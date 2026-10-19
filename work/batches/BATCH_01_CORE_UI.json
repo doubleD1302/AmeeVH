@@ -1,0 +1,288 @@
+{
+  "batch_id": "BATCH_01_CORE_UI",
+  "description": "Core UI Navigation, Action Bar, Modal Dialogs and Settings",
+  "table_source": "bin/UIText.bytes (00704_0x87cc29ac0defc2d9.bin)",
+  "total_items": 35,
+  "items": [
+    {
+      "key": "UIText.ActionBar_Back.1",
+      "source_en": "Back",
+      "source_cn": "返回",
+      "text_vi": "Quay lại",
+      "translator": "Antigravity-AI",
+      "notes": "Nút điều hướng quay lại trang trước"
+    },
+    {
+      "key": "UIText.ActionBar_Confirm.1",
+      "source_en": "Confirm",
+      "source_cn": "确认",
+      "text_vi": "Xác nhận",
+      "translator": "Antigravity-AI",
+      "notes": "Nút xác nhận hành động trên thanh công cụ"
+    },
+    {
+      "key": "UIText.ActionBar_Check.1",
+      "source_en": "View",
+      "source_cn": "查看",
+      "text_vi": "Xem",
+      "translator": "Antigravity-AI",
+      "notes": "Nút xem chi tiết"
+    },
+    {
+      "key": "UIText.ActionBar_Settings.1",
+      "source_en": "Settings",
+      "source_cn": "设置",
+      "text_vi": "Cài đặt",
+      "translator": "Antigravity-AI",
+      "notes": "Nút mở bảng thiết lập hệ thống"
+    },
+    {
+      "key": "UIText.ActionBar_Skill.1",
+      "source_en": "Skills",
+      "source_cn": "技能",
+      "text_vi": "Kỹ năng",
+      "translator": "Antigravity-AI",
+      "notes": "Nút xem thông tin chiêu thức/kỹ năng"
+    },
+    {
+      "key": "UIText.ActionBar_Depot.1",
+      "source_en": "Bag",
+      "source_cn": "背包",
+      "text_vi": "Túi đồ",
+      "translator": "Antigravity-AI",
+      "notes": "Kho hành trang/túi đồ người chơi"
+    },
+    {
+      "key": "UIText.ActionBar_Skip.1",
+      "source_en": "Skip",
+      "source_cn": "跳过",
+      "text_vi": "Bỏ qua",
+      "translator": "Antigravity-AI",
+      "notes": "Nút bỏ qua hội thoại/hoạt cảnh"
+    },
+    {
+      "key": "UIText.ActionBar_AutoPlay.1",
+      "source_en": "Auto-play",
+      "source_cn": "自动播放",
+      "text_vi": "Tự động phát",
+      "translator": "Antigravity-AI",
+      "notes": "Chế độ tự động chạy lời thoại"
+    },
+    {
+      "key": "UIText.ActionBar_HideUI.1",
+      "source_en": "Hide Interface",
+      "source_cn": "隐藏界面",
+      "text_vi": "Ẩn giao diện",
+      "translator": "Antigravity-AI",
+      "notes": "Ẩn toàn bộ nút bấm để chụp ảnh màn hình"
+    },
+    {
+      "key": "UIText.ActionBar_Log.1",
+      "source_en": "View Record",
+      "source_cn": "查看记录",
+      "text_vi": "Xem lịch sử",
+      "translator": "Antigravity-AI",
+      "notes": "Xem nhật ký/lịch sử lời thoại visual novel"
+    },
+    {
+      "key": "UIText.ActionBar_NextDialogue.1",
+      "source_en": "Next",
+      "source_cn": "下一条",
+      "text_vi": "Tiếp theo",
+      "translator": "Antigravity-AI",
+      "notes": "Chuyển câu thoại kế tiếp"
+    },
+    {
+      "key": "UIText.ActionBar_ChangeDesc.1",
+      "source_en": "Change Description",
+      "source_cn": "切换描述",
+      "text_vi": "Đổi mô tả",
+      "translator": "Antigravity-AI",
+      "notes": "Chuyển đổi kiểu hiển thị mô tả ngắn/dài"
+    },
+    {
+      "key": "UIText.ActionBar_CloseMenu.1",
+      "source_en": "Close Menu",
+      "source_cn": "合上菜单",
+      "text_vi": "Đóng menu",
+      "translator": "Antigravity-AI",
+      "notes": "Thu gọn thanh menu điều hướng"
+    },
+    {
+      "key": "UIText.ActionBar_OpenMenu.1",
+      "source_en": "Expand Menu",
+      "source_cn": "展开菜单",
+      "text_vi": "Mở menu",
+      "translator": "Antigravity-AI",
+      "notes": "Mở rộng thanh menu điều hướng"
+    },
+    {
+      "key": "UIText.ActionBar_Reroll.1",
+      "source_en": "Refresh",
+      "source_cn": "刷新",
+      "text_vi": "Làm mới",
+      "translator": "Antigravity-AI",
+      "notes": "Làm mới lượt chọn thẻ/thưởng"
+    },
+    {
+      "key": "UIText.ActionBar_GiveUp.1",
+      "source_en": "Give Up",
+      "source_cn": "放弃",
+      "text_vi": "Bỏ cuộc",
+      "translator": "Antigravity-AI",
+      "notes": "Từ bỏ màn chơi hoặc thử thách"
+    },
+    {
+      "key": "UIText.ActionBar_Leave.1",
+      "source_en": "Leave for Now",
+      "source_cn": "暂离",
+      "text_vi": "Rời tạm thời",
+      "translator": "Antigravity-AI",
+      "notes": "Tạm dừng và rời khỏi màn chơi, giữ tiến trình"
+    },
+    {
+      "key": "UIText.AVG_SkipTip.1",
+      "source_en": "Skip story?",
+      "source_cn": "是否跳过该段剧情",
+      "text_vi": "Bỏ qua đoạn cốt truyện này?",
+      "translator": "Antigravity-AI",
+      "notes": "Hộp thoại xác nhận bỏ qua cutscene"
+    },
+    {
+      "key": "UIText.MessageBox_Title.1",
+      "source_en": "Notice",
+      "source_cn": "提示",
+      "text_vi": "Thông báo",
+      "translator": "Antigravity-AI",
+      "notes": "Tiêu đề hộp thoại thông báo"
+    },
+    {
+      "key": "UIText.MessageBox_Confirm.1",
+      "source_en": "Confirm",
+      "source_cn": "确 认",
+      "text_vi": "Xác nhận",
+      "translator": "Antigravity-AI",
+      "notes": "Nút xác nhận trong pop-up"
+    },
+    {
+      "key": "UIText.MessageBox_Cancel.1",
+      "source_en": "Cancel",
+      "source_cn": "取 消",
+      "text_vi": "Hủy",
+      "translator": "Antigravity-AI",
+      "notes": "Nút hủy bỏ trong pop-up"
+    },
+    {
+      "key": "UIText.MessageBox_Desc.1",
+      "source_en": "Instructions",
+      "source_cn": "说明",
+      "text_vi": "Hướng dẫn",
+      "translator": "Antigravity-AI",
+      "notes": "Tiêu đề phần giải thích chi tiết"
+    },
+    {
+      "key": "UIText.MessageBox_Reward.1",
+      "source_en": "Rewards",
+      "source_cn": "奖励预览",
+      "text_vi": "Phần thưởng",
+      "translator": "Antigravity-AI",
+      "notes": "Xem trước phần thưởng nhận được"
+    },
+    {
+      "key": "UIText.MessageBox_TodayWarning.1",
+      "source_en": "Do not show again today",
+      "source_cn": "今日不再提示",
+      "text_vi": "Không nhắc lại trong hôm nay",
+      "translator": "Antigravity-AI",
+      "notes": "Tùy chọn ẩn thông báo cho đến ngày hôm sau"
+    },
+    {
+      "key": "UIText.MessageBox_LoginWarning.1",
+      "source_en": "Do not show again until next login",
+      "source_cn": "本次登录不再提示",
+      "text_vi": "Không nhắc lại trong lần đăng nhập này",
+      "translator": "Antigravity-AI",
+      "notes": "Tùy chọn ẩn thông báo trong phiên đăng nhập"
+    },
+    {
+      "key": "UIText.Achievement_Btn_Receive.1",
+      "source_en": "Claim",
+      "source_cn": "领取",
+      "text_vi": "Nhận",
+      "translator": "Antigravity-AI",
+      "notes": "Nút nhận quà thành tựu"
+    },
+    {
+      "key": "UIText.Achievement_Btn_ReceiveAll.1",
+      "source_en": "Claim All",
+      "source_cn": "一键领取",
+      "text_vi": "Nhận tất cả",
+      "translator": "Antigravity-AI",
+      "notes": "Nút nhận nhanh tất cả phần thưởng"
+    },
+    {
+      "key": "UIText.Achievement_State_Completed.1",
+      "source_en": "Complete",
+      "source_cn": "已完成",
+      "text_vi": "Đã hoàn thành",
+      "translator": "Antigravity-AI",
+      "notes": "Trạng thái thành tựu đã xong"
+    },
+    {
+      "key": "UIText.Achievement_Tips_Completed.1",
+      "source_en": "Achievement Complete",
+      "source_cn": "成就已达成",
+      "text_vi": "Đã hoàn thành thành tựu",
+      "translator": "Antigravity-AI",
+      "notes": "Thông báo nổi khi mở khóa thành tựu"
+    },
+    {
+      "key": "UIText.Settings_Account.1",
+      "source_en": "Account",
+      "source_cn": "账号",
+      "text_vi": "Tài khoản",
+      "translator": "Antigravity-AI",
+      "notes": "Mục cài đặt tài khoản"
+    },
+    {
+      "key": "UIText.Settings_Account_Center.1",
+      "source_en": "User Center",
+      "source_cn": "用户中心",
+      "text_vi": "Trung tâm người dùng",
+      "translator": "Antigravity-AI",
+      "notes": "Cổng quản lý tài khoản người chơi"
+    },
+    {
+      "key": "UIText.Settings_Sound.1",
+      "source_en": "Sound",
+      "source_cn": "声音",
+      "text_vi": "Âm thanh",
+      "translator": "Antigravity-AI",
+      "notes": "Tab cài đặt âm thanh"
+    },
+    {
+      "key": "UIText.Settings_Language.1",
+      "source_en": "Language",
+      "source_cn": "语言",
+      "text_vi": "Ngôn ngữ",
+      "translator": "Antigravity-AI",
+      "notes": "Tab cài đặt ngôn ngữ"
+    },
+    {
+      "key": "UIText.Settings_Language_Settings.1",
+      "source_en": "Language Settings",
+      "source_cn": "语言设置",
+      "text_vi": "Cài đặt ngôn ngữ",
+      "translator": "Antigravity-AI",
+      "notes": "Tiêu đề trang thiết lập ngôn ngữ"
+    },
+    {
+      "key": "UIText.Settings_Sound_Voice.1",
+      "source_en": "Trekker Voiceover",
+      "source_cn": "旅人语音",
+      "text_vi": "Giọng nói Lữ khách",
+      "translator": "Antigravity-AI",
+      "notes": "Âm lượng giọng lồng tiếng của Lữ khách (Trekker)"
+    }
+  ]
+}
