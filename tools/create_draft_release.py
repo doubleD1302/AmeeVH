@@ -39,7 +39,7 @@ def main():
     body = """Bản thử nghiệm nội bộ đầu tiên cho Stella Sora (EN) trên PC và Android.
 
 ### 📥 Tải về cài đặt:
-- **PC Windows**: Tải `StellaSora_Launcher_PC.zip` bên dưới (giải nén và chạy `Start_Launcher.bat`).
+- **PC Windows**: Tải `StellaSora_Launcher.exe` bên dưới (chạy trực tiếp không cần cài Python).
 - **Android**: Tải `StellaSora_VietHoa.apk` bên dưới (cài đặt trực tiếp lên máy hoặc giả lập).
 
 ### ✨ Nội dung:
@@ -55,6 +55,19 @@ def main():
     if existing:
         print(f"Release with tag {tag} already exists (id: {existing['id']})")
         rel = existing
+        # Update body
+        patch_req = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/releases/{rel['id']}",
+            data=json.dumps({'body': body, 'name': name}).encode('utf-8'),
+            headers={**headers, 'Content-Type': 'application/json'},
+            method='PATCH'
+        )
+        try:
+            with urllib.request.urlopen(patch_req) as resp:
+                rel = json.loads(resp.read().decode('utf-8'))
+                print("Updated release metadata.")
+        except Exception as e:
+            print(f"Note: Could not patch release metadata: {e}")
     else:
         payload = {
             'tag_name': tag,
@@ -78,8 +91,9 @@ def main():
 
     # 2. Upload assets
     assets = [
-        (root / 'StellaSora_Launcher_PC.zip', 'application/zip'),
+        (root / 'dist' / 'StellaSora_Launcher.exe', 'application/vnd.microsoft.portable-executable'),
         (root / 'android' / 'bin' / 'StellaSora_VietHoa.apk', 'application/vnd.android.package-archive'),
+        (root / 'StellaSora_Launcher_PC.zip', 'application/zip'),
     ]
 
     existing_assets = {a['name']: a['id'] for a in rel.get('assets', [])}

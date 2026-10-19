@@ -18,6 +18,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import re
 import shutil
 import subprocess
 import sys
@@ -33,20 +34,28 @@ try:
 except ImportError:
     TKINTER_AVAILABLE = False
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-LAUNCHER_DIR = Path(__file__).resolve().parent
-CONFIG_FILE = LAUNCHER_DIR / "config.json"
-NOTIFS_FILE = LAUNCHER_DIR / "notifications.json"
-BACKUP_DIR = BASE_DIR / "backups"
+if getattr(sys, "frozen", False):
+    BUNDLE_DIR = Path(sys._MEIPASS)
+    EXE_DIR = Path(sys.executable).resolve().parent
+    LAUNCHER_DIR = EXE_DIR
+    BASE_DIR = BUNDLE_DIR
+else:
+    LAUNCHER_DIR = Path(__file__).resolve().parent
+    BASE_DIR = Path(__file__).resolve().parents[1]
+    EXE_DIR = LAUNCHER_DIR
+
+CONFIG_FILE = EXE_DIR / "config.json"
+NOTIFS_FILE = EXE_DIR / "notifications.json"
+BACKUP_DIR = EXE_DIR / "backups"
 
 DEFAULT_CONFIG = {
     "version": "1.0.0",
     "app_name": "Stella Sora Việt Hóa - Multiplatform Launcher",
     "default_game_path": "C:\\YostarGames\\StellaSora_EN",
-    "github_repo": "stellasora-vn/StellaSora_VietHoa",
+    "github_repo": "doubleD1302/AmeeVH",
     "github_branch": "main",
-    "github_api_url": "https://api.github.com/repos/stellasora-vn/StellaSora_VietHoa/releases/latest",
-    "remote_notifications_url": "https://raw.githubusercontent.com/stellasora-vn/StellaSora_VietHoa/main/launcher/notifications.json",
+    "github_api_url": "https://api.github.com/repos/doubleD1302/AmeeVH/releases/latest",
+    "remote_notifications_url": "https://raw.githubusercontent.com/doubleD1302/AmeeVH/main/launcher/notifications.json",
     "android_package": "com.YoStar.StellaSora",
     "android_game_storage": "/sdcard/Android/data/com.YoStar.StellaSora/files",
 }
@@ -58,6 +67,12 @@ def load_config() -> dict:
             return {**DEFAULT_CONFIG, **json.loads(CONFIG_FILE.read_text(encoding="utf-8"))}
         except Exception:
             pass
+    bundle_cfg = BASE_DIR / "launcher" / "config.json"
+    if bundle_cfg.exists():
+        try:
+            return {**DEFAULT_CONFIG, **json.loads(bundle_cfg.read_text(encoding="utf-8"))}
+        except Exception:
+            pass
     return DEFAULT_CONFIG.copy()
 
 
@@ -67,6 +82,51 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+CUE_PATTERN = re.compile(
+    r"(?m)^(?P<index>\d+)\r?\n(?P<time>\d{2,}:\d{2}:\d{2},\d{3} --> \d{2,}:\d{2}:\d{2},\d{3}[^\r\n]*)"
+    r"\r?\n(?P<body>[^\r\n]+(?:\r?\n(?!\r?$)[^\r\n]+)*)"
+)
+
+
+def parse_srt(raw: bytes) -> tuple[str, list[dict]]:
+    text = raw.decode("utf-8-sig")
+    cues, previous_end = [], 0
+    seen = set()
+    for match in CUE_PATTERN.finditer(text):
+        if text[previous_end:match.start()].strip():
+            raise ValueError("Unparsed SRT data before cue")
+        key = match["index"]
+        if key in seen:
+            raise ValueError(f"Duplicate SRT cue {key}")
+        seen.add(key)
+        cues.append({
+            "index": key,
+            "timestamp": match["time"],
+            "text": match["body"].replace("\r\n", "\n"),
+            "start": match.start("body"),
+            "end": match.end("body")
+        })
+        previous_end = match.end()
+    if text[previous_end:].strip() or not cues:
+        raise ValueError("Unparsed/empty SRT data")
+    return text, cues
+
+
+def render_srt(raw: bytes, translations: dict[str, str]) -> bytes:
+    text, cues = parse_srt(raw)
+    if set(translations) - {c["index"] for c in cues}:
+        raise ValueError("Unknown subtitle cue")
+    newline = "\r\n" if b"\r\n" in raw else "\n"
+    for cue in reversed(cues):
+        if cue["index"] in translations:
+            target = translations[cue["index"]]
+            if "\r" in target or "\n\n" in target or not target.strip():
+                raise ValueError("Invalid subtitle body")
+            text = text[:cue["start"]] + target.replace("\n", newline) + text[cue["end"]:]
+    bom = b"\xef\xbb\xbf" if raw.startswith(b"\xef\xbb\xbf") else b""
+    return bom + text.encode("utf-8")
 
 
 def detect_game_info(game_path: Path) -> dict:
@@ -206,6 +266,7 @@ class LocalizationEngine:
                 "Persistent_Store/Videos/CH04ED-CH04ED_EN.srt",
                 "Persistent_Store/Videos/CH06ED-CH06ED_EN.srt",
             ]
+            table_rel = "Persistent_Store/Tables/data.arcx"
 
             # Source batch proposals
             batches_dir = BASE_DIR / "work" / "batches"
@@ -215,6 +276,7 @@ class LocalizationEngine:
                 "Persistent_Store/Videos/CH04ED-CH04ED_EN.srt": batches_dir / "SRT003_CH04ED.json",
                 "Persistent_Store/Videos/CH06ED-CH06ED_EN.srt": batches_dir / "SRT004_CH06ED.json",
             }
+            patched_arcx = BASE_DIR / "work" / "research" / "data_patched_vi.arcx"
 
             # 1. Create Backup
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -228,6 +290,7 @@ class LocalizationEngine:
                 "files": []
             }
 
+            # Backup subtitles
             for rel in target_subtitles:
                 orig_file = game_path / rel
                 if orig_file.exists():
@@ -242,15 +305,37 @@ class LocalizationEngine:
                     })
                     log(f"   Đã sao lưu: {orig_file.name} (SHA: {orig_hash[:8]}...)")
 
+            # Backup table archive if game table and patched arcx exist
+            orig_table = game_path / table_rel
+            if patched_arcx.exists() and orig_table.exists():
+                orig_hash = sha256_file(orig_table)
+                bak_file = run_backup_dir / table_rel.replace("/", "_")
+                shutil.copy2(orig_table, bak_file)
+                backup_manifest["files"].append({
+                    "relative_path": table_rel,
+                    "backup_file": bak_file.name,
+                    "original_sha256": orig_hash,
+                    "size": orig_table.stat().st_size
+                })
+                log(f"   Đã sao lưu: {orig_table.name} (SHA: {orig_hash[:8]}...)")
+
             (run_backup_dir / "manifest.json").write_text(json.dumps(backup_manifest, indent=2), encoding="utf-8")
 
             # 2. Render & Install Translated Files
             log("2. Tiến hành đóng gói và áp dụng dữ liệu Việt hóa...")
-            # Import render helper from tools/localize.py
-            sys.path.insert(0, str(BASE_DIR))
-            from tools.localize import parse_srt, render_srt
-
             installed_count = 0
+            installed_files = []
+
+            # Install Core UI table archive
+            if patched_arcx.exists() and orig_table.exists():
+                temp_table = orig_table.with_suffix(".tmp_patch")
+                shutil.copy2(patched_arcx, temp_table)
+                temp_table.replace(orig_table)
+                installed_count += 1
+                installed_files.append(table_rel)
+                log(f"   ✓ Đã cài đặt thành công: {orig_table.name} (Giao diện Core UI ArcX)")
+
+            # Install subtitles
             for rel, proposal_file in batch_files.items():
                 orig_file = game_path / rel
                 if not orig_file.exists():
@@ -281,6 +366,7 @@ class LocalizationEngine:
                 temp_file.write_bytes(candidate_bytes)
                 temp_file.replace(orig_file)
                 installed_count += 1
+                installed_files.append(rel)
                 log(f"   ✓ Đã cài đặt thành công: {orig_file.name} ({len(translations)} cues)")
 
             # 3. Write installation marker
@@ -288,7 +374,7 @@ class LocalizationEngine:
             marker_data = {
                 "installed_at": timestamp,
                 "version": "1.0.0",
-                "installed_files": target_subtitles,
+                "installed_files": installed_files,
                 "backup_run": run_backup_dir.name
             }
             marker_file.write_text(json.dumps(marker_data, indent=2), encoding="utf-8")
@@ -398,12 +484,13 @@ class GitHubManager:
                 return d.get("announcements", [])
         except Exception:
             # Fallback to local
-            if NOTIFS_FILE.exists():
-                try:
-                    d = json.loads(NOTIFS_FILE.read_text(encoding="utf-8"))
-                    return d.get("announcements", [])
-                except Exception:
-                    pass
+            for path in [NOTIFS_FILE, BASE_DIR / "launcher" / "notifications.json"]:
+                if path.exists():
+                    try:
+                        d = json.loads(path.read_text(encoding="utf-8"))
+                        return d.get("announcements", [])
+                    except Exception:
+                        pass
         return []
 
 

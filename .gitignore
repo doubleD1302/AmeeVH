@@ -14,6 +14,11 @@ android/build/
 android/.gradle/
 android/debug.keystore
 
+# PyInstaller build artifacts
+build/
+dist/
+*.spec
+
 # Keep translation work catalogs and proposals
 work/*
 !work/batches/
