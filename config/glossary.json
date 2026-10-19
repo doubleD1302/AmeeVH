@@ -1,9 +1,1784 @@
 {
-  "schema": 1,
-  "policy": "Only approved entries are enforced. Proposed terms need actual scene review.",
+  "schema": 2,
+  "policy": "Mandatory Project Glossary. All approved entries are strictly enforced for all agents and translation pipelines.",
   "entries": [
-    {"source": "Trekker", "target": "Lữ khách", "status": "proposed", "evidence": "Prologue subtitle; inspect wider game terminology before approval"},
-    {"source": "Monolith", "target": "Cự tháp", "status": "proposed", "evidence": "Prologue subtitle; inspect world lore before approval"},
-    {"source": "Novians", "target": "người Nova", "status": "proposed", "evidence": "Prologue subtitle; provisional demonym, not a locked name"}
+    {
+      "source": "Trekker",
+      "target": "Lữ Khách",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Nhân vật người chơi điều khiển/chiêu mộ trong hành trình"
+    },
+    {
+      "source": "Monolith",
+      "target": "Cự Tháp",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Cấu trúc khổng lồ bí ẩn trong thế giới Stella Sora"
+    },
+    {
+      "source": "Novian",
+      "target": "Người Novian",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Cư dân trên đại lục Nova"
+    },
+    {
+      "source": "Novians",
+      "target": "Dân Novian",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Số nhiều của Novian"
+    },
+    {
+      "source": "Nova Continent",
+      "target": "Đại Lục Nova",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Lục địa bối cảnh chính của game"
+    },
+    {
+      "source": "Star Pluck",
+      "target": "Đoạt Sao",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Hoạt động/chế độ đoạt sao (TUYỆT ĐỐI KHÔNG DỊCH 'Sao nhổ')"
+    },
+    {
+      "source": "Star Pluck Conquest",
+      "target": "Chinh Phục Đoạt Sao",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "TUYỆT ĐỐI KHÔNG DỊCH 'Cuộc chinh phục sao nhổ'"
+    },
+    {
+      "source": "Wilds",
+      "target": "Vùng Hoang Dã",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Khu vực ngoài thành phố Nova"
+    },
+    {
+      "source": "Deepsea Finance",
+      "target": "Tài Chính Biển Sâu",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Tập đoàn tài chính phát hành Dorra"
+    },
+    {
+      "source": "Dorra",
+      "target": "Dorra",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Đơn vị tiền tệ chính thức của Nova, giữ nguyên"
+    },
+    {
+      "source": "Stellanite Lumina",
+      "target": "Quặng Tinh Thể Lumina",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Khoáng thạch năng lượng quý"
+    },
+    {
+      "source": "Star Tower",
+      "target": "Tháp Sao",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Công trình thử thách chính"
+    },
+    {
+      "source": "Infinite Arena",
+      "target": "Đấu Trường Vô Tận",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Chế độ vượt tầng thử thách"
+    },
+    {
+      "source": "Infinity Tower",
+      "target": "Tháp Vô Tận",
+      "status": "approved",
+      "category": "Lore",
+      "notes": "Tháp thử thách vô hạn"
+    },
+    {
+      "source": "ATK",
+      "target": "Tấn Công",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Chỉ số sức mạnh công kích"
+    },
+    {
+      "source": "DEF",
+      "target": "Phòng Thủ",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Chỉ số giảm sát thương"
+    },
+    {
+      "source": "HP",
+      "target": "HP",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Lượng máu/sinh lực nhân vật"
+    },
+    {
+      "source": "Crit Rate",
+      "target": "Tỷ Lệ Bạo Kích",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Xác suất đòn đánh chí mạng"
+    },
+    {
+      "source": "CRIT Rate",
+      "target": "Tỷ Lệ Bạo Kích",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Viết tắt CRIT Rate"
+    },
+    {
+      "source": "Crit DMG",
+      "target": "Sát Thương Bạo Kích",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Lượng sát thương khi chí mạng"
+    },
+    {
+      "source": "CRIT DMG",
+      "target": "Sát Thương Bạo Kích",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Viết tắt CRIT DMG"
+    },
+    {
+      "source": "DMG",
+      "target": "Sát Thương",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Lượng thương tổn gây ra/nhận vào"
+    },
+    {
+      "source": "Movement SPD",
+      "target": "Tốc Độ Di Chuyển",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "TUYỆT ĐỐI KHÔNG DỊCH 'SPD chuyển động'"
+    },
+    {
+      "source": "Move SPD",
+      "target": "Tốc Độ Di Chuyển",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Viết tắt Move SPD"
+    },
+    {
+      "source": "Attack SPD",
+      "target": "Tốc Độ Tấn Công",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Tần suất ra đòn"
+    },
+    {
+      "source": "ATK SPD",
+      "target": "Tốc Độ Tấn Công",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Viết tắt ATK SPD"
+    },
+    {
+      "source": "Cooldown",
+      "target": "Hồi Chiêu",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Thời gian chờ kỹ năng"
+    },
+    {
+      "source": "CD",
+      "target": "Hồi Chiêu",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Viết tắt CD"
+    },
+    {
+      "source": "Normal Attack",
+      "target": "Đòn Đánh Thường",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Tấn công cơ bản"
+    },
+    {
+      "source": "Auto Attack",
+      "target": "Đòn Đánh Thường",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Tấn công tự động/thường"
+    },
+    {
+      "source": "Main Skill",
+      "target": "Kỹ Năng Chính",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Chiêu thức kích hoạt chủ đạo"
+    },
+    {
+      "source": "Secondary Skill",
+      "target": "Kỹ Năng Phụ",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Kỹ năng bổ trợ chiến thuật"
+    },
+    {
+      "source": "Ultimate",
+      "target": "Tuyệt Kỹ",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Chiêu cuối năng lượng cao"
+    },
+    {
+      "source": "Burst",
+      "target": "Bộc Phá Tuyệt Kỹ",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Trạng thái bùng nổ sức mạnh"
+    },
+    {
+      "source": "Dodge",
+      "target": "Né Tránh",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Hành động lướt né đòn"
+    },
+    {
+      "source": "Dash",
+      "target": "Lướt",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Tốc biến ngắn né chiêu"
+    },
+    {
+      "source": "Incapacitated",
+      "target": "Bị Tê Liệt / Vô Hiệu Hóa",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "TUYỆT ĐỐI KHÔNG DỊCH 'mất khả năng lao động'"
+    },
+    {
+      "source": "Stun",
+      "target": "Choáng",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Hiệu ứng khống chế cứng"
+    },
+    {
+      "source": "Freeze",
+      "target": "Đóng Băng",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Hiệu ứng hóa đá băng"
+    },
+    {
+      "source": "Frozen",
+      "target": "Bị Đóng Băng",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Trạng thái bị đông cứng"
+    },
+    {
+      "source": "Shock",
+      "target": "Sốc Điện",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Hiệu ứng cảm điện liên tục"
+    },
+    {
+      "source": "Burn",
+      "target": "Thiêu Đốt",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Hiệu ứng sát thương lửa liên tục"
+    },
+    {
+      "source": "Bleed",
+      "target": "Xuất Huyết",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Hiệu ứng chảy máu mất máu dần"
+    },
+    {
+      "source": "Shield",
+      "target": "Lá Chắn",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Giáp ảo chặn sát thương"
+    },
+    {
+      "source": "Vigor",
+      "target": "Thể Lực",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Năng lượng đi phụ bản"
+    },
+    {
+      "source": "Magazine Capacity",
+      "target": "Dung Lượng Băng Đạn",
+      "status": "approved",
+      "category": "Combat",
+      "notes": "Số đạn trong một băng"
+    },
+    {
+      "source": "Talent",
+      "target": "Thiên Phú",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Nhánh nâng cấp thụ động theo nhân vật"
+    },
+    {
+      "source": "Potential",
+      "target": "Tiềm Năng",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Cường hóa chiêu thức đột phá"
+    },
+    {
+      "source": "FateCard",
+      "target": "Thẻ Định Mệnh",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Trang bị thẻ bài gia tăng năng lực"
+    },
+    {
+      "source": "Affinity",
+      "target": "Độ Thân Mật",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Điểm hảo cảm với nhân vật"
+    },
+    {
+      "source": "Affinity Quest",
+      "target": "Nhiệm Vụ Thân Mật",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Chuỗi cốt truyện gắn kết nhân vật"
+    },
+    {
+      "source": "Affinity Up Reward",
+      "target": "Phần Thưởng Thân Mật",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Quà tặng khi tăng cấp độ hảo cảm"
+    },
+    {
+      "source": "Soul Key",
+      "target": "Chìa Khóa Tâm Hồn",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Vật phẩm mở khóa thiên phú"
+    },
+    {
+      "source": "Authorization Lv.",
+      "target": "Cấp Ủy Quyền",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Cấp độ tài khoản/người chơi"
+    },
+    {
+      "source": "Breakthrough",
+      "target": "Đột Phá",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Nâng giới hạn cấp độ"
+    },
+    {
+      "source": "Enhance",
+      "target": "Cường Hóa",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Nâng cấp trang bị/kỹ năng"
+    },
+    {
+      "source": "Upgrade",
+      "target": "Nâng Cấp",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Tăng bậc thuộc tính"
+    },
+    {
+      "source": "Character Skin",
+      "target": "Trang Phục Nhân Vật",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Ngoại trang nhân vật"
+    },
+    {
+      "source": "Trial Character",
+      "target": "Dùng Thử Nhân Vật",
+      "status": "approved",
+      "category": "Progression",
+      "notes": "Chế độ trải nghiệm thử tướng"
+    },
+    {
+      "source": "Gacha",
+      "target": "Triệu Hồi",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Quay tướng/thẻ bài"
+    },
+    {
+      "source": "Draw",
+      "target": "Chiêu Mộ",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Rút thẻ"
+    },
+    {
+      "source": "Pull",
+      "target": "Quay",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Lượt quay"
+    },
+    {
+      "source": "Banner",
+      "target": "Kỳ Chiêu Mộ",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Giai đoạn triệu hồi giới hạn"
+    },
+    {
+      "source": "Inventory",
+      "target": "Túi Đồ",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Kho lưu trữ vật phẩm"
+    },
+    {
+      "source": "Mall",
+      "target": "Cửa Hàng",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Khu mua sắm trong game"
+    },
+    {
+      "source": "Shop",
+      "target": "Cửa Hàng",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Shop vật phẩm"
+    },
+    {
+      "source": "Package",
+      "target": "Gói Quà",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Combo vật phẩm bán sẵn"
+    },
+    {
+      "source": "Battle Pass",
+      "target": "Thẻ Hành Trình",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Vé thông hành mùa giải"
+    },
+    {
+      "source": "Quest",
+      "target": "Nhiệm Vụ",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Mục tiêu cần hoàn thành"
+    },
+    {
+      "source": "Mission",
+      "target": "Nhiệm Vụ",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Chiến dịch nhiệm vụ"
+    },
+    {
+      "source": "Task",
+      "target": "Nhiệm Vụ",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Công việc cần làm"
+    },
+    {
+      "source": "Achievement",
+      "target": "Thành Tựu",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Bảng vinh danh mục tiêu"
+    },
+    {
+      "source": "Claim",
+      "target": "Nhận",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Nút nhận thưởng"
+    },
+    {
+      "source": "Claim All",
+      "target": "Nhận Tất Cả",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Nút gom toàn bộ phần thưởng"
+    },
+    {
+      "source": "Confirm",
+      "target": "Xác Nhận",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Nút đồng ý hành động"
+    },
+    {
+      "source": "Cancel",
+      "target": "Hủy",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Nút từ chối hành động"
+    },
+    {
+      "source": "Back",
+      "target": "Quay Lại",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Trở về màn hình trước"
+    },
+    {
+      "source": "Settings",
+      "target": "Cài Đặt",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Thiết lập hệ thống"
+    },
+    {
+      "source": "Notice",
+      "target": "Thông Báo",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Bảng tin thông tin mới"
+    },
+    {
+      "source": "Mailbox",
+      "target": "Hòm Thư",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Nơi nhận quà và thư hệ thống"
+    },
+    {
+      "source": "Quick Clear",
+      "target": "Quét Nhanh",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Vượt ải tự động tức thì"
+    },
+    {
+      "source": "Sweep",
+      "target": "Quét Ải",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Thu hoạch tài nguyên ải đã vượt"
+    },
+    {
+      "source": "Deploy",
+      "target": "Xuất Trận",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Bố trí đội hình tham chiến"
+    },
+    {
+      "source": "Penguin Card",
+      "target": "Thẻ Chim Cánh Cụt",
+      "status": "approved",
+      "category": "UI",
+      "notes": "Thẻ minigame bài Cánh Cụt"
+    },
+    {
+      "source": "Amber",
+      "target": "Amber",
+      "category": "Character",
+      "notes": "Lữ Khách hệ Hỏa, Tiên Phong tự do (CN: 琥珀)",
+      "status": "approved"
+    },
+    {
+      "source": "Tilia",
+      "target": "Tilia",
+      "category": "Character",
+      "notes": "Lữ Khách kiếm sĩ công lý (CN: 缇莉娅)",
+      "status": "approved"
+    },
+    {
+      "source": "Kasimira",
+      "target": "Kasimira",
+      "category": "Character",
+      "notes": "Lữ Khách hệ Lôi (CN: 卡西米拉)",
+      "status": "approved"
+    },
+    {
+      "source": "Firenze",
+      "target": "Firenze",
+      "category": "Character",
+      "notes": "Lữ Khách thuộc Imperial Guard (CN: 翡冷翠)",
+      "status": "approved"
+    },
+    {
+      "source": "Iris",
+      "target": "Iris",
+      "category": "Character",
+      "notes": "Lữ Khách bí ẩn (CN: 鸢尾)",
+      "status": "approved"
+    },
+    {
+      "source": "Noya",
+      "target": "Noya",
+      "category": "Character",
+      "notes": "Lữ Khách hệ Địa (CN: 尘沙)",
+      "status": "approved"
+    },
+    {
+      "source": "Shimiao",
+      "target": "Shimiao",
+      "category": "Character",
+      "notes": "Lữ Khách phương Đông (CN: 师渺)",
+      "status": "approved"
+    },
+    {
+      "source": "Chaton",
+      "target": "Chaton",
+      "category": "Character",
+      "notes": "Lữ Khách miêu tộc (CN: 猫眼)",
+      "status": "approved"
+    },
+    {
+      "source": "Firefly",
+      "target": "Firefly",
+      "category": "Character",
+      "notes": "Lữ Khách vũ khí cơ giới (CN: 火垂)",
+      "status": "approved"
+    },
+    {
+      "source": "Ridge",
+      "target": "Ridge",
+      "category": "Character",
+      "notes": "Lữ Khách kiểm lâm United Harvest (CN: 岭川)",
+      "status": "approved"
+    },
+    {
+      "source": "Jinglin",
+      "target": "Jinglin",
+      "category": "Character",
+      "notes": "Lữ Khách lôi thần thụ (CN: 璟麟)",
+      "status": "approved"
+    },
+    {
+      "source": "Coronis",
+      "target": "Coronis",
+      "category": "Character",
+      "notes": "Lữ Khách y sĩ liềm độc (CN: 科洛妮丝)",
+      "status": "approved"
+    },
+    {
+      "source": "Nanoha",
+      "target": "Nanoha",
+      "category": "Character",
+      "notes": "Lữ Khách ninja Goodwind (CN: 花原)",
+      "status": "approved"
+    },
+    {
+      "source": "Canace",
+      "target": "Canace",
+      "category": "Character",
+      "notes": "Lữ Khách giảng viên ma quỷ (CN: 卡娜丝)",
+      "status": "approved"
+    },
+    {
+      "source": "Ann",
+      "target": "Ann",
+      "category": "Character",
+      "notes": "Lữ Khách đồng hành cùng hỏa lang Coco (CN: 杏子)",
+      "status": "approved"
+    },
+    {
+      "source": "Freesia",
+      "target": "Freesia",
+      "category": "Character",
+      "notes": "Lữ Khách hệ Băng (CN: 苍兰)",
+      "status": "approved"
+    },
+    {
+      "source": "Flora",
+      "target": "Flora",
+      "category": "Character",
+      "notes": "Lữ Khách thảo mộc (CN: 紫槿)",
+      "status": "approved"
+    },
+    {
+      "source": "Teresa",
+      "target": "Teresa",
+      "category": "Character",
+      "notes": "Lữ Khách quý tộc (CN: 特丽莎)",
+      "status": "approved"
+    },
+    {
+      "source": "Donna",
+      "target": "Donna",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 多娜)",
+      "status": "approved"
+    },
+    {
+      "source": "Minova",
+      "target": "Minova",
+      "category": "Character",
+      "notes": "Lữ Khách học giả (CN: 密涅瓦)",
+      "status": "approved"
+    },
+    {
+      "source": "Nazuka",
+      "target": "Nazuka",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 夏花)",
+      "status": "approved"
+    },
+    {
+      "source": "Fuyuka",
+      "target": "Fuyuka",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 冬香)",
+      "status": "approved"
+    },
+    {
+      "source": "Mistique",
+      "target": "Mistique",
+      "category": "Character",
+      "notes": "Lữ Khách sương mù (CN: 雾语)",
+      "status": "approved"
+    },
+    {
+      "source": "Eleanor",
+      "target": "Eleanor",
+      "category": "Character",
+      "notes": "Lữ Khách hiệp sĩ (CN: 埃莉诺)",
+      "status": "approved"
+    },
+    {
+      "source": "Allie",
+      "target": "Allie",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 艾蕾)",
+      "status": "approved"
+    },
+    {
+      "source": "Sparkla",
+      "target": "Sparkla",
+      "category": "Character",
+      "notes": "Lữ Khách lấp lánh (CN: 斯帕克拉)",
+      "status": "approved"
+    },
+    {
+      "source": "Chixia",
+      "target": "Chixia",
+      "category": "Character",
+      "notes": "Lữ Khách hỏa diễm (CN: 赤霞)",
+      "status": "approved"
+    },
+    {
+      "source": "Cosette",
+      "target": "Cosette",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 珂赛特)",
+      "status": "approved"
+    },
+    {
+      "source": "Wraith",
+      "target": "Wraith",
+      "category": "Character",
+      "notes": "Lữ Khách phong ảnh (CN: 风影)",
+      "status": "approved"
+    },
+    {
+      "source": "Chitose",
+      "target": "Chitose",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 千都世)",
+      "status": "approved"
+    },
+    {
+      "source": "Otoha",
+      "target": "Otoha",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 乙叶)",
+      "status": "approved"
+    },
+    {
+      "source": "Caramel",
+      "target": "Caramel",
+      "category": "Character",
+      "notes": "Lữ Khách ngọt ngào (CN: 焦糖)",
+      "status": "approved"
+    },
+    {
+      "source": "Gerie",
+      "target": "Gerie",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 格芮)",
+      "status": "approved"
+    },
+    {
+      "source": "Laru",
+      "target": "Laru",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 菈露)",
+      "status": "approved"
+    },
+    {
+      "source": "Shia",
+      "target": "Shia",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 希娅)",
+      "status": "approved"
+    },
+    {
+      "source": "Nazuna",
+      "target": "Nazuna",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 小禾)",
+      "status": "approved"
+    },
+    {
+      "source": "Karin",
+      "target": "Karin",
+      "category": "Character",
+      "notes": "Lữ Khách chuông hoa (CN: 花铃)",
+      "status": "approved"
+    },
+    {
+      "source": "Willow",
+      "target": "Willow",
+      "category": "Character",
+      "notes": "Lữ Khách (CN: 薇洛)",
+      "status": "approved"
+    },
+    {
+      "source": "Snowish Laru",
+      "target": "Laru Dạ Thánh",
+      "category": "Character",
+      "notes": "Trang phục Laru Giáng Sinh / Thánh Dạ (CN: 菈露（圣夜）)",
+      "status": "approved"
+    },
+    {
+      "source": "Springseek Coronis",
+      "target": "Coronis Nghênh Xuân",
+      "category": "Character",
+      "notes": "Trang phục Coronis Tân Xuân (CN: 科洛妮丝（新春）)",
+      "status": "approved"
+    },
+    {
+      "source": "Suntide Willow",
+      "target": "Willow Triều Hạ",
+      "category": "Character",
+      "notes": "Trang phục Willow Mùa Hè (CN: 薇洛（盛夏）)",
+      "status": "approved"
+    },
+    {
+      "source": "Portia",
+      "target": "Portia",
+      "category": "NPC",
+      "notes": "Thương nhân lang thang tại Star Tower (CN: 波西亚)",
+      "status": "approved"
+    },
+    {
+      "source": "Beatrixa",
+      "target": "Beatrixa",
+      "category": "NPC",
+      "notes": "Phụ trách trạm hồi phục sức khỏe (CN: 贝缇丽)",
+      "status": "approved"
+    },
+    {
+      "source": "Bernina",
+      "target": "Bernina",
+      "category": "NPC",
+      "notes": "Thành viên bộ đôi thỏ ngọc (CN: 珀尔娜)",
+      "status": "approved"
+    },
+    {
+      "source": "Virigia",
+      "target": "Virigia",
+      "category": "NPC",
+      "notes": "Thành viên bộ đôi thỏ ngọc (CN: 维嘉尔)",
+      "status": "approved"
+    },
+    {
+      "source": "Bunny Duo",
+      "target": "Cặp Đôi Thỏ Ngọc",
+      "category": "NPC",
+      "notes": "Nhóm biểu diễn Bernina & Virigia (CN: 兔女郎双人)",
+      "status": "approved"
+    },
+    {
+      "source": "New Star Guild",
+      "target": "Lữ Đoàn Tân Tinh",
+      "category": "Lore",
+      "notes": "Lữ đoàn của người chơi và đồng đội (CN: 空白旅团)",
+      "status": "approved"
+    },
+    {
+      "source": "Imperial Guard",
+      "target": "Cận Vệ Đế Quốc",
+      "category": "Lore",
+      "notes": "Vệ binh hoàng gia Đế Quốc Nova (CN: 帝国卫队)",
+      "status": "approved"
+    },
+    {
+      "source": "White Cat Troupe",
+      "target": "Đoàn Kịch Mèo Trắng",
+      "category": "Lore",
+      "notes": "Đoàn kịch nghệ thuật danh tiếng (CN: 白猫剧团)",
+      "status": "approved"
+    },
+    {
+      "source": "United Harvest",
+      "target": "Nông Nghiệp Liên Hợp",
+      "category": "Lore",
+      "notes": "Tập đoàn công nghệ nông nghiệp và hạt giống (CN: 联合种业)",
+      "status": "approved"
+    },
+    {
+      "source": "Baize Bureau",
+      "target": "Phủ Bạch Trạch",
+      "category": "Lore",
+      "notes": "Cơ quan tình báo, điều tra an ninh (CN: 白泽公署)",
+      "status": "approved"
+    },
+    {
+      "source": "Trekker Association",
+      "target": "Hiệp Hội Lữ Khách",
+      "category": "Lore",
+      "notes": "Hiệp hội địa lý và quản lý lữ khách (CN: 地理协会)",
+      "status": "approved"
+    },
+    {
+      "source": "Fenghuang Diner",
+      "target": "Tiệm Ăn Phượng Hoàng",
+      "category": "Lore",
+      "notes": "Quán ăn ẩm thực truyền thống (CN: 凤凰炒蛋)",
+      "status": "approved"
+    },
+    {
+      "source": "Goodwind Homecare",
+      "target": "Gia Chính Cốc Phong",
+      "category": "Lore",
+      "notes": "Công ty dịch vụ quản gia cao cấp (CN: 谷风家政)",
+      "status": "approved"
+    },
+    {
+      "source": "Post Haste",
+      "target": "Vạn Tống Ốc",
+      "category": "Lore",
+      "notes": "Dịch vụ vận chuyển bưu chính siêu tốc (CN: 万送屋)",
+      "status": "approved"
+    },
+    {
+      "source": "Freelance Trekker",
+      "target": "Lữ Khách Tự Do",
+      "category": "Lore",
+      "notes": "Những lữ khách hoạt động độc lập (CN: 自由旅人)",
+      "status": "approved"
+    },
+    {
+      "source": "Ashwind Clan",
+      "target": "Bang Tro Gió",
+      "category": "Lore",
+      "notes": "Tổ chức ngầm hoạt động nơi hoang dã (CN: 灰风俱乐部)",
+      "status": "approved"
+    },
+    {
+      "source": "Scarlet Sights Media",
+      "target": "Truyền Thông Xích Đồng",
+      "category": "Lore",
+      "notes": "Hãng thông tấn báo chí lớn nhất Nova (CN: 绯曈传讯)",
+      "status": "approved"
+    },
+    {
+      "source": "Yunji Studio",
+      "target": "Studio Vân Cấp",
+      "category": "Lore",
+      "notes": "Xưởng sản xuất văn hóa và nội dung số (CN: 云笈文化)",
+      "status": "approved"
+    },
+    {
+      "source": "Grace Imperium",
+      "target": "Ý Chí Ân Tứ",
+      "category": "Lore",
+      "notes": "Tổ chức quyền lực tối cao bí ẩn (CN: 恩赐意志)",
+      "status": "approved"
+    },
+    {
+      "source": "Petal Bloom",
+      "target": "Lữ Đoàn Hoa Lệnh",
+      "category": "Lore",
+      "notes": "Tổ chức lữ đoàn nữ hoa lệ (CN: 花令旅团)",
+      "status": "approved"
+    },
+    {
+      "source": "Neo Grace Organization",
+      "target": "Nhu Quang Hội Xã",
+      "category": "Lore",
+      "notes": "Công ty nghiên cứu khoa học công nghệ (CN: 柔光会社)",
+      "status": "approved"
+    },
+    {
+      "source": "Daisy Orphanage",
+      "target": "Mái Ấm Hoa Cúc",
+      "category": "Lore",
+      "notes": "Viện nuôi dưỡng trẻ em mồ côi (CN: 雏菊之家)",
+      "status": "approved"
+    },
+    {
+      "source": "Nocturn Eterna",
+      "target": "Tàn Tro Vĩnh Hằng",
+      "category": "Lore",
+      "notes": "Tổ chức bí mật hoạt động trong bóng tối (CN: 余烬)",
+      "status": "approved"
+    },
+    {
+      "source": "Evernight Emberflies",
+      "target": "Đom Đóm Đêm Trường",
+      "category": "Monster",
+      "notes": "Region Boss đom đóm rực lửa (CN: 终宵萤辉)",
+      "status": "approved"
+    },
+    {
+      "source": "Count of the Duloos",
+      "target": "Nam Tước Duloo",
+      "category": "Monster",
+      "notes": "Boss tộc Duloo (CN: 热嘟噜噗男爵)",
+      "status": "approved"
+    },
+    {
+      "source": "Grotesque Dancer",
+      "target": "Vũ Công Quái Dị",
+      "category": "Monster",
+      "notes": "Boss vũ công bóng ma (CN: 怪诞舞者)",
+      "status": "approved"
+    },
+    {
+      "source": "Garden of Parasite",
+      "target": "Khu Vườn Ký Sinh",
+      "category": "Monster",
+      "notes": "Boss đại thụ ký sinh (CN: 寄生之庭)",
+      "status": "approved"
+    },
+    {
+      "source": "Spirit of Brutality",
+      "target": "Linh Thú Cuồng Bạo",
+      "category": "Monster",
+      "notes": "Boss tuần linh thú hung bạo (CN: 猛进之灵)",
+      "status": "approved"
+    },
+    {
+      "source": "Tusk Stomper",
+      "target": "Mãnh Thú Nanh Nhọn",
+      "category": "Monster",
+      "notes": "Dạng Proving Grounds của Spirit of Brutality (CN: 猛进之灵-真格)",
+      "status": "approved"
+    },
+    {
+      "source": "Spellbound Golem",
+      "target": "Cự Tượng Ma Thị",
+      "category": "Monster",
+      "notes": "Boss golem cổ đại khổng lồ (CN: 魔侍巨像)",
+      "status": "approved"
+    },
+    {
+      "source": "Lithe Beauty",
+      "target": "Mỹ Nhân Lưu Phong",
+      "category": "Monster",
+      "notes": "Boss nữ kiếm vũ tốc độ cao (CN: 流风美人)",
+      "status": "approved"
+    },
+    {
+      "source": "Blade of Jade",
+      "target": "Lưỡi Đao Thúy Hoàng",
+      "category": "Monster",
+      "notes": "Boss đao khách bích ngọc hoàng kim (CN: 翠煌之刃)",
+      "status": "approved"
+    },
+    {
+      "source": "Gobble Hexhorn Whale",
+      "target": "Cá Voi Lục Sừng Gobble",
+      "category": "Monster",
+      "notes": "Boss quái ngư lục giác biển sâu (CN: 咕噜六角鲸)",
+      "status": "approved"
+    },
+    {
+      "source": "Opera Ghost: Rovina",
+      "target": "Bóng Ma Nhà Hát: Rovina",
+      "category": "Monster",
+      "notes": "Boss bóng ma nhà hát (CN: 剧院魅影·罗维娜)",
+      "status": "approved"
+    },
+    {
+      "source": "Armadillo Fish",
+      "target": "Cá Cầu Gai Tê Tê",
+      "category": "Monster",
+      "notes": "Quái vật bong bóng đặc hữu Nova (CN: 犰鱼)",
+      "status": "approved"
+    },
+    {
+      "source": "Steam Pot Hammer",
+      "target": "Thiết Chùy Nồi Hơi",
+      "category": "Monster",
+      "notes": "Quái vật xúc tu nồi hơi (CN: 汽锅铁锤)",
+      "status": "approved"
+    },
+    {
+      "source": "Magishark",
+      "target": "Cá Mập Ma Đạo",
+      "category": "Monster",
+      "notes": "Cá mập bay sử dụng ma pháp (CN: 魔导鲨鲨)",
+      "status": "approved"
+    },
+    {
+      "source": "Master Digger",
+      "target": "Bậc Thầy Đào Bới",
+      "category": "Monster",
+      "notes": "Quái vật thợ đào hầm mỏ (CN: 挖掘高手)",
+      "status": "approved"
+    },
+    {
+      "source": "Megahand Enforcer",
+      "target": "Cự Thủ Hãn Tướng",
+      "category": "Monster",
+      "notes": "Chiến binh cánh tay cơ giới khổng lồ (CN: 巨掌悍将)",
+      "status": "approved"
+    },
+    {
+      "source": "Nightmare Executioner",
+      "target": "Đao Phủ Ác Mộng",
+      "category": "Monster",
+      "notes": "Quái vật trảm thủ mộng cảnh (CN: 梦魇处刑人)",
+      "status": "approved"
+    },
+    {
+      "source": "Plundering Dual Blades",
+      "target": "Song Đao Cướp Đoạt",
+      "category": "Monster",
+      "notes": "Sát thủ song đao (CN: 掠夺双刃)",
+      "status": "approved"
+    },
+    {
+      "source": "Projectile Striker",
+      "target": "Xạ Thủ Pháo Đạn",
+      "category": "Monster",
+      "notes": "Lính hỏa lực bắn tỉa tầm xa (CN: 弹丸射手)",
+      "status": "approved"
+    },
+    {
+      "source": "Space Walker",
+      "target": "Lữ Hành Không Gian",
+      "category": "Monster",
+      "notes": "Thực thể không gian bí ẩn (CN: 空间行者)",
+      "status": "approved"
+    },
+    {
+      "source": "Shrubshrew Slinger",
+      "target": "Chuột Bụi Ném Đá",
+      "category": "Monster",
+      "notes": "Quái vật chuột bụi cây tầm xa (CN: 树树鼠投手)",
+      "status": "approved"
+    },
+    {
+      "source": "Shrubshrew Warrior",
+      "target": "Chiến Binh Chuột Bụi",
+      "category": "Monster",
+      "notes": "Quái vật chuột bụi cây cận chiến (CN: 树树鼠战士)",
+      "status": "approved"
+    },
+    {
+      "source": "Wrath Juggernaut",
+      "target": "Cự Nhân Oán Hận",
+      "category": "Monster",
+      "notes": "Quái vật khổng lồ thịnh nộ (CN: 仇厄力士)",
+      "status": "approved"
+    },
+    {
+      "source": "Whimagus",
+      "target": "Pháp Sư Whimagus",
+      "category": "Monster",
+      "notes": "Tiểu phù thủy tinh nghịch (CN: 淘淘巫师)",
+      "status": "approved"
+    },
+    {
+      "source": "Whirling Crawler",
+      "target": "Vuốt Sắc Xoay Tròn",
+      "category": "Monster",
+      "notes": "Quái thú vuốt sắc phi toàn (CN: 飞旋利爪)",
+      "status": "approved"
+    },
+    {
+      "source": "Whirling Great Glopo",
+      "target": "Khối Bùn Xoáy Khổng Lồ",
+      "category": "Monster",
+      "notes": "Đại khối chất nhờn xoáy lốc (CN: 漩涡大冻)",
+      "status": "approved"
+    },
+    {
+      "source": "Fierce Long-Tailed Scorpion",
+      "target": "Bọ Cạp Đuôi Dài Hung Bạo",
+      "category": "Monster",
+      "notes": "Bọ cạp sa mạc độc lực cao (CN: 暴烈长尾蝎)",
+      "status": "approved"
+    },
+    {
+      "source": "Enforcer of Silence",
+      "target": "Cấm Vệ Tĩnh Lặng",
+      "category": "Monster",
+      "notes": "Golem cấm vệ rìu lớn (CN: 静默之抗礼)",
+      "status": "approved"
+    },
+    {
+      "source": "Guardian of Thorns",
+      "target": "Cấm Vệ Gai Góc",
+      "category": "Monster",
+      "notes": "Golem cấm vệ gai nhọn (CN: 荆棘之抗礼)",
+      "status": "approved"
+    },
+    {
+      "source": "Oppressor of Torrents",
+      "target": "Cấm Vệ Cuồng Triều",
+      "category": "Monster",
+      "notes": "Golem cấm vệ thác lũ (CN: 狂潮之抗礼)",
+      "status": "approved"
+    },
+    {
+      "source": "Suppressor of Lava",
+      "target": "Cấm Vệ Dung Nham",
+      "category": "Monster",
+      "notes": "Golem cấm vệ lõi nhiệt (CN: 熔芯的抗礼)",
+      "status": "approved"
+    },
+    {
+      "source": "Subjugator of Firmament",
+      "target": "Cấm Vệ Thương Khung",
+      "category": "Monster",
+      "notes": "Golem cấm vệ cuồng phong (CN: 苍穹之抗礼)",
+      "status": "approved"
+    },
+    {
+      "source": "Protector of Radiance",
+      "target": "Cấm Vệ Ánh Sáng",
+      "category": "Monster",
+      "notes": "Golem cấm vệ quang diệu (CN: 闪熠之抗礼)",
+      "status": "approved"
+    },
+    {
+      "source": "Golem of Nightmares",
+      "target": "Cấm Vệ Ác Mộng",
+      "category": "Monster",
+      "notes": "Golem cấm vệ vực thẳm mộng魘 (CN: 梦魇之抗礼)",
+      "status": "approved"
+    },
+    {
+      "source": "Lucky Rubbi",
+      "target": "Thỏ May Mắn Rubbi",
+      "category": "Monster",
+      "notes": "Linh vật thỏ may mắn (CN: 幸运露比)",
+      "status": "approved"
+    },
+    {
+      "source": "Tainted Mandrake",
+      "target": "Mandrake Nhiễm Độc",
+      "category": "Monster",
+      "notes": "Cây nhân sâm độc thét gào (CN: 污染风茄)",
+      "status": "approved"
+    },
+    {
+      "source": "Emor",
+      "target": "Thành Phố Emor",
+      "category": "Lore",
+      "notes": "Đại đô thị trung tâm văn minh đại lục Nova (CN: 埃摩)",
+      "status": "approved"
+    },
+    {
+      "source": "Emor Market",
+      "target": "Chợ Emor",
+      "category": "Lore",
+      "notes": "Khu chợ giao thương sầm uất tại Emor (CN: 埃摩市集)",
+      "status": "approved"
+    },
+    {
+      "source": "Emor Harbor",
+      "target": "Cảng Emor",
+      "category": "Lore",
+      "notes": "Cảng biển giao thương hàng hải (CN: 埃摩港口)",
+      "status": "approved"
+    },
+    {
+      "source": "Emor Ash District",
+      "target": "Khu Tro Tàn Emor",
+      "category": "Lore",
+      "notes": "Khu phố công nghiệp tàn tích ngoại vi (CN: 埃摩灰城区)",
+      "status": "approved"
+    },
+    {
+      "source": "Philae",
+      "target": "Thành Phố Philae",
+      "category": "Lore",
+      "notes": "Đô thị nông nghiệp trù phú (CN: 菲莱)",
+      "status": "approved"
+    },
+    {
+      "source": "Mirage",
+      "target": "Thành Phố Mirage",
+      "category": "Lore",
+      "notes": "Thành phố ảo ảnh giữa hoang mạc (CN: 米拉什)",
+      "status": "approved"
+    },
+    {
+      "source": "Waterway Bridge",
+      "target": "Cầu Thủy Đạo",
+      "category": "Lore",
+      "notes": "Cầu vòm dẫn nước cổ đại liên kết khu vực (CN: 水道桥)",
+      "status": "approved"
+    },
+    {
+      "source": "Currents and Shadows",
+      "target": "Dòng Chảy & Bóng Tối",
+      "category": "Lore",
+      "notes": "Phân tầng Tháp Sao hệ Thủy/Ám (CN: 暗影与水流)",
+      "status": "approved"
+    },
+    {
+      "source": "Dust and Flames",
+      "target": "Bụi Trần & Lửa Đỏ",
+      "category": "Lore",
+      "notes": "Phân tầng Tháp Sao hệ Hỏa/Địa (CN: 烈焰与尘埃)",
+      "status": "approved"
+    },
+    {
+      "source": "Storm and Thunder",
+      "target": "Cuồng Phong & Sấm Sét",
+      "category": "Lore",
+      "notes": "Phân tầng Tháp Sao hệ Phong/Lôi (CN: 风暴与闪电)",
+      "status": "approved"
+    },
+    {
+      "source": "Misstep On One",
+      "target": "Lạc Lối Nguyên Sơ",
+      "category": "Lore",
+      "notes": "Phân tầng Tháp Sao khởi đầu (CN: 原初的迷途)",
+      "status": "approved"
+    },
+    {
+      "source": "Thrilling Beat",
+      "target": "Tiết Tấu Sảng Khoái",
+      "category": "Lore",
+      "notes": "Phân khu thử thách Tháp Vô Tận (CN: 飒爽疾奏)",
+      "status": "approved"
+    },
+    {
+      "source": "Shake The Floor",
+      "target": "Chấn Động Chiến Lũy",
+      "category": "Lore",
+      "notes": "Phân khu thử thách Tháp Vô Tận (CN: 荒垒震音)",
+      "status": "approved"
+    },
+    {
+      "source": "Sinister Ritual",
+      "target": "Mật Nghi Biệt Lập",
+      "category": "Lore",
+      "notes": "Phân khu thử thách Tháp Vô Tận (CN: 幽闭仪典)",
+      "status": "approved"
+    },
+    {
+      "source": "Flames and Beats",
+      "target": "Cuồng Vũ Rực Lửa",
+      "category": "Lore",
+      "notes": "Phân khu thử thách Tháp Vô Tận (CN: 炽热狂舞)",
+      "status": "approved"
+    },
+    {
+      "source": "Elegance and Flow",
+      "target": "Lưu Ca Thanh Nhã",
+      "category": "Lore",
+      "notes": "Phân khu thử thách Tháp Vô Tận (CN: 清雅流歌)",
+      "status": "approved"
+    },
+    {
+      "source": "Upbeat Party",
+      "target": "Tiệc Vui Lấp Lánh",
+      "category": "Lore",
+      "notes": "Phân khu thử thách Tháp Vô Tận (CN: 纷闪派对)",
+      "status": "approved"
+    },
+    {
+      "source": "Monolith Calendar",
+      "target": "Lịch Cự Tháp",
+      "category": "Lore",
+      "notes": "Hệ niên lịch chính thức của thế giới Stella Sora (CN: 星塔历)",
+      "status": "approved"
+    },
+    {
+      "source": "Aqua",
+      "target": "Thủy",
+      "category": "Combat",
+      "notes": "Nguyên tố Nước (CN: 水 / 水系)",
+      "status": "approved"
+    },
+    {
+      "source": "Ignis",
+      "target": "Hỏa",
+      "category": "Combat",
+      "notes": "Nguyên tố Lửa (CN: 火 / 火系)",
+      "status": "approved"
+    },
+    {
+      "source": "Ventus",
+      "target": "Phong",
+      "category": "Combat",
+      "notes": "Nguyên tố Gió (CN: 风 / 风系)",
+      "status": "approved"
+    },
+    {
+      "source": "Terra",
+      "target": "Địa",
+      "category": "Combat",
+      "notes": "Nguyên tố Đất / Nham (CN: 地 / 岩系)",
+      "status": "approved"
+    },
+    {
+      "source": "Lux",
+      "target": "Quang",
+      "category": "Combat",
+      "notes": "Nguyên tố Ánh Sáng (CN: 光 / 光系)",
+      "status": "approved"
+    },
+    {
+      "source": "Umbra",
+      "target": "Ám",
+      "category": "Combat",
+      "notes": "Nguyên tố Bóng Tối (CN: 暗 / 暗系)",
+      "status": "approved"
+    },
+    {
+      "source": "Base ATK",
+      "target": "Tấn Công Cơ Bản",
+      "category": "Combat",
+      "notes": "Chỉ số công kích nền tảng (CN: 基础攻击)",
+      "status": "approved"
+    },
+    {
+      "source": "Base DEF",
+      "target": "Phòng Thủ Cơ Bản",
+      "category": "Combat",
+      "notes": "Chỉ số phòng ngự nền tảng (CN: 基础防御)",
+      "status": "approved"
+    },
+    {
+      "source": "Base HP",
+      "target": "HP Cơ Bản",
+      "category": "Combat",
+      "notes": "Sinh lực nền tảng (CN: 基础生命)",
+      "status": "approved"
+    },
+    {
+      "source": "DEF PEN",
+      "target": "Xuyên Phòng Thủ",
+      "category": "Combat",
+      "notes": "Chỉ số xuyên giáp kẻ địch (CN: 防御穿透)",
+      "status": "approved"
+    },
+    {
+      "source": "Shield PEN",
+      "target": "Xuyên Lá Chắn",
+      "category": "Combat",
+      "notes": "Khả năng gây sát thương xuyên qua khiên (CN: 护盾穿透)",
+      "status": "approved"
+    },
+    {
+      "source": "Ignore DEF",
+      "target": "Bỏ Qua Phòng Thủ",
+      "category": "Combat",
+      "notes": "Hiệu ứng không tính chỉ số thủ đối phương (CN: 无视防御)",
+      "status": "approved"
+    },
+    {
+      "source": "Final DMG",
+      "target": "Sát Thương Cuối Cùng",
+      "category": "Combat",
+      "notes": "Lượng sát thương sau mọi công thức tính toán (CN: 最终伤害)",
+      "status": "approved"
+    },
+    {
+      "source": "Crit RES",
+      "target": "Kháng Bạo Kích",
+      "category": "Combat",
+      "notes": "Giảm tỷ lệ hoặc sát thương bạo kích nhận vào (CN: 暴击抵抗)",
+      "status": "approved"
+    },
+    {
+      "source": "Accuracy",
+      "target": "Độ Chính Xác",
+      "category": "Combat",
+      "notes": "Tỷ lệ đòn đánh trúng mục tiêu (CN: 命中率)",
+      "status": "approved"
+    },
+    {
+      "source": "Evasion",
+      "target": "Né Tránh",
+      "category": "Combat",
+      "notes": "Tỷ lệ né hoàn toàn đòn tấn công (CN: 回避率)",
+      "status": "approved"
+    },
+    {
+      "source": "Resilience",
+      "target": "Điểm Kiên Cường",
+      "category": "Combat",
+      "notes": "Thanh bền kháng khống chế của Boss/kẻ địch (CN: 韧性 / 韧性值)",
+      "status": "approved"
+    },
+    {
+      "source": "Resilience Break",
+      "target": "Phá Bền",
+      "category": "Combat",
+      "notes": "Đánh sập thanh kiên cường đưa địch vào thế suy yếu (CN: 破韧)",
+      "status": "approved"
+    },
+    {
+      "source": "Resilience Break Efficiency",
+      "target": "Hiệu Suất Phá Bền",
+      "category": "Combat",
+      "notes": "Tốc độ làm tụt thanh kiên cường (CN: 破韧效率)",
+      "status": "approved"
+    },
+    {
+      "source": "VUL Exploit",
+      "target": "Áp Chế Điểm Yếu",
+      "category": "Combat",
+      "notes": "Gia tăng sát thương khi đánh trúng nhược điểm (CN: 弱点压制)",
+      "status": "approved"
+    },
+    {
+      "source": "DMG Dealt",
+      "target": "Sát Thương Gây Ra",
+      "category": "Combat",
+      "notes": "Tổng lượng sát thương nhân vật đánh ra (CN: 造成伤害)",
+      "status": "approved"
+    },
+    {
+      "source": "DMG Taken",
+      "target": "Sát Thương Gánh Chịu",
+      "category": "Combat",
+      "notes": "Lượng sát thương nhân vật nhận vào (CN: 受到伤害)",
+      "status": "approved"
+    },
+    {
+      "source": "Energy Bar",
+      "target": "Thanh Năng Lượng",
+      "category": "Combat",
+      "notes": "Thanh tích trữ năng lượng thi triển tuyệt kỹ (CN: 能量槽)",
+      "status": "approved"
+    },
+    {
+      "source": "Initial Energy",
+      "target": "Năng Lượng Ban Đầu",
+      "category": "Combat",
+      "notes": "Lượng năng lượng có sẵn khi vào trận (CN: 初始能量)",
+      "status": "approved"
+    },
+    {
+      "source": "Energy Regen",
+      "target": "Hiệu Suất Hồi Năng Lượng",
+      "category": "Combat",
+      "notes": "Tốc độ hồi phục năng lượng (CN: 回能效率)",
+      "status": "approved"
+    },
+    {
+      "source": "Max Energy",
+      "target": "Năng Lượng Tối Đa",
+      "category": "Combat",
+      "notes": "Giới hạn bình năng lượng (CN: 能量上限)",
+      "status": "approved"
+    },
+    {
+      "source": "Max Shield",
+      "target": "Giới Hạn Lá Chắn",
+      "category": "Combat",
+      "notes": "Lượng khiên chắn tối đa có thể tích lũy (CN: 护盾值上限)",
+      "status": "approved"
+    },
+    {
+      "source": "Charge Efficiency",
+      "target": "Hiệu Suất Tích Năng Lượng",
+      "category": "Combat",
+      "notes": "Khả năng thu nạp điểm nạp chiêu (CN: 充能效率)",
+      "status": "approved"
+    },
+    {
+      "source": "Support Skill",
+      "target": "Kỹ Năng Viện Trợ",
+      "category": "Combat",
+      "notes": "Kỹ năng của nhân vật hàng sau hỗ trợ (CN: 援护技能)",
+      "status": "approved"
+    },
+    {
+      "source": "Support Ultimate",
+      "target": "Tuyệt Kỹ Viện Trợ",
+      "category": "Combat",
+      "notes": "Chiêu cuối của nhân vật hàng sau (CN: 援护绝招)",
+      "status": "approved"
+    },
+    {
+      "source": "Elemental Mark",
+      "target": "Ấn Ký Nguyên Tố",
+      "category": "Combat",
+      "notes": "Dấu ấn thuộc tính găm lên mục tiêu (CN: 元素印记)",
+      "status": "approved"
+    },
+    {
+      "source": "Derivative DMG",
+      "target": "Sát Thương Phái Sinh",
+      "category": "Combat",
+      "notes": "Sát thương kích hoạt phụ thêm từ đòn đánh (CN: 衍生物伤害)",
+      "status": "approved"
+    },
+    {
+      "source": "Minion DMG",
+      "target": "Sát Thương Triệu Hồi Vật",
+      "category": "Combat",
+      "notes": "Sát thương do đệ tử/vật triệu hồi gây ra (CN: 仆从伤害)",
+      "status": "approved"
+    },
+    {
+      "source": "Main Build",
+      "target": "Lối Chơi Chủ Lực",
+      "category": "Combat",
+      "notes": "Nhánh xây dựng kỹ năng khi điều khiển chính (CN: 主控流派)",
+      "status": "approved"
+    },
+    {
+      "source": "Support Build",
+      "target": "Lối Chơi Viện Trợ",
+      "category": "Combat",
+      "notes": "Nhánh xây dựng kỹ năng khi đứng vị trí hỗ trợ (CN: 援护流派)",
+      "status": "approved"
+    },
+    {
+      "source": "Single-Target Build",
+      "target": "Lối Chơi Đơn Mục Tiêu",
+      "category": "Combat",
+      "notes": "Phong cách dồn sát thương một mục tiêu (CN: 单体流派)",
+      "status": "approved"
+    },
+    {
+      "source": "AoE Build",
+      "target": "Lối Chơi Diện Rộng",
+      "category": "Combat",
+      "notes": "Phong cách sát thương quét nhiều kẻ địch (CN: 群伤流派)",
+      "status": "approved"
+    },
+    {
+      "source": "Vanguard",
+      "target": "Tiên Phong",
+      "category": "Role",
+      "notes": "Vai trò chiến đấu xung kích mở đường (CN: 先锋)",
+      "status": "approved"
+    },
+    {
+      "source": "Versatile",
+      "target": "Cân Bằng",
+      "category": "Role",
+      "notes": "Vai trò chiến đấu toàn diện công thủ (CN: 均衡)",
+      "status": "approved"
+    },
+    {
+      "source": "Support",
+      "target": "Hỗ Trợ",
+      "category": "Role",
+      "notes": "Vai trò hồi máu/buff đội hình (CN: 辅助)",
+      "status": "approved"
+    },
+    {
+      "source": "DMG Boost",
+      "target": "Tăng Sát Thương",
+      "category": "Combat",
+      "notes": "Chỉ số gia tăng sát thương (CN: 增伤)",
+      "status": "approved"
+    },
+    {
+      "source": "Penetration",
+      "target": "Xuyên Kháng",
+      "category": "Combat",
+      "notes": "Chỉ số xuyên thấu phòng ngự đối phương (CN: 穿透)",
+      "status": "approved"
+    },
+    {
+      "source": "DEF Reduction",
+      "target": "Giảm Phòng Thủ",
+      "category": "Combat",
+      "notes": "Hiệu ứng trừ giáp kẻ địch (CN: 减防)",
+      "status": "approved"
+    },
+    {
+      "source": "RES Reduction",
+      "target": "Giảm Kháng",
+      "category": "Combat",
+      "notes": "Hiệu ứng trừ kháng cự nguyên tố (CN: 降抗)",
+      "status": "approved"
+    },
+    {
+      "source": "Proving Grounds",
+      "target": "Đấu Trường Thử Lửa",
+      "category": "Lore",
+      "notes": "Chế độ khiêu chiến thực lực đích thực (CN: 真格挑战)",
+      "status": "approved"
+    },
+    {
+      "source": "Boss Blitz",
+      "target": "Chiến Dịch Đột Kích Boss",
+      "category": "Lore",
+      "notes": "Hoạt động liên minh thảo phạt trùm (CN: 联合讨伐)",
+      "status": "approved"
+    }
+  ],
+  "forbidden_calques": [
+    {
+      "wrong": "Sao nhổ",
+      "correct": "Đoạt Sao / Hái Sao",
+      "rule": "CẤM DỊCH 'Star Pluck' thành 'Sao nhổ'"
+    },
+    {
+      "wrong": "Cuộc chinh phục sao nhổ",
+      "correct": "Chinh Phục Đoạt Sao / Hái Sao Viễn Chinh",
+      "rule": "CẤM DỊCH 'Star Pluck Conquest' thành 'Cuộc chinh phục sao nhổ'"
+    },
+    {
+      "wrong": "mất khả năng lao động",
+      "correct": "bị tê liệt / không thể hành động",
+      "rule": "CẤM DỊCH 'incapacitated' thành 'mất khả năng lao động'"
+    },
+    {
+      "wrong": "SPD chuyển động",
+      "correct": "Tốc độ Di chuyển",
+      "rule": "CẤM GIỮ NGUYÊN 'SPD'"
+    },
+    {
+      "wrong": "có thể được sử dụng trong",
+      "correct": "dùng cho / dùng trong",
+      "rule": "XÓA BỎ THỂ BỊ ĐỘNG 'can be used in'"
+    },
+    {
+      "wrong": "bị gây ra bởi",
+      "correct": "kích hoạt từ / gây ra bởi",
+      "rule": "XÓA BỎ THỂ BỊ ĐỘNG 'inflicted by'"
+    },
+    {
+      "wrong": "nó giải phóng những tài năng chôn vùi",
+      "correct": "khai mở thiên phú say ngủ nơi sâu thẳm tâm hồn",
+      "rule": "VĂN PHONG ANIME RPG BAY BỔNG"
+    },
+    {
+      "wrong": "ở một mình trong vùng hoang dã",
+      "correct": "đơn độc nơi Vùng Hoang Dã",
+      "rule": "VĂN PHONG TỰ NHIÊN, KHÔNG WORD-BY-WORD"
+    }
   ]
 }
