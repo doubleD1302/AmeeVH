@@ -34,17 +34,17 @@ def main():
     }
 
     repo = 'doubleD1302/AmeeVH'
-    tag = 'v0.1.0-alpha'
-    name = 'Stella Sora Việt Hóa v0.1.0-alpha'
-    body = """Bản thử nghiệm nội bộ đầu tiên cho Stella Sora (EN) trên PC và Android.
+    tag = 'v0.2.0'
+    name = 'Stella Sora Việt Hóa v0.2.0'
+    body = """Bản phát hành v0.2.0 cho Stella Sora (PC & Android).
 
-### 📥 Tải về cài đặt:
-- **PC Windows**: Tải `StellaSora_Launcher.exe` bên dưới (chạy trực tiếp không cần cài Python).
-- **Android**: Tải `StellaSora_VietHoa.apk` bên dưới (cài đặt trực tiếp lên máy hoặc giả lập).
+### 📥 Cài đặt:
+- **PC**: Tải `StellaSora_Launcher.exe` (1-chạm tự động cài đặt).
+- **Android**: Tải `StellaSora_VietHoa.apk` hoặc gói `StellaSora_Launcher_PC.zip`.
 
-### ✨ Nội dung:
-- Đã Việt hóa phụ đề video mở đầu và các nút giao diện cốt lõi (Batch 01).
-- Tự động kiểm tra cập nhật và 1-chạm sao chép log lỗi gửi Dev."""
+### ✨ Tính năng mới:
+- Đã Việt hóa hơn 6,440 mục: Toàn bộ 3,777 vật phẩm, 1,314 thành tựu và 1,350 kỹ năng.
+- Tự động đồng bộ và nâng cấp Launcher qua GitHub Releases."""
 
     # 1. Check existing releases
     check_req = urllib.request.Request(f'https://api.github.com/repos/{repo}/releases', headers=headers)
@@ -74,8 +74,8 @@ def main():
             'target_commitish': 'main',
             'name': name,
             'body': body,
-            'draft': True,
-            'prerelease': True
+            'draft': False,
+            'prerelease': False
         }
         create_req = urllib.request.Request(
             f'https://api.github.com/repos/{repo}/releases',

@@ -26,6 +26,7 @@ import threading
 import traceback
 import urllib.error
 import urllib.request
+import webbrowser
 
 try:
     import tkinter as tk
@@ -49,7 +50,7 @@ NOTIFS_FILE = EXE_DIR / "notifications.json"
 BACKUP_DIR = EXE_DIR / "backups"
 
 DEFAULT_CONFIG = {
-    "version": "1.0.0",
+    "version": "0.2.0",
     "app_name": "Stella Sora Việt Hóa - Multiplatform Launcher",
     "default_game_path": "C:\\YostarGames\\StellaSora_EN",
     "github_repo": "doubleD1302/AmeeVH",
@@ -451,29 +452,116 @@ class LocalizationEngine:
 
 
 class GitHubManager:
-    """Handles auto-updating from GitHub repository."""
+    """Handles GitHub release synchronization, auto-updating, and announcements."""
 
     @staticmethod
-    def check_updates(repo: str) -> dict:
-        url = f"https://api.github.com/repos/{repo}/commits?per_page=1"
-        req = urllib.request.Request(url, headers={"User-Agent": "StellaSora-Localizer"})
+    def parse_version(v: str) -> tuple[int, ...]:
+        nums = re.findall(r"\d+", str(v))
+        return tuple(map(int, nums)) if nums else (0, 0, 0)
+
+    @classmethod
+    def check_updates(cls, repo: str, current_ver: str = "0.2.0") -> dict:
+        """Fetches the latest GitHub release and checks for available updates."""
+        headers = {"User-Agent": "StellaSora-Localizer", "Accept": "application/vnd.github.v3+json"}
+        rel_data = None
+
+        # 1. Try /releases/latest first
+        url_latest = f"https://api.github.com/repos/{repo}/releases/latest"
         try:
-            with urllib.request.urlopen(req, timeout=5) as resp:
-                data = json.loads(resp.read().decode())
-                if isinstance(data, list) and len(data) > 0:
-                    latest = data[0]
-                    sha = latest.get("sha", "")[:7]
-                    msg = latest.get("commit", {}).get("message", "").split("\n")[0]
-                    date = latest.get("commit", {}).get("author", {}).get("date", "")
-                    return {
-                        "has_update": True,
-                        "latest_commit": sha,
-                        "commit_message": msg,
-                        "date": date,
-                    }
+            req = urllib.request.Request(url_latest, headers=headers)
+            with urllib.request.urlopen(req, timeout=6) as resp:
+                rel_data = json.loads(resp.read().decode("utf-8"))
+        except Exception:
+            pass
+
+        # 2. Fallback to /releases?per_page=1
+        if not rel_data:
+            url_list = f"https://api.github.com/repos/{repo}/releases?per_page=1"
+            try:
+                req = urllib.request.Request(url_list, headers=headers)
+                with urllib.request.urlopen(req, timeout=6) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                    if isinstance(data, list) and len(data) > 0:
+                        rel_data = data[0]
+            except Exception as e:
+                DiagnosticCollector.log(f"Lỗi kết nối GitHub Releases: {e}")
+
+        if not rel_data:
+            return {"has_update": False, "error": "Không thể kết nối hoặc chưa có bản phát hành trên GitHub"}
+
+        tag_name = rel_data.get("tag_name", "v0.0.0")
+        release_name = rel_data.get("name", tag_name)
+        body = rel_data.get("body", "Không có ghi chú bản phát hành.")
+        date = (rel_data.get("published_at") or rel_data.get("created_at") or "")[:10]
+        html_url = rel_data.get("html_url", f"https://github.com/{repo}/releases")
+
+        assets = rel_data.get("assets", [])
+        launcher_asset = next((a for a in assets if "Launcher.exe" in a.get("name", "")), None)
+        zip_asset = next((a for a in assets if a.get("name", "").endswith(".zip")), None)
+        apk_asset = next((a for a in assets if a.get("name", "").endswith(".apk")), None)
+
+        has_update = cls.parse_version(tag_name) > cls.parse_version(current_ver)
+
+        return {
+            "success": True,
+            "has_update": has_update,
+            "tag": tag_name,
+            "name": release_name,
+            "body": body,
+            "date": date,
+            "html_url": html_url,
+            "current_ver": current_ver,
+            "launcher_asset": launcher_asset,
+            "zip_asset": zip_asset,
+            "apk_asset": apk_asset,
+            "assets": assets,
+        }
+
+    @staticmethod
+    def download_file(url: str, dest_path: Path, progress_cb=None) -> bool:
+        """Downloads a remote file with progress reporting."""
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "StellaSora-Localizer"})
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                total_len = resp.headers.get("Content-Length")
+                total_size = int(total_len) if total_len else 0
+                downloaded = 0
+                chunk_size = 64 * 1024
+
+                dest_path.parent.mkdir(parents=True, exist_ok=True)
+                with open(dest_path, "wb") as f:
+                    while True:
+                        chunk = resp.read(chunk_size)
+                        if not chunk:
+                            break
+                        f.write(chunk)
+                        downloaded += len(chunk)
+                        if progress_cb and total_size > 0:
+                            percent = min(100.0, (downloaded / total_size) * 100.0)
+                            progress_cb(downloaded, total_size, percent)
+            return True
         except Exception as e:
-            DiagnosticCollector.log(f"Không thể kiểm tra GitHub API: {e}")
-        return {"has_update": False, "error": "Không thể kết nối tới GitHub"}
+            DiagnosticCollector.log(f"Lỗi khi tải tệp {url}: {e}")
+            return False
+
+    @staticmethod
+    def perform_self_update(new_exe_path: Path) -> tuple[bool, str]:
+        """Self-updates the launcher on Windows."""
+        try:
+            if getattr(sys, "frozen", False):
+                current_exe = Path(sys.executable).resolve()
+                ps_script = f"Start-Sleep -Milliseconds 800; Move-Item -Force '{new_exe_path}' '{current_exe}'; Start-Process '{current_exe}'"
+                subprocess.Popen(
+                    ["powershell", "-NoProfile", "-WindowStyle", "Hidden", "-Command", ps_script],
+                    creationflags=subprocess.CREATE_NO_WINDOW if platform.system() == "Windows" else 0
+                )
+                os._exit(0)
+            else:
+                target_exe = EXE_DIR / "StellaSora_Launcher.exe"
+                shutil.copy2(new_exe_path, target_exe)
+                return True, f"Đã lưu bản Launcher mới tại: {target_exe}"
+        except Exception as e:
+            return False, str(e)
 
     @staticmethod
     def fetch_announcements(url: str) -> list[dict]:
@@ -483,7 +571,6 @@ class GitHubManager:
                 d = json.loads(resp.read().decode())
                 return d.get("announcements", [])
         except Exception:
-            # Fallback to local
             for path in [NOTIFS_FILE, BASE_DIR / "launcher" / "notifications.json"]:
                 if path.exists():
                     try:
@@ -669,16 +756,56 @@ class LauncherGUI:
         btn_notify.pack(side="left", padx=(0, 10))
 
     def build_news_tab(self):
-        head = tk.Frame(self.tab_news, bg="#1e1e2e")
-        head.pack(fill="x", padx=12, pady=8)
+        # Card 1: GitHub Release Status
+        card_rel = tk.Frame(self.tab_news, bg="#24273a", bd=1, relief="solid")
+        card_rel.pack(fill="x", padx=12, pady=10)
 
-        tk.Label(head, text="Thông Báo Mới & Cập Nhật GitHub", font=("Segoe UI", 12, "bold"), fg="#89b4fa", bg="#1e1e2e").pack(side="left")
-        btn_check_git = tk.Button(head, text="🌐 Kiểm Tra GitHub", font=("Segoe UI", 9, "bold"), bg="#cba6f7", fg="#11111b", bd=0, padx=10, pady=4, cursor="hand2", command=self.on_check_github)
+        # Title & Action Buttons
+        top_row = tk.Frame(card_rel, bg="#24273a")
+        top_row.pack(fill="x", padx=12, pady=(10, 4))
+
+        tk.Label(top_row, text="Đồng Bộ Bản Phát Hành (GitHub Releases)", font=("Segoe UI", 12, "bold"), fg="#89b4fa", bg="#24273a").pack(side="left")
+
+        btn_open_browser = tk.Button(top_row, text="🌐 Mở Trang Web Release", font=("Segoe UI", 9),
+                                     bg="#45475a", fg="#cdd6f4", activebackground="#585b70",
+                                     bd=0, padx=8, pady=4, cursor="hand2", command=self.on_open_release_url)
+        btn_open_browser.pack(side="right", padx=(6, 0))
+
+        btn_check_git = tk.Button(top_row, text="🔄 Kiểm Tra Lại", font=("Segoe UI", 9, "bold"),
+                                  bg="#cba6f7", fg="#11111b", activebackground="#b4befe",
+                                  bd=0, padx=10, pady=4, cursor="hand2", command=self.on_check_github)
         btn_check_git.pack(side="right")
 
+        # Status & Version Labels
+        self.lbl_rel_status = tk.Label(card_rel, text="⏳ Đang kiểm tra bản phát hành trên GitHub...", font=("Segoe UI", 10, "bold"), fg="#f9e2af", bg="#24273a")
+        self.lbl_rel_status.pack(anchor="w", padx=12, pady=(4, 2))
+
+        self.lbl_rel_details = tk.Label(card_rel, text=f"Bản cài hiện tại: v{self.config.get('version', '0.1.0')} | Đang kết nối tới GitHub...", font=("Segoe UI", 9), fg="#bac2de", bg="#24273a")
+        self.lbl_rel_details.pack(anchor="w", padx=12, pady=(0, 8))
+
+        # Download / Action Row
+        act_row = tk.Frame(card_rel, bg="#24273a")
+        act_row.pack(fill="x", padx=12, pady=(0, 10))
+
+        self.btn_auto_download = tk.Button(act_row, text="⚡ TẢI & CẬP NHẬT TỰ ĐỘNG (1-CHẠM)", font=("Segoe UI", 10, "bold"),
+                                           bg="#a6e3a1", fg="#11111b", activebackground="#94e2d5",
+                                           bd=0, padx=14, pady=6, cursor="hand2", command=self.on_auto_update_release)
+        self.btn_auto_download.pack(side="left")
+
+        self.lbl_download_progress = tk.Label(act_row, text="", font=("Segoe UI", 9), fg="#cdd6f4", bg="#24273a")
+        self.lbl_download_progress.pack(side="left", padx=12)
+
+        # Progress bar
+        self.progress_bar = ttk.Progressbar(card_rel, orient="horizontal", mode="determinate")
+
+        # Card 2: Release Notes / Changelog
+        tk.Label(self.tab_news, text="Chi Tiết Bản Phát Hành & Thông Báo Mới:", font=("Segoe UI", 10, "bold"), fg="#cdd6f4", bg="#1e1e2e").pack(anchor="w", padx=12, pady=(6, 2))
         self.txt_news = tk.Text(self.tab_news, bg="#181825", fg="#cdd6f4", font=("Segoe UI", 10), wrap="word", padx=12, pady=12, bd=0)
-        self.txt_news.pack(fill="both", expand=True, padx=12, pady=8)
+        self.txt_news.pack(fill="both", expand=True, padx=12, pady=(0, 8))
+
+        self.latest_release_info = None
         self.load_announcements()
+        self.root.after(400, self.on_check_github)
 
     def build_diag_tab(self):
         card = tk.Frame(self.tab_diag, bg="#24273a", bd=1, relief="solid")
@@ -776,13 +903,119 @@ class LauncherGUI:
         self.txt_news.tag_config("title", font=("Segoe UI", 11, "bold"), foreground="#89b4fa")
         self.txt_news.tag_config("body", font=("Segoe UI", 10), foreground="#cdd6f4")
 
+    def on_open_release_url(self):
+        url = "https://github.com/doubleD1302/AmeeVH/releases"
+        if self.latest_release_info and self.latest_release_info.get("html_url"):
+            url = self.latest_release_info["html_url"]
+        webbrowser.open(url)
+
     def on_check_github(self):
-        res = GitHubManager.check_updates(self.config.get("github_repo", ""))
-        if res.get("has_update"):
-            msg = f"Đã kết nối GitHub thành công!\nCommit mới nhất: {res['latest_commit']}\nNội dung: {res['commit_message']}"
-            messagebox.showinfo("Cập Nhật GitHub", msg)
-        else:
-            messagebox.showinfo("Cập Nhật GitHub", res.get("error", "Chưa có cập nhật mới."))
+        def worker():
+            repo = self.config.get("github_repo", "doubleD1302/AmeeVH")
+            cur_ver = self.config.get("version", "0.1.0")
+            res = GitHubManager.check_updates(repo, cur_ver)
+            self.latest_release_info = res
+
+            def update_ui():
+                if res.get("success"):
+                    tag = res.get("tag", "v0.0.0")
+                    name = res.get("name", tag)
+                    date = res.get("date", "")
+                    has_up = res.get("has_update", False)
+                    body = res.get("body", "")
+
+                    if has_up:
+                        self.lbl_rel_status.config(text=f"⚡ ĐÃ CÓ BẢN CẬP NHẬT MỚI: {tag} ({name})", fg="#a6e3a1")
+                        self.lbl_rel_details.config(text=f"Bản hiện tại: v{cur_ver}  ➔  Bản mới nhất: {tag} (Phát hành: {date})")
+                        self.btn_auto_download.config(state="normal", text=f"⚡ TẢI & CẬP NHẬT LÊN {tag} (1-CHẠM)")
+                    else:
+                        self.lbl_rel_status.config(text=f"✓ Bạn đang sử dụng bản phát hành mới nhất ({tag})", fg="#89b4fa")
+                        self.lbl_rel_details.config(text=f"Bản hiện tại: v{cur_ver} | Phát hành: {date} | Trạng thái: Đồng bộ 100%")
+                        self.btn_auto_download.config(state="normal", text="🔄 Tải Lại / Đồng Bộ Lại Bản Mới Nhất")
+
+                    # Display release notes
+                    self.txt_news.delete("1.0", "end")
+                    self.txt_news.insert("end", f"✨ [{tag}] {name}\n", "title")
+                    self.txt_news.insert("end", f"📅 Ngày phát hành: {date}\n", "sub")
+                    self.txt_news.insert("end", f"🔗 Đường dẫn: {res.get('html_url')}\n\n", "sub")
+                    self.txt_news.insert("end", "Nội dung cập nhật:\n", "h2")
+                    self.txt_news.insert("end", f"{body}\n\n", "body")
+
+                    # Add announcements below
+                    self.txt_news.insert("end", "────────────────────────────────────────\n", "sub")
+                    self.txt_news.insert("end", "📢 THÔNG BÁO DỰ ÁN\n\n", "h2")
+                    items = GitHubManager.fetch_announcements(self.config.get("remote_notifications_url", ""))
+                    for item in items:
+                        self.txt_news.insert("end", f"📌 [{item.get('date', '')}] {item.get('title', '')}\n", "title")
+                        self.txt_news.insert("end", f"{item.get('content', '')}\n\n", "body")
+
+                    self.txt_news.tag_config("title", font=("Segoe UI", 11, "bold"), foreground="#89b4fa")
+                    self.txt_news.tag_config("h2", font=("Segoe UI", 10, "bold"), foreground="#fab387")
+                    self.txt_news.tag_config("sub", font=("Segoe UI", 9), foreground="#a6adc8")
+                    self.txt_news.tag_config("body", font=("Segoe UI", 10), foreground="#cdd6f4")
+                else:
+                    self.lbl_rel_status.config(text="⚠️ Không thể đồng bộ với GitHub Releases", fg="#f38ba8")
+                    self.lbl_rel_details.config(text=res.get("error", "Lỗi mạng hoặc không thể kết nối tới GitHub."))
+
+            self.root.after(0, update_ui)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def on_auto_update_release(self):
+        if not self.latest_release_info or not self.latest_release_info.get("success"):
+            messagebox.showwarning("Cảnh Báo", "Vui lòng đợi kiểm tra bản phát hành GitHub trước!")
+            return
+
+        asset = self.latest_release_info.get("launcher_asset")
+        if not asset or not asset.get("browser_download_url"):
+            messagebox.showwarning("Thông Báo", "Bản phát hành này không có tệp Launcher.exe đính kèm để tự động cập nhật.")
+            return
+
+        download_url = asset["browser_download_url"]
+        file_size = asset.get("size", 0)
+        size_mb = f"{file_size / (1024*1024):.1f} MB" if file_size else "Unknown"
+
+        if not messagebox.askyesno("Xác Nhận Tự Động Cập Nhật",
+                                   f"Tải và cập nhật Launcher mới nhất từ GitHub?\n\n- Tệp: {asset.get('name')}\n- Kích thước: {size_mb}\n- Thẻ phiên bản: {self.latest_release_info.get('tag')}\n\nQuá trình tải về sẽ diễn ra tự động."):
+            return
+
+        def download_worker():
+            self.btn_auto_download.config(state="disabled")
+            self.progress_bar.pack(fill="x", padx=12, pady=(0, 8))
+            self.progress_bar["value"] = 0
+            self.lbl_download_progress.config(text="Đang kết nối tải về...")
+
+            temp_dest = EXE_DIR / "StellaSora_Launcher_update.exe"
+
+            def progress(downloaded, total, pct):
+                self.root.after(0, lambda: self._update_progress_ui(downloaded, total, pct))
+
+            ok = GitHubManager.download_file(download_url, temp_dest, progress_cb=progress)
+            if ok:
+                self.root.after(0, lambda: self._on_download_complete(temp_dest))
+            else:
+                self.root.after(0, lambda: self._on_download_failed())
+
+        threading.Thread(target=download_worker, daemon=True).start()
+
+    def _update_progress_ui(self, downloaded, total, pct):
+        self.progress_bar["value"] = pct
+        dl_mb = downloaded / (1024 * 1024)
+        tot_mb = total / (1024 * 1024)
+        self.lbl_download_progress.config(text=f"Đang tải: {dl_mb:.1f}/{tot_mb:.1f} MB ({pct:.1f}%)")
+
+    def _on_download_complete(self, temp_dest: Path):
+        self.progress_bar.pack_forget()
+        self.lbl_download_progress.config(text="✓ Tải về hoàn tất! Đang áp dụng cập nhật...")
+        messagebox.showinfo("Cập Nhật Thành Công", "Đã tải xong bản Launcher mới nhất!\nỨng dụng sẽ tự động cập nhật và khởi động lại ngay bây giờ.")
+        GitHubManager.perform_self_update(temp_dest)
+        self.btn_auto_download.config(state="normal")
+
+    def _on_download_failed(self):
+        self.progress_bar.pack_forget()
+        self.lbl_download_progress.config(text="❌ Tải về thất bại!", fg="#f38ba8")
+        messagebox.showerror("Lỗi Tải Về", "Không thể tải tệp cập nhật từ GitHub. Vui lòng kiểm tra lại kết nối mạng!")
+        self.btn_auto_download.config(state="normal")
 
     def on_copy_error_log(self):
         report = DiagnosticCollector.generate_report(self.game_path)
@@ -795,12 +1028,30 @@ def cli_main():
     parser = argparse.ArgumentParser(description="Stella Sora Việt Hóa CLI & Launcher")
     parser.add_argument("--install", action="store_true", help="Cài đặt Việt Hóa 1-chạm")
     parser.add_argument("--rollback", action="store_true", help="Khôi phục nguyên bản gốc")
+    parser.add_argument("--check-update", action="store_true", help="Kiểm tra bản phát hành mới nhất từ GitHub Releases")
     parser.add_argument("--copy-error", action="store_true", help="In báo cáo lỗi ra màn hình")
     parser.add_argument("--gui", action="store_true", help="Khởi động giao diện GUI")
     args = parser.parse_args()
 
     cfg = load_config()
     game_path = Path(cfg.get("default_game_path", "C:\\YostarGames\\StellaSora_EN"))
+
+    if args.check_update:
+        repo = cfg.get("github_repo", "doubleD1302/AmeeVH")
+        cur_ver = cfg.get("version", "0.1.0")
+        res = GitHubManager.check_updates(repo, cur_ver)
+        if res.get("success"):
+            print(f"Phiên bản hiện tại: v{cur_ver}")
+            print(f"Bản mới nhất trên GitHub: {res.get('tag')} ({res.get('name')})")
+            print(f"Ngày phát hành: {res.get('date')}")
+            print(f"Trạng thái cập nhật: {'Có bản cập nhật mới!' if res.get('has_update') else 'Đang là bản mới nhất'}")
+            print(f"URL: {res.get('html_url')}")
+            for a in res.get("assets", []):
+                print(f"  Asset: {a.get('name')} ({a.get('size')} bytes)")
+            return 0
+        else:
+            print(f"[FAIL] {res.get('error')}")
+            return 1
 
     if args.install:
         ok, msg = LocalizationEngine.install_pc(game_path)
