@@ -499,6 +499,7 @@ class GitHubManager:
         launcher_asset = next((a for a in assets if "Launcher.exe" in a.get("name", "")), None)
         zip_asset = next((a for a in assets if a.get("name", "").endswith(".zip")), None)
         apk_asset = next((a for a in assets if a.get("name", "").endswith(".apk")), None)
+        arcx_asset = next((a for a in assets if "data_patched_vi.arcx" in a.get("name", "")), None)
 
         has_update = cls.parse_version(tag_name) > cls.parse_version(current_ver)
 
@@ -514,6 +515,7 @@ class GitHubManager:
             "launcher_asset": launcher_asset,
             "zip_asset": zip_asset,
             "apk_asset": apk_asset,
+            "arcx_asset": arcx_asset,
             "assets": assets,
         }
 
@@ -546,20 +548,54 @@ class GitHubManager:
 
     @staticmethod
     def perform_self_update(new_exe_path: Path) -> tuple[bool, str]:
-        """Self-updates the launcher on Windows."""
+        """Self-updates the launcher on Windows using a robust batch runner."""
         try:
-            if getattr(sys, "frozen", False):
-                current_exe = Path(sys.executable).resolve()
-                ps_script = f"Start-Sleep -Milliseconds 800; Move-Item -Force '{new_exe_path}' '{current_exe}'; Start-Process '{current_exe}'"
-                subprocess.Popen(
-                    ["powershell", "-NoProfile", "-WindowStyle", "Hidden", "-Command", ps_script],
-                    creationflags=subprocess.CREATE_NO_WINDOW if platform.system() == "Windows" else 0
-                )
-                os._exit(0)
-            else:
-                target_exe = EXE_DIR / "StellaSora_Launcher.exe"
-                shutil.copy2(new_exe_path, target_exe)
-                return True, f"Đã lưu bản Launcher mới tại: {target_exe}"
+            current_exe = Path(sys.executable).resolve()
+            parent_pid = os.getpid()
+
+            temp_dir = Path(os.environ.get("TEMP", str(EXE_DIR)))
+            updater_bat = temp_dir / f"stellasora_updater_{parent_pid}.bat"
+
+            bat_lines = [
+                "@echo off",
+                f'set "TARGET={current_exe}"',
+                f'set "SOURCE={new_exe_path}"',
+                f'set "PID={parent_pid}"',
+                "",
+                ":wait_loop",
+                'tasklist /fi "PID eq %PID%" 2>NUL | find "%PID%" >NUL',
+                "if not errorlevel 1 (",
+                "    timeout /t 1 /nobreak >nul",
+                "    goto wait_loop",
+                ")",
+                "timeout /t 1 /nobreak >nul",
+                "",
+                "set /a attempts=0",
+                ":move_loop",
+                'move /y "%SOURCE%" "%TARGET%" >nul 2>&1',
+                'if not exist "%SOURCE%" goto launch',
+                "set /a attempts+=1",
+                "if %attempts% geq 15 goto fallback_copy",
+                "timeout /t 1 /nobreak >nul",
+                "goto move_loop",
+                "",
+                ":fallback_copy",
+                'copy /y "%SOURCE%" "%TARGET%" >nul 2>&1',
+                'del /f /q "%SOURCE%" >nul 2>&1',
+                "",
+                ":launch",
+                'start "" "%TARGET%"',
+                'del /f /q "%~f0" >nul 2>&1',
+                "exit",
+            ]
+
+            updater_bat.write_text("\r\n".join(bat_lines), encoding="latin1")
+
+            subprocess.Popen(
+                ["cmd.exe", "/c", str(updater_bat)],
+                creationflags=subprocess.CREATE_NO_WINDOW if platform.system() == "Windows" else 0
+            )
+            os._exit(0)
         except Exception as e:
             return False, str(e)
 
@@ -711,15 +747,20 @@ class LauncherGUI:
         btn_frame = tk.Frame(self.tab_pc, bg="#1e1e2e")
         btn_frame.pack(fill="x", padx=12, pady=6)
 
-        self.btn_install = tk.Button(btn_frame, text="⚡ CÀI ĐẶT VIỆT HÓA (1-CHẠM)", font=("Segoe UI", 11, "bold"),
+        self.btn_install = tk.Button(btn_frame, text="⚡ CÀI ĐẶT VIỆT HÓA (NỘI BỘ)", font=("Segoe UI", 10, "bold"),
                                      bg="#a6e3a1", fg="#11111b", activebackground="#94e2d5",
-                                     padx=16, pady=8, bd=0, cursor="hand2", command=self.on_install_pc)
-        self.btn_install.pack(side="left", padx=(0, 10))
+                                     padx=12, pady=8, bd=0, cursor="hand2", command=self.on_install_pc)
+        self.btn_install.pack(side="left", padx=(0, 8))
 
-        self.btn_rollback = tk.Button(btn_frame, text="🔄 Khôi Phục Gốc (Rollback)", font=("Segoe UI", 10, "bold"),
+        self.btn_online_sync = tk.Button(btn_frame, text="🌐 CẬP NHẬT TỪ GITHUB (TRỰC TIẾP)", font=("Segoe UI", 10, "bold"),
+                                         bg="#89b4fa", fg="#11111b", activebackground="#b4befe",
+                                         padx=12, pady=8, bd=0, cursor="hand2", command=self.on_sync_game_patch_from_github)
+        self.btn_online_sync.pack(side="left", padx=(0, 8))
+
+        self.btn_rollback = tk.Button(btn_frame, text="🔄 Khôi Phục Gốc", font=("Segoe UI", 10, "bold"),
                                       bg="#eba0ac", fg="#11111b", activebackground="#f38ba8",
-                                      padx=12, pady=8, bd=0, cursor="hand2", command=self.on_rollback_pc)
-        self.btn_rollback.pack(side="left", padx=10)
+                                      padx=10, pady=8, bd=0, cursor="hand2", command=self.on_rollback_pc)
+        self.btn_rollback.pack(side="left", padx=8)
 
         self.btn_refresh = tk.Button(btn_frame, text="🔄 Làm Mới", font=("Segoe UI", 10),
                                      bg="#45475a", fg="#cdd6f4", activebackground="#585b70",
@@ -860,6 +901,77 @@ class LauncherGUI:
 
         threading.Thread(target=worker, daemon=True).start()
 
+    def on_sync_game_patch_from_github(self):
+        """Downloads the latest data_patched_vi.arcx directly from GitHub Release and applies it."""
+        if not messagebox.askyesno("Cập Nhật Bản Dịch Trực Tiếp",
+                                   "Tải bản dịch mới nhất từ GitHub và cài đặt trực tiếp vào game?\n\n(Dữ liệu game sẽ được cập nhật lên bản mới nhất mà không cần tải lại Launcher)."):
+            return
+
+        def worker():
+            self.btn_online_sync.config(state="disabled")
+            self.btn_install.config(state="disabled")
+            self.log_ui("Đang kiểm tra bản phát hành mới nhất trên GitHub Releases...")
+
+            repo = self.config.get("github_repo", "doubleD1302/AmeeVH")
+            res = GitHubManager.check_updates(repo, "0.0.0")
+            arcx_asset = res.get("arcx_asset")
+
+            if not arcx_asset or not arcx_asset.get("browser_download_url"):
+                self.log_ui("⚠️ Không tìm thấy tệp data_patched_vi.arcx trên GitHub Release.")
+                messagebox.showerror("Lỗi", "Không tìm thấy gói dữ liệu trên GitHub Release. Vui lòng kiểm tra lại kết nối mạng!")
+                self.btn_online_sync.config(state="normal")
+                self.btn_install.config(state="normal")
+                return
+
+            download_url = arcx_asset["browser_download_url"]
+            tag = res.get("tag", "latest")
+            file_mb = arcx_asset.get('size', 0) / (1024 * 1024)
+            self.log_ui(f"Bắt đầu tải dữ liệu bản dịch {tag} ({file_mb:.1f} MB)...")
+
+            temp_dest = Path(os.environ.get("TEMP", str(EXE_DIR))) / "data_patched_vi_download.arcx"
+
+            def progress(dl, total, pct):
+                if int(pct) % 20 == 0:
+                    self.log_ui(f"Đang tải: {dl/(1024*1024):.1f}/{total/(1024*1024):.1f} MB ({pct:.1f}%)")
+
+            ok = GitHubManager.download_file(download_url, temp_dest, progress_cb=progress)
+            if not ok:
+                self.log_ui("❌ Lỗi khi tải tệp từ GitHub.")
+                messagebox.showerror("Lỗi Tải Về", "Tải dữ liệu từ GitHub thất bại!")
+                self.btn_online_sync.config(state="normal")
+                self.btn_install.config(state="normal")
+                return
+
+            self.log_ui("✓ Đã tải xong tệp vá. Đang cài đặt vào game...")
+
+            target_table = self.game_path / "Persistent_Store" / "Tables" / "data.arcx"
+            if not target_table.parent.exists():
+                target_table.parent.mkdir(parents=True, exist_ok=True)
+
+            orig_bak = target_table.with_suffix(".arcx.orig_en")
+            if target_table.exists() and not orig_bak.exists():
+                shutil.copy2(target_table, orig_bak)
+                self.log_ui("   Đã sao lưu tệp gốc: data.arcx.orig_en")
+
+            shutil.copy2(temp_dest, target_table)
+            temp_dest.unlink(missing_ok=True)
+
+            marker_file = self.game_path / "Persistent_Store" / "viethoa_installed.json"
+            marker_file.write_text(json.dumps({
+                "installed_at": datetime.datetime.now().strftime("%Y%m%d_%H%M%S"),
+                "version": tag.lstrip("v"),
+                "release_tag": tag
+            }, indent=2), encoding="utf-8")
+
+            self.log_ui(f"🎉 CHÚC MỪNG! ĐÃ CẬP NHẬT THÀNH CÔNG BẢN VIỆT HÓA {tag} VÀO GAME!")
+            messagebox.showinfo("Thành Công", f"Đã cập nhật dữ liệu Việt Hóa phiên bản {tag} trực tiếp vào game thành công!\nBạn có thể khởi động game để trải nghiệm ngay.")
+
+            self.refresh_status()
+            self.btn_online_sync.config(state="normal")
+            self.btn_install.config(state="normal")
+
+        threading.Thread(target=worker, daemon=True).start()
+
     def on_rollback_pc(self):
         if not messagebox.askyesno("Xác Nhận", "Bạn có chắc chắn muốn khôi phục toàn bộ tệp game về bản gốc nguyên thủy?"):
             return
@@ -985,7 +1097,7 @@ class LauncherGUI:
             self.progress_bar["value"] = 0
             self.lbl_download_progress.config(text="Đang kết nối tải về...")
 
-            temp_dest = EXE_DIR / "StellaSora_Launcher_update.exe"
+            temp_dest = Path(os.environ.get("TEMP", str(EXE_DIR))) / "StellaSora_Launcher_update.exe"
 
             def progress(downloaded, total, pct):
                 self.root.after(0, lambda: self._update_progress_ui(downloaded, total, pct))

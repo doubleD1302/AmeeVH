@@ -95,6 +95,7 @@ def main():
         (root / 'dist' / 'StellaSora_Launcher.exe', 'application/vnd.microsoft.portable-executable'),
         (root / 'android' / 'bin' / 'StellaSora_VietHoa.apk', 'application/vnd.android.package-archive'),
         (root / 'StellaSora_Launcher_PC.zip', 'application/zip'),
+        (root / 'work' / 'research' / 'data_patched_vi.arcx', 'application/octet-stream'),
     ]
 
     existing_assets = {a['name']: a['id'] for a in rel.get('assets', [])}
