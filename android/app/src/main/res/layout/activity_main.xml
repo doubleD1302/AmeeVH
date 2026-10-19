@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STELLA SORA VIỆT HÓA"
+        android:textColor="#90CAF9"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bản Việt hóa Android / Local ADB Helper v1.0.0"
+        android:textColor="#B0BEC5"
+        android:textSize="13sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Status Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1E1E1E"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvStatusHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trạng Thái Hoạt Động"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đang chờ kết nối Local ADB..."
+            android:textColor="#A5D6A7"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Controls -->
+    <Button
+        android:id="@+id/btnToggleOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bật Thông Báo Nổi (Floating Window)"
+        android:background="#1976D2"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/btnCheckUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kiểm Tra Cập Nhật GitHub"
+        android:background="#37474F"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/btnCopyError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📋 Sao Chép Mã Lỗi Cho Dev (1-Chạm)"
+        android:background="#C2185B"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Announcements -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📢 Bảng Tin &amp; Thông Báo Dev"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginBottom="6dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1E1E1E"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvAnnouncements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đang tải thông báo từ GitHub..."
+            android:textColor="#ECEFF1"
+            android:textSize="13sp"
+            android:lineSpacingExtra="4dp" />
+    </ScrollView>
+
+</LinearLayout>

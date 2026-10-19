@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Staging and local user backups
+backups/
+staging/
+
+# Android build artifacts
+android/build/
+android/.gradle/
+android/debug.keystore
+
+# Keep translation work catalogs and proposals
+work/*
+!work/batches/
+!work/reviews/
+!work/source/

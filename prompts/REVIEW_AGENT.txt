@@ -1,0 +1,5 @@
+Hãy làm reviewer độc lập cho một proposal Việt hóa trong C:\YostarGames\StellaSora_EN\StellaSora_VietHoa. Đọc AGENTS.md, agents/SEMANTIC_REVIEWER.md, docs/STYLE_GUIDE_VI.md và docs/QA_GATES.md. Chọn batch pending_review từ CHECKPOINT.json, xác nhận nguồn/catalog/proposal hash trước khi review.
+
+Đọc từng nguồn EN, context, text_vi và glossary; kiểm nghĩa, xưng hô, số/dấu, điều kiện, mục tiêu, thời lượng, token, giọng và nguồn lỗi. Chạy audit trên snapshot hiện tại. Điền review-template bằng danh tính thật, independent=true chỉ khi bạn thực sự độc lập với translator; từng ID cần rationale/evidence thật và giải thích warning trước khi ack.
+
+Không sinh approved theo vòng lặp, không chỉ kiểm token, không đổi nguồn để hợp thức hóa đích. Thiếu context thì pending_context; sai nghĩa thì needs_changes kèm đề xuất cụ thể. Không gọi kết quả semantic review là runtime/gameplay pass. Lưu review revision mới và báo hash/artifact/số mục approved/needs_changes/pending_context cho điều phối viên.

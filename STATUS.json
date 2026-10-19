@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "updated_local_date": "2026-10-19",
+  "timezone": "Asia/Saigon",
+  "project": "Stella Sora EN to Vietnamese",
+  "scope_current_delivery": "multiplatform_toolkit_and_pilot_translation",
+  "client_version_observed": "1.13.0",
+  "game_version_observed": "1.16.1",
+  "resource_version_observed": "2610041900",
+  "source_locale": "en",
+  "srt_adapter": "implemented_and_tested",
+  "preparation_validation": {
+    "unit_tests_passed": 26,
+    "unit_tests_total": 26,
+    "cli_checks_passed": 9,
+    "real_srt_noop_roundtrips_passed": 8,
+    "independent_qa": false,
+    "report": "reports/preparation_verification_20261019.json"
+  },
+  "arcx_adapter": "unimplemented_format_research_required",
+  "unity_asset_adapter": "unimplemented",
+  "font_validation": "not_tested",
+  "loader_precedence": "unverified",
+  "live_installer": "implemented_multiplatform_pc_and_adb",
+  "launcher_pc": "launcher/launcher_pc.py (1-click installer, backup, rollback, github auto-update, notifications, copy error log)",
+  "android_apk": "android/bin/StellaSora_VietHoa.apk (floating overlay notification, github auto-update, notifications, copy error log)",
+  "adb_tool": "tools/adb_patcher.py (device scanner, push patch, trigger broadcast overlay, copy error log)",
+  "translation": {
+    "extracted_subtitle_cues": 51,
+    "translated": 51,
+    "static_audit_passed": 51,
+    "semantic_approved": 0,
+    "staged_game_files": 0,
+    "whole_game_string_count": null
+  },
+  "runtime": "not_tested",
+  "gameplay": "not_tested",
+  "published": false,
+  "known_source_issue": "Prologue CNVA cue 3 contains dffd (explicitly handled in notes/translation)",
+  "evidence_directory": "reports/"
+}
