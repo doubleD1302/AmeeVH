@@ -5,8 +5,10 @@
 - EN là nguồn có thật trong bản cài hiện tại. Với JP/CN bổ sung, ghi locale, version, ID và quan hệ đối chiếu; không tự tuyên bố nguồn gốc kịch bản.
 - Thoại tự nhiên, gọn, có nhịp cảm xúc của cảnh. Giữ tính cách người nói; xưng hô cần quan hệ nhân vật, địa vị và ngữ cảnh trước/sau. Không thêm meme, tiếng lóng theo trend hoặc tình tiết mới.
 - UI dùng từ ngắn, hành động rõ. Cơ chế ưu tiên chính xác hơn câu chữ hoa mỹ. Lời bài hát/subtitle cần giữ hình ảnh và nghĩa; không buộc vần nếu làm sai nội dung.
-- **Tiết chế Hán-Việt, ưu tiên thuần Việt hiện đại**: Stella Sora là game Anime Sci-Fi Fantasy tươi sáng, tuyệt đối không lạm dụng từ Hán-Việt cổ, sặc mùi kiếm hiệp cổ trang hay tu tiên (như *Càn khôn, Nại lạc, Giải trảm, Thập diện, Viêm khải, Thương khung*). Thay vào đó, dùng từ thuần Việt tự nhiên, gãy gọn, gần gũi với game thủ hiện đại (ví dụ: *Lật ngược tình thế, Khép chặt vòng vây, Nhát chém thủy triều, Giáp lửa, Hộ vệ bầu trời*).
-- Tên riêng giữ theo bản EN cho đến khi glossary có quyết định được duyệt. Không tự Hán Việt hóa tên nhân vật (Amber là Amber, không dịch thành Hổ Phách; Flora là Flora, không dịch thành Tử Cận).
+- **Quy tắc phân định Hán-Việt và Thuần Việt**:
+  * **Với Danh từ (Tên chiêu thức, Kỹ năng, Tổ chức, Bang phái, Chức danh, Quái vật/Boss, Danh từ riêng)**: Được phép và khuyến khích dùng từ **Hán-Việt hào sảng, uy phong, đậm chất Anime RPG** (ví dụ: *Bạo Viêm Quyền, Dung Viêm Phá, Viêm Khải, Ám Triều, Cấm Vệ Thương Khung, Phủ Bạch Trạch, Lữ Đoàn Tân Tinh, Cận Vệ Đế Quốc, Linh Thú Cuồng Bạo*).
+  * **Với Văn miêu tả cơ chế, Lời thoại đối thoại, Hướng dẫn hệ thống**: Ưu tiên **thuần Việt, trong sáng, tự nhiên, dễ hiểu**. Tuyệt đối không nhồi nhét Hán-Việt cổ lỗ sĩ vào văn nói thường ngày, không dịch word-by-word, loại bỏ hoàn toàn thể bị động rườm rà (ví dụ: dùng *Lật ngược tình thế, Khép chặt vòng vây, Khi thi triển Bạo Viêm Quyền sẽ tăng sát thương...*).
+- Tên riêng nhân vật giữ theo chữ Latin gốc của bản EN (Amber, Freesia, Flora, Willow, Kasimira, v.v., không tự Hán hóa tên nhân vật).
 - `config/glossary.json` có trạng thái proposed/approved. Chỉ approved là thuật ngữ khóa. Mỗi thay đổi thuật ngữ cần ví dụ nguồn, phạm vi áp dụng và review tác động.
 
 ## Cơ chế cần giữ nguyên

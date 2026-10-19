@@ -132,11 +132,11 @@ Mục tiêu: Đảm bảo 100% tính nhất quán thuật ngữ, loại bỏ tri
 | `Count of the Duloos` | **Nam Tước Duloo** | Boss tộc Duloo (CN: 热嘟噜噗男爵) |
 | `Grotesque Dancer` | **Vũ Công Quái Dị** | Boss vũ công bóng ma (CN: 怪诞舞者) |
 | `Garden of Parasite` | **Khu Vườn Ký Sinh** | Boss đại thụ ký sinh (CN: 寄生之庭) |
-| `Spirit of Brutality` | **Mãnh Thú Cuồng Bạo** | Boss tuần linh thú hung bạo (CN: 猛进之灵) |
+| `Spirit of Brutality` | **Linh Thú Cuồng Bạo** | Boss tuần linh thú hung bạo (CN: 猛进之灵) |
 | `Tusk Stomper` | **Mãnh Thú Nanh Nhọn** | Dạng Proving Grounds của Spirit of Brutality |
 | `Spellbound Golem` | **Cự Tượng Ma Thị** | Boss golem cổ đại khổng lồ (CN: 魔侍巨像) |
 | `Lithe Beauty` | **Mỹ Nhân Lưu Phong** | Boss nữ kiếm vũ tốc độ cao (CN: 流风美人) |
-| `Blade of Jade` | **Lưỡi Đao Ngọc Bích** | Boss đao khách bích ngọc hoàng kim (CN: 翠煌之刃) |
+| `Blade of Jade` | **Thúy Hoàng Chi Nhận** | Boss đao khách bích ngọc hoàng kim (CN: 翠煌之刃) |
 | `Gobble Hexhorn Whale` | **Cá Voi Lục Sừng Gobble** | Boss quái ngư lục giác biển sâu (CN: 咕噜六角鲸) |
 | `Opera Ghost: Rovina` | **Bóng Ma Nhà Hát: Rovina** | Boss bóng ma nhà hát (CN: 剧院魅影·罗维娜) |
 | `Armadillo Fish` | **Cá Cầu Gai Tê Tê** | Quái vật bong bóng đặc hữu Nova (CN: 犰鱼) |
@@ -155,13 +155,13 @@ Mục tiêu: Đảm bảo 100% tính nhất quán thuật ngữ, loại bỏ tri
 | `Whirling Crawler` | **Vuốt Sắc Xoay Tròn** | Quái thú vuốt sắc phi toàn (CN: 飞旋利爪) |
 | `Whirling Great Glopo` | **Khối Bùn Xoáy Khổng Lồ** | Đại khối chất nhờn xoáy lốc (CN: 漩涡大冻) |
 | `Fierce Long-Tailed Scorpion` | **Bọ Cạp Đuôi Dài Hung Bạo** | Bọ cạp sa mạc độc lực cao (CN: 暴烈长尾蝎) |
-| `Enforcer of Silence` | **Hộ Vệ Tĩnh Lặng** | Golem cấm vệ rìu lớn (CN: 静默之抗礼) |
-| `Guardian of Thorns` | **Hộ Vệ Gai Góc** | Golem cấm vệ gai nhọn (CN: 荆棘之抗礼) |
-| `Oppressor of Torrents` | **Hộ Vệ Cuồng Triều** | Golem cấm vệ thác lũ (CN: 狂潮之抗礼) |
-| `Suppressor of Lava` | **Hộ Vệ Dung Nham** | Golem cấm vệ lõi nhiệt (CN: 熔芯的抗礼) |
-| `Subjugator of Firmament` | **Cấm Vệ Bầu Trời** | Golem cấm vệ cuồng phong (CN: 苍穹之抗礼) |
-| `Protector of Radiance` | **Hộ Vệ Ánh Sáng** | Golem cấm vệ quang diệu (CN: 闪熠之抗礼) |
-| `Golem of Nightmares` | **Hộ Vệ Ác Mộng** | Golem cấm vệ vực thẳm mộng魇 (CN: 梦魇之抗礼) |
+| `Enforcer of Silence` | **Cấm Vệ Tĩnh Lặng** | Golem cấm vệ rìu lớn (CN: 静默之抗礼) |
+| `Guardian of Thorns` | **Cấm Vệ Gai Góc** | Golem cấm vệ gai nhọn (CN: 荆棘之抗礼) |
+| `Oppressor of Torrents` | **Cấm Vệ Cuồng Triều** | Golem cấm vệ thác lũ (CN: 狂潮之抗礼) |
+| `Suppressor of Lava` | **Cấm Vệ Dung Nham** | Golem cấm vệ lõi nhiệt (CN: 熔芯的抗礼) |
+| `Subjugator of Firmament` | **Cấm Vệ Thương Khung** | Golem cấm vệ cuồng phong (CN: 苍穹之抗礼) |
+| `Protector of Radiance` | **Cấm Vệ Ánh Sáng** | Golem cấm vệ quang diệu (CN: 闪熠之抗礼) |
+| `Golem of Nightmares` | **Cấm Vệ Ác Mộng** | Golem cấm vệ vực thẳm mộng魇 (CN: 梦魇之抗礼) |
 | `Lucky Rubbi` | **Thỏ May Mắn Rubbi** | Linh vật thỏ may mắn (CN: 幸运露比) |
 | `Tainted Mandrake` | **Mandrake Nhiễm Độc** | Cây nhân sâm độc thét gào (CN: 污染风茄) |
 
