@@ -5,7 +5,8 @@
 - EN là nguồn có thật trong bản cài hiện tại. Với JP/CN bổ sung, ghi locale, version, ID và quan hệ đối chiếu; không tự tuyên bố nguồn gốc kịch bản.
 - Thoại tự nhiên, gọn, có nhịp cảm xúc của cảnh. Giữ tính cách người nói; xưng hô cần quan hệ nhân vật, địa vị và ngữ cảnh trước/sau. Không thêm meme, tiếng lóng theo trend hoặc tình tiết mới.
 - UI dùng từ ngắn, hành động rõ. Cơ chế ưu tiên chính xác hơn câu chữ hoa mỹ. Lời bài hát/subtitle cần giữ hình ảnh và nghĩa; không buộc vần nếu làm sai nội dung.
-- Tên riêng giữ theo bản EN cho đến khi glossary có quyết định được duyệt. Không tự Hán Việt hóa tên nhân vật hoặc gán vai trò không có trong nguồn.
+- **Tiết chế Hán-Việt, ưu tiên thuần Việt hiện đại**: Stella Sora là game Anime Sci-Fi Fantasy tươi sáng, tuyệt đối không lạm dụng từ Hán-Việt cổ, sặc mùi kiếm hiệp cổ trang hay tu tiên (như *Càn khôn, Nại lạc, Giải trảm, Thập diện, Viêm khải, Thương khung*). Thay vào đó, dùng từ thuần Việt tự nhiên, gãy gọn, gần gũi với game thủ hiện đại (ví dụ: *Lật ngược tình thế, Khép chặt vòng vây, Nhát chém thủy triều, Giáp lửa, Hộ vệ bầu trời*).
+- Tên riêng giữ theo bản EN cho đến khi glossary có quyết định được duyệt. Không tự Hán Việt hóa tên nhân vật (Amber là Amber, không dịch thành Hổ Phách; Flora là Flora, không dịch thành Tử Cận).
 - `config/glossary.json` có trạng thái proposed/approved. Chỉ approved là thuật ngữ khóa. Mỗi thay đổi thuật ngữ cần ví dụ nguồn, phạm vi áp dụng và review tác động.
 
 ## Cơ chế cần giữ nguyên
