@@ -75,7 +75,7 @@ FATECARD_NAMES_MAP = {
     "Streak: Skill DMG Boost": "Khánh Điển: Tăng Sát Thương Kỹ Năng",
     "Streak: Crit DMG": "Khánh Điển: Sát Thương Bạo Kích",
     "Streak: DMG Immunity": "Khánh Điển: Miễn Dịch Sát Thương",
-    "Streak: DMG Taken Reduction": "Khánh Điển: Giảm Thiệt Hại",
+    "Streak: DMG Taken Reduction": "Khánh Điển: Giảm Sát Thương",
 
     # 98101-98110 (Tenacity:)
     "Tenacity: Soothing Breath": "Quyết Tử: Hơi Thở Xoa Dịu",
