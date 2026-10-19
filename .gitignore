@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.log
+*.zip
 
 # Staging and local user backups
 backups/
@@ -16,9 +17,26 @@ android/debug.keystore
 # Keep translation work catalogs and proposals
 work/*
 !work/batches/
-!work/reviews/
 !work/source/
 !work/research/
 work/research/*
 !work/research/*.json
 !work/research/*.md
+
+# AI operational documents & agent prompts
+AGENTS.md
+START_HERE.md
+agents/
+prompts/
+reports/
+templates/
+work/reviews/
+docs/QA_GATES.md
+docs/REFERENCES.md
+docs/DATA_CONTRACT.md
+docs/FORMAT_RESEARCH.md
+docs/LOCAL_DISCOVERY.md
+docs/PATCH_AND_ROLLBACK.md
+docs/TOOLS.md
+tests/
+

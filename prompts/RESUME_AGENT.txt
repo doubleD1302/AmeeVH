@@ -1,7 +1,0 @@
-Tiếp tục dự án StellaSora_VietHoa tại C:\YostarGames\StellaSora_EN. Đọc root AGENTS.md rồi AGENTS.md, STATUS.json, CHECKPOINT.json và báo cáo/artifact được checkpoint trỏ đến.
-
-Không khởi tạo lại, không ghi đè bản dịch/review/backup. Đối chiếu hash/version hiện tại với checkpoint. Kiểm artifact cuối đã ghi đầy đủ và parse được; nếu dở thì giữ nguyên làm bằng chứng, tạo revision mới. Không tin nhãn PASS nếu hash không khớp.
-
-Thực hiện bước next_action còn khả thi. Dịch tiếp theo ID trong proposal, audit, review độc lập, merge, build staging theo đúng gate; nếu reviewer/adapter đang thiếu, tiếp tục phần khác đã được giao và ghi pending đúng tầng. Khi nguồn game cập nhật, tạo catalog mới và diff, không áp bản cũ mù quáng.
-
-Cập nhật checkpoint mỗi mốc. Báo kết quả đã thực hiện và những gì chưa kiểm chứng. Không tự cài vào game nếu scope đang chỉ là chuẩn bị/dịch/staging.
