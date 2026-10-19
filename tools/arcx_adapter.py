@@ -27,6 +27,8 @@ MAGIC: bytes = b"\x1aBAR"
 EXPECTED_VERSION: int = 102
 DEFAULT_FLAG: int = 0x111
 KEY: bytes = b"&^^%#$#_$!@![]<_>?GHBFR_7481SDR_"
+XXTEA_KEY: bytes = bytes.fromhex("a9 21 a4 67 c7 d7 df 39 6e 60 90 9c 31 22 5b d2")
+XXTEA_DELTA: int = 0x9E3779B9
 
 FLAG_HEADER_COMPRESS: int = 0x1
 FLAG_HEADER_ENCRYPTED: int = 0x10
@@ -42,6 +44,87 @@ def xor_cipher(data: bytearray, key: bytes = KEY) -> bytearray:
     for i in range(len(data)):
         data[i] ^= key[i % k_len]
     return data
+
+
+def _to_uint32_array(data: bytes, include_length: bool = False) -> List[int]:
+    length = len(data)
+    n = (length + 3) // 4
+    if include_length:
+        arr = list(struct.unpack(f"<{n}I", data.ljust(n * 4, b"\x00")))
+        arr.append(length)
+        return arr
+    return list(struct.unpack(f"<{n}I", data.ljust(n * 4, b"\x00")))
+
+
+def _to_byte_array(v: List[int]) -> bytes:
+    n = len(v)
+    return struct.pack(f"<{n}I", *v)
+
+
+def _xxtea_mx(z: int, y: int, sum_val: int, p: int, e: int, k: List[int]) -> int:
+    term1 = (((z >> 5) ^ (y << 2)) + ((y >> 3) ^ (z << 4))) & 0xFFFFFFFF
+    term2 = ((sum_val ^ y) + (k[(p & 3) ^ e] ^ z)) & 0xFFFFFFFF
+    return (term1 ^ term2) & 0xFFFFFFFF
+
+
+def xxtea_decrypt(data: bytes, key: bytes = XXTEA_KEY) -> bytes:
+    """Decrypt payload using XXTEA algorithm."""
+    if not data:
+        return b""
+    k = list(struct.unpack("<4I", key))
+    v = _to_uint32_array(data, include_length=False)
+    n = len(v)
+    if n <= 1:
+        return data
+
+    rounds = 6 + 52 // n
+    sum_val = (rounds * XXTEA_DELTA) & 0xFFFFFFFF
+    y = v[0]
+
+    while sum_val != 0:
+        e = (sum_val >> 2) & 3
+        for p in range(n - 1, 0, -1):
+            z = v[p - 1]
+            v[p] = (v[p] - _xxtea_mx(z, y, sum_val, p, e, k)) & 0xFFFFFFFF
+            y = v[p]
+        z = v[n - 1]
+        v[0] = (v[0] - _xxtea_mx(z, y, sum_val, 0, e, k)) & 0xFFFFFFFF
+        y = v[0]
+        sum_val = (sum_val - XXTEA_DELTA) & 0xFFFFFFFF
+
+    orig_len = v[-1]
+    if (len(v) - 1) * 4 - 3 <= orig_len <= (len(v) - 1) * 4:
+        raw = struct.pack(f"<{n-1}I", *v[:-1])
+        return raw[:orig_len]
+    return _to_byte_array(v)
+
+
+def xxtea_encrypt(data: bytes, key: bytes = XXTEA_KEY) -> bytes:
+    """Encrypt payload using XXTEA algorithm."""
+    if not data:
+        return b""
+    k = list(struct.unpack("<4I", key))
+    v = _to_uint32_array(data, include_length=True)
+    n = len(v)
+    if n <= 1:
+        return data
+
+    rounds = 6 + 52 // n
+    sum_val = 0
+    z = v[n - 1]
+
+    for _ in range(rounds):
+        sum_val = (sum_val + XXTEA_DELTA) & 0xFFFFFFFF
+        e = (sum_val >> 2) & 3
+        for p in range(n - 1):
+            y = v[p + 1]
+            v[p] = (v[p] + _xxtea_mx(z, y, sum_val, p, e, k)) & 0xFFFFFFFF
+            z = v[p]
+        y = v[0]
+        v[n - 1] = (v[n - 1] + _xxtea_mx(z, y, sum_val, n - 1, e, k)) & 0xFFFFFFFF
+        z = v[n - 1]
+
+    return _to_byte_array(v)
 
 
 class ArcxArchive:
@@ -123,7 +206,7 @@ class ArcxArchive:
             return lz4.block.decompress(bytes(chunk), uncompressed_size=orig_sz)
         return bytes(chunk)
 
-    def unpack_all(self, output_dir: Path) -> Path:
+    def unpack_all(self, output_dir: Path, decrypt_payload: bool = False) -> Path:
         """Unpack all entries into output directory with manifest."""
         output_dir.mkdir(parents=True, exist_ok=True)
         raw = self.file_path.read_bytes()
@@ -133,6 +216,7 @@ class ArcxArchive:
             "version": self.version,
             "flag": self.flag,
             "entry_count": self.entry_count,
+            "payload_decrypted": decrypt_payload,
             "entries": [],
         }
 
@@ -141,6 +225,12 @@ class ArcxArchive:
 
         for entry in self.entries:
             data = self.extract_entry(entry, raw)
+            if decrypt_payload:
+                try:
+                    data = xxtea_decrypt(data, XXTEA_KEY)
+                except Exception as e:
+                    print(f"Warning: Failed to decrypt entry {entry['index']}: {e}", file=sys.stderr)
+
             fname = f"{entry['index']:05d}_{entry['hash_hex']}.bin"
             fpath = files_dir / fname
             fpath.write_bytes(data)
@@ -152,16 +242,18 @@ class ArcxArchive:
                     "hash_hex": entry["hash_hex"],
                     "filename": fname,
                     "origin_size": entry["origin_size"],
+                    "payload_size": len(data),
                 }
             )
 
         manifest_path = output_dir / "manifest.json"
         manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
-        print(f"Successfully unpacked {self.entry_count} entries to {output_dir}")
+        dec_msg = " (with XXTEA payload decryption)" if decrypt_payload else ""
+        print(f"Successfully unpacked {self.entry_count} entries to {output_dir}{dec_msg}")
         return manifest_path
 
 
-def repack_archive(input_dir: Path, output_file: Path) -> Path:
+def repack_archive(input_dir: Path, output_file: Path, encrypt_payload: bool = False) -> Path:
     """Repack entries from directory into a valid .arcx file."""
     manifest_path = input_dir / "manifest.json"
     if not manifest_path.exists():
@@ -174,6 +266,7 @@ def repack_archive(input_dir: Path, output_file: Path) -> Path:
     version = manifest.get("version", EXPECTED_VERSION)
     flag = manifest.get("flag", DEFAULT_FLAG)
     entry_count = len(entries_meta)
+    need_encrypt = manifest.get("payload_decrypted", False) or encrypt_payload
 
     # 1. Compress all entries
     compressed_entries = []
@@ -186,6 +279,10 @@ def repack_archive(input_dir: Path, output_file: Path) -> Path:
         fname = item["filename"]
         fpath = files_dir / fname
         content = fpath.read_bytes()
+
+        if need_encrypt:
+            content = xxtea_encrypt(content, XXTEA_KEY)
+
         orig_sz = len(content)
 
         if flag & FLAG_ENTRY_COMPRESS:
@@ -362,11 +459,21 @@ def main():
     p_unpack = subparsers.add_parser("unpack", help="Unpack .arcx into directory")
     p_unpack.add_argument("archive", type=Path, help="Input .arcx file")
     p_unpack.add_argument("output", type=Path, help="Output directory")
+    p_unpack.add_argument(
+        "--decrypt-payload",
+        action="store_true",
+        help="Decrypt inner payloads (tables/Lua) using XXTEA key",
+    )
 
     # Repack command
     p_repack = subparsers.add_parser("repack", help="Repack directory into .arcx")
     p_repack.add_argument("input_dir", type=Path, help="Input directory containing manifest.json")
     p_repack.add_argument("output", type=Path, help="Output .arcx file")
+    p_repack.add_argument(
+        "--encrypt-payload",
+        action="store_true",
+        help="Force encrypt inner payloads using XXTEA key before packing",
+    )
 
     # Verify command
     p_verify = subparsers.add_parser("verify", help="Verify roundtrip unpack/repack integrity")
@@ -379,9 +486,9 @@ def main():
 
     if args.command == "unpack":
         arc = ArcxArchive(args.archive)
-        arc.unpack_all(args.output)
+        arc.unpack_all(args.output, decrypt_payload=args.decrypt_payload)
     elif args.command == "repack":
-        repack_archive(args.input_dir, args.output)
+        repack_archive(args.input_dir, args.output, encrypt_payload=args.encrypt_payload)
     elif args.command == "verify":
         success = verify_roundtrip(args.archive, args.work_dir)
         sys.exit(0 if success else 1)
