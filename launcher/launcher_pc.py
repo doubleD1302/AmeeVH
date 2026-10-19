@@ -50,7 +50,7 @@ NOTIFS_FILE = EXE_DIR / "notifications.json"
 BACKUP_DIR = EXE_DIR / "backups"
 
 DEFAULT_CONFIG = {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "app_name": "Stella Sora Việt Hóa - Multiplatform Launcher",
     "default_game_path": "C:\\YostarGames\\StellaSora_EN",
     "github_repo": "doubleD1302/AmeeVH",
@@ -460,7 +460,7 @@ class GitHubManager:
         return tuple(map(int, nums)) if nums else (0, 0, 0)
 
     @classmethod
-    def check_updates(cls, repo: str, current_ver: str = "0.2.0") -> dict:
+    def check_updates(cls, repo: str, current_ver: str = "0.3.0") -> dict:
         """Fetches the latest GitHub release and checks for available updates."""
         headers = {"User-Agent": "StellaSora-Localizer", "Accept": "application/vnd.github.v3+json"}
         rel_data = None

@@ -34,17 +34,18 @@ def main():
     }
 
     repo = 'doubleD1302/AmeeVH'
-    tag = 'v0.2.0'
-    name = 'Stella Sora Việt Hóa v0.2.0'
-    body = """Bản phát hành v0.2.0 cho Stella Sora (PC & Android).
+    tag = 'v0.3.0'
+    name = 'Stella Sora Việt Hóa v0.3.0'
+    body = """Bản phát hành v0.3.0 cho Stella Sora (PC & Android).
 
 ### 📥 Cài đặt:
 - **PC**: Tải `StellaSora_Launcher.exe` (1-chạm tự động cài đặt).
 - **Android**: Tải `StellaSora_VietHoa.apk` hoặc gói `StellaSora_Launcher_PC.zip`.
 
 ### ✨ Tính năng mới:
-- Đã Việt hóa hơn 6,440 mục: Toàn bộ 3,777 vật phẩm, 1,314 thành tựu và 1,350 kỹ năng.
-- Tự động đồng bộ và nâng cấp Launcher qua GitHub Releases."""
+- Hoàn tất 100% Giao diện & Hệ thống: 4,212 mục UIText, 656 Hiệu ứng, 340 Từ khóa, 430 Hướng dẫn Cự tháp và 300 Thư thông báo.
+- Đạt mốc hơn 11,200 chuỗi Việt hóa chuẩn RPG.
+- Cập nhật Launcher v0.3.0 tự động đồng bộ."""
 
     # 1. Check existing releases
     check_req = urllib.request.Request(f'https://api.github.com/repos/{repo}/releases', headers=headers)
