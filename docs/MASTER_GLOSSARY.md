@@ -429,11 +429,11 @@
 | `Firenze: Default` | **Firenze: Mặc Định** | Chuẩn hóa Master |
 | `Fireworks` | **Pháo Hoa Rực Rỡ** | Chuẩn hóa Master |
 | `Fireworks Dazzling the Night` | **Pháo Hoa Rực Rỡ Đêm Sao** | Chuẩn hóa Master |
-| `First Light` | **Sơ Quang** | Chuẩn hóa Master |
-| `First Light Noya` | **Noya Sơ Quang** | Chuẩn hóa Master |
+| `First Light` | **Khải Minh** | Chuẩn hóa Master |
+| `First Light Noya` | **Noya - Khải Minh** | Chuẩn hóa Master |
 | `First Meeting` | **Lần Đầu Gặp Gỡ** | Chuẩn hóa Master |
-| `Firstlight` | **Sơ Quang** | Chuẩn hóa Master |
-| `Firstlight Noya` | **Noya Sơ Quang** | Chuẩn hóa Master |
+| `Firstlight` | **Khải Minh** | Chuẩn hóa Master |
+| `Firstlight Noya` | **Noya - Khải Minh** | Chuẩn hóa Master |
 | `Fist of Courage` | **Nắm Đấm Dũng Cảm** | Chuẩn hóa Master |
 | `Fizz and Pop` | **Bật Nắp Sảng Khoái** | Chuẩn hóa Master |
 | `Flames and Beats` | **Cuồng Vũ Rực Lửa** | Chuẩn hóa Master |
