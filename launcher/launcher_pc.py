@@ -50,7 +50,7 @@ NOTIFS_FILE = EXE_DIR / "notifications.json"
 BACKUP_DIR = EXE_DIR / "backups"
 
 DEFAULT_CONFIG = {
-    "version": "0.8.0",
+    "version": "0.8.5",
     "app_name": "Stella Sora Việt Hóa - Multiplatform & Steam Launcher",
     "default_game_path": "C:\\YostarGames\\StellaSora_EN",
     "github_repo": "doubleD1302/AmeeVH",
@@ -434,6 +434,7 @@ class LocalizationEngine:
                 "Persistent_Store/Videos/CH06ED-CH06ED_EN.srt",
             ]
             table_rel = "Persistent_Store/Tables/data.arcx"
+            script_rel = "Persistent_Store/Scripts/lua.arcx"
 
             # Source batch proposals
             batches_dir = BASE_DIR / "work" / "batches"
@@ -446,6 +447,10 @@ class LocalizationEngine:
             patched_arcx = BASE_DIR / "dist" / "data_patched_vi.arcx"
             if not patched_arcx.exists():
                 patched_arcx = BASE_DIR / "work" / "research" / "data_patched_vi.arcx"
+
+            patched_lua_arcx = BASE_DIR / "dist" / "lua_patched_vi.arcx"
+            if not patched_lua_arcx.exists():
+                patched_lua_arcx = BASE_DIR / "work" / "research" / "lua_patched_vi.arcx"
 
             # 1. Create Backup
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -486,7 +491,21 @@ class LocalizationEngine:
                     "original_sha256": orig_hash,
                     "size": orig_table.stat().st_size
                 })
-                log(f"   Đã sao lưu: {orig_table.name} (SHA: {orig_hash[:8]}...)")
+                log(f"   Đã sao lưu: {orig_table.name} (Giao diện Core UI ArcX)")
+
+            # Backup lua archive if game script and patched lua arcx exist
+            orig_script = game_path / script_rel
+            if patched_lua_arcx.exists() and orig_script.exists():
+                orig_hash = sha256_file(orig_script)
+                bak_file = run_backup_dir / script_rel.replace("/", "_")
+                shutil.copy2(orig_script, bak_file)
+                backup_manifest["files"].append({
+                    "relative_path": script_rel,
+                    "backup_file": bak_file.name,
+                    "original_sha256": orig_hash,
+                    "size": orig_script.stat().st_size
+                })
+                log(f"   Đã sao lưu: {orig_script.name} (Kịch bản thoại & Tin nhắn ArcX)")
 
             (run_backup_dir / "manifest.json").write_text(json.dumps(backup_manifest, indent=2), encoding="utf-8")
 
@@ -503,6 +522,15 @@ class LocalizationEngine:
                 installed_count += 1
                 installed_files.append(table_rel)
                 log(f"   ✓ Đã cài đặt thành công: {orig_table.name} (Giao diện Core UI ArcX)")
+
+            # Install Dialogue & Phone script archive
+            if patched_lua_arcx.exists() and orig_script.exists():
+                temp_script = orig_script.with_suffix(".tmp_patch")
+                shutil.copy2(patched_lua_arcx, temp_script)
+                temp_script.replace(orig_script)
+                installed_count += 1
+                installed_files.append(script_rel)
+                log(f"   ✓ Đã cài đặt thành công: {orig_script.name} (Kịch bản thoại & Tin nhắn Lua ArcX)")
 
             # Install subtitles
             for rel, proposal_file in batch_files.items():
@@ -668,6 +696,7 @@ class GitHubManager:
         zip_asset = next((a for a in assets if a.get("name", "").endswith(".zip")), None)
         apk_asset = next((a for a in assets if a.get("name", "").endswith(".apk")), None)
         arcx_asset = next((a for a in assets if "data_patched_vi.arcx" in a.get("name", "")), None)
+        lua_arcx_asset = next((a for a in assets if "lua_patched_vi.arcx" in a.get("name", "") or "lua.arcx" in a.get("name", "")), None)
 
         has_update = cls.parse_version(tag_name) > cls.parse_version(current_ver)
 
@@ -684,6 +713,7 @@ class GitHubManager:
             "zip_asset": zip_asset,
             "apk_asset": apk_asset,
             "arcx_asset": arcx_asset,
+            "lua_arcx_asset": lua_arcx_asset,
             "assets": assets,
         }
 
@@ -1281,6 +1311,24 @@ class LauncherGUI:
 
             shutil.copy2(temp_dest, target_table)
             temp_dest.unlink(missing_ok=True)
+            self.log_ui("   ✓ Đã cập nhật xong Tables/data.arcx")
+
+            # Check and sync lua_patched_vi.arcx if available
+            lua_asset = res.get("lua_arcx_asset")
+            if lua_asset and lua_asset.get("browser_download_url"):
+                lua_url = lua_asset["browser_download_url"]
+                lua_mb = lua_asset.get('size', 0) / (1024 * 1024)
+                self.log_ui(f"Bắt đầu tải gói kịch bản thoại & tin nhắn ({lua_mb:.1f} MB)...")
+                temp_lua = Path(os.environ.get("TEMP", str(EXE_DIR))) / "lua_patched_vi_download.arcx"
+                if GitHubManager.download_file(lua_url, temp_lua):
+                    target_script = self.game_path / "Persistent_Store" / "Scripts" / "lua.arcx"
+                    target_script.parent.mkdir(parents=True, exist_ok=True)
+                    orig_lua_bak = target_script.with_suffix(".arcx.orig_en")
+                    if target_script.exists() and not orig_lua_bak.exists():
+                        shutil.copy2(target_script, orig_lua_bak)
+                    shutil.copy2(temp_lua, target_script)
+                    temp_lua.unlink(missing_ok=True)
+                    self.log_ui("   ✓ Đã cập nhật xong Scripts/lua.arcx (Thoại & Tin nhắn)")
 
             marker_file = self.game_path / "Persistent_Store" / "viethoa_installed.json"
             marker_file.write_text(json.dumps({
