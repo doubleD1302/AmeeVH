@@ -1,15 +1,52 @@
+import os
 import json
-from collections import Counter
+import re
 
-en = json.load(open('work/research/data_decrypted/entries/00704_0x87cc29ac0defc2d9.bin', encoding='utf-8'))
-cn = json.load(open('work/research/data_decrypted/entries/00925_0x363690c09b175230.bin', encoding='utf-8'))
+viet_dir = r"c:\YostarGames\StellaSora_EN\StellaSora_VietHoa"
+data_dec = os.path.join(viet_dir, r"work\research\data_decrypted\entries")
+data_en = os.path.join(viet_dir, r"work\research\data_en_original\entries")
+ckpt_file = os.path.join(viet_dir, "CHECKPOINT.json")
 
-vn_chars = 'àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ'
-untranslated = {k: en[k] for k in en if not any(c in en[k] for c in vn_chars)}
-print(f'Total untranslated in UIText: {len(untranslated)}')
+with open(ckpt_file, "r", encoding="utf-8") as f:
+    ckpt = json.load(f)
+completed_ids = set(ckpt.get("completed_translation_ids", []))
 
-# Categorize by prefix
-prefixes = Counter(k.split('.')[1].split('_')[0] for k in untranslated.keys())
-print('Top untranslated categories:')
-for p, count in prefixes.most_common(25):
-    print(f'  {p:20s}: {count:4d}')
+all_tables = [f[:-5] for f in os.listdir(data_dec) if f.endswith(".json")]
+print(f"Total tables in data_dec: {len(all_tables)}")
+print(f"Completed table IDs in checkpoint: {len(completed_ids)}")
+
+def extract_strings(obj):
+    texts = []
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            texts.extend(extract_strings(v))
+    elif isinstance(obj, list):
+        for item in obj:
+            texts.extend(extract_strings(item))
+    elif isinstance(obj, str):
+        s = obj.strip()
+        if len(s) > 1 and re.search(r'[a-zA-Z]{2,}', s) and not s.startswith("http") and not (s.startswith("Assets/") or s.startswith("UI/") or s.startswith("Audio/") or s.startswith("Prefabs/")):
+            texts.append(s)
+    return texts
+
+untranslated_tables = []
+for t in all_tables:
+    if t in completed_ids:
+        continue
+    fpath = os.path.join(data_dec, f"{t}.json")
+    try:
+        with open(fpath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        strs = extract_strings(data)
+        if strs:
+            untranslated_tables.append((t, len(strs), len(data) if isinstance(data, list) else 1))
+    except Exception as e:
+        pass
+
+untranslated_tables.sort(key=lambda x: x[1], reverse=True)
+print(f"Untranslated tables with text: {len(untranslated_tables)}")
+print(f"Total untranslated string occurrences: {sum(x[1] for x in untranslated_tables)}")
+
+print("\nTop 50 untranslated tables by string count:")
+for t, s_cnt, rows in untranslated_tables[:50]:
+    print(f"  {t:40s} | {s_cnt:6d} strings | {rows:5d} rows")
