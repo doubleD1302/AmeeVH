@@ -1,6 +1,6 @@
 # Stella Sora — Master Glossary & Bản Đồ Thuật Ngữ Chuẩn Hóa
 
-> Cập nhật tự động phiên bản v0.6.0 (2026-10-20). Tổng số thuật ngữ chuẩn hóa: **1191**, quy tắc cấm calque: **29**.
+> Cập nhật tự động phiên bản v0.6.0 (2026-10-20). Tổng số thuật ngữ chuẩn hóa: **1214**, quy tắc cấm calque: **29**.
 
 ## 1. Nguyên Tắc Cốt Lõi Bản Địa Hóa
 
@@ -119,6 +119,7 @@
 | `Assistant Sweeper: Rock` | **Trợ Thủ Quét Dọn: Trọng Nham** | Chuẩn hóa Master |
 | `Assistant Sweeper: Shadow` | **Trợ Thủ Quét Dọn: Ám Ảnh** | Chuẩn hóa Master |
 | `Assistant Sweeper: Torrent` | **Trợ Thủ Quét Dọn: Đoan Lưu** | Chuẩn hóa Master |
+| `At the First Piercing Light` | **Thời Khắc Tia Sáng Đầu Tiên Xuyên Qua** | Chuẩn hóa Master |
 | `Attack SPD` | **Tốc Độ Tấn Công** | Chuẩn hóa Master |
 | `Authorization Lv.` | **Cấp Ủy Quyền** | Chuẩn hóa Master |
 | `Auto Attack` | **Đòn Đánh Thường** | Chuẩn hóa Master |
@@ -281,6 +282,7 @@
 | `Crit RES` | **Kháng Bạo Kích** | Chuẩn hóa Master |
 | `Crit Rate` | **Tỷ Lệ Bạo Kích** | Chuẩn hóa Master |
 | `Crit build` | **Lối chơi bạo kích** | Chuẩn hóa Master |
+| `Cross Great Sword Aura` | **Thập Tự Đại Kiếm Khí** | Chuẩn hóa Master |
 | `Crunchy Shaved Ice` | **Đá Bào Giòn Tan** | Chuẩn hóa Master |
 | `Cry of the Valor` | **Tiếng Vọng Dũng Khí** | Chuẩn hóa Master |
 | `Currents and Shadows` | **Dòng Chảy & Bóng Tối** | Chuẩn hóa Master |
@@ -336,6 +338,7 @@
 | `Doomfire` | **Diệt Thế Liệt Diễm** | Chuẩn hóa Master |
 | `Dorra` | **Dorra** | Chuẩn hóa Master |
 | `Double Triplets` | **Song Tam Điêu** | Chuẩn hóa Master |
+| `Dragon Slash` | **Thăng Long Trảm** | Chuẩn hóa Master |
 | `Draw` | **Chiêu Mộ** | Chuẩn hóa Master |
 | `Dream Factory of ☆Truth` | **Nhà Máy Mơ Ước ☆Sự Thật** | Chuẩn hóa Master |
 | `Dreamflow Breeze` | **Gió Nhẹ Chảy Trong Mộng** | Chuẩn hóa Master |
@@ -426,7 +429,11 @@
 | `Firenze: Default` | **Firenze: Mặc Định** | Chuẩn hóa Master |
 | `Fireworks` | **Pháo Hoa Rực Rỡ** | Chuẩn hóa Master |
 | `Fireworks Dazzling the Night` | **Pháo Hoa Rực Rỡ Đêm Sao** | Chuẩn hóa Master |
+| `First Light` | **Sơ Quang** | Chuẩn hóa Master |
+| `First Light Noya` | **Noya Sơ Quang** | Chuẩn hóa Master |
 | `First Meeting` | **Lần Đầu Gặp Gỡ** | Chuẩn hóa Master |
+| `Firstlight` | **Sơ Quang** | Chuẩn hóa Master |
+| `Firstlight Noya` | **Noya Sơ Quang** | Chuẩn hóa Master |
 | `Fist of Courage` | **Nắm Đấm Dũng Cảm** | Chuẩn hóa Master |
 | `Fizz and Pop` | **Bật Nắp Sảng Khoái** | Chuẩn hóa Master |
 | `Flames and Beats` | **Cuồng Vũ Rực Lửa** | Chuẩn hóa Master |
@@ -481,6 +488,7 @@
 | `Gacha` | **Triệu Hồi** | Chuẩn hóa Master |
 | `Gale Owl` | **Cuồng Phong Thanh Kiêu** | Chuẩn hóa Master |
 | `Gallant Rider` | **Cộng Sự Chính Nghĩa** | Chuẩn hóa Master |
+| `Galloping Wind Strike` | **Trì Phong Kích** | Chuẩn hóa Master |
 | `Garden of Parasite` | **Khu Vườn Ký Sinh** | Chuẩn hóa Master |
 | `Garden of Parasite: Proving Grounds` | **Khu Vườn Ký Sinh: Đấu Trường Thử Lửa** | Chuẩn hóa Master |
 | `Gauntlet of Fury` | **Cuồng Nộ Quyền Khải** | Chuẩn hóa Master |
@@ -509,6 +517,7 @@
 | `Gleeful Jar Spirit: Rock` | **Hồ Linh Cười Vui: Trọng Nham** | Chuẩn hóa Master |
 | `Gleeful Jar Spirit: Shadow` | **Hồ Linh Cười Vui: Ám Ảnh** | Chuẩn hóa Master |
 | `Gleeful Jar Spirit: Torrent` | **Hồ Linh Cười Vui: Đoan Lưu** | Chuẩn hóa Master |
+| `Glimmer` | **Vi Quang** | Chuẩn hóa Master |
 | `Glimmer Bubbles` | **Bong Bóng Lấp Lánh** | Chuẩn hóa Master |
 | `Glimmer of Yore` | **Dư Quang Quá Khứ** | Chuẩn hóa Master |
 | `Gloomfiend` | **Ảnh Ma** | Chuẩn hóa Master |
@@ -536,6 +545,7 @@
 | `Graceful Dive` | **Hạ Cánh Điêu Luyện** | Chuẩn hóa Master |
 | `Graceful Essence` | **Thục Huệ Bản Sắc** | Chuẩn hóa Master |
 | `Graceful Poise` | **Dáng Múa Tao Nhã** | Chuẩn hóa Master |
+| `Great Sword Aura` | **Đại Kiếm Khí** | Chuẩn hóa Master |
 | `Greedy Pursuit` | **Cuộc Săn Đầy Tham Lam** | Chuẩn hóa Master |
 | `Greetings` | **Lời Chào** | Chuẩn hóa Master |
 | `Grotesque Dancer` | **Vũ Công Quái Dị** | Chuẩn hóa Master |
@@ -660,6 +670,7 @@
 | `Little Paradise` | **Thiên Đường Nhỏ Bé** | Chuẩn hóa Master |
 | `Livestream Prep` | **Chuẩn Bị Phát Sóng** | Chuẩn hóa Master |
 | `Logging Crab C8` | **Phạt Mộc Giải C8** | Chuẩn hóa Master |
+| `Loxy` | **Loxy** | Chuẩn hóa Master |
 | `Lucky` | **Lai Phúc** | Chuẩn hóa Master |
 | `Lucky Clip` | **Kẹp May Mắn** | Chuẩn hóa Master |
 | `Lucky Rubbi` | **Thỏ May Mắn Rubbi** | Chuẩn hóa Master |
@@ -726,6 +737,7 @@
 | `Midnight Mayhem` | **Nửa Đêm Thiên Sứ Sa Ngã** | Chuẩn hóa Master |
 | `Mini Flush` | **Thuần Sắc** | Chuẩn hóa Master |
 | `Minion DMG` | **Sát Thương Triệu Hồi Vật** | Chuẩn hóa Master |
+| `Minor Sword Aura` | **Tiểu Kiếm Khí** | Chuẩn hóa Master |
 | `Minova` | **Minova** | Chuẩn hóa Master |
 | `Minova: Awakened` | **Minova: Thức Tỉnh** | Chuẩn hóa Master |
 | `Minova: Default` | **Minova: Mặc Định** | Chuẩn hóa Master |
@@ -755,7 +767,9 @@
 | `Mountainous Space Walker` | **Lữ Hành Không Gian: Trùng Loan** | Chuẩn hóa Master |
 | `Move SPD` | **Tốc Độ Di Chuyển** | Chuẩn hóa Master |
 | `Movement SPD` | **Tốc Độ Di Chuyển** | Chuẩn hóa Master |
+| `Multi Sword Aura` | **Đa Trọng Kiếm Khí** | Chuẩn hóa Master |
 | `Mutual Understanding` | **Hiểu Lòng Nhau** | Chuẩn hóa Master |
+| `My Guiding Star` | **Ngôi Sao Dẫn Đường** | Chuẩn hóa Master |
 | `My Stage, My Creation` | **Sân Khấu Do Chính Tôi Dựng Xây** | Chuẩn hóa Master |
 | `Mystery of Gyration` | **Áo Nghĩa Hồi Chuyển** | Chuẩn hóa Master |
 | `Mystic Brushstrokes` | **Rồng Múa Phượng Bay** | Chuẩn hóa Master |
@@ -787,6 +801,7 @@
 | `Nightmare Head Executioner` | **Đao Phủ Trưởng Ác Mộng** | Chuẩn hóa Master |
 | `Nocturn Eterna` | **Tàn Tro Vĩnh Hằng** | Chuẩn hóa Master |
 | `Nocturne Beat` | **Tiết Tấu Dạ Khúc** | Chuẩn hóa Master |
+| `Noname` | **Vô Danh** | Chuẩn hóa Master |
 | `Normal Attack` | **Đòn Đánh Thường** | Chuẩn hóa Master |
 | `Normal Attack build` | **Lối chơi cường hóa đánh thường** | Chuẩn hóa Master |
 | `Notice` | **Thông Báo** | Chuẩn hóa Master |
@@ -896,12 +911,14 @@
 | `Rippling Void of the Darkest Heartbreak` | **Sóng Gương Lấp Lánh ☆ Nỗi Đau Đêm Tối** | Chuẩn hóa Master |
 | `Rippling Waves, a Touch so Gentle` | **Sóng Nước Lăn Tăn Đầu Ngón Tay** | Chuẩn hóa Master |
 | `Rise with Zephyr` | **Cưỡi Gió Vút Bay** | Chuẩn hóa Master |
+| `Rising Dragon Slash` | **Thăng Long Trảm** | Chuẩn hóa Master |
 | `Rock Party` | **Bữa Tiệc Rock** | Chuẩn hóa Master |
 | `Rolling Charge` | **Lăn Tròn Xung Kích** | Chuẩn hóa Master |
 | `Rolling Chase` | **Lăn Tròn Truy Đuổi** | Chuẩn hóa Master |
 | `Rookie Hero Reporting In` | **Tân Binh Dũng Giả Đến Trình Diện** | Chuẩn hóa Master |
 | `Rotting Silencer` | **Chiêm Vọng Hủ Bại** | Chuẩn hóa Master |
 | `Royal Rebate` | **Hoàn Trả Hoàng Gia** | Chuẩn hóa Master |
+| `Ruin Wind` | **Tàn Phong** | Chuẩn hóa Master |
 | `Sad` | **Buồn Bã** | Chuẩn hóa Master |
 | `Safe` | **Két Sắt** | Chuẩn hóa Master |
 | `Salutes Boomed` | **Pháo Lễ Vang Rền** | Chuẩn hóa Master |
@@ -956,6 +973,7 @@
 | `Skill Cartridge` | **Băng Đạn Kỹ Năng** | Chuẩn hóa Master |
 | `Skill Charge` | **Tích Năng Kỹ Năng** | Chuẩn hóa Master |
 | `Skill cycle build` | **Lối chơi luân chuyển kỹ năng** | Chuẩn hóa Master |
+| `Sky Splitter Void Rupture Slash` | **Liệt Không Đoạn Phá Trảm** | Chuẩn hóa Master |
 | `Sky of Fantasy` | **Vòm Trời Ảo Tưởng** | Chuẩn hóa Master |
 | `Sky, Flowers, Poem` | **Trời, Hoa Và Thi Ca** | Chuẩn hóa Master |
 | `Slide` | **Lướt Âm** | Chuẩn hóa Master |
@@ -1058,7 +1076,9 @@
 | `Sweep` | **Quét Ải** | Chuẩn hóa Master |
 | `Sweet Creek` | **Suối Ngọt** | Chuẩn hóa Master |
 | `Sweet Times` | **Lời Ngọt Trái Thơm** | Chuẩn hóa Master |
+| `Swift Wind Flash` | **Tấn Phong Thiểm** | Chuẩn hóa Master |
 | `Sword Against Stream` | **Kiếm Sắc Nghịch Dòng Nước** | Chuẩn hóa Master |
+| `Sword Aura` | **Kiếm Khí** | Chuẩn hóa Master |
 | `Sword-and-Shield Vanguard` | **Tiên Phong Kiếm Khiên** | Chuẩn hóa Master |
 | `Sword-and-Shield Vanguard: Gust` | **Tiên Phong Kiếm Khiên: Hô Khiếu** | Chuẩn hóa Master |
 | `Sword-and-Shield Vanguard: Heat` | **Tiên Phong Kiếm Khiên: Chước Nhiệt** | Chuẩn hóa Master |
@@ -1153,6 +1173,7 @@
 | `Veiled Dawn of Spring` | **Màn Trướng Nhuộm Nắng Xuân** | Chuẩn hóa Master |
 | `Veiled Negative` | **Phim Âm Bản Bí Ẩn** | Chuẩn hóa Master |
 | `Ventus` | **Phong** | Chuẩn hóa Master |
+| `Ventus Mark: Breeze` | **Phong Ấn: Phong Tức** | Chuẩn hóa Master |
 | `Vernal Zephyr` | **Gió Xuân Tan Tuyết** | Chuẩn hóa Master |
 | `Versatile` | **Cân Bằng** | Chuẩn hóa Master |
 | `Victorious Pursuit` | **Thừa Thắng Xông Lên** | Chuẩn hóa Master |
@@ -1198,6 +1219,7 @@
 | `Whirling Great Glopo: Torrent` | **Khối Bùn Xoáy Khổng Lồ: Đoan Lưu** | Chuẩn hóa Master |
 | `Whirling Thunder Claw` | **Phi Toàn Phách Lịch Trảo** | Chuẩn hóa Master |
 | `White Cat Troupe` | **Đoàn Kịch Mèo Trắng** | Chuẩn hóa Master |
+| `Wholeness at Reunion's Dawn` | **Viên Mãn Nơi Bình Minh Tái Ngộ** | Chuẩn hóa Master |
 | `Wild Brushstrokes` | **Nét Mực Cuồng Phóng** | Chuẩn hóa Master |
 | `Wilds` | **Vùng Hoang Dã** | Chuẩn hóa Master |
 | `Wildwood Boon` | **Sâm Lâm Chi Chúc** | Chuẩn hóa Master |
@@ -1219,6 +1241,7 @@
 | `Wisteria Dream` | **Giấc Mộng Tiên Tử Đằng** | Chuẩn hóa Master |
 | `Witch's Swing` | **Xích Đu Phù Thủy** | Chuẩn hóa Master |
 | `With Graceful Steps, Elegance Arrives` | **Vũ Điệu Thanh Tao, Tiểu Thư Xuất Hiện** | Chuẩn hóa Master |
+| `Withered Wind` | **Tàn Phong** | Chuẩn hóa Master |
 | `Wolfpack Coordination` | **Bầy Sói Phối Hợp** | Chuẩn hóa Master |
 | `Words into Longing` | **Câu Chữ Hóa Nỗi Tương Tư** | Chuẩn hóa Master |
 | `Words of Endless Devotion` | **Từng Chữ Từng Lời Đều Là Chân Tình** | Chuẩn hóa Master |
