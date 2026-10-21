@@ -50,7 +50,7 @@ NOTIFS_FILE = EXE_DIR / "notifications.json"
 BACKUP_DIR = EXE_DIR / "backups"
 
 DEFAULT_CONFIG = {
-    "version": "0.8.5",
+    "version": "0.9.0",
     "app_name": "Stella Sora Việt Hóa - Multiplatform & Steam Launcher",
     "default_game_path": "C:\\YostarGames\\StellaSora_EN",
     "github_repo": "doubleD1302/AmeeVH",

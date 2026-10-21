@@ -97,6 +97,15 @@ def main():
         master_dict.update({k.strip(): v.strip() for k, v in rem_d.items()})
         print(f"Total master dictionary size after remaining dialogue: {len(master_dict)}")
 
+    # Source C: High-Quality Handcrafted Chat & Anti-Calque Dictionary
+    try:
+        from polish_all_pm_chat_strings import CHAT_DICTIONARY
+        for en, vi in CHAT_DICTIONARY.items():
+            master_dict[en.strip()] = vi.strip()
+        print(f"Applied {len(CHAT_DICTIONARY)} high-quality chat overrides to master dictionary.")
+    except Exception as e:
+        print(f"Note: Could not load CHAT_DICTIONARY: {e}")
+
     # 2. Load Mapping of 626 Lua AVG files
     mapping_path = ROOT / "work" / "research" / "avg_file_to_entry.json"
     mapping = json.load(open(mapping_path, encoding="utf-8"))
