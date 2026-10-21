@@ -1,13 +1,20 @@
 {
-  "version": "0.9.0",
+  "version": "0.9.5",
   "updated_at": "2026-10-21",
   "announcements": [
     {
+      "id": "NOTIF-011",
+      "date": "2026-10-21",
+      "title": "Bản cập nhật v0.9.5: Đột phá Việt Hóa Hình Ảnh & 60 AssetBundles Đồ Họa",
+      "type": "release",
+      "content": "Chính thức kích hoạt Việt hóa hình ảnh vẽ chữ trong game (drawn-text textures / typography)! Nạp trực tiếp 493 hình ảnh tiếng Việt (100% Truyện tranh 4 ô màn hình chờ, 100% Danh hiệu nhân vật & người chơi, 79 Logo tiêu đề chương & sự kiện) vào 60 tệp AssetBundles (.en.unity3d) của cả Yostar Client và Steam PC. Phát hành kèm gói nén AssetBundles và gói thư viện ảnh tương tác HTML Gallery tra cứu trực quan."
+    },
+    {
       "id": "NOTIF-010",
       "date": "2026-10-21",
-      "title": "Bản cập nhật v0.8.5: Việt Hóa Toàn Diện Thoại & Tin Nhắn, Khử Hán Việt",
+      "title": "Bản cập nhật v0.9.0: Việt Hóa 100% Lời Thoại Nhân Vật & Khử Sạch Calque Chat",
       "type": "release",
-      "content": "Đột phá công nghệ Lua 5.3 Bytecode Engine: Chính thức kích hoạt 100% tiếng Việt cho toàn bộ Kịch bản cốt truyện chính, Thoại lồng tiếng nhân vật và toàn bộ Tin nhắn điện thoại (66.161 chuỗi kịch bản qua Scripts/lua.arcx). Trau chuốt văn phong chuẩn người Việt: Khử triệt để lạm dụng từ Hán Việt/trang trọng quá mức, chuyển hóa thành văn phong tự nhiên, trẻ trung, dí dỏm, đậm chất anime RPG. Launcher v0.8.5 chính thức hỗ trợ cài đặt & đồng bộ song song cả Tables/data.arcx và Scripts/lua.arcx cho Steam PC và Yostar."
+      "content": "Việt hóa trọn bộ 4.400 mục lồng tiếng (6.658 câu thoại phụ đề VoiceTable) bao gồm bong bóng thoại màn hình chính (Alina, Noya, Amber...) và thoại chiến đấu. Khử sạch toàn bộ từ ngữ máy dịch thô cứng trong tin nhắn điện thoại (PM*.lua), đồng nhất xưng hô và chuẩn hóa tên Firstlight Noya thành Noya - Khải Minh."
     },
     {
       "id": "NOTIF-009",
@@ -17,32 +24,11 @@
       "content": "Đột phá lịch sử: 100% toàn bộ cơ sở dữ liệu game Stella Sora đã được Việt hóa hoàn tất (71.249 chuỗi / 229 bảng dữ liệu, 0 câu tiếng Anh sót lại). Launcher nâng cấp v0.8.0 chính thức hỗ trợ toàn diện Steam PC (AppID 4813850), tự động nhận diện thư viện Steam, chọn thư mục tự do, khởi động mượt mà với Steam Overlay & tay cầm."
     },
     {
-      "id": "NOTIF-008",
-      "date": "2026-10-20",
-      "title": "Bản cập nhật v0.8.0: Hỗ trợ Steam PC & Đột phá 40.000 câu thoại AVG",
-      "type": "release",
-      "content": "Launcher chính thức nâng cấp v0.8.0: Tự động phát hiện thư viện Steam (AppID 4813850), hỗ trợ duyệt thư mục linh hoạt, khởi động 1-chạm qua Steam Overlay & tay cầm. Tích hợp trọn bộ 88,655 chuỗi Việt hóa (100% 4 đợt cốt truyện AVG 40,000 câu thoại + 48,562 chuỗi database)."
-    },
-    {
       "id": "NOTIF-001",
       "date": "2026-10-19",
       "title": "Ra mắt bộ công cụ Việt hóa Stella Sora (PC & Android ADB)",
       "type": "release",
       "content": "Chào mừng bạn đến với dự án Việt hóa Stella Sora! Phiên bản hỗ trợ cài đặt 1-chạm cho PC, hỗ trợ Android qua local ADB với thông báo nổi, tự động cập nhật qua GitHub và báo lỗi 1-chạm."
-    },
-    {
-      "id": "NOTIF-002",
-      "date": "2026-10-19",
-      "title": "Hoàn thành giai đoạn dịch phụ đề mở đầu & ca từ",
-      "type": "info",
-      "content": "Toàn bộ 51 cue phụ đề (Prologue JPVA, Prologue CNVA, Ending Chapter 4, Ending Chapter 6) đã hoàn thành bản dịch tiếng Việt chuẩn NFC, vượt qua static audit và sẵn sàng thử nghiệm."
-    },
-    {
-      "id": "NOTIF-003",
-      "date": "2026-10-19",
-      "title": "Hướng dẫn gửi báo cáo lỗi cho Dev",
-      "type": "tip",
-      "content": "Nếu gặp bất kỳ sự cố nào trong quá trình cài đặt hoặc chơi game, bạn chỉ cần bấm nút 'Sao chép mã lỗi cho Dev' và dán (Ctrl+V) vào kênh hỗ trợ để dev xử lý nhanh nhất."
     }
   ]
 }
