@@ -1,7 +1,14 @@
 {
-  "version": "0.9.5",
-  "updated_at": "2026-10-21",
+  "version": "0.9.6",
+  "updated_at": "2026-10-23",
   "announcements": [
+    {
+      "id": "NOTIF-012",
+      "date": "2026-10-23",
+      "title": "Bản cập nhật v0.9.6: Chuẩn hóa Quy trình Texture An toàn & Xác thực Manifest",
+      "type": "release",
+      "content": "Nâng cấp tính năng đồng bộ GitHub Releases với cơ chế xác thực Manifest (patch_manifest.json), kiểm tra mã băm SHA256 từng tệp, thay thế nguyên tử (atomic replace), bảo vệ chống tràn đường dẫn (path traversal) và sao lưu preimage an toàn. Tích hợp 53 truyện tranh 4 ô màn hình chờ trong 16 AssetBundles (.en.unity3d) đã kiểm chứng 100% không cắt chữ. Các danh hiệu và banner đang chờ adapter mesh/atlas."
+    },
     {
       "id": "NOTIF-011",
       "date": "2026-10-21",
