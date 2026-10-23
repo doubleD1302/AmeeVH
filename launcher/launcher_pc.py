@@ -1647,6 +1647,107 @@ class LauncherGUI:
 
         threading.Thread(target=worker, daemon=True).start()
 
+    def on_rollback_pc(self):
+        if not messagebox.askyesno("Xác Nhận", "Bạn có chắc chắn muốn khôi phục toàn bộ tệp game về bản gốc nguyên thủy?"):
+            return
+
+        def worker():
+            self.btn_rollback.config(state="disabled")
+            self.log_ui("Bắt đầu khôi phục...")
+            ok, msg = LocalizationEngine.rollback_pc(self.game_path, log_cb=self.log_ui)
+            if ok:
+                messagebox.showinfo("Thành Công", "Đã khôi phục game về nguyên bản gốc!")
+            else:
+                messagebox.showerror("Lỗi Khôi Phục", f"Lỗi khôi phục: {msg}")
+            self.btn_rollback.config(state="normal")
+            self.refresh_status()
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def on_scan_adb(self):
+        devices = ADBBridge.list_devices()
+        if devices:
+            self.lbl_adb_devices.config(text=f"Thiết bị phát hiện: {', '.join(devices)}", fg="#a6e3a1")
+            self.log_ui(f"Phát hiện thiết bị ADB: {devices}")
+        else:
+            self.lbl_adb_devices.config(text="Không tìm thấy thiết bị ADB nào kết nối!", fg="#f38ba8")
+            self.log_ui("Không tìm thấy thiết bị ADB.")
+
+    def on_send_floating_notif(self):
+        devices = ADBBridge.list_devices()
+        if not devices:
+            messagebox.showwarning("Cảnh Báo", "Vui lòng kết nối thiết bị Android / giả lập trước!")
+            return
+        ADBBridge.trigger_floating_notification(devices[0], "Stella Sora Việt Hóa đang hoạt động!")
+        messagebox.showinfo("Thông Báo", f"Đã gửi lệnh kích hoạt thông báo nổi tới thiết bị {devices[0]}!")
+
+    def load_announcements(self):
+        items = GitHubManager.fetch_announcements(self.config.get("remote_notifications_url", ""))
+        self.txt_news.delete("1.0", "end")
+        for item in items:
+            self.txt_news.insert("end", f"📌 [{item.get('date', '')}] {item.get('title', '')}\n", "title")
+            self.txt_news.insert("end", f"{item.get('content', '')}\n\n", "body")
+        self.txt_news.tag_config("title", font=("Segoe UI", 11, "bold"), foreground="#89b4fa")
+        self.txt_news.tag_config("body", font=("Segoe UI", 10), foreground="#cdd6f4")
+
+    def on_open_release_url(self):
+        url = "https://github.com/doubleD1302/AmeeVH/releases"
+        if self.latest_release_info and self.latest_release_info.get("html_url"):
+            url = self.latest_release_info["html_url"]
+        webbrowser.open(url)
+
+    def on_check_github(self):
+        def worker():
+            repo = self.config.get("github_repo", "doubleD1302/AmeeVH")
+            cur_ver = self.config.get("version", "0.1.0")
+            res = GitHubManager.check_updates(repo, cur_ver)
+            self.latest_release_info = res
+
+            def update_ui():
+                if res.get("success"):
+                    tag = res.get("tag", "v0.0.0")
+                    name = res.get("name", tag)
+                    date = res.get("date", "")
+                    has_up = res.get("has_update", False)
+                    body = res.get("body", "")
+
+                    if has_up:
+                        self.lbl_rel_status.config(text=f"⚡ ĐÃ CÓ BẢN CẬP NHẬT MỚI: {tag} ({name})", fg="#a6e3a1")
+                        self.lbl_rel_details.config(text=f"Bản hiện tại: v{cur_ver}  ➔  Bản mới nhất: {tag} (Phát hành: {date})")
+                        self.btn_auto_download.config(state="normal", text=f"⚡ TẢI & CẬP NHẬT LÊN {tag} (1-CHẠM)")
+                    else:
+                        self.lbl_rel_status.config(text=f"✓ Bạn đang sử dụng bản phát hành mới nhất ({tag})", fg="#89b4fa")
+                        self.lbl_rel_details.config(text=f"Bản hiện tại: v{cur_ver} | Phát hành: {date} | Trạng thái: Đồng bộ 100%")
+                        self.btn_auto_download.config(state="normal", text="🔄 Tải Lại / Đồng Bộ Lại Bản Mới Nhất")
+
+                    # Display release notes
+                    self.txt_news.delete("1.0", "end")
+                    self.txt_news.insert("end", f"✨ [{tag}] {name}\n", "title")
+                    self.txt_news.insert("end", f"📅 Ngày phát hành: {date}\n", "sub")
+                    self.txt_news.insert("end", f"🔗 Đường dẫn: {res.get('html_url')}\n\n", "sub")
+                    self.txt_news.insert("end", "Nội dung cập nhật:\n", "h2")
+                    self.txt_news.insert("end", f"{body}\n\n", "body")
+
+                    # Add announcements below
+                    self.txt_news.insert("end", "────────────────────────────────────────\n", "sub")
+                    self.txt_news.insert("end", "📢 THÔNG BÁO DỰ ÁN\n\n", "h2")
+                    items = GitHubManager.fetch_announcements(self.config.get("remote_notifications_url", ""))
+                    for item in items:
+                        self.txt_news.insert("end", f"📌 [{item.get('date', '')}] {item.get('title', '')}\n", "title")
+                        self.txt_news.insert("end", f"{item.get('content', '')}\n\n", "body")
+
+                    self.txt_news.tag_config("title", font=("Segoe UI", 11, "bold"), foreground="#89b4fa")
+                    self.txt_news.tag_config("h2", font=("Segoe UI", 10, "bold"), foreground="#fab387")
+                    self.txt_news.tag_config("sub", font=("Segoe UI", 9), foreground="#a6adc8")
+                    self.txt_news.tag_config("body", font=("Segoe UI", 10), foreground="#cdd6f4")
+                else:
+                    self.lbl_rel_status.config(text="⚠️ Không thể đồng bộ với GitHub Releases", fg="#f38ba8")
+                    self.lbl_rel_details.config(text=res.get("error", "Lỗi mạng hoặc không thể kết nối tới GitHub."))
+
+            self.root.after(0, update_ui)
+
+        threading.Thread(target=worker, daemon=True).start()
+
     def on_auto_update_release(self):
         if not self.latest_release_info or not self.latest_release_info.get("success"):
             messagebox.showwarning("Cảnh Báo", "Vui lòng đợi kiểm tra bản phát hành GitHub trước!")
