@@ -29,7 +29,7 @@ from UnityPy.streams import EndianBinaryReader
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = PROJECT_ROOT.parent
-SOURCE_BUNDLES_DIR = WORKSPACE_ROOT / "Persistent_Store" / "AssetBundles"
+SOURCE_BUNDLES_DIR = PROJECT_ROOT / "backups" / "steam_installresource_backup_20261023"
 STEAM_BUNDLES_DIR = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora\Persistent_Store\AssetBundles")
 
 DIST_TEX_VI = PROJECT_ROOT / "dist" / "StellaSora_Texture_VI"
@@ -38,7 +38,7 @@ ZIP_OUTPUT = PROJECT_ROOT / "dist" / "StellaSora_AssetBundles_VI_Cat123.zip"
 
 CATEGORIES = [
     "01_TruyenTranh_LoadingComics_VI",
-    "02_DanhHieu_HonorTitles_VI",
+    # "02_DanhHieu_HonorTitles_VI" - Giữ nguyên tài nguyên gốc theo yêu cầu người dùng
     "03_TieuDe_Logos_Headers_VI"
 ]
 
@@ -208,6 +208,7 @@ def run_batch_patch():
 
     # 6b. Steam Game
     steam_updated = 0
+    steam_install_dir = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora\StellaSora_Data\StreamingAssets\InstallResource")
     if STEAM_BUNDLES_DIR.exists():
         for b_file in STAGING_DIR.glob("*.en.unity3d"):
             dest = STEAM_BUNDLES_DIR / b_file.name
@@ -216,7 +217,15 @@ def run_batch_patch():
                 shutil.copy2(dest, bak)  # Backup original
             shutil.copy2(b_file, dest)
             steam_updated += 1
-        print(f"   ✓ Đã cài đặt {steam_updated} bundles vào Steam PC (đã sao lưu *.orig_en)")
+        print(f"   ✓ Đã cài đặt {steam_updated} bundles vào Steam Persistent_Store (đã sao lưu *.orig_en)")
+
+    if steam_install_dir.exists():
+        s_inst_count = 0
+        for b_file in STAGING_DIR.glob("*.en.unity3d"):
+            dest = steam_install_dir / b_file.name
+            shutil.copy2(b_file, dest)
+            s_inst_count += 1
+        print(f"   ✓ Đã cài đặt {s_inst_count} bundles vào Steam StreamingAssets/InstallResource")
 
     t_total = time.time() - t_start
     print(f"\n=== HOÀN TẤT TOÀN DIỆN TRONG {t_total:.2f} GIÂY ===")
