@@ -240,6 +240,12 @@ def main():
     print(f"  Files patched with Vietnamese: {stats['patched_files']}")
     print(f"  Total dialogue strings replaced: {stats['patched_strings']:,}")
 
+    # 4.1 Patch AvgContacts.lua with Vietnamese signatures and bios
+    from patch_avg_contacts import patch_avg_contacts_entry
+    contacts_entry = entries_dir / "02804_0x6b338c3a32f44951.bin"
+    if contacts_entry.exists():
+        patch_avg_contacts_entry(contacts_entry)
+
     # 5. Repack lua.arcx
     output_lua_arcx = ROOT / "dist" / "lua_patched_vi.arcx"
     unpacked_dir = ROOT / "work" / "research" / "lua_full_unpacked"
@@ -252,12 +258,24 @@ def main():
     print(f"  Size: {output_lua_arcx.stat().st_size:,} bytes")
     print(f"  Entries: {len(arc_out.entries)}")
 
-    # 6. Synchronize to live game
-    live_script = Path(r"c:\YostarGames\StellaSora_EN") / "Persistent_Store" / "Scripts" / "lua.arcx"
-    if live_script.parent.exists():
-        print(f"\nSynchronizing to live game: {live_script}...")
-        shutil.copy2(output_lua_arcx, live_script)
-        print(f"SUCCESS! Synced to {live_script} ({live_script.stat().st_size:,} bytes)")
+    # 6. Synchronize to live game (Both Standalone and Steam installation!)
+    live_targets = [
+        Path(r"c:\YostarGames\StellaSora_EN") / "Persistent_Store" / "Scripts" / "lua.arcx",
+        Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora") / "Persistent_Store" / "Scripts" / "lua.arcx"
+    ]
+    for target in live_targets:
+        if target.parent.exists():
+            print(f"\nSynchronizing to: {target}...")
+            shutil.copy2(output_lua_arcx, target)
+            print(f"SUCCESS! Synced to {target} ({target.stat().st_size:,} bytes)")
+
+    # Also synchronize tables (data.arcx) to Steam
+    standalone_data = Path(r"c:\YostarGames\StellaSora_EN") / "Persistent_Store" / "Tables" / "data.arcx"
+    steam_data = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora") / "Persistent_Store" / "Tables" / "data.arcx"
+    if standalone_data.exists() and steam_data.parent.exists():
+        print(f"\nSynchronizing tables to Steam: {steam_data}...")
+        shutil.copy2(standalone_data, steam_data)
+        print(f"SUCCESS! Synced tables to {steam_data}")
 
 if __name__ == "__main__":
     main()
