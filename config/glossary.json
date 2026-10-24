@@ -1747,10 +1747,10 @@
     },
     {
       "source": "City of a Thousand Monoliths",
-      "target": "Thành Phố Ngàn Cự Tháp",
+      "target": "Thiên Tháp Chi Thành",
       "status": "approved",
       "category": "Location",
-      "notes": "Thành Phố Ngàn Cự Tháp"
+      "notes": "Thành phố ngàn Cự Tháp. CẤM calque thành 'Thành phố ngàn khối đá'."
     },
     {
       "source": "Soul Stone",
@@ -1798,8 +1798,8 @@
       "source": "Snowish Festival",
       "target": "Lễ Hội Mùa Tuyết",
       "status": "approved",
-      "category": "Event",
-      "notes": "Lễ hội Mùa Tuyết"
+      "category": "Event / Lore",
+      "notes": "Lễ hội mùa đông ngập tràn tuyết trắng trong STev_02. CẤM dịch 'Lễ Hội Snowish' hay 'Lễ hội Tuyết rơi'."
     },
     {
       "source": "Snowish Festival Messenger",
@@ -2164,6 +2164,55 @@
       "status": "approved",
       "category": "Idiom",
       "notes": "Lời nói dối vô hại xuất phát từ ý tốt. BẪY PHẢN NGHĨA CỰC KỲ NGUY HIỂM: CẤM dịch thành 'lời nói dối trắng trợn'."
+    },
+    {
+      "source": "Snowish Tree Spirit",
+      "target": "Tinh Linh Cây Tuyết",
+      "status": "approved",
+      "category": "Lore / Character",
+      "notes": "Tinh linh hộ mệnh ngự trên Cây Tuyết thực hiện điều ước cho trẻ thơ (Laru đóng vai). CẤM dịch 'Thần cây tuyết', 'Tinh thần cây tuyết', 'Cô Linh'."
+    },
+    {
+      "source": "Springseek Festival",
+      "target": "Lễ Hội Tầm Xuân",
+      "status": "approved",
+      "category": "Event / Lore",
+      "notes": "Tầm Xuân Tiết (Lễ Hội Tầm Xuân) — ngày hội đón Tết đầu năm của vùng đất Thương Ngô (Cangwu) và Tộc Long."
+    },
+    {
+      "source": "Nian",
+      "target": "Niên Thú",
+      "status": "approved",
+      "category": "Monster / Lore",
+      "notes": "Quái thú truyền thuyết ngày Tết của Tộc Long tại Thương Ngô. CẤM để nguyên tiếng Anh Nian."
+    },
+    {
+      "source": "Norstheim",
+      "target": "Norstheim",
+      "status": "approved",
+      "category": "Location",
+      "notes": "Đô thành băng tuyết phương Bắc hùng vĩ, quê hương của Edda bị Đêm Trường Vĩnh Cửu phá hủy."
+    },
+    {
+      "source": "Frozen Ruins",
+      "target": "Tàn Tích Băng Giá",
+      "status": "approved",
+      "category": "Location / Dungeon",
+      "notes": "Tàn tích ngầm bị băng tuyết bao phủ tại phương Bắc. CẤM dịch thô 'Tàn tích đông lạnh'."
+    },
+    {
+      "source": "Chariot",
+      "target": "Chiến Xa",
+      "status": "approved",
+      "category": "Archon / Lore",
+      "notes": "Chấp Chính Quan Chiến Xa (Archon Chariot). CẤM calque thành 'Xe ngựa'."
+    },
+    {
+      "source": "Ghost",
+      "target": "U Linh",
+      "status": "approved",
+      "category": "Archon / Lore",
+      "notes": "Chấp Chính Quan U Linh (Archon Ghost). CẤM calque thành 'Bóng ma'."
     }
   ],
   "forbidden_calques": [
@@ -2250,7 +2299,7 @@
     {
       "wrong": "Lễ Hội Snowish",
       "correct": "Lễ Hội Mùa Tuyết",
-      "rule": "CẤM để nửa Anh nửa Việt Snowish Festival"
+      "rule": "CẤM DỊCH NỬA VỜI 'Snowish Festival' thành 'Lễ Hội Snowish'."
     },
     {
       "wrong": "vụ cướp đường cao tốc",
@@ -2326,6 +2375,31 @@
       "wrong": "Vai quay lại",
       "correct": "Thẳng lưng ưỡn ngực lên!",
       "rule": "CẤM DỊCH THÔ 'Shoulders back' thành 'Vai quay lại'."
+    },
+    {
+      "wrong": "Tinh thần cây tuyết",
+      "correct": "Tinh Linh Cây Tuyết",
+      "rule": "CẤM DỊCH MÁY THÔ 'Snowish Tree Spirit' thành 'Tinh thần cây tuyết' hay 'Thần cây tuyết'."
+    },
+    {
+      "wrong": "Dấu vết của Sprite",
+      "correct": "Dấu Vết Tiểu Tinh Linh",
+      "rule": "CẤM DỊCH MÁY 'Trace of the Sprite' thành 'Dấu vết của Sprite' (nước ngọt) hay 'Dấu vết tinh thần'."
+    },
+    {
+      "wrong": "Tàn tích đông lạnh",
+      "correct": "Tàn Tích Băng Giá",
+      "rule": "CẤM DỊCH THÔ 'Frozen Ruins' thành 'Tàn tích đông lạnh'."
+    },
+    {
+      "wrong": "Thành phố ngàn khối đá",
+      "correct": "Thiên Tháp Chi Thành / Thành Phố Ngàn Cự Tháp",
+      "rule": "CẤM CALQUE 'City of a Thousand Monoliths' thành 'Thành phố ngàn khối đá'."
+    },
+    {
+      "wrong": "Xe ngựa và bóng ma",
+      "correct": "Chiến Xa và U Linh",
+      "rule": "CẤM CALQUE THÔ hai đại Chấp Chính Quan 'Chariot and Ghost' thành 'Xe ngựa và bóng ma'."
     }
   ]
 }
