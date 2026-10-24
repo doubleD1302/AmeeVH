@@ -93,8 +93,8 @@ def main():
         (entries_dir / fname).write_bytes(payload)
     print(f"Restored {len(arc_pristine.entries)} pristine entries.")
 
-    # 2. Build Scene-Specific Dictionaries for Campaigns 1, 2, 4, 5, 6, 7, 8
-    print("Building Scene-Specific Dictionaries from Campaigns 1, 2, 4, 5, 6, 7, 8...")
+    # 2. Build Scene-Specific Dictionaries for Campaigns 1, 2, 4, 5, 6, 7, 8, 9
+    print("Building Scene-Specific Dictionaries from Campaigns 1, 2, 4, 5, 6, 7, 8, 9...")
     p1 = ROOT / "work/editorial/lightnovel_editorial_20261024_r02/UNIFIED_STORY_PROPOSALS.jsonl"
     p2 = ROOT / "work/editorial/phone_messages_editorial_20261024_r01/UNIFIED_PHONE_PROPOSALS.jsonl"
     p4 = ROOT / "work/editorial/character_cg_stories_editorial_20261024_r01/UNIFIED_CG_PROPOSALS.jsonl"
@@ -102,9 +102,10 @@ def main():
     p6 = ROOT / "work/editorial/act2_climax_story_editorial_20261024_r01/UNIFIED_ACT2_CLIMAX_PROPOSALS.jsonl"
     p7 = ROOT / "work/editorial/phone_messages_phase2_20261024_r01/UNIFIED_PM_PHASE2_PROPOSALS.jsonl"
     p8 = ROOT / "work/editorial/act1_act2_story_editorial_20261024_r01/UNIFIED_ACT1_ACT2_PROPOSALS.jsonl"
+    p9 = ROOT / "work/editorial/act3_part1_story_editorial_20261024_r01/UNIFIED_ACT3_PART1_PROPOSALS.jsonl"
 
     scene_dicts = {}
-    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0, "c7": 0, "c8": 0}
+    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0, "c7": 0, "c8": 0, "c9": 0}
 
     campaigns = [
         (p1, "vi", "c1"),
@@ -113,7 +114,8 @@ def main():
         (p5, "vi_editorial", "c5"),
         (p6, "vi_editorial", "c6"),
         (p7, "vi_editorial", "c7"),
-        (p8, "vi_editorial", "c8")
+        (p8, "vi_editorial", "c8"),
+        (p9, "vi_editorial", "c9")
     ]
 
     for p, vi_key, cname in campaigns:
@@ -143,6 +145,7 @@ def main():
     print(f"  Campaign 6 (Act 2 Climax & Philae): {campaign_counts['c6']} scene lines")
     print(f"  Campaign 7 (Phone Phase 2): {campaign_counts['c7']} scene lines")
     print(f"  Campaign 8 (Act 1-2 Story): {campaign_counts['c8']} scene lines")
+    print(f"  Campaign 9 (Act 3 Part 1 Story): {campaign_counts['c9']} scene lines")
     print(f"  Total scene-specific dictionaries: {len(scene_dicts)} scenes")
 
     # 3. Master Dictionary for remaining general dialogues
