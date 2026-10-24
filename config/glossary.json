@@ -1763,8 +1763,8 @@
       "source": "Dusk Arbiter",
       "target": "Thẩm Phán Hoàng Hôn",
       "status": "approved",
-      "category": "Title/Faction",
-      "notes": "Thẩm Phán Hoàng Hôn - Tuyệt đối không dịch là Trọng tài"
+      "category": "Faction / Title",
+      "notes": "Tổ chức/chức vị tôn giáo dị giáo trực thuộc Grace. CẤM dịch là Trọng Tài Hoàng Hôn hay Trọng Tài Chạng Vạng."
     },
     {
       "source": "Dusk Arbiter Prison #7",
@@ -1833,8 +1833,8 @@
       "source": "Tyrant",
       "target": "Bạo Chúa",
       "status": "approved",
-      "category": "Title",
-      "notes": "Bạo Chúa - Tuyệt đối không dùng Bạo Quân"
+      "category": "Lore / Identity",
+      "notes": "Bạo Chúa huyền thoại trong quá khứ gắn liền với Sếp. CẤM dịch là Bạo Quân."
     },
     {
       "source": "Captain",
@@ -1854,8 +1854,8 @@
       "source": "Boss Accord",
       "target": "Hiệp Ước Của Sếp",
       "status": "approved",
-      "category": "Faction",
-      "notes": "Hiệp Ước Của Sếp"
+      "category": "Organization",
+      "notes": "Hiệp Hội / Tổ Chức của Sếp. Tuyệt đối không dịch thô là Hiệp Ước Boss hay Sếp Accord."
     },
     {
       "source": "Artifact",
@@ -1959,8 +1959,8 @@
       "source": "Ghost Ship",
       "target": "U Linh Hạm",
       "status": "approved",
-      "category": "Lore/Event",
-      "notes": "U Linh Hạm - Tàu ma phát sáng trong sự kiện mùa hè"
+      "category": "Event / Lore",
+      "notes": "Chiếc tàu ma huyền thoại trong sự kiện mùa hè STev_01. Dùng U Linh Hạm để tăng tính hào sảng, anime."
     },
     {
       "source": "The Ghost Ship",
@@ -1987,8 +1987,8 @@
       "source": "Arbiter Gerie",
       "target": "Thẩm Phán Gerie",
       "status": "approved",
-      "category": "Title/Role",
-      "notes": "Thẩm Phán Gerie - Cấm dịch Trọng tài Gerie"
+      "category": "Character / Title",
+      "notes": "Thẩm Phán Gerie. Tuyệt đối không dịch là Trọng tài Gerie."
     },
     {
       "source": "Sentinel of Dawn",
@@ -2029,8 +2029,8 @@
       "source": "Never Ending Summer",
       "target": "Mùa Hè Bất Tận",
       "status": "approved",
-      "category": "Event",
-      "notes": "Mùa Hè Bất Tận"
+      "category": "Event / Story",
+      "notes": "Tiêu đề cốt truyện sự kiện hè STev_01. CẤM dịch thô 'Mùa hè không bao giờ kết thúc'."
     },
     {
       "source": "Horizon",
@@ -2122,6 +2122,48 @@
       "status": "approved",
       "category": "Lore",
       "notes": "Hội Chứng Nghiện Sự Dễ Thương"
+    },
+    {
+      "source": "Trekkers' House",
+      "target": "Nhà Lữ Khách",
+      "status": "approved",
+      "category": "Location",
+      "notes": "Nhà nghỉ / trụ sở dừng chân của các Lữ Khách. CẤM dịch 'Các Lữ Khách' House'."
+    },
+    {
+      "source": "Messis Month",
+      "target": "Tháng Messis",
+      "status": "approved",
+      "category": "Calendar",
+      "notes": "Tháng Messis trong lịch thế giới Stella Sora. CẤM calque thành Tháng Messi."
+    },
+    {
+      "source": "Director Knight",
+      "target": "Kỵ Sĩ Đạo Diễn",
+      "status": "approved",
+      "category": "Character / Role",
+      "notes": "Nhân vật trong phim trường của Minova (STsp_15). CẤM dịch 'Hiệp sĩ đạo diễn'."
+    },
+    {
+      "source": "Masked Knight",
+      "target": "Kỵ Sĩ Mặt Nạ",
+      "status": "approved",
+      "category": "Character / Role",
+      "notes": "Trang phục / nhân vật lấy cảm hứng trong STsp_15. CẤM dịch 'Hiệp sĩ đeo mặt nạ'."
+    },
+    {
+      "source": "nautical log",
+      "target": "nhật ký hàng hải",
+      "status": "approved",
+      "category": "Item / Concept",
+      "notes": "Sổ nhật ký hải trình của bà Marlene. CẤM dịch nhầm thành 'nhật ký hải lý'."
+    },
+    {
+      "source": "white lie",
+      "target": "lời nói dối thiện ý",
+      "status": "approved",
+      "category": "Idiom",
+      "notes": "Lời nói dối vô hại xuất phát từ ý tốt. BẪY PHẢN NGHĨA CỰC KỲ NGUY HIỂM: CẤM dịch thành 'lời nói dối trắng trợn'."
     }
   ],
   "forbidden_calques": [
@@ -2193,12 +2235,12 @@
     {
       "wrong": "Trọng Tài Hoàng Hôn",
       "correct": "Thẩm Phán Hoàng Hôn",
-      "rule": "CẤM DỊCH Dusk Arbiter thành Trọng Tài Hoàng Hôn"
+      "rule": "CẤM DỊCH 'Dusk Arbiter' thành 'Trọng Tài Hoàng Hôn' hay 'Trọng Tài Chạng Vạng'. Arbiter là Thẩm Phán dị giáo tôn giáo."
     },
     {
       "wrong": "Bạo Quân",
       "correct": "Bạo Chúa",
-      "rule": "CẤM DỊCH Tyrant thành Bạo Quân"
+      "rule": "CẤM DỊCH 'Tyrant' thành 'Bạo Quân'. Phải chuẩn hóa thành Bạo Chúa."
     },
     {
       "wrong": "Thuyền trưởng",
@@ -2223,17 +2265,17 @@
     {
       "wrong": "Trọng tài Gerie",
       "correct": "Thẩm Phán Gerie",
-      "rule": "CẤM DỊCH Arbiter Gerie thành Trọng tài Gerie"
+      "rule": "CẤM DỊCH 'Arbiter Gerie' thành 'Trọng tài Gerie'."
     },
     {
       "wrong": "Tháng Messi",
       "correct": "Tháng Messis",
-      "rule": "CẤM DỊCH Messis Month thành Tháng Messi"
+      "rule": "CẤM CALQUE 'Messis Month' thành 'Tháng Messi'."
     },
     {
       "wrong": "Cô Liễu",
       "correct": "Cô Willow",
-      "rule": "CẤM dịch calque tên riêng Willow thành Cô Liễu"
+      "rule": "CẤM DỊCH tên riêng nhân vật 'Miss Willow' thành 'Cô Liễu'."
     },
     {
       "wrong": "Tất cả đã bình phương đi",
@@ -2243,12 +2285,47 @@
     {
       "wrong": "Mùa hè không bao giờ kết thúc",
       "correct": "Mùa Hè Bất Tận",
-      "rule": "CẤM dịch thô 'Never Ending Summer'"
+      "rule": "CẤM DỊCH 'Never Ending Summer' thành 'Mùa hè không bao giờ kết thúc'."
     },
     {
       "wrong": "nhật ký hải lý",
       "correct": "nhật ký hàng hải",
-      "rule": "CẤM dịch 'nautical log' thành nhật ký hải lý"
+      "rule": "CẤM DỊCH 'nautical log' thành 'nhật ký hải lý'."
+    },
+    {
+      "wrong": "Hiệp Ước Boss",
+      "correct": "Hiệp Ước Của Sếp",
+      "rule": "CẤM DỊCH nửa vời 'Boss Accord' thành 'Hiệp Ước Boss' hay 'Sếp Accord'."
+    },
+    {
+      "wrong": "Các Lữ Khách' House",
+      "correct": "Nhà Lữ Khách",
+      "rule": "CẤM GIỮ NGUYÊN sở hữu cách tiếng Anh 'Các Lữ Khách' House'. Chuẩn hóa là Nhà Lữ Khách."
+    },
+    {
+      "wrong": "Bạn đặt cược!",
+      "correct": "Chuẩn luôn! / Còn phải hỏi!",
+      "rule": "CẤM DỊCH THÔ thành ngữ 'You bet!' thành 'Bạn đặt cược!'."
+    },
+    {
+      "wrong": "Tất cả đã bình phương đi!",
+      "correct": "Chuẩn bị xong xuôi hết rồi!",
+      "rule": "CẤM DỊCH THÔ 'All squared away!' thành 'Tất cả đã bình phương đi!'."
+    },
+    {
+      "wrong": "lời nói dối trắng trợn",
+      "correct": "lời nói dối thiện ý / vô hại",
+      "rule": "BẪY PHẢN NGHĨA NGUY HIỂM: CẤM DỊCH 'a white lie' thành 'lời nói dối trắng trợn'."
+    },
+    {
+      "wrong": "Người đàn ông từ chức",
+      "correct": "Người đàn ông cam chịu / buông xuôi",
+      "rule": "CẤM DỊCH THÔ 'Resigned Man' thành 'Người đàn ông từ chức'."
+    },
+    {
+      "wrong": "Vai quay lại",
+      "correct": "Thẳng lưng ưỡn ngực lên!",
+      "rule": "CẤM DỊCH THÔ 'Shoulders back' thành 'Vai quay lại'."
     }
   ]
 }

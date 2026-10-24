@@ -1,6 +1,6 @@
 # Stella Sora — Master Glossary & Bản Đồ Thuật Ngữ Chuẩn Hóa
 
-> Cập nhật tự động phiên bản v0.6.0 (2026-10-20). Tổng số thuật ngữ chuẩn hóa: **1454**, quy tắc cấm calque: **98**.
+> Cập nhật tự động phiên bản v0.6.0 (2026-10-20). Tổng số thuật ngữ chuẩn hóa: **1461**, quy tắc cấm calque: **114**.
 
 ## 1. Nguyên Tắc Cốt Lõi Bản Địa Hóa
 
@@ -16,24 +16,26 @@
 | `Bão tuyết: Ngăn xếp` | **Thường Lượng: Điệp Gia (Blizzard: Stack)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Bạn có chép không` | **Nghe rõ không!?** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Bạn có sao chép không` | **Nghe rõ không!?** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Bạo Quân` | **Bạo Chúa** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Bạn đặt cược` | **Chuẩn luôn / Còn phải hỏi (You bet!)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Bạo Quân` | **Bạo Chúa (Tyrant)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Bột chắc chắn` | **Cầu Thủ Vạm Vỡ (Sturdy Batter)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cuộc chinh phục sao nhổ` | **Chinh Phục Đoạt Sao / Hái Sao Viễn Chinh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cá Voi 6 Sừng` | **Cá Voi Lục Sừng (Hexhorn Whale -> Cá Voi Lục Sừng)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Các Lữ Khách' House` | **Nhà Lữ Khách** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Các Lữ Khách' House` | **Nhà Lữ Khách (Trekkers' House)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Có sao chép không` | **Nghe rõ không!?** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Cô Liễu` | **Cô Willow (tên riêng)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Cổ Vật` | **Di Vật** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Cổ vật` | **Di Vật** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Cô Liễu` | **Cô Willow (Miss Willow)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Cổ Vật` | **Di Vật (Artifact)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Cổ vật` | **Di Vật (Artifact)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cự Thạch` | **Cự Tháp (khi chỉ Monolith)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Dự báo thời tiết lạnh` | **Dự Báo Hàn Băng (Chill Forecast)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Firstlight Sơ Quang` | **Khải Minh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Grand Thanh tra` | **Đại Thanh Tra** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Grand Thanh tra` | **Đại Thanh Tra (Grand Inspector)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hiệp sĩ đeo mặt nạ` | **Kỵ Sĩ Mặt Nạ** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hiệp sĩ đạo diễn` | **Kỵ Sĩ Đạo Diễn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Hiệp Ước Boss` | **Hiệp Ước Của Sếp (Boss Accord)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hiệu Trưởng Allie` | **Giám Đốc Allie (Director Allie -> Giám Đốc Allie)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hoa Hồng Ủy Thác` | **Thù lao ủy thác / Nhiệm vụ ủy thác (Commission / Commission Fee)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Hòn Hồn Thạch` | **Hồn Thạch** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Hòn Hồn Thạch` | **Hồn Thạch (Soul Stone)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hội Hoa Đăng (khi dịch Swimming Fish Festival)` | **Lễ Hội Cá Bơi** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Kim Khố Ý Chí Ân Tứ` | **Đế Quốc Grace (Grace Imperium -> Đế Quốc Grace)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Kỵ Sĩ Hoàng Gia` | **Cận Vệ Hoàng Gia (Imperial Guard -> Cận Vệ Hoàng Gia)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -41,6 +43,7 @@
 | `Lễ Hội Snowish rơi` | **Lễ Hội Mùa Tuyết** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Lời thề hiệp sĩ: Skyfall` | **Kỵ Thệ: Thiên Khung Băng Lạc (Knight Oath: Skyfall)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Mùa hè không bao giờ kết thúc` | **Mùa Hè Bất Tận (Never Ending Summer)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Người đàn ông từ chức` | **Người đàn ông cam chịu (Resigned Man)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Noya Sơ Quang` | **Noya - Khải Minh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Phòng Màu Trắng` | **Phòng Trắng (White Room -> Phòng Trắng)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Quý Cô Angie` | **Tiểu Thư Angie** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -48,22 +51,27 @@
 | `Sao nhổ` | **Đoạt Sao / Hái Sao** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Sơ Quang` | **Khải Minh (Tuyệt đối không dùng Sơ Quang, Firstlight Noya -> Noya - Khải Minh)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Sơ Quang Noya` | **Noya - Khải Minh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Sếp Accord` | **Hiệp Ước Của Sếp (Boss Accord)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Thuyền trưởng (khi chỉ Fuyuka)` | **Đội Trưởng** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Thành cổ Cây bụi` | **Pháo Đài Chuột Bụi (Citadel Shrubshrew)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Tháng Messi` | **Tháng Messis** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Tháng Messi` | **Tháng Messis (Messis Month)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Tháng ba không thể ngăn cản` | **Tiến Bước Trong Bão Tuyết (Unstoppable March)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Thưa bác sĩ (khi dịch Mentor trong STsp_13)` | **Tiền Bối / Người Hướng Dẫn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Thầy / Cố vấn (khi gọi Boss trong STsp_13)` | **Người Hướng Dẫn / Tiền Bối** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Trại Mồ Côi Cúc Họa Mi` | **Viện Mồ Côi Daisy** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Trại Mồ Côi Daisy` | **Viện Mồ Côi Daisy (Daisy Orphanage -> Viện Mồ Côi Daisy)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Trọng Tài Chạng Vạng` | **Trọng Tài Hoàng Hôn (Dusk Arbiter -> Trọng Tài Hoàng Hôn)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Trọng Tài Hoàng Hôn` | **Thẩm Phán Hoàng Hôn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Trọng tài Gerie` | **Thẩm Phán Gerie** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Trọng tài Hoàng hôn` | **Thẩm Phán Hoàng Hôn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng Tài Chạng Vạng` | **Thẩm Phán Hoàng Hôn (Dusk Arbiter)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng Tài Gerie` | **Thẩm Phán Gerie (Arbiter Gerie)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng Tài Hoàng Hôn` | **Thẩm Phán Hoàng Hôn (Dusk Arbiter)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng tài Gerie` | **Thẩm Phán Gerie (Arbiter Gerie)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng tài Hoàng hôn` | **Thẩm Phán Hoàng Hôn (Dusk Arbiter)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng tài hoàng hôn` | **Thẩm Phán Hoàng Hôn (Dusk Arbiter)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Tất cả đã bình phương đi` | **Chuẩn bị xong xuôi hết rồi (All squared away)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `U Linh Thuyền` | **U Linh Hạm (Ghost Ship -> U Linh Hạm)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Vai quay lại` | **Thẳng lưng ưỡn ngực lên (Shoulders back)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Vector: kiên cố hóa` | **Vector: Cố Hóa (Vector: Solidifying)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
-| `Viên Hồn Thạch` | **Hồn Thạch** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Viên Hồn Thạch` | **Hồn Thạch (Soul Stone)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `bạn đặt cược` | **chuẩn luôn / còn phải hỏi (you bet!)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `bạn đời (khi dịch partner trong STsp_09)` | **cộng sự** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `bị gây ra bởi` | **kích hoạt từ / gây ra bởi** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `bữa tiệc (khi dịch party trong STsp_09)` | **bên tham gia / phía đối tác** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -72,6 +80,8 @@
 | `chó con (khi dịch puppy trong STsp_03_02.59)` | **cún con** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `con cá bột (khi dịch fry trong STsp_05)` | **khoai tây chiên** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `có thể được sử dụng trong` | **dùng cho / dùng trong** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `cô Liễu` | **cô Willow (Miss Willow)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `cổ vật` | **di vật (artifact)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `cửa Loong (khi dịch Loong Gate trong STsp_03)` | **Long Môn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `giữ vững lập trường (khi dịch steady my stance)` | **đứng vững bộ tấn / thế tấn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `hào quang (khi dịch aura của Chitose)` | **kiếm khí** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -80,10 +90,13 @@
 | `khối đá` | **Cự Tháp (khi chỉ Monolith)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `lau sàn nhà kính với tôi (khi dịch wipe the floor)` | **xử đẹp tôi / dần tôi một trận tơi bời** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `lưỡi dao (khi dịch blade kiếm của Chitose)` | **lưỡi kiếm / thanh kiếm** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `lời nói dối trắng trợn` | **lời nói dối thiện ý / vô hại (white lie)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `lời nói dối trắng trợn (khi dịch a white lie)` | **lời nói dối thiện ý / vô hại** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `mua vở diễn (khi dịch buy the couple act)` | **mắc lừa / tin vào vở kịch** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `máy ảnh cuộn` | **bấm máy (roll camera)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `mất khả năng lao động` | **bị tê liệt / không thể hành động** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `người giúp việc (khi dịch maid Nanoha)` | **hầu gái** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `người đàn ông từ chức` | **người đàn ông cam chịu (Resigned Man)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `nhật ký hải lý` | **nhật ký hàng hải (nautical log)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `những thay đổi thực tế (khi dịch actual shifts trong STsp_11)` | **ca làm việc chính thức** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `nó giải phóng những tài năng chôn vùi` | **khai mở thiên phú say ngủ nơi sâu thẳm tâm hồn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -94,15 +107,18 @@
 | `sao chép điều đó` | **rõ rồi / nghe rõ** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `sát thương dẫn xuất` | **Sát Thương Phái Sinh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `tay cầm (khi dịch grip kiếm của Chitose)` | **bàn tay / chuôi kiếm** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `tháng Messi` | **tháng Messis (Messis Month)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `thời gian hồi phục` | **Hồi Chiêu / Thời Gian Hồi Chiêu** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `trạng thái đóng băng` | **Sương Ngưng Trệ Đóng Băng (Freezing Stasis)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `tìm hiểu (khi dịch dig in trong STsp_11)` | **khai tiệc / cùng ăn thôi** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `tối hậu thư` | **Tối Hậu Thư (Ultimatum)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `tổng lực chiến` | **Lực Chiến Toàn Đội** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `vai quay lại` | **thẳng lưng ưỡn ngực lên (Shoulders back)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `vết rách không gian` | **Vết Nứt Không Gian** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `vụ cướp đường cao tốc (khi dịch highway robbery)` | **chém giá cắt cổ / bóc lột trắng trợn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `xoắn ốc hoàn hảo` | **Vòng Xoáy Hoàn Hảo (Perfect Spiral)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `xếp hạng sức mạnh` | **Lực Chiến** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `âm thanh cuộn` | **thu âm (roll sound)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Đom đóm phát sáng: Rạng rỡ` | **Huỳnh Lưu: Phất Chiếu (Firefly Glow: Radiance)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Đom đóm phát sáng: Ánh sáng` | **Huỳnh Lưu: Lũng Quang (Firefly Glow: Luminary)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Đá Hồn` | **Hồn Thạch (Soul Stone -> Hồn Thạch)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -169,7 +185,7 @@
 | `Aqua` | **Thủy** | Chuẩn hóa Master |
 | `Arbiter` | **Thẩm Phán** | Chuẩn hóa Master |
 | `Arbiter Gerie` | **Thẩm Phán Gerie** | Chuẩn hóa Master |
-| `Arbiters` | **Thẩm Phán** | Chuẩn hóa Master |
+| `Arbiters` | **Các Thẩm Phán** | Chuẩn hóa Master |
 | `Archon` | **Chấp Chính Quan** | Chuẩn hóa Master |
 | `Archons` | **Các Chấp Chính Quan** | Chuẩn hóa Master |
 | `Ardent Trigger` | **Cò Súng Rực Lửa** | Chuẩn hóa Master |
@@ -472,7 +488,7 @@
 | `Dusk Arbiter` | **Thẩm Phán Hoàng Hôn** | Chuẩn hóa Master |
 | `Dusk Arbiter Prison #7` | **Nhà Tù Số 7 Thẩm Phán Hoàng Hôn** | Chuẩn hóa Master |
 | `Dusk Arbiter Tribunal` | **Tòa Án Thẩm Phán Hoàng Hôn** | Chuẩn hóa Master |
-| `Dusk Arbiters` | **Thẩm Phán Hoàng Hôn** | Chuẩn hóa Master |
+| `Dusk Arbiters` | **Các Thẩm Phán Hoàng Hôn** | Chuẩn hóa Master |
 | `Dust and Flames` | **Bụi Trần & Lửa Đỏ** | Chuẩn hóa Master |
 | `EXP Magnet` | **Nam Châm Kinh Nghiệm** | Chuẩn hóa Master |
 | `Eager Loong Staff` | **Nhân Viên Tộc Long Nhiệt Tình** | Chuẩn hóa Master |
@@ -1071,6 +1087,7 @@
 | `Prayer Beneath Light` | **Cầu Nguyện Dưới Ánh Sáng** | Chuẩn hóa Master |
 | `Precise Temperature Control` | **Chuẩn Xác Khống Nhiệt** | Chuẩn hóa Master |
 | `Preferred Enemy` | **Kình Địch Vừa Ý** | Chuẩn hóa Master |
+| `Prey-Chasing Trekker` | **Lữ Khách Săn Mồi** | Chuẩn hóa Master |
 | `Princess of the Wondrous Wilds` | **Công Chúa Xứ Rừng Diệu Kỳ** | Chuẩn hóa Master |
 | `Prison #7` | **Nhà Tù Số 7** | Chuẩn hóa Master |
 | `Prison of Passion` | **Giam Hãm Trong Men Tình** | Chuẩn hóa Master |
@@ -1113,6 +1130,7 @@
 | `Rehired` | **Tái Gia Nhập** | Chuẩn hóa Master |
 | `Relaxing Tea` | **Tách Trà Thư Thái** | Chuẩn hóa Master |
 | `Repeated Performance` | **Diễn Tấu Lặp Lại** | Chuẩn hóa Master |
+| `Resigned Man` | **Người đàn ông cam chịu** | Chuẩn hóa Master |
 | `Resilience` | **Điểm Kiên Cường** | Chuẩn hóa Master |
 | `Resilience Break` | **Phá Bền** | Chuẩn hóa Master |
 | `Resilience Break Efficiency` | **Hiệu Suất Phá Bền** | Chuẩn hóa Master |
@@ -1352,6 +1370,7 @@
 | `The Ashwind Clan` | **Bộ Tộc Tàn Phong** | Chuẩn hóa Master |
 | `The Awakening Reset` | **Khởi Đầu Thức Tỉnh** | Chuẩn hóa Master |
 | `The Boss` | **Sếp** | Chuẩn hóa Master |
+| `The Boss Accord` | **Hiệp Ước Của Sếp** | Chuẩn hóa Master |
 | `The Bud of Change` | **Mầm Non Cải Cách** | Chuẩn hóa Master |
 | `The Cat's Treasure` | **Kho Báu Của Mèo** | Chuẩn hóa Master |
 | `The Cave` | **Hang Động Bí Ẩn** | Chuẩn hóa Master |
@@ -1363,6 +1382,7 @@
 | `The Demon's Challenge` | **Lời Khiêu Chiến Của Ác Ma** | Chuẩn hóa Master |
 | `The Demon's Temptation` | **Sự Cám Dỗ Của Ác Ma** | Chuẩn hóa Master |
 | `The Dessert Shop` | **Tiệm Đồ Ngọt** | Chuẩn hóa Master |
+| `The Dusk Arbiter` | **Thẩm Phán Hoàng Hôn** | Chuẩn hóa Master |
 | `The Eye of Grace` | **Mắt Grace** | Chuẩn hóa Master |
 | `The Formula for Victory` | **Phương Trình Chiến Thắng** | Chuẩn hóa Master |
 | `The Ghost Ship` | **U Linh Hạm** | Chuẩn hóa Master |
@@ -1569,3 +1589,6 @@
 | `commission fee` | **thù lao ủy thác** | Chuẩn hóa Master |
 | `commission fees` | **thù lao ủy thác** | Chuẩn hóa Master |
 | `commissions` | **nhiệm vụ ủy thác** | Chuẩn hóa Master |
+| `harpoon gun` | **súng phóng lao** | Chuẩn hóa Master |
+| `nautical log` | **nhật ký hàng hải** | Chuẩn hóa Master |
+| `white lie` | **lời nói dối thiện ý** | Chuẩn hóa Master |
