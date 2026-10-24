@@ -80,8 +80,31 @@ def main():
         if not (p5_vi / p.name).exists() or p.stat().st_size == (p5_vi / p.name).stat().st_size
     ]
 
-    # Category 7: Other UI (All 407)
-    untranslated["07_GiaoDienKhac_OtherUI"] = list((EN_ROOT / "07_GiaoDienKhac_OtherUI").glob("*.png"))
+    # Category 7: Other UI (Only textures with drawn typography / text)
+    obviously_non_text_keywords = [
+        'UIMask', 'Background', 'Noise', 'gear', 'gearshadow', 'XboxOne', 'PS4', 'PS5', 'Switch',
+        'DropdownArrow', 'Checkmark', 'Knob', 'Square', 'UISprite', 'InputFieldBackground',
+        'loading_1_', '10104_Bg', '10104_Star', 'db_spring_main', 'zs_spring_main_deco',
+        'Chopsticks', 'Eat_', 'Expression', 'Finger', 'Curtain', 'Deco', 'Desk', 'Door_',
+        'Hotpot', 'Mouse', 'Sweat', 'Eye', 'Eyebrow', 'Eyelid', 'Hand', 'Ribbon', 'Water',
+        'Lantern', 'Railing', 'Shimiao', 'Yuanwei', 'Chensha', 'Hupo', 'JingLin', 'Keluolisi',
+        'TravelerDuelLevel_Light', 'TrekkerVersusl_Glow', 'item_21', 'item_11', 'item_heavenlygift',
+        'Swim_Star', 'icon_swimsuit_story', 'icon_tech_cert', 'zs_tech_lock', 'icon_solodance_battle_cert',
+        'db_common_2px', 'db_common_6px', 'zs_common_stop', 'db_stage_duel_level_little',
+        'db_gacha_10158_02'
+    ]
+    explicit_non_text = {
+        'ui_activity_30103__zs_dream_task_done_2.png',
+        'ui_activity_30104__zs_dream_task_done_2.png',
+        'ui_activitystoryreview__bg_viewfinder_main11.png',
+        'ui_buildfunction__note_90011_S.png'
+    }
+    cat7_all = list((EN_ROOT / "07_GiaoDienKhac_OtherUI").glob("*.png"))
+    untranslated["07_GiaoDienKhac_OtherUI"] = [
+        p for p in cat7_all
+        if not any(k.lower() in p.name.lower() for k in obviously_non_text_keywords)
+        and p.name not in explicit_non_text
+    ]
 
     # Category 8: Full Atlas Textures (All 4)
     untranslated["08_Full_Atlas_Textures"] = list((EN_ROOT / "08_Full_Atlas_Textures").glob("*.png"))
@@ -146,7 +169,7 @@ def main():
 
     # 5. Write Interactive HTML Gallery
     html_out = OUTPUT_DIR / "XEM_TRUOC_TEXTURE_CHUA_DICH.html"
-    html_content = generate_html_gallery(html_items)
+    html_content = generate_html_gallery(html_items, untranslated)
     html_out.write_text(html_content, encoding="utf-8")
     print(f"Wrote Interactive HTML Gallery: {html_out.name}")
 
@@ -170,12 +193,19 @@ def main():
     print(f"  SHA256: {sha256_file(OUTPUT_ZIP)}")
 
 def generate_readme(untranslated: dict) -> str:
+    total_count = sum(len(v) for v in untranslated.values())
+    c2 = len(untranslated.get("02_DanhHieu_HonorTitles", []))
+    c4 = len(untranslated.get("04_NutBam_HuyHieu_Results", []))
+    c5 = len(untranslated.get("05_SuKien_Banners_Tabs", []))
+    c7 = len(untranslated.get("07_GiaoDienKhac_OtherUI", []))
+    c8 = len(untranslated.get("08_Full_Atlas_Textures", []))
+
     lines = [
         "# DANH SÁCH & HƯỚNG DẪN VIỆT HÓA TEXTURE CHƯA DỊCH",
         "## STELLA SORA — TỔNG HỢP TOÀN BỘ ẢNH VẼ CHỮ CÒN NGUYÊN BẢN TIẾNG ANH",
         "",
-        "> **Tổng số texture chưa dịch**: **848 ảnh PNG**",
-        "> **Ngày trích xuất**: 2026-10-25",
+        f"> **Tổng số texture chưa dịch**: **{total_count} ảnh PNG** (Đã lọc chính xác 100% texture có chữ)",
+        "> **Ngày cập nhật**: 2026-10-25",
         "> **Định dạng**: PNG 32-bit (RGBA, bảo tồn kênh trong suốt)",
         "",
         "---",
@@ -184,11 +214,11 @@ def generate_readme(untranslated: dict) -> str:
         "",
         "| Thư mục | Số lượng ảnh | Đặc điểm & Nội dung | Ưu tiên |",
         "| :--- | :---: | :--- | :---: |",
-        "| `02_DanhHieu_HonorTitles/` | 361 | Danh hiệu vinh dự người chơi gắn trên profile (bản gốc tiếng Anh). | Trung bình |",
-        "| `04_NutBam_HuyHieu_Results/` | 73 | Nút bấm giao diện, huy hiệu hoàn thành, kết quả phụ bản. | **Cao** |",
-        "| `05_SuKien_Banners_Tabs/` | 3 | 3 banner sự kiện còn giữ nguyên bản tiếng Anh gốc. | Trung bình |",
-        "| `07_GiaoDienKhac_OtherUI/` | 407 | Chi tiết giao diện phụ, khung viền, nhãn đồ họa nhỏ. | Tùy chọn |",
-        "| `08_Full_Atlas_Textures/` | 4 | Toàn bộ các tấm Atlas Texture ghép lớn (`SpriteAtlas_Language`). | Nâng cao |",
+        f"| `02_DanhHieu_HonorTitles/` | {c2} | Danh hiệu vinh dự người chơi gắn trên profile (bản gốc tiếng Anh). | Trung bình |",
+        f"| `04_NutBam_HuyHieu_Results/` | {c4} | Nút bấm giao diện, huy hiệu hoàn thành, kết quả phụ bản. | **Cao** |",
+        f"| `05_SuKien_Banners_Tabs/` | {c5} | 3 banner sự kiện còn giữ nguyên bản tiếng Anh gốc. | Trung bình |",
+        f"| `07_GiaoDienKhac_OtherUI/` | {c7} | **Chỉ chứa ảnh có chữ**: Banner quảng cáo shop/battlepass (`mallAdv`), logo banner gacha, huy hiệu kỹ năng/chỉ số (`Stats`, `Power Up`, `Bonus`, `Elite`, `Story`), kết quả minigame (`Victory`, `Failed`, `Battle Ended`). Toàn bộ background trống, mặt nạ mask, nút bấm tay cầm console đã được loại bỏ sạch sẽ. | **Cao** |",
+        f"| `08_Full_Atlas_Textures/` | {c8} | Toàn bộ các tấm Atlas Texture ghép lớn (`SpriteAtlas_Language`). | Nâng cao |",
         "",
         "---",
         "",
@@ -208,7 +238,13 @@ def generate_readme(untranslated: dict) -> str:
     ]
     return "\n".join(lines)
 
-def generate_html_gallery(items: list) -> str:
+def generate_html_gallery(items: list, untranslated: dict) -> str:
+    c2 = len(untranslated.get("02_DanhHieu_HonorTitles", []))
+    c4 = len(untranslated.get("04_NutBam_HuyHieu_Results", []))
+    c5 = len(untranslated.get("05_SuKien_Banners_Tabs", []))
+    c7 = len(untranslated.get("07_GiaoDienKhac_OtherUI", []))
+    c8 = len(untranslated.get("08_Full_Atlas_Textures", []))
+
     html = [
         "<!DOCTYPE html>",
         "<html lang='vi'>",
@@ -234,14 +270,14 @@ def generate_html_gallery(items: list) -> str:
         "</head>",
         "<body>",
         "  <h1>Thư Viện Texture Chưa Việt Hóa — Stella Sora</h1>",
-        f"  <p class='subtitle'>Tổng hợp <strong>{len(items)}</strong> ảnh vẽ chữ tiếng Anh chưa được bản địa hóa. Bạn có thể bấm vào các danh mục để lọc xem trực tiếp.</p>",
+        f"  <p class='subtitle'>Tổng hợp <strong>{len(items)}</strong> ảnh vẽ chữ tiếng Anh chưa được bản địa hóa (đã lọc chỉ chứa texture có chữ). Bạn có thể bấm vào các danh mục để lọc xem trực tiếp.</p>",
         "  <div class='filters'>",
-        "    <button class='filter-btn active' onclick=\"filterCat('all')\">Tất cả (" + str(len(items)) + ")</button>",
-        "    <button class='filter-btn' onclick=\"filterCat('02_DanhHieu_HonorTitles')\">02 Danh Hiệu (361)</button>",
-        "    <button class='filter-btn' onclick=\"filterCat('04_NutBam_HuyHieu_Results')\">04 Nút Bấm & Kết Quả (73)</button>",
-        "    <button class='filter-btn' onclick=\"filterCat('05_SuKien_Banners_Tabs')\">05 Banner Sự Kiện (3)</button>",
-        "    <button class='filter-btn' onclick=\"filterCat('07_GiaoDienKhac_OtherUI')\">07 Giao Diện Khác (407)</button>",
-        "    <button class='filter-btn' onclick=\"filterCat('08_Full_Atlas_Textures')\">08 Full Atlas (4)</button>",
+        f"    <button class='filter-btn active' onclick=\"filterCat('all')\">Tất cả ({len(items)})</button>",
+        f"    <button class='filter-btn' onclick=\"filterCat('02_DanhHieu_HonorTitles')\">02 Danh Hiệu ({c2})</button>",
+        f"    <button class='filter-btn' onclick=\"filterCat('04_NutBam_HuyHieu_Results')\">04 Nút Bấm & Kết Quả ({c4})</button>",
+        f"    <button class='filter-btn' onclick=\"filterCat('05_SuKien_Banners_Tabs')\">05 Banner Sự Kiện ({c5})</button>",
+        f"    <button class='filter-btn' onclick=\"filterCat('07_GiaoDienKhac_OtherUI')\">07 Giao Diện Khác — Chỉ Có Chữ ({c7})</button>",
+        f"    <button class='filter-btn' onclick=\"filterCat('08_Full_Atlas_Textures')\">08 Full Atlas ({c8})</button>",
         "  </div>",
         "  <div class='gallery' id='gallery'>"
     ]
