@@ -110,9 +110,10 @@ def main():
     p14 = ROOT / "work/editorial/event_stories_part2_editorial_20261025_r01/UNIFIED_CAMPAIGN_14_PROPOSALS.jsonl"
     p15 = ROOT / "work/editorial/event_stories_part3_editorial_20261025_r01/UNIFIED_CAMPAIGN_15_PROPOSALS.jsonl"
     p16 = ROOT / "work/editorial/event_stories_part4_editorial_20261025_r01/UNIFIED_CAMPAIGN_16_PROPOSALS.jsonl"
+    p17 = ROOT / "work/editorial/tutorial_and_character_cg_editorial_20261025_r01/UNIFIED_CAMPAIGN_17_PROPOSALS.jsonl"
 
     scene_dicts = {}
-    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0, "c7": 0, "c8": 0, "c9": 0, "c10": 0, "c11": 0, "c12": 0, "c13": 0, "c14": 0, "c15": 0, "c16": 0}
+    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0, "c7": 0, "c8": 0, "c9": 0, "c10": 0, "c11": 0, "c12": 0, "c13": 0, "c14": 0, "c15": 0, "c16": 0, "c17": 0}
 
     campaigns = [
         (p1, "vi", "c1"),
@@ -129,7 +130,8 @@ def main():
         (p13, "vi_editorial", "c13"),
         (p14, "vi_editorial", "c14"),
         (p15, "vi_editorial", "c15"),
-        (p16, "vi_editorial", "c16")
+        (p16, "vi_editorial", "c16"),
+        (p17, "vi_editorial", "c17")
     ]
 
     for p, vi_key, cname in campaigns:
@@ -167,6 +169,7 @@ def main():
     print(f"  Campaign 14 (Event Stories Part 2 & Dungeon Intros): {campaign_counts['c14']} scene lines")
     print(f"  Campaign 15 (Event Stories Part 3: Bellin, Emor, Bloc): {campaign_counts['c15']} scene lines")
     print(f"  Campaign 16 (Event Stories Part 4: Mirage, Willow, Leafia, Eleanor): {campaign_counts['c16']} scene lines")
+    print(f"  Campaign 17 (Tutorial Prologue, System & Character CGs): {campaign_counts['c17']} scene lines")
     print(f"  Total scene-specific dictionaries: {len(scene_dicts)} scenes")
 
     # 3. Master Dictionary for remaining general dialogues
