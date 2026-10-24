@@ -93,8 +93,8 @@ def main():
         (entries_dir / fname).write_bytes(payload)
     print(f"Restored {len(arc_pristine.entries)} pristine entries.")
 
-    # 2. Build Scene-Specific Dictionaries for Campaigns 1, 2, 4, 5, 6, 7, 8, 9, 10, 11
-    print("Building Scene-Specific Dictionaries from Campaigns 1, 2, 4, 5, 6, 7, 8, 9, 10, 11...")
+    # 2. Build Scene-Specific Dictionaries for Campaigns 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12
+    print("Building Scene-Specific Dictionaries from Campaigns 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12...")
     p1 = ROOT / "work/editorial/lightnovel_editorial_20261024_r02/UNIFIED_STORY_PROPOSALS.jsonl"
     p2 = ROOT / "work/editorial/phone_messages_editorial_20261024_r01/UNIFIED_PHONE_PROPOSALS.jsonl"
     p4 = ROOT / "work/editorial/character_cg_stories_editorial_20261024_r01/UNIFIED_CG_PROPOSALS.jsonl"
@@ -105,9 +105,10 @@ def main():
     p9 = ROOT / "work/editorial/act3_part1_story_editorial_20261024_r01/UNIFIED_ACT3_PART1_PROPOSALS.jsonl"
     p10 = ROOT / "work/editorial/act4_final_story_editorial_20261024_r01/UNIFIED_ACT4_STORY_PROPOSALS.jsonl"
     p11 = ROOT / "work/editorial/character_cg_part2_editorial_20261024_r01/UNIFIED_CG_PART2_PROPOSALS.jsonl"
+    p12 = ROOT / "work/editorial/side_stories_part1_editorial_20261025_r01/UNIFIED_STSP_PART1_PROPOSALS.jsonl"
 
     scene_dicts = {}
-    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0, "c7": 0, "c8": 0, "c9": 0, "c10": 0, "c11": 0}
+    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0, "c7": 0, "c8": 0, "c9": 0, "c10": 0, "c11": 0, "c12": 0}
 
     campaigns = [
         (p1, "vi", "c1"),
@@ -119,7 +120,8 @@ def main():
         (p8, "vi_editorial", "c8"),
         (p9, "vi_editorial", "c9"),
         (p10, "vi_editorial", "c10"),
-        (p11, "vi_editorial", "c11")
+        (p11, "vi_editorial", "c11"),
+        (p12, "vi_editorial", "c12")
     ]
 
     for p, vi_key, cname in campaigns:
