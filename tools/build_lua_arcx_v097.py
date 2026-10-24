@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Build and Repack lua_patched_vi.arcx with All Campaigns (Campaigns 1, 2, 4, 5, and Campaign 6 Act 2 Climax Story).
-Total relocalized lines = 21,891 lines across 309 scenes!
+Build and Repack lua_patched_vi.arcx with All Campaigns (Campaigns 1, 2, 4, 5, 6, and Campaign 7 Phone Messages Phase 2).
+Total relocalized lines = 29,095 lines across 349 scenes!
 """
 
 import json
@@ -93,23 +93,25 @@ def main():
         (entries_dir / fname).write_bytes(payload)
     print(f"Restored {len(arc_pristine.entries)} pristine entries.")
 
-    # 2. Build Scene-Specific Dictionaries for Campaigns 1, 2, 4, 5, 6
-    print("Building Scene-Specific Dictionaries from Campaigns 1, 2, 4, 5, 6...")
+    # 2. Build Scene-Specific Dictionaries for Campaigns 1, 2, 4, 5, 6, 7
+    print("Building Scene-Specific Dictionaries from Campaigns 1, 2, 4, 5, 6, 7...")
     p1 = ROOT / "work/editorial/lightnovel_editorial_20261024_r02/UNIFIED_STORY_PROPOSALS.jsonl"
     p2 = ROOT / "work/editorial/phone_messages_editorial_20261024_r01/UNIFIED_PHONE_PROPOSALS.jsonl"
     p4 = ROOT / "work/editorial/character_cg_stories_editorial_20261024_r01/UNIFIED_CG_PROPOSALS.jsonl"
     p5 = ROOT / "work/editorial/act3_story_editorial_20261024_r01/UNIFIED_ACT3_PROPOSALS.jsonl"
     p6 = ROOT / "work/editorial/act2_climax_story_editorial_20261024_r01/UNIFIED_ACT2_CLIMAX_PROPOSALS.jsonl"
+    p7 = ROOT / "work/editorial/phone_messages_phase2_20261024_r01/UNIFIED_PM_PHASE2_PROPOSALS.jsonl"
 
     scene_dicts = {}
-    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0}
+    campaign_counts = {"c1": 0, "c2": 0, "c4": 0, "c5": 0, "c6": 0, "c7": 0}
 
     campaigns = [
         (p1, "vi", "c1"),
         (p2, "vi_editorial", "c2"),
         (p4, "vi_editorial", "c4"),
         (p5, "vi_editorial", "c5"),
-        (p6, "vi_editorial", "c6")
+        (p6, "vi_editorial", "c6"),
+        (p7, "vi_editorial", "c7")
     ]
 
     for p, vi_key, cname in campaigns:
@@ -137,6 +139,7 @@ def main():
     print(f"  Campaign 4 (CG): {campaign_counts['c4']} scene lines")
     print(f"  Campaign 5 (Act 3 Story & PM): {campaign_counts['c5']} scene lines")
     print(f"  Campaign 6 (Act 2 Climax & Philae): {campaign_counts['c6']} scene lines")
+    print(f"  Campaign 7 (Phone Phase 2): {campaign_counts['c7']} scene lines")
     print(f"  Total scene-specific dictionaries: {len(scene_dicts)} scenes")
 
     # 3. Master Dictionary for remaining general dialogues
@@ -236,6 +239,13 @@ def main():
     print(f"SUCCESS! Created {output_lua_arcx} in {elapsed:.2f}s:")
     print(f"  Size: {output_lua_arcx.stat().st_size:,} bytes")
     print(f"  Entries: {len(arc_out.entries)}")
+
+    # 6. Synchronize to live game
+    live_script = Path(r"c:\YostarGames\StellaSora_EN") / "Persistent_Store" / "Scripts" / "lua.arcx"
+    if live_script.parent.exists():
+        print(f"\nSynchronizing to live game: {live_script}...")
+        shutil.copy2(output_lua_arcx, live_script)
+        print(f"SUCCESS! Synced to {live_script} ({live_script.stat().st_size:,} bytes)")
 
 if __name__ == "__main__":
     main()
