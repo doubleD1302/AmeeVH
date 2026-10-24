@@ -1,6 +1,6 @@
 # Stella Sora — Master Glossary & Bản Đồ Thuật Ngữ Chuẩn Hóa
 
-> Cập nhật tự động phiên bản v0.6.0 (2026-10-20). Tổng số thuật ngữ chuẩn hóa: **1422**, quy tắc cấm calque: **84**.
+> Cập nhật tự động phiên bản v0.6.0 (2026-10-20). Tổng số thuật ngữ chuẩn hóa: **1454**, quy tắc cấm calque: **98**.
 
 ## 1. Nguyên Tắc Cốt Lõi Bản Địa Hóa
 
@@ -20,13 +20,17 @@
 | `Bột chắc chắn` | **Cầu Thủ Vạm Vỡ (Sturdy Batter)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cuộc chinh phục sao nhổ` | **Chinh Phục Đoạt Sao / Hái Sao Viễn Chinh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cá Voi 6 Sừng` | **Cá Voi Lục Sừng (Hexhorn Whale -> Cá Voi Lục Sừng)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Các Lữ Khách' House` | **Nhà Lữ Khách** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Có sao chép không` | **Nghe rõ không!?** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Cô Liễu` | **Cô Willow (tên riêng)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cổ Vật` | **Di Vật** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cổ vật` | **Di Vật** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Cự Thạch` | **Cự Tháp (khi chỉ Monolith)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Dự báo thời tiết lạnh` | **Dự Báo Hàn Băng (Chill Forecast)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Firstlight Sơ Quang` | **Khải Minh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Grand Thanh tra` | **Đại Thanh Tra** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Hiệp sĩ đeo mặt nạ` | **Kỵ Sĩ Mặt Nạ** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Hiệp sĩ đạo diễn` | **Kỵ Sĩ Đạo Diễn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hiệu Trưởng Allie` | **Giám Đốc Allie (Director Allie -> Giám Đốc Allie)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hoa Hồng Ủy Thác` | **Thù lao ủy thác / Nhiệm vụ ủy thác (Commission / Commission Fee)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Hòn Hồn Thạch` | **Hồn Thạch** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -36,6 +40,7 @@
 | `Lễ Hội Snowish` | **Lễ Hội Mùa Tuyết** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Lễ Hội Snowish rơi` | **Lễ Hội Mùa Tuyết** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Lời thề hiệp sĩ: Skyfall` | **Kỵ Thệ: Thiên Khung Băng Lạc (Knight Oath: Skyfall)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Mùa hè không bao giờ kết thúc` | **Mùa Hè Bất Tận (Never Ending Summer)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Noya Sơ Quang` | **Noya - Khải Minh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Phòng Màu Trắng` | **Phòng Trắng (White Room -> Phòng Trắng)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Quý Cô Angie` | **Tiểu Thư Angie** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -45,11 +50,17 @@
 | `Sơ Quang Noya` | **Noya - Khải Minh** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Thuyền trưởng (khi chỉ Fuyuka)` | **Đội Trưởng** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Thành cổ Cây bụi` | **Pháo Đài Chuột Bụi (Citadel Shrubshrew)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Tháng Messi` | **Tháng Messis** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Tháng ba không thể ngăn cản` | **Tiến Bước Trong Bão Tuyết (Unstoppable March)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Thưa bác sĩ (khi dịch Mentor trong STsp_13)` | **Tiền Bối / Người Hướng Dẫn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Thầy / Cố vấn (khi gọi Boss trong STsp_13)` | **Người Hướng Dẫn / Tiền Bối** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Trại Mồ Côi Cúc Họa Mi` | **Viện Mồ Côi Daisy** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Trại Mồ Côi Daisy` | **Viện Mồ Côi Daisy (Daisy Orphanage -> Viện Mồ Côi Daisy)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Trọng Tài Chạng Vạng` | **Trọng Tài Hoàng Hôn (Dusk Arbiter -> Trọng Tài Hoàng Hôn)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Trọng Tài Hoàng Hôn` | **Thẩm Phán Hoàng Hôn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng tài Gerie` | **Thẩm Phán Gerie** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Trọng tài Hoàng hôn` | **Thẩm Phán Hoàng Hôn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `Tất cả đã bình phương đi` | **Chuẩn bị xong xuôi hết rồi (All squared away)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `U Linh Thuyền` | **U Linh Hạm (Ghost Ship -> U Linh Hạm)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Vector: kiên cố hóa` | **Vector: Cố Hóa (Vector: Solidifying)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `Viên Hồn Thạch` | **Hồn Thạch** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -69,8 +80,11 @@
 | `khối đá` | **Cự Tháp (khi chỉ Monolith)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `lau sàn nhà kính với tôi (khi dịch wipe the floor)` | **xử đẹp tôi / dần tôi một trận tơi bời** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `lưỡi dao (khi dịch blade kiếm của Chitose)` | **lưỡi kiếm / thanh kiếm** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `lời nói dối trắng trợn (khi dịch a white lie)` | **lời nói dối thiện ý / vô hại** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `mua vở diễn (khi dịch buy the couple act)` | **mắc lừa / tin vào vở kịch** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `mất khả năng lao động` | **bị tê liệt / không thể hành động** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `người giúp việc (khi dịch maid Nanoha)` | **hầu gái** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
+| `nhật ký hải lý` | **nhật ký hàng hải (nautical log)** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `những thay đổi thực tế (khi dịch actual shifts trong STsp_11)` | **ca làm việc chính thức** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `nó giải phóng những tài năng chôn vùi` | **khai mở thiên phú say ngủ nơi sâu thẳm tâm hồn** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
 | `phi hành đoàn (khi dịch crew trong STsp_11)` | **cả nhóm / ba người chúng ta** | Loại bỏ calque thô cứng, thuần Việt tự nhiên |
@@ -154,7 +168,10 @@
 | `Appreciating the Gift` | **Cảm Ơn Quà Tặng** | Chuẩn hóa Master |
 | `Aqua` | **Thủy** | Chuẩn hóa Master |
 | `Arbiter` | **Thẩm Phán** | Chuẩn hóa Master |
+| `Arbiter Gerie` | **Thẩm Phán Gerie** | Chuẩn hóa Master |
 | `Arbiters` | **Thẩm Phán** | Chuẩn hóa Master |
+| `Archon` | **Chấp Chính Quan** | Chuẩn hóa Master |
+| `Archons` | **Các Chấp Chính Quan** | Chuẩn hóa Master |
 | `Ardent Trigger` | **Cò Súng Rực Lửa** | Chuẩn hóa Master |
 | `Ardent Twin Moons` | **Song Nguyệt Nồng Nhiệt** | Chuẩn hóa Master |
 | `Armadillo Fish` | **Cá Cầu Gai Tê Tê** | Chuẩn hóa Master |
@@ -178,7 +195,7 @@
 | `Ash District` | **Khu Tro** | Chuẩn hóa Master |
 | `Ash Orphanage` | **Viện Mồ Côi Ash** | Chuẩn hóa Master |
 | `Ashwind` | **Tàn Phong** | Chuẩn hóa Master |
-| `Ashwind Clan` | **Gia Tộc Tàn Phong** | Chuẩn hóa Master |
+| `Ashwind Clan` | **Bộ Tộc Tàn Phong** | Chuẩn hóa Master |
 | `Assistant Sweeper` | **Trợ Thủ Quét Dọn** | Chuẩn hóa Master |
 | `Assistant Sweeper: Gust` | **Trợ Thủ Quét Dọn: Hô Khiếu** | Chuẩn hóa Master |
 | `Assistant Sweeper: Heat` | **Trợ Thủ Quét Dọn: Chước Nhiệt** | Chuẩn hóa Master |
@@ -192,6 +209,7 @@
 | `Aura` | **Kiếm Khí** | Chuẩn hóa Master |
 | `Authorization Lv.` | **Cấp Ủy Quyền** | Chuẩn hóa Master |
 | `Auto Attack` | **Đòn Đánh Thường** | Chuẩn hóa Master |
+| `Autumn Equinox` | **Tiết Thu Phân** | Chuẩn hóa Master |
 | `Ayame` | **Ayame** | Chuẩn hóa Master |
 | `Azure Echo` | **Hồi Âm Biển Biếc** | Chuẩn hóa Master |
 | `Azure Horizon` | **Bầu Trời Trong Xanh Vô Tận** | Chuẩn hóa Master |
@@ -273,6 +291,7 @@
 | `Cadence: Harmony` | **Tiết Tấu: Hòa Thanh** | Chuẩn hóa Master |
 | `Cadence: Main Theme` | **Tiết Tấu: Chủ Điệu** | Chuẩn hóa Master |
 | `Call of Holiday` | **Tiếng Gọi Ngày Nghỉ** | Chuẩn hóa Master |
+| `Calor Month` | **Tháng Calor** | Chuẩn hóa Master |
 | `Canace` | **Canace** | Chuẩn hóa Master |
 | `Canace: Awakened` | **Canace: Thức Tỉnh** | Chuẩn hóa Master |
 | `Canace: Default` | **Canace: Mặc Định** | Chuẩn hóa Master |
@@ -291,6 +310,7 @@
 | `Care-it-all` | **Quản Gia Hoàng Kim** | Chuẩn hóa Master |
 | `Carefree in the Golden Glow` | **Thong Dong Hoàng Hôn** | Chuẩn hóa Master |
 | `Caressing Breeze` | **Gió Thoảng Mơn Man** | Chuẩn hóa Master |
+| `Carlo Town` | **Thị Trấn Carlo** | Chuẩn hóa Master |
 | `Cartridge Recycling` | **Thu Hồi Băng Đạn** | Chuẩn hóa Master |
 | `Cat God's Penalty` | **Mèo Thần Trừng Phạt** | Chuẩn hóa Master |
 | `Cat Treat-1911 Dual-Wield` | **Song Thủ Súng Mèo 1911** | Chuẩn hóa Master |
@@ -374,6 +394,7 @@
 | `Crit Rate` | **Tỷ Lệ Bạo Kích** | Chuẩn hóa Master |
 | `Crit build` | **Lối chơi bạo kích** | Chuẩn hóa Master |
 | `Cross Great Sword Aura` | **Thập Tự Đại Kiếm Khí** | Chuẩn hóa Master |
+| `Crow Rider` | **Kỵ Sĩ Quạ Đen** | Chuẩn hóa Master |
 | `Crunchy Shaved Ice` | **Đá Bào Giòn Tan** | Chuẩn hóa Master |
 | `Cry of the Valor` | **Tiếng Vọng Dũng Khí** | Chuẩn hóa Master |
 | `Currents and Shadows` | **Dòng Chảy & Bóng Tối** | Chuẩn hóa Master |
@@ -384,6 +405,7 @@
 | `Cursipot: Rock` | **Hũ Ma Quái Cursipot: Trọng Nham** | Chuẩn hóa Master |
 | `Cursipot: Shadow` | **Hũ Ma Quái Cursipot: Ám Ảnh** | Chuẩn hóa Master |
 | `Cursipot: Torrent` | **Hũ Ma Quái Cursipot: Đoan Lưu** | Chuẩn hóa Master |
+| `Cuteness Dependency Syndrome` | **Hội Chứng Nghiện Sự Dễ Thương** | Chuẩn hóa Master |
 | `DEF` | **Phòng Thủ** | Chuẩn hóa Master |
 | `DEF PEN` | **Xuyên Phòng Thủ** | Chuẩn hóa Master |
 | `DEF Reduction` | **Giảm Phòng Thủ** | Chuẩn hóa Master |
@@ -455,6 +477,7 @@
 | `EXP Magnet` | **Nam Châm Kinh Nghiệm** | Chuẩn hóa Master |
 | `Eager Loong Staff` | **Nhân Viên Tộc Long Nhiệt Tình** | Chuẩn hóa Master |
 | `Ease Into an Unhurried Summer` | **Hè Về An Yên** | Chuẩn hóa Master |
+| `Ebony Star` | **Hắc Tinh** | Chuẩn hóa Master |
 | `Echoes of Eclipse` | **Dư Âm Nhật Thực** | Chuẩn hóa Master |
 | `Eerie Breath` | **Tàn Khí Quái Dị** | Chuẩn hóa Master |
 | `Eleanor` | **Eleanor** | Chuẩn hóa Master |
@@ -468,6 +491,7 @@
 | `Emor City` | **Thành Phố Emor** | Chuẩn hóa Master |
 | `Emor Harbor` | **Cảng Emor** | Chuẩn hóa Master |
 | `Emor Market` | **Chợ Emor** | Chuẩn hóa Master |
+| `Emor Monolith #25` | **Cự Tháp Emor Số 25** | Chuẩn hóa Master |
 | `Endless Ram` | **Trì Tục Xung Tràng** | Chuẩn hóa Master |
 | `Energy Bar` | **Thanh Năng Lượng** | Chuẩn hóa Master |
 | `Energy Regen` | **Hiệu Suất Hồi Năng Lượng** | Chuẩn hóa Master |
@@ -668,6 +692,7 @@
 | `Graceful Poise` | **Dáng Múa Tao Nhã** | Chuẩn hóa Master |
 | `Grand Inspector` | **Đại Thanh Tra** | Chuẩn hóa Master |
 | `Grand Inspector Matilda` | **Đại Thanh Tra Matilda** | Chuẩn hóa Master |
+| `Granny Marlene` | **Bà Marlene** | Chuẩn hóa Master |
 | `Great Sword Aura` | **Đại Kiếm Khí** | Chuẩn hóa Master |
 | `Greedy Pursuit` | **Cuộc Săn Đầy Tham Lam** | Chuẩn hóa Master |
 | `Greenhouse District` | **Khu Nhà Kính** | Chuẩn hóa Master |
@@ -701,6 +726,7 @@
 | `Harmonics: Main Theme` | **Hài Âm: Chủ Điệu** | Chuẩn hóa Master |
 | `Healthy Diet` | **Chế Độ Ăn Khỏe Mạnh** | Chuẩn hóa Master |
 | `Heartfelt Messages, Delivered on Time` | **Tấm Lòng Trao Gửi, Đúng Giờ Chuyển Trao** | Chuẩn hóa Master |
+| `Heartlink` | **Liên Kết Tâm Linh** | Chuẩn hóa Master |
 | `Heavy Armor Warrior` | **Chiến Binh Trọng Giáp Vạm Vỡ** | Chuẩn hóa Master |
 | `Hero of Waterway` | **Anh Hùng Cầu Thủy Đạo** | Chuẩn hóa Master |
 | `Hexhorn Whale` | **Cá Voi Lục Sừng** | Chuẩn hóa Master |
@@ -717,6 +743,7 @@
 | `Home Screen Interaction: Inactive` | **Tương Tác Treo Máy Lâu** | Chuẩn hóa Master |
 | `Home Screen Interaction: Repeated Input` | **Tương Tác Nhấp Liên Tục** | Chuẩn hóa Master |
 | `Hooking Crawler` | **Phóng Vuốt Sắc** | Chuẩn hóa Master |
+| `Horizon` | **Horizon** | Chuẩn hóa Master |
 | `Horn of Departure` | **Tiếng Còi Nhổ Neo** | Chuẩn hóa Master |
 | `Hot Spring Resort` | **Khu Nghỉ Dưỡng Suối Nước Nóng** | Chuẩn hóa Master |
 | `Hotpot Patrol` | **Đồng Đội Ăn Lẩu** | Chuẩn hóa Master |
@@ -728,6 +755,7 @@
 | `Ignore DEF` | **Bỏ Qua Phòng Thủ** | Chuẩn hóa Master |
 | `Imperial Guard` | **Cận Vệ Hoàng Gia** | Chuẩn hóa Master |
 | `Imperial Guard Knights` | **Kỵ Sĩ Cận Vệ Hoàng Gia** | Chuẩn hóa Master |
+| `Imperial Guard Squire` | **Thị Vệ Cận Vệ Hoàng Gia** | Chuẩn hóa Master |
 | `Imperial Guards` | **Cận Vệ Hoàng Gia** | Chuẩn hóa Master |
 | `Imperial Knights` | **Kỵ Sĩ Hoàng Gia** | Chuẩn hóa Master |
 | `In Ecstasy` | **Cực Lạc Quên Mình** | Chuẩn hóa Master |
@@ -797,6 +825,7 @@
 | `Lasting Trends` | **Dòng Chảy Bất Tận** | Chuẩn hóa Master |
 | `Lemon & Black Tea` | **Trà Đen Chanh Lạnh** | Chuẩn hóa Master |
 | `Life Drain` | **Hút Sinh Mệnh** | Chuẩn hóa Master |
+| `Life Goes On` | **Cuộc Sống Vẫn Tiếp Diễn** | Chuẩn hóa Master |
 | `Light Catcher` | **Người Nhặt Ánh Sáng** | Chuẩn hóa Master |
 | `Light Lullaby` | **Khúc Hát Ru Ánh Sáng** | Chuẩn hóa Master |
 | `Light of Mercy` | **Ánh Sáng Từ Bi** | Chuẩn hóa Master |
@@ -844,6 +873,7 @@
 | `Main Build` | **Lối Chơi Chủ Lực** | Chuẩn hóa Master |
 | `Main Skill` | **Kỹ Năng Chính** | Chuẩn hóa Master |
 | `Mall` | **Cửa Hàng** | Chuẩn hóa Master |
+| `Marlene` | **Marlene** | Chuẩn hóa Master |
 | `Masked Knight` | **Kỵ Sĩ Mặt Nạ** | Chuẩn hóa Master |
 | `Masked Knight Tilia` | **Kỵ Sĩ Mặt Nạ Tilia** | Chuẩn hóa Master |
 | `Masked Knights` | **Các Kỵ Sĩ Mặt Nạ** | Chuẩn hóa Master |
@@ -887,6 +917,8 @@
 | `Meowth's Curse` | **Lời Nguyền Thần Mèo** | Chuẩn hóa Master |
 | `Meowth's Triumph` | **Thần Mèo Khải Hoàn** | Chuẩn hóa Master |
 | `Messis Month` | **Tháng Messis** | Chuẩn hóa Master |
+| `Messis Syndrome` | **Hội Chứng Messis** | Chuẩn hóa Master |
+| `Midas` | **Midas** | Chuẩn hóa Master |
 | `Midnight Mayhem` | **Nửa Đêm Thiên Sứ Sa Ngã** | Chuẩn hóa Master |
 | `Mina` | **Mina** | Chuẩn hóa Master |
 | `Mini Flush` | **Thuần Sắc** | Chuẩn hóa Master |
@@ -945,6 +977,7 @@
 | `Nazuna: Default` | **Nazuna: Mặc Định** | Chuẩn hóa Master |
 | `Neo Grace Organization` | **Nhu Quang Hội Xã** | Chuẩn hóa Master |
 | `Neuvira` | **Tân Nguyệt** | Chuẩn hóa Master |
+| `Never Ending Summer` | **Mùa Hè Bất Tận** | Chuẩn hóa Master |
 | `New Orelian` | **Tân Orelian** | Chuẩn hóa Master |
 | `New Stance Unlocked` | **Mở Khóa Dáng Vẻ Mới** | Chuẩn hóa Master |
 | `New Star` | **Tân Tinh** | Chuẩn hóa Master |
@@ -1083,6 +1116,7 @@
 | `Resilience` | **Điểm Kiên Cường** | Chuẩn hóa Master |
 | `Resilience Break` | **Phá Bền** | Chuẩn hóa Master |
 | `Resilience Break Efficiency` | **Hiệu Suất Phá Bền** | Chuẩn hóa Master |
+| `Resonance Beyond the Starlight` | **Cộng Hưởng Vượt Ánh Sao** | Chuẩn hóa Master |
 | `Resting in the Lush Greenhouse` | **Nghỉ Ngơi Nơi Nhà Kính Xanh** | Chuẩn hóa Master |
 | `Retreat` | **Tĩnh Thất** | Chuẩn hóa Master |
 | `Retriever K9` | **Tuần Hồi Khuyển K9** | Chuẩn hóa Master |
@@ -1113,6 +1147,7 @@
 | `Scattered Fragrance` | **Hương Thơm Vương Vãi** | Chuẩn hóa Master |
 | `Scattering Waltz` | **Vũ Bước Tản Mác** | Chuẩn hóa Master |
 | `Scepter of Light` | **Vương Trượng Ánh Sáng** | Chuẩn hóa Master |
+| `Seafaring Trekker` | **Lữ Khách Đi Biển** | Chuẩn hóa Master |
 | `Seasonal Waves` | **Sóng Theo Mùa** | Chuẩn hóa Master |
 | `Seasoned Elite Employee` | **Tinh Anh Lão Luyện** | Chuẩn hóa Master |
 | `Second Company` | **Đại Đội Hai** | Chuẩn hóa Master |
@@ -1123,6 +1158,7 @@
 | `Semi-auto Fire` | **Bắn Bán Tự Động** | Chuẩn hóa Master |
 | `Senior Igna` | **Tiền Bối Igna** | Chuẩn hóa Master |
 | `Senior's Travel Journal` | **Nhật Ký Lữ Hành Tiền Bối** | Chuẩn hóa Master |
+| `Sentinel of Dawn` | **Vệ Binh Rạng Đông** | Chuẩn hóa Master |
 | `Serena` | **Serena** | Chuẩn hóa Master |
 | `Settings` | **Cài Đặt** | Chuẩn hóa Master |
 | `Shadow Dance: Dream Wanderer` | **Ảnh Vũ: Hoa Kính Mộng** | Chuẩn hóa Master |
@@ -1172,6 +1208,7 @@
 | `Sky, Flowers, Poem` | **Trời, Hoa Và Thi Ca** | Chuẩn hóa Master |
 | `Slide` | **Lướt Âm** | Chuẩn hóa Master |
 | `Slipping into Sunlight` | **Chạm Vào Ánh Nắng** | Chuẩn hóa Master |
+| `Slumbering Where Autumn Tilts` | **Giấc Mộng Thu Nghiêng** | Chuẩn hóa Master |
 | `Sniper of the Meowverse` | **Xạ Thủ Thứ Nguyên Mèo** | Chuẩn hóa Master |
 | `Snowish` | **Snowish** | Chuẩn hóa Master |
 | `Snowish Festival` | **Lễ Hội Mùa Tuyết** | Chuẩn hóa Master |
@@ -1312,7 +1349,7 @@
 | `Terra Mark` | **Dấu Ấn Terra** | Chuẩn hóa Master |
 | `The 1/365th of You` | **Một Phần 365 Của Em** | Chuẩn hóa Master |
 | `The Academy` | **Học Viện** | Chuẩn hóa Master |
-| `The Ashwind Clan` | **Gia Tộc Tàn Phong** | Chuẩn hóa Master |
+| `The Ashwind Clan` | **Bộ Tộc Tàn Phong** | Chuẩn hóa Master |
 | `The Awakening Reset` | **Khởi Đầu Thức Tỉnh** | Chuẩn hóa Master |
 | `The Boss` | **Sếp** | Chuẩn hóa Master |
 | `The Bud of Change` | **Mầm Non Cải Cách** | Chuẩn hóa Master |
@@ -1340,7 +1377,9 @@
 | `The Lucky Oasis` | **Ốc Đảo May Mắn** | Chuẩn hóa Master |
 | `The Market` | **Khu Chợ Sầm Uất** | Chuẩn hóa Master |
 | `The Meow` | **Chuông Mèo Nửa Đêm** | Chuẩn hóa Master |
+| `The Missy and the Saucy Maid` | **Tiểu Thư Và Nàng Hầu Tinh Quái** | Chuẩn hóa Master |
 | `The Monolith` | **Cự Tháp** | Chuẩn hóa Master |
+| `The Most Precious Treasure` | **Kho Báu Quý Giá Nhất** | Chuẩn hóa Master |
 | `The Nimble yet Unbreakable Messenger` | **Sứ Giả Nhanh Nhẹn Kiên Cường** | Chuẩn hóa Master |
 | `The Old Timer and the Newcomer` | **Tiền Bối Và Tân Binh** | Chuẩn hóa Master |
 | `The Port` | **Bến Cảng** | Chuẩn hóa Master |
@@ -1348,6 +1387,7 @@
 | `The Pure-White Angel` | **Thiên Thần Thuần Khiết** | Chuẩn hóa Master |
 | `The Retreat` | **Tĩnh Thất** | Chuẩn hóa Master |
 | `The Salvation Committee` | **Ủy Ban Cứu Rỗi** | Chuẩn hóa Master |
+| `The Sentinel of Dawn` | **Vệ Binh Rạng Đông** | Chuẩn hóa Master |
 | `The Snowish Festival` | **Lễ Hội Mùa Tuyết** | Chuẩn hóa Master |
 | `The Sovereign Elixir` | **Linh Đan Diệu Dược** | Chuẩn hóa Master |
 | `The Swimming Fish Festival` | **Lễ Hội Cá Bơi** | Chuẩn hóa Master |
@@ -1377,6 +1417,11 @@
 | `Track Complete` | **Hoàn Thành Truy Vết** | Chuẩn hóa Master |
 | `Tradewind Incense` | **Tín Phong Hương Phân** | Chuẩn hóa Master |
 | `Tranquil Light` | **Ánh Sáng Tĩnh Lặng** | Chuẩn hóa Master |
+| `Treasure Hunter` | **Thợ Săn Kho Báu** | Chuẩn hóa Master |
+| `Treasure Hunter Crew` | **Thủy Thủ Đoàn Thợ Săn Kho Báu** | Chuẩn hóa Master |
+| `Treasure Hunter Deputy` | **Phó Toán Thợ Săn Kho Báu** | Chuẩn hóa Master |
+| `Treasure Hunter Leader` | **Thủ Lĩnh Thợ Săn Kho Báu** | Chuẩn hóa Master |
+| `Treasure Hunters` | **Các Thợ Săn Kho Báu** | Chuẩn hóa Master |
 | `Trekker` | **Lữ Khách** | Chuẩn hóa Master |
 | `Trekker Association` | **Hiệp Hội Lữ Khách** | Chuẩn hóa Master |
 | `Trekker Camp` | **Doanh Trại Lữ Khách** | Chuẩn hóa Master |
@@ -1438,6 +1483,7 @@
 | `Waterway Bridge Corridor` | **Hành Lang Cầu Kênh Nước** | Chuẩn hóa Master |
 | `Wave Riding` | **Đạp Sóng Vượt Khơi** | Chuẩn hóa Master |
 | `Weightless Tread` | **Đạp Tuyết Không Tích** | Chuẩn hóa Master |
+| `Whally` | **Whally** | Chuẩn hóa Master |
 | `When Distant Winds Rise` | **Khi Ngọn Gió Phương Xa Nổi Lên** | Chuẩn hóa Master |
 | `When Morning Glories Bloom, Her Eyes Open` | **Hoa Bìm Nở Rộ, Thiếu Nữ Tỉnh Giấc** | Chuẩn hóa Master |
 | `Where Night Blossoms Fade` | **Trăng Lặn Nơi Tàn Hoa Dạ Anh** | Chuẩn hóa Master |
