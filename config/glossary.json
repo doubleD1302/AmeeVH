@@ -2213,6 +2213,48 @@
       "status": "approved",
       "category": "Archon / Lore",
       "notes": "Chấp Chính Quan U Linh (Archon Ghost). CẤM calque thành 'Bóng ma'."
+    },
+    {
+      "source": "Gale Owl",
+      "target": "Cú Bão Gale",
+      "status": "approved",
+      "category": "Monster / Lore",
+      "notes": "Quái vật loài cú ăn trộm thư tín tại Cảng Bellin trong STev_05."
+    },
+    {
+      "source": "Grace Light Academy",
+      "target": "Học Viện Quang Năng Grace",
+      "status": "approved",
+      "category": "Organization / Location",
+      "notes": "Viện nghiên cứu học thuật trực thuộc Đế Quốc Grace tại Emor trong STev_07."
+    },
+    {
+      "source": "Lucky Oasis",
+      "target": "Ốc Đảo May Mắn",
+      "status": "approved",
+      "category": "Location",
+      "notes": "Ốc đảo năng lượng nơi xảy ra sự cố trong STev_08."
+    },
+    {
+      "source": "Rabbit Pie",
+      "target": "Chiến Xa Bánh Thỏ",
+      "status": "approved",
+      "category": "Vehicle / Weapon",
+      "notes": "Cỗ xe bọc thép cơ khí cải tiến của Sparkla trong STev_08."
+    },
+    {
+      "source": "Super Action Pie",
+      "target": "Bánh Thỏ Siêu Chiến Đấu",
+      "status": "approved",
+      "category": "Vehicle / Weapon",
+      "notes": "Chiến xa bánh thỏ trang bị vũ khí hạng nặng của Sparkla."
+    },
+    {
+      "source": "Tech Convention",
+      "target": "Triển Lãm Công Nghệ",
+      "status": "approved",
+      "category": "Event / Lore",
+      "notes": "Triển lãm/Hội nghị khoa học kỹ thuật ngầm tại Philae trong STev_08."
     }
   ],
   "forbidden_calques": [
@@ -2400,6 +2442,41 @@
       "wrong": "Xe ngựa và bóng ma",
       "correct": "Chiến Xa và U Linh",
       "rule": "CẤM CALQUE THÔ hai đại Chấp Chính Quan 'Chariot and Ghost' thành 'Xe ngựa và bóng ma'."
+    },
+    {
+      "wrong": "Đăng vội vào đây",
+      "correct": "Chuyển Phát Hỏa Tốc đến đây",
+      "rule": "CẤM DỊCH MÁY THÔ 'Post Haste is here' thành 'Đăng vội vào đây'."
+    },
+    {
+      "wrong": "Ủy ban của Post Haste",
+      "correct": "Ủy thác từ Chuyển Phát Hỏa Tốc",
+      "rule": "CẤM DỊCH THÔ 'Post Haste's commission' thành 'Ủy ban của Post Haste'."
+    },
+    {
+      "wrong": "phi hành đoàn Post Haste",
+      "correct": "đội ngũ Chuyển Phát Hỏa Tốc",
+      "rule": "CẤM DỊCH NHẦM 'crew' thành 'phi hành đoàn' cho bưu cục bưu tá."
+    },
+    {
+      "wrong": "Quái vật đã làm được điều đó?",
+      "correct": "Do Quái Vật Gây Ra Sao?",
+      "rule": "CẤM DỊCH MÁY THÔ 'Monsters Did It?' thành 'Quái vật đã làm được điều đó?'."
+    },
+    {
+      "wrong": "Hoạt động hạt ngô",
+      "correct": "Chiến Dịch Hạt Ngô",
+      "rule": "CẤM DỊCH 'Operation Corn Kernel' thành 'Hoạt động hạt ngô'."
+    },
+    {
+      "wrong": "hội thảo di động",
+      "correct": "xưởng chế tạo di động",
+      "rule": "CẤM DỊCH 'mobile workshop' (xưởng cơ khí) thành 'hội thảo di động'."
+    },
+    {
+      "wrong": "Cấp Tốc Bưu Cục",
+      "correct": "Chuyển Phát Hỏa Tốc",
+      "rule": "CHUẨN HÓA THỐNG NHẤT: 'Post Haste' bắt buộc là 'Chuyển Phát Hỏa Tốc', cấm dùng 'Cấp Tốc Bưu Cục'."
     }
   ]
 }
