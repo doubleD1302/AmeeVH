@@ -243,26 +243,21 @@ def main():
         print(f"  Campaign 19 (Polish Remaining 20k Cache): {c19_count} master lines")
 
     # 3.2 Explicit high-priority scene overrides for STm02_04 & key scenes
-    stm02_04_overrides = {
-        "Hey, don't push! Floor's covered in ice!": "Này, đừng có xô đẩy! Mặt đường đóng băng trơn tuột rồi!",
-        "<size=51>I said don't push!</size>": "<size=51>Tao đã bảo đừng có xô đẩy mà!</size>",
-        "Broke Gangster": "Tên Côn Đồ Túng Tiền",
-        "Excited Gangster": "Tên Côn Đồ Hăng Máu",
-        "Subdued Gangster": "Tên Côn Đồ Bị Khuất Phục",
-        "Sly Gangster": "Tên Côn Đồ Ranh Mãnh",
-        "Young Gangster": "Tên Côn Đồ Trẻ Tuổi",
-        "Anxious Mercenary": "Lính Đánh Thuê Bồn Chồn",
-        "It was all Minova's plan.==W== Hitting them hard really did the trick. All of them took off with their tails between their legs.": 
-            "Tất cả đều nằm trong tính toán của Minova.==W== Giáng cho chúng một đòn chí mạng quả nhiên hiệu nghiệm. Đứa nào đứa nấy cúp đuôi chạy té khói cả rồi.",
-        "That takes care of our tail! Bastelina, how are things on your end?":
-            "Cắt đuôi được bọn bám theo rồi! Bastelina, bên cậu thế nào rồi?",
-    }
-    sdict_stm02_04 = scene_dicts.setdefault("STm02_04", {})
-    for en_k, vi_v in stm02_04_overrides.items():
-        sdict_stm02_04[en_k] = vi_v
-        sdict_stm02_04[clean_str(en_k)] = vi_v
-        master_dict[en_k] = vi_v
-        master_dict[clean_str(en_k)] = vi_v
+    try:
+        from apply_deep_idiom_fixes import STM02_04_PERFECT_DICT, GENERAL_IDIOM_OVERRIDES
+        sdict_stm02_04 = scene_dicts.setdefault("STm02_04", {})
+        for en_k, vi_v in STM02_04_PERFECT_DICT.items():
+            sdict_stm02_04[en_k] = vi_v
+            sdict_stm02_04[clean_str(en_k)] = vi_v
+            master_dict[en_k] = vi_v
+            master_dict[clean_str(en_k)] = vi_v
+            
+        for en_k, vi_v in GENERAL_IDIOM_OVERRIDES.items():
+            master_dict[en_k] = vi_v
+            master_dict[clean_str(en_k)] = vi_v
+        print(f"Applied {len(STM02_04_PERFECT_DICT)} STm02_04 overrides and {len(GENERAL_IDIOM_OVERRIDES)} idiom overrides.")
+    except Exception as e:
+        print(f"Note: Deep idiom overrides not loaded: {e}")
 
     try:
         from polish_all_pm_chat_strings import CHAT_DICTIONARY
