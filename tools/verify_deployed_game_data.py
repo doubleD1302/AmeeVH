@@ -26,6 +26,17 @@ EXPECTED_SKILLS = {
 EXPECTED_UITEXT = {
     "UIText.Achievement_Btn_ReceiveAll.1": "Nhận tất cả",
     "UIText.AVG_SkipTip.1": "Bỏ qua đoạn cốt truyện này?",
+    "UIText.GachaHistory_Guarantee.1": "Chi Tiết Bảo Trợ (Pity)",
+    "UIText.GachaHistory_History.1": "Lịch Sử Chiêu Mộ",
+    "UIText.Recruit_history_empty.1": "Chưa có lịch sử chiêu mộ",
+    "UIText.GachaCover3.1": "lượt chiêu mộ chắc chắn nhận Du Hành Giả Tiêu Điểm!",
+}
+
+EXPECTED_GACHA_STORAGE = {
+    "GachaStorage.CharacterCardPool.1": "Chiêu Mộ Du Hành Thường",
+    "GachaStorage.CharacterUpCardPool.1": "Chiêu Mộ Du Hành Giới Hạn",
+    "GachaStorage.DiscCardPool.1": "Khắc Ấn Thường",
+    "GachaStorage.DiscUpCardPool.1": "Khắc Ấn Giới Hạn",
 }
 
 def get_hash(p: Path) -> str:
@@ -47,6 +58,7 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
     found_disc = False
     found_skill = False
     found_uitext = False
+    found_gacha = False
 
     for e in arc.entries:
         # DiscIP (0x1f924138769d46ec)
@@ -85,7 +97,19 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
                 print(f"    - {k}: {actual_val} (MATCH)")
             found_uitext = True
 
-    if not (found_disc and found_skill and found_uitext):
+        # GachaStorage (0x07f8babd51f803d6)
+        if e["hash"] == 0x07f8babd51f803d6:
+            data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
+            d = json.loads(data.decode("utf-8"))
+            print("  [PASS] Decrypted GachaStorage table.")
+            for k, expected_val in EXPECTED_GACHA_STORAGE.items():
+                actual_val = d.get(k)
+                if actual_val != expected_val:
+                    raise AssertionError(f"GachaStorage regression at {k}: expected '{expected_val}', got '{actual_val}'")
+                print(f"    - {k}: {actual_val} (MATCH)")
+            found_gacha = True
+
+    if not (found_disc and found_skill and found_uitext and found_gacha):
         raise AssertionError("One or more essential tables were missing from data.arcx!")
     print(f"  --> ALL DATA CHECKS PASSED FOR {live_arcx.parent.parent.name}!")
 
