@@ -44,6 +44,13 @@ def patch_proto_constants(proto: dict, scene_dict: dict, master_dict: dict, stat
                     elif s_clean in master_dict:
                         new_text = master_dict[s_clean]
                         
+                if new_text is None:
+                    # Double-layer fallback polish for any legacy Vietnamese strings
+                    from comprehensive_dialogue_polisher import polish_line
+                    s_pol = polish_line("", s_strip)
+                    if s_pol != s_strip:
+                        new_text = s_pol
+                        
                 if new_text is not None:
                     new_text = clean_str(new_text)
                     l_pad = len(s) - len(s.lstrip())
@@ -216,6 +223,47 @@ def main():
                 master_dict[c_k] = v.strip()
         print(f"Total master dictionary size: {len(master_dict)}")
 
+    # 3.1 Load Campaign 19 Polished Cache (20,680 lines)
+    p19 = ROOT / "work/editorial/campaign19_polish_remaining_20680_20261025_r01/UNIFIED_CAMPAIGN_19_POLISHED.jsonl"
+    if p19.exists():
+        c19_count = 0
+        for l in p19.read_text(encoding="utf-8").splitlines():
+            if not l.strip(): continue
+            it = json.loads(l)
+            en = it.get("en")
+            vi = it.get("polished_vi") or it.get("original_vi")
+            if en and vi and vi.strip():
+                en_str = en.strip()
+                vi_str = vi.strip()
+                master_dict[en_str] = vi_str
+                c_en = clean_str(en_str)
+                if c_en:
+                    master_dict[c_en] = vi_str
+                c19_count += 1
+        print(f"  Campaign 19 (Polish Remaining 20k Cache): {c19_count} master lines")
+
+    # 3.2 Explicit high-priority scene overrides for STm02_04 & key scenes
+    stm02_04_overrides = {
+        "Hey, don't push! Floor's covered in ice!": "Này, đừng có xô đẩy! Mặt đường đóng băng trơn tuột rồi!",
+        "<size=51>I said don't push!</size>": "<size=51>Tao đã bảo đừng có xô đẩy mà!</size>",
+        "Broke Gangster": "Tên Côn Đồ Túng Tiền",
+        "Excited Gangster": "Tên Côn Đồ Hăng Máu",
+        "Subdued Gangster": "Tên Côn Đồ Bị Khuất Phục",
+        "Sly Gangster": "Tên Côn Đồ Ranh Mãnh",
+        "Young Gangster": "Tên Côn Đồ Trẻ Tuổi",
+        "Anxious Mercenary": "Lính Đánh Thuê Bồn Chồn",
+        "It was all Minova's plan.==W== Hitting them hard really did the trick. All of them took off with their tails between their legs.": 
+            "Tất cả đều nằm trong tính toán của Minova.==W== Giáng cho chúng một đòn chí mạng quả nhiên hiệu nghiệm. Đứa nào đứa nấy cúp đuôi chạy té khói cả rồi.",
+        "That takes care of our tail! Bastelina, how are things on your end?":
+            "Cắt đuôi được bọn bám theo rồi! Bastelina, bên cậu thế nào rồi?",
+    }
+    sdict_stm02_04 = scene_dicts.setdefault("STm02_04", {})
+    for en_k, vi_v in stm02_04_overrides.items():
+        sdict_stm02_04[en_k] = vi_v
+        sdict_stm02_04[clean_str(en_k)] = vi_v
+        master_dict[en_k] = vi_v
+        master_dict[clean_str(en_k)] = vi_v
+
     try:
         from polish_all_pm_chat_strings import CHAT_DICTIONARY
         for en, vi in CHAT_DICTIONARY.items():
@@ -234,7 +282,8 @@ def main():
         'patched_strings': 0
     }
 
-    print(f"\nPatching {len(mapping)} Lua AVG files...")
+    lua_tree_dir = ROOT / "work" / "research" / "lua_tree" / "Game" / "UI" / "Avg" / "_en" / "Config"
+    print(f"\nPatching {len(mapping)} Lua AVG files (sourcing pure English bytecode from lua_tree)...")
     for fname, info in mapping.items():
         entry_fname = info['filename']
         bin_path = entries_dir / entry_fname
@@ -244,14 +293,19 @@ def main():
         sc_name = fname[:-4] if fname.endswith(".lua") else fname
         sc_dict = scene_dicts.get(sc_name)
 
-        encrypted_data = bin_path.read_bytes()
-        decrypted_data = xxtea_decrypt(encrypted_data, XXTEA_KEY)
+        # Source pure English bytecode from lua_tree if available, otherwise decrypt entry
+        lt_file = lua_tree_dir / fname
+        if lt_file.exists():
+            decrypted_data = lt_file.read_bytes()
+        else:
+            encrypted_data = bin_path.read_bytes()
+            decrypted_data = xxtea_decrypt(encrypted_data, XXTEA_KEY)
 
         prev_count = stats['patched_strings']
         patched_raw = patch_lua_bytecode(decrypted_data, sc_dict, master_dict, stats)
         num_in_file = stats['patched_strings'] - prev_count
 
-        if num_in_file > 0:
+        if num_in_file > 0 or lt_file.exists():
             stats['patched_files'] += 1
             re_encrypted = xxtea_encrypt(patched_raw, XXTEA_KEY)
             bin_path.write_bytes(re_encrypted)
