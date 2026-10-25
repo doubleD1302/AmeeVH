@@ -350,5 +350,10 @@ def main():
                 shutil.copy2(dist_data, target_data)
                 print(f"SUCCESS! Synced golden tables ({dist_data.stat().st_size:,} bytes) to {target_data}")
 
+    # 7. Automated Anti-Regression Verification Gate
+    print("\nRunning Automated Anti-Regression Gate on deployed files...")
+    import verify_deployed_game_data
+    verify_deployed_game_data.main()
+
 if __name__ == "__main__":
     main()
