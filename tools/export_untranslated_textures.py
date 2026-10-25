@@ -100,10 +100,12 @@ def main():
         'ui_buildfunction__note_90011_S.png'
     }
     cat7_all = list((EN_ROOT / "07_GiaoDienKhac_OtherUI").glob("*.png"))
+    p7_vi = VI_ROOT_1 / "07_GiaoDienKhac_OtherUI_VI"
     untranslated["07_GiaoDienKhac_OtherUI"] = [
         p for p in cat7_all
         if not any(k.lower() in p.name.lower() for k in obviously_non_text_keywords)
         and p.name not in explicit_non_text
+        and not (p7_vi / p.name).exists()
     ]
 
     # Category 8: Full Atlas Textures (All 4)
