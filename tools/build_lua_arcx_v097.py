@@ -256,6 +256,18 @@ def main():
             master_dict[en_k] = vi_v
             master_dict[clean_str(en_k)] = vi_v
         print(f"Applied {len(STM02_04_PERFECT_DICT)} STm02_04 overrides and {len(GENERAL_IDIOM_OVERRIDES)} idiom overrides.")
+        from apply_stm02_09_and_avguitext_fix import STM02_09_PERFECT_DICT, ADDITIONAL_RECURRING_FIXES
+        sdict_stm02_09 = scene_dicts.setdefault("STm02_09", {})
+        for en_k, vi_v in STM02_09_PERFECT_DICT.items():
+            sdict_stm02_09[en_k] = vi_v
+            sdict_stm02_09[clean_str(en_k)] = vi_v
+            master_dict[en_k] = vi_v
+            master_dict[clean_str(en_k)] = vi_v
+            
+        for en_k, vi_v in ADDITIONAL_RECURRING_FIXES.items():
+            master_dict[en_k] = vi_v
+            master_dict[clean_str(en_k)] = vi_v
+        print(f"Applied {len(STM02_09_PERFECT_DICT)} STm02_09 overrides and {len(ADDITIONAL_RECURRING_FIXES)} recurring overrides.")
     except Exception as e:
         print(f"Note: Deep idiom overrides not loaded: {e}")
 
@@ -315,6 +327,12 @@ def main():
     contacts_entry = entries_dir / "02804_0x6b338c3a32f44951.bin"
     if contacts_entry.exists():
         patch_avg_contacts_entry(contacts_entry)
+
+    # 4.2 Patch AvgUIText.lua with Vietnamese pronouns, gender tags, and UI prompts
+    from apply_stm02_09_and_avguitext_fix import patch_avguitext_entry
+    avguitext_entry = entries_dir / "02805_0x3e63762a97ac2700.bin"
+    if avguitext_entry.exists():
+        patch_avguitext_entry(avguitext_entry)
 
     # 5. Repack lua.arcx
     output_lua_arcx = ROOT / "dist" / "lua_patched_vi.arcx"
