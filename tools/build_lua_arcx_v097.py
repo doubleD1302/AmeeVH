@@ -339,13 +339,16 @@ def main():
             shutil.copy2(output_lua_arcx, target)
             print(f"SUCCESS! Synced to {target} ({target.stat().st_size:,} bytes)")
 
-    # Also synchronize tables (data.arcx) to Steam
-    standalone_data = Path(r"c:\YostarGames\StellaSora_EN") / "Persistent_Store" / "Tables" / "data.arcx"
-    steam_data = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora") / "Persistent_Store" / "Tables" / "data.arcx"
-    if standalone_data.exists() and steam_data.parent.exists():
-        print(f"\nSynchronizing tables to Steam: {steam_data}...")
-        shutil.copy2(standalone_data, steam_data)
-        print(f"SUCCESS! Synced tables to {steam_data}")
+    # Also synchronize tables (data.arcx) from golden dist/data_patched_vi.arcx to live games
+    dist_data = ROOT / "dist" / "data_patched_vi.arcx"
+    if dist_data.exists():
+        for target_data in [
+            Path(r"c:\YostarGames\StellaSora_EN\Persistent_Store\Tables\data.arcx"),
+            Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora\Persistent_Store\Tables\data.arcx")
+        ]:
+            if target_data.parent.exists():
+                shutil.copy2(dist_data, target_data)
+                print(f"SUCCESS! Synced golden tables ({dist_data.stat().st_size:,} bytes) to {target_data}")
 
 if __name__ == "__main__":
     main()
