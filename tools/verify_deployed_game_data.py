@@ -43,6 +43,19 @@ EXPECTED_CHARGEM = {
     "CharGem.101.1": "Huy Hiệu Gai Tín Đồ",
 }
 
+EXPECTED_CHARGET = {
+    "CharGetLines.10301.1": "Em là Amber",
+    "CharGetLines.10701.1": "Kỵ sĩ Tập sự",
+    "CharGetLines.11001.1": "đồng minh đắc lực của cậu",
+}
+
+EXPECTED_VOICE = {
+    "vo_103_combat_chat_001": "2, 4, 6... Vẫn còn dư dả băng đạn dự phòng.",
+    "vo_112_ui_affchat3_001": "Có cậu ngồi ghế phụ đi cùng thế này thì chuyến đi dài mấy cũng vui hết nấc luôn á! ♪",
+    "vo_107_combat_chatLvUp_001": "Kẻ địch đang chiếm thế thượng phong, nhưng em quyết không lùi bước đâu!",
+    "vo_103_combat_ultskill_001": "Năng lượng đã nạp đầy. Khai hỏa!",
+}
+
 EXPECTED_GACHA_STORAGE = {
     "GachaStorage.CharacterCardPool.1": "Chiêu Mộ Du Hành Thường",
     "GachaStorage.CharacterUpCardPool.1": "Chiêu Mộ Du Hành Giới Hạn",
@@ -132,6 +145,28 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
                     raise AssertionError(f"CharGem regression at {k}: expected '{expected_val}', got '{actual_val}'")
                 print(f"    - {k}: {actual_val} (MATCH)")
             found_chargem = True
+
+        # CharGetLines (0x8dcf06b298f46b28)
+        if e["hash"] == 0x8dcf06b298f46b28:
+            data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
+            d = json.loads(data.decode("utf-8"))
+            print("  [PASS] Decrypted CharGetLines table.")
+            for k, substr in EXPECTED_CHARGET.items():
+                actual_val = d.get(k, "")
+                if substr not in actual_val:
+                    raise AssertionError(f"CharGetLines regression at {k}: expected substring '{substr}', got '{actual_val}'")
+                print(f"    - {k}: contains '{substr}' (MATCH)")
+
+        # Voice Subtitles (0x80911df3a563e0f3)
+        if e["hash"] == 0x80911df3a563e0f3:
+            data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
+            d = json.loads(data.decode("utf-8"))
+            print("  [PASS] Decrypted Master Voice Subtitles table.")
+            for k, expected_val in EXPECTED_VOICE.items():
+                actual_val = d.get(k, {}).get("text", {}).get("female_jp", [""])[0]
+                if actual_val != expected_val:
+                    raise AssertionError(f"Voice regression at {k}: expected '{expected_val}', got '{actual_val}'")
+                print(f"    - {k}: '{actual_val}' (MATCH)")
 
     if not (found_disc and found_skill and found_uitext and found_gacha and found_chargem):
         raise AssertionError("One or more essential tables were missing from data.arcx!")
