@@ -43,6 +43,14 @@ EXPECTED_CHARGEM = {
     "CharGem.101.1": "Huy Hiệu Gai Tín Đồ",
 }
 
+EXPECTED_ITEMS = {
+    "Item.111001.1": "Ma Vương Tập Sự",
+    "Item.111009.1": "Bậc Thầy Ước Nguyện",
+    "Item.11103.1": "Mảnh Ghép 1/365 Của Anh",
+    "Item.11205.1": "Phút Thảnh Thơi Bên Cậu",
+    "Item.1030.2": "Dùng để kích hoạt Thiên phú Du Hành Giả.",
+}
+
 EXPECTED_CHARGET = {
     "CharGetLines.10301.1": "Em là Amber",
     "CharGetLines.10701.1": "Kỵ sĩ Tập sự",
@@ -84,6 +92,7 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
     found_uitext = False
     found_gacha = False
     found_chargem = False
+    found_item = False
 
     for e in arc.entries:
         # DiscIP (0x1f924138769d46ec)
@@ -134,6 +143,18 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
                 print(f"    - {k}: {actual_val} (MATCH)")
             found_gacha = True
 
+        # Item (0xe60634348b826f41)
+        if e["hash"] == 0xe60634348b826f41:
+            data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
+            d = json.loads(data.decode("utf-8"))
+            print("  [PASS] Decrypted Item table.")
+            for k, expected_val in EXPECTED_ITEMS.items():
+                actual_val = d.get(k)
+                if actual_val != expected_val:
+                    raise AssertionError(f"Item regression at {k}: expected '{expected_val}', got '{actual_val}'")
+                print(f"    - {k}: '{actual_val}' (MATCH)")
+            found_item = True
+
         # CharGem (0x627a5df613782a6e)
         if e["hash"] == 0x627a5df613782a6e:
             data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
@@ -168,7 +189,7 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
                     raise AssertionError(f"Voice regression at {k}: expected '{expected_val}', got '{actual_val}'")
                 print(f"    - {k}: '{actual_val}' (MATCH)")
 
-    if not (found_disc and found_skill and found_uitext and found_gacha and found_chargem):
+    if not (found_disc and found_skill and found_uitext and found_gacha and found_chargem and found_item):
         raise AssertionError("One or more essential tables were missing from data.arcx!")
     print(f"  --> ALL DATA CHECKS PASSED FOR {live_arcx.parent.parent.name}!")
 
