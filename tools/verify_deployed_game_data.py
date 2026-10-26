@@ -30,6 +30,17 @@ EXPECTED_UITEXT = {
     "UIText.GachaHistory_History.1": "Lịch Sử Chiêu Mộ",
     "UIText.Recruit_history_empty.1": "Chưa có lịch sử chiêu mộ",
     "UIText.GachaCover3.1": "lượt chiêu mộ chắc chắn nhận Du Hành Giả Tiêu Điểm!",
+    "UIText.Equipment_Btn_Upgrade.1": "Tôi Luyện",
+    "UIText.Equipment_AttrTag_4.1": "Tiềm Năng Hỗ Trợ",
+    "UIText.Equipment_Title_Info.1": "Thông Tin Huy Hiệu",
+    "UIText.TowerDef_LevelPreTime.1": "Đợt tiếp theo bắt đầu sau <color=#08d3d4>{0}</color>",
+    "UIText.Vampire_Bonus_Title.1": "{0} Chuỗi tiêu diệt <size=28>(Điểm x {1})</size>",
+}
+
+EXPECTED_CHARGEM = {
+    "CharGem.203.1": "Huy Hiệu Ánh Sao Pathfinder",
+    "CharGem.201.1": "Huy Hiệu Gai Pathfinder",
+    "CharGem.101.1": "Huy Hiệu Gai Tín Đồ",
 }
 
 EXPECTED_GACHA_STORAGE = {
@@ -59,6 +70,7 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
     found_skill = False
     found_uitext = False
     found_gacha = False
+    found_chargem = False
 
     for e in arc.entries:
         # DiscIP (0x1f924138769d46ec)
@@ -109,7 +121,19 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
                 print(f"    - {k}: {actual_val} (MATCH)")
             found_gacha = True
 
-    if not (found_disc and found_skill and found_uitext and found_gacha):
+        # CharGem (0x627a5df613782a6e)
+        if e["hash"] == 0x627a5df613782a6e:
+            data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
+            d = json.loads(data.decode("utf-8"))
+            print("  [PASS] Decrypted CharGem table.")
+            for k, expected_val in EXPECTED_CHARGEM.items():
+                actual_val = d.get(k)
+                if actual_val != expected_val:
+                    raise AssertionError(f"CharGem regression at {k}: expected '{expected_val}', got '{actual_val}'")
+                print(f"    - {k}: {actual_val} (MATCH)")
+            found_chargem = True
+
+    if not (found_disc and found_skill and found_uitext and found_gacha and found_chargem):
         raise AssertionError("One or more essential tables were missing from data.arcx!")
     print(f"  --> ALL DATA CHECKS PASSED FOR {live_arcx.parent.parent.name}!")
 
