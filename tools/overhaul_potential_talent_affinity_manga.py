@@ -332,9 +332,9 @@ def clean_preset_entry(key: str, val: str) -> str:
         char_name = PRESET_CHAR_NAMES.get(cid, "Du Hành Giả")
 
         if field == "1":
-            return f"Thiết Lập Mặc Định {preset_num}"
+            return f"Gợi ý {preset_num}"
         elif field == "2":
-            return f"Thiết Lập Mặc Định {preset_num} của {char_name}"
+            return f"Gợi ý {preset_num} của {char_name}"
 
     return val
 
