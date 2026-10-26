@@ -1,0 +1,49 @@
+{
+  "name": "Starlit Glass",
+  "reference_canvas": [
+    1440,
+    1000
+  ],
+  "colors": {
+    "bg": "#06182f",
+    "glass_top": "#164d80",
+    "glass_bottom": "#0a294e",
+    "primary": "#62d4ff",
+    "text": "#f0f7ff",
+    "muted": "#a4c9e7",
+    "success": "#3af0bc",
+    "warning": "#ffce79",
+    "error": "#ff7998"
+  },
+  "font": {
+    "family": "Segoe UI",
+    "fallback": [
+      "Arial",
+      "sans-serif"
+    ],
+    "body": 20,
+    "caption": 16,
+    "section": 28,
+    "title": 36
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48
+  ],
+  "radius": {
+    "button": 10,
+    "card": 12,
+    "panel": 22
+  },
+  "animation": {
+    "spinner_ms": 80,
+    "hover_ms": 140,
+    "reduced_motion": "Use static spinner frame and text status"
+  },
+  "text_baked": false
+}

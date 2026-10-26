@@ -1,0 +1,21 @@
+{
+  "background": "resources/ui/background.png",
+  "logo": "resources/ui/logo.png",
+  "icon": "resources/branding/app_icon.ico",
+  "panel": {
+    "path": "resources/ui/png/2x/panels/plain.png",
+    "slice_insets_1x": [
+      36,
+      36,
+      36,
+      36
+    ]
+  },
+  "decor": [
+    "resources/ui/png/2x/decor/leaves.png",
+    "resources/ui/png/2x/decor/star_large.png"
+  ],
+  "buttons": "resources/ui/png/2x/buttons/{variant}_{state}.png",
+  "notifications": "resources/ui/notifications.json",
+  "payload": "explicit user path or verified network cache; not bundled"
+}
