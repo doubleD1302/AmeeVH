@@ -30,6 +30,8 @@ EXPECTED_UITEXT = {
     "UIText.GachaHistory_History.1": "Lịch Sử Chiêu Mộ",
     "UIText.Recruit_history_empty.1": "Chưa có lịch sử chiêu mộ",
     "UIText.Plot_Index.1": "Hồi {0}",
+    "UIText.Activity_Review.1": "Hồi Tưởng Sự Kiện",
+    "UIText.Nova_Story.1": "Thời Báo Nova",
     "UIText.GachaCover3.1": "lượt chiêu mộ chắc chắn nhận Du Hành Giả Tiêu Điểm!",
     "UIText.Equipment_Btn_Upgrade.1": "Tôi Luyện",
     "UIText.Equipment_AttrTag_4.1": "Tiềm Năng Hỗ Trợ",
@@ -57,6 +59,9 @@ EXPECTED_ITEMS = {
     "Item.11103.1": "Mảnh Ghép 1/365 Của Anh",
     "Item.11205.1": "Phút Thảnh Thơi Bên Cậu",
     "Item.1030.2": "Dùng để kích hoạt Thiên phú Du Hành Giả.",
+    "Item.514908.1": "Đòn Đánh Hiểm Độc",
+    "Item.513913.1": "Lướt Quét Thần Tốc",
+    "Item.514906.1": "Tuyệt Không Khoan Nhượng",
 }
 
 EXPECTED_CHARGET = {
