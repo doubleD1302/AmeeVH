@@ -30,7 +30,7 @@ EXPECTED_UITEXT = {
     "UIText.GachaHistory_History.1": "Lịch Sử Chiêu Mộ",
     "UIText.Recruit_history_empty.1": "Chưa có lịch sử chiêu mộ",
     "UIText.Plot_Index.1": "Hồi {0}",
-    "UIText.Activity_Review.1": "Hồi Tưởng Sự Kiện",
+    "UIText.Activity_Review.1": "Hồi Tưởng",
     "UIText.Nova_Story.1": "Thời Báo Nova",
     "UIText.GachaCover3.1": "lượt chiêu mộ chắc chắn nhận Du Hành Giả Tiêu Điểm!",
     "UIText.Equipment_Btn_Upgrade.1": "Tôi Luyện",
