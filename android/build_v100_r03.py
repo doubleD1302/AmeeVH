@@ -82,7 +82,7 @@ print(f"Biên dịch Gradle thành công trong {time.time()-started:.2f}s! ({ass
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
-out_apk_dist = dist / "StellaSora-Android_v1.0.0.apk"
+out_apk_dist = dist / "StellaSora-Android_v1.0.2.apk"
 out_apk_legacy = dist / "StellaSora_VietHoa.apk"
 shutil.copy2(assembled, out_apk_dist)
 shutil.copy2(assembled, out_apk_legacy)
@@ -112,11 +112,12 @@ print(f"APK SHA256: {apk_sha}")
 # Update android_localadb_launcher.json
 launcher_json_path = dist / "android_localadb_launcher.json"
 launcher_data = json.loads(launcher_json_path.read_text(encoding="utf-8"))
-launcher_data["version_code"] = 5
-launcher_data["version_name"] = "1.0.1"
+launcher_data["version_code"] = 6
+launcher_data["version_name"] = "1.0.2"
 launcher_data["size"] = apk_size
 launcher_data["sha256"] = apk_sha
+launcher_data["download_url"] = "https://github.com/doubleD1302/AmeeVH/releases/download/v1.0.2/StellaSora-Android_v1.0.2.apk"
 launcher_json_path.write_text(json.dumps(launcher_data, indent=2, ensure_ascii=False), encoding="utf-8")
-print("Đã cập nhật android_localadb_launcher.json với versionCode: 5 (v1.0.1)!")
+print("Đã cập nhật android_localadb_launcher.json với versionCode: 6 (v1.0.2)!")
 
 print("\n=== HOÀN TẤT BIÊN DỊCH VÀ XÁC THỰC APK V1.0.0 (CODE 4)! ===")
