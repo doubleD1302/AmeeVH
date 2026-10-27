@@ -140,11 +140,8 @@ def run():
                 canvas = vi_img
             else:
                 canvas = Image.new("RGBA", target_size, (0, 0, 0, 0))
-                if spr_name == "zs_activity_trial_logo":
-                    off_x, off_y = 57, 8
-                else:
-                    off_x = (target_size[0] - vi_img.width) // 2
-                    off_y = (target_size[1] - vi_img.height) // 2
+                off_x = (target_size[0] - vi_img.width) // 2
+                off_y = (target_size[1] - vi_img.height) // 2
                 canvas.paste(vi_img, (off_x, off_y), vi_img)
 
             encoded, _ = Texture2DConverter.image_to_texture2d(
