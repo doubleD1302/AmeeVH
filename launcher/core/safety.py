@@ -55,10 +55,15 @@ def normalize_manifest(raw):
     if not isinstance(game,str) or not game or not isinstance(res,(str,int)) or not str(res):raise InstallerError('Manifest thiếu phiên bản game/tài nguyên tương thích.','VERSION_MISSING')
     mapping=m.get('files')
     if mapping is None:
-        bundles=m.get('bundles')
-        if not isinstance(bundles,dict) or not bundles:raise InstallerError('Manifest không khai báo tệp được xác minh.','EMPTY_MANIFEST')
+        bundles=m.get('bundles',{})
         mapping={f'Persistent_Store/AssetBundles/{n}':{'source':f'AssetBundles/{n}','sha256':v.get('patched_sha256') or v.get('sha256'),'size':v.get('size_bytes') or v.get('size')} for n,v in bundles.items() if isinstance(v,dict)}
-        if len(mapping)!=len(bundles):raise InstallerError('Bundle metadata không hợp lệ.','MANIFEST_INVALID')
+        if isinstance(m.get('lua_arcx'),dict):
+            l=m['lua_arcx']
+            mapping['Persistent_Store/Scripts/lua.arcx']={'source':l.get('filename','lua_patched_vi.arcx'),'sha256':l.get('sha256'),'size':l.get('size_bytes') or l.get('size')}
+        if isinstance(m.get('data_arcx'),dict):
+            d=m['data_arcx']
+            mapping['Persistent_Store/Tables/data.arcx']={'source':d.get('filename','data_patched_vi.arcx'),'sha256':d.get('sha256'),'size':d.get('size_bytes') or d.get('size')}
+        if not mapping:raise InstallerError('Manifest không khai báo tệp được xác minh.','EMPTY_MANIFEST')
     if not isinstance(mapping,dict) or not mapping:raise InstallerError('Danh sách tệp rỗng/không hợp lệ.','EMPTY_MANIFEST')
     result={};seen=set()
     for dest,meta in mapping.items():

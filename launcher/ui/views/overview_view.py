@@ -88,7 +88,12 @@ class OverviewView(QWidget):
         for b in (self.btn_verify,self.btn_rollback):b.setEnabled(not busy);b.setToolTip(reason or ('Đối chiếu SHA256 với biên bản đã cài.' if b is self.btn_verify else 'Khôi phục từ backup gắn với thư mục này.'))
         self.spinner.start(getattr(self,'_reduced_motion',False)) if busy else self.spinner.stop()
     def set_translation_update(self,available):
-        self.btn_install.setText('Cập nhật Việt hoá' if available else 'Cài Việt hoá')
+        if available:
+            self.btn_install.setText('Cập nhật Việt hoá')
+        elif getattr(self, '_game', None) and getattr(self._game, 'installed_receipt', None):
+            self.btn_install.setText('Cài lại Việt hoá')
+        else:
+            self.btn_install.setText('Cài Việt hoá')
         self.btn_install.setAccessibleName(self.btn_install.text())
     def set_install_allowed(self,allowed,reason=''):
         self._install_allowed=bool(allowed);self.btn_install.setToolTip(reason);self.set_busy(self._busy)

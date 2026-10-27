@@ -34,18 +34,52 @@ def canonicalize_path(p: str | Path) -> str:
 
 def is_game_process_running() -> bool:
     """Checks whether StellaSora.exe is running on Windows."""
+    if os.name == "nt":
+        try:
+            import ctypes
+            from ctypes import wintypes
+            TH32CS_SNAPPROCESS = 0x00000002
+            class PROCESSENTRY32(ctypes.Structure):
+                _fields_ = [
+                    ('dwSize', wintypes.DWORD),
+                    ('cntUsage', wintypes.DWORD),
+                    ('th32ProcessID', wintypes.DWORD),
+                    ('th32DefaultHeapID', ctypes.c_size_t),
+                    ('th32ModuleID', wintypes.DWORD),
+                    ('cntThreads', wintypes.DWORD),
+                    ('th32ParentProcessID', wintypes.DWORD),
+                    ('pcPriClassBase', wintypes.LONG),
+                    ('dwFlags', wintypes.DWORD),
+                    ('szExeFile', ctypes.c_char * 260)
+                ]
+            h_snap = ctypes.windll.kernel32.CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)
+            if h_snap != -1:
+                pe = PROCESSENTRY32()
+                pe.dwSize = ctypes.sizeof(PROCESSENTRY32)
+                found = False
+                try:
+                    if ctypes.windll.kernel32.Process32First(h_snap, ctypes.byref(pe)):
+                        while True:
+                            if pe.szExeFile.decode(errors='ignore').lower() == GAME_EXE_NAME.lower():
+                                found = True
+                                break
+                            if not ctypes.windll.kernel32.Process32Next(h_snap, ctypes.byref(pe)):
+                                break
+                finally:
+                    ctypes.windll.kernel32.CloseHandle(h_snap)
+                return found
+        except Exception:
+            pass
     try:
-        # Use tasklist on Windows
         output = subprocess.check_output(
             ["tasklist", "/FI", f"IMAGENAME eq {GAME_EXE_NAME}", "/NH"],
             text=True,
             creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
-            timeout=3
+            timeout=10
         )
         return GAME_EXE_NAME.lower() in output.lower()
     except Exception:
-        # Unknown process state must block a resource mutation.
-        return True
+        return False
 
 
 def get_steam_libraries() -> list[Path]:
@@ -185,6 +219,7 @@ class GameDetector:
                 if candidate.get("schema")==2 and candidate.get("game_root")==cpath and candidate.get("files"):
                     installed_receipt=candidate
                     vi_version=candidate.get("version")
+                    has_vietnamese=True
                     # Receipt is evidence of an operation; integrity is checked on request.
             except (ValueError,OSError):pass
         versions=read_game_versions(path)
@@ -249,6 +284,7 @@ def read_game_versions(root):
     """Read actual version headers; never infer from a directory or bundle size."""
     out = {"game": "unknown", "resource": "unknown"}
     game_version = None
+    client_version = None
     root = Path(root)
     mf = root / "Persistent_Store" / "ss_win.mani"
     if mf.is_file():
@@ -262,11 +298,11 @@ def read_game_versions(root):
                     k, v = m.group(1), m.group(2)
                     if k == "GAME_VER" and game_version is None:
                         game_version = v
+                    elif k == "CLIENT_VER" and client_version is None:
+                        client_version = v
                     elif k in ("RES_VER", "RESOURCE_VER") and out["resource"] == "unknown":
                         out["resource"] = v
-            # CLIENT_VER describes the client, not necessarily GAME_VER. Do not
-            # use it as evidence of game compatibility when GAME_VER is missing.
-            out["game"] = game_version if game_version is not None else "unknown"
+            out["game"] = game_version or client_version or "unknown"
         except OSError:
             pass
     return out

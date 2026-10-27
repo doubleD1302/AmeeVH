@@ -4,7 +4,7 @@ import json,logging,uuid,hashlib,time
 from pathlib import Path
 from PySide6.QtCore import Qt,QThread,Signal,QTimer,QRectF,QRect,QEvent
 from PySide6.QtGui import QPainter,QColor,QGuiApplication,QLinearGradient
-from PySide6.QtWidgets import QMainWindow,QWidget,QVBoxLayout,QScrollArea,QDialog,QFileDialog,QMessageBox,QGraphicsBlurEffect
+from PySide6.QtWidgets import QApplication,QMainWindow,QWidget,QVBoxLayout,QScrollArea,QDialog,QFileDialog,QMessageBox,QGraphicsBlurEffect
 from ..core.config import PathManager,ConfigManager,LAUNCHER_VERSION,DEFAULT_GITHUB_REPO,derived_github_endpoints
 from ..core.game_detection import GameDetector,find_all_potential_game_installations
 from ..core.installer import PatchInstaller
@@ -77,6 +77,12 @@ class MainWindow(QMainWindow):
             raw=found[0]['path']
         return GameDetector(self.path_manager.backup_root).detect_info(raw)
     def _initial_load(self):
+        try:
+            from ..core.self_update import cleanup_update_artifacts
+            cleanup_update_artifacts(self.path_manager.exe_dir)
+            cleanup_update_artifacts(self.path_manager.app_data_dir / 'update_helper')
+        except Exception:
+            pass
         self._start('scan',lambda cb,op:{'game':self._detected()})
         self._sync_github(automatic=True)
     def _sync_github(self,automatic=False):
@@ -102,7 +108,7 @@ class MainWindow(QMainWindow):
             self._github_sync_state=result;self.notifications=result.get('notifications',[]);self.overview_view.set_notifications(self.notifications)
             self.network_service.notification_status=result['notification_status'];self.network_service.notification_message=result['notification_message'];self.network_service.notification_version=result.get('notification_version')
             self._record_release_observation(result)
-            self._refresh_translation_state()
+        self._refresh_translation_state()
         self.github_sync_changed.emit(self._github_sync_state)
         if self._manual_translation_check:
             self._manual_translation_check=False
@@ -132,7 +138,7 @@ class MainWindow(QMainWindow):
     def _release_worker(self,w):
         if self.active_worker is w:self.active_worker=None;self.active_operation_id=None;self.overview_view.set_busy(False,self.config_manager.get('reduced_motion',False))
         w.deleteLater()
-        if getattr(self,'_close_after_worker',False):self._close_after_worker=False;QTimer.singleShot(0,self.close)
+        if getattr(self,'_close_after_worker',False):self._close_after_worker=False;QTimer.singleShot(150,lambda:QApplication.instance().quit())
         elif self._pending_discoveries is not None:
             found=self._pending_discoveries;self._pending_discoveries=None;QTimer.singleShot(0,lambda:self._choose_discovered(found))
         else:QTimer.singleShot(0,self._maybe_show_release_notice)

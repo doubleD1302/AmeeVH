@@ -13,13 +13,11 @@ def newer(latest, installed):
     return latest is not None and installed is not None and latest > installed
 
 def matches(observed, expected):
-    # Wildcards or client-only values cannot prove compatibility for a write.
     observed, expected = str(observed or '').strip(), str(expected or '').strip()
-    if observed.lower() in ('', 'unknown', '*', 'all') or expected.lower() in ('', 'unknown', '*', 'all'):
+    if not observed or not expected or observed.lower() in ('unknown', '*', 'all'):
         return False
-    if any(c in observed or c in expected for c in '*;,|'):
-        return False
-    return observed == expected
+    expected_list = [e.strip() for e in re.split(r'[,;|]', expected) if e.strip()]
+    return observed in expected_list or '*' in expected_list
 
 def translation_state(sync, game):
     if sync.get('release_status') != 'online' or sync.get('manifest_status') != 'online':
@@ -41,4 +39,6 @@ def translation_state(sync, game):
         return {'available': False, 'can_install': False, 'message': f'Không thể so sánh phiên bản đã cài ({current}) với bản trong bảng kê ({version}).'}
     if newer(version, current):
         return {'available': True, 'can_install': True, 'message': f'Có bản Việt hoá {version} mới hơn bản đã cài {current}. {version_note}', 'version': version, 'version_note': version_note}
-    return {'available': False, 'can_install': False, 'message': f'Bản đã cài: {current} · Bảng kê: {version}. Không có bản mới hơn.'}
+    if version_parts(version) == version_parts(current):
+        return {'available': False, 'can_install': True, 'message': f'Bản đã cài: {current} (mới nhất). Bạn có thể bấm Cài lại để làm mới dữ liệu. {version_note}', 'version': version, 'version_note': version_note}
+    return {'available': False, 'can_install': False, 'message': f'Bản đã cài ({current}) mới hơn bảng kê ({version}). Hạ cấp bị từ chối. {version_note}', 'version': version, 'version_note': version_note}
