@@ -20,7 +20,7 @@ public final class MainActivity extends Activity implements LauncherService.List
   switch(action){
    case "state":emitState();break;
    case "openWirelessSettings":openWireless();break;
-   case "startPairingNotification":if(Build.VERSION.SDK_INT>=33&&checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED){afterPermission=action;requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},71);}else LauncherService.dispatch(this,action,args);break;
+   case "startPairingNotification":if(Build.VERSION.SDK_INT>=33&&checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED){afterPermission=action;requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},71);}else {LauncherService.dispatch(this,action,args);openWireless();}break;
    case "openIssues":{JSONObject cfg=Store.config(this);Store.validateConfig(cfg);external("https://github.com/"+cfg.getString("repo")+"/issues");break;}
    case "copyAccount":{String method=args.optString("method");JSONArray methods=Store.asset(this,"support/payment_methods.json").getJSONArray("methods");String account=null;for(int i=0;i<methods.length();i++){JSONObject m=methods.getJSONObject(i);if(m.getString("id").equals(method)&&!m.isNull("account_number"))account=m.getString("account_number");}if(account==null)throw new IOException("Nguồn chỉ có số ví được che. Hãy quét mã MoMo, không đoán số điện thoại.");clipboard("Tài khoản ủng hộ",account);showMessage("Đã sao chép","Đã sao chép số tài khoản từ thông tin được cung cấp.",false);break;}
    case "copyDiagnostics":{JSONObject s=LauncherService.snapshot(this);JSONObject report=Store.obj("app",s.opt("app"),"adb_connected",s.getJSONObject("adb").optBoolean("connected"),"adb_status",s.getJSONObject("adb").optString("status"),"game",s.opt("game"),"github",s.opt("github"),"message",s.optString("message"),"recovery",s.opt("recovery"));clipboard("Chẩn đoán Stella Sora",report.toString(2));showMessage("Đã sao chép báo cáo","Báo cáo chỉ được sao chép trên máy. Hãy xem lại trước khi tự gửi lên trang báo lỗi.",false);break;}
@@ -31,7 +31,30 @@ public final class MainActivity extends Activity implements LauncherService.List
   }
  }catch(Exception e){showMessage("Chưa thực hiện được",Store.cleanError(e),true);}}
  private void installUpdate()throws Exception {JSONObject state=LauncherService.snapshot(this);if(state.optBoolean("busy"))throw new IOException("Hãy chờ thao tác đang chạy.");File apk=new File(getCacheDir(),"updates/update.apk"),metadata=Store.internal(this,"pending_update.json");if(!apk.isFile()||!metadata.isFile()){LauncherService.dispatch(this,"prepareUpdate",new JSONObject());return;}ChannelClient.verifyApk(this,apk,Store.read(metadata));if(!getPackageManager().canRequestPackageInstalls()){new AlertDialog.Builder(this).setTitle("Cho phép cài APK từ launcher").setMessage("Android cần bạn cho phép nguồn này trước. Sau khi cấp quyền, quay lại và bấm mở trình cài đặt lần nữa.").setNegativeButton("Để sau",null).setPositiveButton("Mở cài đặt",(d,w)->startActivity(new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,Uri.parse("package:"+getPackageName())))).show();return;}new AlertDialog.Builder(this).setTitle("Mở trình cài đặt Android").setMessage("APK đã đúng ứng dụng Local ADB, là bản mới hơn và có cùng chữ ký. Android vẫn yêu cầu bạn tự xác nhận cài đặt.").setNegativeButton("Để sau",null).setPositiveButton("Mở trình cài đặt",(d,w)->{Uri uri=Uri.parse("content://"+Store.APP+".updates/update.apk");Intent install=new Intent(Intent.ACTION_VIEW).setDataAndType(uri,"application/vnd.android.package-archive").addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);startActivity(install);}).show();}
- private void openWireless(){for(String action:new String[]{"android.settings.WIRELESS_DEBUGGING_SETTINGS",Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS,Settings.ACTION_SETTINGS}){Intent i=new Intent(action);if(i.resolveActivity(getPackageManager())!=null){startActivity(i);return;}}showMessage("Mở Gỡ lỗi không dây","Hãy tự mở Cài đặt → Tuỳ chọn nhà phát triển → Gỡ lỗi không dây.",false);}
+ private void openWireless(){
+  try{
+   Intent tileIntent=new Intent("android.service.quicksettings.action.QS_TILE_PREFERENCES");
+   tileIntent.putExtra(Intent.EXTRA_COMPONENT_NAME,new ComponentName("com.android.settings","com.android.settings.development.qstile.DevelopmentTiles$WirelessDebugging"));
+   tileIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   startActivity(tileIntent);
+   return;
+  }catch(Exception ignored){}
+  try{
+   Intent subSettings=new Intent();
+   subSettings.setClassName("com.android.settings","com.android.settings.SubSettings");
+   subSettings.putExtra(":android:show_fragment","com.android.settings.development.WirelessDebuggingFragment");
+   subSettings.putExtra(":android:no_headers",true);
+   subSettings.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   startActivity(subSettings);
+   return;
+  }catch(Exception ignored){}
+  for(String action:new String[]{"android.settings.WIRELESS_DEBUGGING_SETTINGS",Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS,Settings.ACTION_SETTINGS}){
+   Intent i=new Intent(action);
+   i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   if(i.resolveActivity(getPackageManager())!=null){startActivity(i);return;}
+  }
+  showMessage("Mở Gỡ lỗi không dây","Hãy tự mở Cài đặt → Tuỳ chọn nhà phát triển → Gỡ lỗi không dây.",false);
+ }
  private void external(String url)throws Exception {Uri uri=Uri.parse(url);if(!"https".equals(uri.getScheme())||uri.getHost()==null)throw new IOException("Liên kết không hợp lệ.");startActivity(new Intent(Intent.ACTION_VIEW,uri));}
  private void clipboard(String label,String text){((ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText(label,text));}
  private void maybeAutoSync(){if(!loaded||!resumed||autoSynced)return;try{JSONObject snapshot=LauncherService.snapshot(this);if(!snapshot.optBoolean("busy")){LauncherService.dispatch(this,"sync",new JSONObject());autoSynced=true;}}catch(RuntimeException error){showMessage("Chưa đồng bộ tự động","Hãy mở ứng dụng và bấm Đồng bộ GitHub để thử lại.",true);}}
@@ -40,7 +63,7 @@ public final class MainActivity extends Activity implements LauncherService.List
  @Override public void event(JSONObject e){runOnUiThread(()->{if(web!=null&&loaded)web.evaluateJavascript("window.Stella&&window.Stella.onEvent(JSON.parse("+JSONObject.quote(e.toString())+"))",null);});}
  @Override protected void onResume(){super.onResume();resumed=true;LauncherService.listen(this);if(loaded){emitState();maybeAutoSync();}}
  @Override protected void onPause(){resumed=false;super.onPause();}
- @Override public void onRequestPermissionsResult(int request,String[] permissions,int[] grants){super.onRequestPermissionsResult(request,permissions,grants);if(request==71){String action=afterPermission;afterPermission=null;if(grants.length>0&&grants[0]==PackageManager.PERMISSION_GRANTED&&action!=null)LauncherService.dispatch(this,action,new JSONObject());else showMessage("Chưa được phép hiện thông báo","Ghép đôi nhanh từ thông báo chưa dùng được. Bạn vẫn có thể nhập cổng và mã thủ công trong launcher hoặc cấp quyền thông báo trong Cài đặt ứng dụng.",true);}}
+ @Override public void onRequestPermissionsResult(int request,String[] permissions,int[] grants){super.onRequestPermissionsResult(request,permissions,grants);if(request==71){String action=afterPermission;afterPermission=null;if(grants.length>0&&grants[0]==PackageManager.PERMISSION_GRANTED&&action!=null){LauncherService.dispatch(this,action,new JSONObject());if("startPairingNotification".equals(action))openWireless();}else showMessage("Chưa được phép hiện thông báo","Ghép đôi nhanh từ thông báo chưa dùng được. Bạn vẫn có thể nhập cổng và mã thủ công trong launcher hoặc cấp quyền thông báo trong Cài đặt ứng dụng.",true);}}
  @Override public void onBackPressed(){if(web==null||!loaded){super.onBackPressed();return;}web.evaluateJavascript("window.Stella?window.Stella.goBack():false",result->{if(!"true".equals(result))finish();});}
  @Override protected void onDestroy(){LauncherService.unlisten(this);if(web!=null){web.removeJavascriptInterface("StellaNative");web.destroy();web=null;}super.onDestroy();}
 }
