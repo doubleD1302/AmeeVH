@@ -20,7 +20,7 @@ class TitleBar(QWidget):
                 info=self.parent_window.current_game_info;ready=bool(info.installed and not info.is_running and not self.parent_window.active_worker);a.setEnabled(ready);a.setToolTip('Mở game Stella Sora' if ready else 'Chọn đúng thư mục và đóng thao tác/game đang chạy trước.')
         m.exec(self.gear.mapToGlobal(self.gear.rect().bottomLeft()))
     def set_active_tab(self,key):pass
-    def paintEvent(self,e):p=QPainter(self);AssetManager.get().paint(p,'controls/titlebar',QRectF(self.rect()),'stretch')
+    def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing,True);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);AssetManager.get().paint(p,'controls/titlebar',QRectF(self.rect()),'stretch')
     def mousePressEvent(self,e):
         if e.button()==Qt.MouseButton.LeftButton:self._drag=e.globalPosition().toPoint()-self.parent_window.pos()
     def mouseMoveEvent(self,e):

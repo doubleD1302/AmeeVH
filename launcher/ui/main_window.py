@@ -293,7 +293,7 @@ class MainWindow(QMainWindow):
         return result
     def resizeEvent(self,e):super().resizeEvent(e)
     def paintEvent(self,e):
-        painter=QPainter(self);painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);master=AssetManager.get().get_background()
+        painter=QPainter(self);painter.setRenderHint(QPainter.RenderHint.Antialiasing,True);painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);master=AssetManager.get().get_background()
         if not master.isNull():
             # QPainter applies the paint-device DPR to this single master-to-device draw.
             # There is no logical-sized pixmap that the OS must enlarge again.

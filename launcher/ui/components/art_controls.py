@@ -13,7 +13,7 @@ class AssetImage(QWidget):
     def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);AssetManager.get().paint(p,self.asset_id,QRectF(self.rect()),'contain')
 class ArtDivider(QWidget):
     def __init__(self,parent=None):super().__init__(parent);self.setFixedHeight(14)
-    def paintEvent(self,e):p=QPainter(self);AssetManager.get().paint(p,'decor/divider',QRectF(self.rect()),'stretch')
+    def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing,True);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);AssetManager.get().paint(p,'decor/divider',QRectF(self.rect()),'stretch')
 class Badge(QLabel):
     def __init__(self,text='Dự án',kind='project',parent=None):super().__init__(text,parent);self.kind=kind if kind in ('project','guide','notice','feedback') else 'project';self.setFixedSize(90,29);self.setFont(ui_font(13,QFont.Weight.DemiBold))
     def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);AssetManager.get().paint(p,'badges/'+self.kind,QRectF(self.rect()),'stretch');p.setPen(QColor('#073454'));p.setFont(self.font());p.drawText(self.rect(),Qt.AlignmentFlag.AlignCenter,self.text())
@@ -34,7 +34,7 @@ def scroll_area(widget=None):
 class ArtProgress(QProgressBar):
     def __init__(self,parent=None):super().__init__(parent);self.setFixedHeight(14);self.setRange(0,100);self.setTextVisible(False)
     def paintEvent(self,e):
-        p=QPainter(self);a=AssetManager.get();r=QRectF(self.rect());a.paint(p,'controls/progress_track',r)
+        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing,True);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);a=AssetManager.get();r=QRectF(self.rect());a.paint(p,'controls/progress_track',r)
         if self.maximum()>self.minimum():
             ratio=max(0,min(1,(self.value()-self.minimum())/(self.maximum()-self.minimum())))
             if ratio>0:a.paint(p,'controls/progress_fill',QRectF(r.left(),r.top(),r.width()*ratio,r.height()))
@@ -43,7 +43,7 @@ class Spinner(QWidget):
     def _advance(self):self.frame=(self.frame+1)%12;self.update()
     def start(self,reduced_motion=False):self.show();self.frame=0;self.timer.stop();self.timer.start() if not reduced_motion else None
     def stop(self):self.timer.stop();self.hide()
-    def paintEvent(self,e):p=QPainter(self);AssetManager.get().paint(p,'animation/spinner_'+str(self.frame).zfill(2),QRectF(self.rect()),'contain')
+    def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing,True);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);AssetManager.get().paint(p,'animation/spinner_'+str(self.frame).zfill(2),QRectF(self.rect()),'contain')
 class ArtCheckBox(QCheckBox):
     def __init__(self,text='',parent=None,toggle=False):super().__init__(text,parent);self.toggle=toggle;self.setMinimumHeight(36);self.setCursor(Qt.CursorShape.PointingHandCursor);self.setFont(ui_font(15));self._keyboard_focus=False;self.setStyleSheet('background:transparent;color:#e8f6ff;')
     def sizeHint(self):return QSize(self.fontMetrics().horizontalAdvance(self.text())+(74 if self.toggle else 46),36)
@@ -57,7 +57,7 @@ class AlertStrip(QWidget):
     def __init__(self,message='',kind='info',parent=None):
         super().__init__(parent);self.kind=kind;l=QHBoxLayout(self);l.setContentsMargins(14,9,14,9);l.setSpacing(9);self.icon=AssetImage('icons/'+('info' if kind in ('info','success') else 'warning')+'_cyan',22);l.addWidget(self.icon);self.label=text_label(message,13,wrap=True);l.addWidget(self.label,1)
     def setText(self,t):self.label.setText(t)
-    def paintEvent(self,e):p=QPainter(self);AssetManager.get().paint(p,'controls/alert_'+self.kind,QRectF(self.rect()))
+    def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing,True);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);AssetManager.get().paint(p,'controls/alert_'+self.kind,QRectF(self.rect()))
 class StatusPill(QWidget):
     def __init__(self,text='Chưa kiểm tra kết nối',state='offline',parent=None):super().__init__(parent);self.text=text;self.state=state;self.setMinimumHeight(32)
     def setText(self,text):self.text=text;self.update()

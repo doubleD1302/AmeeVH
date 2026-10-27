@@ -3,7 +3,7 @@ from __future__ import annotations
 import json,logging
 from pathlib import Path
 from PySide6.QtCore import Qt,QRectF,QMargins
-from PySide6.QtGui import QPixmap,QIcon
+from PySide6.QtGui import QPixmap,QIcon,QPainter
 logger=logging.getLogger('launcher.assets')
 class AssetManager:
     _instance=None
@@ -58,7 +58,7 @@ class AssetManager:
         m=self.meta(asset_id);box=m.get('content_rect',[20,20,m.get('width',40)-40,m.get('height',40)-40]);w=m.get('width',1);h=m.get('height',1);s=min(1.,width/w,height/h)
         return QMargins(round(box[0]*s),round(box[1]*s),round((w-box[0]-box[2])*s),round((h-box[1]-box[3])*s))
     def paint(self,painter,asset_id,rect,mode='nine'):
-        rect=QRectF(rect);pix=self.pixmap(asset_id);m=self.meta(asset_id)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing,True);painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);painter.setRenderHint(QPainter.RenderHint.TextAntialiasing,True);rect=QRectF(rect);pix=self.pixmap(asset_id);m=self.meta(asset_id)
         if mode=='nine' and m.get('render_mode') in ('uniform','contain'):mode='contain'
         if pix.isNull() or rect.width()<=0 or rect.height()<=0:return
         if mode=='contain':

@@ -16,7 +16,7 @@ class StarlitButton(QPushButton):
     def focusInEvent(self,e):self._keyboard_focus=e.reason() in (Qt.FocusReason.TabFocusReason,Qt.FocusReason.BacktabFocusReason,Qt.FocusReason.ShortcutFocusReason);self.update();super().focusInEvent(e)
     def focusOutEvent(self,e):self._keyboard_focus=False;self.update();super().focusOutEvent(e)
     def paintEvent(self,event):
-        painter=QPainter(self);painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);assets=AssetManager.get();rect=QRectF(self.rect());focus=self.hasFocus() and self._keyboard_focus
+        painter=QPainter(self);painter.setRenderHint(QPainter.RenderHint.Antialiasing,True);painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);painter.setRenderHint(QPainter.RenderHint.TextAntialiasing,True);assets=AssetManager.get();rect=QRectF(self.rect());focus=self.hasFocus() and self._keyboard_focus
         state='disabled' if not self.isEnabled() else ('pressed' if self.isDown() else ('selected' if self.isChecked() else ('focus' if focus else ('hover' if self.underMouse() else 'normal'))))
         if self.variant=='tab' and state=='focus' and not self.isChecked():state='hover'
         if self.variant!='ghost':

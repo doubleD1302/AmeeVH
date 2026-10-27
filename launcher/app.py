@@ -12,6 +12,17 @@ def main():
     if args.apply_update:
         from launcher.core.self_update import apply_job
         apply_job(args.apply_update);return 0
+    if sys.platform == 'win32':
+        try:
+            import ctypes
+            ctypes.windll.shcore.SetProcessDpiAwareness(2)
+        except Exception:
+            try: ctypes.windll.user32.SetProcessDPIAware()
+            except Exception: pass
+    from PySide6.QtCore import Qt
+    from PySide6.QtGui import QGuiApplication
+    try: QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    except Exception: pass
     from PySide6.QtWidgets import QApplication
     from launcher.core.config import PathManager,ConfigManager
     from launcher.ui.assets import AssetManager

@@ -16,7 +16,7 @@ def soft_weight(weight):
     return QFont.Weight.Normal
 
 def font(size=BODY,weight=QFont.Weight.Normal):
-    result=QFont(FAMILY);result.setPixelSize(int(size));result.setWeight(soft_weight(weight));result.setStyleStrategy(QFont.StyleStrategy.PreferAntialias);return result
+    result=QFont(FAMILY);result.setPixelSize(int(size));result.setWeight(soft_weight(weight));result.setStyleStrategy(QFont.StyleStrategy.PreferQuality|QFont.StyleStrategy.PreferAntialias);result.setHintingPreference(QFont.HintingPreference.PreferFullHinting);return result
 
 def register_fonts(resource_dir):
     global FAMILY
