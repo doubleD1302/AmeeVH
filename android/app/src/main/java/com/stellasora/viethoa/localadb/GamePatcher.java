@@ -15,18 +15,24 @@ final class GamePatcher {
   String androidId=adb.exec("settings --user "+user+" get secure android_id",10000).trim(),device=adb.exec("getprop ro.product.device",10000).trim();if(!androidId.matches("[0-9a-fA-F]{16}")||device.trim().isEmpty())throw new IOException("Chưa xác định được danh tính thiết bị.");String deviceId=Store.digest(androidId+"|"+device+"|"+user);
   target=Store.obj("installed",true,"package",Store.GAME,"root",root,"user",user,"deviceId",deviceId,"versionsKnown",false,"gameVersion","","resourceVersion","");
   String listing=adb.exec("find "+Store.q(root+"/Persistent_Store")+" -maxdepth 1 -type f -name '*.mani' -print",10000);String chosen=null,game=null,resource=null;
+  List<String> files=new ArrayList<>();
   for(String file:listing.split("\\r?\\n")){
-   if(!file.startsWith(root+"/Persistent_Store/")||!file.substring(file.lastIndexOf('/')+1).matches("[A-Za-z0-9_.-]+\\.mani")||file.toLowerCase(Locale.ROOT).contains("ss_win"))continue;
-   if(!adb.exec("readlink -f "+Store.q(file),10000).trim().equals(file))continue;String data=adb.exec("head -n 24 "+Store.q(file),10000);String g=header(data,"GAME_VER"),r=header(data,"RES_VER");if(g==null||r==null)continue;if(game!=null&&(!game.equals(g)||!resource.equals(r)))throw new IOException("Các tiêu đề tài nguyên không thống nhất phiên bản. Không chọn đoán một bản.");game=g;resource=r;chosen=file;
+   file=file.trim();
+   if(!file.startsWith(root+"/Persistent_Store/")||!file.substring(file.lastIndexOf('/')+1).matches("[A-Za-z0-9_.-]+\\.mani"))continue;
+   files.add(file);
+  }
+  Collections.sort(files,(a,b)->{boolean aW=a.toLowerCase(Locale.ROOT).contains("ss_win"),bW=b.toLowerCase(Locale.ROOT).contains("ss_win");if(aW!=bW)return aW?1:-1;return a.compareTo(b);});
+  for(String file:files){
+   if(!adb.exec("readlink -f "+Store.q(file),10000).trim().equals(file))continue;String data=adb.exec("head -n 24 "+Store.q(file),10000);String g=header(data,"GAME_VER");if(g==null)g=header(data,"CLIENT_VER");String r=header(data,"RES_VER");if(g==null||r==null)continue;if(game!=null&&(!game.equals(g)||!resource.equals(r)))throw new IOException("Các tiêu đề tài nguyên không thống nhất phiên bản. Không chọn đoán một bản.");game=g;resource=r;chosen=file;
   }
   if(chosen!=null){target.put("gameVersion",game);target.put("resourceVersion",resource);target.put("versionFile",chosen);target.put("versionsKnown",true);target.put("binding",Store.digest(deviceId+"|"+Store.GAME+"|"+root));}
-  else target.put("reason","Chưa đọc được GAME_VER/RES_VER thực tế từ tài nguyên Android. Chưa thể cài.");return target;
+  else target.put("reason","Chưa đọc được GAME_VER/RES_VER thực tế từ tài nguyên Android. Hãy mở game tải đủ dữ liệu trước khi cài.");return target;
  }
- private static String header(String data,String key){Matcher m=Pattern.compile("(?:^|[\\s|])"+key+"\\s+([0-9A-Za-z_.-]+)").matcher(data);return m.find()?m.group(1):null;}
+ private static String header(String data,String key){Matcher m=Pattern.compile("(?m)(?:^|[\\r\\n\\s$|])"+key+"[:=\\s]+([0-9A-Za-z_.-]+)").matcher(data);return m.find()?m.group(1):null;}
  private JSONObject requireTarget()throws Exception {JSONObject t=detect();if(!t.optBoolean("installed")||!t.optBoolean("versionsKnown"))throw new IOException(t.optString("reason","Chưa đọc được bản game."));return t;}
  private void closedAndVersion()throws Exception {
   String root=target.getString("root");if(!adb.exec("readlink -f "+Store.q(root),10000).trim().equals(root))throw new IOException("Thư mục game đã đổi.");String stopped=adb.exec("pidof "+Store.GAME+" >/dev/null; s=$?; if [ \"$s\" -eq 0 ]; then printf RUNNING; elif [ \"$s\" -eq 1 ]; then printf STOPPED; else exit \"$s\"; fi",10000);if(!stopped.equals("STOPPED"))throw new IOException("Hãy thoát Stella Sora trước khi thay đổi tài nguyên.");
-  String versionFile=target.getString("versionFile");if(!adb.exec("[ ! -L "+Store.q(versionFile)+" ] && readlink -f "+Store.q(versionFile),10000).trim().equals(versionFile))throw new IOException("Tệp phiên bản đã thành liên kết hoặc đổi đường dẫn.");String data=adb.exec("head -n 24 "+Store.q(versionFile),10000);if(!target.getString("gameVersion").equals(header(data,"GAME_VER"))||!target.getString("resourceVersion").equals(header(data,"RES_VER")))throw new IOException("Game đã cập nhật hoặc chưa đọc được phiên bản. Không ghi đè tài nguyên.");
+  String versionFile=target.getString("versionFile");if(!adb.exec("[ ! -L "+Store.q(versionFile)+" ] && readlink -f "+Store.q(versionFile),10000).trim().equals(versionFile))throw new IOException("Tệp phiên bản đã thành liên kết hoặc đổi đường dẫn.");String data=adb.exec("head -n 24 "+Store.q(versionFile),10000);String g=header(data,"GAME_VER");if(g==null)g=header(data,"CLIENT_VER");String r=header(data,"RES_VER");if(!target.getString("gameVersion").equals(g)||!target.getString("resourceVersion").equals(r))throw new IOException("Game đã cập nhật hoặc chưa đọc được phiên bản. Không ghi đè tài nguyên.");
  }
  private String checked(String relative)throws Exception {String path=relative(relative),root=target.getString("root"),current=root;String[] pieces=path.split("/");for(int i=0;i<pieces.length-1;i++){current+="/"+pieces[i];String result=adb.exec("[ ! -L "+Store.q(current)+" ] && [ -d "+Store.q(current)+" ] && readlink -f "+Store.q(current),10000);if(!result.equals(current))throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");}return root+"/"+path;}
  private JSONObject state(String path)throws Exception {
