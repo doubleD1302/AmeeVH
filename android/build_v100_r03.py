@@ -112,10 +112,11 @@ print(f"APK SHA256: {apk_sha}")
 # Update android_localadb_launcher.json
 launcher_json_path = dist / "android_localadb_launcher.json"
 launcher_data = json.loads(launcher_json_path.read_text(encoding="utf-8"))
-launcher_data["version_code"] = 4
+launcher_data["version_code"] = 5
+launcher_data["version_name"] = "1.0.1"
 launcher_data["size"] = apk_size
 launcher_data["sha256"] = apk_sha
 launcher_json_path.write_text(json.dumps(launcher_data, indent=2, ensure_ascii=False), encoding="utf-8")
-print("Đã cập nhật android_localadb_launcher.json với versionCode: 4!")
+print("Đã cập nhật android_localadb_launcher.json với versionCode: 5 (v1.0.1)!")
 
 print("\n=== HOÀN TẤT BIÊN DỊCH VÀ XÁC THỰC APK V1.0.0 (CODE 4)! ===")
