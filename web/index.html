@@ -822,7 +822,7 @@
 
     <!-- ================= TOP CORNER MUSIC TOGGLE BUTTON (ICON ONLY) ================= -->
     <div class="music-control-wrap">
-        <button id="btn-music-toggle" class="playing notranslate" translate="no" title="Bật/Tắt Nhạc Nền" aria-label="Bật tắt nhạc nền">
+        <button id="btn-music-toggle" class="muted notranslate" translate="no" title="Bật/Tắt Nhạc Nền" aria-label="Bật tắt nhạc nền">
             <div class="music-pulse-ring"></div>
             <div class="music-bars">
                 <span class="eq-bar b1"></span>
@@ -834,7 +834,7 @@
     </div>
 
     <!-- Background Music Audio Element -->
-    <audio id="bgm-audio" loop preload="auto" autoplay>
+    <audio id="bgm-audio" src="assets/audio/bgm_launch.m4a" loop preload="auto" playsinline webkit-playsinline autoplay>
         <source src="assets/audio/bgm_launch.m4a" type="audio/mp4">
         <source src="assets/audio/bgm_launch.mp4" type="audio/mp4">
     </audio>
@@ -958,63 +958,74 @@
             });
             enforceFullscreenVideo();
 
-            // Background Music Controller (Mặc định BẬT NHẠC)
+            // Background Music Controller (Tự động phát & Mở khóa âm thanh di động)
             let isMusicPlaying = false;
-            function setMusicState(playing) {
-                if (!bgmAudio) return;
-                if (playing) {
-                    bgmAudio.play().then(() => {
-                        isMusicPlaying = true;
-                        btnMusic.classList.add('playing');
-                        btnMusic.classList.remove('muted');
-                    }).catch(() => {
-                        btnMusic.classList.add('playing');
-                        btnMusic.classList.remove('muted');
-                    });
-                } else {
-                    bgmAudio.pause();
-                    isMusicPlaying = false;
-                    btnMusic.classList.remove('playing');
-                    btnMusic.classList.add('muted');
-                }
-            }
 
-            btnMusic.addEventListener('click', (e) => {
-                e.stopPropagation();
-                setMusicState(!isMusicPlaying);
+            // Đồng bộ trạng thái trực tiếp từ sự kiện thực tế của thẻ Audio
+            bgmAudio.addEventListener('play', () => {
+                isMusicPlaying = true;
+                btnMusic.classList.add('playing');
+                btnMusic.classList.remove('muted');
             });
 
-            // Tự động phát nhạc ngay khi mở trang (Default ON)
-            function attemptAutoplay() {
-                if (isMusicPlaying || !bgmAudio) return;
+            bgmAudio.addEventListener('pause', () => {
+                isMusicPlaying = false;
+                btnMusic.classList.remove('playing');
+                btnMusic.classList.add('muted');
+            });
+
+            // Nút bấm bật/tắt thủ công
+            btnMusic.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (bgmAudio.paused) {
+                    bgmAudio.play().then(() => {
+                        cleanupUnlockListeners();
+                    }).catch(() => {});
+                } else {
+                    bgmAudio.pause();
+                }
+            });
+
+            // Mở khóa âm thanh ở lần chạm đầu tiên (Hỗ trợ chính sách Autoplay trên Android/iOS)
+            const unlockEvents = ['pointerdown', 'touchstart', 'touchend', 'click', 'keydown'];
+
+            function handleFirstUserGesture() {
+                if (!bgmAudio) return;
                 bgmAudio.play().then(() => {
-                    isMusicPlaying = true;
-                    btnMusic.classList.add('playing');
-                    btnMusic.classList.remove('muted');
+                    cleanupUnlockListeners();
                 }).catch(() => {
-                    // Nếu trình duyệt (Chrome/Safari) hạn chế âm thanh trước khi chạm,
-                    // vẫn hiển thị icon sóng nhạc và phát ngay ở lần chạm/cuộn đầu tiên
-                    btnMusic.classList.add('playing');
-                    btnMusic.classList.remove('muted');
+                    // Nếu cử chỉ này chưa đủ điều kiện (một số bản mobile chờ touchend),
+                    // listener vẫn được giữ để cử chỉ chạm tiếp theo kích hoạt thành công
                 });
             }
 
-            // Gọi phát ngay lập tức
-            attemptAutoplay();
-
-            // Mở khóa âm thanh ở tương tác bất kỳ (chạm, click, cuộn)
-            function unlockOnGesture() {
-                if (!isMusicPlaying && bgmAudio) {
-                    bgmAudio.play().then(() => {
-                        isMusicPlaying = true;
-                        btnMusic.classList.add('playing');
-                        btnMusic.classList.remove('muted');
-                    }).catch(() => {});
-                }
+            function setupUnlockListeners() {
+                unlockEvents.forEach(evt => {
+                    document.addEventListener(evt, handleFirstUserGesture, { capture: true, passive: true });
+                    window.addEventListener(evt, handleFirstUserGesture, { capture: true, passive: true });
+                });
             }
-            ['click', 'touchstart', 'touchend', 'pointerdown', 'keydown', 'scroll'].forEach(evt => {
-                window.addEventListener(evt, unlockOnGesture, { once: true, passive: true });
-            });
+
+            function cleanupUnlockListeners() {
+                unlockEvents.forEach(evt => {
+                    document.removeEventListener(evt, handleFirstUserGesture, { capture: true });
+                    window.removeEventListener(evt, handleFirstUserGesture, { capture: true });
+                });
+            }
+
+            // Cố gắng tự động phát ngay (Desktop, Edge, PWA)
+            const autoplayPromise = bgmAudio.play();
+            if (autoplayPromise !== undefined) {
+                autoplayPromise.then(() => {
+                    cleanupUnlockListeners();
+                }).catch(() => {
+                    // Trình duyệt Android / iOS chặn phát tự động khi chưa chạm
+                    // Đăng ký bắt cử chỉ chạm đầu tiên của người dùng ở bất kỳ vị trí nào
+                    setupUnlockListeners();
+                });
+            } else {
+                setupUnlockListeners();
+            }
 
             // Loading Progress Engine
             let currentProgress = 0;
@@ -1095,23 +1106,15 @@
                 }
 
                 // Tự động kiểm tra file local nếu đang mở qua localhost / offline
-            if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                document.querySelectorAll('[data-local-href]').forEach(el => {
-                    fetch(el.getAttribute('data-local-href'), { method: 'HEAD' })
-                        .then(res => { if (res.ok) el.href = el.getAttribute('data-local-href'); })
-                        .catch(() => {});
-                });
-            }
+                if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    document.querySelectorAll('[data-local-href]').forEach(el => {
+                        fetch(el.getAttribute('data-local-href'), { method: 'HEAD' })
+                            .then(res => { if (res.ok) el.href = el.getAttribute('data-local-href'); })
+                            .catch(() => {});
+                    });
+                }
 
-            requestAnimationFrame(stepProgress);
-            }
-            // Tự động kiểm tra file local nếu đang mở qua localhost / offline
-            if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                document.querySelectorAll('[data-local-href]').forEach(el => {
-                    fetch(el.getAttribute('data-local-href'), { method: 'HEAD' })
-                        .then(res => { if (res.ok) el.href = el.getAttribute('data-local-href'); })
-                        .catch(() => {});
-                });
+                requestAnimationFrame(stepProgress);
             }
 
             requestAnimationFrame(stepProgress);
