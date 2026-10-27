@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="notranslate" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <meta name="googlebot" content="notranslate">
     <title>Stella Sora Việt Hoá</title>
     
     <!-- Favicon & Icons -->
@@ -820,7 +822,7 @@
 
     <!-- ================= TOP CORNER MUSIC TOGGLE BUTTON (ICON ONLY) ================= -->
     <div class="music-control-wrap">
-        <button id="btn-music-toggle" class="muted" title="Bật/Tắt Nhạc Nền" aria-label="Bật tắt nhạc nền">
+        <button id="btn-music-toggle" class="playing notranslate" translate="no" title="Bật/Tắt Nhạc Nền" aria-label="Bật tắt nhạc nền">
             <div class="music-pulse-ring"></div>
             <div class="music-bars">
                 <span class="eq-bar b1"></span>
@@ -832,7 +834,7 @@
     </div>
 
     <!-- Background Music Audio Element -->
-    <audio id="bgm-audio" loop preload="auto">
+    <audio id="bgm-audio" loop preload="auto" autoplay>
         <source src="assets/audio/bgm_launch.m4a" type="audio/mp4">
         <source src="assets/audio/bgm_launch.mp4" type="audio/mp4">
     </audio>
@@ -848,9 +850,9 @@
         </div>
 
         <!-- 2 Nút Tải Pha Lê Kính Mờ Đóng Khung Tinh Xảo -->
-        <div class="download-cluster">
+        <div class="download-cluster notranslate" translate="no">
             <!-- Nút Tải Windows -->
-            <a href="https://github.com/doubleD1302/AmeeVH/releases/download/v1.0.0/StellaSora-Windows_v1.0.0.exe" data-local-href="downloads/StellaSora-Windows_v1.0.0.exe" download="StellaSora-Windows_v1.0.0.exe" class="btn-crystal btn-windows" title="Tải Bản Cài Windows v1.0.0">
+            <a href="https://github.com/doubleD1302/AmeeVH/releases/download/v1.0.0/StellaSora-Windows_v1.0.0.exe" data-local-href="downloads/StellaSora-Windows_v1.0.0.exe" download="StellaSora-Windows_v1.0.0.exe" class="btn-crystal btn-windows notranslate" translate="no" title="Tải Bản Cài Windows v1.0.0">
                 <div class="btn-sheen"></div>
                 <div class="btn-icon-box">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -858,13 +860,13 @@
                     </svg>
                 </div>
                 <div class="btn-text-group">
-                    <span class="btn-platform-name">WINDOWS</span>
-                    <span class="btn-sub-tag">v1.0.0 PC</span>
+                    <span class="btn-platform-name notranslate" translate="no">WINDOWS</span>
+                    <span class="btn-sub-tag notranslate" translate="no">v1.0.0 PC</span>
                 </div>
             </a>
 
             <!-- Nút Tải Android -->
-            <a href="https://github.com/doubleD1302/AmeeVH/releases/download/v1.0.0/StellaSora-Android_v1.0.0.apk" data-local-href="downloads/StellaSora-Android_v1.0.0.apk" download="StellaSora-Android_v1.0.0.apk" class="btn-crystal btn-android" title="Tải Bản Cài Android v1.0.0">
+            <a href="https://github.com/doubleD1302/AmeeVH/releases/download/v1.0.0/StellaSora-Android_v1.0.0.apk" data-local-href="downloads/StellaSora-Android_v1.0.0.apk" download="StellaSora-Android_v1.0.0.apk" class="btn-crystal btn-android notranslate" translate="no" title="Tải Bản Cài Android v1.0.0">
                 <div class="btn-sheen"></div>
                 <div class="btn-icon-box">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -872,8 +874,8 @@
                     </svg>
                 </div>
                 <div class="btn-text-group">
-                    <span class="btn-platform-name">ANDROID</span>
-                    <span class="btn-sub-tag">v1.0.0 APK</span>
+                    <span class="btn-platform-name notranslate" translate="no">ANDROID</span>
+                    <span class="btn-sub-tag notranslate" translate="no">v1.0.0 APK</span>
                 </div>
             </a>
         </div>
@@ -956,7 +958,7 @@
             });
             enforceFullscreenVideo();
 
-            // Background Music Controller
+            // Background Music Controller (Mặc định BẬT NHẠC)
             let isMusicPlaying = false;
             function setMusicState(playing) {
                 if (!bgmAudio) return;
@@ -966,9 +968,8 @@
                         btnMusic.classList.add('playing');
                         btnMusic.classList.remove('muted');
                     }).catch(() => {
-                        isMusicPlaying = false;
-                        btnMusic.classList.remove('playing');
-                        btnMusic.classList.add('muted');
+                        btnMusic.classList.add('playing');
+                        btnMusic.classList.remove('muted');
                     });
                 } else {
                     bgmAudio.pause();
@@ -983,14 +984,37 @@
                 setMusicState(!isMusicPlaying);
             });
 
-            // Auto-start music on first user click or tap anywhere
-            function initAudioOnFirstGesture() {
-                if (!isMusicPlaying) {
-                    setMusicState(true);
+            // Tự động phát nhạc ngay khi mở trang (Default ON)
+            function attemptAutoplay() {
+                if (isMusicPlaying || !bgmAudio) return;
+                bgmAudio.play().then(() => {
+                    isMusicPlaying = true;
+                    btnMusic.classList.add('playing');
+                    btnMusic.classList.remove('muted');
+                }).catch(() => {
+                    // Nếu trình duyệt (Chrome/Safari) hạn chế âm thanh trước khi chạm,
+                    // vẫn hiển thị icon sóng nhạc và phát ngay ở lần chạm/cuộn đầu tiên
+                    btnMusic.classList.add('playing');
+                    btnMusic.classList.remove('muted');
+                });
+            }
+
+            // Gọi phát ngay lập tức
+            attemptAutoplay();
+
+            // Mở khóa âm thanh ở tương tác bất kỳ (chạm, click, cuộn)
+            function unlockOnGesture() {
+                if (!isMusicPlaying && bgmAudio) {
+                    bgmAudio.play().then(() => {
+                        isMusicPlaying = true;
+                        btnMusic.classList.add('playing');
+                        btnMusic.classList.remove('muted');
+                    }).catch(() => {});
                 }
             }
-            window.addEventListener('click', initAudioOnFirstGesture, { once: true });
-            window.addEventListener('touchstart', initAudioOnFirstGesture, { once: true });
+            ['click', 'touchstart', 'touchend', 'pointerdown', 'keydown', 'scroll'].forEach(evt => {
+                window.addEventListener(evt, unlockOnGesture, { once: true, passive: true });
+            });
 
             // Loading Progress Engine
             let currentProgress = 0;
