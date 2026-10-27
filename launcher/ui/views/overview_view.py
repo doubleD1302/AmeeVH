@@ -77,18 +77,23 @@ class OverviewView(QWidget):
         self._game=info;self.path_display.setText(str(info.game_path or ''));self.path_display.setToolTip(self.path_display.text());receipt=info.installed_receipt
         self.game_status_label.setText(('Steam' if info.platform=='steam' else 'Yostar')+' · '+info.version+' / '+info.resource_version if info.installed else 'Chọn đúng thư mục có StellaSora.exe')
         if info.is_running:self.game_status_label.setText('Game đang chạy hoặc chưa xác minh được tiến trình.')
-        self.patch_status_badge.setText('Có biên bản' if receipt else 'Chưa cài đặt');self.patch_status_badge.setToolTip('Biên bản cần kiểm tra tệp để xác minh lại' if receipt else 'Chưa có biên bản của launcher này');self.btn_install.setText('Cập nhật Việt hoá' if receipt else 'Cài Việt hoá')
+        self.patch_status_badge.setText('Đã cài Việt hoá' if receipt else 'Chưa cài đặt');self.patch_status_badge.setToolTip(f"Bản Việt hoá v{receipt.get('version', '')} ({receipt.get('files_count', '')} tệp)" if receipt else 'Chưa có bản cài đặt của launcher này');self.btn_install.setText('Cập nhật Việt hoá' if receipt else 'Cài Việt hoá')
         if info.is_running:self.patch_status_badge.setText('Game đang chạy')
         self.path_display.setToolTip(self.path_display.text()+'\n'+self.game_status_label.text());self.set_busy(self._busy)
     def set_busy(self,busy,reduced_motion=None):
         if reduced_motion is not None:self._reduced_motion=reduced_motion
         self._busy=busy;self.path_display.set_busy(busy);g=self._game;idle=bool(g and g.installed and not g.is_running and not busy);self.btn_install.setEnabled(idle);self.btn_folder.setEnabled(not busy);self.btn_browse.setEnabled(not busy)
-        reason='Đang có thao tác, hãy chờ hoàn tất.' if busy else ('Hãy chọn đúng thư mục game.' if not g or not g.installed else ('Hãy đóng game trước.' if g.is_running else ('Chưa có biên bản cài đặt của launcher này.' if not g.installed_receipt else '')))
+        reason='Đang có thao tác, hãy chờ hoàn tất.' if busy else ('Hãy chọn đúng thư mục game.' if not g or not g.installed else ('Hãy đóng game trước.' if g.is_running else ('Chưa cài bản Việt hoá bằng launcher này.' if not g.installed_receipt else '')))
         for b in (self.btn_verify,self.btn_rollback):b.setEnabled(not busy);b.setToolTip(reason or ('Đối chiếu SHA256 với biên bản đã cài.' if b is self.btn_verify else 'Khôi phục từ backup gắn với thư mục này.'))
         self.spinner.start(getattr(self,'_reduced_motion',False)) if busy else self.spinner.stop()
-    def show_progress(self,show=True,label='',percent=0):self.progress_container.setVisible(show);self.progress_label.setText(label);self.progress_bar.setRange(0,100);self.progress_bar.setValue(percent);self._layout_geometry()
+    def show_progress(self,show=True,label='',percent=0):
+        self.progress_container.setVisible(show);self.spinner.setVisible(show);self.progress_bar.setVisible(show);self.progress_label.setText(label)
+        if show:self.progress_bar.setRange(0,100);self.progress_bar.setValue(percent)
+        self._layout_geometry()
+    def show_completed(self,message):
+        self.progress_container.setVisible(True);self.spinner.stop();self.spinner.setVisible(False);self.progress_bar.setVisible(False);self.progress_label.setText(message);self._layout_geometry()
     def handle_operation_event(self,e):
-        self.progress_container.show();self.progress_label.setText(e.message)
+        self.progress_container.show();self.spinner.show();self.progress_bar.show();self.progress_label.setText(e.message)
         if e.total>0:self.progress_bar.setRange(0,100);self.progress_bar.setValue(int(e.percentage))
         else:self.progress_bar.setRange(0,0)
         self._layout_geometry()

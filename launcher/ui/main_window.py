@@ -118,7 +118,7 @@ class MainWindow(QMainWindow):
     def _finish(self,op,success,result):
         if op!=self.active_operation_id:return
         if not success:
-            msg=result.get('message','Lỗi chưa xác định');self.overview_view.show_progress(True,msg,0);self.overview_view.progress_bar.setRange(0,100)
+            msg=result.get('message','Lỗi chưa xác định');self.overview_view.show_completed('⚠ Lỗi: '+msg)
             self._show(MessageDialog('Không thể hoàn tất thao tác',msg,'Mã lỗi: '+result.get('error_code','')+'\nNhật ký: '+str(self.path_manager.logs_dir/'launcher.log'),parent=self,is_error=True));return
         if not isinstance(result,dict):return
         if self.operation_kind=='discover':
@@ -132,13 +132,21 @@ class MainWindow(QMainWindow):
                 self.config_manager.set('game_path',previous);self._show(MessageDialog('Chưa lưu được thư mục','Đường dẫn đang dùng được giữ nguyên.','\n'.join(self.config_manager.warnings),parent=self,is_error=True));return
         if 'game' in result:self.current_game_info=result['game'];self.overview_view.update_game_status(self.current_game_info)
         if self.operation_kind in ('scan','select_root'):self.overview_view.show_progress(False)
-        elif self.operation_kind=='verify':self.overview_view.show_progress(True,'Đã đối chiếu '+str(result.get('files'))+' tệp của bản dịch '+str(result.get('version'))+'.',100)
-        elif self.operation_kind=='launch':self.overview_view.show_progress(True,result.get('message','Đã gửi lệnh mở game.'),100)
+        elif self.operation_kind=='verify':self.overview_view.show_completed('✓ Hoàn tất kiểm tra! Đã đối chiếu '+str(result.get('files',0))+' tệp của bản dịch v'+str(result.get('version',''))+' toàn vẹn.')
+        elif self.operation_kind=='launch':self.overview_view.show_completed(result.get('message','✓ Đã gửi lệnh mở game.'))
         elif self.operation_kind=='self_update':
             if not result.get('has_update') or not result.get('download_url'):self._show(MessageDialog('Cập nhật launcher',result.get('message','Chưa có bản cập nhật được xác minh.'),parent=self))
             else:QTimer.singleShot(0,lambda:self._confirm_update(result))
         elif self.operation_kind=='apply_self_update':self._close_after_worker=True
-        else:self.overview_view.show_progress(True,result.get('message','Đã hoàn tất thao tác.'),100)
+        elif self.operation_kind=='install':
+            msg=result.get('message','')
+            if not msg.startswith('✓') and not msg.startswith('Hoàn tất'):msg=f'✓ Hoàn tất cài đặt! {msg}'
+            self.overview_view.show_completed(msg)
+        elif self.operation_kind=='rollback':
+            msg=result.get('message','')
+            if not msg.startswith('✓') and not msg.startswith('Hoàn tất'):msg=f'✓ Hoàn tất khôi phục! {msg}'
+            self.overview_view.show_completed(msg)
+        else:self.overview_view.show_completed(result.get('message','✓ Hoàn tất thao tác.'))
     def _auto_detect(self):
         if self.active_worker is not None:return
         self._start('discover',lambda cb,op:{'installations':find_all_potential_game_installations()})
@@ -170,7 +178,7 @@ class MainWindow(QMainWindow):
         network=self.network_service;manifest_url=self._channel['manifest_url']
         def work(cb,op):
             payload=Path(local) if local else network.prepare_payload(self.path_manager.payload_root,manifest_url,cb,op)
-            r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"Đã cài {r['files_count']} tệp theo manifest {r['version']}."}
+            r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"✓ Hoàn tất cài đặt! Đã nạp thành công {r['files_count']} tệp bản dịch (v{r['version']})."}
         self._start('install',work)
     def _action_target(self,action,require_receipt=True):
         if self.active_worker is not None:
@@ -192,7 +200,7 @@ class MainWindow(QMainWindow):
         r=self.current_game_info.installed_receipt or {}
         if self._confirm('KHÔI PHỤC TRẠNG THÁI TRƯỚC CÀI','Thư mục: '+str(root)+'\nBackup: '+str(r.get('backup_dir','Chưa xác định'))+'\n\nChỉ phục hồi khi các tệp hiện tại còn khớp bản đã cài. Nếu game đã cập nhật, thao tác sẽ báo xung đột.','Khôi phục'):
             def work(cb,op):
-                RollbackEngine(self.path_manager.backup_root,self.path_manager.journals_dir).rollback(root,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':'Đã khôi phục trạng thái trước lần cài được chọn.'}
+                RollbackEngine(self.path_manager.backup_root,self.path_manager.journals_dir).rollback(root,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':'✓ Hoàn tất khôi phục! Đã đưa game về trạng thái nguyên bản.'}
             self._start('rollback',work)
     def _on_verify_clicked(self):
         root=self._action_target('Kiểm tra tệp')
