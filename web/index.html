@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stella Sora — Tải Launcher Việt Hóa (Windows & Android)</title>
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/app_icon.png">
+    <meta name="theme-color" content="#0d1424">
+
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+        }
+
+        /* ================= 1. IN-GAME AUTHENTIC LOADING SCREEN ================= */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999999;
+            background: linear-gradient(135deg, #e4ecf7 0%, #d8e3f0 50%, #ccd8e9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 1;
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.65s;
+            overflow: hidden;
+        }
+
+        #loading-screen.finished {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .celestial-clockwork {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            opacity: 0.32;
+        }
+
+        .clockwork-svg {
+            width: 100%;
+            height: 100%;
+            animation: clockwork-spin 120s linear infinite;
+            transform-origin: center center;
+        }
+
+        @keyframes clockwork-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-core {
+            position: relative;
+            z-index: 10;
+            width: min(880px, 92vw);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading-stats {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .loading-percent-number {
+            font-size: clamp(3.2rem, 7vw, 4.8rem);
+            font-weight: 900;
+            line-height: 1;
+            color: #3b5372;
+            letter-spacing: -2px;
+            text-shadow: 0 4px 18px rgba(71, 95, 128, 0.18);
+        }
+
+        .loading-sub-title {
+            margin-top: 6px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: #557297;
+            text-transform: uppercase;
+        }
+
+        .loading-tip-text {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #64748b;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 4px 16px;
+            border-radius: 999px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .loading-timeline-track {
+            position: relative;
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .track-rail {
+            position: absolute;
+            left: 36px;
+            right: 36px;
+            height: 6px;
+            background-image: radial-gradient(circle, #5b8bb8 3px, transparent 3px);
+            background-size: 16px 6px;
+            background-repeat: repeat-x;
+            opacity: 0.55;
+            z-index: 1;
+        }
+
+        .track-rail-fill {
+            position: absolute;
+            left: 36px;
+            height: 6px;
+            width: 0%;
+            background-image: radial-gradient(circle, #0284c7 3.5px, transparent 3.5px);
+            background-size: 16px 6px;
+            background-repeat: repeat-x;
+            z-index: 2;
+            transition: width 0.15s ease-out;
+        }
+
+        .track-pin {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .track-pin img {
+            width: 38px;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(35, 78, 122, 0.25));
+        }
+
+        .track-pin.pin-start { left: 36px; }
+        .track-pin.pin-mid-1 { left: 35%; }
+        .track-pin.pin-mid-1 img { width: 24px; opacity: 0.85; }
+        .track-pin.pin-mid-2 { left: 70%; }
+        .track-pin.pin-mid-2 img { width: 34px; opacity: 0.85; }
+        .track-pin.pin-end { right: 0; }
+
+        .track-van-actor {
+            position: absolute;
+            top: 50%;
+            left: 36px;
+            transform: translate(-50%, -64%);
+            z-index: 10;
+            pointer-events: none;
+            transition: left 0.15s ease-out;
+        }
+
+        .van-sprite-box {
+            position: relative;
+            width: 96px;
+            height: 94px;
+            animation: van-suspension-bounce 0.22s ease-in-out infinite alternate;
+        }
+
+        .van-sprite-box img.van-sprite {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 12px rgba(27, 49, 74, 0.28));
+        }
+
+        @keyframes van-suspension-bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-3.5px); }
+        }
+
+        .van-overhead-star {
+            position: absolute;
+            top: -18px;
+            right: 14px;
+            width: 26px;
+            height: 26px;
+            animation: star-sparkle 1.1s ease-in-out infinite alternate;
+        }
+
+        .van-overhead-star img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @keyframes star-sparkle {
+            0% {
+                transform: scale(0.85) rotate(-12deg);
+                opacity: 0.75;
+                filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.5));
+            }
+            100% {
+                transform: scale(1.22) rotate(14deg);
+                opacity: 1;
+                filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.95));
+            }
+        }
+
+        .van-smoke-emitter {
+            position: absolute;
+            bottom: 12px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+        }
+
+        .smoke-particle {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 24px;
+            height: 20px;
+            opacity: 0;
+        }
+
+        .smoke-particle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .smoke-particle.s1 { animation: puff-drift 0.75s ease-out infinite; }
+        .smoke-particle.s2 { animation: puff-drift 0.75s 0.25s ease-out infinite; }
+        .smoke-particle.s3 { animation: puff-drift 0.75s 0.5s ease-out infinite; }
+
+        @keyframes puff-drift {
+            0% {
+                transform: translate(0, 0) scale(0.35);
+                opacity: 0.9;
+            }
+            70% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translate(-32px, -12px) scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        /* ================= 2. BACKGROUND 2.4K VIDEO ENGINE ================= */
+        #bg-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            background: #000;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            z-index: 0;
+            pointer-events: none;
+            filter: none !important; /* STRICT: Pristine 2.4K 60fps Native Clarity */
+            display: block;
+        }
+
+        /* ================= 3. TOP MUSIC CONTROL BUTTON ================= */
+        .music-control-wrap {
+            position: fixed;
+            top: 26px;
+            right: 32px;
+            z-index: 1000;
+        }
+
+        #btn-music-toggle {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(13, 23, 42, 0.82) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(56, 189, 248, 0.45);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #btn-music-toggle:hover {
+            transform: scale(1.12);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.65);
+        }
+
+        .music-pulse-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1.5px solid #38bdf8;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #btn-music-toggle.playing .music-pulse-ring {
+            animation: music-ripple 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+
+        @keyframes music-ripple {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+        }
+
+        .music-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 3.5px;
+            height: 18px;
+        }
+
+        .eq-bar {
+            width: 3.5px;
+            background: currentColor;
+            border-radius: 2px;
+            height: 4px;
+            transition: height 0.2s ease;
+        }
+
+        #btn-music-toggle.playing {
+            border-color: #38bdf8;
+            color: #38bdf8;
+            box-shadow: 0 0 22px rgba(56, 189, 248, 0.6);
+        }
+
+        #btn-music-toggle.playing .b1 { animation: eq-bounce 0.7s ease-in-out infinite alternate; }
+        #btn-music-toggle.playing .b2 { animation: eq-bounce 0.7s 0.22s ease-in-out infinite alternate; }
+        #btn-music-toggle.playing .b3 { animation: eq-bounce 0.7s 0.44s ease-in-out infinite alternate; }
+        #btn-music-toggle.playing .b4 { animation: eq-bounce 0.7s 0.3s ease-in-out infinite alternate; }
+
+        @keyframes eq-bounce {
+            0% { height: 4px; }
+            100% { height: 18px; }
+        }
+
+        #btn-music-toggle.muted {
+            opacity: 0.65;
+            color: #94a3b8;
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ================= 4. REFINED HERO CENTERPIECE ================= */
+        .center-stage {
+            position: fixed;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .logo-ambient-aura {
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(340px, 45vw, 540px);
+            height: clamp(340px, 45vw, 540px);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.24) 0%, rgba(251, 191, 36, 0.14) 38%, transparent 70%);
+            filter: blur(36px);
+            pointer-events: none;
+            z-index: -1;
+            animation: aura-pulse 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes aura-pulse {
+            0% { transform: translate(-50%, -50%) scale(0.94); opacity: 0.75; }
+            100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+        }
+
+        .logo-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: logo-gentle-float 4.5s ease-in-out infinite alternate;
+        }
+
+        .main-viethoa-logo {
+            width: clamp(230px, 29vw, 360px);
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 24px rgba(56, 189, 248, 0.25));
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        @keyframes logo-gentle-float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-8px); }
+        }
+
+        /* ================= 5. PREMIUM CRYSTAL GLASS DOWNLOAD BUTTONS ================= */
+        .download-cluster {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(18px, 3.5vw, 32px);
+            margin-top: clamp(20px, 4vw, 36px);
+            position: relative;
+            z-index: 5;
+        }
+
+        .btn-crystal {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 13px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            cursor: pointer;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(13, 23, 42, 0.8) 55%, rgba(8, 14, 28, 0.9) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1.5px solid rgba(255, 255, 255, 0.24);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+        }
+
+        .btn-sheen {
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transform: skewX(-24deg);
+            pointer-events: none;
+        }
+
+        .btn-crystal:hover .btn-sheen {
+            left: 150%;
+            transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-icon-box {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-icon-box svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-text-group {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .btn-platform-name {
+            font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .btn-sub-tag {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            padding: 2px 7px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* Windows Variant */
+        .btn-crystal.btn-windows {
+            border-color: rgba(56, 189, 248, 0.65);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 16px rgba(56, 189, 248, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-crystal.btn-windows .btn-icon-box {
+            color: #38bdf8;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.7));
+        }
+
+        .btn-crystal.btn-windows .btn-sub-tag {
+            background: rgba(56, 189, 248, 0.18);
+            border: 1px solid rgba(56, 189, 248, 0.45);
+            color: #7dd3fc;
+        }
+
+        .btn-crystal.btn-windows:hover {
+            transform: translateY(-4px) scale(1.05);
+            border-color: #38bdf8;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(56, 189, 248, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-crystal.btn-windows:hover .btn-icon-box {
+            transform: scale(1.16);
+            filter: drop-shadow(0 0 14px rgba(56, 189, 248, 1));
+        }
+
+        /* Android Variant */
+        .btn-crystal.btn-android {
+            border-color: rgba(52, 211, 153, 0.65);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 16px rgba(52, 211, 153, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-crystal.btn-android .btn-icon-box {
+            color: #34d399;
+            filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.7));
+        }
+
+        .btn-crystal.btn-android .btn-sub-tag {
+            background: rgba(52, 211, 153, 0.18);
+            border: 1px solid rgba(52, 211, 153, 0.45);
+            color: #6ee7b7;
+        }
+
+        .btn-crystal.btn-android:hover {
+            transform: translateY(-4px) scale(1.05);
+            border-color: #34d399;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(52, 211, 153, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-crystal.btn-android:hover .btn-icon-box {
+            transform: scale(1.16);
+            filter: drop-shadow(0 0 14px rgba(52, 211, 153, 1));
+        }
+
+        .btn-crystal:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        /* ================= 6. MINIMALIST GLASS FOOTER ================= */
+        .minimal-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            padding: 12px 20px 16px;
+            background: linear-gradient(to top, rgba(7, 12, 24, 0.8) 0%, rgba(7, 12, 24, 0.45) 60%, transparent 100%);
+            pointer-events: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .footer-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.84rem;
+            color: #cbd5e1;
+        }
+
+        .author-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .link-author {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .link-author:hover {
+            color: #7dd3fc;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+            text-decoration: underline;
+        }
+
+        .meta-divider {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .social-chip svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        .social-chip:hover {
+            background: rgba(56, 189, 248, 0.22);
+            border-color: #38bdf8;
+            color: #ffffff;
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .social-chip.facebook:hover {
+            background: rgba(24, 119, 242, 0.25);
+            border-color: #1877f2;
+            box-shadow: 0 0 14px rgba(24, 119, 242, 0.4);
+        }
+
+        .footer-copyright-row {
+            font-size: 0.72rem;
+            color: #64748b;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Responsive Optimization */
+        @media (max-width: 600px) {
+            .center-stage {
+                top: 45%;
+            }
+            .download-cluster {
+                gap: 14px;
+                margin-top: 18px;
+            }
+            .btn-crystal {
+                padding: 11px 22px;
+                gap: 10px;
+            }
+            .btn-platform-name {
+                font-size: 1rem;
+            }
+            .music-control-wrap {
+                top: 18px;
+                right: 18px;
+            }
+            #btn-music-toggle {
+                width: 44px;
+                height: 44px;
+            }
+            .minimal-footer {
+                padding: 8px 12px 14px;
+            }
+            .footer-meta-row {
+                gap: 8px;
+                font-size: 0.76rem;
+            }
+            .footer-copyright-row {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= IN-GAME AUTHENTIC LOADING SCREEN ================= -->
+    <div id="loading-screen">
+        <div class="celestial-clockwork">
+            <svg viewBox="0 0 1000 1000" class="clockwork-svg">
+                <circle cx="500" cy="500" r="440" stroke="rgba(65, 105, 155, 0.16)" stroke-width="2.5" fill="none" stroke-dasharray="10 8"/>
+                <circle cx="500" cy="500" r="370" stroke="rgba(65, 105, 155, 0.12)" stroke-width="1.5" fill="none"/>
+                <circle cx="500" cy="500" r="310" stroke="rgba(65, 105, 155, 0.18)" stroke-width="2" fill="none" stroke-dasharray="18 10"/>
+                <circle cx="500" cy="500" r="230" stroke="rgba(65, 105, 155, 0.12)" stroke-width="1.5" fill="none"/>
+                <line x1="500" y1="50" x2="500" y2="950" stroke="rgba(65, 105, 155, 0.14)" stroke-width="1.5" stroke-dasharray="8 6"/>
+                <line x1="50" y1="500" x2="950" y2="500" stroke="rgba(65, 105, 155, 0.14)" stroke-width="1.5" stroke-dasharray="8 6"/>
+                <line x1="180" y1="180" x2="820" y2="820" stroke="rgba(65, 105, 155, 0.08)" stroke-width="1"/>
+                <line x1="820" y1="180" x2="180" y2="820" stroke="rgba(65, 105, 155, 0.08)" stroke-width="1"/>
+            </svg>
+        </div>
+
+        <div class="loading-core">
+            <div class="loading-stats">
+                <div class="loading-percent-number" id="loading-percent">0%</div>
+                <div class="loading-sub-title">L O A D I N G . . .</div>
+                <div class="loading-tip-text" id="loading-status-tip">Đang khởi tạo tài nguyên hoạt ảnh 2.4K...</div>
+            </div>
+
+            <div class="loading-timeline-track" id="timeline-track">
+                <div class="track-rail"></div>
+                <div class="track-rail-fill" id="track-progress-fill"></div>
+
+                <div class="track-pin pin-start" title="Khởi hành">
+                    <img src="assets/loading/Transition_Style_7_Point_01_trimmed.png" alt="Start Pin">
+                </div>
+                <div class="track-pin pin-mid-1" title="Điểm hẹn">
+                    <img src="assets/loading/Transition_Style_7_Sign_trimmed.png" alt="Star Sign">
+                </div>
+                <div class="track-pin pin-mid-2" title="Trạm nghỉ">
+                    <img src="assets/loading/Transition_Style_7_Point_02_trimmed.png" alt="Mid Pin">
+                </div>
+                <div class="track-pin pin-end" title="Đích đến">
+                    <img src="assets/loading/Transition_Style_7_Point_01_trimmed.png" alt="End Pin">
+                </div>
+
+                <div class="track-van-actor" id="track-van">
+                    <div class="van-overhead-star">
+                        <img src="assets/loading/star_yellow_ref.png" alt="Yellow Star">
+                    </div>
+                    <div class="van-sprite-box">
+                        <img src="assets/loading/Transition_Style_7_Car_01_trimmed.png" class="van-sprite" alt="Camper Van">
+                    </div>
+                    <div class="van-smoke-emitter">
+                        <div class="smoke-particle s1"><img src="assets/loading/smoke_ref.png" alt="Smoke"></div>
+                        <div class="smoke-particle s2"><img src="assets/loading/smoke_ref.png" alt="Smoke"></div>
+                        <div class="smoke-particle s3"><img src="assets/loading/smoke_ref.png" alt="Smoke"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 2.4K GAMEPLAY LAUNCH VIDEO BACKGROUND ================= -->
+    <div id="bg-video-container">
+        <video id="bg-video" autoplay loop muted playsinline preload="auto">
+            <source src="assets/videos/background_launch.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- ================= TOP CORNER MUSIC TOGGLE BUTTON (ICON ONLY) ================= -->
+    <div class="music-control-wrap">
+        <button id="btn-music-toggle" class="muted" title="Bật/Tắt Nhạc Nền" aria-label="Bật tắt nhạc nền">
+            <div class="music-pulse-ring"></div>
+            <div class="music-bars">
+                <span class="eq-bar b1"></span>
+                <span class="eq-bar b2"></span>
+                <span class="eq-bar b3"></span>
+                <span class="eq-bar b4"></span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Background Music Audio Element -->
+    <audio id="bgm-audio" loop preload="auto">
+        <source src="assets/audio/bgm_launch.m4a" type="audio/mp4">
+        <source src="assets/audio/bgm_launch.mp4" type="audio/mp4">
+    </audio>
+
+    <!-- ================= CENTER STAGE (LOGO & CRYSTAL BUTTONS) ================= -->
+    <div class="center-stage">
+        <!-- Ambient Light Halo -->
+        <div class="logo-ambient-aura"></div>
+
+        <!-- Logo của Bản Việt Hóa (No Background) -->
+        <div class="logo-wrapper">
+            <img src="assets/app_icon.png" alt="Stella Sora Việt Hóa" class="main-viethoa-logo">
+        </div>
+
+        <!-- 2 Nút Tải Pha Lê Kính Mờ Đóng Khung Tinh Xảo -->
+        <div class="download-cluster">
+            <!-- Nút Tải Windows -->
+            <a href="downloads/StellaSora-Windows_v0.9.9.exe" download="StellaSora-Windows_v0.9.9.exe" class="btn-crystal btn-windows" title="Tải Bản Cài Windows v0.9.9">
+                <div class="btn-sheen"></div>
+                <div class="btn-icon-box">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.951"/>
+                    </svg>
+                </div>
+                <div class="btn-text-group">
+                    <span class="btn-platform-name">WINDOWS</span>
+                    <span class="btn-sub-tag">v0.9.9 PC</span>
+                </div>
+            </a>
+
+            <!-- Nút Tải Android -->
+            <a href="downloads/StellaSora-Android_v0.1.1.apk" download="StellaSora-Android_v0.1.1.apk" class="btn-crystal btn-android" title="Tải Bản Cài Android v0.1.1">
+                <div class="btn-sheen"></div>
+                <div class="btn-icon-box">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4116 13.8533 8.1 12 8.1s-3.5902.3116-5.1368.8497L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+                    </svg>
+                </div>
+                <div class="btn-text-group">
+                    <span class="btn-platform-name">ANDROID</span>
+                    <span class="btn-sub-tag">v0.1.1 APK</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= 6. MINIMALIST GLASS FOOTER ================= -->
+    <footer class="minimal-footer">
+        <div class="footer-content">
+            <!-- Author & Social Links Row -->
+            <div class="footer-meta-row">
+                <span class="author-tag">
+                    Tác giả: 
+                    <a href="https://github.com/doubleD1302" target="_blank" rel="noopener noreferrer" class="link-author" title="Trang GitHub tác giả DoubleD1302">
+                        DoubleD1302
+                    </a>
+                </span>
+                <span class="meta-divider">•</span>
+                <div class="social-links">
+                    <!-- Facebook Link -->
+                    <a href="https://www.facebook.com/datnguyen.kei" target="_blank" rel="noopener noreferrer" class="social-chip facebook" title="Liên hệ Facebook: datnguyen.kei">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>Facebook</span>
+                    </a>
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/doubleD1302" target="_blank" rel="noopener noreferrer" class="social-chip" title="GitHub: doubleD1302">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                        <span>doubleD1302</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright Notice Row -->
+            <div class="footer-copyright-row">
+                <span>© 2026 Dự án Việt Hóa Stella Sora • Bản quyền tài nguyên & nội dung gốc thuộc về Yostar Games & Developers</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT CONTROLLER ================= -->
+    <script>
+        (function() {
+            // Elements
+            const loadingScreen = document.getElementById('loading-screen');
+            const loadingPercent = document.getElementById('loading-percent');
+            const loadingStatusTip = document.getElementById('loading-status-tip');
+            const trackProgressFill = document.getElementById('track-progress-fill');
+            const trackVan = document.getElementById('track-van');
+            const timelineTrack = document.getElementById('timeline-track');
+            const bgVideo = document.getElementById('bg-video');
+            const bgmAudio = document.getElementById('bgm-audio');
+            const btnMusic = document.getElementById('btn-music-toggle');
+
+            // Responsive Van Positioning Tracker
+            function updateVanPosition(percent) {
+                if (!timelineTrack || !trackVan) return;
+                const trackWidth = timelineTrack.offsetWidth;
+                const startOffset = 36;
+                const travelDistance = Math.max(0, trackWidth - (startOffset * 2));
+                const currentPx = startOffset + (travelDistance * (percent / 100));
+
+                trackVan.style.left = currentPx + 'px';
+                if (trackProgressFill) {
+                    trackProgressFill.style.width = ((percent / 100) * travelDistance) + 'px';
+                }
+            }
+
+            // Real-time Resize Handler for Strict Aspect Ratio & Fullscreen Coverage
+            function enforceFullscreenVideo() {
+                if (!bgVideo) return;
+                bgVideo.style.width = window.innerWidth + 'px';
+                bgVideo.style.height = window.innerHeight + 'px';
+            }
+            window.addEventListener('resize', () => {
+                enforceFullscreenVideo();
+                updateVanPosition(currentProgress);
+            });
+            enforceFullscreenVideo();
+
+            // Background Music Controller
+            let isMusicPlaying = false;
+            function setMusicState(playing) {
+                if (!bgmAudio) return;
+                if (playing) {
+                    bgmAudio.play().then(() => {
+                        isMusicPlaying = true;
+                        btnMusic.classList.add('playing');
+                        btnMusic.classList.remove('muted');
+                    }).catch(() => {
+                        isMusicPlaying = false;
+                        btnMusic.classList.remove('playing');
+                        btnMusic.classList.add('muted');
+                    });
+                } else {
+                    bgmAudio.pause();
+                    isMusicPlaying = false;
+                    btnMusic.classList.remove('playing');
+                    btnMusic.classList.add('muted');
+                }
+            }
+
+            btnMusic.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setMusicState(!isMusicPlaying);
+            });
+
+            // Auto-start music on first user click or tap anywhere
+            function initAudioOnFirstGesture() {
+                if (!isMusicPlaying) {
+                    setMusicState(true);
+                }
+            }
+            window.addEventListener('click', initAudioOnFirstGesture, { once: true });
+            window.addEventListener('touchstart', initAudioOnFirstGesture, { once: true });
+
+            // Loading Progress Engine
+            let currentProgress = 0;
+            let targetProgress = 12;
+            let videoReady = false;
+
+            const tipMessages = [
+                { threshold: 0, text: "Đang nạp hoạt ảnh 2.4K..." },
+                { threshold: 30, text: "Đang chuẩn bị gói cài đặt Windows & Android..." },
+                { threshold: 70, text: "Hoàn tất đồng bộ dữ liệu..." },
+                { threshold: 99, text: "Sẵn sàng khởi hành!" }
+            ];
+
+            function updateTip(pct) {
+                for (let i = tipMessages.length - 1; i >= 0; i--) {
+                    if (pct >= tipMessages[i].threshold) {
+                        loadingStatusTip.textContent = tipMessages[i].text;
+                        break;
+                    }
+                }
+            }
+
+            // Video buffering tracking
+            if (bgVideo) {
+                bgVideo.addEventListener('canplay', () => {
+                    videoReady = true;
+                    targetProgress = Math.max(targetProgress, 85);
+                });
+                bgVideo.addEventListener('canplaythrough', () => {
+                    videoReady = true;
+                    targetProgress = 100;
+                });
+                setTimeout(() => {
+                    videoReady = true;
+                    targetProgress = 100;
+                }, 2800);
+            } else {
+                targetProgress = 100;
+            }
+
+            // Preload logo
+            const logoImg = new Image();
+            logoImg.onload = logoImg.onerror = () => {
+                targetProgress = Math.max(targetProgress, 60);
+            };
+            logoImg.src = 'assets/app_icon.png';
+
+            // Smooth Interpolation Loop
+            let hasCompleted = false;
+            function stepProgress() {
+                if (hasCompleted) return;
+
+                if (targetProgress < 95) {
+                    targetProgress += 0.45;
+                }
+
+                const diff = targetProgress - currentProgress;
+                currentProgress += diff * 0.085;
+
+                if (currentProgress > 99.4 && videoReady) {
+                    currentProgress = 100;
+                }
+
+                const rounded = Math.min(100, Math.round(currentProgress));
+                loadingPercent.textContent = rounded + '%';
+                updateTip(rounded);
+                updateVanPosition(currentProgress);
+
+                if (currentProgress >= 100) {
+                    hasCompleted = true;
+                    setTimeout(() => {
+                        loadingScreen.classList.add('finished');
+                        if (bgVideo) {
+                            bgVideo.play().catch(() => {});
+                        }
+                    }, 350);
+                    return;
+                }
+
+                requestAnimationFrame(stepProgress);
+            }
+            requestAnimationFrame(stepProgress);
+        })();
+    </script>
+</body>
+</html>

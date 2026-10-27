@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "sections": [
+    {
+      "title": "Bắt đầu",
+      "subtitle": "Chuẩn bị trước khi cài bản dịch.",
+      "current": 1,
+      "steps": [
+        {
+          "title": "Đóng game và chọn thư mục",
+          "detail": "Thoát Stella Sora. Trên Tổng quan, bấm biểu tượng tìm kiếm trong ô đường dẫn để tự tìm game. Nếu có nhiều bản cài, chọn đúng Steam hoặc Yostar đang dùng."
+        },
+        {
+          "title": "Cài bản dịch từ GitHub",
+          "detail": "Bấm Cài Việt hoá và xem lại thư mục. Launcher tải gói từ GitHub, kiểm tra tệp và tạo bản sao lưu trước khi cài. Chờ thông báo hoàn tất; không đóng launcher giữa chừng."
+        },
+        {
+          "title": "Mở game để xem kết quả",
+          "detail": "Sau khi cài xong, bấm Kiểm tra tệp để đối chiếu bản dịch, rồi mở game như bình thường. Nếu chữ chưa đổi hoặc hiển thị lỗi, xem mục Câu hỏi thường gặp."
+        }
+      ]
+    },
+    {
+      "title": "Cài Việt hoá",
+      "subtitle": "Chọn đúng bản game trước khi xác nhận.",
+      "current": 2,
+      "steps": [
+        {
+          "title": "Kiểm tra đường dẫn",
+          "detail": "Thư mục đúng là nơi có StellaSora.exe, không phải thư mục tải bản dịch. Dùng nút tự tìm hoặc biểu tượng thư mục để chọn thủ công."
+        },
+        {
+          "title": "Tải và cài gói tương thích",
+          "detail": "Launcher lấy bản dịch từ kho GitHub đang cấu hình. Nếu gói không khớp phiên bản game, thao tác dừng và báo lý do. Không đổi tên tệp để ép cài một gói cũ."
+        },
+        {
+          "title": "Giữ lại bản sao lưu",
+          "detail": "Bản sao lưu và biên bản cài đặt được lưu trên máy của bạn. Giữ chúng để có thể Khôi phục sau này. Kiểm tra tệp chỉ đối chiếu những tệp bản dịch mà launcher đã cài."
+        }
+      ]
+    },
+    {
+      "title": "Cập nhật bản dịch",
+      "subtitle": "Bản dịch và launcher có lịch cập nhật riêng.",
+      "current": 2,
+      "steps": [
+        {
+          "title": "Đồng bộ thông tin mới",
+          "detail": "Mở Cài đặt launcher và chọn Đồng bộ GitHub để tải lại thông báo và kiểm tra bản phát hành. Cần kết nối Internet để nhận dữ liệu mới."
+        },
+        {
+          "title": "Cập nhật bản dịch khi phù hợp",
+          "detail": "Đóng game rồi bấm Cài Việt hoá hoặc Cập nhật Việt hoá trên Tổng quan. Launcher đọc lại gói đang phát hành trên GitHub và chỉ cài phần được gói đó công bố."
+        },
+        {
+          "title": "Cập nhật chính launcher",
+          "detail": "Dùng Kiểm tra cập nhật launcher. Chỉ tải khi có phiên bản mới hơn và tệp được xác minh. Cập nhật launcher không tự cài lại bản dịch vào game."
+        }
+      ]
+    },
+    {
+      "title": "Khôi phục bản gốc",
+      "subtitle": "Đưa các tệp về trạng thái trước lần cài đã ghi nhận.",
+      "current": 3,
+      "steps": [
+        {
+          "title": "Đóng game và chọn đúng bản cài",
+          "detail": "Chọn đúng thư mục Steam hoặc Yostar đã được launcher này cài bản dịch. Khôi phục không lấy bản sao lưu của một thư mục game khác."
+        },
+        {
+          "title": "Xem lại thông tin khôi phục",
+          "detail": "Bấm Khôi phục dưới nút cài đặt, xem đường dẫn và xác nhận. Nếu thiếu bản sao lưu hoặc game đã đổi tệp sau khi cập nhật, launcher sẽ dừng để tránh ghi đè sai dữ liệu."
+        },
+        {
+          "title": "Nếu lần cài bị ngắt giữa chừng",
+          "detail": "Mở bánh răng → Công cụ nâng cao → Phục hồi & cập nhật → Phục hồi từ nhật ký. Khi phục hồi xong, kiểm tra lại game trước khi cài tiếp."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Bấm tự tìm nhưng không thấy game thì làm sao?",
+      "answer": "Bấm biểu tượng thư mục để chọn thủ công nơi có StellaSora.exe. Nếu chỉ thấy thư mục con như StellaSora_Data, hãy quay lên một cấp. Launcher dò các thư viện Steam và vị trí Yostar thông dụng; bản cài ở chỗ khác có thể cần chọn tay."
+    },
+    {
+      "question": "Máy có cả Steam và Yostar thì chọn bản nào?",
+      "answer": "Chọn bản bạn thực sự mở để chơi. Mỗi bản cài có thư mục và bản sao lưu riêng. Launcher sẽ cho bạn chọn nếu tìm thấy nhiều bản, không tự chép bản dịch từ bản game này sang bản khác."
+    },
+    {
+      "question": "Vì sao Kiểm tra tệp hoặc Khôi phục báo thiếu biên bản?",
+      "answer": "Hai thao tác này cần thông tin của lần cài bằng launcher này. Nếu trước đây bạn cài thủ công hoặc bằng công cụ khác, launcher chưa có danh sách tệp và bản sao lưu để đối chiếu. Hãy kiểm tra lại thư mục đã chọn. Nếu bạn cài bằng công cụ khác, hãy dùng bản sao lưu hoặc cách khôi phục của lần cài đó."
+    },
+    {
+      "question": "Game đang chạy thì có cài bản dịch được không?",
+      "answer": "Hãy thoát game trước. Nếu đã thoát mà launcher vẫn báo đang chạy, chờ vài giây rồi tự tìm hoặc chọn lại thư mục để cập nhật trạng thái."
+    },
+    {
+      "question": "Vì sao gói bản dịch bị từ chối?",
+      "answer": "Có thể game vừa cập nhật, gói tải thiếu hoặc dữ liệu tải về không đúng bản công bố. Đọc thông báo lỗi và đồng bộ GitHub rồi thử tải lại. Không tắt bước kiểm tra tệp để cố cài."
+    },
+    {
+      "question": "Không có Internet thì launcher có dùng được không?",
+      "answer": "Bạn vẫn có thể xem thông báo đã lưu và chọn thư mục game. Muốn nhận thông báo hoặc bản dịch mới cần Internet. Nếu đã có gói ngoại tuyến đầy đủ, chọn gói trong Cài đặt launcher; gói vẫn phải qua bước kiểm tra trước khi cài."
+    },
+    {
+      "question": "Cập nhật launcher có giống cập nhật bản dịch không?",
+      "answer": "Không. Cập nhật launcher thay ứng dụng quản lý; Cài/Cập nhật Việt hoá thay các tệp bản dịch trong game. Số phiên bản của hai phần có thể khác nhau."
+    },
+    {
+      "question": "Kiểm tra tệp có kiểm tra toàn bộ game không?",
+      "answer": "Nút này chỉ đối chiếu các tệp bản dịch đã được launcher ghi nhận. Để kiểm tra toàn bộ bản game gốc, dùng chức năng kiểm tra tệp của Steam hoặc launcher Yostar."
+    },
+    {
+      "question": "Cài xong nhưng game chưa hiện tiếng Việt?",
+      "answer": "Kiểm tra bạn có mở đúng bản Steam/Yostar vừa cài không. Bấm Kiểm tra tệp rồi đọc kết quả. Một bản phát hành có thể chỉ cập nhật hình ảnh; xem mô tả gói trên GitHub để biết nội dung có trong bản đó."
+    },
+    {
+      "question": "Gửi thông tin lỗi ở đâu?",
+      "answer": "Vào bánh răng → Công cụ nâng cao → Chẩn đoán → Làm mới chẩn đoán → Sao chép báo cáo. Gửi báo cáo cùng nội dung lỗi và ảnh chụp qua kênh hỗ trợ của dự án. Launcher không tự gửi báo cáo; hãy xem lại thông tin trước khi chia sẻ."
+    },
+    {
+      "question": "Có phải ủng hộ mới được tải bản Việt hoá không?",
+      "answer": "Không. Bản Việt hoá luôn luôn miễn phí. Mọi khoản ủng hộ đều tự nguyện và không phải điều kiện để tải, cài hoặc cập nhật bản dịch."
+    }
+  ]
+}

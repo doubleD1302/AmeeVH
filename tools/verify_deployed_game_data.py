@@ -23,6 +23,15 @@ EXPECTED_SKILLS = {
     "Skill.14740000.1": "Giai Điệu Seraphim",
 }
 
+
+EXPECTED_MAINSKILL = {
+    "MainSkill.405101.1": "Nơi Ánh Sao Hướng Về",
+    "MainSkill.405101.2": "Du Hành Giả Đa Năng hệ Quang",
+    "MainSkill.400301.2": "Du Hành Giả Đa Năng hệ Quang",
+    "MainSkill.400801.2": "Du Hành Giả Đa Năng hệ Thủy",
+    "MainSkill.405901.2": "「Tinh Vọng」",
+}
+
 EXPECTED_UITEXT = {
     "UIText.Achievement_Btn_ReceiveAll.1": "Nhận tất cả",
     "UIText.AVG_SkipTip.1": "Bỏ qua đoạn cốt truyện này?",
@@ -38,6 +47,13 @@ EXPECTED_UITEXT = {
     "UIText.Equipment_Title_Info.1": "Thông Tin Huy Hiệu",
     "UIText.TowerDef_LevelPreTime.1": "Đợt tiếp theo bắt đầu sau <color=#08d3d4>{0}</color>",
     "UIText.Vampire_Bonus_Title.1": "{0} Chuỗi tiêu diệt <size=28>(Điểm x {1})</size>",
+    "UIText.Diffculty_1.1": "Độ khó 1",
+    "UIText.Diffculty_2.1": "Độ khó 2",
+    "UIText.Diffculty_3.1": "Độ khó 3",
+    "UIText.SkillInstance_PassConfition_1.1": "Thời gian vượt ải ≤ {0} s",
+    "UIText.SkillInstance_PassConfition_2.1": "Vượt ải khi còn lại > {0} giây",
+    "UIText.RegusBoss_Unlock.1": "Chưa mở khóa độ khó",
+    "UIText.StarTower_Rank_Diff_Score.1": "Điểm độ khó",
 }
 
 EXPECTED_CHARGEM = {
@@ -132,6 +148,20 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
                     raise AssertionError(f"Skill regression at {k}: expected '{expected_val}', got '{actual_val}'")
                 print(f"    - {k}: {actual_val} (MATCH)")
             found_skill = True
+
+
+        # MainSkill (0x57e760255c1d3b2d)
+        if e["hash"] == 0x57e760255c1d3b2d:
+            data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
+            d = json.loads(data.decode("utf-8"))
+            print("  [PASS] Decrypted MainSkill table.")
+            for k, expected_sub in EXPECTED_MAINSKILL.items():
+                val = d.get(k, "")
+                if expected_sub not in val:
+                    raise AssertionError(f"MainSkill regression at {k}: expected substring '{expected_sub}', got '{val}'")
+                if "phượt thủ" in val or "Auto Tấn Công" in val:
+                    raise AssertionError(f"MainSkill regression at {k}: forbidden MT calque found in '{val}'")
+                print(f"    - {k}: contains '{expected_sub}' (MATCH)")
 
         # UIText (0x87cc29ac0defc2d9)
         if e["hash"] == 0x87cc29ac0defc2d9:

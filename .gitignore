@@ -1,43 +1,49 @@
+# Python virtual environments & bytecode
 .venv/
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 *.log
-*.zip
 
-# Staging and local user backups
+# Build outputs, temporary directories & archives
+dist/
+build/
+work/
 backups/
 staging/
+reports/
+agents/
+prompts/
+templates/
 
-# Android build artifacts
+# Large binaries & compiled archives
+*.exe
+*.apk
+*.zip
+*.idsig
+*.arcx
+*.unity3d
+
+# Android build & local properties
 android/build/
 android/.gradle/
-android/debug.keystore
+android/app/build/
+android/local.properties
+android/signing/*.keystore
+android_launcher_*/
+launcher_next_*/
 
-# PyInstaller build artifacts
-build/
-dist/
-*.spec
+# Web downloads local binaries
+web/downloads/*.exe
+web/downloads/*.apk
+web/downloads/*.zip
 
-# Keep translation work catalogs and proposals
-work/*
-!work/batches/
-!work/source/
-!work/research/
-work/research/*
-!work/research/*.json
-!work/research/*.md
-
-# AI operational documents & agent prompts
+# AI operational files & internal specs
 AGENTS.md
 START_HERE.md
 STATUS.json
 CHECKPOINT.json
-agents/
-prompts/
-reports/
-templates/
-work/
 docs/SUBAGENT_*.md
 docs/QA_GATES.md
 docs/REFERENCES.md
@@ -47,4 +53,3 @@ docs/LOCAL_DISCOVERY.md
 docs/PATCH_AND_ROLLBACK.md
 docs/TOOLS.md
 tests/
-

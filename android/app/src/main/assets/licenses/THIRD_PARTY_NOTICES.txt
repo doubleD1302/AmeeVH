@@ -1,0 +1,8 @@
+This local candidate includes unmodified generic libraries, with source coordinates and artifact hashes in DEPENDENCIES.json.
+libadb-android 3.1.1: https://github.com/MuntashirAkon/libadb-android/tree/3.1.1 ; dual GPL-3.0-or-later OR Apache-2.0. This app elects Apache-2.0. BSD-3-Clause components retain their copyright notices (including Cameron Gutman 2013).
+spake2-android 2.2.1: https://github.com/MuntashirAkon/spake2-java/tree/2.2.1 ; LGPL-3.0. Unmodified separate Android native library. Its corresponding source is at that tagged repository.
+Bouncy Castle bcprov-jdk15to18 1.81: https://www.bouncycastle.org/licence.html ; Bouncy Castle licence (MIT-style).
+Conscrypt Android 2.5.3: https://github.com/google/conscrypt/tree/2.5.3 ; Apache-2.0 and third-party notices in upstream source.
+AndroidX annotation-jvm 1.9.1: https://android.googlesource.com/platform/frameworks/support/ ; Apache-2.0.
+Be Vietnam Pro Regular/Medium/SemiBold fonts: SIL Open Font License 1.1, included verbatim with pinned source provenance. All illustrated pastel UI icons, round paper/cloud/leaf surfaces and cloud notification vector are newly drawn for this Android app. The user explicitly preserved the original VNflag logo and app icon byte-for-byte.
+App-specific implementation is new; no other game's rules, payload data or private keys are included. Candidate signing key is preserved unchanged from this app r01 for compatible updates, separate from runtime per-app ADB keys.

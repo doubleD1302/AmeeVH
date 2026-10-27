@@ -1,0 +1,40 @@
+[
+  {
+    "method": "momo",
+    "original": "momo_original.jpg",
+    "original_sha256": "3f99f816ac66b9779fa6e3d0ff6c0a22634f8fd505503e67443ce9e238f90358",
+    "original_size": [
+      1220,
+      1334
+    ],
+    "payload": "00020101021138630010A000000727013300069710250119PSP26051127000000150208QRIBFTTA53037045802VN62200516MOMOW2W1178545486304A26A",
+    "qr_crop": "momo_qr.png",
+    "crop_box": [
+      384,
+      406,
+      837,
+      859
+    ],
+    "qr_sha256": "482e9b41fbf84e4f2fcc42b3675cb406a552d572fa2907314d6dae58cab75ce8",
+    "image_operation": "exact pixel crop only; original unchanged; no regeneration or rescaling"
+  },
+  {
+    "method": "techcombank",
+    "original": "techcombank_original.jpg",
+    "original_sha256": "91e4b1b22618fb779db1ca837b3dc039b898c898dfcb141bdfc242f7b0b2bcde",
+    "original_size": [
+      1220,
+      2169
+    ],
+    "payload": "00020101021138580010A000000727012800069704070114190759046030160208QRIBFTTA5204601153037045802VN5903TCB6005Hanoi63047df0",
+    "qr_crop": "techcombank_qr.png",
+    "crop_box": [
+      348,
+      493,
+      874,
+      1019
+    ],
+    "qr_sha256": "170de1dba2a1863e19e51c876c50d430d3f6f299986eb6e61adf98bef00509cd",
+    "image_operation": "exact pixel crop only; original unchanged; no regeneration or rescaling"
+  }
+]

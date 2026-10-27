@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "recipient_name": "NGUYEN DUC DAT",
+  "source": "user_provided_images",
+  "identity_verification": "not_checked_with_bank; names transcribed from provided images",
+  "methods": [
+    {
+      "id": "bank",
+      "label": "Chuyển khoản",
+      "provider": "Techcombank",
+      "recipient_name": "NGUYEN DUC DAT",
+      "account_number": "19075904603016",
+      "qr_file": "techcombank_qr.png",
+      "qr_sha256": "170de1dba2a1863e19e51c876c50d430d3f6f299986eb6e61adf98bef00509cd",
+      "qr_payload": "00020101021138580010A000000727012800069704070114190759046030160208QRIBFTTA5204601153037045802VN5903TCB6005Hanoi63047df0",
+      "account_source": "image text and decoded QR both match"
+    },
+    {
+      "id": "wallet",
+      "label": "Ví điện tử",
+      "provider": "MoMo",
+      "recipient_name": "NGUYEN DUC DAT",
+      "account_masked": "*******015",
+      "account_number": null,
+      "qr_file": "momo_qr.png",
+      "qr_sha256": "482e9b41fbf84e4f2fcc42b3675cb406a552d572fa2907314d6dae58cab75ce8",
+      "qr_payload": "00020101021138630010A000000727013300069710250119PSP26051127000000150208QRIBFTTA53037045802VN62200516MOMOW2W1178545486304A26A",
+      "account_source": "masked number in source image; PSP identifier in QR is not a phone number"
+    }
+  ],
+  "reminder": "Bản Việt hoá luôn luôn miễn phí."
+}
