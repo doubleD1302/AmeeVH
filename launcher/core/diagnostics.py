@@ -13,7 +13,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from launcher_next_r09.core.types import GameInfo
+from .types import GameInfo
 
 logger = logging.getLogger("launcher.diagnostics")
 

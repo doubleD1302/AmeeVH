@@ -247,16 +247,22 @@ class GameDetector:
 
 def read_game_versions(root):
     """Read actual version headers; never infer from a directory or bundle size."""
-    import json
-    out={"game":"unknown","resource":"unknown"}
-    root=Path(root)
-    mf=root/"Persistent_Store"/"ss_win.mani"
+    out = {"game": "unknown", "resource": "unknown"}
+    root = Path(root)
+    mf = root / "Persistent_Store" / "ss_win.mani"
     if mf.is_file():
         try:
-            with mf.open(encoding="utf8",errors="replace") as f: header="".join(next(f,"") for _ in range(16))
-            for part in header.replace(chr(10),'|').split('|'):
-                fields=part.strip().split()
-                if len(fields)>=2 and fields[0] in ('GAME_VER','RES_VER'):
-                    out['game' if fields[0]=='GAME_VER' else 'resource']=fields[-1]
-        except OSError:pass
+            with mf.open(encoding="utf8", errors="replace") as f:
+                header = "".join(next(f, "") for _ in range(32))
+            for line in header.splitlines():
+                line = line.strip().lstrip("$")
+                m = re.match(r"^(GAME_VER|CLIENT_VER|RES_VER|RESOURCE_VER)[:=\s]+([0-9A-Za-z_.-]+)", line)
+                if m:
+                    k, v = m.group(1), m.group(2)
+                    if k in ("GAME_VER", "CLIENT_VER") and out["game"] == "unknown":
+                        out["game"] = v
+                    elif k in ("RES_VER", "RESOURCE_VER") and out["resource"] == "unknown":
+                        out["resource"] = v
+        except OSError:
+            pass
     return out

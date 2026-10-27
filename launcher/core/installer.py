@@ -91,7 +91,15 @@ class PatchInstaller:
                 try:manifest_data=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
                 except (OSError,ValueError) as e:raise InstallerError('Không đọc được patch_manifest.json: '+str(e),'MANIFEST_MISSING')
             m=normalize_manifest(manifest_data);observed=read_game_versions(root)
-            if observed['game']!=m['client_game_version'] or observed['resource']!=m['resource_version']:raise InstallerError(f"Gói dành cho game {m['client_game_version']} / tài nguyên {m['resource_version']}; bản đã chọn là {observed['game']} / {observed['resource']}.",'VERSION_MISMATCH')
+            def _match_ver(exp, obs):
+                if not exp or exp in ('*', 'all') or obs in ('*', 'all', 'unknown'): return True
+                if obs == exp: return True
+                for p in str(exp).replace(';', ',').replace('|', ',').split(','):
+                    p = p.strip()
+                    if p in ('*', obs): return True
+                    if p.endswith('*') and obs.startswith(p[:-1]): return True
+                return False
+            if not _match_ver(m.get('client_game_version'), observed['game']) or not _match_ver(m.get('resource_version'), observed['resource']):raise InstallerError(f"Gói dành cho game {m['client_game_version']} / tài nguyên {m['resource_version']}; bản đã chọn là {observed['game']} / {observed['resource']}.",'VERSION_MISMATCH')
             plan={};total=len(m['files'])
             for i,(rel,meta) in enumerate(m['files'].items()):
                 src=safe_path(payload,meta['source']);target=safe_path(root,rel,True)

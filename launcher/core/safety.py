@@ -57,7 +57,7 @@ def normalize_manifest(raw):
     if mapping is None:
         bundles=m.get('bundles')
         if not isinstance(bundles,dict) or not bundles:raise InstallerError('Manifest không khai báo tệp được xác minh.','EMPTY_MANIFEST')
-        mapping={f'Persistent_Store/AssetBundles/{n}':{'source':f'AssetBundles/{n}','sha256':v.get('patched_sha256'),'size':v.get('size_bytes')} for n,v in bundles.items() if isinstance(v,dict)}
+        mapping={f'Persistent_Store/AssetBundles/{n}':{'source':f'AssetBundles/{n}','sha256':v.get('patched_sha256') or v.get('sha256'),'size':v.get('size_bytes') or v.get('size')} for n,v in bundles.items() if isinstance(v,dict)}
         if len(mapping)!=len(bundles):raise InstallerError('Bundle metadata không hợp lệ.','MANIFEST_INVALID')
     if not isinstance(mapping,dict) or not mapping:raise InstallerError('Danh sách tệp rỗng/không hợp lệ.','EMPTY_MANIFEST')
     result={};seen=set()
