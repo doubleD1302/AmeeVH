@@ -268,6 +268,18 @@ def main():
             master_dict[en_k] = vi_v
             master_dict[clean_str(en_k)] = vi_v
         print(f"Applied {len(STM02_09_PERFECT_DICT)} STm02_09 overrides and {len(ADDITIONAL_RECURRING_FIXES)} recurring overrides.")
+
+        from apply_story_terminology_and_pronouns_fix import STM03_00_B_PERFECT_DICT, GENERAL_TERMINOLOGY_OVERRIDES
+        sdict_stm03_00_b = scene_dicts.setdefault("STm03_00_b", {})
+        for en_k, vi_v in STM03_00_B_PERFECT_DICT.items():
+            sdict_stm03_00_b[en_k] = vi_v
+            sdict_stm03_00_b[clean_str(en_k)] = vi_v
+            master_dict[en_k] = vi_v
+            master_dict[clean_str(en_k)] = vi_v
+        for en_k, vi_v in GENERAL_TERMINOLOGY_OVERRIDES.items():
+            master_dict[en_k] = vi_v
+            master_dict[clean_str(en_k)] = vi_v
+        print(f"Applied {len(STM03_00_B_PERFECT_DICT)} STm03_00_b overrides and {len(GENERAL_TERMINOLOGY_OVERRIDES)} terminology/pronoun overrides.")
     except Exception as e:
         print(f"Note: Deep idiom overrides not loaded: {e}")
 

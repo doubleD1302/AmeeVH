@@ -65,7 +65,28 @@ GLOSSARY_RULES = [
     (r'\bMonolith\b', 'Cự Tháp'),
     
     # Creta Trading
-    (r'\bCreta Trading\b', 'Thương đoàn Creta'),
+    (r'\bCreta Trading\b', 'Thương Hội Creta'),
+    (r'\bThương mại Creta\b', 'Thương Hội Creta'),
+    (r'\bThương Mại Creta\b', 'Thương Hội Creta'),
+    (r'\bThương đoàn Creta\b', 'Thương Hội Creta'),
+
+    # World Well
+    (r'\bHệ thống Phát triển Bạo chúa Giếng nước của Thế giới\b', 'Hệ Thống Bồi Dưỡng Bạo Chúa Giếng Vạn Giới'),
+    (r'\bGiếng nước của Thế giới\b', 'Giếng Vạn Giới'),
+    (r'\bgiếng nước của thế giới\b', 'giếng Vạn Giới'),
+    (r'\bGiếng nước Bạo chúa\b', 'Giếng Vạn Giới Bạo Chúa'),
+    (r'\bThe Well of Worlds\b', 'Giếng Vạn Giới'),
+
+    # Grace Terminology
+    (r'\bDấu ấn Ân điển\b', 'Ấn Ký Ân Tứ'),
+    (r'\bPhong ấn Ân điển\b', 'Ấn Ký Ân Tứ'),
+    (r'\bDấu ấn ân điển\b', 'Ấn Ký Ân Tứ'),
+    (r'\bThần Ân [đĐ]iển\b', 'Thần Ân Tứ'),
+    (r'\bCon [mM]ắt Ân [đĐ]iển\b', 'Đôi Mắt Ân Tứ'),
+    (r'\bThánh [đĐ]ịa Ân [đĐ]iển\b', 'Thánh Địa Ân Tứ'),
+    (r'\bNước Ân [đĐ]iển\b', 'Nước Ân Tứ'),
+    (r'\bSách Tiên [tT]ri Ân [đĐ]iển\b', 'Sách Tiên Tri Ân Tứ'),
+    (r'\bHộp Điều ước\b', 'Hộp Ước Nguyện'),
     
     # Nocturn Eterna
     (r'\bNocturn Eterna\b', 'Đêm Trường Vĩnh Cửu'),
@@ -96,6 +117,18 @@ GLOSSARY_RULES = [
 
 # 3. IDIOMS & PHRASAL CALQUES
 IDIOM_RULES = [
+    # Chess Promotion & Oracle & World Well
+    (r'Nó được gọi là "Khuyến mãi\."', 'Nó mang tên "Phong Cấp".'),
+    (r'Nó được gọi là \\"Khuyến mãi\.\\"', 'Nó mang tên "Phong Cấp".'),
+    (r'Nó được gọi là "Oracle\."', 'Nó mang tên "Thần Dụ".'),
+    (r'Nó được gọi là \\"Oracle\.\\"', 'Nó mang tên "Thần Dụ".'),
+    
+    # Amber address & soul trading
+    (r'anh không cần phải tự dằn vặt chuyện tụi này đánh đổi linh hồn đâu', 'cậu không cần phải tự dằn vặt chuyện tụi này giao dịch linh hồn đâu'),
+    (r'Anh đã đứng ra che chắn cho tụi này, tụi này đâu thể để anh một mình gánh chịu hiểm nguy được', 'Cậu đã đứng ra che chắn cho tụi này, tụi này đâu thể để cậu một mình gánh chịu hiểm nguy được'),
+    (r'Em ước gì mình cũng có được một chiếc điện thoại màn hình to đùng như của anh, ==PLAYER_NAME== ơi!', 'Em ước gì mình cũng có được một chiếc điện thoại màn hình to đùng như của cậu, ==PLAYER_NAME== ơi!'),
+    (r'Cảm ơn em nhé, Amber\.', 'Cảm ơn cậu nhé, Amber.'),
+
     # Specific user reports & Scene 2
     (r"Được rồi, đây là chỗ\. Cửa sau của Creta Trading ở ngay dưới kia\.", "Được rồi, tới nơi rồi. Cửa sau của Thương đoàn Creta nằm ngay phía dưới kia."),
     (r"Ặc, thật điên rồ! Chúng ta thậm chí còn không biết những con đường này\.\.\. Nhưng tôi đoán chúng ta không còn lựa chọn nào khác\.", "Trời ạ, điên thật đấy! Đường sá ở đây mình còn chưa thuộc nữa là... Nhưng giờ chắc hết cách rồi."),
