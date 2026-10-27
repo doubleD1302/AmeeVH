@@ -24,11 +24,15 @@ def get_github_token() -> str:
 
 def upload_asset_to_release(rel, file_path: Path, ctype: str, headers: dict, repo: str):
     upload_url_tmpl = rel["upload_url"].split("{")[0]
-    existing_assets = {a["name"]: a["id"] for a in rel.get("assets", [])}
+    existing_assets = {a["name"]: a for a in rel.get("assets", [])}
     aname = file_path.name
 
     if aname in existing_assets:
-        aid = existing_assets[aname]
+        asset_info = existing_assets[aname]
+        if aname.endswith(".zip") and asset_info.get("size") == file_path.stat().st_size:
+            print(f"Skipping {aname} because size matches ({file_path.stat().st_size} bytes)")
+            return
+        aid = asset_info["id"]
         del_req = urllib.request.Request(
             f"https://api.github.com/repos/{repo}/releases/assets/{aid}",
             headers=headers,
