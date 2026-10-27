@@ -206,7 +206,7 @@ class MainWindow(QMainWindow):
         local=self.config_manager.get('payload_path','');channel_valid=self._configure_network()
         if not local and not channel_valid:
             self._show(MessageDialog('Chưa thể tải bản dịch',self._github_sync_state['message'],parent=self));return
-        if not self._confirm('CÀI / CẬP NHẬT VIỆT HÓA','Thư mục: '+str(root)+'\n\nTải hoặc đọc gói đã chọn, đối chiếu phiên bản, sao lưu và cài đúng các tệp trong manifest. Gói chỉ gồm texture sẽ chỉ cài texture.','Cài bản dịch'):return
+        if not self._confirm('CÀI / CẬP NHẬT VIỆT HÓA','Thư mục: '+str(root)+'\n\n'+state['message']+'\n\nTải hoặc đọc gói đã chọn, sao lưu và cài đúng các tệp trong manifest. Gói chỉ gồm texture sẽ chỉ cài texture.','Cài bản dịch'):return
         network=self.network_service;manifest_url=self._channel['manifest_url']
         def work(cb,op):
             payload=Path(local) if local else network.prepare_payload(self.path_manager.payload_root,manifest_url,cb,op)
@@ -215,7 +215,7 @@ class MainWindow(QMainWindow):
                 # Re-check the actual freshly downloaded manifest before writing.
                 manifest=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
                 state=translation_state({'release_status':'online','manifest_status':'online','translation_version':manifest.get('version'),'translation_game':manifest.get('client_game_version'),'translation_resource':manifest.get('resource_version')},info)
-                if not state['available']:raise RuntimeError('Không còn bản Việt hoá mới tương thích: '+state['message'])
+                if not state['available']:raise RuntimeError('Không còn bản Việt hoá mới hơn: '+state['message'])
             r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"✓ Hoàn tất cài đặt! Đã nạp thành công {r['files_count']} tệp bản dịch (v{r['version']})."}
         self._start('install',work)
     def _action_target(self,action,require_receipt=True):
