@@ -105,8 +105,20 @@
     if (game.versionsKnown) lines.push('Game: ' + game.gameVersion + ' · tài nguyên ' + game.resourceVersion);
     text('github-state', lines.join('\n'));
     const ghRead = ['online','empty','cached','bundled'].includes(gh.announcementStatus);
-    text('github-summary', p.available ? (p.compatible ? 'Đã đọc gói Android tương thích.' : 'Đã đọc gói Android; cần kiểm tra tương thích.') : (ghRead || gh.message !== initial.github.message ? 'Chưa có gói Android tương thích. Xem trạng thái chi tiết bên dưới.' : 'Chưa đồng bộ GitHub.'));
-    text('app-version', 'Launcher Android ' + (state.app.versionName || '0.1.1') + ' · Local ADB');
+    let summary = 'Chưa đồng bộ GitHub.';
+    if (p.available) {
+      if (adb.connected && p.compatible) {
+        summary = 'Đã đọc gói Android tương thích (Sẵn sàng cài đặt).';
+      } else if (adb.connected && !p.compatible) {
+        summary = 'Đã đọc gói Android; chưa tương thích với game trên máy.';
+      } else {
+        summary = 'Đã đồng bộ gói Android thành công (Chờ kết nối Local ADB).';
+      }
+    } else if (ghRead || gh.message !== initial.github.message) {
+      summary = gh.message || 'Chưa có gói Android tương thích. Xem trạng thái chi tiết bên dưới.';
+    }
+    text('github-summary', summary);
+    text('app-version', 'Launcher Android ' + (state.app.versionName || '1.0.0') + ' · Local ADB');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Mở trình cài đặt Android' : 'Tải bản cập nhật';
