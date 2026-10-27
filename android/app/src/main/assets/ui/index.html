@@ -22,6 +22,21 @@
  </div>
 </section>
 <section id="page-adb" class="page" aria-label="Local ADB"><div class="page-intro"><p class="eyebrow">KẾT NỐI TRÊN ĐIỆN THOẠI</p><h1>Local ADB</h1><p>Ghép đôi một lần để dùng trên điện thoại này.</p></div><div class="content-stack">
+  <article class="glass" id="dev-mode-warning" hidden>
+   <div class="section-heading"><h2>Tuỳ chọn nhà phát triển</h2><span class="status warning" id="dev-status-badge"><i></i>Chưa bật</span></div>
+   <p class="muted">Điện thoại chưa kích hoạt Chế độ nhà phát triển. Bạn cần bật chế độ này để sử dụng tính năng Gỡ lỗi không dây.</p>
+   <div class="callout dev-guide-box">
+    <strong>Hướng dẫn kích hoạt (chỉ làm 1 lần):</strong>
+    <p>1. Bấm nút <strong>Mở Thông tin điện thoại</strong> bên dưới.</p>
+    <p>2. Tìm dòng <strong>Số bản dựng (Build Number)</strong> hoặc <strong>Phiên bản OS / HyperOS / MIUI</strong>.</p>
+    <p>3. Chạm liên tiếp <strong>7 lần</strong> vào dòng đó cho đến khi máy báo <em>"Bạn đã là nhà phát triển!"</em>.</p>
+   </div>
+   <div class="button-row">
+    <button class="button primary needs-idle" data-action="openDeviceInfo"><img src="icons/settings.svg" alt="">Mở Thông tin điện thoại</button>
+    <button class="button secondary needs-idle" data-action="openDevSettings"><img src="icons/sparkle.svg" alt="">Mở Cài đặt nhà phát triển</button>
+   </div>
+  </article>
+
  <article class="glass"><div class="section-heading"><h2>Ghép đôi nhanh</h2><span id="adb-page-status" class="status">Chưa kết nối</span></div><p id="adb-summary" class="muted">Bật Gỡ lỗi không dây, rồi nhập mã từ thông báo.</p><button class="button primary wide needs-idle" data-action="startPairingNotification"><img src="icons/bell.svg" alt="">Ghép đôi qua thông báo</button><button class="button secondary wide" data-action="openWirelessSettings"><img src="icons/settings.svg" alt="">Mở cài đặt Android</button><button class="text-button full" id="cancel-pairing" data-action="cancelPairing" hidden>Huỷ ghép đôi</button><p class="callout" id="pairing-note">Cho phép thông báo và giữ cửa sổ mã ghép đôi của Android mở.</p><details class="disclosure"><summary>Cách ghép đôi từng bước</summary><div class="disclosure-body"><ol class="steps"><li><span>1</span><div><strong>Bật Gỡ lỗi không dây</strong><p>Vào Tuỳ chọn nhà phát triển và bật Gỡ lỗi không dây. Cần Android 11 trở lên và Wi-Fi.</p></div></li><li><span>2</span><div><strong>Mở mã ghép đôi</strong><p>Bấm Ghép đôi qua thông báo, rồi chọn Ghép đôi thiết bị bằng mã trong cài đặt Android.</p></div></li><li><span>3</span><div><strong>Nhập mã trên thông báo</strong><p>Kéo thanh thông báo xuống và nhập mã 6 số. Giữ cửa sổ mã mở đến khi ghép đôi xong.</p></div></li></ol></div></details><p class="connection-note" id="connection-details">Chưa xác nhận kết nối với thiết bị.</p><button class="text-button full" data-page="overview">Trở lại Tổng quan <img src="icons/chevron_right.svg" alt=""></button></article>
  <details class="glass disclosure manual-connection"><summary>Kết nối thủ công</summary><div class="disclosure-body"><p class="muted">Dùng khi máy không tự tìm thấy cổng. Cổng ghép đôi và cổng kết nối là hai cổng khác nhau.</p><label>Địa chỉ trên điện thoại<input id="adb-host" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="127.0.0.1"></label><div class="form-row"><label>Cổng ghép đôi<input id="pair-port" type="text" inputmode="numeric" maxlength="5" autocomplete="off" placeholder="Ví dụ: 37123"></label><label>Mã 6 số<input id="pair-code" type="text" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="Mã đang hiển thị"></label></div><button class="button secondary wide needs-idle" id="manual-pair"><img src="icons/check.svg" alt="">Ghép đôi</button><label>Cổng kết nối<input id="connect-port" type="text" inputmode="numeric" maxlength="5" autocomplete="off" placeholder="Cổng ở trang Gỡ lỗi không dây"></label><div class="button-row"><button class="button secondary needs-idle" id="manual-connect"><img src="icons/globe.svg" alt="">Kết nối</button><button class="button quiet needs-idle" data-action="disconnect">Ngắt kết nối</button></div></div></details>
  </div></section>

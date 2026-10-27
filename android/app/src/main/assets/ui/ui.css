@@ -36,3 +36,7 @@ input{background:#F5FAFB;color:#304E65;border-color:#C5D9E2}input::placeholder{c
 /* Reviewed small-text contrast correction on ivory/light-blue surfaces. */
 label,.muted,.eyebrow,.page-foot,.status,.connection-row,.connection-note,.metadata dt,.disclosure summary:after,input::placeholder,.recipient>span:first-child,.text-button,.bottom-nav button{color:#577388}
 .status.connected{color:#426B5E}.steps li>span{color:#47677B}.bottom-nav .active{color:#315E6B}
+
+.status.warning{color:#8C6A2E}.status.warning i{background:#D9A84E}
+.dev-guide-box{background:#FFF9EE;border:1px solid #ECD9B6;color:#614A22;border-radius:14px;padding:14px;margin:12px 0}
+.dev-guide-box p{margin:6px 0 0;font-size:13.5px;line-height:1.5}

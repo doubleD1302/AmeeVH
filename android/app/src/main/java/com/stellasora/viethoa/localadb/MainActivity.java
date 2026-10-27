@@ -3,7 +3,7 @@ import android.widget.FrameLayout;import android.Manifest;import android.app.*;i
 /** Trusted local HTTPS asset origin and a narrow explicit-action native bridge. */
 public final class MainActivity extends Activity implements LauncherService.Listener {
  private static final String HOST="stella.local.invalid",HOME="https://stella.local.invalid/index.html";private WebView web;private boolean loaded,autoSynced,resumed;private String afterPermission;
- private final Set<String> allowed=new HashSet<>(Arrays.asList("state","sync","saveSettings","pair","connect","disconnect","startPairingNotification","cancelPairing","detect","install","verify","restore","recover","checkUpdate","installUpdate","openWirelessSettings","launchGame","copyDiagnostics","copyAccount","openIssues"));
+ private final Set<String> allowed=new HashSet<>(Arrays.asList("state","sync","saveSettings","pair","connect","disconnect","startPairingNotification","cancelPairing","detect","install","verify","restore","recover","checkUpdate","installUpdate","openWirelessSettings","launchGame","copyDiagnostics","copyAccount","openIssues","openDeviceInfo","openDevSettings"));
  @Override public void onCreate(Bundle saved){super.onCreate(saved);getWindow().setStatusBarColor(Color.rgb(243,248,250));getWindow().setNavigationBarColor(Color.rgb(243,248,250));getWindow().setDecorFitsSystemWindows(false);web=new WebView(this);web.setBackgroundColor(Color.rgb(243,248,250));FrameLayout container=new FrameLayout(this);container.setBackgroundColor(Color.rgb(243,248,250));container.addView(web,new FrameLayout.LayoutParams(-1,-1));setContentView(container);container.setOnApplyWindowInsetsListener((v,insets)->{android.graphics.Insets bars=insets.getInsets(WindowInsets.Type.systemBars()),ime=insets.getInsets(WindowInsets.Type.ime());v.setPadding(bars.left,bars.top,bars.right,Math.max(bars.bottom,ime.bottom));return WindowInsets.CONSUMED;});container.requestApplyInsets();WindowInsetsController barAppearance=getWindow().getInsetsController();if(barAppearance!=null)barAppearance.setSystemBarsAppearance(WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS|WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS|WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS);
   WebView.setWebContentsDebuggingEnabled(false);WebSettings settings=web.getSettings();settings.setJavaScriptEnabled(true);settings.setDomStorageEnabled(false);settings.setAllowFileAccess(false);settings.setAllowContentAccess(false);settings.setAllowFileAccessFromFileURLs(false);settings.setAllowUniversalAccessFromFileURLs(false);settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);settings.setSupportMultipleWindows(false);settings.setJavaScriptCanOpenWindowsAutomatically(false);settings.setMediaPlaybackRequiresUserGesture(true);web.addJavascriptInterface(new NativeBridge(),"StellaNative");
   web.setWebViewClient(new WebViewClient(){
@@ -19,8 +19,10 @@ public final class MainActivity extends Activity implements LauncherService.List
  private void handle(String action,JSONObject args){try{
   switch(action){
    case "state":emitState();break;
-   case "openWirelessSettings":openWireless();break;
-   case "startPairingNotification":if(Build.VERSION.SDK_INT>=33&&checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED){afterPermission=action;requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},71);}else {LauncherService.dispatch(this,action,args);openWireless();}break;
+   case "openDeviceInfo":openDeviceInfo();break;
+    case "openDevSettings":openDevSettings();break;
+    case "openWirelessSettings":openWireless();break;
+   case "startPairingNotification":if(!LauncherService.isDevOptions(this)){showDevModeGuideDialog();break;}if(Build.VERSION.SDK_INT>=33&&checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED){afterPermission=action;requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},71);}else {LauncherService.dispatch(this,action,args);openWireless();}break;
    case "openIssues":{JSONObject cfg=Store.config(this);Store.validateConfig(cfg);external("https://github.com/"+cfg.getString("repo")+"/issues");break;}
    case "copyAccount":{String method=args.optString("method");JSONArray methods=Store.asset(this,"support/payment_methods.json").getJSONArray("methods");String account=null;for(int i=0;i<methods.length();i++){JSONObject m=methods.getJSONObject(i);if(m.getString("id").equals(method)&&!m.isNull("account_number"))account=m.getString("account_number");}if(account==null)throw new IOException("Nguồn chỉ có số ví được che. Hãy quét mã MoMo, không đoán số điện thoại.");clipboard("Tài khoản ủng hộ",account);showMessage("Đã sao chép","Đã sao chép số tài khoản từ thông tin được cung cấp.",false);break;}
    case "copyDiagnostics":{JSONObject s=LauncherService.snapshot(this);JSONObject report=Store.obj("app",s.opt("app"),"adb_connected",s.getJSONObject("adb").optBoolean("connected"),"adb_status",s.getJSONObject("adb").optString("status"),"game",s.opt("game"),"github",s.opt("github"),"message",s.optString("message"),"recovery",s.opt("recovery"));clipboard("Chẩn đoán Stella Sora",report.toString(2));showMessage("Đã sao chép báo cáo","Báo cáo chỉ được sao chép trên máy. Hãy xem lại trước khi tự gửi lên trang báo lỗi.",false);break;}
@@ -66,4 +68,36 @@ public final class MainActivity extends Activity implements LauncherService.List
  @Override public void onRequestPermissionsResult(int request,String[] permissions,int[] grants){super.onRequestPermissionsResult(request,permissions,grants);if(request==71){String action=afterPermission;afterPermission=null;if(grants.length>0&&grants[0]==PackageManager.PERMISSION_GRANTED&&action!=null){LauncherService.dispatch(this,action,new JSONObject());if("startPairingNotification".equals(action))openWireless();}else showMessage("Chưa được phép hiện thông báo","Ghép đôi nhanh từ thông báo chưa dùng được. Bạn vẫn có thể nhập cổng và mã thủ công trong launcher hoặc cấp quyền thông báo trong Cài đặt ứng dụng.",true);}}
  @Override public void onBackPressed(){if(web==null||!loaded){super.onBackPressed();return;}web.evaluateJavascript("window.Stella?window.Stella.goBack():false",result->{if(!"true".equals(result))finish();});}
  @Override protected void onDestroy(){LauncherService.unlisten(this);if(web!=null){web.removeJavascriptInterface("StellaNative");web.destroy();web=null;}super.onDestroy();}
+
+ private void openDeviceInfo(){
+  for(String action:new String[]{Settings.ACTION_DEVICE_INFO_SETTINGS,"android.settings.DEVICE_INFO_SETTINGS",Settings.ACTION_SETTINGS}){
+   try{
+    Intent i=new Intent(action);
+    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    if(i.resolveActivity(getPackageManager())!=null){startActivity(i);return;}
+   }catch(Exception ignored){}
+  }
+  showMessage("Mở Cài đặt","Hãy mở Cài đặt hệ thống ➔ Thông tin điện thoại để chạm 7 lần bật Chế độ nhà phát triển.",false);
+ }
+ private void openDevSettings(){
+  for(String action:new String[]{Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS,"android.settings.APPLICATION_DEVELOPMENT_SETTINGS",Settings.ACTION_SETTINGS}){
+   try{
+    Intent i=new Intent(action);
+    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    if(i.resolveActivity(getPackageManager())!=null){startActivity(i);return;}
+   }catch(Exception ignored){}
+  }
+  showMessage("Mở Tuỳ chọn nhà phát triển","Hãy mở Cài đặt ➔ Tuỳ chọn nhà phát triển.",false);
+ }
+ private void showDevModeGuideDialog(){
+  new AlertDialog.Builder(this)
+   .setTitle("Chưa bật Tuỳ chọn nhà phát triển")
+   .setMessage("Để sử dụng Gỡ lỗi không dây, bạn cần kích hoạt Chế độ nhà phát triển trước:\n\n1. Bấm nút 'Mở Thông tin điện thoại' bên dưới.\n2. Tìm dòng 'Số bản dựng' (Build Number) hoặc 'Phiên bản OS / HyperOS / MIUI'.\n3. Chạm liên tiếp 7 lần vào dòng đó cho đến khi máy báo 'Bạn đã là nhà phát triển!'.\n\nSau khi kích hoạt xong, quay lại ứng dụng để bắt đầu kết nối.")
+   .setPositiveButton("Mở Thông tin điện thoại",(d,w)->openDeviceInfo())
+   .setNeutralButton("Mở Cài đặt",(d,w)->{
+    try{Intent i=new Intent(Settings.ACTION_SETTINGS);i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);startActivity(i);}catch(Exception ignored){}
+   })
+   .setNegativeButton("Đóng",null)
+   .show();
+ }
 }

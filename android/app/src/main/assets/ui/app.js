@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const content = window.STELLA_CONTENT || {sections: [], faq: [], paymentMethods: []};
   const initial = {
-    busy:false,mutating:false,phase:'',message:'',progress:{percent:0,indeterminate:false,label:''},
+    busy:false,mutating:false,devOptionsEnabled:true,phase:'',message:'',progress:{percent:0,indeterminate:false,label:''},
     adb:{connected:false,paired:false,host:'127.0.0.1',pairingPort:0,connectionPort:0,status:'Chưa kết nối',notificationPairing:{active:false,stage:'',message:''}},
     game:{installed:false,package:'com.YoStarEN.StellaSora',root:'',gameVersion:'',resourceVersion:'',versionsKnown:false},
     github:{repo:'doubleD1302/AmeeVH',branch:'main',announcementStatus:'Chưa đọc',releaseVersion:'',manifestStatus:'Chưa đọc',translationVersion:'',message:'Chưa đồng bộ GitHub.'},
@@ -45,6 +45,7 @@
     if (force || !e.dataset.edited) e.value = value == null || value === 0 ? '' : String(value);
   }
   function primaryAction() {
+    if (state.devOptionsEnabled === false) return {page:'adb',caption:'Bật Tuỳ chọn nhà phát triển',icon:'settings',note:'Kích hoạt chế độ nhà phát triển trước khi kết nối.'};
     if (!state.adb.connected) return {page:'adb',caption:'Kết nối Local ADB',icon:'shield',note:'Kết nối trên điện thoại trước khi cài bản dịch.'};
     if (!state.game.installed || !state.game.root || !state.game.versionsKnown) return {action:'detect',caption:'Tìm và kiểm tra game',icon:'search',note:state.game.installed ? 'Cần đọc đủ phiên bản game trước khi cài.' : 'Tìm Stella Sora và đọc phiên bản trên điện thoại.'};
     if (!state.payload.available) return {action:'sync',caption:'Đồng bộ gói Android',icon:'refresh',note:'Chưa có gói Android tương thích để cài.'};
@@ -64,6 +65,10 @@
     }
     if (merged.busy) lastOutcome = '';
     state = merged;
+    const devEnabled = data.devOptionsEnabled !== undefined ? !!data.devOptionsEnabled : (state.devOptionsEnabled !== undefined ? !!state.devOptionsEnabled : true);
+    state.devOptionsEnabled = devEnabled;
+    const devCard = $('dev-mode-warning');
+    if (devCard) devCard.hidden = devEnabled;
     document.querySelectorAll('.needs-idle').forEach(e => { e.disabled = !!state.busy; });
     const adb = state.adb, game = state.game, p = state.payload, gh = state.github;
     text('adb-status', adb.connected ? 'Đã kết nối' : 'Chưa kết nối');

@@ -29,7 +29,7 @@ EXPECTED_MAINSKILL = {
     "MainSkill.405101.2": "Du Hành Giả Đa Năng hệ Quang",
     "MainSkill.400301.2": "Du Hành Giả Đa Năng hệ Quang",
     "MainSkill.400801.2": "Du Hành Giả Đa Năng hệ Thủy",
-    "MainSkill.405901.2": "「Tinh Vọng」",
+    "MainSkill.405901.2": "Tinh Vọng",
 }
 
 EXPECTED_UITEXT = {
@@ -91,6 +91,13 @@ EXPECTED_VOICE = {
     "vo_112_ui_affchat3_001": "Có cậu ngồi ghế phụ đi cùng thế này thì chuyến đi dài mấy cũng vui hết nấc luôn á! ♪",
     "vo_107_combat_chatLvUp_001": "Kẻ địch đang chiếm thế thượng phong, nhưng em quyết không lùi bước đâu!",
     "vo_103_combat_ultskill_001": "Năng lượng đã nạp đầy. Khai hỏa!",
+}
+
+
+EXPECTED_SKIN_QUOTES = {
+    "CharacterSkin.14403.2": "Đóa hoa triêu nhan cắm trong bình nước thanh khiết này—— sắc hoa tươi thắm cùng hương thơm thanh nhã ấy, liệu có thể lưu giữ được bao lâu đây?",
+    "CharacterSkin.14903.2": "Vị chua đắng của cà phê, hương thơm ngát của đóa tường vi, em muốn chia sẻ trọn vẹn mọi trải nghiệm mới mẻ này cùng với anh. Khi tuyết tan rồi, chúng mình cùng nhau hẹn hò một chuyến nhé?",
+    "CharacterSkin.11104.2": "Cái đó... Em sẽ cố hết sức giữ thăng bằng cho chiếc phao bơi này, nhưng khi trèo lên anh nhớ cẩn thận một chút nhé.\x0b——Đ-Đương nhiên rồi, nếu anh lỡ sảy chân rơi xuống nước, em nhất định sẽ kéo anh lại thật chặt!",
 }
 
 EXPECTED_GACHA_STORAGE = {
@@ -233,6 +240,17 @@ def verify_data_arcx(live_arcx: Path, expected_hash: str = None):
                 if substr not in actual_val:
                     raise AssertionError(f"CharGetLines regression at {k}: expected substring '{substr}', got '{actual_val}'")
                 print(f"    - {k}: contains '{substr}' (MATCH)")
+
+        # CharacterSkin (0xd79f78b562c5c75c)
+        if e["hash"] == 0xd79f78b562c5c75c:
+            data = xxtea_decrypt(arc.extract_entry(e, raw), XXTEA_KEY)
+            d = json.loads(data.decode("utf-8"))
+            print("  [PASS] Decrypted CharacterSkin table.")
+            for k, expected_val in EXPECTED_SKIN_QUOTES.items():
+                actual_val = d.get(k)
+                if actual_val != expected_val:
+                    raise AssertionError(f"Skin quote regression at {k}: expected '{expected_val}', got '{actual_val}'")
+                print(f"    - {k}: '{actual_val[:40]}...' (MATCH)")
 
         # Voice Subtitles (0x80911df3a563e0f3)
         if e["hash"] == 0x80911df3a563e0f3:

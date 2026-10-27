@@ -1,5 +1,5 @@
 package com.stellasora.viethoa.localadb;
-import android.content.*;import android.os.*;import org.json.*;import java.io.*;import java.util.*;import java.util.regex.*;
+import android.content.*;import android.os.*;import org.json.*;import java.io.*;import java.util.*;import java.util.zip.*;import java.util.regex.*;
 /** Android-only transaction client. Commands are generated here, never supplied by JS. */
 final class GamePatcher {
  private final Context context;private final AdbClient adb;private final ChannelClient.Progress progress;private JSONObject target;private long deadline;
@@ -64,7 +64,45 @@ final class GamePatcher {
   JSONObject j=Store.obj("schema",1,"id",id,"state","PREPARING","binding",binding,"deviceId",target.getString("deviceId"),"package",Store.GAME,"root",target.getString("root"),"gameVersion",target.getString("gameVersion"),"resourceVersion",target.getString("resourceVersion"),"version",manifest.getString("version"),"files",plan,"previous_receipt",previous);saveJournal(j);
   try{
    if(new StatFs(stage.getAbsolutePath()).getAvailableBytes()<total+16777216)throw new IOException("Không đủ bộ nhớ để tải và kiểm tra gói Android.");
-   for(int i=0;i<files.length();i++){final int index=i;JSONObject f=files.getJSONObject(i);File source=new File(stage,i+".payload");step("Tải tệp "+(i+1)+" / "+files.length(),i*25/files.length());ChannelClient.download(f.getString("url"),source,f.getLong("size"),f.getString("sha256"),(label,pct)->{if(SystemClock.elapsedRealtime()>deadline)throw new IllegalStateException("Tải quá thời hạn.");if(progress!=null)progress.update(label,index*25/files.length());});ownExternalPath(source);JSONObject expected=Store.obj("exists",true,"size",f.getLong("size"),"sha256",f.getString("sha256"));if(!same(state(source.getCanonicalPath()),expected))throw new IOException("Shell chưa đọc đúng tệp tải đã xác minh.");String destination=checked(f.getString("path"));JSONObject before=state(destination);beforeTotal+=before.optLong("size",0);maxFile=Math.max(maxFile,f.getLong("size"));plan.put(Store.obj("path",f.getString("path"),"before",before,"after",expected,"source",source.getCanonicalPath(),"backup",new File(backup,i+".original").getCanonicalPath()));saveJournal(j);}
+   JSONObject packageZip=manifest.optJSONObject("package_zip");
+   Map<String,File> extractedBundles=new HashMap<>();
+   if(packageZip!=null){
+    File zipFile=new File(stage,"bundles.zip");
+    step("Tải gói AssetBundles nén ("+(packageZip.getLong("size")/1048576)+" MB)...",5);
+    ChannelClient.download(packageZip.getString("url"),zipFile,packageZip.getLong("size"),packageZip.getString("sha256"),(label,pct)->{
+     if(SystemClock.elapsedRealtime()>deadline)throw new IllegalStateException("Tải quá thời hạn.");
+     if(progress!=null)progress.update("Đang tải AssetBundles ("+pct+"%)",pct/8);
+    });
+    step("Đang giải nén AssetBundles...",15);
+    extractZip(zipFile,stage,extractedBundles);
+    zipFile.delete();
+   }
+   for(int i=0;i<files.length();i++){
+    final int index=i;
+    JSONObject f=files.getJSONObject(i);
+    String fPath=f.getString("path");
+    File source;
+    String bundleName=new File(fPath).getName();
+    if(fPath.startsWith("Persistent_Store/AssetBundles/")&&extractedBundles.containsKey(bundleName)){
+     source=extractedBundles.get(bundleName);
+    }else{
+     source=new File(stage,i+".payload");
+     step("Tải tệp "+(i+1)+" / "+files.length(),15+index*10/files.length());
+     ChannelClient.download(f.getString("url"),source,f.getLong("size"),f.getString("sha256"),(label,pct)->{
+      if(SystemClock.elapsedRealtime()>deadline)throw new IllegalStateException("Tải quá thời hạn.");
+      if(progress!=null)progress.update(label,15+index*10/files.length());
+     });
+    }
+    ownExternalPath(source);
+    JSONObject expected=Store.obj("exists",true,"size",f.getLong("size"),"sha256",f.getString("sha256"));
+    if(!same(state(source.getCanonicalPath()),expected))throw new IOException("Shell chưa đọc đúng tệp tải đã xác minh: "+fPath);
+    String destination=checked(f.getString("path"));
+    JSONObject before=state(destination);
+    beforeTotal+=before.optLong("size",0);
+    maxFile=Math.max(maxFile,f.getLong("size"));
+    plan.put(Store.obj("path",f.getString("path"),"before",before,"after",expected,"source",source.getCanonicalPath(),"backup",new File(backup,i+".original").getCanonicalPath()));
+    saveJournal(j);
+   }
    closedAndVersion();long required=beforeTotal+maxFile+16777216;if(new StatFs(backup.getAbsolutePath()).getAvailableBytes()<required)throw new IOException("Không đủ dung lượng để sao lưu và thay tệp an toàn.");String df=adb.exec("df -Pk "+Store.q(target.getString("root"))+" | tail -n 1",10000);String[] columns=df.trim().split("\\s+");if(columns.length<4||Long.parseLong(columns[3])*1024<required)throw new IOException("Bộ nhớ vùng game không đủ hoặc chưa xác định được.");
    for(int i=0;i<plan.length();i++){JSONObject f=plan.getJSONObject(i),before=f.getJSONObject("before");String destination=checked(f.getString("path"));if(!same(state(destination),before))throw new IOException("Tệp game đổi trước khi sao lưu: "+f.getString("path"));if(before.getBoolean("exists")){String saved=f.getString("backup");adb.exec("[ ! -e "+Store.q(saved)+" ] && "+guard(destination,before)+" && cp "+Store.q(destination)+" "+Store.q(saved),120000);ownExternalPath(new File(saved));if(!same(state(saved),before))throw new IOException("Backup không khớp tệp gốc.");}step("Đã sao lưu "+(i+1)+" / "+plan.length(),25+(i+1)*20/plan.length());}
    j.put("state","APPLYING");saveJournal(j);
@@ -80,5 +118,23 @@ final class GamePatcher {
   bound(j);closedAndVersion();JSONArray files=j.getJSONArray("files");for(int i=0;i<files.length();i++){JSONObject f=files.getJSONObject(i),current=state(checked(f.getString("path"))),before=f.getJSONObject("before"),after=f.getJSONObject("after");if(requireAfter?!same(current,after):(!same(current,before)&&!same(current,after)))throw new IOException("Tệp đã đổi ngoài thao tác; giữ nguyên: "+f.getString("path"));if(before.getBoolean("exists")){ownExternalPath(new File(f.getString("backup")));if(!same(state(f.getString("backup")),before))throw new IOException("Backup bị thiếu hoặc sai SHA256.");}}
   j.put("state","RESTORING");saveJournal(j);for(int i=0;i<files.length();i++){closedAndVersion();JSONObject f=files.getJSONObject(i),before=f.getJSONObject("before"),after=f.getJSONObject("after");String path=checked(f.getString("path"));JSONObject now=state(path);if(same(now,before))continue;if(!same(now,after))throw new IOException("Tệp đổi trong lúc phục hồi.");if(before.getBoolean("exists")){String temp=path+".stella-restore-"+j.getString("id")+".tmp";temporary(j,temp,f.getString("backup"),before);adb.exec(guard(path,after)+" && mv -f "+Store.q(temp)+" "+Store.q(path),120000);}else adb.exec(guard(path,after)+" && rm -f "+Store.q(path),120000);if(!same(state(path),before))throw new IOException("Đọc lại phục hồi không khớp.");step("Đã phục hồi "+(i+1)+" / "+files.length(),100*(i+1)/files.length());}
   cleanupTemps(j);File rp=receipt(target.getString("binding"));Object previous=j.opt("previous_receipt");if(previous instanceof JSONObject)Store.write(rp,(JSONObject)previous);else if(rp.exists()&&!rp.delete())throw new IOException("Chưa cập nhật được biên bản phục hồi.");j.put("state",requireAfter?"RESTORED":"ROLLED_BACK");saveJournal(j);
+ }
+
+ private static void extractZip(File zipFile,File targetDir,Map<String,File> outMap)throws Exception {
+  byte[] buffer=new byte[65536];String base=targetDir.getCanonicalPath();
+  try(ZipInputStream zis=new ZipInputStream(new BufferedInputStream(new FileInputStream(zipFile)))){
+   ZipEntry ze;
+   while((ze=zis.getNextEntry())!=null){
+    if(ze.isDirectory())continue;
+    String name=new File(ze.getName()).getName();
+    File target=new File(targetDir,name);
+    if(!target.getCanonicalPath().startsWith(base+File.separator))throw new SecurityException("Phát hiện tệp zip vượt giới hạn: "+ze.getName());
+    try(FileOutputStream fos=new FileOutputStream(target);BufferedOutputStream bos=new BufferedOutputStream(fos,buffer.length)){
+     int len;while((len=zis.read(buffer))>0)bos.write(buffer,0,len);
+    }
+    zis.closeEntry();
+    outMap.put(name,target);
+   }
+  }
  }
 }
