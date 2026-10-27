@@ -159,7 +159,11 @@ def patch_single_bundle(b_name, asset_to_path):
             vi_img = im.convert("RGBA")
             
         if vi_img.size != target_size:
-            canvas = vi_img.resize(target_size, Image.Resampling.LANCZOS)
+            if b_name == "ui_activity_trial.en.unity3d" and asset_name == "zs_activity_trial_logo":
+                canvas = Image.new("RGBA", target_size, (0, 0, 0, 0))
+                canvas.paste(vi_img, (57, 8), vi_img)
+            else:
+                canvas = vi_img.resize(target_size, Image.Resampling.LANCZOS)
         else:
             canvas = vi_img
             
