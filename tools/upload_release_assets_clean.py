@@ -19,7 +19,7 @@ MANIFEST_PATH = DIST_DIR / "android_patch_manifest.json"
 SHA_FILE = DIST_DIR / "SHA256SUMS.txt"
 
 REPO = "doubleD1302/AmeeVH"
-TAG = "v1.0.0"
+TAG = "v1.0.4"
 
 
 def get_github_token() -> str:
