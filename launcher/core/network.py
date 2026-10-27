@@ -81,6 +81,12 @@ class NetworkService:
             # files are synthesized from unrelated GitHub asset names.
             return self._json(manifest_url),{'source':'explicit_custom_manifest','release_tag':release['tag_name']}
         raise InstallerError('Bản phát hành chưa có bảng kê tệp tương thích.','MANIFEST_MISSING')
+    def _windows_manifest(self,raw):
+        manifest=normalize_manifest(raw)
+        platform=str(manifest.get('platform','windows')).lower()
+        if platform not in ('windows','win','pc'):
+            raise InstallerError('Bảng kê không dành cho Windows.','PLATFORM_MISMATCH')
+        return manifest
     def check_for_updates(self,current_version='0.9.8',release_data=None):
         base={'status':'unavailable','has_update':False,'latest_version':None,'download_url':None,'message':'Chưa có kênh cập nhật launcher đã xác minh.'}
         if not self.update_url:return base
@@ -115,7 +121,7 @@ class NetworkService:
             return {**base,'status':'online','has_update':new,'latest_version':latest,'download_url':asset['browser_download_url'] if actionable else None,'asset':asset,'sha256':digest if actionable else None,'message':('Có bản cập nhật launcher '+latest+('. Có thể tự động tải và cập nhật.' if actionable else '; chưa có tệp được xác minh để tự cập nhật.')) if new else f'Launcher hiện tại ({current_version}) là phiên bản mới nhất.','changelog':d.get('body','')}
         except Exception as exc:return {**base,'status':'error','message':'Không kiểm tra được cập nhật: '+str(exc)}
     def sync_channel(self,fallback_path,current_version='0.9.8',manifest_url=None,check_launcher=True):
-        items=self.fetch_notifications(fallback_path);release=None;release_status='error';release_error='';manifest_status='unavailable';manifest_error='';translation_version=None;file_count=None;translation_scope=None;cache_warning=''
+        items=self.fetch_notifications(fallback_path);release=None;release_status='error';release_error='';manifest_status='unavailable';manifest_error='';translation_version=None;file_count=None;translation_scope=None;cache_warning='';translation_game=None;translation_resource=None
         try:
             release=self.release();release_status='online'
             if self.cache_dir:
@@ -130,14 +136,14 @@ class NetworkService:
         if release_status=='online':
             update=self.check_for_updates(current_version,release) if check_launcher else {'status':'not_checked','has_update':False,'download_url':None,'message':'Đã tắt kiểm tra launcher lúc mở. Bạn vẫn có thể kiểm tra thủ công.'}
             try:
-                raw,binding=self._manifest_for_release(release,manifest_url);manifest=normalize_manifest(raw);translation_version=manifest['version'];file_count=len(manifest['files']);translation_scope='images_only' if all(path.startswith('Persistent_Store/AssetBundles/') for path in manifest['files']) else 'declared_files';manifest_status='online'
+                raw,binding=self._manifest_for_release(release,manifest_url);manifest=self._windows_manifest(raw);translation_version=manifest['version'];file_count=len(manifest['files']);translation_game=manifest['client_game_version'];translation_resource=manifest['resource_version'];translation_scope='images_only' if all(path.startswith('Persistent_Store/AssetBundles/') for path in manifest['files']) else 'declared_files';manifest_status='online'
             except Exception as exc:manifest_status='error';manifest_error=str(exc)
         if manifest_url and release_status!='online':
             try:
-                raw,binding=self._manifest_for_release(None,manifest_url);manifest=normalize_manifest(raw);translation_version=manifest['version'];file_count=len(manifest['files']);translation_scope='images_only' if all(path.startswith('Persistent_Store/AssetBundles/') for path in manifest['files']) else 'declared_files';manifest_status='online'
+                raw,binding=self._manifest_for_release(None,manifest_url);manifest=self._windows_manifest(raw);translation_version=manifest['version'];file_count=len(manifest['files']);translation_game=manifest['client_game_version'];translation_resource=manifest['resource_version'];translation_scope='images_only' if all(path.startswith('Persistent_Store/AssetBundles/') for path in manifest['files']) else 'declared_files';manifest_status='online'
             except Exception as exc:manifest_status='error';manifest_error=str(exc)
         fresh=self.notification_status in ('online','empty') and release_status=='online' and manifest_status=='online'
-        return {'notifications':items,'notification_status':self.notification_status,'notification_message':self.notification_message,'notification_version':self.notification_version,'release_status':release_status,'release_version':release.get('tag_name') if release else None,'release_error':release_error,'translation_version':translation_version,'manifest_status':manifest_status,'manifest_error':manifest_error,'translation_file_count':file_count,'translation_scope':translation_scope,'cache_warning':cache_warning,'update':update,'fresh':fresh,'message':'Đã đọc thông tin mới từ GitHub.' if fresh else 'Đồng bộ chưa đầy đủ. Xem trạng thái từng nguồn bên dưới.','fetched_at':datetime.now(timezone.utc).isoformat()}
+        return {'notifications':items,'notification_status':self.notification_status,'notification_message':self.notification_message,'notification_version':self.notification_version,'release_status':release_status,'release_version':release.get('tag_name') if release else None,'release_notes':str(release.get('body') or '')[:8000] if release_status=='online' else '', 'release_error':release_error,'translation_version':translation_version,'translation_game':translation_game,'translation_resource':translation_resource,'manifest_status':manifest_status,'manifest_error':manifest_error,'translation_file_count':file_count,'translation_scope':translation_scope,'cache_warning':cache_warning,'update':update,'fresh':fresh,'message':'Đã đọc thông tin mới từ GitHub.' if fresh else 'Đồng bộ chưa đầy đủ. Xem trạng thái từng nguồn bên dưới.','fetched_at':datetime.now(timezone.utc).isoformat()}
     def download(self,url,dest,size,sha=None,event_cb=None,operation_id='download'):
         if not valid_url(url) or not isinstance(size,int) or size<=0:raise InstallerError('Thiếu URL/kích thước tải hợp lệ.','DOWNLOAD_INVALID')
         dest=Path(dest);dest.parent.mkdir(parents=True,exist_ok=True);part=dest.with_name(dest.name+'.'+uuid.uuid4().hex+'.part');deadline=time.monotonic()+120
@@ -167,7 +173,7 @@ class NetworkService:
             # from a cached release or from asset names.
             release=None
         raw,binding=self._manifest_for_release(release,manifest_url)
-        manifest=normalize_manifest(raw);stage=Path(cache_root)/('payload_'+uuid.uuid4().hex);stage.mkdir(parents=True)
+        manifest=self._windows_manifest(raw);stage=Path(cache_root)/('payload_'+uuid.uuid4().hex);stage.mkdir(parents=True)
         release_assets={a['name']:a for a in release['assets']} if release else {}
         assets=release_assets if binding['source']=='release_asset' else {}
         package=raw.get('package_zip',{}) if isinstance(raw.get('package_zip'),dict) else {}

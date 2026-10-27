@@ -1,6 +1,6 @@
 """Queued operation controller; all resource mutation lives in manifest services."""
 from __future__ import annotations
-import json,logging,uuid,hashlib
+import json,logging,uuid,hashlib,time
 from pathlib import Path
 from PySide6.QtCore import Qt,QThread,Signal,QTimer,QRectF,QRect,QEvent
 from PySide6.QtGui import QPainter,QColor,QGuiApplication,QLinearGradient
@@ -10,6 +10,7 @@ from ..core.game_detection import GameDetector,find_all_potential_game_installat
 from ..core.installer import PatchInstaller
 from ..core.rollback import RollbackEngine
 from ..core.network import NetworkService
+from ..core.update_notice import translation_state,newer,version_parts
 from ..core.types import GameInfo,OperationEvent
 from ..core.self_update import schedule_update
 from .assets import AssetManager
@@ -22,6 +23,7 @@ from .views.settings_modal import SettingsModal
 from .views.advanced_tools_modal import AdvancedToolsModal
 from .views.confirmation_dialog import ConfirmationDialog
 from .views.message_dialog import MessageDialog
+from .views.update_notice_dialog import UpdateNoticeDialog
 from .views.game_selection_dialog import GameSelectionDialog
 from .components.modal_shell import ModalScrim
 logger=logging.getLogger('launcher.controller')
@@ -34,14 +36,16 @@ class AsyncOperationWorker(QThread):
 class MainWindow(QMainWindow):
     github_sync_changed=Signal(object)
     def __init__(self,path_manager,config_manager):
-        super().__init__();self.path_manager=path_manager;self.config_manager=config_manager;self.active_worker=None;self.active_operation_id=None;self.operation_kind='';self.current_game_info=GameInfo();self.notifications=[];self.background_worker=None;self._close_after_background=False;self._pending_sync=False;self._pending_discoveries=None;self._github_sync_state={'message':'Chưa đồng bộ GitHub.','fresh':False}
-        self._configure_network();self.setWindowTitle('Stella Sora Việt Hóa · Candidate r09');self.setWindowIcon(AssetManager.get().get_app_icon());self.setWindowFlags(Qt.WindowType.FramelessWindowHint|Qt.WindowType.Window)
+        super().__init__();self.path_manager=path_manager;self.config_manager=config_manager;self.active_worker=None;self.active_operation_id=None;self.operation_kind='';self.current_game_info=GameInfo();self.notifications=[];self.background_worker=None;self._close_after_background=False;self._pending_sync=False;self._pending_discoveries=None;self._github_sync_state={'message':'Chưa đồng bộ GitHub.','fresh':False};self._manual_translation_check=False;self._manual_translation_next=False;self._notice_seen=set()
+        self._configure_network();self.setWindowTitle('Stella Sora Việt Hóa');self.setWindowIcon(AssetManager.get().get_app_icon());self.setWindowFlags(Qt.WindowType.FramelessWindowHint|Qt.WindowType.Window)
         area=QGuiApplication.primaryScreen().availableGeometry();self.setMinimumSize(min(480,area.width()),min(320,area.height()));self.resize(min(1280,area.width()-24),min(900,area.height()-24));self.move(area.center()-self.rect().center())
         central=QWidget();central.setObjectName('launcherRoot');central.setStyleSheet('#launcherRoot{background:transparent;}');self.setCentralWidget(central);l=QVBoxLayout(central);l.setContentsMargins(0,0,0,0);l.setSpacing(0)
         self.title_bar=TitleBar(self);self.title_bar.navigate_requested.connect(self._handle_navigation);self.title_bar.minimize_requested.connect(self.showMinimized);self.title_bar.close_requested.connect(self.close);self.setMenuWidget(self.title_bar)
         scroll=QScrollArea();scroll.setWidgetResizable(True);scroll.setFrameShape(QScrollArea.Shape.NoFrame);scroll.setStyleSheet('QScrollArea{background:transparent;border:0;}QScrollArea>QWidget>QWidget{background:transparent;}');self.overview_view=OverviewView();self.overview_view.setMinimumHeight(650);scroll.setWidget(self.overview_view);l.addWidget(scroll,1)
-        v=self.overview_view;v.auto_detect_requested.connect(self._auto_detect);v.install_requested.connect(self._on_install_clicked);v.rollback_requested.connect(self._on_rollback_clicked);v.verify_requested.connect(self._on_verify_clicked);v.browse_requested.connect(self._browse);v.launch_requested.connect(self._on_launch_clicked);v.navigate_requested.connect(self._handle_navigation);v.view_notifications_requested.connect(lambda:self._handle_navigation('notifications'));v.notification_selected.connect(self._open_notifications)
+        v=self.overview_view;v.auto_detect_requested.connect(self._auto_detect);v.install_requested.connect(self._on_install_clicked);v.rollback_requested.connect(self._on_rollback_clicked);v.verify_requested.connect(self._on_verify_clicked);v.browse_requested.connect(self._browse);v.launch_requested.connect(self._on_launch_clicked);v.navigate_requested.connect(self._handle_navigation);v.view_notifications_requested.connect(lambda:self._handle_navigation('notifications'));v.notification_selected.connect(self._open_notifications);v.check_translation_requested.connect(self._check_translation_version)
         self.overview_view.update_game_status(self.current_game_info)
+        self._release_timer=QTimer(self);self._release_timer.setInterval(30*60*1000);self._release_timer.timeout.connect(lambda:self._sync_github(automatic=True));self._release_timer.start()
+        self._snooze_timer=QTimer(self);self._snooze_timer.setSingleShot(True);self._snooze_timer.timeout.connect(self._maybe_show_release_notice)
         QTimer.singleShot(0,self._clamp_to_screen);QTimer.singleShot(0,self._initial_load)
     def _configure_network(self):
         try:
@@ -57,6 +61,7 @@ class MainWindow(QMainWindow):
             self.notifications=[]
             if hasattr(self,'overview_view'):self.overview_view.set_notifications([])
             self._github_sync_state={'message':'Đã đổi kênh. Chưa đọc thông tin của nguồn mới.','fresh':False};self.github_sync_changed.emit(self._github_sync_state)
+            if hasattr(self,'overview_view'):self.overview_view.set_translation_update(False);self.overview_view.set_install_allowed(False,'Kênh vừa thay đổi; cần kiểm tra lại.')
         cache=self.path_manager.app_data_dir/'network_cache'/hashlib.sha256(identity.encode('utf8')).hexdigest()[:16]
         self.network_service=NetworkService(channel['release_url'],channel['notifications_url'],cache)
         if self._channel_error:
@@ -78,6 +83,7 @@ class MainWindow(QMainWindow):
         if not self._configure_network():self._pending_sync=False;return
         if self.background_worker is not None:
             self._pending_sync=True;self._github_sync_state={'message':'Đang hoàn tất lần đọc trước. Sẽ đồng bộ lại kênh đã chọn.','fresh':False};self.github_sync_changed.emit(self._github_sync_state);return
+        self.overview_view.set_translation_update(False);self.overview_view.set_install_allowed(False,'Đang kiểm tra bảng kê mới.')
         network=NetworkService(self.network_service.update_url,self.network_service.notifications_url,self.network_service.cache_dir,self.network_service.timeout)
         identity=self._github_identity;manifest_url=self._channel['manifest_url'];check_launcher=not automatic or self.config_manager.get('check_updates_on_start',True)
         fallback=str(self.path_manager.resource_dir/'ui'/'notifications.json') if network.notifications_url==derived_github_endpoints(DEFAULT_GITHUB_REPO,'main')['remote_notifications_url'] else None
@@ -95,15 +101,26 @@ class MainWindow(QMainWindow):
         else:
             self._github_sync_state=result;self.notifications=result.get('notifications',[]);self.overview_view.set_notifications(self.notifications)
             self.network_service.notification_status=result['notification_status'];self.network_service.notification_message=result['notification_message'];self.network_service.notification_version=result.get('notification_version')
-            update=result.get('update',{})
-            if update.get('has_update') and update.get('download_url') and self.config_manager.get('check_updates_on_start',True):
-                QTimer.singleShot(1200,lambda:self._prompt_auto_update(update))
+            self._record_release_observation(result)
+            self._refresh_translation_state()
         self.github_sync_changed.emit(self._github_sync_state)
+        if self._manual_translation_check:
+            self._manual_translation_check=False
+            self._refresh_translation_state();state=translation_state(self._github_sync_state,self.current_game_info)
+            message=state['message']
+            if self.config_manager.get('payload_path',''):message+='\nLauncher đang dùng gói cục bộ đã chọn để cài đặt.'
+            if not success:message=self._github_sync_state['message']
+            elif result.get('manifest_status')!='online':message+='\n'+str(result.get('manifest_error') or result.get('release_error') or '')
+            QTimer.singleShot(0,lambda m=message:self._show(MessageDialog('Kiểm tra phiên bản Việt hoá',m,parent=self)))
+        else:QTimer.singleShot(1200,self._maybe_show_release_notice)
     def _release_background(self,worker):
         if self.background_worker is worker:self.background_worker=None
         worker.deleteLater()
         if self._close_after_background:self._close_after_background=False;QTimer.singleShot(0,self.close)
-        elif self._pending_sync:self._pending_sync=False;QTimer.singleShot(0,self._sync_github)
+        elif self._pending_sync:
+            self._pending_sync=False
+            if self._manual_translation_next:self._manual_translation_check=True;self._manual_translation_next=False
+            QTimer.singleShot(0,self._sync_github)
     def _start(self,kind,target):
         if self.active_worker is not None:return False
         op=uuid.uuid4().hex;self.active_operation_id=op;self.operation_kind=kind;
@@ -118,6 +135,7 @@ class MainWindow(QMainWindow):
         if getattr(self,'_close_after_worker',False):self._close_after_worker=False;QTimer.singleShot(0,self.close)
         elif self._pending_discoveries is not None:
             found=self._pending_discoveries;self._pending_discoveries=None;QTimer.singleShot(0,lambda:self._choose_discovered(found))
+        else:QTimer.singleShot(0,self._maybe_show_release_notice)
     def _finish(self,op,success,result):
         if op!=self.active_operation_id:return
         if not success:
@@ -133,12 +151,14 @@ class MainWindow(QMainWindow):
             previous=self.config_manager.get('game_path','');self.config_manager.set('game_path',str(info.game_path))
             if not self.config_manager.save():
                 self.config_manager.set('game_path',previous);self._show(MessageDialog('Chưa lưu được thư mục','Đường dẫn đang dùng được giữ nguyên.','\n'.join(self.config_manager.warnings),parent=self,is_error=True));return
-        if 'game' in result:self.current_game_info=result['game'];self.overview_view.update_game_status(self.current_game_info)
+        if 'game' in result:self.current_game_info=result['game'];self.overview_view.update_game_status(self.current_game_info);self._refresh_translation_state()
         if self.operation_kind in ('scan','select_root'):self.overview_view.show_progress(False)
         elif self.operation_kind=='verify':self.overview_view.show_completed('✓ Hoàn tất kiểm tra! Đã đối chiếu '+str(result.get('files',0))+' tệp của bản dịch v'+str(result.get('version',''))+' toàn vẹn.')
         elif self.operation_kind=='launch':self.overview_view.show_completed(result.get('message','✓ Đã gửi lệnh mở game.'))
         elif self.operation_kind=='self_update':
-            if not result.get('has_update'):
+            if result.get('status')!='online':
+                self._show(MessageDialog('Không kiểm tra được cập nhật',result.get('message','Không thể kết nối GitHub.'),parent=self,is_error=True))
+            elif not result.get('has_update'):
                 self._show(MessageDialog('Cập nhật launcher',f'Bạn đang dùng phiên bản mới nhất ({LAUNCHER_VERSION}).\nKhông có bản cập nhật mới trên GitHub.',parent=self))
             elif not result.get('download_url'):
                 self._show(MessageDialog('Cập nhật launcher',result.get('message','Chưa có tệp cập nhật tự động được xác minh.'),parent=self))
@@ -179,6 +199,10 @@ class MainWindow(QMainWindow):
     def _on_install_clicked(self):
         if not self._valid_target():return
         root=self.current_game_info.game_path
+        info=self.current_game_info;state=self._refresh_translation_state()
+        if not state['can_install']:
+            self._show(MessageDialog('Chưa thể cài Việt hoá',state['message'],parent=self,is_error=True));return
+        is_update=state['available']
         local=self.config_manager.get('payload_path','');channel_valid=self._configure_network()
         if not local and not channel_valid:
             self._show(MessageDialog('Chưa thể tải bản dịch',self._github_sync_state['message'],parent=self));return
@@ -186,6 +210,12 @@ class MainWindow(QMainWindow):
         network=self.network_service;manifest_url=self._channel['manifest_url']
         def work(cb,op):
             payload=Path(local) if local else network.prepare_payload(self.path_manager.payload_root,manifest_url,cb,op)
+            if is_update:
+                # The release can change while the user reads the confirmation.
+                # Re-check the actual freshly downloaded manifest before writing.
+                manifest=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
+                state=translation_state({'release_status':'online','manifest_status':'online','translation_version':manifest.get('version'),'translation_game':manifest.get('client_game_version'),'translation_resource':manifest.get('resource_version')},info)
+                if not state['available']:raise RuntimeError('Không còn bản Việt hoá mới tương thích: '+state['message'])
             r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"✓ Hoàn tất cài đặt! Đã nạp thành công {r['files_count']} tệp bản dịch (v{r['version']})."}
         self._start('install',work)
     def _action_target(self,action,require_receipt=True):
@@ -225,6 +255,68 @@ class MainWindow(QMainWindow):
         if not self._configure_network():
             self._show(MessageDialog('Chưa thể kiểm tra cập nhật',self._github_sync_state['message'],parent=self));return
         network=self.network_service;self._start('self_update',lambda cb,op:network.check_for_updates(LAUNCHER_VERSION))
+    def _check_translation_version(self):
+        if self.active_worker is not None:return
+        if not self._configure_network():
+            self._show(MessageDialog('Chưa thể kiểm tra',self._github_sync_state['message'],parent=self,is_error=True));return
+        if self.background_worker is not None:
+            self._manual_translation_next=True;self._pending_sync=True;return
+        self._manual_translation_check=True;self._sync_github()
+    def _refresh_translation_state(self):
+        local=self.config_manager.get('payload_path','')
+        if local:
+            try:
+                path=Path(local)/'patch_manifest.json'
+                if not path.is_file() or path.stat().st_size>4*1024*1024:raise ValueError('Thiếu bảng kê hoặc bảng kê quá lớn.')
+                manifest=self.network_service._windows_manifest(json.loads(path.read_text(encoding='utf8')))
+                local_state={'release_status':'online','manifest_status':'online','translation_version':manifest['version'],'translation_game':manifest['client_game_version'],'translation_resource':manifest['resource_version']}
+                state=translation_state(local_state,self.current_game_info)
+                state['message']='Gói cục bộ: '+state['message']
+            except Exception as exc:state={'available':False,'can_install':False,'message':'Không đọc được bảng kê của gói cục bộ: '+str(exc)}
+        else:state=translation_state(self._github_sync_state,self.current_game_info)
+        if hasattr(self,'overview_view'):
+            self.overview_view.set_translation_update(state['available'])
+            self.overview_view.btn_check_translation.setToolTip(state['message'])
+            self.overview_view.set_install_allowed(state['can_install'],state['message'])
+        return state
+    def _record_release_observation(self,sync):
+        if sync.get('release_status')!='online':return
+        version=sync.get('release_version')
+        if version_parts(version) is None:return
+        key=hashlib.sha256(self._github_identity.encode('utf8')).hexdigest()
+        baselines=self.config_manager.get('release_notice_baselines',{})
+        pending=self.config_manager.get('release_notice_pending',{})
+        baselines=dict(baselines) if isinstance(baselines,dict) else {}
+        pending=dict(pending) if isinstance(pending,dict) else {}
+        previous=baselines.get(key)
+        if previous and newer(version,previous):pending[key]=version
+        if not previous or not newer(previous,version):baselines[key]=version
+        self.config_manager.update({'release_notice_baselines':baselines,'release_notice_pending':pending});self.config_manager.save()
+    def _maybe_show_release_notice(self):
+        if self.active_worker is not None or self.background_worker is not None or self._manual_translation_check or not self.isVisible():return
+        sync=self._github_sync_state
+        if sync.get('release_status')!='online':return
+        version=sync.get('release_version')
+        channel_key=hashlib.sha256(self._github_identity.encode('utf8')).hexdigest()
+        pending=self.config_manager.get('release_notice_pending',{})
+        pending=dict(pending) if isinstance(pending,dict) else {}
+        if version_parts(version) is None or not (pending.get(channel_key)==version or sync.get('update',{}).get('has_update') or translation_state(sync,self.current_game_info)['available']):return
+        key=self._github_identity+'|'+version
+        try:snooze_until=float(self.config_manager.get('release_notice_snooze_until',0) or 0)
+        except (ValueError,TypeError):snooze_until=0
+        if key in self._notice_seen:return
+        remaining=snooze_until-time.time()
+        if remaining>0:
+            self._snooze_timer.start(min(2147483647,max(1,int(remaining*1000)+1)));return
+        result=self._show(UpdateNoticeDialog(version,sync.get('release_notes',''),self))
+        if result==2:
+            self.config_manager.set('release_notice_snooze_until',time.time()+24*60*60)
+            if not self.config_manager.save():self._show(MessageDialog('Chưa lưu được lựa chọn','Không thể lưu thời gian tắt thông báo. Thông báo có thể xuất hiện lại khi mở launcher.',parent=self,is_error=True))
+            self._snooze_timer.start(24*60*60*1000)
+        else:
+            self._notice_seen.add(key)
+            if pending.get(channel_key)==version:
+                pending.pop(channel_key,None);self.config_manager.set('release_notice_pending',pending);self.config_manager.save()
     def _prompt_auto_update(self,update):
         if self.active_worker is not None:return
         self._confirm_update(update)

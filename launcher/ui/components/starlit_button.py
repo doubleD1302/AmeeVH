@@ -29,7 +29,14 @@ class StarlitButton(QPushButton):
         else:
             content=rect.adjusted(5,3,-5,-3)
             if self.isEnabled() and (self.isDown() or self.underMouse()):painter.fillRect(content,QColor(70,170,235,24))
-        light=self.isEnabled() and (self.variant=='primary' or (self.variant=='tab' and self.isChecked()));painter.setPen(QColor('#073253' if light else ('#f0f7ff' if self.isEnabled() else '#b2cde3')));painter.setFont(self.font());iconw=self.iconSize().width() if not self.icon().isNull() else 0;gap=8 if iconw and self.text() else 0;fm=painter.fontMetrics();available=max(0,int(content.width())-iconw-gap);label=self.text() if self.caption_wrap else fm.elidedText(self.text(),Qt.TextElideMode.ElideRight,available);textw=min(available,fm.horizontalAdvance(label))
+        light=self.isEnabled() and (self.variant=='primary' or (self.variant=='tab' and self.isChecked()));painter.setPen(QColor('#073253' if light else ('#f0f7ff' if self.isEnabled() else '#b2cde3')));iconw=self.iconSize().width() if not self.icon().isNull() else 0;gap=8 if iconw and self.text() else 0;available=max(0,int(content.width())-iconw-gap)
+        display_font=QFont(self.font());painter.setFont(display_font);fm=painter.fontMetrics()
+        # Resize action captions rather than clipping them at higher DPI or in
+        # narrower windows. Notification titles may still elide with a tooltip.
+        if self.icon_side!='far_right' and not self.caption_wrap:
+            while fm.horizontalAdvance(self.text())>available and display_font.pixelSize()>11:
+                display_font.setPixelSize(display_font.pixelSize()-1);painter.setFont(display_font);fm=painter.fontMetrics()
+        label=self.text() if self.caption_wrap else fm.elidedText(self.text(),Qt.TextElideMode.ElideRight,available);textw=available if self.caption_wrap else min(available,fm.horizontalAdvance(label))
         if self.icon_side=='far_right':
             textrect=QRectF(content.left(),content.top(),max(0,content.width()-iconw-gap),content.height());iconrect=QRectF(content.right()-iconw,content.center().y()-iconw/2,iconw,iconw)
         else:

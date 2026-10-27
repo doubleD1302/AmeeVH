@@ -248,6 +248,7 @@ class GameDetector:
 def read_game_versions(root):
     """Read actual version headers; never infer from a directory or bundle size."""
     out = {"game": "unknown", "resource": "unknown"}
+    game_version = None
     root = Path(root)
     mf = root / "Persistent_Store" / "ss_win.mani"
     if mf.is_file():
@@ -259,10 +260,13 @@ def read_game_versions(root):
                 m = re.match(r"^(GAME_VER|CLIENT_VER|RES_VER|RESOURCE_VER)[:=\s]+([0-9A-Za-z_.-]+)", line)
                 if m:
                     k, v = m.group(1), m.group(2)
-                    if k in ("GAME_VER", "CLIENT_VER") and out["game"] == "unknown":
-                        out["game"] = v
+                    if k == "GAME_VER" and game_version is None:
+                        game_version = v
                     elif k in ("RES_VER", "RESOURCE_VER") and out["resource"] == "unknown":
                         out["resource"] = v
+            # CLIENT_VER describes the client, not necessarily GAME_VER. Do not
+            # use it as evidence of game compatibility when GAME_VER is missing.
+            out["game"] = game_version if game_version is not None else "unknown"
         except OSError:
             pass
     return out

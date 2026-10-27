@@ -6,6 +6,7 @@ from pathlib import Path
 from .game_detection import canonicalize_path,is_game_process_running,read_game_versions
 from .types import OperationEvent,OperationPhase
 from .safety import InstallerError,sha256_file,safe_path,normalize_manifest,atomic_json
+from .update_notice import matches,version_parts
 RECEIPT='.vietnamese_patch_receipt.json'
 
 def state(path):
@@ -90,16 +91,24 @@ class PatchInstaller:
             if manifest_data is None:
                 try:manifest_data=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
                 except (OSError,ValueError) as e:raise InstallerError('Không đọc được patch_manifest.json: '+str(e),'MANIFEST_MISSING')
-            m=normalize_manifest(manifest_data);observed=read_game_versions(root)
-            def _match_ver(exp, obs):
-                if not exp or exp in ('*', 'all') or obs in ('*', 'all', 'unknown'): return True
-                if obs == exp: return True
-                for p in str(exp).replace(';', ',').replace('|', ',').split(','):
-                    p = p.strip()
-                    if p in ('*', obs): return True
-                    if p.endswith('*') and obs.startswith(p[:-1]): return True
-                return False
-            if not _match_ver(m.get('client_game_version'), observed['game']) or not _match_ver(m.get('resource_version'), observed['resource']):raise InstallerError(f"Gói dành cho game {m['client_game_version']} / tài nguyên {m['resource_version']}; bản đã chọn là {observed['game']} / {observed['resource']}.",'VERSION_MISMATCH')
+            m=normalize_manifest(manifest_data)
+            if str(m.get('platform','windows')).lower() not in ('windows','win','pc'):raise InstallerError('Gói không dành cho Windows.','PLATFORM_MISMATCH')
+            target_version=version_parts(m['version'])
+            if target_version is None:raise InstallerError('Phiên bản bản Việt hoá không thể so sánh an toàn.','VERSION_INVALID')
+            def validate_game_version():
+                observed=read_game_versions(root)
+                if not matches(observed.get('game'),m.get('client_game_version')) or not matches(observed.get('resource'),m.get('resource_version')):
+                    raise InstallerError(f"Không xác minh được gói dành cho game {m['client_game_version']} / tài nguyên {m['resource_version']} với bản đã chọn {observed.get('game')} / {observed.get('resource')}.",'VERSION_MISMATCH')
+            validate_game_version()
+            rp=root/RECEIPT;previous=None
+            if rp.exists():
+                try:previous=json.loads(rp.read_text(encoding='utf8'))
+                except (ValueError,OSError) as e:raise InstallerError('Biên bản cũ bị hỏng; không tự ghi đè.','RECEIPT_CORRUPT') from e
+                if not isinstance(previous,dict) or previous.get('schema')!=2 or previous.get('game_root')!=canonicalize_path(root) or not isinstance(previous.get('files'),dict) or not previous['files']:
+                    raise InstallerError('Biên bản cài đặt cũ không hợp lệ hoặc không khớp thư mục.','RECEIPT_INVALID')
+                old_version=version_parts(previous.get('version'))
+                if old_version is None:raise InstallerError('Không thể xác định phiên bản đã cài để ngăn hạ cấp.','VERSION_INVALID')
+                if target_version<old_version:raise InstallerError('Gói cũ hơn phiên bản đã cài; thao tác hạ cấp bị từ chối.','DOWNGRADE_BLOCKED')
             plan={};total=len(m['files'])
             for i,(rel,meta) in enumerate(m['files'].items()):
                 src=safe_path(payload,meta['source']);target=safe_path(root,rel,True)
@@ -108,10 +117,7 @@ class PatchInstaller:
             needed=sum(v['before'].get('size',0)+v['after']['size'] for v in plan.values())+1024*1024
             if shutil.disk_usage(root).free<needed or shutil.disk_usage(self.backup_root).free<needed:raise InstallerError('Không đủ dung lượng cho bản sao lưu và tệp tạm.','DISK_FULL')
             bid='backup_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')+'_'+uuid.uuid4().hex[:10];backup=self.get_backup_dir_for_root(root)/bid;backup.mkdir()
-            rp=root/RECEIPT;previous=None
-            if rp.exists():
-                try:previous=json.loads(rp.read_text(encoding='utf8'))
-                except ValueError:raise InstallerError('Biên bản cũ bị hỏng; không tự ghi đè.','RECEIPT_CORRUPT')
+            validate_game_version()
             for i,(rel,item) in enumerate(plan.items()):
                 target=safe_path(root,rel,True)
                 if not same(target,item['before']):raise InstallerError('Game thay đổi trước sao lưu: '+rel,'PREIMAGE_CONFLICT')
@@ -124,7 +130,7 @@ class PatchInstaller:
             jid=uuid.uuid4().hex;jfile=self.journals_dir/(jid+'.json');j={'schema':2,'id':jid,'game_root':canonicalize_path(root),'backup_dir':str(backup),'files':plan,'previous_receipt':previous,'state':'prepared'};atomic_json(jfile,j)
             try:
                 for i,(rel,item) in enumerate(plan.items()):
-                    self._preflight(root);target=safe_path(root,rel,True)
+                    self._preflight(root);validate_game_version();target=safe_path(root,rel,True)
                     if not same(target,item['before']):raise InstallerError('Tệp đã đổi trước ghi: '+rel,'PREIMAGE_CONFLICT')
                     target.parent.mkdir(parents=True,exist_ok=True);tmp=target.with_name('.patch_'+uuid.uuid4().hex)
                     try:
