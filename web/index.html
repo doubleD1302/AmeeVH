@@ -850,7 +850,7 @@
         <!-- 2 Nút Tải Pha Lê Kính Mờ Đóng Khung Tinh Xảo -->
         <div class="download-cluster">
             <!-- Nút Tải Windows -->
-            <a href="downloads/StellaSora-Windows_v0.9.9.exe" download="StellaSora-Windows_v0.9.9.exe" class="btn-crystal btn-windows" title="Tải Bản Cài Windows v0.9.9">
+            <a href="https://github.com/doubleD1302/AmeeVH/releases/download/v0.9.9/StellaSora-Windows_v0.9.9.exe" data-local-href="downloads/StellaSora-Windows_v0.9.9.exe" download="StellaSora-Windows_v0.9.9.exe" class="btn-crystal btn-windows" title="Tải Bản Cài Windows v0.9.9">
                 <div class="btn-sheen"></div>
                 <div class="btn-icon-box">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -864,7 +864,7 @@
             </a>
 
             <!-- Nút Tải Android -->
-            <a href="downloads/StellaSora-Android_v0.1.1.apk" download="StellaSora-Android_v0.1.1.apk" class="btn-crystal btn-android" title="Tải Bản Cài Android v0.1.1">
+            <a href="https://github.com/doubleD1302/AmeeVH/releases/download/v0.9.9/StellaSora-Android_v0.1.1.apk" data-local-href="downloads/StellaSora-Android_v0.1.1.apk" download="StellaSora-Android_v0.1.1.apk" class="btn-crystal btn-android" title="Tải Bản Cài Android v0.1.1">
                 <div class="btn-sheen"></div>
                 <div class="btn-icon-box">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1070,8 +1070,26 @@
                     return;
                 }
 
-                requestAnimationFrame(stepProgress);
+                // Tự động kiểm tra file local nếu đang mở qua localhost / offline
+            if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                document.querySelectorAll('[data-local-href]').forEach(el => {
+                    fetch(el.getAttribute('data-local-href'), { method: 'HEAD' })
+                        .then(res => { if (res.ok) el.href = el.getAttribute('data-local-href'); })
+                        .catch(() => {});
+                });
             }
+
+            requestAnimationFrame(stepProgress);
+            }
+            // Tự động kiểm tra file local nếu đang mở qua localhost / offline
+            if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                document.querySelectorAll('[data-local-href]').forEach(el => {
+                    fetch(el.getAttribute('data-local-href'), { method: 'HEAD' })
+                        .then(res => { if (res.ok) el.href = el.getAttribute('data-local-href'); })
+                        .catch(() => {});
+                });
+            }
+
             requestAnimationFrame(stepProgress);
         })();
     </script>
