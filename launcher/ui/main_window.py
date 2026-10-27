@@ -95,6 +95,9 @@ class MainWindow(QMainWindow):
         else:
             self._github_sync_state=result;self.notifications=result.get('notifications',[]);self.overview_view.set_notifications(self.notifications)
             self.network_service.notification_status=result['notification_status'];self.network_service.notification_message=result['notification_message'];self.network_service.notification_version=result.get('notification_version')
+            update=result.get('update',{})
+            if update.get('has_update') and update.get('download_url') and self.config_manager.get('check_updates_on_start',True):
+                QTimer.singleShot(1200,lambda:self._prompt_auto_update(update))
         self.github_sync_changed.emit(self._github_sync_state)
     def _release_background(self,worker):
         if self.background_worker is worker:self.background_worker=None
@@ -135,9 +138,14 @@ class MainWindow(QMainWindow):
         elif self.operation_kind=='verify':self.overview_view.show_completed('✓ Hoàn tất kiểm tra! Đã đối chiếu '+str(result.get('files',0))+' tệp của bản dịch v'+str(result.get('version',''))+' toàn vẹn.')
         elif self.operation_kind=='launch':self.overview_view.show_completed(result.get('message','✓ Đã gửi lệnh mở game.'))
         elif self.operation_kind=='self_update':
-            if not result.get('has_update') or not result.get('download_url'):self._show(MessageDialog('Cập nhật launcher',result.get('message','Chưa có bản cập nhật được xác minh.'),parent=self))
+            if not result.get('has_update'):
+                self._show(MessageDialog('Cập nhật launcher',f'Bạn đang dùng phiên bản mới nhất ({LAUNCHER_VERSION}).\nKhông có bản cập nhật mới trên GitHub.',parent=self))
+            elif not result.get('download_url'):
+                self._show(MessageDialog('Cập nhật launcher',result.get('message','Chưa có tệp cập nhật tự động được xác minh.'),parent=self))
             else:QTimer.singleShot(0,lambda:self._confirm_update(result))
-        elif self.operation_kind=='apply_self_update':self._close_after_worker=True
+        elif self.operation_kind=='apply_self_update':
+            self.overview_view.show_completed('✓ Cập nhật hoàn tất! Đang khởi động lại launcher…')
+            self._close_after_worker=True
         elif self.operation_kind=='install':
             msg=result.get('message','')
             if not msg.startswith('✓') and not msg.startswith('Hoàn tất'):msg=f'✓ Hoàn tất cài đặt! {msg}'
@@ -217,10 +225,19 @@ class MainWindow(QMainWindow):
         if not self._configure_network():
             self._show(MessageDialog('Chưa thể kiểm tra cập nhật',self._github_sync_state['message'],parent=self));return
         network=self.network_service;self._start('self_update',lambda cb,op:network.check_for_updates(LAUNCHER_VERSION))
+    def _prompt_auto_update(self,update):
+        if self.active_worker is not None:return
+        self._confirm_update(update)
     def _confirm_update(self,data):
-        if not self._confirm('CẬP NHẬT LAUNCHER','Tải launcher '+data['latest_version']+' đã có SHA256 từ kênh cấu hình. Launcher hiện tại sẽ đóng sau khi chuẩn bị helper.','Tải và cập nhật'):return
+        latest=data.get('latest_version','')
+        body=f'Đã có phiên bản launcher mới: {latest} (hiện tại: v{LAUNCHER_VERSION}).\n\nBạn có muốn tải và tự động cập nhật ngay bây giờ không?'
+        cl=data.get('changelog','').strip()
+        if cl:
+            cl_lines=[l for l in cl.splitlines() if l.strip()][:5]
+            if cl_lines:body+='\n\nNội dung mới:\n'+('\n'.join(cl_lines))
+        if not self._confirm(f'CẬP NHẬT LAUNCHER {latest}',body,'Cập nhật ngay'):return
         def work(cb,op):
-            a=data['asset'];dest=self.path_manager.app_data_dir/'updates'/'StellaSora_Launcher.exe';self.network_service.download(data['download_url'],dest,a['size'],data['sha256'],cb,op);schedule_update(dest,data['sha256'],self.path_manager.app_data_dir);return {'message':'Đã chuẩn bị helper cập nhật.'}
+            a=data['asset'];dest=self.path_manager.app_data_dir/'updates'/f'StellaSora_Launcher_{latest}.exe';self.network_service.download(data['download_url'],dest,a['size'],data['sha256'],cb,op);schedule_update(dest,data['sha256'],self.path_manager.app_data_dir);return {'message':'Đã chuẩn bị bản cập nhật.'}
         self._start('apply_self_update',work)
     def _recover(self):
         if not self._valid_target():return
@@ -244,6 +261,7 @@ class MainWindow(QMainWindow):
     def _handle_navigation(self,dest):
         if dest=='overview':return
         if dest=='launch':self._on_launch_clicked();return
+        if dest=='check_update':self._check_update();return
         if dest=='notifications':self._show(NotificationsModal(self.notifications,self))
         elif dest=='guide':self._show(GuideModal(self))
         elif dest=='support':self._show(SupportModal(self.network_service.get_supporter_data(),self))

@@ -53,9 +53,9 @@ hiddenimports = [
     "PySide6.QtCore",
     "PySide6.QtGui",
     "PySide6.QtWidgets",
-    "launcher_next_r09",
-    "launcher_next_r09.core",
-    "launcher_next_r09.ui",
+    "launcher",
+    "launcher.core",
+    "launcher.ui",
 ]
 
 a = Analysis(

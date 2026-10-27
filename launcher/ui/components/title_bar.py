@@ -14,7 +14,7 @@ class TitleBar(QWidget):
             b=StarlitButton('',variant='ghost',icon=icon);b.setFixedSize(36,34);b.setAccessibleName(tip);b.setToolTip(tip);b.clicked.connect(handler);l.addWidget(b)
     def _menu(self):
         m=QMenu(self);m.setToolTipsVisible(True);m.setStyleSheet('QMenu{background:#0b2d50;color:#eef7ff;border:1px solid #55bde9;padding:6px;}QMenu::item{padding:10px 22px;}QMenu::item:selected{background:#135884;}')
-        for label,dest,icon in [('Cài đặt launcher','settings','settings'),('Công cụ nâng cao / ADB','tools','shield'),('Thông báo','notifications','bell'),('Mở game','launch','play')]:
+        for label,dest,icon in [('Cài đặt launcher','settings','settings'),('Kiểm tra cập nhật','check_update','download'),('Công cụ nâng cao / ADB','tools','shield'),('Thông báo','notifications','bell'),('Mở game','launch','play')]:
             a=m.addAction(AssetManager.get().get_icon(icon),label);a.triggered.connect(lambda checked=False,d=dest:self.navigate_requested.emit(d))
             if dest=='launch':
                 info=self.parent_window.current_game_info;ready=bool(info.installed and not info.is_running and not self.parent_window.active_worker);a.setEnabled(ready);a.setToolTip('Mở game Stella Sora' if ready else 'Chọn đúng thư mục và đóng thao tác/game đang chạy trước.')

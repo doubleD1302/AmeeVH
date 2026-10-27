@@ -10,15 +10,15 @@ def main():
     parser.add_argument('--apply-update',type=Path,help=argparse.SUPPRESS)
     args=parser.parse_args()
     if args.apply_update:
-        from launcher_next_r09.core.self_update import apply_job
+        from launcher.core.self_update import apply_job
         apply_job(args.apply_update);return 0
     from PySide6.QtWidgets import QApplication
-    from launcher_next_r09.core.config import PathManager,ConfigManager
-    from launcher_next_r09.ui.assets import AssetManager
-    from launcher_next_r09.ui.theme import Theme
-    from launcher_next_r09.ui.typography import register_fonts,font
-    from launcher_next_r09.ui.main_window import MainWindow
-    app=QApplication(sys.argv);app.setApplicationName('StellaSora Launcher Candidate r09');app.setOrganizationName('StellaSora VietHoa')
+    from launcher.core.config import PathManager,ConfigManager
+    from launcher.ui.assets import AssetManager
+    from launcher.ui.theme import Theme
+    from launcher.ui.typography import register_fonts,font
+    from launcher.ui.main_window import MainWindow
+    app=QApplication(sys.argv);app.setApplicationName('StellaSora Launcher');app.setOrganizationName('StellaSora VietHoa')
     pm=PathManager(args.resource_dir,args.app_data_dir)
     logging.basicConfig(level=logging.INFO,format='%(asctime)s [%(levelname)s] %(name)s %(message)s',handlers=[logging.FileHandler(pm.logs_dir/'launcher.log',encoding='utf8')])
     register_fonts(pm.resource_dir);app.setFont(font(15));AssetManager.initialize(pm.resource_dir);app.setStyleSheet(Theme.get_application_stylesheet());app.setWindowIcon(AssetManager.get().get_app_icon())

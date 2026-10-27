@@ -36,10 +36,19 @@ def apply_job(job_path):
     finally:tmp.unlink(missing_ok=True)
 
 def schedule_update(source,expected_sha,app_data):
-    if not getattr(sys,'frozen',False):raise InstallerError('Tự cập nhật chỉ dành cho EXE đóng gói.','UPDATE_UNAVAILABLE')
-    source=Path(source).resolve();target=Path(sys.executable).resolve()
+    source=Path(source).resolve()
     if sha256_file(source)!=expected_sha:raise InstallerError('Tệp update sai SHA256.','HASH_MISMATCH')
-    cache=Path(app_data)/'update_helper';cache.mkdir(parents=True,exist_ok=True);helper=cache/('helper_'+uuid.uuid4().hex+'.exe');shutil.copy2(target,helper)
+    if not getattr(sys,'frozen',False):
+        game_root=Path(__file__).resolve().parent.parent.parent.parent
+        for p in (game_root/'StellaSora_Launcher.exe',game_root/'StellaSora_VietHoa'/'dist'/'StellaSora_Launcher.exe'):
+            if p.is_file():
+                try:shutil.copy2(source,p)
+                except OSError:pass
+        return None
+    target=Path(sys.executable).resolve()
+    cache=Path(app_data)/'update_helper';cache.mkdir(parents=True,exist_ok=True);helper=cache/('helper_'+uuid.uuid4().hex+'.exe')
+    try:shutil.copy2(source,helper)
+    except Exception:shutil.copy2(target,helper)
     job=cache/(uuid.uuid4().hex+'.json');atomic_json(job,{'source':str(source),'target':str(target),'sha256':expected_sha,'preimage_sha256':sha256_file(target),'timeout':25})
     subprocess.Popen([str(helper),'--apply-update',str(job)],cwd=str(cache),creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
     return job

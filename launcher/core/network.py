@@ -86,9 +86,33 @@ class NetworkService:
         if not self.update_url:return base
         try:
             d=release_data if release_data is not None else self.release();latest=d['tag_name'];new=version_tuple(latest)>version_tuple(current_version)
-            asset=next((a for a in d['assets'] if a['name'].endswith('Launcher.exe')),None);digest=self._asset_digest(asset) if asset else None
+            assets=d.get('assets',[]);asset=None
+            for a in assets:
+                n=a.get('name','').lower()
+                if a.get('name','').endswith('.exe') and not n.startswith('helper'):
+                    if any(k in n for k in ('launcher','windows','stellasora')):
+                        asset=a;break
+            if not asset:
+                for a in assets:
+                    if a.get('name','').endswith('.exe') and not a.get('name','').lower().startswith('helper'):
+                        asset=a;break
+            digest=self._asset_digest(asset) if asset else None
+            if asset and not digest:
+                sums_asset=next((a for a in assets if a.get('name')=='SHA256SUMS.txt'),None)
+                if sums_asset and valid_url(sums_asset.get('browser_download_url','')):
+                    try:
+                        sreq=urllib.request.Request(sums_asset['browser_download_url'],headers={'User-Agent':'StellaSora-Launcher'})
+                        with urllib.request.urlopen(sreq,timeout=self.timeout) as sresp:
+                            stext=sresp.read(64*1024).decode('utf-8',errors='ignore')
+                            for sline in stext.splitlines():
+                                sparts=sline.strip().split()
+                                if len(sparts)>=2 and re.fullmatch(r'[0-9a-fA-F]{64}',sparts[0]):
+                                    sname=sparts[1].lstrip('*')
+                                    if sname==asset['name'] or (sname=='StellaSora_Launcher.exe' and 'launcher' in asset['name'].lower()):
+                                        digest=sparts[0].lower();break
+                    except Exception:pass
             actionable=bool(new and asset and digest)
-            return {**base,'status':'online','has_update':new,'latest_version':latest,'download_url':asset['browser_download_url'] if actionable else None,'asset':asset,'sha256':digest if actionable else None,'message':('Có launcher '+latest+('. Có thể tải và cập nhật.' if actionable else '; chưa có tệp được xác minh để tự cập nhật.')) if new else 'Launcher hiện tại '+str(current_version)+' không cũ hơn bản đang phát hành '+latest+'.','changelog':d.get('body','')}
+            return {**base,'status':'online','has_update':new,'latest_version':latest,'download_url':asset['browser_download_url'] if actionable else None,'asset':asset,'sha256':digest if actionable else None,'message':('Có bản cập nhật launcher '+latest+('. Có thể tự động tải và cập nhật.' if actionable else '; chưa có tệp được xác minh để tự cập nhật.')) if new else f'Launcher hiện tại ({current_version}) là phiên bản mới nhất.','changelog':d.get('body','')}
         except Exception as exc:return {**base,'status':'error','message':'Không kiểm tra được cập nhật: '+str(exc)}
     def sync_channel(self,fallback_path,current_version='0.9.8',manifest_url=None,check_launcher=True):
         items=self.fetch_notifications(fallback_path);release=None;release_status='error';release_error='';manifest_status='unavailable';manifest_error='';translation_version=None;file_count=None;translation_scope=None;cache_warning=''
