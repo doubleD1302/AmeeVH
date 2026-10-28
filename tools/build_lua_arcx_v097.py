@@ -52,6 +52,8 @@ def patch_proto_constants(proto: dict, scene_dict: dict, master_dict: dict, stat
                         new_text = s_pol
                         
                 if new_text is not None:
+                    from comprehensive_dialogue_polisher import polish_line
+                    new_text = polish_line(s_strip, new_text)
                     new_text = clean_str(new_text)
                     l_pad = len(s) - len(s.lstrip())
                     r_pad = len(s) - len(s.rstrip())

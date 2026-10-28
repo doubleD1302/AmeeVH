@@ -72,7 +72,7 @@ EXPECTED_MANGA = {
 EXPECTED_ITEMS = {
     "Item.111001.1": "Ma Vương Tập Sự",
     "Item.111009.1": "Bậc Thầy Ước Nguyện",
-    "Item.11103.1": "Mảnh Ghép 1/365 Của Anh",
+    "Item.11103.1": "Mảnh Ghép 1/365 Của Cậu",
     "Item.11205.1": "Phút Thảnh Thơi Bên Cậu",
     "Item.1030.2": "Dùng để kích hoạt Thiên phú Du Hành Giả.",
     "Item.514908.1": "Đòn Đánh Hiểm Độc",
@@ -97,7 +97,7 @@ EXPECTED_VOICE = {
 EXPECTED_SKIN_QUOTES = {
     "CharacterSkin.14403.2": "Đóa hoa triêu nhan cắm trong bình nước thanh khiết này—— sắc hoa tươi thắm cùng hương thơm thanh nhã ấy, liệu có thể lưu giữ được bao lâu đây?",
     "CharacterSkin.14903.2": "Vị chua đắng của cà phê, hương thơm ngát của đóa tường vi, em muốn chia sẻ trọn vẹn mọi trải nghiệm mới mẻ này cùng với anh. Khi tuyết tan rồi, chúng mình cùng nhau hẹn hò một chuyến nhé?",
-    "CharacterSkin.11104.2": "Cái đó... Em sẽ cố hết sức giữ thăng bằng cho chiếc phao bơi này, nhưng khi trèo lên anh nhớ cẩn thận một chút nhé.\x0b——Đ-Đương nhiên rồi, nếu anh lỡ sảy chân rơi xuống nước, em nhất định sẽ kéo anh lại thật chặt!",
+    "CharacterSkin.11104.2": "Cái đó... Em sẽ cố hết sức giữ thăng bằng cho chiếc phao bơi này, nhưng khi trèo lên Sếp nhớ cẩn thận một chút nhé. ——Đ-Đương nhiên rồi, nếu Sếp lỡ sảy chân rơi xuống nước, em nhất định sẽ kéo Sếp lại thật chặt!",
 }
 
 EXPECTED_GACHA_STORAGE = {
