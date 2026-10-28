@@ -1,7 +1,70 @@
 {
-  "version": "0.9.6",
-  "updated_at": "2026-10-23",
+  "version": "1.0.7",
+  "updated_at": "2026-10-28",
   "announcements": [
+    {
+      "id": "NOTIF-021",
+      "date": "2026-10-28",
+      "title": "Bản cập nhật v1.0.7: Khôi Phục Texture Gốc Danh Hiệu, SKIP & Tối Ưu Chiêu Mộ",
+      "type": "release",
+      "content": "Khôi phục nguyên bản 100% texture gốc tiếng Anh cho toàn bộ 360+ Danh hiệu (Honor Titles), nút 'SKIP' và banner chiêu mộ kiếm 20162 / 1 Năm. Khắc phục triệt để lỗi kẹt vào giao diện Chiêu Mộ (Gacha) trên PC và nạp đầy đủ 606 hình ảnh Việt hóa chuẩn ASTC cho Android."
+    },
+    {
+      "id": "NOTIF-020",
+      "date": "2026-10-28",
+      "title": "Bản cập nhật v1.0.6: Sửa Lỗi Cài Đặt APK Android & Hỗ Trợ Tạo Lối Tắt Desktop",
+      "type": "release",
+      "content": "Nâng cấp cơ chế tự động cài đặt cập nhật APK Android trực tiếp trong ứng dụng. Bổ sung tùy chọn tạo lối tắt màn hình chính (Desktop Shortcut) ngay sau khi cài đặt trên Launcher PC Windows (hỗ trợ cả OneDrive Desktop)."
+    },
+    {
+      "id": "NOTIF-019",
+      "date": "2026-10-28",
+      "title": "Bản cập nhật v1.0.5: Tối Ưu Hóa Giao Diện & Đồng Bộ Đa Nền Tảng",
+      "type": "release",
+      "content": "Cải tiến độ phân giải giao diện, khử răng cưa chữ và hình ảnh trên launcher PC. Tối ưu hóa bộ nhớ đệm và cải thiện tốc độ kiểm tra cập nhật tự động."
+    },
+    {
+      "id": "NOTIF-018",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật v1.0.4: Nâng Cấp Tự Động Cập Nhật Trực Tiếp Trong Ứng Dụng",
+      "type": "release",
+      "content": "Trang bị quy trình tự động cập nhật launcher trong ứng dụng theo quy chuẩn an toàn, loại bỏ hoàn toàn việc phải tải lại thủ công."
+    },
+    {
+      "id": "NOTIF-017",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật v1.0.3: Khắc Phục Lỗi Nạp AssetBundles & Hoàn Thiện Âm Thanh",
+      "type": "release",
+      "content": "Sửa lỗi nạp gói AssetBundles trên một số thiết bị Android cấu hình đặc thù, đồng bộ hóa 100% bảng phụ đề âm thanh chiến đấu."
+    },
+    {
+      "id": "NOTIF-016",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật 1.0.2: Đầy Đủ 95 AssetBundles Android ASTC & Tích Hợp Toàn Bộ Banner Gacha, Trang Phục",
+      "type": "release",
+      "content": "Nâng cấp gói AssetBundles cho Android lên 95 gói chuẩn ASTC nguyên bản. Tích hợp đầy đủ toàn bộ banner Gacha Cover kỷ niệm 1 năm và chiêu mộ nhân vật/đĩa, toàn bộ chữ thư pháp và hình ảnh trang phục Mall Shop, truyện tranh 4 ô cùng giao diện sự kiện."
+    },
+    {
+      "id": "NOTIF-015",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật 1.0.1: Cập Nhật 52 Banner Mới & Tối Ưu Tải Trọn Gói ZIP",
+      "type": "release",
+      "content": "Bổ sung toàn bộ 52 banner Việt hóa mới nhất (Logo, Gacha Cover, Tiêu đề sự kiện). Đồng thời tinh giản và tối ưu hóa hệ thống tải trọn gói ZIP cho cả Android và PC, sửa lỗi đối chiếu kiểm tra toàn vẹn tệp đồ họa."
+    },
+    {
+      "id": "NOTIF-014",
+      "date": "2026-10-27",
+      "title": "Bản phát hành chính thức 1.0.0: Hoàn Tất Toàn Diện Bộ Đôi Launcher & Bản Dịch",
+      "type": "release",
+      "content": "Chính thức phát hành phiên bản 1.0.0 hoàn chỉnh nhất. Ra mắt bộ đôi launcher Windows và Android Local ADB với tính năng tự cập nhật qua GitHub, bảo vệ an toàn dữ liệu game và chuẩn hóa toàn bộ thuật ngữ đĩa nhạc, kỹ năng và cốt truyện."
+    },
+    {
+      "id": "NOTIF-013",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật v0.9.9: Phát Hành Launcher Chính Thức (PC & Android ADB) & Chuẩn Hóa Thuật Ngữ Toàn Diện",
+      "type": "release",
+      "content": "Chính thức phát hành bộ đôi Launcher thế hệ mới: Windows Launcher (StellaSora-Windows_v0.9.9.exe) và Android Local ADB Launcher (StellaSora-Android_v0.1.1.apk) với khả năng tự cập nhật qua GitHub và nạp bản dịch 100% an toàn. Đồng thời rà soát và chuẩn hóa 104 kỹ năng Đĩa Nhạc (Du Hành Giả Đa Năng, Tinh Vọng, Độ Khó...), khắc phục triệt để mọi lỗi dịch máy."
+    },
     {
       "id": "NOTIF-012",
       "date": "2026-10-23",
