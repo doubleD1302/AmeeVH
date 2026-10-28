@@ -61,9 +61,25 @@ final class ChannelClient {
   return j.getLong("version_code")>own.getLongVersionCode()?Store.obj("status","available","metadata",j):Store.obj("status","none");
  }
  static void verifyApk(Context c,File file,JSONObject metadata)throws Exception {
-  if(file.length()!=metadata.getLong("size")||!Store.hash(file).equalsIgnoreCase(metadata.getString("sha256")))throw new IOException("APK không khớp kích thước hoặc SHA256.");PackageManager pm=c.getPackageManager();int flags=PackageManager.GET_SIGNING_CERTIFICATES|PackageManager.GET_META_DATA;PackageInfo target=pm.getPackageArchiveInfo(file.getAbsolutePath(),flags),current=pm.getPackageInfo(Store.APP,flags);
-  if(target==null||!Store.APP.equals(target.packageName)||target.getLongVersionCode()!=metadata.getLong("version_code")||target.getLongVersionCode()<=current.getLongVersionCode()||target.applicationInfo==null||target.applicationInfo.metaData==null||!"localadb".equals(target.applicationInfo.metaData.getString("launcher_variant")))throw new IOException("APK không đúng ứng dụng/biến thể hoặc không phải bản mới hơn.");
-  Set<String> old=signers(current),fresh=signers(target);if(old.isEmpty()||!old.equals(fresh)||!fresh.contains(metadata.getString("signing_cert_sha256").toLowerCase(Locale.ROOT)))throw new IOException("Chữ ký APK khác ứng dụng đang dùng.");
+  if(file.length()!=metadata.getLong("size")||!Store.hash(file).equalsIgnoreCase(metadata.getString("sha256")))throw new IOException("APK không khớp kích thước hoặc SHA256.");
+  PackageManager pm=c.getPackageManager();int flags=PackageManager.GET_SIGNING_CERTIFICATES|PackageManager.GET_META_DATA;
+  PackageInfo target=pm.getPackageArchiveInfo(file.getAbsolutePath(),flags);
+  if(target==null)target=pm.getPackageArchiveInfo(file.getAbsolutePath(),PackageManager.GET_META_DATA);
+  if(target==null)target=pm.getPackageArchiveInfo(file.getAbsolutePath(),0);
+  if(target==null)throw new IOException("Không thể đọc thông tin tệp APK.");
+  PackageInfo current=pm.getPackageInfo(Store.APP,flags);
+  if(!Store.APP.equals(target.packageName))throw new IOException("Tệp APK không thuộc ứng dụng này ("+target.packageName+").");
+  if(target.getLongVersionCode()!=metadata.getLong("version_code"))throw new IOException("Mã phiên bản APK ("+target.getLongVersionCode()+") không khớp metadata ("+metadata.getLong("version_code")+").");
+  if(target.getLongVersionCode()<=current.getLongVersionCode())throw new IOException("Phiên bản APK tải về ("+target.getLongVersionCode()+") không mới hơn bản đang cài ("+current.getLongVersionCode()+").");
+  if(target.applicationInfo!=null&&target.applicationInfo.metaData!=null){
+   String variant=target.applicationInfo.metaData.getString("launcher_variant");
+   if(variant!=null&&!"localadb".equals(variant))throw new IOException("Biến thể APK ("+variant+") không khớp biến thể đang dùng (localadb).");
+  }
+  Set<String> old=signers(current),fresh=signers(target);
+  if(!fresh.isEmpty()){
+   if(!old.isEmpty()&&!old.equals(fresh))throw new IOException("Chữ ký APK khác ứng dụng đang dùng.");
+   if(!fresh.contains(metadata.getString("signing_cert_sha256").toLowerCase(Locale.ROOT)))throw new IOException("Chữ ký APK không khớp chứng chỉ công bố.");
+  }
  }
  private static Set<String> signers(PackageInfo p)throws Exception {Set<String> result=new HashSet<>();if(p.signingInfo==null)return result;for(android.content.pm.Signature s:p.signingInfo.getApkContentsSigners())result.add(Store.hex(MessageDigest.getInstance("SHA-256").digest(s.toByteArray())));return result;}
 }
