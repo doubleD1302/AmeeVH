@@ -91,7 +91,13 @@ def upload_asset(rel: dict, file_path: Path, headers: dict, existing_assets: dic
     size = len(data)
     upload_url_tmpl = rel["upload_url"].split("{")[0]
 
-    force_reupload = {"android_patch_manifest.json", "patch_manifest.json", "SHA256SUMS.txt"}
+    force_reupload = {
+        "android_patch_manifest.json",
+        "patch_manifest.json",
+        "SHA256SUMS.txt",
+        "StellaSora_AssetBundles_VI.zip",
+        "StellaSora_Android_AssetBundles_VI.zip",
+    }
 
     if aname in existing_assets:
         e_info = existing_assets[aname]
