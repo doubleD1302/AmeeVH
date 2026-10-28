@@ -83,3 +83,4 @@ Mọi bản release phải chạy script kiểm tra `python tools/verify_seamles
 - [x] **Gate 3:** Helper của PC launcher chứa `taskkill` và `target.rename`.
 - [x] **Gate 4:** `android_localadb_launcher.json` có SHA256 và size khớp 100% với APK phát hành.
 - [x] **Gate 5:** `android_patch_manifest.json` và `patch_manifest.json` chứa `*` trong `resource_version`.
+- [x] **Gate 6:** `android_patch_manifest.json` tuân thủ nghiêm ngặt hợp đồng ChannelClient: `platform="android"`, `game_package="com.YoStarEN.StellaSora"`, `client_game_version`, `resource_version`, `version`, và mọi bundle đều có `asset_platform="android"`.

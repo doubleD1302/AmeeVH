@@ -52,6 +52,35 @@ def check_all():
             if vcode < 8:
                 errors.append(f"versionCode in build.gradle is {vcode}; must be >= 8 for new release!")
 
+    # 5. Check Android & PC Manifest contracts
+    and_manifest_file = ROOT / "dist/android_patch_manifest.json"
+    if and_manifest_file.is_file():
+        try:
+            m = json.loads(and_manifest_file.read_text(encoding="utf-8"))
+            if m.get("platform", "").lower() != "android":
+                errors.append("android_patch_manifest.json missing platform='android'")
+            if m.get("game_package") != "com.YoStarEN.StellaSora":
+                errors.append("android_patch_manifest.json missing game_package='com.YoStarEN.StellaSora'")
+            if not m.get("client_game_version"):
+                errors.append("android_patch_manifest.json missing client_game_version")
+            if not m.get("resource_version"):
+                errors.append("android_patch_manifest.json missing resource_version")
+            if not m.get("version"):
+                errors.append("android_patch_manifest.json missing version")
+        except Exception as e:
+            errors.append(f"android_patch_manifest.json parse error: {e}")
+
+    pc_manifest_file = ROOT / "dist/patch_manifest.json"
+    if pc_manifest_file.is_file():
+        try:
+            pm = json.loads(pc_manifest_file.read_text(encoding="utf-8"))
+            if not (pm.get("version") or pm.get("release_tag")):
+                errors.append("patch_manifest.json missing version / release_tag")
+            if not pm.get("client_game_version") or not pm.get("resource_version"):
+                errors.append("patch_manifest.json missing game/resource version")
+        except Exception as e:
+            errors.append(f"patch_manifest.json parse error: {e}")
+
     if errors:
         print("\n❌ FAILED INVARIANTS:")
         for err in errors:

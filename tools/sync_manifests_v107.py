@@ -77,6 +77,7 @@ def update_manifests():
 
     pc_manifest = {
         "release_tag": TAG,
+        "version": VERSION,
         "client_game_version": "2.0.0",
         "resource_version": "2610201624, 2610211918, 2610211926, *",
         "total_bundles": len(pc_bundles),
@@ -128,6 +129,10 @@ def update_manifests():
         })
 
     and_manifest = {
+        "platform": "android",
+        "game_package": "com.YoStarEN.StellaSora",
+        "client_game_version": "2.0.0",
+        "resource_version": "2610201624, 2610211918, 2610211926, *",
         "version": VERSION,
         "total_size": sum(f["size"] for f in and_files),
         "package_zip": {

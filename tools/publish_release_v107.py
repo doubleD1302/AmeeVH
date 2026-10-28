@@ -91,9 +91,11 @@ def upload_asset(rel: dict, file_path: Path, headers: dict, existing_assets: dic
     size = len(data)
     upload_url_tmpl = rel["upload_url"].split("{")[0]
 
+    force_reupload = {"android_patch_manifest.json", "patch_manifest.json", "SHA256SUMS.txt"}
+
     if aname in existing_assets:
         e_info = existing_assets[aname]
-        if e_info.get("size") == size:
+        if aname not in force_reupload and e_info.get("size") == size:
             print(f"✓ {aname} already exists with matching size ({size:,} bytes), skipping upload.")
             return e_info.get("browser_download_url")
         # Delete stale
