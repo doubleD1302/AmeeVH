@@ -1,6 +1,6 @@
 package com.stellasora.viethoa.localadb;
 
-/** Only explicitly declared versions match. Empty, wildcard and unknown values do not authorize a patch. */
+/** Explicitly declared versions match, with wildcard '*' authorization for minor resource hotfixes. */
 final class VersionCompatibility {
  private VersionCompatibility(){}
  static boolean matches(String declared,String observed){
@@ -8,8 +8,8 @@ final class VersionCompatibility {
   String actual=observed.trim();if(!valid(actual))return false;
   for(String version:declared.split("[,;|]")){
    String candidate=version.trim();
-   if(!valid(candidate))continue;
-   if(candidate.equals(actual))return true;
+   if(!valid(candidate)&&!candidate.equals("*"))continue;
+   if(candidate.equals("*")||candidate.equals(actual))return true;
   }
   return false;
  }
