@@ -3,7 +3,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QFrame
 from ..components.modal_shell import ArtDialog
 from ..components.starlit_button import StarlitButton
-from ..components.art_controls import AssetImage, AlertStrip, text_label
+from ..components.art_controls import AssetImage, AlertStrip, text_label, ArtCheckBox
 
 class InfoGlassCard(QFrame):
     """High-contrast translucent card for structured information."""
@@ -18,15 +18,16 @@ class InfoGlassCard(QFrame):
         """)
 
 class ConfirmationDialog(ArtDialog):
-    def __init__(self, title, message, confirm_label='Xác nhận', cancel_label='Hủy bỏ', is_danger=False, parent=None):
+    def __init__(self, title, message, confirm_label='Xác nhận', cancel_label='Hủy bỏ', is_danger=False, show_shortcut_option=False, shortcut_default=True, parent=None):
         subtitle = 'Vui lòng kiểm tra lại thông tin và vị trí trước khi thực hiện.'
+        has_shortcut = show_shortcut_option or ('CÀI' in title)
         super().__init__(
             title,
             subtitle,
             'warning' if is_danger else ('download' if 'CÀI' in title else ('restore' if 'KHÔI PHỤC' in title else 'info')),
             parent,
             width=780,
-            height=510,
+            height=550 if has_shortcut else 510,
             panel='panels/dialog'
         )
         self.heading.setStyleSheet('color:#ffccd5;' if is_danger else 'color:#f0f8ff;')
@@ -118,6 +119,19 @@ class ConfirmationDialog(ArtDialog):
 
         self.body.addWidget(scope_box)
 
+        # Tuỳ chọn lối tắt màn hình chính khi cài đặt
+        self.cb_shortcut = None
+        if has_shortcut:
+            sc_box = InfoGlassCard(self)
+            scl = QHBoxLayout(sc_box)
+            scl.setContentsMargins(16, 8, 16, 8)
+            scl.setSpacing(10)
+            self.cb_shortcut = ArtCheckBox('Thêm lối tắt vào màn hình chính', self)
+            self.cb_shortcut.setChecked(shortcut_default)
+            scl.addWidget(self.cb_shortcut)
+            scl.addStretch()
+            self.body.addWidget(sc_box)
+
         # Alert Strip
         alert = AlertStrip('Dữ liệu game chỉ được thay đổi sau khi bạn bấm xác nhận.', 'warning' if is_danger else 'info')
         self.body.addWidget(alert)
@@ -136,3 +150,6 @@ class ConfirmationDialog(ArtDialog):
         confirm.setMinimumHeight(44)
         confirm.clicked.connect(self.accept)
         self.footer.addWidget(confirm)
+
+    def create_shortcut_requested(self) -> bool:
+        return bool(self.cb_shortcut and self.cb_shortcut.isChecked())

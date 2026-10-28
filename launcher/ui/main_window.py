@@ -22,6 +22,8 @@ from .views.support_modal import SupportModal
 from .views.settings_modal import SettingsModal
 from .views.advanced_tools_modal import AdvancedToolsModal
 from .views.confirmation_dialog import ConfirmationDialog
+from .views.install_completed_dialog import InstallCompletedDialog
+from ..core.shortcut import create_game_shortcut, create_desktop_shortcut
 from .views.message_dialog import MessageDialog
 from .views.update_notice_dialog import UpdateNoticeDialog
 from .views.game_selection_dialog import GameSelectionDialog
@@ -175,7 +177,14 @@ class MainWindow(QMainWindow):
         elif self.operation_kind=='install':
             msg=result.get('message','')
             if not msg.startswith('✓') and not msg.startswith('Hoàn tất'):msg=f'✓ Hoàn tất cài đặt! {msg}'
+            sc_ok = False
+            if getattr(self, '_pending_create_shortcut', False) and getattr(self.current_game_info, 'game_path', None):
+                ok, sc_msg = create_game_shortcut(self.current_game_info.game_path)
+                sc_ok = ok
+                if ok:
+                    msg += '\n✓ Đã thêm lối tắt "Stella Sora Việt Hóa" vào màn hình chính.'
             self.overview_view.show_completed(msg)
+            QTimer.singleShot(150, lambda r=result, s=sc_ok: self._show_install_completed(r, s))
         elif self.operation_kind=='rollback':
             msg=result.get('message','')
             if not msg.startswith('✓') and not msg.startswith('Hoàn tất'):msg=f'✓ Hoàn tất khôi phục! {msg}'
@@ -212,7 +221,12 @@ class MainWindow(QMainWindow):
         local=self.config_manager.get('payload_path','');channel_valid=self._configure_network()
         if not local and not channel_valid:
             self._show(MessageDialog('Chưa thể tải bản dịch',self._github_sync_state['message'],parent=self));return
-        if not self._confirm('CÀI / CẬP NHẬT VIỆT HÓA','Thư mục: '+str(root)+'\n\n'+state['message']+'\n\nTải hoặc đọc gói đã chọn, sao lưu và cài đúng các tệp trong manifest. Gói chỉ gồm texture sẽ chỉ cài texture.','Cài bản dịch'):return
+        pref_shortcut = self.config_manager.get('create_desktop_shortcut', True)
+        cd = ConfirmationDialog('CÀI / CẬP NHẬT VIỆT HÓA','Thư mục: '+str(root)+'\n\n'+state['message']+'\n\nTải hoặc đọc gói đã chọn, sao lưu và cài đúng các tệp trong manifest. Gói chỉ gồm texture sẽ chỉ cài texture.','Cài bản dịch',show_shortcut_option=True,shortcut_default=pref_shortcut,parent=self)
+        if self._show(cd) != QDialog.DialogCode.Accepted:return
+        self._pending_create_shortcut = cd.create_shortcut_requested()
+        self.config_manager.set('create_desktop_shortcut', self._pending_create_shortcut)
+        self.config_manager.save()
         network=self.network_service;manifest_url=self._channel['manifest_url']
         def work(cb,op):
             payload=Path(local) if local else network.prepare_payload(self.path_manager.payload_root,manifest_url,cb,op)
@@ -398,3 +412,9 @@ class MainWindow(QMainWindow):
             scale=max(self.width()/master.width(),self.height()/master.height());sw=self.width()/scale;sh=self.height()/scale;source=QRectF((master.width()-sw)/2,(master.height()-sh)/2,sw,sh);painter.drawPixmap(QRectF(self.rect()),master,source)
         # Local bottom readability only; the main artwork is never blurred or fogged.
         gradient=QLinearGradient(0,self.height()*.86,0,self.height());gradient.setColorAt(0,QColor(3,15,30,0));gradient.setColorAt(1,QColor(3,15,30,65));painter.fillRect(QRectF(0,self.height()*.86,self.width(),self.height()*.14),gradient)
+
+    def _show_install_completed(self, result, shortcut_created=False):
+        d = InstallCompletedDialog(self.current_game_info, result, shortcut_created_initially=shortcut_created, parent=self)
+        self._show(d)
+        if getattr(d, 'launch_game_clicked', False):
+            self._on_launch_clicked()

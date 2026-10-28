@@ -4,6 +4,7 @@ from PySide6.QtCore import Qt,Signal,QTimer
 from PySide6.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QFileDialog
 from ...core.config import LAUNCHER_VERSION
 from ..components.modal_shell import ArtDialog
+from ...core.shortcut import create_game_shortcut
 from ..components.starlit_button import StarlitButton
 from ..components.art_controls import ArtInput,ArtCheckBox,AlertStrip,ArtDivider,text_label,scroll_area
 class SettingsModal(ArtDialog):
@@ -19,6 +20,8 @@ class SettingsModal(ArtDialog):
         self.chk_auto_detect=ArtCheckBox('Tự tìm game khi chưa chọn thư mục');self.chk_auto_detect.setChecked(config_manager.get('auto_detect_game',True));body.addWidget(self.chk_auto_detect)
         self.chk_update=ArtCheckBox('Kiểm tra cập nhật launcher lúc mở');self.chk_update.setChecked(config_manager.get('check_updates_on_start',True));body.addWidget(self.chk_update)
         self.chk_reduced_motion=ArtCheckBox('Giảm hiệu ứng chuyển động và làm mờ',toggle=True);self.chk_reduced_motion.setChecked(config_manager.get('reduced_motion',False));body.addWidget(self.chk_reduced_motion)
+        self.chk_shortcut=ArtCheckBox('Thêm lối tắt vào màn hình chính khi cài đặt');self.chk_shortcut.setChecked(config_manager.get('create_desktop_shortcut',True));body.addWidget(self.chk_shortcut)
+        row_sc=QHBoxLayout();btn_sc=self._button('Tạo lối tắt màn hình chính ngay','link',290);btn_sc.clicked.connect(self._create_desktop_shortcut_now);row_sc.addWidget(btn_sc);row_sc.addStretch();body.addLayout(row_sc)
         self.fields=(self.path_input,self.payload_input,self.repo_input,self.branch_input,self.chk_auto_detect,self.chk_update,self.chk_reduced_motion)
         if getattr(config_manager,'_corrupt',False):
             for field in self.fields:field.setEnabled(False)
@@ -81,7 +84,16 @@ class SettingsModal(ArtDialog):
         except (ValueError,TypeError):old_channel=None
         try:config.set_channel(self.repo_input.text(),self.branch_input.text())
         except ValueError as exc:self.sync_status_label.setText(str(exc));return
-        config.update({'game_path':self.path_input.text().strip(),'payload_path':self.payload_input.text().strip(),'auto_detect_game':self.chk_auto_detect.isChecked(),'check_updates_on_start':self.chk_update.isChecked(),'reduced_motion':self.chk_reduced_motion.isChecked()})
+        config.update({'game_path':self.path_input.text().strip(),'payload_path':self.payload_input.text().strip(),'auto_detect_game':self.chk_auto_detect.isChecked(),'check_updates_on_start':self.chk_update.isChecked(),'reduced_motion':self.chk_reduced_motion.isChecked(),'create_desktop_shortcut':self.chk_shortcut.isChecked()})
         if not config.save():config.update(before);self.path_status_label.setText('\n'.join(config.warnings));return
         if config.channel()!=old_channel:self.channel_changed.emit()
         self.game_path_changed.emit(config.get('game_path'));self.accept()
+
+    def _create_desktop_shortcut_now(self):
+        game_path = Path(self.path_input.text()) if self.path_input.text() else Path(self.config_manager.get('game_path', ''))
+        ok, msg = create_game_shortcut(game_path)
+        from .message_dialog import MessageDialog
+        if ok:
+            MessageDialog('Lối tắt màn hình chính', msg, parent=self).exec()
+        else:
+            MessageDialog('Chưa thể tạo lối tắt', msg, parent=self, is_error=True).exec()
