@@ -37,12 +37,11 @@ MANIFEST_PATH = PROJECT_ROOT / "dist" / "patch_manifest.json"
 STEAM_PS = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora\Persistent_Store\AssetBundles")
 STEAM_IR = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora\StellaSora_Data\StreamingAssets\InstallResource")
 
-# Gather all available VI textures
+# Gather all available VI textures (EXCLUDING btn_video_skip to preserve pristine English SKIP)
 VI_SOURCES = [
     PROJECT_ROOT / "dist" / "StellaSora_Texture_AnhVeChu_EN" / "04_NutBam_HuyHieu_Results_VI",
     PROJECT_ROOT / "dist" / "StellaSora_Texture_VI" / "03_TieuDe_Logos_Headers_VI",
     PROJECT_ROOT / "dist" / "StellaSora_Texture_AnhVeChu_EN" / "05_SuKien_Banners_Tabs_VI",
-    PROJECT_ROOT / "dist" / "btn_video_skip_viet_hoa.png",
 ]
 
 
@@ -50,12 +49,14 @@ def load_all_vi_sprites() -> dict[str, Image.Image]:
     sprites: dict[str, Image.Image] = {}
     for s_path in VI_SOURCES:
         if s_path.is_file():
-            # special case btn_video_skip
-            sprites["btn_video_skip"] = Image.open(s_path).convert("RGBA")
+            pass
         elif s_path.is_dir():
             for p in s_path.glob("*.png"):
                 name = p.stem.split("__")[-1]
+                if name == "btn_video_skip":
+                    continue
                 sprites[name] = Image.open(p).convert("RGBA")
+    sprites.pop("btn_video_skip", None)
     return sprites
 
 

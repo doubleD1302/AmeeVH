@@ -2,7 +2,7 @@ plugins { id 'com.android.application' }
 android {
     namespace 'com.stellasora.viethoa.localadb'
     compileSdk 36
-    defaultConfig { applicationId 'com.stellasora.viethoa.localadb'; minSdk 30; targetSdk 35; versionCode 8; versionName '1.0.6' }
+    defaultConfig { applicationId 'com.stellasora.viethoa.localadb'; minSdk 30; targetSdk 35; versionCode 9; versionName '1.0.7' }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     signingConfigs { candidate { storeFile file('../signing/candidate-debug.keystore'); storePassword 'android'; keyAlias 'stella-candidate'; keyPassword 'android'; v1SigningEnabled true; v2SigningEnabled true } }
     buildTypes { debug { signingConfig signingConfigs.candidate; debuggable false }; release { minifyEnabled false; signingConfig signingConfigs.candidate } }

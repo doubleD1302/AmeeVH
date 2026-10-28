@@ -43,7 +43,6 @@ VI_SOURCES = [
     PROJECT_ROOT / "dist" / "StellaSora_Texture_AnhVeChu_EN" / "04_NutBam_HuyHieu_Results_VI",
     PROJECT_ROOT / "dist" / "StellaSora_Texture_VI" / "03_TieuDe_Logos_Headers_VI",
     PROJECT_ROOT / "dist" / "StellaSora_Texture_AnhVeChu_EN" / "05_SuKien_Banners_Tabs_VI",
-    PROJECT_ROOT / "dist" / "btn_video_skip_viet_hoa.png",
 ]
 
 def step1_copy_user_textures():
@@ -74,10 +73,12 @@ def load_all_sprites():
     bundle_specific = {}
     for s_path in VI_SOURCES:
         if s_path.is_file():
-            sprites["btn_video_skip"] = Image.open(s_path).convert("RGBA")
+            pass
         elif s_path.is_dir():
             for p in s_path.glob("*.png"):
                 parts = p.stem.split("__")
+                if parts[-1] == "btn_video_skip":
+                    continue
                 img = Image.open(p).convert("RGBA")
                 if len(parts) == 2:
                     bundle_stem, spr_name = parts[0], parts[1]
