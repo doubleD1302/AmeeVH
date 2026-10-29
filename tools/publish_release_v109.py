@@ -107,9 +107,6 @@ def upload_asset(rel: dict, file_path: Path, headers: dict, existing_assets: dic
         "patch_manifest.json",
         "android_localadb_launcher.json",
         "SHA256SUMS.txt",
-        "data_patched_vi.arcx",
-        "lua_patched_vi.arcx",
-        "StellaSora-Windows_v1.0.9.exe",
     }
 
     if aname in existing_assets:
@@ -185,7 +182,6 @@ def main():
         DIST_DIR / "android_patch_manifest.json",
         DIST_DIR / "data_patched_vi.arcx",
         DIST_DIR / "lua_patched_vi.arcx",
-        "StellaSora-Windows_v1.0.9.exe",
         DIST_DIR / "StellaSora_AssetBundles_VI.zip",
         DIST_DIR / "StellaSora_Android_AssetBundles_VI.zip",
         DIST_DIR / "SHA256SUMS.txt",
