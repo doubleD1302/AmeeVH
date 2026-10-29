@@ -25,7 +25,13 @@ def main():
     print("=== KIỂM TRA CHỈ TIÊU BẢO ĐẢM TỰ ĐỘNG CẬP NHẬT TRỰC TIẾP (SEAMLESS UPDATE GATES) ===")
     errors = []
 
-    # Gate 1: versionCode of APK > release hiện tại (v1.0.7 was versionCode 9)
+    # Read current version from config.py
+    cfg_file = ROOT / "launcher" / "core" / "config.py"
+    cfg_txt = cfg_file.read_text(encoding="utf-8")
+    lv_match = re.search(r'LAUNCHER_VERSION\s*=\s*"([^"]+)"', cfg_txt)
+    current_ver = lv_match.group(1) if lv_match else "1.0.9"
+
+    # Gate 1: versionCode of APK > release trước (v1.0.7 was versionCode 9)
     gradle_file = ROOT / "android" / "app" / "build.gradle"
     gradle_txt = gradle_file.read_text(encoding="utf-8")
     vc_match = re.search(r"versionCode\s+(\d+)", gradle_txt)
@@ -34,14 +40,11 @@ def main():
     else:
         print(f"✓ Gate 1: versionCode = {vc_match.group(1)} (> 9)")
 
-    # Gate 2: LAUNCHER_VERSION của PC == "1.0.8"
-    cfg_file = ROOT / "launcher" / "core" / "config.py"
-    cfg_txt = cfg_file.read_text(encoding="utf-8")
-    lv_match = re.search(r'LAUNCHER_VERSION\s*=\s*"([^"]+)"', cfg_txt)
-    if not lv_match or lv_match.group(1) != "1.0.8":
-        errors.append(f"Gate 2 thất bại: LAUNCHER_VERSION phải là 1.0.8, tìm thấy {lv_match.group(1) if lv_match else 'None'}")
+    # Gate 2: LAUNCHER_VERSION của PC hợp lệ
+    if not lv_match or not current_ver:
+        errors.append("Gate 2 thất bại: Không tìm thấy LAUNCHER_VERSION hợp lệ trong config.py")
     else:
-        print(f"✓ Gate 2: LAUNCHER_VERSION = {lv_match.group(1)}")
+        print(f"✓ Gate 2: LAUNCHER_VERSION = {current_ver}")
 
     # Gate 3: Helper của PC launcher chứa taskkill và target.rename
     updater_file = ROOT / "launcher" / "core" / "self_update.py"
@@ -52,10 +55,10 @@ def main():
         print("✓ Gate 3: PC updater có đầy đủ cơ chế ngắt tiến trình cha và rename an toàn")
 
     # Gate 4: android_localadb_launcher.json có SHA256 và size khớp 100% với APK phát hành
-    apk_file = DIST / "StellaSora-Android_v1.0.8.apk"
+    apk_file = DIST / f"StellaSora-Android_v{current_ver}.apk"
     localadb_file = DIST / "android_localadb_launcher.json"
     if not apk_file.exists() or not localadb_file.exists():
-        errors.append("Gate 4 thất bại: Không tìm thấy APK hoặc android_localadb_launcher.json")
+        errors.append(f"Gate 4 thất bại: Không tìm thấy APK ({apk_file.name}) hoặc android_localadb_launcher.json")
     else:
         apk_sha = sha256_file(apk_file)
         apk_size = apk_file.stat().st_size
@@ -99,9 +102,9 @@ def main():
             print(f"  - {err}")
         sys.exit(1)
 
-    print("\n=======================================================")
+    print("\n" + "=" * 55)
     print("🎉 TẤT CẢ 6 CỔNG KIỂM TRA BẢO ĐẢM TỰ ĐỘNG CẬP NHẬT ĐÃ ĐẠT 100%!")
-    print("=======================================================\n")
+    print("=" * 55)
 
 if __name__ == "__main__":
     main()

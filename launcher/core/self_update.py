@@ -28,7 +28,7 @@ def apply_job(job_path):
     target = Path(j['target']).resolve()
     source = Path(j['source']).resolve()
     backup = target.with_name(target.name + '.preupdate.' + uuid.uuid4().hex)
-    parent_pid = j.get('parent_pid')
+    parent_pids = j.get('parent_pids') or ([j['parent_pid']] if j.get('parent_pid') else [])
 
     if target == Path(sys.executable).resolve():
         raise InstallerError('Helper không được thay chính nó.', 'UPDATE_INVALID')
@@ -45,20 +45,20 @@ def apply_job(job_path):
     if sha256_file(tmp) != j['sha256']:
         raise InstallerError('Bản launcher tạm sai SHA256.', 'HASH_MISMATCH')
 
-    # Gracefully wait for the launcher parent process to exit
-    if parent_pid:
+    # Gracefully wait for the launcher parent processes to exit
+    for pid in parent_pids:
         start_wait = time.monotonic()
-        while time.monotonic() - start_wait < 4.0:
+        while time.monotonic() - start_wait < 3.0:
             try:
-                out = subprocess.check_output(f'tasklist /FI "PID eq {parent_pid}" /NH', shell=True, text=True)
-                if str(parent_pid) not in out:
+                out = subprocess.check_output(f'tasklist /FI "PID eq {pid}" /NH', shell=True, text=True)
+                if str(pid) not in out:
                     break
             except Exception:
                 break
             time.sleep(0.3)
-        # Terminate parent if still running after wait
+        # Terminate parent and its child tree if still running after wait
         try:
-            subprocess.run(f'taskkill /F /PID {parent_pid}', shell=True, capture_output=True)
+            subprocess.run(f'taskkill /F /T /PID {pid}', shell=True, capture_output=True)
         except Exception:
             pass
 
@@ -144,13 +144,21 @@ def schedule_update(source, expected_sha, app_data):
     try: shutil.copy2(source, helper)
     except Exception: shutil.copy2(target, helper)
     job = cache / (uuid.uuid4().hex + '.json')
+    pids = [os.getpid()]
+    try:
+        ppid = os.getppid() if hasattr(os, 'getppid') else None
+        if ppid and ppid > 4:
+            pids.append(ppid)
+    except Exception:
+        pass
     atomic_json(job, {
         'source': str(source),
         'target': str(target),
         'sha256': expected_sha,
         'preimage_sha256': sha256_file(target),
         'timeout': 30,
-        'parent_pid': os.getpid()
+        'parent_pid': os.getpid(),
+        'parent_pids': pids
     })
     subprocess.Popen([str(helper), '--apply-update', str(job)], cwd=str(cache), creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
     return job

@@ -1,10 +1,11 @@
 """Bounded JSON/network adapters for the existing Stella Sora release provider."""
 from __future__ import annotations
-import json,os,re,shutil,time,urllib.request,urllib.parse,uuid,zipfile,hashlib
+import http.client,json,os,re,shutil,time,urllib.request,urllib.parse,uuid,zipfile,hashlib
 from datetime import datetime,timezone
 from pathlib import Path
 from .types import NotificationItem,SupporterData,OperationPhase,OperationEvent
 from .safety import InstallerError,sha256_file,safe_path,relative_name,normalize_manifest,atomic_json
+from .config import LAUNCHER_VERSION
 
 def valid_url(url):
     try:
@@ -15,11 +16,11 @@ def valid_url(url):
 def version_tuple(v):return tuple(int(n) for n in re.findall(r'\d+',str(v).split('-')[0]))
 
 class NetworkService:
-    def __init__(self,update_url=None,notifications_url=None,cache_dir=None,timeout=8):
+    def __init__(self,update_url=None,notifications_url=None,cache_dir=None,timeout=15):
         self.update_url=update_url;self.notifications_url=notifications_url;self.cache_dir=Path(cache_dir) if cache_dir else None;self.timeout=timeout;self.notification_status='unavailable';self.notification_message='Chưa tải thông báo.';self.connection_status='Chưa kiểm tra kết nối';self.notification_version=None
     def _json(self,url,expected_sha=None,expected_size=None):
         if not valid_url(url):raise InstallerError('Endpoint không phải HTTP/HTTPS hợp lệ.','ENDPOINT_INVALID')
-        req=urllib.request.Request(url,headers={'User-Agent':'StellaSora-Launcher/0.9.8','Accept':'application/json'})
+        req=urllib.request.Request(url,headers={'User-Agent':f'StellaSora-Launcher/{LAUNCHER_VERSION}','Accept':'application/json'})
         with urllib.request.urlopen(req,timeout=self.timeout) as r:
             data=r.read(4*1024*1024+1)
             if len(data)>4*1024*1024:raise InstallerError('JSON máy chủ quá lớn.','SCHEMA_INVALID')
@@ -107,7 +108,7 @@ class NetworkService:
                 sums_asset=next((a for a in assets if a.get('name')=='SHA256SUMS.txt'),None)
                 if sums_asset and valid_url(sums_asset.get('browser_download_url','')):
                     try:
-                        sreq=urllib.request.Request(sums_asset['browser_download_url'],headers={'User-Agent':'StellaSora-Launcher'})
+                        sreq=urllib.request.Request(sums_asset['browser_download_url'],headers={'User-Agent':f'StellaSora-Launcher/{LAUNCHER_VERSION}'})
                         with urllib.request.urlopen(sreq,timeout=self.timeout) as sresp:
                             stext=sresp.read(64*1024).decode('utf-8',errors='ignore')
                             for sline in stext.splitlines():
@@ -144,55 +145,96 @@ class NetworkService:
             except Exception as exc:manifest_status='error';manifest_error=str(exc)
         fresh=self.notification_status in ('online','empty') and release_status=='online' and manifest_status=='online'
         return {'notifications':items,'notification_status':self.notification_status,'notification_message':self.notification_message,'notification_version':self.notification_version,'release_status':release_status,'release_version':release.get('tag_name') if release else None,'release_notes':str(release.get('body') or '')[:8000] if release_status=='online' else '', 'release_error':release_error,'translation_version':translation_version,'translation_game':translation_game,'translation_resource':translation_resource,'manifest_status':manifest_status,'manifest_error':manifest_error,'translation_file_count':file_count,'translation_scope':translation_scope,'cache_warning':cache_warning,'update':update,'fresh':fresh,'message':'Đã đọc thông tin mới từ GitHub.' if fresh else 'Đồng bộ chưa đầy đủ. Xem trạng thái từng nguồn bên dưới.','fetched_at':datetime.now(timezone.utc).isoformat()}
-    def download(self,url,dest,size,sha=None,event_cb=None,operation_id='download'):
+    def download(self,url,dest,size,sha=None,event_cb=None,operation_id='download',max_retries=5):
         if not valid_url(url) or not isinstance(size,int) or size<=0:raise InstallerError('Thiếu URL/kích thước tải hợp lệ.','DOWNLOAD_INVALID')
-        dest=Path(dest);dest.parent.mkdir(parents=True,exist_ok=True);part=dest.with_name(dest.name+'.'+uuid.uuid4().hex+'.part');deadline=time.monotonic()+120
-        try:
-            with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'StellaSora-Launcher/0.9.8'}),timeout=self.timeout) as r,part.open('xb') as out:
-                n=0
-                while True:
-                    if time.monotonic()>deadline:raise InstallerError('Tải quá thời hạn. Hãy thử lại.','DOWNLOAD_TIMEOUT')
-                    chunk=r.read(256*1024)
-                    if not chunk:break
-                    n+=len(chunk)
-                    if n>size:raise InstallerError('Máy chủ trả quá kích thước đã kê khai.','SIZE_MISMATCH')
-                    out.write(chunk)
-                    if event_cb:event_cb(OperationEvent(operation_id,OperationPhase.DOWNLOAD,dest.name,n,size,'bytes'))
-                out.flush();os.fsync(out.fileno())
-            if part.stat().st_size!=size or (sha and sha256_file(part)!=sha.lower()):raise InstallerError('Tải thiếu hoặc sai SHA256.','HASH_MISMATCH')
-            os.replace(part,dest);return dest
-        finally:part.unlink(missing_ok=True)
+        dest=Path(dest);dest.parent.mkdir(parents=True,exist_ok=True)
+        if dest.is_file() and dest.stat().st_size==size:
+            if not sha or sha256_file(dest)==sha.lower():
+                if event_cb:event_cb(OperationEvent(operation_id,OperationPhase.DOWNLOAD,dest.name,size,size,'bytes'))
+                return dest
+        tag=(sha[:12] if sha else str(size))
+        part=dest.with_name(f"{dest.name}.{tag}.part")
+        stream_timeout=max(45,self.timeout)
+        total_deadline=time.monotonic()+max(900,int(size/15000))
+        chunk_size=256*1024
+        attempt=0
+        last_error=None
+        while attempt<max_retries:
+            attempt+=1
+            current_size=part.stat().st_size if part.is_file() else 0
+            if current_size>size:
+                part.unlink(missing_ok=True);current_size=0
+            elif current_size==size:
+                if not sha or sha256_file(part)==sha.lower():
+                    os.replace(part,dest);return dest
+                part.unlink(missing_ok=True);current_size=0
+            headers={'User-Agent':f'StellaSora-Launcher/{LAUNCHER_VERSION}'}
+            if current_size>0:
+                headers['Range']=f'bytes={current_size}-'
+            try:
+                req=urllib.request.Request(url,headers=headers)
+                with urllib.request.urlopen(req,timeout=stream_timeout) as resp:
+                    status=getattr(resp,'status',200)
+                    is_resume=(status==206)
+                    if not is_resume and current_size>0:
+                        current_size=0;mode='wb'
+                    else:
+                        mode='ab' if current_size>0 else 'wb'
+                    with part.open(mode) as out:
+                        n=current_size
+                        while True:
+                            if time.monotonic()>total_deadline:
+                                raise InstallerError('Tải quá thời hạn cho phép. Vui lòng thử lại.','DOWNLOAD_TIMEOUT')
+                            chunk=resp.read(chunk_size)
+                            if not chunk:break
+                            n+=len(chunk)
+                            if n>size:raise InstallerError('Máy chủ trả về dung lượng lớn hơn dự kiến.','SIZE_MISMATCH')
+                            out.write(chunk)
+                            if event_cb:event_cb(OperationEvent(operation_id,OperationPhase.DOWNLOAD,dest.name,n,size,'bytes'))
+                        out.flush();os.fsync(out.fileno())
+                if part.stat().st_size!=size:
+                    raise InstallerError(f'Tải chưa đủ dữ liệu ({part.stat().st_size}/{size} bytes).','SIZE_MISMATCH')
+                if sha and sha256_file(part)!=sha.lower():
+                    part.unlink(missing_ok=True)
+                    raise InstallerError('Tệp tải về không khớp mã SHA256.','HASH_MISMATCH')
+                os.replace(part,dest);return dest
+            except (TimeoutError,urllib.error.URLError,http.client.IncompleteRead,ConnectionError,OSError) as exc:
+                last_error=exc
+                if time.monotonic()>total_deadline:break
+                time.sleep(min(5,1.5*attempt))
+                continue
+            except InstallerError:
+                part.unlink(missing_ok=True);raise
+            except Exception as exc:
+                last_error=exc;break
+        err_msg=str(last_error) if last_error else 'Lỗi kết nối mạng.'
+        part.unlink(missing_ok=True)
+        raise InstallerError(f'Tải tệp không thành công sau {attempt} lần thử ({err_msg}).','DOWNLOAD_FAILED')
     def prepare_payload(self,cache_root,manifest_url=None,event_cb=None,operation_id='download'):
-        # Always re-resolve the online release at install time; cached display
-        # metadata never authorizes installation or a downgrade.
         try:release=self.release()
         except Exception:
             if not manifest_url:raise
-            # Explicit custom manifest sources can operate independently; unlike
-            # the default GitHub path, they do not acquire missing file metadata
-            # from a cached release or from asset names.
             release=None
         raw,binding=self._manifest_for_release(release,manifest_url)
         manifest=self._windows_manifest(raw);stage=Path(cache_root)/('payload_'+uuid.uuid4().hex);stage.mkdir(parents=True)
+        downloads_dir=Path(cache_root)/'shared_downloads';downloads_dir.mkdir(parents=True,exist_ok=True)
         release_assets={a['name']:a for a in release['assets']} if release else {}
         assets=release_assets if binding['source']=='release_asset' else {}
         package=raw.get('package_zip',{}) if isinstance(raw.get('package_zip'),dict) else {}
         if binding['source']=='explicit_custom_manifest' and package.get('filename'):
-            # An independent custom manifest cannot inherit an arbitrary ZIP.
-            # Reuse only its explicit exact filename/hash/size package binding.
             candidate=release_assets.get(package['filename']);digest=package.get('sha256');size=package.get('size_bytes')
             if candidate and isinstance(digest,str) and re.fullmatch('[0-9a-fA-F]{64}',digest) and isinstance(size,int) and not isinstance(size,bool) and size>0 and candidate['size']==size and self._asset_digest(candidate)==digest.lower():
                 assets={package['filename']:candidate};binding={**binding,'explicit_package_asset':package['filename'],'explicit_package_sha256':digest.lower()}
         zasset=assets.get(package.get('filename')) if package.get('filename') else next((a for a in assets.values() if 'AssetBundles' in a['name'] and a['name'].endswith('.zip')),None)
         bundle_entries={r:v for r,v in manifest['files'].items() if r.startswith('Persistent_Store/AssetBundles/')}
         if bundle_entries and zasset:
-            # Container size is checked; promotion of payload requires each manifest hash.
             zip_digest=self._asset_digest(zasset);declared_digest=package.get('sha256') or raw.get('asset_bundles_package_sha256');declared_size=package.get('size_bytes') or raw.get('asset_bundles_package_size')
             if declared_digest is not None and (not isinstance(declared_digest,str) or not re.fullmatch('[0-9a-fA-F]{64}',declared_digest)):raise InstallerError('Mã xác minh gói ảnh không hợp lệ.','MANIFEST_INVALID')
             if declared_size is not None and (not isinstance(declared_size,int) or isinstance(declared_size,bool) or declared_size<=0):raise InstallerError('Kích thước gói ảnh không hợp lệ.','MANIFEST_INVALID')
             if declared_digest and zip_digest and declared_digest.lower()!=zip_digest:raise InstallerError('Gói ảnh không khớp bảng kê của bản phát hành.','HASH_MISMATCH')
             if declared_size is not None and declared_size!=zasset['size']:raise InstallerError('Kích thước gói ảnh không khớp bản phát hành.','SIZE_MISMATCH')
-            archive=self.download(zasset['browser_download_url'],stage/'bundles.download',zasset['size'],declared_digest or zip_digest,event_cb,operation_id)
+            archive_cached=downloads_dir/f"{zasset['name']}_{declared_digest or zip_digest}.zip"
+            archive=self.download(zasset['browser_download_url'],archive_cached,zasset['size'],declared_digest or zip_digest,event_cb,operation_id)
             with zipfile.ZipFile(archive) as z:
                 members={};seen=set()
                 for info in z.infolist():
@@ -209,7 +251,6 @@ class NetworkService:
                     target=safe_path(stage,meta['source']);target.parent.mkdir(parents=True,exist_ok=True)
                     with z.open(info) as src,target.open('xb') as out:shutil.copyfileobj(src,out,256*1024)
                     if sha256_file(target)!=meta['sha256']:raise InstallerError('Bundle sai SHA256: '+rel,'HASH_MISMATCH')
-            archive.unlink()
         for rel,meta in manifest['files'].items():
             target=safe_path(stage,meta['source'])
             if target.is_file():continue
@@ -218,6 +259,9 @@ class NetworkService:
             asset=assets.get(Path(meta['source']).name)
             if not url and asset:url=asset['browser_download_url']
             if not url:raise InstallerError('Gói chưa cung cấp đường dẫn tải cho '+rel+'. Nguồn tùy chỉnh cần đường dẫn tệp trực tiếp hoặc một gói ZIP được khai báo đúng tên, kích thước và mã xác minh.','PAYLOAD_UNAVAILABLE')
-            self.download(url,target,meta['size'],meta['sha256'],event_cb,operation_id)
+            cached_item=downloads_dir/f"{Path(meta['source']).name}_{meta['sha256']}"
+            self.download(url,cached_item,meta['size'],meta['sha256'],event_cb,operation_id)
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copy2(cached_item,target)
         manifest['source_metadata']=binding;atomic_json(stage/'patch_manifest.json',manifest);return stage
     def get_supporter_data(self):return SupporterData(status='unavailable',supporters=[],qr_placeholder_text='Thông tin thanh toán do người dùng cung cấp. Danh sách người đồng hành hiện chưa có nguồn dữ liệu.')

@@ -328,8 +328,15 @@ class MainWindow(QMainWindow):
         remaining=snooze_until-time.time()
         if remaining>0:
             self._snooze_timer.start(min(2147483647,max(1,int(remaining*1000)+1)));return
-        result=self._show(UpdateNoticeDialog(version,sync.get('release_notes',''),self))
-        if result==2:
+        has_l_update=bool(sync.get('update',{}).get('has_update') and sync.get('update',{}).get('download_url'))
+        result=self._show(UpdateNoticeDialog(version,sync.get('release_notes',''),self,has_launcher_update=has_l_update))
+        if result==3:
+            self._notice_seen.add(key)
+            if pending.get(channel_key)==version:
+                pending.pop(channel_key,None);self.config_manager.set('release_notice_pending',pending);self.config_manager.save()
+            if has_l_update:
+                QTimer.singleShot(50,lambda:self._confirm_update(sync['update']))
+        elif result==2:
             self.config_manager.set('release_notice_snooze_until',time.time()+24*60*60)
             if not self.config_manager.save():self._show(MessageDialog('Chưa lưu được lựa chọn','Không thể lưu thời gian tắt thông báo. Thông báo có thể xuất hiện lại khi mở launcher.',parent=self,is_error=True))
             self._snooze_timer.start(24*60*60*1000)
