@@ -26,9 +26,9 @@ EXPECTED_SKILLS = {
 
 EXPECTED_MAINSKILL = {
     "MainSkill.405101.1": "Nơi Ánh Sao Hướng Về",
-    "MainSkill.405101.2": "Du Hành Giả Đa Năng hệ Quang",
-    "MainSkill.400301.2": "Du Hành Giả Đa Năng hệ Quang",
-    "MainSkill.400801.2": "Du Hành Giả Đa Năng hệ Thủy",
+    "MainSkill.405101.2": "Du Hành Giả Toàn Năng hệ Quang",
+    "MainSkill.400301.2": "Du Hành Giả Toàn Năng hệ Quang",
+    "MainSkill.400801.2": "Du Hành Giả Toàn Năng hệ Thủy",
     "MainSkill.405901.2": "Tinh Vọng",
 }
 

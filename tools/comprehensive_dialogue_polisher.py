@@ -61,9 +61,37 @@ def fix_character_names(en: str, vi: str) -> str:
 # 2. MASTER GLOSSARY TERM HARMONIZATIONS
 GLOSSARY_RULES = [
     # Monolith
+    (r"\bCự Thạch\b", "Cự Tháp"),
+    (r"\bcự thạch\b", "cự tháp"),
     (r"\bkhối đá khổng lồ\b", "Cự Tháp"),
     (r"\bkhối đá\b(?=.*(?:Philae|leo|tầng|di tích|tháp|bão tuyết))", "Cự Tháp"),
     (r"\bMonolith\b", "Cự Tháp"),
+    
+    # New Star Guild
+    (r"\bCông Hội Tân Tinh\b", "Lữ Đoàn Tân Tinh"),
+    (r"\bcông hội Tân Tinh\b", "lữ đoàn Tân Tinh"),
+    (r"\bNew Star Guild\b", "Lữ Đoàn Tân Tinh"),
+
+    # Dusk Arbiter / Arbiter
+    (r"\bTrọng [tT]ài Hoàng Hôn\b", "Thẩm Phán Hoàng Hôn"),
+    (r"\bTrọng [tT]ài Dusk\b", "Thẩm Phán Hoàng Hôn"),
+    (r"\bDusk Arbiter\b", "Thẩm Phán Hoàng Hôn"),
+
+    # Grace Imperium
+    (r"\bÝ Chí Ân Tứ\b", "Đế Quốc Grace"),
+    (r"\bGrace Imperium\b", "Đế Quốc Grace"),
+
+    # Soul Stone
+    (r"\b[Hh]òn [hH]ồn [tT]hạch\b", "Hồn Thạch"),
+    (r"\b[Vv]iên [hH]ồn [tT]hạch\b", "Hồn Thạch"),
+    (r"\b[Đđ]á linh hồn\b", "Hồn Thạch"),
+    (r"\b[Đđ]á [hH]ồn\b", "Hồn Thạch"),
+
+    # All-Rounder Trekker
+    (r"(?i)\b(?:du hành giả|phượt thủ)\s+đa năng\b", "Du Hành Giả Toàn Năng"),
+
+    # Messis Month
+    (r"\bTháng Messi\b", "Tháng Messis"),
     
     # Creta Trading
     (r"\bCreta Trading\b", "Thương Hội Creta"),
