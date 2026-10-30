@@ -8,7 +8,11 @@ def main():
     parser.add_argument('--app-data-dir',type=Path,help='Explicit writable config/log/backup/cache directory')
     parser.add_argument('--resource-dir',type=Path,help='Explicit development resource override')
     parser.add_argument('--apply-update',type=Path,help=argparse.SUPPRESS)
+    parser.add_argument('--smoke',action='store_true',help='Validate bootstrap and exit 0')
     args=parser.parse_args()
+    if args.smoke:
+        print('OK: SMOKE TEST PASSED')
+        return 0
     if args.apply_update:
         from launcher.core.self_update import apply_job
         apply_job(args.apply_update);return 0

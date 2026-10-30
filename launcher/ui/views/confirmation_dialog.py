@@ -11,8 +11,8 @@ class InfoGlassCard(QFrame):
         super().__init__(parent)
         self.setStyleSheet("""
             QFrame {
-                background: rgba(8, 32, 58, 0.78);
-                border: 1px solid rgba(82, 166, 219, 0.38);
+                background: rgba(235, 242, 247, 0.92);
+                border: 1px solid rgba(192, 180, 157, 0.70);
                 border-radius: 8px;
             }
         """)
@@ -30,7 +30,7 @@ class ConfirmationDialog(ArtDialog):
             height=550 if has_shortcut else 510,
             panel='panels/dialog'
         )
-        self.heading.setStyleSheet('color:#ffccd5;' if is_danger else 'color:#f0f8ff;')
+        self.heading.setStyleSheet('color:#a13d52;' if is_danger else 'color:#304679;')
         self.body.setContentsMargins(10, 4, 10, 4)
         self.body.setSpacing(10)
 
@@ -61,13 +61,13 @@ class ConfirmationDialog(ArtDialog):
             top_row.addStretch()
 
             badge = text_label('Đã nhận diện', 11, '#a6d9fa')
-            badge.setStyleSheet('background: rgba(24, 76, 118, 0.7); border: 1px solid #4da0d4; border-radius: 4px; padding: 2px 8px;')
+            badge.setStyleSheet('background: rgba(217, 239, 239, 0.9); border: 1px solid #c5b69a; border-radius: 4px; padding: 2px 8px;')
             top_row.addWidget(badge)
             fl.addLayout(top_row)
 
             path_lbl = text_label(folder_path, 13, '#eef8ff', bold=True)
             path_lbl.setWordWrap(True)
-            path_lbl.setStyleSheet('color:#eef8ff; font-family: "Consolas", "Courier New", monospace;')
+            path_lbl.setStyleSheet('color:#304679; font-family: "Consolas", "Courier New", monospace;')
             fl.addWidget(path_lbl)
             self.body.addWidget(folder_box)
 

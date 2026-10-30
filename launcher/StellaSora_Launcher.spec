@@ -55,6 +55,7 @@ hiddenimports = [
     "PySide6.QtWidgets",
     "launcher",
     "launcher.core",
+    "launcher.core.vanilla_restore",
     "launcher.ui",
 ]
 

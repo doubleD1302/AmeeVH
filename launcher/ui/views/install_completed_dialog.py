@@ -38,7 +38,7 @@ class InstallCompletedDialog(ArtDialog):
         r1.addWidget(text_label('KẾT QUẢ CÀI ĐẶT VIỆT HÓA', 12, '#7cd4fd', bold=True))
         r1.addStretch()
         badge = text_label('Thành công', 11, '#63f5aa')
-        badge.setStyleSheet('background: rgba(14, 60, 40, 0.75); border: 1px solid #36b37e; border-radius: 4px; padding: 2px 8px;')
+        badge.setStyleSheet('background: rgba(217, 239, 225, 0.95); border: 1px solid #83b79a; color:#305f4f; border-radius: 4px; padding: 2px 8px;')
         r1.addWidget(badge)
         cl.addLayout(r1)
 

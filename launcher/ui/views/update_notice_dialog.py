@@ -7,15 +7,18 @@ from ..components.art_controls import text_label
 
 class UpdateNoticeDialog(ArtDialog):
     def __init__(self, version, notes, parent=None, has_launcher_update=False):
-        super().__init__('Có phiên bản mới', 'Thông tin mới nhất từ GitHub', 'info', parent, width=740, height=560, panel='panels/dialog')
+        super().__init__('Có phiên bản mới', 'Thông tin mới nhất từ GitHub', 'info', parent, width=740, height=560, panel='panels/update')
         title = text_label('Phiên bản ' + str(version), 20, '#eaf7ff', bold=True, wrap=True)
         self.body.addWidget(title)
         text = QPlainTextEdit()
         text.setReadOnly(True)
+        text.setLineWrapMode(QPlainTextEdit.LineWrapMode.WidgetWidth)
+        text.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        text.setMinimumHeight(130)
         text.setPlainText(notes.strip() or 'Bản phát hành chưa cung cấp mô tả thay đổi.')
-        text.setStyleSheet('QPlainTextEdit{background:rgba(5,22,42,130);border:1px solid #326c94;color:#edf8ff;border-radius:8px;font-size:15px;padding:12px;}')
+        text.setStyleSheet('QPlainTextEdit{background:rgba(236,242,247,220);border:1px solid #c7bca8;color:#304679;border-radius:8px;font-size:15px;padding:12px;}')
         self.body.addWidget(text, 1)
-        self.footer.addStretch()
+
         if has_launcher_update:
             update_btn = StarlitButton('Cập nhật Launcher ngay', variant='primary')
             update_btn.setMinimumWidth(0)
@@ -34,3 +37,10 @@ class UpdateNoticeDialog(ArtDialog):
         snooze.setMinimumWidth(0)
         snooze.clicked.connect(lambda: self.done(2))
         self.footer.addWidget(snooze, 1)
+
+        # Release/update captions can wrap to two lines at the default width.
+        # Reserve their height locally; other launcher buttons retain their sizes.
+        for index in range(self.footer.count()):
+            button = self.footer.itemAt(index).widget()
+            if isinstance(button, StarlitButton):
+                button.setMinimumHeight(72)

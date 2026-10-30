@@ -43,6 +43,7 @@ def build_apk_v120():
         "ANDROID_SDK_ROOT": str(sdk),
         "ANDROID_USER_HOME": str(work / "android-user"),
         "GRADLE_USER_HOME": str(gradle_home),
+        "GRADLE_RO_DEP_CACHE": str(shared),
         "TMP": str(work / "tmp"),
         "TEMP": str(work / "tmp"),
     })

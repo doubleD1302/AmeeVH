@@ -10,7 +10,8 @@ from ..core.game_detection import GameDetector,find_all_potential_game_installat
 from ..core.installer import PatchInstaller
 from ..core.rollback import RollbackEngine
 from ..core.network import NetworkService
-from ..core.update_notice import translation_state,newer,version_parts
+from ..core.update_notice import translation_state,newer,version_parts,detect_new_publisher_version
+from ..core.vanilla_restore import VanillaRestoreEngine
 from ..core.types import GameInfo,OperationEvent
 from ..core.self_update import schedule_update
 from .assets import AssetManager
@@ -43,7 +44,7 @@ class MainWindow(QMainWindow):
         area=QGuiApplication.primaryScreen().availableGeometry();self.setMinimumSize(min(480,area.width()),min(320,area.height()));self.resize(min(1280,area.width()-24),min(900,area.height()-24));self.move(area.center()-self.rect().center())
         central=QWidget();central.setObjectName('launcherRoot');central.setStyleSheet('#launcherRoot{background:transparent;}');self.setCentralWidget(central);l=QVBoxLayout(central);l.setContentsMargins(0,0,0,0);l.setSpacing(0)
         self.title_bar=TitleBar(self);self.title_bar.navigate_requested.connect(self._handle_navigation);self.title_bar.minimize_requested.connect(self.showMinimized);self.title_bar.close_requested.connect(self.close);self.setMenuWidget(self.title_bar)
-        scroll=QScrollArea();scroll.setWidgetResizable(True);scroll.setFrameShape(QScrollArea.Shape.NoFrame);scroll.setStyleSheet('QScrollArea{background:transparent;border:0;}QScrollArea>QWidget>QWidget{background:transparent;}');self.overview_view=OverviewView();self.overview_view.setMinimumHeight(650);scroll.setWidget(self.overview_view);l.addWidget(scroll,1)
+        scroll=QScrollArea();scroll.setWidgetResizable(True);scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff);scroll.setFrameShape(QScrollArea.Shape.NoFrame);scroll.setStyleSheet('QScrollArea{background:transparent;border:0;}QScrollArea>QWidget>QWidget{background:transparent;}');self.overview_view=OverviewView();self.overview_view.setMinimumHeight(650);scroll.setWidget(self.overview_view);l.addWidget(scroll,1)
         v=self.overview_view;v.auto_detect_requested.connect(self._auto_detect);v.install_requested.connect(self._on_install_clicked);v.rollback_requested.connect(self._on_rollback_clicked);v.verify_requested.connect(self._on_verify_clicked);v.browse_requested.connect(self._browse);v.launch_requested.connect(self._on_launch_clicked);v.navigate_requested.connect(self._handle_navigation);v.view_notifications_requested.connect(lambda:self._handle_navigation('notifications'));v.notification_selected.connect(self._open_notifications);v.check_translation_requested.connect(self._check_translation_version)
         self.overview_view.update_game_status(self.current_game_info)
         self._release_timer=QTimer(self);self._release_timer.setInterval(30*60*1000);self._release_timer.timeout.connect(lambda:self._sync_github(automatic=True));self._release_timer.start()
@@ -217,6 +218,35 @@ class MainWindow(QMainWindow):
         info=self.current_game_info;state=self._refresh_translation_state()
         if not state['can_install']:
             self._show(MessageDialog('Chưa thể cài Việt hoá',state['message'],parent=self,is_error=True));return
+
+        # Kiểm tra nếu nhà phát hành có bản cập nhật mới
+        manifest_meta = {
+            'client_game_version': self._github_sync_state.get('translation_game', '2.0.1'),
+            'resource_version': self._github_sync_state.get('translation_resource', '2610291554')
+        }
+        has_new_pub, pub_reason = detect_new_publisher_version(info, manifest_meta)
+        if has_new_pub:
+            v_engine = VanillaRestoreEngine(self.path_manager.backup_root, self.path_manager.journals_dir)
+            try:
+                v_engine.restore_vanilla(root)
+            except Exception:
+                pass
+            self.current_game_info = self._detected()
+            self._render_game_info(self.current_game_info)
+            self._refresh_translation_state()
+
+            dialog = ConfirmationDialog(
+                'Game mới cập nhật tài nguyên mới',
+                f'Phát hiện game có bản cập nhật mới từ nhà phát hành ({pub_reason}).\n\n'
+                f'Launcher đã lập tức khôi phục toàn bộ dữ liệu gốc nguyên bản (chưa Việt hoá) để bảo toàn tệp game.\n\n'
+                f'Vui lòng mở game để cập nhật tài nguyên mới trước khi cài Việt hoá!',
+                'Mở Game ngay',
+                parent=self
+            )
+            if self._show(dialog) == QDialog.DialogCode.Accepted:
+                self._on_launch_clicked()
+            return
+
         is_update=state['available']
         local=self.config_manager.get('payload_path','');channel_valid=self._configure_network()
         if not local and not channel_valid:
@@ -253,12 +283,18 @@ class MainWindow(QMainWindow):
                 'Sau khi cài bằng launcher này, hai thao tác sẽ dùng biên bản và bản sao lưu được tạo trong lần cài.',parent=self));return None
         return info.game_path
     def _on_rollback_clicked(self):
-        root=self._action_target('Khôi phục')
+        root=self._action_target('Khôi phục', require_receipt=False)
         if root is None:return
-        r=self.current_game_info.installed_receipt or {}
-        if self._confirm('KHÔI PHỤC TRẠNG THÁI TRƯỚC CÀI','Thư mục: '+str(root)+'\nBackup: '+str(r.get('backup_dir','Chưa xác định'))+'\n\nChỉ phục hồi khi các tệp hiện tại còn khớp bản đã cài. Nếu game đã cập nhật, thao tác sẽ báo xung đột.','Khôi phục'):
+        if self._confirm(
+            'KHÔI PHỤC DỮ LIỆU GỐC NGUYÊN BẢN',
+            'Thư mục: '+str(root)+'\n\n'
+            'Thao tác này sẽ gỡ bỏ hoàn toàn bản Việt hóa và phục hồi toàn bộ dữ liệu game về trạng thái gốc nguyên bản từ nhà phát hành (bản hoàn chỉnh, chưa Việt hóa).\n\n'
+            'Bạn có chắc chắn muốn khôi phục dữ liệu gốc?',
+            'Khôi phục dữ liệu gốc'
+        ):
             def work(cb,op):
-                RollbackEngine(self.path_manager.backup_root,self.path_manager.journals_dir).rollback(root,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':'✓ Hoàn tất khôi phục! Đã đưa game về trạng thái nguyên bản.'}
+                r = RollbackEngine(self.path_manager.backup_root,self.path_manager.journals_dir).rollback(root,operation_id=op,event_cb=cb)
+                return {'game':self._detected(),'message':r.get('message','✓ Hoàn tất khôi phục! Đã đưa game về dữ liệu gốc nguyên bản của nhà phát hành.')}
             self._start('rollback',work)
     def _on_verify_clicked(self):
         root=self._action_target('Kiểm tra tệp')

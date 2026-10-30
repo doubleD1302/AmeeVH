@@ -1,7 +1,7 @@
 """Shared decorated shell and a blurred snapshot of the actual parent scene."""
-from PySide6.QtCore import Qt,QRectF,QSize
+from PySide6.QtCore import Qt,QRectF,QSize,QTimer
 from PySide6.QtGui import QPainter,QColor,QFont
-from PySide6.QtWidgets import QDialog,QWidget,QVBoxLayout,QHBoxLayout,QGraphicsBlurEffect,QApplication,QLayout
+from PySide6.QtWidgets import QDialog,QWidget,QVBoxLayout,QHBoxLayout,QGraphicsBlurEffect,QApplication,QLayout,QBoxLayout
 from ..assets import AssetManager
 from ..typography import font as ui_font
 from .starlit_button import StarlitButton
@@ -14,19 +14,30 @@ class ModalScrim(QWidget):
         p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing,True);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);p.drawPixmap(self.rect(),self.image);AssetManager.get().paint(p,'controls/modal_scrim',QRectF(self.rect()),'stretch')
 class ArtDialog(QDialog):
     def __init__(self,title,subtitle='',icon='star_small',parent=None,width=1160,height=780,panel='panels/modal'):
-        super().__init__(parent);self.panel=panel;self.setWindowFlags(Qt.WindowType.FramelessWindowHint|Qt.WindowType.Dialog);self.setWindowModality(Qt.WindowModality.WindowModal);self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground,True);self.setWindowTitle(title);self.resize(width,height)
-        self.root=QVBoxLayout(self);self.root.setContentsMargins(48,42,48,64);self.root.setSpacing(12)
+        super().__init__(parent);self.panel=panel;self.panel_kind={'panels/guide':'guide','panels/support':'support','panels/update':'update','panels/confirm':'confirm','panels/dialog':'confirm'}.get(panel,'guide');self._large_panel_art=panel=='panels/modal' and width>=980 and height>=700;self.setWindowFlags(Qt.WindowType.FramelessWindowHint|Qt.WindowType.Dialog);self.setWindowModality(Qt.WindowModality.WindowModal);self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground,True);self.setWindowTitle(title);self.resize(width,height)
+        self.root=QVBoxLayout(self);self.root.setContentsMargins(52,64,52,64);self.root.setSpacing(12)
         header=QHBoxLayout();self.header=header;header.setSpacing(15)
-        if icon:header.addWidget(AssetImage('icons/'+icon+'_white' if icon!='star_small' else 'decor/star_small',36))
-        text=QVBoxLayout();text.setSpacing(3);self.heading=text_label(title,29,bold=True);self.heading.setFont(ui_font(29,QFont.Weight.Bold));text.addWidget(self.heading);self.subtitle=text_label(subtitle,14,'#a9cdea',wrap=True);text.addWidget(self.subtitle);header.addLayout(text,1);self.header_extra=QHBoxLayout();header.addLayout(self.header_extra)
+        if icon and icon!='star_small':header.addWidget(AssetImage('icons/'+icon+'_white',32))
+        text=QVBoxLayout();text.setSpacing(3);self.heading=text_label(title,27,bold=True,wrap=True);self.heading.setFont(ui_font(27,QFont.Weight.Bold));text.addWidget(self.heading);self.subtitle=text_label(subtitle,14,'#5f7094',wrap=True);text.addWidget(self.subtitle);header.addLayout(text,1);self.header_extra=QHBoxLayout();header.addLayout(self.header_extra)
         close=StarlitButton('',variant='ghost',icon='close');close.setFixedSize(36,36);close.setToolTip('Đóng');close.setAccessibleName('Đóng hộp thoại');close.clicked.connect(self.reject);header.addWidget(close,0,Qt.AlignmentFlag.AlignTop);self.root.addLayout(header);self.root.addWidget(ArtDivider())
         self.body_widget=QWidget();self.body_widget.setMinimumWidth(0);self.body=QVBoxLayout(self.body_widget);self.body.setContentsMargins(0,0,0,0);self.body.setSpacing(12);self.body_scroll=scroll_area(self.body_widget);self.root.addWidget(self.body_scroll,1);self.root.setSizeConstraint(QLayout.SizeConstraint.SetNoConstraint)
         self.footer=QHBoxLayout();self.footer.setSpacing(12);self.root.addWidget(ArtDivider());self.root.addLayout(self.footer)
     def compact_layout(self,width):
         if width<900 and not getattr(self,'_compact',False):
-            self._compact=True;self.root.setContentsMargins(28,30,28,60)
-            self.header.removeItem(self.header_extra);self.header_extra.setParent(None);self.root.insertLayout(2,self.header_extra)
+            self._compact=True
+            self.header.removeItem(self.header_extra);self.root.insertLayout(2,self.header_extra)
             f=self.heading.font();f.setPixelSize(23);self.heading.setFont(f)
+        self._apply_panel_layout()
+    def _apply_panel_layout(self):
+        from ..panel_geometry import panel_content_rect
+        import math
+        safe=panel_content_rect(QRectF(self.rect()).adjusted(12,12,-12,-12),self.panel_kind)
+        self.root.setContentsMargins(math.ceil(safe.left()),math.ceil(safe.top()),math.ceil(self.width()-safe.right()),math.ceil(self.height()-safe.bottom()))
+        self.footer.setDirection(QBoxLayout.Direction.TopToBottom if safe.width()<440 else QBoxLayout.Direction.LeftToRight)
+        callback=getattr(self,'_responsive_callback',None)
+        if callback:callback(safe.width())
+    def resizeEvent(self,e):
+        self._apply_panel_layout();super().resizeEvent(e)
     def _can_close(self):
         p=self.parentWidget()
         return not (p and getattr(p,'active_worker',None) and getattr(p,'operation_kind','') in ('install','rollback','recover','apply_self_update'))
@@ -40,11 +51,6 @@ class ArtDialog(QDialog):
         if self._can_close():e.accept()
         else:e.ignore()
     def paintEvent(self,e):
-        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing,True);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);p.setRenderHint(QPainter.RenderHint.TextAntialiasing,True);a=AssetManager.get();r=QRectF(self.rect()).adjusted(16,16,-16,-16);a.paint(p,self.panel,r)
-        if a.meta(self.panel).get('avoid_r04_ornament_overlays'):return
-        a.paint(p,'supplemental/decor/glass_luminance',r,'stretch')
-        a.paint(p,'supplemental/decor/header_wash',QRectF(18,18,self.width()-36,116),'stretch')
-        a.paint(p,'supplemental/decor/crown_top_left',QRectF(0,0,248,136),'contain')
-        a.paint(p,'supplemental/decor/header_trail_right',QRectF(self.width()-322,18,300,114),'contain')
-        a.paint(p,'supplemental/decor/petal_sweep_left',QRectF(18,self.height()-196,280,175),'contain')
-        a.paint(p,'supplemental/decor/petal_sweep_right',QRectF(self.width()-360,self.height()-234,340,212),'contain')
+        from ..journal_paint import panel,panel_asset
+        p=QPainter(self);r=QRectF(self.rect()).adjusted(12,12,-12,-12)
+        if not panel_asset(p,r,self.panel_kind,modal=True):panel(p,r)

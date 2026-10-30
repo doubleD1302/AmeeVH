@@ -104,6 +104,8 @@ def upload_asset(rel: dict, file_path: Path, headers: dict, existing_assets: dic
     upload_url_tmpl = rel["upload_url"].split("{")[0]
 
     force_reupload = {
+        "StellaSora-Windows_v1.2.0.exe",
+        "StellaSora-Android_v1.2.0.apk",
         "android_patch_manifest.json",
         "patch_manifest.json",
         "android_localadb_launcher.json",

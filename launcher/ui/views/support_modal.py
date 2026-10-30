@@ -4,14 +4,14 @@ from PySide6.QtGui import QPainter,QColor,QPen,QFont,QPixmap,QGuiApplication
 from pathlib import Path
 import json,hashlib
 from ..typography import font as ui_font
-from PySide6.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QFrame,QButtonGroup
+from PySide6.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QFrame,QButtonGroup,QBoxLayout
 from ..assets import AssetManager
 from ..components.modal_shell import ArtDialog
 from ..components.starlit_button import StarlitButton
 from ..components.art_controls import AssetImage,ArtInput,ArtTableRow,AlertStrip,ArtDivider,text_label,scroll_area
 class PaymentQR(QWidget):
     def __init__(self,parent=None):
-        super().__init__(parent);self.setMinimumHeight(280);self.setMaximumHeight(320);self.master=QPixmap();self.error='Chọn phương thức để xem mã QR.'
+        super().__init__(parent);self.setMinimumHeight(220);self.setMaximumHeight(260);self.master=QPixmap();self.error='Chọn phương thức để xem mã QR.'
     def set_method(self,method,asset_dir):
         self.master=QPixmap();self.error=''
         try:
@@ -26,7 +26,7 @@ class PaymentQR(QWidget):
     def paintEvent(self,event):
         painter=QPainter(self)
         if self.master.isNull():
-            painter.setPen(QColor('#c4e6ff'));painter.drawText(QRectF(16,16,self.width()-32,self.height()-32),Qt.AlignmentFlag.AlignCenter|Qt.TextFlag.TextWordWrap,self.error);return
+            painter.setPen(QColor('#405682'));painter.drawText(QRectF(16,16,self.width()-32,self.height()-32),Qt.AlignmentFlag.AlignCenter|Qt.TextFlag.TextWordWrap,self.error);return
         # Keep the exact supplied raster, preserve aspect, and never upscale
         # beyond its physical master pixels. White padding is the quiet zone.
         dpr=max(1.,self.devicePixelRatioF());scale=min((self.width()-48)/self.master.width(),(self.height()-48)/self.master.height(),1./dpr)
@@ -35,7 +35,7 @@ class PaymentQR(QWidget):
 class EmptySupport(QWidget):
     def __init__(self,parent=None):super().__init__(parent);self.setMinimumHeight(245)
     def paintEvent(self,e):
-        p=QPainter(self);a=AssetManager.get();a.paint(p,'supplemental/decor/empty_constellation',QRectF((self.width()-245)/2,12,245,140),'contain');p.setPen(QColor('#c5e7ff'));p.drawText(QRectF(10,156,self.width()-20,30),Qt.AlignmentFlag.AlignCenter,'Danh sách chưa có dữ liệu');p.setPen(QColor('#9bc4e3'));p.drawText(QRectF(20,190,self.width()-40,50),Qt.AlignmentFlag.AlignCenter|Qt.TextFlag.TextWordWrap,'Chỉ hiển thị thông tin sau khi có nguồn được xác minh.')
+        p=QPainter(self);a=AssetManager.get();p.setPen(QColor('#405682'));p.drawText(QRectF(10,156,self.width()-20,30),Qt.AlignmentFlag.AlignCenter,'Danh sách chưa có dữ liệu');p.setPen(QColor('#637596'));p.drawText(QRectF(20,190,self.width()-40,50),Qt.AlignmentFlag.AlignCenter|Qt.TextFlag.TextWordWrap,'Chỉ hiển thị thông tin sau khi có nguồn được xác minh.')
 class PaymentTile(StarlitButton):
     # The authored selected skin already shows selection. Painting a second
     # radio glyph over the caption would reintroduce the overlap defect.
@@ -43,11 +43,11 @@ class PaymentTile(StarlitButton):
 class FactIcon(QWidget):
     def __init__(self,name):super().__init__();self.name=name;self.setFixedSize(42,42)
     def paintEvent(self,e):
-        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing);p.setPen(QPen(QColor('#5acbff'),1));p.setBrush(QColor('#1a5d8b'));p.drawEllipse(QRectF(2,2,38,38));AssetManager.get().paint(p,'icons/'+self.name+'_white',QRectF(9,9,24,24),'contain')
+        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing);p.setPen(QPen(QColor('#c7b79a'),1));p.setBrush(QColor('#d8f0ef'));p.drawEllipse(QRectF(2,2,38,38));AssetManager.get().paint(p,'icons/'+self.name+'_white',QRectF(9,9,24,24),'contain')
 class SupportModal(ArtDialog):
     def __init__(self,supporter_data,parent=None):
-        super().__init__('Ủng hộ dự án','Cảm ơn bạn đã tiếp sức cho Stella Sora Việt hoá.','star_small',parent,width=1160,height=790);self.body_widget.setMinimumWidth(820);self.supporter_data=supporter_data
-        columns=QHBoxLayout();columns.setSpacing(25);left=QWidget();ll=QVBoxLayout(left);ll.setContentsMargins(0,0,5,0);ll.setSpacing(11);ll.addWidget(text_label('Gửi một chút động viên',23,bold=True,wrap=True));ll.addWidget(text_label('Sự ủng hộ của bạn giúp nhóm duy trì công cụ và tiếp tục hoàn thiện bản dịch.',15,'#bddaf1',wrap=True));ll.addSpacing(5);ll.addWidget(text_label('Chọn phương thức',14,bold=True));methods=QHBoxLayout();methods.setSpacing(8)
+        super().__init__('Ủng hộ dự án','Cảm ơn bạn đã tiếp sức cho Stella Sora Việt hoá.','star_small',parent,width=1160,height=790,panel='panels/support');self.body_widget.setMinimumWidth(0);self.supporter_data=supporter_data
+        columns=QHBoxLayout();self.support_columns=columns;columns.setSpacing(20);left=QWidget();ll=QVBoxLayout(left);ll.setContentsMargins(0,0,5,0);ll.setSpacing(11);ll.addWidget(text_label('Gửi một chút động viên',23,bold=True,wrap=True));ll.addWidget(text_label('Sự ủng hộ của bạn giúp nhóm duy trì công cụ và tiếp tục hoàn thiện bản dịch.',15,'#bddaf1',wrap=True));ll.addSpacing(5);ll.addWidget(text_label('Chọn phương thức',14,bold=True));methods=QHBoxLayout();methods.setSpacing(8)
         self.payment_dir=AssetManager.get().ui_dir/'support_r09';self.payment_methods=[];self.payment_group=QButtonGroup(self);self.payment_group.setExclusive(True)
         try:
             data=json.loads((self.payment_dir/'payment_methods.json').read_text(encoding='utf8'));candidates=data['methods']
@@ -69,14 +69,21 @@ class SupportModal(ArtDialog):
         else:self.copy_account.setEnabled(False)
         for text,icon in [('Ủng hộ hoàn toàn tự nguyện.','heart'),('Bản Việt hoá luôn miễn phí.','gift')]:
             row=QHBoxLayout();row.setSpacing(12);row.addWidget(FactIcon(icon));row.addWidget(text_label(text,13,wrap=True),1);ll.addLayout(row)
-        columns.addWidget(scroll_area(left),46);line=QFrame();line.setFixedWidth(1);line.setStyleSheet('background:#39769d');columns.addWidget(line)
-        right=QWidget();rl=QVBoxLayout(right);rl.setContentsMargins(0,0,0,0);rl.setSpacing(10);rl.addWidget(text_label('Những người bạn đồng hành',23,bold=True,wrap=True));rl.addWidget(text_label('Mỗi sự ủng hộ là một lời động viên.',14,'#bddaf1'));self.search=ArtInput(placeholder='Tìm tên người đồng hành',icon='search');self.search.textChanged.connect(self._populate);rl.addWidget(self.search)
+        self.payment_scroll=scroll_area(left);columns.addWidget(self.payment_scroll,46);line=QFrame();self.support_divider=line;line.setFixedWidth(1);line.setStyleSheet('background:#c9bda7');columns.addWidget(line)
+        right=QWidget();self.support_right=right;rl=QVBoxLayout(right);rl.setContentsMargins(0,0,0,0);rl.setSpacing(10);rl.addWidget(text_label('Những người bạn đồng hành',23,bold=True,wrap=True));rl.addWidget(text_label('Mỗi sự ủng hộ là một lời động viên.',14,'#bddaf1'));self.search=ArtInput(placeholder='Tìm tên người đồng hành',icon='search');self.search.textChanged.connect(self._populate);rl.addWidget(self.search)
         header=QWidget();header.setFixedHeight(38);hl=QHBoxLayout(header);hl.setContentsMargins(12,0,12,0);hl.addWidget(text_label('Người đồng hành',13,'#bde9ff',True),3);hl.addWidget(text_label('Ủng hộ',13,'#bde9ff',True),2);hl.addWidget(text_label('Ngày',12,'#bde9ff',True),2)
         class Header(QWidget):
             def paintEvent(self,e):p=QPainter(self);AssetManager.get().paint(p,'controls/table_header',QRectF(self.rect()),'stretch')
         arthead=Header();arthead.setFixedHeight(38);artlayout=QHBoxLayout(arthead);artlayout.setContentsMargins(0,0,0,0);artlayout.addWidget(header);rl.addWidget(arthead)
         self.rows=QWidget();self.rows_layout=QVBoxLayout(self.rows);self.rows_layout.setContentsMargins(0,0,0,0);self.rows_layout.setSpacing(0);rl.addWidget(scroll_area(self.rows),1);rl.addWidget(text_label('Trân trọng sự đồng hành của bạn.',12,'#bed9f0'));columns.addWidget(right,54);self.body.addLayout(columns,1)
-        reminder=text_label('Bản Việt hoá luôn luôn miễn phí.',23,'#a4efff',True,True);reminder.setFont(ui_font(23,QFont.Weight.Bold));reminder.setMinimumHeight(40);reminder.setAccessibleName('Bản Việt hoá luôn luôn miễn phí.');self.footer.addWidget(reminder,1);self.footer.addSpacing(16);b=StarlitButton('Đóng',variant='primary');b.setMinimumWidth(150);b.clicked.connect(self.reject);self.footer.addWidget(b);self._populate()
+        reminder=text_label('Bản Việt hoá luôn luôn miễn phí.',23,'#a4efff',True,True);reminder.setFont(ui_font(23,QFont.Weight.Bold));reminder.setMinimumHeight(40);reminder.setAccessibleName('Bản Việt hoá luôn luôn miễn phí.');self.footer.addWidget(reminder,1);self.footer.addSpacing(16);b=StarlitButton('Đóng',variant='primary');b.setMinimumWidth(150);b.clicked.connect(self.reject);self.footer.addWidget(b);self._populate();self._responsive_callback=self._layout_support_columns;self._apply_panel_layout()
+    def _layout_support_columns(self,width):
+        compact=width<760
+        self.support_columns.setDirection(QBoxLayout.Direction.TopToBottom if compact else QBoxLayout.Direction.LeftToRight)
+        self.support_divider.setVisible(not compact)
+        self.payment_scroll.setMinimumHeight(430 if compact else 0)
+        self.support_right.setMinimumHeight(340 if compact else 0)
+        self.body_widget.setMinimumHeight(800 if compact else 320)
     def _select_payment(self,method):
         self.selected_payment=method;self.payment_qr.set_method(method,self.payment_dir)
         account=method.get('account_number');display=account or method.get('account_masked') or 'Quét mã để xem người nhận'

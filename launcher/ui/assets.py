@@ -2,13 +2,13 @@
 from __future__ import annotations
 import json,logging
 from pathlib import Path
-from PySide6.QtCore import Qt,QRectF,QMargins
-from PySide6.QtGui import QPixmap,QIcon,QPainter
+from PySide6.QtCore import Qt,QRectF,QMargins,QSize
+from PySide6.QtGui import QPixmap,QIcon,QPainter,QImageReader
 logger=logging.getLogger('launcher.assets')
 class AssetManager:
     _instance=None
     def __init__(self,resource_dir):
-        self.resource_dir=Path(resource_dir);self.ui_dir=self.resource_dir/'ui';self.branding_dir=self.resource_dir/'branding';self._cache={};self._icons={}
+        self.resource_dir=Path(resource_dir);self.ui_dir=self.resource_dir/'ui';self.branding_dir=self.resource_dir/'branding';self._cache={};self._icons={};self._journey_cache={}
         self.manifest=json.loads((self.ui_dir/'asset_manifest.json').read_text(encoding='utf8'));self.entries={a['id']:a for a in self.manifest['assets']};self.supplement_dir=self.ui_dir/'supplemental'
         extra=json.loads((self.supplement_dir/'asset_manifest.json').read_text(encoding='utf8'))
         self.entries.update({a['id']:{**a,'_supplement':True} for a in extra['assets']})
@@ -28,7 +28,42 @@ class AssetManager:
             if pix.isNull():logger.error('Missing or invalid asset: %s',f)
             self._cache[relative_path]=pix
         return self._cache[relative_path]
+    def journey_pixmap(self,path,square=False):
+        """Decode lazily to a bounded, aspect-preserving in-memory raster."""
+        path=Path(path);key=(str(path),bool(square))
+        if key in self._journey_cache:return self._journey_cache[key]
+        if not path.is_file():return None
+        reader=QImageReader(str(path));reader.setAutoTransform(True)
+        size=reader.size()
+        if not size.isValid() or size.width()<=0 or size.height()<=0:
+            logger.warning('Invalid journey image metadata: %s',path);return None
+        limit=128 if square else 192
+        scaled=size.scaled(QSize(limit,limit),Qt.AspectRatioMode.KeepAspectRatio)
+        reader.setScaledSize(scaled);img=reader.read()
+        if img.isNull():
+            logger.warning('Cannot load journey image: %s: %s',path,reader.errorString());return None
+        if img.width()>limit or img.height()>limit:img=img.scaled(QSize(limit,limit),Qt.AspectRatioMode.KeepAspectRatio,Qt.TransformationMode.SmoothTransformation)
+        if square:
+            pix=QPixmap(limit,limit);pix.fill(Qt.GlobalColor.transparent)
+            painter=QPainter(pix);painter.drawImage((limit-img.width())//2,(limit-img.height())//2,img);painter.end()
+        else:pix=QPixmap.fromImage(img)
+        self._journey_cache[key]=pix
+        return pix
     def pixmap(self,asset_id):
+        if asset_id.startswith('icons/'):
+            name,_,variant=asset_id[6:].rpartition('_')
+            if name and variant in ('white','cyan','ink','muted'):
+                candidate=self.ui_dir/'journey_r01'/'icons'/(name+'.png')
+                pix=self.journey_pixmap(candidate,square=True)
+                if pix is not None:
+                    if variant!='muted':return pix
+                    key=('journey-disabled',str(candidate))
+                    if key not in self._journey_cache:
+                        dimmed=QPixmap(pix.size());dimmed.fill(Qt.GlobalColor.transparent)
+                        painter=QPainter(dimmed);painter.setOpacity(0.48);painter.drawPixmap(0,0,pix);painter.end();self._journey_cache[key]=dimmed
+                    return self._journey_cache[key]
+                replacement='icons/'+name+('_muted' if variant=='muted' else '_ink')
+                if replacement in self.entries:asset_id=replacement
         m=self.entries[asset_id];rel=m.get('png_4x') or m.get('png_2x') or m['png'];return self.get_pixmap(str(self.skin_dir/rel) if m.get('_skin') else (str(self.supplement_dir/rel) if m.get('_supplement') else rel))
     def supplement(self,name):
         key='supplement:'+name
@@ -58,7 +93,40 @@ class AssetManager:
         m=self.meta(asset_id);box=m.get('content_rect',[20,20,m.get('width',40)-40,m.get('height',40)-40]);w=m.get('width',1);h=m.get('height',1);s=min(1.,width/w,height/h)
         return QMargins(round(box[0]*s),round(box[1]*s),round((w-box[0]-box[2])*s),round((h-box[1]-box[3])*s))
     def paint(self,painter,asset_id,rect,mode='nine'):
-        painter.setRenderHint(QPainter.RenderHint.Antialiasing,True);painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);painter.setRenderHint(QPainter.RenderHint.TextAntialiasing,True);rect=QRectF(rect);pix=self.pixmap(asset_id);m=self.meta(asset_id)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing,True);painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform,True);painter.setRenderHint(QPainter.RenderHint.TextAntialiasing,True);rect=QRectF(rect)
+        if asset_id=='controls/modal_scrim':
+            from PySide6.QtGui import QColor
+            painter.fillRect(rect,QColor(7,21,40,155));return
+        if asset_id.startswith('badges/'):
+            from .journal_paint import badge
+            badge(painter,rect,asset_id.split('/',1)[1]);return
+        if asset_id.startswith('status/'):
+            from .journal_paint import status
+            status(painter,rect,asset_id.split('/',1)[1]);return
+        if asset_id.startswith('controls/checkbox_'):
+            from .journal_paint import indicator
+            state=asset_id.split('checkbox_',1)[1]
+            indicator(painter,rect,'checked' in state,'disabled' in state,False);return
+        if asset_id.startswith('controls/toggle_'):
+            from .journal_paint import indicator
+            state=asset_id.split('toggle_',1)[1]
+            indicator(painter,rect,state.endswith('on'),'disabled' in state,True);return
+        if asset_id.startswith('controls/scrollbar_'):
+            from .journal_paint import scroll_part
+            scroll_part(painter,rect,asset_id.endswith('thumb'));return
+        if asset_id.startswith('controls/step_'):
+            from .journal_paint import step
+            parts=asset_id.split('_');step(painter,rect,parts[-2],parts[-1]);return
+        if asset_id=='controls/avatar':
+            from .journal_paint import avatar
+            avatar(painter,rect);return
+        if asset_id.startswith(('controls/list_row_', 'controls/table_row_', 'controls/alert_')) or asset_id=='controls/table_header':
+            from .journal_paint import row
+            row(painter,rect,asset_id.rsplit('_',1)[-1]);return
+        if asset_id.startswith('controls/input_'):
+            from .journal_paint import field
+            field(painter,rect,asset_id.rsplit('_',1)[-1]);return
+        pix=self.pixmap(asset_id);m=self.meta(asset_id)
         if mode=='nine' and m.get('render_mode') in ('uniform','contain'):mode='contain'
         if pix.isNull() or rect.width()<=0 or rect.height()<=0:return
         if mode=='contain':

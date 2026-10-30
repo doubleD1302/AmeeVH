@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Stella Sora — Trạm Dịch Thuật Cốt Truyện</title>
+    
+    <!-- PWA & Favicon -->
+    <link rel="icon" type="image/png" href="web_assets/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#070c18">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Fonts: Chuẩn quốc tế, 100% tiếng Việt hoàn hảo, cực kỳ sắc nét và êm mắt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>try { if (localStorage.getItem("stella_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (_) {}</script>
+    <link rel="stylesheet" href="assets/soft-sky/theme.css">
+    <link rel="stylesheet" href="assets/soft-sky/theme-dark.css">
+</head>
+<body>
+    <!-- Scenic Wallpaper Background -->
+    <div class="scenic-wallpaper" id="scenicWallpaper"></div>
+    <div class="scenic-overlay-gradient"></div>
+
+    <!-- Hidden Audio Player Elements -->
+    <audio id="bgmAudio" loop src="official_assets/bgm-90e5d63f.mp3"></audio>
+    <audio id="voiceAudio"></audio>
+
+    <!-- Floating XP Toast -->
+    <div id="toastNotification" class="toast-popup">
+        <span>⭐</span>
+        <span id="toastNotificationText">+50 EXP! Đã cập nhật lên Google Sheets!</span>
+    </div>
+
+    <!-- Header HUD -->
+    <header>
+        <div class="brand-box" onclick="openProfileModal()">
+            <img class="brand-logo-img" src="web_assets/logo_stella_sora_clean.png" onerror="this.src='web_assets/favicon.png'" alt="Stella Sora">
+            <div class="brand-text">
+                <span class="brand-title">STELLA SORA</span>
+                <span class="brand-sub">Trạm Dịch Thuật Cốt Truyện</span>
+            </div>
+        </div>
+
+        <!-- Translator Profile HUD -->
+        <div class="hud-profile-pill" onclick="openProfileModal()">
+            <div class="hud-avatar-frame">
+                <img id="hudAvatar" class="hud-avatar-img" src="web_assets/favicon.png" alt="Avatar">
+            </div>
+            <div class="hud-profile-meta">
+                <div class="hud-name-line">
+                    <span id="hudUsername" class="hud-username">Nhà Thám Hiểm</span>
+                    <span id="hudLevelBadge" class="hud-level-tag">Lv. 1</span>
+                </div>
+                <div class="hud-exp-track">
+                    <div id="hudExpFill" class="hud-exp-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions HUD -->
+        <div class="hud-tools">
+            <button id="bgmToggleBtn" class="btn-circle" title="Bật/Tắt Nhạc Nền Game" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></button>
+            <button id="themeToggleBtn" class="btn-circle" type="button" title="Chuyển sang chế độ tối" aria-label="Chuyển sang chế độ tối" aria-pressed="false" onclick="toggleTheme()"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M19 5l-1.5 1.5m-11 11L5 19"/></svg></button>
+            <button class="btn-circle" title="Bảng Phong Thần Dịch Giả" aria-label="Bảng Phong Thần Dịch Giả" onclick="openLeaderboardModal()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4v2a4 4 0 0 0 4 4m9-6h3v2a4 4 0 0 1-4 4M12 14v4m-4 2h8"/></svg></button>
+            <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-3-2-6-2-9-1v13c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v13"/></svg></button>
+            <a href="https://docs.google.com/spreadsheets/d/13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-circle" title="Mở Google Sheets" aria-label="Mở Google Sheets"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5h6v6M19 5l-9 9M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"/></svg></a>
+        </div>
+    </header>
+
+    <!-- Navigation Sub-Bar -->
+    <div class="sub-bar">
+        <div class="selectors-wrap">
+            <select id="chapterSelect" class="app-select" onchange="onChapterChange()"></select>
+            <select id="sceneSelect" class="app-select" onchange="onSceneChange()"></select>
+            <select id="filterSelect" class="app-select" onchange="applyFilters()">
+                <option value="all">🔍 Tất cả câu thoại</option>
+                <option value="untranslated">⏳ Chưa dịch (Cần làm)</option>
+                <option value="translated">⭐ Đã dịch</option>
+                <option value="approved">✅ Đã duyệt</option>
+                <option value="dialogue_only">🗣️ Chỉ thoại nhân vật</option>
+            </select>
+        </div>
+
+        <div class="mode-switch-box">
+            <button id="tabGameMode" class="mode-tab-btn active" onclick="switchMode('game')">🎮 Visual Novel</button>
+            <button id="tabListMode" class="mode-tab-btn" onclick="switchMode('list')">📋 Danh Sách</button>
+        </div>
+    </div>
+
+    <!-- Progress Ribbon -->
+    <div class="progress-ribbon">
+        <span id="progressSummaryText">Đang kết nối kho dữ liệu...</span>
+        <div class="progress-track">
+            <div id="progressBarFill" class="progress-fill"></div>
+        </div>
+        <span id="progressPercent" style="font-weight:700; color:var(--cyan-light);">0%</span>
+    </div>
+
+    <!-- Main Workspace Area -->
+    <main>
+        <!-- Desktop Scenes Sidebar -->
+        <aside class="scenes-nav-drawer" id="scenesDrawer"></aside>
+
+        <!-- Right Workspace Arena -->
+        <section class="workspace-arena">
+            
+            <!-- 1. Visual Novel Stage Mode -->
+            <div class="vn-stage-container" id="vnStageContainer">
+                
+                <!-- Character Full Body Standee (Ảnh đứng toàn thân chính thức) -->
+                <img id="actorStandee" class="character-standee-visual" src="" alt="Standee" style="display:none;">
+
+                <!-- Character Header & Voice Player -->
+                <div class="vn-character-header">
+                    <div class="actor-id-badge">
+                        <div class="actor-avatar-circle" id="actorAvatarCircle">
+                            <img id="actorAvatarImg" src="web_assets/favicon.png" alt="Avatar">
+                        </div>
+                        <div class="actor-details">
+                            <div class="actor-name-title">
+                                <span id="actorNameText" class="actor-name-text">Dẫn chuyện</span>
+                                <span id="actorSceneTag" class="actor-tag-pill">Cảnh 1.1</span>
+                            </div>
+                            <span id="actorQuoteText" class="actor-quote-desc">Bối cảnh cốt truyện</span>
+                        </div>
+                    </div>
+
+                    <!-- Voice Audio Play Buttons -->
+                    <div class="voice-controls-box" id="voiceControlsBox" style="display:none;">
+                        <button class="btn-voice" id="voiceJpBtn" onclick="playVoice('jp')">
+                            <span>🔊 Lồng tiếng JP</span>
+                        </button>
+                        <button class="btn-voice" id="voiceCnBtn" onclick="playVoice('cn')">
+                            <span>🔊 Lồng tiếng CN</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Speech Box (Original English / Japanese text) -->
+                <div class="dialogue-speech-box">
+                    <div class="speech-box-top">
+                        <span class="speech-badge-title">💬 LỜI THOẠI GỐC (EN)</span>
+                        <span id="lineIdLabel" style="font-family:var(--font-code);">ID #</span>
+                    </div>
+                    <!-- Khung lời thoại gốc nổi bật -->
+                    <div class="speech-original-frame">
+                        <p class="speech-original-text" id="speechOriginalText">Đang tải câu thoại...</p>
+                    </div>
+                    <div class="speech-reference-quote" id="referenceQuoteBox" style="display:none;">
+                        <span class="ref-quote-label">💡 Bản dịch cũ:</span>
+                        <span id="referenceQuoteText" class="ref-quote-text"></span>
+                    </div>
+                </div>
+
+                <!-- Translation Input Box (Phông chữ chuẩn, êm mắt) -->
+                <div class="translation-input-box">
+                    <div class="input-box-header">
+                        <span class="input-title">BẢN DỊCH TIẾNG VIỆT MỚI (⭐ SỬA Ở ĐÂY)</span>
+                        <div class="smart-tag-tray" id="smartTagTray"></div>
+                    </div>
+                    <!-- Gợi ý thuật ngữ từ điển xuất hiện trong câu -->
+                    <!-- Cảnh báo kiểm tra Token hệ thống -->
+                    <div class="token-validation-alert" id="tokenValidationAlert" style="display:none;"></div>
+                    <div class="glossary-suggestions-box" id="glossarySuggestionsBox" style="display:none;">
+                        <div class="suggestions-header">
+                            <span class="suggestions-title">💡 GỢI Ý THUẬT NGỮ TRONG CÂU:</span>
+                            <span class="suggestions-count" id="suggestionsCount">0</span>
+                        </div>
+                        <div class="suggestions-chips-tray" id="suggestionsChipsTray"></div>
+                    </div>
+                    <textarea id="vietnameseInput" placeholder="Nhập câu dịch tiếng Việt mượt mà, văn phong anime RPG tự nhiên..." oninput="updateTokenValidationUI()" onkeydown="handleTextareaKeydown(event)"></textarea>
+                </div>
+
+                <!-- Action Toolbar -->
+                <div class="stage-action-toolbar">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <button class="btn-direction" onclick="navigateLine(-1)">⏮️ Câu trước</button>
+                        <button class="btn-direction" onclick="navigateLine(1)">⏭️ Câu kế</button>
+                        <span id="counterIndicator" style="font-size:0.85rem; color:var(--text-sub); font-weight:600;">0 / 0</span>
+                    </div>
+                    <button class="btn-save-glow" onclick="saveCurrentLine()">
+                        <span>⭐ LƯU & TIẾP TỤC (Ctrl+Enter)</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- 2. List / Table Mode -->
+            <div class="list-mode-container" id="listModeContainer"></div>
+
+        </section>
+    </main>
+
+    <!-- Modal: Profile / Login -->
+    <div class="modal-shade" id="profileModal">
+        <div class="modal-panel">
+            <div class="modal-panel-header">
+                <h2>HỒ SƠ NHÀ THÁM HIỂM</h2>
+                <button class="btn-circle" onclick="closeProfileModal()">✕</button>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.6;">
+                Tên của bạn sẽ được tự động cập nhật vào cột <b>Dịch giả</b> trên Google Sheets mỗi khi bạn hoàn thành một câu thoại!
+            </p>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <label style="font-size:0.82rem; color:var(--cyan-primary); font-weight:700;">BIỆT DANH / TÊN DỊCH GIẢ</label>
+                <input type="text" id="inputUsername" placeholder="Ví dụ: KhaiMinh, Arthur, Noya_Fan..." style="background:#050912; border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:12px 16px; color:#ffffff; font-family:var(--font-main); font-size:1.05rem; outline:none;">
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px;">
+                <label style="font-size:0.82rem; color:var(--cyan-primary); font-weight:700;">CHỌN NHÂN VẬT ĐẠI DIỆN</label>
+                <div class="avatar-selection-grid" id="avatarSelectionGrid"></div>
+            </div>
+
+            <button class="btn-save-glow" style="justify-content:center; margin-top:12px;" onclick="saveUserProfile()">
+                <span>XÁC NHẬN HỒ SƠ</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal: Leaderboard -->
+    <div class="modal-shade" id="leaderboardModal">
+        <div class="modal-panel">
+            <div class="modal-panel-header">
+                <h2>🏆 BẢNG PHONG THẦN DỊCH GIẢ</h2>
+                <button class="btn-circle" onclick="closeLeaderboardModal()">✕</button>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-sub);">
+                Vinh danh các nhà thám hiểm đóng góp nhiều câu dịch nhất cho Stella Sora!
+            </p>
+            <div id="leaderboardListing" style="display:flex; flex-direction:column; gap:10px; max-height:380px; overflow-y:auto;"></div>
+        </div>
+    </div>
+
+    <!-- Modal: Glossary -->
+    <div class="modal-shade" id="glossaryModal">
+        <div class="modal-panel modal-panel-wide">
+            <div class="modal-panel-header">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <h2>📖 TỪ ĐIỂN THUẬT NGỮ CHUẨN</h2>
+                    <span class="glossary-counter-badge" id="glossaryTotalBadge">322 Mục</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <button class="btn-sync-glossary" id="btnSyncGlossary" onclick="syncGlossaryFromSheets()" title="Đồng bộ trực tiếp từ Google Sheet '01. Thống Nhất Danh Từ'">
+                        <span class="sync-icon">🔄</span>
+                        <span class="sync-text">Đồng Bộ Sheet</span>
+                    </button>
+                    <button class="btn-circle" onclick="closeGlossaryModal()" aria-label="Đóng từ điển">✕</button>
+                </div>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="glossary-toolbar">
+                <div class="glossary-search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="glossary-search-input" id="glossarySearchInput" placeholder="Tìm theo tiếng Anh, tiếng Việt, hoặc ghi chú cảnh báo..." oninput="onGlossarySearch(this.value)">
+                    <button class="search-clear-btn" id="glossarySearchClear" onclick="clearGlossarySearch()" style="display:none;">✕</button>
+                </div>
+                <div class="glossary-cat-pills" id="glossaryCatPills"></div>
+            </div>
+
+            <!-- Terms List Container -->
+            <div class="glossary-list-container" id="glossaryListContainer"></div>
+        </div>
+    </div>
+
+    <!-- ================= MVC ARCHITECTURE ================= -->
+    <!-- Models -->
+    <script src="js/config.js"></script>
+    <script src="js/models/UserModel.js"></script>
+    <script src="js/models/CharacterModel.js"></script>
+    <script src="js/models/TokenModel.js"></script>
+    <script src="js/models/GlossaryModel.js"></script>
+    <script src="js/models/StoryModel.js"></script>
+
+    <!-- Views -->
+    <script src="js/views/ToastView.js"></script>
+    <script src="js/views/HudView.js"></script>
+    <script src="js/views/CardView.js"></script>
+    <script src="js/views/TableView.js"></script>
+    <script src="js/views/GlossaryView.js"></script>
+    <script src="js/views/ProfileView.js"></script>
+    <script src="js/views/LeaderboardView.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/AudioController.js"></script>
+    <script src="js/controllers/EditorController.js"></script>
+    <script src="js/controllers/NavigationController.js"></script>
+    <script src="js/controllers/AppController.js"></script>
+
+    <!-- Main Bootstrapper -->
+    <script src="js/app.js"></script>
+</body>
+</html>

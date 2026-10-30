@@ -9,17 +9,17 @@ class Theme:
     GLASS_BG = "rgba(10, 32, 60, 0.78)"
     GLASS_BG_SOLID = "#0a203c"
     GLASS_CARD_BG = "rgba(14, 42, 78, 0.82)"
-    GLASS_CARD_BORDER = "#1f568a"
-    GLASS_CARD_BORDER_HOVER = "#62d4ff"
+    GLASS_CARD_BORDER = "#c6bba4"
+    GLASS_CARD_BORDER_HOVER = "#b6a379"
 
-    PRIMARY_CYAN = "#62d4ff"
+    PRIMARY_CYAN = "#0ab8c1"
     PRIMARY_CYAN_HOVER = "#8ae2ff"
     PRIMARY_CYAN_PRESSED = "#3fb6e8"
     PRIMARY_CYAN_DISABLED = "#25506e"
 
     SECONDARY_BTN_BG = "rgba(22, 64, 110, 0.65)"
     SECONDARY_BTN_BG_HOVER = "rgba(35, 95, 160, 0.85)"
-    SECONDARY_BTN_BORDER = "#2f72aa"
+    SECONDARY_BTN_BORDER = "#c5b79c"
 
     DANGER_RED = "#ff5470"
     DANGER_RED_HOVER = "#ff7998"
@@ -28,8 +28,8 @@ class Theme:
     SUCCESS_GREEN = "#3af0bc"
     WARNING_AMBER = "#ffce79"
 
-    TEXT_WHITE = "#f0f7ff"
-    TEXT_MUTED = "#a4c9e7"
+    TEXT_WHITE = "#304679"
+    TEXT_MUTED = "#687c9e"
     TEXT_DARK = "#06182f"
 
     FONT_FAMILY = '"Nunito"'
@@ -58,12 +58,12 @@ class Theme:
             border-radius: 4px;
         }}
         QScrollBar::handle:vertical {{
-            background: rgba(98, 212, 255, 0.35);
+            background: rgba(180, 164, 139, 0.5);
             min-height: 24px;
             border-radius: 4px;
         }}
         QScrollBar::handle:vertical:hover {{
-            background: rgba(98, 212, 255, 0.65);
+            background: rgba(160, 143, 115, 0.7);
         }}
         QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
             height: 0px;
@@ -71,29 +71,28 @@ class Theme:
 
         /* Tooltip */
         QToolTip {{
-            border-image: url("{tooltip}");
-            background-color: transparent;
+            background-color: #fbf8ef;
             color: {cls.TEXT_WHITE};
-            border: 1px solid {cls.PRIMARY_CYAN};
+            border: 1px solid #c6bba4;
             border-radius: 4px;
             padding: 6px 10px;
-            font-size: 13px;
+            font-size: 15px;
         }}
 
         /* Input fields */
         QLineEdit, QTextEdit, QPlainTextEdit {{
-            background-color: rgba(6, 24, 47, 0.75);
+            background-color: rgba(238, 242, 246, 0.95);
             border: 1px solid {cls.GLASS_CARD_BORDER};
             border-radius: 6px;
             padding: 8px 12px;
             color: {cls.TEXT_WHITE};
             selection-background-color: {cls.PRIMARY_CYAN};
             selection-color: {cls.TEXT_DARK};
-            font-size: 15px;
+            font-size: 17px;
         }}
         QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus {{
             border: 1px solid {cls.PRIMARY_CYAN};
-            background-color: rgba(10, 34, 66, 0.85);
+            background-color: rgba(255, 252, 246, 0.98);
         }}
 
         /* List views */
@@ -119,12 +118,12 @@ class Theme:
 
         /* Progress Bar */
         QProgressBar {{
-            background-color: rgba(6, 24, 47, 0.85);
+            background-color: rgba(223, 233, 242, 0.95);
             border: 1px solid {cls.GLASS_CARD_BORDER};
             border-radius: 6px;
             text-align: center;
             color: {cls.TEXT_WHITE};
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 500;
             height: 18px;
         }}
