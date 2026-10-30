@@ -192,9 +192,17 @@ class ArcxArchive:
                 }
             )
 
+        # Detect whether entries use relative offset (offset from payload start, like official game archives)
+        # or absolute offset (offset from file start, like repacked archives)
+        header_and_dir_len = 24 + self.comp_size
+        if self.entries and self.entries[0]["offset"] < header_and_dir_len:
+            self.payload_base = header_and_dir_len
+        else:
+            self.payload_base = 0
+
     def extract_entry(self, entry: Dict, raw_data: bytes) -> bytes:
         """Extract a single decompressed entry payload."""
-        off = entry["offset"]
+        off = getattr(self, "payload_base", 0) + entry["offset"]
         sz = entry["compressed_size"]
         orig_sz = entry["origin_size"]
 
