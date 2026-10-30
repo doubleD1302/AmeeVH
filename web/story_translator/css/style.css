@@ -1815,3 +1815,85 @@
                 display: none;
             }
         }
+/* ================= QUICK GLOSSARY SEARCH & HIGHLIGHT ================= */
+.quick-glossary-search-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: rgba(14, 23, 38, 0.55);
+    border: 1px solid rgba(86, 204, 242, 0.25);
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-bottom: 6px;
+    transition: all 0.2s ease;
+}
+.quick-glossary-search-wrap:focus-within {
+    border-color: var(--cyan-primary);
+    box-shadow: 0 0 10px rgba(86, 204, 242, 0.25);
+    background: rgba(14, 23, 38, 0.85);
+}
+.quick-glossary-search-wrap .quick-search-icon {
+    font-size: 0.85rem;
+    color: var(--cyan-primary);
+    margin-right: 6px;
+}
+.quick-glossary-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    font-size: 0.82rem;
+    padding: 6px 0;
+}
+.quick-glossary-input::placeholder {
+    color: rgba(160, 180, 205, 0.55);
+    font-style: italic;
+}
+.quick-search-clear {
+    background: transparent;
+    border: none;
+    color: var(--text-sub);
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.quick-search-clear:hover {
+    color: var(--red-coral);
+    background: rgba(255, 107, 107, 0.15);
+}
+.quick-glossary-results-tray {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(86, 204, 242, 0.2);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    max-height: 140px;
+    overflow-y: auto;
+}
+.glossary-kw-highlight {
+    background: rgba(255, 215, 0, 0.35);
+    color: #fff;
+    font-weight: 700;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+html:not([data-theme="dark"]) .quick-glossary-search-wrap {
+    background: rgba(240, 246, 252, 0.85);
+    border-color: rgba(0, 120, 212, 0.25);
+}
+html:not([data-theme="dark"]) .quick-glossary-input {
+    color: #1e293b;
+}
+html:not([data-theme="dark"]) .quick-glossary-results-tray {
+    background: rgba(241, 245, 249, 0.95);
+    border-color: rgba(0, 120, 212, 0.25);
+}
+html:not([data-theme="dark"]) .glossary-kw-highlight {
+    background: #fef08a;
+    color: #0f172a;
+}

@@ -98,6 +98,7 @@ function renderCurrentLine() {
     input.value = item.new_vi || item.old_vi || "";
     renderSmartTags(item.en);
     renderGlossarySuggestions(item.en);
+    if (typeof clearQuickGlossarySearch === "function") clearQuickGlossarySearch();
     updateTokenValidationUI();
 }
 

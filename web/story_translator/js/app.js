@@ -11,6 +11,18 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 // Đăng ký phím tắt toàn cục
 window.addEventListener("keydown", (e) => {
+    // Alt + G: Mở nhanh từ điển thuật ngữ
+    if (e.altKey && (e.key === "g" || e.key === "G")) {
+        e.preventDefault();
+        openGlossaryModal();
+        return;
+    }
+    // Alt + M: Bật/Tắt nhạc nền hoặc đổi bài
+    if (e.altKey && (e.key === "m" || e.key === "M")) {
+        e.preventDefault();
+        toggleBgm();
+        return;
+    }
     // Alt + Mũi tên Trái: Câu trước
     if (e.altKey && e.key === "ArrowLeft") {
         e.preventDefault();

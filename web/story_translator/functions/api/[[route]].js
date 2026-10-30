@@ -51,19 +51,24 @@ export async function onRequest(context) {
 
         // Xác định action từ subpath (ví dụ: /api/save_line -> action=save_line)
         const pathSegments = url.pathname.replace(/^\/api\/?/, "").split("/").filter(Boolean);
-        if (pathSegments.length > 0 && !targetUrl.searchParams.has("action")) {
-            targetUrl.searchParams.set("action", pathSegments[0]);
+        const subAction = pathSegments.length > 0 ? pathSegments[0] : "";
+        if (subAction && !targetUrl.searchParams.has("action")) {
+            if (subAction === "sync_glossary" || subAction === "glossary") {
+                targetUrl.searchParams.set("action", "get_glossary");
+            } else {
+                targetUrl.searchParams.set("action", subAction);
+            }
         }
 
         let fetchOptions = {
-            method: request.method,
+            method: (subAction === "sync_glossary" || subAction === "glossary") ? "GET" : request.method,
             headers: {
                 "Content-Type": "text/plain;charset=utf-8"
             },
             redirect: "follow"
         };
 
-        if (request.method === "POST" || request.method === "PUT") {
+        if (fetchOptions.method === "POST" || fetchOptions.method === "PUT") {
             const bodyText = await request.text();
             fetchOptions.body = bodyText;
         }

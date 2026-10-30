@@ -1,0 +1,841 @@
+{
+  "name": "TramVH — Soft Sky Icons",
+  "revision": "r01",
+  "date_local": "2026-10-31",
+  "source_web": "https://tramvh.doubled1302.workers.dev/",
+  "authoring": "Original SVG geometry; no image-generation model used",
+  "icon_count": 49,
+  "variants": [
+    "light",
+    "dark",
+    "mono"
+  ],
+  "palette": {
+    "light": {
+      "ink": "#28687b",
+      "accent": "#bf8b3b"
+    },
+    "dark": {
+      "ink": "#b9e4ed",
+      "accent": "#efc47f"
+    },
+    "mono": {
+      "ink": "currentColor",
+      "accent": "currentColor"
+    }
+  },
+  "icons": [
+    {
+      "id": "home",
+      "label": "Trang chủ",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/home.svg",
+        "dark": "svg/dark/home.svg",
+        "mono": "svg/mono/home.svg"
+      }
+    },
+    {
+      "id": "chapters",
+      "label": "Chương truyện",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/chapters.svg",
+        "dark": "svg/dark/chapters.svg",
+        "mono": "svg/mono/chapters.svg"
+      }
+    },
+    {
+      "id": "scenes",
+      "label": "Cảnh truyện",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/scenes.svg",
+        "dark": "svg/dark/scenes.svg",
+        "mono": "svg/mono/scenes.svg"
+      }
+    },
+    {
+      "id": "visual-novel",
+      "label": "Visual Novel",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/visual-novel.svg",
+        "dark": "svg/dark/visual-novel.svg",
+        "mono": "svg/mono/visual-novel.svg"
+      }
+    },
+    {
+      "id": "list",
+      "label": "Danh sách",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/list.svg",
+        "dark": "svg/dark/list.svg",
+        "mono": "svg/mono/list.svg"
+      }
+    },
+    {
+      "id": "previous",
+      "label": "Câu trước",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/previous.svg",
+        "dark": "svg/dark/previous.svg",
+        "mono": "svg/mono/previous.svg"
+      }
+    },
+    {
+      "id": "next",
+      "label": "Câu kế",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/next.svg",
+        "dark": "svg/dark/next.svg",
+        "mono": "svg/mono/next.svg"
+      }
+    },
+    {
+      "id": "menu",
+      "label": "Mở menu",
+      "category": "Điều hướng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/menu.svg",
+        "dark": "svg/dark/menu.svg",
+        "mono": "svg/mono/menu.svg"
+      }
+    },
+    {
+      "id": "dialogue",
+      "label": "Lời thoại",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/dialogue.svg",
+        "dark": "svg/dark/dialogue.svg",
+        "mono": "svg/mono/dialogue.svg"
+      }
+    },
+    {
+      "id": "translate",
+      "label": "Việt hóa",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/translate.svg",
+        "dark": "svg/dark/translate.svg",
+        "mono": "svg/mono/translate.svg"
+      }
+    },
+    {
+      "id": "edit",
+      "label": "Biên tập",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/edit.svg",
+        "dark": "svg/dark/edit.svg",
+        "mono": "svg/mono/edit.svg"
+      }
+    },
+    {
+      "id": "quill",
+      "label": "Bút dịch",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/quill.svg",
+        "dark": "svg/dark/quill.svg",
+        "mono": "svg/mono/quill.svg"
+      }
+    },
+    {
+      "id": "save",
+      "label": "Lưu bản dịch",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/save.svg",
+        "dark": "svg/dark/save.svg",
+        "mono": "svg/mono/save.svg"
+      }
+    },
+    {
+      "id": "save-next",
+      "label": "Lưu và tiếp tục",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/save-next.svg",
+        "dark": "svg/dark/save-next.svg",
+        "mono": "svg/mono/save-next.svg"
+      }
+    },
+    {
+      "id": "glossary",
+      "label": "Từ điển thuật ngữ",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/glossary.svg",
+        "dark": "svg/dark/glossary.svg",
+        "mono": "svg/mono/glossary.svg"
+      }
+    },
+    {
+      "id": "tokens",
+      "label": "Token hệ thống",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/tokens.svg",
+        "dark": "svg/dark/tokens.svg",
+        "mono": "svg/mono/tokens.svg"
+      }
+    },
+    {
+      "id": "copy",
+      "label": "Sao chép",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/copy.svg",
+        "dark": "svg/dark/copy.svg",
+        "mono": "svg/mono/copy.svg"
+      }
+    },
+    {
+      "id": "undo",
+      "label": "Hoàn tác",
+      "category": "Biên dịch",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/undo.svg",
+        "dark": "svg/dark/undo.svg",
+        "mono": "svg/mono/undo.svg"
+      }
+    },
+    {
+      "id": "search",
+      "label": "Tìm kiếm",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/search.svg",
+        "dark": "svg/dark/search.svg",
+        "mono": "svg/mono/search.svg"
+      }
+    },
+    {
+      "id": "filter",
+      "label": "Lọc câu thoại",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/filter.svg",
+        "dark": "svg/dark/filter.svg",
+        "mono": "svg/mono/filter.svg"
+      }
+    },
+    {
+      "id": "sync",
+      "label": "Đồng bộ",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/sync.svg",
+        "dark": "svg/dark/sync.svg",
+        "mono": "svg/mono/sync.svg"
+      }
+    },
+    {
+      "id": "upload",
+      "label": "Tải lên",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/upload.svg",
+        "dark": "svg/dark/upload.svg",
+        "mono": "svg/mono/upload.svg"
+      }
+    },
+    {
+      "id": "download",
+      "label": "Tải xuống",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/download.svg",
+        "dark": "svg/dark/download.svg",
+        "mono": "svg/mono/download.svg"
+      }
+    },
+    {
+      "id": "sheet",
+      "label": "Bảng dữ liệu",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/sheet.svg",
+        "dark": "svg/dark/sheet.svg",
+        "mono": "svg/mono/sheet.svg"
+      }
+    },
+    {
+      "id": "external-link",
+      "label": "Mở liên kết",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/external-link.svg",
+        "dark": "svg/dark/external-link.svg",
+        "mono": "svg/mono/external-link.svg"
+      }
+    },
+    {
+      "id": "settings",
+      "label": "Cài đặt",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/settings.svg",
+        "dark": "svg/dark/settings.svg",
+        "mono": "svg/mono/settings.svg"
+      }
+    },
+    {
+      "id": "close",
+      "label": "Đóng",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/close.svg",
+        "dark": "svg/dark/close.svg",
+        "mono": "svg/mono/close.svg"
+      }
+    },
+    {
+      "id": "help",
+      "label": "Trợ giúp",
+      "category": "Công cụ",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/help.svg",
+        "dark": "svg/dark/help.svg",
+        "mono": "svg/mono/help.svg"
+      }
+    },
+    {
+      "id": "approved",
+      "label": "Đã duyệt",
+      "category": "Trạng thái",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/approved.svg",
+        "dark": "svg/dark/approved.svg",
+        "mono": "svg/mono/approved.svg"
+      }
+    },
+    {
+      "id": "translated",
+      "label": "Đã dịch",
+      "category": "Trạng thái",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/translated.svg",
+        "dark": "svg/dark/translated.svg",
+        "mono": "svg/mono/translated.svg"
+      }
+    },
+    {
+      "id": "pending",
+      "label": "Chờ xử lý",
+      "category": "Trạng thái",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/pending.svg",
+        "dark": "svg/dark/pending.svg",
+        "mono": "svg/mono/pending.svg"
+      }
+    },
+    {
+      "id": "warning",
+      "label": "Cần kiểm tra",
+      "category": "Trạng thái",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/warning.svg",
+        "dark": "svg/dark/warning.svg",
+        "mono": "svg/mono/warning.svg"
+      }
+    },
+    {
+      "id": "error",
+      "label": "Có lỗi",
+      "category": "Trạng thái",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/error.svg",
+        "dark": "svg/dark/error.svg",
+        "mono": "svg/mono/error.svg"
+      }
+    },
+    {
+      "id": "info",
+      "label": "Thông tin",
+      "category": "Trạng thái",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/info.svg",
+        "dark": "svg/dark/info.svg",
+        "mono": "svg/mono/info.svg"
+      }
+    },
+    {
+      "id": "check",
+      "label": "Hoàn thành",
+      "category": "Trạng thái",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/check.svg",
+        "dark": "svg/dark/check.svg",
+        "mono": "svg/mono/check.svg"
+      }
+    },
+    {
+      "id": "profile",
+      "label": "Hồ sơ dịch giả",
+      "category": "Cộng đồng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/profile.svg",
+        "dark": "svg/dark/profile.svg",
+        "mono": "svg/mono/profile.svg"
+      }
+    },
+    {
+      "id": "community",
+      "label": "Cộng đồng",
+      "category": "Cộng đồng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/community.svg",
+        "dark": "svg/dark/community.svg",
+        "mono": "svg/mono/community.svg"
+      }
+    },
+    {
+      "id": "trophy",
+      "label": "Bảng xếp hạng",
+      "category": "Cộng đồng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/trophy.svg",
+        "dark": "svg/dark/trophy.svg",
+        "mono": "svg/mono/trophy.svg"
+      }
+    },
+    {
+      "id": "medal",
+      "label": "Huy hiệu",
+      "category": "Cộng đồng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/medal.svg",
+        "dark": "svg/dark/medal.svg",
+        "mono": "svg/mono/medal.svg"
+      }
+    },
+    {
+      "id": "star",
+      "label": "Ngôi sao",
+      "category": "Cộng đồng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/star.svg",
+        "dark": "svg/dark/star.svg",
+        "mono": "svg/mono/star.svg"
+      }
+    },
+    {
+      "id": "xp",
+      "label": "Kinh nghiệm",
+      "category": "Cộng đồng",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/xp.svg",
+        "dark": "svg/dark/xp.svg",
+        "mono": "svg/mono/xp.svg"
+      }
+    },
+    {
+      "id": "sun",
+      "label": "Chế độ sáng",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/sun.svg",
+        "dark": "svg/dark/sun.svg",
+        "mono": "svg/mono/sun.svg"
+      }
+    },
+    {
+      "id": "moon",
+      "label": "Chế độ tối",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/moon.svg",
+        "dark": "svg/dark/moon.svg",
+        "mono": "svg/mono/moon.svg"
+      }
+    },
+    {
+      "id": "music",
+      "label": "Nhạc nền",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/music.svg",
+        "dark": "svg/dark/music.svg",
+        "mono": "svg/mono/music.svg"
+      }
+    },
+    {
+      "id": "music-off",
+      "label": "Tắt nhạc nền",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/music-off.svg",
+        "dark": "svg/dark/music-off.svg",
+        "mono": "svg/mono/music-off.svg"
+      }
+    },
+    {
+      "id": "volume",
+      "label": "Lồng tiếng",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/volume.svg",
+        "dark": "svg/dark/volume.svg",
+        "mono": "svg/mono/volume.svg"
+      }
+    },
+    {
+      "id": "volume-off",
+      "label": "Tắt lồng tiếng",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/volume-off.svg",
+        "dark": "svg/dark/volume-off.svg",
+        "mono": "svg/mono/volume-off.svg"
+      }
+    },
+    {
+      "id": "play",
+      "label": "Phát",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/play.svg",
+        "dark": "svg/dark/play.svg",
+        "mono": "svg/mono/play.svg"
+      }
+    },
+    {
+      "id": "pause",
+      "label": "Tạm dừng",
+      "category": "Âm thanh & giao diện",
+      "viewBox": "0 0 32 32",
+      "recommended_size": [
+        20,
+        24,
+        32
+      ],
+      "files": {
+        "light": "svg/light/pause.svg",
+        "dark": "svg/dark/pause.svg",
+        "mono": "svg/mono/pause.svg"
+      }
+    }
+  ],
+  "badges": [
+    {
+      "id": "translator",
+      "label": "Dịch giả"
+    },
+    {
+      "id": "storyteller",
+      "label": "Người kể chuyện"
+    },
+    {
+      "id": "reviewer",
+      "label": "Người duyệt"
+    },
+    {
+      "id": "terminologist",
+      "label": "Người giữ thuật ngữ"
+    },
+    {
+      "id": "contributor",
+      "label": "Người đóng góp"
+    },
+    {
+      "id": "honor",
+      "label": "Vinh danh"
+    }
+  ],
+  "brand": "brand/",
+  "integration": "asset_package_only; existing index, manifest and live web are unchanged"
+}

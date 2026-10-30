@@ -83,6 +83,10 @@ function doPost(e) {
 
     var action = payload.action || "save_line";
 
+    if (action === "sync_glossary" || action === "get_glossary") {
+      return createJsonResponse(getGlossaryTerms());
+    }
+
     if (action === "save_line") {
       var result = handleSaveLine(payload);
       return createJsonResponse(result);
@@ -127,7 +131,7 @@ function doGet(e) {
       });
     }
 
-    if (action === "get_glossary") {
+    if (action === "get_glossary" || action === "sync_glossary" || action === "glossary") {
       return createJsonResponse(getGlossaryTerms());
     }
 

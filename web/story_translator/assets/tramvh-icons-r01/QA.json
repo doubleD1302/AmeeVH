@@ -1,0 +1,56 @@
+{
+  "icon_count": 49,
+  "png_count": 222,
+  "checks": {
+    "search": {
+      "query": "tu dien",
+      "ids": [
+        "glossary"
+      ],
+      "passed": true
+    },
+    "size": {
+      "width": "20px",
+      "passed": true
+    },
+    "theme": {
+      "passed": true
+    }
+  },
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "overflow": false,
+      "images": 117,
+      "broken": [],
+      "theme": "light",
+      "height": 2558
+    },
+    {
+      "label": "dark",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "overflow": false,
+      "images": 117,
+      "broken": [],
+      "theme": "dark",
+      "height": 2558
+    },
+    {
+      "label": "mobile",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "images": 117,
+      "broken": [],
+      "theme": "light",
+      "height": 4463
+    }
+  ],
+  "browser": "Chrome headless desktop; mobile emulation only",
+  "deployment": "not_performed",
+  "independent_review": "not_performed",
+  "real_device": "not_tested"
+}
