@@ -6,9 +6,10 @@
     <title>Stella Sora — Trạm Dịch Thuật Cốt Truyện</title>
     
     <!-- PWA & Favicon -->
-    <link rel="icon" type="image/png" href="web_assets/favicon.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#070c18">
+    <link rel="icon" type="image/png" href="assets/tramvh-icons-r01/brand/tramvh-app-light-32.png">
+    <link rel="apple-touch-icon" href="assets/tramvh-icons-r01/brand/tramvh-app-light-180.png">
+    <link rel="manifest" href="manifest.json?v=1.3.1">
+    <meta name="theme-color" content="#eaf3f8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -16,10 +17,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1.3.0">
+    <link rel="stylesheet" href="css/style.css?v=1.3.1">
     <script>try { if (localStorage.getItem("stella_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (_) {}</script>
-    <link rel="stylesheet" href="assets/soft-sky/theme.css?v=1.3.0">
-    <link rel="stylesheet" href="assets/soft-sky/theme-dark.css?v=1.3.0">
+    <link rel="stylesheet" href="assets/soft-sky/theme.css?v=1.3.1">
+    <link rel="stylesheet" href="assets/soft-sky/theme-dark.css?v=1.3.1">
+    <link rel="stylesheet" href="assets/tramvh-icons-r01/icons.css?v=1.3.1">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -32,14 +34,14 @@
 
     <!-- Floating XP Toast -->
     <div id="toastNotification" class="toast-popup">
-        <span>⭐</span>
+        <span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/xp.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/xp.svg" alt=""></span>
         <span id="toastNotificationText">+50 EXP! Đã cập nhật lên Google Sheets!</span>
     </div>
 
     <!-- Header HUD -->
     <header>
         <div class="brand-box" onclick="openProfileModal()">
-            <img class="brand-logo-img" src="web_assets/logo_stella_sora_clean.png" onerror="this.src='web_assets/favicon.png'" alt="Stella Sora">
+            <span class="tram-brand-mark" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/brand/tramvh-mark-light.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/brand/tramvh-mark-dark.svg" alt=""></span>
             <div class="brand-text">
                 <span class="brand-title">STELLA SORA</span>
                 <span class="brand-sub">Trạm Dịch Thuật Cốt Truyện</span>
@@ -49,7 +51,7 @@
         <!-- Translator Profile HUD -->
         <div class="hud-profile-pill" onclick="openProfileModal()">
             <div class="hud-avatar-frame">
-                <img id="hudAvatar" class="hud-avatar-img" src="web_assets/favicon.png" alt="Avatar">
+                <img id="hudAvatar" class="hud-avatar-img" src="assets/tramvh-icons-r01/brand/tramvh-app-light-192.png" alt="Avatar">
             </div>
             <div class="hud-profile-meta">
                 <div class="hud-name-line">
@@ -64,12 +66,12 @@
 
         <!-- Actions HUD -->
         <div class="hud-tools">
-            <button id="bgmToggleBtn" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></button>
-            <button id="bgmNextBtn" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 5 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
-            <button id="themeToggleBtn" class="btn-circle" type="button" title="Chuyển sang chế độ tối" aria-label="Chuyển sang chế độ tối" aria-pressed="false" onclick="toggleTheme()"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M19 5l-1.5 1.5m-11 11L5 19"/></svg></button>
-            <button class="btn-circle" title="Bảng Phong Thần Dịch Giả" aria-label="Bảng Phong Thần Dịch Giả" onclick="openLeaderboardModal()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4v2a4 4 0 0 0 4 4m9-6h3v2a4 4 0 0 1-4 4M12 14v4m-4 2h8"/></svg></button>
-            <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-3-2-6-2-9-1v13c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v13"/></svg></button>
-            <a href="https://docs.google.com/spreadsheets/d/13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-circle" title="Mở Google Sheets" aria-label="Mở Google Sheets"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5h6v6M19 5l-9 9M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"/></svg></a>
+            <button id="bgmToggleBtn" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/music.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/music.svg" alt=""></span></button>
+            <button id="bgmNextBtn" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 5 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
+            <button id="themeToggleBtn" class="btn-circle" type="button" title="Chuyển sang chế độ tối" aria-label="Chuyển sang chế độ tối" aria-pressed="false" onclick="toggleTheme()"><span class="tram-theme-night"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/moon.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/moon.svg" alt=""></span></span><span class="tram-theme-day"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sun.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sun.svg" alt=""></span></span></button>
+            <button class="btn-circle" title="Bảng Phong Thần Dịch Giả" aria-label="Bảng Phong Thần Dịch Giả" onclick="openLeaderboardModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/trophy.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/trophy.svg" alt=""></span></button>
+            <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span></button>
+            <a href="https://docs.google.com/spreadsheets/d/13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-circle" title="Mở Google Sheets" aria-label="Mở Google Sheets"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sheet.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sheet.svg" alt=""></span></a>
         </div>
     </header>
 
@@ -88,8 +90,8 @@
         </div>
 
         <div class="mode-switch-box">
-            <button id="tabGameMode" class="mode-tab-btn active" onclick="switchMode('game')">🎮 Visual Novel</button>
-            <button id="tabListMode" class="mode-tab-btn" onclick="switchMode('list')">📋 Danh Sách</button>
+            <button id="tabGameMode" class="mode-tab-btn active" onclick="switchMode('game')"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/visual-novel.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/visual-novel.svg" alt=""></span> Visual Novel</button>
+            <button id="tabListMode" class="mode-tab-btn" onclick="switchMode('list')"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/list.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/list.svg" alt=""></span> Danh Sách</button>
         </div>
     </div>
 
@@ -120,7 +122,7 @@
                 <div class="vn-character-header">
                     <div class="actor-id-badge">
                         <div class="actor-avatar-circle" id="actorAvatarCircle">
-                            <img id="actorAvatarImg" src="web_assets/favicon.png" alt="Avatar">
+                            <img id="actorAvatarImg" src="assets/tramvh-icons-r01/brand/tramvh-app-light-192.png" alt="Avatar">
                         </div>
                         <div class="actor-details">
                             <div class="actor-name-title">
@@ -134,10 +136,10 @@
                     <!-- Voice Audio Play Buttons -->
                     <div class="voice-controls-box" id="voiceControlsBox" style="display:none;">
                         <button class="btn-voice" id="voiceJpBtn" onclick="playVoice('jp')">
-                            <span>🔊 Lồng tiếng JP</span>
+                            <span><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/volume.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/volume.svg" alt=""></span> Lồng tiếng JP</span>
                         </button>
                         <button class="btn-voice" id="voiceCnBtn" onclick="playVoice('cn')">
-                            <span>🔊 Lồng tiếng CN</span>
+                            <span><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/volume.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/volume.svg" alt=""></span> Lồng tiếng CN</span>
                         </button>
                     </div>
                 </div>
@@ -145,7 +147,7 @@
                 <!-- Speech Box (Original English / Japanese text) -->
                 <div class="dialogue-speech-box">
                     <div class="speech-box-top">
-                        <span class="speech-badge-title">💬 LỜI THOẠI GỐC (EN)</span>
+                        <span class="speech-badge-title"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/dialogue.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/dialogue.svg" alt=""></span> LỜI THOẠI GỐC (EN)</span>
                         <span id="lineIdLabel" style="font-family:var(--font-code);">ID #</span>
                     </div>
                     <!-- Khung lời thoại gốc nổi bật -->
@@ -153,7 +155,7 @@
                         <p class="speech-original-text" id="speechOriginalText">Đang tải câu thoại...</p>
                     </div>
                     <div class="speech-reference-quote" id="referenceQuoteBox" style="display:none;">
-                        <span class="ref-quote-label">💡 Bản dịch cũ:</span>
+                        <span class="ref-quote-label"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/info.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/info.svg" alt=""></span> Bản dịch cũ:</span>
                         <span id="referenceQuoteText" class="ref-quote-text"></span>
                     </div>
                 </div>
@@ -161,21 +163,21 @@
                 <!-- Translation Input Box (Phông chữ chuẩn, êm mắt) -->
                 <div class="translation-input-box">
                     <div class="input-box-header">
-                        <span class="input-title">BẢN DỊCH TIẾNG VIỆT MỚI (⭐ SỬA Ở ĐÂY)</span>
+                        <span class="input-title"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/quill.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/quill.svg" alt=""></span> BẢN DỊCH TIẾNG VIỆT MỚI (SỬA Ở ĐÂY)</span>
                         <div class="smart-tag-tray" id="smartTagTray"></div>
                     </div>
                     <!-- Tra cứu thuật ngữ nhanh & Gợi ý từ điển xuất hiện trong câu -->
                     <div class="quick-glossary-search-wrap">
-                        <span class="quick-search-icon">🔍</span>
+                        <span class="quick-search-icon"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/search.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/search.svg" alt=""></span></span>
                         <input type="text" class="quick-glossary-input" id="quickGlossaryInput" placeholder="Tra cứu nhanh thuật ngữ (gõ từ cần tra, click để chèn, Alt+G mở đầy đủ)..." oninput="onQuickGlossarySearch(this.value)">
-                        <button class="quick-search-clear" id="quickGlossaryClear" onclick="clearQuickGlossarySearch()" style="display:none;">✕</button>
+                        <button class="quick-search-clear" id="quickGlossaryClear" onclick="clearQuickGlossarySearch()" style="display:none;" aria-label="Xóa tìm kiếm nhanh"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
                     </div>
                     <div class="quick-glossary-results-tray" id="quickGlossaryResultsTray" style="display:none;"></div>
                     <!-- Cảnh báo kiểm tra Token hệ thống -->
                     <div class="token-validation-alert" id="tokenValidationAlert" style="display:none;"></div>
                     <div class="glossary-suggestions-box" id="glossarySuggestionsBox" style="display:none;">
                         <div class="suggestions-header">
-                            <span class="suggestions-title">💡 GỢI Ý THUẬT NGỮ TRONG CÂU:</span>
+                            <span class="suggestions-title"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span> GỢI Ý THUẬT NGỮ TRONG CÂU:</span>
                             <span class="suggestions-count" id="suggestionsCount">0</span>
                         </div>
                         <div class="suggestions-chips-tray" id="suggestionsChipsTray"></div>
@@ -186,12 +188,12 @@
                 <!-- Action Toolbar -->
                 <div class="stage-action-toolbar">
                     <div style="display:flex; align-items:center; gap:10px;">
-                        <button class="btn-direction" onclick="navigateLine(-1)">⏮️ Câu trước</button>
-                        <button class="btn-direction" onclick="navigateLine(1)">⏭️ Câu kế</button>
+                        <button class="btn-direction" onclick="navigateLine(-1)"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/previous.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/previous.svg" alt=""></span> Câu trước</button>
+                        <button class="btn-direction" onclick="navigateLine(1)"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span> Câu kế</button>
                         <span id="counterIndicator" style="font-size:0.85rem; color:var(--text-sub); font-weight:600;">0 / 0</span>
                     </div>
                     <button class="btn-save-glow" onclick="saveCurrentLine()">
-                        <span>⭐ LƯU & TIẾP TỤC (Ctrl+Enter)</span>
+                        <span><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/save-next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/save-next.svg" alt=""></span> LƯU & TIẾP TỤC (Ctrl+Enter)</span>
                     </button>
                 </div>
 
@@ -208,7 +210,7 @@
         <div class="modal-panel">
             <div class="modal-panel-header">
                 <h2>HỒ SƠ NHÀ THÁM HIỂM</h2>
-                <button class="btn-circle" onclick="closeProfileModal()">✕</button>
+                <button class="btn-circle" onclick="closeProfileModal()" aria-label="Đóng"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
             </div>
             <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.6;">
                 Tên của bạn sẽ được tự động cập nhật vào cột <b>Dịch giả</b> trên Google Sheets mỗi khi bạn hoàn thành một câu thoại!
@@ -233,8 +235,8 @@
     <div class="modal-shade" id="leaderboardModal">
         <div class="modal-panel">
             <div class="modal-panel-header">
-                <h2>🏆 BẢNG PHONG THẦN DỊCH GIẢ</h2>
-                <button class="btn-circle" onclick="closeLeaderboardModal()">✕</button>
+                <h2><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/trophy.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/trophy.svg" alt=""></span> BẢNG PHONG THẦN DỊCH GIẢ</h2>
+                <button class="btn-circle" onclick="closeLeaderboardModal()" aria-label="Đóng"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
             </div>
             <p style="font-size:0.88rem; color:var(--text-sub);">
                 Vinh danh các nhà thám hiểm đóng góp nhiều câu dịch nhất cho Stella Sora!
@@ -248,24 +250,24 @@
         <div class="modal-panel modal-panel-wide">
             <div class="modal-panel-header">
                 <div style="display:flex; align-items:center; gap:12px;">
-                    <h2>📖 TỪ ĐIỂN THUẬT NGỮ CHUẨN</h2>
+                    <h2><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span> TỪ ĐIỂN THUẬT NGỮ CHUẨN</h2>
                     <span class="glossary-counter-badge" id="glossaryTotalBadge">322 Mục</span>
                 </div>
                 <div style="display:flex; align-items:center; gap:10px;">
                     <button class="btn-sync-glossary" id="btnSyncGlossary" onclick="syncGlossaryFromSheets()" title="Đồng bộ trực tiếp từ Google Sheet '01. Thống Nhất Danh Từ'">
-                        <span class="sync-icon">🔄</span>
+                        <span class="sync-icon"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sync.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sync.svg" alt=""></span></span>
                         <span class="sync-text">Đồng Bộ Sheet</span>
                     </button>
-                    <button class="btn-circle" onclick="closeGlossaryModal()" aria-label="Đóng từ điển">✕</button>
+                    <button class="btn-circle" onclick="closeGlossaryModal()" aria-label="Đóng từ điển"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
                 </div>
             </div>
 
             <!-- Search and Filter Bar -->
             <div class="glossary-toolbar">
                 <div class="glossary-search-wrapper">
-                    <span class="search-icon">🔍</span>
+                    <span class="search-icon"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/search.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/search.svg" alt=""></span></span>
                     <input type="text" class="glossary-search-input" id="glossarySearchInput" placeholder="Tìm theo tiếng Anh, tiếng Việt, hoặc ghi chú cảnh báo..." oninput="onGlossarySearch(this.value)">
-                    <button class="search-clear-btn" id="glossarySearchClear" onclick="clearGlossarySearch()" style="display:none;">✕</button>
+                    <button class="search-clear-btn" id="glossarySearchClear" onclick="clearGlossarySearch()" style="display:none;" aria-label="Xóa tìm kiếm"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
                 </div>
                 <div class="glossary-cat-pills" id="glossaryCatPills"></div>
             </div>
@@ -276,30 +278,31 @@
     </div>
 
     <!-- ================= MVC ARCHITECTURE ================= -->
+    <script src="js/views/IconView.js?v=1.3.1"></script>
     <!-- Models -->
-    <script src="js/config.js?v=1.3.0"></script>
-    <script src="js/models/UserModel.js?v=1.3.0"></script>
-    <script src="js/models/CharacterModel.js?v=1.3.0"></script>
-    <script src="js/models/TokenModel.js?v=1.3.0"></script>
-    <script src="js/models/GlossaryModel.js?v=1.3.0"></script>
-    <script src="js/models/StoryModel.js?v=1.3.0"></script>
+    <script src="js/config.js?v=1.3.1"></script>
+    <script src="js/models/UserModel.js?v=1.3.1"></script>
+    <script src="js/models/CharacterModel.js?v=1.3.1"></script>
+    <script src="js/models/TokenModel.js?v=1.3.1"></script>
+    <script src="js/models/GlossaryModel.js?v=1.3.1"></script>
+    <script src="js/models/StoryModel.js?v=1.3.1"></script>
 
     <!-- Views -->
-    <script src="js/views/ToastView.js?v=1.3.0"></script>
-    <script src="js/views/HudView.js?v=1.3.0"></script>
-    <script src="js/views/CardView.js?v=1.3.0"></script>
-    <script src="js/views/TableView.js?v=1.3.0"></script>
-    <script src="js/views/GlossaryView.js?v=1.3.0"></script>
-    <script src="js/views/ProfileView.js?v=1.3.0"></script>
-    <script src="js/views/LeaderboardView.js?v=1.3.0"></script>
+    <script src="js/views/ToastView.js?v=1.3.1"></script>
+    <script src="js/views/HudView.js?v=1.3.1"></script>
+    <script src="js/views/CardView.js?v=1.3.1"></script>
+    <script src="js/views/TableView.js?v=1.3.1"></script>
+    <script src="js/views/GlossaryView.js?v=1.3.1"></script>
+    <script src="js/views/ProfileView.js?v=1.3.1"></script>
+    <script src="js/views/LeaderboardView.js?v=1.3.1"></script>
 
     <!-- Controllers -->
-    <script src="js/controllers/AudioController.js?v=1.3.0"></script>
-    <script src="js/controllers/EditorController.js?v=1.3.0"></script>
-    <script src="js/controllers/NavigationController.js?v=1.3.0"></script>
-    <script src="js/controllers/AppController.js?v=1.3.0"></script>
+    <script src="js/controllers/AudioController.js?v=1.3.1"></script>
+    <script src="js/controllers/EditorController.js?v=1.3.1"></script>
+    <script src="js/controllers/NavigationController.js?v=1.3.1"></script>
+    <script src="js/controllers/AppController.js?v=1.3.1"></script>
 
     <!-- Main Bootstrapper -->
-    <script src="js/app.js?v=1.3.0"></script>
+    <script src="js/app.js?v=1.3.1"></script>
 </body>
 </html>

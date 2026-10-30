@@ -61,6 +61,9 @@ COLORS={'approved':('#287e6b','#287e6b'),'translated':('#287e6b','#287e6b'),'war
 
 def svg(body,under='',variant='light',name='',viewbox='0 0 32 32',width=32):
  p=PALETTES[variant]; ink=p['ink']; accent=p['accent']
+ if name=='upload':
+  body='<g transform="translate(1 1) scale(.92)">'+body+'</g>'
+  under='<g transform="translate(1 1) scale(.92)">'+under+'</g>'
  if variant=='light' and name in COLORS: ink,accent=COLORS[name]
  if variant=='dark' and name in COLORS: ink,accent={'approved':('#91d8bd','#91d8bd'),'translated':('#91d8bd','#91d8bd'),'warning':('#efc47f','#efc47f'),'error':('#f3a8b5','#f3a8b5')}[name]
  style=f'--tram-ink:{ink};--tram-accent:{accent};'

@@ -68,12 +68,14 @@ function updateBgmUI() {
     const track = BGM_PLAYLIST[currentBgmIndex];
     if (btn) {
         btn.title = `Nhạc [${track.tag}]: ${track.title} (Bấm để ${isBgmPlaying ? 'Tạm Dừng' : 'Phát'}, Alt+M)`;
+        btn.setAttribute("aria-label", btn.title);
+        btn.setAttribute("aria-pressed", String(isBgmPlaying));
         if (isBgmPlaying) {
             btn.classList.add("active");
-            btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
+            btn.innerHTML = tramIcon("pause");
         } else {
             btn.classList.remove("active");
-            btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>`;
+            btn.innerHTML = tramIcon("music");
         }
     }
 }

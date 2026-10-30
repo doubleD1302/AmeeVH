@@ -15,7 +15,7 @@ Bộ asset mới dành cho web https://tramvh.doubled1302.workers.dev/, đối c
 
 ## Dùng với cấu trúc web hiện tại
 
-Bộ này đang ở `assets/tramvh-icons-r01/`. Chỉ tạo bộ asset mới, chưa thay index.html, manifest.json hay đăng bản mới lên Workers.
+Bộ này đang ở `assets/tramvh-icons-r01/`. Đã tích hợp vào index.html, manifest.json, các view biên dịch/từ điển và điều khiển nhạc. IconView.js cung cấp hàm tramIcon(id) cho HTML động. Việc đồng bộ GitHub và kiểm tra Workers được ghi ở báo cáo tích hợp riêng.
 
 Cách đơn giản, dùng ảnh SVG màu theo theme (không cần JavaScript):
 
@@ -63,4 +63,4 @@ Không chèn hình vào option của select native; dùng nhãn chữ cho bộ l
 
 ## Phạm vi kiểm chứng
 
-Kết quả tự kiểm và hash được ghi ở QA.json/SHA256SUMS.txt sau khi xuất PNG. Xem ảnh preview-desktop.png, preview-dark.png và preview-mobile.png. Kiểm thử ở viewport di động bằng Chrome máy tính không thay thế kiểm trên điện thoại thật. Không có thao tác lưu Google Sheets hay deploy web trong đợt này.
+Kết quả tự kiểm và hash được ghi ở QA.json/SHA256SUMS.txt sau khi xuất PNG. Xem ảnh preview-desktop.png, preview-dark.png và preview-mobile.png. Kiểm thử ở viewport di động bằng Chrome máy tính không thay thế kiểm trên điện thoại thật. Không gửi bản dịch thử lên Google Sheets. Trạng thái GitHub/Workers xem báo cáo tích hợp riêng.

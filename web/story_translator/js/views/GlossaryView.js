@@ -57,7 +57,7 @@ function renderGlossarySuggestions(enText) {
             <span class="chip-en">${escapeHtml(item.en)}</span>
             <span class="chip-arrow">➔</span>
             <span class="chip-vi">${escapeHtml(item.vi)}</span>
-            ${item.is_critical ? `<span class="chip-warn-badge">⚠️ LƯU Ý</span>` : ''}
+            ${item.is_critical ? `<span class="chip-warn-badge">${tramIcon("warning")} LƯU Ý</span>` : ''}
         `;
 
         chip.onclick = (e) => {
@@ -155,7 +155,7 @@ function renderGlossaryList() {
 
     if (filtered.length === 0) {
         container.innerHTML = `<div class="glossary-empty-state">
-            <p style="font-size:1.15rem; font-weight:700; margin-bottom:8px; color:var(--text-main);">🔍 Không tìm thấy thuật ngữ phù hợp!</p>
+            <p style="font-size:1.15rem; font-weight:700; margin-bottom:8px; color:var(--text-main);">${tramIcon("search")} Không tìm thấy thuật ngữ phù hợp!</p>
             <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.5;">
                 Bạn có thể thử tìm bằng từ tiếng Anh, tiếng Việt (có dấu hoặc không dấu), hoặc bấm <b>"Tất cả"</b> để xem danh sách.
             </p>
@@ -173,13 +173,13 @@ function renderGlossaryList() {
                 </div>
                 <div class="glossary-card-actions">
                     <span class="glossary-term-badge">${escapeHtml(item.category || 'Chung')}</span>
-                    <button class="glossary-action-btn" onclick="copyGlossaryTerm('${escapeHtml(item.vi)}')">📋 Sao chép</button>
+                    <button class="glossary-action-btn" onclick="copyGlossaryTerm('${escapeHtml(item.vi)}')">${tramIcon("copy")} Sao chép</button>
                     <button class="glossary-action-btn action-insert" onclick="insertGlossaryFromModal('${escapeHtml(item.vi)}')">➕ Chèn</button>
                 </div>
             </div>
             ${item.notes ? `
                 <div class="glossary-card-notes ${item.is_critical ? 'critical-notes' : ''}">
-                    <span class="notes-icon">${item.is_critical ? '⚠️' : 'ℹ️'}</span>
+                    <span class="notes-icon">${tramIcon(item.is_critical ? 'warning' : 'info')}</span>
                     <span class="notes-text">${highlightGlossaryMatch(item.notes, glossarySearchTerm)}</span>
                 </div>
             ` : ''}
@@ -208,7 +208,7 @@ function onQuickGlossarySearch(val) {
     const matches = searchGlossaryTerms(term, "ALL");
     if (matches.length === 0) {
         tray.style.display = "flex";
-        tray.innerHTML = `<span style="font-size:0.8rem; color:var(--text-sub); padding:4px;">🔍 Không tìm thấy thuật ngữ nào khớp với "${escapeHtml(term)}" (Bấm Alt+G để mở Từ điển đầy đủ)</span>`;
+        tray.innerHTML = `<span style="font-size:0.8rem; color:var(--text-sub); padding:4px;">${tramIcon("search")} Không tìm thấy thuật ngữ nào khớp với "${escapeHtml(term)}" (Bấm Alt+G để mở Từ điển đầy đủ)</span>`;
         return;
     }
 
@@ -220,7 +220,7 @@ function onQuickGlossarySearch(val) {
             <span class="chip-en">${escapeHtml(item.en)}</span>
             <span class="chip-arrow">➔</span>
             <span class="chip-vi">${escapeHtml(item.vi)}</span>
-            ${item.is_critical ? '<span class="chip-warn-badge">⚠️ LƯU Ý</span>' : ''}
+            ${item.is_critical ? '<span class="chip-warn-badge">' + tramIcon('warning') + ' LƯU Ý</span>' : ''}
         </div>
     `).join('');
 }

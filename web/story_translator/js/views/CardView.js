@@ -76,7 +76,7 @@ function renderCurrentLine() {
         }
     } else {
         // Narrator / System
-        avatarImg.src = "web_assets/favicon.png";
+        avatarImg.src = "assets/tramvh-icons-r01/brand/tramvh-app-light-192.png";
         avatarCircle.style.borderColor = "#38bdf8";
         avatarCircle.style.boxShadow = "0 0 15px rgba(56, 189, 248, 0.4)";
         document.getElementById("actorQuoteText").innerText = spk.includes("Hệ thống") ? "Lệnh hệ thống game" : "Bối cảnh câu chuyện";
@@ -146,7 +146,7 @@ function updateTokenValidationUI() {
         const uniqueMissing = [...new Set(res.missing)];
         alertBox.innerHTML = `
             <div class="token-alert-header">
-                <span class="token-alert-icon">⚠️</span>
+                <span class="token-alert-icon">${tramIcon("warning")}</span>
                 <span class="token-alert-title">THIẾU TOKEN HỆ THỐNG / ĐỊNH DẠNG (${res.missing.length}):</span>
             </div>
             <div class="token-alert-body">
@@ -167,7 +167,7 @@ function updateTokenValidationUI() {
         alertBox.className = "token-validation-alert alert-valid";
         alertBox.innerHTML = `
             <div class="token-valid-row">
-                <span class="token-valid-icon">✅</span>
+                <span class="token-valid-icon">${tramIcon("approved")}</span>
                 <span class="token-valid-text">Đã điền đủ tất cả <b>${res.sourceTokens.length}</b> token hệ thống & định dạng.</span>
             </div>
         `;

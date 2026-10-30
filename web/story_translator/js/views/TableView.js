@@ -10,7 +10,7 @@ function renderListTokenWarningHtml(idx, enText, viText) {
     }
     const uniqueMissing = [...new Set(res.missing)];
     return `<div class="list-token-warning" id="listTokenWarn_${idx}">
-        <span>⚠️ Thiếu ${res.missing.length} token:</span>
+        <span>${tramIcon("warning")} Thiếu ${res.missing.length} token:</span>
         ${uniqueMissing.map(t => `<code onclick="insertListTag(${idx}, '${escapeHtml(t)}')" title="Bấm để chèn vào câu">+ ${escapeHtml(t)}</code>`).join(' ')}
     </div>`;
 }
@@ -25,12 +25,12 @@ function renderListGlossaryChipsHtml(idx, enText) {
             <span class="chip-en">${escapeHtml(m.en)}</span>
             <span class="chip-arrow">➔</span>
             <span class="chip-vi">${escapeHtml(m.vi)}</span>
-            ${m.is_critical ? '⚠️' : ''}
+            ${m.is_critical ? tramIcon('warning') : ''}
         </span>`;
     }).join('');
 
     return `<div class="table-glossary-tray">
-        <span class="table-glossary-label">💡 Gợi ý:</span>
+        <span class="table-glossary-label">${tramIcon("glossary")} Gợi ý:</span>
         ${chipsHtml}
     </div>`;
 }
@@ -45,7 +45,7 @@ function renderListMode() {
         card.innerHTML = `
             <div class="table-row-top">
                 <div class="table-row-speaker">
-                    <span>🗣️ ${item.speaker}</span>
+                    <span>${tramIcon("dialogue")} ${item.speaker}</span>
                     <span style="font-size:0.75rem; color:var(--cyan-light); font-weight:normal; font-family:var(--font-code);">#${item.line_id}</span>
                 </div>
                 <span class="badge-status ${item.status === 'Đã duyệt' ? 'approved' : item.status === 'Đã dịch' ? 'translated' : 'pending'}">${item.status}</span>
@@ -56,8 +56,8 @@ function renderListMode() {
             ${renderListTokenWarningHtml(idx, item.en, item.new_vi || '')}
             <input type="text" class="table-row-input ${!validateTokens(item.en, item.new_vi || '').isValid && extractTokens(item.en).length > 0 ? 'token-invalid' : ''}" value="${item.new_vi || ''}" placeholder="Nhập câu dịch tiếng Việt..." oninput="onListInput(${idx}, this)" onchange="onListChange(${idx}, this.value)">
             <div class="table-row-bottom">
-                <span style="color:var(--gold-light);">👤 Dịch giả: ${item.translator || 'Chưa có'}</span>
-                <button class="btn-direction" style="padding:6px 14px; font-size:0.8rem;" onclick="saveListRow(${idx})">💾 Lưu câu này</button>
+                <span style="color:var(--gold-light);">${tramIcon("profile")} Dịch giả: ${item.translator || 'Chưa có'}</span>
+                <button class="btn-direction" style="padding:6px 14px; font-size:0.8rem;" onclick="saveListRow(${idx})">${tramIcon("save")} Lưu câu này</button>
             </div>
         `;
         container.appendChild(card);

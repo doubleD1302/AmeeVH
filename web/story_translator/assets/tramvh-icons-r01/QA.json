@@ -52,5 +52,15 @@
   "browser": "Chrome headless desktop; mobile emulation only",
   "deployment": "not_performed",
   "independent_review": "not_performed",
-  "real_device": "not_tested"
+  "real_device": "not_tested",
+  "structural_checks": {
+    "svg_xml_files_valid": 167,
+    "sprite_unique_ids_each": 49,
+    "ui_png_count": 196,
+    "ui_png_dimensions_alpha_padding": "passed",
+    "script_or_foreignobject_in_svg": false,
+    "self_visual_inspection": "desktop_light_dark_and_mobile_inspected; badge_fill_and_upload_padding_corrected"
+  },
+  "all_self_checks_passed": true,
+  "integration": "See reports/tramvh_icons_20261031_r01/INTEGRATION_QA.json; this QA covers asset export/catalog only."
 }

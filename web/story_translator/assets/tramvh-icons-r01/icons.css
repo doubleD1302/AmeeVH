@@ -1,6 +1,23 @@
-/* TramVH Icons r01 — opt-in; no global selectors. */
-.tram-icon{width:1.5rem;height:1.5rem;display:inline-block;flex-shrink:0;vertical-align:-.22em;color:inherit}
-.tram-icon--sm{width:1.25rem;height:1.25rem}.tram-icon--lg{width:2rem;height:2rem}
+/* TramVH r01: theme-aware vector icons, scoped to the icon elements. */
+.tram-icon{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;flex:none;vertical-align:middle;line-height:1}
+.tram-icon img{width:100%;height:100%;object-fit:contain}
 .tram-icon-light{display:inline-block}.tram-icon-dark{display:none}
 html[data-theme="dark"] .tram-icon-light{display:none}html[data-theme="dark"] .tram-icon-dark{display:inline-block}
+.tram-brand-mark{width:48px;height:40px;display:inline-flex;align-items:center;flex:none}
+.tram-brand-mark img{width:100%;height:100%;object-fit:contain}
+.tram-theme-night{display:inline-flex}.tram-theme-day{display:none}
+html[data-theme="dark"] .tram-theme-night{display:none}html[data-theme="dark"] .tram-theme-day{display:inline-flex}
+.btn-circle .tram-icon{width:23px;height:23px}.mode-tab-btn,.btn-direction,.btn-voice>span,.btn-save-glow>span{display:inline-flex;align-items:center;gap:7px;justify-content:center}
+.mode-tab-btn .tram-icon,.btn-direction .tram-icon,.btn-voice .tram-icon{width:21px;height:21px}
+.input-title .tram-icon,.speech-badge-title .tram-icon,.ref-quote-label .tram-icon,.suggestions-title .tram-icon{width:20px;height:20px;margin-right:3px}
+.modal-panel-header h2 .tram-icon{width:26px;height:26px;margin-right:7px}
+.table-row-speaker .tram-icon,.table-row-bottom .tram-icon,.table-glossary-label .tram-icon,.list-token-warning .tram-icon,.glossary-action-btn .tram-icon,.notes-icon .tram-icon,.chip-warn-badge .tram-icon{width:18px;height:18px}
+.sync-icon,.search-icon{display:inline-flex;align-items:center;justify-content:center}
+.sync-icon .tram-icon,.search-icon .tram-icon{width:20px;height:20px}
+.btn-save-glow .tram-icon-light{display:none}.btn-save-glow .tram-icon-dark{display:inline-block}
+html[data-theme="dark"] .btn-save-glow .tram-icon-light{display:none}
+.tram-icon--sm{width:20px;height:20px}.tram-icon--lg{width:32px;height:32px}
 .tram-icon-button{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:700px){.tram-brand-mark{width:40px;height:34px}}
+
+.btn-direction{white-space:nowrap}.quick-search-icon{display:inline-flex;align-items:center}.quick-search-icon .tram-icon{width:18px;height:18px}
