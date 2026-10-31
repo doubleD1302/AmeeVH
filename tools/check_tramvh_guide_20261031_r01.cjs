@@ -6,7 +6,8 @@ const http = require('node:http');
 const { spawn } = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const base = path.join(root, 'web/story_translator');
-const out = path.join(root, 'reports/tramvh_translation_guide_20261031_r03');
+const publicMode = process.argv.includes('--public');
+const out = path.join(root, 'reports/tramvh_guide_concise_20261031_r01', ...(publicMode ? ['public_runtime'] : []));
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 (async () => {
@@ -27,8 +28,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         } catch { res.writeHead(404); res.end(); }
     });
     await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-    const url = `http://127.0.0.1:${server.address().port}`;
-    const profile = path.join(root, 'work/runs/tramvh_translation_guide_20261031_r01/chrome-' + Date.now());
+    const url = publicMode ? 'https://tramvh.doubled1302.workers.dev' : `http://127.0.0.1:${server.address().port}`;
+    const profile = path.join(root, 'work/runs/tramvh_guide_concise_20261031_r01/chrome-' + Date.now());
     await fs.mkdir(profile, { recursive: true });
     const chrome = spawn('C:/Program Files/Google/Chrome/Application/chrome.exe', ['--headless', '--disable-gpu', '--disable-extensions', '--no-first-run', '--remote-debugging-port=0', '--remote-allow-origins=*', `--user-data-dir=${profile}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
     let ws;
@@ -50,7 +51,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
             const message = JSON.parse(event.data);
             if (message.method === 'Runtime.exceptionThrown') exceptions.push(message.params.exceptionDetails);
             if (message.method === 'Fetch.requestPaused') {
-                const { requestId, request } = message.params;
+                const { requestId, request } = message.params; requests.push(request.method + " " + request.url);
                 // External fonts/audio/GAS are not needed to exercise guide behavior.
                 call(request.url.startsWith(url + '/') && request.method === 'GET' ? 'Fetch.continueRequest' : 'Fetch.failRequest', { requestId, ...(request.url.startsWith(url + '/') && request.method === 'GET' ? {} : { errorReason: 'BlockedByClient' }) }).catch(() => {});
             }
@@ -80,15 +81,15 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         await call('Page.navigate', { url });
         for (let i = 0; i < 100; i++) { if (await evaluate(`typeof filteredLines !== 'undefined' && filteredLines.length > 0 && typeof openTranslationGuide === 'function'`)) break; await pause(100); }
         await evaluate(`closeProfileModal(); document.querySelector('#vietnameseInput').value='Bản nháp {0} đang viết'; window.beforeGuide={index:currentIndex,rows:JSON.stringify(currentLines),profile:localStorage.getItem('stella_user_profile')}; document.querySelector('#translationGuideBtn').focus(); document.querySelector('#translationGuideBtn').click();`);
-        await check('native modal and five sections', `document.querySelector('#translationGuideDialog').matches(':modal') && document.querySelectorAll('[data-guide-section]').length === 5`);
+        await check('native modal and two usage sections', `document.querySelector('#translationGuideDialog').matches(':modal') && document.querySelectorAll('[data-guide-section]').length === 2`);
         await check('initial search focus and body scroll lock', `document.activeElement.id==='guideSearch' && document.body.style.overflow==='hidden'`);
         await check('literal token examples escaped correctly', `['{name}', '$'+'{value}', '<color=#FFCC00>…</color>', String.fromCharCode(92)+'n'].every(t=>document.querySelector('[data-guide-section="tokens"]').textContent.includes(t)) && !document.querySelector('[data-guide-section="tokens"] color')`);
-        await check('unaccented search', `(()=>{const input=document.querySelector('#guideSearch');input.value='xung ho';input.dispatchEvent(new Event('input'));const visible=document.querySelectorAll('[data-guide-section]:not([hidden])').length;return !document.querySelector('[data-guide-section="pronouns"]').hidden && visible>0 && visible<5 && document.querySelector('#guideResultCount').textContent===visible+'/5 mục hướng dẫn'})()`);
+        await check('unaccented search', `(()=>{const input=document.querySelector('#guideSearch');input.value='thuat ngu';input.dispatchEvent(new Event('input'));const visible=document.querySelectorAll('[data-guide-section]:not([hidden])').length;return !document.querySelector('[data-guide-section="workflow"]').hidden && visible>0 && visible<2 && document.querySelector('#guideResultCount').textContent===visible+'/2 mục hướng dẫn'})()`);
         await check('empty search results and safe literal query', `(()=>{const i=document.querySelector('#guideSearch');i.value='<img src=x onerror=alert(1)>';i.dispatchEvent(new Event('input'));return !document.querySelector('#guideEmpty').hidden && !document.querySelector('#guideSearch img')})()`);
         await check('clear search restores sections', `(()=>{document.querySelector('#guideClearSearch').click();return document.querySelector('#guideSearch').value==='' && [...document.querySelectorAll('[data-guide-section]')].every(e=>!e.hidden)})()`);
-        await check('topic selection and checklist count', `(()=>{document.querySelector('[data-guide-topic="checklist"]').click();document.querySelectorAll('[data-guide-check]').forEach(e=>e.click());return document.querySelectorAll('[data-guide-section]:not([hidden])').length===1 && document.querySelector('#guideCheckStatus').textContent.includes('6/6') && document.querySelector('[data-guide-topic="checklist"]').getAttribute('aria-pressed')==='true'})()`);
-        await check('checklist reset', `(()=>{document.querySelector('#guideResetChecklist').click();return document.querySelectorAll('[data-guide-check]:checked').length===0 && document.querySelector('#guideCheckStatus').textContent.includes('0/6')})()`);
-        await evaluate(`document.querySelectorAll('[data-guide-check]')[0].click();document.querySelector('#guideSearch').focus()`);
+        await check('topic selection shows tokens', `(()=>{document.querySelector('[data-guide-topic="tokens"]').click();return document.querySelectorAll('[data-guide-section]:not([hidden])').length===1 && !document.querySelector('[data-guide-section="tokens"]').hidden && document.querySelector('[data-guide-topic="tokens"]').getAttribute('aria-pressed')==='true'})()`);
+        await check('removed topics and checklist controls are absent', `(()=>{const d=document.querySelector('#translationGuideDialog');return !/Văn phong|Xưng hô|Checklist/i.test(d.textContent) && !d.querySelector('[data-guide-section="style"],[data-guide-section="pronouns"],[data-guide-section="checklist"],input[type="checkbox"]') && document.querySelector('#guideTopicSelect').options.length===3})()`);
+        await evaluate(`document.querySelector('#guideSearch').focus()`);
         await key('s', 83, 1); await key('ArrowRight', 39, 1); await key('Enter', 13, 2);
         await check('editor shortcuts blocked while guide is open', `currentIndex===beforeGuide.index && JSON.stringify(currentLines)===beforeGuide.rows && localStorage.getItem('stella_user_profile')===beforeGuide.profile && document.querySelector('#vietnameseInput').value==='Bản nháp {0} đang viết'`);
         await evaluate(`document.querySelector('#guideClose').focus()`); await key('Tab', 9, 8);
@@ -96,7 +97,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         await key('Escape', 27); await pause(60);
         await check('escape closes and restores trigger focus', `!document.querySelector('#translationGuideDialog').open && document.activeElement.id==='translationGuideBtn' && document.body.style.overflow===''`);
         await evaluate(`document.querySelector('#translationGuideBtn').click()`);
-        await check('reopen resets checklist search and category', `document.querySelectorAll('[data-guide-check]:checked').length===0 && document.querySelector('#guideSearch').value==='' && document.querySelector('[data-guide-topic="all"]').getAttribute('aria-pressed')==='true'`);
+        await check('reopen resets search and category', `document.querySelector('#guideSearch').value==='' && document.querySelector('[data-guide-topic="all"]').getAttribute('aria-pressed')==='true'`);
         for (const [width, height] of [[1440,1000],[900,900],[390,844],[320,568],[320,480],[844,390],[390,360]]) {
             await call('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 700 });
             for (const theme of ['light', 'dark']) {
@@ -104,8 +105,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
                 await check(`layout ${width}x${height} ${theme}`, `(()=>{const d=document.querySelector('#translationGuideDialog'),r=d.getBoundingClientRect(),reading=d.querySelector('.guide-reading');return r.left>=0 && r.right<=innerWidth && r.top>=0 && r.bottom<=innerHeight && reading.clientHeight>80 && reading.scrollWidth<=reading.clientWidth+1 && document.documentElement.scrollWidth<=innerWidth && getComputedStyle(d).color!=='rgb(0, 0, 0)'})()`);
                 if (width<=700 || height<=500) {
                     await check(`mobile controls ${width}x${height} ${theme}`, `(()=>{const d=document.querySelector('#translationGuideDialog'),select=d.querySelector('#guideTopicSelect'),close=d.querySelector('#guideClose'),search=d.querySelector('#guideToggleSearch');return document.activeElement.id==='translationGuideTitle' && !d.querySelector('#guideSearchTools').classList.contains('is-open') && getComputedStyle(d.querySelector('.guide-nav')).display==='none' && [select,close,search].every(e=>e.getBoundingClientRect().height>=44) && d.getBoundingClientRect().height===innerHeight})()`);
-                    await check(`native topic selection ${width}x${height} ${theme}`, `(()=>{const s=document.querySelector('#guideTopicSelect');s.value='checklist';s.dispatchEvent(new Event('change'));return !document.querySelector('[data-guide-section="checklist"]').hidden && document.querySelectorAll('[data-guide-section]:not([hidden])').length===1 && s.selectedOptions[0].textContent==='Checklist trước khi lưu'})()`);
-                    await screenshot(`guide-checklist-${width}x${height}-${theme}`);
+                    await check(`native topic selection ${width}x${height} ${theme}`, `(()=>{const s=document.querySelector('#guideTopicSelect');s.value='tokens';s.dispatchEvent(new Event('change'));return !document.querySelector('[data-guide-section="tokens"]').hidden && document.querySelectorAll('[data-guide-section]:not([hidden])').length===1 && s.selectedOptions[0].textContent==='Token & tag'})()`);
+                    await screenshot(`guide-topic-${width}x${height}-${theme}`);
                     await evaluate(`document.querySelector('#guideTopicSelect').value='all';document.querySelector('#guideTopicSelect').dispatchEvent(new Event('change'))`);
                 }
                 await screenshot(`guide-${width}x${height}-${theme}`);
@@ -116,14 +117,13 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         await check('mobile search collapses and clears query', `(()=>{document.querySelector('#guideToggleSearch').click();return document.querySelector('#guideSearch').value==='' && document.querySelector('#guideToggleSearch').getAttribute('aria-expanded')==='false' && [...document.querySelectorAll('[data-guide-section]')].every(e=>!e.hidden)})()`);
         await call('Emulation.setDeviceMetricsOverride', { width:390,height:844,deviceScaleFactor:1,mobile:true });
         await evaluate(`document.querySelector('#guideTopicSelect').value='tokens';document.querySelector('#guideTopicSelect').dispatchEvent(new Event('change'))`); await screenshot('guide-tokens-mobile-dark');
-        await evaluate(`document.querySelector('#guideTopicSelect').value='checklist';document.querySelector('#guideTopicSelect').dispatchEvent(new Event('change'))`); await screenshot('guide-checklist-mobile-dark');
         await evaluate(`document.querySelector('#guideClose').click()`);
         await check('close preserves draft and line state', `document.querySelector('#vietnameseInput').value==='Bản nháp {0} đang viết' && currentIndex===beforeGuide.index && JSON.stringify(currentLines)===beforeGuide.rows`);
         await check('no duplicate IDs', `(()=>{const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);return ids.length===new Set(ids).size})()`);
         await check('guide uses only dedicated matching SVG icons', `(()=>{const images=[...document.querySelectorAll('#translationGuideDialog img,#translationGuideBtn img')];return images.length>0 && images.every(image=>image.getAttribute('src').startsWith('assets/translation-guide-r01/') && image.getAttribute('src').endsWith('.svg') && image.complete && image.naturalWidth>0)})()`);
         await check('list mode entry and draft preservation', `(()=>{switchMode('list');const row=document.querySelector('.table-row-input');row.value='Bản nháp danh sách';row.focus();openTranslationGuide();document.querySelector('#guideClose').click();return viewMode==='list' && row.value==='Bản nháp danh sách' && document.activeElement===row})()`);
         await check('glossary and navigation remain available', `(()=>{switchMode('game');const before=currentIndex;navigateLine(1);const moved=currentIndex===before+1;navigateLine(-1);openGlossaryModal();const opened=document.querySelector('#glossaryModal').classList.contains('open');closeGlossaryModal();return moved && currentIndex===before && opened})()`);
-        const report = { scope: 'Isolated static Chrome runtime; no external requests permitted', checks, exceptions, nonGetRequests: requests.filter(request=>!request.startsWith('GET ')), realDevice: 'not_tested', passed: checks.every(check=>check.passed) && exceptions.length===0 && requests.every(request=>request.startsWith('GET ')) };
+        const report = { scope: publicMode ? 'Live Cloudflare Chrome runtime; non-GET and other-origin requests blocked' : 'Isolated static Chrome runtime; non-GET and external requests blocked', checks, exceptions, nonGetRequests: requests.filter(request=>!request.startsWith('GET ')), realDevice: 'not_tested', passed: checks.every(check=>check.passed) && exceptions.length===0 && requests.every(request=>request.startsWith('GET ')) };
         await fs.writeFile(path.join(out, 'BROWSER_QA.json'), JSON.stringify(report, null, 2));
         console.log(JSON.stringify(report));
         if (!report.passed) throw Error('Guide QA failed');

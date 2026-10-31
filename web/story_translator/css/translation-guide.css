@@ -35,11 +35,6 @@
 .guide-section code{font-family:var(--font-code);font-size:.85em;color:var(--cyan-primary);white-space:pre-wrap;overflow-wrap:anywhere}
 .guide-note{padding:12px 14px;border-left:3px solid var(--cyan-primary);background:var(--bg-deep);border-radius:0 8px 8px 0;font-size:.86rem}
 .guide-section kbd{font-family:var(--font-code);font-size:.8em;border:1px solid var(--card-border);border-bottom-width:2px;border-radius:4px;padding:1px 5px;white-space:nowrap}
-.guide-checklist{border:0;padding:0;margin:12px 0;min-width:0}
-.guide-checklist legend{font-size:.85rem;color:var(--text-sub);margin-bottom:8px}
-.guide-checklist label{display:flex;align-items:flex-start;gap:10px;padding:9px 0;cursor:pointer}
-.guide-checklist input{accent-color:var(--cyan-primary);width:18px;height:18px;flex:none;margin-top:6px}
-.guide-check-status{font-size:.85rem;color:var(--text-sub)}
 .guide-empty{padding:24px 8px;color:var(--text-sub)}
 .guide-footer{font-size:.76rem;color:var(--text-sub);margin-top:18px}
 #translationGuideDialog :focus-visible{outline:3px solid var(--cyan-primary);outline-offset:3px}
@@ -68,7 +63,5 @@
     .guide-section-heading{gap:10px;margin:0 0 10px}
     .guide-section h3{font-size:1rem}
     .guide-section ul,.guide-section ol{padding-left:20px}
-    .guide-checklist label{padding:10px 0;gap:12px;min-height:44px}
-    .guide-checklist input{width:20px;height:20px}
 }
 @media(max-width:380px){.hud-tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.hud-tools .btn-circle{width:100%;max-width:none;min-height:44px}}
