@@ -1,6 +1,6 @@
 /**
  * AudioController.js
- * Quản lý khởi tạo âm thanh, danh sách phát nhạc vòng lặp 2 bài (Cinematic & Ending Themes) và voice clip
+ * Quản lý khởi tạo âm thanh, danh sách phát nhạc vòng lặp 2 bài (Title Screen & Official Web Themes) và voice clip
  */
 
 const BGM_PLAYLIST = [
@@ -13,11 +13,11 @@ const BGM_PLAYLIST = [
         tag: "1/2"
     },
     {
-        id: "prologue_theme",
-        title: "Prologue Theme (Ca Khúc Mở Màn)",
-        shortName: "Ca Khúc Mở Màn",
-        src: "official_assets/bgm/bgm_02_prologue_theme.mp3",
-        duration: "1:38",
+        id: "official_web_theme",
+        title: "Official Website Theme (Nhạc Trang Chủ Official)",
+        shortName: "Trang Chủ Official",
+        src: "official_assets/bgm/bgm_02_official_web_theme.mp3",
+        duration: "1:54",
         tag: "2/2"
     }
 ];
