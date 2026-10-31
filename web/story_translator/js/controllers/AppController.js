@@ -5,6 +5,7 @@
 
 const AppController = {
     async init() {
+        initTramSelects();
         updateThemeButton();
         await loadCharactersMetadata();
         loadProfile();

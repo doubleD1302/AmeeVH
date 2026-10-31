@@ -55,7 +55,7 @@ async function loadChapterData(chapterId) {
 
         const sceneSel = document.getElementById("sceneSelect");
         const drawer = document.getElementById("scenesDrawer");
-        sceneSel.innerHTML = '<option value="all">🌟 Toàn bộ các Màn</option>';
+        sceneSel.innerHTML = '<option value="all">Toàn bộ các Màn</option>';
         drawer.innerHTML = '<div class="scenes-nav-header"><span>DANH SÁCH MÀN</span></div>';
 
         currentLines = [];
@@ -94,6 +94,7 @@ async function loadChapterData(chapterId) {
 
 // Filtering
 function applyFilters() {
+    if (typeof syncTramSelects === "function") syncTramSelects();
     const scVal = document.getElementById("sceneSelect").value;
     const filterVal = document.getElementById("filterSelect").value;
 

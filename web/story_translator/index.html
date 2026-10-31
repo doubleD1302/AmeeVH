@@ -6,9 +6,9 @@
     <title>Stella Sora — Trạm Dịch Thuật Cốt Truyện</title>
     
     <!-- PWA & Favicon -->
-    <link rel="icon" type="image/png" href="assets/tramvh-icons-r01/brand/tramvh-app-light-32.png">
-    <link rel="apple-touch-icon" href="assets/tramvh-icons-r01/brand/tramvh-app-light-180.png">
-    <link rel="manifest" href="manifest.json?v=1.3.1">
+    <link rel="icon" type="image/png" href="web_assets/favicon.png?v=1.3.2">
+    <link rel="apple-touch-icon" href="web_assets/app_icon.png?v=1.3.2">
+    <link rel="manifest" href="manifest.json?v=1.3.2">
     <meta name="theme-color" content="#eaf3f8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,11 +17,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1.3.1">
+    <link rel="stylesheet" href="css/style.css?v=1.3.2">
     <script>try { if (localStorage.getItem("stella_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (_) {}</script>
-    <link rel="stylesheet" href="assets/soft-sky/theme.css?v=1.3.1">
-    <link rel="stylesheet" href="assets/soft-sky/theme-dark.css?v=1.3.1">
-    <link rel="stylesheet" href="assets/tramvh-icons-r01/icons.css?v=1.3.1">
+    <link rel="stylesheet" href="assets/soft-sky/theme.css?v=1.3.2">
+    <link rel="stylesheet" href="assets/soft-sky/theme-dark.css?v=1.3.2">
+    <link rel="stylesheet" href="assets/tramvh-icons-r01/icons.css?v=1.3.2">
+    <link rel="stylesheet" href="css/icon-controls.css?v=1.3.2">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -51,7 +52,7 @@
         <!-- Translator Profile HUD -->
         <div class="hud-profile-pill" onclick="openProfileModal()">
             <div class="hud-avatar-frame">
-                <img id="hudAvatar" class="hud-avatar-img" src="assets/tramvh-icons-r01/brand/tramvh-app-light-192.png" alt="Avatar">
+                <img id="hudAvatar" class="hud-avatar-img" src="web_assets/favicon.png" alt="Avatar">
             </div>
             <div class="hud-profile-meta">
                 <div class="hud-name-line">
@@ -78,14 +79,14 @@
     <!-- Navigation Sub-Bar -->
     <div class="sub-bar">
         <div class="selectors-wrap">
-            <select id="chapterSelect" class="app-select" onchange="onChapterChange()"></select>
-            <select id="sceneSelect" class="app-select" onchange="onSceneChange()"></select>
-            <select id="filterSelect" class="app-select" onchange="applyFilters()">
-                <option value="all">🔍 Tất cả câu thoại</option>
-                <option value="untranslated">⏳ Chưa dịch (Cần làm)</option>
-                <option value="translated">⭐ Đã dịch</option>
-                <option value="approved">✅ Đã duyệt</option>
-                <option value="dialogue_only">🗣️ Chỉ thoại nhân vật</option>
+            <select id="chapterSelect" aria-label="Chọn chương" class="app-select" onchange="onChapterChange()"></select>
+            <select id="sceneSelect" aria-label="Chọn cảnh" class="app-select" onchange="onSceneChange()"></select>
+            <select id="filterSelect" aria-label="Lọc câu thoại" class="app-select" onchange="applyFilters()">
+                <option value="all">Tất cả câu thoại</option>
+                <option value="untranslated">Chưa dịch (Cần làm)</option>
+                <option value="translated">Đã dịch</option>
+                <option value="approved">Đã duyệt</option>
+                <option value="dialogue_only">Chỉ thoại nhân vật</option>
             </select>
         </div>
 
@@ -122,7 +123,7 @@
                 <div class="vn-character-header">
                     <div class="actor-id-badge">
                         <div class="actor-avatar-circle" id="actorAvatarCircle">
-                            <img id="actorAvatarImg" src="assets/tramvh-icons-r01/brand/tramvh-app-light-192.png" alt="Avatar">
+                            <img id="actorAvatarImg" src="web_assets/favicon.png" alt="Avatar">
                         </div>
                         <div class="actor-details">
                             <div class="actor-name-title">
@@ -189,7 +190,7 @@
                 <div class="stage-action-toolbar">
                     <div style="display:flex; align-items:center; gap:10px;">
                         <button class="btn-direction" onclick="navigateLine(-1)"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/previous.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/previous.svg" alt=""></span> Câu trước</button>
-                        <button class="btn-direction" onclick="navigateLine(1)"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span> Câu kế</button>
+                        <button class="btn-direction" onclick="navigateLine(1)">Câu kế <span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
                         <span id="counterIndicator" style="font-size:0.85rem; color:var(--text-sub); font-weight:600;">0 / 0</span>
                     </div>
                     <button class="btn-save-glow" onclick="saveCurrentLine()">
@@ -278,31 +279,32 @@
     </div>
 
     <!-- ================= MVC ARCHITECTURE ================= -->
-    <script src="js/views/IconView.js?v=1.3.1"></script>
+    <script src="js/views/IconView.js?v=1.3.2"></script>
+    <script src="js/views/SelectView.js?v=1.3.2"></script>
     <!-- Models -->
-    <script src="js/config.js?v=1.3.1"></script>
-    <script src="js/models/UserModel.js?v=1.3.1"></script>
-    <script src="js/models/CharacterModel.js?v=1.3.1"></script>
-    <script src="js/models/TokenModel.js?v=1.3.1"></script>
-    <script src="js/models/GlossaryModel.js?v=1.3.1"></script>
-    <script src="js/models/StoryModel.js?v=1.3.1"></script>
+    <script src="js/config.js?v=1.3.2"></script>
+    <script src="js/models/UserModel.js?v=1.3.2"></script>
+    <script src="js/models/CharacterModel.js?v=1.3.2"></script>
+    <script src="js/models/TokenModel.js?v=1.3.2"></script>
+    <script src="js/models/GlossaryModel.js?v=1.3.2"></script>
+    <script src="js/models/StoryModel.js?v=1.3.2"></script>
 
     <!-- Views -->
-    <script src="js/views/ToastView.js?v=1.3.1"></script>
-    <script src="js/views/HudView.js?v=1.3.1"></script>
-    <script src="js/views/CardView.js?v=1.3.1"></script>
-    <script src="js/views/TableView.js?v=1.3.1"></script>
-    <script src="js/views/GlossaryView.js?v=1.3.1"></script>
-    <script src="js/views/ProfileView.js?v=1.3.1"></script>
-    <script src="js/views/LeaderboardView.js?v=1.3.1"></script>
+    <script src="js/views/ToastView.js?v=1.3.2"></script>
+    <script src="js/views/HudView.js?v=1.3.2"></script>
+    <script src="js/views/CardView.js?v=1.3.2"></script>
+    <script src="js/views/TableView.js?v=1.3.2"></script>
+    <script src="js/views/GlossaryView.js?v=1.3.2"></script>
+    <script src="js/views/ProfileView.js?v=1.3.2"></script>
+    <script src="js/views/LeaderboardView.js?v=1.3.2"></script>
 
     <!-- Controllers -->
-    <script src="js/controllers/AudioController.js?v=1.3.1"></script>
-    <script src="js/controllers/EditorController.js?v=1.3.1"></script>
-    <script src="js/controllers/NavigationController.js?v=1.3.1"></script>
-    <script src="js/controllers/AppController.js?v=1.3.1"></script>
+    <script src="js/controllers/AudioController.js?v=1.3.2"></script>
+    <script src="js/controllers/EditorController.js?v=1.3.2"></script>
+    <script src="js/controllers/NavigationController.js?v=1.3.2"></script>
+    <script src="js/controllers/AppController.js?v=1.3.2"></script>
 
     <!-- Main Bootstrapper -->
-    <script src="js/app.js?v=1.3.1"></script>
+    <script src="js/app.js?v=1.3.2"></script>
 </body>
 </html>

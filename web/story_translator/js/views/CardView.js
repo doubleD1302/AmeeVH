@@ -76,7 +76,7 @@ function renderCurrentLine() {
         }
     } else {
         // Narrator / System
-        avatarImg.src = "assets/tramvh-icons-r01/brand/tramvh-app-light-192.png";
+        avatarImg.src = "web_assets/favicon.png";
         avatarCircle.style.borderColor = "#38bdf8";
         avatarCircle.style.boxShadow = "0 0 15px rgba(56, 189, 248, 0.4)";
         document.getElementById("actorQuoteText").innerText = spk.includes("Hệ thống") ? "Lệnh hệ thống game" : "Bối cảnh câu chuyện";
