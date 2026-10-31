@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/tramvh-icons-r01/icons.css?v=1.4.0">
     <link rel="stylesheet" href="css/icon-controls.css?v=1.4.0">
     <link rel="stylesheet" href="css/wordmark.css?v=1.4.0">
+    <link rel="stylesheet" href="css/translation-guide.css?v=guide-r03">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -66,6 +67,7 @@
 
         <!-- Actions HUD -->
         <div class="hud-tools">
+            <button id="translationGuideBtn" class="btn-circle guide-open-button" type="button" title="Hướng dẫn dịch thuật" aria-label="Hướng dẫn dịch thuật" aria-haspopup="dialog" onclick="openTranslationGuide()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/translation-guide-r01/guide-light.svg" alt=""><img class="tram-icon-dark" src="assets/translation-guide-r01/guide-dark.svg" alt=""></span><span>Hướng dẫn</span></button>
             <button id="bgmToggleBtn" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/music.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/music.svg" alt=""></span></button>
             <button id="bgmNextBtn" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 2 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
             <button id="themeToggleBtn" class="btn-circle" type="button" title="Chuyển sang chế độ tối" aria-label="Chuyển sang chế độ tối" aria-pressed="false" onclick="toggleTheme()"><span class="tram-theme-night"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/moon.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/moon.svg" alt=""></span></span><span class="tram-theme-day"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sun.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sun.svg" alt=""></span></span></button>
@@ -349,7 +351,11 @@
         </div>
     </div>
 
+    <!-- Reading help never submits or changes the current translation. -->
+    <dialog id="translationGuideDialog" aria-labelledby="translationGuideTitle" aria-describedby="translationGuideIntro"></dialog>
+
     <!-- ================= MVC ARCHITECTURE ================= -->
+    <script src="js/views/TranslationGuideView.js?v=guide-r03"></script>
     <script src="js/views/IconView.js?v=1.4.0"></script>
     <script src="js/views/SelectView.js?v=1.4.0"></script>
     <!-- Models -->
