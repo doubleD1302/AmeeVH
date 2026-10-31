@@ -92,6 +92,11 @@ function doPost(e) {
       return createJsonResponse(result);
     }
 
+    if (action === "add_glossary_term" || action === "add_term") {
+      var result = handleAddGlossaryTerm(payload);
+      return createJsonResponse(result);
+    }
+
     return createJsonResponse({
       success: false,
       error: "Hành động không hợp lệ: " + action
@@ -133,6 +138,10 @@ function doGet(e) {
 
     if (action === "get_glossary" || action === "sync_glossary" || action === "glossary") {
       return createJsonResponse(getGlossaryTerms());
+    }
+
+    if (action === "add_glossary_term" || action === "add_term") {
+      return createJsonResponse(handleAddGlossaryTerm(e.parameter));
     }
 
     if (action === "get_leaderboard") {
@@ -310,15 +319,79 @@ function getGlossaryTerms() {
   for (var i = 1; i < data.length; i++) {
     var row = data[i];
     if (row.length >= 2 && String(row[0]).trim() !== "") {
+      var col0 = String(row[0]).trim();
+      if (col0.startsWith("---") || col0.startsWith("BẢNG THỐNG NHẤT") || col0.startsWith("Danh từ")) {
+        continue;
+      }
       terms.push({
-        category: String(row[0]).trim(),
-        en: String(row[1] || "").trim(),
-        vi: String(row[2] || "").trim(),
-        notes: String(row[3] || "").trim()
+        en: col0,
+        vi: String(row[1] || "").trim(),
+        category: String(row[2] || "Chung").trim(),
+        notes: String(row[3] || "").trim(),
+        status: String(row[4] || "approved").trim()
       });
     }
   }
   return { success: true, total: terms.length, terms: terms };
+}
+
+/**
+ * Thêm hoặc cập nhật thuật ngữ vào tab '01. Thống Nhất Danh Từ'
+ */
+function handleAddGlossaryTerm(data) {
+  var ss = getSpreadsheet();
+  var sheet = ss.getSheetByName("01. Thống Nhất Danh Từ");
+  if (!sheet) {
+    return { success: false, error: "Không tìm thấy tab '01. Thống Nhất Danh Từ' trên Google Sheets!" };
+  }
+
+  var en = String(data.en || data.term_en || data.source || "").trim();
+  var vi = String(data.vi || data.term_vi || data.target || "").trim();
+  var category = String(data.category || data.group || "").trim() || "Chung";
+  var notes = String(data.notes || "").trim();
+  var status = String(data.status || "approved").trim();
+  var translator = String(data.translator || "").trim() || "Ẩn Danh";
+
+  if (!en || !vi) {
+    return { success: false, error: "Thuật ngữ tiếng Anh (EN) và tiếng Việt (VI) không được để trống!" };
+  }
+
+  var values = sheet.getDataRange().getValues();
+  var existingRow = -1;
+  for (var i = 1; i < values.length; i++) {
+    var rowEn = String(values[i][0]).trim();
+    if (rowEn.toLowerCase() === en.toLowerCase()) {
+      existingRow = i + 1;
+      break;
+    }
+  }
+
+  if (existingRow > 0) {
+    // Cập nhật dòng đã tồn tại
+    sheet.getRange(existingRow, 2).setValue(vi);
+    if (category && category !== "Chung") sheet.getRange(existingRow, 3).setValue(category);
+    if (notes) sheet.getRange(existingRow, 4).setValue(notes);
+    sheet.getRange(existingRow, 5).setValue(status);
+  } else {
+    // Thêm dòng mới vào cuối bảng
+    sheet.appendRow([en, vi, category, notes, status]);
+  }
+
+  if (translator && translator !== "Ẩn Danh") {
+    recordTranslatorContribution(ss, translator, 30, "Thêm Thuật Ngữ");
+  }
+
+  return {
+    success: true,
+    message: "Đã đồng bộ thuật ngữ '" + en + " ➔ " + vi + "' lên Google Sheets thành công!",
+    term: {
+      en: en,
+      vi: vi,
+      category: category,
+      notes: notes,
+      status: status
+    }
+  };
 }
 
 /**

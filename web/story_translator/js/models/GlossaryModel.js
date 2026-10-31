@@ -1,6 +1,6 @@
 /**
  * GlossaryModel.js
- * Quản lý thuật ngữ, tra cứu thông minh, phân loại và thuật toán quét gợi ý danh từ trong câu
+ * Quản lý thuật ngữ, tra cứu thông minh, thêm thuật ngữ mới và tự động đồng bộ Google Sheets
  */
 
 let allGlossaryTerms = [];
@@ -18,6 +18,64 @@ function removeVietnameseTones(str) {
     str = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     str = str.replace(/[đĐ]/g, "d");
     return str;
+}
+
+/**
+ * Chuẩn hóa và làm sạch mảng thuật ngữ, bỏ dòng tiêu đề và gộp cache offline
+ */
+function normalizeLoadedGlossaryTerms(rawList) {
+    if (!rawList || !Array.isArray(rawList)) return [];
+
+    const cleaned = [];
+    const seenEn = new Set();
+
+    for (const item of rawList) {
+        if (!item) continue;
+        let en = (item.en || item.term_en || item.source || "").trim();
+        let vi = (item.vi || item.term_vi || item.target || "").trim();
+        let cat = (item.category || item.group || "Chung").trim();
+        let notes = (item.notes || "").trim();
+        let status = (item.status || "approved").trim();
+
+        // Xử lý nếu gặp dữ liệu dạng ngược (category chứa tên tiếng Anh)
+        if (!en && cat && vi && cat.length > 0 && !cat.startsWith("---")) {
+            en = cat;
+            cat = "Chung";
+        }
+
+        // Bỏ qua các dòng tiêu đề bảng tính
+        if (!en || en.startsWith("---") || en.startsWith("BẢNG THỐNG NHẤT") || en.startsWith("Danh từ")) {
+            continue;
+        }
+
+        const enKey = en.toLowerCase();
+        if (seenEn.has(enKey)) continue;
+        seenEn.add(enKey);
+
+        cleaned.push({
+            en: en,
+            vi: vi,
+            category: cat || "Chung",
+            raw_category: cat || "Chung",
+            notes: notes,
+            status: status
+        });
+    }
+
+    // Gộp thêm các thuật ngữ tùy chỉnh đã lưu offline (nếu có)
+    try {
+        const localCustoms = JSON.parse(localStorage.getItem("ss_custom_glossary") || "[]");
+        if (Array.isArray(localCustoms)) {
+            for (const c of localCustoms) {
+                if (c && c.en && !seenEn.has(c.en.toLowerCase())) {
+                    seenEn.add(c.en.toLowerCase());
+                    cleaned.push(c);
+                }
+            }
+        }
+    } catch (_) {}
+
+    return cleaned;
 }
 
 /**
@@ -70,7 +128,7 @@ async function loadGlossaryTerms(refresh = false) {
         }
 
         if (loadedTerms && Array.isArray(loadedTerms) && loadedTerms.length > 0) {
-            allGlossaryTerms = loadedTerms;
+            allGlossaryTerms = normalizeLoadedGlossaryTerms(loadedTerms);
             // Chuẩn hóa và sắp xếp theo độ dài tiếng Anh giảm dần (để cụm từ dài được ưu tiên quét trước từ đơn)
             allGlossaryTerms.sort((a, b) => ((b.en || "").length) - ((a.en || "").length));
             updateGlossaryCountBadge();
@@ -149,6 +207,129 @@ function detectGlossaryMatches(text) {
 }
 
 /**
+ * Thêm thuật ngữ mới và tự động đồng bộ lên Google Sheets
+ * @param {Object} termData - { en, vi, category, notes }
+ * @returns {Promise<{success: boolean, message: string, term: Object}>}
+ */
+async function addGlossaryTerm(termData) {
+    const en = (termData.en || "").trim();
+    const vi = (termData.vi || "").trim();
+    const category = (termData.category || "").trim() || "Chung";
+    const notes = (termData.notes || "").trim();
+    const translator = (typeof currentTranslator !== "undefined" && currentTranslator) ? currentTranslator : "Nhà Thám Hiểm";
+
+    if (!en || !vi) {
+        throw new Error("Vui lòng điền đầy đủ Thuật ngữ tiếng Anh (EN) và Bản dịch tiếng Việt (VI)!");
+    }
+
+    // 1. Cập nhật lạc quan (Optimistic UI Update) ngay trên giao diện
+    let existingIndex = allGlossaryTerms.findIndex(t => (t.en || "").trim().toLowerCase() === en.toLowerCase());
+    let newOrUpdatedTerm = {
+        en: en,
+        vi: vi,
+        category: category,
+        raw_category: category,
+        notes: notes,
+        status: "approved"
+    };
+
+    if (existingIndex >= 0) {
+        allGlossaryTerms[existingIndex] = newOrUpdatedTerm;
+    } else {
+        allGlossaryTerms.unshift(newOrUpdatedTerm);
+    }
+
+    // Sắp xếp lại theo độ dài EN giảm dần
+    allGlossaryTerms.sort((a, b) => ((b.en || "").length) - ((a.en || "").length));
+    updateGlossaryCountBadge();
+    renderGlossaryCategories();
+    renderGlossaryList();
+    if (typeof filteredLines !== "undefined" && filteredLines.length > 0 && filteredLines[currentIndex]) {
+        renderGlossarySuggestions(filteredLines[currentIndex].en);
+    }
+
+    // Lưu vào cache offline localStorage
+    try {
+        const localCustoms = JSON.parse(localStorage.getItem("ss_custom_glossary") || "[]");
+        const idx = localCustoms.findIndex(c => (c.en || "").toLowerCase() === en.toLowerCase());
+        if (idx >= 0) localCustoms[idx] = newOrUpdatedTerm;
+        else localCustoms.push(newOrUpdatedTerm);
+        localStorage.setItem("ss_custom_glossary", JSON.stringify(localCustoms));
+    } catch (_) {}
+
+    // 2. Gửi yêu cầu đồng bộ lên Google Sheets qua các tầng kết nối
+    let syncSuccess = false;
+    let syncMessage = "";
+
+    const payload = {
+        action: "add_glossary_term",
+        en: en,
+        vi: vi,
+        category: category,
+        notes: notes,
+        status: "approved",
+        translator: translator
+    };
+
+    // Tầng 1: Gọi qua API Local Server hoặc Cloudflare Pages Functions (/api/add_glossary_term)
+    try {
+        const res = await fetch("/api/add_glossary_term", {
+            method: "POST",
+            headers: { "Content-Type": "application/json;charset=utf-8" },
+            body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+            const text = await res.text();
+            if (text && text.trim().length > 0) {
+                try {
+                    const data = JSON.parse(text);
+                    if (data && (data.success || data.term)) {
+                        syncSuccess = true;
+                        syncMessage = data.message || "Đã lưu và đồng bộ Google Sheets thành công!";
+                    }
+                } catch (_) {}
+            }
+        }
+    } catch (_) {}
+
+    // Tầng 2: Nếu chưa đồng bộ được (trên môi trường Static không có Functions), gọi trực tiếp sang Google Apps Script Web App
+    if (!syncSuccess) {
+        try {
+            const gasUrl = GAS_GLOSSARY_URL.split("?")[0];
+            const gasRes = await fetch(gasUrl, {
+                method: "POST",
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
+                body: JSON.stringify(payload)
+            });
+            if (gasRes.ok) {
+                const gasText = await gasRes.text();
+                if (gasText && gasText.trim().length > 0) {
+                    try {
+                        const gasData = JSON.parse(gasText);
+                        if (gasData && (gasData.success || gasData.term)) {
+                            syncSuccess = true;
+                            syncMessage = gasData.message || "Đã đồng bộ trực tiếp lên Google Sheets (Live)!";
+                        }
+                    } catch (_) {}
+                }
+            }
+        } catch (_) {}
+    }
+
+    if (syncSuccess) {
+        showToastAlert(`🎉 ${syncMessage || 'Đã thêm thuật ngữ và đồng bộ Google Sheets!'}`);
+    } else {
+        showToastAlert(`💾 Đã lưu tạm thuật ngữ vào máy (sẽ tự đẩy lên Google Sheets khi có mạng)!`);
+    }
+
+    return {
+        success: true,
+        message: syncMessage || "Đã lưu thuật ngữ!",
+        term: newOrUpdatedTerm
+    };
+}
+
+/**
  * Đồng bộ thuật ngữ thời gian thực từ Google Sheets (Bảo vệ tuyệt đối khỏi lỗi Unexpected end of JSON)
  */
 async function syncGlossaryFromSheets() {
@@ -217,7 +398,7 @@ async function syncGlossaryFromSheets() {
         }
 
         if (syncedTerms && Array.isArray(syncedTerms) && syncedTerms.length > 0) {
-            allGlossaryTerms = syncedTerms;
+            allGlossaryTerms = normalizeLoadedGlossaryTerms(syncedTerms);
             allGlossaryTerms.sort((a, b) => ((b.en || "").length) - ((a.en || "").length));
             updateGlossaryCountBadge();
             renderGlossaryCategories();

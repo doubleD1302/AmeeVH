@@ -260,6 +260,35 @@ def handle_post_api(handler, path):
         })
         return True
 
+    if path == "/api/add_glossary_term":
+        length = int(handler.headers.get("Content-Length", 0))
+        body = handler.rfile.read(length).decode("utf-8")
+        try:
+            data = json.loads(body)
+        except Exception:
+            handler.send_error(400, "Invalid JSON payload")
+            return True
+
+        en = data.get("en", "").strip()
+        vi = data.get("vi", "").strip()
+        category = data.get("category", "").strip() or "Chung"
+        notes = data.get("notes", "").strip()
+        status = data.get("status", "approved").strip()
+        translator = data.get("translator", "").strip() or "Ẩn Danh"
+
+        if not en or not vi:
+            send_json(handler, {"success": False, "error": "Thuật ngữ EN và VI không được để trống!"})
+            return True
+
+        from backend.models.glossary_model import add_new_term
+        success, msg, term = add_new_term(en, vi, category, notes, status, translator)
+        send_json(handler, {
+            "success": success,
+            "message": msg,
+            "term": term
+        })
+        return True
+
     if path == "/api/sync_glossary":
         success, count, msg = sync_glossary_from_google_sheets()
         terms = get_glossary_data()

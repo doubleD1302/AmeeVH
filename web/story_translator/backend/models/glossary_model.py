@@ -95,3 +95,51 @@ def get_glossary_data(refresh=False):
         return parse_glossary_csv(GLOSSARY_CSV)
 
     return []
+
+
+def add_new_term(en, vi, category="Chung", notes="", status="approved", translator="Ẩn Danh"):
+    try:
+        terms = get_glossary_data()
+        en_clean = en.strip()
+        vi_clean = vi.strip()
+        cat_clean = category.strip() or "Chung"
+        notes_clean = notes.strip()
+        status_clean = status.strip() or "approved"
+
+        existing = None
+        for t in terms:
+            if t.get("en", "").strip().lower() == en_clean.lower():
+                existing = t
+                break
+
+        if existing:
+            existing["vi"] = vi_clean
+            if cat_clean != "Chung":
+                existing["category"] = cat_clean
+            if notes_clean:
+                existing["notes"] = notes_clean
+            existing["status"] = status_clean
+            new_term = existing
+            msg = f"Đã cập nhật thuật ngữ '{en_clean} ➔ {vi_clean}'"
+        else:
+            new_term = {
+                "en": en_clean,
+                "vi": vi_clean,
+                "category": cat_clean,
+                "raw_category": cat_clean,
+                "notes": notes_clean,
+                "status": status_clean
+            }
+            terms.append(new_term)
+            msg = f"Đã thêm mới thuật ngữ '{en_clean} ➔ {vi_clean}'"
+
+        GLOSSARY_JSON.write_text(json.dumps(terms, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        if GLOSSARY_CSV.exists():
+            with open(GLOSSARY_CSV, "a", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerow([en_clean, vi_clean, cat_clean, notes_clean, status_clean])
+
+        return True, msg, new_term
+    except Exception as e:
+        return False, f"Lỗi lưu thuật ngữ: {e}", None

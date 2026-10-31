@@ -245,20 +245,92 @@
         </div>
     </div>
 
-    <!-- Modal: Glossary -->
-    <div class="modal-shade" id="glossaryModal">
-        <div class="modal-panel modal-panel-wide">
-            <div class="modal-panel-header">
-                <div style="display:flex; align-items:center; gap:12px;">
-                    <h2><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span> TỪ ĐIỂN THUẬT NGỮ CHUẨN</h2>
-                    <span class="glossary-counter-badge" id="glossaryTotalBadge">322 Mục</span>
+    <!-- Modal: Glossary (Redesigned for PC & Mobile / Android) -->
+    <div class="modal-shade" id="glossaryModal" onclick="handleGlossaryModalBackdropClick(event)">
+        <div class="modal-panel modal-panel-wide glossary-modal-panel">
+            <!-- Modal Header HUD -->
+            <div class="modal-panel-header glossary-header">
+                <div class="glossary-header-brand">
+                    <div class="glossary-brand-icon">
+                        <span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span>
+                    </div>
+                    <div class="glossary-brand-titles">
+                        <h2 class="glossary-main-title">TỪ ĐIỂN THUẬT NGỮ</h2>
+                        <div class="glossary-sub-meta">
+                            <span class="glossary-counter-badge" id="glossaryTotalBadge">322 Mục</span>
+                            <span class="glossary-sync-status-indicator" id="glossarySyncIndicator" title="Trực tiếp từ Google Sheets">● Trực tiếp</span>
+                        </div>
+                    </div>
                 </div>
-                <div style="display:flex; align-items:center; gap:10px;">
+
+                <div class="glossary-header-actions">
+                    <button class="btn-action-primary btn-add-term" id="btnOpenAddTerm" onclick="toggleAddTermDrawer()" title="Thêm thuật ngữ mới và đồng bộ Google Sheets">
+                        <span class="btn-icon">➕</span>
+                        <span class="btn-text">Thêm Thuật Ngữ</span>
+                    </button>
                     <button class="btn-sync-glossary" id="btnSyncGlossary" onclick="syncGlossaryFromSheets()" title="Đồng bộ trực tiếp từ Google Sheet '01. Thống Nhất Danh Từ'">
                         <span class="sync-icon"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sync.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sync.svg" alt=""></span></span>
                         <span class="sync-text">Đồng Bộ Sheet</span>
                     </button>
-                    <button class="btn-circle" onclick="closeGlossaryModal()" aria-label="Đóng từ điển"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
+                    <button class="btn-circle btn-close-glossary" onclick="closeGlossaryModal()" aria-label="Đóng từ điển" title="Đóng (Esc)">
+                        <span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Inline Collapsible Drawer: Add New Term -->
+            <div class="add-term-drawer" id="addTermDrawer" style="display:none;">
+                <div class="add-term-panel">
+                    <div class="add-term-panel-header">
+                        <div class="add-term-title">
+                            <span class="add-term-icon">✨</span>
+                            <span>THÊM THUẬT NGỮ MỚI & ĐỒNG BỘ GOOGLE SHEETS</span>
+                        </div>
+                        <button type="button" class="btn-circle-mini" onclick="toggleAddTermDrawer(false)" aria-label="Đóng biểu mẫu thêm">✕</button>
+                    </div>
+
+                    <form id="addTermForm" onsubmit="event.preventDefault(); submitAddTermForm();">
+                        <div class="add-term-grid">
+                            <div class="add-term-field">
+                                <label for="inputTermEn">Thuật ngữ Tiếng Anh (EN) <span class="required-star">*</span></label>
+                                <input type="text" id="inputTermEn" class="add-term-input" placeholder="Ví dụ: Astral Core, Starlight Shard..." required autocomplete="off">
+                            </div>
+
+                            <div class="add-term-field">
+                                <label for="inputTermVi">Bản dịch Tiếng Việt (VI) <span class="required-star">*</span></label>
+                                <input type="text" id="inputTermVi" class="add-term-input" placeholder="Ví dụ: Lõi Tinh Tú, Mảnh Ánh Sao..." required autocomplete="off">
+                            </div>
+
+                            <div class="add-term-field">
+                                <label for="selectTermCategory">Phân loại danh mục</label>
+                                <div class="add-term-select-wrapper">
+                                    <select id="selectTermCategory" class="add-term-select">
+                                        <option value="Cốt Truyện & Thế Giới">Cốt Truyện & Thế Giới</option>
+                                        <option value="Chiến Đấu & Kỹ Năng">Chiến Đấu & Kỹ Năng</option>
+                                        <option value="Nhân Vật & Đại Từ">Nhân Vật & Đại Từ</option>
+                                        <option value="Quái Vật & Boss">Quái Vật & Boss</option>
+                                        <option value="Giao Diện & Hệ Thống">Giao Diện & Hệ Thống</option>
+                                        <option value="Địa Danh & Bản Đồ">Địa Danh & Bản Đồ</option>
+                                        <option value="Vật Phẩm & Trang Bị">Vật Phẩm & Trang Bị</option>
+                                        <option value="Chung" selected>Chung</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="add-term-field">
+                                <label for="inputTermNotes">Ghi chú ngữ cảnh (Tùy chọn)</label>
+                                <input type="text" id="inputTermNotes" class="add-term-input" placeholder="Ví dụ: Khái niệm xuất hiện từ Chương 3..." autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="add-term-actions">
+                            <button type="button" class="btn-secondary-cancel" onclick="toggleAddTermDrawer(false)">Hủy</button>
+                            <button type="submit" class="btn-submit-term" id="btnSubmitAddTerm">
+                                <span class="btn-submit-icon">💾</span>
+                                <span class="btn-submit-text">Lưu & Đồng Bộ Lên Sheet</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -266,7 +338,7 @@
             <div class="glossary-toolbar">
                 <div class="glossary-search-wrapper">
                     <span class="search-icon"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/search.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/search.svg" alt=""></span></span>
-                    <input type="text" class="glossary-search-input" id="glossarySearchInput" placeholder="Tìm theo tiếng Anh, tiếng Việt, hoặc ghi chú cảnh báo..." oninput="onGlossarySearch(this.value)">
+                    <input type="text" class="glossary-search-input" id="glossarySearchInput" placeholder="Tìm kiếm nhanh tiếng Anh, tiếng Việt (có dấu hoặc không dấu)..." oninput="onGlossarySearch(this.value)">
                     <button class="search-clear-btn" id="glossarySearchClear" onclick="clearGlossarySearch()" style="display:none;" aria-label="Xóa tìm kiếm"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
                 </div>
                 <div class="glossary-cat-pills" id="glossaryCatPills"></div>
