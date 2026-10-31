@@ -1,0 +1,20 @@
+# Only browser assets belong in the static Worker upload.
+.wrangler/
+.git/
+.gitignore
+.assetsignore
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+**/__pycache__/
+*.py
+*.pyc
+*.pyo
+*.bat
+/backend/
+/functions/
+/gas/
+wrangler.json
+wrangler.jsonc
+wrangler.toml
