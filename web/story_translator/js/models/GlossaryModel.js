@@ -95,9 +95,7 @@ function searchGlossaryTerms(searchTerm, category = "ALL") {
     if (!allGlossaryTerms || allGlossaryTerms.length === 0) return [];
     
     let list = allGlossaryTerms;
-    if (category === "CRITICAL") {
-        list = list.filter(t => t.is_critical);
-    } else if (category && category !== "ALL") {
+    if (category && category !== "ALL") {
         list = list.filter(t => t.category === category);
     }
 

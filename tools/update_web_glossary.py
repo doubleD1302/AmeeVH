@@ -822,15 +822,12 @@ def update_index_html():
             if (!tray) return;
 
             const counts = {};
-            let criticalCount = 0;
             allGlossaryTerms.forEach(t => {
                 counts[t.category] = (counts[t.category] || 0) + 1;
-                if (t.is_critical) criticalCount++;
             });
 
             const catList = [
-                { id: "ALL", label: `Tất cả (${allGlossaryTerms.length})` },
-                { id: "CRITICAL", label: `⚠️ Lưu Ý Sống Còn (${criticalCount})`, isCrit: true }
+                { id: "ALL", label: `Tất cả (${allGlossaryTerms.length})` }
             ];
 
             const presetCats = [
@@ -851,7 +848,7 @@ def update_index_html():
             });
 
             tray.innerHTML = catList.map(c => `
-                <button class="glossary-cat-pill ${c.isCrit ? 'critical-pill' : ''} ${activeGlossaryCategory === c.id ? 'active' : ''}" onclick="setGlossaryCategory('${c.id}')">
+                <button class="glossary-cat-pill ${activeGlossaryCategory === c.id ? 'active' : ''}" onclick="setGlossaryCategory('${c.id}')">
                     ${c.label}
                 </button>
             `).join('');
@@ -886,9 +883,7 @@ def update_index_html():
             let filtered = allGlossaryTerms;
 
             // Category filter
-            if (activeGlossaryCategory === "CRITICAL") {
-                filtered = filtered.filter(t => t.is_critical);
-            } else if (activeGlossaryCategory !== "ALL") {
+            if (activeGlossaryCategory !== "ALL") {
                 filtered = filtered.filter(t => t.category === activeGlossaryCategory);
             }
 

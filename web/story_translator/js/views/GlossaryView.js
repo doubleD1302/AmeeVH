@@ -47,17 +47,16 @@ function renderGlossarySuggestions(enText) {
 
     matches.forEach(item => {
         const chip = document.createElement("div");
-        chip.className = `glossary-suggestion-chip ${item.is_critical ? 'warn' : ''}`;
+        chip.className = "glossary-suggestion-chip";
         
         let tooltip = `[${item.category}] ${item.en} ➔ ${item.vi}`;
-        if (item.notes) tooltip += `\n⚠️ Lưu ý: ${item.notes}`;
+        if (item.notes) tooltip += `\n(${item.notes})`;
         chip.title = tooltip;
 
         chip.innerHTML = `
             <span class="chip-en">${escapeHtml(item.en)}</span>
             <span class="chip-arrow">➔</span>
             <span class="chip-vi">${escapeHtml(item.vi)}</span>
-            ${item.is_critical ? `<span class="chip-warn-badge">${tramIcon("warning")} LƯU Ý</span>` : ''}
         `;
 
         chip.onclick = (e) => {
@@ -94,16 +93,13 @@ function renderGlossaryCategories() {
     if (!tray) return;
 
     const counts = {};
-    let criticalCount = 0;
     allGlossaryTerms.forEach(t => {
         const cat = t.category || "Chung";
         counts[cat] = (counts[cat] || 0) + 1;
-        if (t.is_critical) criticalCount++;
     });
 
     const catList = [
-        { id: "ALL", label: `Tất cả (${allGlossaryTerms.length})` },
-        { id: "CRITICAL", label: `⚠️ Lưu Ý Sống Còn (${criticalCount})`, isCrit: true }
+        { id: "ALL", label: `Tất cả (${allGlossaryTerms.length})` }
     ];
 
     const presetCats = [
@@ -125,13 +121,13 @@ function renderGlossaryCategories() {
 
     // Thêm các danh mục khác nếu có trong sheet
     Object.keys(counts).forEach(c => {
-        if (!presetCats.includes(c) && c !== "ALL" && c !== "CRITICAL") {
+        if (!presetCats.includes(c) && c !== "ALL") {
             catList.push({ id: c, label: `${c} (${counts[c]})` });
         }
     });
 
     tray.innerHTML = catList.map(c => `
-        <button class="glossary-cat-pill ${c.isCrit ? 'critical-pill' : ''} ${activeGlossaryCategory === c.id ? 'active' : ''}" onclick="setGlossaryCategory('${c.id}')">
+        <button class="glossary-cat-pill ${activeGlossaryCategory === c.id ? 'active' : ''}" onclick="setGlossaryCategory('${c.id}')">
             ${c.label}
         </button>
     `).join('');
@@ -164,7 +160,7 @@ function renderGlossaryList() {
     }
 
     container.innerHTML = filtered.map(item => `
-        <div class="glossary-card ${item.is_critical ? 'critical-card' : ''}">
+        <div class="glossary-card">
             <div class="glossary-card-main">
                 <div class="glossary-card-terms">
                     <span class="glossary-term-en">${highlightGlossaryMatch(item.en, glossarySearchTerm)}</span>
@@ -178,8 +174,8 @@ function renderGlossaryList() {
                 </div>
             </div>
             ${item.notes ? `
-                <div class="glossary-card-notes ${item.is_critical ? 'critical-notes' : ''}">
-                    <span class="notes-icon">${tramIcon(item.is_critical ? 'warning' : 'info')}</span>
+                <div class="glossary-card-notes">
+                    <span class="notes-icon">${tramIcon('info')}</span>
                     <span class="notes-text">${highlightGlossaryMatch(item.notes, glossarySearchTerm)}</span>
                 </div>
             ` : ''}
@@ -214,13 +210,12 @@ function onQuickGlossarySearch(val) {
 
     tray.style.display = "flex";
     tray.innerHTML = matches.slice(0, 20).map(item => `
-        <div class="glossary-suggestion-chip ${item.is_critical ? 'warn' : ''}" 
+        <div class="glossary-suggestion-chip" 
              title="[${item.category}] ${item.en} ➔ ${item.vi}${item.notes ? ' (' + item.notes + ')' : ''}"
              onclick="insertGlossaryTerm('${escapeHtml(item.vi)}');">
             <span class="chip-en">${escapeHtml(item.en)}</span>
             <span class="chip-arrow">➔</span>
             <span class="chip-vi">${escapeHtml(item.vi)}</span>
-            ${item.is_critical ? '<span class="chip-warn-badge">' + tramIcon('warning') + ' LƯU Ý</span>' : ''}
         </div>
     `).join('');
 }

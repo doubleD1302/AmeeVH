@@ -418,7 +418,7 @@ def build_instruction_sheet() -> Tuple[List[float], List[List[Tuple[str, int]]]]
             ("", 9), ("", 9), ("", 9)
         ],
         [
-            ("Hệ thống bảng tính được thiết kế theo từng Chương và từng Màn. Dưới đây là 5 quy tắc sống còn:", 10),
+            ("Hệ thống bảng tính được thiết kế theo từng Chương và từng Màn. Dưới đây là các quy tắc cốt lõi:", 10),
             ("", 10), ("", 10), ("", 10)
         ],
         [("Quy tắc cốt lõi", 1), ("Giải thích dễ hiểu", 1), ("Ví dụ SAI (Gây lỗi game)", 1), ("Ví dụ ĐÚNG (Chuẩn)", 1)],
@@ -430,7 +430,7 @@ def build_instruction_sheet() -> Tuple[List[float], List[List[Tuple[str, int]]]]
         ],
         [
             ("2. Biến số trong ngoặc { ... }", 2),
-            ("Đây là chỗ game tự điền số hoặc tên (ví dụ: {0}, {player}). TUYỆT ĐỐI KHÔNG DỊCH TRONG NGOẶC. Giữ nguyên 100%!", 4),
+            ("Đây là chỗ game tự điền số hoặc tên (ví dụ: {0}, {player}). Giữ nguyên cụm trong ngoặc. Giữ nguyên 100%!", 4),
             ("Nhận được {0} Vàng -> Nhận được {không} Vàng\nWelcome {player} -> Chào mừng {người chơi}", 11),
             ("Nhận được {0} Vàng.\nChào mừng {player} đã trở lại!", 12)
         ],
@@ -481,7 +481,7 @@ def build_glossary_sheet(batch_data: Optional[Dict[str, Any]] = None) -> Tuple[L
             ("Danh từ gốc (EN)", 1),
             ("Bản dịch Tiếng Việt chuẩn", 1),
             ("Phân loại nhóm", 1),
-            ("Ghi chú ngữ cảnh & Lưu ý sống còn", 1),
+            ("Ghi chú ngữ cảnh", 1),
             ("Trạng thái", 1)
         ]
     ]

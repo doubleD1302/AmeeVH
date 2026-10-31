@@ -50,7 +50,7 @@ def sync_batch_1_glossary_and_voice():
     glossary_rows = [
         ["BẢNG THỐNG NHẤT DANH TỪ & THUẬT NGỮ TOÀN GAME (GLOSSARY 322 MỤC)", "", "", "", ""],
         ["Danh từ chuẩn bắt buộc tuân thủ. Giúp toàn bộ các Chương và Màn không bao giờ bị lệch thuật ngữ.", "", "", "", ""],
-        ["Danh từ gốc (EN)", "Bản dịch Tiếng Việt chuẩn", "Phân loại nhóm", "Ghi chú ngữ cảnh & Lưu ý sống còn", "Trạng thái"]
+        ["Danh từ gốc (EN)", "Bản dịch Tiếng Việt chuẩn", "Phân loại nhóm", "Ghi chú ngữ cảnh", "Trạng thái"]
     ]
     cur_group = ""
     for item in data.get("glossary", []):

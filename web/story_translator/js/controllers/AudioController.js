@@ -1,6 +1,6 @@
 /**
  * AudioController.js
- * Quản lý khởi tạo âm thanh, danh sách phát nhạc vòng lặp 5 bài (Cinematic & Ending Themes) và voice clip
+ * Quản lý khởi tạo âm thanh, danh sách phát nhạc vòng lặp 2 bài (Cinematic & Ending Themes) và voice clip
  */
 
 const BGM_PLAYLIST = [
@@ -10,7 +10,7 @@ const BGM_PLAYLIST = [
         shortName: "Màn Hình Khởi Động",
         src: "official_assets/bgm/bgm_01_launch_title.mp3",
         duration: "3:17",
-        tag: "1/5"
+        tag: "1/2"
     },
     {
         id: "prologue_theme",
@@ -18,31 +18,7 @@ const BGM_PLAYLIST = [
         shortName: "Ca Khúc Mở Màn",
         src: "official_assets/bgm/bgm_02_prologue_theme.mp3",
         duration: "1:38",
-        tag: "2/5"
-    },
-    {
-        id: "ending_ch04",
-        title: "Ending Chapter 4 (Bài Hát Kết Thúc Chương 4)",
-        shortName: "Kết Thúc Chương 4",
-        src: "official_assets/bgm/bgm_03_ending_ch04.mp3",
-        duration: "1:36",
-        tag: "3/5"
-    },
-    {
-        id: "ending_ch06",
-        title: "Ending Chapter 6 (Bài Hát Kết Thúc Chương 6)",
-        shortName: "Kết Thúc Chương 6",
-        src: "official_assets/bgm/bgm_04_ending_ch06.mp3",
-        duration: "1:46",
-        tag: "4/5"
-    },
-    {
-        id: "ending_ch09",
-        title: "Ending Chapter 9 (Bài Hát Kết Thúc Chương 9)",
-        shortName: "Kết Thúc Chương 9",
-        src: "official_assets/bgm/bgm_05_ending_ch09.mp3",
-        duration: "1:15",
-        tag: "5/5"
+        tag: "2/2"
     }
 ];
 
@@ -55,7 +31,7 @@ function initAudio() {
     bgm.volume = 0.35;
     bgm.src = BGM_PLAYLIST[currentBgmIndex].src;
     
-    // Tự động chuyển tiếp bài tiếp theo khi kết thúc bài hiện tại (vòng lặp 5 bài vô tận)
+    // Tự động chuyển tiếp bài tiếp theo khi kết thúc bài hiện tại (vòng lặp 2 bài vô tận)
     bgm.addEventListener("ended", () => {
         nextBgm(true);
     });

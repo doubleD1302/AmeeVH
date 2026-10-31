@@ -59,15 +59,13 @@ def parse_glossary_csv(csv_path):
                     status = r[4].strip() if len(r) > 4 else "approved"
                     if en and vi:
                         friendly_cat = get_friendly_category(raw_cat)
-                        is_critical = any(w in notes.upper() for w in ["CẤM", "BẪY", "LƯU Ý", "NGUY HIỂM", "TUYỆT ĐỐI"])
                         terms.append({
                             "en": en,
                             "vi": vi,
                             "category": friendly_cat,
                             "raw_category": raw_cat,
                             "notes": notes,
-                            "status": status,
-                            "is_critical": is_critical
+                            "status": status
                         })
         if terms:
             GLOSSARY_JSON.write_text(json.dumps(terms, ensure_ascii=False, indent=2), encoding="utf-8")
