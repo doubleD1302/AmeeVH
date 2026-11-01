@@ -7,11 +7,11 @@
                 <li><strong>Chọn câu cần dịch.</strong> Chọn chương, cảnh và bộ lọc ở thanh phía trên. Dùng “Tất cả câu thoại” để xem các câu liền trước và sau.</li>
                 <li><strong>Nhập bản dịch.</strong> Đọc bản EN và điền vào ô “Bản dịch tiếng Việt mới”. Bản dịch cũ và nút nghe lồng tiếng là thông tin tham khảo nếu có.</li>
                 <li><strong>Tra thuật ngữ.</strong> Dùng ô tra cứu cạnh khung nhập hoặc mở Từ điển bằng <kbd>Alt+G</kbd>. Bấm vào gợi ý để chèn thuật ngữ.</li>
-                <li><strong>Lưu bản dịch.</strong> Ở Visual Novel, bấm “Lưu &amp; Tiếp tục” hoặc <kbd>Ctrl+Enter</kbd>. Ở Danh Sách, bấm nút lưu của từng dòng; chỉ nhập vào ô chưa gửi bản dịch.</li>
-                <li><strong>Kiểm tra đồng bộ.</strong> Mở Google Sheets từ thanh công cụ để xem đúng ID và nội dung đã lưu. Khi mất mạng, kiểm tra lại trên Sheet sau khi kết nối trở lại.</li>
+                <li><strong>Gửi bản dịch.</strong> Câu chưa dịch: nhập nội dung và chọn lưu. Câu đã có bản dịch: chọn “Đề xuất sửa”, đối chiếu khác biệt và ghi lý do. Bản đang dùng được giữ đến khi đề xuất được duyệt.</li>
+                <li><strong>Xem lại thay đổi.</strong> “Xem lịch sử” hiển thị người sửa, lý do và các phiên bản. “Xuất chương” tải dữ liệu hiện tại; Google Sheets trên thanh công cụ là bản tham khảo đã nhập trước đây.</li>
             </ol>
-            <p class="guide-note">Lưu câu đặt trạng thái “Đã dịch”. “Đã duyệt” là bước review riêng; thông báo EXP chưa xác nhận bản dịch đã đồng bộ.</p>
-            <p><strong>Phím tắt:</strong> <kbd>Alt+←</kbd> / <kbd>Alt+→</kbd> chuyển câu; <kbd>Alt+S</kbd> lưu. Đóng hướng dẫn trước khi dùng các phím này.</p>` },
+            <p class="guide-note">Bản mới lưu có trạng thái “Đã Việt hoá · Chờ duyệt”. Chỉ người có mã quản trị mới có quyền duyệt. Nếu báo xung đột, tải bản mới để đối chiếu; bản nháp của bạn vẫn được giữ.</p>
+            <p><strong>Phím tắt:</strong> <kbd>Alt+←</kbd> / <kbd>Alt+→</kbd> chuyển câu; <kbd>Alt+S</kbd> mở khung gửi bản dịch; <kbd>Ctrl+Enter</kbd> trong khung để gửi. Đóng hướng dẫn trước khi dùng các phím này.</p>` },
         { id: 'tokens', title: 'Token & tag', keywords: 'token tag the dinh dang bien placeholder ma code rich text xuong dong', body: `
             <p>Token và tag là mã để game điền dữ liệu hoặc định dạng chữ. Giữ nguyên cách viết và số lần xuất hiện khi dịch.</p>
             <ul>

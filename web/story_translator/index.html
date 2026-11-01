@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/icon-controls.css?v=1.4.0">
     <link rel="stylesheet" href="css/wordmark.css?v=1.4.0">
     <link rel="stylesheet" href="css/translation-guide.css?v=guide-r04">
+    <link rel="stylesheet" href="css/collaboration.css?v=collab-r01">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -67,13 +68,14 @@
 
         <!-- Actions HUD -->
         <div class="hud-tools">
+            <button id="reviewerAccessBtn" class="btn-circle" type="button" title="Nhập mã quản trị để duyệt" aria-label="Quyền duyệt" aria-pressed="false" onclick="openReviewerAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/approved.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/approved.svg" alt=""></span></button>
             <button id="translationGuideBtn" class="btn-circle guide-open-button" type="button" title="Hướng dẫn dịch thuật" aria-label="Hướng dẫn dịch thuật" aria-haspopup="dialog" onclick="openTranslationGuide()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/translation-guide-r01/guide-light.svg" alt=""><img class="tram-icon-dark" src="assets/translation-guide-r01/guide-dark.svg" alt=""></span><span>Hướng dẫn</span></button>
             <button id="bgmToggleBtn" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/music.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/music.svg" alt=""></span></button>
             <button id="bgmNextBtn" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 2 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
             <button id="themeToggleBtn" class="btn-circle" type="button" title="Chuyển sang chế độ tối" aria-label="Chuyển sang chế độ tối" aria-pressed="false" onclick="toggleTheme()"><span class="tram-theme-night"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/moon.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/moon.svg" alt=""></span></span><span class="tram-theme-day"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sun.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sun.svg" alt=""></span></span></button>
             <button class="btn-circle" title="Bảng Phong Thần Dịch Giả" aria-label="Bảng Phong Thần Dịch Giả" onclick="openLeaderboardModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/trophy.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/trophy.svg" alt=""></span></button>
             <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span></button>
-            <a href="https://docs.google.com/spreadsheets/d/13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-circle" title="Mở Google Sheets" aria-label="Mở Google Sheets"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sheet.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sheet.svg" alt=""></span></a>
+            <a href="https://docs.google.com/spreadsheets/d/13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-circle" title="Google Sheets — bản tham khảo trước khi bật cộng tác" aria-label="Mở Google Sheets tham khảo"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sheet.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sheet.svg" alt=""></span></a>
         </div>
     </header>
 
@@ -84,8 +86,10 @@
             <select id="sceneSelect" aria-label="Chọn cảnh" class="app-select" onchange="onSceneChange()"></select>
             <select id="filterSelect" aria-label="Lọc câu thoại" class="app-select" onchange="applyFilters()">
                 <option value="all">Tất cả câu thoại</option>
-                <option value="untranslated">Chưa dịch (Cần làm)</option>
-                <option value="translated">Đã dịch</option>
+                <option value="untranslated">Chưa dịch</option>
+                <option value="translated">Đã Việt hoá · Chờ duyệt</option>
+                <option value="needs_review">Cần xem lại</option>
+                <option value="machine">Bản dịch máy/AI</option>
                 <option value="approved">Đã duyệt</option>
                 <option value="dialogue_only">Chỉ thoại nhân vật</option>
             </select>
@@ -104,8 +108,10 @@
             <div id="progressBarFill" class="progress-fill"></div>
         </div>
         <span id="progressPercent" style="font-weight:700; color:var(--cyan-light);">0%</span>
+        <button id="exportChapterBtn" class="collab-link" type="button" onclick="Collaboration.exportChapter()">Xuất chương</button>
     </div>
 
+    <div id="collabServiceNotice" class="collab-service-notice" role="status" hidden></div>
     <!-- Main Workspace Area -->
     <main>
         <!-- Desktop Scenes Sidebar -->
@@ -162,6 +168,8 @@
                     </div>
                 </div>
 
+                <div id="currentLineCollaboration"></div>
+
                 <!-- Translation Input Box (Phông chữ chuẩn, êm mắt) -->
                 <div class="translation-input-box">
                     <div class="input-box-header">
@@ -184,7 +192,7 @@
                         </div>
                         <div class="suggestions-chips-tray" id="suggestionsChipsTray"></div>
                     </div>
-                    <textarea id="vietnameseInput" placeholder="Nhập câu dịch tiếng Việt mượt mà, văn phong anime RPG tự nhiên..." oninput="updateTokenValidationUI()" onkeydown="handleTextareaKeydown(event)"></textarea>
+                    <textarea id="vietnameseInput" placeholder="Nhập câu dịch tiếng Việt mượt mà, văn phong anime RPG tự nhiên..." oninput="onTranslationDraftInput()" onkeydown="handleTextareaKeydown(event)"></textarea>
                 </div>
 
                 <!-- Action Toolbar -->
@@ -354,8 +362,9 @@
     <!-- Reading help never submits or changes the current translation. -->
     <dialog id="translationGuideDialog" aria-labelledby="translationGuideTitle" aria-describedby="translationGuideIntro"></dialog>
 
+    <dialog id="collaborationDialog" aria-labelledby="collabDialogTitle"></dialog>
     <!-- ================= MVC ARCHITECTURE ================= -->
-    <script src="js/views/TranslationGuideView.js?v=guide-r04"></script>
+    <script src="js/views/TranslationGuideView.js?v=collab-r01"></script>
     <script src="js/views/IconView.js?v=1.4.0"></script>
     <script src="js/views/SelectView.js?v=1.4.0"></script>
     <!-- Models -->
@@ -364,22 +373,24 @@
     <script src="js/models/CharacterModel.js?v=1.4.0"></script>
     <script src="js/models/TokenModel.js?v=1.4.0"></script>
     <script src="js/models/GlossaryModel.js?v=1.4.0"></script>
-    <script src="js/models/StoryModel.js?v=1.4.0"></script>
+    <script src="js/models/CollaborationModel.js?v=collab-r01"></script>
+    <script src="js/models/StoryModel.js?v=collab-r01"></script>
 
     <!-- Views -->
     <script src="js/views/ToastView.js?v=1.4.0"></script>
-    <script src="js/views/HudView.js?v=1.4.0"></script>
-    <script src="js/views/CardView.js?v=1.4.0"></script>
-    <script src="js/views/TableView.js?v=1.4.0"></script>
+    <script src="js/views/HudView.js?v=collab-r01"></script>
+    <script src="js/views/CardView.js?v=collab-r01"></script>
+    <script src="js/views/CollaborationView.js?v=collab-r01"></script>
+    <script src="js/views/TableView.js?v=collab-r01"></script>
     <script src="js/views/GlossaryView.js?v=1.4.0"></script>
     <script src="js/views/ProfileView.js?v=1.4.0"></script>
     <script src="js/views/LeaderboardView.js?v=1.4.0"></script>
 
     <!-- Controllers -->
     <script src="js/controllers/AudioController.js?v=1.4.1"></script>
-    <script src="js/controllers/EditorController.js?v=1.4.0"></script>
+    <script src="js/controllers/EditorController.js?v=collab-r01"></script>
     <script src="js/controllers/NavigationController.js?v=1.4.0"></script>
-    <script src="js/controllers/AppController.js?v=1.4.0"></script>
+    <script src="js/controllers/AppController.js?v=collab-r01"></script>
 
     <!-- Main Bootstrapper -->
     <script src="js/app.js?v=1.4.0"></script>

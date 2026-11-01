@@ -27,6 +27,7 @@ function renderCurrentLine() {
         document.getElementById("counterIndicator").innerText = "0 / 0";
         document.getElementById("actorStandee").style.display = "none";
         document.getElementById("voiceControlsBox").style.display = "none";
+        document.getElementById("currentLineCollaboration")?.replaceChildren();
         return;
     }
 
@@ -95,11 +96,12 @@ function renderCurrentLine() {
 
     // Translation textarea
     const input = document.getElementById("vietnameseInput");
-    input.value = item.new_vi || item.old_vi || "";
+    input.value = window.Collaboration ? (Collaboration.readDraft(item)?.text ?? item.new_vi ?? item.old_vi ?? "") : (item.new_vi || item.old_vi || "");
     renderSmartTags(item.en);
     renderGlossarySuggestions(item.en);
     if (typeof clearQuickGlossarySearch === "function") clearQuickGlossarySearch();
     updateTokenValidationUI();
+    if (window.CollaborationView) CollaborationView.renderCurrent(item);
 }
 
 function renderSmartTags(enText) {

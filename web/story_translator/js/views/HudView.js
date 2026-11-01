@@ -42,7 +42,7 @@ function updateProgressBar() {
     if (!currentLines || currentLines.length === 0) return;
     let trans = 0;
     currentLines.forEach(l => {
-        if (l.new_vi && l.new_vi !== l.en && l.status !== "Chờ dịch") {
+        if (l.new_vi && Collaboration.status(l) !== "untranslated") {
             trans++;
         }
     });

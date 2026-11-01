@@ -49,9 +49,10 @@ async function loadChapterData(chapterId) {
         } catch (_) {}
         if (!data) {
             const res = await fetch(`data/chapters/${chapterId}.json`);
-            if (res.ok) data = await res.json();
+            if (res.ok) { data = await res.json(); data.collaboration_available = false; }
         }
         currentChapterData = data || { scenes: [] };
+        if (data && typeof data.collaboration_available === "boolean") { Collaboration.ready=data.collaboration_available; Collaboration.updateNotice(); }
 
         const sceneSel = document.getElementById("sceneSelect");
         const drawer = document.getElementById("scenesDrawer");
@@ -79,6 +80,7 @@ async function loadChapterData(chapterId) {
             drawer.appendChild(btn);
 
             sc.lines.forEach(l => {
+                l.chapter_id = cidFromChapter();
                 l.sceneTitle = sc.title;
                 l.sceneBadge = sc.badge || sc.scene_id;
                 currentLines.push(l);
@@ -93,6 +95,8 @@ async function loadChapterData(chapterId) {
 }
 
 // Filtering
+function cidFromChapter() { return currentChapterData.chapter_id || document.getElementById("chapterSelect").value; }
+
 function applyFilters() {
     if (typeof syncTramSelects === "function") syncTramSelects();
     const scVal = document.getElementById("sceneSelect").value;
@@ -108,14 +112,16 @@ function applyFilters() {
 
     filteredLines = lines.filter(l => {
         if (filterVal === "untranslated") {
-            return !l.new_vi || l.new_vi === l.en || l.status === "Chờ dịch";
+            return Collaboration.status(l) === "untranslated";
         }
         if (filterVal === "translated") {
-            return l.new_vi && l.new_vi !== l.en && l.status !== "Chờ dịch";
+            return ["pending","machine_pending"].includes(Collaboration.status(l));
         }
         if (filterVal === "approved") {
-            return l.status === "Đã duyệt";
+            return Collaboration.status(l) === "approved";
         }
+        if (filterVal === "needs_review") return Collaboration.status(l) === "needs_review";
+        if (filterVal === "machine") return l.translation_origin === "machine";
         if (filterVal === "dialogue_only") {
             return !l.speaker.includes("[Hệ thống") && !l.speaker.includes("Dẫn chuyện");
         }

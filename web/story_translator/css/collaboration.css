@@ -1,0 +1,57 @@
+/* Collaboration reuses TramVH's Soft Sky palette and existing controls. */
+.collab-service-notice{margin:12px auto;padding:12px 18px;max-width:1450px;border:1px solid var(--card-border);border-radius:12px;background:var(--card-glass);color:var(--text-body);font-size:.86rem}
+.collab-service-notice[hidden]{display:none}
+.collab-summary{display:flex;flex-direction:column;gap:9px;min-width:0}
+.collab-badge{display:inline-flex;align-self:flex-start;max-width:100%;font-size:.76rem;font-weight:800;padding:5px 10px;line-height:1.5;border:1px solid var(--card-border);border-radius:8px;background:var(--bg-deep);color:var(--text-body)}
+.collab-approved{border-color:var(--green-accent);color:var(--green-accent)}
+.collab-pending,.collab-machine_pending{color:var(--gold-light);border-color:var(--gold-accent)}
+.collab-needs_review{color:#a74737;border-color:#c98877}html[data-theme="dark"] .collab-needs_review{color:#f6b8a9}
+.collab-current-text,.collab-diff-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.75;margin:0;color:var(--text-pure)}
+.collab-meta{display:flex;flex-wrap:wrap;gap:5px 14px;color:var(--text-sub);font-size:.79rem;line-height:1.6}
+.collab-origin,.collab-pending-count{color:var(--cyan-primary)}
+.collab-context{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--text-sub);font-size:.85rem;margin:0}
+.collab-muted{font-size:.78rem;line-height:1.6;color:var(--text-sub)}
+.collab-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.collab-actions .btn-direction{font-size:.8rem;padding:8px 12px;min-height:44px}
+.collab-line-id{font-family:var(--font-code);font-size:.78rem;color:var(--text-sub);overflow-wrap:anywhere}
+.collab-source{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--text-sub);padding:12px;border-radius:10px;background:var(--bg-deep);line-height:1.7}
+.collab-info{padding:10px;border-left:3px solid var(--cyan-primary);color:var(--text-body);font-size:.85rem}
+.collab-error{padding:10px 12px;border:1px solid #ba705d;border-radius:10px;color:#9b3f30;background:var(--bg-deep);font-size:.88rem;line-height:1.6;white-space:pre-wrap}
+html[data-theme="dark"] .collab-error{color:#ffbea9}
+.collab-link{background:none;border:0;color:var(--cyan-primary);font:600 .85rem var(--font-main);padding:10px;cursor:pointer;text-decoration:underline;min-height:44px}
+#collaborationDialog{margin:auto;padding:0;width:min(900px,calc(100% - 28px));max-width:none;max-height:calc(100dvh - 32px);border:1px solid var(--card-border);border-radius:18px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-main);box-shadow:0 24px 80px #0004;overflow:hidden}
+#collaborationDialog::backdrop{background:#061728aa}
+#collaborationDialog[open]{display:flex;flex-direction:column}
+#collaborationDialog [hidden]{display:none!important}
+.collab-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 22px;border-bottom:1px solid var(--card-border);flex:none}
+.collab-dialog-header h2{font-size:1.15rem;line-height:1.5;color:var(--text-pure);margin:0;overflow-wrap:anywhere}
+#collaborationDialog #collabDialogTitle:focus{outline:none}
+.collab-close{background:var(--card-glass);border:1px solid var(--card-border);border-radius:10px;min-height:44px;padding:8px 14px;color:var(--text-pure);font:600 .85rem var(--font-main);cursor:pointer;flex:none}
+.collab-dialog-body{padding:20px 22px;min-height:0;overflow:auto;overscroll-behavior:contain;line-height:1.7}
+.collab-dialog-body>.collab-summary,.collab-dialog-body>div>.collab-summary{background:var(--card-glass);border:1px solid var(--card-border);padding:16px;border-radius:12px;margin:12px 0}
+.collab-form{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.collab-form label{display:flex;flex-direction:column;gap:6px;font-size:.86rem;font-weight:700;color:var(--text-pure)}
+.collab-form textarea,.collab-form select,.collab-form input{width:100%;min-width:0;box-sizing:border-box;border:1px solid var(--card-border);border-radius:10px;background:var(--card-glass);color:var(--text-pure);font:400 16px/1.65 var(--font-main);padding:10px 12px;min-height:44px}
+.collab-form textarea{resize:vertical}.collab-form textarea[readonly]{opacity:.85}
+.collab-form .btn-save-glow{justify-content:center;min-height:48px}
+.collab-diff{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;font-size:.85rem}
+.collab-diff>div{padding:12px;border:1px solid var(--card-border);background:var(--card-glass);border-radius:10px;min-width:0}
+.collab-diff strong{display:block;font-size:.74rem;color:var(--text-sub);margin-bottom:8px}
+.collab-diff del{background:#f8dcd5;color:#8b3524;text-decoration:line-through}
+.collab-diff ins{background:#d6eee2;color:#205e45;text-decoration:none}
+html[data-theme="dark"] .collab-diff del{background:#633b3b;color:#ffe0d4}html[data-theme="dark"] .collab-diff ins{background:#285648;color:#d4fae5}
+.collab-event{border:1px solid var(--card-border);border-radius:12px;background:var(--card-glass);padding:14px;margin:12px 0;overflow-wrap:anywhere}
+.collab-event>strong{color:var(--text-pure)}
+#currentLineCollaboration{padding:14px;background:var(--card-glass);border:1px solid var(--card-border);border-radius:12px;position:relative;z-index:2}
+.table-row-card .collab-summary{margin:12px 0}.collab-load-more{margin:18px auto}
+#collaborationDialog :focus-visible{outline:3px solid var(--cyan-primary);outline-offset:3px}
+#collaborationDialog button:disabled{opacity:.6;cursor:wait}
+@media(max-width:700px),(max-width:900px) and (max-height:500px){
+ #collaborationDialog{width:100%;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0;box-sizing:border-box;padding-top:env(safe-area-inset-top)}
+ .collab-dialog-header{padding:10px 14px}.collab-dialog-header h2{font-size:1.05rem}
+ .collab-dialog-body{padding:14px 14px max(20px,env(safe-area-inset-bottom));flex:1;-webkit-overflow-scrolling:touch}
+ .collab-diff{grid-template-columns:1fr}.collab-actions{gap:7px}.collab-actions .btn-direction{flex:1;justify-content:center;font-size:.78rem}
+ .collab-meta{flex-direction:column;gap:3px}.collab-form .btn-save-glow{width:100%}
+}
+
+@media(max-width:700px){.hud-tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.hud-tools .btn-circle{width:100%;max-width:none;min-height:44px}}

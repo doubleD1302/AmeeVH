@@ -2,6 +2,18 @@
   "name": "tramvh",
   "compatibility_date": "2024-10-01",
   "assets": {
-    "directory": "."
-  }
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "main": "worker/index.mjs",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tramvh-collaboration",
+      "database_id": "18e01d6e-8966-4782-b89e-7d5158edbefb"
+    }
+  ]
 }

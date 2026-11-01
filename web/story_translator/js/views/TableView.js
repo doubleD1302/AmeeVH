@@ -1,65 +1,18 @@
-/**
- * TableView.js
- * Quản lý chế độ xem dạng Bảng / Table Grid Mode (Song ngữ, nhập liệu trực tiếp, cảnh báo dòng)
- */
-
-function renderListTokenWarningHtml(idx, enText, viText) {
-    const res = validateTokens(enText, viText);
-    if (res.sourceTokens.length === 0 || res.isValid) {
-        return `<div class="list-token-warning" id="listTokenWarn_${idx}" style="display:none;"></div>`;
-    }
-    const uniqueMissing = [...new Set(res.missing)];
-    return `<div class="list-token-warning" id="listTokenWarn_${idx}">
-        <span>${tramIcon("warning")} Thiếu ${res.missing.length} token:</span>
-        ${uniqueMissing.map(t => `<code onclick="insertListTag(${idx}, '${escapeHtml(t)}')" title="Bấm để chèn vào câu">+ ${escapeHtml(t)}</code>`).join(' ')}
-    </div>`;
-}
-
-function renderListGlossaryChipsHtml(idx, enText) {
-    const matches = detectGlossaryMatches(enText);
-    if (!matches || matches.length === 0) return "";
-    
-    const chipsHtml = matches.map(m => {
-        const tip = escapeHtml(`[${m.category}] ${m.en} ➔ ${m.vi}` + (m.notes ? ` (Lưu ý: ${m.notes})` : ''));
-        return `<span class="table-glossary-chip ${m.is_critical ? 'warn' : ''}" onclick="insertListGlossaryTerm(${idx}, '${escapeHtml(m.vi)}')" title="${tip}">
-            <span class="chip-en">${escapeHtml(m.en)}</span>
-            <span class="chip-arrow">➔</span>
-            <span class="chip-vi">${escapeHtml(m.vi)}</span>
-            ${m.is_critical ? tramIcon('warning') : ''}
-        </span>`;
-    }).join('');
-
-    return `<div class="table-glossary-tray">
-        <span class="table-glossary-label">${tramIcon("glossary")} Gợi ý:</span>
-        ${chipsHtml}
-    </div>`;
-}
-
+/** The list previews the current version before opening any editor. */
 function renderListMode() {
-    const container = document.getElementById("listModeContainer");
-    if (!container) return;
-    container.innerHTML = "";
-    filteredLines.forEach((item, idx) => {
-        const card = document.createElement("div");
-        card.className = "table-row-card";
-        card.innerHTML = `
-            <div class="table-row-top">
-                <div class="table-row-speaker">
-                    <span>${tramIcon("dialogue")} ${item.speaker}</span>
-                    <span style="font-size:0.75rem; color:var(--cyan-light); font-weight:normal; font-family:var(--font-code);">#${item.line_id}</span>
-                </div>
-                <span class="badge-status ${item.status === 'Đã duyệt' ? 'approved' : item.status === 'Đã dịch' ? 'translated' : 'pending'}">${item.status}</span>
-            </div>
-            <p class="table-row-en">${highlightTokensInText(item.en)}</p>
-
-            ${renderListGlossaryChipsHtml(idx, item.en)}
-            ${renderListTokenWarningHtml(idx, item.en, item.new_vi || '')}
-            <input type="text" class="table-row-input ${!validateTokens(item.en, item.new_vi || '').isValid && extractTokens(item.en).length > 0 ? 'token-invalid' : ''}" value="${item.new_vi || ''}" placeholder="Nhập câu dịch tiếng Việt..." oninput="onListInput(${idx}, this)" onchange="onListChange(${idx}, this.value)">
-            <div class="table-row-bottom">
-                <span style="color:var(--gold-light);">${tramIcon("profile")} Dịch giả: ${item.translator || 'Chưa có'}</span>
-                <button class="btn-direction" style="padding:6px 14px; font-size:0.8rem;" onclick="saveListRow(${idx})">${tramIcon("save")} Lưu câu này</button>
-            </div>
-        `;
-        container.appendChild(card);
-    });
+    const container=document.getElementById('listModeContainer');if(!container)return;container.replaceChildren();
+    const label=(tag,cls,text)=>{const e=document.createElement(tag);e.className=cls;e.textContent=text;return e;};
+    let rendered=0;
+    const more=document.createElement('button');more.className='btn-direction collab-load-more';more.type='button';
+    const append=()=>{
+        more.remove();const end=Math.min(filteredLines.length,rendered+80);
+        for(let idx=rendered;idx<end;idx++){
+            const item=filteredLines[idx],card=document.createElement('div');card.className='table-row-card';card.dataset.lineId=item.line_id;
+            const top=label('div','table-row-top',''),speaker=label('div','table-row-speaker',item.speaker || 'Dẫn chuyện');speaker.append(label('span','collab-line-id','#'+item.line_id));top.append(speaker);card.append(top,label('p','table-row-en',item.en || ''),CollaborationView.summary(item));
+            const buttons=label('div','collab-actions','');
+            for(const [text,handler]of [[Collaboration.hasText(item)?'Đề xuất sửa':'Dịch câu này',()=>CollaborationView.openEdit(item)],['Xem lịch sử',()=>CollaborationView.openHistory(item)],['Báo vấn đề',()=>CollaborationView.openEdit(item,undefined,{mode:'report'})]]){const button=label('button','btn-direction',text);button.type='button';button.addEventListener('click',handler);buttons.append(button);}card.append(buttons);container.append(card);
+        }
+        rendered=end;if(rendered<filteredLines.length){more.textContent=`Xem thêm câu (${rendered}/${filteredLines.length})`;container.append(more);}
+    };
+    more.onclick=append;append();
 }

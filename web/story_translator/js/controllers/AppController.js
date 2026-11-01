@@ -9,6 +9,8 @@ const AppController = {
         updateThemeButton();
         await loadCharactersMetadata();
         loadProfile();
+        CollaborationView.init();
+        await Collaboration.init();
         await loadChaptersList();
         await loadGlossaryTerms();
         initAudio();

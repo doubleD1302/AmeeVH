@@ -115,182 +115,19 @@ function onListInput(idx, inputElem) {
     }
 }
 
-// Save Current Line to Backend & Google Sheets
+// Always submit with the revision captured by the proposal dialog. No GAS fallback.
 async function saveCurrentLine() {
-    if (filteredLines.length === 0) return;
-    const item = filteredLines[currentIndex];
-    const newText = document.getElementById("vietnameseInput").value.trim();
-    if (!newText) return;
-
-    // Kiểm tra Token hệ thống bắt buộc
-    const valCheck = validateTokens(item.en, newText);
-    if (!valCheck.isValid) {
-        const alertBox = document.getElementById("tokenValidationAlert");
-        if (alertBox) {
-            alertBox.classList.add("shake-alert");
-            setTimeout(() => alertBox.classList.remove("shake-alert"), 600);
-        }
-        const confirmSave = confirm(
-            "⚠️ CẢNH BÁO BẢN DỊCH THIẾU TOKEN HỆ THỐNG / ĐỊNH DẠNG!\n\n" +
-            "Các mã code/token còn thiếu trong câu:\n" +
-            valCheck.missing.map(t => "  • " + t).join("\n") + "\n\n" +
-            "Việc thiếu token hoặc sai định dạng có thể gây lỗi hiển thị hoặc crash game khi nạp!\n" +
-            "Bấm 'Hủy' (Cancel) để bổ sung token, hoặc 'OK' nếu bạn thực sự chắc chắn muốn lưu."
-        );
-        if (!confirmSave) {
-            document.getElementById("vietnameseInput").focus({ preventScroll: true });
-            return;
-        }
-    }
-
-    item.new_vi = newText;
-    item.translator = currentUser.name;
-    item.status = "Đã dịch";
-
-    // Award EXP
-    currentUser.exp = (currentUser.exp || 0) + 50;
-    const newLvl = 1 + Math.floor(currentUser.exp / 250);
-    if (newLvl > currentUser.level) {
-        currentUser.level = newLvl;
-        showToastAlert(`🎉 THĂNG CẤP! Bạn đã đạt Cấp ${newLvl}!`);
-    } else {
-        showToastAlert(`⭐ +50 EXP! Đã cập nhật [${currentUser.name}] lên Google Sheets!`);
-    }
-    localStorage.setItem("stella_user_profile", JSON.stringify(currentUser));
-    updateHud();
-
-    // Background API Sync (Serverless GAS & Cloudflare Pages)
-    const payload = {
-        action: "save_line",
-        chapter_id: currentChapterData.chapter_id,
-        sheet_name: currentChapterData.sheet_name,
-        row_index: item.row_index,
-        line_id: item.line_id,
-        new_vi: newText,
-        translator: currentUser.name,
-        status: "Đã dịch"
-    };
-    syncLineToBackend(payload);
-
-    // Auto advance
-    updateProgressBar();
-    if (currentIndex < filteredLines.length - 1) {
-        currentIndex++;
-        renderCurrentLine();
-    }
+    const item=filteredLines[currentIndex];if(!item)return;
+    const text=document.getElementById('vietnameseInput').value;
+    return CollaborationView.openEdit(item,text);
 }
+async function saveListRow(idx) {const item=filteredLines[idx];if(item)return CollaborationView.openEdit(item);}
+// Kept as a compatibility hook: old offline saves require manual comparison first.
+async function flushOfflineQueue() { Collaboration.updateNotice(); }
+window.addEventListener('online',()=>{ Collaboration.init(); });
 
-async function saveListRow(idx) {
-    const item = filteredLines[idx];
-    if (!item || !item.new_vi) return;
-    item.translator = currentUser.name;
-    item.status = "Đã dịch";
-    currentUser.exp = (currentUser.exp || 0) + 50;
-    localStorage.setItem("stella_user_profile", JSON.stringify(currentUser));
-    updateHud();
-    showToastAlert(`⭐ +50 EXP! Đã cập nhật câu ${item.line_id}!`);
-
-    const payload = {
-        action: "save_line",
-        chapter_id: currentChapterData.chapter_id,
-        sheet_name: currentChapterData.sheet_name,
-        row_index: item.row_index,
-        line_id: item.line_id,
-        new_vi: item.new_vi,
-        translator: currentUser.name,
-        status: "Đã dịch"
-    };
-    syncLineToBackend(payload);
-
-    renderListMode();
-    updateProgressBar();
+function onTranslationDraftInput() {
+    updateTokenValidationUI();
+    const item=filteredLines[currentIndex];if(!item)return;
+    Collaboration.saveDraft(item,{text:document.getElementById('vietnameseInput').value,origin:item.translation_origin || 'human',notes:item.notes || '',base_revision:item.revision});
 }
-
-/**
- * Điều phối gửi dữ liệu lên Backend Serverless (Cloudflare Proxy hoặc Trực tiếp Google Apps Script)
- */
-async function syncLineToBackend(payload) {
-    const config = window.APP_CONFIG || { SYNC_MODE: "auto", GAS_URL: "" };
-    let success = false;
-
-    // 1. Thử qua Cloudflare Pages Proxy (/api/save_line)
-    if (config.SYNC_MODE === "proxy" || config.SYNC_MODE === "auto") {
-        try {
-            const res = await fetch("/api/save_line", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-            });
-            if (res.ok) {
-                const data = await res.json();
-                if (data.success !== false) {
-                    success = true;
-                }
-            }
-        } catch (proxyErr) {
-            console.warn("[Cloudflare Proxy] Không khả dụng, chuyển sang kênh trực tiếp:", proxyErr);
-        }
-    }
-
-    // 2. Thử gửi trực tiếp lên Google Apps Script Web App (Direct Mode)
-    if (!success && config.GAS_URL && (config.SYNC_MODE === "direct" || config.SYNC_MODE === "auto")) {
-        try {
-            // Dùng text/plain để tránh preflight CORS OPTIONS từ trình duyệt
-            const res = await fetch(config.GAS_URL, {
-                method: "POST",
-                headers: { "Content-Type": "text/plain;charset=utf-8" },
-                body: JSON.stringify(payload),
-                redirect: "follow"
-            });
-            if (res.ok) {
-                const data = await res.json();
-                if (data.success !== false) {
-                    success = true;
-                }
-            }
-        } catch (gasErr) {
-            console.error("[GAS Direct] Thất bại:", gasErr);
-        }
-    }
-
-    // 3. Nếu chưa gửi được (mất mạng hoặc lỗi server), đưa vào hàng đợi Offline
-    if (!success && config.ENABLE_OFFLINE_QUEUE) {
-        enqueueOfflineSave(payload);
-    }
-
-    return success;
-}
-
-function enqueueOfflineSave(payload) {
-    try {
-        let queue = JSON.parse(localStorage.getItem("stella_offline_queue") || "[]");
-        queue.push({
-            payload: payload,
-            timestamp: new Date().toISOString()
-        });
-        localStorage.setItem("stella_offline_queue", JSON.stringify(queue));
-        showToastAlert("💾 Đang offline: Đã lưu tạm vào máy, sẽ tự động đồng bộ khi có mạng!");
-    } catch (_) {}
-}
-
-async function flushOfflineQueue() {
-    try {
-        let queue = JSON.parse(localStorage.getItem("stella_offline_queue") || "[]");
-        if (!queue || queue.length === 0) return;
-        
-        console.log(`[Offline Sync] Đang đồng bộ ${queue.length} câu đã lưu tạm...`);
-        let remaining = [];
-        for (const item of queue) {
-            const ok = await syncLineToBackend(item.payload);
-            if (!ok) {
-                remaining.push(item);
-            }
-        }
-        localStorage.setItem("stella_offline_queue", JSON.stringify(remaining));
-        if (remaining.length === 0) {
-            showToastAlert(`🎉 Đã đồng bộ ${queue.length} câu đã lưu offline lên Google Sheets thành công!`);
-        }
-    } catch (_) {}
-}
-
-window.addEventListener("online", flushOfflineQueue);
