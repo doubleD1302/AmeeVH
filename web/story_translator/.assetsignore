@@ -21,3 +21,7 @@ wrangler.toml
 
 # Collaboration server implementation and SQL are never public browser assets.
 /worker/
+
+# Local build and QA output never belongs in the browser bundle.
+/work/
+/reports/
