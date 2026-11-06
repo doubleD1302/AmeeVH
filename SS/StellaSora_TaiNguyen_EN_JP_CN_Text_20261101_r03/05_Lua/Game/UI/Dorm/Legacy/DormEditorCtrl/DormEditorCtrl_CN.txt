@@ -1,0 +1,40 @@
+Game/UI/Dorm/Legacy/DormEditorCtrl.lua | CN
+8 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/11:K30] TRUY VẾT TĨNH TỚI UI — legacy_ui
+Archive: 0x48cec668c306b7a7 | offset: 6838
+Chứng cứ: SETTABLE sContent rồi truyền bảng tới OpenMessageBox.
+是否保存当前修改
+
+[0/12:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x48cec668c306b7a7 | offset: 9441
+No PresetData:
+
+[0/12:K15] TRUY VẾT TĨNH TỚI UI — legacy_ui
+Archive: 0x48cec668c306b7a7 | offset: 9563
+Chứng cứ: Hằng truyền trực tiếp tới OpenMessageBox khi loại phòng không khớp.
+不是该房间类型的预设
+
+[0/12:K39] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x48cec668c306b7a7 | offset: 9855
+ApplyPresetResult Nil
+
+[0/12:K41] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x48cec668c306b7a7 | offset: 9887
+ApplyPresetResult TypeError:
+
+[0/15:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x48cec668c306b7a7 | offset: 12887
+预设
+
+[0/15:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x48cec668c306b7a7 | offset: 12895
+暂无预设
+
+[0/16:K10] TRUY VẾT TĨNH TỚI UI — legacy_ui
+Archive: 0x48cec668c306b7a7 | offset: 13397
+Chứng cứ: Hằng truyền trực tiếp tới OpenMessageBox khi không có preset.
+暂无预设
+

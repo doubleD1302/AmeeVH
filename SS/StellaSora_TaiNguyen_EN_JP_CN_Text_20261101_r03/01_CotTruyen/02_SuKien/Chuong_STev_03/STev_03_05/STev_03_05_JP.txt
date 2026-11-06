@@ -1,0 +1,6517 @@
+STev_03_05 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 2171
+
+[STev_03_05::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STev_03_05::command/0 SetIntro/param/1]
+第5話
+
+[STev_03_05::command/0 SetIntro/param/2]
+高収入の依頼
+
+[STev_03_05::command/0 SetIntro/param/3]
+ひと悶着あったものの、ようやくおとなしくなった火薬の窃盗犯たち。そこでリーダーの口から、空白旅団を雇ってからの一部始終が語られる。どうやら空白旅団とジンリンが消息を絶ったのは、星ノ塔の中で年獣に襲われたせいらしい…
+
+[STev_03_05::command/1 SetBg/param/1]
+BG_Black
+
+[STev_03_05::command/1 SetBg/param/2]
+0
+
+[STev_03_05::command/1 SetBg/param/3]
+Linear
+
+[STev_03_05::command/1 SetBg/param/6]
+default
+
+[STev_03_05::command/2 SetAudio/param/1]
+se_322
+
+[STev_03_05::command/3 SetFx/param/1]
+fx_avg_atta
+
+[STev_03_05::command/5 SetAudio/param/1]
+se_330
+
+[STev_03_05::command/6 SetFx/param/1]
+fx_avg_land_attack
+
+[STev_03_05::command/7 SetFx/param/1]
+fx_avg_water_blade
+
+[STev_03_05::command/9 SetAudio/param/1]
+se_324
+
+[STev_03_05::command/10 SetFx/param/1]
+fx_avg_flame_disappear_a
+
+[STev_03_05::command/11 SetAudio/param/1]
+se_283
+
+[STev_03_05::command/13 SetChar/param/2]
+none
+
+[STev_03_05::command/13 SetChar/param/3]
+avg3_176
+
+[STev_03_05::command/13 SetChar/param/4]
+a
+
+[STev_03_05::command/13 SetChar/param/5]
+002
+
+[STev_03_05::command/13 SetChar/param/6]
+none
+
+[STev_03_05::command/14 SetChar/param/2]
+none
+
+[STev_03_05::command/14 SetChar/param/3]
+avg3_175
+
+[STev_03_05::command/14 SetChar/param/4]
+a
+
+[STev_03_05::command/14 SetChar/param/5]
+002
+
+[STev_03_05::command/14 SetChar/param/6]
+none
+
+[STev_03_05::command/15 SetTrans/param/2]
+0
+
+[STev_03_05::command/15 SetTrans/param/3]
+Linear
+
+[STev_03_05::command/15 SetTrans/param/8]
+default
+
+[STev_03_05::command/16 SetBg/param/1]
+uniseed_warehouse
+
+[STev_03_05::command/16 SetBg/param/2]
+0
+
+[STev_03_05::command/16 SetBg/param/3]
+Linear
+
+[STev_03_05::command/16 SetBg/param/6]
+default
+
+[STev_03_05::command/17 CtrlBg/param/10]
+none
+
+[STev_03_05::command/17 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/18 CtrlStage/param/9]
+none
+
+[STev_03_05::command/18 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/19 SetTrans/param/2]
+0
+
+[STev_03_05::command/19 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/19 SetTrans/param/8]
+fade
+
+[STev_03_05::command/20 SetFx/param/1]
+fx_avg_dust_light
+
+[STev_03_05::command/21 SetAudio/param/1]
+se_258
+
+[STev_03_05::command/23 SetAudio/param/1]
+se_121
+
+[STev_03_05::command/24 CtrlChar/param/0]
+avg3_176
+
+[STev_03_05::command/24 CtrlChar/param/1]
+a
+
+[STev_03_05::command/24 CtrlChar/param/3]
+none
+
+[STev_03_05::command/24 CtrlChar/param/11]
+manbu
+
+[STev_03_05::command/24 CtrlChar/param/12]
+none
+
+[STev_03_05::command/24 CtrlChar/param/13]
+InOutSine
+
+[STev_03_05::command/25 CtrlChar/param/0]
+avg3_175
+
+[STev_03_05::command/25 CtrlChar/param/1]
+a
+
+[STev_03_05::command/25 CtrlChar/param/3]
+none
+
+[STev_03_05::command/25 CtrlChar/param/11]
+manbu
+
+[STev_03_05::command/25 CtrlChar/param/12]
+none
+
+[STev_03_05::command/25 CtrlChar/param/13]
+InOutQuad
+
+[STev_03_05::command/26 SetChar/param/2]
+none
+
+[STev_03_05::command/26 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/26 SetChar/param/4]
+c
+
+[STev_03_05::command/26 SetChar/param/5]
+005
+
+[STev_03_05::command/26 SetChar/param/6]
+none
+
+[STev_03_05::command/28 SetAudio/param/1]
+se_072
+
+[STev_03_05::command/29 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STev_03_05::command/29 SetBGM/param/3]
+m59
+
+[STev_03_05::command/29 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/30 SetBg/param/1]
+phoenix_food_street_night
+
+[STev_03_05::command/30 SetBg/param/2]
+rule_39
+
+[STev_03_05::command/30 SetBg/param/3]
+OutSine
+
+[STev_03_05::command/30 SetBg/param/6]
+fade
+
+[STev_03_05::command/31 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/31 CtrlChar/param/1]
+c
+
+[STev_03_05::command/31 CtrlChar/param/3]
+none
+
+[STev_03_05::command/31 CtrlChar/param/11]
+niunie1
+
+[STev_03_05::command/31 CtrlChar/param/12]
+none
+
+[STev_03_05::command/31 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/33 SetAudio/param/1]
+se_112
+
+[STev_03_05::command/34 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/34 CtrlChar/param/1]
+c
+
+[STev_03_05::command/34 CtrlChar/param/3]
+none
+
+[STev_03_05::command/34 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/34 CtrlChar/param/12]
+none
+
+[STev_03_05::command/34 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/35 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/35 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/35 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/35 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/35 SetTalk/param/7]
+ちょ、やめ……！==RT==参った、降参！もう抵抗しないから！
+
+[STev_03_05::command/35 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/36 SetChar/param/2]
+none
+
+[STev_03_05::command/36 SetChar/param/3]
+avg1_141
+
+[STev_03_05::command/36 SetChar/param/4]
+a
+
+[STev_03_05::command/36 SetChar/param/5]
+002
+
+[STev_03_05::command/36 SetChar/param/6]
+none
+
+[STev_03_05::command/38 SetAudio/param/1]
+se_236
+
+[STev_03_05::command/39 CtrlChar/param/0]
+avg1_141
+
+[STev_03_05::command/39 CtrlChar/param/1]
+a
+
+[STev_03_05::command/39 CtrlChar/param/3]
+none
+
+[STev_03_05::command/39 CtrlChar/param/11]
+jushou
+
+[STev_03_05::command/39 CtrlChar/param/12]
+none
+
+[STev_03_05::command/39 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/40 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/40 CtrlChar/param/1]
+c
+
+[STev_03_05::command/40 CtrlChar/param/2]
+008
+
+[STev_03_05::command/40 CtrlChar/param/3]
+none
+
+[STev_03_05::command/40 CtrlChar/param/11]
+jinzhang
+
+[STev_03_05::command/40 CtrlChar/param/12]
+none
+
+[STev_03_05::command/40 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/41 CtrlStage/param/9]
+none
+
+[STev_03_05::command/41 CtrlStage/param/10]
+OutQuad
+
+[STev_03_05::command/42 SetAudio/param/1]
+se_063
+
+[STev_03_05::command/43 SetFx/param/1]
+fx_avg_line_cen_lp
+
+[STev_03_05::command/44 CtrlChar/param/0]
+avg1_141
+
+[STev_03_05::command/44 CtrlChar/param/1]
+a
+
+[STev_03_05::command/44 CtrlChar/param/3]
+none
+
+[STev_03_05::command/44 CtrlChar/param/11]
+daintou
+
+[STev_03_05::command/44 CtrlChar/param/12]
+none
+
+[STev_03_05::command/44 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/45 SetTalkShake/param/1]
+none
+
+[STev_03_05::command/46 SetTalk/param/1]
+avg1_141
+
+[STev_03_05::command/46 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/46 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/46 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/46 SetTalk/param/7]
+まったく、最初からおとなしくしておればよいものを。==RT==<size=60>ほれ、知っていることをすべて話すのじゃ。
+
+[STev_03_05::command/46 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/48 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/48 CtrlChar/param/1]
+c
+
+[STev_03_05::command/48 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STev_03_05::command/48 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/48 CtrlChar/param/12]
+none
+
+[STev_03_05::command/48 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/49 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/49 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/49 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/49 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/49 SetTalk/param/7]
+わ、わかってるから。ただ、どう話したものか……
+
+[STev_03_05::command/49 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/51 SetAudio/param/1]
+se_065
+
+[STev_03_05::command/52 SetTrans/param/2]
+0
+
+[STev_03_05::command/52 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/52 SetTrans/param/8]
+fade
+
+[STev_03_05::command/54 SetFx/param/1]
+fx_avg_line_cen_lp
+
+[STev_03_05::command/55 SetChar/param/2]
+none
+
+[STev_03_05::command/55 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/55 SetChar/param/4]
+c
+
+[STev_03_05::command/55 SetChar/param/5]
+005
+
+[STev_03_05::command/55 SetChar/param/6]
+none
+
+[STev_03_05::command/56 CtrlStage/param/9]
+none
+
+[STev_03_05::command/56 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/57 SetAudio/param/1]
+se_066
+
+[STev_03_05::command/58 SetTrans/param/2]
+0
+
+[STev_03_05::command/58 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/58 SetTrans/param/8]
+fade
+
+[STev_03_05::command/60 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/60 CtrlChar/param/1]
+c
+
+[STev_03_05::command/60 CtrlChar/param/3]
+none
+
+[STev_03_05::command/60 CtrlChar/param/11]
+none
+
+[STev_03_05::command/60 CtrlChar/param/12]
+none
+
+[STev_03_05::command/60 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/61 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/61 CtrlChar/param/1]
+c
+
+[STev_03_05::command/61 CtrlChar/param/2]
+004
+
+[STev_03_05::command/61 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_03_05::command/61 CtrlChar/param/11]
+none
+
+[STev_03_05::command/61 CtrlChar/param/12]
+none
+
+[STev_03_05::command/61 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/63 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/63 CtrlChar/param/1]
+c
+
+[STev_03_05::command/63 CtrlChar/param/3]
+close
+
+[STev_03_05::command/63 CtrlChar/param/11]
+none
+
+[STev_03_05::command/63 CtrlChar/param/12]
+none
+
+[STev_03_05::command/63 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/64 SetMainRoleTalk/param/2]
+014
+
+[STev_03_05::command/64 SetMainRoleTalk/param/3]
+none
+
+[STev_03_05::command/64 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/64 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/64 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/65 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/65 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/65 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/65 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/65 SetTalk/param/7]
+ありのままを話せばいい。==W====RT==あとのことは聞いてからこちらが判断する。
+
+[STev_03_05::command/65 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/67 SetMainRoleTalk/param/2]
+006
+
+[STev_03_05::command/67 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STev_03_05::command/67 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/67 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/67 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/69 SetMainRoleTalk/param/3]
+none
+
+[STev_03_05::command/69 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/69 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/69 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/71 SetAudio/param/1]
+se_070
+
+[STev_03_05::command/72 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/72 CtrlChar/param/1]
+c
+
+[STev_03_05::command/72 CtrlChar/param/2]
+008
+
+[STev_03_05::command/72 CtrlChar/param/3]
+none
+
+[STev_03_05::command/72 CtrlChar/param/11]
+chijing
+
+[STev_03_05::command/72 CtrlChar/param/12]
+none
+
+[STev_03_05::command/72 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/74 SetMainRoleTalk/param/2]
+002
+
+[STev_03_05::command/74 SetMainRoleTalk/param/3]
+none
+
+[STev_03_05::command/74 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/74 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/74 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/75 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/75 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/75 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/75 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/75 SetTalk/param/7]
+そうだな……昨日3人の巡遊者を雇っただろう？==RT==そのあとの話を聞かせてくれ。
+
+[STev_03_05::command/75 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/76 SetMainRoleTalk/param/3]
+close
+
+[STev_03_05::command/76 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/76 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/76 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/78 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/78 CtrlChar/param/1]
+c
+
+[STev_03_05::command/78 CtrlChar/param/2]
+007
+
+[STev_03_05::command/78 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STev_03_05::command/78 CtrlChar/param/11]
+none
+
+[STev_03_05::command/78 CtrlChar/param/12]
+none
+
+[STev_03_05::command/78 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/79 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/79 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/79 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/79 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/79 SetTalk/param/7]
+え？あ、ああ、あの3人のこと？==RT==それなら……
+
+[STev_03_05::command/79 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/80 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/80 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/80 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/82 SetAudio/param/1]
+se_169
+
+[STev_03_05::command/83 SetTrans/param/2]
+34
+
+[STev_03_05::command/83 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/83 SetTrans/param/8]
+fade
+
+[STev_03_05::command/84 SetBg/param/1]
+forest
+
+[STev_03_05::command/84 SetBg/param/2]
+0
+
+[STev_03_05::command/84 SetBg/param/3]
+Linear
+
+[STev_03_05::command/84 SetBg/param/6]
+default
+
+[STev_03_05::command/85 SetTalk/param/1]
+0
+
+[STev_03_05::command/85 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/85 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/85 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/85 SetTalk/param/7]
+1日前――
+
+[STev_03_05::command/85 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/86 SetChar/param/2]
+none
+
+[STev_03_05::command/86 SetChar/param/3]
+avg1_112
+
+[STev_03_05::command/86 SetChar/param/4]
+a
+
+[STev_03_05::command/86 SetChar/param/5]
+006
+
+[STev_03_05::command/86 SetChar/param/6]
+none
+
+[STev_03_05::command/87 SetChar/param/2]
+none
+
+[STev_03_05::command/87 SetChar/param/3]
+avg1_103
+
+[STev_03_05::command/87 SetChar/param/4]
+a
+
+[STev_03_05::command/87 SetChar/param/5]
+002
+
+[STev_03_05::command/87 SetChar/param/6]
+none
+
+[STev_03_05::command/88 SetChar/param/2]
+none
+
+[STev_03_05::command/88 SetChar/param/3]
+avg1_111
+
+[STev_03_05::command/88 SetChar/param/4]
+a
+
+[STev_03_05::command/88 SetChar/param/5]
+002
+
+[STev_03_05::command/88 SetChar/param/6]
+none
+
+[STev_03_05::command/89 SetTrans/param/2]
+0
+
+[STev_03_05::command/89 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/89 SetTrans/param/8]
+default
+
+[STev_03_05::command/90 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/90 SetBGM/param/3]
+m56
+
+[STev_03_05::command/90 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/92 SetAudio/param/1]
+se_048
+
+[STev_03_05::command/93 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/93 CtrlChar/param/1]
+a
+
+[STev_03_05::command/93 CtrlChar/param/3]
+none
+
+[STev_03_05::command/93 CtrlChar/param/11]
+none
+
+[STev_03_05::command/93 CtrlChar/param/12]
+none
+
+[STev_03_05::command/93 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/94 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/94 CtrlChar/param/1]
+a
+
+[STev_03_05::command/94 CtrlChar/param/3]
+none
+
+[STev_03_05::command/94 CtrlChar/param/11]
+none
+
+[STev_03_05::command/94 CtrlChar/param/12]
+none
+
+[STev_03_05::command/94 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/95 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/95 CtrlChar/param/1]
+a
+
+[STev_03_05::command/95 CtrlChar/param/3]
+none
+
+[STev_03_05::command/95 CtrlChar/param/11]
+none
+
+[STev_03_05::command/95 CtrlChar/param/12]
+none
+
+[STev_03_05::command/95 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/97 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/97 CtrlChar/param/1]
+a
+
+[STev_03_05::command/97 CtrlChar/param/3]
+avg_emoji_shock
+
+[STev_03_05::command/97 CtrlChar/param/11]
+none
+
+[STev_03_05::command/97 CtrlChar/param/12]
+none
+
+[STev_03_05::command/97 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/98 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/98 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/98 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/98 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/98 SetTalk/param/7]
+こんなにたくさんの食料、星ノ塔に運びこんでどうするの？==RT==まさか……泊まり込んでたくさん願掛けするつもり？
+
+[STev_03_05::command/98 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/99 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/99 CtrlChar/param/1]
+a
+
+[STev_03_05::command/99 CtrlChar/param/3]
+close
+
+[STev_03_05::command/99 CtrlChar/param/11]
+none
+
+[STev_03_05::command/99 CtrlChar/param/12]
+none
+
+[STev_03_05::command/99 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/101 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/101 CtrlChar/param/1]
+a
+
+[STev_03_05::command/101 CtrlChar/param/2]
+015
+
+[STev_03_05::command/101 CtrlChar/param/3]
+none
+
+[STev_03_05::command/101 CtrlChar/param/11]
+niunie
+
+[STev_03_05::command/101 CtrlChar/param/12]
+none
+
+[STev_03_05::command/101 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/102 SetTalk/param/1]
+avg1_103
+
+[STev_03_05::command/102 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/102 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/102 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/102 SetTalk/param/7]
+無理はよくないよ。
+
+[STev_03_05::command/102 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/104 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/104 CtrlChar/param/1]
+a
+
+[STev_03_05::command/104 CtrlChar/param/3]
+none
+
+[STev_03_05::command/104 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/104 CtrlChar/param/12]
+none
+
+[STev_03_05::command/104 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/105 SetTalk/param/1]
+avg1_111
+
+[STev_03_05::command/105 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/105 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/105 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/105 SetTalk/param/7]
+そうですね。==W==つまりそれだけ大量の記憶を消費するということですから。
+
+[STev_03_05::command/105 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/107 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/107 CtrlChar/param/1]
+a
+
+[STev_03_05::command/107 CtrlChar/param/2]
+007
+
+[STev_03_05::command/107 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STev_03_05::command/107 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/107 CtrlChar/param/12]
+none
+
+[STev_03_05::command/107 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/110 SetChar/param/2]
+none
+
+[STev_03_05::command/110 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/110 SetChar/param/4]
+c
+
+[STev_03_05::command/110 SetChar/param/5]
+002
+
+[STev_03_05::command/110 SetChar/param/6]
+none
+
+[STev_03_05::command/111 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/111 CtrlChar/param/1]
+a
+
+[STev_03_05::command/111 CtrlChar/param/3]
+none
+
+[STev_03_05::command/111 CtrlChar/param/11]
+none
+
+[STev_03_05::command/111 CtrlChar/param/12]
+none
+
+[STev_03_05::command/111 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/112 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/112 CtrlChar/param/1]
+a
+
+[STev_03_05::command/112 CtrlChar/param/3]
+none
+
+[STev_03_05::command/112 CtrlChar/param/11]
+none
+
+[STev_03_05::command/112 CtrlChar/param/12]
+none
+
+[STev_03_05::command/112 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/113 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/113 CtrlChar/param/1]
+a
+
+[STev_03_05::command/113 CtrlChar/param/3]
+none
+
+[STev_03_05::command/113 CtrlChar/param/11]
+none
+
+[STev_03_05::command/113 CtrlChar/param/12]
+none
+
+[STev_03_05::command/113 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/115 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/115 CtrlChar/param/1]
+c
+
+[STev_03_05::command/115 CtrlChar/param/3]
+none
+
+[STev_03_05::command/115 CtrlChar/param/11]
+none
+
+[STev_03_05::command/115 CtrlChar/param/12]
+none
+
+[STev_03_05::command/115 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/116 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/116 CtrlChar/param/1]
+c
+
+[STev_03_05::command/116 CtrlChar/param/2]
+006
+
+[STev_03_05::command/116 CtrlChar/param/3]
+avg_emoji_music
+
+[STev_03_05::command/116 CtrlChar/param/11]
+daintou
+
+[STev_03_05::command/116 CtrlChar/param/12]
+none
+
+[STev_03_05::command/116 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/117 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/117 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/117 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/117 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/117 SetTalk/param/7]
+大丈夫！そこは心配しなくていいわ！
+
+[STev_03_05::command/117 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/118 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/118 CtrlChar/param/1]
+a
+
+[STev_03_05::command/118 CtrlChar/param/2]
+006
+
+[STev_03_05::command/118 CtrlChar/param/3]
+none
+
+[STev_03_05::command/118 CtrlChar/param/11]
+none
+
+[STev_03_05::command/118 CtrlChar/param/12]
+none
+
+[STev_03_05::command/118 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/120 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/120 CtrlChar/param/1]
+a
+
+[STev_03_05::command/120 CtrlChar/param/3]
+none
+
+[STev_03_05::command/120 CtrlChar/param/11]
+none
+
+[STev_03_05::command/120 CtrlChar/param/12]
+none
+
+[STev_03_05::command/120 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/121 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/121 CtrlChar/param/1]
+c
+
+[STev_03_05::command/121 CtrlChar/param/3]
+none
+
+[STev_03_05::command/121 CtrlChar/param/11]
+none
+
+[STev_03_05::command/121 CtrlChar/param/12]
+none
+
+[STev_03_05::command/121 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/122 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/122 CtrlChar/param/1]
+a
+
+[STev_03_05::command/122 CtrlChar/param/3]
+avg_emoji_question
+
+[STev_03_05::command/122 CtrlChar/param/11]
+none
+
+[STev_03_05::command/122 CtrlChar/param/12]
+none
+
+[STev_03_05::command/122 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/123 SetTalk/param/1]
+avg1_111
+
+[STev_03_05::command/123 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/123 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/123 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/123 SetTalk/param/7]
+本当に大丈夫なんですか……？
+
+[STev_03_05::command/123 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/125 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/125 CtrlChar/param/1]
+a
+
+[STev_03_05::command/125 CtrlChar/param/2]
+004
+
+[STev_03_05::command/125 CtrlChar/param/3]
+none
+
+[STev_03_05::command/125 CtrlChar/param/11]
+none
+
+[STev_03_05::command/125 CtrlChar/param/12]
+none
+
+[STev_03_05::command/125 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/126 SetTalk/param/1]
+avg1_111
+
+[STev_03_05::command/126 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/126 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/126 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/126 SetTalk/param/7]
+高額の報酬がもらえるのはありがたいのですが……==W====RT==それでも、危険なことは見過ごせません。
+
+[STev_03_05::command/126 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/128 SetAudio/param/1]
+se_112
+
+[STev_03_05::command/129 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/129 CtrlChar/param/1]
+a
+
+[STev_03_05::command/129 CtrlChar/param/2]
+003
+
+[STev_03_05::command/129 CtrlChar/param/3]
+none
+
+[STev_03_05::command/129 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/129 CtrlChar/param/12]
+none
+
+[STev_03_05::command/129 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/132 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/132 CtrlChar/param/1]
+a
+
+[STev_03_05::command/132 CtrlChar/param/2]
+002
+
+[STev_03_05::command/132 CtrlChar/param/3]
+none
+
+[STev_03_05::command/132 CtrlChar/param/11]
+none
+
+[STev_03_05::command/132 CtrlChar/param/12]
+none
+
+[STev_03_05::command/132 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/133 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/133 CtrlChar/param/1]
+c
+
+[STev_03_05::command/133 CtrlChar/param/2]
+004
+
+[STev_03_05::command/133 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_03_05::command/133 CtrlChar/param/11]
+none
+
+[STev_03_05::command/133 CtrlChar/param/12]
+none
+
+[STev_03_05::command/133 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/134 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/134 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/134 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/134 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/134 SetTalk/param/7]
+だ、だから本当に心配はいらないのよ。==W====RT==そもそも願掛けしにいこうってわけじゃないんだから。
+
+[STev_03_05::command/134 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/136 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/136 CtrlChar/param/1]
+c
+
+[STev_03_05::command/136 CtrlChar/param/2]
+002
+
+[STev_03_05::command/136 CtrlChar/param/3]
+close
+
+[STev_03_05::command/136 CtrlChar/param/11]
+none
+
+[STev_03_05::command/136 CtrlChar/param/12]
+none
+
+[STev_03_05::command/136 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/138 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/138 CtrlChar/param/1]
+a
+
+[STev_03_05::command/138 CtrlChar/param/3]
+none
+
+[STev_03_05::command/138 CtrlChar/param/11]
+none
+
+[STev_03_05::command/138 CtrlChar/param/12]
+none
+
+[STev_03_05::command/138 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/140 SetAudio/param/1]
+se_101
+
+[STev_03_05::command/141 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/141 CtrlChar/param/1]
+a
+
+[STev_03_05::command/141 CtrlChar/param/3]
+none
+
+[STev_03_05::command/141 CtrlChar/param/11]
+none
+
+[STev_03_05::command/141 CtrlChar/param/12]
+none
+
+[STev_03_05::command/141 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/142 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/142 CtrlChar/param/1]
+c
+
+[STev_03_05::command/142 CtrlChar/param/3]
+none
+
+[STev_03_05::command/142 CtrlChar/param/11]
+none
+
+[STev_03_05::command/142 CtrlChar/param/12]
+none
+
+[STev_03_05::command/142 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/144 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/144 CtrlChar/param/1]
+a
+
+[STev_03_05::command/144 CtrlChar/param/3]
+avg_emoji_question
+
+[STev_03_05::command/144 CtrlChar/param/11]
+none
+
+[STev_03_05::command/144 CtrlChar/param/12]
+none
+
+[STev_03_05::command/144 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/145 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/145 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/145 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/145 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/145 SetTalk/param/7]
+じゃあ、この荷物は？
+
+[STev_03_05::command/145 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/147 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/147 CtrlChar/param/1]
+c
+
+[STev_03_05::command/147 CtrlChar/param/2]
+004
+
+[STev_03_05::command/147 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_03_05::command/147 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/147 CtrlChar/param/12]
+none
+
+[STev_03_05::command/147 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/148 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/148 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/148 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/148 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/148 SetTalk/param/7]
+このままじゃ納得してもらえなさそうだし……==RT==わかった、正直に話すわ。
+
+[STev_03_05::command/148 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/150 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/150 CtrlChar/param/1]
+c
+
+[STev_03_05::command/150 CtrlChar/param/2]
+007
+
+[STev_03_05::command/150 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_03_05::command/150 CtrlChar/param/11]
+none
+
+[STev_03_05::command/150 CtrlChar/param/12]
+none
+
+[STev_03_05::command/150 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/151 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/151 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/151 SetBGM/param/4]
+4000ms
+
+[STev_03_05::command/152 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/152 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/152 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/152 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/152 SetTalk/param/7]
+私には、心から信頼してた友人がいたの。==RT==幼い頃からずっと一緒で、苦しいときも互いに支えあってきた……
+
+[STev_03_05::command/152 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/154 SetTrans/param/2]
+0
+
+[STev_03_05::command/154 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/154 SetTrans/param/8]
+fade
+
+[STev_03_05::command/155 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STev_03_05::command/155 SetBGM/param/3]
+m9
+
+[STev_03_05::command/155 SetBGM/param/4]
+4000ms
+
+[STev_03_05::command/157 SetBg/param/1]
+sky_tower
+
+[STev_03_05::command/157 SetBg/param/2]
+0
+
+[STev_03_05::command/157 SetBg/param/3]
+Linear
+
+[STev_03_05::command/157 SetBg/param/6]
+default
+
+[STev_03_05::command/158 SetTrans/param/2]
+0
+
+[STev_03_05::command/158 SetTrans/param/3]
+OutQuad
+
+[STev_03_05::command/158 SetTrans/param/8]
+default
+
+[STev_03_05::command/159 SetTalk/param/1]
+0
+
+[STev_03_05::command/159 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/159 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/159 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/159 SetTalk/param/7]
+依頼人は感情豊かに、身振り手振りを交えながら、==RT==その親友が彼女を守って命を落とし、==RT==最期に笑顔で『キミは幸せに生きろ』と告げたことを語った。
+
+[STev_03_05::command/159 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/161 CtrlBg/param/10]
+none
+
+[STev_03_05::command/161 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/164 SetBg/param/1]
+forest
+
+[STev_03_05::command/164 SetBg/param/2]
+0
+
+[STev_03_05::command/164 SetBg/param/3]
+Linear
+
+[STev_03_05::command/164 SetBg/param/6]
+default
+
+[STev_03_05::command/165 SetChar/param/2]
+none
+
+[STev_03_05::command/165 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/165 SetChar/param/4]
+c
+
+[STev_03_05::command/165 SetChar/param/5]
+004
+
+[STev_03_05::command/165 SetChar/param/6]
+none
+
+[STev_03_05::command/167 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/167 CtrlChar/param/1]
+c
+
+[STev_03_05::command/167 CtrlChar/param/3]
+none
+
+[STev_03_05::command/167 CtrlChar/param/11]
+none
+
+[STev_03_05::command/167 CtrlChar/param/12]
+none
+
+[STev_03_05::command/167 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/168 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/168 CtrlChar/param/1]
+c
+
+[STev_03_05::command/168 CtrlChar/param/3]
+none
+
+[STev_03_05::command/168 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/168 CtrlChar/param/12]
+none
+
+[STev_03_05::command/168 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/169 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/169 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/169 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/169 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/169 SetTalk/param/7]
+私だけじゃない。ここにいる仲間たちにも、==RT==星ノ塔から生きて戻れなかった家族や友人がいるの。
+
+[STev_03_05::command/169 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/171 SetAudio/param/1]
+se_077
+
+[STev_03_05::command/172 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/172 CtrlChar/param/1]
+c
+
+[STev_03_05::command/172 CtrlChar/param/3]
+none
+
+[STev_03_05::command/172 CtrlChar/param/11]
+JuGong
+
+[STev_03_05::command/172 CtrlChar/param/12]
+none
+
+[STev_03_05::command/172 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/173 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/173 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/173 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/173 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/173 SetTalk/param/7]
+だから毎年、春節には彼らが好きだったものを持って塔へ行き、==RT==心を込めて弔うの――
+
+[STev_03_05::command/173 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/175 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/175 CtrlChar/param/1]
+c
+
+[STev_03_05::command/175 CtrlChar/param/2]
+002
+
+[STev_03_05::command/175 CtrlChar/param/3]
+none
+
+[STev_03_05::command/175 CtrlChar/param/11]
+none
+
+[STev_03_05::command/175 CtrlChar/param/12]
+none
+
+[STev_03_05::command/175 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/176 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/176 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/176 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/176 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/176 SetTalk/param/7]
+せめて向こうでは、いい春節を過ごしてほしい……==W==とね。
+
+[STev_03_05::command/176 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/178 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/178 CtrlChar/param/1]
+c
+
+[STev_03_05::command/178 CtrlChar/param/3]
+avg_emoji_star
+
+[STev_03_05::command/178 CtrlChar/param/11]
+niunie
+
+[STev_03_05::command/178 CtrlChar/param/12]
+none
+
+[STev_03_05::command/178 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/181 SetAudio/param/1]
+se_048
+
+[STev_03_05::command/182 SetCharHead/param/5]
+avg1_112
+
+[STev_03_05::command/182 SetCharHead/param/6]
+a
+
+[STev_03_05::command/182 SetCharHead/param/7]
+006
+
+[STev_03_05::command/182 SetCharHead/param/8]
+none
+
+[STev_03_05::command/183 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/183 CtrlChar/param/1]
+a
+
+[STev_03_05::command/183 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_03_05::command/183 CtrlChar/param/11]
+none
+
+[STev_03_05::command/183 CtrlChar/param/12]
+none
+
+[STev_03_05::command/183 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/184 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/184 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/184 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/184 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/184 SetTalk/param/7]
+つまり……この荷物はお供え物だったんだね。
+
+[STev_03_05::command/184 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/185 SetCharHead/param/5]
+avg1_112
+
+[STev_03_05::command/185 SetCharHead/param/6]
+a
+
+[STev_03_05::command/185 SetCharHead/param/7]
+002
+
+[STev_03_05::command/185 SetCharHead/param/8]
+none
+
+[STev_03_05::command/186 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/186 CtrlChar/param/1]
+c
+
+[STev_03_05::command/186 CtrlChar/param/3]
+none
+
+[STev_03_05::command/186 CtrlChar/param/11]
+none
+
+[STev_03_05::command/186 CtrlChar/param/12]
+none
+
+[STev_03_05::command/186 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/187 SetChar/param/2]
+none
+
+[STev_03_05::command/187 SetChar/param/3]
+avg1_117
+
+[STev_03_05::command/187 SetChar/param/4]
+a
+
+[STev_03_05::command/187 SetChar/param/5]
+002
+
+[STev_03_05::command/187 SetChar/param/6]
+none
+
+[STev_03_05::command/189 SetAudio/param/1]
+se_090
+
+[STev_03_05::command/190 CtrlStage/param/9]
+none
+
+[STev_03_05::command/190 CtrlStage/param/10]
+OutQuad
+
+[STev_03_05::command/191 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/191 CtrlChar/param/1]
+a
+
+[STev_03_05::command/191 CtrlChar/param/3]
+none
+
+[STev_03_05::command/191 CtrlChar/param/11]
+none
+
+[STev_03_05::command/191 CtrlChar/param/12]
+none
+
+[STev_03_05::command/191 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/192 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/192 CtrlChar/param/1]
+a
+
+[STev_03_05::command/192 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STev_03_05::command/192 CtrlChar/param/11]
+lengzhan2
+
+[STev_03_05::command/192 CtrlChar/param/12]
+none
+
+[STev_03_05::command/192 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/193 SetTalk/param/1]
+avg3_999
+
+[STev_03_05::command/193 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/193 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/193 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/193 SetTalk/param/7]
+うううぅ〜……いい話だねぇ……
+
+[STev_03_05::command/193 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/195 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/195 CtrlChar/param/1]
+a
+
+[STev_03_05::command/195 CtrlChar/param/3]
+none
+
+[STev_03_05::command/195 CtrlChar/param/11]
+none
+
+[STev_03_05::command/195 CtrlChar/param/12]
+none
+
+[STev_03_05::command/195 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/197 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/197 CtrlChar/param/1]
+c
+
+[STev_03_05::command/197 CtrlChar/param/3]
+none
+
+[STev_03_05::command/197 CtrlChar/param/11]
+none
+
+[STev_03_05::command/197 CtrlChar/param/12]
+none
+
+[STev_03_05::command/197 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/198 CtrlBg/param/10]
+none
+
+[STev_03_05::command/198 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/199 CtrlStage/param/9]
+none
+
+[STev_03_05::command/199 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/200 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/200 CtrlChar/param/1]
+a
+
+[STev_03_05::command/200 CtrlChar/param/2]
+004
+
+[STev_03_05::command/200 CtrlChar/param/3]
+none
+
+[STev_03_05::command/200 CtrlChar/param/11]
+none
+
+[STev_03_05::command/200 CtrlChar/param/12]
+none
+
+[STev_03_05::command/200 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/201 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/201 CtrlChar/param/1]
+c
+
+[STev_03_05::command/201 CtrlChar/param/2]
+008
+
+[STev_03_05::command/201 CtrlChar/param/3]
+none
+
+[STev_03_05::command/201 CtrlChar/param/11]
+none
+
+[STev_03_05::command/201 CtrlChar/param/12]
+none
+
+[STev_03_05::command/201 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/202 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/202 CtrlChar/param/1]
+c
+
+[STev_03_05::command/202 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STev_03_05::command/202 CtrlChar/param/11]
+chijing
+
+[STev_03_05::command/202 CtrlChar/param/12]
+none
+
+[STev_03_05::command/202 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/203 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/203 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/203 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/203 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/203 SetTalk/param/7]
+えっ……だ、誰？どこから出てきたの？
+
+[STev_03_05::command/203 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/204 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/204 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/204 SetBGM/param/4]
+4000ms
+
+[STev_03_05::command/206 CtrlBg/param/10]
+none
+
+[STev_03_05::command/206 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/207 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/207 CtrlChar/param/1]
+c
+
+[STev_03_05::command/207 CtrlChar/param/3]
+none
+
+[STev_03_05::command/207 CtrlChar/param/11]
+none
+
+[STev_03_05::command/207 CtrlChar/param/12]
+none
+
+[STev_03_05::command/207 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/209 SetAudio/param/1]
+se_090
+
+[STev_03_05::command/210 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/210 CtrlChar/param/1]
+a
+
+[STev_03_05::command/210 CtrlChar/param/3]
+none
+
+[STev_03_05::command/210 CtrlChar/param/11]
+jushou
+
+[STev_03_05::command/210 CtrlChar/param/12]
+none
+
+[STev_03_05::command/210 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/212 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/212 CtrlChar/param/1]
+a
+
+[STev_03_05::command/212 CtrlChar/param/2]
+010
+
+[STev_03_05::command/212 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STev_03_05::command/212 CtrlChar/param/11]
+none
+
+[STev_03_05::command/212 CtrlChar/param/12]
+none
+
+[STev_03_05::command/212 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/213 SetTalk/param/1]
+avg1_117
+
+[STev_03_05::command/213 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/213 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/213 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/213 SetTalk/param/7]
+えっと、盗み聞きするつもりはなかったんですよ？==RT==ただ山菜を採ってたら、たまたま話が聞こえてきちゃって。
+
+[STev_03_05::command/213 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/215 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/215 CtrlChar/param/1]
+a
+
+[STev_03_05::command/215 CtrlChar/param/2]
+014
+
+[STev_03_05::command/215 CtrlChar/param/3]
+avg_emoji_shy
+
+[STev_03_05::command/215 CtrlChar/param/11]
+niunie
+
+[STev_03_05::command/215 CtrlChar/param/12]
+none
+
+[STev_03_05::command/215 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/216 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/216 SetBGM/param/3]
+m37
+
+[STev_03_05::command/216 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/217 SetTalk/param/1]
+avg1_117
+
+[STev_03_05::command/217 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/217 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/217 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/217 SetTalk/param/7]
+そしたらすっごく素敵なお話だったから、==RT==つい我慢できなくなっちゃって……えへへ。
+
+[STev_03_05::command/217 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/218 SetChar/param/2]
+none
+
+[STev_03_05::command/218 SetChar/param/3]
+avg1_112
+
+[STev_03_05::command/218 SetChar/param/4]
+a
+
+[STev_03_05::command/218 SetChar/param/5]
+006
+
+[STev_03_05::command/218 SetChar/param/6]
+none
+
+[STev_03_05::command/220 SetAudio/param/1]
+se_065
+
+[STev_03_05::command/221 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/221 CtrlChar/param/1]
+a
+
+[STev_03_05::command/221 CtrlChar/param/3]
+none
+
+[STev_03_05::command/221 CtrlChar/param/11]
+none
+
+[STev_03_05::command/221 CtrlChar/param/12]
+none
+
+[STev_03_05::command/221 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/222 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/222 CtrlChar/param/1]
+a
+
+[STev_03_05::command/222 CtrlChar/param/2]
+003
+
+[STev_03_05::command/222 CtrlChar/param/3]
+none
+
+[STev_03_05::command/222 CtrlChar/param/11]
+none
+
+[STev_03_05::command/222 CtrlChar/param/12]
+none
+
+[STev_03_05::command/222 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/224 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/224 CtrlChar/param/1]
+a
+
+[STev_03_05::command/224 CtrlChar/param/2]
+005
+
+[STev_03_05::command/224 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_03_05::command/224 CtrlChar/param/11]
+none
+
+[STev_03_05::command/224 CtrlChar/param/12]
+none
+
+[STev_03_05::command/224 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/225 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/225 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/225 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/225 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/225 SetTalk/param/7]
+あれ？<r=りゅうじんろう>龍璟樓</r>のジンリン……だよね？==RT==なんで<r=そうごじょう>蒼梧城</r>にいるの？
+
+[STev_03_05::command/225 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/226 SetChar/param/2]
+none
+
+[STev_03_05::command/226 SetChar/param/3]
+avg1_111
+
+[STev_03_05::command/226 SetChar/param/4]
+a
+
+[STev_03_05::command/226 SetChar/param/5]
+002
+
+[STev_03_05::command/226 SetChar/param/6]
+none
+
+[STev_03_05::command/227 SetChar/param/2]
+none
+
+[STev_03_05::command/227 SetChar/param/3]
+avg1_103
+
+[STev_03_05::command/227 SetChar/param/4]
+a
+
+[STev_03_05::command/227 SetChar/param/5]
+002
+
+[STev_03_05::command/227 SetChar/param/6]
+none
+
+[STev_03_05::command/229 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/229 CtrlChar/param/1]
+a
+
+[STev_03_05::command/229 CtrlChar/param/2]
+011
+
+[STev_03_05::command/229 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_03_05::command/229 CtrlChar/param/11]
+jushou2
+
+[STev_03_05::command/229 CtrlChar/param/12]
+none
+
+[STev_03_05::command/229 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/230 SetTalk/param/1]
+avg1_117
+
+[STev_03_05::command/230 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/230 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/230 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/230 SetTalk/param/7]
+いまはママと一緒に、フィーリエから帰省してて。==RT==そういうみなさんも、蒼梧城に来てたんですね。
+
+[STev_03_05::command/230 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/232 SetAudio/param/1]
+se_061
+
+[STev_03_05::command/233 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/233 CtrlChar/param/1]
+a
+
+[STev_03_05::command/233 CtrlChar/param/3]
+none
+
+[STev_03_05::command/233 CtrlChar/param/11]
+none
+
+[STev_03_05::command/233 CtrlChar/param/12]
+none
+
+[STev_03_05::command/233 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/234 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/234 CtrlChar/param/1]
+a
+
+[STev_03_05::command/234 CtrlChar/param/3]
+none
+
+[STev_03_05::command/234 CtrlChar/param/11]
+none
+
+[STev_03_05::command/234 CtrlChar/param/12]
+none
+
+[STev_03_05::command/234 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/235 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/235 CtrlChar/param/1]
+a
+
+[STev_03_05::command/235 CtrlChar/param/2]
+003
+
+[STev_03_05::command/235 CtrlChar/param/3]
+none
+
+[STev_03_05::command/235 CtrlChar/param/11]
+none
+
+[STev_03_05::command/235 CtrlChar/param/12]
+none
+
+[STev_03_05::command/235 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/236 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/236 CtrlChar/param/1]
+a
+
+[STev_03_05::command/236 CtrlChar/param/3]
+none
+
+[STev_03_05::command/236 CtrlChar/param/11]
+none
+
+[STev_03_05::command/236 CtrlChar/param/12]
+none
+
+[STev_03_05::command/236 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/238 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/238 CtrlChar/param/1]
+a
+
+[STev_03_05::command/238 CtrlChar/param/2]
+013
+
+[STev_03_05::command/238 CtrlChar/param/3]
+none
+
+[STev_03_05::command/238 CtrlChar/param/11]
+none
+
+[STev_03_05::command/238 CtrlChar/param/12]
+none
+
+[STev_03_05::command/238 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/239 CtrlStage/param/9]
+none
+
+[STev_03_05::command/239 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/240 SetTalk/param/1]
+avg1_111
+
+[STev_03_05::command/240 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/240 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/240 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/240 SetTalk/param/7]
+私たちは近くで依頼を受けたあと、補給するために立ち寄ったんです。
+
+[STev_03_05::command/240 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/242 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/242 CtrlChar/param/1]
+a
+
+[STev_03_05::command/242 CtrlChar/param/2]
+002
+
+[STev_03_05::command/242 CtrlChar/param/3]
+none
+
+[STev_03_05::command/242 CtrlChar/param/11]
+none
+
+[STev_03_05::command/242 CtrlChar/param/12]
+none
+
+[STev_03_05::command/242 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/243 CtrlStage/param/9]
+none
+
+[STev_03_05::command/243 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/244 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/244 CtrlChar/param/1]
+a
+
+[STev_03_05::command/244 CtrlChar/param/2]
+005
+
+[STev_03_05::command/244 CtrlChar/param/3]
+avg_emoji_music
+
+[STev_03_05::command/244 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/244 CtrlChar/param/12]
+none
+
+[STev_03_05::command/244 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/245 SetTalk/param/1]
+avg1_103
+
+[STev_03_05::command/245 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/245 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/245 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/245 SetTalk/param/7]
+ボスも来てるよ。
+
+[STev_03_05::command/245 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/246 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/246 CtrlChar/param/1]
+a
+
+[STev_03_05::command/246 CtrlChar/param/2]
+014
+
+[STev_03_05::command/246 CtrlChar/param/3]
+none
+
+[STev_03_05::command/246 CtrlChar/param/11]
+none
+
+[STev_03_05::command/246 CtrlChar/param/12]
+none
+
+[STev_03_05::command/246 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/248 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/248 CtrlChar/param/1]
+a
+
+[STev_03_05::command/248 CtrlChar/param/3]
+none
+
+[STev_03_05::command/248 CtrlChar/param/11]
+none
+
+[STev_03_05::command/248 CtrlChar/param/12]
+none
+
+[STev_03_05::command/248 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/249 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/249 CtrlChar/param/1]
+a
+
+[STev_03_05::command/249 CtrlChar/param/3]
+none
+
+[STev_03_05::command/249 CtrlChar/param/11]
+none
+
+[STev_03_05::command/249 CtrlChar/param/12]
+none
+
+[STev_03_05::command/249 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/250 CtrlStage/param/9]
+none
+
+[STev_03_05::command/250 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/252 SetAudio/param/1]
+se_069
+
+[STev_03_05::command/253 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/253 CtrlChar/param/1]
+a
+
+[STev_03_05::command/253 CtrlChar/param/2]
+023
+
+[STev_03_05::command/253 CtrlChar/param/3]
+none
+
+[STev_03_05::command/253 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/253 CtrlChar/param/12]
+none
+
+[STev_03_05::command/253 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/254 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/254 CtrlChar/param/1]
+a
+
+[STev_03_05::command/254 CtrlChar/param/2]
+008
+
+[STev_03_05::command/254 CtrlChar/param/3]
+avg_emoji_shy
+
+[STev_03_05::command/254 CtrlChar/param/11]
+none
+
+[STev_03_05::command/254 CtrlChar/param/12]
+none
+
+[STev_03_05::command/254 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/255 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/255 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/255 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/255 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/255 SetTalk/param/7]
+ジンリンの顔を見たら、龍璟樓のごちそうを思い出しちゃって……==RT==なんだかお腹空いてきちゃった。
+
+[STev_03_05::command/255 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/257 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/257 CtrlChar/param/1]
+a
+
+[STev_03_05::command/257 CtrlChar/param/2]
+002
+
+[STev_03_05::command/257 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_03_05::command/257 CtrlChar/param/11]
+huanxin
+
+[STev_03_05::command/257 CtrlChar/param/12]
+none
+
+[STev_03_05::command/257 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/258 SetTalk/param/1]
+avg1_117
+
+[STev_03_05::command/258 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/258 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/258 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/258 SetTalk/param/7]
+それなら明日、みんなで一緒に年越し料理を食べませんか？==RT==うちに招待しますよ。
+
+[STev_03_05::command/258 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/260 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/260 CtrlChar/param/1]
+a
+
+[STev_03_05::command/260 CtrlChar/param/2]
+013
+
+[STev_03_05::command/260 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_03_05::command/260 CtrlChar/param/11]
+huanxin
+
+[STev_03_05::command/260 CtrlChar/param/12]
+none
+
+[STev_03_05::command/260 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/261 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/261 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/261 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/261 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/261 SetTalk/param/7]
+ホント！？行く行くー！！
+
+[STev_03_05::command/261 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/263 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/263 CtrlChar/param/1]
+a
+
+[STev_03_05::command/263 CtrlChar/param/2]
+010
+
+[STev_03_05::command/263 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_03_05::command/263 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/263 CtrlChar/param/12]
+none
+
+[STev_03_05::command/263 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/264 SetTalk/param/1]
+avg1_117
+
+[STev_03_05::command/264 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/264 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/264 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/264 SetTalk/param/7]
+ただ春節前は人が多くて、==RT==マーケットでもなかなか食材が手に入らないんですよね……
+
+[STev_03_05::command/264 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/266 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/266 CtrlChar/param/1]
+a
+
+[STev_03_05::command/266 CtrlChar/param/2]
+007
+
+[STev_03_05::command/266 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STev_03_05::command/266 CtrlChar/param/11]
+buman
+
+[STev_03_05::command/266 CtrlChar/param/12]
+none
+
+[STev_03_05::command/266 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/267 SetTalk/param/1]
+avg1_117
+
+[STev_03_05::command/267 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/267 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/267 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/267 SetTalk/param/7]
+だからこうして食材を探してたんですけど、==RT==時期が時期だからあんまりいいものが見つからなくて。
+
+[STev_03_05::command/267 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/269 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/269 CtrlChar/param/1]
+a
+
+[STev_03_05::command/269 CtrlChar/param/2]
+019
+
+[STev_03_05::command/269 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_03_05::command/269 CtrlChar/param/11]
+zuochupeng
+
+[STev_03_05::command/269 CtrlChar/param/12]
+none
+
+[STev_03_05::command/269 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/270 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/270 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/270 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/270 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/270 SetTalk/param/7]
+じゃあいっそ、私たちと一緒に星ノ塔まで行かない？==RT==食材なら、祈願箱からなんでも出てくるし。
+
+[STev_03_05::command/270 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/272 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/272 CtrlChar/param/1]
+a
+
+[STev_03_05::command/272 CtrlChar/param/2]
+009
+
+[STev_03_05::command/272 CtrlChar/param/3]
+avg_emoji_idea
+
+[STev_03_05::command/272 CtrlChar/param/11]
+youzai
+
+[STev_03_05::command/272 CtrlChar/param/12]
+none
+
+[STev_03_05::command/272 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/273 SetTalk/param/1]
+avg1_117
+
+[STev_03_05::command/273 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/273 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/273 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/273 SetTalk/param/7]
+たしかにそれなら……！==RT==それじゃあ、あたしもご一緒していいですか！？
+
+[STev_03_05::command/273 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/274 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/274 CtrlChar/param/1]
+c
+
+[STev_03_05::command/274 CtrlChar/param/3]
+none
+
+[STev_03_05::command/274 CtrlChar/param/11]
+none
+
+[STev_03_05::command/274 CtrlChar/param/12]
+none
+
+[STev_03_05::command/274 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/276 CtrlStage/param/9]
+none
+
+[STev_03_05::command/276 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/277 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/277 CtrlChar/param/1]
+a
+
+[STev_03_05::command/277 CtrlChar/param/3]
+none
+
+[STev_03_05::command/277 CtrlChar/param/11]
+none
+
+[STev_03_05::command/277 CtrlChar/param/12]
+none
+
+[STev_03_05::command/277 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/278 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/278 CtrlChar/param/1]
+a
+
+[STev_03_05::command/278 CtrlChar/param/3]
+none
+
+[STev_03_05::command/278 CtrlChar/param/11]
+none
+
+[STev_03_05::command/278 CtrlChar/param/12]
+none
+
+[STev_03_05::command/278 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/279 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/279 CtrlChar/param/1]
+a
+
+[STev_03_05::command/279 CtrlChar/param/3]
+none
+
+[STev_03_05::command/279 CtrlChar/param/11]
+none
+
+[STev_03_05::command/279 CtrlChar/param/12]
+none
+
+[STev_03_05::command/279 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/280 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/280 CtrlChar/param/1]
+a
+
+[STev_03_05::command/280 CtrlChar/param/3]
+none
+
+[STev_03_05::command/280 CtrlChar/param/11]
+none
+
+[STev_03_05::command/280 CtrlChar/param/12]
+none
+
+[STev_03_05::command/280 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/282 SetAudio/param/1]
+se_112
+
+[STev_03_05::command/283 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/283 CtrlChar/param/1]
+c
+
+[STev_03_05::command/283 CtrlChar/param/3]
+none
+
+[STev_03_05::command/283 CtrlChar/param/11]
+shouji
+
+[STev_03_05::command/283 CtrlChar/param/12]
+none
+
+[STev_03_05::command/283 CtrlChar/param/13]
+InOutQuad
+
+[STev_03_05::command/284 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/284 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/284 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/284 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/284 SetTalk/param/7]
+コホン……そ、それはちょっとマズいんじゃないかしら？==RT==こんな小さい子を連れて行くのは危ないし……
+
+[STev_03_05::command/284 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/286 CtrlBg/param/10]
+none
+
+[STev_03_05::command/286 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/287 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/287 CtrlChar/param/1]
+a
+
+[STev_03_05::command/287 CtrlChar/param/2]
+002
+
+[STev_03_05::command/287 CtrlChar/param/3]
+none
+
+[STev_03_05::command/287 CtrlChar/param/11]
+none
+
+[STev_03_05::command/287 CtrlChar/param/12]
+none
+
+[STev_03_05::command/287 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/288 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/288 CtrlChar/param/1]
+c
+
+[STev_03_05::command/288 CtrlChar/param/3]
+none
+
+[STev_03_05::command/288 CtrlChar/param/11]
+none
+
+[STev_03_05::command/288 CtrlChar/param/12]
+none
+
+[STev_03_05::command/288 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/289 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/289 CtrlChar/param/1]
+a
+
+[STev_03_05::command/289 CtrlChar/param/3]
+none
+
+[STev_03_05::command/289 CtrlChar/param/11]
+none
+
+[STev_03_05::command/289 CtrlChar/param/12]
+none
+
+[STev_03_05::command/289 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/290 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/290 CtrlChar/param/1]
+a
+
+[STev_03_05::command/290 CtrlChar/param/2]
+004
+
+[STev_03_05::command/290 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_03_05::command/290 CtrlChar/param/11]
+huanxin
+
+[STev_03_05::command/290 CtrlChar/param/12]
+none
+
+[STev_03_05::command/290 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/291 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/291 SetTalk/param/7]
+大丈夫だって。<r=せいがい>星骸</r>からは私たちが守るし……==RT==てかなんならジンリンも戦えるからね。
+
+[STev_03_05::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/292 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/292 CtrlChar/param/1]
+c
+
+[STev_03_05::command/292 CtrlChar/param/3]
+none
+
+[STev_03_05::command/292 CtrlChar/param/11]
+none
+
+[STev_03_05::command/292 CtrlChar/param/12]
+none
+
+[STev_03_05::command/292 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/293 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/293 CtrlChar/param/1]
+c
+
+[STev_03_05::command/293 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_03_05::command/293 CtrlChar/param/11]
+none
+
+[STev_03_05::command/293 CtrlChar/param/12]
+none
+
+[STev_03_05::command/293 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/294 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/294 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/294 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/294 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/294 SetTalk/param/7]
+う、うーん……少し仲間と相談させてください。
+
+[STev_03_05::command/294 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/296 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/296 CtrlChar/param/1]
+c
+
+[STev_03_05::command/296 CtrlChar/param/3]
+close
+
+[STev_03_05::command/296 CtrlChar/param/11]
+none
+
+[STev_03_05::command/296 CtrlChar/param/12]
+none
+
+[STev_03_05::command/296 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/298 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STev_03_05::command/298 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/298 SetTrans/param/8]
+fade
+
+[STev_03_05::command/299 SetBg/param/1]
+forest
+
+[STev_03_05::command/299 SetBg/param/2]
+0
+
+[STev_03_05::command/299 SetBg/param/3]
+Linear
+
+[STev_03_05::command/299 SetBg/param/6]
+default
+
+[STev_03_05::command/300 SetChar/param/2]
+none
+
+[STev_03_05::command/300 SetChar/param/3]
+avg3_175
+
+[STev_03_05::command/300 SetChar/param/4]
+a
+
+[STev_03_05::command/300 SetChar/param/5]
+004
+
+[STev_03_05::command/300 SetChar/param/6]
+none
+
+[STev_03_05::command/301 SetChar/param/2]
+none
+
+[STev_03_05::command/301 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/301 SetChar/param/4]
+c
+
+[STev_03_05::command/301 SetChar/param/5]
+004
+
+[STev_03_05::command/301 SetChar/param/6]
+none
+
+[STev_03_05::command/302 SetAudio/param/1]
+se_020
+
+[STev_03_05::command/304 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[STev_03_05::command/304 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/304 SetTrans/param/8]
+fade
+
+[STev_03_05::command/306 SetAudio/param/1]
+se_020_stop
+
+[STev_03_05::command/307 CtrlChar/param/0]
+avg3_175
+
+[STev_03_05::command/307 CtrlChar/param/1]
+a
+
+[STev_03_05::command/307 CtrlChar/param/2]
+007
+
+[STev_03_05::command/307 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_03_05::command/307 CtrlChar/param/11]
+jushou2
+
+[STev_03_05::command/307 CtrlChar/param/12]
+none
+
+[STev_03_05::command/307 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/308 SetTalk/param/1]
+依頼人の仲間
+
+[STev_03_05::command/308 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/308 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/308 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/308 SetTalk/param/7]
+親分、どうするんすか？あのちっこい子、龍族っすよ？==RT==万が一にも怪しまれたら……
+
+[STev_03_05::command/308 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/310 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/310 CtrlChar/param/1]
+c
+
+[STev_03_05::command/310 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_03_05::command/310 CtrlChar/param/11]
+none
+
+[STev_03_05::command/310 CtrlChar/param/12]
+none
+
+[STev_03_05::command/310 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/312 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/312 CtrlChar/param/1]
+c
+
+[STev_03_05::command/312 CtrlChar/param/2]
+008
+
+[STev_03_05::command/312 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STev_03_05::command/312 CtrlChar/param/11]
+none
+
+[STev_03_05::command/312 CtrlChar/param/12]
+none
+
+[STev_03_05::command/312 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/313 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/313 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/313 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/313 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/313 SetTalk/param/7]
+ダメよ。私たちが出した依頼は、一緒に星ノ塔へ行くこと。==RT==ここで変に拒んだら、逆に怪しまれるかもしれないし。
+
+[STev_03_05::command/313 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/315 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/315 CtrlChar/param/1]
+c
+
+[STev_03_05::command/315 CtrlChar/param/2]
+004
+
+[STev_03_05::command/315 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_03_05::command/315 CtrlChar/param/11]
+JuGong
+
+[STev_03_05::command/315 CtrlChar/param/12]
+none
+
+[STev_03_05::command/315 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/316 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/316 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/316 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/316 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/316 SetTalk/param/7]
+はぁ……仕方ないわね。話すときは慎重にいきましょう。==RT==幸いあの子は龍族でも、蒼梧城には住んでないみたいだし。
+
+[STev_03_05::command/316 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/317 CtrlChar/param/0]
+avg3_175
+
+[STev_03_05::command/317 CtrlChar/param/1]
+a
+
+[STev_03_05::command/317 CtrlChar/param/2]
+005
+
+[STev_03_05::command/317 CtrlChar/param/3]
+none
+
+[STev_03_05::command/317 CtrlChar/param/11]
+none
+
+[STev_03_05::command/317 CtrlChar/param/12]
+none
+
+[STev_03_05::command/317 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/319 SetTrans/param/2]
+0
+
+[STev_03_05::command/319 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/319 SetTrans/param/8]
+fade
+
+[STev_03_05::command/320 CtrlStage/param/9]
+none
+
+[STev_03_05::command/320 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/321 SetChar/param/2]
+none
+
+[STev_03_05::command/321 SetChar/param/3]
+avg3_175
+
+[STev_03_05::command/321 SetChar/param/4]
+a
+
+[STev_03_05::command/321 SetChar/param/5]
+002
+
+[STev_03_05::command/321 SetChar/param/6]
+none
+
+[STev_03_05::command/322 SetChar/param/2]
+none
+
+[STev_03_05::command/322 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/322 SetChar/param/4]
+c
+
+[STev_03_05::command/322 SetChar/param/5]
+002
+
+[STev_03_05::command/322 SetChar/param/6]
+none
+
+[STev_03_05::command/323 SetAudio/param/1]
+se_102
+
+[STev_03_05::command/324 SetTrans/param/2]
+0
+
+[STev_03_05::command/324 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/324 SetTrans/param/8]
+fade
+
+[STev_03_05::command/326 CtrlChar/param/0]
+avg3_175
+
+[STev_03_05::command/326 CtrlChar/param/1]
+a
+
+[STev_03_05::command/326 CtrlChar/param/3]
+none
+
+[STev_03_05::command/326 CtrlChar/param/11]
+none
+
+[STev_03_05::command/326 CtrlChar/param/12]
+none
+
+[STev_03_05::command/326 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/327 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/327 CtrlChar/param/1]
+c
+
+[STev_03_05::command/327 CtrlChar/param/3]
+none
+
+[STev_03_05::command/327 CtrlChar/param/11]
+none
+
+[STev_03_05::command/327 CtrlChar/param/12]
+none
+
+[STev_03_05::command/327 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/329 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/329 CtrlChar/param/1]
+c
+
+[STev_03_05::command/329 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_03_05::command/329 CtrlChar/param/11]
+none
+
+[STev_03_05::command/329 CtrlChar/param/12]
+none
+
+[STev_03_05::command/329 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/330 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/330 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/330 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/330 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/330 SetTalk/param/7]
+お待たせしました。==RT==ではその子のことは、みなさんにお任せしますね。
+
+[STev_03_05::command/330 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/332 CtrlChar/param/0]
+avg3_175
+
+[STev_03_05::command/332 CtrlChar/param/1]
+a
+
+[STev_03_05::command/332 CtrlChar/param/3]
+none
+
+[STev_03_05::command/332 CtrlChar/param/11]
+none
+
+[STev_03_05::command/332 CtrlChar/param/12]
+none
+
+[STev_03_05::command/332 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/333 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/333 CtrlChar/param/1]
+c
+
+[STev_03_05::command/333 CtrlChar/param/3]
+none
+
+[STev_03_05::command/333 CtrlChar/param/11]
+none
+
+[STev_03_05::command/333 CtrlChar/param/12]
+none
+
+[STev_03_05::command/333 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/334 CtrlStage/param/9]
+none
+
+[STev_03_05::command/334 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/336 SetChar/param/2]
+none
+
+[STev_03_05::command/336 SetChar/param/3]
+avg3_175
+
+[STev_03_05::command/336 SetChar/param/4]
+a
+
+[STev_03_05::command/336 SetChar/param/5]
+002
+
+[STev_03_05::command/336 SetChar/param/6]
+none
+
+[STev_03_05::command/337 SetChar/param/2]
+none
+
+[STev_03_05::command/337 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/337 SetChar/param/4]
+c
+
+[STev_03_05::command/337 SetChar/param/5]
+002
+
+[STev_03_05::command/337 SetChar/param/6]
+none
+
+[STev_03_05::command/339 SetChar/param/2]
+none
+
+[STev_03_05::command/339 SetChar/param/3]
+avg1_103
+
+[STev_03_05::command/339 SetChar/param/4]
+a
+
+[STev_03_05::command/339 SetChar/param/5]
+014
+
+[STev_03_05::command/339 SetChar/param/6]
+none
+
+[STev_03_05::command/340 SetChar/param/2]
+none
+
+[STev_03_05::command/340 SetChar/param/3]
+avg1_117
+
+[STev_03_05::command/340 SetChar/param/4]
+a
+
+[STev_03_05::command/340 SetChar/param/5]
+002
+
+[STev_03_05::command/340 SetChar/param/6]
+none
+
+[STev_03_05::command/341 SetChar/param/2]
+none
+
+[STev_03_05::command/341 SetChar/param/3]
+avg1_111
+
+[STev_03_05::command/341 SetChar/param/4]
+a
+
+[STev_03_05::command/341 SetChar/param/5]
+011
+
+[STev_03_05::command/341 SetChar/param/6]
+none
+
+[STev_03_05::command/342 SetChar/param/2]
+none
+
+[STev_03_05::command/342 SetChar/param/3]
+avg1_112
+
+[STev_03_05::command/342 SetChar/param/4]
+a
+
+[STev_03_05::command/342 SetChar/param/5]
+004
+
+[STev_03_05::command/342 SetChar/param/6]
+none
+
+[STev_03_05::command/344 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/344 CtrlChar/param/1]
+a
+
+[STev_03_05::command/344 CtrlChar/param/3]
+none
+
+[STev_03_05::command/344 CtrlChar/param/11]
+none
+
+[STev_03_05::command/344 CtrlChar/param/12]
+none
+
+[STev_03_05::command/344 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/345 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/345 CtrlChar/param/1]
+a
+
+[STev_03_05::command/345 CtrlChar/param/3]
+none
+
+[STev_03_05::command/345 CtrlChar/param/11]
+none
+
+[STev_03_05::command/345 CtrlChar/param/12]
+none
+
+[STev_03_05::command/345 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/346 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/346 CtrlChar/param/1]
+a
+
+[STev_03_05::command/346 CtrlChar/param/3]
+none
+
+[STev_03_05::command/346 CtrlChar/param/11]
+none
+
+[STev_03_05::command/346 CtrlChar/param/12]
+none
+
+[STev_03_05::command/346 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/347 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/347 CtrlChar/param/1]
+a
+
+[STev_03_05::command/347 CtrlChar/param/3]
+none
+
+[STev_03_05::command/347 CtrlChar/param/11]
+none
+
+[STev_03_05::command/347 CtrlChar/param/12]
+none
+
+[STev_03_05::command/347 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/349 CtrlChar/param/0]
+avg1_117
+
+[STev_03_05::command/349 CtrlChar/param/1]
+a
+
+[STev_03_05::command/349 CtrlChar/param/2]
+011
+
+[STev_03_05::command/349 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_03_05::command/349 CtrlChar/param/11]
+huanxin
+
+[STev_03_05::command/349 CtrlChar/param/12]
+none
+
+[STev_03_05::command/349 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/350 SetAudio/param/1]
+se_077
+
+[STev_03_05::command/352 SetAudio/param/1]
+se_101
+
+[STev_03_05::command/353 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/353 CtrlChar/param/1]
+a
+
+[STev_03_05::command/353 CtrlChar/param/2]
+002
+
+[STev_03_05::command/353 CtrlChar/param/3]
+close
+
+[STev_03_05::command/353 CtrlChar/param/11]
+daintou
+
+[STev_03_05::command/353 CtrlChar/param/12]
+none
+
+[STev_03_05::command/353 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/354 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/354 CtrlChar/param/1]
+a
+
+[STev_03_05::command/354 CtrlChar/param/2]
+005
+
+[STev_03_05::command/354 CtrlChar/param/3]
+avg_emoji_idea
+
+[STev_03_05::command/354 CtrlChar/param/11]
+jushou0
+
+[STev_03_05::command/354 CtrlChar/param/12]
+none
+
+[STev_03_05::command/354 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/355 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/355 SetTalk/param/7]
+よ～し、それじゃあしゅっぱーつ！！
+
+[STev_03_05::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/357 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STev_03_05::command/357 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/357 SetBGM/param/4]
+none
+
+[STev_03_05::command/358 SetTrans/param/2]
+34
+
+[STev_03_05::command/358 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/358 SetTrans/param/8]
+fade
+
+[STev_03_05::command/359 CtrlStage/param/9]
+none
+
+[STev_03_05::command/359 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/360 SetBg/param/1]
+phoenix_food_street_night
+
+[STev_03_05::command/360 SetBg/param/2]
+0
+
+[STev_03_05::command/360 SetBg/param/3]
+Linear
+
+[STev_03_05::command/360 SetBg/param/6]
+default
+
+[STev_03_05::command/361 SetChar/param/2]
+none
+
+[STev_03_05::command/361 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/361 SetChar/param/4]
+c
+
+[STev_03_05::command/361 SetChar/param/5]
+004
+
+[STev_03_05::command/361 SetChar/param/6]
+none
+
+[STev_03_05::command/362 SetTrans/param/2]
+34
+
+[STev_03_05::command/362 SetTrans/param/3]
+Linear
+
+[STev_03_05::command/362 SetTrans/param/8]
+default
+
+[STev_03_05::command/364 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STev_03_05::command/364 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/364 SetBGM/param/4]
+none
+
+[STev_03_05::command/365 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/365 CtrlChar/param/1]
+c
+
+[STev_03_05::command/365 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STev_03_05::command/365 CtrlChar/param/11]
+none
+
+[STev_03_05::command/365 CtrlChar/param/12]
+none
+
+[STev_03_05::command/365 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/366 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/366 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/366 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/366 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/366 SetTalk/param/7]
+……ということがあったわけ。==RT==それであの巡遊者たちには、花火や爆竹を運んでもらったの。
+
+[STev_03_05::command/366 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/368 SetMainRoleTalk/param/2]
+002
+
+[STev_03_05::command/368 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_03_05::command/368 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/368 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/368 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/369 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/369 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/369 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/369 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/369 SetTalk/param/7]
+お供え物というのは嘘だな？==RT==本当の理由は？
+
+[STev_03_05::command/369 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/370 SetMainRoleTalk/param/3]
+close
+
+[STev_03_05::command/370 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/370 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/370 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/372 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/372 CtrlChar/param/1]
+c
+
+[STev_03_05::command/372 CtrlChar/param/2]
+005
+
+[STev_03_05::command/372 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STev_03_05::command/372 CtrlChar/param/11]
+none
+
+[STev_03_05::command/372 CtrlChar/param/12]
+none
+
+[STev_03_05::command/372 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/373 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/373 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/373 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/373 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/373 SetTalk/param/7]
+一度に大量の火薬を運べば、どの都市でも必ず検問に引っかかる。==RT==それに道中で同業者に目をつけられる可能性も高いわ。
+
+[STev_03_05::command/373 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/375 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/375 CtrlChar/param/1]
+c
+
+[STev_03_05::command/375 CtrlChar/param/3]
+none
+
+[STev_03_05::command/375 CtrlChar/param/11]
+none
+
+[STev_03_05::command/375 CtrlChar/param/12]
+none
+
+[STev_03_05::command/375 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/376 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/376 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/376 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/376 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/376 SetTalk/param/7]
+だからいったん星ノ塔に隠すことにしたの。==RT==そうすれば街で堂々と生活できるし、==RT==火薬は少量ずつ、各都市に運び出せばいいんだから。
+
+[STev_03_05::command/376 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/378 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/378 CtrlChar/param/1]
+c
+
+[STev_03_05::command/378 CtrlChar/param/2]
+007
+
+[STev_03_05::command/378 CtrlChar/param/3]
+none
+
+[STev_03_05::command/378 CtrlChar/param/11]
+none
+
+[STev_03_05::command/378 CtrlChar/param/12]
+none
+
+[STev_03_05::command/378 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/379 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/379 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/379 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/379 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/379 SetTalk/param/7]
+万が一巡遊者に花火と爆竹が見つかっても、祈願箱から出たもの以外、==RT==わざわざ持ち帰ろうとする巡遊者なんていないでしょ？
+
+[STev_03_05::command/379 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/381 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/381 CtrlChar/param/1]
+c
+
+[STev_03_05::command/381 CtrlChar/param/2]
+002
+
+[STev_03_05::command/381 CtrlChar/param/3]
+avg_emoji_idea
+
+[STev_03_05::command/381 CtrlChar/param/11]
+none
+
+[STev_03_05::command/381 CtrlChar/param/12]
+none
+
+[STev_03_05::command/381 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/382 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/382 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/382 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/382 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/382 SetTalk/param/7]
+つまり星ノ塔は『優秀な金庫』ってことよ。
+
+[STev_03_05::command/382 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/384 SetMainRoleTalk/param/2]
+020
+
+[STev_03_05::command/384 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STev_03_05::command/384 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/384 SetMainRoleTalk/param/5]
+y
+
+[STev_03_05::command/384 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/385 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/385 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/385 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/385 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/385 SetTalk/param/7]
+（まったく、悪知恵だけはよく働くようだな……）
+
+[STev_03_05::command/385 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/387 SetMainRoleTalk/param/2]
+002
+
+[STev_03_05::command/387 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_03_05::command/387 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/387 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/387 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/388 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/388 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/388 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/388 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/388 SetTalk/param/7]
+それで、そのあとみんなは？
+
+[STev_03_05::command/388 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/389 SetMainRoleTalk/param/3]
+close
+
+[STev_03_05::command/389 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/389 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/389 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/391 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/391 CtrlChar/param/1]
+c
+
+[STev_03_05::command/391 CtrlChar/param/2]
+004
+
+[STev_03_05::command/391 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_03_05::command/391 CtrlChar/param/11]
+none
+
+[STev_03_05::command/391 CtrlChar/param/12]
+none
+
+[STev_03_05::command/391 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/392 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/392 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/392 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/393 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/393 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/393 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/393 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/393 SetTalk/param/7]
+そのあとは……
+
+[STev_03_05::command/393 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/395 SetAudio/param/1]
+se_169
+
+[STev_03_05::command/396 SetTrans/param/2]
+34
+
+[STev_03_05::command/396 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/396 SetTrans/param/8]
+fade
+
+[STev_03_05::command/397 SetBg/param/1]
+tower_fire_earth
+
+[STev_03_05::command/397 SetBg/param/2]
+0
+
+[STev_03_05::command/397 SetBg/param/3]
+Linear
+
+[STev_03_05::command/397 SetBg/param/6]
+default
+
+[STev_03_05::command/398 SetChar/param/2]
+none
+
+[STev_03_05::command/398 SetChar/param/3]
+avg1_112
+
+[STev_03_05::command/398 SetChar/param/4]
+a
+
+[STev_03_05::command/398 SetChar/param/5]
+002
+
+[STev_03_05::command/398 SetChar/param/6]
+none
+
+[STev_03_05::command/399 SetTrans/param/2]
+0
+
+[STev_03_05::command/399 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/399 SetTrans/param/8]
+fade
+
+[STev_03_05::command/400 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/400 SetBGM/param/3]
+m14
+
+[STev_03_05::command/400 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/402 SetAudio/param/1]
+se_334
+
+[STev_03_05::command/403 CtrlStage/param/9]
+1ZhenDong
+
+[STev_03_05::command/403 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/405 SetFx/param/1]
+fx_avg_dust_light
+
+[STev_03_05::command/407 SetAudio/param/1]
+se_075
+
+[STev_03_05::command/408 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/408 CtrlChar/param/1]
+a
+
+[STev_03_05::command/408 CtrlChar/param/2]
+006
+
+[STev_03_05::command/408 CtrlChar/param/3]
+none
+
+[STev_03_05::command/408 CtrlChar/param/11]
+JuGong
+
+[STev_03_05::command/408 CtrlChar/param/12]
+none
+
+[STev_03_05::command/408 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/409 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/409 CtrlChar/param/1]
+a
+
+[STev_03_05::command/409 CtrlChar/param/2]
+005
+
+[STev_03_05::command/409 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_03_05::command/409 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/409 CtrlChar/param/12]
+none
+
+[STev_03_05::command/409 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/410 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/410 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/410 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/410 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/410 SetTalk/param/7]
+ふぅ～、これで全部運び終わったかな。
+
+[STev_03_05::command/410 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/411 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/411 CtrlChar/param/1]
+a
+
+[STev_03_05::command/411 CtrlChar/param/3]
+none
+
+[STev_03_05::command/411 CtrlChar/param/11]
+none
+
+[STev_03_05::command/411 CtrlChar/param/12]
+none
+
+[STev_03_05::command/411 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/412 SetChar/param/2]
+none
+
+[STev_03_05::command/412 SetChar/param/3]
+avg1_111
+
+[STev_03_05::command/412 SetChar/param/4]
+a
+
+[STev_03_05::command/412 SetChar/param/5]
+002
+
+[STev_03_05::command/412 SetChar/param/6]
+none
+
+[STev_03_05::command/413 SetChar/param/2]
+none
+
+[STev_03_05::command/413 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/413 SetChar/param/4]
+c
+
+[STev_03_05::command/413 SetChar/param/5]
+002
+
+[STev_03_05::command/413 SetChar/param/6]
+none
+
+[STev_03_05::command/415 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/415 CtrlChar/param/1]
+a
+
+[STev_03_05::command/415 CtrlChar/param/3]
+none
+
+[STev_03_05::command/415 CtrlChar/param/11]
+none
+
+[STev_03_05::command/415 CtrlChar/param/12]
+none
+
+[STev_03_05::command/415 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/416 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/416 CtrlChar/param/1]
+c
+
+[STev_03_05::command/416 CtrlChar/param/3]
+none
+
+[STev_03_05::command/416 CtrlChar/param/11]
+none
+
+[STev_03_05::command/416 CtrlChar/param/12]
+none
+
+[STev_03_05::command/416 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/417 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/417 CtrlChar/param/1]
+a
+
+[STev_03_05::command/417 CtrlChar/param/2]
+002
+
+[STev_03_05::command/417 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_03_05::command/417 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/417 CtrlChar/param/12]
+none
+
+[STev_03_05::command/417 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/418 SetTalk/param/1]
+avg1_111
+
+[STev_03_05::command/418 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/418 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/418 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/418 SetTalk/param/7]
+私たちは弔いの邪魔にならないよう、このあたりで失礼しようと思います。==RT==依頼料の精算をお願いできますか？
+
+[STev_03_05::command/418 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/420 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/420 CtrlChar/param/1]
+c
+
+[STev_03_05::command/420 CtrlChar/param/2]
+007
+
+[STev_03_05::command/420 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_03_05::command/420 CtrlChar/param/11]
+chijing
+
+[STev_03_05::command/420 CtrlChar/param/12]
+none
+
+[STev_03_05::command/420 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/421 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/421 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/421 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/421 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/421 SetTalk/param/7]
+ああ、そうですね。それでは……あれ！？==W====RT==すみません！出発のときバタバタしてたから、==RT==報酬を入れた封筒を忘れてきたみたいで……
+
+[STev_03_05::command/421 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/422 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/422 CtrlChar/param/1]
+c
+
+[STev_03_05::command/422 CtrlChar/param/2]
+004
+
+[STev_03_05::command/422 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_03_05::command/422 CtrlChar/param/11]
+daintou
+
+[STev_03_05::command/422 CtrlChar/param/12]
+none
+
+[STev_03_05::command/422 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/425 SetAudio/param/1]
+se_368
+
+[STev_03_05::command/426 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/426 CtrlChar/param/1]
+c
+
+[STev_03_05::command/426 CtrlChar/param/3]
+none
+
+[STev_03_05::command/426 CtrlChar/param/11]
+none
+
+[STev_03_05::command/426 CtrlChar/param/12]
+none
+
+[STev_03_05::command/426 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/427 CtrlStage/param/9]
+none
+
+[STev_03_05::command/427 CtrlStage/param/10]
+OutQuad
+
+[STev_03_05::command/428 CtrlBg/param/10]
+none
+
+[STev_03_05::command/428 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/429 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/429 CtrlChar/param/1]
+a
+
+[STev_03_05::command/429 CtrlChar/param/2]
+006
+
+[STev_03_05::command/429 CtrlChar/param/3]
+none
+
+[STev_03_05::command/429 CtrlChar/param/11]
+none
+
+[STev_03_05::command/429 CtrlChar/param/12]
+none
+
+[STev_03_05::command/429 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/431 SetAudio/param/1]
+se_070
+
+[STev_03_05::command/432 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/432 CtrlChar/param/1]
+a
+
+[STev_03_05::command/432 CtrlChar/param/3]
+none
+
+[STev_03_05::command/432 CtrlChar/param/11]
+chijing
+
+[STev_03_05::command/432 CtrlChar/param/12]
+none
+
+[STev_03_05::command/432 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/433 SetTalk/param/1]
+avg1_111
+
+[STev_03_05::command/433 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/433 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/433 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/433 SetTalk/param/7]
+えっ……
+
+[STev_03_05::command/433 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/434 SetAudio/param/1]
+se_356
+
+[STev_03_05::command/435 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/435 CtrlChar/param/1]
+a
+
+[STev_03_05::command/435 CtrlChar/param/3]
+none
+
+[STev_03_05::command/435 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/435 CtrlChar/param/12]
+none
+
+[STev_03_05::command/435 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/437 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/437 CtrlChar/param/1]
+c
+
+[STev_03_05::command/437 CtrlChar/param/2]
+007
+
+[STev_03_05::command/437 CtrlChar/param/3]
+none
+
+[STev_03_05::command/437 CtrlChar/param/11]
+none
+
+[STev_03_05::command/437 CtrlChar/param/12]
+none
+
+[STev_03_05::command/437 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/438 SetAudio/param/1]
+se_065
+
+[STev_03_05::command/439 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/439 CtrlChar/param/1]
+c
+
+[STev_03_05::command/439 CtrlChar/param/3]
+none
+
+[STev_03_05::command/439 CtrlChar/param/11]
+none
+
+[STev_03_05::command/439 CtrlChar/param/12]
+none
+
+[STev_03_05::command/439 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/441 SetAudio/param/1]
+se_061
+
+[STev_03_05::command/442 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/442 CtrlChar/param/1]
+c
+
+[STev_03_05::command/442 CtrlChar/param/2]
+004
+
+[STev_03_05::command/442 CtrlChar/param/3]
+none
+
+[STev_03_05::command/442 CtrlChar/param/11]
+JuGong
+
+[STev_03_05::command/442 CtrlChar/param/12]
+none
+
+[STev_03_05::command/442 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/443 CtrlBg/param/10]
+none
+
+[STev_03_05::command/443 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/444 CtrlStage/param/9]
+none
+
+[STev_03_05::command/444 CtrlStage/param/10]
+OutQuad
+
+[STev_03_05::command/445 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/445 CtrlChar/param/1]
+a
+
+[STev_03_05::command/445 CtrlChar/param/3]
+none
+
+[STev_03_05::command/445 CtrlChar/param/11]
+JuGong
+
+[STev_03_05::command/445 CtrlChar/param/12]
+none
+
+[STev_03_05::command/445 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/446 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/446 CtrlChar/param/1]
+c
+
+[STev_03_05::command/446 CtrlChar/param/3]
+none
+
+[STev_03_05::command/446 CtrlChar/param/11]
+jushou
+
+[STev_03_05::command/446 CtrlChar/param/12]
+none
+
+[STev_03_05::command/446 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/448 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/448 CtrlChar/param/1]
+c
+
+[STev_03_05::command/448 CtrlChar/param/2]
+006
+
+[STev_03_05::command/448 CtrlChar/param/3]
+avg_emoji_idea
+
+[STev_03_05::command/448 CtrlChar/param/11]
+none
+
+[STev_03_05::command/448 CtrlChar/param/12]
+none
+
+[STev_03_05::command/448 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/449 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/449 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/449 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/449 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/449 SetTalk/param/7]
+申し訳ありませんが、==RT==明日の午前10時に『<r=こうていき>紅鼎記</r>』の前に来ていただけませんか？
+
+[STev_03_05::command/449 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/451 CtrlChar/param/0]
+avg1_111
+
+[STev_03_05::command/451 CtrlChar/param/1]
+a
+
+[STev_03_05::command/451 CtrlChar/param/2]
+009
+
+[STev_03_05::command/451 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_03_05::command/451 CtrlChar/param/11]
+none
+
+[STev_03_05::command/451 CtrlChar/param/12]
+none
+
+[STev_03_05::command/451 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/452 SetTalk/param/1]
+avg1_111
+
+[STev_03_05::command/452 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/452 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/452 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/452 SetTalk/param/7]
+――っ！？
+
+[STev_03_05::command/452 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/453 SetTrans/param/2]
+0
+
+[STev_03_05::command/453 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/453 SetTrans/param/8]
+fade
+
+[STev_03_05::command/454 SetBg/param/1]
+BG_Black
+
+[STev_03_05::command/454 SetBg/param/2]
+0
+
+[STev_03_05::command/454 SetBg/param/3]
+Linear
+
+[STev_03_05::command/454 SetBg/param/6]
+default
+
+[STev_03_05::command/455 SetTrans/param/2]
+0
+
+[STev_03_05::command/455 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/455 SetTrans/param/8]
+fade
+
+[STev_03_05::command/456 CtrlStage/param/9]
+none
+
+[STev_03_05::command/456 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/457 SetBg/param/1]
+tower_fire_earth
+
+[STev_03_05::command/457 SetBg/param/2]
+0
+
+[STev_03_05::command/457 SetBg/param/3]
+Linear
+
+[STev_03_05::command/457 SetBg/param/6]
+default
+
+[STev_03_05::command/458 SetChar/param/2]
+none
+
+[STev_03_05::command/458 SetChar/param/3]
+avg1_103
+
+[STev_03_05::command/458 SetChar/param/4]
+a
+
+[STev_03_05::command/458 SetChar/param/5]
+010
+
+[STev_03_05::command/458 SetChar/param/6]
+none
+
+[STev_03_05::command/459 SetChar/param/2]
+none
+
+[STev_03_05::command/459 SetChar/param/3]
+avg1_112
+
+[STev_03_05::command/459 SetChar/param/4]
+a
+
+[STev_03_05::command/459 SetChar/param/5]
+022
+
+[STev_03_05::command/459 SetChar/param/6]
+none
+
+[STev_03_05::command/460 SetChar/param/2]
+none
+
+[STev_03_05::command/460 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/460 SetChar/param/4]
+c
+
+[STev_03_05::command/460 SetChar/param/5]
+004
+
+[STev_03_05::command/460 SetChar/param/6]
+none
+
+[STev_03_05::command/461 SetStage/param/2]
+OutSine
+
+[STev_03_05::command/462 SetAudio/param/1]
+se_074
+
+[STev_03_05::command/463 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/463 CtrlChar/param/1]
+a
+
+[STev_03_05::command/463 CtrlChar/param/3]
+none
+
+[STev_03_05::command/463 CtrlChar/param/11]
+none
+
+[STev_03_05::command/463 CtrlChar/param/12]
+none
+
+[STev_03_05::command/463 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/465 SetAudio/param/1]
+se_074
+
+[STev_03_05::command/466 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/466 CtrlChar/param/1]
+a
+
+[STev_03_05::command/466 CtrlChar/param/3]
+none
+
+[STev_03_05::command/466 CtrlChar/param/11]
+none
+
+[STev_03_05::command/466 CtrlChar/param/12]
+none
+
+[STev_03_05::command/466 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/468 SetAudio/param/1]
+se_257
+
+[STev_03_05::command/469 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/469 CtrlChar/param/1]
+a
+
+[STev_03_05::command/469 CtrlChar/param/2]
+013
+
+[STev_03_05::command/469 CtrlChar/param/3]
+none
+
+[STev_03_05::command/469 CtrlChar/param/11]
+none
+
+[STev_03_05::command/469 CtrlChar/param/12]
+none
+
+[STev_03_05::command/469 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/470 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/470 CtrlChar/param/1]
+a
+
+[STev_03_05::command/470 CtrlChar/param/2]
+014
+
+[STev_03_05::command/470 CtrlChar/param/3]
+none
+
+[STev_03_05::command/470 CtrlChar/param/11]
+none
+
+[STev_03_05::command/470 CtrlChar/param/12]
+none
+
+[STev_03_05::command/470 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/472 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/472 CtrlChar/param/1]
+c
+
+[STev_03_05::command/472 CtrlChar/param/2]
+005
+
+[STev_03_05::command/472 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STev_03_05::command/472 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/472 CtrlChar/param/12]
+none
+
+[STev_03_05::command/472 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/473 SetTalk/param/1]
+依頼人
+
+[STev_03_05::command/473 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/473 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/473 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/473 SetTalk/param/7]
+ちょ、そんなに睨まないで！==RT==別にあなたたちを騙したわけじゃなくて……
+
+[STev_03_05::command/473 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/475 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/475 CtrlChar/param/1]
+a
+
+[STev_03_05::command/475 CtrlChar/param/2]
+006
+
+[STev_03_05::command/475 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_03_05::command/475 CtrlChar/param/11]
+chijing
+
+[STev_03_05::command/475 CtrlChar/param/12]
+none
+
+[STev_03_05::command/475 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/476 SetTalk/param/1]
+avg1_103
+
+[STev_03_05::command/476 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/476 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/476 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/476 SetTalk/param/7]
+なにか変。
+
+[STev_03_05::command/476 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/477 SetAudio/param/1]
+se_078
+
+[STev_03_05::command/478 CtrlChar/param/0]
+avg1_103
+
+[STev_03_05::command/478 CtrlChar/param/1]
+a
+
+[STev_03_05::command/478 CtrlChar/param/3]
+none
+
+[STev_03_05::command/478 CtrlChar/param/11]
+jushou0
+
+[STev_03_05::command/478 CtrlChar/param/12]
+none
+
+[STev_03_05::command/478 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/479 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/479 CtrlChar/param/1]
+a
+
+[STev_03_05::command/479 CtrlChar/param/2]
+009
+
+[STev_03_05::command/479 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_03_05::command/479 CtrlChar/param/11]
+jushou
+
+[STev_03_05::command/479 CtrlChar/param/12]
+none
+
+[STev_03_05::command/479 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/480 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/480 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/480 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/480 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/480 SetTalk/param/7]
+みんな、来るよ！気をつけて！
+
+[STev_03_05::command/480 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/481 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/481 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/481 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/483 SetAudio/param/1]
+se_063
+
+[STev_03_05::command/484 SetStage/param/2]
+OutSine
+
+[STev_03_05::command/485 SetTrans/param/2]
+0
+
+[STev_03_05::command/485 SetTrans/param/3]
+Linear
+
+[STev_03_05::command/485 SetTrans/param/8]
+default
+
+[STev_03_05::command/486 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/486 SetBGM/param/3]
+m10
+
+[STev_03_05::command/486 SetBGM/param/4]
+none
+
+[STev_03_05::command/488 SetTalk/param/1]
+avg3_999
+
+[STev_03_05::command/488 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/488 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/488 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/488 SetTalk/param/7]
+<size=50>グオォォーーッ！
+
+[STev_03_05::command/488 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/489 SetBg/param/1]
+tower_fire_earth
+
+[STev_03_05::command/489 SetBg/param/2]
+0
+
+[STev_03_05::command/489 SetBg/param/3]
+Linear
+
+[STev_03_05::command/489 SetBg/param/6]
+default
+
+[STev_03_05::command/490 CtrlBg/param/10]
+none
+
+[STev_03_05::command/490 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/491 SetBg/param/1]
+circle_light
+
+[STev_03_05::command/491 SetBg/param/2]
+0
+
+[STev_03_05::command/491 SetBg/param/3]
+Linear
+
+[STev_03_05::command/491 SetBg/param/6]
+default
+
+[STev_03_05::command/492 SetChar/param/2]
+none
+
+[STev_03_05::command/492 SetChar/param/3]
+avg2_952
+
+[STev_03_05::command/492 SetChar/param/4]
+a
+
+[STev_03_05::command/492 SetChar/param/5]
+002
+
+[STev_03_05::command/492 SetChar/param/6]
+none
+
+[STev_03_05::command/493 CtrlBg/param/10]
+none
+
+[STev_03_05::command/493 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/494 SetTrans/param/2]
+0
+
+[STev_03_05::command/494 SetTrans/param/3]
+Linear
+
+[STev_03_05::command/494 SetTrans/param/8]
+default
+
+[STev_03_05::command/495 SetAudio/param/1]
+se_081
+
+[STev_03_05::command/496 CtrlChar/param/0]
+avg2_952
+
+[STev_03_05::command/496 CtrlChar/param/1]
+a
+
+[STev_03_05::command/496 CtrlChar/param/3]
+none
+
+[STev_03_05::command/496 CtrlChar/param/11]
+buman
+
+[STev_03_05::command/496 CtrlChar/param/12]
+none
+
+[STev_03_05::command/496 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/498 SetTrans/param/2]
+0
+
+[STev_03_05::command/498 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/498 SetTrans/param/8]
+fade
+
+[STev_03_05::command/499 CtrlBg/param/10]
+none
+
+[STev_03_05::command/499 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/500 CtrlBg/param/10]
+none
+
+[STev_03_05::command/500 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/501 SetChar/param/2]
+none
+
+[STev_03_05::command/501 SetChar/param/3]
+avg3_175
+
+[STev_03_05::command/501 SetChar/param/4]
+a
+
+[STev_03_05::command/501 SetChar/param/5]
+008
+
+[STev_03_05::command/501 SetChar/param/6]
+none
+
+[STev_03_05::command/502 SetTrans/param/2]
+0
+
+[STev_03_05::command/502 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/502 SetTrans/param/8]
+fade
+
+[STev_03_05::command/504 SetAudio/param/1]
+se_070
+
+[STev_03_05::command/505 CtrlChar/param/0]
+avg3_175
+
+[STev_03_05::command/505 CtrlChar/param/1]
+a
+
+[STev_03_05::command/505 CtrlChar/param/3]
+none
+
+[STev_03_05::command/505 CtrlChar/param/11]
+shouji
+
+[STev_03_05::command/505 CtrlChar/param/12]
+none
+
+[STev_03_05::command/505 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/506 CtrlStage/param/9]
+xiaozhen
+
+[STev_03_05::command/506 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/507 SetTalkShake/param/1]
+Zhong
+
+[STev_03_05::command/508 SetTalk/param/1]
+依頼人の仲間
+
+[STev_03_05::command/508 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/508 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/508 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/508 SetTalk/param/7]
+<size=60>で、出たあぁ〜〜ッ！？==RT==<size=60>敵襲ーッ！星骸が出たぞーッ！
+
+[STev_03_05::command/508 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/509 SetChar/param/2]
+none
+
+[STev_03_05::command/509 SetChar/param/3]
+avg1_112
+
+[STev_03_05::command/509 SetChar/param/4]
+a
+
+[STev_03_05::command/509 SetChar/param/5]
+009
+
+[STev_03_05::command/509 SetChar/param/6]
+none
+
+[STev_03_05::command/510 SetAudio/param/1]
+se_063
+
+[STev_03_05::command/511 SetFx/param/1]
+fx_avg_line_goleft_lp_w
+
+[STev_03_05::command/512 CtrlStage/param/9]
+none
+
+[STev_03_05::command/512 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/513 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/513 CtrlChar/param/1]
+a
+
+[STev_03_05::command/513 CtrlChar/param/3]
+none
+
+[STev_03_05::command/513 CtrlChar/param/11]
+jushou
+
+[STev_03_05::command/513 CtrlChar/param/12]
+none
+
+[STev_03_05::command/513 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/514 CtrlChar/param/0]
+avg3_175
+
+[STev_03_05::command/514 CtrlChar/param/1]
+a
+
+[STev_03_05::command/514 CtrlChar/param/3]
+none
+
+[STev_03_05::command/514 CtrlChar/param/11]
+none
+
+[STev_03_05::command/514 CtrlChar/param/12]
+none
+
+[STev_03_05::command/514 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/515 CtrlBg/param/10]
+none
+
+[STev_03_05::command/515 CtrlBg/param/11]
+Linear
+
+[STev_03_05::command/517 SetFx/param/1]
+fx_avg_line_goleft_lp_w
+
+[STev_03_05::command/518 CtrlChar/param/0]
+avg1_112
+
+[STev_03_05::command/518 CtrlChar/param/1]
+a
+
+[STev_03_05::command/518 CtrlChar/param/2]
+009
+
+[STev_03_05::command/518 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_03_05::command/518 CtrlChar/param/11]
+jushou
+
+[STev_03_05::command/518 CtrlChar/param/12]
+none
+
+[STev_03_05::command/518 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/519 SetTalk/param/1]
+avg1_112
+
+[STev_03_05::command/519 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/519 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/519 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/519 SetTalk/param/7]
+早く私の後ろに隠れて！
+
+[STev_03_05::command/519 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/521 SetTrans/param/2]
+34
+
+[STev_03_05::command/521 SetTrans/param/3]
+OutSine
+
+[STev_03_05::command/521 SetTrans/param/8]
+fade
+
+[STev_03_05::command/522 CtrlStage/param/9]
+none
+
+[STev_03_05::command/522 CtrlStage/param/10]
+Linear
+
+[STev_03_05::command/523 SetBg/param/1]
+phoenix_food_street_night
+
+[STev_03_05::command/523 SetBg/param/2]
+0
+
+[STev_03_05::command/523 SetBg/param/3]
+Linear
+
+[STev_03_05::command/523 SetBg/param/6]
+default
+
+[STev_03_05::command/524 SetChar/param/2]
+none
+
+[STev_03_05::command/524 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/524 SetChar/param/4]
+c
+
+[STev_03_05::command/524 SetChar/param/5]
+005
+
+[STev_03_05::command/524 SetChar/param/6]
+none
+
+[STev_03_05::command/525 SetTrans/param/2]
+0
+
+[STev_03_05::command/525 SetTrans/param/3]
+Linear
+
+[STev_03_05::command/525 SetTrans/param/8]
+default
+
+[STev_03_05::command/526 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/526 CtrlChar/param/1]
+c
+
+[STev_03_05::command/526 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STev_03_05::command/526 CtrlChar/param/11]
+lengzhan
+
+[STev_03_05::command/526 CtrlChar/param/12]
+none
+
+[STev_03_05::command/526 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/527 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/527 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/527 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/527 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/527 SetTalk/param/7]
+そして……あの星骸は、==RT==私たちが苦労して集めた花火や爆竹を丸飲みにしたの。
+
+[STev_03_05::command/527 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/529 SetMainRoleTalk/param/2]
+025
+
+[STev_03_05::command/529 SetMainRoleTalk/param/3]
+none
+
+[STev_03_05::command/529 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/529 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/529 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/530 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/530 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/530 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/530 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/530 SetTalk/param/7]
+なっ――！？ほかのみんなはどうなったんだ！？
+
+[STev_03_05::command/530 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/531 SetMainRoleTalk/param/3]
+close
+
+[STev_03_05::command/531 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/531 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/531 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/533 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/533 CtrlChar/param/1]
+c
+
+[STev_03_05::command/533 CtrlChar/param/2]
+008
+
+[STev_03_05::command/533 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STev_03_05::command/533 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/533 CtrlChar/param/12]
+none
+
+[STev_03_05::command/533 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/534 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/534 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/534 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/534 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/534 SetTalk/param/7]
+本当に知らないわ！==RT==私たちも必死に逃げて、塔の外に出てからようやく==RT==あの子達がいないことに気づいたくらいだったから……
+
+[STev_03_05::command/534 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/536 SetMainRoleTalk/param/2]
+002
+
+[STev_03_05::command/536 SetMainRoleTalk/param/3]
+none
+
+[STev_03_05::command/536 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/536 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/536 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/537 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/537 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/537 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/537 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/537 SetTalk/param/7]
+それで？==RT==助けを呼びもせず、損失を埋めるための盗みを働いたと？
+
+[STev_03_05::command/537 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/538 SetMainRoleTalk/param/3]
+close
+
+[STev_03_05::command/538 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/538 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/538 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/540 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/540 CtrlChar/param/1]
+c
+
+[STev_03_05::command/540 CtrlChar/param/2]
+007
+
+[STev_03_05::command/540 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_03_05::command/540 CtrlChar/param/11]
+buman
+
+[STev_03_05::command/540 CtrlChar/param/12]
+none
+
+[STev_03_05::command/540 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/541 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/541 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/541 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/541 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/541 SetTalk/param/7]
+わ、私たちだって、生きるために必死なの！==RT==ここで稼げなきゃ、路頭に迷っちゃうんだから！
+
+[STev_03_05::command/541 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/542 SetChar/param/2]
+none
+
+[STev_03_05::command/542 SetChar/param/3]
+avg1_113
+
+[STev_03_05::command/542 SetChar/param/4]
+a
+
+[STev_03_05::command/542 SetChar/param/5]
+002
+
+[STev_03_05::command/542 SetChar/param/6]
+none
+
+[STev_03_05::command/544 CtrlStage/param/9]
+none
+
+[STev_03_05::command/544 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/546 SetAudio/param/1]
+se_257
+
+[STev_03_05::command/547 CtrlChar/param/0]
+avg1_113
+
+[STev_03_05::command/547 CtrlChar/param/1]
+a
+
+[STev_03_05::command/547 CtrlChar/param/3]
+none
+
+[STev_03_05::command/547 CtrlChar/param/11]
+none
+
+[STev_03_05::command/547 CtrlChar/param/12]
+none
+
+[STev_03_05::command/547 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/548 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/548 CtrlChar/param/1]
+c
+
+[STev_03_05::command/548 CtrlChar/param/3]
+none
+
+[STev_03_05::command/548 CtrlChar/param/11]
+none
+
+[STev_03_05::command/548 CtrlChar/param/12]
+none
+
+[STev_03_05::command/548 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/550 CtrlChar/param/0]
+avg1_113
+
+[STev_03_05::command/550 CtrlChar/param/1]
+a
+
+[STev_03_05::command/550 CtrlChar/param/2]
+010
+
+[STev_03_05::command/550 CtrlChar/param/3]
+none
+
+[STev_03_05::command/550 CtrlChar/param/11]
+none
+
+[STev_03_05::command/550 CtrlChar/param/12]
+none
+
+[STev_03_05::command/550 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/551 SetTalk/param/1]
+avg1_113
+
+[STev_03_05::command/551 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/551 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/551 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/551 SetTalk/param/7]
+言い訳はあとで白沢管理局で聞くとして……==RT==いまは一刻も早く、皆さんを助けに行かなければ。
+
+[STev_03_05::command/551 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/553 SetAudio/param/1]
+se_048
+
+[STev_03_05::command/554 CtrlChar/param/0]
+avg1_113
+
+[STev_03_05::command/554 CtrlChar/param/1]
+a
+
+[STev_03_05::command/554 CtrlChar/param/3]
+none
+
+[STev_03_05::command/554 CtrlChar/param/11]
+none
+
+[STev_03_05::command/554 CtrlChar/param/12]
+none
+
+[STev_03_05::command/554 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/555 SetAudio/param/1]
+se_074
+
+[STev_03_05::command/556 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/556 CtrlChar/param/1]
+c
+
+[STev_03_05::command/556 CtrlChar/param/2]
+004
+
+[STev_03_05::command/556 CtrlChar/param/3]
+none
+
+[STev_03_05::command/556 CtrlChar/param/11]
+none
+
+[STev_03_05::command/556 CtrlChar/param/12]
+none
+
+[STev_03_05::command/556 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/557 CtrlStage/param/9]
+none
+
+[STev_03_05::command/557 CtrlStage/param/10]
+OutQuad
+
+[STev_03_05::command/558 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/558 CtrlChar/param/1]
+c
+
+[STev_03_05::command/558 CtrlChar/param/2]
+008
+
+[STev_03_05::command/558 CtrlChar/param/3]
+avg_emoji_shock
+
+[STev_03_05::command/558 CtrlChar/param/11]
+chijing
+
+[STev_03_05::command/558 CtrlChar/param/12]
+none
+
+[STev_03_05::command/558 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/559 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/559 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/559 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/559 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/559 SetTalk/param/7]
+あ、あなたたち……星ノ塔に行くつもりなの！？
+
+[STev_03_05::command/559 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/560 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/560 CtrlChar/param/1]
+c
+
+[STev_03_05::command/560 CtrlChar/param/3]
+close
+
+[STev_03_05::command/560 CtrlChar/param/11]
+none
+
+[STev_03_05::command/560 CtrlChar/param/12]
+none
+
+[STev_03_05::command/560 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/562 SetAudio/param/1]
+se_062
+
+[STev_03_05::command/563 CtrlChar/param/0]
+avg1_113
+
+[STev_03_05::command/563 CtrlChar/param/1]
+a
+
+[STev_03_05::command/563 CtrlChar/param/2]
+012
+
+[STev_03_05::command/563 CtrlChar/param/3]
+none
+
+[STev_03_05::command/563 CtrlChar/param/11]
+none
+
+[STev_03_05::command/563 CtrlChar/param/12]
+none
+
+[STev_03_05::command/563 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/564 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/564 CtrlChar/param/1]
+c
+
+[STev_03_05::command/564 CtrlChar/param/3]
+none
+
+[STev_03_05::command/564 CtrlChar/param/11]
+none
+
+[STev_03_05::command/564 CtrlChar/param/12]
+none
+
+[STev_03_05::command/564 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/565 CtrlStage/param/9]
+none
+
+[STev_03_05::command/565 CtrlStage/param/10]
+OutQuad
+
+[STev_03_05::command/566 SetChar/param/2]
+none
+
+[STev_03_05::command/566 SetChar/param/3]
+avg1_159
+
+[STev_03_05::command/566 SetChar/param/4]
+a
+
+[STev_03_05::command/566 SetChar/param/5]
+010
+
+[STev_03_05::command/566 SetChar/param/6]
+none
+
+[STev_03_05::command/567 SetChar/param/2]
+none
+
+[STev_03_05::command/567 SetChar/param/3]
+avg1_141
+
+[STev_03_05::command/567 SetChar/param/4]
+a
+
+[STev_03_05::command/567 SetChar/param/5]
+004
+
+[STev_03_05::command/567 SetChar/param/6]
+none
+
+[STev_03_05::command/569 CtrlChar/param/0]
+avg1_113
+
+[STev_03_05::command/569 CtrlChar/param/1]
+a
+
+[STev_03_05::command/569 CtrlChar/param/2]
+014
+
+[STev_03_05::command/569 CtrlChar/param/3]
+none
+
+[STev_03_05::command/569 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/569 CtrlChar/param/12]
+none
+
+[STev_03_05::command/569 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/570 SetTalk/param/1]
+avg1_113
+
+[STev_03_05::command/570 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/570 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/570 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/570 SetTalk/param/7]
+皆さんがそこにいるのなら、==W==助けに向かわなければなりません。
+
+[STev_03_05::command/570 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/572 SetAudio/param/1]
+se_075
+
+[STev_03_05::command/573 CtrlChar/param/0]
+avg1_141
+
+[STev_03_05::command/573 CtrlChar/param/1]
+a
+
+[STev_03_05::command/573 CtrlChar/param/3]
+none
+
+[STev_03_05::command/573 CtrlChar/param/11]
+none
+
+[STev_03_05::command/573 CtrlChar/param/12]
+none
+
+[STev_03_05::command/573 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/574 CtrlChar/param/0]
+avg1_159
+
+[STev_03_05::command/574 CtrlChar/param/1]
+a
+
+[STev_03_05::command/574 CtrlChar/param/3]
+none
+
+[STev_03_05::command/574 CtrlChar/param/11]
+none
+
+[STev_03_05::command/574 CtrlChar/param/12]
+none
+
+[STev_03_05::command/574 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/575 CtrlChar/param/0]
+avg1_113
+
+[STev_03_05::command/575 CtrlChar/param/1]
+a
+
+[STev_03_05::command/575 CtrlChar/param/2]
+010
+
+[STev_03_05::command/575 CtrlChar/param/3]
+none
+
+[STev_03_05::command/575 CtrlChar/param/11]
+none
+
+[STev_03_05::command/575 CtrlChar/param/12]
+none
+
+[STev_03_05::command/575 CtrlChar/param/13]
+OutQuad
+
+[STev_03_05::command/577 SetAudio/param/1]
+se_063
+
+[STev_03_05::command/578 CtrlChar/param/0]
+avg1_141
+
+[STev_03_05::command/578 CtrlChar/param/1]
+a
+
+[STev_03_05::command/578 CtrlChar/param/2]
+020
+
+[STev_03_05::command/578 CtrlChar/param/3]
+none
+
+[STev_03_05::command/578 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/578 CtrlChar/param/12]
+none
+
+[STev_03_05::command/578 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/579 CtrlChar/param/0]
+avg1_159
+
+[STev_03_05::command/579 CtrlChar/param/1]
+a
+
+[STev_03_05::command/579 CtrlChar/param/2]
+006
+
+[STev_03_05::command/579 CtrlChar/param/3]
+none
+
+[STev_03_05::command/579 CtrlChar/param/11]
+diantou
+
+[STev_03_05::command/579 CtrlChar/param/12]
+none
+
+[STev_03_05::command/579 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/580 CtrlStage/param/9]
+none
+
+[STev_03_05::command/580 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/581 SetFx/param/1]
+fx_avg_moster_roared
+
+[STev_03_05::command/583 SetMainRoleTalk/param/2]
+004
+
+[STev_03_05::command/583 SetMainRoleTalk/param/3]
+none
+
+[STev_03_05::command/583 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/583 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/583 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/584 SetTalk/param/1]
+avg3_100
+
+[STev_03_05::command/584 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/584 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/584 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/584 SetTalk/param/7]
+ああ、その通りだ。
+
+[STev_03_05::command/584 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/585 SetMainRoleTalk/param/3]
+close
+
+[STev_03_05::command/585 SetMainRoleTalk/param/4]
+none
+
+[STev_03_05::command/585 SetMainRoleTalk/param/5]
+z
+
+[STev_03_05::command/585 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_03_05::command/587 CtrlStage/param/9]
+none
+
+[STev_03_05::command/587 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/589 SetChar/param/2]
+none
+
+[STev_03_05::command/589 SetChar/param/3]
+avg2_984
+
+[STev_03_05::command/589 SetChar/param/4]
+c
+
+[STev_03_05::command/589 SetChar/param/5]
+007
+
+[STev_03_05::command/589 SetChar/param/6]
+none
+
+[STev_03_05::command/591 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/591 CtrlChar/param/1]
+c
+
+[STev_03_05::command/591 CtrlChar/param/3]
+none
+
+[STev_03_05::command/591 CtrlChar/param/11]
+none
+
+[STev_03_05::command/591 CtrlChar/param/12]
+none
+
+[STev_03_05::command/591 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/592 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/592 CtrlChar/param/1]
+c
+
+[STev_03_05::command/592 CtrlChar/param/2]
+008
+
+[STev_03_05::command/592 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STev_03_05::command/592 CtrlChar/param/11]
+jinzhang
+
+[STev_03_05::command/592 CtrlChar/param/12]
+none
+
+[STev_03_05::command/592 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/593 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/593 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/593 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/593 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/593 SetTalk/param/7]
+で、でも……私、はっきり見たの！！==RT==あの怪物は、間違いなく伝説の――
+
+[STev_03_05::command/593 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/594 SetAudio/param/1]
+se_169
+
+[STev_03_05::command/595 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/595 CtrlChar/param/1]
+c
+
+[STev_03_05::command/595 CtrlChar/param/3]
+none
+
+[STev_03_05::command/595 CtrlChar/param/11]
+none
+
+[STev_03_05::command/595 CtrlChar/param/12]
+none
+
+[STev_03_05::command/595 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/596 SetBg/param/1]
+tower_fire_earth
+
+[STev_03_05::command/596 SetBg/param/2]
+17
+
+[STev_03_05::command/596 SetBg/param/3]
+OutSine
+
+[STev_03_05::command/596 SetBg/param/6]
+fade
+
+[STev_03_05::command/597 CtrlStage/param/9]
+none
+
+[STev_03_05::command/597 CtrlStage/param/10]
+OutSine
+
+[STev_03_05::command/598 SetChar/param/2]
+none
+
+[STev_03_05::command/598 SetChar/param/3]
+avg2_952
+
+[STev_03_05::command/598 SetChar/param/4]
+a
+
+[STev_03_05::command/598 SetChar/param/5]
+002
+
+[STev_03_05::command/598 SetChar/param/6]
+none
+
+[STev_03_05::command/600 CtrlChar/param/0]
+avg2_952
+
+[STev_03_05::command/600 CtrlChar/param/1]
+a
+
+[STev_03_05::command/600 CtrlChar/param/3]
+none
+
+[STev_03_05::command/600 CtrlChar/param/11]
+none
+
+[STev_03_05::command/600 CtrlChar/param/12]
+none
+
+[STev_03_05::command/600 CtrlChar/param/13]
+OutSine
+
+[STev_03_05::command/601 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_03_05::command/601 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/601 SetBGM/param/4]
+2000ms
+
+[STev_03_05::command/603 CtrlChar/param/0]
+avg2_984
+
+[STev_03_05::command/603 CtrlChar/param/1]
+c
+
+[STev_03_05::command/603 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STev_03_05::command/603 CtrlChar/param/11]
+none
+
+[STev_03_05::command/603 CtrlChar/param/12]
+none
+
+[STev_03_05::command/603 CtrlChar/param/13]
+Linear
+
+[STev_03_05::command/604 SetTalk/param/1]
+火薬窃盗団の団長
+
+[STev_03_05::command/604 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/604 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/604 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_03_05::command/604 SetTalk/param/7]
+年獣だったわ。
+
+[STev_03_05::command/604 SetTalk/param/8]
+[EMPTY_SOURCE]
+

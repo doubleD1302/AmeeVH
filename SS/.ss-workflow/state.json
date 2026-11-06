@@ -1,0 +1,1282 @@
+﻿{
+  "schema_version": 2,
+  "resource_root": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03",
+  "revision": 56,
+  "updated_at": "2026-11-05T15:11:52+00:00",
+  "run": {
+    "token": "e5769fd1189941309f71aa6b935f60ea",
+    "status": "completed",
+    "started_at": "2026-11-05T14:33:37+00:00",
+    "deadline": "2026-11-05T15:33:37.835940+00:00",
+    "max_items": 10,
+    "max_attempts": 2,
+    "finished_items": 4,
+    "admitted_jobs": [
+      "41f05c8208417d33790c",
+      "4ac0a6d475a6399b93a9",
+      "9cebfd5dff2272a94754"
+    ],
+    "reason": "No runnable jobs remain"
+  },
+  "jobs": [
+    {
+      "id": "9cebfd5dff2272a94754",
+      "merge_path": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_08/STm02_08_Merge.txt",
+      "folder": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_08",
+      "base": "STm02_08",
+      "sources": {
+        "EN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_08/STm02_08_EN.txt",
+        "JP": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_08/STm02_08_JP.txt",
+        "CN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_08/STm02_08_CN.txt"
+      },
+      "status": "done",
+      "stage": "verify",
+      "checkpoints": {
+        "merge": {
+          "summary": "Đã merge story 101 khối; đọc lại BOM/CRLF, kiểm tra nguồn, tên, token và snapshot bằng validate_payload; 8 term đã có, không đề xuất trùng. Chưa dịch VI.",
+          "at": "2026-11-05T11:47:05+00:00",
+          "sources": {
+            "EN": "4d52341758cb46aaf49dd9de721aceb130183901f716109faf5a18de417e7004",
+            "JP": "bbcc2bc699b7554a7b925ef7e9b9ad2788537d24ca7418e6efcca7521d9abeaa",
+            "CN": "1284ae3777235f082da5f2560431a1a41d606f12c266a993ad4ffb7fd591c722"
+          },
+          "glossary": {
+            "sha256": "ae7b503b1fe67f8aaca6aeff642143ccba351949295ae27dfe5ae389f6c0c90d",
+            "relevant": "ff0d4550457a46352747636ff2990afd7c697f423b99938a998af31bdfb23916",
+            "mapping": "c627186fd0d15c164245a40f32ba4b545ea022dda1574f222437060e711cfe0f"
+          },
+          "merge_sha256": "4eb16fb1de0d42e555b30c489a3acdafef0011d9223c3e7c02e512477826816f",
+          "layout": {
+            "1": "e67c6c79abec3d0a0f322826137865e10921fd7c0a83650a7a97a73574bf6224",
+            "2": "2bd95765d39d12ce0b7fb6a7a6173ce4e208dd815f2023a492850e4f8a7174b5",
+            "3": "e2689956f03f071cf3610bca5a022229d4d04e69fcfa8d3964873eec669441a8",
+            "4": "57ecf438899d79907099c5ed45022ec9f92ef7183b02ca52cf5f0c84291ca122",
+            "5": "760e02cf75203a2fb43ef8969f813ef7989fb88af40271c63d51250eba5f8ffc",
+            "6": "70957c6967c9b6b1b0346df2b1755a5934bd68df12afd67e40eb93b62164cf0c",
+            "7": "73c5469691f0f2b5629641ce0ebe03813427d2637ca2d86e4a5d72e901dc1c21",
+            "8": "0fbd6d3c2604b5288da1c3b05508f43e89340556143f0d21160a335cdfce6002",
+            "9": "c8683eab9a5840792eb8bbffe34db5394f3b98b029ac20433f47130f992f8b37",
+            "10": "36f79e402f77f1bab5d424f82b7e4562fb584ffb261aa13b6b21a81b9b26becf",
+            "11": "77be70857a86b191c0413970f6186f261ad738b47f64c458fbf08bfa97f233cf",
+            "12": "af211e9ef01cc5a2ce5901513389faf6fdfc4b1ef577b2966de3c68dd76eb2e0",
+            "13": "661388be2b5eb8e0c92752dcf149d8c7c2a1f5496c7b000510a8da23b8b3359b",
+            "14": "2a9d4f1186e96cac1235cf4cf4f9599857dcfece7cf0d7566f557d6f4faccc03",
+            "15": "4e6b38b5739997bb3f18a4820134d73b8675a02e867bfd49d555aeb354854018",
+            "16": "2310205825412934796b569c8430dc193bb264443b15c158f691badaaf016efb",
+            "17": "d0b872888d198de2dac70d47befa0c06c23e1d5c4d5bb63e13fdefb9f28cb5a1",
+            "18": "cee8ef413ad07f441fb8ae776a77c71a1aa30eaa35724e48334ecd895780d7d1",
+            "19": "463ef71e9ec60ddf8f317fcabc5251707318755028da99943af7ac360d17125c",
+            "20": "1dfab58d072b9b56f2f56a41ff66a7e27557b5d6167d3eed88607ba7ef166e75",
+            "21": "40ab31ee6c84f5bdb53a65fa2b1bf1955f2d36734d02abe1f4059920a680b477",
+            "22": "62c54e3be6522dccc27401f281d8a9a57797d5b2aaa3c3e25901a46273b82192",
+            "23": "631af917e3b10dfd49a707afcc57d5a0d6faec3e17725df92a720f50aacd37b8",
+            "24": "9c93f3b983b8296ad1122a46b295bfe4d533c6d40bd1df678e2fa9d9ce5cfc19",
+            "25": "8e32c08bf28466943ef2596d89ab0f0e96a29e46c965e1157867ff7bc9bf77e0",
+            "26": "3dc2677a60e1533f55f780eee92be86551735778d3c068e1718fcb0acf769e2b",
+            "27": "d30ff356717124a1ef0d7d5d698d7affc05adfbc9d9f7a3679f11d81f8929eb8",
+            "28": "47334b765814f66dad9b7a36e815188ce629b998e9432491b40019dd78ebf653",
+            "29": "f7e1392179d039f44c7aec958e6c794d7292fa1271de3e6e793be39c660aa31d",
+            "30": "47613156fb4830306903e99f4be8572a82586e2b0fa4454e53b19bef703b7087",
+            "31": "07316e27bb42264a582b967221dfdd052445a90e47cdd7f6b521bc280465515f",
+            "32": "5eae826d6f11d24ef8b5296ebd1417434ec7a721fada90f92bae1d40ba67c02f",
+            "33": "45fa48832f50bef96a65d345ec7bb452e2b53df0eb99fd7d1296f3b118bcf245",
+            "34": "506658a525ee1fc8b7e74d5d6d5cc82d2fe7c8d718ceeb76d00f86b47a0ad5ca",
+            "35": "705c999234dc95836192799dabd61dcff5b37614f17609d87469bb96a5ea5334",
+            "36": "14cef5ca1792caa75e67ccd8f4e0d3e48ced4f1563f04c4583c87f5b313897fc",
+            "37": "c19c9ba369b9ae53c699b852d5237876ac0dae784dcab3f4972f386c84b7abb6",
+            "38": "11a82955925bba6c6d04df098a7916f9cdccb49e1ce77ad08844b50551af96de",
+            "39": "5dc541b5803ebe941715170a4578a6d2728f2e59af66b4aad14b177c2b74a4f1",
+            "40": "d3ed0f36004d9f5a8ab9ebef2416c5ab256808ba9e1bdd58fb2a4088f7752512",
+            "41": "0a66365c4154116793e9d64a827d240ac5a14a5bc71a655f642d2aa4abc8f8a8",
+            "42": "1b685b0d0fb1d30da878257c60fb63b04384c044804201351533c1cd3731c1fe",
+            "43": "8e8db5e950e92158b7b4f3c9199751cc94eeb94be94fc2269aa2eb42a7cfe427",
+            "44": "bfe6f6002b6b976224ed7a39335bc792aaccbb7f1ffaf54d8c9c72d39dc2a1cc",
+            "45": "68af3a7c206f3991b446e3d8d082c7594156a558bb23e0f31db87ca18aef490f",
+            "46": "f38810ae35a0f1427f5c246c236fc04289cee6f4af91dc19836b012224c3d9cd",
+            "47": "b7645e66b74200ce8813824686e4629a1a1d78907e17f5fbad8028e2c64b538c",
+            "48": "1d1db1954b22809b2c5b39a3e5b24a4086dd44212e4ed6a9b01acdf4e5ca1168",
+            "49": "3900f406c1f57d49940fbf3cf537e812ff0b14cba066b5d5d86792886b453042",
+            "50": "bdf862d19fffb40cf316843564a5686b38f72e6469a972f14f568d0221fa0260",
+            "51": "32b977ce6cf2a3488277116a92894a2c8c7e943eba03ecb166973203eb911b3f",
+            "52": "68217a51a47af616f0d7b38957d7f42dff3f4e7a0c9a606ff0c5cb7bfb600857",
+            "53": "c6423d76bf0da141de0303d60e34d6ee467f1313481d0559ef4cda2f61f43949",
+            "54": "860cc72ff5dd205de4c002b59b91deab0f46f186ff72409f923cf7a34d8417c2",
+            "55": "38805a77199bc4ac5251edf654793fd6f2f1c30c3eaa0e283f13d54f4184d61e",
+            "56": "483001ebd7fc939da7b944bf9a70eeba3df68306f37035f468e0739b156b26e1",
+            "57": "ad53b85f00dd21971644fcafa3f00894d3606c4b61e10725361e5535dbc2a2a4",
+            "58": "eea5010e60c57a6c4b4e6d45a4a39fe5ffea683d4a6591b7b0c7f00acbec0d1a",
+            "59": "5f2990a5ab983eb66f07a7b50c496baf1089c806f753b84439f6693f38b054bf",
+            "60": "0b433a8c9881e950f2856502d7a56ccb66f32451184249bccb8f08da72f49f32",
+            "61": "2a1786d5e87249da1eef9d81ba73052d5e24e00f014e790953d1f6338c85408d",
+            "62": "952b3cc7c6b46ef5e84a9999517c62765c6cc47823887c3881a68b4778743cf7",
+            "63": "323737ffe022eead78b14ee902a91fb39f5e7f7463250eeeaa0b8328091dcc26",
+            "64": "a4243a888218b72ea3dca0cba2fb513b486c8a650145288a5012a21dfb1ffc3b",
+            "65": "44412219b602bb3296566595ce9284f3c6758334ec93b254f0dd988bd2bc028d",
+            "66": "3a1db85935cba9df426f2945ec9e1d44c88af76dcbd1bf63fd8157a44c116b3c",
+            "67": "119dc6bbd686807860951c337bffefebb8521295420c89042f258780cf0b438f",
+            "68": "832d82366f62c86ff07940454b3940272b5d104026fbeaebe4b670a5de060a02",
+            "69": "c2f5fb7af50ba98684e69dbe778febb2213fdf3e4ec6d5cd9c23cf2ca7c57daf",
+            "70": "034e74248195bc77416ecf6736691cc99cb5572f8e9abf200fdd68885f3c8ed4",
+            "71": "c1dc9ba18edd2ec11130392258cbf0062af0a6e5eb6a64b534b97e38def076a3",
+            "72": "4f2a2212a7a7980cb770e9f370252e826327f38574c42ff65f5613c9b689746b",
+            "73": "feb81198126b4f2aac1302b9ee307b7aeae423cc77ea29aa43784d0b31931610",
+            "74": "68ee4c547cedce21207faad82c02d89921bc5eb515de0400070ffeedc11ab12c",
+            "75": "b6c42f7fed54fe4581f869145be51ca96c0ba37a880290da3671245ca04c3064",
+            "76": "c08446426391e90d8dcd7133d22cea7ebad0d88e2ebf7b13c60d92dc2cc554e4",
+            "77": "59e612f07169a7b443d7a4ffcb84f951ebfb81864b7e88d0428c749aead05531",
+            "78": "b72595e8278937607299333c2a56dc22ed450dacf5a15c3d6b617e8783b46a08",
+            "79": "d5cdb55fc77b21c6aab1f4da2569e910e4e06659c6af3e27b7427f10024b8262",
+            "80": "618325cb9816ffaacc3b1d9408ba70b387ea5c874311b6c833720ecee8b2b958",
+            "81": "c2959a41edf056e5410b9114ed571d892d8310792dd72d572b46dc46eee66379",
+            "82": "478174269baf56837176e18a348afca68956cc1e6d2b17372b97658ca8fd0b8e",
+            "83": "b10e12b0c55db5adc6f67baea4e4323c6ef99c660ff4439c95ed3b3e5479bad6",
+            "84": "659e82314741a7232ab60675a86c314a270945edb381377bbe31aa82251f7960",
+            "85": "b6aad306caffb08fceb7982ba8ff9d4e6d24d88f9d13a5bb5a43d97bddbcc57b",
+            "86": "d1069aec5915d9234359bb49fbaf933b30f68d2e5bdb78c4c15418f3e317e56c",
+            "87": "cef59ac750fc8409de07389a485bf99c518365fc6f22ef77c81d06720cbc9849",
+            "88": "196e00315451cf4b7f03fdd3cddc2107242ff693070d66c4737edf868191c6b7",
+            "89": "b5516a7d0f52b567bdffb9cc42625c8e6b918d5135e4f9443a4b089d6303daeb",
+            "90": "ed7a2e9ca41b1e232756eed94c5ddb7c8a9320a5f6427fac84cf93d6f0cd9561",
+            "91": "94aa0a6b92872a1f6445efaf25d49e557568516b59a7034890926f390825d4e8",
+            "92": "f0957f4c08df2aee16a0b7d22d1e4da10508446e829faecb3fc0c14d0f7f9521",
+            "93": "ff0770744547ad0da081c535053af421bcd8c51f112538e78ac6e3f9fd1bdf5e",
+            "94": "e6275954f875e465c5332733bdf39619fd354c1f519d1b79764f311df84f1aac",
+            "95": "ad5ec1e76ed561bb4b59438e1020dc474cfb029be674f3d37864a9a590d079c0",
+            "96": "e1b36228a942628ac95d2d347067b43c43e8eb6894a36a7fff358d8aa1bbf073",
+            "97": "866c34cc142791921e2e830c8c39d64b19d826c582f5e2ac5b043825005b5c5a",
+            "98": "732bc00296e66043c13afeb15281d5612a895d1c92cdab173315df70ab55b41a",
+            "99": "c57072f66e619b37b0815a26d8abb5dac3e030fd3d1230aed3e62a87595597ca",
+            "100": "b17f55d1b23b8ba02898ac8c36fecfd3a4f1302e55d5f1cb6b6c6c76df068dc1",
+            "101": "25dbff275e5ff65e54c591788c88d785e9503c830f7281b86e4321ef60a02655"
+          },
+          "block_count": 101
+        },
+        "translate": {
+          "summary": "Đã rà lại đủ 101 khối STm02_08 với glossary mới. Nova chỉ xuất hiện tại khối95 và VI đã dùng đúng target Nova, nên giữ nguyên toàn bộ byte Merge và mọi hiệu đính. Đối chiếu nguồn, header với snapshot/capture, đủ VI, token theo EN và BOM/CRLF. Đã giữ các phát hiện còn phù hợp, làm mới cả hai HTML đúng hash hiện tại, coverage101/101, không unresolved, giữ nguyên các nhánh báo cáo khác.",
+          "at": "2026-11-05T14:51:51+00:00",
+          "sources": {
+            "EN": "4d52341758cb46aaf49dd9de721aceb130183901f716109faf5a18de417e7004",
+            "JP": "bbcc2bc699b7554a7b925ef7e9b9ad2788537d24ca7418e6efcca7521d9abeaa",
+            "CN": "1284ae3777235f082da5f2560431a1a41d606f12c266a993ad4ffb7fd591c722"
+          },
+          "glossary": {
+            "sha256": "f29ef6ac55b78e6f4b7f55022d0538afdb3e806c5386aa22e0bd154166fe6abb",
+            "relevant": "97fa390a16777657f9dbe549cf2f92180b40087b0e303d15597dafbae0c4921f",
+            "mapping": "c627186fd0d15c164245a40f32ba4b545ea022dda1574f222437060e711cfe0f"
+          },
+          "merge_sha256": "3e3ac1d30bc0633eb82bddf07b4a65d72f31e64121ca99f3d94ec923fdc1761f",
+          "block_count": 101
+        },
+        "verify": {
+          "summary": "Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues.",
+          "at": "2026-11-05T14:52:52+00:00",
+          "sources": {
+            "EN": "4d52341758cb46aaf49dd9de721aceb130183901f716109faf5a18de417e7004",
+            "JP": "bbcc2bc699b7554a7b925ef7e9b9ad2788537d24ca7418e6efcca7521d9abeaa",
+            "CN": "1284ae3777235f082da5f2560431a1a41d606f12c266a993ad4ffb7fd591c722"
+          },
+          "glossary": {
+            "sha256": "f29ef6ac55b78e6f4b7f55022d0538afdb3e806c5386aa22e0bd154166fe6abb",
+            "relevant": "97fa390a16777657f9dbe549cf2f92180b40087b0e303d15597dafbae0c4921f",
+            "mapping": "c627186fd0d15c164245a40f32ba4b545ea022dda1574f222437060e711cfe0f"
+          },
+          "merge_sha256": "3e3ac1d30bc0633eb82bddf07b4a65d72f31e64121ca99f3d94ec923fdc1761f",
+          "block_count": 101
+        }
+      },
+      "proposals": [],
+      "attempts": {
+        "translate": 1,
+        "verify": 1
+      },
+      "claim": null,
+      "history": [
+        {
+          "at": "2026-11-05T11:05:24+00:00",
+          "message": "inspect: Đã đọc đủ 3 nguồn hợp lệ (2021 trường/bản), xác minh story và 101 khối dự kiến; không có Merge hiện hữu, ID tên thiếu hoặc cảnh báo lỗi nguồn. Có 8 đề xuất thuật ngữ đủ căn cứ; giữ biến thể JP param8 ở 4 command và các UI đặc biệt. Chưa ghi Merge/glossary/reports/state."
+        },
+        {
+          "at": "2026-11-05T11:10:34+00:00",
+          "message": "terms: Đã thêm 8 term mới cho STm02_08; không có ánh xạ phía sau cần đồng bộ (0)."
+        },
+        {
+          "at": "2026-11-05T11:15:20+00:00",
+          "message": "Parent stopped/interrupted its worker: User requested workflow redesign; all workers stopped, merge claim had no worker"
+        },
+        {
+          "at": "2026-11-05T11:27:34+00:00",
+          "message": "Migrated to merge-first pipeline; artifacts and legacy evidence preserved"
+        },
+        {
+          "at": "2026-11-05T11:44:16+00:00",
+          "message": "Interrupted claim recovered; re-read saved artifacts before retry"
+        },
+        {
+          "at": "2026-11-05T11:47:10+00:00",
+          "message": "merge: Đã merge story 101 khối; đọc lại BOM/CRLF, kiểm tra nguồn, tên, token và snapshot bằng validate_payload; 8 term đã có, không đề xuất trùng. Chưa dịch VI."
+        },
+        {
+          "at": "2026-11-05T11:55:55+00:00",
+          "message": "translate: Đã dịch đủ 101 khối STm02_08, đọc lại bản lưu và đối chiếu ba nguồn, tên, glossary, token, BOM/CRLF; hai báo cáo cùng phiên bản Merge đã cập nhật đủ 101 khối."
+        },
+        {
+          "at": "2026-11-05T11:56:27+00:00",
+          "message": "verify: Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues."
+        },
+        {
+          "at": "2026-11-05T14:47:51+00:00",
+          "message": "Relevant VI definitions changed; review translation with latest glossary"
+        },
+        {
+          "at": "2026-11-05T14:52:00+00:00",
+          "message": "translate: Đã rà lại đủ 101 khối STm02_08 với glossary mới. Nova chỉ xuất hiện tại khối95 và VI đã dùng đúng target Nova, nên giữ nguyên toàn bộ byte Merge và mọi hiệu đính. Đối chiếu nguồn, header với snapshot/capture, đủ VI, token theo EN và BOM/CRLF. Đã giữ các phát hiện còn phù hợp, làm mới cả hai HTML đúng hash hiện tại, coverage101/101, không unresolved, giữ nguyên các nhánh báo cáo khác."
+        },
+        {
+          "at": "2026-11-05T14:53:02+00:00",
+          "message": "verify: Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues."
+        }
+      ],
+      "ui_type": "story",
+      "legacy_checkpoints": {
+        "inspect": {
+          "summary": "Đã đọc đủ 3 nguồn hợp lệ (2021 trường/bản), xác minh story và 101 khối dự kiến; không có Merge hiện hữu, ID tên thiếu hoặc cảnh báo lỗi nguồn. Có 8 đề xuất thuật ngữ đủ căn cứ; giữ biến thể JP param8 ở 4 command và các UI đặc biệt. Chưa ghi Merge/glossary/reports/state.",
+          "at": "2026-11-05T11:05:17+00:00",
+          "sources": {
+            "EN": "4d52341758cb46aaf49dd9de721aceb130183901f716109faf5a18de417e7004",
+            "JP": "bbcc2bc699b7554a7b925ef7e9b9ad2788537d24ca7418e6efcca7521d9abeaa",
+            "CN": "1284ae3777235f082da5f2560431a1a41d606f12c266a993ad4ffb7fd591c722"
+          },
+          "glossary": {
+            "sha256": "6ed6c5cd88baf18572560d2b1e8f6e48ff10389a0bec64ac3b3dbd1fa2bb707e",
+            "relevant": "a1f66f5156e6cf4fbaa23587680de63440d921899e5a38e5d3b90018eb74b5fa"
+          },
+          "merge_sha256": null
+        },
+        "terms": {
+          "summary": "Đã thêm 8 term mới cho STm02_08; không có ánh xạ phía sau cần đồng bộ (0).",
+          "at": "2026-11-05T11:10:25+00:00",
+          "sources": {
+            "EN": "4d52341758cb46aaf49dd9de721aceb130183901f716109faf5a18de417e7004",
+            "JP": "bbcc2bc699b7554a7b925ef7e9b9ad2788537d24ca7418e6efcca7521d9abeaa",
+            "CN": "1284ae3777235f082da5f2560431a1a41d606f12c266a993ad4ffb7fd591c722"
+          },
+          "glossary": {
+            "sha256": "ae7b503b1fe67f8aaca6aeff642143ccba351949295ae27dfe5ae389f6c0c90d",
+            "relevant": "ff0d4550457a46352747636ff2990afd7c697f423b99938a998af31bdfb23916"
+          },
+          "merge_sha256": null,
+          "outcomes": [
+            {
+              "EN": "Soul trading",
+              "status": "added",
+              "target": "Giao dịch linh hồn"
+            },
+            {
+              "EN": "Tyrant Accord",
+              "status": "added",
+              "target": "Giao ước Ma vương"
+            },
+            {
+              "EN": "Boss Accord Staffing Co.",
+              "status": "added",
+              "target": "Công ty nhân lực Giao ước Boss"
+            },
+            {
+              "EN": "Tyrant Accord Staffing Co.",
+              "status": "added",
+              "target": "Công ty nhân lực Giao ước Ma vương"
+            },
+            {
+              "EN": "Emor",
+              "status": "added",
+              "target": "Emor"
+            },
+            {
+              "EN": "Grace Imperium Vault",
+              "status": "added",
+              "target": "Kho lưu trữ Ý chí Ân điển"
+            },
+            {
+              "EN": "Cangwu",
+              "status": "added",
+              "target": "Cangwu"
+            },
+            {
+              "EN": "Matsukawa",
+              "status": "added",
+              "target": "Matsukawa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a65022c217a89095ed63",
+      "merge_path": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_Merge.txt",
+      "folder": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09",
+      "base": "STm02_09",
+      "sources": {
+        "EN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_EN.txt",
+        "JP": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_JP.txt",
+        "CN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_CN.txt"
+      },
+      "status": "done",
+      "stage": "verify",
+      "checkpoints": {
+        "merge": {
+          "summary": "Đã merge story 120 khối từ đủ ba nguồn hợp lệ, 2862 trường/bản; giữ đủ 101 thoại, 3 Intro, 15 heading và 1 lựa chọn cùng hai biến thể JP. Đọc lại BOM/CRLF và validate_payload đủ 120 khối; chưa dịch VI. Có 6 đề xuất term và 2 ứng viên chưa chắc.",
+          "at": "2026-11-05T11:51:49+00:00",
+          "sources": {
+            "EN": "023661465611595b5e8737bc627f9427276528e90298f92fea045a2efad3bbb2",
+            "JP": "00eaa11dfe11545ec7a92314f27d436cd3c4359187c28b534e8e7875b5df9287",
+            "CN": "8224566a700561c3e0c726887d449bed904b42fa878ba88f50923b8e3391dc28"
+          },
+          "glossary": {
+            "sha256": "ae7b503b1fe67f8aaca6aeff642143ccba351949295ae27dfe5ae389f6c0c90d",
+            "relevant": "f9bb1d44fc9487d589380b06b29e47896220ba0d36eae1bc684bd1bfe7d2325d",
+            "mapping": "dd7569e55d1d9cc11f2827a8752883782f7e4c4c23fd5db48b93dbfbd3214ee8"
+          },
+          "merge_sha256": "5617eacdde53532943e7166c46ebfd405eccba26732ee828c5865bf1a2829771",
+          "layout": {
+            "1": "804171e616ac51e8bad6a8980cd6206ae90cd3abf8aa7c30074140e64a40687f",
+            "2": "462dd41a0b1592de26e17ac2a2ad6c6579cb03be2eab4d487f5a42c703c17a35",
+            "3": "47bb01346174c8646b6d82069b5cf85bfb3b378847209cae4284ba37f89161c8",
+            "4": "def0c596a16592ae7f1e7144519a5c22aeabc28da7f476a5447c47d2eea2cd48",
+            "5": "760e02cf75203a2fb43ef8969f813ef7989fb88af40271c63d51250eba5f8ffc",
+            "6": "70957c6967c9b6b1b0346df2b1755a5934bd68df12afd67e40eb93b62164cf0c",
+            "7": "c7819c12479d10736de41f25a7303f0b44866382e331958d2ad5bcef4bb70b69",
+            "8": "2e50267a8e200f347046bab05e0ce27a86538aa46aa38b23c00b2966f5fafcca",
+            "9": "fb6837e41636349da6aa745711b7056e035adcc115739bf675a0cfe704830bb7",
+            "10": "6f0c4b7afa7a18229efdc329eab924158dbcd98416d0202ca1eb3aa883ca3dca",
+            "11": "9be7ae90da95d7ed33def3dcdfa67c6a1f5ed358876b589f011ed5542870199d",
+            "12": "5a2a40ae379df67aba6ca5aa3dabde422ead698efc65d414eda2b66bc9e87536",
+            "13": "d0255908c636933008bd89bdd36b888a723b9df7d9d0ba724439b0d07d0c7927",
+            "14": "00c2969b89dde62f81f9389f0a5f77af82eb47528a62ee31c1da1d01b4068132",
+            "15": "5cb838680844383e8b46bbedb018adf5ed35beb4d771a6bb1304f43ee5fb8b3e",
+            "16": "9acf20e0c6fd61a48b0d2160de40074c5008a21b5a55d73fd679b1303e62fe75",
+            "17": "2b519b2f4bb5bd6cd38572647bc926888fe18fd6b876f8f35e5d332057d9ac33",
+            "18": "4ded4940b5665abe9998a547f3072a368f357aaad9530020bc7cf747462cb73d",
+            "19": "4aff78588eacb457742b426823c413ff815ddddfe94b2a0f2126856aa6d0de86",
+            "20": "736b83139246177b16433e79808aff8dbadb726a97ad6d58cd2180f5b45b0c3f",
+            "21": "e63661af594270fed0c5faa7172d40cb7c2e60e7f053f87d8d066160018090a9",
+            "22": "cc39d9adf0ad96fd5d5c60a24e955ba33f2176a0a5250647532dd8ee87e38645",
+            "23": "ea68676c499c5e95e5b48fb765c3819c93322cfd4c68cde24c7e9e4a5728a136",
+            "24": "98c32c88f17901c8994a7078c87c8c8c1eb66352e79cfe798f24a9134b1dd079",
+            "25": "c63917b42762d128f1e6d693d1d6a3cf820d67ff3a0e997ea3ad6ea9afb9e4c5",
+            "26": "f88cbff8efd03803ee87b6ae5876de69055a2ba59f3c0ebab7be4fdc70d9af7d",
+            "27": "27f175b76b068129ebfbc5e0a1c75855b02a3b1aef01369e785fade8b4a67115",
+            "28": "effb7b8b2643545f5d4dd9e94062b88850e66ab5473e9a06981b2a15870fbec2",
+            "29": "2e9795f83979a8a3dff692ed497089b7c48a6716cad06ac48ef9611da9c2a165",
+            "30": "f60fb2e637de9abe5e5932baa7d7ac6f76b1876a9c1a79b882f53ca21550a424",
+            "31": "fa6a00411eafe78b0cbff5e64d6104ce92e5531c6c53a51f529654f12006028d",
+            "32": "9f621f9f13ff58a360ee3b12cf97c152cf86bfb76d5aa13ae52a05c4ae322c74",
+            "33": "d5e18d1da1222ab9dfeb6a8f92c63bec712383fbc2561f0bc8326be9d44731db",
+            "34": "f818dde9226e19dacd04b8dc0f2df686411ca76814b27e03f718ae0d4ca3eae2",
+            "35": "4ec62c93c377dbe69e68626ee2463609290b4fe6d3e53fd4614d0bbb814d5680",
+            "36": "d2bb8c8aaeae2b63512450eeb1a427ba9428e8c53d7e1da39943e646bf39e17d",
+            "37": "ab22ecfc421b8a32df5cdd559bef03c80515f423aa3fa76ea6956de02e62cb39",
+            "38": "37d48f2957c9da975e29cc90d44cb9c77ee267e76ddb1d7e6288f690fd91c319",
+            "39": "ea9d1f35c267b26499171f038aa72f0e452e9126acb6b444844ae0d39f37c8f9",
+            "40": "7db45236a2a04607a88a6f920c8cb59aa64ce215a2736c8b6544e01e17f98453",
+            "41": "00345a0c60f2638db9f4ea00bd9699c27a5f52c7dc62b8d7c56fe170ed7b0b7e",
+            "42": "def0c596a16592ae7f1e7144519a5c22aeabc28da7f476a5447c47d2eea2cd48",
+            "43": "760e02cf75203a2fb43ef8969f813ef7989fb88af40271c63d51250eba5f8ffc",
+            "44": "70957c6967c9b6b1b0346df2b1755a5934bd68df12afd67e40eb93b62164cf0c",
+            "45": "73c5469691f0f2b5629641ce0ebe03813427d2637ca2d86e4a5d72e901dc1c21",
+            "46": "b531f82c27528fdee0deee73e108d17554a8bf73099ccd8070690de52b9af48a",
+            "47": "6be486adfa975026716567d706aac43ab68ff9a0cca00e7d4c2d81fbf831480a",
+            "48": "45c43f42bb082d40af03beeddd941b9b79dd3844d866f7d99f11798d733ab4d7",
+            "49": "4ea83151cae564fb1b23cb4040ef2f717a94414f783d0af9caebe9ba3a8a6ab0",
+            "50": "0e4cad1640b50a830fadce72ec577fbc1752ce9ffa2e1b62c65f5954a88fefc0",
+            "51": "2940c1ba4d33a854d2220f9792011416eac5fde04369cbb88fdc95a34e581219",
+            "52": "d891f94abbf0f5bca62d63f9fef0d65216ec16608b7ae1918670eebb2f84de38",
+            "53": "fdabc5f32ba9ec0c239eecbb542e11e83aad35cf7eebeb928c21a1faead49910",
+            "54": "74b96f9b6b7f8081803ae9fbc75650e458734d9f050a7eb0d9af56b19ef513da",
+            "55": "7bb60e8d2f76e8fe2fee77a85fb9f6e91e239596d1decc169c821d22a446c879",
+            "56": "97512b11d7d650136375b6f5a070b3d78623ca477ac9227ecf655f0b13fd9359",
+            "57": "ef075e9719f4cffc6be79715e318afe099a32ce14f1bf9b328eafe9f2c23aa51",
+            "58": "35716ecbffff62b8bbd07af6b7ee6a1c91557d23a52c0450b1b27101cac2db6f",
+            "59": "3c1e6aba636685683dc603f83bf1a62f862fe3e01ea587a4d787526a72f48f04",
+            "60": "a6113f55613801e5b61639a110d35568892a30cef6b3104e2777b4d3f1a8084d",
+            "61": "57a13ee3bc3114c8d3e291fa59f5e9ccc35e8bd8c1b1cb0fbe1d93afdf1955e8",
+            "62": "6a9d7cac255f5ea187471cd9eb76b94a3be3ad78019730cb3eed3bb769e6816d",
+            "63": "c080c0854e4fe6d857bb1edeb18bb2bcb7a805502f3309f817468b7633809770",
+            "64": "35413357cc3d2e7ea02144a19b320c9606856d2b68b5d8b3a4ed39f61f1e16fa",
+            "65": "8a9139363cd6c4d02a024b70b463caebb03337be5266660226dd66c43d052031",
+            "66": "23e0674d4e9c3566b7c2fa898a13838189056b266fec39ebe414e5df0ba81d35",
+            "67": "2a5e294ae655d1de8b7056ed7fae4791ba22e76b7e6424c937e616c9b43616dc",
+            "68": "8af59b536246f15b6cfa517bb9b82f1bec0b527721f1baf5433de645fd52fe17",
+            "69": "55e127123679e00be3bda9045293baefc97e1ba9b4cb99dec7c542ba937e2411",
+            "70": "435392159fc7db367dfbf8c1235ecbc6178db288c45ac37a0070f7c7757af6b8",
+            "71": "ef16076d1359742f215fd8e84c4e8b52f6d52f33ead3fb8f8a8dc3a8041794d9",
+            "72": "da12debf6c7af1b192807fd452cd7d339b1d7dbfdfd09bc6cb611e5d61202413",
+            "73": "a21853b98e09f7ae1b08eb71f8a85a6e065508e79451e76760221516c02aefce",
+            "74": "3da5873bbab60f3ca303b78e695180dca2386c5df8bcdac49a054fb17ac95e07",
+            "75": "01204497de93f22e20f246032f4b79fe5be3947d7e32690e28092e7e6857a837",
+            "76": "b22aafd43a04a0d993984dfa154bde2b512319914588e7f535e9bb8e782494e6",
+            "77": "da1d4fe0c5d1afb75f2a07c11175e819d17b7689631f17a7cf21b8c829534176",
+            "78": "83dc68b6c8e567d0d695a79ee782ef2488da6b80d038d8ec4d0f291f1f977adc",
+            "79": "d4adf9880c55411e44e39271ab039beb653c0774cab734d866b46453061258b9",
+            "80": "e4c2929e2d64d784f8343cc1abbc1c06b0cca704e25625dd0e59227a9c723ce0",
+            "81": "268d5a29d88248bdda14ddc1e9727b04bd79b753ec9d90b9b6c759e2475a23c1",
+            "82": "7e79b26ca55833e9500ba5c017e0babde8a99d627fea111f5fd166ed63d455f9",
+            "83": "a427d477341d3df0ebcb1b8023e5f511c76c0c9955e22d01e0e5484846ac6de8",
+            "84": "0b9076b11d0618ab8565bfdfea47febc772b717ac8feefbf13ecf1866d1e3207",
+            "85": "2f7ef78095ddfff78b122a26da5b927fcf6cb2577be11af9eb23ca09b4c66a13",
+            "86": "8ae2f64f5b36308f3d80e25b28c369dedbe40ebd8a19496d587863123022ab75",
+            "87": "ad90eeec3dbf7ed0ac6a9f8954a35189b477e213eef05e6a146bf0a8618ee7e9",
+            "88": "148482a4a946e256c19df67bae8c63cf6eb5681c7bd816aa87d07563148df8b2",
+            "89": "e39895c282dfe5ec98957d7edbba125d43d4e955e338088eff55a0241d76530f",
+            "90": "f08c8b059d8073603f99c14d01c743907810107ef93e2a14a7ffdef8fbf96706",
+            "91": "d40b5036f614f22be2a29b51290fd7efe187ffe8f52050ba9b6a0a403ffb58b7",
+            "92": "4ce395d9eb9ca14be82cadb9abe2a1549262fd2250841f332290286efce272b2",
+            "93": "5415d6b7ecd22fa045d0b77be26e7e28fac7ebb1fda8d09631cab3e17f59a99c",
+            "94": "cf59ea53ad5a04fa095eab3c69201a6eb16f7dcbe64ae3fce18bf62263fa8465",
+            "95": "2c3fb8d5d6205bb7aff5362c56366b2a024022a8b87db88b5e03022570ab1363",
+            "96": "0371d4e6fdf05935380c289186e9c6dbb0358532bd94eb2b0ccddcb6f661fb3a",
+            "97": "0156017209646ebf419d9a3a2d56219425661a4eb96271a991054e561d3508d2",
+            "98": "6f39b51f6ed3958797bcb8b211e30077e2156607ced113712f86a3f363570760",
+            "99": "73aabbb9974f84637c911b46299ccc94189250a4ac666102a2e77bfbf8a4d6a3",
+            "100": "760e02cf75203a2fb43ef8969f813ef7989fb88af40271c63d51250eba5f8ffc",
+            "101": "70957c6967c9b6b1b0346df2b1755a5934bd68df12afd67e40eb93b62164cf0c",
+            "102": "1c7f1b5823db363a2282d988af6e29523bac8ef3e3d1c0eded84bbc38fc61c1b",
+            "103": "62bd02380da81c673f36c43c31726fa497a23d935ec395ede40fcf5e7088a734",
+            "104": "61a4d0ea22a0679b25f022973d8087d30b4ca4be67c89145c904338ffe509609",
+            "105": "ee2eb11bf752cd77ea93e908c817ae96c77ad67b41a8fb870c8db02fd6240272",
+            "106": "864eb5bc364c526f24623ca6331cda6d7cbdba38e80cdcbe3b8046fe6047d2ce",
+            "107": "70b6064d51ac5c1100d13528170b142cf33ef96d4080fd770be2f849f3f610dd",
+            "108": "c208e01a5ea77b318672ffd4687f869c032145fe08ad8f295445128f21781e66",
+            "109": "0a66e21e2d31534368be774352858a317bb01f2724ed853a74f6d5d58d99f1d5",
+            "110": "35654c09839318da9ec89a85b268228055925955117b4fae70b3bf20e0aefee7",
+            "111": "74b0098053cf7332943a3dca2165369562dbde64ef66607f8670bec5f8423939",
+            "112": "69eb18a72ac5b1766086e52c47adf7bd5428eb16252cc0ee00a3ce6186ff91b0",
+            "113": "5a5310197f40788dbc55c3855d8750c12b181693b4be5354ed3182e449f3ba6a",
+            "114": "4a5d5ca0d2a01f300fdcc4bbd55df93ca1d015620a9f7cd30952f10605796369",
+            "115": "921e821f490057622d438e3ccd232a089149768c31d00fa8e3de3e07ec9137ba",
+            "116": "13f5f3926bd896d419ea29f9a8293c5ec7a70381ea8b09977609c98e1a763cb7",
+            "117": "26cca83cf17cf25596543e203386fa1ff47d5a94a27be12604a502ced0ea0a93",
+            "118": "139c419613b426ff4cd06a76ccdfb2e7b283c213c80794a7e3a9c1d8d314891d",
+            "119": "3b3c193a8b8dca67533504913bed865fa9b0dd3ec4cf7bd9816fc47823343f94",
+            "120": "bba62f2fa10c9faad77fda545f147a1c402833f6a11e39ded6a80aaf51da46a9"
+          },
+          "block_count": 120
+        },
+        "terms": {
+          "summary": "Đã thêm 6 thuật ngữ sau dòng term cuối; đồng bộ 0 ánh xạ vì các tên tổ chức/cư dân hiện hành đã khớp target, giữ Imperial Guard theo ánh xạ hiện có; Xuan Shi và Tanikaze chưa xử lý.",
+          "at": "2026-11-05T12:02:03+00:00",
+          "sources": {
+            "EN": "023661465611595b5e8737bc627f9427276528e90298f92fea045a2efad3bbb2",
+            "JP": "00eaa11dfe11545ec7a92314f27d436cd3c4359187c28b534e8e7875b5df9287",
+            "CN": "8224566a700561c3e0c726887d449bed904b42fa878ba88f50923b8e3391dc28"
+          },
+          "glossary": {
+            "sha256": "7e01312508c9b1a53e31b62d14a66e7dd4270ffd30a9593adc9d40e25d0e4c96",
+            "relevant": "3583f5840210b772affa292bdb08e274060988a926c44bea4d3f9cdbb76d7d14",
+            "mapping": "dd7569e55d1d9cc11f2827a8752883782f7e4c4c23fd5db48b93dbfbd3214ee8"
+          },
+          "merge_sha256": "5617eacdde53532943e7166c46ebfd405eccba26732ee828c5865bf1a2829771",
+          "outcomes": [
+            {
+              "EN": "Flavio",
+              "status": "added",
+              "target": "Flavio"
+            },
+            {
+              "EN": "Scarlet Sights Street",
+              "status": "added",
+              "target": "Phố Mắt Đỏ"
+            },
+            {
+              "EN": "United Harvest",
+              "status": "added",
+              "target": "United Harvest"
+            },
+            {
+              "EN": "Tetrad Aspects",
+              "status": "added",
+              "target": "Tứ Giác Tâm Tướng"
+            },
+            {
+              "EN": "company war",
+              "status": "added",
+              "target": "Chiến tranh công ty"
+            },
+            {
+              "EN": "Imperial Guard Security Solutions Company",
+              "status": "added",
+              "target": "Công ty Giải pháp An ninh Vệ binh đế quốc"
+            }
+          ]
+        },
+        "translate": {
+          "summary": "Đã dịch hoàn chỉnh 120/120 khối story STm02_09; đọc lại toàn bộ VI, bảo toàn 3 nguồn/tên gốc/kind, một lựa chọn và hai biến thể JP, thẻ/token EN, glossary mới, UTF-8 BOM/CRLF. Helper dry-run và ghi hai HTML thành công, readback đủ 120 khối coverage mỗi báo cáo, 0 unresolved/needs_review. Ghi 38 xung đột nghĩa/biến thể và 58 mục khác thẻ/token; 5 liên hệ/ẩn dụ nội bộ có chứng cứ, không gán nguồn ngoài chưa xác minh.",
+          "at": "2026-11-05T12:12:12+00:00",
+          "sources": {
+            "EN": "023661465611595b5e8737bc627f9427276528e90298f92fea045a2efad3bbb2",
+            "JP": "00eaa11dfe11545ec7a92314f27d436cd3c4359187c28b534e8e7875b5df9287",
+            "CN": "8224566a700561c3e0c726887d449bed904b42fa878ba88f50923b8e3391dc28"
+          },
+          "glossary": {
+            "sha256": "7e01312508c9b1a53e31b62d14a66e7dd4270ffd30a9593adc9d40e25d0e4c96",
+            "relevant": "3583f5840210b772affa292bdb08e274060988a926c44bea4d3f9cdbb76d7d14",
+            "mapping": "dd7569e55d1d9cc11f2827a8752883782f7e4c4c23fd5db48b93dbfbd3214ee8"
+          },
+          "merge_sha256": "d3af5e5eb4af1845c3a71418b8c7663aed74c18a01134f864cae05b720c899fd",
+          "block_count": 120
+        },
+        "verify": {
+          "summary": "Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues.",
+          "at": "2026-11-05T12:12:58+00:00",
+          "sources": {
+            "EN": "023661465611595b5e8737bc627f9427276528e90298f92fea045a2efad3bbb2",
+            "JP": "00eaa11dfe11545ec7a92314f27d436cd3c4359187c28b534e8e7875b5df9287",
+            "CN": "8224566a700561c3e0c726887d449bed904b42fa878ba88f50923b8e3391dc28"
+          },
+          "glossary": {
+            "sha256": "7e01312508c9b1a53e31b62d14a66e7dd4270ffd30a9593adc9d40e25d0e4c96",
+            "relevant": "3583f5840210b772affa292bdb08e274060988a926c44bea4d3f9cdbb76d7d14",
+            "mapping": "dd7569e55d1d9cc11f2827a8752883782f7e4c4c23fd5db48b93dbfbd3214ee8"
+          },
+          "merge_sha256": "d3af5e5eb4af1845c3a71418b8c7663aed74c18a01134f864cae05b720c899fd",
+          "block_count": 120
+        }
+      },
+      "proposals": [
+        {
+          "EN": "Flavio",
+          "JP": "フラヴィオ",
+          "CN": "弗拉维奥",
+          "context": "Tên thành phố ở trường địa điểm heading. Chưa có category=term; tên trong các nhãn cư dân chỉ là ánh xạ nhân vật.\nEN: Flavio\nJP: フラヴィオ\nCN: 弗拉维奥",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_EN.txt [STm02_09::command/4 SetSceneHeading/param/3]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_JP.txt [STm02_09::command/4 SetSceneHeading/param/3]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_CN.txt [STm02_09::command/4 SetSceneHeading/param/3]"
+        },
+        {
+          "EN": "Scarlet Sights Street",
+          "JP": "レッドアイズ大通り",
+          "CN": "绯瞳大街",
+          "context": "Tên phố cụ thể tại Flavio, heading phụ param4; cách gọi EN/JP/CN cùng vai trò địa điểm.\nEN: Scarlet Sights Street\nJP: レッドアイズ大通り\nCN: 绯瞳大街",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_EN.txt [STm02_09::command/4 SetSceneHeading/param/4]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_JP.txt [STm02_09::command/4 SetSceneHeading/param/4]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_CN.txt [STm02_09::command/4 SetSceneHeading/param/4]"
+        },
+        {
+          "EN": "United Harvest",
+          "JP": "アグリ・ユニオン",
+          "CN": "联合种业",
+          "context": "Tên tổ chức/công ty của nhóm điều hành đang bàn kế hoạch nghiên cứu. Chưa có term dù có nhiều ánh xạ nhân viên United Harvest.\nEN: Once our plan succeeds, United Harvest will be untouchable.\nJP: あの計画さえ成功すれば――==RT==アグリ・ユニオンが、大陸の経済を牛耳ることになるのよ。\nCN: 只要能完成那个计划，联合种业就能立于不败之地。",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_EN.txt [STm02_09::command/197 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_JP.txt [STm02_09::command/197 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_CN.txt [STm02_09::command/197 SetTalk/param/2]"
+        },
+        {
+          "EN": "Tetrad Aspects",
+          "JP": "心相四角",
+          "CN": "心相四角",
+          "context": "Tên nhóm/cơ cấu lập ra để ứng phó hữu sự; thành viên nói rõ chúng ta Tetrad Aspects, bốn hướng được nhắc ở command211/216/222/223.\nEN: What good are prayers? Let's use our heads. Isn't the Tetrad Aspects here precisely to handle situations like this?\nJP: 神頼みは否定しないが、その頭はなんのためについてるんだ？==RT==そもそもこういった有事のために存在してるのが、==RT==私たち心相四角なんだぞ？\nCN: 祈祷有什么用，动动脑子行不行。我们心相四角，不就是为了应对这种情况建立的么。",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_EN.txt [STm02_09::command/222 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_JP.txt [STm02_09::command/222 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_CN.txt [STm02_09::command/222 SetTalk/param/2]"
+        },
+        {
+          "EN": "company war",
+          "JP": "カンパニー戦争",
+          "CN": "公司战争",
+          "context": "Khái niệm được định nghĩa: hai công ty chiến đấu đến khi một bên đầu hàng và chấp nhận mọi điều kiện; command499/503 nêu mất bảo hộ pháp luật và được giết không bị phạt. Lặp từ intro/command193/264/276/438.\nEN: Don't be stupid. A company war is a fight to the death between two companies. It only ends when one side surrenders and meets all the other's demands.\nJP: あんた知らないの？カンパニー戦争ってのは、==RT==ふたつのカンパニーが徹底的に潰しあう戦いのことよ？==RT==どっちかが降伏して、条件を飲むまで終わらないんだから。\nCN: 别傻了，公司战争是两家公司之间不死不休的战斗，直到一方投降并满足另一方的所有条件为止。",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_EN.txt [STm02_09::command/497 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_JP.txt [STm02_09::command/497 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_CN.txt [STm02_09::command/497 SetTalk/param/2]"
+        },
+        {
+          "EN": "Imperial Guard Security Solutions Company",
+          "JP": "",
+          "CN": "帝国卫队安保公司",
+          "context": "Tên pháp nhân công ty an ninh Vệ binh đế quốc, đứng ra trả tiền phạt vi phạm hợp đồng. JP cùng command chỉ dùng 弊社経理部 (phòng kế toán công ty chúng tôi), không có tên đầy đủ; để JP trống. Imperial Guard đã có term, nhưng đây là tên đầy đủ của công ty cụ thể.\nEN: We sincerely regret breaking our deal. The Imperial Guard Security Solutions Company will compensate you for any penalties incurred.\nJP: 違約金については、弊社経理部よりお支払いさせていただきます。==RT==この度は誠に申し訳ございませんでした。\nCN: 这次违约非常抱歉，相关的违约金帝国卫队安保公司会支付给您的。",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_EN.txt [STm02_09::command/440 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_JP.txt [STm02_09::command/440 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_09/STm02_09_CN.txt [STm02_09::command/440 SetTalk/param/2]"
+        }
+      ],
+      "attempts": {
+        "merge": 1,
+        "terms": 1,
+        "translate": 1,
+        "verify": 1
+      },
+      "claim": null,
+      "history": [
+        {
+          "at": "2026-11-05T11:27:34+00:00",
+          "message": "Migrated to merge-first pipeline; artifacts and legacy evidence preserved"
+        },
+        {
+          "at": "2026-11-05T11:51:55+00:00",
+          "message": "merge: Đã merge story 120 khối từ đủ ba nguồn hợp lệ, 2862 trường/bản; giữ đủ 101 thoại, 3 Intro, 15 heading và 1 lựa chọn cùng hai biến thể JP. Đọc lại BOM/CRLF và validate_payload đủ 120 khối; chưa dịch VI. Có 6 đề xuất term và 2 ứng viên chưa chắc."
+        },
+        {
+          "at": "2026-11-05T12:02:14+00:00",
+          "message": "terms: Đã thêm 6 thuật ngữ sau dòng term cuối; đồng bộ 0 ánh xạ vì các tên tổ chức/cư dân hiện hành đã khớp target, giữ Imperial Guard theo ánh xạ hiện có; Xuan Shi và Tanikaze chưa xử lý."
+        },
+        {
+          "at": "2026-11-05T12:12:23+00:00",
+          "message": "translate: Đã dịch hoàn chỉnh 120/120 khối story STm02_09; đọc lại toàn bộ VI, bảo toàn 3 nguồn/tên gốc/kind, một lựa chọn và hai biến thể JP, thẻ/token EN, glossary mới, UTF-8 BOM/CRLF. Helper dry-run và ghi hai HTML thành công, readback đủ 120 khối coverage mỗi báo cáo, 0 unresolved/needs_review. Ghi 38 xung đột nghĩa/biến thể và 58 mục khác thẻ/token; 5 liên hệ/ẩn dụ nội bộ có chứng cứ, không gán nguồn ngoài chưa xác minh."
+        },
+        {
+          "at": "2026-11-05T12:13:10+00:00",
+          "message": "verify: Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues."
+        }
+      ],
+      "legacy_checkpoints": {},
+      "ui_type": "story"
+    },
+    {
+      "id": "41f05c8208417d33790c",
+      "merge_path": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_Merge.txt",
+      "folder": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10",
+      "base": "STm02_10",
+      "sources": {
+        "EN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_EN.txt",
+        "JP": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_JP.txt",
+        "CN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_CN.txt"
+      },
+      "status": "done",
+      "stage": "verify",
+      "checkpoints": {
+        "merge": {
+          "summary": "Đã merge story 128 khối, đủ ba nguồn hợp lệ; giữ 112 SetTalk, Intro, heading, NewCharIntro, choice và biến thể JP. Đã đọc lại BOM/CRLF và validate_payload đủ128 khối. Chưa dịch VI, chưa ghi HTML/glossary. Có3 đề xuất term.",
+          "at": "2026-11-05T12:08:27+00:00",
+          "sources": {
+            "EN": "a281e2c712a693b648b6040a1f13a052f4276b0dc4d78dd32c7d77b25a46fb64",
+            "JP": "3e2edb72d882e0c30700a2f884217404b41d5aa3a9c40eecfb8dbbeaccd46ecb",
+            "CN": "b580a31443bb70cd3d925c3e957c3dde59bb4ce03b9f3f0115b2be764c1975e5"
+          },
+          "glossary": {
+            "sha256": "7e01312508c9b1a53e31b62d14a66e7dd4270ffd30a9593adc9d40e25d0e4c96",
+            "relevant": "ca8d3d692c46b096fe75a749382ecba1b50e81613b49a03f8aa0c19ec2a366c4",
+            "mapping": "c2b62b244c23bbbabc9084964ecaf0856b8da5b83fb7a6b85b6244f794783efe"
+          },
+          "merge_sha256": "496634120efb0290c40b01625ba935ebc82450607d9c21fd1ea92729b2bebae5",
+          "layout": {
+            "1": "ab28ffb793ed49eedfb9a98b27895f41c6f9580ce89163cfb15a7bd11ca6373d",
+            "2": "a07d141116368367b6e9082ba4b817d34084c248744e7344ffd31b2955c3df60",
+            "3": "aa2ed0034f8fdabc36dc3b2652d2afb2f917579da23d0e40bbed0d71d1817463",
+            "4": "58fd1690f35ebba5e197810873da5d8de4ca93ccc462bd40707ce04868972d87",
+            "5": "760e02cf75203a2fb43ef8969f813ef7989fb88af40271c63d51250eba5f8ffc",
+            "6": "70957c6967c9b6b1b0346df2b1755a5934bd68df12afd67e40eb93b62164cf0c",
+            "7": "4c5951499dcd0d88d2630c08270c5e7bd77d4ed556b63672d39b28c1c4fadf30",
+            "8": "08e6478db0e6ec17519a32da85a29071f6a824419446210389cd9e4d1c225ddb",
+            "9": "7d0a1defa3af5f25860779aa674d3c483ceb3a668cdd5700e9e45a77d6bce470",
+            "10": "933b6bac1a604530573b2439d28101bcd82f628bd7749696e8fcd3e9199657ce",
+            "11": "dfadf6eeecc676bb548002826c9eefdbac7c86cca088e1a87b3b533724ae8e6d",
+            "12": "6fcebbd19ae7ceafd1df12d243d47faf7bb1a2006839e765e90babed1246dfdf",
+            "13": "cf3a93ac8cfd532c0ffe456d7de1e2b56833befc9f4c72721bb290392b9a9cbb",
+            "14": "36e0ca98a87114dc6a6c6abf4a0bfb98ad9896c195e85351c02f631dc0aff7b5",
+            "15": "1b871a09049c6b05a8c5f97746c6844d2d30c9eef2dee828f4079531376d5cca",
+            "16": "5a5480164ecbc4392c3451606381c7002c433cbaed3c96c4c46ce0a61b2c57c2",
+            "17": "95c3dcdc386d27544c5e3c2ac5f04a91a7926f1f2ba845ca2e88df5d36fd5ccd",
+            "18": "6d03788bfc9d72c1036511c17ad6016566331d92cf8ecfe1a3c0a77217a8ef78",
+            "19": "5ef31c300e9baa2521901c7856cc28bbca7a49a11da21793754dda5baf31e776",
+            "20": "182159c7ac1f6a1c9dd75ad8c69eab95fbdeb4bf215c4c76183e79a683cd23a7",
+            "21": "115f0cd39798751239589e0c9c5eea1ed79f59aada9761edab7c3218df74f8a2",
+            "22": "a5c9b83adfb2f3e46c2029b4f3c3e9f3ec555054a2b02d9062248e5a5ec85193",
+            "23": "0800fbce4f1bea2bc7fca2f7537e99564338c24cc52c7b7cca5d3bd5df8514ae",
+            "24": "36f948845deb8d8df6ea6c1172602d8383c1ceaaa61990e534fb289851edce8c",
+            "25": "017bad2493a3a5899eec2a1829088e30b0d350a4a2b8579fd02758cc8dd99b82",
+            "26": "73c987ea782da5a330a81d88a222ff3e104ef8fb2ee234ea17d244b45de4fbf5",
+            "27": "c91051d1e0346bac5c14b2689d7fe057ef7dbd5b0c91fb9db7b4397f10e0e123",
+            "28": "22cde1b7479d8152f27404c6d9cdb6927d490121f60d5a39efc5dbc1d60a1244",
+            "29": "10ea539681c5edf0ac68d645216e2758f3352a67caadc96ea860756349dc726d",
+            "30": "c42fc53c30b65c9874bac68037ed7b6af3ae326fb33808cd3bada4d1e12060a6",
+            "31": "85b3a22a773430d9d3b8d452d2b634512ba3557749b370c863ab96d5bb81f5ae",
+            "32": "64f6eb46940f75c459479fed99c466c190f08b1821cb918d85a29960e12e9648",
+            "33": "e80eaa3a57a740f6945ab5147cbb1533bc4868e4f6a39f0da9d3a413f5fd3980",
+            "34": "4c7aefaa5e20ec36508102d9914c4b73f973f47cf0745119e6a978f89614ac69",
+            "35": "b6f59d826b87f4fc90e5334a0ca69db108ead2cbd8019b8534c733f9d48cef5a",
+            "36": "f36c7d9376c000714394b8e17188040dda97eacc74f8302fe0a790e2cd67bf5e",
+            "37": "d19f1bfdf0596f1dfda4a53baa49639f9114b7f6de8a79151545355883d9affb",
+            "38": "e446fd859644fef204b235700deb71a72db2a8688ca26793642664e0bafe983d",
+            "39": "c10c760adf22e3f103f143b703d30d98eed7340124922d2115ae2152a6c409d3",
+            "40": "014610077f6f5adddfab394b16ec93fb24eebba8e9a0954734934b81d9c4dda3",
+            "41": "164df792ffff8bcab6e6596fd5ab9feb4f2556f4e970a11dcc2e3e1f792e7d94",
+            "42": "047c8faa164c2f87daf680ea445439454ed9133b238f0de8d8f78f5d4515786e",
+            "43": "9e06a2ad1563fee709351ac1123029e97bc6635cfdac1fa9cab5098c90a5f9c6",
+            "44": "ac349f1899e1790ce72a8fe3670b60636f08a3cd8bfa42a191cb541905a2a3b8",
+            "45": "e4d00c04506acf04d6f3f28e616994538e0b365cc7e6ebd73f713e9a252c3bc2",
+            "46": "1d63fa8bf24418dbd419c28aa1ad585c51c5b2188959fce6085b34cf54f5bb33",
+            "47": "6a0c0ca33c64fff4796674c159bc18307a0af697204a05acd201d71eaf01d03f",
+            "48": "82be3b79af7b6625720d51d7264926917d43fc18188e7ceb86104e405501dc9b",
+            "49": "2bd45462176c3a38fb975c523ff724c719093cb2eca83d53eb087383bf4f0d5f",
+            "50": "d52b953b35083ce94cd1637c97d36e2de3cd8b91563ce88abdc5cfa3cce3bc8a",
+            "51": "393513a8c47908f8fd35df5dbe247f1184bd83f30934e078e24d5364be5e9337",
+            "52": "7168d693e65fa5663d90313702586ab141614771876a5da6ce1f926da981faf3",
+            "53": "f952b7dd549c579ddb501094ee452e337a225b0b1c5a6c7e76e386ad3f55afc7",
+            "54": "38689b639d8cd86ef9b79bf609d96462b259d36d7ccf95a4a15fb72f9e799d20",
+            "55": "8df50a21887689eb8db69b790fe22dc498be6f143326b5e5ebc8d924fe2bda39",
+            "56": "741bd7b852009828ea6b879891a5d7a4d299265dfc97212981ebf0945454058b",
+            "57": "adf7b80efa4ea3d597aaaac60d05b4f4b5c1d4580cf3b6027345b22df930cce1",
+            "58": "39f6a0e26823c27a7b12a3b1532ddadf89647d773cdbf4bef96f7ec133ab1919",
+            "59": "26e43c46cdffc57804ff66b304b05c7bedfa4d11b930277ad8f8f77d5cec367c",
+            "60": "753f8f384f3fa627edac362b503758c0de265cdbfda27c4b151d87d1adddb235",
+            "61": "484e8deb53c13a6e6a7ec1402dca33d4ac29d91531ca54b4cdbc2c2f2118d88f",
+            "62": "53c217ca58019c29493418f28e731a8c5f65911fa9969c8bee6cb123c3ac9598",
+            "63": "2040ae8cdc490aabf0cc86030a91c6267d66b13354cb180a22945a5f17403a53",
+            "64": "9a81cb917952c6f780414edf23158fa22836828ce7acf0499d2b8eeecd71a71d",
+            "65": "5c1e116642db0054691f197529769a85c9e1892154e3af52558bd2bd0b1d2bab",
+            "66": "e44e727c87de2d0ed00c0d461100fd8f36f62c396091454dff2eb4a9817964b2",
+            "67": "10dafc349521016fe6bf8af61eaaf89490e9403dc8dc17304c17d20ba3aeac0c",
+            "68": "a1cf97250ba1c2badefa60d1116b9b74b85fde5f18b882a87ca928868c1b2c54",
+            "69": "cafa763d2ce67a35129aa490c3e06a4c648bfdf7e443ad6a7bdeec4cc7202c10",
+            "70": "6b3ecf4b9a45cfa2a221123d7fa50bbaeb32a7e986b35e64607d419f7a07ab4e",
+            "71": "be7679ee02a217b80398f78386b59ada793351bdcf2708598c4b3e472be0857b",
+            "72": "f27b2bd45128068a87ffac9663fa9b22324b166160bf9888c5b83917ee0f35dc",
+            "73": "8c7b8983c84fb00bae30134afb96ab5cb08ce2f76226d7dd262163ba07ac27b5",
+            "74": "170307510de1191c67bfced5a992c3f85648a2ada7a50eb8000c3f8bc7bad98a",
+            "75": "97c73d3018b94c8a90fa8a2b2fbf62ed226c01633f35292cf97184162030b8bc",
+            "76": "1fc88f6765ea124e406dc83b9bee6ec937e64a290247abaddf07badfdc9fb25e",
+            "77": "4188a16e3cdceab5a4ff17177a411cf08f3afa84bfb75569f414f4a895b94026",
+            "78": "e78b19da929a6ecf8af1a1b60170fb1dd35f8d76ad31e358ad8d9827c1455717",
+            "79": "8585cee746801697672a8861b0fdb3956fb6a54c3b6bf4663049e5dee1d35dec",
+            "80": "08d6edf6835fd65323cdd4d7c67b7c43851b52a3b212d57a63b308bb2b76124d",
+            "81": "2baa406f8c784309a947fcc2a8f04d6f3bb1b6068b72ddba38f911369492b2f4",
+            "82": "5674f4fc783e6e762624376014f032522246f0b4638afef29be220f92778de7e",
+            "83": "b40774c09f54849e350b418ca96e3ab43880d645e2426a69692fa2827a80d158",
+            "84": "a73ab3c3b2716e00c1a09afd0209581179c9cbb56f915e1805e040625b429246",
+            "85": "2ccb8fbc78ca1ab5d1f50c45973a0356f706fd14436a02387d045ad677d843ce",
+            "86": "1fabf0cf041306c2bc931b0104d26c3453b745c0761ffed5995446fe8f33c4b9",
+            "87": "f170f28f83fdcf74728239d74e164702f5ae726f1556dba545e4c5358e4ce20f",
+            "88": "660dbe7e285d35b207319c8d165aa47898118b1872621c843e648423b5fcfa81",
+            "89": "f28354c27443a6a18ce4e12728d9eee2b67c34859b6eabc9e0ef2056dddfffc1",
+            "90": "dfd9512e38e1f5eeacd8d28c23d09d0afd704764961677a826b62488359d2a7b",
+            "91": "c34f3849acd047c6ba9661efaaafe015a7c4a934f4bd05d78294ab987b4a3ddb",
+            "92": "5f836df03701421f232de88dc5c9d03f68c371f6d850d8ab76a3f48490afc59b",
+            "93": "3d9403e7834215856ec420d7df49a3536eb64413ab517a750174563cb97b8d8f",
+            "94": "2289e32ec1a1f61b7d97b5abf3c16dc40d012749dbc38e96c8c480c787ea3b68",
+            "95": "5f26bcc96a599ffd71329faec0990c53662795489b65b42de352e35205886a57",
+            "96": "76f99096641fd44bb66323b805360853640592dcbaa5fb1bab393fbfb9cc0d0c",
+            "97": "f20682cbbdb804b873e6c124f8074c7d7b2daa1a0b15321269ef9e60086b9aaf",
+            "98": "f2e59b6330a0667fe4eb7036754c961b78ee96f5a50353eee407778632afaf4b",
+            "99": "1867656874b25bb02f1b10a8bba46f8071c52c552643bfb198f9a272fd702a2a",
+            "100": "7ed426748aeed746d467b2b3e2fdf377157cd9caddb446eae2a509a541ddac55",
+            "101": "d4a27b778b32cb4f66f0b9190d88d87cfe27d4e755f5fad34fb7ea8888009cac",
+            "102": "9dfe678cfde7efcbc139cec4e93feed5cd52dfb9c444952d834ded73236d638b",
+            "103": "3c9218db6692c141c3733574b19bee969622ef7f443988b54fe6f87b58331a39",
+            "104": "ec8cb27e1ec06c99cf5620d3d3cca5465ac78817ace9228f7ce1ca38670f8341",
+            "105": "76459f3b45cd955f20879670a4d5a9d4d8017592ab179bd19bc10dcc7a1f55d5",
+            "106": "739caf570d6b90b1a8aa5a5fdc1b06f6443fadfdf6af586c88b04dcc9af8a839",
+            "107": "0c9722e2f25d542b3d793cbee212863cfb900f8ce6abb7db01709970a9f963cc",
+            "108": "9e20f6f0224a2f1a486dfea2e63bec17b13f850de95ebf195f815b127ad37587",
+            "109": "03fce4009b94c90dc3fed5cbb80e4695d94b490476c3c4437830c1986fc25d23",
+            "110": "c8a67e8442e016ae90bf05aa323d29c12ec94beccd56791655d2fb49de709a6b",
+            "111": "c843aef5a474bfcb9d3d3ffd3745c5a41a34d4e368ea22e8e0883b6d273add3b",
+            "112": "8126128abdf8bee5ad826d605bf53f1e7406e0452330889bb495e5d67fa33253",
+            "113": "61501e7eb742ecdfca4f23e8bb4420676f86559215301b566164eae4de14bea7",
+            "114": "541e861dbca7aebb9d3ae4a9b7182d78f469087db08d63ef36d8204b59973709",
+            "115": "6ff84cd1e9710c7b7b877b48b0262463713be58e762a0e50625540e9dea30501",
+            "116": "bcaf15d011394963629c3e460e53f9ce48c042d4f7eb6f3ff9cae324cef18b7e",
+            "117": "719726b47101eb085cd4e09f81d1f723297e98d3ed99dc668986aa7d39d3c157",
+            "118": "8bd1fa6586d9e0d0e7336020a0c71ed3edae4d1cdf23212f3e7cd5fc0fe50752",
+            "119": "6a89b4e1c52b51f7b8cd2e0cc86576a91f5d96866bf624d1c90a6f8752649812",
+            "120": "8cffae0e2cea1f1431353fe7d38184d8db30fea305651255685f4ef74d1a8e89",
+            "121": "a12cee85a58b7da32f55c8a779865c73f040cb76c94944df502bec25fb5172d8",
+            "122": "49521c387b26aa622c21c9bd1cf6a18d5427d46b3375fdd75c48701ef3765d15",
+            "123": "79a68e29b5e8859e86312e4e137e7f1b826e7f4c39ab0e6d02bb7070b3827dd5",
+            "124": "e90ad1ad32879edd0fb0590d22f45e57ca9eea0c3d1949faa1946ee729fe1da6",
+            "125": "5682a307d8574dcc90463fa264b13dc2f38858fc506fa547a3e0a1dcd01cde47",
+            "126": "1942716e0c18c0d14942d17b898fa3f665da249ae5b194c42e43a5c17d042dd5",
+            "127": "9c5c8deda84cf6d7ef53a09b6aee2a7d8ffea3fac82e938c8aa20c4e5f7153c3",
+            "128": "589457897b59c155d8081d53678e88a9f777cfa2281419c3ad4705cfa9dc1580"
+          },
+          "block_count": 128
+        },
+        "terms": {
+          "summary": "Đã xử lý 3 đề xuất STm02_10; thêm các term đủ căn cứ và giữ nguyên glossary ngoài các dòng thêm.",
+          "at": "2026-11-05T12:18:50+00:00",
+          "sources": {
+            "EN": "a281e2c712a693b648b6040a1f13a052f4276b0dc4d78dd32c7d77b25a46fb64",
+            "JP": "3e2edb72d882e0c30700a2f884217404b41d5aa3a9c40eecfb8dbbeaccd46ecb",
+            "CN": "b580a31443bb70cd3d925c3e957c3dde59bb4ce03b9f3f0115b2be764c1975e5"
+          },
+          "glossary": {
+            "sha256": "ae09119f8b10d24f9b9f85ddf107d87b4f6ca2adf20826c581cdd85b57c4b292",
+            "relevant": "a20c4f685b711a765dbba5e419ad2004ef6c7d7a9938f5c95afbf9a2b333f3a2",
+            "mapping": "c2b62b244c23bbbabc9084964ecaf0856b8da5b83fb7a6b85b6244f794783efe"
+          },
+          "merge_sha256": "496634120efb0290c40b01625ba935ebc82450607d9c21fd1ea92729b2bebae5",
+          "outcomes": [
+            {
+              "EN": "Monolith Meltdown",
+              "status": "added",
+              "target": "Biến cố Tháp sao"
+            },
+            {
+              "EN": "Lux Stealer",
+              "status": "added",
+              "target": "Kẻ trộm ánh sáng"
+            },
+            {
+              "EN": "Nocturn Eterna",
+              "status": "added",
+              "target": "Nocturn Eterna"
+            }
+          ]
+        },
+        "translate": {
+          "summary": "Đã rà lại đủ 128 khối STm02_10 với glossary mới. Nova được xác minh từ CN/JP tại khối95/99; EN dùng tính từ Novian và VI đã dùng đúng target Nova, nên giữ nguyên toàn bộ byte Merge và mọi hiệu đính. Đối chiếu nguồn, header với snapshot/capture, đủ VI, token theo EN và BOM/CRLF. Đã giữ các phát hiện còn phù hợp, làm mới cả hai HTML đúng hash hiện tại, coverage128/128, không unresolved, giữ nguyên các nhánh báo cáo khác.",
+          "at": "2026-11-05T14:56:02+00:00",
+          "sources": {
+            "EN": "a281e2c712a693b648b6040a1f13a052f4276b0dc4d78dd32c7d77b25a46fb64",
+            "JP": "3e2edb72d882e0c30700a2f884217404b41d5aa3a9c40eecfb8dbbeaccd46ecb",
+            "CN": "b580a31443bb70cd3d925c3e957c3dde59bb4ce03b9f3f0115b2be764c1975e5"
+          },
+          "glossary": {
+            "sha256": "f29ef6ac55b78e6f4b7f55022d0538afdb3e806c5386aa22e0bd154166fe6abb",
+            "relevant": "4105faef1b3f807d16f116d1b947ca76aa4405e7d0b4aaf3e61fde59b4b73abd",
+            "mapping": "c2b62b244c23bbbabc9084964ecaf0856b8da5b83fb7a6b85b6244f794783efe"
+          },
+          "merge_sha256": "877edb30eb6715a0377400241273c46e674179fd217dfac326bbee5d9d6b99f8",
+          "block_count": 128
+        },
+        "verify": {
+          "summary": "Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues.",
+          "at": "2026-11-05T14:57:28+00:00",
+          "sources": {
+            "EN": "a281e2c712a693b648b6040a1f13a052f4276b0dc4d78dd32c7d77b25a46fb64",
+            "JP": "3e2edb72d882e0c30700a2f884217404b41d5aa3a9c40eecfb8dbbeaccd46ecb",
+            "CN": "b580a31443bb70cd3d925c3e957c3dde59bb4ce03b9f3f0115b2be764c1975e5"
+          },
+          "glossary": {
+            "sha256": "f29ef6ac55b78e6f4b7f55022d0538afdb3e806c5386aa22e0bd154166fe6abb",
+            "relevant": "4105faef1b3f807d16f116d1b947ca76aa4405e7d0b4aaf3e61fde59b4b73abd",
+            "mapping": "c2b62b244c23bbbabc9084964ecaf0856b8da5b83fb7a6b85b6244f794783efe"
+          },
+          "merge_sha256": "877edb30eb6715a0377400241273c46e674179fd217dfac326bbee5d9d6b99f8",
+          "block_count": 128
+        }
+      },
+      "proposals": [
+        {
+          "EN": "Monolith Meltdown",
+          "JP": "異変",
+          "CN": "灾变",
+          "context": "Khái niệm được Iris định nghĩa: Stellaroid tăng quá nhiều trong Tháp sao, vượt phong ấn thang máy để tràn ra ngoài. EN/CN nêu tên ở75 và giải thích77; JP giải thích75 và nêu tên77. Đã đối chiếu cả cặp command. EN: too many Stellaroids build up inside a Monolith, they spill out. JP: 星ノ塔の中で星骸が増えすぎると、昇降機による封印を破って外へ出てくる. CN: 星塔里的星骸太多的时候，就会突破升降机跑到外面来. Cùng sự kiện tràn Stellaroid do quá đông, không chỉ dựa vào vị trí gần nhau; nguyên văn đủ hai command nằm trong evidence.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_EN.txt [STm02_10::command/75 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_EN.txt [STm02_10::command/77 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_JP.txt [STm02_10::command/75 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_JP.txt [STm02_10::command/77 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_CN.txt [STm02_10::command/75 SetTalk/param/2]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_CN.txt [STm02_10::command/77 SetTalk/param/2]",
+          "evidence": {
+            "EN": {
+              "75": "Experienced Trekkers call this a Monolith Meltdown.",
+              "77": "When too many Stellaroids build up inside a Monolith, they spill out."
+            },
+            "JP": {
+              "75": "他の巡遊者から聞いた話ですが……==RT==なんでも星ノ塔の中で星骸が増えすぎると、==RT==昇降機による封印を破って外へ出てくるとかで。",
+              "77": "そのような異常事態は『異変』と呼ばれています。"
+            },
+            "CN": {
+              "75": "我听有经验的旅人说过，这叫灾变。",
+              "77": "当星塔里的星骸太多的时候，就会突破升降机跑到外面来。"
+            }
+          }
+        },
+        {
+          "EN": "Lux Stealer",
+          "JP": "明かりを灯す者",
+          "CN": "窃光人",
+          "context": "Danh xưng Aeloria tự xưng; lặp lại trong UI NewCharIntro261/param2 và SetTalk268. JP mang nghĩa người thắp sáng, khác sắc thái kẻ trộm ánh sáng của EN/CN.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_EN.txt [STm02_10::command/247 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_JP.txt [STm02_10::command/247 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_CN.txt [STm02_10::command/247 SetTalk/param/2]"
+        },
+        {
+          "EN": "Nocturn Eterna",
+          "JP": "永夜",
+          "CN": "永夜",
+          "context": "Tên tổ chức của Aeloria, UI giới thiệu261/param2, được Iris nhắc lại268 và Aeloria xác nhận275: mục tiêu phá hủy Tháp sao.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_EN.txt [STm02_10::command/261 NewCharIntro/param/2]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_JP.txt [STm02_10::command/261 NewCharIntro/param/2]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_10/STm02_10_CN.txt [STm02_10::command/261 NewCharIntro/param/2]"
+        }
+      ],
+      "attempts": {
+        "translate": 1,
+        "verify": 1
+      },
+      "claim": null,
+      "history": [
+        {
+          "at": "2026-11-05T11:27:34+00:00",
+          "message": "Migrated to merge-first pipeline; artifacts and legacy evidence preserved"
+        },
+        {
+          "at": "2026-11-05T12:08:34+00:00",
+          "message": "merge: Đã merge story 128 khối, đủ ba nguồn hợp lệ; giữ 112 SetTalk, Intro, heading, NewCharIntro, choice và biến thể JP. Đã đọc lại BOM/CRLF và validate_payload đủ128 khối. Chưa dịch VI, chưa ghi HTML/glossary. Có3 đề xuất term."
+        },
+        {
+          "at": "2026-11-05T12:19:09+00:00",
+          "message": "terms: Đã xử lý 3 đề xuất STm02_10; thêm các term đủ căn cứ và giữ nguyên glossary ngoài các dòng thêm."
+        },
+        {
+          "at": "2026-11-05T14:33:11+00:00",
+          "message": "Interrupted claim recovered; re-read saved artifacts before retry"
+        },
+        {
+          "at": "2026-11-05T14:40:40+00:00",
+          "message": "translate: Đã dịch và đọc lại đủ 128 khối UI story STm02_10, gồm hai trường NewCharIntro Aeloria; bảo toàn CN/JP/EN, tên nguồn, ID0/ID1, dấu câu, token và biến thể JP. Đã sửa đúng người nghe câu Minova57, áp dụng Biến cố Tháp sao/Kẻ trộm ánh sáng/Nocturn Eterna, chúa công và sư phụ103. Cả hai HTML đã dry-run, lưu và đọc lại thành công với đúng hash Merge, coverage128/128, không unresolved. Không sửa glossary hoặc nguồn."
+        },
+        {
+          "at": "2026-11-05T14:41:49+00:00",
+          "message": "verify: Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues."
+        },
+        {
+          "at": "2026-11-05T14:48:15+00:00",
+          "message": "Relevant VI definitions changed; review translation with latest glossary"
+        },
+        {
+          "at": "2026-11-05T14:52:27+00:00",
+          "message": "Merge edited; preserve current VI and recheck reports"
+        },
+        {
+          "at": "2026-11-05T14:56:17+00:00",
+          "message": "translate: Đã rà lại đủ 128 khối STm02_10 với glossary mới. Nova được xác minh từ CN/JP tại khối95/99; EN dùng tính từ Novian và VI đã dùng đúng target Nova, nên giữ nguyên toàn bộ byte Merge và mọi hiệu đính. Đối chiếu nguồn, header với snapshot/capture, đủ VI, token theo EN và BOM/CRLF. Đã giữ các phát hiện còn phù hợp, làm mới cả hai HTML đúng hash hiện tại, coverage128/128, không unresolved, giữ nguyên các nhánh báo cáo khác."
+        },
+        {
+          "at": "2026-11-05T14:57:43+00:00",
+          "message": "verify: Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues."
+        }
+      ],
+      "legacy_checkpoints": {},
+      "ui_type": "story"
+    },
+    {
+      "id": "4ac0a6d475a6399b93a9",
+      "merge_path": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_Merge.txt",
+      "folder": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11",
+      "base": "STm02_11",
+      "sources": {
+        "EN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_EN.txt",
+        "JP": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_JP.txt",
+        "CN": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_CN.txt"
+      },
+      "status": "done",
+      "stage": "verify",
+      "checkpoints": {
+        "merge": {
+          "summary": "Đã merge story 168 khối từ ba nguồn hợp lệ; kiểm tra tập khóa, UI, tên, token, 10 biến thể JP, BOM/CRLF và validate_payload đủ mọi khối. Chưa dịch VI hoặc ghi glossary/HTML/state. Có 5 đề xuất term chờ parent sau barrier.",
+          "at": "2026-11-05T14:37:42+00:00",
+          "sources": {
+            "EN": "5ee455fa16a4bcbb097e6e2f48c7c2d625b8ac052f09ad0d8b7c111575ff7ebc",
+            "JP": "f555915e8be47a5c0565fd96bf90bcf62bb1f618521962e9875e2d34374f876b",
+            "CN": "426870fd045a54be180e578f7ad1ffae7d5f9c84aaf369165fdacf5d0e21f175"
+          },
+          "glossary": {
+            "sha256": "ae09119f8b10d24f9b9f85ddf107d87b4f6ca2adf20826c581cdd85b57c4b292",
+            "relevant": "96aeb97f4326883cd089834074ba06ae21ac807943fdba731b0bbe78393f9f81",
+            "mapping": "b5fd5fcb8591385d24079f7ac6c21056fb9c50cbc8751ccac8125209e4420d9c"
+          },
+          "merge_sha256": "307fe20a392b3788113e21148ae69448193fcbc39e322c08b9bd177c5fdd771e",
+          "layout": {
+            "1": "16f5bcd33db736c41043cd8271b086ac6e1e9cddfe8c19cc36c88312b83fadaf",
+            "2": "084686d763bcacd00a969ed37b245a2d56591a657eb2022f6271c1f2a6f5778e",
+            "3": "ecfad7ef1da77a7d3f054ad6c761bc07237bc2a5f060a6d651bde03d30b17427",
+            "4": "a1c22960467234149ffac9234ca35b5a72564f63e8040a2442c14ed3c93c0c34",
+            "5": "918d1046f1628c7f73d88ceb287e05695f718f01d60ce20b39ca4e5757608643",
+            "6": "6ff84cd1e9710c7b7b877b48b0262463713be58e762a0e50625540e9dea30501",
+            "7": "ee9df0b6a11b271f87720a5161ddfbbd6b3bd82b29c9b54c4bf7dcaa68a0dbc7",
+            "8": "f5ec2740323db4f8d1eb81143b7ef39fdabb9c6a288eb02728fc1970df22522f",
+            "9": "493afd8861ba5d975564e4937abbcd131ca43dde347ac408dbccc48b4f1ecaf0",
+            "10": "15a277c8e5f026b20a43176d59cd47afcc13466ecc84d770984510d489479a88",
+            "11": "17f18b739c383e36af9e939b10a54a813d62f88041dac924eadfeedb188952ba",
+            "12": "a9e8b0399b0ee386f4cbb35681ccc8aa0f1e04b997e8494823e67652c3d34b74",
+            "13": "07e2af2bdfb9020e0b4623e623a304400fb1d5eed934a59275a5226afc27576f",
+            "14": "7288528af2967572943285fd8375dcfa6987ecc6469d0fe2302f7066046b3787",
+            "15": "8bc170a3f24c9a732ac72a1065e0507be28233648b2403560d2e7a12979fc4cb",
+            "16": "65fb6296372f6d9e15251a7ac5716c107296c3206c10ad03fa0c73c4472afa2a",
+            "17": "7f58a393f63635c0df3eca08386153e167bbb32611984defacb9682ec5bf3c8d",
+            "18": "9c926f138b5964799a2de0bba8dc82413030f658253ef07959229b6fd8b0178b",
+            "19": "64cf437f3c64e077112191bb5f9ffd4107e813054e1d9b35512302cfa538919e",
+            "20": "68628e720499f7fbb7ce36f9ee9c52d33fa42e503631ed35e1a7b095060ade9d",
+            "21": "ae8e83a054cde162ae2dc3c0768856b5603d42e4b1c9de1cee0b4a2b5de1a7dd",
+            "22": "fb31c7a53b9f409137ca5220d2ba3d37f6ba259b754a5800b30512ae97a7d32c",
+            "23": "61c1fad6beda19a1dc29ead9ab7226baad6a70bb3a54cf4b7e8468ec29cc4516",
+            "24": "0106095f61af0c34e5cb4111d4fdd714340506f3c914b32d1c4701725ff7c121",
+            "25": "d55a94d3c1435d1e7efe96e36ecfec5612bb7e9aa7c9e186403f9ec6b3827407",
+            "26": "68fe18d93bb79d898f2bf0fac3e77f89c3709a8f0a7b31faf049a1e4ca3dbaf2",
+            "27": "4a21e82c437d437a258549efd32681940f6bdac11c79c580b393c2cad1fca19b",
+            "28": "857087478915c1e4cdde7f4faef6f7a9dd222a8c65f711760e1fda53c6bb822c",
+            "29": "46fc8ba7236c43f216afbd422a8123238af22262b0c77fe2384c6781dd4edc30",
+            "30": "6158a5afbcb3a65f9ac4e9bb0a1d8ee1e77b62d2d0c8173c6427e5cf7cad9293",
+            "31": "113bd791d3de1faae9004a5fca1736a0a6662874aa23c41828c7ed146340bb85",
+            "32": "087ea577dff185d8eb63f928402ec1439909034c686804032b79cb4b24049832",
+            "33": "df488fd3169cce21b143d8d677c4d0a708baecce39329581c0f8f75bbd1306d5",
+            "34": "d7842718300a90e7aefea7adbb05dbb779b17aa1d5bf6f537589b5a7bec03bdb",
+            "35": "bc33318886b4b8843b7b147d1133e4b47e2fb2910874003a26c96f64de02a767",
+            "36": "9a4c12757c235df4392bd90d8d40c3af3512ba4223e8bb02f9147723c0648748",
+            "37": "56993610d33baf86026c120a27e7bb62920ffc5b9cf472b87fbc2cc7969a10e8",
+            "38": "fde23d53df27f91d60d730d9278849fd2316166316c272dbff2280ddd99487e6",
+            "39": "f01f243e21ec811e698eb270865de8f2efac8237e7a92ed138daff4b10b6cdc1",
+            "40": "629654c5635c3d3e4556464ec67131073eaf1594c826d5b58b160447bfe322d5",
+            "41": "def3fa8b58f93457b1e06c88a251cc6a2b6ae9993266d647692feb38adf0e771",
+            "42": "a25a53fe066fb9924db4bb5ab08c2982cb36de5aa10c870089d43c856addaf78",
+            "43": "ac5e77fa7f93bbbb22393f7b2c70b8286c9c90b82740397e212e0475476da4be",
+            "44": "6657bf6b7cbb490c12909187e27f0515dd79bfb40091073b11884d9dddb2ba4b",
+            "45": "b2db74635a8b20f20993c50316fcb90aebef11192b500aace0892d592d15c67c",
+            "46": "8836fc73e299c729ab0bd3c451ed56771ba182d9811dfda98a6578f6fbd6aa34",
+            "47": "ddebebdda7de5c85e317cd0e7edf0ee792bb484d0176e27d6ffff1055905fbda",
+            "48": "8795bf4e7c2c00d630d3e409fe387b8aab54a1471ca7322429ebbe10f448ff49",
+            "49": "db42ac65392e19c2351f5b00c38c6ef6d5640d04fd493cd92ea16ca444d25fe6",
+            "50": "982ea6125d0b9d1e6cdf6d228e74d473e0bc22df25434e4a4554269e1ad9b7fa",
+            "51": "22f9cb8d3266c54748a9b8c14bf94d9ab961715152098411b58ff11a2fbdec3a",
+            "52": "9c40106701cf175a5dc6ebf53af949d50e8578a58de77bfa2805527a27e40fa5",
+            "53": "e0b36663eb544110522eca9ba599307da01f9f0e770cb8fd9410bb48855aa3aa",
+            "54": "c35df78b0a663343963256cd5d1165034a5971653e7c6987959bba72d8eeaeb8",
+            "55": "e3822a0c64983ef271252dc1f767bf79358fc47c798839b3d1b1b1b12d396438",
+            "56": "25ac2a195eb1b9d951b212a68ffe5f81358681286485efc83e879d7344badb6e",
+            "57": "fe11bf9919837616d72a3a5068aea08fc21cf37d4e44c0a07fc246fdff60a4ba",
+            "58": "25e73f934cb4b21e88b0756622958a984e4da4a59b242bfadf090d86521df68d",
+            "59": "4fa9e51b357af0c196eee574f67dd542fd9577517fa049307405132df45f7e72",
+            "60": "bad1c046b48c767aed14d5bb5ed62725cbb69d79bccb4efc1f1b58eb2a53532a",
+            "61": "2af62cc756efcc9b8245103c62224be7b7a7cbffbd74e0b8f269220387fcd7bf",
+            "62": "58e8ca2c3ece9260706a1ce556c96141acb0565331aa8efd93f616b3395845d6",
+            "63": "44747ba99a25798a6a912655e8931258eaf4cebd8f486553f725cdbe3195f191",
+            "64": "6701ebc11107416b10ca09772d58c812a0daf17b44a5cb87ca8718ad91ed05b4",
+            "65": "3e51885d2fcc79bd1d1b49c2ab0c0016d12de289fe323ae389dc93fa44b30e83",
+            "66": "8cbea8a57d4897e015c89b86ead14183052b1a1c4ecbd8bb9bb76252d1787f2c",
+            "67": "bb7f1d5e40b0b373e3116c93473389c77a832e037b6f21353be61cfafcac0814",
+            "68": "e7151146c9d58d6339c9b5c1e981fa9e93b0770d09232c5260150e0f42fd60cd",
+            "69": "6efa357f908546bf5fc9174f2e4fe5f2f4c9b0ebe1a3b363cb5cf7b373371962",
+            "70": "354b58e412141f439e9e58ee45b75f2880661267b69ef1568d53b284aa41e108",
+            "71": "25dacff85eef60ee1d32b1017dd3199938609d803a13770410177e08f63fa659",
+            "72": "2ec365c92fa8115d95bf71993cc235e35a10c0a6c9152d06caab0e19448e2580",
+            "73": "2a41fe6b1d65d3ebb6783cdc71772875bb49d1cd96c49f7753981b30e429d9c0",
+            "74": "0df8ef64cf7bafd5489dcece4caa35a5678fb6e8de607c5ac0de9f3402d65df4",
+            "75": "de2387deeacf7bf93a4c0358d80f94fd5e43c6cc08ad47d58fa1c3ee75b0571e",
+            "76": "a724a03e75d85606d78effea5c5edc7cf08ededde4c6a4e568e06abdd4ea7f15",
+            "77": "8c132208df1f97986000458e0e32c3ec0b3eeb27a1961104a2f84d3ec15af196",
+            "78": "6ff84cd1e9710c7b7b877b48b0262463713be58e762a0e50625540e9dea30501",
+            "79": "ee9df0b6a11b271f87720a5161ddfbbd6b3bd82b29c9b54c4bf7dcaa68a0dbc7",
+            "80": "a7325c847889848bc329ee5de51cfc2a64202b17fefa4cc810a0d73fb9535cd7",
+            "81": "08e6478db0e6ec17519a32da85a29071f6a824419446210389cd9e4d1c225ddb",
+            "82": "70f6da9f659fafbd3e489b399d8e85ef4ebc2b92b6ea0c86efd3d93b757d50c7",
+            "83": "c89be37729f466b9dd72faa85dde54412b6355ba06849eba63a24dc2ae22f78a",
+            "84": "14531e894d21ce5ed3d161ada27f2e70cc54c611bd4a5d0e2fc4165b726f8c37",
+            "85": "2c8682ae0d03ede46c0fc7e32f85e87644c8dd51edd3b735410ae99cc0d6218a",
+            "86": "3bd6ef67fc61ab22d98a54572e698a2b029c1e558c3c0f7749cc09fa7d7cc47b",
+            "87": "5ce7e486d9b4ff0769a03c3947ff55414b17f3c7aaaeadecead6b38448e65769",
+            "88": "806fe8b3e6dca9b73f9444854dd15f9aab33d2eccf762072ddb7107cb9385f07",
+            "89": "6b35c443035ca70919deb9dbb6d44714dbed9478648c409d00724397242b0aba",
+            "90": "933b72eb189de1720638a4281c1052572f60580524200db1fd73cf0ca6ed198f",
+            "91": "7bd1784e37d4f7e33e5725601249d9cd687df2143ab3cf0fab0b9fc9e7b4ae6c",
+            "92": "4ff2e9d11b721bc7d038203de62aac57c15226e7cc4b2cf555f76a2e2036f661",
+            "93": "2bbe1419d7cdcd3239e101f87973f88e204295e5b791fd79828a491933d47e89",
+            "94": "deb163d280fb8e425db7429d4995192113fba9dccacc1bdfd9550d09e9ef254f",
+            "95": "9aafe806597b57af8f6da40703392ec71a7617d933ff970dd7f9f1511d6dc906",
+            "96": "eeed753c1791cc31f8249733a4e6c3b07d839a6d88f2489e1522e366a37bbb11",
+            "97": "f61bb48d201d5da9e415515ef973f78690457357c7572ef044477f78d16b1798",
+            "98": "586a4361ce62341835b12a555d662383ed499676728f0be18af7926983f74d7b",
+            "99": "6625fd4b606c06a159fc81a7b38d7e61845d349f448d3ad3dc9be188a6162055",
+            "100": "08e4781c69f870aa852fe5e62cc729fbf3332df62f29a0e3e18f64a256b5edf4",
+            "101": "20e4639e6134f35b824d7d360adce194327a3e212aa833d14414842b507cbf7c",
+            "102": "e094724825a15663c7c4136d8d0798ade14fb4a7b1d385049b3532333ca0650d",
+            "103": "943e2d117960f001503f0d47e19c056f1cffe016b86a2876f5fdd36e55ac83fe",
+            "104": "2dfe46102923af0d80c2b4d695fa09cae4e1e866f88d06c3fc42e0de3ad9ca86",
+            "105": "d45646985750bdaa104dfb494574109b3ee52106b497bc3edcbd0a4f54652cbf",
+            "106": "1955782fc8f144a253fed1f1fb6a20020feee531d8939611891c0e5dca3cf6a0",
+            "107": "dd95da837d87ac85f2039d845f0353f6708157ca5997f0b6229f4516c36384e9",
+            "108": "fbeab0682903b60cdde3604475cba41b5a725be4da30c4784d274dd9a86c3d75",
+            "109": "43d6a0dc359bcbd819d5f088b0797b90d71a0fa669fe965759611980e7cfe1d9",
+            "110": "183273c5e983c1032d7e134ed22485be3d4f8e116635d7c025ceeb8bab832ffb",
+            "111": "05f985adecdc4705aad1ff670872113b4040cacbaf5960a83d4bf54d6776027a",
+            "112": "c2b2691f5a213202b03fc3cf0cdaecd39f19ddbf4d1e470206fbef453dbe3b21",
+            "113": "d332c673a6206771cd3714979db9080bf0c1e03d37debe89e7b149a600e3f926",
+            "114": "84dfd598ee29aca977602f3ea410b795a4e31e4beb0b0b065bc31d37cca485f7",
+            "115": "177ab2ba942f8a1d31ffc1fe3629fc90271861378df029e5649042894913ea70",
+            "116": "a1e97f5778ad18e7dbea470577e406927d0ef61193fa45bd70b1c0080bc81530",
+            "117": "1c50b615219949874eebe0e6986790440c146a50a81c812c7f2b2916399be022",
+            "118": "c27f790623acefc7750a2c2914e4e9ba33a1e40f84ae985286daf7339d12e40d",
+            "119": "d5a53afe79c51faa19087fa2f41a4ccee933fa2252edb61f576b246997f7d543",
+            "120": "c724ab7c38a2fa6eae9142d5c4857b6d1711522b63bfc23fd09b812003219b85",
+            "121": "be923b030e38821e33778cbbd09eee20bd1c4e593f64d9f7260f88850abd4359",
+            "122": "fc168297e2179c2aede69169a3f1b596b6979c15b52f2d67661dc726fb4c45d5",
+            "123": "479a4fe44bea0dfa9814d3b8f67dee6768d6d6b66214ed6aa2804bb9d541860c",
+            "124": "d5dd7a6e0b84b4c02f54c3b8ebb2be85951bf352d257282ffffddccc5b3717f3",
+            "125": "f300227f08691ffe4b7038d1bfa42d65abef278e51e1b4261abece7c4deb32c7",
+            "126": "52460d66310177b4a721114f38155753809eaaab1a60139d8ac1bf0a8f70172e",
+            "127": "cfa4b20d9a6fa832bcd0804c860afe23752b2c2190832e2c7eebb3ce3d15c486",
+            "128": "44def3a99fed774a6cdc43e1c93feea463bfbc2ecb994b1c647adfa09d12e180",
+            "129": "87cac988129f8de58b689815b7a72ca10b355b55924ac3282e3b77072950f3ba",
+            "130": "0bd4a4e94b86e780d6c26edd461922e5817195ba057da0e6e45f2ab9c779f2e8",
+            "131": "42d56a6be285b50c3707561f89064c304735c15b88cb60042833ff22c7f5da9c",
+            "132": "e325b4adf6b819070a4e8001b70f095e034a93e35ec0850635e748918e78d5a7",
+            "133": "dd8eec48dce7a2740879cc8e4de1405028ba6cafd31585a2a0eb24635bbd8dd0",
+            "134": "e1b04a01a7eee15db1f5f3a358d9199b1f40bb9041e0043d35819c82d057daee",
+            "135": "4840711fc8ea575aad27ea615773db8ea63e2be255c1fa03da29de851820b615",
+            "136": "42229b18a7cea3d337fbc563961426642ffa36e046b9a07c663ce867f5486c5b",
+            "137": "5a4125b7e7501999b7f968e3308b405128e115231e36da608630a02cdea19c69",
+            "138": "ec3c772138bcb9aeee6da6097e64c64a8884c5e32ca526b8f662991cdbcaad96",
+            "139": "c94de97084a9b422a699302911397358c19bb254e3a0d064cccccd0e588d5f51",
+            "140": "9c4ce9df01ee35e6929eaee8005cbbf8d52d98d1ba1e9999c409df56482758d9",
+            "141": "5cf2985414d9b56ffbaba6a38be022a91661fb8a2cdcea09c58227fb001ff516",
+            "142": "5964c436afb202a866d894217cdc02d86a6f7127a9b0fe16d8171c7a8f2402f7",
+            "143": "6361d965c1dc5be57c898ed36069db9dcc8655a358f6225d1b5b6791a9f28ffe",
+            "144": "a642b1c95a8b1d40f7732254ecbfa675388b711cd432f28980b6ae779a873155",
+            "145": "5485641c9544bd944f93af6f075bddd10341fe27c0e07efbbeac9abda83f9552",
+            "146": "6edd4f738e92eadef3502464c27e69e53e9545dea567ec6ab3aac123f8c456a9",
+            "147": "c04c92e668e799f938c9a409f8d4df7be1dd6ce870edb1fedd01a636c76c993c",
+            "148": "0cf18c67ead238015f4f19cdfbe226d12195376a6cc302afbf3e82adbab4e7e9",
+            "149": "e811a9bceae8fe42c221b64cbe49368f2c5e75c33f7f86671135c177982b3d03",
+            "150": "1a45be176713790e26ad50a5d46c2fdf3ec483b5386eca11ee61952098ddca89",
+            "151": "0728ce8ba29c7aae026a1cb9b7ae1434d7370bc7051eb957d24d29e58ad143ef",
+            "152": "eb2cece5cd9fc0bc1189a43f2beb3ab0666bbed9d3e4f5c58ff4e3593556d98b",
+            "153": "c97b434b6bea3341424d1710dacaf63b6ac26cb7a6681aacd2835632e4d33f0d",
+            "154": "1eb38b5e76b09ee4ff327f9f0c1d9b27ee04431f372af3ee70cdc1a11f7ad29c",
+            "155": "256db0c8e18175ed5568476ce928bd61f056bfab55575390c709c7a2b6d73a03",
+            "156": "280ecf296812cdbb02c207197e0b630f0fd2b188a6cfb1ff7ddce7a78b7a23fd",
+            "157": "3498dea049baf91f658cf6fe9756c24ab8bc90d0324e1a7041aac211e08d40f2",
+            "158": "50529aa46c1a64f3f2697e9f16d9e75873d2f04ff044a62016091b6ba995267a",
+            "159": "4cc1846d1e4a948256c32131e9067a7c1cd80a289246e37038172701a06927f4",
+            "160": "bb00d5f47da2715ad73fa428fb816f9ca2333ea188519c138b9aa51fd60ca653",
+            "161": "419f2d65015e6f95fc0380b8ba3535533d222035f5b68bbc6aacfa6f32c06fe8",
+            "162": "faaa66a9d9e91c2ce08586c3ef2f5ea33083032054533798232b1802d5ffbc1e",
+            "163": "8b90e4de77336fc112d4bbb6dea5ffef4869ba528dca8333132c392a3e16319e",
+            "164": "8f734215d01663bd78c537a13f676bb9b87fc5b5eea4d8f70979212d30e5f069",
+            "165": "1f5df9382bb1ce87709a1af25d55204aead2be1e46e648427d008c48b3081048",
+            "166": "6f397723b52084aaac0c7fa4f0bab92c1a67fabe8de611884e18e4bad5abaf67",
+            "167": "8d7b98e8d55a7a21e407a8f19a1b6b6aa9329c995955f0fbe448f086cde86cac",
+            "168": "6570ce023a04c1589f203cc81e211f9c0654f5a209f6c4c0c37b3aa95f88d0bd"
+          },
+          "block_count": 168
+        },
+        "terms": {
+          "summary": "Đã xử lý 5 đề xuất STm02_11; thêm 5 term đủ căn cứ, giữ nguyên các ánh xạ hiện có.",
+          "at": "2026-11-05T14:47:25+00:00",
+          "sources": {
+            "EN": "5ee455fa16a4bcbb097e6e2f48c7c2d625b8ac052f09ad0d8b7c111575ff7ebc",
+            "JP": "f555915e8be47a5c0565fd96bf90bcf62bb1f618521962e9875e2d34374f876b",
+            "CN": "426870fd045a54be180e578f7ad1ffae7d5f9c84aaf369165fdacf5d0e21f175"
+          },
+          "glossary": {
+            "sha256": "f29ef6ac55b78e6f4b7f55022d0538afdb3e806c5386aa22e0bd154166fe6abb",
+            "relevant": "dfdef7b2fba350dced402f1212e8ff959dba582b409ed893848e366cc3cd3d2b",
+            "mapping": "b5fd5fcb8591385d24079f7ac6c21056fb9c50cbc8751ccac8125209e4420d9c"
+          },
+          "merge_sha256": "307fe20a392b3788113e21148ae69448193fcbc39e322c08b9bd177c5fdd771e",
+          "outcomes": [
+            {
+              "EN": "Philae",
+              "status": "added",
+              "target": "Philae"
+            },
+            {
+              "EN": "sageo",
+              "status": "added",
+              "target": "dây buộc vỏ kiếm",
+              "reason": "Dây buộc vỏ kiếm vào đai; JP 下緒 và CN 下绪. Không phải dây quấn cán kiếm."
+            },
+            {
+              "EN": "Knight's Code",
+              "status": "added",
+              "target": "Quy tắc Kỵ sĩ"
+            },
+            {
+              "EN": "Well of Worlds Tyrant Development System",
+              "status": "added",
+              "target": "Hệ thống Bồi dưỡng Ma vương Giếng Chư Giới",
+              "reason": "EN/JP/CN được lưu dưới dạng từ vựng; trường CN trong glossary chuẩn hóa phần đọc 魔王, không giữ markup ruby. Receipt merge vẫn giữ bằng chứng CN gốc với <r=mowang></r>."
+            },
+            {
+              "EN": "Nova",
+              "status": "added",
+              "target": "Nova",
+              "reason": "JP ノヴァ xác nhận trực tiếp tại STm02_10 command/854 và command/807; CN 诺瓦."
+            }
+          ]
+        },
+        "translate": {
+          "summary": "Đã dịch, lưu và đọc lại đủ 168 khối UI story STm02_11, gồm 4 trường NewCharIntro; giữ nguyên CN/JP/EN, 10 biến thể JP, ba tên nguồn, header ID0, tên Young Squire/Girl in Blue/??? và toàn bộ token/thẻ kể cả banner kết. Áp dụng glossary mới cho Philae, dây buộc vỏ kiếm, Quy tắc Kỵ sĩ, hệ thống Giếng Chư Giới và Nova. Hai HTML đã dry-run, lưu và đọc lại đúng hash Merge, coverage168/168, không unresolved; giữ nguyên mọi nhánh khác. Parent đã đọc và chấp nhận toàn168 EN/VI, không yêu cầu sửa thêm.",
+          "at": "2026-11-05T15:08:48+00:00",
+          "sources": {
+            "EN": "5ee455fa16a4bcbb097e6e2f48c7c2d625b8ac052f09ad0d8b7c111575ff7ebc",
+            "JP": "f555915e8be47a5c0565fd96bf90bcf62bb1f618521962e9875e2d34374f876b",
+            "CN": "426870fd045a54be180e578f7ad1ffae7d5f9c84aaf369165fdacf5d0e21f175"
+          },
+          "glossary": {
+            "sha256": "f29ef6ac55b78e6f4b7f55022d0538afdb3e806c5386aa22e0bd154166fe6abb",
+            "relevant": "dfdef7b2fba350dced402f1212e8ff959dba582b409ed893848e366cc3cd3d2b",
+            "mapping": "b5fd5fcb8591385d24079f7ac6c21056fb9c50cbc8751ccac8125209e4420d9c"
+          },
+          "merge_sha256": "b245e19cafeab5de581032bb53868de0ee96d40d812e51daa5e612399c5a39bc",
+          "block_count": 168
+        },
+        "verify": {
+          "summary": "Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues.",
+          "at": "2026-11-05T15:10:10+00:00",
+          "sources": {
+            "EN": "5ee455fa16a4bcbb097e6e2f48c7c2d625b8ac052f09ad0d8b7c111575ff7ebc",
+            "JP": "f555915e8be47a5c0565fd96bf90bcf62bb1f618521962e9875e2d34374f876b",
+            "CN": "426870fd045a54be180e578f7ad1ffae7d5f9c84aaf369165fdacf5d0e21f175"
+          },
+          "glossary": {
+            "sha256": "f29ef6ac55b78e6f4b7f55022d0538afdb3e806c5386aa22e0bd154166fe6abb",
+            "relevant": "dfdef7b2fba350dced402f1212e8ff959dba582b409ed893848e366cc3cd3d2b",
+            "mapping": "b5fd5fcb8591385d24079f7ac6c21056fb9c50cbc8751ccac8125209e4420d9c"
+          },
+          "merge_sha256": "b245e19cafeab5de581032bb53868de0ee96d40d812e51daa5e612399c5a39bc",
+          "block_count": 168
+        }
+      },
+      "proposals": [
+        {
+          "EN": "Philae",
+          "JP": "フィーリエ",
+          "CN": "菲莱",
+          "context": "Tên thành phố Feagin lặp lại ở command46; command53 xác nhận là thành phố nổi tiếng sản xuất lương thực. Bastelina giới thiệu người môi giới ở đó tại306;815 xác nhận đây là đích đến mới. Chưa có trong bất kỳ cột glossary.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_EN.txt [STm02_11::command/46 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_JP.txt [STm02_11::command/46 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_CN.txt [STm02_11::command/46 SetTalk/param/2]"
+        },
+        {
+          "EN": "sageo",
+          "JP": "下緒",
+          "CN": "下绪",
+          "context": "Chitose trao vật này cho Sylar, nói đó là biểu tượng mối gắn bó giữa thanh kiếm và người cầm. JP có ruby <r=さげお>下緒</r>; chỉ đề xuất phần từ vựng không gồm thẻ. Term-controller cần chọn cách gọi tự nhiên cho dây buộc vỏ kiếm, không nâng lời thoại thành lời thề.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_EN.txt [STm02_11::command/201 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_JP.txt [STm02_11::command/201 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_CN.txt [STm02_11::command/201 SetTalk/param/2]"
+        },
+        {
+          "EN": "Knight's Code",
+          "JP": "騎士の精神",
+          "CN": "骑士准则",
+          "context": "Tilia nói Vệ binh đế quốc phải khắc ghi lại lòng chính nghĩa và quy tắc này. EN/CN gọi Code/准则; JP gọi tinh thần kỵ sĩ, cần giữ khác biệt thuật ngữ nguồn.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_EN.txt [STm02_11::command/87 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_JP.txt [STm02_11::command/87 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_CN.txt [STm02_11::command/87 SetTalk/param/2]"
+        },
+        {
+          "EN": "Well of Worlds Tyrant Development System",
+          "JP": "パラレル次元魔王育成システム",
+          "CN": "诸界之井魔<r=mowang></r>王养成系统",
+          "context": "Tên hệ thống được giọng ??? chào mừng người chơi trở lại, rồi tự giới thiệu là Vita ở887. EN/CN có Well of Worlds/诸界之井; JP dùng chiều không gian song song. Giữ bằng chứng CN kèm ruby nguyên gốc; không đồng nhất máy móc Tyrant Growth đã có với tên hệ thống riêng.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_EN.txt [STm02_11::command/885 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_JP.txt [STm02_11::command/885 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_CN.txt [STm02_11::command/885 SetTalk/param/2]"
+        },
+        {
+          "EN": "Nova",
+          "JP": "",
+          "CN": "诺瓦",
+          "context": "Chitose hứa trở thành thanh kiếm sắc nhất toàn Nova; CN gọi 诺瓦. JP chỉ nói 大陸 (đại lục), không cung cấp tên riêng nên để trống JP. Novians và Chronicles of New Nova đã có, nhưng chưa có Nova như địa danh độc lập; đây là bằng chứng EN trực tiếp, không suy từ Novian.",
+          "source_ref": "StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_EN.txt [STm02_11::command/187 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_JP.txt [STm02_11::command/187 SetTalk/param/7]; StellaSora_TaiNguyen_EN_JP_CN_Text_20261101_r03/01_CotTruyen/01_Chinh/Chuong_STm02/STm02_11/STm02_11_CN.txt [STm02_11::command/187 SetTalk/param/2]"
+        }
+      ],
+      "attempts": {
+        "merge": 2,
+        "terms": 1,
+        "translate": 1,
+        "verify": 1
+      },
+      "claim": null,
+      "history": [
+        {
+          "at": "2026-11-05T11:27:34+00:00",
+          "message": "Migrated to merge-first pipeline; artifacts and legacy evidence preserved"
+        },
+        {
+          "at": "2026-11-05T14:33:11+00:00",
+          "message": "Interrupted claim recovered; re-read saved artifacts before retry"
+        },
+        {
+          "at": "2026-11-05T14:37:49+00:00",
+          "message": "merge: Đã merge story 168 khối từ ba nguồn hợp lệ; kiểm tra tập khóa, UI, tên, token, 10 biến thể JP, BOM/CRLF và validate_payload đủ mọi khối. Chưa dịch VI hoặc ghi glossary/HTML/state. Có 5 đề xuất term chờ parent sau barrier."
+        },
+        {
+          "at": "2026-11-05T14:47:44+00:00",
+          "message": "terms: Đã xử lý 5 đề xuất STm02_11; thêm 5 term đủ căn cứ, giữ nguyên các ánh xạ hiện có."
+        },
+        {
+          "at": "2026-11-05T15:09:00+00:00",
+          "message": "translate: Đã dịch, lưu và đọc lại đủ 168 khối UI story STm02_11, gồm 4 trường NewCharIntro; giữ nguyên CN/JP/EN, 10 biến thể JP, ba tên nguồn, header ID0, tên Young Squire/Girl in Blue/??? và toàn bộ token/thẻ kể cả banner kết. Áp dụng glossary mới cho Philae, dây buộc vỏ kiếm, Quy tắc Kỵ sĩ, hệ thống Giếng Chư Giới và Nova. Hai HTML đã dry-run, lưu và đọc lại đúng hash Merge, coverage168/168, không unresolved; giữ nguyên mọi nhánh khác. Parent đã đọc và chấp nhận toàn168 EN/VI, không yêu cầu sửa thêm."
+        },
+        {
+          "at": "2026-11-05T15:10:23+00:00",
+          "message": "verify: Parent read all VI and compared EN, checked source speaker headers, glossary, tags/placeholders, numbering, BOM/CRLF, source layout and full paired-report coverage; no unresolved issues."
+        }
+      ],
+      "legacy_checkpoints": {},
+      "ui_type": "story"
+    }
+  ]
+}

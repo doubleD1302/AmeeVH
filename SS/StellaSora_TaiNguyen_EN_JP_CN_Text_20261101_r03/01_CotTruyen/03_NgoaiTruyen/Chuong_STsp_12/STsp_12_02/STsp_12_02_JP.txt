@@ -1,0 +1,9811 @@
+STsp_12_02 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 3269
+
+[STsp_12_02::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STsp_12_02::command/0 SetIntro/param/1]
+第2話
+
+[STsp_12_02::command/0 SetIntro/param/2]
+魂のカタチ
+
+[STsp_12_02::command/0 SetIntro/param/3]
+共に依頼を進めるうちに一行はグレイへの印象を改めていく。そんな中、血のついたケータイを見つける一行。突の着信に応じれば、通話口からは巡遊者のSOSが聞こえるのだった。
+
+[STsp_12_02::command/1 SetTrans/param/2]
+0
+
+[STsp_12_02::command/1 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/1 SetTrans/param/8]
+default
+
+[STsp_12_02::command/2 SetAudio/param/1]
+se_079
+
+[STsp_12_02::command/3 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/3 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/4 SetBg/param/1]
+BG_Black
+
+[STsp_12_02::command/4 SetBg/param/2]
+0
+
+[STsp_12_02::command/4 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/4 SetBg/param/6]
+default
+
+[STsp_12_02::command/5 SetTrans/param/2]
+0
+
+[STsp_12_02::command/5 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/5 SetTrans/param/8]
+default
+
+[STsp_12_02::command/6 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STsp_12_02::command/6 SetBGM/param/3]
+m8
+
+[STsp_12_02::command/6 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/7 SetFx/param/1]
+fx_avg_magic_ice
+
+[STsp_12_02::command/8 SetChar/param/2]
+none
+
+[STsp_12_02::command/8 SetChar/param/3]
+avg2_954
+
+[STsp_12_02::command/8 SetChar/param/4]
+a
+
+[STsp_12_02::command/8 SetChar/param/5]
+002
+
+[STsp_12_02::command/8 SetChar/param/6]
+none
+
+[STsp_12_02::command/10 SetAudio/param/1]
+se_336
+
+[STsp_12_02::command/11 SetFx/param/1]
+fx_avg_frezon_full_loop
+
+[STsp_12_02::command/12 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/12 SetBg/param/2]
+0
+
+[STsp_12_02::command/12 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/12 SetBg/param/6]
+fade
+
+[STsp_12_02::command/13 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/13 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/13 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/13 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/13 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/13 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/15 SetAudio/param/1]
+se_063
+
+[STsp_12_02::command/16 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STsp_12_02::command/16 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/16 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/17 SetFx/param/1]
+fx_avg_frezon_full_loop
+
+[STsp_12_02::command/18 SetChar/param/2]
+none
+
+[STsp_12_02::command/18 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/18 SetChar/param/4]
+a
+
+[STsp_12_02::command/18 SetChar/param/5]
+017
+
+[STsp_12_02::command/18 SetChar/param/6]
+none
+
+[STsp_12_02::command/20 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[STsp_12_02::command/20 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/20 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/21 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/21 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/21 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/21 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/21 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/21 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/22 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/22 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/22 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STsp_12_02::command/22 CtrlChar/param/11]
+jushou
+
+[STsp_12_02::command/22 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/22 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/23 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/23 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/23 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/23 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/23 SetTalk/param/7]
+これで通常の星骸が50体っ！
+
+[STsp_12_02::command/23 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/25 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/25 SetBg/param/2]
+0
+
+[STsp_12_02::command/25 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/25 SetBg/param/6]
+default
+
+[STsp_12_02::command/26 SetChar/param/2]
+none
+
+[STsp_12_02::command/26 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/26 SetChar/param/4]
+a
+
+[STsp_12_02::command/26 SetChar/param/5]
+006
+
+[STsp_12_02::command/26 SetChar/param/6]
+none
+
+[STsp_12_02::command/27 SetAudio/param/1]
+se_048
+
+[STsp_12_02::command/28 SetStage/param/2]
+OutSine
+
+[STsp_12_02::command/29 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/29 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/29 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/29 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/29 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/29 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/31 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/31 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/31 CtrlChar/param/2]
+005
+
+[STsp_12_02::command/31 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_12_02::command/31 CtrlChar/param/11]
+huanxin
+
+[STsp_12_02::command/31 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/31 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/32 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/32 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/32 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/32 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/32 SetTalk/param/7]
+ナイス、アヤメ！こっちは任せて！
+
+[STsp_12_02::command/32 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/34 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/34 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/34 CtrlChar/param/2]
+010
+
+[STsp_12_02::command/34 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/34 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/34 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/34 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/35 SetTrans/param/2]
+0
+
+[STsp_12_02::command/35 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/35 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/36 SetStage/param/2]
+Linear
+
+[STsp_12_02::command/37 SetBg/param/1]
+BG_Black
+
+[STsp_12_02::command/37 SetBg/param/2]
+0
+
+[STsp_12_02::command/37 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/37 SetBg/param/6]
+default
+
+[STsp_12_02::command/38 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[STsp_12_02::command/38 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/38 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/39 SetAudio/param/1]
+se_331
+
+[STsp_12_02::command/40 SetFx/param/1]
+fx_avg_wind_blade
+
+[STsp_12_02::command/42 SetTrans/param/2]
+0
+
+[STsp_12_02::command/42 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/42 SetTrans/param/8]
+default
+
+[STsp_12_02::command/43 SetChar/param/2]
+none
+
+[STsp_12_02::command/43 SetChar/param/3]
+avg1_1195
+
+[STsp_12_02::command/43 SetChar/param/4]
+a
+
+[STsp_12_02::command/43 SetChar/param/5]
+002
+
+[STsp_12_02::command/43 SetChar/param/6]
+none
+
+[STsp_12_02::command/44 SetChar/param/2]
+none
+
+[STsp_12_02::command/44 SetChar/param/3]
+avg1_1196
+
+[STsp_12_02::command/44 SetChar/param/4]
+a
+
+[STsp_12_02::command/44 SetChar/param/5]
+002
+
+[STsp_12_02::command/44 SetChar/param/6]
+none
+
+[STsp_12_02::command/45 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/45 SetBg/param/2]
+0
+
+[STsp_12_02::command/45 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/45 SetBg/param/6]
+default
+
+[STsp_12_02::command/46 SetTrans/param/2]
+0
+
+[STsp_12_02::command/46 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/46 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/48 SetChar/param/2]
+none
+
+[STsp_12_02::command/48 SetChar/param/3]
+avg2_954
+
+[STsp_12_02::command/48 SetChar/param/4]
+a
+
+[STsp_12_02::command/48 SetChar/param/5]
+002
+
+[STsp_12_02::command/48 SetChar/param/6]
+none
+
+[STsp_12_02::command/49 SetAudio/param/1]
+se_442
+
+[STsp_12_02::command/50 CtrlChar/param/0]
+avg1_1195
+
+[STsp_12_02::command/50 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/50 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/50 CtrlChar/param/11]
+shouji
+
+[STsp_12_02::command/50 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/50 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/51 CtrlChar/param/0]
+avg1_1196
+
+[STsp_12_02::command/51 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/51 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/51 CtrlChar/param/11]
+shouji
+
+[STsp_12_02::command/51 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/51 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/52 SetAudio/param/1]
+se_112
+
+[STsp_12_02::command/53 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/53 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/53 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/53 CtrlChar/param/11]
+buman
+
+[STsp_12_02::command/53 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/53 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/55 SetAudio/param/1]
+se_066
+
+[STsp_12_02::command/56 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/56 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/56 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/56 CtrlChar/param/11]
+2TiaoYue
+
+[STsp_12_02::command/56 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/56 CtrlChar/param/13]
+InOutSine
+
+[STsp_12_02::command/58 SetAudio/param/1]
+se_046
+
+[STsp_12_02::command/59 SetCharHead/param/5]
+avg1_112
+
+[STsp_12_02::command/59 SetCharHead/param/6]
+a
+
+[STsp_12_02::command/59 SetCharHead/param/7]
+009
+
+[STsp_12_02::command/59 SetCharHead/param/8]
+none
+
+[STsp_12_02::command/60 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/60 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/60 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/60 CtrlChar/param/11]
+jushou2
+
+[STsp_12_02::command/60 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/60 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/61 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/61 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/61 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/61 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/61 SetTalk/param/7]
+コハク、1体そっちに行ったよ！
+
+[STsp_12_02::command/61 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/62 SetCharHead/param/5]
+avg1_112
+
+[STsp_12_02::command/62 SetCharHead/param/6]
+a
+
+[STsp_12_02::command/62 SetCharHead/param/7]
+002
+
+[STsp_12_02::command/62 SetCharHead/param/8]
+none
+
+[STsp_12_02::command/63 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/63 SetBg/param/2]
+0
+
+[STsp_12_02::command/63 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/63 SetBg/param/6]
+default
+
+[STsp_12_02::command/64 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/64 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/65 SetChar/param/2]
+none
+
+[STsp_12_02::command/65 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/65 SetChar/param/4]
+a
+
+[STsp_12_02::command/65 SetChar/param/5]
+010
+
+[STsp_12_02::command/65 SetChar/param/6]
+none
+
+[STsp_12_02::command/66 SetAudio/param/1]
+se_078
+
+[STsp_12_02::command/67 SetStage/param/2]
+OutQuad
+
+[STsp_12_02::command/69 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/69 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/69 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/69 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/69 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/69 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/70 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/70 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/70 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/70 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/70 SetTalk/param/7]
+了解。
+
+[STsp_12_02::command/70 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/71 SetAudio/param/1]
+se_074
+
+[STsp_12_02::command/72 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/72 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/72 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/72 CtrlChar/param/11]
+jushou
+
+[STsp_12_02::command/72 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/72 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/74 SetStage/param/2]
+OutQuad
+
+[STsp_12_02::command/76 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STsp_12_02::command/76 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/76 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/77 SetBg/param/1]
+BG_Black
+
+[STsp_12_02::command/77 SetBg/param/2]
+0
+
+[STsp_12_02::command/77 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/77 SetBg/param/6]
+default
+
+[STsp_12_02::command/78 SetTrans/param/2]
+0
+
+[STsp_12_02::command/78 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/78 SetTrans/param/8]
+default
+
+[STsp_12_02::command/79 SetFx/param/1]
+fx_avg_bullet
+
+[STsp_12_02::command/81 SetFx/param/1]
+fx_avg_bullet
+
+[STsp_12_02::command/83 SetFx/param/1]
+fx_avg_bullet
+
+[STsp_12_02::command/85 SetTrans/param/2]
+0
+
+[STsp_12_02::command/85 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/85 SetTrans/param/8]
+default
+
+[STsp_12_02::command/86 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/86 SetBg/param/2]
+0
+
+[STsp_12_02::command/86 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/86 SetBg/param/6]
+default
+
+[STsp_12_02::command/87 SetChar/param/2]
+none
+
+[STsp_12_02::command/87 SetChar/param/3]
+avg2_954
+
+[STsp_12_02::command/87 SetChar/param/4]
+a
+
+[STsp_12_02::command/87 SetChar/param/5]
+002
+
+[STsp_12_02::command/87 SetChar/param/6]
+none
+
+[STsp_12_02::command/88 SetTrans/param/2]
+0
+
+[STsp_12_02::command/88 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/88 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/89 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/89 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/89 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/89 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/89 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/89 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/91 SetAudio/param/1]
+se_442
+
+[STsp_12_02::command/92 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/92 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/92 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/92 CtrlChar/param/11]
+lengzhan
+
+[STsp_12_02::command/92 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/92 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/94 PlayCharAnim/param/0]
+avg2_954
+
+[STsp_12_02::command/94 PlayCharAnim/param/1]
+shake_L
+
+[STsp_12_02::command/95 SetAudio/param/1]
+se_096
+
+[STsp_12_02::command/96 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/96 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/96 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/96 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/96 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/96 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/97 SetAudio/param/1]
+se_018
+
+[STsp_12_02::command/98 SetTrans/param/2]
+34
+
+[STsp_12_02::command/98 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/98 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/99 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/99 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/100 SetTrans/param/2]
+0
+
+[STsp_12_02::command/100 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/100 SetTrans/param/8]
+default
+
+[STsp_12_02::command/101 SetTalk/param/1]
+0
+
+[STsp_12_02::command/101 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/101 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/101 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/101 SetTalk/param/7]
+星ノ塔に入った私たちは、すぐに星骸の掃討戦に突入した。==RT==私はケータイを構え、討伐報告の証拠として、撃破の瞬間を==RT==次々と撮影していく。
+
+[STsp_12_02::command/101 SetTalk/param/8]
+星ノ塔に入った僕たちは、すぐに星骸の掃討戦に突入した。==RT==僕はケータイを構え、討伐報告の証拠として、撃破の瞬間を==RT==次々と撮影していく。
+
+[STsp_12_02::command/103 SetMainRoleTalk/param/2]
+020
+
+[STsp_12_02::command/103 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_12_02::command/103 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/103 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/103 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/104 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/104 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/104 SetTalk/param/7]
+（この調子なら、前の依頼の赤字も帳消しにできそうだ。==RT==今月の生活費も、これでなんとか……）
+
+[STsp_12_02::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/105 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/105 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/105 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/105 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/106 SetChar/param/2]
+none
+
+[STsp_12_02::command/106 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/106 SetChar/param/4]
+a
+
+[STsp_12_02::command/106 SetChar/param/5]
+011
+
+[STsp_12_02::command/106 SetChar/param/6]
+none
+
+[STsp_12_02::command/108 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/108 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/109 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/109 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/109 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/109 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/109 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/109 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/111 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/111 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/111 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/111 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/111 SetTalk/param/7]
+……
+
+[STsp_12_02::command/111 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/113 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/113 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/113 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/114 SetMainRoleTalk/param/2]
+012
+
+[STsp_12_02::command/114 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_12_02::command/114 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/114 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/114 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/115 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/115 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/115 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/115 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/115 SetTalk/param/7]
+（気味が悪いな……監督役で来ているはずなのに、==RT==なんであんな目でみんなを見ているんだ……）
+
+[STsp_12_02::command/115 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/116 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/116 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/116 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/116 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/118 SetAudio/param/1]
+se_060
+
+[STsp_12_02::command/119 SetTrans/param/2]
+0
+
+[STsp_12_02::command/119 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/119 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/120 SetBg/param/1]
+tower_rest
+
+[STsp_12_02::command/120 SetBg/param/2]
+0
+
+[STsp_12_02::command/120 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/120 SetBg/param/6]
+default
+
+[STsp_12_02::command/121 SetChar/param/2]
+none
+
+[STsp_12_02::command/121 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/121 SetChar/param/4]
+a
+
+[STsp_12_02::command/121 SetChar/param/5]
+002
+
+[STsp_12_02::command/121 SetChar/param/6]
+none
+
+[STsp_12_02::command/122 SetAudio/param/1]
+se_493
+
+[STsp_12_02::command/124 SetTrans/param/2]
+0
+
+[STsp_12_02::command/124 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/124 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/125 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/125 SetBGM/param/3]
+m49
+
+[STsp_12_02::command/125 SetBGM/param/4]
+none
+
+[STsp_12_02::command/127 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/127 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/127 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/127 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/127 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/127 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/128 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/128 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/128 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_12_02::command/128 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/128 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/128 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/129 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/129 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/129 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/129 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/129 SetTalk/param/7]
+ん～、これでこのあたりはもう安全ね。==RT==巡遊者ちゃんたち、お疲れさま。
+
+[STsp_12_02::command/129 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/131 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/131 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/131 CtrlChar/param/2]
+018
+
+[STsp_12_02::command/131 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_12_02::command/131 CtrlChar/param/11]
+huanxin
+
+[STsp_12_02::command/131 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/131 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/132 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/132 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/132 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/132 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/132 SetTalk/param/7]
+少し早いけど、そろそろ休憩にしましょうか。==RT==補給は持ってきてる？よければワタシの分をわけましょうか？
+
+[STsp_12_02::command/132 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/133 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/133 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/133 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/133 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/133 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/133 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/134 SetChar/param/2]
+none
+
+[STsp_12_02::command/134 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/134 SetChar/param/4]
+a
+
+[STsp_12_02::command/134 SetChar/param/5]
+008
+
+[STsp_12_02::command/134 SetChar/param/6]
+none
+
+[STsp_12_02::command/135 SetChar/param/2]
+none
+
+[STsp_12_02::command/135 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/135 SetChar/param/4]
+a
+
+[STsp_12_02::command/135 SetChar/param/5]
+007
+
+[STsp_12_02::command/135 SetChar/param/6]
+none
+
+[STsp_12_02::command/136 SetChar/param/2]
+none
+
+[STsp_12_02::command/136 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/136 SetChar/param/4]
+a
+
+[STsp_12_02::command/136 SetChar/param/5]
+027
+
+[STsp_12_02::command/136 SetChar/param/6]
+none
+
+[STsp_12_02::command/138 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/138 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/138 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/138 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/138 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/138 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/139 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/139 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/139 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/139 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/139 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/139 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/140 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/140 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/140 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/140 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/140 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/140 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/141 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/141 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/142 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/142 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/142 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STsp_12_02::command/142 CtrlChar/param/11]
+jinzhang
+
+[STsp_12_02::command/142 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/142 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/143 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/143 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/143 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/143 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/143 SetTalk/param/7]
+い、いえいえ！この依頼の分はありますので……！
+
+[STsp_12_02::command/143 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/145 SetMainRoleTalk/param/2]
+007
+
+[STsp_12_02::command/145 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STsp_12_02::command/145 SetMainRoleTalk/param/4]
+lengzhan
+
+[STsp_12_02::command/145 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/145 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/146 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/146 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/146 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/146 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/146 SetTalk/param/7]
+私たちは向こうでこのあとの作戦を考えてくるよ。
+
+[STsp_12_02::command/146 SetTalk/param/8]
+僕たちは向こうでこのあとの作戦を考えてくるよ。
+
+[STsp_12_02::command/147 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/147 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/147 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/147 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/151 SetChar/param/2]
+none
+
+[STsp_12_02::command/151 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/151 SetChar/param/4]
+a
+
+[STsp_12_02::command/151 SetChar/param/5]
+006
+
+[STsp_12_02::command/151 SetChar/param/6]
+none
+
+[STsp_12_02::command/152 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/152 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/154 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/154 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/154 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/154 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/154 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/154 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/155 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/155 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/155 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/155 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STsp_12_02::command/155 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/155 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/155 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/156 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/156 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/156 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/156 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/156 SetTalk/param/7]
+あらそう？なら15分後に出発するから、遅れないようにね。
+
+[STsp_12_02::command/156 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/157 SetChar/param/2]
+none
+
+[STsp_12_02::command/157 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/157 SetChar/param/4]
+a
+
+[STsp_12_02::command/157 SetChar/param/5]
+002
+
+[STsp_12_02::command/157 SetChar/param/6]
+none
+
+[STsp_12_02::command/158 SetChar/param/2]
+none
+
+[STsp_12_02::command/158 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/158 SetChar/param/4]
+a
+
+[STsp_12_02::command/158 SetChar/param/5]
+002
+
+[STsp_12_02::command/158 SetChar/param/6]
+none
+
+[STsp_12_02::command/159 SetChar/param/2]
+none
+
+[STsp_12_02::command/159 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/159 SetChar/param/4]
+a
+
+[STsp_12_02::command/159 SetChar/param/5]
+002
+
+[STsp_12_02::command/159 SetChar/param/6]
+none
+
+[STsp_12_02::command/161 SetAudio/param/1]
+se_060
+
+[STsp_12_02::command/162 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/162 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/162 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/162 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/162 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/162 CtrlChar/param/13]
+InOutSine
+
+[STsp_12_02::command/163 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/163 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/163 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/163 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/163 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/163 CtrlChar/param/13]
+InOutSine
+
+[STsp_12_02::command/164 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/164 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/164 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/164 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/164 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/164 CtrlChar/param/13]
+InOutSine
+
+[STsp_12_02::command/166 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/166 SetBg/param/2]
+AvgStageEffect_fade_left
+
+[STsp_12_02::command/166 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/166 SetBg/param/6]
+default
+
+[STsp_12_02::command/168 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/168 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/168 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/168 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/168 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/168 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/170 SetChar/param/2]
+none
+
+[STsp_12_02::command/170 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/170 SetChar/param/4]
+a
+
+[STsp_12_02::command/170 SetChar/param/5]
+002
+
+[STsp_12_02::command/170 SetChar/param/6]
+none
+
+[STsp_12_02::command/171 SetChar/param/2]
+none
+
+[STsp_12_02::command/171 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/171 SetChar/param/4]
+a
+
+[STsp_12_02::command/171 SetChar/param/5]
+002
+
+[STsp_12_02::command/171 SetChar/param/6]
+none
+
+[STsp_12_02::command/172 SetChar/param/2]
+none
+
+[STsp_12_02::command/172 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/172 SetChar/param/4]
+a
+
+[STsp_12_02::command/172 SetChar/param/5]
+002
+
+[STsp_12_02::command/172 SetChar/param/6]
+none
+
+[STsp_12_02::command/173 SetChar/param/2]
+none
+
+[STsp_12_02::command/173 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/173 SetChar/param/4]
+a
+
+[STsp_12_02::command/173 SetChar/param/5]
+002
+
+[STsp_12_02::command/173 SetChar/param/6]
+none
+
+[STsp_12_02::command/175 SetChar/param/2]
+none
+
+[STsp_12_02::command/175 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/175 SetChar/param/4]
+a
+
+[STsp_12_02::command/175 SetChar/param/5]
+002
+
+[STsp_12_02::command/175 SetChar/param/6]
+none
+
+[STsp_12_02::command/176 SetChar/param/2]
+none
+
+[STsp_12_02::command/176 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/176 SetChar/param/4]
+a
+
+[STsp_12_02::command/176 SetChar/param/5]
+002
+
+[STsp_12_02::command/176 SetChar/param/6]
+none
+
+[STsp_12_02::command/177 SetChar/param/2]
+none
+
+[STsp_12_02::command/177 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/177 SetChar/param/4]
+a
+
+[STsp_12_02::command/177 SetChar/param/5]
+002
+
+[STsp_12_02::command/177 SetChar/param/6]
+none
+
+[STsp_12_02::command/178 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/178 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/178 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/178 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/178 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/178 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/179 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/179 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/179 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/179 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/179 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/179 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/180 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/180 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/180 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/180 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/180 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/180 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/181 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/181 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/181 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/181 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/181 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/181 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/182 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/182 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/182 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/182 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/182 SetTalk/param/7]
+ボス？顔色が悪いですよ？
+
+[STsp_12_02::command/182 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/184 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/184 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/184 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/185 SetMainRoleTalk/param/2]
+010
+
+[STsp_12_02::command/185 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STsp_12_02::command/185 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/185 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/185 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/186 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/186 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/186 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/186 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/186 SetTalk/param/7]
+戦闘中、グレイがずっと変な目でみんなを見ていたんだ。
+
+[STsp_12_02::command/186 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/187 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/187 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/187 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/187 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/188 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STsp_12_02::command/188 SetBGM/param/3]
+m42
+
+[STsp_12_02::command/188 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/190 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/190 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/190 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/190 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STsp_12_02::command/190 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/190 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/190 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/191 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/191 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/191 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/191 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/191 SetTalk/param/7]
+うん。そのせいでなんか動きにくかったし。
+
+[STsp_12_02::command/191 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/193 SetAudio/param/1]
+se_112
+
+[STsp_12_02::command/194 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/194 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/194 CtrlChar/param/2]
+009
+
+[STsp_12_02::command/194 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/194 CtrlChar/param/11]
+lengzhan
+
+[STsp_12_02::command/194 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/194 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/195 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/195 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/195 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/195 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/195 SetTalk/param/7]
+寒気がした……
+
+[STsp_12_02::command/195 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/197 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/197 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/197 CtrlChar/param/2]
+025
+
+[STsp_12_02::command/197 CtrlChar/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/197 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/197 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/197 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/198 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/198 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/198 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/198 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/198 SetTalk/param/7]
+ま、まさか……例の噂、本当だったりして？
+
+[STsp_12_02::command/198 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/199 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/199 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/199 CtrlChar/param/2]
+016
+
+[STsp_12_02::command/199 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/199 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/199 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/199 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/201 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/201 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/201 CtrlChar/param/2]
+023
+
+[STsp_12_02::command/201 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/201 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/201 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/201 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/202 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/202 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/202 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/202 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/202 SetTalk/param/7]
+噂……ということは、この依頼自体が罠だったとか？==RT==本当の目的は――
+
+[STsp_12_02::command/202 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/203 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/203 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/203 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/203 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/203 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/203 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/205 SetAudio/param/1]
+se_368
+
+[STsp_12_02::command/206 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/206 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/207 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/207 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/207 CtrlChar/param/2]
+019
+
+[STsp_12_02::command/207 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/207 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/207 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/207 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/208 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/208 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/208 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/208 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/208 SetTalk/param/7]
+私たちを鉄の棺に閉じ込めて、魂を抜き取ること！
+
+[STsp_12_02::command/208 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/210 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/210 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/211 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/211 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/211 CtrlChar/param/2]
+014
+
+[STsp_12_02::command/211 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STsp_12_02::command/211 CtrlChar/param/11]
+buman
+
+[STsp_12_02::command/211 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/211 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/212 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/212 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/212 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/212 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/212 SetTalk/param/7]
+それだ！星ノ塔に連れ込めば、なにかあっても誰も気づかないし！
+
+[STsp_12_02::command/212 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/214 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/214 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/214 CtrlChar/param/2]
+015
+
+[STsp_12_02::command/214 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/214 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/214 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/214 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/215 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/215 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/216 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/216 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/216 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/216 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/216 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/216 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/217 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/217 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/217 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/217 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/217 SetTalk/param/7]
+ボス、気をつけて。==RT==戦闘中、いちばん狙われやすいのはボスだよ。
+
+[STsp_12_02::command/217 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/219 SetAudio/param/1]
+se_061
+
+[STsp_12_02::command/220 SetChar/param/2]
+none
+
+[STsp_12_02::command/220 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/220 SetChar/param/4]
+a
+
+[STsp_12_02::command/220 SetChar/param/5]
+002
+
+[STsp_12_02::command/220 SetChar/param/6]
+none
+
+[STsp_12_02::command/221 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/221 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/223 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/223 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/223 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/223 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/223 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/223 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/224 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/224 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/224 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/224 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/224 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/224 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/224 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/225 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/225 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/225 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/225 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/225 SetTalk/param/7]
+ふぅん？真面目に作戦を立ててるのね。
+
+[STsp_12_02::command/225 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/227 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/227 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/227 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/227 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/227 CtrlChar/param/11]
+chijing
+
+[STsp_12_02::command/227 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/227 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/228 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/228 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/228 CtrlChar/param/2]
+009
+
+[STsp_12_02::command/228 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/228 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/228 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/228 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/229 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/229 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/229 CtrlChar/param/2]
+015
+
+[STsp_12_02::command/229 CtrlChar/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/229 CtrlChar/param/11]
+jushou
+
+[STsp_12_02::command/229 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/229 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/230 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/230 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/230 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/230 CtrlChar/param/11]
+chijing
+
+[STsp_12_02::command/230 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/230 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/231 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/231 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/231 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/231 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/231 SetTalk/param/7]
+そ、そうそう！作戦を立てる魔王さんの安全が第一だから！
+
+[STsp_12_02::command/231 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/233 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/233 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/233 CtrlChar/param/2]
+023
+
+[STsp_12_02::command/233 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/233 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/233 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/233 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/234 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/234 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/234 CtrlChar/param/2]
+017
+
+[STsp_12_02::command/234 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_12_02::command/234 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/234 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/234 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/235 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/235 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/235 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/235 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/235 SetTalk/param/7]
+いざとなったら、ワタシを頼ってくれてもいいのよ？==RT==監督役とはいえ、戦闘の準備はできてるし。
+
+[STsp_12_02::command/235 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/237 SetMainRoleTalk/param/2]
+007
+
+[STsp_12_02::command/237 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STsp_12_02::command/237 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/237 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/237 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/238 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/238 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/238 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/238 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/238 SetTalk/param/7]
+（この状況でどう頼れと！？）
+
+[STsp_12_02::command/238 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/240 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/240 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/240 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/240 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/240 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/240 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/241 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/241 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/241 CtrlChar/param/2]
+018
+
+[STsp_12_02::command/241 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/241 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/241 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/241 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/242 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/242 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/242 CtrlChar/param/2]
+014
+
+[STsp_12_02::command/242 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/242 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/242 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/242 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/243 SetMainRoleTalk/param/2]
+002
+
+[STsp_12_02::command/243 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/243 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/243 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/243 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/244 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/244 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/244 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/244 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/244 SetTalk/param/7]
+それで、グレイはどうしたんだ？
+
+[STsp_12_02::command/244 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/245 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/245 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/245 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/245 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/247 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/247 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/247 CtrlChar/param/2]
+018
+
+[STsp_12_02::command/247 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/247 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/247 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/247 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/248 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/248 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/248 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/248 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/248 SetTalk/param/7]
+ああ、そうそう。==RT==お菓子を作ってきたから、よければアナタたちもどうかと思って。
+
+[STsp_12_02::command/248 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/250 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/250 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/252 CtrlStage/param/9]
+jushou
+
+[STsp_12_02::command/252 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/253 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/253 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/253 CtrlChar/param/2]
+005
+
+[STsp_12_02::command/253 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/253 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/253 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/253 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/254 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/254 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/254 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/254 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/254 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/254 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/254 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/255 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/255 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/255 CtrlChar/param/2]
+007
+
+[STsp_12_02::command/255 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/255 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/255 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/255 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/257 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/257 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/257 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/257 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/257 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/257 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/257 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/259 SetAudio/param/1]
+se_077
+
+[STsp_12_02::command/260 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/260 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/260 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/260 CtrlChar/param/11]
+JuGong
+
+[STsp_12_02::command/260 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/260 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/262 SetAudio/param/1]
+se_074
+
+[STsp_12_02::command/263 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STsp_12_02::command/263 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/263 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/264 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/264 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/265 SetAudio/param/1]
+se_060
+
+[STsp_12_02::command/266 SetBg/param/1]
+tower_rest
+
+[STsp_12_02::command/266 SetBg/param/2]
+0
+
+[STsp_12_02::command/266 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/266 SetBg/param/6]
+default
+
+[STsp_12_02::command/267 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/267 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/268 SetChar/param/2]
+none
+
+[STsp_12_02::command/268 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/268 SetChar/param/4]
+a
+
+[STsp_12_02::command/268 SetChar/param/5]
+018
+
+[STsp_12_02::command/268 SetChar/param/6]
+none
+
+[STsp_12_02::command/269 SetTrans/param/2]
+0
+
+[STsp_12_02::command/269 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/269 SetTrans/param/8]
+default
+
+[STsp_12_02::command/271 SetTalk/param/1]
+0
+
+[STsp_12_02::command/271 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/271 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/271 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/271 SetTalk/param/7]
+グレイはかわいらしい花柄の箱を取り出した。==RT==中には色とりどりの焼き菓子が詰められている。
+
+[STsp_12_02::command/271 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/273 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/273 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/273 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/273 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/273 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/273 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/274 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/274 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/274 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_12_02::command/274 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/274 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/274 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/275 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/275 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/275 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/275 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/275 SetTalk/param/7]
+味は……まあ問題ないと思うわ。
+
+[STsp_12_02::command/275 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/277 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/277 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/277 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/277 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/277 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/277 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/279 SetChar/param/2]
+none
+
+[STsp_12_02::command/279 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/279 SetChar/param/4]
+a
+
+[STsp_12_02::command/279 SetChar/param/5]
+002
+
+[STsp_12_02::command/279 SetChar/param/6]
+none
+
+[STsp_12_02::command/280 SetChar/param/2]
+none
+
+[STsp_12_02::command/280 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/280 SetChar/param/4]
+a
+
+[STsp_12_02::command/280 SetChar/param/5]
+002
+
+[STsp_12_02::command/280 SetChar/param/6]
+none
+
+[STsp_12_02::command/281 SetChar/param/2]
+none
+
+[STsp_12_02::command/281 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/281 SetChar/param/4]
+a
+
+[STsp_12_02::command/281 SetChar/param/5]
+022
+
+[STsp_12_02::command/281 SetChar/param/6]
+none
+
+[STsp_12_02::command/282 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/282 CtrlBg/param/11]
+OutSine
+
+[STsp_12_02::command/283 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/283 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/283 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/283 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/283 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/283 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/284 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/284 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/284 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/284 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/284 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/284 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/285 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/285 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/285 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/285 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/285 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/285 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/286 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/286 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/286 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/286 CtrlChar/param/11]
+buman
+
+[STsp_12_02::command/286 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/286 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/287 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/287 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/287 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/287 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/287 SetTalk/param/7]
+こ、こんなタイミングで差し入れ？==RT==怪しすぎるでしょ……
+
+[STsp_12_02::command/287 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/289 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/289 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/289 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/289 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/289 CtrlChar/param/11]
+zuochupeng
+
+[STsp_12_02::command/289 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/289 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/290 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/290 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/290 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/290 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/290 SetTalk/param/7]
+シッ！声が大きい……！==RT==聞かれたらどうするの？
+
+[STsp_12_02::command/290 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/292 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/292 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/292 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/292 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STsp_12_02::command/292 CtrlChar/param/11]
+jushou0
+
+[STsp_12_02::command/292 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/292 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/293 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/293 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/293 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/293 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/293 SetTalk/param/7]
+知ってる？審問官の作った食べ物って、 ==RT==自白の魔法がかけられてるって噂だよ。 ==RT==尋問に使ってるんだって。
+
+[STsp_12_02::command/293 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/295 SetMainRoleTalk/param/2]
+025
+
+[STsp_12_02::command/295 SetMainRoleTalk/param/3]
+none
+
+[STsp_12_02::command/295 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/295 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/295 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/296 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/296 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/296 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/296 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/296 SetTalk/param/7]
+自白の魔法？
+
+[STsp_12_02::command/296 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/297 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/297 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/297 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/297 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/299 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/299 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/299 CtrlChar/param/2]
+009
+
+[STsp_12_02::command/299 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STsp_12_02::command/299 CtrlChar/param/11]
+lengzhan
+
+[STsp_12_02::command/299 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/299 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/300 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/300 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/300 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/300 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/300 SetTalk/param/7]
+嘘がつけなくなるってこと。でもボスには魔法がきかないし、==RT==それがバレたら尋問が拷問になっちゃうかも……
+
+[STsp_12_02::command/300 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/302 SetMainRoleTalk/param/2]
+010
+
+[STsp_12_02::command/302 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STsp_12_02::command/302 SetMainRoleTalk/param/4]
+shouji
+
+[STsp_12_02::command/302 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/302 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/303 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/303 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/303 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/303 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/303 SetTalk/param/7]
+嫌すぎる……==W====RT==だがグレイは魔力絶縁体質を知らないはずだ。==RT==お菓子は私が食べるよ。
+
+[STsp_12_02::command/303 SetTalk/param/8]
+嫌すぎる…==W====RT==だがグレイは魔力絶縁体質を知らないはずだ==RT==お菓子は僕が食べるよ
+
+[STsp_12_02::command/305 SetMainRoleTalk/param/2]
+002
+
+[STsp_12_02::command/305 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/305 SetMainRoleTalk/param/4]
+jushou
+
+[STsp_12_02::command/305 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/305 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/308 SetTrans/param/2]
+0
+
+[STsp_12_02::command/308 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/308 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/309 SetChar/param/2]
+none
+
+[STsp_12_02::command/309 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/309 SetChar/param/4]
+a
+
+[STsp_12_02::command/309 SetChar/param/5]
+002
+
+[STsp_12_02::command/309 SetChar/param/6]
+none
+
+[STsp_12_02::command/310 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/310 CtrlBg/param/11]
+OutSine
+
+[STsp_12_02::command/311 SetTrans/param/2]
+0
+
+[STsp_12_02::command/311 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/311 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/313 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/313 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/313 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/313 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/313 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/313 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/314 SetMainRoleTalk/param/2]
+013
+
+[STsp_12_02::command/314 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STsp_12_02::command/314 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/314 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/314 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/315 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/315 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/315 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/315 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/315 SetTalk/param/7]
+せっかくだし、いただこう。
+
+[STsp_12_02::command/315 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/316 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/316 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/316 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/316 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/318 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/318 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/318 CtrlChar/param/2]
+018
+
+[STsp_12_02::command/318 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/318 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/318 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/318 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/319 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/319 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/319 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/319 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/319 SetTalk/param/7]
+ご自由にどうぞ。
+
+[STsp_12_02::command/319 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/0]
+1
+
+[STsp_12_02::command/321 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/6]
+a
+
+[STsp_12_02::command/321 SetChoiceBegin/param/7]
+002
+
+[STsp_12_02::command/321 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/12/0]
+（お菓子を食べてみる）
+
+[STsp_12_02::command/321 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/321 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/322 SetChoiceJumpTo/param/0]
+1
+
+[STsp_12_02::command/322 SetChoiceJumpTo/param/1]
+1
+
+[STsp_12_02::command/323 SetChoiceRollover/param/0]
+1
+
+[STsp_12_02::command/324 SetChoiceEnd/param/0]
+1
+
+[STsp_12_02::command/326 SetAudio/param/1]
+se_341
+
+[STsp_12_02::command/327 SetTrans/param/2]
+0
+
+[STsp_12_02::command/327 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/327 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/328 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/328 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/329 SetBg/param/1]
+mood_2
+
+[STsp_12_02::command/329 SetBg/param/2]
+0
+
+[STsp_12_02::command/329 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/329 SetBg/param/6]
+default
+
+[STsp_12_02::command/330 SetTrans/param/2]
+0
+
+[STsp_12_02::command/330 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/330 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/331 SetMainRoleTalk/param/2]
+018
+
+[STsp_12_02::command/331 SetMainRoleTalk/param/3]
+none
+
+[STsp_12_02::command/331 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/331 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/331 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/332 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/332 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/332 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/332 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/332 SetTalk/param/7]
+ん……もぐ……==W==ん……
+
+[STsp_12_02::command/332 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/334 SetMainRoleTalk/param/2]
+009
+
+[STsp_12_02::command/334 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/334 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/334 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/334 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/335 SetBg/param/1]
+mood_4
+
+[STsp_12_02::command/335 SetBg/param/2]
+0
+
+[STsp_12_02::command/335 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/335 SetBg/param/6]
+default
+
+[STsp_12_02::command/338 SetAudio/param/1]
+se_112
+
+[STsp_12_02::command/339 SetBg/param/1]
+tower_rest
+
+[STsp_12_02::command/339 SetBg/param/2]
+AvgStageEffect_mosaic
+
+[STsp_12_02::command/339 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/339 SetBg/param/6]
+cut off
+
+[STsp_12_02::command/340 CtrlStage/param/9]
+chijing
+
+[STsp_12_02::command/340 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/341 SetMainRoleTalk/param/2]
+016
+
+[STsp_12_02::command/341 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STsp_12_02::command/341 SetMainRoleTalk/param/4]
+lengzhan
+
+[STsp_12_02::command/341 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/341 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/342 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/342 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/342 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/342 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/342 SetTalk/param/7]
+んんっ！？
+
+[STsp_12_02::command/342 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/343 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/343 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/343 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/343 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/345 SetChar/param/2]
+none
+
+[STsp_12_02::command/345 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/345 SetChar/param/4]
+a
+
+[STsp_12_02::command/345 SetChar/param/5]
+015
+
+[STsp_12_02::command/345 SetChar/param/6]
+none
+
+[STsp_12_02::command/346 SetAudio/param/1]
+se_074
+
+[STsp_12_02::command/347 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/347 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/347 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/347 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/347 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/347 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/348 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/348 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/348 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/348 CtrlChar/param/11]
+daintou
+
+[STsp_12_02::command/348 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/348 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/349 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/349 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/349 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/349 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/349 SetTalk/param/7]
+魔王さん！大丈夫！？
+
+[STsp_12_02::command/349 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/350 SetChar/param/2]
+none
+
+[STsp_12_02::command/350 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/350 SetChar/param/4]
+a
+
+[STsp_12_02::command/350 SetChar/param/5]
+006
+
+[STsp_12_02::command/350 SetChar/param/6]
+none
+
+[STsp_12_02::command/352 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/352 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/352 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/352 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/352 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/352 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/353 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/353 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/353 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/353 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/353 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/353 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/354 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/354 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/354 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STsp_12_02::command/354 CtrlChar/param/11]
+chijing
+
+[STsp_12_02::command/354 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/354 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/355 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/355 SetTalk/param/7]
+まさか……魔法じゃなくて、毒！？
+
+[STsp_12_02::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/356 SetChar/param/2]
+none
+
+[STsp_12_02::command/356 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/356 SetChar/param/4]
+a
+
+[STsp_12_02::command/356 SetChar/param/5]
+011
+
+[STsp_12_02::command/356 SetChar/param/6]
+none
+
+[STsp_12_02::command/358 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/358 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/358 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/358 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/358 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/358 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/359 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/359 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/359 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/359 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/359 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/359 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/360 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/360 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/360 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/360 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/360 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/360 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/361 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/361 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/362 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/362 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/362 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STsp_12_02::command/362 CtrlChar/param/11]
+daintou
+
+[STsp_12_02::command/362 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/362 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/363 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/363 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/363 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/363 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/363 SetTalk/param/7]
+やられた……
+
+[STsp_12_02::command/363 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/365 SetMainRoleTalk/param/2]
+007
+
+[STsp_12_02::command/365 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_12_02::command/365 SetMainRoleTalk/param/4]
+jushou2
+
+[STsp_12_02::command/365 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/365 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/366 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/366 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/366 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/366 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/366 SetTalk/param/7]
+だ、大丈夫。少し喉に詰まっただけだよ。==RT==まあ味はちょっと……いや、かなり甘すぎる気はするが。
+
+[STsp_12_02::command/366 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/367 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/367 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/367 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/367 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/369 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/369 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/369 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/370 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/370 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/370 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/370 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/370 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/370 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/371 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/371 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/371 CtrlChar/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/371 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/371 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/371 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/372 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/372 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/372 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/372 CtrlChar/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/372 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/372 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/372 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/373 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/373 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/375 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/375 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/375 CtrlChar/param/2]
+007
+
+[STsp_12_02::command/375 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/375 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/375 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/375 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/376 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/376 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/376 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/376 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/376 SetTalk/param/7]
+あ……
+
+[STsp_12_02::command/376 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/377 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STsp_12_02::command/377 SetBGM/param/3]
+m4
+
+[STsp_12_02::command/377 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/379 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/379 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/379 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/379 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STsp_12_02::command/379 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/379 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/379 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/380 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/380 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/380 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/380 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/380 SetTalk/param/7]
+えっと……
+
+[STsp_12_02::command/380 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/381 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/381 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/381 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/381 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/381 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/381 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/383 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/383 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/383 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/383 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/383 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/383 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/383 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/384 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/384 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/384 CtrlChar/param/2]
+023
+
+[STsp_12_02::command/384 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/384 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/384 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/384 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/385 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/385 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/387 SetAudio/param/1]
+se_077
+
+[STsp_12_02::command/388 SetAudio/param/1]
+se_075
+
+[STsp_12_02::command/389 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/389 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/389 CtrlChar/param/2]
+011
+
+[STsp_12_02::command/389 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STsp_12_02::command/389 CtrlChar/param/11]
+JuGong
+
+[STsp_12_02::command/389 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/389 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/390 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/390 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/390 CtrlChar/param/2]
+015
+
+[STsp_12_02::command/390 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STsp_12_02::command/390 CtrlChar/param/11]
+JuGong
+
+[STsp_12_02::command/390 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/390 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/391 SetTalk/param/1]
+avg3_905
+
+[STsp_12_02::command/391 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/391 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/391 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/391 SetTalk/param/7]
+ご、ごめんなさいっ！！
+
+[STsp_12_02::command/391 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/393 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/393 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/394 SetTrans/param/2]
+0
+
+[STsp_12_02::command/394 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/394 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/395 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/395 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/395 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/395 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/395 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/395 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/396 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/396 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/396 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/396 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/396 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/396 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/397 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/397 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/397 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/397 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/397 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/397 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/398 SetChar/param/2]
+none
+
+[STsp_12_02::command/398 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/398 SetChar/param/4]
+a
+
+[STsp_12_02::command/398 SetChar/param/5]
+002
+
+[STsp_12_02::command/398 SetChar/param/6]
+none
+
+[STsp_12_02::command/399 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/399 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/400 SetTrans/param/2]
+0
+
+[STsp_12_02::command/400 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/400 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/401 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/401 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/401 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/401 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/401 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/401 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/402 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/402 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/402 CtrlChar/param/2]
+017
+
+[STsp_12_02::command/402 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_12_02::command/402 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/402 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/402 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/403 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/403 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/403 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/403 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/403 SetTalk/param/7]
+このくらい気にしてないわ。==RT==ワタシたち審問官は、誤解されるのに慣れてるもの。
+
+[STsp_12_02::command/403 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/404 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/404 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/404 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/406 SetAudio/param/1]
+se_077
+
+[STsp_12_02::command/407 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/407 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/407 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/407 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/407 CtrlChar/param/11]
+JuGong
+
+[STsp_12_02::command/407 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/407 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/409 SetAudio/param/1]
+se_092
+
+[STsp_12_02::command/410 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/410 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/410 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/410 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/410 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/410 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/410 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/412 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/412 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/412 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/412 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/412 SetTalk/param/7]
+よければアナタたちもどうぞ。
+
+[STsp_12_02::command/412 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/413 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/413 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/413 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/413 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/413 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/413 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/415 SetAudio/param/1]
+se_052
+
+[STsp_12_02::command/416 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/416 CtrlBg/param/11]
+OutQuad
+
+[STsp_12_02::command/417 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/417 CtrlStage/param/10]
+OutQuad
+
+[STsp_12_02::command/418 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/418 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/418 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/418 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/418 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/418 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/418 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/419 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/419 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/419 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/419 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/419 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/419 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/419 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/420 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/420 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/420 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/420 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/420 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/420 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/420 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/422 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/422 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/422 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/422 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/422 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/422 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/423 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/423 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/423 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/423 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/423 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/423 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/424 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/424 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/424 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/424 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/424 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/424 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/425 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/425 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/425 CtrlChar/param/2]
+010
+
+[STsp_12_02::command/425 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/425 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/425 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/425 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/426 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/426 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/426 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/426 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/426 SetTalk/param/7]
+では……いただきます。
+
+[STsp_12_02::command/426 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/428 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/428 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/428 CtrlChar/param/2]
+005
+
+[STsp_12_02::command/428 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/428 CtrlChar/param/11]
+huanxin
+
+[STsp_12_02::command/428 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/428 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/429 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/429 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/429 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/429 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/429 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/429 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/430 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/430 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/430 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/430 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/430 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/430 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/431 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/431 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/431 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/431 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/431 SetTalk/param/7]
+それじゃ私、この赤いやつー！
+
+[STsp_12_02::command/431 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/432 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/432 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/432 SetBGM/param/4]
+4000ms
+
+[STsp_12_02::command/434 SetAudio/param/1]
+se_341
+
+[STsp_12_02::command/435 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/435 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/435 CtrlChar/param/2]
+003
+
+[STsp_12_02::command/435 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/435 CtrlChar/param/11]
+daintou
+
+[STsp_12_02::command/435 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/435 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/436 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/436 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/436 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/436 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/436 SetTalk/param/7]
+ん……==W==んん……==W==んむっ！？
+
+[STsp_12_02::command/436 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/438 SetAudio/param/1]
+se_112
+
+[STsp_12_02::command/439 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/439 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/439 CtrlChar/param/2]
+023
+
+[STsp_12_02::command/439 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/439 CtrlChar/param/11]
+lengzhan
+
+[STsp_12_02::command/439 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/439 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/442 SetAudio/param/1]
+se_230
+
+[STsp_12_02::command/443 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STsp_12_02::command/443 SetBGM/param/3]
+m37
+
+[STsp_12_02::command/443 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/444 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/444 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/444 CtrlChar/param/2]
+015
+
+[STsp_12_02::command/444 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/444 CtrlChar/param/11]
+jushou2
+
+[STsp_12_02::command/444 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/444 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/445 SetBg/param/1]
+mood_5
+
+[STsp_12_02::command/445 SetBg/param/2]
+avg_char_effect_up
+
+[STsp_12_02::command/445 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/445 SetBg/param/6]
+fade
+
+[STsp_12_02::command/448 SetBg/param/1]
+tower_rest
+
+[STsp_12_02::command/448 SetBg/param/2]
+AvgStageEffect_paint
+
+[STsp_12_02::command/448 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/448 SetBg/param/6]
+fade
+
+[STsp_12_02::command/449 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/449 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/449 CtrlChar/param/2]
+016
+
+[STsp_12_02::command/449 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STsp_12_02::command/449 CtrlChar/param/11]
+buman
+
+[STsp_12_02::command/449 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/449 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/450 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/450 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/450 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/450 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/450 SetTalk/param/7]
+か、辛ぁ～～ッ！！誰か水、水ちょうだい！！は～～や～～くっ！！
+
+[STsp_12_02::command/450 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/452 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/452 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/453 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STsp_12_02::command/453 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/453 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/454 SetBg/param/1]
+mood_4
+
+[STsp_12_02::command/454 SetBg/param/2]
+0
+
+[STsp_12_02::command/454 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/454 SetBg/param/6]
+default
+
+[STsp_12_02::command/455 SetChar/param/2]
+none
+
+[STsp_12_02::command/455 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/455 SetChar/param/4]
+a
+
+[STsp_12_02::command/455 SetChar/param/5]
+002
+
+[STsp_12_02::command/455 SetChar/param/6]
+none
+
+[STsp_12_02::command/456 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/456 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/456 CtrlChar/param/2]
+015
+
+[STsp_12_02::command/456 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/456 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/456 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/456 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/457 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/457 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/458 SetTrans/param/2]
+0
+
+[STsp_12_02::command/458 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/458 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/459 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/459 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/459 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/459 CtrlChar/param/11]
+jinzhang
+
+[STsp_12_02::command/459 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/459 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/460 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/460 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/460 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/460 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/460 SetTalk/param/7]
+に、苦ぁぁぁああああい！！苦すぎて舌が痺れる……！！==W====RT==ちょ、どうしてこんな味にしたんですか！？
+
+[STsp_12_02::command/460 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/462 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/462 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/462 CtrlChar/param/2]
+025
+
+[STsp_12_02::command/462 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STsp_12_02::command/462 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/462 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/462 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/463 CtrlStage/param/9]
+Xiao
+
+[STsp_12_02::command/463 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/465 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/465 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/465 CtrlChar/param/2]
+009
+
+[STsp_12_02::command/465 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/465 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/465 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/465 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/466 SetTrans/param/2]
+0
+
+[STsp_12_02::command/466 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/466 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/467 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/467 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/467 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/467 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/467 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/467 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/468 SetBg/param/1]
+tower_rest
+
+[STsp_12_02::command/468 SetBg/param/2]
+AvgStageEffect_paint
+
+[STsp_12_02::command/468 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/468 SetBg/param/6]
+default
+
+[STsp_12_02::command/469 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/469 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/470 SetTrans/param/2]
+0
+
+[STsp_12_02::command/470 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/470 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/472 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/472 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/472 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/472 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/472 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/472 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/473 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/473 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/473 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/473 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/473 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/473 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/475 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/475 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/475 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/475 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/475 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/475 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/476 SetMainRoleTalk/param/2]
+025
+
+[STsp_12_02::command/476 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/476 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/476 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/476 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/477 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/477 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/477 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/477 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/477 SetTalk/param/7]
+え？そんなに味が違うのか？==RT==コハクはどうする……？
+
+[STsp_12_02::command/477 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/478 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/478 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/478 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/478 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/480 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/480 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/480 CtrlChar/param/2]
+012
+
+[STsp_12_02::command/480 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/480 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/480 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/480 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/481 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/481 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/481 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/481 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/481 SetTalk/param/7]
+残ってるの、酸っぱそう……==RT==酸っぱいのは苦手。甘いのがいい。
+
+[STsp_12_02::command/481 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/483 SetMainRoleTalk/param/2]
+009
+
+[STsp_12_02::command/483 SetMainRoleTalk/param/3]
+none
+
+[STsp_12_02::command/483 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/483 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/483 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/484 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/484 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/484 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/484 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/484 SetTalk/param/7]
+甘いのは私が口をつけてしまったからな……
+
+[STsp_12_02::command/484 SetTalk/param/8]
+甘いのは僕が口をつけてしまったからな……
+
+[STsp_12_02::command/485 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/485 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/485 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/485 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/486 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/486 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/486 CtrlChar/param/2]
+005
+
+[STsp_12_02::command/486 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/486 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/486 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/486 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/487 SetAudio/param/1]
+se_074
+
+[STsp_12_02::command/488 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/488 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/488 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/488 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/488 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/488 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/488 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/490 SetAudio/param/1]
+se_019
+
+[STsp_12_02::command/491 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/491 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/491 CtrlChar/param/2]
+014
+
+[STsp_12_02::command/491 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/491 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/491 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/491 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/493 SetAudio/param/1]
+se_077
+
+[STsp_12_02::command/494 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/494 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/494 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/494 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/494 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/494 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/495 SetAudio/param/1]
+se_341
+
+[STsp_12_02::command/496 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/496 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/496 CtrlChar/param/2]
+003
+
+[STsp_12_02::command/496 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/496 CtrlChar/param/11]
+daintou
+
+[STsp_12_02::command/496 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/496 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/498 SetBg/param/1]
+mood_1
+
+[STsp_12_02::command/498 SetBg/param/2]
+31
+
+[STsp_12_02::command/498 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/498 SetBg/param/6]
+fade
+
+[STsp_12_02::command/499 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/499 CtrlStage/param/10]
+OutQuad
+
+[STsp_12_02::command/500 SetFx/param/1]
+fx_avg_bubble
+
+[STsp_12_02::command/501 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/501 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/501 CtrlChar/param/2]
+014
+
+[STsp_12_02::command/501 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/501 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/501 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/501 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/502 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/502 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/502 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/502 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/502 SetTalk/param/7]
+あむ……うん、おいしい。
+
+[STsp_12_02::command/502 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/504 SetAudio/param/1]
+se_070
+
+[STsp_12_02::command/505 CtrlStage/param/9]
+Xiao
+
+[STsp_12_02::command/505 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/506 SetBg/param/1]
+tower_rest
+
+[STsp_12_02::command/506 SetBg/param/2]
+AvgStageEffect_paint
+
+[STsp_12_02::command/506 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/506 SetBg/param/6]
+default
+
+[STsp_12_02::command/507 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/507 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/509 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/509 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/510 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/510 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/510 CtrlChar/param/2]
+007
+
+[STsp_12_02::command/510 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STsp_12_02::command/510 CtrlChar/param/11]
+jingxia
+
+[STsp_12_02::command/510 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/510 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/512 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/512 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/512 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/512 CtrlChar/param/3]
+avg_emoji_shy
+
+[STsp_12_02::command/512 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/512 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/512 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/513 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/513 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/513 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/513 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/513 SetTalk/param/7]
+ボスと半分こ……うれしい。
+
+[STsp_12_02::command/513 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/515 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/515 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/515 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/515 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/515 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/515 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/516 SetAudio/param/1]
+se_066
+
+[STsp_12_02::command/517 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/517 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/517 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/517 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/517 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/517 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/519 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/519 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/519 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/519 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/519 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/519 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/519 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/520 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/520 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/520 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/520 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/520 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/520 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/521 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/521 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/521 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/521 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/521 SetTalk/param/7]
+そんなに変な味だった？==RT==ワタシ的にはいい感じに調節したつもりだったんだけど……
+
+[STsp_12_02::command/521 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/523 SetMainRoleTalk/param/2]
+021
+
+[STsp_12_02::command/523 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[STsp_12_02::command/523 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/523 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/523 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/524 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/524 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/524 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/524 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/524 SetTalk/param/7]
+変というわけではないが……==RT==なんというか極端な味つけだとは思ったよ。
+
+[STsp_12_02::command/524 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/525 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/525 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/525 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/525 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/527 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/527 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/527 CtrlChar/param/2]
+015
+
+[STsp_12_02::command/527 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STsp_12_02::command/527 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/527 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/527 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/528 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/528 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/528 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/528 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/528 SetTalk/param/7]
+……そう。ならそれはワタシのミスね。
+
+[STsp_12_02::command/528 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/530 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/530 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/530 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/530 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/530 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/530 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/530 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/531 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/531 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/531 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/531 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/531 SetTalk/param/7]
+普段から味覚にガツンとくるものばかり食べているから。==RT==間違いなくそれが原因よ。
+
+[STsp_12_02::command/531 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/532 SetAudio/param/1]
+se_077
+
+[STsp_12_02::command/533 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/533 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/533 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/533 CtrlChar/param/11]
+JuGong
+
+[STsp_12_02::command/533 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/533 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/535 SetChar/param/2]
+none
+
+[STsp_12_02::command/535 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/535 SetChar/param/4]
+a
+
+[STsp_12_02::command/535 SetChar/param/5]
+006
+
+[STsp_12_02::command/535 SetChar/param/6]
+none
+
+[STsp_12_02::command/536 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/536 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/536 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/536 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/536 SetTalk/param/7]
+無理して食べてお腹を壊したら大変だし、==RT==残してくれてかまわないわ。
+
+[STsp_12_02::command/536 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/537 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/537 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/537 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/537 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/537 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/537 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/539 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/539 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/539 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/539 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/539 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/539 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/540 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/540 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/540 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/540 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/540 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/540 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/541 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/541 CtrlStage/param/10]
+OutQuad
+
+[STsp_12_02::command/543 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/543 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/543 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/543 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/543 CtrlChar/param/11]
+daintou
+
+[STsp_12_02::command/543 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/543 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/544 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/544 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/544 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/544 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/544 SetTalk/param/7]
+だ、大丈夫……！たしかに超激辛ではあるけど……==RT==なんだか体が熱くなって、代謝が上がった的な？==RT==健康になってる気がするし！
+
+[STsp_12_02::command/544 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/545 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/545 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/545 CtrlChar/param/2]
+005
+
+[STsp_12_02::command/545 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/545 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/545 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/545 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/547 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/547 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/547 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/547 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/547 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/547 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/548 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/548 CtrlBg/param/11]
+OutSine
+
+[STsp_12_02::command/549 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/549 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/549 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/549 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/549 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/549 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/550 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/550 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/550 CtrlChar/param/2]
+017
+
+[STsp_12_02::command/550 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_12_02::command/550 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/550 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/550 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/551 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/551 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/551 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/551 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/551 SetTalk/param/7]
+ウフフ。フォローしてくれてありがとう。==RT==でも……少し頭を冷やしたほうがいいみたい。==RT==悪いけど次の階層の星骸は、ワタシが殲滅しちゃうわね？
+
+[STsp_12_02::command/551 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/553 SetAudio/param/1]
+se_072
+
+[STsp_12_02::command/554 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/554 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/554 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/554 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/554 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/554 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/555 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/555 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/555 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/555 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/555 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/555 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/555 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/556 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/556 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/557 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/557 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/557 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/557 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/557 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/557 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/557 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/558 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/558 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/560 SetMainRoleTalk/param/2]
+025
+
+[STsp_12_02::command/560 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[STsp_12_02::command/560 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/560 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/560 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/561 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/561 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/561 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/561 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/561 SetTalk/param/7]
+（殲滅？たったひとりで？==W====RT==だが引き止められる空気ではないな……）
+
+[STsp_12_02::command/561 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/563 SetMainRoleTalk/param/2]
+010
+
+[STsp_12_02::command/563 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_12_02::command/563 SetMainRoleTalk/param/4]
+diantou
+
+[STsp_12_02::command/563 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/563 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/565 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/565 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/565 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/565 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/567 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/567 CtrlStage/param/10]
+OutQuad
+
+[STsp_12_02::command/569 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/569 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/569 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/569 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STsp_12_02::command/569 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/569 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/569 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/570 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/570 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/570 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/570 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/570 SetTalk/param/7]
+行っちゃった……==RT==でもスポンサーをひとりにしちゃってよかったのかな？
+
+[STsp_12_02::command/570 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/571 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/571 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/571 CtrlChar/param/2]
+009
+
+[STsp_12_02::command/571 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/571 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/571 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/571 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/573 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/573 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/573 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/573 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/573 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/573 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/574 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/574 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/575 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/575 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/575 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/576 SetChar/param/2]
+none
+
+[STsp_12_02::command/576 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/576 SetChar/param/4]
+a
+
+[STsp_12_02::command/576 SetChar/param/5]
+002
+
+[STsp_12_02::command/576 SetChar/param/6]
+none
+
+[STsp_12_02::command/577 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/577 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/577 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/577 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/577 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/577 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/578 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/578 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/578 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/578 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/578 SetTalk/param/7]
+問題ないわ。むしろスポンサーが決めたことなら、==RT==その意向に軽々しく口を出すべきじゃないもの。
+
+[STsp_12_02::command/578 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/580 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/580 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/580 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/580 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/580 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/580 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/580 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/581 SetChar/param/2]
+none
+
+[STsp_12_02::command/581 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/581 SetChar/param/4]
+a
+
+[STsp_12_02::command/581 SetChar/param/5]
+002
+
+[STsp_12_02::command/581 SetChar/param/6]
+none
+
+[STsp_12_02::command/583 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/583 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/583 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/583 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/583 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/583 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/584 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/584 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/584 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/584 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/584 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/584 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/585 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/585 CtrlBg/param/11]
+OutSine
+
+[STsp_12_02::command/586 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/586 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/587 SetAudio/param/1]
+se_074
+
+[STsp_12_02::command/588 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/588 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/588 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/588 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/588 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/588 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/589 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/589 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/589 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/589 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/589 SetTalk/param/7]
+あっ。==W==グレイが戻ってきたよ。
+
+[STsp_12_02::command/589 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/591 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/591 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/591 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/591 CtrlChar/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/591 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/591 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/591 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/592 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STsp_12_02::command/592 SetBGM/param/3]
+m46
+
+[STsp_12_02::command/592 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/595 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/595 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/595 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/595 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/595 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/595 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/596 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/596 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/596 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/596 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/596 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/596 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/596 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/597 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/597 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/597 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/597 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/597 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/597 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/598 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/598 CtrlBg/param/11]
+OutSine
+
+[STsp_12_02::command/599 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/599 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/601 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/601 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/601 CtrlChar/param/2]
+007
+
+[STsp_12_02::command/601 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/601 CtrlChar/param/11]
+lengzhan
+
+[STsp_12_02::command/601 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/601 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/602 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/602 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/602 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/602 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/602 SetTalk/param/7]
+ここを離れてから、まだ5分も経っていないのに……==RT==つまり次の階層の星骸は、あのグレイさんといえどひとりでは==RT==倒しきれないほど強かったということね。みんな気を引き締めて――
+
+[STsp_12_02::command/602 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/605 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/605 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/607 SetChar/param/2]
+none
+
+[STsp_12_02::command/607 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/607 SetChar/param/4]
+a
+
+[STsp_12_02::command/607 SetChar/param/5]
+002
+
+[STsp_12_02::command/607 SetChar/param/6]
+none
+
+[STsp_12_02::command/608 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/608 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/608 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/608 CtrlChar/param/11]
+youzai
+
+[STsp_12_02::command/608 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/608 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/609 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/609 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/609 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/609 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/609 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/609 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/610 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/610 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/610 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/610 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/610 SetTalk/param/7]
+ふぅ～♪巡遊者ちゃんたち、お待たせ。==RT==次の階層の星骸は全部片づけたから、==RT==スキップしてふたつ上の階層に進みましょうか。
+
+[STsp_12_02::command/610 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/611 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/611 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/611 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/611 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/611 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/611 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/612 SetBg/param/1]
+tower_common
+
+[STsp_12_02::command/612 SetBg/param/2]
+0
+
+[STsp_12_02::command/612 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/612 SetBg/param/6]
+fade
+
+[STsp_12_02::command/613 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/613 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/614 SetChar/param/2]
+none
+
+[STsp_12_02::command/614 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/614 SetChar/param/4]
+a
+
+[STsp_12_02::command/614 SetChar/param/5]
+007
+
+[STsp_12_02::command/614 SetChar/param/6]
+none
+
+[STsp_12_02::command/615 SetChar/param/2]
+none
+
+[STsp_12_02::command/615 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/615 SetChar/param/4]
+a
+
+[STsp_12_02::command/615 SetChar/param/5]
+008
+
+[STsp_12_02::command/615 SetChar/param/6]
+none
+
+[STsp_12_02::command/617 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/617 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/617 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/617 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/617 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/617 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/618 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/618 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/618 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/618 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/618 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/618 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/620 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/620 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/620 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/620 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STsp_12_02::command/620 CtrlChar/param/11]
+chijing
+
+[STsp_12_02::command/620 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/620 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/621 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/621 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/621 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/621 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/621 SetTalk/param/7]
+ほ、本当に星骸が一匹もいない……
+
+[STsp_12_02::command/621 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/623 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/623 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/623 CtrlChar/param/2]
+015
+
+[STsp_12_02::command/623 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STsp_12_02::command/623 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/623 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/623 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/624 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/624 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/624 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/624 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/624 SetTalk/param/7]
+さっきの階層だって、何十匹も星骸がいたはずだし……==RT==この階層だけ最初から一匹もいなかったなんてこと……ないよね？==RT==伝説級の巡遊者もビックリの速さだよ。
+
+[STsp_12_02::command/624 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/625 SetChar/param/2]
+none
+
+[STsp_12_02::command/625 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/625 SetChar/param/4]
+a
+
+[STsp_12_02::command/625 SetChar/param/5]
+005
+
+[STsp_12_02::command/625 SetChar/param/6]
+none
+
+[STsp_12_02::command/627 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/627 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/627 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/627 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/627 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/627 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/628 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/628 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/628 CtrlChar/param/2]
+012
+
+[STsp_12_02::command/628 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STsp_12_02::command/628 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/628 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/628 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/629 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/629 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/629 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/629 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/629 SetTalk/param/7]
+強すぎて、もはや怖い。
+
+[STsp_12_02::command/629 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/631 SetTrans/param/2]
+0
+
+[STsp_12_02::command/631 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/631 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/632 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/632 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/633 SetBg/param/1]
+BG_Black
+
+[STsp_12_02::command/633 SetBg/param/2]
+0
+
+[STsp_12_02::command/633 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/633 SetBg/param/6]
+default
+
+[STsp_12_02::command/634 SetTrans/param/2]
+0
+
+[STsp_12_02::command/634 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/634 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/636 SetAudio/param/1]
+se_128
+
+[STsp_12_02::command/637 SetFx/param/1]
+fx_avg_atta
+
+[STsp_12_02::command/639 SetAudio/param/1]
+se_323
+
+[STsp_12_02::command/641 SetTrans/param/2]
+0
+
+[STsp_12_02::command/641 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/641 SetTrans/param/8]
+default
+
+[STsp_12_02::command/642 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/642 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/643 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/643 SetBg/param/2]
+0
+
+[STsp_12_02::command/643 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/643 SetBg/param/6]
+default
+
+[STsp_12_02::command/644 SetChar/param/2]
+none
+
+[STsp_12_02::command/644 SetChar/param/3]
+avg2_954
+
+[STsp_12_02::command/644 SetChar/param/4]
+a
+
+[STsp_12_02::command/644 SetChar/param/5]
+002
+
+[STsp_12_02::command/644 SetChar/param/6]
+none
+
+[STsp_12_02::command/645 SetTrans/param/2]
+0
+
+[STsp_12_02::command/645 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/645 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/647 SetAudio/param/1]
+se_442
+
+[STsp_12_02::command/648 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/648 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/648 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/648 CtrlChar/param/11]
+shouji
+
+[STsp_12_02::command/648 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/648 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/650 PlayCharAnim/param/0]
+avg2_954
+
+[STsp_12_02::command/650 PlayCharAnim/param/1]
+shake_L
+
+[STsp_12_02::command/651 SetAudio/param/1]
+se_096
+
+[STsp_12_02::command/652 CtrlChar/param/0]
+avg2_954
+
+[STsp_12_02::command/652 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/652 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/652 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/652 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/652 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/653 CtrlStage/param/9]
+Xiao
+
+[STsp_12_02::command/653 CtrlStage/param/10]
+OutQuad
+
+[STsp_12_02::command/655 SetAudio/param/1]
+se_018
+
+[STsp_12_02::command/656 SetTrans/param/2]
+34
+
+[STsp_12_02::command/656 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/656 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/657 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/657 CtrlStage/param/10]
+Linear
+
+[STsp_12_02::command/658 SetChar/param/2]
+none
+
+[STsp_12_02::command/658 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/658 SetChar/param/4]
+a
+
+[STsp_12_02::command/658 SetChar/param/5]
+002
+
+[STsp_12_02::command/658 SetChar/param/6]
+none
+
+[STsp_12_02::command/659 SetTrans/param/2]
+0
+
+[STsp_12_02::command/659 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/659 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/661 SetAudio/param/1]
+se_062
+
+[STsp_12_02::command/662 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/662 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/662 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/662 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/662 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/662 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/664 SetMainRoleTalk/param/2]
+005
+
+[STsp_12_02::command/664 SetMainRoleTalk/param/3]
+none
+
+[STsp_12_02::command/664 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/664 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/664 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/665 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/665 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/665 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/665 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/665 SetTalk/param/7]
+グレイ、聞きたいことがあるのだが。==RT==どうして――
+
+[STsp_12_02::command/665 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/666 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/666 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/666 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/666 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/668 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/668 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/668 CtrlChar/param/2]
+009
+
+[STsp_12_02::command/668 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_12_02::command/668 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/668 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/668 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/669 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/669 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/669 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/669 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/669 SetTalk/param/7]
+どうしてひとりでも星骸を片づけられるのに、==RT==わざわざ巡遊者を雇ったのかって？
+
+[STsp_12_02::command/669 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/671 SetMainRoleTalk/param/2]
+012
+
+[STsp_12_02::command/671 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_12_02::command/671 SetMainRoleTalk/param/4]
+JuGong
+
+[STsp_12_02::command/671 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/671 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/672 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/672 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/672 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/672 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/672 SetTalk/param/7]
+そうだ。理由を聞かないまま報酬を==RT==受け取るのも気持ち悪いし……
+
+[STsp_12_02::command/672 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/673 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/673 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/673 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/673 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/674 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/674 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/674 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/674 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/674 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/674 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/674 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/676 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/676 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/676 CtrlChar/param/2]
+003
+
+[STsp_12_02::command/676 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/676 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/676 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/676 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/677 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/677 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/677 SetBGM/param/4]
+4000ms
+
+[STsp_12_02::command/678 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/678 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/678 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/678 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/678 SetTalk/param/7]
+簡単な話よ。==W==理由はワタシが審問官だから。
+
+[STsp_12_02::command/678 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/680 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/680 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/680 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/680 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/680 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/680 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/680 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/683 SetMainRoleTalk/param/2]
+002
+
+[STsp_12_02::command/683 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/683 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/683 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/683 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/684 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/684 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/684 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/684 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/684 SetTalk/param/7]
+審問官？どういうことだ？
+
+[STsp_12_02::command/684 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/685 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/685 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/685 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/685 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/687 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/687 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/687 CtrlChar/param/2]
+003
+
+[STsp_12_02::command/687 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/687 CtrlChar/param/11]
+youzai
+
+[STsp_12_02::command/687 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/687 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/688 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STsp_12_02::command/688 SetBGM/param/3]
+m12
+
+[STsp_12_02::command/688 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/689 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/689 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/689 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/689 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/689 SetTalk/param/7]
+ワタシたち審問官の仕事は、異端を炙り出すこと。==RT==でも星骸とは恩恵の神が生み出した存在であり、==RT==正確には異端とは呼べない。
+
+[STsp_12_02::command/689 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/691 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/691 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/691 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/691 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/691 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/691 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/691 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/692 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/692 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/692 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/692 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/692 SetTalk/param/7]
+だから自らの判断で討伐すれば、それは職務違反に該当するの。==RT==ただし……フフ、他人に手を貸すという名目なら、職務違反にはならない。
+
+[STsp_12_02::command/692 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/694 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/694 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/694 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/694 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/694 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/694 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/694 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/695 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/695 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/695 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/695 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/695 SetTalk/param/7]
+だから今日はね、ここに来たときから、==RT==早くアナタたちを手伝いたくてウズウズしていたの♪
+
+[STsp_12_02::command/695 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/697 SetMainRoleTalk/param/2]
+020
+
+[STsp_12_02::command/697 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_12_02::command/697 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/697 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/697 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/698 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/698 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/698 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/698 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/698 SetTalk/param/7]
+（なるほど、つまり依頼は建前だったのか。==RT==セイナたちをジッと見ていたのも、==W====RT==手を出す機会をうかがっていたのだろうな……）
+
+[STsp_12_02::command/698 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/700 SetMainRoleTalk/param/2]
+002
+
+[STsp_12_02::command/700 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[STsp_12_02::command/700 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/700 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/700 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/702 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/702 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/702 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/702 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/704 SetAudio/param/1]
+se_048
+
+[STsp_12_02::command/705 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/705 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/705 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/705 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/705 CtrlChar/param/11]
+jushou
+
+[STsp_12_02::command/705 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/705 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/706 SetAudio/param/1]
+se_074
+
+[STsp_12_02::command/707 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/707 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/707 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/707 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/707 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/707 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/708 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/708 SetBg/param/2]
+0
+
+[STsp_12_02::command/708 SetBg/param/3]
+OutSine
+
+[STsp_12_02::command/708 SetBg/param/6]
+default
+
+[STsp_12_02::command/709 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/709 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/710 SetChar/param/2]
+none
+
+[STsp_12_02::command/710 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/710 SetChar/param/4]
+a
+
+[STsp_12_02::command/710 SetChar/param/5]
+002
+
+[STsp_12_02::command/710 SetChar/param/6]
+none
+
+[STsp_12_02::command/712 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/712 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/712 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/712 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/712 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/712 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/713 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/713 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/713 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/713 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/713 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/713 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/714 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/714 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/714 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/714 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/714 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/714 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/715 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/715 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/715 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/715 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/715 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/715 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/716 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/716 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/716 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/716 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/716 SetTalk/param/7]
+そういえば、魔導書を持つアナタ、==RT==討伐の記録を取っていたでしょう？
+
+[STsp_12_02::command/716 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/718 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/718 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/718 CtrlChar/param/2]
+007
+
+[STsp_12_02::command/718 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STsp_12_02::command/718 CtrlChar/param/11]
+lengzhan
+
+[STsp_12_02::command/718 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/718 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/719 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/719 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/719 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/719 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/719 SetTalk/param/7]
+は、はい……それがどうかしましたか？
+
+[STsp_12_02::command/719 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/721 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/721 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/721 CtrlChar/param/2]
+017
+
+[STsp_12_02::command/721 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_12_02::command/721 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/721 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/721 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/722 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/722 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/722 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/722 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/722 SetTalk/param/7]
+ワタシが倒した星骸も、アナタたちの討伐数に加えておいてちょうだい。
+
+[STsp_12_02::command/722 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/724 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/724 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/724 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/724 CtrlChar/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/724 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/724 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/724 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/725 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/725 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/725 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/725 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/725 SetTalk/param/7]
+えっ！？それはいけません。==RT==監督役に依頼を手伝わせるだけでなく、==RT==自分たちの報酬に上乗せするなんて真似は……
+
+[STsp_12_02::command/725 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/726 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/726 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/726 CtrlChar/param/3]
+close
+
+[STsp_12_02::command/726 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/726 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/726 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/728 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/728 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/728 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/728 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/728 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/728 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/728 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/729 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/729 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/729 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/729 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/729 SetTalk/param/7]
+あらそう？それなら……==W==フフ、こうしましょうか。==RT==このあとの戦闘にはワタシも参加する。==RT==だからその口止め料として、手柄を受け取ってほしいの。
+
+[STsp_12_02::command/729 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/731 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/731 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/731 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/731 CtrlChar/param/3]
+avg_emoji_idea
+
+[STsp_12_02::command/731 CtrlChar/param/11]
+jushou
+
+[STsp_12_02::command/731 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/731 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/734 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/734 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/734 CtrlChar/param/2]
+016
+
+[STsp_12_02::command/734 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/734 CtrlChar/param/11]
+niunie1
+
+[STsp_12_02::command/734 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/734 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/735 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/735 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/735 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/735 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/735 SetTalk/param/7]
+で、ですが……
+
+[STsp_12_02::command/735 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/737 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/737 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/737 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/737 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/737 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/737 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/737 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/738 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/738 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/738 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/738 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/738 SetTalk/param/7]
+……アナタ、アヤメだったわね？
+
+[STsp_12_02::command/738 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/740 SetAudio/param/1]
+se_075
+
+[STsp_12_02::command/741 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/741 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/741 CtrlChar/param/2]
+009
+
+[STsp_12_02::command/741 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/741 CtrlChar/param/11]
+jushou
+
+[STsp_12_02::command/741 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/741 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/742 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/742 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/742 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/742 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/742 SetTalk/param/7]
+はい……？
+
+[STsp_12_02::command/742 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/744 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/744 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/744 CtrlChar/param/2]
+017
+
+[STsp_12_02::command/744 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_12_02::command/744 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/744 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/744 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/745 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/745 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/745 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/745 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/745 SetTalk/param/7]
+正直者。異端スコア、ゼロ点。
+
+[STsp_12_02::command/745 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/747 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/747 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/747 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/747 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STsp_12_02::command/747 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/747 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/747 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/748 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/748 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/748 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/748 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/748 SetTalk/param/7]
+うぅ……異端スコアは低いほうがいいはずなのに……==RT==『ゼロ点』という響きに体が拒絶反応を起こしています……
+
+[STsp_12_02::command/748 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/749 SetChar/param/2]
+none
+
+[STsp_12_02::command/749 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/749 SetChar/param/4]
+a
+
+[STsp_12_02::command/749 SetChar/param/5]
+002
+
+[STsp_12_02::command/749 SetChar/param/6]
+none
+
+[STsp_12_02::command/750 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/750 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/750 CtrlChar/param/2]
+018
+
+[STsp_12_02::command/750 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/750 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/750 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/750 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/752 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/752 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/752 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/752 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/752 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/752 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/753 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/753 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/753 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/753 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/753 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/753 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/755 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/755 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/755 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/755 CtrlChar/param/11]
+zuochupeng
+
+[STsp_12_02::command/755 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/755 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/756 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/756 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/756 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/756 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/756 SetTalk/param/7]
+アヤメは真面目だから。
+
+[STsp_12_02::command/756 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/758 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/758 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/758 CtrlChar/param/2]
+017
+
+[STsp_12_02::command/758 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_12_02::command/758 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/758 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/758 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/759 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/759 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/759 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/759 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/759 SetTalk/param/7]
+コハク。精度の高い射撃が持ち味の、偵察担当。==RT==異端スコア、ゼロ点。
+
+[STsp_12_02::command/759 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/760 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/760 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/760 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/760 CtrlChar/param/3]
+avg_emoji_shy
+
+[STsp_12_02::command/760 CtrlChar/param/11]
+niunie
+
+[STsp_12_02::command/760 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/760 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/761 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/761 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/761 CtrlChar/param/2]
+021
+
+[STsp_12_02::command/761 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/761 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/761 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/761 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/765 SetChar/param/2]
+none
+
+[STsp_12_02::command/765 SetChar/param/3]
+avg1_112
+
+[STsp_12_02::command/765 SetChar/param/4]
+a
+
+[STsp_12_02::command/765 SetChar/param/5]
+006
+
+[STsp_12_02::command/765 SetChar/param/6]
+none
+
+[STsp_12_02::command/766 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/766 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/766 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/766 CtrlChar/param/11]
+huanxin
+
+[STsp_12_02::command/766 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/766 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/767 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/767 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/767 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/767 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/767 CtrlChar/param/11]
+huanxin
+
+[STsp_12_02::command/767 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/767 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/768 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/768 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/768 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/768 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/768 SetTalk/param/7]
+ねえねえ！私は？私はどう！？
+
+[STsp_12_02::command/768 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/769 SetChar/param/2]
+none
+
+[STsp_12_02::command/769 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/769 SetChar/param/4]
+a
+
+[STsp_12_02::command/769 SetChar/param/5]
+002
+
+[STsp_12_02::command/769 SetChar/param/6]
+none
+
+[STsp_12_02::command/770 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/770 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/770 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/770 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/770 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/770 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/772 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/772 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/772 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/772 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/772 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/772 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/773 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/773 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/773 CtrlChar/param/2]
+008
+
+[STsp_12_02::command/773 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_12_02::command/773 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/773 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/773 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/774 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/774 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/774 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/774 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/774 SetTalk/param/7]
+その明るさで仲間を引っ張っていく勇敢な人。==RT==異端スコア、ゼロ点。
+
+[STsp_12_02::command/774 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/776 SetMainRoleTalk/param/2]
+011
+
+[STsp_12_02::command/776 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_12_02::command/776 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/776 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/776 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/777 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/777 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/777 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/777 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/777 SetTalk/param/7]
+（うーん……グレイは噂ほど怖い人ではないのか？==RT==むしろ優しさを感じるような……）
+
+[STsp_12_02::command/777 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/778 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/778 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/778 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/778 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/780 SetChoiceBegin/param/0]
+2
+
+[STsp_12_02::command/780 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/6]
+a
+
+[STsp_12_02::command/780 SetChoiceBegin/param/7]
+002
+
+[STsp_12_02::command/780 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/12/0]
+なら私の異端スコアは？
+
+[STsp_12_02::command/780 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/13/0]
+なら僕の異端スコアは？
+
+[STsp_12_02::command/780 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/780 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/781 SetChoiceJumpTo/param/0]
+2
+
+[STsp_12_02::command/781 SetChoiceJumpTo/param/1]
+1
+
+[STsp_12_02::command/782 SetChoiceRollover/param/0]
+2
+
+[STsp_12_02::command/783 SetChoiceEnd/param/0]
+2
+
+[STsp_12_02::command/784 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/784 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/784 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/784 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/784 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/784 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/784 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/786 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/786 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/786 CtrlChar/param/2]
+003
+
+[STsp_12_02::command/786 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_12_02::command/786 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/786 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/786 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/787 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/787 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/787 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/787 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/787 SetTalk/param/7]
+ん～……==W==40点ね。
+
+[STsp_12_02::command/787 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/789 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/789 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/789 CtrlChar/param/2]
+005
+
+[STsp_12_02::command/789 CtrlChar/param/3]
+avg_emoji_idea
+
+[STsp_12_02::command/789 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/789 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/789 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/792 SetMainRoleTalk/param/2]
+007
+
+[STsp_12_02::command/792 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STsp_12_02::command/792 SetMainRoleTalk/param/4]
+buman
+
+[STsp_12_02::command/792 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/792 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/793 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/793 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/793 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/793 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/793 SetTalk/param/7]
+先ほどより上がっているだと！？私だけなぜだ！！
+
+[STsp_12_02::command/793 SetTalk/param/8]
+先ほどより上がっているだと！？僕だけなぜだ！！
+
+[STsp_12_02::command/794 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/794 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/794 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/794 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/796 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/796 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/796 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/796 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/796 CtrlChar/param/11]
+youzai
+
+[STsp_12_02::command/796 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/796 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/797 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/797 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/797 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/797 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/797 SetTalk/param/7]
+仲間を守るため、ワタシが用意したお菓子を率先して試食した。==RT==その仲間想いの姿勢こそ、伝説の魔王にふさわしいわ。==RT==というわけでプラス10点よ。
+
+[STsp_12_02::command/797 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/799 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/799 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/799 CtrlChar/param/2]
+003
+
+[STsp_12_02::command/799 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/799 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/799 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/799 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/800 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/800 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/800 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/800 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/800 SetTalk/param/7]
+さらには自らのお菓子を、躊躇なく他人にわけあたえた。==RT==その懐の深さはまさに伝説の魔王にふさわしいわ。==RT==というわけでプラス10点よ。
+
+[STsp_12_02::command/800 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/802 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/802 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/802 CtrlChar/param/2]
+002
+
+[STsp_12_02::command/802 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_12_02::command/802 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/802 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/802 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/803 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/803 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/803 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/803 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/803 SetTalk/param/7]
+そして仲間たちの才能を活かした見事な采配。==RT==この手腕は伝説の魔王にふさわしいわ。==RT==というわけでプラス10点よ。
+
+[STsp_12_02::command/803 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/805 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/805 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/805 SetBGM/param/4]
+4000ms
+
+[STsp_12_02::command/806 SetMainRoleTalk/param/2]
+007
+
+[STsp_12_02::command/806 SetMainRoleTalk/param/3]
+avg_emoji_resentful
+
+[STsp_12_02::command/806 SetMainRoleTalk/param/4]
+buman
+
+[STsp_12_02::command/806 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/806 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/807 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/807 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/807 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/807 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/807 SetTalk/param/7]
+（おいおい、なんだその採点基準！？==RT==そんなことを言っていたら、==RT==すぐに100点になってしまうぞ！）
+
+[STsp_12_02::command/807 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/808 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/808 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/808 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/808 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/809 SetChar/param/2]
+none
+
+[STsp_12_02::command/809 SetChar/param/3]
+avg1_103
+
+[STsp_12_02::command/809 SetChar/param/4]
+a
+
+[STsp_12_02::command/809 SetChar/param/5]
+002
+
+[STsp_12_02::command/809 SetChar/param/6]
+none
+
+[STsp_12_02::command/810 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/810 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/810 CtrlChar/param/2]
+017
+
+[STsp_12_02::command/810 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/810 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/810 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/810 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/812 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/812 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/812 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/812 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/812 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/812 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/814 SetAudio/param/1]
+se_072
+
+[STsp_12_02::command/816 SetAudio/param/1]
+se_052
+
+[STsp_12_02::command/817 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/817 CtrlBg/param/11]
+OutSine
+
+[STsp_12_02::command/818 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/818 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/818 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/818 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/818 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/818 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/819 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/819 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/819 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_12_02::command/819 CtrlChar/param/11]
+jushou
+
+[STsp_12_02::command/819 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/819 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/820 SetTalk/param/1]
+avg1_103
+
+[STsp_12_02::command/820 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/820 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/820 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/820 SetTalk/param/7]
+ねえボス。あそこ、ケータイが落ちてるよ。
+
+[STsp_12_02::command/820 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/821 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/821 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/821 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/821 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/821 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/821 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/822 SetAudio/param/1]
+se_048
+
+[STsp_12_02::command/823 CtrlChar/param/0]
+avg1_103
+
+[STsp_12_02::command/823 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/823 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/823 CtrlChar/param/11]
+JuGong
+
+[STsp_12_02::command/823 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/823 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/824 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/824 SetBGM/param/3]
+m14
+
+[STsp_12_02::command/824 SetBGM/param/4]
+none
+
+[STsp_12_02::command/825 SetFrontObj/param/2]
+qstory_tales_12_003
+
+[STsp_12_02::command/826 SetChar/param/2]
+none
+
+[STsp_12_02::command/826 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/826 SetChar/param/4]
+a
+
+[STsp_12_02::command/826 SetChar/param/5]
+006
+
+[STsp_12_02::command/826 SetChar/param/6]
+none
+
+[STsp_12_02::command/828 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/828 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/828 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/828 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/828 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/828 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/829 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/829 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/829 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/829 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/829 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/829 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/830 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/830 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/830 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/830 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/830 SetTalk/param/7]
+しかもあの赤黒いのは……血でしょうか？==RT==この乾き方からすると、かなり前のもののようですが……
+
+[STsp_12_02::command/830 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/831 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/831 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/831 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/831 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/831 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/831 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/833 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/833 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/833 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/833 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/833 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/833 CtrlChar/param/13]
+OutSine
+
+[STsp_12_02::command/834 CtrlChar/param/0]
+avg1_112
+
+[STsp_12_02::command/834 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/834 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/834 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_12_02::command/834 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/834 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/834 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/835 SetTalk/param/1]
+avg1_112
+
+[STsp_12_02::command/835 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/835 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/835 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/835 SetTalk/param/7]
+エレベーターに乗るときに落としちゃったのかな？
+
+[STsp_12_02::command/835 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/837 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/837 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/837 CtrlChar/param/2]
+005
+
+[STsp_12_02::command/837 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/837 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/837 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/837 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/838 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/838 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/838 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/838 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/838 SetTalk/param/7]
+だとしても、気づいたところで取りに戻るのが普通でしょ？
+
+[STsp_12_02::command/838 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/839 SetFrontObj/param/2]
+qstory_tales_12_003
+
+[STsp_12_02::command/842 SetMainRoleTalk/param/2]
+020
+
+[STsp_12_02::command/842 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_12_02::command/842 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/842 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/842 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/843 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/843 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/843 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/843 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/843 SetTalk/param/7]
+（巡遊者にとってケータイは、==RT==他人と自分をつなぐ命綱だ。==RT==放置するなんてありえない）
+
+[STsp_12_02::command/843 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/845 SetMainRoleTalk/param/2]
+025
+
+[STsp_12_02::command/845 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/845 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/845 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/845 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/846 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/846 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/846 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/846 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/846 SetTalk/param/7]
+（もしかすると――）
+
+[STsp_12_02::command/846 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/847 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/847 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/847 SetMainRoleTalk/param/5]
+y
+
+[STsp_12_02::command/847 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/848 SetAudio/param/1]
+se_169
+
+[STsp_12_02::command/849 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STsp_12_02::command/849 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/849 SetBGM/param/4]
+none
+
+[STsp_12_02::command/850 SetTrans/param/2]
+16
+
+[STsp_12_02::command/850 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/850 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/851 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_12_02::command/852 SetBg/param/1]
+flatlands_daylight
+
+[STsp_12_02::command/852 SetBg/param/2]
+0
+
+[STsp_12_02::command/852 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/852 SetBg/param/6]
+default
+
+[STsp_12_02::command/853 CtrlBg/param/10]
+none
+
+[STsp_12_02::command/853 CtrlBg/param/11]
+Linear
+
+[STsp_12_02::command/854 SetTrans/param/2]
+0
+
+[STsp_12_02::command/854 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/854 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/855 SetPhone/param/2]
+103
+
+[STsp_12_02::command/856 SetPhoneMsg/param/1]
+avg1_103
+
+[STsp_12_02::command/856 SetPhoneMsg/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/856 SetPhoneMsg/param/3]
+0
+
+[STsp_12_02::command/856 SetPhoneMsg/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/856 SetPhoneMsg/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/856 SetPhoneMsg/param/7]
+でも最近、急にあちこちで黄昏庁がなにかを調査しはじめて==RT==アモール周辺では失踪事件が頻発 ==RT==ここ2週間だけでも5組のギルドが荒野で消息を絶ってる
+
+[STsp_12_02::command/856 SetPhoneMsg/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/857 SetPhone/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/858 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_12_02::command/858 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/858 SetBGM/param/4]
+2000ms
+
+[STsp_12_02::command/860 SetAudio/param/1]
+se_490
+
+[STsp_12_02::command/861 SetTrans/param/2]
+0
+
+[STsp_12_02::command/861 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/861 SetTrans/param/8]
+default
+
+[STsp_12_02::command/862 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_12_02::command/863 SetBg/param/1]
+tower_fire_earth
+
+[STsp_12_02::command/863 SetBg/param/2]
+0
+
+[STsp_12_02::command/863 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/863 SetBg/param/6]
+default
+
+[STsp_12_02::command/864 SetTrans/param/2]
+0
+
+[STsp_12_02::command/864 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/864 SetTrans/param/8]
+default
+
+[STsp_12_02::command/866 SetMainRoleTalk/param/2]
+002
+
+[STsp_12_02::command/866 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STsp_12_02::command/866 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/866 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/866 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/867 SetTalk/param/1]
+avg3_100
+
+[STsp_12_02::command/867 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/867 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/867 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/867 SetTalk/param/7]
+うわっ……！？な、なんだ！
+
+[STsp_12_02::command/867 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/868 SetMainRoleTalk/param/3]
+close
+
+[STsp_12_02::command/868 SetMainRoleTalk/param/4]
+none
+
+[STsp_12_02::command/868 SetMainRoleTalk/param/5]
+z
+
+[STsp_12_02::command/868 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_12_02::command/869 SetChar/param/2]
+none
+
+[STsp_12_02::command/869 SetChar/param/3]
+avg1_111
+
+[STsp_12_02::command/869 SetChar/param/4]
+a
+
+[STsp_12_02::command/869 SetChar/param/5]
+006
+
+[STsp_12_02::command/869 SetChar/param/6]
+none
+
+[STsp_12_02::command/871 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/871 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/871 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/871 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/871 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/871 CtrlChar/param/13]
+OutQuad
+
+[STsp_12_02::command/872 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/872 CtrlStage/param/10]
+OutQuad
+
+[STsp_12_02::command/873 CtrlChar/param/0]
+avg1_111
+
+[STsp_12_02::command/873 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/873 CtrlChar/param/2]
+006
+
+[STsp_12_02::command/873 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STsp_12_02::command/873 CtrlChar/param/11]
+lengzhan
+
+[STsp_12_02::command/873 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/873 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/874 SetTalk/param/1]
+avg1_111
+
+[STsp_12_02::command/874 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/874 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/874 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/874 SetTalk/param/7]
+こういう場合、出たほうがいいんでしょうか？
+
+[STsp_12_02::command/874 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/877 SetChar/param/2]
+EV_DOUBLE_R_in
+
+[STsp_12_02::command/877 SetChar/param/3]
+avg1_149
+
+[STsp_12_02::command/877 SetChar/param/4]
+a
+
+[STsp_12_02::command/877 SetChar/param/5]
+002
+
+[STsp_12_02::command/877 SetChar/param/6]
+none
+
+[STsp_12_02::command/878 CtrlStage/param/9]
+none
+
+[STsp_12_02::command/878 CtrlStage/param/10]
+OutSine
+
+[STsp_12_02::command/880 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/880 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/880 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/880 CtrlChar/param/11]
+none
+
+[STsp_12_02::command/880 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/880 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/881 SetTalk/param/1]
+avg1_149
+
+[STsp_12_02::command/881 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/881 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/881 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/881 SetTalk/param/7]
+ちょっと貸して。==W==もしもしー？アナタは誰？
+
+[STsp_12_02::command/881 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/883 SetAudio/param/1]
+se_490_stop
+
+[STsp_12_02::command/884 SetAudio/param/1]
+se_118
+
+[STsp_12_02::command/885 CtrlChar/param/0]
+avg1_149
+
+[STsp_12_02::command/885 CtrlChar/param/1]
+a
+
+[STsp_12_02::command/885 CtrlChar/param/2]
+004
+
+[STsp_12_02::command/885 CtrlChar/param/3]
+none
+
+[STsp_12_02::command/885 CtrlChar/param/11]
+diantou
+
+[STsp_12_02::command/885 CtrlChar/param/12]
+none
+
+[STsp_12_02::command/885 CtrlChar/param/13]
+Linear
+
+[STsp_12_02::command/888 SetAudio/param/1]
+se_282
+
+[STsp_12_02::command/889 SetAudio/param/1]
+se_418
+
+[STsp_12_02::command/890 SetTrans/param/2]
+0
+
+[STsp_12_02::command/890 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/890 SetTrans/param/8]
+fade
+
+[STsp_12_02::command/891 SetBg/param/1]
+white
+
+[STsp_12_02::command/891 SetBg/param/2]
+0
+
+[STsp_12_02::command/891 SetBg/param/3]
+Linear
+
+[STsp_12_02::command/891 SetBg/param/6]
+default
+
+[STsp_12_02::command/892 SetFx/param/1]
+fx_avg_noise
+
+[STsp_12_02::command/893 SetFx/param/1]
+fx_avg_nega_ev
+
+[STsp_12_02::command/894 SetAudio/param/1]
+se_258
+
+[STsp_12_02::command/895 SetAudio/param/1]
+se_079
+
+[STsp_12_02::command/896 SetTrans/param/2]
+0
+
+[STsp_12_02::command/896 SetTrans/param/3]
+Linear
+
+[STsp_12_02::command/896 SetTrans/param/8]
+default
+
+[STsp_12_02::command/897 SetAudio/param/1]
+se_313
+
+[STsp_12_02::command/898 SetAudio/param/1]
+se_339
+
+[STsp_12_02::command/899 SetTalk/param/1]
+0
+
+[STsp_12_02::command/899 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/899 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/899 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/899 SetTalk/param/7]
+……星骸が……たくさん……
+
+[STsp_12_02::command/899 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/900 SetAudio/param/1]
+se_283
+
+[STsp_12_02::command/901 SetAudio/param/1]
+se_334
+
+[STsp_12_02::command/903 SetAudio/param/1]
+se_079
+
+[STsp_12_02::command/904 SetAudio/param/1]
+se_316
+
+[STsp_12_02::command/905 SetTalk/param/1]
+0
+
+[STsp_12_02::command/905 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/905 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/905 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/905 SetTalk/param/7]
+塔の……奥……たす、け……て……
+
+[STsp_12_02::command/905 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/907 SetTalk/param/1]
+0
+
+[STsp_12_02::command/907 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/907 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/907 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/907 SetTalk/param/7]
+<size=100>た、す……けて……！！
+
+[STsp_12_02::command/907 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_12_02::command/908 SetAudio/param/1]
+se_396
+
+[STsp_12_02::command/910 SetAudio/param/1]
+se_418_stop
+
+[STsp_12_02::command/911 SetTrans/param/2]
+34
+
+[STsp_12_02::command/911 SetTrans/param/3]
+OutSine
+
+[STsp_12_02::command/911 SetTrans/param/8]
+fade
+

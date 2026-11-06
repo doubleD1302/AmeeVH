@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__REPORT_TITLE__</title>
+<style>
+[hidden]{display:none!important}
+:root{color-scheme:light;--ink:#18312e;--muted:#586b66;--line:#d8e3dc;--green:#12624f;--paper:#fffef9;--wash:#f0f5ee}*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:var(--ink);color:#fff;padding:32px max(24px,calc((100vw - 1440px)/2));border-bottom:5px solid #9fc6a3}header small{letter-spacing:.14em;color:#b8d8c6}h1{font-size:clamp(25px,3vw,36px);margin:5px 0}header p{margin:5px 0;color:#d7e5dd}.toolbar{position:sticky;top:0;background:#fffef9f5;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:2;padding:16px 24px;display:flex;gap:12px;flex-wrap:wrap;align-items:end}.control{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:650}.control:first-child{flex:1;min-width:220px}input,select,button{font:inherit;border:1px solid #b8cbbf;border-radius:7px;background:white;color:var(--ink);padding:9px 12px}button{cursor:pointer;font-weight:600}button:hover{background:#e5eee5}input:focus,select:focus,button:focus{outline:3px solid #84b9a5;outline-offset:2px}main{max-width:1440px;margin:auto;padding:22px 24px 60px}#stats{color:var(--muted);margin:0 0 16px}.folder{border-left:2px solid #c5d8c9;margin:9px 0 9px 10px;padding-left:14px}summary{cursor:pointer;overflow-wrap:anywhere}.folder>summary{font-weight:700;padding:7px 0}.file{margin:14px 0;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}.file>summary{padding:16px 20px;font-weight:700;background:#eaf1e7}.file-body{padding:16px 20px}.path{font-size:13px;color:var(--muted);overflow-wrap:anywhere}.path a,a{color:var(--green)}.file-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:12px 0}.entry{border:1px solid var(--line);border-radius:9px;margin:16px 0;overflow:hidden;background:#fff}.entry>summary{padding:12px 16px;font-weight:650;display:list-item}.entry-body{padding:0 16px 16px}.badge{display:inline-block;border-radius:20px;padding:2px 10px;font-size:12px;margin:2px 6px 2px 0;background:#e6efe9;color:#225b43}.badge.absent{background:#edf0f1;color:#53605c}.badge.needs_review,.badge.suspected{background:#fff0cc;color:#805609}.sources{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}.source-box{min-width:0;border:1px solid var(--line);border-radius:7px;padding:10px;background:#f7f9f4}.label{font-size:12px;font-weight:750;color:var(--green);margin-bottom:5px}pre{font:14px/1.7 ui-monospace,Consolas,"Segoe UI",monospace;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;max-height:28rem;overflow:auto}.vi{border-left:3px solid #75a78e;padding:10px 14px;margin:12px 0;background:#f1f7ef}.finding{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.finding h3{font-size:17px;margin:4px 0}.finding p{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}.empty{background:var(--paper);border:1px dashed #b8cbbf;border-radius:12px;padding:32px;color:var(--muted)}.notice{padding:8px 12px;background:#fff4d9;border-radius:6px;font-size:13px}.error{color:#9b302c;font-weight:bold}.evidence{padding-left:22px}footer{color:var(--muted);font-size:12px;margin-top:24px}@media(max-width:1000px){.sources{grid-template-columns:1fr}.folder{margin-left:3px;padding-left:8px}.toolbar{position:static}.file-body{padding:12px}}@media print{.toolbar{display:none}body{background:white}.entry,.file{break-inside:avoid}pre{max-height:none}header{color:#18312e;background:white}header p{color:#586b66}}
+</style>
+<header><small>STELLA SORA · ĐỐI CHIẾU BẢN DỊCH</small><h1 id="title"></h1><p id="intro"></p><p id="updated"></p></header>
+<div class="toolbar">
+ <label class="control">Tìm trong đường dẫn, người nói, EN/JP/CN và VI<input id="search" type="search" placeholder="Tên file, số khối, câu thoại…"></label>
+ <label class="control">Trạng thái<select id="status"><option value="all">Tất cả</option><option value="active">Còn phát hiện</option><option value="clear">Đã rà, chưa có phát hiện</option><option value="needs_review">Cần đối chiếu</option><option value="absent">Không còn ở bản hiện tại</option></select></label>
+ <label class="control" id="confidence-control">Reference<select id="confidence"><option value="all">Mọi mức xác minh</option><option value="verified">Đã xác minh</option><option value="suspected">Nghi vấn</option></select></label>
+ <button id="expand" type="button">Mở tất cả</button><button id="collapse" type="button">Thu gọn</button>
+</div>
+<main><p id="stats" aria-live="polite"></p><div id="tree"></div><footer>Báo cáo phản ánh lần dịch/rà đã lưu gần nhất. Trang chỉ để đọc; không tự dịch, theo dõi file nền hoặc gửi dữ liệu lên mạng.</footer></main>
+<script id="report-data" type="application/json">__REPORT_DATA__</script>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const statusNames={active:'Còn phát hiện',clear:'Đã rà, chưa có phát hiện',absent:'Không còn ở bản hiện tại',needs_review:'Cần đối chiếu'};
+const confidenceNames={verified:'Đã xác minh',suspected:'Nghi vấn'};
+function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n}
+function field(parent,label,text,cls){const box=el('div',undefined,cls);box.append(el('div',label,'label'),el('pre',text));parent.append(box)}
+function badge(text,cls){return el('span',text,'badge '+(cls||''))}
+function formatDate(value){return value?value.replace('T',' ').replace('+07:00',' GMT+7'):'Chưa có lần rà'}
+function ranges(values){const ns=values.map(Number).sort((a,b)=>a-b),out=[];for(let i=0;i<ns.length;){let start=ns[i],end=start;while(i+1<ns.length&&ns[i+1]===end+1)end=ns[++i];out.push(start===end?String(start):start+'–'+end);i++}return out.join(', ')||'Chưa có'}
+function evidenceLink(proof){const li=el('li');let url;try{url=new URL(proof.url||'')}catch{}if(url&&['https:','http:'].includes(url.protocol)){const a=el('a',proof.label);a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';li.append(a)}else{li.textContent=proof.label+(proof.url?' — '+proof.url:'')}return li}
+let report;
+try{report=JSON.parse($('report-data').textContent)}catch(error){$('tree').append(el('p','Dữ liệu báo cáo không đọc được. Giữ nguyên file và kiểm tra lại.','error'));throw error}
+const isReference=report.report_type==='references';
+$('title').textContent=isReference?'Reference & chơi chữ':'Xung đột EN / JP / CN';
+$('intro').textContent=isReference?'Dụng ý ngôn ngữ, bằng chứng và cách chuyển sang tiếng Việt.':'Khác biệt nguồn, ngoại lệ và căn cứ xử lý trong bản VI.';
+$('updated').textContent='Cập nhật: '+formatDate(report.updated_at);
+$('confidence-control').hidden=!isReference;
+function makeEntry(record,unresolved){
+ const box=el('details',undefined,'entry');box.open=true;
+ const identity=record.source_code||record.speaker;
+ const sum=el('summary',(unresolved?'Vị trí cũ — ':'')+'Khối '+record.block_order+(identity?' · '+identity:''));
+ sum.append(document.createTextNode(' '),badge(statusNames[record.status],record.status));box.append(sum);
+ const body=el('div',undefined,'entry-body');
+ if(unresolved)body.append(el('p','Chưa xác định chắc chắn vị trí hiện tại; số khối và trích đoạn dưới đây thuộc lần rà trước.','notice'));
+ if(record.status==='clear')body.append(el('p','Đã rà khối này, chưa có phát hiện thuộc báo cáo này.','notice'));
+ if(record.status==='absent')body.append(el('p','Không còn phát hiện trong phạm vi vừa rà. Chi tiết lần phát hiện trước được giữ lại để tra cứu.','notice'));
+ if(record.status==='needs_review'&&!unresolved)body.append(el('p','Nội dung VI hoặc vị trí đã đổi; cần đối chiếu lại phần phân tích.','notice'));
+ body.append(el('div',(record.kind||'UI tĩnh')+' · '+formatDate(record.updated_at),'path'));
+ if(Object.keys(record.source_refs).length)field(body,'Mã nguồn',Object.entries(record.source_refs).map(([k,v])=>k+': '+v).join('\n'));
+ const sources=el('div',undefined,'sources');for(const lang of ['EN','JP','CN'])field(sources,lang,record.source[lang],'source-box');body.append(sources);
+ field(body,unresolved?'VI tại lần rà':'VI hiện tại',record.current_text_vi,'vi');
+ if(record.current_text_vi!==record.text_vi)field(body,'VI đã dùng khi phân tích',record.text_vi,'vi');
+ if(record.previous_context){const history=el('details');history.append(el('summary','Ngữ cảnh lần phát hiện trước'));for(const lang of ['EN','JP','CN'])field(history,lang,record.previous_context.source[lang],'source-box');field(history,'VI khi phát hiện',record.previous_context.text_vi,'vi');body.append(history)}
+ for(const finding of record.findings){
+  if(['active','absent'].includes($('status').value)&&(finding.status||'active')!==$('status').value)continue;
+  if(isReference&&$('confidence').value!=='all'&&finding.confidence!==$('confidence').value)continue;const item=el('section',undefined,'finding');item.append(el('h3',finding.title));
+  item.append(badge(finding.languages.join(' / ')));item.append(badge(statusNames[finding.status||'active'],finding.status));
+  if(finding.previous_context){const prior=el('details');prior.append(el('summary','Ngữ cảnh của phát hiện không còn ở bản hiện tại'));for(const lang of ['EN','JP','CN'])field(prior,lang,finding.previous_context.source[lang],'source-box');field(prior,'VI khi phát hiện',finding.previous_context.text_vi,'vi');item.append(prior)}if(isReference)item.append(badge(confidenceNames[finding.confidence],finding.confidence));
+  item.append(el('p',finding.detail));item.append(el('div','Cách xử lý VI','label'),el('p',finding.handling));
+  if(finding.basis)item.append(el('div','Căn cứ','label'),el('p',finding.basis));
+  if(finding.evidence){const ul=el('ul',undefined,'evidence');for(const proof of finding.evidence)ul.append(evidenceLink(proof));item.append(el('div','Bằng chứng / tra cứu','label'),ul)}body.append(item)}
+ box.append(body);return box;
+}
+function makeFile(path,info,records){
+ const box=el('details',undefined,'file');box.open=true;
+ const reviewed=Object.keys(info.coverage).length;
+ box.append(el('summary',path.split('/').at(-1)+' · '+reviewed+'/'+info.total_blocks+' khối đã rà'));
+ const body=el('div',undefined,'file-body');const link=el('a',path);link.href='../'+path.split('/').map(encodeURIComponent).join('/');link.target='_blank';link.rel='noopener';
+ const pathRow=el('div',undefined,'path');pathRow.append(link);body.append(pathRow);
+ const meta=el('div',undefined,'file-meta');meta.append(el('span','Phạm vi đã rà: '+ranges(Object.keys(info.coverage))),el('span',reviewed===info.total_blocks?'Đã rà đủ file':'Chưa rà đủ file'),el('span','Cập nhật: '+formatDate(info.updated_at)));body.append(meta);
+ const all=Object.values(info.entries).concat(Object.values(info.unresolved));
+ const active=all.filter(e=>e.status==='active').reduce((sum,e)=>sum+e.findings.filter(f=>(f.status||'active')==='active').length,0),pending=all.filter(e=>e.status==='needs_review').length;
+ body.append(el('p',active+' phát hiện hiện hành · '+pending+' mục cần đối chiếu · Đang hiển thị '+records.length+' mục.','path'));
+ if(!all.length)body.append(el('p','Không phát hiện vấn đề thuộc báo cáo này trong phạm vi đã rà.','notice'));
+ else if(!records.length)body.append(el('p','Không có mục khớp bộ lọc hiện tại.','path'));
+ for(const item of records)body.append(makeEntry(item.record,item.unresolved));box.append(body);return box;
+}
+function renderTree(){
+ const q=$('search').value.trim().toLocaleLowerCase('vi'),status=$('status').value,confidence=$('confidence').value;
+ const allFilters=status==='all'&&confidence==='all';const root={children:new Map(),files:[]};let visibleFiles=0,visibleEntries=0;
+ const paths=Object.keys(report.files).sort((a,b)=>a.localeCompare(b,'vi',{numeric:true}));
+ for(const path of paths){const info=report.files[path],pathMatch=path.toLocaleLowerCase('vi').includes(q);
+  const records=[...Object.values(info.entries).map(record=>({record,unresolved:false})),...Object.values(info.unresolved).map(record=>({record,unresolved:true}))]
+   .filter(({record})=>{
+    const candidates=record.findings.filter(f=>(!isReference||confidence==='all'||f.confidence===confidence)&&(!['active','absent'].includes(status)||(f.status||'active')===status));
+    const statusMatch=status==='all'||(['active','absent'].includes(status)?record.status!=='needs_review'&&candidates.length>0:record.status===status);
+    return statusMatch&&(!isReference||confidence==='all'||candidates.length>0)&&(!q||JSON.stringify([path,record]).toLocaleLowerCase('vi').includes(q));
+   })
+   .sort((a,b)=>a.record.block_order-b.record.block_order||Number(a.unresolved)-Number(b.unresolved));
+  if(!records.length&&!(allFilters&&pathMatch))continue;
+  const parts=path.split('/');parts.pop();let cursor=root;for(const part of parts){if(!cursor.children.has(part))cursor.children.set(part,{children:new Map(),files:[]});cursor=cursor.children.get(part)}cursor.files.push({path,info,records});visibleFiles++;visibleEntries+=records.length;
+ }
+ $('tree').replaceChildren();
+ function append(node,parent,depth){for(const [name,child] of node.children){const d=el('details',undefined,'folder');d.open=depth<2||Boolean(q);d.append(el('summary',name+'/'));append(child,d,depth+1);parent.append(d)}for(const f of node.files)parent.append(makeFile(f.path,f.info,f.records))}
+ append(root,$('tree'),0);
+ if(!paths.length)$('tree').append(el('div','Chưa có dữ liệu rà. Hai báo cáo sẽ được cập nhật từ những lần dịch tiếp theo; các Merge cũ chưa được rà ngược.','empty'));
+ else if(!visibleFiles)$('tree').append(el('div','Không có kết quả khớp tìm kiếm và bộ lọc.','empty'));
+ $('stats').textContent=paths.length+' file đã có dữ liệu rà · Hiển thị '+visibleFiles+' file / '+visibleEntries+' mục';
+}
+for(const id of ['search','status','confidence'])$(id).addEventListener(id==='search'?'input':'change',renderTree);
+$('expand').addEventListener('click',()=>document.querySelectorAll('#tree details').forEach(n=>n.open=true));
+$('collapse').addEventListener('click',()=>document.querySelectorAll('#tree details').forEach(n=>n.open=false));
+renderTree();
+</script>
+</html>

@@ -1,0 +1,5317 @@
+STev_01_07 | EN | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1771
+
+[STev_01_07::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STev_01_07::command/0 SetIntro/param/1]
+Act Seven
+
+[STev_01_07::command/0 SetIntro/param/2]
+Beneath the Shadow
+
+[STev_01_07::command/0 SetIntro/param/3]
+A giant Hexhorn Whale attacks, but you and Karin manage to shake it off. Just as you think the danger is over, Shia gets caught in a whirlpool. In that moment of despair, that eerie green glow silently emerges.
+
+[STev_01_07::command/1 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/1 SetBg/param/2]
+0
+
+[STev_01_07::command/1 SetBg/param/3]
+Linear
+
+[STev_01_07::command/1 SetBg/param/6]
+default
+
+[STev_01_07::command/2 SetTrans/param/2]
+0
+
+[STev_01_07::command/2 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/2 SetTrans/param/8]
+default
+
+[STev_01_07::command/3 SetAudio/param/1]
+se_347
+
+[STev_01_07::command/4 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/4 SetBg/param/2]
+0
+
+[STev_01_07::command/4 SetBg/param/3]
+Linear
+
+[STev_01_07::command/4 SetBg/param/6]
+default
+
+[STev_01_07::command/5 SetFx/param/1]
+fx_avg_rain_2
+
+[STev_01_07::command/6 SetTrans/param/2]
+0
+
+[STev_01_07::command/6 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/6 SetTrans/param/8]
+default
+
+[STev_01_07::command/7 SetAudio/param/1]
+se_193
+
+[STev_01_07::command/8 SetFx/param/1]
+fx_avg_thunder
+
+[STev_01_07::command/9 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/9 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/10 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/10 SetBGM/param/3]
+m10
+
+[STev_01_07::command/10 SetBGM/param/4]
+none
+
+[STev_01_07::command/11 SetChar/param/2]
+none
+
+[STev_01_07::command/11 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/11 SetChar/param/4]
+b
+
+[STev_01_07::command/11 SetChar/param/5]
+020
+
+[STev_01_07::command/11 SetChar/param/6]
+none
+
+[STev_01_07::command/12 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/12 CtrlChar/param/1]
+b
+
+[STev_01_07::command/12 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/12 CtrlChar/param/11]
+none
+
+[STev_01_07::command/12 CtrlChar/param/12]
+none
+
+[STev_01_07::command/12 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/13 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/13 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/13 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/13 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/13 SetTalk/param/7]
+Th-that sound... It's a Hexhorn Whale!==RT==Ugh, those giant fellas are the absolute worst to deal with!
+
+[STev_01_07::command/13 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/15 SetFx/param/1]
+fx_avg_thunder
+
+[STev_01_07::command/16 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/16 CtrlChar/param/1]
+b
+
+[STev_01_07::command/16 CtrlChar/param/2]
+006
+
+[STev_01_07::command/16 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STev_01_07::command/16 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/16 CtrlChar/param/12]
+none
+
+[STev_01_07::command/16 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/17 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/17 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/17 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/17 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/17 SetTalk/param/7]
+It's all my fault. I totally jinxed us. Now a real sea monster's here...
+
+[STev_01_07::command/17 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/19 SetAudio/param/1]
+se_099
+
+[STev_01_07::command/20 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/20 CtrlChar/param/1]
+b
+
+[STev_01_07::command/20 CtrlChar/param/2]
+014
+
+[STev_01_07::command/20 CtrlChar/param/3]
+none
+
+[STev_01_07::command/20 CtrlChar/param/11]
+none
+
+[STev_01_07::command/20 CtrlChar/param/12]
+none
+
+[STev_01_07::command/20 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/21 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/21 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/21 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/21 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/21 SetTalk/param/7]
+This is bad. We gotta reach Shia, now!
+
+[STev_01_07::command/21 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/23 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/23 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/24 SetMainRoleTalk/param/2]
+016
+
+[STev_01_07::command/24 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/24 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/24 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/24 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/25 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/25 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/25 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/25 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/25 SetTalk/param/7]
+Shia just called. The signal cut out almost immediately—the waves must be too rough.
+
+[STev_01_07::command/25 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/26 SetMainRoleTalk/param/2]
+012
+
+[STev_01_07::command/26 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/26 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/26 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/26 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/27 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/27 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/27 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/27 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/27 SetTalk/param/7]
+She must've run into the monster, too. She told us to go without her...
+
+[STev_01_07::command/27 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/28 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/28 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/28 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/28 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/30 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/30 CtrlChar/param/1]
+b
+
+[STev_01_07::command/30 CtrlChar/param/2]
+007
+
+[STev_01_07::command/30 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STev_01_07::command/30 CtrlChar/param/11]
+none
+
+[STev_01_07::command/30 CtrlChar/param/12]
+none
+
+[STev_01_07::command/30 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/31 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/31 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/31 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/31 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/31 SetTalk/param/7]
+Go without her?! No way!==W== She's out there all by herself! We have to go save her, right now!
+
+[STev_01_07::command/31 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/33 CtrlBg/param/10]
+Zhong
+
+[STev_01_07::command/33 CtrlBg/param/11]
+Linear
+
+[STev_01_07::command/34 SetAudio/param/1]
+se_237
+
+[STev_01_07::command/35 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/35 CtrlChar/param/1]
+b
+
+[STev_01_07::command/35 CtrlChar/param/2]
+020
+
+[STev_01_07::command/35 CtrlChar/param/3]
+close
+
+[STev_01_07::command/35 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/35 CtrlChar/param/12]
+none
+
+[STev_01_07::command/35 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/38 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/38 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/39 SetMainRoleTalk/param/2]
+009
+
+[STev_01_07::command/39 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/39 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/39 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/39 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/40 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/40 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/40 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/40 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/40 SetTalk/param/7]
+Karin, calm down. We don't know her exact position. Rushing in blind could make things worse.
+
+[STev_01_07::command/40 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/41 SetMainRoleTalk/param/2]
+012
+
+[STev_01_07::command/41 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/41 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/41 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/41 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/42 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/42 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/42 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/42 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/42 SetTalk/param/7]
+Let's get our facts straight and come up with a plan. You don't want to put her in more danger, do you?
+
+[STev_01_07::command/42 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/43 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/43 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/43 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/43 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/45 SetAudio/param/1]
+se_146
+
+[STev_01_07::command/46 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/46 CtrlChar/param/1]
+b
+
+[STev_01_07::command/46 CtrlChar/param/2]
+006
+
+[STev_01_07::command/46 CtrlChar/param/3]
+none
+
+[STev_01_07::command/46 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/46 CtrlChar/param/12]
+none
+
+[STev_01_07::command/46 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/48 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/48 CtrlChar/param/1]
+b
+
+[STev_01_07::command/48 CtrlChar/param/2]
+003
+
+[STev_01_07::command/48 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_01_07::command/48 CtrlChar/param/11]
+none
+
+[STev_01_07::command/48 CtrlChar/param/12]
+none
+
+[STev_01_07::command/48 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/49 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/49 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/49 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/49 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/49 SetTalk/param/7]
+Okay... You're right. Deep breaths...
+
+[STev_01_07::command/49 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/51 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/51 CtrlChar/param/1]
+b
+
+[STev_01_07::command/51 CtrlChar/param/2]
+017
+
+[STev_01_07::command/51 CtrlChar/param/3]
+close
+
+[STev_01_07::command/51 CtrlChar/param/11]
+none
+
+[STev_01_07::command/51 CtrlChar/param/12]
+none
+
+[STev_01_07::command/51 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/52 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/52 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/52 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/52 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/52 SetTalk/param/7]
+A Hexhorn Whale this huge... We can't win a head-on fight. Gotta avoid its attacks...==W== C'mon, think. What would Shia do?
+
+[STev_01_07::command/52 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/54 SetFx/param/1]
+fx_avg_rain_2
+
+[STev_01_07::command/55 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/55 SetBg/param/2]
+0
+
+[STev_01_07::command/55 SetBg/param/3]
+Linear
+
+[STev_01_07::command/55 SetBg/param/6]
+default
+
+[STev_01_07::command/56 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/56 CtrlChar/param/1]
+b
+
+[STev_01_07::command/56 CtrlChar/param/2]
+003
+
+[STev_01_07::command/56 CtrlChar/param/3]
+none
+
+[STev_01_07::command/56 CtrlChar/param/11]
+niunie1
+
+[STev_01_07::command/56 CtrlChar/param/12]
+none
+
+[STev_01_07::command/56 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/59 SetFx/param/1]
+fx_avg_flash_light
+
+[STev_01_07::command/60 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/60 CtrlChar/param/1]
+b
+
+[STev_01_07::command/60 CtrlChar/param/2]
+016
+
+[STev_01_07::command/60 CtrlChar/param/3]
+none
+
+[STev_01_07::command/60 CtrlChar/param/11]
+none
+
+[STev_01_07::command/60 CtrlChar/param/12]
+none
+
+[STev_01_07::command/60 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/61 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/61 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/61 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/61 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/61 SetTalk/param/7]
+Ah, I've got it! Boss,==W== I need you to back me up.
+
+[STev_01_07::command/61 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/63 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/63 SetBg/param/2]
+0
+
+[STev_01_07::command/63 SetBg/param/3]
+Linear
+
+[STev_01_07::command/63 SetBg/param/6]
+default
+
+[STev_01_07::command/64 SetFx/param/1]
+fx_avg_rain_2
+
+[STev_01_07::command/65 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/65 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/66 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/66 CtrlChar/param/1]
+b
+
+[STev_01_07::command/66 CtrlChar/param/2]
+004
+
+[STev_01_07::command/66 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/66 CtrlChar/param/11]
+none
+
+[STev_01_07::command/66 CtrlChar/param/12]
+none
+
+[STev_01_07::command/66 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/69 SetMainRoleTalk/param/2]
+002
+
+[STev_01_07::command/69 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/69 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/69 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/69 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/70 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/70 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/70 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/70 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/70 SetTalk/param/7]
+Tell me what to do.
+
+[STev_01_07::command/70 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/71 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/71 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/71 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/71 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/73 SetAudio/param/1]
+se_074
+
+[STev_01_07::command/74 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/74 CtrlChar/param/1]
+b
+
+[STev_01_07::command/74 CtrlChar/param/2]
+014
+
+[STev_01_07::command/74 CtrlChar/param/3]
+none
+
+[STev_01_07::command/74 CtrlChar/param/11]
+none
+
+[STev_01_07::command/74 CtrlChar/param/12]
+none
+
+[STev_01_07::command/74 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/75 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/75 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/75 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/75 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/75 SetTalk/param/7]
+I'll be the bait. You take the helm and follow my lead, Boss. We'll lure the Hexhorn Whale away, then lose it.
+
+[STev_01_07::command/75 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/77 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/77 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/78 SetMainRoleTalk/param/2]
+002
+
+[STev_01_07::command/78 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_01_07::command/78 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/78 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/78 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/79 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/79 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/79 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/79 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/79 SetTalk/param/7]
+Bait? You think it'll take it that easily?
+
+[STev_01_07::command/79 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/80 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/80 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/80 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/80 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/82 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/82 CtrlChar/param/1]
+b
+
+[STev_01_07::command/82 CtrlChar/param/2]
+015
+
+[STev_01_07::command/82 CtrlChar/param/3]
+avg_emoji_idea
+
+[STev_01_07::command/82 CtrlChar/param/11]
+none
+
+[STev_01_07::command/82 CtrlChar/param/12]
+none
+
+[STev_01_07::command/82 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/83 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/83 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/83 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/83 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/83 SetTalk/param/7]
+Shia said whales are sensitive to bright lights. I can get its attention with a flare.
+
+[STev_01_07::command/83 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/84 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/84 CtrlChar/param/1]
+b
+
+[STev_01_07::command/84 CtrlChar/param/2]
+004
+
+[STev_01_07::command/84 CtrlChar/param/3]
+none
+
+[STev_01_07::command/84 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/84 CtrlChar/param/12]
+none
+
+[STev_01_07::command/84 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/85 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/85 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/85 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/85 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/85 SetTalk/param/7]
+As long as it's chasing us, it's not chasing her. We'll keep it occupied and buy her time to meet up with us.
+
+[STev_01_07::command/85 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/87 SetMainRoleTalk/param/2]
+009
+
+[STev_01_07::command/87 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STev_01_07::command/87 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/87 SetMainRoleTalk/param/5]
+u
+
+[STev_01_07::command/87 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/88 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/88 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/88 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/88 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/88 SetTalk/param/7]
+If Shia saw the monster too, she can't be far... This is risky, but it's our only shot.
+
+[STev_01_07::command/88 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/89 SetMainRoleTalk/param/2]
+012
+
+[STev_01_07::command/89 SetMainRoleTalk/param/3]
+close
+
+[STev_01_07::command/89 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/89 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/89 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/90 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/90 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/90 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/90 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/90 SetTalk/param/7]
+Understood. We'll do it your way.
+
+[STev_01_07::command/90 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/91 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/91 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/91 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/91 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/93 SetAudio/param/1]
+se_077
+
+[STev_01_07::command/94 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/94 CtrlChar/param/1]
+b
+
+[STev_01_07::command/94 CtrlChar/param/2]
+015
+
+[STev_01_07::command/94 CtrlChar/param/3]
+none
+
+[STev_01_07::command/94 CtrlChar/param/11]
+JuGong1
+
+[STev_01_07::command/94 CtrlChar/param/12]
+none
+
+[STev_01_07::command/94 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/95 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/95 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/95 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/95 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/95 SetTalk/param/7]
+I'm counting on you, Boss!
+
+[STev_01_07::command/95 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/97 SetMainRoleTalk/param/2]
+002
+
+[STev_01_07::command/97 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STev_01_07::command/97 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/97 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/97 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/98 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/98 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/98 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/98 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/98 SetTalk/param/7]
+But Shia entrusted you to me. If things get dangerous, I'm prioritizing your safety.
+
+[STev_01_07::command/98 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/99 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/99 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/99 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/99 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/101 SetAudio/param/1]
+se_099
+
+[STev_01_07::command/102 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/102 CtrlChar/param/1]
+b
+
+[STev_01_07::command/102 CtrlChar/param/2]
+016
+
+[STev_01_07::command/102 CtrlChar/param/3]
+close
+
+[STev_01_07::command/102 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/102 CtrlChar/param/12]
+none
+
+[STev_01_07::command/102 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/103 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/103 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/103 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/103 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/103 SetTalk/param/7]
+Pfft, don't worry about me!==W== After this is over, I'm treating you to a deluxe seafood platter! On me!
+
+[STev_01_07::command/103 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/105 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/105 CtrlChar/param/1]
+b
+
+[STev_01_07::command/105 CtrlChar/param/2]
+012
+
+[STev_01_07::command/105 CtrlChar/param/3]
+avg_emoji_star
+
+[STev_01_07::command/105 CtrlChar/param/11]
+none
+
+[STev_01_07::command/105 CtrlChar/param/12]
+none
+
+[STev_01_07::command/105 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/108 SetAudio/param/1]
+se_072
+
+[STev_01_07::command/109 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/109 CtrlChar/param/1]
+b
+
+[STev_01_07::command/109 CtrlChar/param/3]
+none
+
+[STev_01_07::command/109 CtrlChar/param/11]
+none
+
+[STev_01_07::command/109 CtrlChar/param/12]
+none
+
+[STev_01_07::command/109 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/110 SetTrans/param/2]
+16
+
+[STev_01_07::command/110 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/110 SetTrans/param/8]
+AvgStageEffect_fade_right
+
+[STev_01_07::command/111 SetFx/param/1]
+fx_avg_rain_2
+
+[STev_01_07::command/112 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/112 SetBg/param/2]
+0
+
+[STev_01_07::command/112 SetBg/param/3]
+Linear
+
+[STev_01_07::command/112 SetBg/param/6]
+default
+
+[STev_01_07::command/113 SetTrans/param/2]
+0
+
+[STev_01_07::command/113 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/113 SetTrans/param/8]
+default
+
+[STev_01_07::command/114 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/114 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/114 SetBGM/param/4]
+2000ms
+
+[STev_01_07::command/115 SetAudio/param/1]
+se_063
+
+[STev_01_07::command/116 SetFx/param/1]
+fx_speedline_center_w
+
+[STev_01_07::command/117 SetTalkShake/param/1]
+Zhong
+
+[STev_01_07::command/118 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/118 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/118 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/118 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/118 SetTalk/param/7]
+<size=50>Hey, big fella! Got some suuuper tasty fish over here for ya! Come and get it!
+
+[STev_01_07::command/118 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/120 SetFx/param/1]
+fx_avg_flash_ev
+
+[STev_01_07::command/121 SetBg/param/1]
+white
+
+[STev_01_07::command/121 SetBg/param/2]
+0
+
+[STev_01_07::command/121 SetBg/param/3]
+Linear
+
+[STev_01_07::command/121 SetBg/param/6]
+default
+
+[STev_01_07::command/122 SetTalk/param/1]
+0
+
+[STev_01_07::command/122 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/122 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/122 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/122 SetTalk/param/7]
+Karin launched a flare into the sky. A blinding light erupted, and the Hexhorn Whale's attention snapped toward it.
+
+[STev_01_07::command/122 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/123 CtrlStage/param/9]
+none
+
+[STev_01_07::command/123 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/125 SetBg/param/1]
+view_whale_1
+
+[STev_01_07::command/125 SetBg/param/2]
+0
+
+[STev_01_07::command/125 SetBg/param/3]
+Linear
+
+[STev_01_07::command/125 SetBg/param/6]
+default
+
+[STev_01_07::command/126 SetAudio/param/1]
+se_347
+
+[STev_01_07::command/127 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/127 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/128 CtrlStage/param/9]
+none
+
+[STev_01_07::command/128 CtrlStage/param/10]
+OutSine
+
+[STev_01_07::command/129 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/129 SetBGM/param/3]
+m35
+
+[STev_01_07::command/129 SetBGM/param/4]
+none
+
+[STev_01_07::command/130 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/130 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/131 SetMainRoleTalk/param/2]
+026
+
+[STev_01_07::command/131 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/131 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/131 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/131 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/132 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/132 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/132 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/132 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/132 SetTalk/param/7]
+Karin, it's charging straight for us!
+
+[STev_01_07::command/132 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/133 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/133 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/133 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/133 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/135 SetCharHead/param/5]
+avg1_157
+
+[STev_01_07::command/135 SetCharHead/param/6]
+b
+
+[STev_01_07::command/135 SetCharHead/param/7]
+020
+
+[STev_01_07::command/135 SetCharHead/param/8]
+none
+
+[STev_01_07::command/136 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/136 CtrlChar/param/1]
+b
+
+[STev_01_07::command/136 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/136 CtrlChar/param/11]
+none
+
+[STev_01_07::command/136 CtrlChar/param/12]
+none
+
+[STev_01_07::command/136 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/137 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/137 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/137 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/137 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/137 SetTalk/param/7]
+Steer the ship! Don't let it ram us!
+
+[STev_01_07::command/137 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/139 SetAudio/param/1]
+se_129
+
+[STev_01_07::command/140 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/140 CtrlChar/param/1]
+b
+
+[STev_01_07::command/140 CtrlChar/param/2]
+007
+
+[STev_01_07::command/140 CtrlChar/param/3]
+none
+
+[STev_01_07::command/140 CtrlChar/param/11]
+JuGong1
+
+[STev_01_07::command/140 CtrlChar/param/12]
+none
+
+[STev_01_07::command/140 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/141 SetAudio/param/1]
+se_133
+
+[STev_01_07::command/142 CtrlStage/param/9]
+ChaoDaZhenDong
+
+[STev_01_07::command/142 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/143 SetTrans/param/2]
+0
+
+[STev_01_07::command/143 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/143 SetTrans/param/8]
+default
+
+[STev_01_07::command/144 SetAudio/param/1]
+se_133
+
+[STev_01_07::command/145 SetAudio/param/1]
+se_133
+
+[STev_01_07::command/146 SetCharHead/param/5]
+avg1_157
+
+[STev_01_07::command/146 SetCharHead/param/6]
+a
+
+[STev_01_07::command/146 SetCharHead/param/7]
+002
+
+[STev_01_07::command/146 SetCharHead/param/8]
+none
+
+[STev_01_07::command/147 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/147 SetBg/param/2]
+0
+
+[STev_01_07::command/147 SetBg/param/3]
+Linear
+
+[STev_01_07::command/147 SetBg/param/6]
+default
+
+[STev_01_07::command/148 SetTrans/param/2]
+0
+
+[STev_01_07::command/148 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/148 SetTrans/param/8]
+default
+
+[STev_01_07::command/149 SetAudio/param/1]
+se_454
+
+[STev_01_07::command/150 SetTalk/param/1]
+0
+
+[STev_01_07::command/150 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/150 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/150 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/150 SetTalk/param/7]
+More flares burst across the sky, but the Hexhorn Whale was still on our tail, relentless. It looked pissed.
+
+[STev_01_07::command/150 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/152 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/152 SetBg/param/2]
+0
+
+[STev_01_07::command/152 SetBg/param/3]
+Linear
+
+[STev_01_07::command/152 SetBg/param/6]
+default
+
+[STev_01_07::command/153 SetFx/param/1]
+fx_avg_rain_2
+
+[STev_01_07::command/154 SetAudio/param/1]
+se_193
+
+[STev_01_07::command/155 SetFx/param/1]
+fx_avg_thunder
+
+[STev_01_07::command/156 CtrlStage/param/9]
+ChaoDaZhenDong
+
+[STev_01_07::command/156 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/158 SetChar/param/2]
+none
+
+[STev_01_07::command/158 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/158 SetChar/param/4]
+b
+
+[STev_01_07::command/158 SetChar/param/5]
+007
+
+[STev_01_07::command/158 SetChar/param/6]
+none
+
+[STev_01_07::command/159 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/159 CtrlChar/param/1]
+b
+
+[STev_01_07::command/159 CtrlChar/param/3]
+close
+
+[STev_01_07::command/159 CtrlChar/param/11]
+none
+
+[STev_01_07::command/159 CtrlChar/param/12]
+none
+
+[STev_01_07::command/159 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/160 SetAudio/param/1]
+se_251
+
+[STev_01_07::command/161 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/161 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/161 SetTalk/param/7]
+We've travelled so far, dammit... How is it still on our tail?!==W== Alright, time for Plan B—
+
+[STev_01_07::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/162 SetFx/param/1]
+fx_avg_thunder
+
+[STev_01_07::command/164 SetAudio/param/1]
+se_077
+
+[STev_01_07::command/165 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/165 CtrlChar/param/1]
+b
+
+[STev_01_07::command/165 CtrlChar/param/2]
+013
+
+[STev_01_07::command/165 CtrlChar/param/3]
+close
+
+[STev_01_07::command/165 CtrlChar/param/11]
+JuGong1
+
+[STev_01_07::command/165 CtrlChar/param/12]
+none
+
+[STev_01_07::command/165 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/168 SetAudio/param/1]
+se_099
+
+[STev_01_07::command/169 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/169 CtrlChar/param/1]
+b
+
+[STev_01_07::command/169 CtrlChar/param/2]
+014
+
+[STev_01_07::command/169 CtrlChar/param/3]
+none
+
+[STev_01_07::command/169 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/169 CtrlChar/param/12]
+none
+
+[STev_01_07::command/169 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/170 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/170 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/170 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/170 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/170 SetTalk/param/7]
+Boss! Get the high-pressure gas tank from the cabin! If we use it for a boost...
+
+[STev_01_07::command/170 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/172 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/172 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/173 SetMainRoleTalk/param/2]
+004
+
+[STev_01_07::command/173 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/173 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/173 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/173 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/174 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/174 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/174 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/174 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/174 SetTalk/param/7]
+We can finally lose it!
+
+[STev_01_07::command/174 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/175 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/175 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/175 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/175 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/177 SetAudio/param/1]
+se_074
+
+[STev_01_07::command/178 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/178 CtrlChar/param/1]
+b
+
+[STev_01_07::command/178 CtrlChar/param/3]
+none
+
+[STev_01_07::command/178 CtrlChar/param/11]
+none
+
+[STev_01_07::command/178 CtrlChar/param/12]
+none
+
+[STev_01_07::command/178 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/179 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/179 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/179 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/179 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/179 SetTalk/param/7]
+Exactly! But it packs a serious punch, so keep a death grip on that helm!
+
+[STev_01_07::command/179 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/181 SetMainRoleTalk/param/2]
+012
+
+[STev_01_07::command/181 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/181 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/181 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/181 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/182 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/182 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/182 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/182 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/182 SetTalk/param/7]
+No problem. I'm ready!
+
+[STev_01_07::command/182 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/183 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/183 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/183 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/183 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/185 SetTrans/param/2]
+0
+
+[STev_01_07::command/185 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/185 SetTrans/param/8]
+default
+
+[STev_01_07::command/186 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/186 SetBg/param/2]
+0
+
+[STev_01_07::command/186 SetBg/param/3]
+Linear
+
+[STev_01_07::command/186 SetBg/param/6]
+default
+
+[STev_01_07::command/187 CtrlStage/param/9]
+none
+
+[STev_01_07::command/187 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/188 SetFx/param/1]
+fx_avg_rain_2
+
+[STev_01_07::command/189 SetTrans/param/2]
+0
+
+[STev_01_07::command/189 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/189 SetTrans/param/8]
+default
+
+[STev_01_07::command/190 SetAudio/param/1]
+se_450
+
+[STev_01_07::command/191 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/191 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/191 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/191 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/191 SetTalk/param/7]
+Three, two, one...==W== HIT IT!
+
+[STev_01_07::command/191 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/193 SetBg/param/1]
+mood_2
+
+[STev_01_07::command/193 SetBg/param/2]
+0
+
+[STev_01_07::command/193 SetBg/param/3]
+Linear
+
+[STev_01_07::command/193 SetBg/param/6]
+default
+
+[STev_01_07::command/194 SetChar/param/2]
+none
+
+[STev_01_07::command/194 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/194 SetChar/param/4]
+b
+
+[STev_01_07::command/194 SetChar/param/5]
+020
+
+[STev_01_07::command/194 SetChar/param/6]
+none
+
+[STev_01_07::command/195 SetStage/param/2]
+Linear
+
+[STev_01_07::command/196 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/196 CtrlChar/param/1]
+b
+
+[STev_01_07::command/196 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/196 CtrlChar/param/11]
+none
+
+[STev_01_07::command/196 CtrlChar/param/12]
+none
+
+[STev_01_07::command/196 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/199 SetStage/param/2]
+Linear
+
+[STev_01_07::command/200 SetAudio/param/1]
+se_063
+
+[STev_01_07::command/201 SetBg/param/1]
+view_whale_1
+
+[STev_01_07::command/201 SetBg/param/2]
+0
+
+[STev_01_07::command/201 SetBg/param/3]
+Linear
+
+[STev_01_07::command/201 SetBg/param/6]
+default
+
+[STev_01_07::command/202 SetFx/param/1]
+fx_speedline_center_w
+
+[STev_01_07::command/203 CtrlStage/param/9]
+none
+
+[STev_01_07::command/203 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/204 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/204 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/204 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/204 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/204 SetTalk/param/7]
+<size=50>FULL SPEED AHEAD—!!
+
+[STev_01_07::command/204 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/206 CtrlStage/param/9]
+ChaoDaZhenDong
+
+[STev_01_07::command/206 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/207 SetAudio/param/1]
+se_127
+
+[STev_01_07::command/208 SetTrans/param/2]
+0
+
+[STev_01_07::command/208 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/208 SetTrans/param/8]
+default
+
+[STev_01_07::command/209 SetAudio/param/1]
+se_114
+
+[STev_01_07::command/210 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/210 SetBg/param/2]
+0
+
+[STev_01_07::command/210 SetBg/param/3]
+Linear
+
+[STev_01_07::command/210 SetBg/param/6]
+default
+
+[STev_01_07::command/211 SetTrans/param/2]
+0
+
+[STev_01_07::command/211 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/211 SetTrans/param/8]
+AvgStageEffect_wipe_left
+
+[STev_01_07::command/212 SetAudio/param/1]
+se_370
+
+[STev_01_07::command/213 SetTalk/param/1]
+0
+
+[STev_01_07::command/213 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/213 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/213 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/213 SetTalk/param/7]
+The tank erupted in a thick white cloud, the force of it nearly lifting the ship clean out of the water.
+
+[STev_01_07::command/213 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/215 SetAudio/param/1]
+se_063
+
+[STev_01_07::command/216 SetFx/param/1]
+fx_avg_line_goright_2_lp_w
+
+[STev_01_07::command/218 SetMainRoleTalk/param/2]
+025
+
+[STev_01_07::command/218 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STev_01_07::command/218 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/218 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/218 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/219 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/219 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/219 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/219 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/219 SetTalk/param/7]
+Wait, we're going way too fast!!
+
+[STev_01_07::command/219 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/220 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/220 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/220 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/220 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/222 SetTrans/param/2]
+0
+
+[STev_01_07::command/222 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/222 SetTrans/param/8]
+default
+
+[STev_01_07::command/223 SetFx/param/1]
+fx_avg_line_goright_2_lp_w
+
+[STev_01_07::command/224 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/224 SetBg/param/2]
+0
+
+[STev_01_07::command/224 SetBg/param/3]
+Linear
+
+[STev_01_07::command/224 SetBg/param/6]
+default
+
+[STev_01_07::command/225 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/225 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/225 SetBGM/param/4]
+4000ms
+
+[STev_01_07::command/226 SetAudio/param/1]
+se_148
+
+[STev_01_07::command/227 SetTrans/param/2]
+16
+
+[STev_01_07::command/227 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/227 SetTrans/param/8]
+5
+
+[STev_01_07::command/228 SetAudio/param/1]
+se_225
+
+[STev_01_07::command/229 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/229 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/230 SetAudio/param/1]
+se_451
+
+[STev_01_07::command/231 CtrlStage/param/9]
+zongbo
+
+[STev_01_07::command/231 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/233 SetChar/param/2]
+none
+
+[STev_01_07::command/233 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/233 SetChar/param/4]
+b
+
+[STev_01_07::command/233 SetChar/param/5]
+006
+
+[STev_01_07::command/233 SetChar/param/6]
+none
+
+[STev_01_07::command/234 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/234 CtrlChar/param/1]
+b
+
+[STev_01_07::command/234 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_01_07::command/234 CtrlChar/param/11]
+none
+
+[STev_01_07::command/234 CtrlChar/param/12]
+none
+
+[STev_01_07::command/234 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/235 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/235 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/235 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/235 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/235 SetTalk/param/7]
+It worked...==W== Boss, you alright?
+
+[STev_01_07::command/235 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/237 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/237 CtrlChar/param/1]
+b
+
+[STev_01_07::command/237 CtrlChar/param/2]
+016
+
+[STev_01_07::command/237 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/237 CtrlChar/param/11]
+none
+
+[STev_01_07::command/237 CtrlChar/param/12]
+none
+
+[STev_01_07::command/237 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/240 SetAudio/param/1]
+se_251
+
+[STev_01_07::command/241 SetMainRoleTalk/param/2]
+016
+
+[STev_01_07::command/241 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/241 SetMainRoleTalk/param/4]
+chijing
+
+[STev_01_07::command/241 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/241 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/242 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/242 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/242 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/242 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/242 SetTalk/param/7]
+I'm fine...==W== What about the Hexhorn Whale?!
+
+[STev_01_07::command/242 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/244 SetMainRoleTalk/param/2]
+025
+
+[STev_01_07::command/244 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STev_01_07::command/244 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/244 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/244 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/246 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/246 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/246 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/246 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/248 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/248 CtrlChar/param/1]
+b
+
+[STev_01_07::command/248 CtrlChar/param/2]
+017
+
+[STev_01_07::command/248 CtrlChar/param/3]
+close
+
+[STev_01_07::command/248 CtrlChar/param/11]
+none
+
+[STev_01_07::command/248 CtrlChar/param/12]
+none
+
+[STev_01_07::command/248 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/249 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/249 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/249 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/249 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/249 SetTalk/param/7]
+It's gone...==W== I think we lost it.
+
+[STev_01_07::command/249 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/251 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/251 CtrlChar/param/1]
+b
+
+[STev_01_07::command/251 CtrlChar/param/2]
+009
+
+[STev_01_07::command/251 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_01_07::command/251 CtrlChar/param/11]
+none
+
+[STev_01_07::command/251 CtrlChar/param/12]
+none
+
+[STev_01_07::command/251 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/254 SetMainRoleTalk/param/2]
+009
+
+[STev_01_07::command/254 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/254 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/254 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/254 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/255 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/255 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/255 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/255 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/255 SetTalk/param/7]
+Good. But let's stay sharp.
+
+[STev_01_07::command/255 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/256 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/256 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/256 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/256 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/258 SetTrans/param/2]
+0
+
+[STev_01_07::command/258 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/258 SetTrans/param/8]
+default
+
+[STev_01_07::command/259 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/259 SetBg/param/2]
+0
+
+[STev_01_07::command/259 SetBg/param/3]
+Linear
+
+[STev_01_07::command/259 SetBg/param/6]
+default
+
+[STev_01_07::command/260 SetTrans/param/2]
+0
+
+[STev_01_07::command/260 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/260 SetTrans/param/8]
+default
+
+[STev_01_07::command/261 SetAudio/param/1]
+se_430_stop
+
+[STev_01_07::command/262 SetAudio/param/1]
+se_273
+
+[STev_01_07::command/264 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/264 SetBg/param/2]
+0
+
+[STev_01_07::command/264 SetBg/param/3]
+Linear
+
+[STev_01_07::command/264 SetBg/param/6]
+default
+
+[STev_01_07::command/265 SetChar/param/2]
+none
+
+[STev_01_07::command/265 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/265 SetChar/param/4]
+b
+
+[STev_01_07::command/265 SetChar/param/5]
+016
+
+[STev_01_07::command/265 SetChar/param/6]
+none
+
+[STev_01_07::command/266 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/266 CtrlChar/param/1]
+b
+
+[STev_01_07::command/266 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_01_07::command/266 CtrlChar/param/11]
+none
+
+[STev_01_07::command/266 CtrlChar/param/12]
+none
+
+[STev_01_07::command/266 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/267 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/267 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/267 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/267 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/267 SetTalk/param/7]
+Wait, what's that sound...?
+
+[STev_01_07::command/267 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/269 SetAudio/param/1]
+se_074
+
+[STev_01_07::command/270 CtrlStage/param/9]
+none
+
+[STev_01_07::command/270 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/271 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/271 CtrlChar/param/1]
+b
+
+[STev_01_07::command/271 CtrlChar/param/2]
+006
+
+[STev_01_07::command/271 CtrlChar/param/3]
+none
+
+[STev_01_07::command/271 CtrlChar/param/11]
+none
+
+[STev_01_07::command/271 CtrlChar/param/12]
+none
+
+[STev_01_07::command/271 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/273 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/273 CtrlChar/param/1]
+b
+
+[STev_01_07::command/273 CtrlChar/param/2]
+012
+
+[STev_01_07::command/273 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/273 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/273 CtrlChar/param/12]
+none
+
+[STev_01_07::command/273 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/274 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/274 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/274 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/274 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/274 SetTalk/param/7]
+Ah! Shia's drone!
+
+[STev_01_07::command/274 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/276 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/276 CtrlChar/param/1]
+b
+
+[STev_01_07::command/276 CtrlChar/param/3]
+none
+
+[STev_01_07::command/276 CtrlChar/param/11]
+none
+
+[STev_01_07::command/276 CtrlChar/param/12]
+none
+
+[STev_01_07::command/276 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/277 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STev_01_07::command/277 SetBGM/param/3]
+m43
+
+[STev_01_07::command/277 SetBGM/param/4]
+4000ms
+
+[STev_01_07::command/278 CtrlStage/param/9]
+none
+
+[STev_01_07::command/278 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/279 SetTalk/param/1]
+avg1_155
+
+[STev_01_07::command/279 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/279 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/279 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/279 SetTalk/param/7]
+Karin! Boss—
+
+[STev_01_07::command/279 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/281 SetBg/param/1]
+beach_wasteland_night
+
+[STev_01_07::command/281 SetBg/param/2]
+0
+
+[STev_01_07::command/281 SetBg/param/3]
+Linear
+
+[STev_01_07::command/281 SetBg/param/6]
+default
+
+[STev_01_07::command/282 CtrlBg/param/10]
+none
+
+[STev_01_07::command/282 CtrlBg/param/11]
+Linear
+
+[STev_01_07::command/283 SetChar/param/2]
+none
+
+[STev_01_07::command/283 SetChar/param/3]
+avg1_155
+
+[STev_01_07::command/283 SetChar/param/4]
+b
+
+[STev_01_07::command/283 SetChar/param/5]
+013
+
+[STev_01_07::command/283 SetChar/param/6]
+none
+
+[STev_01_07::command/284 SetStage/param/2]
+Linear
+
+[STev_01_07::command/285 CtrlChar/param/0]
+avg1_155
+
+[STev_01_07::command/285 CtrlChar/param/1]
+b
+
+[STev_01_07::command/285 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_01_07::command/285 CtrlChar/param/11]
+none
+
+[STev_01_07::command/285 CtrlChar/param/12]
+none
+
+[STev_01_07::command/285 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/286 SetTalk/param/1]
+avg1_155
+
+[STev_01_07::command/286 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/286 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/286 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/286 SetTalk/param/7]
+I saw the flares and came as fast as I could! Nice work, you two!
+
+[STev_01_07::command/286 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/288 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/288 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/288 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/288 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/288 SetTalk/param/7]
+Shia! Thank goodness...==W== You're finally...
+
+[STev_01_07::command/288 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/290 SetAudio/param/1]
+se_125
+
+[STev_01_07::command/293 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/293 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/293 SetBGM/param/4]
+1000ms
+
+[STev_01_07::command/294 SetAudio/param/1]
+se_370
+
+[STev_01_07::command/295 SetAudio/param/1]
+se_450
+
+[STev_01_07::command/296 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/296 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/297 CtrlChar/param/0]
+avg1_155
+
+[STev_01_07::command/297 CtrlChar/param/1]
+b
+
+[STev_01_07::command/297 CtrlChar/param/2]
+009
+
+[STev_01_07::command/297 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_01_07::command/297 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/297 CtrlChar/param/12]
+none
+
+[STev_01_07::command/297 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/298 PlayCharAnim/param/0]
+avg1_155
+
+[STev_01_07::command/298 PlayCharAnim/param/1]
+shake_L
+
+[STev_01_07::command/299 CtrlChar/param/0]
+avg1_155
+
+[STev_01_07::command/299 CtrlChar/param/1]
+b
+
+[STev_01_07::command/299 CtrlChar/param/3]
+none
+
+[STev_01_07::command/299 CtrlChar/param/11]
+none
+
+[STev_01_07::command/299 CtrlChar/param/12]
+none
+
+[STev_01_07::command/299 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/300 CtrlBg/param/10]
+Zhong
+
+[STev_01_07::command/300 CtrlBg/param/11]
+Linear
+
+[STev_01_07::command/302 SetAudio/param/1]
+se_369_stop
+
+[STev_01_07::command/303 SetAudio/param/1]
+se_370
+
+[STev_01_07::command/304 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/304 SetBg/param/2]
+16
+
+[STev_01_07::command/304 SetBg/param/3]
+Linear
+
+[STev_01_07::command/304 SetBg/param/6]
+default
+
+[STev_01_07::command/305 SetStage/param/2]
+Linear
+
+[STev_01_07::command/306 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STev_01_07::command/306 SetBGM/param/3]
+m47
+
+[STev_01_07::command/306 SetBGM/param/4]
+2000ms
+
+[STev_01_07::command/308 SetTalk/param/1]
+0
+
+[STev_01_07::command/308 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/308 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/308 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/308 SetTalk/param/7]
+The sea around Shia suddenly started to churn. A massive whirlpool opened up right beneath her, sucking our ship straight towards the center.
+
+[STev_01_07::command/308 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/310 SetTrans/param/2]
+0
+
+[STev_01_07::command/310 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/310 SetTrans/param/8]
+default
+
+[STev_01_07::command/311 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/311 SetBg/param/2]
+0
+
+[STev_01_07::command/311 SetBg/param/3]
+Linear
+
+[STev_01_07::command/311 SetBg/param/6]
+default
+
+[STev_01_07::command/312 SetStage/param/2]
+Linear
+
+[STev_01_07::command/313 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/313 SetBg/param/2]
+0
+
+[STev_01_07::command/313 SetBg/param/3]
+Linear
+
+[STev_01_07::command/313 SetBg/param/6]
+default
+
+[STev_01_07::command/314 CtrlStage/param/9]
+none
+
+[STev_01_07::command/314 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/315 SetTrans/param/2]
+0
+
+[STev_01_07::command/315 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/315 SetTrans/param/8]
+default
+
+[STev_01_07::command/316 CtrlStage/param/9]
+ChaoDaZhenDong
+
+[STev_01_07::command/316 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/317 SetChar/param/2]
+none
+
+[STev_01_07::command/317 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/317 SetChar/param/4]
+b
+
+[STev_01_07::command/317 SetChar/param/5]
+020
+
+[STev_01_07::command/317 SetChar/param/6]
+none
+
+[STev_01_07::command/318 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/318 CtrlChar/param/1]
+b
+
+[STev_01_07::command/318 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/318 CtrlChar/param/11]
+none
+
+[STev_01_07::command/318 CtrlChar/param/12]
+none
+
+[STev_01_07::command/318 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/319 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/319 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/319 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/319 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/319 SetTalk/param/7]
+A whirlpool! Boss, take the helm! I'll get Shia!
+
+[STev_01_07::command/319 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/321 SetAudio/param/1]
+se_072
+
+[STev_01_07::command/322 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/322 CtrlChar/param/1]
+b
+
+[STev_01_07::command/322 CtrlChar/param/3]
+none
+
+[STev_01_07::command/322 CtrlChar/param/11]
+none
+
+[STev_01_07::command/322 CtrlChar/param/12]
+none
+
+[STev_01_07::command/322 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/323 SetMainRoleTalk/param/2]
+025
+
+[STev_01_07::command/323 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STev_01_07::command/323 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/323 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/323 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/324 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/324 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/324 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/324 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/324 SetTalk/param/7]
+Hold on—that huge shadow under the water... Is that...
+
+[STev_01_07::command/324 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/325 SetMainRoleTalk/param/2]
+026
+
+[STev_01_07::command/325 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/325 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/325 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/325 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/326 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/326 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/326 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/326 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/326 SetTalk/param/7]
+Shia! GET OUT OF THERE—!!!
+
+[STev_01_07::command/326 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/327 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/327 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/327 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/327 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/329 SetAudio/param/1]
+se_454
+
+[STev_01_07::command/330 CtrlStage/param/9]
+ChaoDaZhenDong
+
+[STev_01_07::command/330 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/331 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/331 SetBg/param/2]
+0
+
+[STev_01_07::command/331 SetBg/param/3]
+Linear
+
+[STev_01_07::command/331 SetBg/param/6]
+default
+
+[STev_01_07::command/333 SetTalk/param/1]
+0
+
+[STev_01_07::command/333 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/333 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/333 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/333 SetTalk/param/7]
+A dark shadow erupted from the sea. The Hexhorn Whale's roar unleashes a monstrous wave, instantly engulfing Shia.
+
+[STev_01_07::command/333 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/335 SetAudio/param/1]
+se_114
+
+[STev_01_07::command/336 SetAudio/param/1]
+se_450
+
+[STev_01_07::command/337 SetTalk/param/1]
+0
+
+[STev_01_07::command/337 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/337 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/337 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/337 SetTalk/param/7]
+The wave tossed our ship skyward, flinging Karin and me into the air.
+
+[STev_01_07::command/337 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/339 SetAudio/param/1]
+se_251
+
+[STev_01_07::command/340 SetMainRoleTalk/param/2]
+016
+
+[STev_01_07::command/340 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/340 SetMainRoleTalk/param/4]
+chijing
+
+[STev_01_07::command/340 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/340 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/341 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/341 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/341 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/341 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/341 SetTalk/param/7]
+Dammit, the ship's going to capsize—!!
+
+[STev_01_07::command/341 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/342 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/342 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/342 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/342 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/344 SetAudio/param/1]
+se_370
+
+[STev_01_07::command/345 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/345 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/346 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/346 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/346 SetBGM/param/4]
+1000ms
+
+[STev_01_07::command/347 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/347 SetBg/param/2]
+0
+
+[STev_01_07::command/347 SetBg/param/3]
+Linear
+
+[STev_01_07::command/347 SetBg/param/6]
+default
+
+[STev_01_07::command/348 CtrlStage/param/9]
+none
+
+[STev_01_07::command/348 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/349 SetAudio/param/1]
+se_099
+
+[STev_01_07::command/350 SetAudio/param/1]
+se_175
+
+[STev_01_07::command/351 SetTalk/param/1]
+0
+
+[STev_01_07::command/351 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/351 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/351 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/351 SetTalk/param/7]
+Just as I was about to plunge into the ocean, a grappling hook shot out from where Shia was, securing me and Karin to the ship's railing.
+
+[STev_01_07::command/351 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/353 SetCharHead/param/5]
+avg1_157
+
+[STev_01_07::command/353 SetCharHead/param/6]
+b
+
+[STev_01_07::command/353 SetCharHead/param/7]
+020
+
+[STev_01_07::command/353 SetCharHead/param/8]
+avg_emoji_exclamation
+
+[STev_01_07::command/354 SetTalkShake/param/1]
+Zhong
+
+[STev_01_07::command/355 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/355 SetTalk/param/7]
+<size=50>Shia—!!!
+
+[STev_01_07::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/357 SetTrans/param/2]
+0
+
+[STev_01_07::command/357 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/357 SetTrans/param/8]
+default
+
+[STev_01_07::command/358 SetCharHead/param/5]
+avg1_157
+
+[STev_01_07::command/358 SetCharHead/param/6]
+a
+
+[STev_01_07::command/358 SetCharHead/param/7]
+002
+
+[STev_01_07::command/358 SetCharHead/param/8]
+none
+
+[STev_01_07::command/359 SetBg/param/1]
+cabin_night
+
+[STev_01_07::command/359 SetBg/param/2]
+0
+
+[STev_01_07::command/359 SetBg/param/3]
+Linear
+
+[STev_01_07::command/359 SetBg/param/6]
+default
+
+[STev_01_07::command/360 SetTrans/param/2]
+0
+
+[STev_01_07::command/360 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/360 SetTrans/param/8]
+default
+
+[STev_01_07::command/361 SetChar/param/2]
+none
+
+[STev_01_07::command/361 SetChar/param/3]
+avg2_990
+
+[STev_01_07::command/361 SetChar/param/4]
+b
+
+[STev_01_07::command/361 SetChar/param/5]
+003
+
+[STev_01_07::command/361 SetChar/param/6]
+none
+
+[STev_01_07::command/362 SetAudio/param/1]
+se_075
+
+[STev_01_07::command/363 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/363 CtrlChar/param/1]
+b
+
+[STev_01_07::command/363 CtrlChar/param/3]
+close
+
+[STev_01_07::command/363 CtrlChar/param/11]
+none
+
+[STev_01_07::command/363 CtrlChar/param/12]
+none
+
+[STev_01_07::command/363 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/365 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/365 SetBGM/param/3]
+m14
+
+[STev_01_07::command/365 SetBGM/param/4]
+none
+
+[STev_01_07::command/366 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/366 CtrlChar/param/1]
+b
+
+[STev_01_07::command/366 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_01_07::command/366 CtrlChar/param/11]
+none
+
+[STev_01_07::command/366 CtrlChar/param/12]
+none
+
+[STev_01_07::command/366 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/367 SetTalk/param/1]
+avg3_999
+
+[STev_01_07::command/367 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/367 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/367 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/367 SetTalk/param/7]
+Well now... Looks like a complete wipeout.
+
+[STev_01_07::command/367 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/369 SetChar/param/2]
+none
+
+[STev_01_07::command/369 SetChar/param/3]
+avg2_984
+
+[STev_01_07::command/369 SetChar/param/4]
+b
+
+[STev_01_07::command/369 SetChar/param/5]
+007
+
+[STev_01_07::command/369 SetChar/param/6]
+none
+
+[STev_01_07::command/370 CtrlChar/param/0]
+avg2_984
+
+[STev_01_07::command/370 CtrlChar/param/1]
+b
+
+[STev_01_07::command/370 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/370 CtrlChar/param/11]
+none
+
+[STev_01_07::command/370 CtrlChar/param/12]
+none
+
+[STev_01_07::command/370 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/371 SetTalk/param/1]
+Thuggish Treasure Hunter
+
+[STev_01_07::command/371 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/371 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/371 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/371 SetTalk/param/7]
+Boss! Target Mackerel's status is unknown. No movement from Puffer or Shark. Awaiting your orders!
+
+[STev_01_07::command/371 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/373 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/373 CtrlChar/param/1]
+b
+
+[STev_01_07::command/373 CtrlChar/param/2]
+012
+
+[STev_01_07::command/373 CtrlChar/param/3]
+close
+
+[STev_01_07::command/373 CtrlChar/param/11]
+niunie1
+
+[STev_01_07::command/373 CtrlChar/param/12]
+none
+
+[STev_01_07::command/373 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/374 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/374 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/374 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/374 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/374 SetTalk/param/7]
+No rush. Keep watching. You know what they say: when two dogs fight for a bone, the third one runs away with it.
+
+[STev_01_07::command/374 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/375 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/375 CtrlChar/param/1]
+b
+
+[STev_01_07::command/375 CtrlChar/param/2]
+013
+
+[STev_01_07::command/375 CtrlChar/param/3]
+avg_emoji_star
+
+[STev_01_07::command/375 CtrlChar/param/11]
+JuGong1
+
+[STev_01_07::command/375 CtrlChar/param/12]
+none
+
+[STev_01_07::command/375 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/376 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/376 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/376 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/376 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/376 SetTalk/param/7]
+Let them and that monster beat each other black and blue. Then we can just swoop in and clean up.
+
+[STev_01_07::command/376 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/378 CtrlChar/param/0]
+avg2_984
+
+[STev_01_07::command/378 CtrlChar/param/1]
+b
+
+[STev_01_07::command/378 CtrlChar/param/2]
+006
+
+[STev_01_07::command/378 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/378 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/378 CtrlChar/param/12]
+none
+
+[STev_01_07::command/378 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/379 SetTalk/param/1]
+Thuggish Treasure Hunter
+
+[STev_01_07::command/379 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/379 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/379 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/379 SetTalk/param/7]
+You're a genius, boss! Everything is proceeding exactly as you've foreseen!
+
+[STev_01_07::command/379 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/381 CtrlChar/param/0]
+avg2_984
+
+[STev_01_07::command/381 CtrlChar/param/1]
+b
+
+[STev_01_07::command/381 CtrlChar/param/3]
+none
+
+[STev_01_07::command/381 CtrlChar/param/11]
+none
+
+[STev_01_07::command/381 CtrlChar/param/12]
+none
+
+[STev_01_07::command/381 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/382 SetBg/param/1]
+mood_1
+
+[STev_01_07::command/382 SetBg/param/2]
+0
+
+[STev_01_07::command/382 SetBg/param/3]
+Linear
+
+[STev_01_07::command/382 SetBg/param/6]
+default
+
+[STev_01_07::command/383 SetFx/param/1]
+fx_avg_bubble
+
+[STev_01_07::command/384 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/384 CtrlChar/param/1]
+b
+
+[STev_01_07::command/384 CtrlChar/param/2]
+004
+
+[STev_01_07::command/384 CtrlChar/param/3]
+none
+
+[STev_01_07::command/384 CtrlChar/param/11]
+none
+
+[STev_01_07::command/384 CtrlChar/param/12]
+none
+
+[STev_01_07::command/384 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/385 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/385 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/385 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/385 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/385 SetTalk/param/7]
+Heh heh. After this score, I'll go down as the greatest seafaring Trekker Carlo Town has ever known!
+
+[STev_01_07::command/385 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/387 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/387 SetBg/param/2]
+0
+
+[STev_01_07::command/387 SetBg/param/3]
+Linear
+
+[STev_01_07::command/387 SetBg/param/6]
+default
+
+[STev_01_07::command/388 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/388 CtrlChar/param/1]
+b
+
+[STev_01_07::command/388 CtrlChar/param/2]
+003
+
+[STev_01_07::command/388 CtrlChar/param/3]
+close
+
+[STev_01_07::command/388 CtrlChar/param/11]
+none
+
+[STev_01_07::command/388 CtrlChar/param/12]
+none
+
+[STev_01_07::command/388 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/389 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/389 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/389 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/389 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/389 SetTalk/param/7]
+That old man's diary wasn't complete nonsense—"Marlene was swallowed by a great whirlpool. She must be dead."
+
+[STev_01_07::command/389 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/390 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/390 CtrlChar/param/1]
+b
+
+[STev_01_07::command/390 CtrlChar/param/2]
+004
+
+[STev_01_07::command/390 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_01_07::command/390 CtrlChar/param/11]
+none
+
+[STev_01_07::command/390 CtrlChar/param/12]
+none
+
+[STev_01_07::command/390 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/391 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/391 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/391 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/391 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/391 SetTalk/param/7]
+Ah, is this the cycle of fate? That both Marlene and her granddaughter would fail to escape the whirlpool's grasp...
+
+[STev_01_07::command/391 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/393 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/393 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/393 SetBGM/param/4]
+none
+
+[STev_01_07::command/394 SetFx/param/1]
+fx_avg_flash_light
+
+[STev_01_07::command/395 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/395 CtrlChar/param/1]
+b
+
+[STev_01_07::command/395 CtrlChar/param/2]
+002
+
+[STev_01_07::command/395 CtrlChar/param/3]
+close
+
+[STev_01_07::command/395 CtrlChar/param/11]
+none
+
+[STev_01_07::command/395 CtrlChar/param/12]
+none
+
+[STev_01_07::command/395 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/396 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/396 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/396 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/396 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/396 SetTalk/param/7]
+Wait a minute! If Marlene had died back then ...==W== who was it that later returned to Carlo Town?!
+
+[STev_01_07::command/396 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/398 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/398 CtrlChar/param/1]
+b
+
+[STev_01_07::command/398 CtrlChar/param/2]
+007
+
+[STev_01_07::command/398 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STev_01_07::command/398 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/398 CtrlChar/param/12]
+none
+
+[STev_01_07::command/398 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/401 SetBg/param/1]
+mood_3
+
+[STev_01_07::command/401 SetBg/param/2]
+0
+
+[STev_01_07::command/401 SetBg/param/3]
+Linear
+
+[STev_01_07::command/401 SetBg/param/6]
+default
+
+[STev_01_07::command/402 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/402 CtrlChar/param/1]
+b
+
+[STev_01_07::command/402 CtrlChar/param/2]
+003
+
+[STev_01_07::command/402 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_01_07::command/402 CtrlChar/param/11]
+none
+
+[STev_01_07::command/402 CtrlChar/param/12]
+none
+
+[STev_01_07::command/402 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/403 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/403 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/403 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/403 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/403 SetTalk/param/7]
+D-Don't tell me ... she was a ...==W== g-g-ghost?!
+
+[STev_01_07::command/403 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/405 CtrlStage/param/9]
+zhenjing
+
+[STev_01_07::command/405 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/406 SetAudio/param/1]
+se_112
+
+[STev_01_07::command/407 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/407 CtrlChar/param/1]
+b
+
+[STev_01_07::command/407 CtrlChar/param/2]
+010
+
+[STev_01_07::command/407 CtrlChar/param/3]
+close
+
+[STev_01_07::command/407 CtrlChar/param/11]
+none
+
+[STev_01_07::command/407 CtrlChar/param/12]
+none
+
+[STev_01_07::command/407 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/410 SetTrans/param/2]
+0
+
+[STev_01_07::command/410 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/410 SetTrans/param/8]
+default
+
+[STev_01_07::command/411 SetBg/param/1]
+cabin_night
+
+[STev_01_07::command/411 SetBg/param/2]
+0
+
+[STev_01_07::command/411 SetBg/param/3]
+Linear
+
+[STev_01_07::command/411 SetBg/param/6]
+default
+
+[STev_01_07::command/412 SetTrans/param/2]
+0
+
+[STev_01_07::command/412 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/412 SetTrans/param/8]
+default
+
+[STev_01_07::command/413 SetAudio/param/1]
+se_368
+
+[STev_01_07::command/414 SetChar/param/2]
+none
+
+[STev_01_07::command/414 SetChar/param/3]
+avg2_983
+
+[STev_01_07::command/414 SetChar/param/4]
+b
+
+[STev_01_07::command/414 SetChar/param/5]
+002
+
+[STev_01_07::command/414 SetChar/param/6]
+none
+
+[STev_01_07::command/415 CtrlChar/param/0]
+avg2_983
+
+[STev_01_07::command/415 CtrlChar/param/1]
+b
+
+[STev_01_07::command/415 CtrlChar/param/3]
+none
+
+[STev_01_07::command/415 CtrlChar/param/11]
+none
+
+[STev_01_07::command/415 CtrlChar/param/12]
+none
+
+[STev_01_07::command/415 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/416 CtrlChar/param/0]
+avg2_983
+
+[STev_01_07::command/416 CtrlChar/param/1]
+b
+
+[STev_01_07::command/416 CtrlChar/param/3]
+none
+
+[STev_01_07::command/416 CtrlChar/param/11]
+zuochupeng
+
+[STev_01_07::command/416 CtrlChar/param/12]
+none
+
+[STev_01_07::command/416 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/418 SetAudio/param/1]
+se_356
+
+[STev_01_07::command/419 CtrlChar/param/0]
+avg2_990
+
+[STev_01_07::command/419 CtrlChar/param/1]
+b
+
+[STev_01_07::command/419 CtrlChar/param/3]
+none
+
+[STev_01_07::command/419 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/419 CtrlChar/param/12]
+none
+
+[STev_01_07::command/419 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/420 SetTrans/param/2]
+0
+
+[STev_01_07::command/420 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/420 SetTrans/param/8]
+default
+
+[STev_01_07::command/421 SetBg/param/1]
+sky_night_b
+
+[STev_01_07::command/421 SetBg/param/2]
+0
+
+[STev_01_07::command/421 SetBg/param/3]
+Linear
+
+[STev_01_07::command/421 SetBg/param/6]
+default
+
+[STev_01_07::command/422 SetTrans/param/2]
+0
+
+[STev_01_07::command/422 SetTrans/param/3]
+Linear
+
+[STev_01_07::command/422 SetTrans/param/8]
+default
+
+[STev_01_07::command/423 SetFx/param/1]
+fx_speedline_center_w
+
+[STev_01_07::command/424 SetAudio/param/1]
+se_063
+
+[STev_01_07::command/425 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/425 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/425 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/425 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/425 SetTalk/param/7]
+<size=50>Waaaaaaaaah—!!
+
+[STev_01_07::command/425 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/427 CtrlBg/param/10]
+none
+
+[STev_01_07::command/427 CtrlBg/param/11]
+Linear
+
+[STev_01_07::command/428 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/428 SetBGM/param/3]
+m36
+
+[STev_01_07::command/428 SetBGM/param/4]
+none
+
+[STev_01_07::command/429 SetAudio/param/1]
+se_053
+
+[STev_01_07::command/430 SetTalk/param/1]
+Clumsy Treasure Hunter
+
+[STev_01_07::command/430 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/430 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/430 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/430 SetTalk/param/7]
+Boss?! Boss, what's wrong?!
+
+[STev_01_07::command/430 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/432 SetAudio/param/1]
+se_046
+
+[STev_01_07::command/433 SetTalkShake/param/1]
+Zhong
+
+[STev_01_07::command/434 SetTalk/param/1]
+Thuggish Treasure Hunter
+
+[STev_01_07::command/434 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/434 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/434 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/434 SetTalk/param/7]
+It's all your fault! You sneaked up on her and scared her half to death! Don't you know she's terrified of ghosts?!
+
+[STev_01_07::command/434 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/436 SetAudio/param/1]
+se_124
+
+[STev_01_07::command/437 SetTalk/param/1]
+Clumsy Treasure Hunter
+
+[STev_01_07::command/437 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/437 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/437 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/437 SetTalk/param/7]
+S-Sorry, boss! I was just bringing you a late-night snack ... and forgot to knock...
+
+[STev_01_07::command/437 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/439 CtrlStage/param/9]
+Zhong
+
+[STev_01_07::command/439 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/440 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/440 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/440 SetBGM/param/4]
+1000ms
+
+[STev_01_07::command/441 SetAudio/param/1]
+se_070
+
+[STev_01_07::command/442 SetTalk/param/1]
+Treasure Hunter Leader
+
+[STev_01_07::command/442 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/442 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/442 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/442 SetTalk/param/7]
+<size=50>A ghost! GHOST! Stay away from me—!!
+
+[STev_01_07::command/442 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/444 SetTrans/param/2]
+0
+
+[STev_01_07::command/444 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/444 SetTrans/param/8]
+default
+
+[STev_01_07::command/445 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/445 SetBg/param/2]
+0
+
+[STev_01_07::command/445 SetBg/param/3]
+Linear
+
+[STev_01_07::command/445 SetBg/param/6]
+default
+
+[STev_01_07::command/446 CtrlStage/param/9]
+none
+
+[STev_01_07::command/446 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/447 SetTrans/param/2]
+0
+
+[STev_01_07::command/447 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/447 SetTrans/param/8]
+default
+
+[STev_01_07::command/449 SetChar/param/2]
+none
+
+[STev_01_07::command/449 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/449 SetChar/param/4]
+b
+
+[STev_01_07::command/449 SetChar/param/5]
+003
+
+[STev_01_07::command/449 SetChar/param/6]
+none
+
+[STev_01_07::command/450 SetAudio/param/1]
+se_186
+
+[STev_01_07::command/451 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/451 CtrlChar/param/1]
+b
+
+[STev_01_07::command/451 CtrlChar/param/3]
+none
+
+[STev_01_07::command/451 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/451 CtrlChar/param/12]
+none
+
+[STev_01_07::command/451 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/452 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/452 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/452 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/452 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/452 SetTalk/param/7]
+(sob) ... Shia...
+
+[STev_01_07::command/452 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/454 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/454 SetBGM/param/3]
+m9
+
+[STev_01_07::command/454 SetBGM/param/4]
+2000ms
+
+[STev_01_07::command/455 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/455 CtrlChar/param/1]
+b
+
+[STev_01_07::command/455 CtrlChar/param/2]
+008
+
+[STev_01_07::command/455 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_01_07::command/455 CtrlChar/param/11]
+none
+
+[STev_01_07::command/455 CtrlChar/param/12]
+none
+
+[STev_01_07::command/455 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/456 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/456 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/456 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/456 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/456 SetTalk/param/7]
+What... What do we do now, Boss...?
+
+[STev_01_07::command/456 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/457 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/457 CtrlChar/param/1]
+b
+
+[STev_01_07::command/457 CtrlChar/param/3]
+close
+
+[STev_01_07::command/457 CtrlChar/param/11]
+none
+
+[STev_01_07::command/457 CtrlChar/param/12]
+none
+
+[STev_01_07::command/457 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/459 SetMainRoleTalk/param/2]
+009
+
+[STev_01_07::command/459 SetMainRoleTalk/param/3]
+close
+
+[STev_01_07::command/459 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/459 SetMainRoleTalk/param/5]
+u
+
+[STev_01_07::command/459 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/460 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/460 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/460 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/460 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/460 SetTalk/param/7]
+The Hexhorn Whale and Shia were gone. Did that whirlpool just swallow them both?
+
+[STev_01_07::command/460 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/461 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/461 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/461 SetMainRoleTalk/param/5]
+u
+
+[STev_01_07::command/461 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/463 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/463 CtrlChar/param/1]
+b
+
+[STev_01_07::command/463 CtrlChar/param/3]
+none
+
+[STev_01_07::command/463 CtrlChar/param/11]
+none
+
+[STev_01_07::command/463 CtrlChar/param/12]
+none
+
+[STev_01_07::command/463 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/464 SetAudio/param/1]
+se_451
+
+[STev_01_07::command/465 CtrlBg/param/10]
+none
+
+[STev_01_07::command/465 CtrlBg/param/11]
+Linear
+
+[STev_01_07::command/466 SetTalk/param/1]
+0
+
+[STev_01_07::command/466 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/466 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/466 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/466 SetTalk/param/7]
+The Hexhorn Whale's charge actually freed us from the whirlpool's pull. Now we were just adrift in calmer waters.
+
+[STev_01_07::command/466 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/468 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/468 SetBg/param/2]
+0
+
+[STev_01_07::command/468 SetBg/param/3]
+Linear
+
+[STev_01_07::command/468 SetBg/param/6]
+default
+
+[STev_01_07::command/469 SetMainRoleTalk/param/2]
+010
+
+[STev_01_07::command/469 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STev_01_07::command/469 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/469 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/469 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/470 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/470 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/470 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/470 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/470 SetTalk/param/7]
+We'll wait for the whirlpool to die down, then we'll go find Shia. Chances are they were both pulled to the same place.
+
+[STev_01_07::command/470 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/471 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/471 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/471 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/471 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/473 SetAudio/param/1]
+se_186
+
+[STev_01_07::command/474 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/474 CtrlChar/param/1]
+b
+
+[STev_01_07::command/474 CtrlChar/param/2]
+008
+
+[STev_01_07::command/474 CtrlChar/param/3]
+none
+
+[STev_01_07::command/474 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/474 CtrlChar/param/12]
+none
+
+[STev_01_07::command/474 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/475 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/475 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/475 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/475 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/475 SetTalk/param/7]
+But...
+
+[STev_01_07::command/475 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/477 SetMainRoleTalk/param/2]
+022
+
+[STev_01_07::command/477 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/477 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/477 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/477 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/478 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/478 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/478 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/478 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/478 SetTalk/param/7]
+Hey, she'll be okay. The boat was about to capsize, and she still nailed that shot with her grappling hook.
+
+[STev_01_07::command/478 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/479 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/479 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/479 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/479 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/481 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/481 CtrlChar/param/1]
+b
+
+[STev_01_07::command/481 CtrlChar/param/2]
+003
+
+[STev_01_07::command/481 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_01_07::command/481 CtrlChar/param/11]
+none
+
+[STev_01_07::command/481 CtrlChar/param/12]
+none
+
+[STev_01_07::command/481 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/482 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/482 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/482 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/482 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/482 SetTalk/param/7]
+You're right...==W== Shia has to be okay! She's probably riding that whale's giant fin like a surfboard right now!
+
+[STev_01_07::command/482 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/484 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/484 CtrlChar/param/1]
+b
+
+[STev_01_07::command/484 CtrlChar/param/2]
+012
+
+[STev_01_07::command/484 CtrlChar/param/3]
+avg_emoji_star
+
+[STev_01_07::command/484 CtrlChar/param/11]
+none
+
+[STev_01_07::command/484 CtrlChar/param/12]
+none
+
+[STev_01_07::command/484 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/487 SetMainRoleTalk/param/2]
+013
+
+[STev_01_07::command/487 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STev_01_07::command/487 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/487 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/487 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/488 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/488 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/488 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/488 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/488 SetTalk/param/7]
+That's one monster of a surfboard. Only Shia could handle that.
+
+[STev_01_07::command/488 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/489 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/489 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/489 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/489 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/491 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/491 CtrlChar/param/1]
+b
+
+[STev_01_07::command/491 CtrlChar/param/2]
+015
+
+[STev_01_07::command/491 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_01_07::command/491 CtrlChar/param/11]
+none
+
+[STev_01_07::command/491 CtrlChar/param/12]
+none
+
+[STev_01_07::command/491 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/492 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/492 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/492 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/492 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/492 SetTalk/param/7]
+Yeah! Shia's the best seafaring Trekker there is. She's gotta be fine!
+
+[STev_01_07::command/492 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/494 SetMainRoleTalk/param/2]
+023
+
+[STev_01_07::command/494 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/494 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/494 SetMainRoleTalk/param/5]
+u
+
+[STev_01_07::command/494 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/495 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/495 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/495 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/495 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/495 SetTalk/param/7]
+Good, she's pulling herself together...
+
+[STev_01_07::command/495 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/496 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/496 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/496 SetMainRoleTalk/param/5]
+u
+
+[STev_01_07::command/496 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/498 SetAudio/param/1]
+se_074
+
+[STev_01_07::command/499 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/499 CtrlChar/param/1]
+b
+
+[STev_01_07::command/499 CtrlChar/param/2]
+012
+
+[STev_01_07::command/499 CtrlChar/param/3]
+none
+
+[STev_01_07::command/499 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/499 CtrlChar/param/12]
+none
+
+[STev_01_07::command/499 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/500 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/500 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/500 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/500 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/500 SetTalk/param/7]
+Okay, let's get ready to set off anytime! First, we need to get this deck cleaned up. It's a complete disaster.
+
+[STev_01_07::command/500 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/502 SetAudio/param/1]
+se_099
+
+[STev_01_07::command/503 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/503 CtrlChar/param/1]
+b
+
+[STev_01_07::command/503 CtrlChar/param/2]
+002
+
+[STev_01_07::command/503 CtrlChar/param/3]
+none
+
+[STev_01_07::command/503 CtrlChar/param/11]
+none
+
+[STev_01_07::command/503 CtrlChar/param/12]
+none
+
+[STev_01_07::command/503 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/504 SetAudio/param/1]
+se_077
+
+[STev_01_07::command/505 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/505 CtrlChar/param/1]
+b
+
+[STev_01_07::command/505 CtrlChar/param/3]
+none
+
+[STev_01_07::command/505 CtrlChar/param/11]
+JuGong1
+
+[STev_01_07::command/505 CtrlChar/param/12]
+none
+
+[STev_01_07::command/505 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/507 CtrlStage/param/9]
+none
+
+[STev_01_07::command/507 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/508 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/508 CtrlChar/param/1]
+b
+
+[STev_01_07::command/508 CtrlChar/param/2]
+016
+
+[STev_01_07::command/508 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_01_07::command/508 CtrlChar/param/11]
+jushou2
+
+[STev_01_07::command/508 CtrlChar/param/12]
+none
+
+[STev_01_07::command/508 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/509 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/509 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/509 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/509 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/509 SetTalk/param/7]
+We also need to fish our supplies out of the water and dry them off. I'll take this side, you check over there.
+
+[STev_01_07::command/509 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/511 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_01_07::command/511 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/511 SetBGM/param/4]
+4000ms
+
+[STev_01_07::command/512 SetTrans/param/2]
+0
+
+[STev_01_07::command/512 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/512 SetTrans/param/8]
+default
+
+[STev_01_07::command/513 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/513 SetBg/param/2]
+0
+
+[STev_01_07::command/513 SetBg/param/3]
+Linear
+
+[STev_01_07::command/513 SetBg/param/6]
+default
+
+[STev_01_07::command/514 SetTrans/param/2]
+0
+
+[STev_01_07::command/514 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/514 SetTrans/param/8]
+default
+
+[STev_01_07::command/515 SetAudio/param/1]
+se_055
+
+[STev_01_07::command/516 SetTalk/param/1]
+0
+
+[STev_01_07::command/516 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/516 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/516 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/516 SetTalk/param/7]
+As Karin and I fished the scattered crates out of the sea, a familiar glimmer in the distance caught my eye.
+
+[STev_01_07::command/516 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/518 SetAudio/param/1]
+se_372
+
+[STev_01_07::command/519 SetFrontObj/param/2]
+qstory_event_01_001
+
+[STev_01_07::command/520 SetMainRoleTalk/param/2]
+002
+
+[STev_01_07::command/520 SetMainRoleTalk/param/3]
+close
+
+[STev_01_07::command/520 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/520 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/520 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/521 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/521 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/521 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/521 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/521 SetTalk/param/7]
+Ah! It's the old lantern...
+
+[STev_01_07::command/521 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/522 SetMainRoleTalk/param/2]
+015
+
+[STev_01_07::command/522 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STev_01_07::command/522 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/522 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/522 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/523 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/523 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/523 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/523 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/523 SetTalk/param/7]
+Huh? Why is it ... glowing again?
+
+[STev_01_07::command/523 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/524 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/524 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/524 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/524 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/526 SetFrontObj/param/2]
+qstory_event_01_001
+
+[STev_01_07::command/527 SetAudio/param/1]
+se_365
+
+[STev_01_07::command/528 SetTalk/param/1]
+0
+
+[STev_01_07::command/528 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/528 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/528 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/528 SetTalk/param/7]
+While I was staring at the lantern floating on the water, Karin stumbled over and shoved the binoculars into my hands, her face pale with terror.
+
+[STev_01_07::command/528 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/530 SetBg/param/1]
+deck_night
+
+[STev_01_07::command/530 SetBg/param/2]
+0
+
+[STev_01_07::command/530 SetBg/param/3]
+Linear
+
+[STev_01_07::command/530 SetBg/param/6]
+default
+
+[STev_01_07::command/531 SetChar/param/2]
+none
+
+[STev_01_07::command/531 SetChar/param/3]
+avg1_157
+
+[STev_01_07::command/531 SetChar/param/4]
+b
+
+[STev_01_07::command/531 SetChar/param/5]
+019
+
+[STev_01_07::command/531 SetChar/param/6]
+none
+
+[STev_01_07::command/532 SetStage/param/2]
+Linear
+
+[STev_01_07::command/533 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/533 CtrlChar/param/1]
+b
+
+[STev_01_07::command/533 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_01_07::command/533 CtrlChar/param/11]
+chijing
+
+[STev_01_07::command/533 CtrlChar/param/12]
+none
+
+[STev_01_07::command/533 CtrlChar/param/13]
+OutSine
+
+[STev_01_07::command/534 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/534 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/534 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/534 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/534 SetTalk/param/7]
+B-Boss... L-Look ... over there...
+
+[STev_01_07::command/534 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/535 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/535 CtrlChar/param/1]
+b
+
+[STev_01_07::command/535 CtrlChar/param/3]
+close
+
+[STev_01_07::command/535 CtrlChar/param/11]
+none
+
+[STev_01_07::command/535 CtrlChar/param/12]
+none
+
+[STev_01_07::command/535 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/537 SetStage/param/2]
+Linear
+
+[STev_01_07::command/538 SetMainRoleTalk/param/2]
+002
+
+[STev_01_07::command/538 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/538 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/538 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/538 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/539 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/539 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/539 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/539 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/539 SetTalk/param/7]
+Yeah? What's up?
+
+[STev_01_07::command/539 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/540 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/540 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/540 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/540 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/542 SetAudio/param/1]
+se_077
+
+[STev_01_07::command/543 CtrlChar/param/0]
+avg1_157
+
+[STev_01_07::command/543 CtrlChar/param/1]
+b
+
+[STev_01_07::command/543 CtrlChar/param/3]
+none
+
+[STev_01_07::command/543 CtrlChar/param/11]
+JuGong1
+
+[STev_01_07::command/543 CtrlChar/param/12]
+none
+
+[STev_01_07::command/543 CtrlChar/param/13]
+Linear
+
+[STev_01_07::command/544 SetTrans/param/2]
+0
+
+[STev_01_07::command/544 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/544 SetTrans/param/8]
+default
+
+[STev_01_07::command/545 SetStage/param/2]
+Linear
+
+[STev_01_07::command/546 SetBg/param/1]
+view_wasteland_night
+
+[STev_01_07::command/546 SetBg/param/2]
+0
+
+[STev_01_07::command/546 SetBg/param/3]
+Linear
+
+[STev_01_07::command/546 SetBg/param/6]
+default
+
+[STev_01_07::command/547 SetBg/param/1]
+BG_Black
+
+[STev_01_07::command/547 SetBg/param/2]
+0
+
+[STev_01_07::command/547 SetBg/param/3]
+Linear
+
+[STev_01_07::command/547 SetBg/param/6]
+default
+
+[STev_01_07::command/548 CtrlBg/param/10]
+none
+
+[STev_01_07::command/548 CtrlBg/param/11]
+Linear
+
+[STev_01_07::command/549 SetAudio/param/1]
+se_369
+
+[STev_01_07::command/550 SetTrans/param/2]
+0
+
+[STev_01_07::command/550 SetTrans/param/3]
+OutSine
+
+[STev_01_07::command/550 SetTrans/param/8]
+default
+
+[STev_01_07::command/551 SetAudio/param/1]
+se_100
+
+[STev_01_07::command/552 SetBg/param/1]
+circle_light
+
+[STev_01_07::command/552 SetBg/param/2]
+0
+
+[STev_01_07::command/552 SetBg/param/3]
+Linear
+
+[STev_01_07::command/552 SetBg/param/6]
+default
+
+[STev_01_07::command/553 CtrlBg/param/10]
+none
+
+[STev_01_07::command/553 CtrlBg/param/11]
+Linear
+
+[STev_01_07::command/555 SetAudio/param/1]
+se_368
+
+[STev_01_07::command/556 SetMainRoleTalk/param/2]
+025
+
+[STev_01_07::command/556 SetMainRoleTalk/param/3]
+close
+
+[STev_01_07::command/556 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/556 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/556 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/557 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/557 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/557 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/557 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/557 SetTalk/param/7]
+... A Ghost Ship?!
+
+[STev_01_07::command/557 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/558 SetAudio/param/1]
+se_226
+
+[STev_01_07::command/559 SetMainRoleTalk/param/2]
+012
+
+[STev_01_07::command/559 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/559 SetMainRoleTalk/param/4]
+chijing
+
+[STev_01_07::command/559 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/559 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/560 SetTalk/param/1]
+avg3_100
+
+[STev_01_07::command/560 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/560 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/560 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/560 SetTalk/param/7]
+No, wait. That silhouette... It can't be a ship...
+
+[STev_01_07::command/560 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/561 SetMainRoleTalk/param/3]
+none
+
+[STev_01_07::command/561 SetMainRoleTalk/param/4]
+none
+
+[STev_01_07::command/561 SetMainRoleTalk/param/5]
+v
+
+[STev_01_07::command/561 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_01_07::command/563 SetAudio/param/1]
+se_055
+
+[STev_01_07::command/564 CtrlBg/param/10]
+none
+
+[STev_01_07::command/564 CtrlBg/param/11]
+InSine
+
+[STev_01_07::command/566 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/566 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/566 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/566 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/566 SetTalk/param/7]
+It... It looks like an island...
+
+[STev_01_07::command/566 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/568 SetAudio/param/1]
+se_369_stop
+
+[STev_01_07::command/569 SetAudio/param/1]
+se_058
+
+[STev_01_07::command/570 CtrlStage/param/9]
+zhenjing
+
+[STev_01_07::command/570 CtrlStage/param/10]
+Linear
+
+[STev_01_07::command/571 SetTalk/param/1]
+avg1_157
+
+[STev_01_07::command/571 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/571 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/571 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_01_07::command/571 SetTalk/param/7]
+The light ... is not coming from the Ghost Ship...?
+
+[STev_01_07::command/571 SetTalk/param/8]
+[EMPTY_SOURCE]
+

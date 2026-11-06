@@ -1,0 +1,265 @@
+{
+  "spreadsheet_id": "13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM",
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM/edit",
+  "scope": [
+    "STm01"
+  ],
+  "scene_count": 12,
+  "block_count": 1507,
+  "tables": [
+    {
+      "name": "DB_Scenes",
+      "sheet_id": 2101040001,
+      "table_id": "283721359",
+      "range": {
+        "sheetId": 2101040001,
+        "startRowIndex": 0,
+        "endRowIndex": 13,
+        "startColumnIndex": 0,
+        "endColumnIndex": 4
+      },
+      "columns": [
+        {
+          "name": "scene_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "chapter_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "sort_order",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "merge_path",
+          "type": "TEXT"
+        }
+      ],
+      "frozen_rows": 1
+    },
+    {
+      "name": "DB_Blocks",
+      "sheet_id": 2101040002,
+      "table_id": "349019826",
+      "range": {
+        "sheetId": 2101040002,
+        "startRowIndex": 0,
+        "endRowIndex": 1508,
+        "startColumnIndex": 0,
+        "endColumnIndex": 17
+      },
+      "columns": [
+        {
+          "name": "block_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "scene_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "block_order",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "kind",
+          "type": "TEXT"
+        },
+        {
+          "name": "speaker_vi",
+          "type": "TEXT"
+        },
+        {
+          "name": "speaker_en",
+          "type": "TEXT"
+        },
+        {
+          "name": "speaker_jp",
+          "type": "TEXT"
+        },
+        {
+          "name": "speaker_cn",
+          "type": "TEXT"
+        },
+        {
+          "name": "text_cn",
+          "type": "TEXT"
+        },
+        {
+          "name": "text_jp",
+          "type": "TEXT"
+        },
+        {
+          "name": "text_en",
+          "type": "TEXT"
+        },
+        {
+          "name": "text_vi",
+          "type": "TEXT"
+        },
+        {
+          "name": "merge_header_raw",
+          "type": "TEXT"
+        },
+        {
+          "name": "source_refs_json",
+          "type": "TEXT"
+        },
+        {
+          "name": "source_hash",
+          "type": "TEXT"
+        },
+        {
+          "name": "revision",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT"
+        }
+      ],
+      "frozen_rows": 1
+    },
+    {
+      "name": "DB_Proposals",
+      "sheet_id": 2101040003,
+      "table_id": "227249836",
+      "range": {
+        "sheetId": 2101040003,
+        "startRowIndex": 0,
+        "endRowIndex": 2,
+        "startColumnIndex": 0,
+        "endColumnIndex": 9
+      },
+      "columns": [
+        {
+          "name": "session_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "block_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "author_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "author_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "new_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "note",
+          "type": "TEXT"
+        },
+        {
+          "name": "base_block_revision",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "proposal_revision",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT"
+        }
+      ],
+      "frozen_rows": 1
+    },
+    {
+      "name": "DB_Control",
+      "sheet_id": 2101040004,
+      "table_id": "1514030480",
+      "range": {
+        "sheetId": 2101040004,
+        "startRowIndex": 0,
+        "endRowIndex": 2,
+        "startColumnIndex": 0,
+        "endColumnIndex": 8
+      },
+      "columns": [
+        {
+          "name": "schema_version",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "session_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "session_state",
+          "type": "DROPDOWN"
+        },
+        {
+          "name": "release_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "opened_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "locked_at",
+          "type": "TEXT"
+        },
+        {
+          "name": "pending_publish_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "pending_payload_hash",
+          "type": "TEXT"
+        }
+      ],
+      "frozen_rows": 1
+    }
+  ],
+  "verified_cells": 25713,
+  "all_cells_match": true,
+  "original_tabs_unchanged": 52,
+  "source_files_unchanged": 48,
+  "source_refs": {
+    "cn": {
+      "ambiguous": 79,
+      "matched": 1419,
+      "missing_source": 4,
+      "unresolved": 5
+    },
+    "en": {
+      "ambiguous": 79,
+      "matched": 1419,
+      "missing_source": 4,
+      "unresolved": 5
+    },
+    "jp": {
+      "ambiguous": 71,
+      "matched": 1391,
+      "missing_source": 3,
+      "unresolved": 42
+    }
+  },
+  "payload_hash": "0f88070974d4570334b5112c60d2bf92b299477fac8d5210dad891648c48263f",
+  "session_id": "258a425e-0d7a-43be-bdbc-8064abd21fc5",
+  "release_id": "a60c0d52-5eee-4fe2-a182-5086415b9de4",
+  "control": [
+    1,
+    "258a425e-0d7a-43be-bdbc-8064abd21fc5",
+    "OPEN",
+    "a60c0d52-5eee-4fe2-a182-5086415b9de4",
+    "2026-11-04T16:29:01Z",
+    "",
+    "",
+    ""
+  ],
+  "visual_verification": {
+    "method": "Google Sheets API formatting and native-table readback",
+    "native_render_verified": false,
+    "reason": "Browser and node runtimes could not initialize: kernel asset path missing."
+  }
+}

@@ -1,0 +1,5833 @@
+CG_disc4036 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1943
+
+[CG_disc4036::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_disc4036::command/0 SetIntro/param/1]
+記憶回想
+
+[CG_disc4036::command/0 SetIntro/param/2]
+亡き友人への鎮魂歌
+
+[CG_disc4036::command/0 SetIntro/param/3]
+街で出会ったグレイは、普段とはどこか様子が異なる。どうやら彼女には目的があるらしく、森の奥へと誘われる。そこで目にしたのは、放棄された小さな霊園だった…
+
+[CG_disc4036::command/1 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/1 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/2 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_disc4036::command/2 SetBGM/param/3]
+m2
+
+[CG_disc4036::command/2 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/3 SetBg/param/1]
+ttc_market_dusk
+
+[CG_disc4036::command/3 SetBg/param/2]
+0
+
+[CG_disc4036::command/3 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/3 SetBg/param/6]
+default
+
+[CG_disc4036::command/4 SetAudio/param/1]
+se_060
+
+[CG_disc4036::command/6 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/6 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/6 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/6 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/6 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/7 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/7 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/7 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/7 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/7 SetTalk/param/7]
+夕方のマーケットは賑やかだな。==RT==眺めているだけで楽しいし、散歩にはちょうどいい。
+
+[CG_disc4036::command/7 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/8 SetAudio/param/1]
+se_060
+
+[CG_disc4036::command/9 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/9 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/10 SetChar/param/2]
+none
+
+[CG_disc4036::command/10 SetChar/param/3]
+avg3_138
+
+[CG_disc4036::command/10 SetChar/param/4]
+a
+
+[CG_disc4036::command/10 SetChar/param/5]
+002
+
+[CG_disc4036::command/10 SetChar/param/6]
+none
+
+[CG_disc4036::command/11 SetChar/param/2]
+none
+
+[CG_disc4036::command/11 SetChar/param/3]
+avg2_983
+
+[CG_disc4036::command/11 SetChar/param/4]
+a
+
+[CG_disc4036::command/11 SetChar/param/5]
+002
+
+[CG_disc4036::command/11 SetChar/param/6]
+none
+
+[CG_disc4036::command/12 SetChar/param/2]
+none
+
+[CG_disc4036::command/12 SetChar/param/3]
+avg2_984
+
+[CG_disc4036::command/12 SetChar/param/4]
+a
+
+[CG_disc4036::command/12 SetChar/param/5]
+002
+
+[CG_disc4036::command/12 SetChar/param/6]
+none
+
+[CG_disc4036::command/13 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4036::command/13 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/13 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/13 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/13 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/13 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/14 CtrlChar/param/0]
+avg2_983
+
+[CG_disc4036::command/14 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/14 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/14 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/14 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/14 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/15 CtrlChar/param/0]
+avg2_984
+
+[CG_disc4036::command/15 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/15 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/15 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/15 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/15 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/16 SetAudio/param/1]
+se_020_stop
+
+[CG_disc4036::command/17 SetAudio/param/1]
+se_205
+
+[CG_disc4036::command/18 SetAudio/param/1]
+se_116_stop
+
+[CG_disc4036::command/20 SetChar/param/2]
+none
+
+[CG_disc4036::command/20 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/20 SetChar/param/4]
+a
+
+[CG_disc4036::command/20 SetChar/param/5]
+002
+
+[CG_disc4036::command/20 SetChar/param/6]
+none
+
+[CG_disc4036::command/21 CtrlChar/param/0]
+avg2_983
+
+[CG_disc4036::command/21 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/21 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/21 CtrlChar/param/11]
+diantou2
+
+[CG_disc4036::command/21 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/21 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/22 CtrlChar/param/0]
+avg2_984
+
+[CG_disc4036::command/22 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/22 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/22 CtrlChar/param/11]
+diantou2
+
+[CG_disc4036::command/22 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/22 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/23 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4036::command/23 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/23 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/23 CtrlChar/param/11]
+diantou2
+
+[CG_disc4036::command/23 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/23 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/25 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/25 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/25 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/25 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/25 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/25 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/26 SetAudio/param/1]
+se_052
+
+[CG_disc4036::command/27 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/27 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/29 SetAudio/param/1]
+se_072
+
+[CG_disc4036::command/30 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/30 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/30 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/30 CtrlChar/param/11]
+tiao2
+
+[CG_disc4036::command/30 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/30 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/31 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/31 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/32 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/32 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_disc4036::command/32 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/32 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4036::command/32 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/33 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/33 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/33 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/33 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/33 SetTalk/param/7]
+――ん？いまのは……
+
+[CG_disc4036::command/33 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/34 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/34 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/36 SetTrans/param/2]
+0
+
+[CG_disc4036::command/36 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/36 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/37 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/37 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/38 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/38 CtrlBg/param/11]
+Linear
+
+[CG_disc4036::command/39 SetChar/param/2]
+none
+
+[CG_disc4036::command/39 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/39 SetChar/param/4]
+a
+
+[CG_disc4036::command/39 SetChar/param/5]
+002
+
+[CG_disc4036::command/39 SetChar/param/6]
+none
+
+[CG_disc4036::command/40 SetChar/param/2]
+none
+
+[CG_disc4036::command/40 SetChar/param/3]
+avg3_144
+
+[CG_disc4036::command/40 SetChar/param/4]
+a
+
+[CG_disc4036::command/40 SetChar/param/5]
+002
+
+[CG_disc4036::command/40 SetChar/param/6]
+none
+
+[CG_disc4036::command/41 SetTrans/param/2]
+0
+
+[CG_disc4036::command/41 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/41 SetTrans/param/8]
+default
+
+[CG_disc4036::command/42 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/42 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/42 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/42 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_disc4036::command/42 CtrlChar/param/11]
+daintou
+
+[CG_disc4036::command/42 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/42 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/43 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/43 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/43 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/43 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/43 SetTalk/param/7]
+店主さん、『<r=サングレープ>聖葡萄</r>』をひとつもらえる？==RT==それとここから近い花屋も教えてちょうだい。
+
+[CG_disc4036::command/43 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/44 CtrlChar/param/0]
+avg3_144
+
+[CG_disc4036::command/44 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/44 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4036::command/44 CtrlChar/param/11]
+chijing
+
+[CG_disc4036::command/44 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/44 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/45 SetTalk/param/1]
+果物屋さん
+
+[CG_disc4036::command/45 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/45 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/45 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/45 SetTalk/param/7]
+これはこれは、審問官殿ではありませんか！==RT==いらしてくださるなんて、大変光栄です！
+
+[CG_disc4036::command/45 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/46 SetAudio/param/1]
+se_062
+
+[CG_disc4036::command/47 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/47 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/48 CtrlChar/param/0]
+avg3_144
+
+[CG_disc4036::command/48 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/48 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/48 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/48 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/48 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/49 SetAudio/param/1]
+se_077
+
+[CG_disc4036::command/50 CtrlChar/param/0]
+avg3_144
+
+[CG_disc4036::command/50 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/50 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/50 CtrlChar/param/11]
+JuGong
+
+[CG_disc4036::command/50 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/50 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/51 SetTalk/param/1]
+果物屋さん
+
+[CG_disc4036::command/51 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/51 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/51 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/51 SetTalk/param/7]
+<r=サングレープ>聖葡萄</r>は……こちらをどうぞ。==RT==花屋はこの先の角を右に曲がって二軒目ですよ。
+
+[CG_disc4036::command/51 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/52 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/52 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/52 CtrlChar/param/2]
+017
+
+[CG_disc4036::command/52 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/52 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/52 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/52 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/53 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/53 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/53 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/53 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/53 SetTalk/param/7]
+そう。ありがとう。==RT==恩恵の神のご加護があらんことを。
+
+[CG_disc4036::command/53 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/55 SetAudio/param/1]
+se_060
+
+[CG_disc4036::command/56 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[CG_disc4036::command/56 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/56 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/57 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/57 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/58 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[CG_disc4036::command/58 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/58 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/59 SetChar/param/2]
+none
+
+[CG_disc4036::command/59 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/59 SetChar/param/4]
+a
+
+[CG_disc4036::command/59 SetChar/param/5]
+002
+
+[CG_disc4036::command/59 SetChar/param/6]
+none
+
+[CG_disc4036::command/60 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/60 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/60 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/60 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/60 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/60 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/61 SetAudio/param/1]
+se_062
+
+[CG_disc4036::command/62 SetChar/param/2]
+none
+
+[CG_disc4036::command/62 SetChar/param/3]
+avg3_143
+
+[CG_disc4036::command/62 SetChar/param/4]
+a
+
+[CG_disc4036::command/62 SetChar/param/5]
+002
+
+[CG_disc4036::command/62 SetChar/param/6]
+none
+
+[CG_disc4036::command/63 CtrlChar/param/0]
+avg3_143
+
+[CG_disc4036::command/63 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/63 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/63 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/63 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/63 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/64 CtrlChar/param/0]
+avg3_143
+
+[CG_disc4036::command/64 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/64 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/64 CtrlChar/param/11]
+JuGong
+
+[CG_disc4036::command/64 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/64 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/65 SetTalk/param/1]
+花屋さん
+
+[CG_disc4036::command/65 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/65 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/65 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/65 SetTalk/param/7]
+お待たせいたしました。こちら、白百合の花束です。==RT==大きいので、気をつけて運んでくださいね！
+
+[CG_disc4036::command/65 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/66 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/66 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/66 CtrlChar/param/2]
+017
+
+[CG_disc4036::command/66 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/66 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/66 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/66 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/67 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/67 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/67 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/67 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/67 SetTalk/param/7]
+そうするわ。綺麗な花と心遣いをありがとう。==RT==アナタに恩恵の神のご加護があらんことを。
+
+[CG_disc4036::command/67 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/68 SetTrans/param/2]
+0
+
+[CG_disc4036::command/68 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/68 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/69 SetBg/param/1]
+city_street_dusk
+
+[CG_disc4036::command/69 SetBg/param/2]
+0
+
+[CG_disc4036::command/69 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/69 SetBg/param/6]
+default
+
+[CG_disc4036::command/70 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/70 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/71 SetTrans/param/2]
+0
+
+[CG_disc4036::command/71 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/71 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/72 SetAudio/param/1]
+se_062
+
+[CG_disc4036::command/73 SetChar/param/2]
+C_in
+
+[CG_disc4036::command/73 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/73 SetChar/param/4]
+a
+
+[CG_disc4036::command/73 SetChar/param/5]
+002
+
+[CG_disc4036::command/73 SetChar/param/6]
+none
+
+[CG_disc4036::command/74 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/74 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/74 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/74 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_disc4036::command/74 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/74 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/74 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/75 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/75 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/75 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/75 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/75 SetTalk/param/7]
+パンに<r=サングレープ>聖葡萄</r>、花束、それから……==W==ああ、本も買いに行かないと。
+
+[CG_disc4036::command/75 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/76 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/76 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/76 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/76 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/76 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/76 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/76 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/78 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/78 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/78 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/78 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/78 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/78 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/79 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/79 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/80 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/80 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/80 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/80 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/80 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/80 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/81 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/81 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/81 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/81 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/81 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/81 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/82 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/82 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/82 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4036::command/82 CtrlChar/param/11]
+youchupeng
+
+[CG_disc4036::command/82 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/82 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/83 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/83 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/83 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/83 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/83 SetTalk/param/7]
+ねえ店主さん？『白騎士冒険譚』の最終巻は発売されているかしら？
+
+[CG_disc4036::command/83 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/84 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/84 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/84 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/84 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[CG_disc4036::command/84 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/84 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/84 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/85 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/85 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/85 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/85 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/85 SetTalk/param/7]
+……そう、まだなのね。平気よ、確認してくれてありがとう。
+
+[CG_disc4036::command/85 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/86 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/86 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/86 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/86 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/86 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/86 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/87 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/87 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/87 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/88 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/88 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/89 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4036::command/89 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_disc4036::command/89 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/89 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4036::command/89 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/90 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/90 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/90 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/90 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/90 SetTalk/param/7]
+（『白騎士冒険譚』とは、たしか漫画だったか？==RT==あのグレイが、まさか漫画好きだったとは……）
+
+[CG_disc4036::command/90 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/91 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/91 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/92 SetAudio/param/1]
+se_236
+
+[CG_disc4036::command/93 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/93 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/93 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/93 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/93 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/93 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/93 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/94 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_disc4036::command/94 SetBGM/param/3]
+m44
+
+[CG_disc4036::command/94 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/95 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/95 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/95 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/95 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/95 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/95 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/95 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/96 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/96 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/96 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/96 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/96 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/96 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/97 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/97 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/97 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/97 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/97 SetTalk/param/7]
+あらぁ……ウフフフ♪ なじみのある気配を感じたと思ったら……
+
+[CG_disc4036::command/97 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/98 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/98 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/98 CtrlChar/param/2]
+009
+
+[CG_disc4036::command/98 CtrlChar/param/3]
+avg_emoji_love
+
+[CG_disc4036::command/98 CtrlChar/param/11]
+diantou2
+
+[CG_disc4036::command/98 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/98 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/99 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/99 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/99 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/99 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/99 SetTalk/param/7]
+やっぱりアナタだったのね。 今日はどうしたの？==RT==わざわざ会いに来てくれたのかしら？
+
+[CG_disc4036::command/99 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/101 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4036::command/101 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_disc4036::command/101 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/101 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/101 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/102 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/102 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/102 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/102 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/102 SetTalk/param/7]
+グ、グレイ……！？君は店の中で……==RT==本を買っていたのではないのか！？
+
+[CG_disc4036::command/102 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/103 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/103 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/103 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/103 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_disc4036::command/103 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/103 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/103 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/104 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/104 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/104 SetTalk/param/7]
+もう済んだわ。欲しい本が売っていなかったの。
+
+[CG_disc4036::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/105 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/105 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/105 CtrlChar/param/2]
+017
+
+[CG_disc4036::command/105 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/105 CtrlChar/param/11]
+niunie
+
+[CG_disc4036::command/105 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/105 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/106 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/106 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/106 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/106 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/106 SetTalk/param/7]
+それに……アナタのアツ～い視線を感じたから、==RT==急いで確認しにきたのよ。
+
+[CG_disc4036::command/106 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/108 SetMainRoleTalk/param/2]
+003
+
+[CG_disc4036::command/108 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/108 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/108 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/108 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/109 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/109 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/109 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/109 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/109 SetTalk/param/7]
+い、いや……熱い視線というか。==RT==グレイが漫画を読むなんて想像もしなかったからな。==RT==いったいなにを読むのかと、気になってしまって……
+
+[CG_disc4036::command/109 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/110 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/110 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/110 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/110 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/110 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/110 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/110 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/111 SetAudio/param/1]
+se_077
+
+[CG_disc4036::command/112 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/112 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/112 CtrlChar/param/2]
+002
+
+[CG_disc4036::command/112 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/112 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/112 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/112 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/113 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/113 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/113 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/113 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/113 SetTalk/param/7]
+あらそう……ざんねん。せっかくスイートな刺激に浸れると思ったのに。
+
+[CG_disc4036::command/113 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/114 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/114 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/114 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/114 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/114 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/114 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/114 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/115 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/115 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/115 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/115 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/115 SetTalk/param/7]
+それはともかく、なにを期待したのか知らないけど、==RT==ワタシ……漫画なんて読まないわよ。興味ないし。
+
+[CG_disc4036::command/115 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/117 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/117 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4036::command/117 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/117 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/117 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/118 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/118 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/118 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/118 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/118 SetTalk/param/7]
+ぬ？だが漫画を買いに来たのだろう？==RT==それとも誰かへのプレゼントだったのか？
+
+[CG_disc4036::command/118 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/119 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/119 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/119 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/119 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/119 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/119 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/119 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/120 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/120 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/120 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/120 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/120 SetTalk/param/7]
+プレゼント……フフ、似たようなものね。
+
+[CG_disc4036::command/120 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/121 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/121 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/121 CtrlChar/param/2]
+018
+
+[CG_disc4036::command/121 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/121 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/121 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/121 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/122 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/122 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/122 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/122 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/122 SetTalk/param/7]
+ああそうそう。ちょうどよかったわ。==RT==アナタに手伝ってほしいことがあるの。
+
+[CG_disc4036::command/122 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/123 SetBGM/param/1]
+music_avg_volume35_1s
+
+[CG_disc4036::command/123 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/123 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/124 SetAudio/param/1]
+se_052
+
+[CG_disc4036::command/125 SetTrans/param/2]
+0
+
+[CG_disc4036::command/125 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/125 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/126 SetBg/param/1]
+forest
+
+[CG_disc4036::command/126 SetBg/param/2]
+0
+
+[CG_disc4036::command/126 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/126 SetBg/param/6]
+default
+
+[CG_disc4036::command/127 SetAudio/param/1]
+se_102
+
+[CG_disc4036::command/128 SetTrans/param/2]
+0
+
+[CG_disc4036::command/128 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/128 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/129 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_disc4036::command/129 SetBGM/param/3]
+m12
+
+[CG_disc4036::command/129 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/131 SetChar/param/2]
+C_0.05_in
+
+[CG_disc4036::command/131 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/131 SetChar/param/4]
+a
+
+[CG_disc4036::command/131 SetChar/param/5]
+003
+
+[CG_disc4036::command/131 SetChar/param/6]
+none
+
+[CG_disc4036::command/132 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/132 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/132 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_disc4036::command/132 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/132 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/132 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/133 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/133 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/133 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/133 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/133 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/133 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/133 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/134 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/134 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/135 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4036::command/135 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_disc4036::command/135 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/135 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4036::command/135 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/136 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/136 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/136 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/136 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/136 SetTalk/param/7]
+（グレイのやつ……==RT==森に入るなり黙りこんでしまったな）
+
+[CG_disc4036::command/136 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/137 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/137 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/137 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/137 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/137 SetTalk/param/7]
+（そもそも手伝いと言われたものの、==RT====W==こんな森の奥でいったいなにをしろと……？）
+
+[CG_disc4036::command/137 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/138 SetMainRoleTalk/param/2]
+005
+
+[CG_disc4036::command/138 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/138 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/138 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4036::command/138 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/140 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/140 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/141 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/141 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4036::command/141 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/141 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/141 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/142 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/142 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/142 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/142 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/142 SetTalk/param/7]
+グレイ、まだ歩くのか？
+
+[CG_disc4036::command/142 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/143 SetAudio/param/1]
+se_112
+
+[CG_disc4036::command/144 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/144 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/144 CtrlChar/param/2]
+015
+
+[CG_disc4036::command/144 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/144 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4036::command/144 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/144 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/145 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/145 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/145 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/145 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/145 SetTalk/param/7]
+……ああ、==W==ごめんなさい。==RT==少しぼんやりしていて……目的地はまだ先よ。
+
+[CG_disc4036::command/145 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/146 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/146 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/146 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/146 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/146 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/146 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/146 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/149 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/149 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_disc4036::command/149 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/149 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/149 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/150 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/150 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/150 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/150 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/150 SetTalk/param/7]
+大丈夫か？以前のように体調が悪いなら……
+
+[CG_disc4036::command/150 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/151 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/151 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/151 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/151 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/151 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/151 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/151 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/152 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/152 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/152 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/152 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/152 SetTalk/param/7]
+いいえ、問題ないわ。あのときは魔王さんのお陰でたっぷり==RT==発散できたから、いまはとっても調子がいいの。
+
+[CG_disc4036::command/152 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/153 SetAudio/param/1]
+se_152
+
+[CG_disc4036::command/154 SetMainRoleTalk/param/2]
+013
+
+[CG_disc4036::command/154 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/154 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/154 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/154 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/155 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/155 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/155 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/155 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/155 SetTalk/param/7]
+それならいいのだが……==W==む？
+
+[CG_disc4036::command/155 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/156 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/156 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/156 CtrlChar/param/2]
+011
+
+[CG_disc4036::command/156 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/156 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/156 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/156 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/157 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/157 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4036::command/157 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/157 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/157 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/159 SetBGM/param/1]
+music_avg_volume35_1s
+
+[CG_disc4036::command/159 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/159 SetBGM/param/4]
+none
+
+[CG_disc4036::command/160 SetAudio/param/1]
+se_152
+
+[CG_disc4036::command/161 CtrlStage/param/9]
+Xiao
+
+[CG_disc4036::command/161 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/162 SetTrans/param/2]
+3
+
+[CG_disc4036::command/162 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/162 SetTrans/param/8]
+default
+
+[CG_disc4036::command/163 SetChar/param/2]
+none
+
+[CG_disc4036::command/163 SetChar/param/3]
+avg2_977
+
+[CG_disc4036::command/163 SetChar/param/4]
+a
+
+[CG_disc4036::command/163 SetChar/param/5]
+002
+
+[CG_disc4036::command/163 SetChar/param/6]
+none
+
+[CG_disc4036::command/164 SetTrans/param/2]
+4
+
+[CG_disc4036::command/164 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/164 SetTrans/param/8]
+default
+
+[CG_disc4036::command/165 SetAudio/param/1]
+se_090
+
+[CG_disc4036::command/166 SetAudio/param/1]
+se_152
+
+[CG_disc4036::command/167 CtrlChar/param/0]
+avg2_977
+
+[CG_disc4036::command/167 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/167 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/167 CtrlChar/param/11]
+tiao2
+
+[CG_disc4036::command/167 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/167 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/169 SetAudio/param/1]
+se_152
+
+[CG_disc4036::command/170 SetAudio/param/1]
+se_314
+
+[CG_disc4036::command/171 CtrlChar/param/0]
+avg2_977
+
+[CG_disc4036::command/171 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/171 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/171 CtrlChar/param/11]
+buman
+
+[CG_disc4036::command/171 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/171 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/172 CtrlStage/param/9]
+Xiao
+
+[CG_disc4036::command/172 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/173 SetAudio/param/1]
+se_063
+
+[CG_disc4036::command/174 SetTrans/param/2]
+4
+
+[CG_disc4036::command/174 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/174 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/175 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/175 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/176 SetChar/param/2]
+none
+
+[CG_disc4036::command/176 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/176 SetChar/param/4]
+a
+
+[CG_disc4036::command/176 SetChar/param/5]
+011
+
+[CG_disc4036::command/176 SetChar/param/6]
+none
+
+[CG_disc4036::command/177 SetTrans/param/2]
+3
+
+[CG_disc4036::command/177 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/177 SetTrans/param/8]
+default
+
+[CG_disc4036::command/178 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4036::command/178 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_disc4036::command/178 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/178 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/178 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/179 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/179 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/179 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/179 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/179 SetTalk/param/7]
+この足音……大型の魔物だな。
+
+[CG_disc4036::command/179 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/181 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/181 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/181 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/181 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/181 CtrlChar/param/11]
+JuGong
+
+[CG_disc4036::command/181 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/181 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/182 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/182 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/182 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/182 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/182 SetTalk/param/7]
+魔王さん、迂回しましょうか。
+
+[CG_disc4036::command/182 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/183 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/183 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/183 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/183 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/183 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/183 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/184 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/184 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_disc4036::command/184 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/184 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/184 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/185 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/185 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/185 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/185 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/185 SetTalk/param/7]
+――えっ？いつものグレイなら、==RT==喜んで向かっていきそうなのに……
+
+[CG_disc4036::command/185 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/186 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/186 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/186 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/186 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_disc4036::command/186 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/186 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/186 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/187 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/187 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/187 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/188 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/188 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/188 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/188 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/188 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/188 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/188 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/189 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/189 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/189 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/189 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/189 SetTalk/param/7]
+まあ……そんな日もあるわ。
+
+[CG_disc4036::command/189 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/190 SetTrans/param/2]
+0
+
+[CG_disc4036::command/190 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/190 SetTrans/param/8]
+default
+
+[CG_disc4036::command/191 SetAudio/param/1]
+se_102
+
+[CG_disc4036::command/192 SetBg/param/1]
+forest_night_1
+
+[CG_disc4036::command/192 SetBg/param/2]
+0
+
+[CG_disc4036::command/192 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/192 SetBg/param/6]
+default
+
+[CG_disc4036::command/193 SetTrans/param/2]
+0
+
+[CG_disc4036::command/193 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/193 SetTrans/param/8]
+default
+
+[CG_disc4036::command/194 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_disc4036::command/194 SetBGM/param/3]
+m12
+
+[CG_disc4036::command/194 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/196 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4036::command/196 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_disc4036::command/196 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/196 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/196 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/197 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/197 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/197 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/197 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/197 SetTalk/param/7]
+はぁ、はぁ……==W==ま、まさか……==RT==暗くなるまで歩くとはな……
+
+[CG_disc4036::command/197 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/198 SetMainRoleTalk/param/2]
+005
+
+[CG_disc4036::command/198 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/198 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/198 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/198 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/200 SetChar/param/2]
+EV_SOLO_L__in
+
+[CG_disc4036::command/200 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/200 SetChar/param/4]
+a
+
+[CG_disc4036::command/200 SetChar/param/5]
+004
+
+[CG_disc4036::command/200 SetChar/param/6]
+none
+
+[CG_disc4036::command/201 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/201 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/201 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/201 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/201 SetTalk/param/7]
+ごめんなさいね。もう少しの辛抱だから。
+
+[CG_disc4036::command/201 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/202 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/202 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/202 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/202 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/202 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/202 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/203 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/203 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/204 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4036::command/204 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_disc4036::command/204 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/204 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4036::command/204 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/205 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/205 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/205 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/205 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/205 SetTalk/param/7]
+（……やっぱり妙だ。==RT==グレイが優しく言葉をかけてくれるなんて……）
+
+[CG_disc4036::command/205 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/206 SetAudio/param/1]
+se_102
+
+[CG_disc4036::command/207 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/207 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/208 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/208 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/209 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/209 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/209 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/209 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/209 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/209 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/210 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/210 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/210 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/210 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/210 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/210 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/211 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/211 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/211 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/211 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/211 SetTalk/param/7]
+……着いたわ、ここよ。
+
+[CG_disc4036::command/211 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/212 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/212 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/212 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/212 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/212 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/212 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/213 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/213 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/214 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/214 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/216 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4036::command/216 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_disc4036::command/216 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/216 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/216 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/217 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/217 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/217 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/217 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/217 SetTalk/param/7]
+ここは……墓地？
+
+[CG_disc4036::command/217 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/219 SetTalk/param/1]
+0
+
+[CG_disc4036::command/219 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/219 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/219 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/219 SetTalk/param/7]
+周囲には苔むした墓石が点在しており、==RT==グレイはそのうちのひとつの前にしゃがみ込むと、==RT==丁寧に枯葉を払いのけた。
+
+[CG_disc4036::command/219 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/220 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/220 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/221 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/221 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/221 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/221 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/221 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/221 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/222 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/222 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/222 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/222 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/222 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/222 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/223 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/223 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/223 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/223 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/223 SetTalk/param/7]
+今日は……ここで眠っている子に会いに来たの。
+
+[CG_disc4036::command/223 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/225 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/225 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_disc4036::command/225 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/225 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/225 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/226 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/226 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/226 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/226 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/226 SetTalk/param/7]
+……なるほどな。==W====RT==そういえば、近くには教会もあったそうだが？
+
+[CG_disc4036::command/226 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/227 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/227 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/227 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/227 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/227 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/229 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/229 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/229 CtrlChar/param/2]
+002
+
+[CG_disc4036::command/229 CtrlChar/param/3]
+avg_emoji_shock
+
+[CG_disc4036::command/229 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/229 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/229 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/230 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/230 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/230 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/230 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/230 SetTalk/param/7]
+あら、よく知っているわね。
+
+[CG_disc4036::command/230 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/232 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/232 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/232 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/232 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/232 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/232 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/233 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/233 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/233 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/233 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/233 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/234 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/234 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/234 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/234 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/234 SetTalk/param/7]
+アヤメの持っていた地図で、たまたま見かけたんだ。
+
+[CG_disc4036::command/234 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/235 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/235 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/235 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/235 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/235 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/235 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/235 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/236 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/236 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/236 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/236 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/236 SetTalk/param/7]
+ちょうど……あの木の向こう側よ。
+
+[CG_disc4036::command/236 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/237 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/237 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/237 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/237 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/237 SetTalk/param/7]
+審問官は全員去ってしまって、それっきり放棄されているけど。
+
+[CG_disc4036::command/237 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/238 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/238 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/238 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/238 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_disc4036::command/238 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/238 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/238 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/239 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/239 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/239 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/239 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/239 SetTalk/param/7]
+とはいえ生きている者と違って、逝ってしまった者たちは==RT==永遠にここに取り残される。だから誰かが管理してあげる==RT==必要があるの。
+
+[CG_disc4036::command/239 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/240 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/240 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/240 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/240 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/240 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/240 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/240 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/241 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/241 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/241 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/241 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/241 SetTalk/param/7]
+こんなふうにね。
+
+[CG_disc4036::command/241 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/242 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/242 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/242 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/242 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/242 SetTalk/param/7]
+ところで魔王さん、ワタシの体質については覚えているかしら？
+
+[CG_disc4036::command/242 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/244 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/244 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/244 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/244 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/244 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/245 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/245 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/245 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/245 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/245 SetTalk/param/7]
+定期的に体内の魔力を解放しないと、==RT==溜まった魔力が爆発してしまう……だったな？
+
+[CG_disc4036::command/245 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/247 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/247 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/247 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/247 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_disc4036::command/247 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/247 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/247 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/248 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/248 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/248 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/248 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/248 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/248 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/248 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/249 SetTrans/param/2]
+16
+
+[CG_disc4036::command/249 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/249 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/250 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4036::command/251 SetFilm/param/1]
+Linear
+
+[CG_disc4036::command/252 SetBg/param/1]
+field_town_daylight
+
+[CG_disc4036::command/252 SetBg/param/2]
+0
+
+[CG_disc4036::command/252 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/252 SetBg/param/6]
+default
+
+[CG_disc4036::command/253 SetChar/param/2]
+none
+
+[CG_disc4036::command/253 SetChar/param/3]
+avg3_167
+
+[CG_disc4036::command/253 SetChar/param/4]
+a
+
+[CG_disc4036::command/253 SetChar/param/5]
+002
+
+[CG_disc4036::command/253 SetChar/param/6]
+none
+
+[CG_disc4036::command/254 SetTrans/param/2]
+0
+
+[CG_disc4036::command/254 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/254 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/255 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/255 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/255 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/255 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/255 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/255 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/256 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/256 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/256 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/256 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/256 SetTalk/param/7]
+ええ。そして過去に、そんなワタシと同じ体質を持って生まれた子が存在したの。
+
+[CG_disc4036::command/256 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/257 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/257 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/257 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/257 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/257 SetTalk/param/7]
+あれはワタシがまだ、黄昏庁の見習い審問官だったころ……
+
+[CG_disc4036::command/257 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/258 SetAudio/param/1]
+se_059
+
+[CG_disc4036::command/259 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/259 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/259 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/259 CtrlChar/param/11]
+jinzhang
+
+[CG_disc4036::command/259 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/259 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/260 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/260 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/260 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/260 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/260 SetTalk/param/7]
+彼女は生まれつき体が弱くて、両親に捨てられてここへ流れ着いた。
+
+[CG_disc4036::command/260 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/261 SetAudio/param/1]
+se_034
+
+[CG_disc4036::command/262 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/262 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/262 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/262 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/262 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/262 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/263 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/263 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/265 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/265 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/265 SetBGM/param/4]
+500ms
+
+[CG_disc4036::command/266 SetAudio/param/1]
+se_034_stop
+
+[CG_disc4036::command/267 SetAudio/param/1]
+se_074
+
+[CG_disc4036::command/268 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/268 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/268 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/268 CtrlChar/param/11]
+jushou
+
+[CG_disc4036::command/268 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/268 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/270 SetAudio/param/1]
+se_055
+
+[CG_disc4036::command/271 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/271 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/271 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_disc4036::command/271 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/271 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/271 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/272 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/272 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/272 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/272 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/272 SetTalk/param/7]
+でもあの子はワタシよりも厄介な状態で……==RT==そもそも魔法を使うことができなかったのよ。
+
+[CG_disc4036::command/272 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/273 SetTrans/param/2]
+0
+
+[CG_disc4036::command/273 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/273 SetTrans/param/8]
+default
+
+[CG_disc4036::command/274 SetChar/param/2]
+none
+
+[CG_disc4036::command/274 SetChar/param/3]
+avg3_167
+
+[CG_disc4036::command/274 SetChar/param/4]
+a
+
+[CG_disc4036::command/274 SetChar/param/5]
+002
+
+[CG_disc4036::command/274 SetChar/param/6]
+none
+
+[CG_disc4036::command/275 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4036::command/276 SetBg/param/1]
+forest_night_1
+
+[CG_disc4036::command/276 SetBg/param/2]
+0
+
+[CG_disc4036::command/276 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/276 SetBg/param/6]
+default
+
+[CG_disc4036::command/277 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/277 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/277 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/277 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/277 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/277 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/277 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/278 SetFilm/param/1]
+Linear
+
+[CG_disc4036::command/279 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/279 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/280 SetTrans/param/2]
+0
+
+[CG_disc4036::command/280 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/280 SetTrans/param/8]
+default
+
+[CG_disc4036::command/281 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/281 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/281 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/282 SetBGM/param/1]
+music_avg_volume35_0s
+
+[CG_disc4036::command/282 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/282 SetBGM/param/4]
+none
+
+[CG_disc4036::command/283 SetMainRoleTalk/param/2]
+015
+
+[CG_disc4036::command/283 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_disc4036::command/283 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/283 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/283 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/284 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/284 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/284 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/284 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/284 SetTalk/param/7]
+つまり……私と同じような体質でもあったのか？
+
+[CG_disc4036::command/284 SetTalk/param/8]
+つまり……僕と同じような体質でもあったのか？
+
+[CG_disc4036::command/285 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/285 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/285 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_disc4036::command/285 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/285 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/285 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/286 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/286 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/286 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/286 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/286 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/286 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/286 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/287 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/287 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/287 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/287 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/287 SetTalk/param/7]
+それは少し違うわね。あの子の場合、近くで誰かが==RT==魔法を使っただけでも体調を崩していたから。==RT==郊外のこの教会で過ごしていたのも、そういう理由よ。
+
+[CG_disc4036::command/287 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/288 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/288 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/288 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/288 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/288 SetTalk/param/7]
+ま、ワタシとあの子じゃ趣味も好みも全然違っていたけど……==RT==似たような境遇だったからか、すぐに打ち解けたわ。
+
+[CG_disc4036::command/288 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/289 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/289 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/289 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_disc4036::command/289 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/289 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/289 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/290 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/290 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/290 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/290 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/290 SetTalk/param/7]
+それからしばらくして、戦闘への適正があったワタシは正式な==RT==審問官になった。でもあの子には声がかからなかったの。
+
+[CG_disc4036::command/290 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/291 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/291 SetTalk/param/7]
+ひどく落ち込んでいたわ。==W====RT==神に見捨てられたってずっと泣いてて……==RT==でもワタシは、ただ慰めることしかできなかった。
+
+[CG_disc4036::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/292 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/292 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/292 CtrlChar/param/2]
+015
+
+[CG_disc4036::command/292 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/292 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/292 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/292 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/295 SetMainRoleTalk/param/2]
+009
+
+[CG_disc4036::command/295 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_disc4036::command/295 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/295 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/295 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/296 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/296 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/296 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/296 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/296 SetTalk/param/7]
+それは……互いに辛かったろうな。
+
+[CG_disc4036::command/296 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/297 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/297 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/297 SetBGM/param/4]
+4000ms
+
+[CG_disc4036::command/298 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/298 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/298 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/298 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/298 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/298 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/298 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/299 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/299 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/299 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/299 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/299 SetTalk/param/7]
+……そうね。正直どうしていいかわからなかったわ。==RT==けれど仕事は待ってくれない。
+
+[CG_disc4036::command/299 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/300 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/300 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/300 CtrlChar/param/2]
+016
+
+[CG_disc4036::command/300 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/300 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/300 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/300 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/301 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/301 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/301 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/301 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/301 SetTalk/param/7]
+彼女の訃報が届いたのは、==RT==ワタシが任務でここを離れていたときだった。
+
+[CG_disc4036::command/301 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/302 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/302 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/302 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/302 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/302 SetTalk/param/7]
+なんでも近くの星ノ塔で『異変』が起きて……==RT==あの子は強力な光の魔法でみんなを守ったらしいの。
+
+[CG_disc4036::command/302 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/304 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4036::command/304 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_disc4036::command/304 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/304 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/304 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/305 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/305 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/305 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/305 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/305 SetTalk/param/7]
+む？その子は魔法が使えなかったのでは？
+
+[CG_disc4036::command/305 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/306 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/306 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/306 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/306 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/306 SetTalk/param/7]
+ワタシもそのときまで知らなかったんだけど、==RT==あの子は魔法を使えなかったんじゃない。使わなかったの。==RT==重度の魔法アレルギーだったそうよ。
+
+[CG_disc4036::command/306 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/307 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/307 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/307 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/307 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/307 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/307 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/309 SetAudio/param/1]
+se_169
+
+[CG_disc4036::command/310 SetTrans/param/2]
+0
+
+[CG_disc4036::command/310 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/310 SetTrans/param/8]
+default
+
+[CG_disc4036::command/311 SetAudio/param/1]
+se_283
+
+[CG_disc4036::command/312 SetBg/param/1]
+bossroom_inside
+
+[CG_disc4036::command/312 SetBg/param/2]
+0
+
+[CG_disc4036::command/312 SetBg/param/3]
+OutSine
+
+[CG_disc4036::command/312 SetBg/param/6]
+fade
+
+[CG_disc4036::command/313 SetFilm/param/1]
+Linear
+
+[CG_disc4036::command/314 SetChar/param/2]
+none
+
+[CG_disc4036::command/314 SetChar/param/3]
+avg3_167
+
+[CG_disc4036::command/314 SetChar/param/4]
+a
+
+[CG_disc4036::command/314 SetChar/param/5]
+002
+
+[CG_disc4036::command/314 SetChar/param/6]
+none
+
+[CG_disc4036::command/315 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/315 CtrlBg/param/11]
+Linear
+
+[CG_disc4036::command/316 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4036::command/317 SetFx/param/1]
+fx_avg_dust_2_a
+
+[CG_disc4036::command/318 SetTrans/param/2]
+34
+
+[CG_disc4036::command/318 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/318 SetTrans/param/8]
+default
+
+[CG_disc4036::command/319 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/319 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/319 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/319 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/319 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/319 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/320 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/320 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/320 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/320 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4036::command/320 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/320 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/321 SetAudio/param/1]
+se_110
+
+[CG_disc4036::command/322 CtrlChar/param/0]
+avg3_167
+
+[CG_disc4036::command/322 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/322 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/322 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/322 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/322 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/323 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/323 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/323 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/323 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/323 SetTalk/param/7]
+だから魔法を使うたび、彼女の体は魔力で蝕まれていった。==RT==強力な魔法になるほど、急激にね。
+
+[CG_disc4036::command/323 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/324 SetTrans/param/2]
+34
+
+[CG_disc4036::command/324 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/324 SetTrans/param/8]
+default
+
+[CG_disc4036::command/325 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4036::command/326 SetFx/param/1]
+fx_avg_dust_2_a
+
+[CG_disc4036::command/327 SetBg/param/1]
+forest_night_1
+
+[CG_disc4036::command/327 SetBg/param/2]
+0
+
+[CG_disc4036::command/327 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/327 SetBg/param/6]
+default
+
+[CG_disc4036::command/328 SetFilm/param/1]
+Linear
+
+[CG_disc4036::command/329 SetTrans/param/2]
+0
+
+[CG_disc4036::command/329 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/329 SetTrans/param/8]
+default
+
+[CG_disc4036::command/330 SetBGM/param/1]
+music_avg_volume100_3s
+
+[CG_disc4036::command/330 SetBGM/param/3]
+m5
+
+[CG_disc4036::command/330 SetBGM/param/4]
+4000ms
+
+[CG_disc4036::command/332 SetMainRoleTalk/param/2]
+005
+
+[CG_disc4036::command/332 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/332 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/332 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/332 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/333 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/333 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/333 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/333 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/333 SetTalk/param/7]
+つまり最期は自らを犠牲にしたというわけか……
+
+[CG_disc4036::command/333 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/334 SetChar/param/2]
+none
+
+[CG_disc4036::command/334 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/334 SetChar/param/4]
+a
+
+[CG_disc4036::command/334 SetChar/param/5]
+002
+
+[CG_disc4036::command/334 SetChar/param/6]
+none
+
+[CG_disc4036::command/335 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/335 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/335 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/335 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/335 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/335 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/335 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/336 SetAudio/param/1]
+se_077
+
+[CG_disc4036::command/337 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/337 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/337 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/337 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/337 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/337 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/338 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/338 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/338 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/338 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/338 SetTalk/param/7]
+ねえ魔王さん、恩恵の神なんて―― 本当に存在すると思う？
+
+[CG_disc4036::command/338 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/340 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4036::command/340 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_disc4036::command/340 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/340 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/340 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/341 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/341 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/341 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/341 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/341 SetTalk/param/7]
+君は黄昏庁の審問官だろう。==RT==そのようなことを軽々しく口にしていいのか？
+
+[CG_disc4036::command/341 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/342 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/342 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/342 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/342 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/342 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/342 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/342 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/343 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/343 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/343 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/343 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/343 SetTalk/param/7]
+フフ……それもそうね。==W==けれど運命はいつだって残酷だもの。==RT==存在を疑いたくなるのは、仕方のないことでしょう？
+
+[CG_disc4036::command/343 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/344 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/344 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/344 CtrlChar/param/2]
+018
+
+[CG_disc4036::command/344 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/344 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/344 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/344 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/347 SetAudio/param/1]
+se_055
+
+[CG_disc4036::command/348 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4036::command/348 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/348 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/348 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/348 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/349 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/349 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/349 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/349 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/349 SetTalk/param/7]
+……そういうことなら、恩恵の神はともかく、==RT==最後には 『楽園』に辿り着けると思っているよ。
+
+[CG_disc4036::command/349 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/350 SetMainRoleTalk/param/2]
+009
+
+[CG_disc4036::command/350 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/350 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/350 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/350 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/351 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/351 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/351 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/351 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/351 SetTalk/param/7]
+なにを信仰していても、どのように生きても、==RT==たとえ残酷な運命を背負っていようとも――==RT==最後まで懸命に生き抜いた者は、きっと報われる。
+
+[CG_disc4036::command/351 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/352 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/352 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/352 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/352 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/352 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/353 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/353 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/353 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/353 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/353 SetTalk/param/7]
+だから……いつか君も、==RT==その友人から直接想いを聞けるかもしれない。
+
+[CG_disc4036::command/353 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/355 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/355 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/355 CtrlChar/param/2]
+006
+
+[CG_disc4036::command/355 CtrlChar/param/3]
+avg_emoji_shock
+
+[CG_disc4036::command/355 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/355 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/355 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/356 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/356 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/356 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/356 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/356 SetTalk/param/7]
+魔王さん……
+
+[CG_disc4036::command/356 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/357 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/357 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/357 CtrlChar/param/2]
+005
+
+[CG_disc4036::command/357 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/357 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/357 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/357 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/358 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/358 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/358 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/358 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/358 SetTalk/param/7]
+フ……フフ、ウフフフフフフ……
+
+[CG_disc4036::command/358 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/360 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4036::command/360 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/360 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/360 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/360 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/361 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/361 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/361 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/361 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/361 SetTalk/param/7]
+おかしなことを言ったつもりはないのだが？
+
+[CG_disc4036::command/361 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/362 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/362 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/362 CtrlChar/param/2]
+002
+
+[CG_disc4036::command/362 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/362 CtrlChar/param/11]
+diantou2
+
+[CG_disc4036::command/362 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/362 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/363 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/363 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/363 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/363 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/363 SetTalk/param/7]
+ええ、ごめんなさい。わかってるの。でも……==RT==そこまで真剣に答えてくれるとは思ってなかったから、==RT==ちょっとビックリしちゃって。
+
+[CG_disc4036::command/363 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/364 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/364 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/364 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/364 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/364 SetTalk/param/7]
+楽園……たしかに、ロマンチックな考えね。
+
+[CG_disc4036::command/364 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/365 SetAudio/param/1]
+se_077
+
+[CG_disc4036::command/366 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/366 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/366 SetBGM/param/4]
+1000ms
+
+[CG_disc4036::command/367 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/367 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/367 CtrlChar/param/2]
+003
+
+[CG_disc4036::command/367 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/367 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/367 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/367 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/368 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/368 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/368 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/368 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/368 SetTalk/param/7]
+ありがとう。おかげで……==RT==ウフフフッ、気持ちが楽になったわぁ♪
+
+[CG_disc4036::command/368 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/369 SetFx/param/1]
+fx_avg_flash_light
+
+[CG_disc4036::command/370 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/370 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/370 CtrlChar/param/2]
+009
+
+[CG_disc4036::command/370 CtrlChar/param/3]
+close
+
+[CG_disc4036::command/370 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/370 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/370 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/371 SetTrans/param/2]
+30
+
+[CG_disc4036::command/371 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/371 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/372 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4036::command/372 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_disc4036::command/372 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/372 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4036::command/372 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/373 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/373 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/373 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/373 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/373 SetTalk/param/7]
+（言葉とは裏腹に、==RT==ものすごい殺気を感じるのだが……！？）
+
+[CG_disc4036::command/373 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/374 SetBg/param/1]
+BG_Black
+
+[CG_disc4036::command/374 SetBg/param/2]
+0
+
+[CG_disc4036::command/374 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/374 SetBg/param/6]
+default
+
+[CG_disc4036::command/375 SetTrans/param/2]
+0
+
+[CG_disc4036::command/375 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/375 SetTrans/param/8]
+default
+
+[CG_disc4036::command/376 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_disc4036::command/376 SetBGM/param/3]
+m11
+
+[CG_disc4036::command/376 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/377 SetBg/param/1]
+4036_B
+
+[CG_disc4036::command/377 SetBg/param/2]
+0
+
+[CG_disc4036::command/377 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/377 SetBg/param/6]
+default
+
+[CG_disc4036::command/378 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/378 CtrlBg/param/11]
+Linear
+
+[CG_disc4036::command/379 SetStage/param/2]
+OutSine
+
+[CG_disc4036::command/380 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/380 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/381 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/381 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/381 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/381 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/381 SetTalk/param/7]
+やっぱりアナタって、ワタシがこれまで出会った人の中で、==RT==最も強く……特別で、興味深い存在……
+
+[CG_disc4036::command/381 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/382 SetAudio/param/1]
+se_050
+
+[CG_disc4036::command/383 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/383 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/383 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/383 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/383 SetTalk/param/7]
+意地でも手に入れたくなっちゃう♪
+
+[CG_disc4036::command/383 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/384 SetStage/param/2]
+OutSine
+
+[CG_disc4036::command/386 SetBg/param/1]
+4036_B
+
+[CG_disc4036::command/386 SetBg/param/2]
+0
+
+[CG_disc4036::command/386 SetBg/param/3]
+OutSine
+
+[CG_disc4036::command/386 SetBg/param/6]
+fade
+
+[CG_disc4036::command/387 SetBg/param/1]
+4036_B
+
+[CG_disc4036::command/387 SetBg/param/2]
+0
+
+[CG_disc4036::command/387 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/387 SetBg/param/6]
+default
+
+[CG_disc4036::command/388 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/388 CtrlBg/param/11]
+Linear
+
+[CG_disc4036::command/389 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/389 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/389 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/389 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/389 SetTalk/param/7]
+ねぇ魔王さん、ワタシだけのアナタになる気はない？ゼッタイに後悔させないわ。
+
+[CG_disc4036::command/389 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/391 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4036::command/391 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_disc4036::command/391 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/391 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/391 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/392 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/392 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/392 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/392 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/392 SetTalk/param/7]
+いつもの調子に戻ったようでなによりだが……==RT==それは遠慮しておく！
+
+[CG_disc4036::command/392 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/393 SetBg/param/1]
+4036_B
+
+[CG_disc4036::command/393 SetBg/param/2]
+0
+
+[CG_disc4036::command/393 SetBg/param/3]
+OutSine
+
+[CG_disc4036::command/393 SetBg/param/6]
+default
+
+[CG_disc4036::command/394 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/394 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/395 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/395 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/395 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/395 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/395 SetTalk/param/7]
+ウフフフ、相変わらずツレないわねぇ。ま、そういうところも素敵なんだけど……
+
+[CG_disc4036::command/395 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/396 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/396 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/396 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/396 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/396 SetTalk/param/7]
+失われた魂は戻ってこない。けれど―― 目の前に存在しているうちは、救うことができる。==RT==なら……少しくらい強引な手を使ってもいいわよね？
+
+[CG_disc4036::command/396 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/397 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4036::command/397 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_disc4036::command/397 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/397 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/397 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/398 CtrlStage/param/9]
+jushou
+
+[CG_disc4036::command/398 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/399 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/399 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/399 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/399 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/399 SetTalk/param/7]
+ま、待て……！なにをする気だ！？
+
+[CG_disc4036::command/399 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/400 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/400 CtrlBg/param/11]
+OutSine
+
+[CG_disc4036::command/402 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/402 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/402 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/402 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/402 SetTalk/param/7]
+いただきます♪
+
+[CG_disc4036::command/402 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/403 SetAudio/param/1]
+se_070
+
+[CG_disc4036::command/404 CtrlStage/param/9]
+Zhong
+
+[CG_disc4036::command/404 CtrlStage/param/10]
+Linear
+
+[CG_disc4036::command/406 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/406 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/406 SetBGM/param/4]
+1500ms
+
+[CG_disc4036::command/407 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4036::command/407 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_disc4036::command/407 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/407 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/407 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/408 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/408 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/408 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/408 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/408 SetTalk/param/7]
+ちょグレイ、早まるんじゃ――
+
+[CG_disc4036::command/408 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/409 SetTrans/param/2]
+0
+
+[CG_disc4036::command/409 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/409 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/410 SetAudio/param/1]
+se_236
+
+[CG_disc4036::command/411 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4036::command/411 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4036::command/411 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/411 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/411 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/412 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/412 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/412 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/412 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/412 SetTalk/param/7]
+……ぬ？
+
+[CG_disc4036::command/412 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/413 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/413 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/413 SetBGM/param/4]
+1000ms
+
+[CG_disc4036::command/414 SetAudio/param/1]
+se_208
+
+[CG_disc4036::command/415 SetBg/param/1]
+forest_night_1
+
+[CG_disc4036::command/415 SetBg/param/2]
+0
+
+[CG_disc4036::command/415 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/415 SetBg/param/6]
+default
+
+[CG_disc4036::command/416 SetMainRoleTalk/param/2]
+003
+
+[CG_disc4036::command/416 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/416 SetMainRoleTalk/param/4]
+niunie
+
+[CG_disc4036::command/416 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4036::command/416 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/417 SetFx/param/1]
+fx_avg_eye_ev
+
+[CG_disc4036::command/418 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/418 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/418 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/418 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/418 SetTalk/param/7]
+（やわらかくて、温かい……？）
+
+[CG_disc4036::command/418 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/419 SetChar/param/2]
+none
+
+[CG_disc4036::command/419 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/419 SetChar/param/4]
+a
+
+[CG_disc4036::command/419 SetChar/param/5]
+002
+
+[CG_disc4036::command/419 SetChar/param/6]
+none
+
+[CG_disc4036::command/420 SetTrans/param/2]
+0
+
+[CG_disc4036::command/420 SetTrans/param/3]
+Linear
+
+[CG_disc4036::command/420 SetTrans/param/8]
+default
+
+[CG_disc4036::command/421 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/421 SetBGM/param/3]
+m22
+
+[CG_disc4036::command/421 SetBGM/param/4]
+2000ms
+
+[CG_disc4036::command/422 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/422 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/422 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/422 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/422 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/422 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/423 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/423 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/423 CtrlChar/param/2]
+009
+
+[CG_disc4036::command/423 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/423 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/423 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/423 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/424 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/424 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/424 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/424 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/424 SetTalk/param/7]
+なんて……フフ、今回はハグだけで許してあげる。==RT==アナタの慌てる顔……とってもかわいかったから♪
+
+[CG_disc4036::command/424 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/426 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4036::command/426 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_disc4036::command/426 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/426 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/426 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/427 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/427 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/427 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/427 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/427 SetTalk/param/7]
+まったく……冗談にしては笑えないぞ？
+
+[CG_disc4036::command/427 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/428 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/428 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/428 CtrlChar/param/2]
+008
+
+[CG_disc4036::command/428 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/428 CtrlChar/param/11]
+niunie
+
+[CG_disc4036::command/428 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/428 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/429 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/429 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/429 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/429 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/429 SetTalk/param/7]
+あら、そう？==RT==ワタシはいつもこんな感じだったと思うけど。
+
+[CG_disc4036::command/429 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/431 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4036::command/431 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_disc4036::command/431 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/431 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/431 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/432 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/432 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/432 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/432 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/432 SetTalk/param/7]
+だからいつも気が気ではないのだが……==W====RT==ところで私をここに連れてきたのは、==RT==結局なんのためだったんだ？
+
+[CG_disc4036::command/432 SetTalk/param/8]
+だからいつも気が気ではないのだが……==W====RT==ところで僕をここに連れてきたのは、==RT==結局なんのためだったんだ？
+
+[CG_disc4036::command/433 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/433 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/433 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/433 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/433 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/435 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/435 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/435 CtrlChar/param/2]
+004
+
+[CG_disc4036::command/435 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/435 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/435 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/435 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/436 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/436 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/436 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/436 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/436 SetTalk/param/7]
+ああそうそう。漫画が手に入らなかったから、==RT==代わりに魔王さんの冒険譚を、この子に聞かせてあげてほしいのよ。
+
+[CG_disc4036::command/436 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/438 SetMainRoleTalk/param/2]
+013
+
+[CG_disc4036::command/438 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/438 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/438 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/438 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/439 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/439 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/439 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/439 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/439 SetTalk/param/7]
+……なるほどな。そういうことなら任せてくれ。
+
+[CG_disc4036::command/439 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/440 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/440 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/440 CtrlChar/param/2]
+017
+
+[CG_disc4036::command/440 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_disc4036::command/440 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/440 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/440 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/441 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/441 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/441 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/441 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/441 SetTalk/param/7]
+ありがとう。きっとあの子も喜んでくれるわ。
+
+[CG_disc4036::command/441 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/442 SetAudio/param/1]
+se_207
+
+[CG_disc4036::command/443 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/443 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/443 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/443 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/443 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/443 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/444 SetBGM/param/1]
+music_avg_volume35_1s
+
+[CG_disc4036::command/444 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/444 SetBGM/param/4]
+none
+
+[CG_disc4036::command/445 SetTrans/param/2]
+0
+
+[CG_disc4036::command/445 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/445 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/446 SetBg/param/1]
+sky_night_b
+
+[CG_disc4036::command/446 SetBg/param/2]
+0
+
+[CG_disc4036::command/446 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/446 SetBg/param/6]
+default
+
+[CG_disc4036::command/447 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/447 CtrlBg/param/11]
+Linear
+
+[CG_disc4036::command/448 SetTrans/param/2]
+0
+
+[CG_disc4036::command/448 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/448 SetTrans/param/8]
+default
+
+[CG_disc4036::command/449 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/449 CtrlBg/param/11]
+Linear
+
+[CG_disc4036::command/451 SetTalk/param/1]
+0
+
+[CG_disc4036::command/451 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/451 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/451 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/451 SetTalk/param/7]
+それから日付が変わる近くまで、私は冒険譚を語り続けた。
+
+[CG_disc4036::command/451 SetTalk/param/8]
+それから日付が変わる近くまで、僕は冒険譚を語り続けた。
+
+[CG_disc4036::command/453 CtrlStage/param/9]
+none
+
+[CG_disc4036::command/453 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/454 SetBg/param/1]
+forest_night_1
+
+[CG_disc4036::command/454 SetBg/param/2]
+0
+
+[CG_disc4036::command/454 SetBg/param/3]
+OutSine
+
+[CG_disc4036::command/454 SetBg/param/6]
+fade
+
+[CG_disc4036::command/455 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4036::command/455 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4036::command/455 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/455 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/455 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/456 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/456 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/456 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/456 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/456 SetTalk/param/7]
+だいぶ遅くなってしまったが、==RT==一晩では語り尽くせそうにないな。
+
+[CG_disc4036::command/456 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/457 SetMainRoleTalk/param/2]
+014
+
+[CG_disc4036::command/457 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[CG_disc4036::command/457 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4036::command/457 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/457 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/458 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/458 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/458 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/458 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/458 SetTalk/param/7]
+とはいえ私の冒険譚は、これからがいいところだ。==RT==また語り聞かせにくると約束するよ。
+
+[CG_disc4036::command/458 SetTalk/param/8]
+とはいえ僕の冒険譚は、これからがいいところだ。==RT==また語り聞かせにくると約束するよ。
+
+[CG_disc4036::command/459 SetChar/param/2]
+C_in
+
+[CG_disc4036::command/459 SetChar/param/3]
+avg1_149
+
+[CG_disc4036::command/459 SetChar/param/4]
+a
+
+[CG_disc4036::command/459 SetChar/param/5]
+003
+
+[CG_disc4036::command/459 SetChar/param/6]
+none
+
+[CG_disc4036::command/460 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/460 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/460 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/460 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/460 SetTalk/param/7]
+ふふ……楽しみにしてるわね。==W====RT==さ、それじゃあ今日のところは帰りましょうか。==RT==こんな時間だし、空白旅団の車まで送るわ。
+
+[CG_disc4036::command/460 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/461 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/461 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/461 CtrlChar/param/2]
+002
+
+[CG_disc4036::command/461 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4036::command/461 CtrlChar/param/11]
+diantou
+
+[CG_disc4036::command/461 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/461 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/464 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4036::command/464 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_disc4036::command/464 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/464 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/464 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/465 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/465 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/465 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/465 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/465 SetTalk/param/7]
+いや。わざわざそこまでする必要はない。
+
+[CG_disc4036::command/465 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/466 SetAudio/param/1]
+se_075
+
+[CG_disc4036::command/467 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/467 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/467 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/467 CtrlChar/param/11]
+JuGong
+
+[CG_disc4036::command/467 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/467 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/468 SetTalk/param/1]
+avg1_149
+
+[CG_disc4036::command/468 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/468 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/468 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/468 SetTalk/param/7]
+ウフフフ……==W==遠慮しないで。==RT==それに魔王さんくらいの体なら抱えていけるし、==RT==自分の足で歩くより、よっぽど早いわよ？
+
+[CG_disc4036::command/468 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/469 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/469 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/469 CtrlChar/param/2]
+005
+
+[CG_disc4036::command/469 CtrlChar/param/3]
+avg_emoji_love
+
+[CG_disc4036::command/469 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/469 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/469 CtrlChar/param/13]
+Linear
+
+[CG_disc4036::command/471 SetAudio/param/1]
+se_112
+
+[CG_disc4036::command/472 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4036::command/472 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_disc4036::command/472 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4036::command/472 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4036::command/472 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4036::command/473 CtrlStage/param/9]
+Xiao
+
+[CG_disc4036::command/473 CtrlStage/param/10]
+OutSine
+
+[CG_disc4036::command/474 SetTalk/param/1]
+avg3_100
+
+[CG_disc4036::command/474 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/474 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/474 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/474 SetTalk/param/7]
+ちょ、こらっ！放してくれ！==RT==本当に送らなくていいから……！
+
+[CG_disc4036::command/474 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/475 SetAudio/param/1]
+se_074
+
+[CG_disc4036::command/476 SetAudio/param/1]
+se_077
+
+[CG_disc4036::command/477 CtrlChar/param/0]
+avg1_149
+
+[CG_disc4036::command/477 CtrlChar/param/1]
+a
+
+[CG_disc4036::command/477 CtrlChar/param/2]
+009
+
+[CG_disc4036::command/477 CtrlChar/param/3]
+none
+
+[CG_disc4036::command/477 CtrlChar/param/11]
+none
+
+[CG_disc4036::command/477 CtrlChar/param/12]
+none
+
+[CG_disc4036::command/477 CtrlChar/param/13]
+OutSine
+
+[CG_disc4036::command/478 SetTrans/param/2]
+AvgStageEffect_wipe_up
+
+[CG_disc4036::command/478 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/478 SetTrans/param/8]
+fade
+
+[CG_disc4036::command/479 SetBg/param/1]
+story_main_01_006_c
+
+[CG_disc4036::command/479 SetBg/param/2]
+0
+
+[CG_disc4036::command/479 SetBg/param/3]
+Linear
+
+[CG_disc4036::command/479 SetBg/param/6]
+default
+
+[CG_disc4036::command/480 SetAudio/param/1]
+se_115
+
+[CG_disc4036::command/481 SetTrans/param/2]
+0
+
+[CG_disc4036::command/481 SetTrans/param/3]
+OutSine
+
+[CG_disc4036::command/481 SetTrans/param/8]
+default
+
+[CG_disc4036::command/482 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4036::command/482 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/482 SetBGM/param/4]
+1500ms
+
+[CG_disc4036::command/483 CtrlBg/param/10]
+none
+
+[CG_disc4036::command/483 CtrlBg/param/11]
+Linear
+
+[CG_disc4036::command/485 SetTalk/param/1]
+0
+
+[CG_disc4036::command/485 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/485 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/485 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4036::command/485 SetTalk/param/7]
+だが力でグレイには到底敵うはずもなく……==RT==結局オアシス号まで送り届けてもらったのだった。
+
+[CG_disc4036::command/485 SetTalk/param/8]
+[EMPTY_SOURCE]
+

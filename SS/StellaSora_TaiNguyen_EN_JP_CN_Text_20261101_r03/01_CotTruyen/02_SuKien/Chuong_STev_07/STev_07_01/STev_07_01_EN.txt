@@ -1,0 +1,6781 @@
+STev_07_01 | EN | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 2259
+
+[STev_07_01::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STev_07_01::command/0 SetIntro/param/1]
+Act One
+
+[STev_07_01::command/0 SetIntro/param/2]
+The Reunion
+
+[STev_07_01::command/0 SetIntro/param/3]
+You've accepted a commission from Igna and travel to Emor, where you are reunited with Firefly—the young girl you first met during the Snowish Festival.
+
+[STev_07_01::command/1 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/1 SetBGM/param/3]
+m17
+
+[STev_07_01::command/1 SetBGM/param/4]
+none
+
+[STev_07_01::command/2 SetTrans/param/2]
+0
+
+[STev_07_01::command/2 SetTrans/param/3]
+Linear
+
+[STev_07_01::command/2 SetTrans/param/8]
+default
+
+[STev_07_01::command/3 CtrlStage/param/9]
+JingTouYaoHuang
+
+[STev_07_01::command/3 CtrlStage/param/10]
+Linear
+
+[STev_07_01::command/4 SetBg/param/1]
+sky_tower
+
+[STev_07_01::command/4 SetBg/param/2]
+0
+
+[STev_07_01::command/4 SetBg/param/3]
+Linear
+
+[STev_07_01::command/4 SetBg/param/6]
+default
+
+[STev_07_01::command/5 CtrlBg/param/10]
+none
+
+[STev_07_01::command/5 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/6 CtrlBg/param/10]
+none
+
+[STev_07_01::command/6 CtrlBg/param/11]
+OutSine
+
+[STev_07_01::command/7 SetFx/param/1]
+fx_avg_sunlight
+
+[STev_07_01::command/8 SetTrans/param/2]
+0
+
+[STev_07_01::command/8 SetTrans/param/3]
+Linear
+
+[STev_07_01::command/8 SetTrans/param/8]
+default
+
+[STev_07_01::command/10 CtrlBg/param/10]
+none
+
+[STev_07_01::command/10 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/11 SetBg/param/1]
+forest_daylight_2_a
+
+[STev_07_01::command/11 SetBg/param/2]
+0
+
+[STev_07_01::command/11 SetBg/param/3]
+OutCubic
+
+[STev_07_01::command/11 SetBg/param/6]
+default
+
+[STev_07_01::command/12 CtrlBg/param/10]
+none
+
+[STev_07_01::command/12 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/13 CtrlBg/param/10]
+none
+
+[STev_07_01::command/13 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/14 SetChar/param/2]
+none
+
+[STev_07_01::command/14 SetChar/param/3]
+avg3_100
+
+[STev_07_01::command/14 SetChar/param/4]
+a
+
+[STev_07_01::command/14 SetChar/param/5]
+012
+
+[STev_07_01::command/14 SetChar/param/6]
+none
+
+[STev_07_01::command/15 SetAudio/param/1]
+se_061
+
+[STev_07_01::command/16 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/16 CtrlChar/param/1]
+a
+
+[STev_07_01::command/16 CtrlChar/param/3]
+none
+
+[STev_07_01::command/16 CtrlChar/param/11]
+none
+
+[STev_07_01::command/16 CtrlChar/param/12]
+none
+
+[STev_07_01::command/16 CtrlChar/param/13]
+OutBack
+
+[STev_07_01::command/18 SetAudio/param/1]
+se_089
+
+[STev_07_01::command/19 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/19 CtrlChar/param/1]
+a
+
+[STev_07_01::command/19 CtrlChar/param/3]
+none
+
+[STev_07_01::command/19 CtrlChar/param/11]
+manbu_loop
+
+[STev_07_01::command/19 CtrlChar/param/12]
+none
+
+[STev_07_01::command/19 CtrlChar/param/13]
+OutQuad
+
+[STev_07_01::command/20 CtrlBg/param/10]
+none
+
+[STev_07_01::command/20 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/21 SetBg/param/1]
+tower_intel
+
+[STev_07_01::command/21 SetBg/param/2]
+0
+
+[STev_07_01::command/21 SetBg/param/3]
+OutCubic
+
+[STev_07_01::command/21 SetBg/param/6]
+default
+
+[STev_07_01::command/22 CtrlBg/param/10]
+none
+
+[STev_07_01::command/22 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/23 CtrlBg/param/10]
+none
+
+[STev_07_01::command/23 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/24 SetChar/param/2]
+none
+
+[STev_07_01::command/24 SetChar/param/3]
+avg3_100
+
+[STev_07_01::command/24 SetChar/param/4]
+a
+
+[STev_07_01::command/24 SetChar/param/5]
+002
+
+[STev_07_01::command/24 SetChar/param/6]
+none
+
+[STev_07_01::command/25 SetAudio/param/1]
+se_094
+
+[STev_07_01::command/26 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/26 CtrlChar/param/1]
+a
+
+[STev_07_01::command/26 CtrlChar/param/3]
+none
+
+[STev_07_01::command/26 CtrlChar/param/11]
+manbu_loop
+
+[STev_07_01::command/26 CtrlChar/param/12]
+none
+
+[STev_07_01::command/26 CtrlChar/param/13]
+OutSine
+
+[STev_07_01::command/27 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/27 CtrlChar/param/1]
+a
+
+[STev_07_01::command/27 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/27 CtrlChar/param/11]
+jushou0
+
+[STev_07_01::command/27 CtrlChar/param/12]
+none
+
+[STev_07_01::command/27 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/28 CtrlStage/param/9]
+JingTouYaoHuang
+
+[STev_07_01::command/28 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/29 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/29 CtrlChar/param/1]
+a
+
+[STev_07_01::command/29 CtrlChar/param/3]
+none
+
+[STev_07_01::command/29 CtrlChar/param/11]
+none
+
+[STev_07_01::command/29 CtrlChar/param/12]
+none
+
+[STev_07_01::command/29 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/31 CtrlStage/param/9]
+JingTouYaoHuang
+
+[STev_07_01::command/31 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/32 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/32 CtrlChar/param/1]
+a
+
+[STev_07_01::command/32 CtrlChar/param/2]
+017
+
+[STev_07_01::command/32 CtrlChar/param/3]
+none
+
+[STev_07_01::command/32 CtrlChar/param/11]
+none
+
+[STev_07_01::command/32 CtrlChar/param/12]
+none
+
+[STev_07_01::command/32 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/34 SetAudio/param/1]
+se_072
+
+[STev_07_01::command/35 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/35 CtrlChar/param/1]
+a
+
+[STev_07_01::command/35 CtrlChar/param/3]
+none
+
+[STev_07_01::command/35 CtrlChar/param/11]
+manbu_loop
+
+[STev_07_01::command/35 CtrlChar/param/12]
+none
+
+[STev_07_01::command/35 CtrlChar/param/13]
+OutSine
+
+[STev_07_01::command/37 CtrlBg/param/10]
+none
+
+[STev_07_01::command/37 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/38 SetBg/param/1]
+tower_entrance
+
+[STev_07_01::command/38 SetBg/param/2]
+0
+
+[STev_07_01::command/38 SetBg/param/3]
+OutCubic
+
+[STev_07_01::command/38 SetBg/param/6]
+default
+
+[STev_07_01::command/39 CtrlBg/param/10]
+none
+
+[STev_07_01::command/39 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/40 CtrlBg/param/10]
+none
+
+[STev_07_01::command/40 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/41 CtrlStage/param/9]
+stop
+
+[STev_07_01::command/41 CtrlStage/param/10]
+OutQuad
+
+[STev_07_01::command/42 SetChar/param/2]
+none
+
+[STev_07_01::command/42 SetChar/param/3]
+avg3_100
+
+[STev_07_01::command/42 SetChar/param/4]
+a
+
+[STev_07_01::command/42 SetChar/param/5]
+002
+
+[STev_07_01::command/42 SetChar/param/6]
+none
+
+[STev_07_01::command/43 SetAudio/param/1]
+se_101
+
+[STev_07_01::command/44 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/44 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/44 SetBGM/param/4]
+4000ms
+
+[STev_07_01::command/45 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/45 CtrlChar/param/1]
+a
+
+[STev_07_01::command/45 CtrlChar/param/3]
+none
+
+[STev_07_01::command/45 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/45 CtrlChar/param/12]
+none
+
+[STev_07_01::command/45 CtrlChar/param/13]
+OutQuad
+
+[STev_07_01::command/47 SetAudio/param/1]
+se_024
+
+[STev_07_01::command/48 SetAudio/param/1]
+se_101
+
+[STev_07_01::command/49 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/49 CtrlChar/param/1]
+a
+
+[STev_07_01::command/49 CtrlChar/param/2]
+010
+
+[STev_07_01::command/49 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_07_01::command/49 CtrlChar/param/11]
+JuGong
+
+[STev_07_01::command/49 CtrlChar/param/12]
+none
+
+[STev_07_01::command/49 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/50 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/50 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/50 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/50 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/50 SetTalk/param/7]
+Finally... Made it...
+
+[STev_07_01::command/50 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/51 CtrlStage/param/9]
+none
+
+[STev_07_01::command/51 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/52 CtrlBg/param/10]
+none
+
+[STev_07_01::command/52 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/53 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/53 CtrlChar/param/1]
+c
+
+[STev_07_01::command/53 CtrlChar/param/2]
+020
+
+[STev_07_01::command/53 CtrlChar/param/3]
+close
+
+[STev_07_01::command/53 CtrlChar/param/11]
+none
+
+[STev_07_01::command/53 CtrlChar/param/12]
+none
+
+[STev_07_01::command/53 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/54 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/54 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/54 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/54 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/54 SetTalk/param/7]
+This time, the client told me to meet them beneath Emor's Monolith...
+
+[STev_07_01::command/54 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/55 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/55 CtrlChar/param/1]
+c
+
+[STev_07_01::command/55 CtrlChar/param/2]
+012
+
+[STev_07_01::command/55 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STev_07_01::command/55 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/55 CtrlChar/param/12]
+none
+
+[STev_07_01::command/55 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/56 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/56 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/56 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/56 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/56 SetTalk/param/7]
+Surely they're not expecting me to climb it, right?
+
+[STev_07_01::command/56 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/57 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/57 CtrlChar/param/1]
+c
+
+[STev_07_01::command/57 CtrlChar/param/2]
+009
+
+[STev_07_01::command/57 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/57 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/57 CtrlChar/param/12]
+none
+
+[STev_07_01::command/57 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/58 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/58 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/58 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/58 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/58 SetTalk/param/7]
+Since this commission supposedly doesn't involve any fighting, I came alone...==W== Still, the fact that they specifically told me to come by myself feels a little strange...
+
+[STev_07_01::command/58 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/60 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/60 CtrlChar/param/1]
+c
+
+[STev_07_01::command/60 CtrlChar/param/2]
+003
+
+[STev_07_01::command/60 CtrlChar/param/3]
+close
+
+[STev_07_01::command/60 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/60 CtrlChar/param/12]
+none
+
+[STev_07_01::command/60 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/62 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/62 CtrlChar/param/1]
+c
+
+[STev_07_01::command/62 CtrlChar/param/2]
+005
+
+[STev_07_01::command/62 CtrlChar/param/3]
+none
+
+[STev_07_01::command/62 CtrlChar/param/11]
+ChanDou
+
+[STev_07_01::command/62 CtrlChar/param/12]
+none
+
+[STev_07_01::command/62 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/63 SetAudio/param/1]
+se_112
+
+[STev_07_01::command/64 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/64 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/64 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/64 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/64 SetTalk/param/7]
+After all, the one who got me this job was—
+
+[STev_07_01::command/64 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/65 SetAudio/param/1]
+se_024_stop
+
+[STev_07_01::command/66 SetAudio/param/1]
+se_169
+
+[STev_07_01::command/67 SetTrans/param/2]
+0
+
+[STev_07_01::command/67 SetTrans/param/3]
+OutCubic
+
+[STev_07_01::command/67 SetTrans/param/8]
+default
+
+[STev_07_01::command/68 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/68 SetBGM/param/3]
+m12
+
+[STev_07_01::command/68 SetBGM/param/4]
+none
+
+[STev_07_01::command/69 SetBg/param/1]
+hospital_inside
+
+[STev_07_01::command/69 SetBg/param/2]
+0
+
+[STev_07_01::command/69 SetBg/param/3]
+Linear
+
+[STev_07_01::command/69 SetBg/param/6]
+default
+
+[STev_07_01::command/70 SetChar/param/2]
+none
+
+[STev_07_01::command/70 SetChar/param/3]
+avg1_118
+
+[STev_07_01::command/70 SetChar/param/4]
+a
+
+[STev_07_01::command/70 SetChar/param/5]
+003
+
+[STev_07_01::command/70 SetChar/param/6]
+none
+
+[STev_07_01::command/71 CtrlStage/param/9]
+none
+
+[STev_07_01::command/71 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/72 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STev_07_01::command/73 SetTrans/param/2]
+0
+
+[STev_07_01::command/73 SetTrans/param/3]
+Linear
+
+[STev_07_01::command/73 SetTrans/param/8]
+default
+
+[STev_07_01::command/74 CtrlStage/param/9]
+none
+
+[STev_07_01::command/74 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/75 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/75 CtrlChar/param/1]
+a
+
+[STev_07_01::command/75 CtrlChar/param/3]
+none
+
+[STev_07_01::command/75 CtrlChar/param/11]
+none
+
+[STev_07_01::command/75 CtrlChar/param/12]
+none
+
+[STev_07_01::command/75 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/77 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/77 CtrlChar/param/1]
+a
+
+[STev_07_01::command/77 CtrlChar/param/2]
+008
+
+[STev_07_01::command/77 CtrlChar/param/3]
+avg_emoji_love
+
+[STev_07_01::command/77 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/77 CtrlChar/param/12]
+none
+
+[STev_07_01::command/77 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/78 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/78 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/78 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/78 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/78 SetTalk/param/7]
+Oh, hi, ==PLAYER_NAME==.
+
+[STev_07_01::command/78 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/80 SetMainRoleTalk/param/2]
+021
+
+[STev_07_01::command/80 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/80 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/80 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/80 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/81 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/81 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/81 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/81 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/81 SetTalk/param/7]
+Sorry to keep you waiting.==W== So... What did you need me for?
+
+[STev_07_01::command/81 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/83 SetMainRoleTalk/param/2]
+021
+
+[STev_07_01::command/83 SetMainRoleTalk/param/3]
+none
+
+[STev_07_01::command/83 SetMainRoleTalk/param/4]
+ChanDou
+
+[STev_07_01::command/83 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/83 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/84 SetAudio/param/1]
+se_146
+
+[STev_07_01::command/86 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/86 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/86 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/86 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/88 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/88 CtrlChar/param/1]
+a
+
+[STev_07_01::command/88 CtrlChar/param/2]
+002
+
+[STev_07_01::command/88 CtrlChar/param/3]
+avg_emoji_question
+
+[STev_07_01::command/88 CtrlChar/param/11]
+none
+
+[STev_07_01::command/88 CtrlChar/param/12]
+none
+
+[STev_07_01::command/88 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/89 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/89 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/89 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/89 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/89 SetTalk/param/7]
+What's with that look on your face? You look like a little lab rat resigned to its fate.==W== If you're really not feeling well, I could give you a full body examination first.
+
+[STev_07_01::command/89 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/91 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/91 CtrlChar/param/1]
+a
+
+[STev_07_01::command/91 CtrlChar/param/2]
+009
+
+[STev_07_01::command/91 CtrlChar/param/3]
+avg_emoji_music
+
+[STev_07_01::command/91 CtrlChar/param/11]
+none
+
+[STev_07_01::command/91 CtrlChar/param/12]
+none
+
+[STev_07_01::command/91 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/94 CtrlStage/param/9]
+none
+
+[STev_07_01::command/94 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/95 SetTalkShake/param/1]
+chijing
+
+[STev_07_01::command/96 SetMainRoleTalk/param/2]
+007
+
+[STev_07_01::command/96 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STev_07_01::command/96 SetMainRoleTalk/param/4]
+manbu2
+
+[STev_07_01::command/96 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/96 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/97 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/97 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/97 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/97 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/97 SetTalk/param/7]
+No, no, that's really not necessary.==W== No need for all that. Not today...
+
+[STev_07_01::command/97 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/99 SetMainRoleTalk/param/2]
+013
+
+[STev_07_01::command/99 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STev_07_01::command/99 SetMainRoleTalk/param/4]
+diantou
+
+[STev_07_01::command/99 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/99 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/101 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/101 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/101 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/101 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/103 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/103 CtrlChar/param/1]
+a
+
+[STev_07_01::command/103 CtrlChar/param/2]
+003
+
+[STev_07_01::command/103 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/103 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/103 CtrlChar/param/12]
+none
+
+[STev_07_01::command/103 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/104 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/104 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/104 SetTalk/param/7]
+Then you can relax. I didn't call you here to help with my research today.
+
+[STev_07_01::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/106 SetMainRoleTalk/param/2]
+021
+
+[STev_07_01::command/106 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/106 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/106 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/106 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/107 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/107 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/107 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/107 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/107 SetTalk/param/7]
+... Really?
+
+[STev_07_01::command/107 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/108 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/108 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/108 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/108 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/110 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/110 CtrlChar/param/1]
+a
+
+[STev_07_01::command/110 CtrlChar/param/2]
+010
+
+[STev_07_01::command/110 CtrlChar/param/3]
+avg_emoji_star
+
+[STev_07_01::command/110 CtrlChar/param/11]
+none
+
+[STev_07_01::command/110 CtrlChar/param/12]
+none
+
+[STev_07_01::command/110 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/111 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/111 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/111 SetBGM/param/4]
+2000ms
+
+[STev_07_01::command/112 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/112 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/112 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/112 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/112 SetTalk/param/7]
+Of course. Though I could always change my mind on the spot.==W== There's no test subject more appealing to me than you.
+
+[STev_07_01::command/112 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/114 CtrlBg/param/10]
+none
+
+[STev_07_01::command/114 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/115 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/115 CtrlChar/param/1]
+a
+
+[STev_07_01::command/115 CtrlChar/param/2]
+018
+
+[STev_07_01::command/115 CtrlChar/param/3]
+avg_emoji_flower
+
+[STev_07_01::command/115 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/115 CtrlChar/param/12]
+none
+
+[STev_07_01::command/115 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/116 CtrlStage/param/9]
+none
+
+[STev_07_01::command/116 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/117 SetAudio/param/1]
+se_062
+
+[STev_07_01::command/118 SetAudio/param/1]
+se_062
+
+[STev_07_01::command/121 CtrlStage/param/9]
+chijing
+
+[STev_07_01::command/121 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/122 CtrlBg/param/10]
+none
+
+[STev_07_01::command/122 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/123 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/123 CtrlChar/param/1]
+a
+
+[STev_07_01::command/123 CtrlChar/param/2]
+010
+
+[STev_07_01::command/123 CtrlChar/param/3]
+none
+
+[STev_07_01::command/123 CtrlChar/param/11]
+none
+
+[STev_07_01::command/123 CtrlChar/param/12]
+none
+
+[STev_07_01::command/123 CtrlChar/param/13]
+OutQuart
+
+[STev_07_01::command/124 SetAudio/param/1]
+se_070
+
+[STev_07_01::command/125 SetMainRoleTalk/param/2]
+007
+
+[STev_07_01::command/125 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[STev_07_01::command/125 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/125 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/125 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/126 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/126 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/126 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/126 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/126 SetTalk/param/7]
+N-no thanks! Just get to the point already!
+
+[STev_07_01::command/126 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/127 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/127 CtrlChar/param/1]
+a
+
+[STev_07_01::command/127 CtrlChar/param/2]
+003
+
+[STev_07_01::command/127 CtrlChar/param/3]
+none
+
+[STev_07_01::command/127 CtrlChar/param/11]
+none
+
+[STev_07_01::command/127 CtrlChar/param/12]
+none
+
+[STev_07_01::command/127 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/128 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/128 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/128 SetBGM/param/4]
+1000ms
+
+[STev_07_01::command/129 SetMainRoleTalk/param/2]
+003
+
+[STev_07_01::command/129 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STev_07_01::command/129 SetMainRoleTalk/param/4]
+daintou
+
+[STev_07_01::command/129 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/129 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/130 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/130 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/130 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/130 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/130 SetTalk/param/7]
+If it's not an experiment...==W== Then do you have a commission for me?
+
+[STev_07_01::command/130 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/132 SetMainRoleTalk/param/2]
+002
+
+[STev_07_01::command/132 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/132 SetMainRoleTalk/param/4]
+diantou
+
+[STev_07_01::command/132 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/132 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/134 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/134 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/134 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/134 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/136 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/136 CtrlChar/param/1]
+a
+
+[STev_07_01::command/136 CtrlChar/param/2]
+012
+
+[STev_07_01::command/136 CtrlChar/param/3]
+none
+
+[STev_07_01::command/136 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/136 CtrlChar/param/12]
+none
+
+[STev_07_01::command/136 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/137 SetAudio/param/1]
+se_029
+
+[STev_07_01::command/138 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/138 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/138 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/138 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/138 SetTalk/param/7]
+That's right. More precisely, it's from an old friend of mine.
+
+[STev_07_01::command/138 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/139 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/139 CtrlChar/param/1]
+a
+
+[STev_07_01::command/139 CtrlChar/param/2]
+014
+
+[STev_07_01::command/139 CtrlChar/param/3]
+none
+
+[STev_07_01::command/139 CtrlChar/param/11]
+none
+
+[STev_07_01::command/139 CtrlChar/param/12]
+none
+
+[STev_07_01::command/139 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/140 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/140 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/140 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/140 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/140 SetTalk/param/7]
+She once saved my life—==W==literally.
+
+[STev_07_01::command/140 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/144 SetMainRoleTalk/param/2]
+002
+
+[STev_07_01::command/144 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/144 SetMainRoleTalk/param/4]
+daintou
+
+[STev_07_01::command/144 SetMainRoleTalk/param/5]
+y
+
+[STev_07_01::command/144 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/145 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/145 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/145 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/145 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/145 SetTalk/param/7]
+Your friend...==W== Is she a doctor, too?
+
+[STev_07_01::command/145 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/148 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/148 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/148 SetMainRoleTalk/param/5]
+y
+
+[STev_07_01::command/148 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/150 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/150 CtrlChar/param/1]
+a
+
+[STev_07_01::command/150 CtrlChar/param/2]
+013
+
+[STev_07_01::command/150 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/150 CtrlChar/param/11]
+none
+
+[STev_07_01::command/150 CtrlChar/param/12]
+none
+
+[STev_07_01::command/150 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/151 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/151 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/151 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/151 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/151 SetTalk/param/7]
+A doctor...==W== More or less.==W== She went to the same university as I did. Her name is Igna.
+
+[STev_07_01::command/151 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/153 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/153 CtrlChar/param/1]
+a
+
+[STev_07_01::command/153 CtrlChar/param/2]
+002
+
+[STev_07_01::command/153 CtrlChar/param/3]
+close
+
+[STev_07_01::command/153 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/153 CtrlChar/param/12]
+none
+
+[STev_07_01::command/153 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/156 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/156 CtrlChar/param/1]
+a
+
+[STev_07_01::command/156 CtrlChar/param/2]
+011
+
+[STev_07_01::command/156 CtrlChar/param/3]
+none
+
+[STev_07_01::command/156 CtrlChar/param/11]
+none
+
+[STev_07_01::command/156 CtrlChar/param/12]
+none
+
+[STev_07_01::command/156 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/159 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/159 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/159 SetBGM/param/4]
+2000ms
+
+[STev_07_01::command/160 SetMainRoleTalk/param/2]
+015
+
+[STev_07_01::command/160 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_07_01::command/160 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/160 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/160 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/161 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/161 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/161 SetTalk/param/7]
+Igna...?
+
+[STev_07_01::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/162 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/162 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/162 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/162 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/164 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/164 CtrlChar/param/1]
+a
+
+[STev_07_01::command/164 CtrlChar/param/2]
+002
+
+[STev_07_01::command/164 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/164 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/164 CtrlChar/param/12]
+none
+
+[STev_07_01::command/164 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/165 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/165 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/165 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/165 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/165 SetTalk/param/7]
+Have you heard of the Eye of Grace, Tyrant?
+
+[STev_07_01::command/165 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/167 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/167 SetBGM/param/3]
+m46
+
+[STev_07_01::command/167 SetBGM/param/4]
+none
+
+[STev_07_01::command/168 SetFilm/param/1]
+OutCubic
+
+[STev_07_01::command/169 SetAudio/param/1]
+se_224
+
+[STev_07_01::command/170 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/170 CtrlChar/param/1]
+a
+
+[STev_07_01::command/170 CtrlChar/param/3]
+none
+
+[STev_07_01::command/170 CtrlChar/param/11]
+none
+
+[STev_07_01::command/170 CtrlChar/param/12]
+none
+
+[STev_07_01::command/170 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/171 SetBg/param/1]
+wog_academy_corridor
+
+[STev_07_01::command/171 SetBg/param/2]
+0
+
+[STev_07_01::command/171 SetBg/param/3]
+OutCubic
+
+[STev_07_01::command/171 SetBg/param/6]
+default
+
+[STev_07_01::command/172 CtrlBg/param/10]
+none
+
+[STev_07_01::command/172 CtrlBg/param/11]
+OutSine
+
+[STev_07_01::command/173 CtrlBg/param/10]
+JingTouYaoHuang
+
+[STev_07_01::command/173 CtrlBg/param/11]
+OutSine
+
+[STev_07_01::command/175 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/175 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/175 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/175 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/175 SetTalk/param/7]
+The Eye of Grace... If I remember right, it's an academic==RT==research institute under the Grace Imperium, right?
+
+[STev_07_01::command/175 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/176 SetFilm/param/1]
+OutCubic
+
+[STev_07_01::command/177 SetBg/param/1]
+hospital_inside
+
+[STev_07_01::command/177 SetBg/param/2]
+0
+
+[STev_07_01::command/177 SetBg/param/3]
+OutCubic
+
+[STev_07_01::command/177 SetBg/param/6]
+default
+
+[STev_07_01::command/178 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/178 CtrlChar/param/1]
+a
+
+[STev_07_01::command/178 CtrlChar/param/3]
+none
+
+[STev_07_01::command/178 CtrlChar/param/11]
+none
+
+[STev_07_01::command/178 CtrlChar/param/12]
+none
+
+[STev_07_01::command/178 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/179 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/179 CtrlChar/param/1]
+a
+
+[STev_07_01::command/179 CtrlChar/param/2]
+003
+
+[STev_07_01::command/179 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/179 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/179 CtrlChar/param/12]
+none
+
+[STev_07_01::command/179 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/180 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/180 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/180 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/180 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/180 SetTalk/param/7]
+So you do know. Igna currently works there, and apparently the project she's been handling lately is short on people.
+
+[STev_07_01::command/180 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/181 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/181 CtrlChar/param/1]
+a
+
+[STev_07_01::command/181 CtrlChar/param/2]
+012
+
+[STev_07_01::command/181 CtrlChar/param/3]
+none
+
+[STev_07_01::command/181 CtrlChar/param/11]
+niunie1
+
+[STev_07_01::command/181 CtrlChar/param/12]
+none
+
+[STev_07_01::command/181 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/182 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/182 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/182 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/182 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/182 SetTalk/param/7]
+For certain reasons, I'm still not in a position to stroll openly through the streets of Emor City...==W== So I recommended you to her instead.
+
+[STev_07_01::command/182 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/184 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/184 CtrlChar/param/1]
+a
+
+[STev_07_01::command/184 CtrlChar/param/2]
+009
+
+[STev_07_01::command/184 CtrlChar/param/3]
+avg_emoji_music
+
+[STev_07_01::command/184 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/184 CtrlChar/param/12]
+none
+
+[STev_07_01::command/184 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/187 SetMainRoleTalk/param/2]
+012
+
+[STev_07_01::command/187 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_07_01::command/187 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/187 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/187 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/188 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/188 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/188 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/188 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/188 SetTalk/param/7]
+A research project? But I don't have any professional medical background.
+
+[STev_07_01::command/188 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/189 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/189 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/189 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/189 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/191 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/191 CtrlChar/param/1]
+a
+
+[STev_07_01::command/191 CtrlChar/param/2]
+012
+
+[STev_07_01::command/191 CtrlChar/param/3]
+close
+
+[STev_07_01::command/191 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/191 CtrlChar/param/12]
+none
+
+[STev_07_01::command/191 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/192 SetAudio/param/1]
+se_062
+
+[STev_07_01::command/193 SetAudio/param/1]
+se_062
+
+[STev_07_01::command/194 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/194 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/194 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/194 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/194 SetTalk/param/7]
+Big projects always end up outsourcing...
+
+[STev_07_01::command/194 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/196 CtrlStage/param/9]
+none
+
+[STev_07_01::command/196 CtrlStage/param/10]
+OutExpo
+
+[STev_07_01::command/197 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/197 CtrlChar/param/1]
+a
+
+[STev_07_01::command/197 CtrlChar/param/2]
+008
+
+[STev_07_01::command/197 CtrlChar/param/3]
+close
+
+[STev_07_01::command/197 CtrlChar/param/11]
+none
+
+[STev_07_01::command/197 CtrlChar/param/12]
+none
+
+[STev_07_01::command/197 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/198 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/198 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/198 SetBGM/param/4]
+none
+
+[STev_07_01::command/199 SetMainRoleTalk/param/2]
+007
+
+[STev_07_01::command/199 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[STev_07_01::command/199 SetMainRoleTalk/param/4]
+chijing
+
+[STev_07_01::command/199 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/199 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/200 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/200 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/200 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/200 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/200 SetTalk/param/7]
+<size=50>So I'm basically the temp who's gonna get blamed if anything goes wrong?!</size>
+
+[STev_07_01::command/200 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/201 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/201 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/201 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/201 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/203 CtrlStage/param/9]
+none
+
+[STev_07_01::command/203 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/204 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/204 CtrlChar/param/1]
+a
+
+[STev_07_01::command/204 CtrlChar/param/2]
+003
+
+[STev_07_01::command/204 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/204 CtrlChar/param/11]
+jushou0
+
+[STev_07_01::command/204 CtrlChar/param/12]
+none
+
+[STev_07_01::command/204 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/205 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/205 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/205 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/205 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/205 SetTalk/param/7]
+Heh. When I think of capable, well-read people, you're the first one who comes to mind.
+
+[STev_07_01::command/205 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/206 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/206 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/206 SetBGM/param/4]
+1000ms
+
+[STev_07_01::command/207 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/207 CtrlChar/param/1]
+a
+
+[STev_07_01::command/207 CtrlChar/param/2]
+013
+
+[STev_07_01::command/207 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STev_07_01::command/207 CtrlChar/param/11]
+niunie
+
+[STev_07_01::command/207 CtrlChar/param/12]
+none
+
+[STev_07_01::command/207 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/208 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/208 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/208 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/208 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/208 SetTalk/param/7]
+Though... I do get the feeling she never intended to ask me in the first place.
+
+[STev_07_01::command/208 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/209 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/209 CtrlChar/param/1]
+a
+
+[STev_07_01::command/209 CtrlChar/param/2]
+002
+
+[STev_07_01::command/209 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_07_01::command/209 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/209 CtrlChar/param/12]
+none
+
+[STev_07_01::command/209 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/210 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/210 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/210 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/210 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/210 SetTalk/param/7]
+What she actually asked was whether I knew anyone she could bring in to help. I doubt I was ever under consideration.
+
+[STev_07_01::command/210 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/211 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/211 CtrlChar/param/1]
+a
+
+[STev_07_01::command/211 CtrlChar/param/2]
+003
+
+[STev_07_01::command/211 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/211 CtrlChar/param/11]
+zuochupeng
+
+[STev_07_01::command/211 CtrlChar/param/12]
+none
+
+[STev_07_01::command/211 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/212 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/212 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/212 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/212 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/212 SetTalk/param/7]
+So I mentioned you to her just to test the waters,==W== and she immediately got very excited. She told me she absolutely had to work with you.==W== Do you two know each other?
+
+[STev_07_01::command/212 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/216 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/216 CtrlChar/param/1]
+a
+
+[STev_07_01::command/216 CtrlChar/param/2]
+009
+
+[STev_07_01::command/216 CtrlChar/param/3]
+avg_emoji_question
+
+[STev_07_01::command/216 CtrlChar/param/11]
+none
+
+[STev_07_01::command/216 CtrlChar/param/12]
+none
+
+[STev_07_01::command/216 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/219 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/219 CtrlChar/param/1]
+a
+
+[STev_07_01::command/219 CtrlChar/param/3]
+none
+
+[STev_07_01::command/219 CtrlChar/param/11]
+none
+
+[STev_07_01::command/219 CtrlChar/param/12]
+none
+
+[STev_07_01::command/219 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/220 SetMainRoleTalk/param/2]
+009
+
+[STev_07_01::command/220 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/220 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/220 SetMainRoleTalk/param/5]
+y
+
+[STev_07_01::command/220 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/221 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/221 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/221 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/221 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/221 SetTalk/param/7]
+I don't think I've met her...
+
+[STev_07_01::command/221 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/222 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/222 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/222 SetMainRoleTalk/param/5]
+y
+
+[STev_07_01::command/222 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/224 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/224 CtrlChar/param/1]
+a
+
+[STev_07_01::command/224 CtrlChar/param/2]
+008
+
+[STev_07_01::command/224 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/224 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/224 CtrlChar/param/12]
+none
+
+[STev_07_01::command/224 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/225 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/225 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/225 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/225 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/225 SetTalk/param/7]
+It seems that your fame precedes you then, Tyrant.
+
+[STev_07_01::command/225 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/227 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/227 CtrlChar/param/1]
+a
+
+[STev_07_01::command/227 CtrlChar/param/2]
+004
+
+[STev_07_01::command/227 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STev_07_01::command/227 CtrlChar/param/11]
+niunie
+
+[STev_07_01::command/227 CtrlChar/param/12]
+none
+
+[STev_07_01::command/227 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/228 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/228 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/228 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/228 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/228 SetTalk/param/7]
+I just never expected so many people to recognize your worth.==W== Heh. Yet here I am, wishing I could keep you all to myself.
+
+[STev_07_01::command/228 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/230 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/230 CtrlChar/param/1]
+a
+
+[STev_07_01::command/230 CtrlChar/param/2]
+019
+
+[STev_07_01::command/230 CtrlChar/param/3]
+avg_emoji_love
+
+[STev_07_01::command/230 CtrlChar/param/11]
+tiao2
+
+[STev_07_01::command/230 CtrlChar/param/12]
+none
+
+[STev_07_01::command/230 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/233 SetMainRoleTalk/param/2]
+021
+
+[STev_07_01::command/233 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[STev_07_01::command/233 SetMainRoleTalk/param/4]
+jingxia
+
+[STev_07_01::command/233 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/233 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/234 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/234 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/234 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/234 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/234 SetTalk/param/7]
+... Coming from you, that somehow doesn't make me happy...
+
+[STev_07_01::command/234 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/235 SetMainRoleTalk/param/2]
+025
+
+[STev_07_01::command/235 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STev_07_01::command/235 SetMainRoleTalk/param/4]
+jushou0
+
+[STev_07_01::command/235 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/235 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/236 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/236 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/236 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/236 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/236 SetTalk/param/7]
+Wait a second. Don't tell me this friend of yours is also one of those—
+
+[STev_07_01::command/236 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/237 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/237 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/237 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/237 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/239 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/239 CtrlChar/param/1]
+a
+
+[STev_07_01::command/239 CtrlChar/param/2]
+003
+
+[STev_07_01::command/239 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/239 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/239 CtrlChar/param/12]
+none
+
+[STev_07_01::command/239 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/240 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/240 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/240 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/240 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/240 SetTalk/param/7]
+Heh. Don't worry. She is not a mad scientist.
+
+[STev_07_01::command/240 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/242 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/242 CtrlChar/param/1]
+a
+
+[STev_07_01::command/242 CtrlChar/param/2]
+008
+
+[STev_07_01::command/242 CtrlChar/param/3]
+none
+
+[STev_07_01::command/242 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/242 CtrlChar/param/12]
+none
+
+[STev_07_01::command/242 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/243 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/243 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/243 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/243 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/243 SetTalk/param/7]
+At the very least, she's not the kind who'd want to strap you to an examination table and experiment on you.
+
+[STev_07_01::command/243 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/245 SetMainRoleTalk/param/2]
+010
+
+[STev_07_01::command/245 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STev_07_01::command/245 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/245 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/245 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/246 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/246 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/246 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/246 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/246 SetTalk/param/7]
+Uh... That's assuring...
+
+[STev_07_01::command/246 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/247 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/247 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/247 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/247 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/248 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/248 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/248 SetBGM/param/4]
+2000ms
+
+[STev_07_01::command/250 SetFilm/param/1]
+OutCubic
+
+[STev_07_01::command/251 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/251 CtrlChar/param/1]
+a
+
+[STev_07_01::command/251 CtrlChar/param/3]
+none
+
+[STev_07_01::command/251 CtrlChar/param/11]
+none
+
+[STev_07_01::command/251 CtrlChar/param/12]
+none
+
+[STev_07_01::command/251 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/252 CtrlBg/param/10]
+none
+
+[STev_07_01::command/252 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/253 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/253 CtrlChar/param/1]
+a
+
+[STev_07_01::command/253 CtrlChar/param/2]
+009
+
+[STev_07_01::command/253 CtrlChar/param/3]
+none
+
+[STev_07_01::command/253 CtrlChar/param/11]
+none
+
+[STev_07_01::command/253 CtrlChar/param/12]
+none
+
+[STev_07_01::command/253 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/254 SetAudio/param/1]
+se_226
+
+[STev_07_01::command/255 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/255 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/255 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/255 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/255 SetTalk/param/7]
+Still, you should probably watch out.==W== Maybe she's just hiding her obsession behind a respectable facade.
+
+[STev_07_01::command/255 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/257 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/257 CtrlChar/param/1]
+a
+
+[STev_07_01::command/257 CtrlChar/param/2]
+010
+
+[STev_07_01::command/257 CtrlChar/param/3]
+none
+
+[STev_07_01::command/257 CtrlChar/param/11]
+none
+
+[STev_07_01::command/257 CtrlChar/param/12]
+none
+
+[STev_07_01::command/257 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/259 SetAudio/param/1]
+se_226
+
+[STev_07_01::command/260 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/260 CtrlChar/param/1]
+a
+
+[STev_07_01::command/260 CtrlChar/param/2]
+005
+
+[STev_07_01::command/260 CtrlChar/param/3]
+none
+
+[STev_07_01::command/260 CtrlChar/param/11]
+none
+
+[STev_07_01::command/260 CtrlChar/param/12]
+none
+
+[STev_07_01::command/260 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/261 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/261 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/261 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/261 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/261 SetTalk/param/7]
+I've known her for a long time, but even now,==W== I still have no idea what's really on her mind...
+
+[STev_07_01::command/261 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/263 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/263 CtrlChar/param/1]
+a
+
+[STev_07_01::command/263 CtrlChar/param/2]
+012
+
+[STev_07_01::command/263 CtrlChar/param/3]
+none
+
+[STev_07_01::command/263 CtrlChar/param/11]
+none
+
+[STev_07_01::command/263 CtrlChar/param/12]
+none
+
+[STev_07_01::command/263 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/266 CtrlBg/param/10]
+none
+
+[STev_07_01::command/266 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/267 SetFilm/param/1]
+OutCubic
+
+[STev_07_01::command/268 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/268 CtrlChar/param/1]
+a
+
+[STev_07_01::command/268 CtrlChar/param/3]
+close
+
+[STev_07_01::command/268 CtrlChar/param/11]
+none
+
+[STev_07_01::command/268 CtrlChar/param/12]
+none
+
+[STev_07_01::command/268 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/269 CtrlStage/param/9]
+chijing
+
+[STev_07_01::command/269 CtrlStage/param/10]
+Linear
+
+[STev_07_01::command/270 SetMainRoleTalk/param/2]
+007
+
+[STev_07_01::command/270 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STev_07_01::command/270 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/270 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/270 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/271 SetTalkShake/param/1]
+chijing
+
+[STev_07_01::command/272 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/272 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/272 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/272 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/272 SetTalk/param/7]
+<size=50>So is she actually normal or not?!</size>
+
+[STev_07_01::command/272 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/273 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/273 CtrlChar/param/1]
+a
+
+[STev_07_01::command/273 CtrlChar/param/3]
+none
+
+[STev_07_01::command/273 CtrlChar/param/11]
+none
+
+[STev_07_01::command/273 CtrlChar/param/12]
+none
+
+[STev_07_01::command/273 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/274 SetMainRoleTalk/param/2]
+010
+
+[STev_07_01::command/274 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[STev_07_01::command/274 SetMainRoleTalk/param/4]
+diantou
+
+[STev_07_01::command/274 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/274 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/275 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/275 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/275 SetBGM/param/4]
+1000ms
+
+[STev_07_01::command/276 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/276 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/276 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/276 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/276 SetTalk/param/7]
+Sigh... Never mind.==W== Back to the point. What exactly is this commission about?
+
+[STev_07_01::command/276 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/278 SetMainRoleTalk/param/2]
+002
+
+[STev_07_01::command/278 SetMainRoleTalk/param/3]
+none
+
+[STev_07_01::command/278 SetMainRoleTalk/param/4]
+diantou
+
+[STev_07_01::command/278 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/278 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/280 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/280 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/280 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/280 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/282 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/282 CtrlChar/param/1]
+a
+
+[STev_07_01::command/282 CtrlChar/param/2]
+013
+
+[STev_07_01::command/282 CtrlChar/param/3]
+none
+
+[STev_07_01::command/282 CtrlChar/param/11]
+none
+
+[STev_07_01::command/282 CtrlChar/param/12]
+none
+
+[STev_07_01::command/282 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/283 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/283 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/283 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/283 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/283 SetTalk/param/7]
+That,==W== I have absolutely no idea.
+
+[STev_07_01::command/283 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/285 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/285 CtrlChar/param/1]
+a
+
+[STev_07_01::command/285 CtrlChar/param/2]
+008
+
+[STev_07_01::command/285 CtrlChar/param/3]
+avg_emoji_star
+
+[STev_07_01::command/285 CtrlChar/param/11]
+none
+
+[STev_07_01::command/285 CtrlChar/param/12]
+none
+
+[STev_07_01::command/285 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/288 SetMainRoleTalk/param/2]
+021
+
+[STev_07_01::command/288 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_07_01::command/288 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/288 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/288 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/289 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/289 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/289 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/289 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/289 SetTalk/param/7]
+... Huh?
+
+[STev_07_01::command/289 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/290 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/290 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/290 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/290 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/292 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/292 CtrlChar/param/1]
+a
+
+[STev_07_01::command/292 CtrlChar/param/2]
+002
+
+[STev_07_01::command/292 CtrlChar/param/3]
+none
+
+[STev_07_01::command/292 CtrlChar/param/11]
+none
+
+[STev_07_01::command/292 CtrlChar/param/12]
+none
+
+[STev_07_01::command/292 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/293 SetAudio/param/1]
+se_047
+
+[STev_07_01::command/294 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/294 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/294 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/294 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/294 SetTalk/param/7]
+Apparently it involves confidentiality. She said she would explain the details in person.
+
+[STev_07_01::command/294 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/296 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/296 CtrlChar/param/1]
+a
+
+[STev_07_01::command/296 CtrlChar/param/2]
+003
+
+[STev_07_01::command/296 CtrlChar/param/3]
+close
+
+[STev_07_01::command/296 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/296 CtrlChar/param/12]
+none
+
+[STev_07_01::command/296 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/297 SetAudio/param/1]
+se_077
+
+[STev_07_01::command/298 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/298 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/298 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/298 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/298 SetTalk/param/7]
+But she did explicitly say that there won't be any combat involved, so you don't need to worry about that.
+
+[STev_07_01::command/298 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/300 CtrlChar/param/0]
+avg1_118
+
+[STev_07_01::command/300 CtrlChar/param/1]
+a
+
+[STev_07_01::command/300 CtrlChar/param/3]
+avg_emoji_music
+
+[STev_07_01::command/300 CtrlChar/param/11]
+jushou0
+
+[STev_07_01::command/300 CtrlChar/param/12]
+none
+
+[STev_07_01::command/300 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/301 SetTalk/param/1]
+avg1_118
+
+[STev_07_01::command/301 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/301 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/301 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/301 SetTalk/param/7]
+Well? Will you take it?
+
+[STev_07_01::command/301 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/302 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/302 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/302 SetBGM/param/4]
+2000ms
+
+[STev_07_01::command/304 CtrlStage/param/9]
+none
+
+[STev_07_01::command/304 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/305 SetAudio/param/1]
+se_169
+
+[STev_07_01::command/306 SetTrans/param/2]
+0
+
+[STev_07_01::command/306 SetTrans/param/3]
+OutCubic
+
+[STev_07_01::command/306 SetTrans/param/8]
+default
+
+[STev_07_01::command/307 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STev_07_01::command/308 SetBg/param/1]
+tower_entrance
+
+[STev_07_01::command/308 SetBg/param/2]
+0
+
+[STev_07_01::command/308 SetBg/param/3]
+Linear
+
+[STev_07_01::command/308 SetBg/param/6]
+default
+
+[STev_07_01::command/309 CtrlBg/param/10]
+none
+
+[STev_07_01::command/309 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/310 CtrlStage/param/9]
+none
+
+[STev_07_01::command/310 CtrlStage/param/10]
+Linear
+
+[STev_07_01::command/311 SetChar/param/2]
+none
+
+[STev_07_01::command/311 SetChar/param/3]
+avg3_100
+
+[STev_07_01::command/311 SetChar/param/4]
+c
+
+[STev_07_01::command/311 SetChar/param/5]
+009
+
+[STev_07_01::command/311 SetChar/param/6]
+avg_emoji_speechless
+
+[STev_07_01::command/312 SetTrans/param/2]
+0
+
+[STev_07_01::command/312 SetTrans/param/3]
+OutCubic
+
+[STev_07_01::command/312 SetTrans/param/8]
+default
+
+[STev_07_01::command/313 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/313 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/313 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/313 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/313 SetTalk/param/7]
+If there's no fighting involved...==W== Then I should be okay going alone, I guess.
+
+[STev_07_01::command/313 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/314 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/314 SetBGM/param/3]
+m53
+
+[STev_07_01::command/314 SetBGM/param/4]
+1500ms
+
+[STev_07_01::command/316 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/316 CtrlChar/param/1]
+c
+
+[STev_07_01::command/316 CtrlChar/param/2]
+009
+
+[STev_07_01::command/316 CtrlChar/param/3]
+none
+
+[STev_07_01::command/316 CtrlChar/param/11]
+none
+
+[STev_07_01::command/316 CtrlChar/param/12]
+none
+
+[STev_07_01::command/316 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/318 SetAudio/param/1]
+se_090
+
+[STev_07_01::command/319 CtrlBg/param/10]
+none
+
+[STev_07_01::command/319 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/320 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/320 CtrlChar/param/1]
+c
+
+[STev_07_01::command/320 CtrlChar/param/2]
+002
+
+[STev_07_01::command/320 CtrlChar/param/3]
+avg_emoji_shock
+
+[STev_07_01::command/320 CtrlChar/param/11]
+jushou
+
+[STev_07_01::command/320 CtrlChar/param/12]
+none
+
+[STev_07_01::command/320 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/321 CtrlStage/param/9]
+none
+
+[STev_07_01::command/321 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/322 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/322 CtrlChar/param/1]
+c
+
+[STev_07_01::command/322 CtrlChar/param/2]
+020
+
+[STev_07_01::command/322 CtrlChar/param/3]
+close
+
+[STev_07_01::command/322 CtrlChar/param/11]
+none
+
+[STev_07_01::command/322 CtrlChar/param/12]
+none
+
+[STev_07_01::command/322 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/323 SetAudio/param/1]
+se_090
+
+[STev_07_01::command/324 CtrlStage/param/9]
+chijing
+
+[STev_07_01::command/324 CtrlStage/param/10]
+Linear
+
+[STev_07_01::command/326 SetAudio/param/1]
+se_236
+
+[STev_07_01::command/327 SetChar/param/2]
+none
+
+[STev_07_01::command/327 SetChar/param/3]
+avg1_115
+
+[STev_07_01::command/327 SetChar/param/4]
+b
+
+[STev_07_01::command/327 SetChar/param/5]
+002
+
+[STev_07_01::command/327 SetChar/param/6]
+none
+
+[STev_07_01::command/328 CtrlStage/param/9]
+none
+
+[STev_07_01::command/328 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/329 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/329 CtrlChar/param/1]
+b
+
+[STev_07_01::command/329 CtrlChar/param/2]
+018
+
+[STev_07_01::command/329 CtrlChar/param/3]
+none
+
+[STev_07_01::command/329 CtrlChar/param/11]
+none
+
+[STev_07_01::command/329 CtrlChar/param/12]
+none
+
+[STev_07_01::command/329 CtrlChar/param/13]
+OutBack
+
+[STev_07_01::command/331 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/331 CtrlChar/param/1]
+b
+
+[STev_07_01::command/331 CtrlChar/param/2]
+002
+
+[STev_07_01::command/331 CtrlChar/param/3]
+avg_emoji_music
+
+[STev_07_01::command/331 CtrlChar/param/11]
+none
+
+[STev_07_01::command/331 CtrlChar/param/12]
+none
+
+[STev_07_01::command/331 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/332 SetTalk/param/1]
+avg3_999
+
+[STev_07_01::command/332 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/332 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/332 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/332 SetTalk/param/7]
+~<size=52>♪</size>
+
+[STev_07_01::command/332 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/334 CtrlStage/param/9]
+stop
+
+[STev_07_01::command/334 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/335 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/335 CtrlChar/param/1]
+c
+
+[STev_07_01::command/335 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/335 CtrlChar/param/11]
+none
+
+[STev_07_01::command/335 CtrlChar/param/12]
+none
+
+[STev_07_01::command/335 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/336 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/336 CtrlChar/param/1]
+b
+
+[STev_07_01::command/336 CtrlChar/param/3]
+none
+
+[STev_07_01::command/336 CtrlChar/param/11]
+none
+
+[STev_07_01::command/336 CtrlChar/param/12]
+none
+
+[STev_07_01::command/336 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/337 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/337 CtrlChar/param/1]
+b
+
+[STev_07_01::command/337 CtrlChar/param/3]
+none
+
+[STev_07_01::command/337 CtrlChar/param/11]
+tiao2
+
+[STev_07_01::command/337 CtrlChar/param/12]
+none
+
+[STev_07_01::command/337 CtrlChar/param/13]
+OutQuad
+
+[STev_07_01::command/338 SetTalk/param/1]
+1
+
+[STev_07_01::command/338 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/338 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/338 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/338 SetTalk/param/7]
+Looks like someone's here. Is that the client?
+
+[STev_07_01::command/338 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/339 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/339 CtrlChar/param/1]
+c
+
+[STev_07_01::command/339 CtrlChar/param/2]
+003
+
+[STev_07_01::command/339 CtrlChar/param/3]
+none
+
+[STev_07_01::command/339 CtrlChar/param/11]
+niunie
+
+[STev_07_01::command/339 CtrlChar/param/12]
+none
+
+[STev_07_01::command/339 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/340 SetAudio/param/1]
+se_146
+
+[STev_07_01::command/341 SetTalk/param/1]
+1
+
+[STev_07_01::command/341 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/341 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/341 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/341 SetTalk/param/7]
+No... Doesn't look like an adult...==W== Is that a lost kid?
+
+[STev_07_01::command/341 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/343 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/343 CtrlChar/param/1]
+b
+
+[STev_07_01::command/343 CtrlChar/param/3]
+none
+
+[STev_07_01::command/343 CtrlChar/param/11]
+tiao2
+
+[STev_07_01::command/343 CtrlChar/param/12]
+none
+
+[STev_07_01::command/343 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/344 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/344 CtrlChar/param/1]
+a
+
+[STev_07_01::command/344 CtrlChar/param/2]
+010
+
+[STev_07_01::command/344 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STev_07_01::command/344 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/344 CtrlChar/param/12]
+none
+
+[STev_07_01::command/344 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/347 CtrlStage/param/9]
+none
+
+[STev_07_01::command/347 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/348 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/348 CtrlChar/param/1]
+b
+
+[STev_07_01::command/348 CtrlChar/param/2]
+003
+
+[STev_07_01::command/348 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/348 CtrlChar/param/11]
+tiao2
+
+[STev_07_01::command/348 CtrlChar/param/12]
+none
+
+[STev_07_01::command/348 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/349 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/349 CtrlChar/param/1]
+a
+
+[STev_07_01::command/349 CtrlChar/param/2]
+020
+
+[STev_07_01::command/349 CtrlChar/param/3]
+none
+
+[STev_07_01::command/349 CtrlChar/param/11]
+none
+
+[STev_07_01::command/349 CtrlChar/param/12]
+none
+
+[STev_07_01::command/349 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/350 SetTalk/param/1]
+avg3_999
+
+[STev_07_01::command/350 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/350 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/350 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/350 SetTalk/param/7]
+Flowers.==W== Pretty.
+
+[STev_07_01::command/350 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/352 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/352 CtrlChar/param/1]
+b
+
+[STev_07_01::command/352 CtrlChar/param/3]
+none
+
+[STev_07_01::command/352 CtrlChar/param/11]
+none
+
+[STev_07_01::command/352 CtrlChar/param/12]
+none
+
+[STev_07_01::command/352 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/353 SetAudio/param/1]
+se_100
+
+[STev_07_01::command/356 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/356 CtrlChar/param/1]
+b
+
+[STev_07_01::command/356 CtrlChar/param/3]
+none
+
+[STev_07_01::command/356 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/356 CtrlChar/param/12]
+none
+
+[STev_07_01::command/356 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/357 SetAudio/param/1]
+se_229
+
+[STev_07_01::command/358 SetTalk/param/1]
+avg3_999
+
+[STev_07_01::command/358 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/358 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/358 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/358 SetTalk/param/7]
+Take photo.
+
+[STev_07_01::command/358 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/360 CtrlStage/param/9]
+none
+
+[STev_07_01::command/360 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/361 CtrlBg/param/10]
+none
+
+[STev_07_01::command/361 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/362 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/362 CtrlChar/param/1]
+b
+
+[STev_07_01::command/362 CtrlChar/param/2]
+003
+
+[STev_07_01::command/362 CtrlChar/param/3]
+none
+
+[STev_07_01::command/362 CtrlChar/param/11]
+none
+
+[STev_07_01::command/362 CtrlChar/param/12]
+none
+
+[STev_07_01::command/362 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/363 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/363 CtrlChar/param/1]
+a
+
+[STev_07_01::command/363 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STev_07_01::command/363 CtrlChar/param/11]
+none
+
+[STev_07_01::command/363 CtrlChar/param/12]
+none
+
+[STev_07_01::command/363 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/364 SetTalk/param/1]
+1
+
+[STev_07_01::command/364 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/364 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/364 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/364 SetTalk/param/7]
+Huh? That stray hair looks strangely familiar...
+
+[STev_07_01::command/364 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/365 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/365 CtrlChar/param/1]
+c
+
+[STev_07_01::command/365 CtrlChar/param/2]
+009
+
+[STev_07_01::command/365 CtrlChar/param/3]
+none
+
+[STev_07_01::command/365 CtrlChar/param/11]
+none
+
+[STev_07_01::command/365 CtrlChar/param/12]
+none
+
+[STev_07_01::command/365 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/367 CtrlStage/param/9]
+none
+
+[STev_07_01::command/367 CtrlStage/param/10]
+OutSine
+
+[STev_07_01::command/368 SetAudio/param/1]
+se_169
+
+[STev_07_01::command/369 SetTrans/param/2]
+0
+
+[STev_07_01::command/369 SetTrans/param/3]
+OutCubic
+
+[STev_07_01::command/369 SetTrans/param/8]
+default
+
+[STev_07_01::command/370 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STev_07_01::command/371 SetChar/param/2]
+none
+
+[STev_07_01::command/371 SetChar/param/3]
+avg1_158
+
+[STev_07_01::command/371 SetChar/param/4]
+a
+
+[STev_07_01::command/371 SetChar/param/5]
+002
+
+[STev_07_01::command/371 SetChar/param/6]
+none
+
+[STev_07_01::command/372 SetChar/param/2]
+none
+
+[STev_07_01::command/372 SetChar/param/3]
+avg1_115
+
+[STev_07_01::command/372 SetChar/param/4]
+b
+
+[STev_07_01::command/372 SetChar/param/5]
+002
+
+[STev_07_01::command/372 SetChar/param/6]
+none
+
+[STev_07_01::command/373 SetBg/param/1]
+city_park_night_winter
+
+[STev_07_01::command/373 SetBg/param/2]
+0
+
+[STev_07_01::command/373 SetBg/param/3]
+Linear
+
+[STev_07_01::command/373 SetBg/param/6]
+default
+
+[STev_07_01::command/374 CtrlStage/param/9]
+none
+
+[STev_07_01::command/374 CtrlStage/param/10]
+Linear
+
+[STev_07_01::command/375 SetTrans/param/2]
+0
+
+[STev_07_01::command/375 SetTrans/param/3]
+OutCubic
+
+[STev_07_01::command/375 SetTrans/param/8]
+default
+
+[STev_07_01::command/377 CtrlChar/param/0]
+avg1_158
+
+[STev_07_01::command/377 CtrlChar/param/1]
+a
+
+[STev_07_01::command/377 CtrlChar/param/2]
+004
+
+[STev_07_01::command/377 CtrlChar/param/3]
+none
+
+[STev_07_01::command/377 CtrlChar/param/11]
+none
+
+[STev_07_01::command/377 CtrlChar/param/12]
+none
+
+[STev_07_01::command/377 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/378 SetTalk/param/1]
+avg1_158
+
+[STev_07_01::command/378 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/378 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/378 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/378 SetTalk/param/7]
+I see...==W== So your wish wasn't about gifts, was it?
+
+[STev_07_01::command/378 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/380 CtrlChar/param/0]
+avg1_158
+
+[STev_07_01::command/380 CtrlChar/param/1]
+a
+
+[STev_07_01::command/380 CtrlChar/param/2]
+002
+
+[STev_07_01::command/380 CtrlChar/param/3]
+none
+
+[STev_07_01::command/380 CtrlChar/param/11]
+none
+
+[STev_07_01::command/380 CtrlChar/param/12]
+none
+
+[STev_07_01::command/380 CtrlChar/param/13]
+OutSine
+
+[STev_07_01::command/383 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/383 CtrlChar/param/1]
+b
+
+[STev_07_01::command/383 CtrlChar/param/2]
+014
+
+[STev_07_01::command/383 CtrlChar/param/3]
+none
+
+[STev_07_01::command/383 CtrlChar/param/11]
+niunie
+
+[STev_07_01::command/383 CtrlChar/param/12]
+none
+
+[STev_07_01::command/383 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/384 SetTalk/param/1]
+avg1_115
+
+[STev_07_01::command/384 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/384 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/384 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/384 SetTalk/param/7]
+No.
+
+[STev_07_01::command/384 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/386 CtrlChar/param/0]
+avg1_158
+
+[STev_07_01::command/386 CtrlChar/param/1]
+a
+
+[STev_07_01::command/386 CtrlChar/param/2]
+003
+
+[STev_07_01::command/386 CtrlChar/param/3]
+avg_emoji_shock
+
+[STev_07_01::command/386 CtrlChar/param/11]
+none
+
+[STev_07_01::command/386 CtrlChar/param/12]
+none
+
+[STev_07_01::command/386 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/387 SetTalk/param/1]
+avg1_158
+
+[STev_07_01::command/387 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/387 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/387 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/387 SetTalk/param/7]
+Okay... Then, what is your wish?
+
+[STev_07_01::command/387 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/388 CtrlChar/param/0]
+avg1_158
+
+[STev_07_01::command/388 CtrlChar/param/1]
+a
+
+[STev_07_01::command/388 CtrlChar/param/3]
+close
+
+[STev_07_01::command/388 CtrlChar/param/11]
+none
+
+[STev_07_01::command/388 CtrlChar/param/12]
+none
+
+[STev_07_01::command/388 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/390 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/390 CtrlChar/param/1]
+b
+
+[STev_07_01::command/390 CtrlChar/param/2]
+004
+
+[STev_07_01::command/390 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/390 CtrlChar/param/11]
+none
+
+[STev_07_01::command/390 CtrlChar/param/12]
+none
+
+[STev_07_01::command/390 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/391 SetTalk/param/1]
+avg1_115
+
+[STev_07_01::command/391 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/391 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/391 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/391 SetTalk/param/7]
+I wish for ...==W== a friend to play with.
+
+[STev_07_01::command/391 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/393 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/393 CtrlChar/param/1]
+b
+
+[STev_07_01::command/393 CtrlChar/param/2]
+008
+
+[STev_07_01::command/393 CtrlChar/param/3]
+close
+
+[STev_07_01::command/393 CtrlChar/param/11]
+none
+
+[STev_07_01::command/393 CtrlChar/param/12]
+none
+
+[STev_07_01::command/393 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/395 SetAudio/param/1]
+se_169
+
+[STev_07_01::command/396 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/396 SetBGM/param/3]
+m
+
+[STev_07_01::command/396 SetBGM/param/4]
+1000ms
+
+[STev_07_01::command/397 SetTrans/param/2]
+0
+
+[STev_07_01::command/397 SetTrans/param/3]
+Linear
+
+[STev_07_01::command/397 SetTrans/param/8]
+default
+
+[STev_07_01::command/398 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STev_07_01::command/399 SetBg/param/1]
+tower_entrance
+
+[STev_07_01::command/399 SetBg/param/2]
+0
+
+[STev_07_01::command/399 SetBg/param/3]
+Linear
+
+[STev_07_01::command/399 SetBg/param/6]
+default
+
+[STev_07_01::command/400 CtrlBg/param/10]
+none
+
+[STev_07_01::command/400 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/401 SetChar/param/2]
+none
+
+[STev_07_01::command/401 SetChar/param/3]
+avg3_100
+
+[STev_07_01::command/401 SetChar/param/4]
+c
+
+[STev_07_01::command/401 SetChar/param/5]
+007
+
+[STev_07_01::command/401 SetChar/param/6]
+none
+
+[STev_07_01::command/402 SetChar/param/2]
+none
+
+[STev_07_01::command/402 SetChar/param/3]
+avg1_115
+
+[STev_07_01::command/402 SetChar/param/4]
+b
+
+[STev_07_01::command/402 SetChar/param/5]
+003
+
+[STev_07_01::command/402 SetChar/param/6]
+none
+
+[STev_07_01::command/403 CtrlStage/param/9]
+none
+
+[STev_07_01::command/403 CtrlStage/param/10]
+Linear
+
+[STev_07_01::command/404 SetTrans/param/2]
+0
+
+[STev_07_01::command/404 SetTrans/param/3]
+Linear
+
+[STev_07_01::command/404 SetTrans/param/8]
+default
+
+[STev_07_01::command/405 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/405 CtrlChar/param/1]
+b
+
+[STev_07_01::command/405 CtrlChar/param/3]
+none
+
+[STev_07_01::command/405 CtrlChar/param/11]
+xuanyun
+
+[STev_07_01::command/405 CtrlChar/param/12]
+none
+
+[STev_07_01::command/405 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/406 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/406 CtrlChar/param/1]
+c
+
+[STev_07_01::command/406 CtrlChar/param/3]
+avg_emoji_shock
+
+[STev_07_01::command/406 CtrlChar/param/11]
+jushou
+
+[STev_07_01::command/406 CtrlChar/param/12]
+none
+
+[STev_07_01::command/406 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/407 SetTalk/param/1]
+1
+
+[STev_07_01::command/407 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/407 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/407 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/407 SetTalk/param/7]
+Isn't this the little girl I ran into during the Snowish Festival?
+
+[STev_07_01::command/407 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/408 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/408 CtrlChar/param/1]
+c
+
+[STev_07_01::command/408 CtrlChar/param/2]
+020
+
+[STev_07_01::command/408 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/408 CtrlChar/param/11]
+none
+
+[STev_07_01::command/408 CtrlChar/param/12]
+none
+
+[STev_07_01::command/408 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/409 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/409 SetBGM/param/3]
+m2
+
+[STev_07_01::command/409 SetBGM/param/4]
+none
+
+[STev_07_01::command/410 SetTalk/param/1]
+1
+
+[STev_07_01::command/410 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/410 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/410 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/410 SetTalk/param/7]
+She wants to go inside the Monolith to play again?
+
+[STev_07_01::command/410 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/412 CtrlStage/param/9]
+none
+
+[STev_07_01::command/412 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/413 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/413 CtrlChar/param/1]
+b
+
+[STev_07_01::command/413 CtrlChar/param/3]
+none
+
+[STev_07_01::command/413 CtrlChar/param/11]
+none
+
+[STev_07_01::command/413 CtrlChar/param/12]
+none
+
+[STev_07_01::command/413 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/414 SetAudio/param/1]
+se_101
+
+[STev_07_01::command/415 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/415 CtrlChar/param/1]
+a
+
+[STev_07_01::command/415 CtrlChar/param/2]
+013
+
+[STev_07_01::command/415 CtrlChar/param/3]
+close
+
+[STev_07_01::command/415 CtrlChar/param/11]
+manbu_loop
+
+[STev_07_01::command/415 CtrlChar/param/12]
+none
+
+[STev_07_01::command/415 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/417 SetAudio/param/1]
+se_101
+
+[STev_07_01::command/418 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/418 CtrlChar/param/1]
+a
+
+[STev_07_01::command/418 CtrlChar/param/3]
+none
+
+[STev_07_01::command/418 CtrlChar/param/11]
+stop
+
+[STev_07_01::command/418 CtrlChar/param/12]
+none
+
+[STev_07_01::command/418 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/419 SetTalk/param/1]
+1
+
+[STev_07_01::command/419 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/419 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/419 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/419 SetTalk/param/7]
+Firefly, it's me! Do you remember me?
+
+[STev_07_01::command/419 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/421 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/421 CtrlChar/param/1]
+b
+
+[STev_07_01::command/421 CtrlChar/param/3]
+none
+
+[STev_07_01::command/421 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/421 CtrlChar/param/12]
+none
+
+[STev_07_01::command/421 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/422 SetAudio/param/1]
+se_229
+
+[STev_07_01::command/423 SetTrans/param/2]
+0
+
+[STev_07_01::command/423 SetTrans/param/3]
+InFlash
+
+[STev_07_01::command/423 SetTrans/param/8]
+default
+
+[STev_07_01::command/424 SetTrans/param/2]
+0
+
+[STev_07_01::command/424 SetTrans/param/3]
+InCubic
+
+[STev_07_01::command/424 SetTrans/param/8]
+default
+
+[STev_07_01::command/425 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/425 CtrlChar/param/1]
+a
+
+[STev_07_01::command/425 CtrlChar/param/2]
+025
+
+[STev_07_01::command/425 CtrlChar/param/3]
+none
+
+[STev_07_01::command/425 CtrlChar/param/11]
+chijing
+
+[STev_07_01::command/425 CtrlChar/param/12]
+none
+
+[STev_07_01::command/425 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/426 SetTalk/param/1]
+1
+
+[STev_07_01::command/426 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/426 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/426 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/426 SetTalk/param/7]
+Whoa?!
+
+[STev_07_01::command/426 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/428 CtrlStage/param/9]
+none
+
+[STev_07_01::command/428 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/429 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/429 CtrlChar/param/1]
+a
+
+[STev_07_01::command/429 CtrlChar/param/3]
+none
+
+[STev_07_01::command/429 CtrlChar/param/11]
+none
+
+[STev_07_01::command/429 CtrlChar/param/12]
+none
+
+[STev_07_01::command/429 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/430 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/430 CtrlChar/param/1]
+b
+
+[STev_07_01::command/430 CtrlChar/param/3]
+avg_emoji_music
+
+[STev_07_01::command/430 CtrlChar/param/11]
+huanxin
+
+[STev_07_01::command/430 CtrlChar/param/12]
+none
+
+[STev_07_01::command/430 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/431 SetTalk/param/1]
+avg1_115
+
+[STev_07_01::command/431 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/431 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/431 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/431 SetTalk/param/7]
+~<size=52>♪</size>
+
+[STev_07_01::command/431 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/433 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/433 CtrlChar/param/1]
+b
+
+[STev_07_01::command/433 CtrlChar/param/3]
+none
+
+[STev_07_01::command/433 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/433 CtrlChar/param/12]
+none
+
+[STev_07_01::command/433 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/434 CtrlStage/param/9]
+none
+
+[STev_07_01::command/434 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/435 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/435 CtrlChar/param/1]
+a
+
+[STev_07_01::command/435 CtrlChar/param/2]
+003
+
+[STev_07_01::command/435 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_07_01::command/435 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/435 CtrlChar/param/12]
+none
+
+[STev_07_01::command/435 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/436 SetTalk/param/1]
+1
+
+[STev_07_01::command/436 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/436 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/436 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/436 SetTalk/param/7]
+Oh, so she's taking pictures.==W==
+
+[STev_07_01::command/436 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/438 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/438 CtrlChar/param/1]
+b
+
+[STev_07_01::command/438 CtrlChar/param/3]
+none
+
+[STev_07_01::command/438 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/438 CtrlChar/param/12]
+none
+
+[STev_07_01::command/438 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/441 CtrlStage/param/9]
+none
+
+[STev_07_01::command/441 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/442 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/442 CtrlChar/param/1]
+a
+
+[STev_07_01::command/442 CtrlChar/param/2]
+020
+
+[STev_07_01::command/442 CtrlChar/param/3]
+none
+
+[STev_07_01::command/442 CtrlChar/param/11]
+none
+
+[STev_07_01::command/442 CtrlChar/param/12]
+none
+
+[STev_07_01::command/442 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/443 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/443 CtrlChar/param/1]
+b
+
+[STev_07_01::command/443 CtrlChar/param/3]
+none
+
+[STev_07_01::command/443 CtrlChar/param/11]
+none
+
+[STev_07_01::command/443 CtrlChar/param/12]
+none
+
+[STev_07_01::command/443 CtrlChar/param/13]
+OutQuad
+
+[STev_07_01::command/444 SetTalk/param/1]
+avg1_115
+
+[STev_07_01::command/444 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/444 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/444 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/444 SetTalk/param/7]
+Another one.==W==
+
+[STev_07_01::command/444 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/446 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/446 CtrlChar/param/1]
+b
+
+[STev_07_01::command/446 CtrlChar/param/3]
+none
+
+[STev_07_01::command/446 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/446 CtrlChar/param/12]
+none
+
+[STev_07_01::command/446 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/447 SetAudio/param/1]
+se_229
+
+[STev_07_01::command/448 SetTrans/param/2]
+0
+
+[STev_07_01::command/448 SetTrans/param/3]
+InFlash
+
+[STev_07_01::command/448 SetTrans/param/8]
+default
+
+[STev_07_01::command/449 SetTrans/param/2]
+0
+
+[STev_07_01::command/449 SetTrans/param/3]
+InCubic
+
+[STev_07_01::command/449 SetTrans/param/8]
+default
+
+[STev_07_01::command/452 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/452 CtrlChar/param/1]
+b
+
+[STev_07_01::command/452 CtrlChar/param/2]
+012
+
+[STev_07_01::command/452 CtrlChar/param/3]
+avg_emoji_flower
+
+[STev_07_01::command/452 CtrlChar/param/11]
+Tiao
+
+[STev_07_01::command/452 CtrlChar/param/12]
+none
+
+[STev_07_01::command/452 CtrlChar/param/13]
+OutBack
+
+[STev_07_01::command/454 CtrlBg/param/10]
+none
+
+[STev_07_01::command/454 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/455 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/455 CtrlChar/param/1]
+a
+
+[STev_07_01::command/455 CtrlChar/param/3]
+none
+
+[STev_07_01::command/455 CtrlChar/param/11]
+none
+
+[STev_07_01::command/455 CtrlChar/param/12]
+none
+
+[STev_07_01::command/455 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/456 SetAudio/param/1]
+se_103
+
+[STev_07_01::command/457 CtrlStage/param/9]
+none
+
+[STev_07_01::command/457 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/458 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/458 CtrlChar/param/1]
+b
+
+[STev_07_01::command/458 CtrlChar/param/3]
+none
+
+[STev_07_01::command/458 CtrlChar/param/11]
+manbu
+
+[STev_07_01::command/458 CtrlChar/param/12]
+none
+
+[STev_07_01::command/458 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/460 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/460 CtrlChar/param/1]
+c
+
+[STev_07_01::command/460 CtrlChar/param/2]
+003
+
+[STev_07_01::command/460 CtrlChar/param/3]
+avg_emoji_think
+
+[STev_07_01::command/460 CtrlChar/param/11]
+none
+
+[STev_07_01::command/460 CtrlChar/param/12]
+none
+
+[STev_07_01::command/460 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/461 CtrlStage/param/9]
+none
+
+[STev_07_01::command/461 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/462 CtrlBg/param/10]
+none
+
+[STev_07_01::command/462 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/463 SetTalk/param/1]
+1
+
+[STev_07_01::command/463 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/463 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/463 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/463 SetTalk/param/7]
+She doesn't seem to have noticed me.==W== Still, that's a relief. At least she isn't going into the Monolith...
+
+[STev_07_01::command/463 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/465 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/465 CtrlChar/param/1]
+c
+
+[STev_07_01::command/465 CtrlChar/param/2]
+023
+
+[STev_07_01::command/465 CtrlChar/param/3]
+close
+
+[STev_07_01::command/465 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/465 CtrlChar/param/12]
+none
+
+[STev_07_01::command/465 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/466 SetAudio/param/1]
+se_047
+
+[STev_07_01::command/468 SetChar/param/2]
+none
+
+[STev_07_01::command/468 SetChar/param/3]
+avg1_115
+
+[STev_07_01::command/468 SetChar/param/4]
+a
+
+[STev_07_01::command/468 SetChar/param/5]
+002
+
+[STev_07_01::command/468 SetChar/param/6]
+none
+
+[STev_07_01::command/469 SetChar/param/2]
+none
+
+[STev_07_01::command/469 SetChar/param/3]
+avg2_980
+
+[STev_07_01::command/469 SetChar/param/4]
+a
+
+[STev_07_01::command/469 SetChar/param/5]
+002
+
+[STev_07_01::command/469 SetChar/param/6]
+none
+
+[STev_07_01::command/470 SetAudio/param/1]
+se_338
+
+[STev_07_01::command/471 SetBg/param/1]
+white
+
+[STev_07_01::command/471 SetBg/param/2]
+0
+
+[STev_07_01::command/471 SetBg/param/3]
+OutQuad
+
+[STev_07_01::command/471 SetBg/param/6]
+default
+
+[STev_07_01::command/472 CtrlBg/param/10]
+none
+
+[STev_07_01::command/472 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/474 SetBg/param/1]
+tower_common
+
+[STev_07_01::command/474 SetBg/param/2]
+0
+
+[STev_07_01::command/474 SetBg/param/3]
+OutCubic
+
+[STev_07_01::command/474 SetBg/param/6]
+default
+
+[STev_07_01::command/475 SetFx/param/1]
+fx_avg_movie
+
+[STev_07_01::command/476 CtrlBg/param/10]
+none
+
+[STev_07_01::command/476 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/477 CtrlChar/param/0]
+avg2_980
+
+[STev_07_01::command/477 CtrlChar/param/1]
+a
+
+[STev_07_01::command/477 CtrlChar/param/3]
+none
+
+[STev_07_01::command/477 CtrlChar/param/11]
+manbu_loop
+
+[STev_07_01::command/477 CtrlChar/param/12]
+none
+
+[STev_07_01::command/477 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/478 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/478 CtrlChar/param/1]
+c
+
+[STev_07_01::command/478 CtrlChar/param/2]
+024
+
+[STev_07_01::command/478 CtrlChar/param/3]
+none
+
+[STev_07_01::command/478 CtrlChar/param/11]
+none
+
+[STev_07_01::command/478 CtrlChar/param/12]
+none
+
+[STev_07_01::command/478 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/479 SetTalk/param/1]
+1
+
+[STev_07_01::command/479 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/479 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/479 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/479 SetTalk/param/7]
+The first time we met, she was running all over the Monolith chasing Stellaroids...==W== Honestly, seeing her with a normal hobby like this is a huge relief.
+
+[STev_07_01::command/479 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/481 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/481 CtrlChar/param/1]
+a
+
+[STev_07_01::command/481 CtrlChar/param/3]
+none
+
+[STev_07_01::command/481 CtrlChar/param/11]
+manbu
+
+[STev_07_01::command/481 CtrlChar/param/12]
+none
+
+[STev_07_01::command/481 CtrlChar/param/13]
+OutQuad
+
+[STev_07_01::command/482 SetFx/param/1]
+fx_avg_movie
+
+[STev_07_01::command/483 SetAudio/param/1]
+se_221
+
+[STev_07_01::command/484 SetBg/param/1]
+white
+
+[STev_07_01::command/484 SetBg/param/2]
+0
+
+[STev_07_01::command/484 SetBg/param/3]
+OutQuad
+
+[STev_07_01::command/484 SetBg/param/6]
+default
+
+[STev_07_01::command/485 CtrlBg/param/10]
+none
+
+[STev_07_01::command/485 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/487 SetBg/param/1]
+tower_entrance
+
+[STev_07_01::command/487 SetBg/param/2]
+0
+
+[STev_07_01::command/487 SetBg/param/3]
+OutCubic
+
+[STev_07_01::command/487 SetBg/param/6]
+default
+
+[STev_07_01::command/488 CtrlBg/param/10]
+none
+
+[STev_07_01::command/488 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/489 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/489 CtrlChar/param/1]
+c
+
+[STev_07_01::command/489 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/489 CtrlChar/param/11]
+none
+
+[STev_07_01::command/489 CtrlChar/param/12]
+none
+
+[STev_07_01::command/489 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/491 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/491 CtrlChar/param/1]
+c
+
+[STev_07_01::command/491 CtrlChar/param/2]
+020
+
+[STev_07_01::command/491 CtrlChar/param/3]
+avg_emoji_question
+
+[STev_07_01::command/491 CtrlChar/param/11]
+none
+
+[STev_07_01::command/491 CtrlChar/param/12]
+none
+
+[STev_07_01::command/491 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/492 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/492 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/492 SetBGM/param/4]
+1500ms
+
+[STev_07_01::command/493 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/493 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/493 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/493 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/493 SetTalk/param/7]
+Is she here by herself? Where's her guardian?
+
+[STev_07_01::command/493 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/495 CtrlStage/param/9]
+none
+
+[STev_07_01::command/495 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/496 CtrlBg/param/10]
+none
+
+[STev_07_01::command/496 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/497 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/497 CtrlChar/param/1]
+a
+
+[STev_07_01::command/497 CtrlChar/param/2]
+002
+
+[STev_07_01::command/497 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/497 CtrlChar/param/11]
+none
+
+[STev_07_01::command/497 CtrlChar/param/12]
+none
+
+[STev_07_01::command/497 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/498 SetChar/param/2]
+none
+
+[STev_07_01::command/498 SetChar/param/3]
+avg3_205
+
+[STev_07_01::command/498 SetChar/param/4]
+a
+
+[STev_07_01::command/498 SetChar/param/5]
+002
+
+[STev_07_01::command/498 SetChar/param/6]
+none
+
+[STev_07_01::command/499 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/499 CtrlChar/param/1]
+a
+
+[STev_07_01::command/499 CtrlChar/param/2]
+002
+
+[STev_07_01::command/499 CtrlChar/param/3]
+none
+
+[STev_07_01::command/499 CtrlChar/param/11]
+none
+
+[STev_07_01::command/499 CtrlChar/param/12]
+none
+
+[STev_07_01::command/499 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/500 SetAudio/param/1]
+se_101
+
+[STev_07_01::command/501 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STev_07_01::command/501 SetBGM/param/3]
+m33
+
+[STev_07_01::command/501 SetBGM/param/4]
+none
+
+[STev_07_01::command/502 SetTalk/param/1]
+avg3_999
+
+[STev_07_01::command/502 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/502 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/502 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/502 SetTalk/param/7]
+Hello.
+
+[STev_07_01::command/502 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/504 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/504 CtrlChar/param/1]
+a
+
+[STev_07_01::command/504 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/504 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/504 CtrlChar/param/12]
+none
+
+[STev_07_01::command/504 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/505 SetTalk/param/1]
+avg3_999
+
+[STev_07_01::command/505 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/505 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/505 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/505 SetTalk/param/7]
+Excuse me, are you the one they call Tyrant?
+
+[STev_07_01::command/505 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/507 SetAudio/param/1]
+se_077
+
+[STev_07_01::command/508 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/508 CtrlChar/param/1]
+a
+
+[STev_07_01::command/508 CtrlChar/param/2]
+005
+
+[STev_07_01::command/508 CtrlChar/param/3]
+none
+
+[STev_07_01::command/508 CtrlChar/param/11]
+JuGong
+
+[STev_07_01::command/508 CtrlChar/param/12]
+none
+
+[STev_07_01::command/508 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/509 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/509 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/509 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/509 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/509 SetTalk/param/7]
+Nice to meet you. I'm Igna, from the Eye of Grace.
+
+[STev_07_01::command/509 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/511 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/511 CtrlChar/param/1]
+a
+
+[STev_07_01::command/511 CtrlChar/param/3]
+none
+
+[STev_07_01::command/511 CtrlChar/param/11]
+none
+
+[STev_07_01::command/511 CtrlChar/param/12]
+none
+
+[STev_07_01::command/511 CtrlChar/param/13]
+OutQuint
+
+[STev_07_01::command/512 SetAudio/param/1]
+se_065
+
+[STev_07_01::command/513 CtrlChar/param/0]
+avg3_100
+
+[STev_07_01::command/513 CtrlChar/param/1]
+a
+
+[STev_07_01::command/513 CtrlChar/param/3]
+none
+
+[STev_07_01::command/513 CtrlChar/param/11]
+none
+
+[STev_07_01::command/513 CtrlChar/param/12]
+none
+
+[STev_07_01::command/513 CtrlChar/param/13]
+InBack
+
+[STev_07_01::command/514 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/514 CtrlChar/param/1]
+a
+
+[STev_07_01::command/514 CtrlChar/param/3]
+none
+
+[STev_07_01::command/514 CtrlChar/param/11]
+none
+
+[STev_07_01::command/514 CtrlChar/param/12]
+none
+
+[STev_07_01::command/514 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/515 CtrlBg/param/10]
+none
+
+[STev_07_01::command/515 CtrlBg/param/11]
+OutCubic
+
+[STev_07_01::command/516 CtrlStage/param/9]
+none
+
+[STev_07_01::command/516 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/517 SetMainRoleTalk/param/2]
+002
+
+[STev_07_01::command/517 SetMainRoleTalk/param/3]
+none
+
+[STev_07_01::command/517 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/517 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/517 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/518 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/518 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/518 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/518 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/518 SetTalk/param/7]
+You're my client...?
+
+[STev_07_01::command/518 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/519 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/519 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/519 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/519 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/521 SetAudio/param/1]
+se_077
+
+[STev_07_01::command/522 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/522 CtrlChar/param/1]
+a
+
+[STev_07_01::command/522 CtrlChar/param/2]
+003
+
+[STev_07_01::command/522 CtrlChar/param/3]
+none
+
+[STev_07_01::command/522 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/522 CtrlChar/param/12]
+none
+
+[STev_07_01::command/522 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/523 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/523 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/523 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/523 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/523 SetTalk/param/7]
+Yes. And it's an honor to meet you.
+
+[STev_07_01::command/523 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/524 SetBg/param/1]
+forest
+
+[STev_07_01::command/524 SetBg/param/2]
+0
+
+[STev_07_01::command/524 SetBg/param/3]
+Linear
+
+[STev_07_01::command/524 SetBg/param/6]
+default
+
+[STev_07_01::command/525 CtrlBg/param/10]
+none
+
+[STev_07_01::command/525 CtrlBg/param/11]
+Linear
+
+[STev_07_01::command/526 SetChar/param/2]
+none
+
+[STev_07_01::command/526 SetChar/param/3]
+avg1_115
+
+[STev_07_01::command/526 SetChar/param/4]
+b
+
+[STev_07_01::command/526 SetChar/param/5]
+002
+
+[STev_07_01::command/526 SetChar/param/6]
+none
+
+[STev_07_01::command/527 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/527 CtrlChar/param/1]
+a
+
+[STev_07_01::command/527 CtrlChar/param/2]
+002
+
+[STev_07_01::command/527 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/527 CtrlChar/param/11]
+none
+
+[STev_07_01::command/527 CtrlChar/param/12]
+none
+
+[STev_07_01::command/527 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/528 SetBg/param/1]
+white
+
+[STev_07_01::command/528 SetBg/param/2]
+0
+
+[STev_07_01::command/528 SetBg/param/3]
+Linear
+
+[STev_07_01::command/528 SetBg/param/6]
+default
+
+[STev_07_01::command/529 CtrlBg/param/10]
+none
+
+[STev_07_01::command/529 CtrlBg/param/11]
+InSine
+
+[STev_07_01::command/530 SetStage/param/2]
+OutCubic
+
+[STev_07_01::command/532 SetAudio/param/1]
+se_061
+
+[STev_07_01::command/533 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/533 CtrlChar/param/1]
+b
+
+[STev_07_01::command/533 CtrlChar/param/3]
+none
+
+[STev_07_01::command/533 CtrlChar/param/11]
+tiao2
+
+[STev_07_01::command/533 CtrlChar/param/12]
+none
+
+[STev_07_01::command/533 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/534 SetAudio/param/1]
+se_229
+
+[STev_07_01::command/535 CtrlBg/param/10]
+none
+
+[STev_07_01::command/535 CtrlBg/param/11]
+InCubic
+
+[STev_07_01::command/536 CtrlBg/param/10]
+none
+
+[STev_07_01::command/536 CtrlBg/param/11]
+InCubic
+
+[STev_07_01::command/537 SetTalk/param/1]
+avg1_115
+
+[STev_07_01::command/537 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/537 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/537 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/537 SetTalk/param/7]
+Over here, too...==W==
+
+[STev_07_01::command/537 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/539 SetAudio/param/1]
+se_236
+
+[STev_07_01::command/540 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/540 CtrlChar/param/1]
+b
+
+[STev_07_01::command/540 CtrlChar/param/3]
+none
+
+[STev_07_01::command/540 CtrlChar/param/11]
+tiao2
+
+[STev_07_01::command/540 CtrlChar/param/12]
+none
+
+[STev_07_01::command/540 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/541 SetAudio/param/1]
+se_229
+
+[STev_07_01::command/542 CtrlBg/param/10]
+none
+
+[STev_07_01::command/542 CtrlBg/param/11]
+InCubic
+
+[STev_07_01::command/543 CtrlBg/param/10]
+none
+
+[STev_07_01::command/543 CtrlBg/param/11]
+InCubic
+
+[STev_07_01::command/545 CtrlChar/param/0]
+avg1_115
+
+[STev_07_01::command/545 CtrlChar/param/1]
+b
+
+[STev_07_01::command/545 CtrlChar/param/3]
+none
+
+[STev_07_01::command/545 CtrlChar/param/11]
+tiao2
+
+[STev_07_01::command/545 CtrlChar/param/12]
+none
+
+[STev_07_01::command/545 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/546 SetStage/param/2]
+InBack
+
+[STev_07_01::command/547 SetChar/param/2]
+none
+
+[STev_07_01::command/547 SetChar/param/3]
+avg1_115
+
+[STev_07_01::command/547 SetChar/param/4]
+a
+
+[STev_07_01::command/547 SetChar/param/5]
+002
+
+[STev_07_01::command/547 SetChar/param/6]
+none
+
+[STev_07_01::command/548 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/548 CtrlChar/param/1]
+a
+
+[STev_07_01::command/548 CtrlChar/param/2]
+003
+
+[STev_07_01::command/548 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/548 CtrlChar/param/11]
+none
+
+[STev_07_01::command/548 CtrlChar/param/12]
+none
+
+[STev_07_01::command/548 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/549 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/549 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/549 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/549 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/549 SetTalk/param/7]
+Looked like you were about to speak to that child...==W== Do you know Firefly?
+
+[STev_07_01::command/549 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/551 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/551 CtrlChar/param/1]
+a
+
+[STev_07_01::command/551 CtrlChar/param/2]
+002
+
+[STev_07_01::command/551 CtrlChar/param/3]
+avg_emoji_question
+
+[STev_07_01::command/551 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/551 CtrlChar/param/12]
+none
+
+[STev_07_01::command/551 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/554 SetMainRoleTalk/param/2]
+002
+
+[STev_07_01::command/554 SetMainRoleTalk/param/3]
+none
+
+[STev_07_01::command/554 SetMainRoleTalk/param/4]
+daintou
+
+[STev_07_01::command/554 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/554 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/555 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/555 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/555 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/555 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/555 SetTalk/param/7]
+Yes, we've met once before.
+
+[STev_07_01::command/555 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/556 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/556 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/556 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/556 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/558 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/558 CtrlChar/param/1]
+a
+
+[STev_07_01::command/558 CtrlChar/param/2]
+003
+
+[STev_07_01::command/558 CtrlChar/param/3]
+close
+
+[STev_07_01::command/558 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/558 CtrlChar/param/12]
+none
+
+[STev_07_01::command/558 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/559 SetAudio/param/1]
+se_077
+
+[STev_07_01::command/560 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/560 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/560 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/560 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/560 SetTalk/param/7]
+I see...==W== What an unexpected coincidence.==W== If you don't mind, could you tell me in detail about that meeting?
+
+[STev_07_01::command/560 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/562 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/562 CtrlChar/param/1]
+a
+
+[STev_07_01::command/562 CtrlChar/param/2]
+007
+
+[STev_07_01::command/562 CtrlChar/param/3]
+avg_emoji_attention
+
+[STev_07_01::command/562 CtrlChar/param/11]
+none
+
+[STev_07_01::command/562 CtrlChar/param/12]
+none
+
+[STev_07_01::command/562 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/565 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/565 CtrlChar/param/1]
+a
+
+[STev_07_01::command/565 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/565 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/565 CtrlChar/param/12]
+none
+
+[STev_07_01::command/565 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/568 SetMainRoleTalk/param/2]
+015
+
+[STev_07_01::command/568 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/568 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/568 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/568 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/569 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/569 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/569 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/569 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/569 SetTalk/param/7]
+No problem, I guess...
+
+[STev_07_01::command/569 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/570 SetMainRoleTalk/param/2]
+020
+
+[STev_07_01::command/570 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STev_07_01::command/570 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/570 SetMainRoleTalk/param/5]
+y
+
+[STev_07_01::command/570 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/571 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/571 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/571 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/571 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/571 SetTalk/param/7]
+That's weird. Aren't we going to talk about the commission?
+
+[STev_07_01::command/571 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/572 SetMainRoleTalk/param/3]
+none
+
+[STev_07_01::command/572 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/572 SetMainRoleTalk/param/5]
+y
+
+[STev_07_01::command/572 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/574 SetAudio/param/1]
+se_076
+
+[STev_07_01::command/575 CtrlStage/param/9]
+none
+
+[STev_07_01::command/575 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/576 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[STev_07_01::command/576 SetTrans/param/3]
+Linear
+
+[STev_07_01::command/576 SetTrans/param/8]
+default
+
+[STev_07_01::command/577 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/577 CtrlChar/param/1]
+a
+
+[STev_07_01::command/577 CtrlChar/param/2]
+003
+
+[STev_07_01::command/577 CtrlChar/param/3]
+none
+
+[STev_07_01::command/577 CtrlChar/param/11]
+none
+
+[STev_07_01::command/577 CtrlChar/param/12]
+none
+
+[STev_07_01::command/577 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/579 CtrlStage/param/9]
+none
+
+[STev_07_01::command/579 CtrlStage/param/10]
+OutCubic
+
+[STev_07_01::command/580 SetTrans/param/2]
+0
+
+[STev_07_01::command/580 SetTrans/param/3]
+OutCubic
+
+[STev_07_01::command/580 SetTrans/param/8]
+default
+
+[STev_07_01::command/581 SetMainRoleTalk/param/2]
+009
+
+[STev_07_01::command/581 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/581 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/581 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/581 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/582 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/582 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/582 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/582 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/582 SetTalk/param/7]
+Later, we went into the Monolith together and fought Stellaroids...==W== Anyway, I kinda helped Firefly make her wish come true.
+
+[STev_07_01::command/582 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/584 SetMainRoleTalk/param/2]
+003
+
+[STev_07_01::command/584 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STev_07_01::command/584 SetMainRoleTalk/param/4]
+diantou
+
+[STev_07_01::command/584 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/584 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/586 SetMainRoleTalk/param/2]
+002
+
+[STev_07_01::command/586 SetMainRoleTalk/param/3]
+none
+
+[STev_07_01::command/586 SetMainRoleTalk/param/4]
+daintou
+
+[STev_07_01::command/586 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/586 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/587 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/587 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/587 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/587 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/587 SetTalk/param/7]
+... And that's basically it.
+
+[STev_07_01::command/587 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/588 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/588 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/588 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/588 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/590 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/590 CtrlChar/param/1]
+a
+
+[STev_07_01::command/590 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/590 CtrlChar/param/11]
+diantou2
+
+[STev_07_01::command/590 CtrlChar/param/12]
+none
+
+[STev_07_01::command/590 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/591 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/591 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/591 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/591 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/591 SetTalk/param/7]
+I see. So there was a whole episode like that during the Snowish Festival...
+
+[STev_07_01::command/591 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/593 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/593 CtrlChar/param/1]
+a
+
+[STev_07_01::command/593 CtrlChar/param/2]
+008
+
+[STev_07_01::command/593 CtrlChar/param/3]
+avg_emoji_flower
+
+[STev_07_01::command/593 CtrlChar/param/11]
+none
+
+[STev_07_01::command/593 CtrlChar/param/12]
+none
+
+[STev_07_01::command/593 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/594 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/594 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/594 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/594 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/594 SetTalk/param/7]
+Heh. Then it seems I really did ask the right person for this commission.
+
+[STev_07_01::command/594 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/596 SetMainRoleTalk/param/2]
+021
+
+[STev_07_01::command/596 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_07_01::command/596 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/596 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/596 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/597 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/597 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/597 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/597 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/597 SetTalk/param/7]
+... Hm? What do you mean by that?
+
+[STev_07_01::command/597 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/598 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/598 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/598 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/598 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/600 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/600 CtrlChar/param/1]
+a
+
+[STev_07_01::command/600 CtrlChar/param/3]
+avg_emoji_happy
+
+[STev_07_01::command/600 CtrlChar/param/11]
+daintou
+
+[STev_07_01::command/600 CtrlChar/param/12]
+none
+
+[STev_07_01::command/600 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/601 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/601 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/601 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/601 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/601 SetTalk/param/7]
+I mean that, since you already have experience with her, there's clearly no one more suitable for this job than you.
+
+[STev_07_01::command/601 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/602 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/602 CtrlChar/param/1]
+a
+
+[STev_07_01::command/602 CtrlChar/param/2]
+007
+
+[STev_07_01::command/602 CtrlChar/param/3]
+none
+
+[STev_07_01::command/602 CtrlChar/param/11]
+none
+
+[STev_07_01::command/602 CtrlChar/param/12]
+none
+
+[STev_07_01::command/602 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/603 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/603 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/603 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/603 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/603 SetTalk/param/7]
+The commission is this:==W== I'd like you to look after Firefly for a while.
+
+[STev_07_01::command/603 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/605 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/605 CtrlChar/param/1]
+a
+
+[STev_07_01::command/605 CtrlChar/param/3]
+avg_emoji_star
+
+[STev_07_01::command/605 CtrlChar/param/11]
+youchupeng
+
+[STev_07_01::command/605 CtrlChar/param/12]
+none
+
+[STev_07_01::command/605 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/608 SetMainRoleTalk/param/2]
+015
+
+[STev_07_01::command/608 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STev_07_01::command/608 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/608 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/608 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/609 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/609 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/609 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/609 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/609 SetTalk/param/7]
+... That's it?
+
+[STev_07_01::command/609 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/610 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/610 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/610 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/610 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/612 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/612 CtrlChar/param/1]
+a
+
+[STev_07_01::command/612 CtrlChar/param/2]
+003
+
+[STev_07_01::command/612 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/612 CtrlChar/param/11]
+niunie1
+
+[STev_07_01::command/612 CtrlChar/param/12]
+none
+
+[STev_07_01::command/612 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/613 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/613 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/613 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/613 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/613 SetTalk/param/7]
+That's it...
+
+[STev_07_01::command/613 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/615 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/615 CtrlChar/param/1]
+a
+
+[STev_07_01::command/615 CtrlChar/param/2]
+004
+
+[STev_07_01::command/615 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STev_07_01::command/615 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/615 CtrlChar/param/12]
+none
+
+[STev_07_01::command/615 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/616 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/616 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/616 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/616 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/616 SetTalk/param/7]
+Well, it's not as simple as it sounds.
+
+[STev_07_01::command/616 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/617 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/617 CtrlChar/param/1]
+a
+
+[STev_07_01::command/617 CtrlChar/param/2]
+005
+
+[STev_07_01::command/617 CtrlChar/param/3]
+none
+
+[STev_07_01::command/617 CtrlChar/param/11]
+none
+
+[STev_07_01::command/617 CtrlChar/param/12]
+none
+
+[STev_07_01::command/617 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/618 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/618 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/618 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/618 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/618 SetTalk/param/7]
+I imagine you've already noticed to some extent that Firefly grew up in a very unusual environment.
+
+[STev_07_01::command/618 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/619 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/619 CtrlChar/param/1]
+a
+
+[STev_07_01::command/619 CtrlChar/param/2]
+009
+
+[STev_07_01::command/619 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STev_07_01::command/619 CtrlChar/param/11]
+none
+
+[STev_07_01::command/619 CtrlChar/param/12]
+none
+
+[STev_07_01::command/619 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/620 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/620 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/620 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/620 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/620 SetTalk/param/7]
+Because of that, there are many ways in which she differs from ordinary children...==W== In other words, her sense of what is normal is a little different...
+
+[STev_07_01::command/620 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/624 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/624 CtrlChar/param/1]
+a
+
+[STev_07_01::command/624 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STev_07_01::command/624 CtrlChar/param/11]
+niunie
+
+[STev_07_01::command/624 CtrlChar/param/12]
+none
+
+[STev_07_01::command/624 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/625 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/625 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/625 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/625 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/625 SetTalk/param/7]
+Getting her to behave and listen can be quite a headache—
+
+[STev_07_01::command/625 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/627 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/627 CtrlChar/param/1]
+a
+
+[STev_07_01::command/627 CtrlChar/param/2]
+005
+
+[STev_07_01::command/627 CtrlChar/param/3]
+none
+
+[STev_07_01::command/627 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/627 CtrlChar/param/12]
+none
+
+[STev_07_01::command/627 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/628 SetAudio/param/1]
+se_029
+
+[STev_07_01::command/629 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/629 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/629 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/629 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/629 SetTalk/param/7]
+And that is precisely why I'm asking this of you.==W== Since the two of you already know each other, you really are a very good fit.
+
+[STev_07_01::command/629 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/631 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/631 CtrlChar/param/1]
+a
+
+[STev_07_01::command/631 CtrlChar/param/2]
+007
+
+[STev_07_01::command/631 CtrlChar/param/3]
+avg_emoji_love
+
+[STev_07_01::command/631 CtrlChar/param/11]
+manbu2
+
+[STev_07_01::command/631 CtrlChar/param/12]
+none
+
+[STev_07_01::command/631 CtrlChar/param/13]
+OutCubic
+
+[STev_07_01::command/634 SetMainRoleTalk/param/2]
+020
+
+[STev_07_01::command/634 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STev_07_01::command/634 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/634 SetMainRoleTalk/param/5]
+y
+
+[STev_07_01::command/634 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/635 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/635 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/635 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/635 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/635 SetTalk/param/7]
+I see... If that's all the commission is, then I should be able to handle it on my own.
+
+[STev_07_01::command/635 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/637 SetMainRoleTalk/param/2]
+002
+
+[STev_07_01::command/637 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/637 SetMainRoleTalk/param/4]
+diantou
+
+[STev_07_01::command/637 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/637 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/638 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/638 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/638 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/638 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/638 SetTalk/param/7]
+Understood. I'll take the job.
+
+[STev_07_01::command/638 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/640 SetMainRoleTalk/param/2]
+003
+
+[STev_07_01::command/640 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STev_07_01::command/640 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/640 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/640 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/641 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/641 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/641 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/641 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/641 SetTalk/param/7]
+Come to think of it, Firefly once mentioned she had a mentor.==W== Would that be you?
+
+[STev_07_01::command/641 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/643 SetMainRoleTalk/param/2]
+014
+
+[STev_07_01::command/643 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STev_07_01::command/643 SetMainRoleTalk/param/4]
+diantou
+
+[STev_07_01::command/643 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/643 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/645 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/645 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/645 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/645 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/647 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/647 CtrlChar/param/1]
+a
+
+[STev_07_01::command/647 CtrlChar/param/2]
+003
+
+[STev_07_01::command/647 CtrlChar/param/3]
+none
+
+[STev_07_01::command/647 CtrlChar/param/11]
+niunie
+
+[STev_07_01::command/647 CtrlChar/param/12]
+none
+
+[STev_07_01::command/647 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/648 SetAudio/param/1]
+se_146
+
+[STev_07_01::command/649 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/649 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/649 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/649 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/649 SetTalk/param/7]
+No, that's someone else. You'll be meeting her soon enough.
+
+[STev_07_01::command/649 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/651 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/651 CtrlChar/param/1]
+a
+
+[STev_07_01::command/651 CtrlChar/param/2]
+002
+
+[STev_07_01::command/651 CtrlChar/param/3]
+none
+
+[STev_07_01::command/651 CtrlChar/param/11]
+diantou
+
+[STev_07_01::command/651 CtrlChar/param/12]
+none
+
+[STev_07_01::command/651 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/652 SetTalk/param/1]
+avg3_205
+
+[STev_07_01::command/652 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/652 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/652 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/652 SetTalk/param/7]
+I have other matters to attend to, so I'll leave Firefly in your care for now.==W== Once she's had her fill of fun, please take her back to her home in Emor.
+
+[STev_07_01::command/652 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/654 CtrlChar/param/0]
+avg3_205
+
+[STev_07_01::command/654 CtrlChar/param/1]
+a
+
+[STev_07_01::command/654 CtrlChar/param/2]
+007
+
+[STev_07_01::command/654 CtrlChar/param/3]
+none
+
+[STev_07_01::command/654 CtrlChar/param/11]
+none
+
+[STev_07_01::command/654 CtrlChar/param/12]
+none
+
+[STev_07_01::command/654 CtrlChar/param/13]
+Linear
+
+[STev_07_01::command/656 SetTrans/param/2]
+0
+
+[STev_07_01::command/656 SetTrans/param/3]
+OutCubic
+
+[STev_07_01::command/656 SetTrans/param/8]
+default
+
+[STev_07_01::command/658 SetTalk/param/1]
+0
+
+[STev_07_01::command/658 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/658 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/658 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/658 SetTalk/param/7]
+<size=50>After explaining the commission, Igna gave me Firefly's address==RT==and told me when we would next meet, then hurried off.</size>
+
+[STev_07_01::command/658 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/660 SetBg/param/1]
+agency_daylight
+
+[STev_07_01::command/660 SetBg/param/2]
+0
+
+[STev_07_01::command/660 SetBg/param/3]
+Linear
+
+[STev_07_01::command/660 SetBg/param/6]
+default
+
+[STev_07_01::command/661 SetMainRoleTalk/param/2]
+015
+
+[STev_07_01::command/661 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STev_07_01::command/661 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/661 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/661 SetMainRoleTalk/param/8]
+avg3_100
+
+[STev_07_01::command/662 SetTalk/param/1]
+avg3_100
+
+[STev_07_01::command/662 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/662 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/662 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/662 SetTalk/param/7]
+… She's a mystery, all right.
+
+[STev_07_01::command/662 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STev_07_01::command/663 SetMainRoleTalk/param/3]
+close
+
+[STev_07_01::command/663 SetMainRoleTalk/param/4]
+none
+
+[STev_07_01::command/663 SetMainRoleTalk/param/5]
+z
+
+[STev_07_01::command/663 SetMainRoleTalk/param/8]
+avg3_100
+

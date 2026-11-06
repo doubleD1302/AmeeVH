@@ -1,0 +1,30 @@
+Game/UI/Avg/AvgPanel.lua | CN
+6 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/5:K3] TRUY VẾT TĨNH TỚI UI — ui_error
+Archive: 0xa94fd112883e7802 | offset: 13945
+Chứng cứ: Nếu require cấu hình AVG thất bại, ghép đường dẫn rồi truyền tới OpenMessageBox; cùng chuỗi cũng được ghi log.
+AVG 指令配置文件未找到，路径:
+
+[0/17:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xa94fd112883e7802 | offset: 23163
+Avg加速 AvgPanel 
+
+[0/18:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xa94fd112883e7802 | offset: 23816
+当前指令 %s 尚未执行完成，在一帧里又调用了一次 AvgPanel:RUN() 接口，必须排查此严重错误！！
+
+[0/18:K15] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xa94fd112883e7802 | offset: 24025
+未找到该指令：
+
+[0/18:K20] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xa94fd112883e7802 | offset: 24079
+索引:%s指令:%s耗时:%f
+
+[0/53:K32] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xa94fd112883e7802 | offset: 39150
+Jump to AvgId:
+

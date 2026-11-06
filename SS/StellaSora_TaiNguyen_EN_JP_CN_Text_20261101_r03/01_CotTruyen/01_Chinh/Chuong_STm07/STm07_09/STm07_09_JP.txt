@@ -1,0 +1,5980 @@
+STm07_09 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1992
+
+[STm07_09::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STm07_09::command/0 SetIntro/param/1]
+第9話
+
+[STm07_09::command/0 SetIntro/param/2]
+チトセという刀
+
+[STm07_09::command/0 SetIntro/param/3]
+天穹保険の妨害工作を振り切り、星ノ塔へと向かうためのロープウェイ乗り場にたどり着いた魔王。しかしそこにも天穹保険の雇った巡遊者が待ち構えており、魔王を島に渡らせまいとロープウェイのケーブルを切断しようとしていた。
+
+[STm07_09::command/1 CtrlStage/param/9]
+none
+
+[STm07_09::command/1 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/2 SetBg/param/1]
+story_main_07_003
+
+[STm07_09::command/2 SetBg/param/2]
+0
+
+[STm07_09::command/2 SetBg/param/3]
+OutSine
+
+[STm07_09::command/2 SetBg/param/6]
+default
+
+[STm07_09::command/3 SetSceneHeading/param/0]
+11:35
+
+[STm07_09::command/3 SetSceneHeading/param/1]
+狩月
+
+[STm07_09::command/3 SetSceneHeading/param/2]
+14日
+
+[STm07_09::command/3 SetSceneHeading/param/3]
+フィーリエ：郊外
+
+[STm07_09::command/3 SetSceneHeading/param/4]
+『ロープウェイ乗り場』
+
+[STm07_09::command/4 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/4 SetBGM/param/3]
+m35
+
+[STm07_09::command/4 SetBGM/param/4]
+none
+
+[STm07_09::command/5 SetChar/param/2]
+none
+
+[STm07_09::command/5 SetChar/param/3]
+avg2_982
+
+[STm07_09::command/5 SetChar/param/4]
+a
+
+[STm07_09::command/5 SetChar/param/5]
+002
+
+[STm07_09::command/5 SetChar/param/6]
+none
+
+[STm07_09::command/6 SetChar/param/2]
+none
+
+[STm07_09::command/6 SetChar/param/3]
+avg1_112
+
+[STm07_09::command/6 SetChar/param/4]
+b
+
+[STm07_09::command/6 SetChar/param/5]
+004
+
+[STm07_09::command/6 SetChar/param/6]
+none
+
+[STm07_09::command/7 SetChar/param/2]
+none
+
+[STm07_09::command/7 SetChar/param/3]
+avg2_984
+
+[STm07_09::command/7 SetChar/param/4]
+a
+
+[STm07_09::command/7 SetChar/param/5]
+002
+
+[STm07_09::command/7 SetChar/param/6]
+none
+
+[STm07_09::command/8 SetChar/param/2]
+none
+
+[STm07_09::command/8 SetChar/param/3]
+avg2_983
+
+[STm07_09::command/8 SetChar/param/4]
+a
+
+[STm07_09::command/8 SetChar/param/5]
+002
+
+[STm07_09::command/8 SetChar/param/6]
+none
+
+[STm07_09::command/9 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/9 CtrlChar/param/1]
+b
+
+[STm07_09::command/9 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/9 CtrlChar/param/11]
+none
+
+[STm07_09::command/9 CtrlChar/param/12]
+none
+
+[STm07_09::command/9 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/10 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/10 CtrlChar/param/1]
+a
+
+[STm07_09::command/10 CtrlChar/param/3]
+none
+
+[STm07_09::command/10 CtrlChar/param/11]
+none
+
+[STm07_09::command/10 CtrlChar/param/12]
+none
+
+[STm07_09::command/10 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/12 CtrlChar/param/0]
+avg2_984
+
+[STm07_09::command/12 CtrlChar/param/1]
+a
+
+[STm07_09::command/12 CtrlChar/param/3]
+none
+
+[STm07_09::command/12 CtrlChar/param/11]
+none
+
+[STm07_09::command/12 CtrlChar/param/12]
+none
+
+[STm07_09::command/12 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/14 CtrlChar/param/0]
+avg2_983
+
+[STm07_09::command/14 CtrlChar/param/1]
+a
+
+[STm07_09::command/14 CtrlChar/param/3]
+none
+
+[STm07_09::command/14 CtrlChar/param/11]
+none
+
+[STm07_09::command/14 CtrlChar/param/12]
+none
+
+[STm07_09::command/14 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/16 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/16 CtrlChar/param/1]
+b
+
+[STm07_09::command/16 CtrlChar/param/3]
+close
+
+[STm07_09::command/16 CtrlChar/param/11]
+none
+
+[STm07_09::command/16 CtrlChar/param/12]
+none
+
+[STm07_09::command/16 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/17 SetFx/param/1]
+fx_speedline_center
+
+[STm07_09::command/18 CtrlStage/param/9]
+none
+
+[STm07_09::command/18 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/19 CtrlChar/param/0]
+avg2_984
+
+[STm07_09::command/19 CtrlChar/param/1]
+a
+
+[STm07_09::command/19 CtrlChar/param/3]
+none
+
+[STm07_09::command/19 CtrlChar/param/11]
+none
+
+[STm07_09::command/19 CtrlChar/param/12]
+none
+
+[STm07_09::command/19 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/20 CtrlChar/param/0]
+avg2_983
+
+[STm07_09::command/20 CtrlChar/param/1]
+a
+
+[STm07_09::command/20 CtrlChar/param/3]
+none
+
+[STm07_09::command/20 CtrlChar/param/11]
+none
+
+[STm07_09::command/20 CtrlChar/param/12]
+none
+
+[STm07_09::command/20 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/21 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/21 CtrlChar/param/1]
+b
+
+[STm07_09::command/21 CtrlChar/param/2]
+007
+
+[STm07_09::command/21 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_09::command/21 CtrlChar/param/11]
+jushou
+
+[STm07_09::command/21 CtrlChar/param/12]
+none
+
+[STm07_09::command/21 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/23 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/23 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/23 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/23 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/23 SetTalk/param/7]
+隙あり！！
+
+[STm07_09::command/23 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/25 SetTrans/param/2]
+0
+
+[STm07_09::command/25 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/25 SetTrans/param/8]
+default
+
+[STm07_09::command/26 SetBg/param/1]
+BG_Black
+
+[STm07_09::command/26 SetBg/param/2]
+0
+
+[STm07_09::command/26 SetBg/param/3]
+Linear
+
+[STm07_09::command/26 SetBg/param/6]
+default
+
+[STm07_09::command/27 SetTrans/param/2]
+0
+
+[STm07_09::command/27 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/27 SetTrans/param/8]
+default
+
+[STm07_09::command/28 SetAudio/param/1]
+se_220
+
+[STm07_09::command/29 SetFx/param/1]
+fx_avg_wind_blade
+
+[STm07_09::command/31 SetBg/param/1]
+story_main_07_003
+
+[STm07_09::command/31 SetBg/param/2]
+0
+
+[STm07_09::command/31 SetBg/param/3]
+OutSine
+
+[STm07_09::command/31 SetBg/param/6]
+default
+
+[STm07_09::command/32 CtrlBg/param/10]
+none
+
+[STm07_09::command/32 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/33 CtrlStage/param/9]
+none
+
+[STm07_09::command/33 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/35 SetChar/param/2]
+none
+
+[STm07_09::command/35 SetChar/param/3]
+avg2_984
+
+[STm07_09::command/35 SetChar/param/4]
+a
+
+[STm07_09::command/35 SetChar/param/5]
+008
+
+[STm07_09::command/35 SetChar/param/6]
+none
+
+[STm07_09::command/36 SetChar/param/2]
+none
+
+[STm07_09::command/36 SetChar/param/3]
+avg2_983
+
+[STm07_09::command/36 SetChar/param/4]
+a
+
+[STm07_09::command/36 SetChar/param/5]
+008
+
+[STm07_09::command/36 SetChar/param/6]
+none
+
+[STm07_09::command/37 CtrlChar/param/0]
+avg2_983
+
+[STm07_09::command/37 CtrlChar/param/1]
+a
+
+[STm07_09::command/37 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm07_09::command/37 CtrlChar/param/11]
+lengzhan
+
+[STm07_09::command/37 CtrlChar/param/12]
+none
+
+[STm07_09::command/37 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/38 CtrlChar/param/0]
+avg2_984
+
+[STm07_09::command/38 CtrlChar/param/1]
+a
+
+[STm07_09::command/38 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm07_09::command/38 CtrlChar/param/11]
+lengzhan
+
+[STm07_09::command/38 CtrlChar/param/12]
+none
+
+[STm07_09::command/38 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/39 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/39 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/39 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/40 SetTalk/param/1]
+焦る傭兵
+
+[STm07_09::command/40 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/40 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/40 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/40 SetTalk/param/7]
+ぐああっ……！？
+
+[STm07_09::command/40 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/42 PlayCharAnim/param/0]
+avg2_984
+
+[STm07_09::command/42 PlayCharAnim/param/1]
+shake_R
+
+[STm07_09::command/43 PlayCharAnim/param/0]
+avg2_983
+
+[STm07_09::command/43 PlayCharAnim/param/1]
+shake_L
+
+[STm07_09::command/45 SetAudio/param/1]
+se_110
+
+[STm07_09::command/46 CtrlChar/param/0]
+avg2_983
+
+[STm07_09::command/46 CtrlChar/param/1]
+a
+
+[STm07_09::command/46 CtrlChar/param/3]
+none
+
+[STm07_09::command/46 CtrlChar/param/11]
+none
+
+[STm07_09::command/46 CtrlChar/param/12]
+none
+
+[STm07_09::command/46 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/47 CtrlChar/param/0]
+avg2_984
+
+[STm07_09::command/47 CtrlChar/param/1]
+a
+
+[STm07_09::command/47 CtrlChar/param/3]
+none
+
+[STm07_09::command/47 CtrlChar/param/11]
+none
+
+[STm07_09::command/47 CtrlChar/param/12]
+none
+
+[STm07_09::command/47 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/48 CtrlStage/param/9]
+jushou
+
+[STm07_09::command/48 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/50 CtrlStage/param/9]
+none
+
+[STm07_09::command/50 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/51 SetChar/param/2]
+none
+
+[STm07_09::command/51 SetChar/param/3]
+avg2_982
+
+[STm07_09::command/51 SetChar/param/4]
+a
+
+[STm07_09::command/51 SetChar/param/5]
+005
+
+[STm07_09::command/51 SetChar/param/6]
+none
+
+[STm07_09::command/52 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/52 SetBGM/param/3]
+m40
+
+[STm07_09::command/52 SetBGM/param/4]
+none
+
+[STm07_09::command/53 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/53 CtrlChar/param/1]
+a
+
+[STm07_09::command/53 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm07_09::command/53 CtrlChar/param/11]
+daintou
+
+[STm07_09::command/53 CtrlChar/param/12]
+none
+
+[STm07_09::command/53 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/54 SetTalk/param/1]
+呆れた傭兵
+
+[STm07_09::command/54 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/54 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/54 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/54 SetTalk/param/7]
+くそっ、たったひとりに全員やられるなんて……！==RT==なんなんだこいつは！？
+
+[STm07_09::command/54 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/56 CtrlStage/param/9]
+none
+
+[STm07_09::command/56 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/57 SetChar/param/2]
+none
+
+[STm07_09::command/57 SetChar/param/3]
+avg1_112
+
+[STm07_09::command/57 SetChar/param/4]
+b
+
+[STm07_09::command/57 SetChar/param/5]
+007
+
+[STm07_09::command/57 SetChar/param/6]
+none
+
+[STm07_09::command/58 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/58 CtrlChar/param/1]
+b
+
+[STm07_09::command/58 CtrlChar/param/3]
+none
+
+[STm07_09::command/58 CtrlChar/param/11]
+none
+
+[STm07_09::command/58 CtrlChar/param/12]
+none
+
+[STm07_09::command/58 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/59 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/59 CtrlChar/param/1]
+b
+
+[STm07_09::command/59 CtrlChar/param/3]
+none
+
+[STm07_09::command/59 CtrlChar/param/11]
+none
+
+[STm07_09::command/59 CtrlChar/param/12]
+none
+
+[STm07_09::command/59 CtrlChar/param/13]
+OutBack
+
+[STm07_09::command/61 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/61 CtrlChar/param/1]
+b
+
+[STm07_09::command/61 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_09::command/61 CtrlChar/param/11]
+none
+
+[STm07_09::command/61 CtrlChar/param/12]
+none
+
+[STm07_09::command/61 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/62 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/62 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/62 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/62 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/62 SetTalk/param/7]
+どう？まだ続ける？
+
+[STm07_09::command/62 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/64 CtrlStage/param/9]
+none
+
+[STm07_09::command/64 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/66 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/66 CtrlChar/param/1]
+a
+
+[STm07_09::command/66 CtrlChar/param/2]
+008
+
+[STm07_09::command/66 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STm07_09::command/66 CtrlChar/param/11]
+lengzhan
+
+[STm07_09::command/66 CtrlChar/param/12]
+none
+
+[STm07_09::command/66 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/67 SetTalk/param/1]
+呆れた傭兵
+
+[STm07_09::command/67 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/67 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/67 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/67 SetTalk/param/7]
+ぐぅ……！？わ、悪かったよ！==W====RT==私たちだって、本当はロープウェイを壊しに来ただけで、==W====RT==別にあんたたちと争うつもりはなかったんだ！
+
+[STm07_09::command/67 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/69 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/69 CtrlChar/param/1]
+a
+
+[STm07_09::command/69 CtrlChar/param/2]
+005
+
+[STm07_09::command/69 CtrlChar/param/3]
+none
+
+[STm07_09::command/69 CtrlChar/param/11]
+none
+
+[STm07_09::command/69 CtrlChar/param/12]
+none
+
+[STm07_09::command/69 CtrlChar/param/13]
+OutBack
+
+[STm07_09::command/71 CtrlStage/param/9]
+Xiao
+
+[STm07_09::command/71 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/72 SetTalkShake/param/1]
+Xiao
+
+[STm07_09::command/73 SetAudio/param/1]
+se_097
+
+[STm07_09::command/76 CtrlStage/param/9]
+Zhong
+
+[STm07_09::command/76 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/77 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/77 CtrlChar/param/1]
+a
+
+[STm07_09::command/77 CtrlChar/param/3]
+none
+
+[STm07_09::command/77 CtrlChar/param/11]
+JuGong2
+
+[STm07_09::command/77 CtrlChar/param/12]
+none
+
+[STm07_09::command/77 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/78 SetAudio/param/1]
+se_352
+
+[STm07_09::command/79 SetTalkShake/param/1]
+Zhong
+
+[STm07_09::command/82 CtrlStage/param/9]
+none
+
+[STm07_09::command/82 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/84 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/84 CtrlChar/param/1]
+b
+
+[STm07_09::command/84 CtrlChar/param/2]
+005
+
+[STm07_09::command/84 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/84 CtrlChar/param/11]
+none
+
+[STm07_09::command/84 CtrlChar/param/12]
+none
+
+[STm07_09::command/84 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/85 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/85 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/85 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/85 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/85 SetTalk/param/7]
+ふーん？まあそれならそれでいいけどさ。
+
+[STm07_09::command/85 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/86 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/86 CtrlChar/param/1]
+a
+
+[STm07_09::command/86 CtrlChar/param/2]
+006
+
+[STm07_09::command/86 CtrlChar/param/3]
+none
+
+[STm07_09::command/86 CtrlChar/param/11]
+none
+
+[STm07_09::command/86 CtrlChar/param/12]
+none
+
+[STm07_09::command/86 CtrlChar/param/13]
+OutBack
+
+[STm07_09::command/87 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/87 CtrlChar/param/1]
+b
+
+[STm07_09::command/87 CtrlChar/param/3]
+close
+
+[STm07_09::command/87 CtrlChar/param/11]
+none
+
+[STm07_09::command/87 CtrlChar/param/12]
+none
+
+[STm07_09::command/87 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/89 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/89 CtrlChar/param/1]
+a
+
+[STm07_09::command/89 CtrlChar/param/3]
+none
+
+[STm07_09::command/89 CtrlChar/param/11]
+none
+
+[STm07_09::command/89 CtrlChar/param/12]
+none
+
+[STm07_09::command/89 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/90 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/90 CtrlChar/param/1]
+b
+
+[STm07_09::command/90 CtrlChar/param/2]
+006
+
+[STm07_09::command/90 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm07_09::command/90 CtrlChar/param/11]
+none
+
+[STm07_09::command/90 CtrlChar/param/12]
+none
+
+[STm07_09::command/90 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/91 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/91 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/91 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/91 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/91 SetTalk/param/7]
+でもいまロープウェイを壊されたら困るし……==W====RT==悪いけど、技術審査が終わるまでは眠っててもらうよ。
+
+[STm07_09::command/91 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/93 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/93 CtrlChar/param/1]
+b
+
+[STm07_09::command/93 CtrlChar/param/2]
+004
+
+[STm07_09::command/93 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_09::command/93 CtrlChar/param/11]
+jushou
+
+[STm07_09::command/93 CtrlChar/param/12]
+none
+
+[STm07_09::command/93 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/94 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/94 CtrlChar/param/1]
+a
+
+[STm07_09::command/94 CtrlChar/param/2]
+007
+
+[STm07_09::command/94 CtrlChar/param/3]
+none
+
+[STm07_09::command/94 CtrlChar/param/11]
+none
+
+[STm07_09::command/94 CtrlChar/param/12]
+none
+
+[STm07_09::command/94 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/96 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/96 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/96 SetBGM/param/4]
+1500ms
+
+[STm07_09::command/98 SetAudio/param/1]
+se_062
+
+[STm07_09::command/99 CtrlChar/param/0]
+avg2_982
+
+[STm07_09::command/99 CtrlChar/param/1]
+a
+
+[STm07_09::command/99 CtrlChar/param/2]
+008
+
+[STm07_09::command/99 CtrlChar/param/3]
+none
+
+[STm07_09::command/99 CtrlChar/param/11]
+none
+
+[STm07_09::command/99 CtrlChar/param/12]
+none
+
+[STm07_09::command/99 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/100 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/100 CtrlChar/param/1]
+b
+
+[STm07_09::command/100 CtrlChar/param/2]
+004
+
+[STm07_09::command/100 CtrlChar/param/3]
+none
+
+[STm07_09::command/100 CtrlChar/param/11]
+none
+
+[STm07_09::command/100 CtrlChar/param/12]
+none
+
+[STm07_09::command/100 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/102 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/102 CtrlChar/param/1]
+b
+
+[STm07_09::command/102 CtrlChar/param/3]
+none
+
+[STm07_09::command/102 CtrlChar/param/11]
+none
+
+[STm07_09::command/102 CtrlChar/param/12]
+none
+
+[STm07_09::command/102 CtrlChar/param/13]
+InBack
+
+[STm07_09::command/104 CtrlStage/param/9]
+none
+
+[STm07_09::command/104 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/105 SetFx/param/1]
+fx_speedline_center
+
+[STm07_09::command/107 SetTrans/param/2]
+0
+
+[STm07_09::command/107 SetTrans/param/3]
+OutCubic
+
+[STm07_09::command/107 SetTrans/param/8]
+default
+
+[STm07_09::command/108 CtrlStage/param/9]
+none
+
+[STm07_09::command/108 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/109 SetBg/param/1]
+BG_Black
+
+[STm07_09::command/109 SetBg/param/2]
+0
+
+[STm07_09::command/109 SetBg/param/3]
+Linear
+
+[STm07_09::command/109 SetBg/param/6]
+default
+
+[STm07_09::command/110 SetTrans/param/2]
+0
+
+[STm07_09::command/110 SetTrans/param/3]
+OutCubic
+
+[STm07_09::command/110 SetTrans/param/8]
+default
+
+[STm07_09::command/111 SetAudio/param/1]
+se_321
+
+[STm07_09::command/112 SetFx/param/1]
+fx_avg_arrow
+
+[STm07_09::command/114 SetAudio/param/1]
+se_110
+
+[STm07_09::command/116 SetBg/param/1]
+story_main_07_003
+
+[STm07_09::command/116 SetBg/param/2]
+0
+
+[STm07_09::command/116 SetBg/param/3]
+Linear
+
+[STm07_09::command/116 SetBg/param/6]
+default
+
+[STm07_09::command/117 CtrlBg/param/10]
+none
+
+[STm07_09::command/117 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/118 CtrlBg/param/10]
+none
+
+[STm07_09::command/118 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/120 SetChar/param/2]
+none
+
+[STm07_09::command/120 SetChar/param/3]
+avg3_152
+
+[STm07_09::command/120 SetChar/param/4]
+a
+
+[STm07_09::command/120 SetChar/param/5]
+004
+
+[STm07_09::command/120 SetChar/param/6]
+none
+
+[STm07_09::command/121 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/121 CtrlChar/param/1]
+a
+
+[STm07_09::command/121 CtrlChar/param/3]
+none
+
+[STm07_09::command/121 CtrlChar/param/11]
+none
+
+[STm07_09::command/121 CtrlChar/param/12]
+none
+
+[STm07_09::command/121 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/123 SetAudio/param/1]
+se_480
+
+[STm07_09::command/124 SetFx/param/1]
+fx_avg_bubble_lp
+
+[STm07_09::command/126 CtrlBg/param/10]
+none
+
+[STm07_09::command/126 CtrlBg/param/11]
+OutSine
+
+[STm07_09::command/127 CtrlStage/param/9]
+none
+
+[STm07_09::command/127 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/129 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/129 SetBGM/param/3]
+m1
+
+[STm07_09::command/129 SetBGM/param/4]
+none
+
+[STm07_09::command/130 SetChar/param/2]
+none
+
+[STm07_09::command/130 SetChar/param/3]
+avg1_112
+
+[STm07_09::command/130 SetChar/param/4]
+b
+
+[STm07_09::command/130 SetChar/param/5]
+002
+
+[STm07_09::command/130 SetChar/param/6]
+none
+
+[STm07_09::command/131 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/131 CtrlChar/param/1]
+b
+
+[STm07_09::command/131 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm07_09::command/131 CtrlChar/param/11]
+daintou
+
+[STm07_09::command/131 CtrlChar/param/12]
+none
+
+[STm07_09::command/131 CtrlChar/param/13]
+OutQuad
+
+[STm07_09::command/132 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/132 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/132 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/132 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/132 SetTalk/param/7]
+追手のほうはこれでよし――っと！==RT==ベスティナ、そっちは順調？
+
+[STm07_09::command/132 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/133 SetFx/param/1]
+fx_avg_bubble_lp
+
+[STm07_09::command/135 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/135 CtrlChar/param/1]
+a
+
+[STm07_09::command/135 CtrlChar/param/2]
+010
+
+[STm07_09::command/135 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_09::command/135 CtrlChar/param/11]
+diantou
+
+[STm07_09::command/135 CtrlChar/param/12]
+none
+
+[STm07_09::command/135 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/136 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/136 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/136 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/136 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/136 SetTalk/param/7]
+ふふふ。プリチーなわたくしは、魔力構築の試験でも常に満点でしたから。==RT==ロープウェイを動かすことくらい、なんてことありません♪
+
+[STm07_09::command/136 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/138 CtrlStage/param/9]
+none
+
+[STm07_09::command/138 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/140 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/140 CtrlChar/param/1]
+a
+
+[STm07_09::command/140 CtrlChar/param/2]
+007
+
+[STm07_09::command/140 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm07_09::command/140 CtrlChar/param/11]
+youchupeng
+
+[STm07_09::command/140 CtrlChar/param/12]
+none
+
+[STm07_09::command/140 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/141 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/141 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/141 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/142 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/142 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/142 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/142 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/142 SetTalk/param/7]
+よろしければ、望遠鏡の神器をお貸ししましょうか？==W====RT==ロープウェイの中での魔王さんとチトセさんの様子が==RT==よく見えますよ？
+
+[STm07_09::command/142 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/144 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/144 CtrlChar/param/1]
+a
+
+[STm07_09::command/144 CtrlChar/param/2]
+005
+
+[STm07_09::command/144 CtrlChar/param/3]
+avg_emoji_star
+
+[STm07_09::command/144 CtrlChar/param/11]
+jushou
+
+[STm07_09::command/144 CtrlChar/param/12]
+none
+
+[STm07_09::command/144 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/145 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/145 CtrlChar/param/1]
+b
+
+[STm07_09::command/145 CtrlChar/param/2]
+005
+
+[STm07_09::command/145 CtrlChar/param/3]
+none
+
+[STm07_09::command/145 CtrlChar/param/11]
+none
+
+[STm07_09::command/145 CtrlChar/param/12]
+none
+
+[STm07_09::command/145 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/150 SetAudio/param/1]
+se_169
+
+[STm07_09::command/151 SetTrans/param/2]
+0
+
+[STm07_09::command/151 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/151 SetTrans/param/8]
+default
+
+[STm07_09::command/152 CtrlStage/param/9]
+none
+
+[STm07_09::command/152 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/153 SetFilm/param/1]
+Linear
+
+[STm07_09::command/154 SetBg/param/1]
+story_main_07_004
+
+[STm07_09::command/154 SetBg/param/2]
+0
+
+[STm07_09::command/154 SetBg/param/3]
+Linear
+
+[STm07_09::command/154 SetBg/param/6]
+default
+
+[STm07_09::command/155 CtrlBg/param/10]
+none
+
+[STm07_09::command/155 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/157 SetTrans/param/2]
+0
+
+[STm07_09::command/157 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/157 SetTrans/param/8]
+default
+
+[STm07_09::command/158 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/158 SetBGM/param/3]
+m70
+
+[STm07_09::command/158 SetBGM/param/4]
+none
+
+[STm07_09::command/159 CtrlBg/param/10]
+none
+
+[STm07_09::command/159 CtrlBg/param/11]
+OutSine
+
+[STm07_09::command/161 SetBg/param/1]
+story_main_07_004
+
+[STm07_09::command/161 SetBg/param/2]
+0
+
+[STm07_09::command/161 SetBg/param/3]
+OutCubic
+
+[STm07_09::command/161 SetBg/param/6]
+default
+
+[STm07_09::command/162 CtrlBg/param/10]
+none
+
+[STm07_09::command/162 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/163 CtrlBg/param/10]
+none
+
+[STm07_09::command/163 CtrlBg/param/11]
+OutSine
+
+[STm07_09::command/165 SetBg/param/1]
+story_main_07_004
+
+[STm07_09::command/165 SetBg/param/2]
+0
+
+[STm07_09::command/165 SetBg/param/3]
+OutQuad
+
+[STm07_09::command/165 SetBg/param/6]
+default
+
+[STm07_09::command/166 CtrlBg/param/10]
+none
+
+[STm07_09::command/166 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/167 CtrlBg/param/10]
+none
+
+[STm07_09::command/167 CtrlBg/param/11]
+OutBack
+
+[STm07_09::command/169 SetFilm/param/1]
+OutSine
+
+[STm07_09::command/171 SetAudio/param/1]
+se_480
+
+[STm07_09::command/172 SetTrans/param/2]
+0
+
+[STm07_09::command/172 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/172 SetTrans/param/8]
+default
+
+[STm07_09::command/173 CtrlStage/param/9]
+JingTouYaoHuang
+
+[STm07_09::command/173 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/174 SetTrans/param/2]
+0
+
+[STm07_09::command/174 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/174 SetTrans/param/8]
+default
+
+[STm07_09::command/176 SetSceneHeading/param/0]
+11:35
+
+[STm07_09::command/176 SetSceneHeading/param/1]
+狩月
+
+[STm07_09::command/176 SetSceneHeading/param/2]
+14日
+
+[STm07_09::command/176 SetSceneHeading/param/3]
+フィーリエ：郊外
+
+[STm07_09::command/176 SetSceneHeading/param/4]
+『ロープウェイ内』
+
+[STm07_09::command/177 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/177 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/177 SetTalk/param/4]
+vo_STm07_09_001
+
+[STm07_09::command/177 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/177 SetTalk/param/7]
+主殿、セイナさんがすべての敵を倒し、==RT==ロープウェイ乗り場での戦闘が終了したようです。
+
+[STm07_09::command/177 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/179 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/179 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/179 SetTalk/param/4]
+vo_STm07_09_002
+
+[STm07_09::command/179 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/179 SetTalk/param/7]
+たったひとりであれだけの人数を相手にしつつ、==RT==それでいて敵の命を奪わない剣術は、まさに神業と言えましょう。
+
+[STm07_09::command/179 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/181 SetMainRoleTalk/param/2]
+002
+
+[STm07_09::command/181 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STm07_09::command/181 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/181 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/181 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/182 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/182 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/182 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/182 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/182 SetTalk/param/7]
+…………ぬ？そ、そうなのか？
+
+[STm07_09::command/182 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/183 SetMainRoleTalk/param/2]
+009
+
+[STm07_09::command/183 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STm07_09::command/183 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/183 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/183 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/184 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/184 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/184 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/184 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/184 SetTalk/param/7]
+この距離だと向こうの状況はまったく見えないのだが……==W====RT==チトセは身体能力だけでなく、目もいいのだな。
+
+[STm07_09::command/184 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/186 SetMainRoleTalk/param/2]
+014
+
+[STm07_09::command/186 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm07_09::command/186 SetMainRoleTalk/param/4]
+jushou
+
+[STm07_09::command/186 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/186 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/188 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/188 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/188 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/188 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/190 SetChar/param/2]
+none
+
+[STm07_09::command/190 SetChar/param/3]
+avg1_103
+
+[STm07_09::command/190 SetChar/param/4]
+a
+
+[STm07_09::command/190 SetChar/param/5]
+002
+
+[STm07_09::command/190 SetChar/param/6]
+avg_emoji_shy
+
+[STm07_09::command/192 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/192 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/192 SetTalk/param/4]
+vo_STm07_09_003
+
+[STm07_09::command/192 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/192 SetTalk/param/7]
+恐縮です。持ち手に迫る敵をいち早く発見し、対応する。==RT==それこそが刀にとってあるべき姿である――
+
+[STm07_09::command/192 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/193 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/193 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/193 SetTalk/param/4]
+vo_STm07_09_004
+
+[STm07_09::command/193 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/193 SetTalk/param/7]
+幼い頃より、チトセはそう教えられてきましたので。
+
+[STm07_09::command/193 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/195 SetMainRoleTalk/param/2]
+009
+
+[STm07_09::command/195 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STm07_09::command/195 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/195 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/195 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/196 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/196 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/196 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/196 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/196 SetTalk/param/7]
+なるほどな。とにかくみんなが無事でよかった――==RT==
+
+[STm07_09::command/196 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/197 SetMainRoleTalk/param/3]
+none
+
+[STm07_09::command/197 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/197 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/197 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/199 CtrlBg/param/10]
+none
+
+[STm07_09::command/199 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/201 SetFilm/param/1]
+OutCubic
+
+[STm07_09::command/202 SetFx/param/1]
+fx_speedline_center
+
+[STm07_09::command/204 SetMainRoleTalk/param/2]
+025
+
+[STm07_09::command/204 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STm07_09::command/204 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/204 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/204 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/205 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/205 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/205 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/205 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/205 SetTalk/param/7]
+ってチトセ、その手はどうしたんだ！？==RT==血が出ているぞ！
+
+[STm07_09::command/205 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/206 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/206 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/206 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/206 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/208 SetFilm/param/1]
+OutQuad
+
+[STm07_09::command/209 CtrlBg/param/10]
+none
+
+[STm07_09::command/209 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/211 CtrlChar/param/0]
+avg1_103
+
+[STm07_09::command/211 CtrlChar/param/1]
+a
+
+[STm07_09::command/211 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/211 CtrlChar/param/11]
+none
+
+[STm07_09::command/211 CtrlChar/param/12]
+none
+
+[STm07_09::command/211 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/212 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/212 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/212 SetTalk/param/4]
+vo_STm07_09_005
+
+[STm07_09::command/212 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/212 SetTalk/param/7]
+はい。先ほど千切れたワイヤーから主殿をお護りする際、==RT==この手で受け止めましたので。
+
+[STm07_09::command/212 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/213 CtrlChar/param/0]
+avg1_103
+
+[STm07_09::command/213 CtrlChar/param/1]
+a
+
+[STm07_09::command/213 CtrlChar/param/3]
+close
+
+[STm07_09::command/213 CtrlChar/param/11]
+none
+
+[STm07_09::command/213 CtrlChar/param/12]
+none
+
+[STm07_09::command/213 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/215 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/215 SetTalk/param/4]
+vo_STm07_09_006
+
+[STm07_09::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/215 SetTalk/param/7]
+ですがご安心ください。この程度の刃こぼれであれば、今後の戦闘にも支障はありません。==RT==どうぞご遠慮なく、チトセを――
+
+[STm07_09::command/215 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/217 CtrlBg/param/10]
+none
+
+[STm07_09::command/217 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/219 SetMainRoleTalk/param/2]
+026
+
+[STm07_09::command/219 SetMainRoleTalk/param/3]
+avg_emoji_resentful
+
+[STm07_09::command/219 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/219 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/219 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/220 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/220 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/220 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/220 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/220 SetTalk/param/7]
+戦闘の心配をしてるわけではない！==RT==君の心配をしているんだ！
+
+[STm07_09::command/220 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/222 SetMainRoleTalk/param/2]
+010
+
+[STm07_09::command/222 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STm07_09::command/222 SetMainRoleTalk/param/4]
+lengzhan
+
+[STm07_09::command/222 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/222 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/223 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/223 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/223 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/223 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/223 SetTalk/param/7]
+まったく、私を庇ってくれるのはありがたいが、==RT==頼むからもっと自分のことも大切にしてくれ……
+
+[STm07_09::command/223 SetTalk/param/8]
+まったく、僕を庇ってくれるのはありがたいが、==RT==頼むからもっと自分のことも大切にしてくれ……
+
+[STm07_09::command/224 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/224 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/224 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/224 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/225 SetChar/param/2]
+none
+
+[STm07_09::command/225 SetChar/param/3]
+avg1_144
+
+[STm07_09::command/225 SetChar/param/4]
+d
+
+[STm07_09::command/225 SetChar/param/5]
+008
+
+[STm07_09::command/225 SetChar/param/6]
+none
+
+[STm07_09::command/226 SetBg/param/1]
+wild_tower_daylight
+
+[STm07_09::command/226 SetBg/param/2]
+0
+
+[STm07_09::command/226 SetBg/param/3]
+Linear
+
+[STm07_09::command/226 SetBg/param/6]
+default
+
+[STm07_09::command/227 CtrlBg/param/10]
+none
+
+[STm07_09::command/227 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/229 SetBg/param/1]
+BG_Black
+
+[STm07_09::command/229 SetBg/param/2]
+0
+
+[STm07_09::command/229 SetBg/param/3]
+OutCubic
+
+[STm07_09::command/229 SetBg/param/6]
+default
+
+[STm07_09::command/231 SetStage/param/2]
+Linear
+
+[STm07_09::command/232 CtrlBg/param/10]
+none
+
+[STm07_09::command/232 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/233 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/233 CtrlChar/param/1]
+d
+
+[STm07_09::command/233 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STm07_09::command/233 CtrlChar/param/11]
+lengzhan
+
+[STm07_09::command/233 CtrlChar/param/12]
+none
+
+[STm07_09::command/233 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/234 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/234 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/234 SetTalk/param/4]
+vo_STm07_09_007
+
+[STm07_09::command/234 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/234 SetTalk/param/7]
+あっ…………御意。
+
+[STm07_09::command/234 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/236 SetMainRoleTalk/param/2]
+020
+
+[STm07_09::command/236 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm07_09::command/236 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/236 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/236 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/237 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/237 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/237 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/237 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/237 SetTalk/param/7]
+とにかく手当しよう。==RT==なんでも入っているチトセの布団の中に、==RT==包帯と傷薬は入っていないのか？
+
+[STm07_09::command/237 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/238 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/238 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/238 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/238 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/240 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/240 CtrlChar/param/1]
+c
+
+[STm07_09::command/240 CtrlChar/param/2]
+010
+
+[STm07_09::command/240 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm07_09::command/240 CtrlChar/param/11]
+lengzhan
+
+[STm07_09::command/240 CtrlChar/param/12]
+none
+
+[STm07_09::command/240 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/241 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/241 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/241 SetTalk/param/4]
+vo_STm07_09_008
+
+[STm07_09::command/241 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/241 SetTalk/param/7]
+ご配慮いただき、ありがとうございます。==RT==とはいえ柄に巻くための包帯は、先日の修行で使い切ってしまっており……
+
+[STm07_09::command/241 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/243 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/243 CtrlChar/param/1]
+c
+
+[STm07_09::command/243 CtrlChar/param/2]
+003
+
+[STm07_09::command/243 CtrlChar/param/3]
+none
+
+[STm07_09::command/243 CtrlChar/param/11]
+diantou
+
+[STm07_09::command/243 CtrlChar/param/12]
+none
+
+[STm07_09::command/243 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/244 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/244 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/244 SetTalk/param/4]
+vo_STm07_09_009
+
+[STm07_09::command/244 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/244 SetTalk/param/7]
+しかしご心配にはおよびません。そもそも刀とは、本来血など流さぬもの。==RT==ゆえにこうして血を流すのは、チトセの修行が足りていない証拠ですから。
+
+[STm07_09::command/244 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/246 SetMainRoleTalk/param/2]
+002
+
+[STm07_09::command/246 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/246 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/246 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/246 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/247 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/247 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/247 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/247 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/247 SetTalk/param/7]
+チトセ。私はチトセ自身の体をどうしろと言った？
+
+[STm07_09::command/247 SetTalk/param/8]
+チトセ。僕はチトセ自身の体をどうしろと言った？
+
+[STm07_09::command/248 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/248 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/248 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/248 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/250 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/250 CtrlChar/param/1]
+c
+
+[STm07_09::command/250 CtrlChar/param/2]
+008
+
+[STm07_09::command/250 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_09::command/250 CtrlChar/param/11]
+jushou
+
+[STm07_09::command/250 CtrlChar/param/12]
+none
+
+[STm07_09::command/250 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/251 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/251 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/251 SetTalk/param/4]
+vo_STm07_09_010
+
+[STm07_09::command/251 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/251 SetTalk/param/7]
+あ……た、大切にするようにと……
+
+[STm07_09::command/251 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/254 SetStage/param/2]
+OutSine
+
+[STm07_09::command/256 SetBg/param/1]
+story_main_07_004
+
+[STm07_09::command/256 SetBg/param/2]
+0
+
+[STm07_09::command/256 SetBg/param/3]
+OutSine
+
+[STm07_09::command/256 SetBg/param/6]
+default
+
+[STm07_09::command/257 CtrlBg/param/10]
+none
+
+[STm07_09::command/257 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/258 CtrlChar/param/0]
+avg1_103
+
+[STm07_09::command/258 CtrlChar/param/1]
+a
+
+[STm07_09::command/258 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/258 CtrlChar/param/11]
+none
+
+[STm07_09::command/258 CtrlChar/param/12]
+none
+
+[STm07_09::command/258 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/260 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/260 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/260 SetTalk/param/4]
+vo_STm07_09_011
+
+[STm07_09::command/260 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/260 SetTalk/param/7]
+申し訳ございません。==RT==主殿のお役に立ちたいという気持ちが逸ってしまい……
+
+[STm07_09::command/260 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/261 CtrlChar/param/0]
+avg1_103
+
+[STm07_09::command/261 CtrlChar/param/1]
+a
+
+[STm07_09::command/261 CtrlChar/param/3]
+close
+
+[STm07_09::command/261 CtrlChar/param/11]
+none
+
+[STm07_09::command/261 CtrlChar/param/12]
+none
+
+[STm07_09::command/261 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/263 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/263 CtrlChar/param/1]
+a
+
+[STm07_09::command/263 CtrlChar/param/3]
+none
+
+[STm07_09::command/263 CtrlChar/param/11]
+none
+
+[STm07_09::command/263 CtrlChar/param/12]
+none
+
+[STm07_09::command/263 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/264 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/264 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/264 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/265 SetFilm/param/1]
+OutCubic
+
+[STm07_09::command/266 CtrlBg/param/10]
+none
+
+[STm07_09::command/266 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/268 SetChoiceBegin/param/0]
+a_67
+
+[STm07_09::command/268 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/6]
+a
+
+[STm07_09::command/268 SetChoiceBegin/param/7]
+002
+
+[STm07_09::command/268 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/12/0]
+（自分の服の裾を引き裂く）
+
+[STm07_09::command/268 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/268 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/269 SetChoiceJumpTo/param/0]
+a_67
+
+[STm07_09::command/269 SetChoiceJumpTo/param/1]
+1
+
+[STm07_09::command/270 SetChoiceRollover/param/0]
+a_67
+
+[STm07_09::command/271 SetChoiceEnd/param/0]
+a_67
+
+[STm07_09::command/273 SetAudio/param/1]
+se_088
+
+[STm07_09::command/274 SetBg/param/1]
+BG_Black
+
+[STm07_09::command/274 SetBg/param/2]
+0
+
+[STm07_09::command/274 SetBg/param/3]
+OutCubic
+
+[STm07_09::command/274 SetBg/param/6]
+default
+
+[STm07_09::command/276 CtrlStage/param/9]
+stop
+
+[STm07_09::command/276 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/277 SetAudio/param/1]
+se_070
+
+[STm07_09::command/278 SetCharHead/param/5]
+avg1_144
+
+[STm07_09::command/278 SetCharHead/param/6]
+d
+
+[STm07_09::command/278 SetCharHead/param/7]
+008
+
+[STm07_09::command/278 SetCharHead/param/8]
+none
+
+[STm07_09::command/279 SetTalkShake/param/1]
+Zhong
+
+[STm07_09::command/280 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/280 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/280 SetTalk/param/4]
+vo_STm07_09_012
+
+[STm07_09::command/280 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/280 SetTalk/param/7]
+あ、あの……主殿？==RT==いったいなにをなさっているのですか……
+
+[STm07_09::command/280 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/281 SetCharHead/param/5]
+avg1_144
+
+[STm07_09::command/281 SetCharHead/param/6]
+a
+
+[STm07_09::command/281 SetCharHead/param/7]
+002
+
+[STm07_09::command/281 SetCharHead/param/8]
+none
+
+[STm07_09::command/283 SetChoiceBegin/param/0]
+a_68
+
+[STm07_09::command/283 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/6]
+a
+
+[STm07_09::command/283 SetChoiceBegin/param/7]
+002
+
+[STm07_09::command/283 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/12/0]
+手をかして
+
+[STm07_09::command/283 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/283 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/284 SetChoiceJumpTo/param/0]
+a_68
+
+[STm07_09::command/284 SetChoiceJumpTo/param/1]
+1
+
+[STm07_09::command/285 SetChoiceRollover/param/0]
+a_68
+
+[STm07_09::command/286 SetChoiceEnd/param/0]
+a_68
+
+[STm07_09::command/288 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/288 SetBGM/param/3]
+m58
+
+[STm07_09::command/288 SetBGM/param/4]
+none
+
+[STm07_09::command/289 SetBg/param/1]
+story_main_07_005_FP
+
+[STm07_09::command/289 SetBg/param/2]
+0
+
+[STm07_09::command/289 SetBg/param/3]
+OutQuad
+
+[STm07_09::command/289 SetBg/param/6]
+default
+
+[STm07_09::command/290 CtrlBg/param/10]
+none
+
+[STm07_09::command/290 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/291 CtrlBg/param/10]
+none
+
+[STm07_09::command/291 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/292 SetFilm/param/1]
+OutCubic
+
+[STm07_09::command/294 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/294 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/294 SetTalk/param/4]
+vo_STm07_09_013
+
+[STm07_09::command/294 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/294 SetTalk/param/7]
+は、はい。こうでよろしいでしょうか？
+
+[STm07_09::command/294 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/296 SetTalk/param/1]
+1
+
+[STm07_09::command/296 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/296 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/296 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/296 SetTalk/param/7]
+ひとまず止血だけでもしておこう。==RT==星ノ塔に着いたら、願掛けで消毒液と包帯を用意するから、それまで我慢してくれ。
+
+[STm07_09::command/296 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/298 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/298 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/298 SetTalk/param/4]
+vo_STm07_09_014
+
+[STm07_09::command/298 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/298 SetTalk/param/7]
+ですが主殿のお召し物が、チトセのせいで台無しに……==RT==そこまでしていただくわけにはいきません。
+
+[STm07_09::command/298 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/0]
+b_20
+
+[STm07_09::command/300 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/6]
+a
+
+[STm07_09::command/300 SetChoiceBegin/param/7]
+002
+
+[STm07_09::command/300 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/12/0]
+チトセ？
+
+[STm07_09::command/300 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/300 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/301 SetChoiceJumpTo/param/0]
+b_20
+
+[STm07_09::command/301 SetChoiceJumpTo/param/1]
+1
+
+[STm07_09::command/302 SetChoiceRollover/param/0]
+b_20
+
+[STm07_09::command/303 SetChoiceEnd/param/0]
+b_20
+
+[STm07_09::command/305 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/305 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/305 SetTalk/param/4]
+vo_STm07_09_015
+
+[STm07_09::command/305 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/305 SetTalk/param/7]
+は、はい……！
+
+[STm07_09::command/305 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/307 SetTalk/param/1]
+1
+
+[STm07_09::command/307 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/307 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/307 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/307 SetTalk/param/7]
+君が自分自身を、私を護るための刀だと思うことは否定しない。==RT==むしろ感謝しているくらいさ。
+
+[STm07_09::command/307 SetTalk/param/8]
+君が自分自身を、僕を護るための刀だと思うことは否定しない。==RT==むしろ感謝しているくらいさ。
+
+[STm07_09::command/308 SetTalk/param/1]
+1
+
+[STm07_09::command/308 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/308 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/308 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/308 SetTalk/param/7]
+だが私にとって、チトセはただの刀ではない。==RT==空白旅団と同じで、大切な仲間のひとりなんだ。
+
+[STm07_09::command/308 SetTalk/param/8]
+だが僕にとって、チトセはただの刀ではない。==RT==空白旅団と同じで、大切な仲間のひとりなんだ。
+
+[STm07_09::command/310 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/310 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/310 SetTalk/param/4]
+vo_STm07_09_016
+
+[STm07_09::command/310 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/310 SetTalk/param/7]
+チトセは刀ではなく、主殿の仲間……
+
+[STm07_09::command/310 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/312 SetTalk/param/1]
+1
+
+[STm07_09::command/312 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/312 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/312 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/312 SetTalk/param/7]
+勘違いしないでくれよ？==RT==刀という部分を否定しているわけではないからな？==RT==――よし、巻き終わった。どうだ？
+
+[STm07_09::command/312 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/314 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/314 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/314 SetTalk/param/4]
+vo_STm07_09_017
+
+[STm07_09::command/314 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/314 SetTalk/param/7]
+はい。動きに支障もなく、とても綺麗です。
+
+[STm07_09::command/314 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/316 SetTalk/param/1]
+1
+
+[STm07_09::command/316 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/316 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/316 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/316 SetTalk/param/7]
+そうだろうそうだろう。==RT==巡遊者をやっている以上、ケガが絶えないからね。==RT==自然と覚えたんだ。
+
+[STm07_09::command/316 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/317 SetTalk/param/1]
+1
+
+[STm07_09::command/317 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/317 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/317 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/317 SetTalk/param/7]
+なにより、持ち手が自分の刀を大切にすることはなにも間違っていないだろう？
+
+[STm07_09::command/317 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/319 SetBg/param/1]
+story_main_07_006
+
+[STm07_09::command/319 SetBg/param/2]
+17
+
+[STm07_09::command/319 SetBg/param/3]
+OutSine
+
+[STm07_09::command/319 SetBg/param/6]
+default
+
+[STm07_09::command/320 CtrlBg/param/10]
+none
+
+[STm07_09::command/320 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/322 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/322 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/322 SetTalk/param/4]
+vo_STm07_09_018
+
+[STm07_09::command/322 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/322 SetTalk/param/7]
+それは……おっしゃるとおりです。それにとても不思議なのですが……==RT==主殿に布を巻いていただいた部分から、ほんのりと温もりを感じ、とても心地よいです。
+
+[STm07_09::command/322 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/323 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/323 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/323 SetTalk/param/4]
+vo_STm07_09_019
+
+[STm07_09::command/323 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/323 SetTalk/param/7]
+これが……主殿の魔法なのでしょうか？
+
+[STm07_09::command/323 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/325 SetMainRoleTalk/param/2]
+020
+
+[STm07_09::command/325 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/325 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/325 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/325 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/326 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/326 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/326 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/326 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/326 SetTalk/param/7]
+いや、チトセも知ってのとおり、==RT==私は魔法が使えないからね。==RT==それはきっと気のせいだよ。
+
+[STm07_09::command/326 SetTalk/param/8]
+いや、チトセも知ってのとおり、==RT==僕は魔法が使えないからね。==RT==それはきっと気のせいだよ。
+
+[STm07_09::command/328 SetMainRoleTalk/param/2]
+002
+
+[STm07_09::command/328 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STm07_09::command/328 SetMainRoleTalk/param/4]
+daintou
+
+[STm07_09::command/328 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/328 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/329 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/329 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/329 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/329 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/329 SetTalk/param/7]
+とにかく傷自体は浅いようだし、==RT==無茶をしなければすぐに良くなるだろう。
+
+[STm07_09::command/329 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/331 SetMainRoleTalk/param/2]
+021
+
+[STm07_09::command/331 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm07_09::command/331 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/331 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/331 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/332 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/332 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/332 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/333 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/333 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/333 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/333 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/333 SetTalk/param/7]
+……とは言ったものの、==RT==チトセはすぐに無茶をするからな。==RT==そもそもどうしてそこまで自分を追い込むんだ？
+
+[STm07_09::command/333 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/334 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/334 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/334 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/334 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/336 SetBg/param/1]
+BG_Black
+
+[STm07_09::command/336 SetBg/param/2]
+0
+
+[STm07_09::command/336 SetBg/param/3]
+OutCubic
+
+[STm07_09::command/336 SetBg/param/6]
+default
+
+[STm07_09::command/337 CtrlBg/param/10]
+none
+
+[STm07_09::command/337 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/339 SetChar/param/2]
+none
+
+[STm07_09::command/339 SetChar/param/3]
+avg1_144
+
+[STm07_09::command/339 SetChar/param/4]
+c
+
+[STm07_09::command/339 SetChar/param/5]
+003
+
+[STm07_09::command/339 SetChar/param/6]
+none
+
+[STm07_09::command/340 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/340 CtrlChar/param/1]
+c
+
+[STm07_09::command/340 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/340 CtrlChar/param/11]
+none
+
+[STm07_09::command/340 CtrlChar/param/12]
+none
+
+[STm07_09::command/340 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/341 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/341 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/341 SetTalk/param/4]
+vo_STm07_09_020
+
+[STm07_09::command/341 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/341 SetTalk/param/7]
+それはもちろん、立派な刀となることが、==RT==チトセに与えられた定めであり存在意義だからです。
+
+[STm07_09::command/341 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/343 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/343 CtrlChar/param/1]
+c
+
+[STm07_09::command/343 CtrlChar/param/3]
+close
+
+[STm07_09::command/343 CtrlChar/param/11]
+none
+
+[STm07_09::command/343 CtrlChar/param/12]
+none
+
+[STm07_09::command/343 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/345 SetTalk/param/1]
+0
+
+[STm07_09::command/345 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/345 SetTalk/param/4]
+vo_STm07_09_021
+
+[STm07_09::command/345 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/345 SetTalk/param/7]
+主殿にお聞かせするのははじめてですが……==RT==チトセは物心ついた頃から、師匠と両親との4人で暮らしておりました。
+
+[STm07_09::command/345 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/347 SetAudio/param/1]
+se_169
+
+[STm07_09::command/348 SetTrans/param/2]
+0
+
+[STm07_09::command/348 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/348 SetTrans/param/8]
+default
+
+[STm07_09::command/349 CtrlStage/param/9]
+none
+
+[STm07_09::command/349 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/350 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm07_09::command/351 SetFilm/param/1]
+Linear
+
+[STm07_09::command/352 SetBg/param/1]
+tanikaze_court_daylight
+
+[STm07_09::command/352 SetBg/param/2]
+0
+
+[STm07_09::command/352 SetBg/param/3]
+Linear
+
+[STm07_09::command/352 SetBg/param/6]
+default
+
+[STm07_09::command/354 CtrlBg/param/10]
+none
+
+[STm07_09::command/354 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/355 SetTrans/param/2]
+0
+
+[STm07_09::command/355 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/355 SetTrans/param/8]
+default
+
+[STm07_09::command/356 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/356 SetBGM/param/3]
+m52
+
+[STm07_09::command/356 SetBGM/param/4]
+none
+
+[STm07_09::command/357 CtrlBg/param/10]
+none
+
+[STm07_09::command/357 CtrlBg/param/11]
+OutSine
+
+[STm07_09::command/359 SetTalk/param/1]
+優しい声
+
+[STm07_09::command/359 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/359 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/359 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/359 SetTalk/param/7]
+チトセ、私たちはいつでもあなたを見守っているわ。
+
+[STm07_09::command/359 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/361 SetTalk/param/1]
+優しい声
+
+[STm07_09::command/361 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/361 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/361 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/361 SetTalk/param/7]
+だから師匠の教えに従って、立派な刀になるのよ。
+
+[STm07_09::command/361 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/363 CtrlStage/param/9]
+none
+
+[STm07_09::command/363 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/364 SetFilm/param/1]
+OutCubic
+
+[STm07_09::command/366 SetBg/param/1]
+tanikaze_court_daylight
+
+[STm07_09::command/366 SetBg/param/2]
+0
+
+[STm07_09::command/366 SetBg/param/3]
+Linear
+
+[STm07_09::command/366 SetBg/param/6]
+default
+
+[STm07_09::command/367 CtrlBg/param/10]
+none
+
+[STm07_09::command/367 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/369 SetChar/param/2]
+none
+
+[STm07_09::command/369 SetChar/param/3]
+avg1_144
+
+[STm07_09::command/369 SetChar/param/4]
+b
+
+[STm07_09::command/369 SetChar/param/5]
+005
+
+[STm07_09::command/369 SetChar/param/6]
+none
+
+[STm07_09::command/370 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/370 CtrlChar/param/1]
+b
+
+[STm07_09::command/370 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/370 CtrlChar/param/11]
+none
+
+[STm07_09::command/370 CtrlChar/param/12]
+none
+
+[STm07_09::command/370 CtrlChar/param/13]
+OutQuad
+
+[STm07_09::command/371 CtrlBg/param/10]
+none
+
+[STm07_09::command/371 CtrlBg/param/11]
+OutQuad
+
+[STm07_09::command/373 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/373 CtrlChar/param/1]
+b
+
+[STm07_09::command/373 CtrlChar/param/3]
+close
+
+[STm07_09::command/373 CtrlChar/param/11]
+none
+
+[STm07_09::command/373 CtrlChar/param/12]
+none
+
+[STm07_09::command/373 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/374 SetChar/param/2]
+none
+
+[STm07_09::command/374 SetChar/param/3]
+avg3_1242
+
+[STm07_09::command/374 SetChar/param/4]
+d
+
+[STm07_09::command/374 SetChar/param/5]
+002
+
+[STm07_09::command/374 SetChar/param/6]
+none
+
+[STm07_09::command/375 CtrlChar/param/0]
+avg3_1242
+
+[STm07_09::command/375 CtrlChar/param/1]
+d
+
+[STm07_09::command/375 CtrlChar/param/3]
+none
+
+[STm07_09::command/375 CtrlChar/param/11]
+none
+
+[STm07_09::command/375 CtrlChar/param/12]
+none
+
+[STm07_09::command/375 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/377 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/377 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/377 SetTalk/param/4]
+vo_STm07_09_022
+
+[STm07_09::command/377 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/377 SetTalk/param/7]
+そのような両親と師匠の言葉に導かれ、チトセは鍛錬を重ねてきたのです。
+
+[STm07_09::command/377 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/378 CtrlChar/param/0]
+avg3_1242
+
+[STm07_09::command/378 CtrlChar/param/1]
+d
+
+[STm07_09::command/378 CtrlChar/param/3]
+close
+
+[STm07_09::command/378 CtrlChar/param/11]
+none
+
+[STm07_09::command/378 CtrlChar/param/12]
+none
+
+[STm07_09::command/378 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/380 SetChar/param/2]
+none
+
+[STm07_09::command/380 SetChar/param/3]
+avg3_100
+
+[STm07_09::command/380 SetChar/param/4]
+c
+
+[STm07_09::command/380 SetChar/param/5]
+002
+
+[STm07_09::command/380 SetChar/param/6]
+none
+
+[STm07_09::command/381 CtrlChar/param/0]
+avg3_100
+
+[STm07_09::command/381 CtrlChar/param/1]
+c
+
+[STm07_09::command/381 CtrlChar/param/3]
+none
+
+[STm07_09::command/381 CtrlChar/param/11]
+none
+
+[STm07_09::command/381 CtrlChar/param/12]
+none
+
+[STm07_09::command/381 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/383 CtrlChar/param/0]
+avg3_100
+
+[STm07_09::command/383 CtrlChar/param/1]
+c
+
+[STm07_09::command/383 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_09::command/383 CtrlChar/param/11]
+none
+
+[STm07_09::command/383 CtrlChar/param/12]
+none
+
+[STm07_09::command/383 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/385 SetTalk/param/1]
+1
+
+[STm07_09::command/385 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/385 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/385 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/385 SetTalk/param/7]
+……ふむ、チトセの両親と師匠か。==RT==いったいどんな人だったんだ？
+
+[STm07_09::command/385 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/387 CtrlChar/param/0]
+avg3_100
+
+[STm07_09::command/387 CtrlChar/param/1]
+c
+
+[STm07_09::command/387 CtrlChar/param/3]
+none
+
+[STm07_09::command/387 CtrlChar/param/11]
+none
+
+[STm07_09::command/387 CtrlChar/param/12]
+none
+
+[STm07_09::command/387 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/388 CtrlChar/param/0]
+avg3_1242
+
+[STm07_09::command/388 CtrlChar/param/1]
+d
+
+[STm07_09::command/388 CtrlChar/param/3]
+none
+
+[STm07_09::command/388 CtrlChar/param/11]
+none
+
+[STm07_09::command/388 CtrlChar/param/12]
+none
+
+[STm07_09::command/388 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/389 CtrlStage/param/9]
+none
+
+[STm07_09::command/389 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/390 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm07_09::command/391 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/391 CtrlChar/param/1]
+b
+
+[STm07_09::command/391 CtrlChar/param/2]
+008
+
+[STm07_09::command/391 CtrlChar/param/3]
+none
+
+[STm07_09::command/391 CtrlChar/param/11]
+none
+
+[STm07_09::command/391 CtrlChar/param/12]
+none
+
+[STm07_09::command/391 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/393 SetBg/param/1]
+mood_3
+
+[STm07_09::command/393 SetBg/param/2]
+0
+
+[STm07_09::command/393 SetBg/param/3]
+Linear
+
+[STm07_09::command/393 SetBg/param/6]
+default
+
+[STm07_09::command/394 CtrlBg/param/10]
+none
+
+[STm07_09::command/394 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/395 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/395 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/395 SetTalk/param/4]
+vo_STm07_09_023
+
+[STm07_09::command/395 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/395 SetTalk/param/7]
+どんな……？==RT==チトセは<r=・>人</r><r=・>だ</r><r=・>っ</r><r=・>た</r><r=・>頃</r>の師匠や両親を見たことがありません。
+
+[STm07_09::command/395 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/396 CtrlChar/param/0]
+avg3_100
+
+[STm07_09::command/396 CtrlChar/param/1]
+c
+
+[STm07_09::command/396 CtrlChar/param/3]
+none
+
+[STm07_09::command/396 CtrlChar/param/11]
+none
+
+[STm07_09::command/396 CtrlChar/param/12]
+none
+
+[STm07_09::command/396 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/397 CtrlChar/param/0]
+avg3_1242
+
+[STm07_09::command/397 CtrlChar/param/1]
+d
+
+[STm07_09::command/397 CtrlChar/param/3]
+none
+
+[STm07_09::command/397 CtrlChar/param/11]
+none
+
+[STm07_09::command/397 CtrlChar/param/12]
+none
+
+[STm07_09::command/397 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/398 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/398 CtrlChar/param/1]
+b
+
+[STm07_09::command/398 CtrlChar/param/2]
+003
+
+[STm07_09::command/398 CtrlChar/param/3]
+none
+
+[STm07_09::command/398 CtrlChar/param/11]
+none
+
+[STm07_09::command/398 CtrlChar/param/12]
+none
+
+[STm07_09::command/398 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/399 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/399 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/399 SetTalk/param/4]
+vo_STm07_09_024
+
+[STm07_09::command/399 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/399 SetTalk/param/7]
+両親と師匠という存在を認識したときには、==RT==すでに立派な刀へとその身を変えたあとでしたから。
+
+[STm07_09::command/399 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/401 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/401 CtrlChar/param/1]
+b
+
+[STm07_09::command/401 CtrlChar/param/3]
+none
+
+[STm07_09::command/401 CtrlChar/param/11]
+none
+
+[STm07_09::command/401 CtrlChar/param/12]
+none
+
+[STm07_09::command/401 CtrlChar/param/13]
+OutQuad
+
+[STm07_09::command/403 CtrlStage/param/9]
+none
+
+[STm07_09::command/403 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/405 SetChar/param/2]
+none
+
+[STm07_09::command/405 SetChar/param/3]
+avg3_1242
+
+[STm07_09::command/405 SetChar/param/4]
+a
+
+[STm07_09::command/405 SetChar/param/5]
+003
+
+[STm07_09::command/405 SetChar/param/6]
+none
+
+[STm07_09::command/406 CtrlChar/param/0]
+avg3_1242
+
+[STm07_09::command/406 CtrlChar/param/1]
+a
+
+[STm07_09::command/406 CtrlChar/param/3]
+none
+
+[STm07_09::command/406 CtrlChar/param/11]
+none
+
+[STm07_09::command/406 CtrlChar/param/12]
+none
+
+[STm07_09::command/406 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/408 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/408 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/408 SetTalk/param/4]
+vo_STm07_09_025
+
+[STm07_09::command/408 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/408 SetTalk/param/7]
+ですがそれこそ、チトセの一族の定め。==RT==神をも散らす刀となりて、修羅を斬る――ということなのでしょう。
+
+[STm07_09::command/408 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/410 CtrlChar/param/0]
+avg3_1242
+
+[STm07_09::command/410 CtrlChar/param/1]
+a
+
+[STm07_09::command/410 CtrlChar/param/3]
+none
+
+[STm07_09::command/410 CtrlChar/param/11]
+none
+
+[STm07_09::command/410 CtrlChar/param/12]
+none
+
+[STm07_09::command/410 CtrlChar/param/13]
+OutQuad
+
+[STm07_09::command/411 CtrlStage/param/9]
+none
+
+[STm07_09::command/411 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/412 SetBg/param/1]
+mood_4
+
+[STm07_09::command/412 SetBg/param/2]
+0
+
+[STm07_09::command/412 SetBg/param/3]
+OutQuad
+
+[STm07_09::command/412 SetBg/param/6]
+default
+
+[STm07_09::command/414 SetChar/param/2]
+none
+
+[STm07_09::command/414 SetChar/param/3]
+avg1_144
+
+[STm07_09::command/414 SetChar/param/4]
+d
+
+[STm07_09::command/414 SetChar/param/5]
+006
+
+[STm07_09::command/414 SetChar/param/6]
+none
+
+[STm07_09::command/415 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/415 CtrlChar/param/1]
+d
+
+[STm07_09::command/415 CtrlChar/param/3]
+none
+
+[STm07_09::command/415 CtrlChar/param/11]
+none
+
+[STm07_09::command/415 CtrlChar/param/12]
+none
+
+[STm07_09::command/415 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/417 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/417 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/417 SetTalk/param/4]
+vo_STm07_09_026
+
+[STm07_09::command/417 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/417 SetTalk/param/7]
+ただ……恥ずかしながら、チトセはいまだその言葉の真意には==RT==たどり着けておりません。
+
+[STm07_09::command/417 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/419 CtrlStage/param/9]
+none
+
+[STm07_09::command/419 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/420 SetFilm/param/1]
+OutCubic
+
+[STm07_09::command/422 CtrlBg/param/10]
+none
+
+[STm07_09::command/422 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/423 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/423 CtrlChar/param/1]
+d
+
+[STm07_09::command/423 CtrlChar/param/2]
+003
+
+[STm07_09::command/423 CtrlChar/param/3]
+none
+
+[STm07_09::command/423 CtrlChar/param/11]
+none
+
+[STm07_09::command/423 CtrlChar/param/12]
+none
+
+[STm07_09::command/423 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/424 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/424 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/424 SetTalk/param/4]
+vo_STm07_09_027
+
+[STm07_09::command/424 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/424 SetTalk/param/7]
+師匠や両親と違い、いまだにこのような<r=不出来な刀>人の身</r>であることが、なによりその証拠です。
+
+[STm07_09::command/424 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/428 CtrlChar/param/0]
+avg1_144
+
+[STm07_09::command/428 CtrlChar/param/1]
+d
+
+[STm07_09::command/428 CtrlChar/param/2]
+007
+
+[STm07_09::command/428 CtrlChar/param/3]
+none
+
+[STm07_09::command/428 CtrlChar/param/11]
+none
+
+[STm07_09::command/428 CtrlChar/param/12]
+none
+
+[STm07_09::command/428 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/429 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/429 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/429 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/430 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/430 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/430 SetTalk/param/4]
+vo_STm07_09_028
+
+[STm07_09::command/430 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/430 SetTalk/param/7]
+この身を刃にできぬ不完全な刀。無闇に人を傷つけてしまう刀。==RT==そんなものに存在価値はありません。
+
+[STm07_09::command/430 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/434 SetFilm/param/1]
+OutQuad
+
+[STm07_09::command/435 SetAudio/param/1]
+se_169
+
+[STm07_09::command/436 SetTrans/param/2]
+0
+
+[STm07_09::command/436 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/436 SetTrans/param/8]
+default
+
+[STm07_09::command/437 SetBg/param/1]
+story_main_07_004
+
+[STm07_09::command/437 SetBg/param/2]
+0
+
+[STm07_09::command/437 SetBg/param/3]
+Linear
+
+[STm07_09::command/437 SetBg/param/6]
+default
+
+[STm07_09::command/438 CtrlStage/param/9]
+none
+
+[STm07_09::command/438 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/440 CtrlBg/param/10]
+JingTouYaoHuang
+
+[STm07_09::command/440 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/441 SetTrans/param/2]
+0
+
+[STm07_09::command/441 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/441 SetTrans/param/8]
+default
+
+[STm07_09::command/443 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm07_09::command/443 SetBGM/param/3]
+m70
+
+[STm07_09::command/443 SetBGM/param/4]
+none
+
+[STm07_09::command/444 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/444 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/444 SetTalk/param/4]
+vo_STm07_09_029
+
+[STm07_09::command/444 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/444 SetTalk/param/7]
+幸いチトセは主殿と出会い、こうして存在を証明する機会を得ることができましたが……==RT==それは鍛錬を終える理由にはなりませんから。
+
+[STm07_09::command/444 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/446 SetMainRoleTalk/param/2]
+020
+
+[STm07_09::command/446 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/446 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/446 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/446 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/447 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/447 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/447 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/447 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/447 SetTalk/param/7]
+……それが自分を追い込む理由か。
+
+[STm07_09::command/447 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/448 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/448 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/448 SetMainRoleTalk/param/5]
+y
+
+[STm07_09::command/448 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/450 SetTrans/param/2]
+0
+
+[STm07_09::command/450 SetTrans/param/3]
+OutCubic
+
+[STm07_09::command/450 SetTrans/param/8]
+default
+
+[STm07_09::command/451 CtrlStage/param/9]
+JingTouYaoHuang
+
+[STm07_09::command/451 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/452 SetFilm/param/1]
+OutSine
+
+[STm07_09::command/453 SetBg/param/1]
+BG_Black
+
+[STm07_09::command/453 SetBg/param/2]
+0
+
+[STm07_09::command/453 SetBg/param/3]
+Linear
+
+[STm07_09::command/453 SetBg/param/6]
+default
+
+[STm07_09::command/454 SetBg/param/1]
+wild_tower_daylight
+
+[STm07_09::command/454 SetBg/param/2]
+0
+
+[STm07_09::command/454 SetBg/param/3]
+Linear
+
+[STm07_09::command/454 SetBg/param/6]
+default
+
+[STm07_09::command/455 CtrlBg/param/10]
+none
+
+[STm07_09::command/455 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/456 SetChar/param/2]
+none
+
+[STm07_09::command/456 SetChar/param/3]
+avg3_100
+
+[STm07_09::command/456 SetChar/param/4]
+c
+
+[STm07_09::command/456 SetChar/param/5]
+022
+
+[STm07_09::command/456 SetChar/param/6]
+none
+
+[STm07_09::command/457 CtrlBg/param/10]
+none
+
+[STm07_09::command/457 CtrlBg/param/11]
+OutSine
+
+[STm07_09::command/458 CtrlChar/param/0]
+avg3_100
+
+[STm07_09::command/458 CtrlChar/param/1]
+c
+
+[STm07_09::command/458 CtrlChar/param/3]
+none
+
+[STm07_09::command/458 CtrlChar/param/11]
+none
+
+[STm07_09::command/458 CtrlChar/param/12]
+none
+
+[STm07_09::command/458 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/459 SetStage/param/2]
+Linear
+
+[STm07_09::command/460 SetTrans/param/2]
+0
+
+[STm07_09::command/460 SetTrans/param/3]
+OutCubic
+
+[STm07_09::command/460 SetTrans/param/8]
+default
+
+[STm07_09::command/462 SetTalk/param/1]
+1
+
+[STm07_09::command/462 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/462 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/462 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/462 SetTalk/param/7]
+ならばチトセがその一族の定めの真意にたどり着けるよう、私も応援しているよ。
+
+[STm07_09::command/462 SetTalk/param/8]
+ならばチトセがその一族の定めの真意にたどり着けるよう、僕も応援しているよ。
+
+[STm07_09::command/464 CtrlChar/param/0]
+avg3_100
+
+[STm07_09::command/464 CtrlChar/param/1]
+c
+
+[STm07_09::command/464 CtrlChar/param/2]
+003
+
+[STm07_09::command/464 CtrlChar/param/3]
+none
+
+[STm07_09::command/464 CtrlChar/param/11]
+none
+
+[STm07_09::command/464 CtrlChar/param/12]
+none
+
+[STm07_09::command/464 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/465 SetTalk/param/1]
+1
+
+[STm07_09::command/465 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/465 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/465 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/465 SetTalk/param/7]
+ただ、いまの話を聞いた後では心苦しいのだが……
+
+[STm07_09::command/465 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/467 SetTrans/param/2]
+0
+
+[STm07_09::command/467 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/467 SetTrans/param/8]
+default
+
+[STm07_09::command/468 CtrlStage/param/9]
+stop
+
+[STm07_09::command/468 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/469 SetStage/param/2]
+Linear
+
+[STm07_09::command/470 SetChar/param/2]
+none
+
+[STm07_09::command/470 SetChar/param/3]
+avg3_100
+
+[STm07_09::command/470 SetChar/param/4]
+c
+
+[STm07_09::command/470 SetChar/param/5]
+022
+
+[STm07_09::command/470 SetChar/param/6]
+none
+
+[STm07_09::command/471 SetBg/param/1]
+white
+
+[STm07_09::command/471 SetBg/param/2]
+0
+
+[STm07_09::command/471 SetBg/param/3]
+Linear
+
+[STm07_09::command/471 SetBg/param/6]
+default
+
+[STm07_09::command/472 SetBg/param/1]
+circle_light
+
+[STm07_09::command/472 SetBg/param/2]
+0
+
+[STm07_09::command/472 SetBg/param/3]
+Linear
+
+[STm07_09::command/472 SetBg/param/6]
+default
+
+[STm07_09::command/473 CtrlBg/param/10]
+none
+
+[STm07_09::command/473 CtrlBg/param/11]
+OutSine
+
+[STm07_09::command/474 SetTrans/param/2]
+0
+
+[STm07_09::command/474 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/474 SetTrans/param/8]
+default
+
+[STm07_09::command/476 SetTalk/param/1]
+1
+
+[STm07_09::command/476 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/476 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/476 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/476 SetTalk/param/7]
+ひとつだけお願いを聞いてくれるとうれしい。
+
+[STm07_09::command/476 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/478 SetTrans/param/2]
+0
+
+[STm07_09::command/478 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/478 SetTrans/param/8]
+default
+
+[STm07_09::command/479 SetFilm/param/1]
+Linear
+
+[STm07_09::command/480 SetBg/param/1]
+story_main_07_004
+
+[STm07_09::command/480 SetBg/param/2]
+0
+
+[STm07_09::command/480 SetBg/param/3]
+Linear
+
+[STm07_09::command/480 SetBg/param/6]
+default
+
+[STm07_09::command/481 CtrlBg/param/10]
+JingTouYaoHuang
+
+[STm07_09::command/481 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/482 CtrlBg/param/10]
+none
+
+[STm07_09::command/482 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/483 SetTrans/param/2]
+0
+
+[STm07_09::command/483 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/483 SetTrans/param/8]
+default
+
+[STm07_09::command/485 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/485 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/485 SetTalk/param/4]
+vo_STm07_09_030
+
+[STm07_09::command/485 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/485 SetTalk/param/7]
+御意。なんでしょうか？
+
+[STm07_09::command/485 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/487 SetMainRoleTalk/param/2]
+023
+
+[STm07_09::command/487 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/487 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/487 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/487 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/488 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/488 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/488 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/488 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/488 SetTalk/param/7]
+修行をがんばることは、とても素晴らしいことだ。==W====RT==だがたまには足を止めて、==RT==周りに目を向けてみるのはどうだろう？
+
+[STm07_09::command/488 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/490 SetMainRoleTalk/param/2]
+013
+
+[STm07_09::command/490 SetMainRoleTalk/param/3]
+none
+
+[STm07_09::command/490 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/490 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/490 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/492 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/492 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/492 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/492 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/494 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/494 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/494 SetTalk/param/4]
+vo_STm07_09_031
+
+[STm07_09::command/494 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/494 SetTalk/param/7]
+足を止める？なぜでしょうか？
+
+[STm07_09::command/494 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/496 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/496 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/496 SetTalk/param/4]
+vo_STm07_09_032
+
+[STm07_09::command/496 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/496 SetTalk/param/7]
+刀とは、鍛錬を繰り返すことで、完成後の切れ味が増していくものです。==RT==ゆえにいまだ不完全な刀であるチトセが、その途中で足を止めるなど……==RT==許されることではありません。
+
+[STm07_09::command/496 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/498 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/498 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/498 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/499 SetMainRoleTalk/param/2]
+003
+
+[STm07_09::command/499 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/499 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/499 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/499 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/500 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/500 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/500 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/500 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/500 SetTalk/param/7]
+チトセの言いたいこともわかる。==W====RT==だがゆっくり周囲を見渡すことで、==RT==思いがけない発見があるかもしれない。
+
+[STm07_09::command/500 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/502 SetMainRoleTalk/param/2]
+002
+
+[STm07_09::command/502 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STm07_09::command/502 SetMainRoleTalk/param/4]
+daintou
+
+[STm07_09::command/502 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/502 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/505 SetAudio/param/1]
+se_169
+
+[STm07_09::command/506 CtrlStage/param/9]
+none
+
+[STm07_09::command/506 CtrlStage/param/10]
+OutQuad
+
+[STm07_09::command/508 SetTrans/param/2]
+0
+
+[STm07_09::command/508 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/508 SetTrans/param/8]
+cut off
+
+[STm07_09::command/509 CtrlStage/param/9]
+none
+
+[STm07_09::command/509 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/510 SetBg/param/1]
+sky_sunny
+
+[STm07_09::command/510 SetBg/param/2]
+0
+
+[STm07_09::command/510 SetBg/param/3]
+Linear
+
+[STm07_09::command/510 SetBg/param/6]
+default
+
+[STm07_09::command/511 CtrlBg/param/10]
+stop
+
+[STm07_09::command/511 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/512 SetTrans/param/2]
+0
+
+[STm07_09::command/512 SetTrans/param/3]
+OutQuad
+
+[STm07_09::command/512 SetTrans/param/8]
+cut off
+
+[STm07_09::command/513 SetFx/param/1]
+fx_avg_sunlight
+
+[STm07_09::command/514 CtrlBg/param/10]
+JingTouYaoHuang
+
+[STm07_09::command/514 CtrlBg/param/11]
+OutSine
+
+[STm07_09::command/515 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/515 SetBGM/param/3]
+m58
+
+[STm07_09::command/515 SetBGM/param/4]
+none
+
+[STm07_09::command/517 SetTalk/param/1]
+1
+
+[STm07_09::command/517 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/517 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/517 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/517 SetTalk/param/7]
+たとえば……このロープウェイから見える景色だって。==RT==足を止めているからこそ見えるんだ。==RT==君はこれまでに、こんな景色を見たことがあったかな？
+
+[STm07_09::command/517 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/519 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/519 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/519 SetTalk/param/4]
+vo_STm07_09_033
+
+[STm07_09::command/519 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/519 SetTalk/param/7]
+ありません。はじめて見る景色です。==RT==それにこの光景を眺めていると……
+
+[STm07_09::command/519 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/521 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/521 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/521 SetTalk/param/4]
+vo_STm07_09_034
+
+[STm07_09::command/521 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/521 SetTalk/param/7]
+チトセ自身が空とひとつになっていくようで、心が清められていく気がします。
+
+[STm07_09::command/521 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/523 SetAudio/param/1]
+se_169
+
+[STm07_09::command/524 SetTrans/param/2]
+0
+
+[STm07_09::command/524 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/524 SetTrans/param/8]
+default
+
+[STm07_09::command/525 CtrlStage/param/9]
+none
+
+[STm07_09::command/525 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/526 SetBg/param/1]
+story_main_07_004
+
+[STm07_09::command/526 SetBg/param/2]
+0
+
+[STm07_09::command/526 SetBg/param/3]
+Linear
+
+[STm07_09::command/526 SetBg/param/6]
+default
+
+[STm07_09::command/527 CtrlBg/param/10]
+JingTouYaoHuang
+
+[STm07_09::command/527 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/529 SetTrans/param/2]
+0
+
+[STm07_09::command/529 SetTrans/param/3]
+Linear
+
+[STm07_09::command/529 SetTrans/param/8]
+default
+
+[STm07_09::command/531 SetMainRoleTalk/param/2]
+014
+
+[STm07_09::command/531 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm07_09::command/531 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/531 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/531 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/532 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/532 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/532 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/532 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/532 SetTalk/param/7]
+それでいい。むしろそうやって心を磨くことも、==RT==修行と言えるはずだ。
+
+[STm07_09::command/532 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/533 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/533 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/533 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/533 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/535 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/535 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/535 SetTalk/param/4]
+vo_STm07_09_035
+
+[STm07_09::command/535 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/535 SetTalk/param/7]
+なるほど。心の鍛錬ということですね。==RT==チトセにはない発想……さすがは主殿です。==RT==では、これも修行ということで、ひとつお願いしてもよろしいでしょうか？
+
+[STm07_09::command/535 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/537 SetMainRoleTalk/param/2]
+013
+
+[STm07_09::command/537 SetMainRoleTalk/param/3]
+none
+
+[STm07_09::command/537 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/537 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/537 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/538 SetTalk/param/1]
+avg3_100
+
+[STm07_09::command/538 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/538 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/538 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/538 SetTalk/param/7]
+どうしたんだ？
+
+[STm07_09::command/538 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/539 SetMainRoleTalk/param/3]
+close
+
+[STm07_09::command/539 SetMainRoleTalk/param/4]
+none
+
+[STm07_09::command/539 SetMainRoleTalk/param/5]
+z
+
+[STm07_09::command/539 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm07_09::command/541 CtrlBg/param/10]
+none
+
+[STm07_09::command/541 CtrlBg/param/11]
+InBack
+
+[STm07_09::command/543 SetAudio/param/1]
+se_019
+
+[STm07_09::command/544 SetBg/param/1]
+story_main_07_006
+
+[STm07_09::command/544 SetBg/param/2]
+33
+
+[STm07_09::command/544 SetBg/param/3]
+OutQuad
+
+[STm07_09::command/544 SetBg/param/6]
+disslove
+
+[STm07_09::command/545 CtrlBg/param/10]
+JingTouYaoHuang
+
+[STm07_09::command/545 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/547 SetTalk/param/1]
+avg1_144
+
+[STm07_09::command/547 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/547 SetTalk/param/4]
+vo_STm07_09_036
+
+[STm07_09::command/547 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/547 SetTalk/param/7]
+<r=じんとういちにょ>人刀一如</r>……主殿の御心へとさらに近づくためにも、その……==RT==いま少しお側へ寄り、主殿がご覧になっている景色をともに見ることを……==RT==お許しいただけますか？
+
+[STm07_09::command/547 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/548 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/548 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/548 SetBGM/param/4]
+4000ms
+
+[STm07_09::command/552 SetAudio/param/1]
+se_076
+
+[STm07_09::command/553 SetTrans/param/2]
+0
+
+[STm07_09::command/553 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/553 SetTrans/param/8]
+default
+
+[STm07_09::command/554 CtrlStage/param/9]
+none
+
+[STm07_09::command/554 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/555 SetBg/param/1]
+story_main_07_003
+
+[STm07_09::command/555 SetBg/param/2]
+0
+
+[STm07_09::command/555 SetBg/param/3]
+Linear
+
+[STm07_09::command/555 SetBg/param/6]
+default
+
+[STm07_09::command/556 CtrlBg/param/10]
+none
+
+[STm07_09::command/556 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/558 SetTrans/param/2]
+0
+
+[STm07_09::command/558 SetTrans/param/3]
+OutSine
+
+[STm07_09::command/558 SetTrans/param/8]
+default
+
+[STm07_09::command/560 SetSceneHeading/param/0]
+11:45
+
+[STm07_09::command/560 SetSceneHeading/param/1]
+狩月
+
+[STm07_09::command/560 SetSceneHeading/param/2]
+14日
+
+[STm07_09::command/560 SetSceneHeading/param/3]
+フィーリエ：郊外
+
+[STm07_09::command/560 SetSceneHeading/param/4]
+『ロープウェイ乗り場』
+
+[STm07_09::command/561 SetAudio/param/1]
+se_020
+
+[STm07_09::command/562 SetChar/param/2]
+none
+
+[STm07_09::command/562 SetChar/param/3]
+avg3_152
+
+[STm07_09::command/562 SetChar/param/4]
+a
+
+[STm07_09::command/562 SetChar/param/5]
+010
+
+[STm07_09::command/562 SetChar/param/6]
+none
+
+[STm07_09::command/563 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/563 CtrlChar/param/1]
+a
+
+[STm07_09::command/563 CtrlChar/param/3]
+none
+
+[STm07_09::command/563 CtrlChar/param/11]
+youzaiLp
+
+[STm07_09::command/563 CtrlChar/param/12]
+none
+
+[STm07_09::command/563 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/565 SetFrontObj/param/2]
+qstory_main_07_011
+
+[STm07_09::command/567 SetFrontObj/param/2]
+qstory_main_07_011
+
+[STm07_09::command/569 CtrlStage/param/9]
+none
+
+[STm07_09::command/569 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/571 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/571 SetBGM/param/3]
+m2
+
+[STm07_09::command/571 SetBGM/param/4]
+none
+
+[STm07_09::command/572 SetChar/param/2]
+none
+
+[STm07_09::command/572 SetChar/param/3]
+avg1_112
+
+[STm07_09::command/572 SetChar/param/4]
+b
+
+[STm07_09::command/572 SetChar/param/5]
+002
+
+[STm07_09::command/572 SetChar/param/6]
+none
+
+[STm07_09::command/573 SetAudio/param/1]
+se_020_stop
+
+[STm07_09::command/574 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/574 CtrlChar/param/1]
+b
+
+[STm07_09::command/574 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm07_09::command/574 CtrlChar/param/11]
+daintou
+
+[STm07_09::command/574 CtrlChar/param/12]
+none
+
+[STm07_09::command/574 CtrlChar/param/13]
+OutQuad
+
+[STm07_09::command/575 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/575 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/575 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/575 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/575 SetTalk/param/7]
+ロープウェイはそろそろ島に着きそうだね。
+
+[STm07_09::command/575 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/577 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/577 CtrlChar/param/1]
+a
+
+[STm07_09::command/577 CtrlChar/param/2]
+007
+
+[STm07_09::command/577 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_09::command/577 CtrlChar/param/11]
+jushou
+
+[STm07_09::command/577 CtrlChar/param/12]
+none
+
+[STm07_09::command/577 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/578 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/578 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/578 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/578 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/578 SetTalk/param/7]
+望遠鏡の神器で様子を見なくてもよろしいのですか？==RT==中の様子がバッチリ見えますよ？
+
+[STm07_09::command/578 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/580 SetAudio/param/1]
+se_077
+
+[STm07_09::command/581 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/581 CtrlChar/param/1]
+b
+
+[STm07_09::command/581 CtrlChar/param/2]
+003
+
+[STm07_09::command/581 CtrlChar/param/3]
+none
+
+[STm07_09::command/581 CtrlChar/param/11]
+diantou
+
+[STm07_09::command/581 CtrlChar/param/12]
+none
+
+[STm07_09::command/581 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/582 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/582 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/582 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/582 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/582 SetTalk/param/7]
+必要ないよ。向こうでのことは、あのふたりに任せてるからね。==RT==それに魔王さんなら、いまのチトセを<r=・>守</r><r=・>っ</r><r=・>て</r>あげられるはずだし。
+
+[STm07_09::command/582 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/584 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/584 CtrlChar/param/1]
+a
+
+[STm07_09::command/584 CtrlChar/param/2]
+011
+
+[STm07_09::command/584 CtrlChar/param/3]
+avg_emoji_question
+
+[STm07_09::command/584 CtrlChar/param/11]
+none
+
+[STm07_09::command/584 CtrlChar/param/12]
+none
+
+[STm07_09::command/584 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/585 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/585 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/585 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/585 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/585 SetTalk/param/7]
+魔王さんが、チトセさんを守る……ですか？==RT==逆ではなく？
+
+[STm07_09::command/585 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/587 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/587 CtrlChar/param/1]
+b
+
+[STm07_09::command/587 CtrlChar/param/2]
+006
+
+[STm07_09::command/587 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_09::command/587 CtrlChar/param/11]
+none
+
+[STm07_09::command/587 CtrlChar/param/12]
+none
+
+[STm07_09::command/587 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/588 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/588 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/588 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/588 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/588 SetTalk/param/7]
+なんとなくわかるんだ。言葉にするのは難しいけど、==RT==いまのチトセの中には、モヤッとしたものが溜まってて……==RT==そこから救えるのは、魔王さんだけなんだって。
+
+[STm07_09::command/588 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/589 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/589 CtrlChar/param/1]
+b
+
+[STm07_09::command/589 CtrlChar/param/3]
+close
+
+[STm07_09::command/589 CtrlChar/param/11]
+none
+
+[STm07_09::command/589 CtrlChar/param/12]
+none
+
+[STm07_09::command/589 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/591 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/591 CtrlChar/param/1]
+a
+
+[STm07_09::command/591 CtrlChar/param/2]
+010
+
+[STm07_09::command/591 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm07_09::command/591 CtrlChar/param/11]
+daintou
+
+[STm07_09::command/591 CtrlChar/param/12]
+none
+
+[STm07_09::command/591 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/592 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/592 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/592 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/592 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/592 SetTalk/param/7]
+ふふ♪いつもがむしゃらで、明るく振る舞って見えるセイナさんも、==RT==そうやって皆さんのことをよく観察しているんですね。
+
+[STm07_09::command/592 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/593 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/593 CtrlChar/param/1]
+a
+
+[STm07_09::command/593 CtrlChar/param/2]
+004
+
+[STm07_09::command/593 CtrlChar/param/3]
+none
+
+[STm07_09::command/593 CtrlChar/param/11]
+none
+
+[STm07_09::command/593 CtrlChar/param/12]
+none
+
+[STm07_09::command/593 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/595 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/595 CtrlChar/param/1]
+b
+
+[STm07_09::command/595 CtrlChar/param/2]
+007
+
+[STm07_09::command/595 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_09::command/595 CtrlChar/param/11]
+jushou
+
+[STm07_09::command/595 CtrlChar/param/12]
+none
+
+[STm07_09::command/595 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/596 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/596 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/596 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/596 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/596 SetTalk/param/7]
+そりゃそうでしょ！==RT==だって魔王さんもチトセも、私の大切な仲間だからね♪
+
+[STm07_09::command/596 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/598 SetAudio/param/1]
+se_113
+
+[STm07_09::command/599 CtrlStage/param/9]
+none
+
+[STm07_09::command/599 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/600 CtrlBg/param/10]
+none
+
+[STm07_09::command/600 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/601 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/601 CtrlChar/param/1]
+a
+
+[STm07_09::command/601 CtrlChar/param/3]
+none
+
+[STm07_09::command/601 CtrlChar/param/11]
+none
+
+[STm07_09::command/601 CtrlChar/param/12]
+none
+
+[STm07_09::command/601 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/602 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/602 CtrlChar/param/1]
+b
+
+[STm07_09::command/602 CtrlChar/param/3]
+none
+
+[STm07_09::command/602 CtrlChar/param/11]
+none
+
+[STm07_09::command/602 CtrlChar/param/12]
+none
+
+[STm07_09::command/602 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/604 SetChar/param/2]
+none
+
+[STm07_09::command/604 SetChar/param/3]
+avg2_983
+
+[STm07_09::command/604 SetChar/param/4]
+a
+
+[STm07_09::command/604 SetChar/param/5]
+004
+
+[STm07_09::command/604 SetChar/param/6]
+none
+
+[STm07_09::command/605 CtrlChar/param/0]
+avg2_983
+
+[STm07_09::command/605 CtrlChar/param/1]
+a
+
+[STm07_09::command/605 CtrlChar/param/3]
+none
+
+[STm07_09::command/605 CtrlChar/param/11]
+none
+
+[STm07_09::command/605 CtrlChar/param/12]
+none
+
+[STm07_09::command/605 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/606 SetChar/param/2]
+none
+
+[STm07_09::command/606 SetChar/param/3]
+avg2_984
+
+[STm07_09::command/606 SetChar/param/4]
+a
+
+[STm07_09::command/606 SetChar/param/5]
+004
+
+[STm07_09::command/606 SetChar/param/6]
+none
+
+[STm07_09::command/607 CtrlChar/param/0]
+avg2_984
+
+[STm07_09::command/607 CtrlChar/param/1]
+a
+
+[STm07_09::command/607 CtrlChar/param/3]
+none
+
+[STm07_09::command/607 CtrlChar/param/11]
+none
+
+[STm07_09::command/607 CtrlChar/param/12]
+none
+
+[STm07_09::command/607 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/608 CtrlChar/param/0]
+avg2_983
+
+[STm07_09::command/608 CtrlChar/param/1]
+a
+
+[STm07_09::command/608 CtrlChar/param/3]
+none
+
+[STm07_09::command/608 CtrlChar/param/11]
+none
+
+[STm07_09::command/608 CtrlChar/param/12]
+none
+
+[STm07_09::command/608 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/609 CtrlChar/param/0]
+avg2_984
+
+[STm07_09::command/609 CtrlChar/param/1]
+a
+
+[STm07_09::command/609 CtrlChar/param/3]
+none
+
+[STm07_09::command/609 CtrlChar/param/11]
+none
+
+[STm07_09::command/609 CtrlChar/param/12]
+none
+
+[STm07_09::command/609 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/610 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/610 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/610 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/610 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/610 SetTalk/param/7]
+それよりも……ほら、さっさとこの人たち縛っちゃおう。==RT==アヤメとコハクが追いついてきたら、すぐみんなで島に渡るんだからね！
+
+[STm07_09::command/610 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/612 CtrlChar/param/0]
+avg2_984
+
+[STm07_09::command/612 CtrlChar/param/1]
+a
+
+[STm07_09::command/612 CtrlChar/param/3]
+none
+
+[STm07_09::command/612 CtrlChar/param/11]
+none
+
+[STm07_09::command/612 CtrlChar/param/12]
+none
+
+[STm07_09::command/612 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/613 CtrlChar/param/0]
+avg2_983
+
+[STm07_09::command/613 CtrlChar/param/1]
+a
+
+[STm07_09::command/613 CtrlChar/param/3]
+none
+
+[STm07_09::command/613 CtrlChar/param/11]
+none
+
+[STm07_09::command/613 CtrlChar/param/12]
+none
+
+[STm07_09::command/613 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/614 CtrlStage/param/9]
+none
+
+[STm07_09::command/614 CtrlStage/param/10]
+OutBack
+
+[STm07_09::command/616 CtrlBg/param/10]
+none
+
+[STm07_09::command/616 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/617 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/617 CtrlChar/param/1]
+a
+
+[STm07_09::command/617 CtrlChar/param/2]
+005
+
+[STm07_09::command/617 CtrlChar/param/3]
+avg_emoji_star
+
+[STm07_09::command/617 CtrlChar/param/11]
+none
+
+[STm07_09::command/617 CtrlChar/param/12]
+none
+
+[STm07_09::command/617 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/618 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/618 CtrlChar/param/1]
+b
+
+[STm07_09::command/618 CtrlChar/param/2]
+002
+
+[STm07_09::command/618 CtrlChar/param/3]
+none
+
+[STm07_09::command/618 CtrlChar/param/11]
+none
+
+[STm07_09::command/618 CtrlChar/param/12]
+none
+
+[STm07_09::command/618 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/619 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/619 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/619 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/619 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/619 SetTalk/param/7]
+でしたらお任せください！==RT==プリチーなわたくしは、縄で人を縛る試験でも満点でしたから♡
+
+[STm07_09::command/619 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/621 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/621 CtrlChar/param/1]
+b
+
+[STm07_09::command/621 CtrlChar/param/2]
+003
+
+[STm07_09::command/621 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_09::command/621 CtrlChar/param/11]
+jushou
+
+[STm07_09::command/621 CtrlChar/param/12]
+none
+
+[STm07_09::command/621 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/622 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/622 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/622 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/623 SetTalk/param/1]
+avg1_112
+
+[STm07_09::command/623 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/623 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/623 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/623 SetTalk/param/7]
+おおっ！頼もしいねぇ～！==RT==それじゃあ私、ロープ取ってくるー！
+
+[STm07_09::command/623 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/625 CtrlChar/param/0]
+avg1_112
+
+[STm07_09::command/625 CtrlChar/param/1]
+b
+
+[STm07_09::command/625 CtrlChar/param/2]
+004
+
+[STm07_09::command/625 CtrlChar/param/3]
+none
+
+[STm07_09::command/625 CtrlChar/param/11]
+none
+
+[STm07_09::command/625 CtrlChar/param/12]
+none
+
+[STm07_09::command/625 CtrlChar/param/13]
+InBack
+
+[STm07_09::command/627 SetAudio/param/1]
+se_147
+
+[STm07_09::command/629 CtrlBg/param/10]
+none
+
+[STm07_09::command/629 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/630 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/630 CtrlChar/param/1]
+a
+
+[STm07_09::command/630 CtrlChar/param/2]
+003
+
+[STm07_09::command/630 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm07_09::command/630 CtrlChar/param/11]
+none
+
+[STm07_09::command/630 CtrlChar/param/12]
+none
+
+[STm07_09::command/630 CtrlChar/param/13]
+OutCubic
+
+[STm07_09::command/631 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/631 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/631 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/631 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/631 SetTalk/param/7]
+真っ直ぐな性格は、セイナさんのいいところですが……==W====RT==こんなにおもしろいものを見逃してしまうなんて、もったいないですね。
+
+[STm07_09::command/631 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/632 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm07_09::command/632 SetBGM/param/3]
+m34
+
+[STm07_09::command/632 SetBGM/param/4]
+none
+
+[STm07_09::command/634 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/634 CtrlChar/param/1]
+a
+
+[STm07_09::command/634 CtrlChar/param/2]
+004
+
+[STm07_09::command/634 CtrlChar/param/3]
+none
+
+[STm07_09::command/634 CtrlChar/param/11]
+none
+
+[STm07_09::command/634 CtrlChar/param/12]
+none
+
+[STm07_09::command/634 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/637 CtrlStage/param/9]
+none
+
+[STm07_09::command/637 CtrlStage/param/10]
+OutCubic
+
+[STm07_09::command/638 SetFilm/param/1]
+OutCubic
+
+[STm07_09::command/639 SetAudio/param/1]
+se_226
+
+[STm07_09::command/640 CtrlBg/param/10]
+none
+
+[STm07_09::command/640 CtrlBg/param/11]
+OutCubic
+
+[STm07_09::command/642 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/642 CtrlChar/param/1]
+a
+
+[STm07_09::command/642 CtrlChar/param/2]
+007
+
+[STm07_09::command/642 CtrlChar/param/3]
+none
+
+[STm07_09::command/642 CtrlChar/param/11]
+none
+
+[STm07_09::command/642 CtrlChar/param/12]
+none
+
+[STm07_09::command/642 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/643 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/643 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/643 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/643 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/643 SetTalk/param/7]
+もっとも、『かわいらしい追跡者』がひとり、ロープウェイにしがみついていることは……==RT==ふふ。魔王さんとチトセさんですら、想像もしていないでしょうけど。
+
+[STm07_09::command/643 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/645 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/645 CtrlChar/param/1]
+a
+
+[STm07_09::command/645 CtrlChar/param/2]
+003
+
+[STm07_09::command/645 CtrlChar/param/3]
+avg_emoji_flower
+
+[STm07_09::command/645 CtrlChar/param/11]
+youzaiLp
+
+[STm07_09::command/645 CtrlChar/param/12]
+none
+
+[STm07_09::command/645 CtrlChar/param/13]
+Linear
+
+[STm07_09::command/646 SetTalk/param/1]
+avg3_152
+
+[STm07_09::command/646 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/646 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/646 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/646 SetTalk/param/7]
+さてさて。思いも寄らないジョーカーの登場で……==RT==技術審査はどうなっていくのでしょうか♪
+
+[STm07_09::command/646 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/648 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/648 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/648 SetBGM/param/4]
+2000ms
+
+[STm07_09::command/649 CtrlStage/param/9]
+none
+
+[STm07_09::command/649 CtrlStage/param/10]
+OutSine
+
+[STm07_09::command/650 CtrlBg/param/10]
+none
+
+[STm07_09::command/650 CtrlBg/param/11]
+OutQuad
+
+[STm07_09::command/651 SetFilm/param/1]
+OutQuad
+
+[STm07_09::command/652 CtrlChar/param/0]
+avg3_152
+
+[STm07_09::command/652 CtrlChar/param/1]
+a
+
+[STm07_09::command/652 CtrlChar/param/3]
+none
+
+[STm07_09::command/652 CtrlChar/param/11]
+none
+
+[STm07_09::command/652 CtrlChar/param/12]
+none
+
+[STm07_09::command/652 CtrlChar/param/13]
+OutSine
+
+[STm07_09::command/654 SetAudio/param/1]
+se_169
+
+[STm07_09::command/655 SetTrans/param/2]
+0
+
+[STm07_09::command/655 SetTrans/param/3]
+OutCubic
+
+[STm07_09::command/655 SetTrans/param/8]
+default
+
+[STm07_09::command/656 SetBg/param/1]
+sky_tower
+
+[STm07_09::command/656 SetBg/param/2]
+0
+
+[STm07_09::command/656 SetBg/param/3]
+OutSine
+
+[STm07_09::command/656 SetBg/param/6]
+default
+
+[STm07_09::command/657 CtrlBg/param/10]
+none
+
+[STm07_09::command/657 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/658 SetFilm/param/1]
+OutSine
+
+[STm07_09::command/659 CtrlBg/param/10]
+none
+
+[STm07_09::command/659 CtrlBg/param/11]
+Linear
+
+[STm07_09::command/661 CtrlStage/param/9]
+none
+
+[STm07_09::command/661 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/663 SetTrans/param/2]
+0
+
+[STm07_09::command/663 SetTrans/param/3]
+OutCubic
+
+[STm07_09::command/663 SetTrans/param/8]
+default
+
+[STm07_09::command/664 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/664 SetBGM/param/3]
+m28
+
+[STm07_09::command/664 SetBGM/param/4]
+none
+
+[STm07_09::command/665 CtrlStage/param/9]
+Zhong
+
+[STm07_09::command/665 CtrlStage/param/10]
+Linear
+
+[STm07_09::command/666 SetAudio/param/1]
+se_070
+
+[STm07_09::command/667 SetCharHead/param/5]
+avg1_142
+
+[STm07_09::command/667 SetCharHead/param/6]
+a
+
+[STm07_09::command/667 SetCharHead/param/7]
+019
+
+[STm07_09::command/667 SetCharHead/param/8]
+none
+
+[STm07_09::command/668 SetTalkShake/param/1]
+Zhong
+
+[STm07_09::command/669 SetTalk/param/1]
+avg1_142
+
+[STm07_09::command/669 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm07_09::command/669 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_09::command/669 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_09::command/669 SetTalk/param/7]
+うぅ～……高いし……！怖いし……！==RT==もう手が疲れて落ちちゃいそう……！==RT==いつになったら島につくのぉ～～～～ッ！！！！
+
+[STm07_09::command/669 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_09::command/672 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_09::command/672 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_09::command/672 SetBGM/param/4]
+1500ms
+

@@ -1,0 +1,7360 @@
+STm03_02 | CN | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 2452
+
+[STm03_02::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STm03_02::command/0 SetIntro/param/1]
+第二话
+
+[STm03_02::command/0 SetIntro/param/2]
+森林深处的“仙人”
+
+[STm03_02::command/0 SetIntro/param/3]
+你们根据线索抵达瑟拉娜的所在地。==RT==在这里，你们遇见自称“仙人”的少女，==RT==她与琥珀展开一场激烈的抓娃娃比赛。
+
+[STm03_02::command/1 SetBg/param/1]
+forest_daylight_2
+
+[STm03_02::command/1 SetBg/param/2]
+0
+
+[STm03_02::command/1 SetBg/param/3]
+Linear
+
+[STm03_02::command/1 SetBg/param/6]
+default
+
+[STm03_02::command/2 CtrlBg/param/10]
+none
+
+[STm03_02::command/2 CtrlBg/param/11]
+InQuad
+
+[STm03_02::command/3 SetAudio/param/1]
+se_103
+
+[STm03_02::command/4 SetSceneHeading/param/0]
+09:00
+
+[STm03_02::command/4 SetSceneHeading/param/1]
+雨月
+
+[STm03_02::command/4 SetSceneHeading/param/2]
+16日
+
+[STm03_02::command/4 SetSceneHeading/param/3]
+菲莱城外
+
+[STm03_02::command/4 SetSceneHeading/param/4]
+林中小路
+
+[STm03_02::command/5 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/5 SetBGM/param/3]
+m53
+
+[STm03_02::command/5 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/7 SetBg/param/1]
+ruin_travellers_home_outside
+
+[STm03_02::command/7 SetBg/param/2]
+0
+
+[STm03_02::command/7 SetBg/param/3]
+Linear
+
+[STm03_02::command/7 SetBg/param/6]
+default
+
+[STm03_02::command/8 CtrlBg/param/10]
+none
+
+[STm03_02::command/8 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/10 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/10 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/10 SetChar/param/4]
+a
+
+[STm03_02::command/10 SetChar/param/5]
+002
+
+[STm03_02::command/10 SetChar/param/6]
+none
+
+[STm03_02::command/11 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/11 CtrlChar/param/1]
+a
+
+[STm03_02::command/11 CtrlChar/param/2]
+005
+
+[STm03_02::command/11 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/11 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/11 CtrlChar/param/12]
+none
+
+[STm03_02::command/11 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/12 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/12 SetTalk/param/2]
+就是这里！
+
+[STm03_02::command/12 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/12 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/12 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/12 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/13 SetChar/param/2]
+L_in
+
+[STm03_02::command/13 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/13 SetChar/param/4]
+a
+
+[STm03_02::command/13 SetChar/param/5]
+002
+
+[STm03_02::command/13 SetChar/param/6]
+none
+
+[STm03_02::command/14 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/14 CtrlChar/param/1]
+a
+
+[STm03_02::command/14 CtrlChar/param/3]
+none
+
+[STm03_02::command/14 CtrlChar/param/11]
+none
+
+[STm03_02::command/14 CtrlChar/param/12]
+none
+
+[STm03_02::command/14 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/15 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/15 CtrlChar/param/1]
+a
+
+[STm03_02::command/15 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/15 CtrlChar/param/11]
+none
+
+[STm03_02::command/15 CtrlChar/param/12]
+none
+
+[STm03_02::command/15 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/16 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/16 SetTalk/param/2]
+咦？不会就是这个房子吧？
+
+[STm03_02::command/16 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/16 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/16 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/16 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/17 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/17 CtrlChar/param/1]
+a
+
+[STm03_02::command/17 CtrlChar/param/3]
+none
+
+[STm03_02::command/17 CtrlChar/param/11]
+none
+
+[STm03_02::command/17 CtrlChar/param/12]
+none
+
+[STm03_02::command/17 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/18 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/18 CtrlChar/param/1]
+a
+
+[STm03_02::command/18 CtrlChar/param/3]
+none
+
+[STm03_02::command/18 CtrlChar/param/11]
+none
+
+[STm03_02::command/18 CtrlChar/param/12]
+none
+
+[STm03_02::command/18 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/20 SetChar/param/2]
+none
+
+[STm03_02::command/20 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/20 SetChar/param/4]
+a
+
+[STm03_02::command/20 SetChar/param/5]
+002
+
+[STm03_02::command/20 SetChar/param/6]
+none
+
+[STm03_02::command/21 CtrlBg/param/10]
+none
+
+[STm03_02::command/21 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/22 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/22 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/22 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/22 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/22 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/23 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/23 SetTalk/param/2]
+看上去已经荒废了。
+
+[STm03_02::command/23 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/23 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/23 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/23 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/24 SetCharHead/param/5]
+avg1_112
+
+[STm03_02::command/24 SetCharHead/param/6]
+a
+
+[STm03_02::command/24 SetCharHead/param/7]
+002
+
+[STm03_02::command/24 SetCharHead/param/8]
+none
+
+[STm03_02::command/25 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/25 CtrlChar/param/1]
+a
+
+[STm03_02::command/25 CtrlChar/param/2]
+003
+
+[STm03_02::command/25 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm03_02::command/25 CtrlChar/param/11]
+none
+
+[STm03_02::command/25 CtrlChar/param/12]
+none
+
+[STm03_02::command/25 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/26 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/26 SetTalk/param/2]
+故事里的传奇旅人，都是住在这种地方的。
+
+[STm03_02::command/26 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/26 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/26 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/26 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/27 SetCharHead/param/5]
+avg1_112
+
+[STm03_02::command/27 SetCharHead/param/6]
+a
+
+[STm03_02::command/27 SetCharHead/param/7]
+002
+
+[STm03_02::command/27 SetCharHead/param/8]
+none
+
+[STm03_02::command/28 SetChar/param/2]
+none
+
+[STm03_02::command/28 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/28 SetChar/param/4]
+a
+
+[STm03_02::command/28 SetChar/param/5]
+002
+
+[STm03_02::command/28 SetChar/param/6]
+none
+
+[STm03_02::command/29 CtrlBg/param/10]
+none
+
+[STm03_02::command/29 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/30 SetAudio/param/1]
+se_061
+
+[STm03_02::command/32 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/32 CtrlChar/param/1]
+a
+
+[STm03_02::command/32 CtrlChar/param/3]
+none
+
+[STm03_02::command/32 CtrlChar/param/11]
+none
+
+[STm03_02::command/32 CtrlChar/param/12]
+none
+
+[STm03_02::command/32 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/33 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/33 CtrlChar/param/1]
+a
+
+[STm03_02::command/33 CtrlChar/param/3]
+none
+
+[STm03_02::command/33 CtrlChar/param/11]
+none
+
+[STm03_02::command/33 CtrlChar/param/12]
+none
+
+[STm03_02::command/33 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/34 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/34 CtrlChar/param/1]
+a
+
+[STm03_02::command/34 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/34 CtrlChar/param/11]
+diantou2
+
+[STm03_02::command/34 CtrlChar/param/12]
+none
+
+[STm03_02::command/34 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/35 SetAudio/param/1]
+se_065
+
+[STm03_02::command/36 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/36 CtrlChar/param/1]
+a
+
+[STm03_02::command/36 CtrlChar/param/2]
+013
+
+[STm03_02::command/36 CtrlChar/param/3]
+none
+
+[STm03_02::command/36 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/36 CtrlChar/param/12]
+none
+
+[STm03_02::command/36 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/37 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/37 CtrlChar/param/1]
+a
+
+[STm03_02::command/37 CtrlChar/param/3]
+none
+
+[STm03_02::command/37 CtrlChar/param/11]
+none
+
+[STm03_02::command/37 CtrlChar/param/12]
+none
+
+[STm03_02::command/37 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/38 CtrlBg/param/10]
+none
+
+[STm03_02::command/38 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/39 CtrlStage/param/9]
+none
+
+[STm03_02::command/39 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/40 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/40 CtrlChar/param/1]
+a
+
+[STm03_02::command/40 CtrlChar/param/3]
+avg_emoji_star
+
+[STm03_02::command/40 CtrlChar/param/11]
+none
+
+[STm03_02::command/40 CtrlChar/param/12]
+none
+
+[STm03_02::command/40 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/41 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/41 SetTalk/param/2]
+星塔影戏里也是，幽暗的山洞里住着小小的绿色剑术大师。
+
+[STm03_02::command/41 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/41 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/41 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/41 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/42 CtrlBg/param/10]
+none
+
+[STm03_02::command/42 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/44 CtrlStage/param/9]
+none
+
+[STm03_02::command/44 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/45 SetMainRoleTalk/param/2]
+009
+
+[STm03_02::command/45 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/45 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/45 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/45 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/46 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/46 SetTalk/param/2]
+但是，贝修莉娜说......==B==那个情报商人借住在协会之家。
+
+[STm03_02::command/46 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/46 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/46 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/46 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/47 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/47 SetMainRoleTalk/param/3]
+close
+
+[STm03_02::command/47 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/47 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/47 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/48 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/48 SetTalk/param/2]
+协会之家是地理协会在各地建立的，帮助旅人和分发委托的地方吧。
+
+[STm03_02::command/48 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/48 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/48 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/48 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/49 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/49 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm03_02::command/49 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/49 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/49 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/50 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/50 SetTalk/param/2]
+怎么会变成这样？==RT==这条路感觉很久没人走了，都被草盖住了。
+
+[STm03_02::command/50 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/50 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/50 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/50 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/51 SetAudio/param/1]
+se_061
+
+[STm03_02::command/52 SetChar/param/2]
+C_in
+
+[STm03_02::command/52 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/52 SetChar/param/4]
+a
+
+[STm03_02::command/52 SetChar/param/5]
+002
+
+[STm03_02::command/52 SetChar/param/6]
+none
+
+[STm03_02::command/53 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/53 CtrlChar/param/1]
+a
+
+[STm03_02::command/53 CtrlChar/param/2]
+005
+
+[STm03_02::command/53 CtrlChar/param/3]
+none
+
+[STm03_02::command/53 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/53 CtrlChar/param/12]
+none
+
+[STm03_02::command/53 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/54 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/54 SetTalk/param/2]
+可疑，危险。
+
+[STm03_02::command/54 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/54 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/54 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/54 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/55 SetChar/param/2]
+none
+
+[STm03_02::command/55 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/55 SetChar/param/4]
+a
+
+[STm03_02::command/55 SetChar/param/5]
+002
+
+[STm03_02::command/55 SetChar/param/6]
+none
+
+[STm03_02::command/56 SetAudio/param/1]
+se_101
+
+[STm03_02::command/57 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/57 CtrlChar/param/1]
+a
+
+[STm03_02::command/57 CtrlChar/param/3]
+none
+
+[STm03_02::command/57 CtrlChar/param/11]
+none
+
+[STm03_02::command/57 CtrlChar/param/12]
+none
+
+[STm03_02::command/57 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/58 SetAudio/param/1]
+se_101
+
+[STm03_02::command/59 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/59 CtrlChar/param/1]
+a
+
+[STm03_02::command/59 CtrlChar/param/3]
+none
+
+[STm03_02::command/59 CtrlChar/param/11]
+none
+
+[STm03_02::command/59 CtrlChar/param/12]
+none
+
+[STm03_02::command/59 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/60 CtrlStage/param/9]
+none
+
+[STm03_02::command/60 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/61 SetAudio/param/1]
+se_047
+
+[STm03_02::command/62 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/62 CtrlChar/param/1]
+a
+
+[STm03_02::command/62 CtrlChar/param/2]
+004
+
+[STm03_02::command/62 CtrlChar/param/3]
+none
+
+[STm03_02::command/62 CtrlChar/param/11]
+youchupeng
+
+[STm03_02::command/62 CtrlChar/param/12]
+none
+
+[STm03_02::command/62 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/63 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/63 SetTalk/param/2]
+别想那么多，我们进去看看不就知道了？
+
+[STm03_02::command/63 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/63 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/63 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/63 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/64 SetAudio/param/1]
+se_102
+
+[STm03_02::command/65 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[STm03_02::command/65 SetTrans/param/3]
+Linear
+
+[STm03_02::command/65 SetTrans/param/8]
+default
+
+[STm03_02::command/66 CtrlStage/param/9]
+none
+
+[STm03_02::command/66 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/67 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/67 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/67 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/68 SetBg/param/1]
+ruin_travellers_home_inside
+
+[STm03_02::command/68 SetBg/param/2]
+0
+
+[STm03_02::command/68 SetBg/param/3]
+Linear
+
+[STm03_02::command/68 SetBg/param/6]
+default
+
+[STm03_02::command/69 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STm03_02::command/69 SetTrans/param/3]
+Linear
+
+[STm03_02::command/69 SetTrans/param/8]
+default
+
+[STm03_02::command/70 SetAudio/param/1]
+se_005
+
+[STm03_02::command/71 SetSceneHeading/param/0]
+09:05
+
+[STm03_02::command/71 SetSceneHeading/param/1]
+雨月
+
+[STm03_02::command/71 SetSceneHeading/param/2]
+16日
+
+[STm03_02::command/71 SetSceneHeading/param/3]
+菲莱城外
+
+[STm03_02::command/71 SetSceneHeading/param/4]
+旧协会之家
+
+[STm03_02::command/73 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/73 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/73 SetChar/param/4]
+a
+
+[STm03_02::command/73 SetChar/param/5]
+007
+
+[STm03_02::command/73 SetChar/param/6]
+none
+
+[STm03_02::command/74 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/74 CtrlChar/param/1]
+a
+
+[STm03_02::command/74 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/74 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/74 CtrlChar/param/12]
+none
+
+[STm03_02::command/74 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/75 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/75 SetTalk/param/2]
+嗨！请问有人在吗？==W====RT==<size=50>有——==W==人——==W==在——==W==吗？
+
+[STm03_02::command/75 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/75 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/75 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/75 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/76 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/76 CtrlChar/param/1]
+a
+
+[STm03_02::command/76 CtrlChar/param/3]
+close
+
+[STm03_02::command/76 CtrlChar/param/11]
+none
+
+[STm03_02::command/76 CtrlChar/param/12]
+none
+
+[STm03_02::command/76 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/84 SetChar/param/2]
+L_in
+
+[STm03_02::command/84 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/84 SetChar/param/4]
+a
+
+[STm03_02::command/84 SetChar/param/5]
+007
+
+[STm03_02::command/84 SetChar/param/6]
+none
+
+[STm03_02::command/85 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/85 CtrlChar/param/1]
+a
+
+[STm03_02::command/85 CtrlChar/param/3]
+none
+
+[STm03_02::command/85 CtrlChar/param/11]
+none
+
+[STm03_02::command/85 CtrlChar/param/12]
+none
+
+[STm03_02::command/85 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/86 CtrlStage/param/9]
+none
+
+[STm03_02::command/86 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/87 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/87 CtrlChar/param/1]
+a
+
+[STm03_02::command/87 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/87 CtrlChar/param/11]
+none
+
+[STm03_02::command/87 CtrlChar/param/12]
+none
+
+[STm03_02::command/87 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/88 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/88 SetTalk/param/2]
+笨蛋，你这样会吓到别人的。
+
+[STm03_02::command/88 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/88 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/88 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/88 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/89 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/89 CtrlChar/param/1]
+a
+
+[STm03_02::command/89 CtrlChar/param/2]
+012
+
+[STm03_02::command/89 CtrlChar/param/3]
+none
+
+[STm03_02::command/89 CtrlChar/param/11]
+none
+
+[STm03_02::command/89 CtrlChar/param/12]
+none
+
+[STm03_02::command/89 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/90 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/90 CtrlChar/param/1]
+a
+
+[STm03_02::command/90 CtrlChar/param/2]
+008
+
+[STm03_02::command/90 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm03_02::command/90 CtrlChar/param/11]
+none
+
+[STm03_02::command/90 CtrlChar/param/12]
+none
+
+[STm03_02::command/90 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/91 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/91 SetTalk/param/2]
+不好意思，我们是空白旅团，冒昧前来打扰……==W==屋子里没人？
+
+[STm03_02::command/91 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/91 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/91 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/91 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/92 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/92 CtrlChar/param/1]
+a
+
+[STm03_02::command/92 CtrlChar/param/2]
+009
+
+[STm03_02::command/92 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/92 CtrlChar/param/11]
+none
+
+[STm03_02::command/92 CtrlChar/param/12]
+none
+
+[STm03_02::command/92 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/95 CtrlStage/param/9]
+none
+
+[STm03_02::command/95 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/96 CtrlBg/param/10]
+none
+
+[STm03_02::command/96 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/97 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/97 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/97 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/97 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/97 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/98 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/98 SetTalk/param/2]
+内部环境打扫得相当干净，看起来确实有人长期居住。
+
+[STm03_02::command/98 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/98 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/98 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/98 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/99 SetAudio/param/1]
+se_075
+
+[STm03_02::command/100 CtrlBg/param/10]
+none
+
+[STm03_02::command/100 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/101 SetChar/param/2]
+none
+
+[STm03_02::command/101 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/101 SetChar/param/4]
+a
+
+[STm03_02::command/101 SetChar/param/5]
+002
+
+[STm03_02::command/101 SetChar/param/6]
+none
+
+[STm03_02::command/102 SetAudio/param/1]
+se_062
+
+[STm03_02::command/103 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/103 CtrlChar/param/1]
+a
+
+[STm03_02::command/103 CtrlChar/param/3]
+none
+
+[STm03_02::command/103 CtrlChar/param/11]
+none
+
+[STm03_02::command/103 CtrlChar/param/12]
+none
+
+[STm03_02::command/103 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/104 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/104 SetTalk/param/2]
+有人。
+
+[STm03_02::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/104 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/106 SetAudio/param/1]
+se_052
+
+[STm03_02::command/107 CtrlBg/param/10]
+none
+
+[STm03_02::command/107 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/108 SetChar/param/2]
+none
+
+[STm03_02::command/108 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/108 SetChar/param/4]
+a
+
+[STm03_02::command/108 SetChar/param/5]
+002
+
+[STm03_02::command/108 SetChar/param/6]
+none
+
+[STm03_02::command/109 SetAudio/param/1]
+se_077
+
+[STm03_02::command/110 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/110 SetBGM/param/3]
+m36
+
+[STm03_02::command/110 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/111 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/111 CtrlChar/param/1]
+a
+
+[STm03_02::command/111 CtrlChar/param/3]
+none
+
+[STm03_02::command/111 CtrlChar/param/11]
+none
+
+[STm03_02::command/111 CtrlChar/param/12]
+none
+
+[STm03_02::command/111 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/112 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/112 SetTalk/param/2]
+嘘。别出声，现在是关键时刻——
+
+[STm03_02::command/112 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/112 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/112 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/112 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/1]
+0
+
+[STm03_02::command/114 SetTalk/param/2]
+协会之家一楼大厅的黑暗角落里，有数台摆放在一起的娃娃机。==RT==发出声音的女孩坐在其中一台前。
+
+[STm03_02::command/114 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/115 SetAudio/param/1]
+se_288
+
+[STm03_02::command/116 SetTalk/param/1]
+0
+
+[STm03_02::command/116 SetTalk/param/2]
+她紧张地抓着操纵杆，全神贯注，银光闪闪的爪子缓缓下落，直取目标——
+
+[STm03_02::command/116 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/116 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/116 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/116 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/117 SetAudio/param/1]
+se_084
+
+[STm03_02::command/118 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/119 SetTalk/param/1]
+0
+
+[STm03_02::command/119 SetTalk/param/2]
+抓臂牢牢抓住了星塔里常见的黑白相间的家伙——名为夏洛克的企鹅的玩偶。
+
+[STm03_02::command/119 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/119 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/119 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/119 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/120 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/121 SetChar/param/2]
+none
+
+[STm03_02::command/121 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/121 SetChar/param/4]
+a
+
+[STm03_02::command/121 SetChar/param/5]
+002
+
+[STm03_02::command/121 SetChar/param/6]
+none
+
+[STm03_02::command/122 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/122 CtrlChar/param/1]
+a
+
+[STm03_02::command/122 CtrlChar/param/3]
+none
+
+[STm03_02::command/122 CtrlChar/param/11]
+none
+
+[STm03_02::command/122 CtrlChar/param/12]
+none
+
+[STm03_02::command/122 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/123 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/123 CtrlChar/param/1]
+a
+
+[STm03_02::command/123 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm03_02::command/123 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/123 CtrlChar/param/12]
+none
+
+[STm03_02::command/123 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/124 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/124 SetTalk/param/2]
+……呼，成了。
+
+[STm03_02::command/124 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/124 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/124 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/124 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/125 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/125 CtrlChar/param/1]
+a
+
+[STm03_02::command/125 CtrlChar/param/3]
+none
+
+[STm03_02::command/125 CtrlChar/param/11]
+none
+
+[STm03_02::command/125 CtrlChar/param/12]
+none
+
+[STm03_02::command/125 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/126 SetChar/param/2]
+L_in
+
+[STm03_02::command/126 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/126 SetChar/param/4]
+a
+
+[STm03_02::command/126 SetChar/param/5]
+002
+
+[STm03_02::command/126 SetChar/param/6]
+none
+
+[STm03_02::command/127 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/127 CtrlChar/param/1]
+a
+
+[STm03_02::command/127 CtrlChar/param/3]
+none
+
+[STm03_02::command/127 CtrlChar/param/11]
+none
+
+[STm03_02::command/127 CtrlChar/param/12]
+none
+
+[STm03_02::command/127 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/128 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/128 CtrlChar/param/1]
+a
+
+[STm03_02::command/128 CtrlChar/param/2]
+007
+
+[STm03_02::command/128 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/128 CtrlChar/param/11]
+daintou
+
+[STm03_02::command/128 CtrlChar/param/12]
+none
+
+[STm03_02::command/128 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/129 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/129 SetTalk/param/2]
+哦，真厉害！
+
+[STm03_02::command/129 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/129 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/129 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/129 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/130 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/130 CtrlChar/param/1]
+a
+
+[STm03_02::command/130 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/130 CtrlChar/param/11]
+none
+
+[STm03_02::command/130 CtrlChar/param/12]
+none
+
+[STm03_02::command/130 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/131 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/131 SetTalk/param/2]
+嘿嘿，谢谢夸奖。
+
+[STm03_02::command/131 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/131 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/131 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/131 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/133 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/133 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/133 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/133 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/133 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/134 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/134 SetTalk/param/2]
+难道她就是……==B==不，不太像。
+
+[STm03_02::command/134 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/134 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/134 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/134 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/135 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/135 CtrlChar/param/1]
+a
+
+[STm03_02::command/135 CtrlChar/param/2]
+013
+
+[STm03_02::command/135 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/135 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/135 CtrlChar/param/12]
+none
+
+[STm03_02::command/135 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/136 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/136 SetTalk/param/2]
+绿色、手指很敏捷。
+
+[STm03_02::command/136 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/136 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/136 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/136 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/137 SetAudio/param/1]
+se_072
+
+[STm03_02::command/138 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/138 CtrlChar/param/1]
+a
+
+[STm03_02::command/138 CtrlChar/param/2]
+005
+
+[STm03_02::command/138 CtrlChar/param/3]
+none
+
+[STm03_02::command/138 CtrlChar/param/11]
+none
+
+[STm03_02::command/138 CtrlChar/param/12]
+none
+
+[STm03_02::command/138 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/139 CtrlStage/param/9]
+none
+
+[STm03_02::command/139 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/140 SetAudio/param/1]
+se_077
+
+[STm03_02::command/141 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/141 CtrlChar/param/1]
+a
+
+[STm03_02::command/141 CtrlChar/param/2]
+006
+
+[STm03_02::command/141 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/141 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/141 CtrlChar/param/12]
+none
+
+[STm03_02::command/141 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/142 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/142 SetTalk/param/2]
+请问，你是剑术大师吗？
+
+[STm03_02::command/142 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/142 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/142 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/142 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/143 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/143 CtrlChar/param/1]
+a
+
+[STm03_02::command/143 CtrlChar/param/2]
+011
+
+[STm03_02::command/143 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/143 CtrlChar/param/11]
+none
+
+[STm03_02::command/143 CtrlChar/param/12]
+none
+
+[STm03_02::command/143 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/144 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/144 SetTalk/param/2]
+嗯？
+
+[STm03_02::command/144 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/144 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/144 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/144 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/146 CtrlStage/param/9]
+none
+
+[STm03_02::command/146 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/147 SetChar/param/2]
+C_in
+
+[STm03_02::command/147 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/147 SetChar/param/4]
+a
+
+[STm03_02::command/147 SetChar/param/5]
+002
+
+[STm03_02::command/147 SetChar/param/6]
+none
+
+[STm03_02::command/148 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/148 SetTalk/param/2]
+尘沙，别把星塔影戏和现实搞混了。
+
+[STm03_02::command/148 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/148 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/148 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/148 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/149 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/149 CtrlChar/param/1]
+a
+
+[STm03_02::command/149 CtrlChar/param/2]
+006
+
+[STm03_02::command/149 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm03_02::command/149 CtrlChar/param/11]
+none
+
+[STm03_02::command/149 CtrlChar/param/12]
+none
+
+[STm03_02::command/149 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/150 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/150 SetTalk/param/2]
+那个，我们是空白旅团，突然打扰非常抱歉。
+
+[STm03_02::command/150 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/150 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/150 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/150 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/151 SetAudio/param/1]
+se_077
+
+[STm03_02::command/152 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/152 CtrlChar/param/1]
+a
+
+[STm03_02::command/152 CtrlChar/param/3]
+none
+
+[STm03_02::command/152 CtrlChar/param/11]
+JuGong
+
+[STm03_02::command/152 CtrlChar/param/12]
+none
+
+[STm03_02::command/152 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/153 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/153 SetTalk/param/2]
+我们是来找一位情报商的，她叫瑟拉娜。
+
+[STm03_02::command/153 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/153 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/153 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/153 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/155 SetChar/param/2]
+C_in
+
+[STm03_02::command/155 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/155 SetChar/param/4]
+a
+
+[STm03_02::command/155 SetChar/param/5]
+018
+
+[STm03_02::command/155 SetChar/param/6]
+none
+
+[STm03_02::command/156 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/156 CtrlChar/param/1]
+a
+
+[STm03_02::command/156 CtrlChar/param/2]
+002
+
+[STm03_02::command/156 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/156 CtrlChar/param/11]
+none
+
+[STm03_02::command/156 CtrlChar/param/12]
+none
+
+[STm03_02::command/156 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/157 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/157 SetTalk/param/2]
+原来是找瑟拉娜的啊，哼哼。
+
+[STm03_02::command/157 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/157 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/157 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/157 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/158 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/158 CtrlChar/param/1]
+a
+
+[STm03_02::command/158 CtrlChar/param/2]
+007
+
+[STm03_02::command/158 CtrlChar/param/3]
+none
+
+[STm03_02::command/158 CtrlChar/param/11]
+none
+
+[STm03_02::command/158 CtrlChar/param/12]
+none
+
+[STm03_02::command/158 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/159 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/159 SetTalk/param/2]
+很不巧，她不在这里哦，她很少在人前露面的。
+
+[STm03_02::command/159 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/159 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/159 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/159 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/160 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/160 CtrlChar/param/1]
+a
+
+[STm03_02::command/160 CtrlChar/param/2]
+003
+
+[STm03_02::command/160 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/160 CtrlChar/param/11]
+none
+
+[STm03_02::command/160 CtrlChar/param/12]
+none
+
+[STm03_02::command/160 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/161 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/161 SetTalk/param/2]
+不过，我知道怎么找到她。
+
+[STm03_02::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/161 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/162 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/162 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/162 SetChar/param/4]
+a
+
+[STm03_02::command/162 SetChar/param/5]
+010
+
+[STm03_02::command/162 SetChar/param/6]
+none
+
+[STm03_02::command/163 CtrlStage/param/9]
+none
+
+[STm03_02::command/163 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/164 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/164 CtrlChar/param/1]
+a
+
+[STm03_02::command/164 CtrlChar/param/3]
+close
+
+[STm03_02::command/164 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/164 CtrlChar/param/12]
+none
+
+[STm03_02::command/164 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/165 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/165 SetTalk/param/2]
+太好了，您能带我们去找吗？谢礼方面......
+
+[STm03_02::command/165 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/165 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/165 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/165 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/166 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/166 CtrlChar/param/1]
+a
+
+[STm03_02::command/166 CtrlChar/param/2]
+009
+
+[STm03_02::command/166 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/166 CtrlChar/param/11]
+none
+
+[STm03_02::command/166 CtrlChar/param/12]
+none
+
+[STm03_02::command/166 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/167 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/167 SetTalk/param/2]
+可以，但是你们得陪我玩一把……==RT==不对，是通过我的考验，毕竟我还不太清楚你们是什么来头呢。
+
+[STm03_02::command/167 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/167 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/167 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/167 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/168 SetChar/param/2]
+R_in
+
+[STm03_02::command/168 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/168 SetChar/param/4]
+a
+
+[STm03_02::command/168 SetChar/param/5]
+006
+
+[STm03_02::command/168 SetChar/param/6]
+none
+
+[STm03_02::command/169 CtrlStage/param/9]
+none
+
+[STm03_02::command/169 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/170 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/170 CtrlChar/param/1]
+a
+
+[STm03_02::command/170 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/170 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/170 CtrlChar/param/12]
+none
+
+[STm03_02::command/170 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/171 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/171 SetTalk/param/2]
+哦哦，我明白了，就和故事里一样，==RT==想要见到隐居的传奇旅人，必须先打赢守门的部下。
+
+[STm03_02::command/171 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/171 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/171 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/171 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/172 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/172 CtrlChar/param/1]
+a
+
+[STm03_02::command/172 CtrlChar/param/2]
+011
+
+[STm03_02::command/172 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/172 CtrlChar/param/11]
+none
+
+[STm03_02::command/172 CtrlChar/param/12]
+none
+
+[STm03_02::command/172 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/173 SetAudio/param/1]
+se_070
+
+[STm03_02::command/174 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/174 CtrlChar/param/1]
+a
+
+[STm03_02::command/174 CtrlChar/param/2]
+017
+
+[STm03_02::command/174 CtrlChar/param/3]
+close
+
+[STm03_02::command/174 CtrlChar/param/11]
+buman
+
+[STm03_02::command/174 CtrlChar/param/12]
+none
+
+[STm03_02::command/174 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/175 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/175 SetTalk/param/2]
+我才不是她的部下！
+
+[STm03_02::command/175 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/175 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/175 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/175 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/176 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/176 CtrlChar/param/1]
+a
+
+[STm03_02::command/176 CtrlChar/param/2]
+007
+
+[STm03_02::command/176 CtrlChar/param/3]
+close
+
+[STm03_02::command/176 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/176 CtrlChar/param/12]
+none
+
+[STm03_02::command/176 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/177 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/177 CtrlChar/param/1]
+a
+
+[STm03_02::command/177 CtrlChar/param/2]
+008
+
+[STm03_02::command/177 CtrlChar/param/3]
+none
+
+[STm03_02::command/177 CtrlChar/param/11]
+none
+
+[STm03_02::command/177 CtrlChar/param/12]
+none
+
+[STm03_02::command/177 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/178 SetMainRoleTalk/param/2]
+025
+
+[STm03_02::command/178 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STm03_02::command/178 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/178 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/178 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/179 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/179 SetTalk/param/2]
+对，对不起！我替尘沙道歉……==B====RT==所以你说的测试是指？
+
+[STm03_02::command/179 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/179 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/179 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/179 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/180 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/180 CtrlChar/param/1]
+a
+
+[STm03_02::command/180 CtrlChar/param/3]
+none
+
+[STm03_02::command/180 CtrlChar/param/11]
+none
+
+[STm03_02::command/180 CtrlChar/param/12]
+none
+
+[STm03_02::command/180 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/181 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/181 CtrlChar/param/1]
+a
+
+[STm03_02::command/181 CtrlChar/param/3]
+none
+
+[STm03_02::command/181 CtrlChar/param/11]
+none
+
+[STm03_02::command/181 CtrlChar/param/12]
+none
+
+[STm03_02::command/181 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/182 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/182 CtrlChar/param/1]
+a
+
+[STm03_02::command/182 CtrlChar/param/2]
+024
+
+[STm03_02::command/182 CtrlChar/param/3]
+none
+
+[STm03_02::command/182 CtrlChar/param/11]
+none
+
+[STm03_02::command/182 CtrlChar/param/12]
+none
+
+[STm03_02::command/182 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/183 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/183 CtrlChar/param/1]
+a
+
+[STm03_02::command/183 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/183 CtrlChar/param/11]
+none
+
+[STm03_02::command/183 CtrlChar/param/12]
+none
+
+[STm03_02::command/183 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/184 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/184 SetTalk/param/2]
+当然是这个——抓娃娃，每人控制一只爪子，==RT==规定时间内抓到更多娃娃的人获胜。
+
+[STm03_02::command/184 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/184 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/184 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/184 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/185 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/185 CtrlChar/param/1]
+a
+
+[STm03_02::command/185 CtrlChar/param/2]
+009
+
+[STm03_02::command/185 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/185 CtrlChar/param/11]
+diantou2
+
+[STm03_02::command/185 CtrlChar/param/12]
+none
+
+[STm03_02::command/185 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/186 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/186 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/186 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/187 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/187 SetTalk/param/2]
+怎么样，很有挑战性吧？
+
+[STm03_02::command/187 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/187 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/187 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/187 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/189 SetChar/param/2]
+L_in
+
+[STm03_02::command/189 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/189 SetChar/param/4]
+a
+
+[STm03_02::command/189 SetChar/param/5]
+007
+
+[STm03_02::command/189 SetChar/param/6]
+none
+
+[STm03_02::command/190 SetChar/param/2]
+R_in
+
+[STm03_02::command/190 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/190 SetChar/param/4]
+a
+
+[STm03_02::command/190 SetChar/param/5]
+008
+
+[STm03_02::command/190 SetChar/param/6]
+none
+
+[STm03_02::command/191 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/191 CtrlChar/param/1]
+a
+
+[STm03_02::command/191 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/191 CtrlChar/param/11]
+none
+
+[STm03_02::command/191 CtrlChar/param/12]
+none
+
+[STm03_02::command/191 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/192 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/192 CtrlChar/param/1]
+a
+
+[STm03_02::command/192 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/192 CtrlChar/param/11]
+none
+
+[STm03_02::command/192 CtrlChar/param/12]
+none
+
+[STm03_02::command/192 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/193 SetMainRoleTalk/param/2]
+025
+
+[STm03_02::command/193 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/193 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/193 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/193 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/194 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/194 SetTalk/param/2]
+……
+
+[STm03_02::command/194 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/194 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/194 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/194 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/195 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/195 CtrlChar/param/1]
+a
+
+[STm03_02::command/195 CtrlChar/param/3]
+close
+
+[STm03_02::command/195 CtrlChar/param/11]
+none
+
+[STm03_02::command/195 CtrlChar/param/12]
+none
+
+[STm03_02::command/195 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/196 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/196 CtrlChar/param/1]
+a
+
+[STm03_02::command/196 CtrlChar/param/3]
+close
+
+[STm03_02::command/196 CtrlChar/param/11]
+none
+
+[STm03_02::command/196 CtrlChar/param/12]
+none
+
+[STm03_02::command/196 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/197 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/197 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/197 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/197 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/197 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/198 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/198 SetTalk/param/2]
+她只是想找个人和她一起玩吧。
+
+[STm03_02::command/198 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/198 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/198 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/198 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/199 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/199 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/199 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/199 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/201 SetAudio/param/1]
+se_014
+
+[STm03_02::command/203 SetPhone/param/2]
+103
+
+[STm03_02::command/204 SetPhoneMsg/param/1]
+avg1_103
+
+[STm03_02::command/204 SetPhoneMsg/param/2]
+==PLAYER_NAME==，我想要。
+
+[STm03_02::command/204 SetPhoneMsg/param/3]
+0
+
+[STm03_02::command/204 SetPhoneMsg/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/204 SetPhoneMsg/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/204 SetPhoneMsg/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/204 SetPhoneMsg/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/1]
+avg3_100
+
+[STm03_02::command/205 SetPhoneMsg/param/2]
+？
+
+[STm03_02::command/205 SetPhoneMsg/param/3]
+0
+
+[STm03_02::command/205 SetPhoneMsg/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/1]
+avg1_103
+
+[STm03_02::command/206 SetPhoneMsg/param/2]
+我想要——那个娃娃。
+
+[STm03_02::command/206 SetPhoneMsg/param/3]
+0
+
+[STm03_02::command/206 SetPhoneMsg/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/207 SetPhone/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/208 SetAudio/param/1]
+se_065
+
+[STm03_02::command/209 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/209 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/209 SetChar/param/4]
+b
+
+[STm03_02::command/209 SetChar/param/5]
+002
+
+[STm03_02::command/209 SetChar/param/6]
+none
+
+[STm03_02::command/210 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/210 CtrlChar/param/1]
+b
+
+[STm03_02::command/210 CtrlChar/param/3]
+none
+
+[STm03_02::command/210 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/210 CtrlChar/param/12]
+none
+
+[STm03_02::command/210 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/211 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/211 CtrlChar/param/1]
+b
+
+[STm03_02::command/211 CtrlChar/param/3]
+avg_emoji_star
+
+[STm03_02::command/211 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/211 CtrlChar/param/12]
+none
+
+[STm03_02::command/211 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/212 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/212 CtrlChar/param/1]
+b
+
+[STm03_02::command/212 CtrlChar/param/3]
+none
+
+[STm03_02::command/212 CtrlChar/param/11]
+none
+
+[STm03_02::command/212 CtrlChar/param/12]
+none
+
+[STm03_02::command/212 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/214 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/214 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/214 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/214 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/214 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/215 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/215 SetTalk/param/2]
+还是第一次见到琥珀这么兴奋！
+
+[STm03_02::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/215 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/215 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/216 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/216 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/216 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/216 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/216 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/217 SetChar/param/2]
+C_in
+
+[STm03_02::command/217 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/217 SetChar/param/4]
+a
+
+[STm03_02::command/217 SetChar/param/5]
+002
+
+[STm03_02::command/217 SetChar/param/6]
+none
+
+[STm03_02::command/218 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/218 CtrlChar/param/1]
+a
+
+[STm03_02::command/218 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/218 CtrlChar/param/11]
+none
+
+[STm03_02::command/218 CtrlChar/param/12]
+none
+
+[STm03_02::command/218 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/219 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/219 SetTalk/param/2]
+忍不住了吧，你的同伴已经跃跃欲试了哦～
+
+[STm03_02::command/219 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/219 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/219 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/219 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/220 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/220 CtrlChar/param/1]
+a
+
+[STm03_02::command/220 CtrlChar/param/2]
+006
+
+[STm03_02::command/220 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/220 CtrlChar/param/11]
+none
+
+[STm03_02::command/220 CtrlChar/param/12]
+none
+
+[STm03_02::command/220 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/221 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/221 SetTalk/param/2]
+哼哼，原来如此，我懂了，你们根本不是来找瑟拉娜的，是来找我的！
+
+[STm03_02::command/221 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/221 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/221 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/221 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/222 SetAudio/param/1]
+se_095
+
+[STm03_02::command/223 SetMainRoleTalk/param/2]
+021
+
+[STm03_02::command/223 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/223 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/223 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/223 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/224 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/224 SetTalk/param/2]
+......
+
+[STm03_02::command/224 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/224 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/224 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/224 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/225 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/225 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/225 SetBGM/param/4]
+4000ms
+
+[STm03_02::command/226 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/226 CtrlChar/param/1]
+a
+
+[STm03_02::command/226 CtrlChar/param/2]
+003
+
+[STm03_02::command/226 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/226 CtrlChar/param/11]
+niunie
+
+[STm03_02::command/226 CtrlChar/param/12]
+none
+
+[STm03_02::command/226 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/227 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/227 SetTalk/param/2]
+是听说了“隐居林中的娃娃机仙人”，所以特地来挑战我吧～
+
+[STm03_02::command/227 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/227 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/227 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/227 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/228 CtrlStage/param/9]
+none
+
+[STm03_02::command/228 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/229 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/229 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/229 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/229 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/229 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/230 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/230 SetTalk/param/2]
+看这架势，不陪她玩的话，怕是没法继续谈正事了。
+
+[STm03_02::command/230 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/230 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/230 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/230 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/232 CtrlStage/param/9]
+none
+
+[STm03_02::command/232 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/233 SetPersonalityChoice/param/2]
+答应挑战
+
+[STm03_02::command/233 SetPersonalityChoice/param/3]
+展示实力
+
+[STm03_02::command/233 SetPersonalityChoice/param/4]
+恐吓对方
+
+[STm03_02::command/233 SetPersonalityChoice/param/5]
+a
+
+[STm03_02::command/233 SetPersonalityChoice/param/6]
+002
+
+[STm03_02::command/233 SetPersonalityChoice/param/7]
+none
+
+[STm03_02::command/233 SetPersonalityChoice/param/8]
+该选什么呢？
+
+[STm03_02::command/233 SetPersonalityChoice/param/9]
+[EMPTY_SOURCE]
+
+[STm03_02::command/235 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/235 SetBGM/param/3]
+m44
+
+[STm03_02::command/235 SetBGM/param/4]
+none
+
+[STm03_02::command/236 CtrlStage/param/9]
+none
+
+[STm03_02::command/236 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/237 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/237 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/237 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/237 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/237 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/238 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/238 SetTalk/param/2]
+正好琥珀也想玩，不如将计就计。
+
+[STm03_02::command/238 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/238 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/238 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/238 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/239 CtrlStage/param/9]
+none
+
+[STm03_02::command/239 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/240 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/240 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STm03_02::command/240 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/240 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/240 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/241 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/241 SetTalk/param/2]
+好，我们接受你的考验。但是，如果我们赢了，你就得带我们找到瑟拉娜。
+
+[STm03_02::command/241 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/241 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/241 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/241 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/242 SetChar/param/2]
+C_in
+
+[STm03_02::command/242 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/242 SetChar/param/4]
+a
+
+[STm03_02::command/242 SetChar/param/5]
+011
+
+[STm03_02::command/242 SetChar/param/6]
+none
+
+[STm03_02::command/243 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/243 CtrlChar/param/1]
+a
+
+[STm03_02::command/243 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/243 CtrlChar/param/11]
+none
+
+[STm03_02::command/243 CtrlChar/param/12]
+none
+
+[STm03_02::command/243 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/244 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/244 CtrlChar/param/1]
+a
+
+[STm03_02::command/244 CtrlChar/param/2]
+002
+
+[STm03_02::command/244 CtrlChar/param/3]
+close
+
+[STm03_02::command/244 CtrlChar/param/11]
+none
+
+[STm03_02::command/244 CtrlChar/param/12]
+none
+
+[STm03_02::command/244 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/245 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/245 SetTalk/param/2]
+你们这可是在向“娃娃机仙人”挑战啊。==RT==找到瑟拉娜算什么，如果你们赢了，你们要我做什么都可以。
+
+[STm03_02::command/245 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/245 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/245 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/245 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/246 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/246 CtrlChar/param/1]
+a
+
+[STm03_02::command/246 CtrlChar/param/3]
+none
+
+[STm03_02::command/246 CtrlChar/param/11]
+none
+
+[STm03_02::command/246 CtrlChar/param/12]
+none
+
+[STm03_02::command/246 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/247 SetChar/param/2]
+none
+
+[STm03_02::command/247 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/247 SetChar/param/4]
+a
+
+[STm03_02::command/247 SetChar/param/5]
+002
+
+[STm03_02::command/247 SetChar/param/6]
+none
+
+[STm03_02::command/248 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/248 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm03_02::command/248 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/248 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/248 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/249 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/249 SetTalk/param/2]
+那......==B==琥珀......
+
+[STm03_02::command/249 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/249 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/249 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/249 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/250 SetChar/param/2]
+C_in
+
+[STm03_02::command/250 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/250 SetChar/param/4]
+a
+
+[STm03_02::command/250 SetChar/param/5]
+002
+
+[STm03_02::command/250 SetChar/param/6]
+none
+
+[STm03_02::command/251 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/251 CtrlChar/param/1]
+a
+
+[STm03_02::command/251 CtrlChar/param/2]
+014
+
+[STm03_02::command/251 CtrlChar/param/3]
+none
+
+[STm03_02::command/251 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/251 CtrlChar/param/12]
+none
+
+[STm03_02::command/251 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/252 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/252 SetTalk/param/2]
+嗯！
+
+[STm03_02::command/252 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/252 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/252 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/252 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/253 SetChar/param/2]
+R_in
+
+[STm03_02::command/253 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/253 SetChar/param/4]
+a
+
+[STm03_02::command/253 SetChar/param/5]
+002
+
+[STm03_02::command/253 SetChar/param/6]
+none
+
+[STm03_02::command/254 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/254 CtrlChar/param/1]
+a
+
+[STm03_02::command/254 CtrlChar/param/3]
+none
+
+[STm03_02::command/254 CtrlChar/param/11]
+none
+
+[STm03_02::command/254 CtrlChar/param/12]
+none
+
+[STm03_02::command/254 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/255 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/255 CtrlChar/param/1]
+a
+
+[STm03_02::command/255 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/255 CtrlChar/param/11]
+none
+
+[STm03_02::command/255 CtrlChar/param/12]
+none
+
+[STm03_02::command/255 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/256 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/256 SetTalk/param/2]
+哦，我就知道是你来挑战，那么请坐吧。
+
+[STm03_02::command/256 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/256 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/256 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/256 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/257 SetAudio/param/1]
+se_112
+
+[STm03_02::command/258 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/258 CtrlChar/param/1]
+a
+
+[STm03_02::command/258 CtrlChar/param/3]
+none
+
+[STm03_02::command/258 CtrlChar/param/11]
+none
+
+[STm03_02::command/258 CtrlChar/param/12]
+none
+
+[STm03_02::command/258 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/259 CtrlStage/param/9]
+none
+
+[STm03_02::command/259 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/260 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/260 SetTalk/param/2]
+准备好了。
+
+[STm03_02::command/260 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/260 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/260 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/260 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/261 SetAudio/param/1]
+se_112
+
+[STm03_02::command/262 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/262 CtrlChar/param/1]
+a
+
+[STm03_02::command/262 CtrlChar/param/2]
+012
+
+[STm03_02::command/262 CtrlChar/param/3]
+none
+
+[STm03_02::command/262 CtrlChar/param/11]
+none
+
+[STm03_02::command/262 CtrlChar/param/12]
+none
+
+[STm03_02::command/262 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/263 CtrlStage/param/9]
+none
+
+[STm03_02::command/263 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/264 SetTalkShake/param/1]
+none
+
+[STm03_02::command/265 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/265 SetTalk/param/2]
+<size=50>挑战开始！！！！
+
+[STm03_02::command/265 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/265 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/265 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/265 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/266 SetTrans/param/2]
+AvgStageEffect_mosaic
+
+[STm03_02::command/266 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/266 SetTrans/param/8]
+default
+
+[STm03_02::command/267 CtrlStage/param/9]
+none
+
+[STm03_02::command/267 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/268 SetTrans/param/2]
+0
+
+[STm03_02::command/268 SetTrans/param/3]
+Linear
+
+[STm03_02::command/268 SetTrans/param/8]
+default
+
+[STm03_02::command/269 SetFrontObj/param/2]
+qstory_main_03_003
+
+[STm03_02::command/270 SetTalk/param/1]
+0
+
+[STm03_02::command/270 SetTalk/param/2]
+娃娃机仙人跳到琥珀身边，动作娴熟地开始操作，她操纵着机械爪一击命中，抓起了一个鳄鱼玩偶。
+
+[STm03_02::command/270 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/270 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/270 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/270 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/271 SetFrontObj/param/2]
+qstory_main_03_003
+
+[STm03_02::command/272 SetChar/param/2]
+C_in
+
+[STm03_02::command/272 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/272 SetChar/param/4]
+a
+
+[STm03_02::command/272 SetChar/param/5]
+002
+
+[STm03_02::command/272 SetChar/param/6]
+none
+
+[STm03_02::command/273 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/273 CtrlChar/param/1]
+a
+
+[STm03_02::command/273 CtrlChar/param/2]
+009
+
+[STm03_02::command/273 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/273 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/273 CtrlChar/param/12]
+none
+
+[STm03_02::command/273 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/274 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/274 SetTalk/param/2]
+哼哼，看到了吧，这就是我的实力，你要是现在想投降还——
+
+[STm03_02::command/274 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/274 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/274 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/274 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/275 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/275 CtrlChar/param/1]
+a
+
+[STm03_02::command/275 CtrlChar/param/2]
+010
+
+[STm03_02::command/275 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/275 CtrlChar/param/11]
+chijing
+
+[STm03_02::command/275 CtrlChar/param/12]
+none
+
+[STm03_02::command/275 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/276 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/276 SetTalk/param/2]
+等……等等！你怎么那么快？！
+
+[STm03_02::command/276 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/276 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/276 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/276 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/277 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/277 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/277 SetChar/param/4]
+a
+
+[STm03_02::command/277 SetChar/param/5]
+002
+
+[STm03_02::command/277 SetChar/param/6]
+none
+
+[STm03_02::command/278 CtrlStage/param/9]
+none
+
+[STm03_02::command/278 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/279 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/279 CtrlChar/param/1]
+a
+
+[STm03_02::command/279 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/279 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/279 CtrlChar/param/12]
+none
+
+[STm03_02::command/279 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/280 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/280 SetTalk/param/2]
+~<size=60>♪
+
+[STm03_02::command/280 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/280 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/280 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/280 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/281 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/281 CtrlChar/param/1]
+a
+
+[STm03_02::command/281 CtrlChar/param/3]
+none
+
+[STm03_02::command/281 CtrlChar/param/11]
+none
+
+[STm03_02::command/281 CtrlChar/param/12]
+none
+
+[STm03_02::command/281 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/282 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/282 CtrlChar/param/1]
+a
+
+[STm03_02::command/282 CtrlChar/param/3]
+none
+
+[STm03_02::command/282 CtrlChar/param/11]
+none
+
+[STm03_02::command/282 CtrlChar/param/12]
+none
+
+[STm03_02::command/282 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/284 CtrlStage/param/9]
+none
+
+[STm03_02::command/284 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/285 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/286 SetTalk/param/1]
+0
+
+[STm03_02::command/286 SetTalk/param/2]
+一瞬间，琥珀的脚边已经多了三个玩偶。
+
+[STm03_02::command/286 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/286 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/286 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/286 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/287 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/288 SetChar/param/2]
+C_in
+
+[STm03_02::command/288 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/288 SetChar/param/4]
+a
+
+[STm03_02::command/288 SetChar/param/5]
+020
+
+[STm03_02::command/288 SetChar/param/6]
+none
+
+[STm03_02::command/289 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/289 CtrlChar/param/1]
+a
+
+[STm03_02::command/289 CtrlChar/param/2]
+017
+
+[STm03_02::command/289 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STm03_02::command/289 CtrlChar/param/11]
+buman
+
+[STm03_02::command/289 CtrlChar/param/12]
+none
+
+[STm03_02::command/289 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/290 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/290 SetTalk/param/2]
+不说话装高手是吧！
+
+[STm03_02::command/290 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/290 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/290 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/290 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/291 SetTalk/param/2]
+好好好，这就让你见识一下本仙人的真正实力！
+
+[STm03_02::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/292 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/292 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/292 SetBGM/param/4]
+1500ms
+
+[STm03_02::command/293 SetTrans/param/2]
+0
+
+[STm03_02::command/293 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/293 SetTrans/param/8]
+fade
+
+[STm03_02::command/296 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/296 SetBGM/param/3]
+m44
+
+[STm03_02::command/296 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/297 CtrlStage/param/9]
+none
+
+[STm03_02::command/297 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/298 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/298 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/298 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/298 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/298 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/299 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/299 SetTalk/param/2]
+要是这样能让她心服口服的话就好……
+
+[STm03_02::command/299 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/299 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/299 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/299 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/300 SetTalk/param/2]
+况且琥珀也兴致勃勃，倒也不算坏事。
+
+[STm03_02::command/300 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/301 CtrlStage/param/9]
+none
+
+[STm03_02::command/301 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/302 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/302 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm03_02::command/302 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/302 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/302 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/303 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/303 SetTalk/param/2]
+好，我们会挑战你，在那之前，能让我们试一下机器吗？
+
+[STm03_02::command/303 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/303 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/303 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/303 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/304 SetChar/param/2]
+C_in
+
+[STm03_02::command/304 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/304 SetChar/param/4]
+a
+
+[STm03_02::command/304 SetChar/param/5]
+002
+
+[STm03_02::command/304 SetChar/param/6]
+none
+
+[STm03_02::command/305 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/305 CtrlChar/param/1]
+a
+
+[STm03_02::command/305 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/305 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/305 CtrlChar/param/12]
+none
+
+[STm03_02::command/305 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/306 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/306 SetTalk/param/2]
+当然，既然是挑战，那就要公平。
+
+[STm03_02::command/306 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/306 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/306 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/306 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/308 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/308 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/308 SetChar/param/4]
+a
+
+[STm03_02::command/308 SetChar/param/5]
+002
+
+[STm03_02::command/308 SetChar/param/6]
+none
+
+[STm03_02::command/309 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/309 CtrlChar/param/1]
+a
+
+[STm03_02::command/309 CtrlChar/param/3]
+none
+
+[STm03_02::command/309 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/309 CtrlChar/param/12]
+none
+
+[STm03_02::command/309 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/310 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/310 SetTalk/param/2]
+我上了。
+
+[STm03_02::command/310 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/310 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/310 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/310 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/312 SetAudio/param/1]
+se_236
+
+[STm03_02::command/313 SetChar/param/2]
+C_in
+
+[STm03_02::command/313 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/313 SetChar/param/4]
+a
+
+[STm03_02::command/313 SetChar/param/5]
+002
+
+[STm03_02::command/313 SetChar/param/6]
+none
+
+[STm03_02::command/314 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/314 CtrlChar/param/1]
+a
+
+[STm03_02::command/314 CtrlChar/param/2]
+009
+
+[STm03_02::command/314 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/314 CtrlChar/param/11]
+none
+
+[STm03_02::command/314 CtrlChar/param/12]
+none
+
+[STm03_02::command/314 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/315 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/315 SetTalk/param/2]
+哦？看起来有点自信嘛……==RT==不过先说好，这里的娃娃机和星塔里的可不一样。
+
+[STm03_02::command/315 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/315 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/315 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/315 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/316 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/316 CtrlChar/param/1]
+a
+
+[STm03_02::command/316 CtrlChar/param/2]
+011
+
+[STm03_02::command/316 CtrlChar/param/3]
+none
+
+[STm03_02::command/316 CtrlChar/param/11]
+none
+
+[STm03_02::command/316 CtrlChar/param/12]
+none
+
+[STm03_02::command/316 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/317 SetAudio/param/1]
+se_288
+
+[STm03_02::command/318 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/318 SetTalk/param/2]
+这里的机器都是特别调试过的，爪子的力量非常微妙。==RT==不习惯的玩家，可能抓一百次也……
+
+[STm03_02::command/318 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/318 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/318 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/318 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/319 SetAudio/param/1]
+se_084
+
+[STm03_02::command/320 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/320 SetCharHead/param/6]
+a
+
+[STm03_02::command/320 SetCharHead/param/7]
+014
+
+[STm03_02::command/320 SetCharHead/param/8]
+none
+
+[STm03_02::command/321 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/321 CtrlChar/param/1]
+a
+
+[STm03_02::command/321 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/321 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/321 CtrlChar/param/12]
+none
+
+[STm03_02::command/321 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/322 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/322 SetTalk/param/2]
+抓到了~
+
+[STm03_02::command/322 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/322 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/322 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/322 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/323 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/323 SetCharHead/param/6]
+a
+
+[STm03_02::command/323 SetCharHead/param/7]
+002
+
+[STm03_02::command/323 SetCharHead/param/8]
+none
+
+[STm03_02::command/324 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/324 CtrlChar/param/1]
+a
+
+[STm03_02::command/324 CtrlChar/param/2]
+023
+
+[STm03_02::command/324 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/324 CtrlChar/param/11]
+none
+
+[STm03_02::command/324 CtrlChar/param/12]
+none
+
+[STm03_02::command/324 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/325 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/325 SetTalk/param/2]
+哎？
+
+[STm03_02::command/325 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/325 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/325 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/325 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/326 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/326 CtrlChar/param/1]
+a
+
+[STm03_02::command/326 CtrlChar/param/2]
+024
+
+[STm03_02::command/326 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STm03_02::command/326 CtrlChar/param/11]
+none
+
+[STm03_02::command/326 CtrlChar/param/12]
+none
+
+[STm03_02::command/326 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/327 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/327 SetTalk/param/2]
+这、这一定是巧合，新人的运气都比较好。你现在把运气用完了，后面就……
+
+[STm03_02::command/327 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/327 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/327 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/327 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/328 SetAudio/param/1]
+se_084
+
+[STm03_02::command/329 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/329 SetCharHead/param/6]
+a
+
+[STm03_02::command/329 SetCharHead/param/7]
+014
+
+[STm03_02::command/329 SetCharHead/param/8]
+none
+
+[STm03_02::command/330 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/330 CtrlChar/param/1]
+a
+
+[STm03_02::command/330 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/330 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/330 CtrlChar/param/12]
+none
+
+[STm03_02::command/330 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/331 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/331 SetTalk/param/2]
+第二只。
+
+[STm03_02::command/331 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/331 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/331 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/331 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/332 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/332 SetCharHead/param/6]
+a
+
+[STm03_02::command/332 SetCharHead/param/7]
+002
+
+[STm03_02::command/332 SetCharHead/param/8]
+none
+
+[STm03_02::command/333 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/333 CtrlChar/param/1]
+a
+
+[STm03_02::command/333 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/333 CtrlChar/param/11]
+none
+
+[STm03_02::command/333 CtrlChar/param/12]
+none
+
+[STm03_02::command/333 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/334 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/334 CtrlChar/param/1]
+a
+
+[STm03_02::command/334 CtrlChar/param/2]
+013
+
+[STm03_02::command/334 CtrlChar/param/3]
+close
+
+[STm03_02::command/334 CtrlChar/param/11]
+none
+
+[STm03_02::command/334 CtrlChar/param/12]
+none
+
+[STm03_02::command/334 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/335 SetAudio/param/1]
+se_084
+
+[STm03_02::command/336 SetAudio/param/1]
+se_084
+
+[STm03_02::command/337 SetAudio/param/1]
+se_062
+
+[STm03_02::command/338 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/338 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/338 SetChar/param/4]
+a
+
+[STm03_02::command/338 SetChar/param/5]
+002
+
+[STm03_02::command/338 SetChar/param/6]
+none
+
+[STm03_02::command/339 CtrlStage/param/9]
+none
+
+[STm03_02::command/339 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/340 SetAudio/param/1]
+se_077
+
+[STm03_02::command/341 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/341 CtrlChar/param/1]
+a
+
+[STm03_02::command/341 CtrlChar/param/3]
+close
+
+[STm03_02::command/341 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/341 CtrlChar/param/12]
+none
+
+[STm03_02::command/341 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/342 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/342 CtrlChar/param/1]
+a
+
+[STm03_02::command/342 CtrlChar/param/2]
+010
+
+[STm03_02::command/342 CtrlChar/param/3]
+none
+
+[STm03_02::command/342 CtrlChar/param/11]
+none
+
+[STm03_02::command/342 CtrlChar/param/12]
+none
+
+[STm03_02::command/342 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/343 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/343 SetTalk/param/2]
+第三只和第四只。
+
+[STm03_02::command/343 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/343 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/343 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/343 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/344 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/344 CtrlChar/param/1]
+a
+
+[STm03_02::command/344 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/344 CtrlChar/param/11]
+none
+
+[STm03_02::command/344 CtrlChar/param/12]
+none
+
+[STm03_02::command/344 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/345 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/345 SetTalk/param/2]
+试好了，挺简单的。
+
+[STm03_02::command/345 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/345 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/345 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/345 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/347 CtrlStage/param/9]
+none
+
+[STm03_02::command/347 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/348 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/348 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/348 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/348 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/348 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/349 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/349 SetTalk/param/2]
+琥珀抓娃娃的技术竟然这么厉害！
+
+[STm03_02::command/349 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/349 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/349 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/349 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/350 CtrlStage/param/9]
+none
+
+[STm03_02::command/350 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/351 SetChar/param/2]
+C_in
+
+[STm03_02::command/351 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/351 SetChar/param/4]
+a
+
+[STm03_02::command/351 SetChar/param/5]
+015
+
+[STm03_02::command/351 SetChar/param/6]
+none
+
+[STm03_02::command/352 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/352 CtrlChar/param/1]
+a
+
+[STm03_02::command/352 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/352 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/352 CtrlChar/param/12]
+none
+
+[STm03_02::command/352 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/353 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/353 SetTalk/param/2]
+哼哼，哼哼哼，挺有意思嘛。==RT==看来是个不容小觑的对手呢……
+
+[STm03_02::command/353 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/353 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/353 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/353 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/354 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/354 CtrlChar/param/1]
+a
+
+[STm03_02::command/354 CtrlChar/param/2]
+017
+
+[STm03_02::command/354 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/354 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/354 CtrlChar/param/12]
+none
+
+[STm03_02::command/354 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/355 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/355 SetTalk/param/2]
+就让“娃娃机仙人”来粉碎你的自信吧！
+
+[STm03_02::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/355 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/356 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/356 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/356 SetBGM/param/4]
+1500ms
+
+[STm03_02::command/358 SetTrans/param/2]
+0
+
+[STm03_02::command/358 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/358 SetTrans/param/8]
+fade
+
+[STm03_02::command/361 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/361 SetBGM/param/3]
+m44
+
+[STm03_02::command/361 SetBGM/param/4]
+none
+
+[STm03_02::command/363 SetMainRoleTalk/param/2]
+019
+
+[STm03_02::command/363 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/363 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/363 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/363 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/364 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/364 SetTalk/param/2]
+哼……哼哼。
+
+[STm03_02::command/364 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/364 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/364 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/364 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/365 SetMainRoleTalk/param/2]
+006
+
+[STm03_02::command/365 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STm03_02::command/365 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/365 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/365 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/366 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/366 SetTalk/param/2]
+哼哈哈哈哈哈！
+
+[STm03_02::command/366 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/366 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/366 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/366 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/367 SetChar/param/2]
+C_in
+
+[STm03_02::command/367 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/367 SetChar/param/4]
+a
+
+[STm03_02::command/367 SetChar/param/5]
+023
+
+[STm03_02::command/367 SetChar/param/6]
+none
+
+[STm03_02::command/368 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/368 CtrlChar/param/1]
+a
+
+[STm03_02::command/368 CtrlChar/param/2]
+010
+
+[STm03_02::command/368 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/368 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/368 CtrlChar/param/12]
+none
+
+[STm03_02::command/368 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/369 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/369 SetTalk/param/2]
+呃，你怎么了……？
+
+[STm03_02::command/369 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/369 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/369 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/369 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/371 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/371 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/371 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/371 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/371 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/372 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/372 SetTalk/param/2]
+我只是感慨一下，没想到居然有人敢于向本魔<r=BOSS></r>王发起挑战，还是用这种无聊的游戏。
+
+[STm03_02::command/372 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/372 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/372 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/372 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/373 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/373 CtrlChar/param/1]
+a
+
+[STm03_02::command/373 CtrlChar/param/2]
+013
+
+[STm03_02::command/373 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm03_02::command/373 CtrlChar/param/11]
+jinzhang
+
+[STm03_02::command/373 CtrlChar/param/12]
+none
+
+[STm03_02::command/373 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/374 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/374 SetTalk/param/2]
+魔，魔<r=BOSS></r>王？
+
+[STm03_02::command/374 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/374 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/374 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/374 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/376 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/376 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/376 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/376 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/376 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/377 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/377 SetTalk/param/2]
+那么我也要问你一句。
+
+[STm03_02::command/377 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/377 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/377 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/377 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/378 SetAudio/param/1]
+se_074
+
+[STm03_02::command/379 CtrlStage/param/9]
+none
+
+[STm03_02::command/379 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/380 SetMainRoleTalk/param/2]
+006
+
+[STm03_02::command/380 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STm03_02::command/380 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/380 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/380 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/381 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/381 SetTalk/param/2]
+准备好向魔王献上灵魂了吗？
+
+[STm03_02::command/381 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/381 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/381 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/381 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/382 SetAudio/param/1]
+se_112
+
+[STm03_02::command/383 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/383 CtrlChar/param/1]
+a
+
+[STm03_02::command/383 CtrlChar/param/2]
+023
+
+[STm03_02::command/383 CtrlChar/param/3]
+close
+
+[STm03_02::command/383 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/383 CtrlChar/param/12]
+none
+
+[STm03_02::command/383 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/384 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/384 SetTalk/param/2]
+灵……==B==灵魂？！
+
+[STm03_02::command/384 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/384 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/384 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/384 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/386 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/386 SetMainRoleTalk/param/3]
+avg_emoji_love
+
+[STm03_02::command/386 SetMainRoleTalk/param/4]
+diantou
+
+[STm03_02::command/386 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/386 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/387 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/387 SetTalk/param/2]
+既然要挑战，那当然要赌上自己的灵魂。
+
+[STm03_02::command/387 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/387 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/387 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/387 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/388 SetMainRoleTalk/param/2]
+006
+
+[STm03_02::command/388 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STm03_02::command/388 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/388 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/388 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/389 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/389 SetTalk/param/2]
+呵呵……那就开始吧！==RT==就让本王麾下的暗黑之豹，给予你永生难忘的教训吧！
+
+[STm03_02::command/389 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/389 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/389 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/389 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/390 SetAudio/param/1]
+se_349
+
+[STm03_02::command/391 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/391 CtrlChar/param/1]
+a
+
+[STm03_02::command/391 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/391 CtrlChar/param/11]
+none
+
+[STm03_02::command/391 CtrlChar/param/12]
+none
+
+[STm03_02::command/391 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/392 SetAudio/param/1]
+se_005
+
+[STm03_02::command/393 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/393 CtrlChar/param/1]
+a
+
+[STm03_02::command/393 CtrlChar/param/2]
+014
+
+[STm03_02::command/393 CtrlChar/param/3]
+close
+
+[STm03_02::command/393 CtrlChar/param/11]
+none
+
+[STm03_02::command/393 CtrlChar/param/12]
+none
+
+[STm03_02::command/393 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/394 CtrlStage/param/9]
+none
+
+[STm03_02::command/394 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/395 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/395 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/395 SetChar/param/4]
+a
+
+[STm03_02::command/395 SetChar/param/5]
+002
+
+[STm03_02::command/395 SetChar/param/6]
+none
+
+[STm03_02::command/396 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/396 CtrlChar/param/1]
+a
+
+[STm03_02::command/396 CtrlChar/param/3]
+none
+
+[STm03_02::command/396 CtrlChar/param/11]
+none
+
+[STm03_02::command/396 CtrlChar/param/12]
+none
+
+[STm03_02::command/396 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/397 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/397 CtrlChar/param/1]
+a
+
+[STm03_02::command/397 CtrlChar/param/2]
+014
+
+[STm03_02::command/397 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/397 CtrlChar/param/11]
+jushou0
+
+[STm03_02::command/397 CtrlChar/param/12]
+none
+
+[STm03_02::command/397 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/398 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/398 SetTalk/param/2]
+喵～
+
+[STm03_02::command/398 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/398 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/398 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/398 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/400 SetAudio/param/1]
+se_070
+
+[STm03_02::command/401 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/401 CtrlChar/param/1]
+a
+
+[STm03_02::command/401 CtrlChar/param/2]
+010
+
+[STm03_02::command/401 CtrlChar/param/3]
+none
+
+[STm03_02::command/401 CtrlChar/param/11]
+chijing
+
+[STm03_02::command/401 CtrlChar/param/12]
+none
+
+[STm03_02::command/401 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/402 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/402 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/402 SetBGM/param/4]
+1000ms
+
+[STm03_02::command/403 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/403 CtrlChar/param/1]
+a
+
+[STm03_02::command/403 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm03_02::command/403 CtrlChar/param/11]
+none
+
+[STm03_02::command/403 CtrlChar/param/12]
+none
+
+[STm03_02::command/403 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/404 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/404 SetTalk/param/2]
+暗黑豹？！！
+
+[STm03_02::command/404 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/404 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/404 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/404 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/405 SetTrans/param/2]
+34
+
+[STm03_02::command/405 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/405 SetTrans/param/8]
+default
+
+[STm03_02::command/408 SetAudio/param/1]
+se_288
+
+[STm03_02::command/409 SetTalk/param/1]
+0
+
+[STm03_02::command/409 SetTalk/param/2]
+就这样，为了获得情报，一场鲜为人知的激烈战争打响了。
+
+[STm03_02::command/409 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/409 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/409 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/409 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/410 CtrlStage/param/9]
+none
+
+[STm03_02::command/410 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/411 SetBg/param/1]
+ruin_travellers_home_inside
+
+[STm03_02::command/411 SetBg/param/2]
+0
+
+[STm03_02::command/411 SetBg/param/3]
+Linear
+
+[STm03_02::command/411 SetBg/param/6]
+default
+
+[STm03_02::command/412 CtrlBg/param/10]
+none
+
+[STm03_02::command/412 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/413 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/413 SetBGM/param/3]
+m24
+
+[STm03_02::command/413 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/414 SetChar/param/2]
+none
+
+[STm03_02::command/414 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/414 SetChar/param/4]
+a
+
+[STm03_02::command/414 SetChar/param/5]
+003
+
+[STm03_02::command/414 SetChar/param/6]
+none
+
+[STm03_02::command/415 SetTrans/param/2]
+0
+
+[STm03_02::command/415 SetTrans/param/3]
+Linear
+
+[STm03_02::command/415 SetTrans/param/8]
+default
+
+[STm03_02::command/416 CtrlBg/param/10]
+none
+
+[STm03_02::command/416 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/417 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/417 CtrlChar/param/1]
+a
+
+[STm03_02::command/417 CtrlChar/param/3]
+none
+
+[STm03_02::command/417 CtrlChar/param/11]
+none
+
+[STm03_02::command/417 CtrlChar/param/12]
+none
+
+[STm03_02::command/417 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/418 CtrlStage/param/9]
+none
+
+[STm03_02::command/418 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/420 SetBg/param/1]
+mood_2
+
+[STm03_02::command/420 SetBg/param/2]
+0
+
+[STm03_02::command/420 SetBg/param/3]
+OutSine
+
+[STm03_02::command/420 SetBg/param/6]
+default
+
+[STm03_02::command/421 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/421 CtrlChar/param/1]
+a
+
+[STm03_02::command/421 CtrlChar/param/2]
+009
+
+[STm03_02::command/421 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/421 CtrlChar/param/11]
+none
+
+[STm03_02::command/421 CtrlChar/param/12]
+none
+
+[STm03_02::command/421 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/422 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/422 SetTalk/param/2]
+你觉得你能打败我？抱歉，我天生只懂胜利的滋味！
+
+[STm03_02::command/422 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/422 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/422 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/422 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/423 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/423 CtrlChar/param/1]
+a
+
+[STm03_02::command/423 CtrlChar/param/2]
+022
+
+[STm03_02::command/423 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/423 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/423 CtrlChar/param/12]
+none
+
+[STm03_02::command/423 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/424 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/424 SetTalk/param/2]
+娃娃机仙人的字典中没有失败两个字！过去如此……==RT==今后亦然！！呜噢噢噢噢噢噢～～～！！！
+
+[STm03_02::command/424 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/424 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/424 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/424 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/425 CtrlStage/param/9]
+none
+
+[STm03_02::command/425 CtrlStage/param/10]
+InSine
+
+[STm03_02::command/426 SetTrans/param/2]
+0
+
+[STm03_02::command/426 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/426 SetTrans/param/8]
+default
+
+[STm03_02::command/427 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/427 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/427 SetBGM/param/4]
+1000ms
+
+[STm03_02::command/428 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/428 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/428 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/428 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/428 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/429 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/429 SetTalk/param/2]
+气势很足啊，但是......
+
+[STm03_02::command/429 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/429 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/429 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/429 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/430 SetAudio/param/1]
+se_084
+
+[STm03_02::command/431 SetBg/param/1]
+story_main_03_001_a
+
+[STm03_02::command/431 SetBg/param/2]
+0
+
+[STm03_02::command/431 SetBg/param/3]
+Linear
+
+[STm03_02::command/431 SetBg/param/6]
+default
+
+[STm03_02::command/432 CtrlBg/param/10]
+none
+
+[STm03_02::command/432 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/433 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/433 SetBGM/param/3]
+m48
+
+[STm03_02::command/433 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/434 SetTrans/param/2]
+0
+
+[STm03_02::command/434 SetTrans/param/3]
+Linear
+
+[STm03_02::command/434 SetTrans/param/8]
+default
+
+[STm03_02::command/435 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/435 SetTalk/param/2]
+我，我居然会输……
+
+[STm03_02::command/435 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/435 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/435 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/435 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/436 SetAudio/param/1]
+se_070
+
+[STm03_02::command/437 CtrlStage/param/9]
+Xiao
+
+[STm03_02::command/437 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/438 CtrlBg/param/10]
+none
+
+[STm03_02::command/438 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/439 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/439 SetTalk/param/2]
+不要啊！真的不行了！呀啊啊啊～～～～！！！！
+
+[STm03_02::command/439 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/439 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/439 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/439 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/440 SetAudio/param/1]
+se_059
+
+[STm03_02::command/441 CtrlBg/param/10]
+chijing
+
+[STm03_02::command/441 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/442 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/442 SetTalk/param/2]
+这，这次输是因为娃娃机的夹子强度设置有问题。
+
+[STm03_02::command/442 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/442 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/442 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/442 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/443 SetTalk/param/2]
+娃娃的位置和摆放也有点微妙，再加上今天风很大——
+
+[STm03_02::command/443 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/444 SetAudio/param/1]
+se_112
+
+[STm03_02::command/445 SetBg/param/1]
+story_main_03_001_b
+
+[STm03_02::command/445 SetBg/param/2]
+0
+
+[STm03_02::command/445 SetBg/param/3]
+Linear
+
+[STm03_02::command/445 SetBg/param/6]
+default
+
+[STm03_02::command/446 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/446 SetTalk/param/2]
+我，我们再来一局！
+
+[STm03_02::command/446 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/446 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/446 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/446 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/447 SetAudio/param/1]
+se_288
+
+[STm03_02::command/448 SetAudio/param/1]
+se_084
+
+[STm03_02::command/449 CtrlBg/param/10]
+none
+
+[STm03_02::command/449 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/450 SetAudio/param/1]
+se_051
+
+[STm03_02::command/451 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/451 SetTalk/param/2]
+好开心~
+
+[STm03_02::command/451 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/451 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/451 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/451 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/452 SetTrans/param/2]
+34
+
+[STm03_02::command/452 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/452 SetTrans/param/8]
+default
+
+[STm03_02::command/453 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/453 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/453 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/454 SetTalk/param/1]
+0
+
+[STm03_02::command/454 SetTalk/param/2]
+不知不觉，过去了数个小时，比赛最终以109:58，琥珀的完胜告一段落。
+
+[STm03_02::command/454 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/454 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/454 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/454 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/455 SetBg/param/1]
+ruin_travellers_home_inside
+
+[STm03_02::command/455 SetBg/param/2]
+0
+
+[STm03_02::command/455 SetBg/param/3]
+Linear
+
+[STm03_02::command/455 SetBg/param/6]
+default
+
+[STm03_02::command/456 SetAudio/param/1]
+se_095
+
+[STm03_02::command/457 SetTrans/param/2]
+0
+
+[STm03_02::command/457 SetTrans/param/3]
+Linear
+
+[STm03_02::command/457 SetTrans/param/8]
+default
+
+[STm03_02::command/458 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/458 SetBGM/param/3]
+m49
+
+[STm03_02::command/458 SetBGM/param/4]
+none
+
+[STm03_02::command/459 SetSceneHeading/param/0]
+11:00
+
+[STm03_02::command/459 SetSceneHeading/param/1]
+雨月
+
+[STm03_02::command/459 SetSceneHeading/param/2]
+16日
+
+[STm03_02::command/459 SetSceneHeading/param/3]
+菲莱城外
+
+[STm03_02::command/459 SetSceneHeading/param/4]
+旧协会之家
+
+[STm03_02::command/460 SetChar/param/2]
+C_in
+
+[STm03_02::command/460 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/460 SetChar/param/4]
+a
+
+[STm03_02::command/460 SetChar/param/5]
+008
+
+[STm03_02::command/460 SetChar/param/6]
+none
+
+[STm03_02::command/461 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/461 CtrlChar/param/1]
+a
+
+[STm03_02::command/461 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm03_02::command/461 CtrlChar/param/11]
+none
+
+[STm03_02::command/461 CtrlChar/param/12]
+none
+
+[STm03_02::command/461 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/462 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/462 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/462 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/462 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/462 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/463 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/463 SetTalk/param/2]
+……已经够了吧？
+
+[STm03_02::command/463 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/463 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/463 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/463 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/464 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/464 CtrlChar/param/1]
+a
+
+[STm03_02::command/464 CtrlChar/param/2]
+010
+
+[STm03_02::command/464 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/464 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/464 CtrlChar/param/12]
+none
+
+[STm03_02::command/464 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/465 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/465 SetTalk/param/2]
+我不信……这一定是……对，是梦……一场噩梦……
+
+[STm03_02::command/465 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/465 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/465 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/465 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/466 SetAudio/param/1]
+se_199
+
+[STm03_02::command/467 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/467 CtrlChar/param/1]
+a
+
+[STm03_02::command/467 CtrlChar/param/2]
+016
+
+[STm03_02::command/467 CtrlChar/param/3]
+none
+
+[STm03_02::command/467 CtrlChar/param/11]
+none
+
+[STm03_02::command/467 CtrlChar/param/12]
+none
+
+[STm03_02::command/467 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/468 CtrlStage/param/9]
+none
+
+[STm03_02::command/468 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/469 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/469 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/469 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/469 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/469 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/470 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/470 SetTalk/param/2]
+看来打击相当大啊。
+
+[STm03_02::command/470 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/470 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/470 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/470 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/471 CtrlStage/param/9]
+none
+
+[STm03_02::command/471 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/473 SetAudio/param/1]
+se_059
+
+[STm03_02::command/474 SetAudio/param/1]
+se_062
+
+[STm03_02::command/475 CtrlBg/param/10]
+none
+
+[STm03_02::command/475 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/476 SetAudio/param/1]
+se_100
+
+[STm03_02::command/477 SetCharHead/param/5]
+avg1_156
+
+[STm03_02::command/477 SetCharHead/param/6]
+a
+
+[STm03_02::command/477 SetCharHead/param/7]
+010
+
+[STm03_02::command/477 SetCharHead/param/8]
+none
+
+[STm03_02::command/478 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/478 CtrlChar/param/1]
+a
+
+[STm03_02::command/478 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm03_02::command/478 CtrlChar/param/11]
+none
+
+[STm03_02::command/478 CtrlChar/param/12]
+none
+
+[STm03_02::command/478 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/479 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/479 SetTalk/param/2]
+呃，咦？辛辛苦苦从塔里许愿回来，一点点收集起来的——娃娃收藏……==RT==怎么变少了？
+
+[STm03_02::command/479 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/479 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/479 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/479 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/480 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/480 CtrlChar/param/1]
+a
+
+[STm03_02::command/480 CtrlChar/param/2]
+013
+
+[STm03_02::command/480 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/480 CtrlChar/param/11]
+jinzhang
+
+[STm03_02::command/480 CtrlChar/param/12]
+none
+
+[STm03_02::command/480 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/481 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/481 SetTalk/param/2]
+啊、啊哈哈……这样啊，那这……看来不是梦啊……==RT==算了，输了就是输了……我不是输不起的人……
+
+[STm03_02::command/481 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/481 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/481 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/481 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/482 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/482 CtrlChar/param/1]
+a
+
+[STm03_02::command/482 CtrlChar/param/2]
+019
+
+[STm03_02::command/482 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm03_02::command/482 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/482 CtrlChar/param/12]
+none
+
+[STm03_02::command/482 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/483 CtrlBg/param/10]
+none
+
+[STm03_02::command/483 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/484 SetCharHead/param/5]
+avg1_156
+
+[STm03_02::command/484 SetCharHead/param/6]
+a
+
+[STm03_02::command/484 SetCharHead/param/7]
+002
+
+[STm03_02::command/484 SetCharHead/param/8]
+none
+
+[STm03_02::command/485 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/485 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/485 SetChar/param/4]
+a
+
+[STm03_02::command/485 SetChar/param/5]
+002
+
+[STm03_02::command/485 SetChar/param/6]
+none
+
+[STm03_02::command/486 SetAudio/param/1]
+se_077
+
+[STm03_02::command/487 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/487 CtrlChar/param/1]
+a
+
+[STm03_02::command/487 CtrlChar/param/3]
+none
+
+[STm03_02::command/487 CtrlChar/param/11]
+JuGong
+
+[STm03_02::command/487 CtrlChar/param/12]
+none
+
+[STm03_02::command/487 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/488 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/488 SetTalk/param/2]
+都还给你。
+
+[STm03_02::command/488 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/488 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/488 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/488 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/490 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/490 CtrlChar/param/1]
+a
+
+[STm03_02::command/490 CtrlChar/param/3]
+none
+
+[STm03_02::command/490 CtrlChar/param/11]
+none
+
+[STm03_02::command/490 CtrlChar/param/12]
+none
+
+[STm03_02::command/490 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/491 SetTalk/param/1]
+0
+
+[STm03_02::command/491 SetTalk/param/2]
+她从脚边堆叠起高高一摞的玩偶堆里，拿起了一个橘红色的猫猫玩偶。
+
+[STm03_02::command/491 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/491 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/491 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/491 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/492 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/493 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/493 SetTalk/param/2]
+我只要这个。
+
+[STm03_02::command/493 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/493 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/493 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/493 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/494 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/495 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/495 CtrlChar/param/1]
+a
+
+[STm03_02::command/495 CtrlChar/param/3]
+none
+
+[STm03_02::command/495 CtrlChar/param/11]
+none
+
+[STm03_02::command/495 CtrlChar/param/12]
+none
+
+[STm03_02::command/495 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/496 SetChar/param/2]
+none
+
+[STm03_02::command/496 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/496 SetChar/param/4]
+a
+
+[STm03_02::command/496 SetChar/param/5]
+019
+
+[STm03_02::command/496 SetChar/param/6]
+none
+
+[STm03_02::command/497 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/497 CtrlChar/param/1]
+a
+
+[STm03_02::command/497 CtrlChar/param/3]
+none
+
+[STm03_02::command/497 CtrlChar/param/11]
+none
+
+[STm03_02::command/497 CtrlChar/param/12]
+none
+
+[STm03_02::command/497 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/498 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/498 CtrlChar/param/1]
+a
+
+[STm03_02::command/498 CtrlChar/param/3]
+none
+
+[STm03_02::command/498 CtrlChar/param/11]
+none
+
+[STm03_02::command/498 CtrlChar/param/12]
+none
+
+[STm03_02::command/498 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/499 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/499 CtrlChar/param/1]
+a
+
+[STm03_02::command/499 CtrlChar/param/3]
+none
+
+[STm03_02::command/499 CtrlChar/param/11]
+buman
+
+[STm03_02::command/499 CtrlChar/param/12]
+none
+
+[STm03_02::command/499 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/500 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/500 SetTalk/param/2]
+……你是在可怜我吗？我才不需要胜者的施舍——
+
+[STm03_02::command/500 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/500 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/500 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/500 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/501 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/501 CtrlChar/param/1]
+a
+
+[STm03_02::command/501 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/501 CtrlChar/param/11]
+none
+
+[STm03_02::command/501 CtrlChar/param/12]
+none
+
+[STm03_02::command/501 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/502 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/502 SetTalk/param/2]
+不要？
+
+[STm03_02::command/502 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/502 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/502 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/502 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/503 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/503 CtrlChar/param/1]
+a
+
+[STm03_02::command/503 CtrlChar/param/2]
+012
+
+[STm03_02::command/503 CtrlChar/param/3]
+none
+
+[STm03_02::command/503 CtrlChar/param/11]
+niunie
+
+[STm03_02::command/503 CtrlChar/param/12]
+none
+
+[STm03_02::command/503 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/504 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/504 SetTalk/param/2]
+当……当然要！
+
+[STm03_02::command/504 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/504 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/504 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/504 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/506 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/506 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm03_02::command/506 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/506 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/506 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/507 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/507 SetTalk/param/2]
+满足了吗？
+
+[STm03_02::command/507 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/507 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/507 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/507 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/508 SetAudio/param/1]
+se_056
+
+[STm03_02::command/509 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/510 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/510 SetTalk/param/2]
+嗯~
+
+[STm03_02::command/510 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/510 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/510 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/510 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/511 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/512 SetChar/param/2]
+C_in
+
+[STm03_02::command/512 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/512 SetChar/param/4]
+a
+
+[STm03_02::command/512 SetChar/param/5]
+008
+
+[STm03_02::command/512 SetChar/param/6]
+none
+
+[STm03_02::command/513 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/513 CtrlChar/param/1]
+a
+
+[STm03_02::command/513 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm03_02::command/513 CtrlChar/param/11]
+niunie1
+
+[STm03_02::command/513 CtrlChar/param/12]
+none
+
+[STm03_02::command/513 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/514 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/514 SetTalk/param/2]
+虽然不甘心，但从今天开始，再也没有娃娃机仙人了。==RT==从今天起，我要作为花令旅团的普通一员小禾活下去……
+
+[STm03_02::command/514 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/514 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/514 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/514 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/515 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/515 CtrlChar/param/1]
+a
+
+[STm03_02::command/515 CtrlChar/param/3]
+none
+
+[STm03_02::command/515 CtrlChar/param/11]
+none
+
+[STm03_02::command/515 CtrlChar/param/12]
+none
+
+[STm03_02::command/515 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/516 NewCharIntro/param/0]
+avg1_156
+
+[STm03_02::command/516 NewCharIntro/param/1]
+小禾
+
+[STm03_02::command/516 NewCharIntro/param/2]
+自称“娃娃机仙人”
+
+[STm03_02::command/516 NewCharIntro/param/3]
+a
+
+[STm03_02::command/516 NewCharIntro/param/4]
+002
+
+[STm03_02::command/517 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/517 CtrlChar/param/1]
+a
+
+[STm03_02::command/517 CtrlChar/param/3]
+none
+
+[STm03_02::command/517 CtrlChar/param/11]
+none
+
+[STm03_02::command/517 CtrlChar/param/12]
+none
+
+[STm03_02::command/517 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/518 SetChar/param/2]
+none
+
+[STm03_02::command/518 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/518 SetChar/param/4]
+a
+
+[STm03_02::command/518 SetChar/param/5]
+002
+
+[STm03_02::command/518 SetChar/param/6]
+none
+
+[STm03_02::command/519 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/519 CtrlChar/param/1]
+a
+
+[STm03_02::command/519 CtrlChar/param/3]
+none
+
+[STm03_02::command/519 CtrlChar/param/11]
+none
+
+[STm03_02::command/519 CtrlChar/param/12]
+none
+
+[STm03_02::command/519 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/520 SetAudio/param/1]
+se_019
+
+[STm03_02::command/521 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/521 CtrlChar/param/1]
+a
+
+[STm03_02::command/521 CtrlChar/param/3]
+none
+
+[STm03_02::command/521 CtrlChar/param/11]
+none
+
+[STm03_02::command/521 CtrlChar/param/12]
+none
+
+[STm03_02::command/521 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/522 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/522 CtrlChar/param/1]
+a
+
+[STm03_02::command/522 CtrlChar/param/3]
+none
+
+[STm03_02::command/522 CtrlChar/param/11]
+none
+
+[STm03_02::command/522 CtrlChar/param/12]
+none
+
+[STm03_02::command/522 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/523 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/523 CtrlChar/param/1]
+a
+
+[STm03_02::command/523 CtrlChar/param/3]
+none
+
+[STm03_02::command/523 CtrlChar/param/11]
+diantou2
+
+[STm03_02::command/523 CtrlChar/param/12]
+none
+
+[STm03_02::command/523 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/524 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/524 SetTalk/param/2]
+所以，那个……琥珀？==RT== “娃娃机仙人”的称号，从今天起就归你了。
+
+[STm03_02::command/524 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/524 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/524 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/524 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/525 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/525 CtrlChar/param/1]
+a
+
+[STm03_02::command/525 CtrlChar/param/2]
+007
+
+[STm03_02::command/525 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/525 CtrlChar/param/11]
+none
+
+[STm03_02::command/525 CtrlChar/param/12]
+none
+
+[STm03_02::command/525 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/526 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/526 CtrlChar/param/1]
+a
+
+[STm03_02::command/526 CtrlChar/param/3]
+close
+
+[STm03_02::command/526 CtrlChar/param/11]
+none
+
+[STm03_02::command/526 CtrlChar/param/12]
+none
+
+[STm03_02::command/526 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/527 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/527 SetTalk/param/2]
+啊……我不要。
+
+[STm03_02::command/527 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/527 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/527 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/527 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/528 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/528 CtrlChar/param/1]
+a
+
+[STm03_02::command/528 CtrlChar/param/2]
+014
+
+[STm03_02::command/528 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/528 CtrlChar/param/11]
+none
+
+[STm03_02::command/528 CtrlChar/param/12]
+none
+
+[STm03_02::command/528 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/529 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/529 SetTalk/param/2]
+为什么啊？！你不是专程来抢我称号的吗？！
+
+[STm03_02::command/529 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/529 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/529 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/529 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/531 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/531 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/531 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/531 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/531 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/532 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/532 SetTalk/param/2]
+不是啊，我们说了在找瑟拉娜……
+
+[STm03_02::command/532 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/532 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/532 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/532 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/533 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/533 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm03_02::command/533 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/533 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/533 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/534 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/534 SetTalk/param/2]
+我一直都是这么说的啊……
+
+[STm03_02::command/534 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/534 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/534 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/534 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/536 SetChar/param/2]
+C_in
+
+[STm03_02::command/536 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/536 SetChar/param/4]
+a
+
+[STm03_02::command/536 SetChar/param/5]
+015
+
+[STm03_02::command/536 SetChar/param/6]
+none
+
+[STm03_02::command/537 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/537 CtrlChar/param/1]
+a
+
+[STm03_02::command/537 CtrlChar/param/2]
+015
+
+[STm03_02::command/537 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/537 CtrlChar/param/11]
+none
+
+[STm03_02::command/537 CtrlChar/param/12]
+none
+
+[STm03_02::command/537 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/538 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/538 CtrlChar/param/1]
+a
+
+[STm03_02::command/538 CtrlChar/param/2]
+008
+
+[STm03_02::command/538 CtrlChar/param/3]
+close
+
+[STm03_02::command/538 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/538 CtrlChar/param/12]
+none
+
+[STm03_02::command/538 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/539 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/539 SetTalk/param/2]
+我，我完全败了。那个，你们是从别的城邦来的旅人吧。
+
+[STm03_02::command/539 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/539 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/539 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/539 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/540 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/540 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/540 SetChar/param/4]
+a
+
+[STm03_02::command/540 SetChar/param/5]
+002
+
+[STm03_02::command/540 SetChar/param/6]
+none
+
+[STm03_02::command/541 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/541 CtrlChar/param/1]
+a
+
+[STm03_02::command/541 CtrlChar/param/2]
+007
+
+[STm03_02::command/541 CtrlChar/param/3]
+none
+
+[STm03_02::command/541 CtrlChar/param/11]
+none
+
+[STm03_02::command/541 CtrlChar/param/12]
+none
+
+[STm03_02::command/541 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/542 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/542 SetTalk/param/2]
+我们从埃摩来。
+
+[STm03_02::command/542 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/542 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/542 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/542 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/543 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/543 CtrlChar/param/1]
+a
+
+[STm03_02::command/543 CtrlChar/param/2]
+014
+
+[STm03_02::command/543 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/543 CtrlChar/param/11]
+none
+
+[STm03_02::command/543 CtrlChar/param/12]
+none
+
+[STm03_02::command/543 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/544 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/544 SetTalk/param/2]
+原来如此。那如果各位还没定住处的话，就住下吧。
+
+[STm03_02::command/544 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/544 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/544 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/544 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/545 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/545 CtrlChar/param/1]
+a
+
+[STm03_02::command/545 CtrlChar/param/2]
+002
+
+[STm03_02::command/545 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/545 CtrlChar/param/11]
+daintou
+
+[STm03_02::command/545 CtrlChar/param/12]
+none
+
+[STm03_02::command/545 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/546 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/546 SetTalk/param/2]
+其实......==B==其实瑟拉娜只是出门办事了，晚上就会回来了。
+
+[STm03_02::command/546 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/546 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/546 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/546 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/547 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/547 CtrlChar/param/1]
+a
+
+[STm03_02::command/547 CtrlChar/param/2]
+013
+
+[STm03_02::command/547 CtrlChar/param/3]
+none
+
+[STm03_02::command/547 CtrlChar/param/11]
+none
+
+[STm03_02::command/547 CtrlChar/param/12]
+none
+
+[STm03_02::command/547 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/548 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/548 SetTalk/param/2]
+那太麻烦你们了，这毕竟是你们的基地。
+
+[STm03_02::command/548 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/548 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/548 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/548 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/549 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/549 CtrlChar/param/1]
+a
+
+[STm03_02::command/549 CtrlChar/param/2]
+004
+
+[STm03_02::command/549 CtrlChar/param/3]
+avg_emoji_star
+
+[STm03_02::command/549 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/549 CtrlChar/param/12]
+none
+
+[STm03_02::command/549 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/550 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/550 SetTalk/param/2]
+哎，不麻烦，虽然看起来破破烂烂的……==RT==不过这里以前是地理协会在菲莱的协会之家，本来就是旅人们歇脚的地方。
+
+[STm03_02::command/550 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/550 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/550 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/550 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/551 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/551 CtrlChar/param/1]
+a
+
+[STm03_02::command/551 CtrlChar/param/2]
+002
+
+[STm03_02::command/551 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/551 CtrlChar/param/11]
+none
+
+[STm03_02::command/551 CtrlChar/param/12]
+none
+
+[STm03_02::command/551 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/552 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/552 SetTalk/param/2]
+而且最近根本没有旅人会来这里。 不然我们也不会这么为所欲为啦。
+
+[STm03_02::command/552 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/552 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/552 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/552 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/554 SetChar/param/2]
+none
+
+[STm03_02::command/554 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/554 SetChar/param/4]
+a
+
+[STm03_02::command/554 SetChar/param/5]
+006
+
+[STm03_02::command/554 SetChar/param/6]
+none
+
+[STm03_02::command/555 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/555 CtrlChar/param/1]
+a
+
+[STm03_02::command/555 CtrlChar/param/3]
+none
+
+[STm03_02::command/555 CtrlChar/param/11]
+none
+
+[STm03_02::command/555 CtrlChar/param/12]
+none
+
+[STm03_02::command/555 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/556 CtrlStage/param/9]
+none
+
+[STm03_02::command/556 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/557 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/557 CtrlChar/param/1]
+a
+
+[STm03_02::command/557 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/557 CtrlChar/param/11]
+none
+
+[STm03_02::command/557 CtrlChar/param/12]
+none
+
+[STm03_02::command/557 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/558 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/558 SetTalk/param/2]
+真的是协会之家啊，协会之家怎么会变成这样？
+
+[STm03_02::command/558 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/558 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/558 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/558 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/559 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/559 CtrlChar/param/1]
+a
+
+[STm03_02::command/559 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/559 CtrlChar/param/11]
+none
+
+[STm03_02::command/559 CtrlChar/param/12]
+none
+
+[STm03_02::command/559 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/560 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/560 SetTalk/param/2]
+被魔物袭击了吗？
+
+[STm03_02::command/560 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/560 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/560 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/560 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/561 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/561 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/561 SetBGM/param/4]
+1000ms
+
+[STm03_02::command/562 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/562 CtrlChar/param/1]
+a
+
+[STm03_02::command/562 CtrlChar/param/3]
+none
+
+[STm03_02::command/562 CtrlChar/param/11]
+none
+
+[STm03_02::command/562 CtrlChar/param/12]
+none
+
+[STm03_02::command/562 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/564 CtrlStage/param/9]
+none
+
+[STm03_02::command/564 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/565 SetChar/param/2]
+C_in
+
+[STm03_02::command/565 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/565 SetChar/param/4]
+a
+
+[STm03_02::command/565 SetChar/param/5]
+013
+
+[STm03_02::command/565 SetChar/param/6]
+close
+
+[STm03_02::command/566 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/566 CtrlChar/param/1]
+a
+
+[STm03_02::command/566 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/566 CtrlChar/param/11]
+none
+
+[STm03_02::command/566 CtrlChar/param/12]
+none
+
+[STm03_02::command/566 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/567 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/567 SetTalk/param/2]
+这个......==W==哎，等晚上大家回来以后，我会好好解释的。
+
+[STm03_02::command/567 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/567 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/567 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm03_02::command/567 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/568 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/568 CtrlChar/param/1]
+a
+
+[STm03_02::command/568 CtrlChar/param/2]
+008
+
+[STm03_02::command/568 CtrlChar/param/3]
+none
+
+[STm03_02::command/568 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/568 CtrlChar/param/12]
+none
+
+[STm03_02::command/568 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/570 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/570 CtrlChar/param/1]
+a
+
+[STm03_02::command/570 CtrlChar/param/2]
+015
+
+[STm03_02::command/570 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm03_02::command/570 CtrlChar/param/11]
+JuGong
+
+[STm03_02::command/570 CtrlChar/param/12]
+none
+
+[STm03_02::command/570 CtrlChar/param/13]
+Linear
+

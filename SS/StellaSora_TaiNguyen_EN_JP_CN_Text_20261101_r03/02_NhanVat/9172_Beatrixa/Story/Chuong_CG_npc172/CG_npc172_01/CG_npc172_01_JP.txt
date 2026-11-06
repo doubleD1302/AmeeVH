@@ -1,0 +1,3820 @@
+CG_npc172_01 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1272
+
+[CG_npc172_01::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_npc172_01::command/0 SetIntro/param/1]
+第1話
+
+[CG_npc172_01::command/0 SetIntro/param/2]
+天使は大忙し
+
+[CG_npc172_01::command/0 SetIntro/param/3]
+機能を失いつつある塔を探索中、床が崩れて空白旅団のみんなと離れ離れになる。そこで医療スタッフを名乗るベアトリスに出会う。彼女は世界中の星ノ塔を飛び回り、負傷した巡遊者の治療にあたっているという。
+
+[CG_npc172_01::command/1 SetTrans/param/2]
+0
+
+[CG_npc172_01::command/1 SetTrans/param/3]
+OutSine
+
+[CG_npc172_01::command/1 SetTrans/param/8]
+default
+
+[CG_npc172_01::command/2 SetBg/param/1]
+tower_common
+
+[CG_npc172_01::command/2 SetBg/param/2]
+0
+
+[CG_npc172_01::command/2 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/2 SetBg/param/6]
+default
+
+[CG_npc172_01::command/3 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/3 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/4 SetTrans/param/2]
+0
+
+[CG_npc172_01::command/4 SetTrans/param/3]
+OutSine
+
+[CG_npc172_01::command/4 SetTrans/param/8]
+default
+
+[CG_npc172_01::command/5 SetAudio/param/1]
+se_095
+
+[CG_npc172_01::command/6 SetTalk/param/1]
+0
+
+[CG_npc172_01::command/6 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/6 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/6 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/6 SetTalk/param/7]
+この日もいつもどおり、空白旅団の三人と一緒に古びた星ノ塔に==RT==登っていたのだが――
+
+[CG_npc172_01::command/6 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/8 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/8 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/10 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/10 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/12 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/12 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/13 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc172_01::command/13 SetBGM/param/3]
+m4
+
+[CG_npc172_01::command/13 SetBGM/param/4]
+none
+
+[CG_npc172_01::command/14 SetChar/param/2]
+none
+
+[CG_npc172_01::command/14 SetChar/param/3]
+avg1_112
+
+[CG_npc172_01::command/14 SetChar/param/4]
+a
+
+[CG_npc172_01::command/14 SetChar/param/5]
+006
+
+[CG_npc172_01::command/14 SetChar/param/6]
+none
+
+[CG_npc172_01::command/15 CtrlChar/param/0]
+avg1_112
+
+[CG_npc172_01::command/15 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/15 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/15 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/15 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/15 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/16 SetTalk/param/1]
+avg1_112
+
+[CG_npc172_01::command/16 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/16 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/16 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/16 SetTalk/param/7]
+この塔ってさ、魔王さんを見つけたあの塔と、どことなく似てない？==RT==ガラ～ンとしてスッカラカンなところとか。
+
+[CG_npc172_01::command/16 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/18 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/18 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/19 SetChar/param/2]
+none
+
+[CG_npc172_01::command/19 SetChar/param/3]
+avg1_103
+
+[CG_npc172_01::command/19 SetChar/param/4]
+a
+
+[CG_npc172_01::command/19 SetChar/param/5]
+017
+
+[CG_npc172_01::command/19 SetChar/param/6]
+none
+
+[CG_npc172_01::command/20 CtrlChar/param/0]
+avg1_103
+
+[CG_npc172_01::command/20 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/20 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc172_01::command/20 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/20 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/20 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/21 SetTalk/param/1]
+avg1_103
+
+[CG_npc172_01::command/21 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/21 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/21 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/21 SetTalk/param/7]
+星ノ塔として、機能してなさそう。
+
+[CG_npc172_01::command/21 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/23 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/23 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/24 SetChar/param/2]
+none
+
+[CG_npc172_01::command/24 SetChar/param/3]
+avg1_111
+
+[CG_npc172_01::command/24 SetChar/param/4]
+a
+
+[CG_npc172_01::command/24 SetChar/param/5]
+007
+
+[CG_npc172_01::command/24 SetChar/param/6]
+none
+
+[CG_npc172_01::command/25 CtrlChar/param/0]
+avg1_111
+
+[CG_npc172_01::command/25 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/25 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_npc172_01::command/25 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/25 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/25 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/26 SetTalk/param/1]
+avg1_111
+
+[CG_npc172_01::command/26 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/26 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/26 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/26 SetTalk/param/7]
+まさか……短期間で二度も、こんな星ノ塔に遭遇するなんて。==RT==統計的にも、正常に機能していない塔を発見するのは、==RT==一生に一度あるかないかって言われているくらいなのよ？
+
+[CG_npc172_01::command/26 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/28 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/28 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/29 CtrlChar/param/0]
+avg1_112
+
+[CG_npc172_01::command/29 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/29 CtrlChar/param/2]
+004
+
+[CG_npc172_01::command/29 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_npc172_01::command/29 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/29 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/29 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/30 SetTalk/param/1]
+avg1_112
+
+[CG_npc172_01::command/30 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/30 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/30 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/30 SetTalk/param/7]
+一生に一度かぁ……==RT==ならそれって、逆に運が良いってことじゃない！？
+
+[CG_npc172_01::command/30 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/32 SetAudio/param/1]
+se_146
+
+[CG_npc172_01::command/33 CtrlChar/param/0]
+avg1_103
+
+[CG_npc172_01::command/33 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/33 CtrlChar/param/2]
+005
+
+[CG_npc172_01::command/33 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/33 CtrlChar/param/11]
+chijing
+
+[CG_npc172_01::command/33 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/33 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/34 SetTalk/param/1]
+avg1_103
+
+[CG_npc172_01::command/34 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/34 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/34 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/34 SetTalk/param/7]
+そういうポジティブなところ、セイナらしいね。
+
+[CG_npc172_01::command/34 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/36 CtrlChar/param/0]
+avg1_111
+
+[CG_npc172_01::command/36 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/36 CtrlChar/param/2]
+016
+
+[CG_npc172_01::command/36 CtrlChar/param/3]
+avg_emoji_resentful
+
+[CG_npc172_01::command/36 CtrlChar/param/11]
+jushou2
+
+[CG_npc172_01::command/36 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/36 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/37 SetTalk/param/1]
+avg1_111
+
+[CG_npc172_01::command/37 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/37 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/37 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/37 SetTalk/param/7]
+そんな幸運、ちっとも嬉しくないけどね！！
+
+[CG_npc172_01::command/37 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/39 CtrlChar/param/0]
+avg1_103
+
+[CG_npc172_01::command/39 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/39 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/39 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/39 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/39 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/40 CtrlChar/param/0]
+avg1_112
+
+[CG_npc172_01::command/40 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/40 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/40 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/40 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/40 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/41 CtrlChar/param/0]
+avg1_111
+
+[CG_npc172_01::command/41 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/41 CtrlChar/param/2]
+017
+
+[CG_npc172_01::command/41 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_npc172_01::command/41 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/41 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/41 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/42 SetTalk/param/1]
+avg1_111
+
+[CG_npc172_01::command/42 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/42 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/42 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/42 SetTalk/param/7]
+それよりも探索に集中して。こういう正常に機能していない星ノ塔は、==RT==ところどころ脆くなっていて、いつ崩れてもおかしくないから。
+
+[CG_npc172_01::command/42 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/44 SetMainRoleTalk/param/2]
+013
+
+[CG_npc172_01::command/44 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/44 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/44 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/44 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/45 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/45 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/45 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/45 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/45 SetTalk/param/7]
+そうだな。油断していると、足元をすくわれるかも――==W====RT==って、うわああああぁ～～～～ッ！？
+
+[CG_npc172_01::command/45 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/47 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc172_01::command/47 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/47 SetBGM/param/4]
+500ms
+
+[CG_npc172_01::command/48 SetAudio/param/1]
+se_356
+
+[CG_npc172_01::command/49 CtrlStage/param/9]
+Zhong
+
+[CG_npc172_01::command/49 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/50 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/50 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc172_01::command/50 SetMainRoleTalk/param/4]
+chijing
+
+[CG_npc172_01::command/50 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/50 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/52 SetMainRoleTalk/param/3]
+close
+
+[CG_npc172_01::command/52 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/52 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/52 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/53 CtrlChar/param/0]
+avg1_111
+
+[CG_npc172_01::command/53 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/53 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/53 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/53 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/53 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/54 SetAudio/param/1]
+se_096
+
+[CG_npc172_01::command/55 SetBg/param/1]
+BG_Black
+
+[CG_npc172_01::command/55 SetBg/param/2]
+16
+
+[CG_npc172_01::command/55 SetBg/param/3]
+OutSine
+
+[CG_npc172_01::command/55 SetBg/param/6]
+AvgStageEffect_wipe_down
+
+[CG_npc172_01::command/57 SetCharHead/param/5]
+avg1_111
+
+[CG_npc172_01::command/57 SetCharHead/param/6]
+a
+
+[CG_npc172_01::command/57 SetCharHead/param/7]
+006
+
+[CG_npc172_01::command/57 SetCharHead/param/8]
+avg_emoji_exclamation
+
+[CG_npc172_01::command/58 SetTalk/param/1]
+avg1_111
+
+[CG_npc172_01::command/58 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/58 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/58 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/58 SetTalk/param/7]
+ちょ、ボス……！？ボスーーーーッ！！！！
+
+[CG_npc172_01::command/58 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/60 SetTrans/param/2]
+0
+
+[CG_npc172_01::command/60 SetTrans/param/3]
+Linear
+
+[CG_npc172_01::command/60 SetTrans/param/8]
+default
+
+[CG_npc172_01::command/61 SetCharHead/param/5]
+avg1_111
+
+[CG_npc172_01::command/61 SetCharHead/param/6]
+a
+
+[CG_npc172_01::command/61 SetCharHead/param/7]
+002
+
+[CG_npc172_01::command/61 SetCharHead/param/8]
+none
+
+[CG_npc172_01::command/63 SetBg/param/1]
+tower_common
+
+[CG_npc172_01::command/63 SetBg/param/2]
+0
+
+[CG_npc172_01::command/63 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/63 SetBg/param/6]
+default
+
+[CG_npc172_01::command/64 CtrlBg/param/10]
+none
+
+[CG_npc172_01::command/64 CtrlBg/param/11]
+Linear
+
+[CG_npc172_01::command/65 SetFx/param/1]
+fx_avg_eye_ev
+
+[CG_npc172_01::command/66 SetAudio/param/1]
+se_227
+
+[CG_npc172_01::command/67 SetTrans/param/2]
+0
+
+[CG_npc172_01::command/67 SetTrans/param/3]
+Linear
+
+[CG_npc172_01::command/67 SetTrans/param/8]
+default
+
+[CG_npc172_01::command/68 CtrlBg/param/10]
+none
+
+[CG_npc172_01::command/68 CtrlBg/param/11]
+Linear
+
+[CG_npc172_01::command/69 SetMainRoleTalk/param/2]
+016
+
+[CG_npc172_01::command/69 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_npc172_01::command/69 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/69 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/69 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/70 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/70 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/70 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/70 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/70 SetTalk/param/7]
+イタタ……ここは、どこだ？==RT==
+
+[CG_npc172_01::command/70 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/71 SetMainRoleTalk/param/2]
+020
+
+[CG_npc172_01::command/71 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_npc172_01::command/71 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/71 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/71 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/72 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/72 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/72 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/72 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/72 SetTalk/param/7]
+――ふむ。脆くなっていた床が崩れたようだが……==W====RT==いったいどれだけの高さから落ちたんだろう？
+
+[CG_npc172_01::command/72 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/74 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/74 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/75 SetMainRoleTalk/param/2]
+010
+
+[CG_npc172_01::command/75 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_npc172_01::command/75 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/75 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/75 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/77 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/77 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/77 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/77 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/79 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc172_01::command/79 SetBGM/param/3]
+m51
+
+[CG_npc172_01::command/79 SetBGM/param/4]
+none
+
+[CG_npc172_01::command/80 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/80 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/81 SetMainRoleTalk/param/2]
+018
+
+[CG_npc172_01::command/81 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/81 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/81 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/81 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/82 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/82 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/82 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/82 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/82 SetTalk/param/7]
+とはいえ以前のように、アヤメに探知魔法をかけて==RT==もらっているから、そのうち探しに来てくれるだろう。==RT==ひとまず周囲の安全を確認――
+
+[CG_npc172_01::command/82 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/83 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/83 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/83 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/83 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/85 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/85 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/86 SetChar/param/2]
+none
+
+[CG_npc172_01::command/86 SetChar/param/3]
+avg2_954
+
+[CG_npc172_01::command/86 SetChar/param/4]
+a
+
+[CG_npc172_01::command/86 SetChar/param/5]
+002
+
+[CG_npc172_01::command/86 SetChar/param/6]
+none
+
+[CG_npc172_01::command/87 SetAudio/param/1]
+se_151
+
+[CG_npc172_01::command/88 CtrlChar/param/0]
+avg2_954
+
+[CG_npc172_01::command/88 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/88 CtrlChar/param/2]
+002
+
+[CG_npc172_01::command/88 CtrlChar/param/3]
+close
+
+[CG_npc172_01::command/88 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/88 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/88 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/89 CtrlChar/param/0]
+avg2_954
+
+[CG_npc172_01::command/89 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/89 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/89 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/89 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/89 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/90 CtrlChar/param/0]
+avg2_954
+
+[CG_npc172_01::command/90 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/90 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/90 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/90 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/90 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/91 SetBg/param/1]
+BG_Black
+
+[CG_npc172_01::command/91 SetBg/param/2]
+0
+
+[CG_npc172_01::command/91 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/91 SetBg/param/6]
+default
+
+[CG_npc172_01::command/92 SetAudio/param/1]
+se_324
+
+[CG_npc172_01::command/93 SetFx/param/1]
+fx_avg_fire_attack
+
+[CG_npc172_01::command/95 SetMainRoleTalk/param/2]
+016
+
+[CG_npc172_01::command/95 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc172_01::command/95 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/95 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/95 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/96 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/96 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/96 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/96 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/96 SetTalk/param/7]
+せ、星骸だと……！？==RT==どうして機能していない星ノ塔に星骸が！
+
+[CG_npc172_01::command/96 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/97 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/97 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc172_01::command/97 SetMainRoleTalk/param/4]
+chijing
+
+[CG_npc172_01::command/97 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/97 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/98 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/98 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/98 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/98 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/98 SetTalk/param/7]
+（マズいぞ、私ひとりでは戦えないというのに……==W====RT==ひとまずこの場は逃げなければ！）
+
+[CG_npc172_01::command/98 SetTalk/param/8]
+（マズいぞ、僕ひとりでは戦えないというのに……==W====RT==ひとまずこの場は逃げなければ！）
+
+[CG_npc172_01::command/100 SetMainRoleTalk/param/2]
+016
+
+[CG_npc172_01::command/100 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc172_01::command/100 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/100 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/100 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/102 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/102 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/102 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/102 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/104 SetTrans/param/2]
+16
+
+[CG_npc172_01::command/104 SetTrans/param/3]
+OutSine
+
+[CG_npc172_01::command/104 SetTrans/param/8]
+AvgStageEffect_fade_left
+
+[CG_npc172_01::command/105 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/105 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/106 SetBg/param/1]
+tower_rest
+
+[CG_npc172_01::command/106 SetBg/param/2]
+0
+
+[CG_npc172_01::command/106 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/106 SetBg/param/6]
+default
+
+[CG_npc172_01::command/107 SetAudio/param/1]
+se_148
+
+[CG_npc172_01::command/108 SetTrans/param/2]
+16
+
+[CG_npc172_01::command/108 SetTrans/param/3]
+OutSine
+
+[CG_npc172_01::command/108 SetTrans/param/8]
+AvgStageEffect_fade_right
+
+[CG_npc172_01::command/109 SetMainRoleTalk/param/2]
+010
+
+[CG_npc172_01::command/109 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc172_01::command/109 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/109 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/109 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/110 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/110 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/110 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/110 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/110 SetTalk/param/7]
+はあ、はあ、はあ……どうにか振り切ったか。
+
+[CG_npc172_01::command/110 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/111 SetMainRoleTalk/param/2]
+015
+
+[CG_npc172_01::command/111 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/111 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/111 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/111 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/112 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/112 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/112 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/112 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/112 SetTalk/param/7]
+だが参ったな。逃げ回るのに必死だったせいで、==RT==さっきの場所がわからなくなったぞ……
+
+[CG_npc172_01::command/112 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/113 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/113 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/113 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/113 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/115 SetChar/param/2]
+none
+
+[CG_npc172_01::command/115 SetChar/param/3]
+avg3_172
+
+[CG_npc172_01::command/115 SetChar/param/4]
+a
+
+[CG_npc172_01::command/115 SetChar/param/5]
+002
+
+[CG_npc172_01::command/115 SetChar/param/6]
+none
+
+[CG_npc172_01::command/116 SetAudio/param/1]
+se_062
+
+[CG_npc172_01::command/117 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/117 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/117 CtrlChar/param/3]
+close
+
+[CG_npc172_01::command/117 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/117 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/117 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/118 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/118 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/118 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/118 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/118 SetTalk/param/7]
+……
+
+[CG_npc172_01::command/118 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/120 SetMainRoleTalk/param/2]
+002
+
+[CG_npc172_01::command/120 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/120 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/120 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/120 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/121 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/121 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/121 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/121 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/121 SetTalk/param/7]
+（……ぬ？あんなところに人が？==RT==私と同じように、仲間とはぐれた巡遊者だろうか？）
+
+[CG_npc172_01::command/121 SetTalk/param/8]
+（……ぬ？あんなところに人が？==RT==僕と同じように、仲間とはぐれた巡遊者だろうか？）
+
+[CG_npc172_01::command/122 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/122 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/122 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/122 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/124 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/124 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/126 SetMainRoleTalk/param/2]
+002
+
+[CG_npc172_01::command/126 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc172_01::command/126 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/126 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/126 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/127 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/127 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/127 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/127 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/127 SetTalk/param/7]
+すまない。少しいいかな？
+
+[CG_npc172_01::command/127 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/128 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/128 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/128 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/128 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/130 SetAudio/param/1]
+se_062
+
+[CG_npc172_01::command/131 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/131 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/131 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/131 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/131 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/131 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/132 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/132 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/132 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/132 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/132 SetTalk/param/7]
+……
+
+[CG_npc172_01::command/132 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/134 SetMainRoleTalk/param/2]
+013
+
+[CG_npc172_01::command/134 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_npc172_01::command/134 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/134 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/134 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/135 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/135 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/135 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/135 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/135 SetTalk/param/7]
+実は仲間とはぐれてしまい、困っていたんだ。==RT==君もひとりなのか？
+
+[CG_npc172_01::command/135 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/136 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/136 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/136 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/136 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/138 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/138 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/138 CtrlChar/param/2]
+003
+
+[CG_npc172_01::command/138 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_npc172_01::command/138 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/138 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/138 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/139 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/139 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/139 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/139 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/139 SetTalk/param/7]
+……
+
+[CG_npc172_01::command/139 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/140 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/140 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/140 CtrlChar/param/3]
+close
+
+[CG_npc172_01::command/140 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/140 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/140 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/142 SetMainRoleTalk/param/2]
+015
+
+[CG_npc172_01::command/142 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_npc172_01::command/142 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/142 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/142 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/143 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/143 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/143 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/143 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/143 SetTalk/param/7]
+（ぬ？おかしいな、聞こえていない……==RT==というわけではないだろうに）
+
+[CG_npc172_01::command/143 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/144 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/144 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/144 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/144 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/146 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/146 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/146 CtrlChar/param/2]
+006
+
+[CG_npc172_01::command/146 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_npc172_01::command/146 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/146 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/146 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/147 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/147 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/147 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/147 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/147 SetTalk/param/7]
+あなたの話には興味ありません。==RT==ケガを治してほしいのか治してほしくないのか、どっちですか？==RT==必要ないなら、私はもう行きますけど。
+
+[CG_npc172_01::command/147 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/149 SetMainRoleTalk/param/2]
+002
+
+[CG_npc172_01::command/149 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/149 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/149 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/149 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/150 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/150 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/150 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/150 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/150 SetTalk/param/7]
+（ケガ？==W==ああ……たしかに腕が腫れているな。==RT==先ほど落ちたときに打ってしまったか）
+
+[CG_npc172_01::command/150 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/152 SetMainRoleTalk/param/2]
+009
+
+[CG_npc172_01::command/152 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/152 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/152 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/152 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/154 SetMainRoleTalk/param/2]
+002
+
+[CG_npc172_01::command/154 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/154 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/154 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/154 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/155 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/155 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/155 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/155 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/155 SetTalk/param/7]
+というか君は、治療ができるのか？
+
+[CG_npc172_01::command/155 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/156 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/156 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/156 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/156 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/158 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/158 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/158 CtrlChar/param/2]
+003
+
+[CG_npc172_01::command/158 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc172_01::command/158 CtrlChar/param/11]
+JuGong2
+
+[CG_npc172_01::command/158 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/158 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/159 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/159 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/159 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/159 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/159 SetTalk/param/7]
+ええ。この注射を打てば、どんなケガも病気もイチコロです。
+
+[CG_npc172_01::command/159 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/161 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/161 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_npc172_01::command/161 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/161 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/161 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/162 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/162 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/162 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/162 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/162 SetTalk/param/7]
+（イチコロ……！？==RT==この子の言うことは本当に信じていいのだろうか？）
+
+[CG_npc172_01::command/162 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/163 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/163 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/163 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/163 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/165 SetAudio/param/1]
+se_251
+
+[CG_npc172_01::command/166 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/166 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/166 CtrlChar/param/2]
+006
+
+[CG_npc172_01::command/166 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/166 CtrlChar/param/11]
+chijing
+
+[CG_npc172_01::command/166 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/166 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/167 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/167 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/167 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/167 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/167 SetTalk/param/7]
+で、どうするんですか？==RT==私も暇ではないので、さっさと決めてもらえます？
+
+[CG_npc172_01::command/167 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/169 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/169 SetMainRoleTalk/param/3]
+avg_emoji_shy
+
+[CG_npc172_01::command/169 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/169 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/169 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/170 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/170 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/170 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/170 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/170 SetTalk/param/7]
+ああ、すまない。ただ……
+
+[CG_npc172_01::command/170 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/171 SetMainRoleTalk/param/2]
+021
+
+[CG_npc172_01::command/171 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/171 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/171 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/171 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/172 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/172 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/172 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/172 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/172 SetTalk/param/7]
+（食べものを口にするのが危険なのは、==RT==身をもって理解しているが……==RT==クスリを体の中に入れるのはどうなんだ？）
+
+[CG_npc172_01::command/172 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/173 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/173 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/173 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/173 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/175 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/175 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/175 CtrlChar/param/2]
+010
+
+[CG_npc172_01::command/175 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc172_01::command/175 CtrlChar/param/11]
+JuGong1
+
+[CG_npc172_01::command/175 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/175 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/176 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/176 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/176 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/176 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/176 SetTalk/param/7]
+はぁ……仕方ありません。==W====RT==あっ。あそこにいるのはあなたの仲間では？
+
+[CG_npc172_01::command/176 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/178 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/178 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/178 CtrlChar/param/2]
+004
+
+[CG_npc172_01::command/178 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/178 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/178 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/178 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/181 CtrlBg/param/10]
+Zhong
+
+[CG_npc172_01::command/181 CtrlBg/param/11]
+Linear
+
+[CG_npc172_01::command/182 SetMainRoleTalk/param/2]
+020
+
+[CG_npc172_01::command/182 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/182 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/182 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/182 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/183 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/183 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/183 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/183 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/183 SetTalk/param/7]
+本当か！？どこに――
+
+[CG_npc172_01::command/183 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/184 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/184 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/184 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/184 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/186 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/186 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/186 CtrlChar/param/2]
+008
+
+[CG_npc172_01::command/186 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc172_01::command/186 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/186 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/186 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/187 SetTalk/param/1]
+avg3_999
+
+[CG_npc172_01::command/187 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/187 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/187 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/187 SetTalk/param/7]
+はい、チクッとしますよ？
+
+[CG_npc172_01::command/187 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/189 SetAudio/param/1]
+se_077
+
+[CG_npc172_01::command/190 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/190 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/190 CtrlChar/param/2]
+009
+
+[CG_npc172_01::command/190 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/190 CtrlChar/param/11]
+JuGong1
+
+[CG_npc172_01::command/190 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/190 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/191 SetAudio/param/1]
+se_257
+
+[CG_npc172_01::command/192 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/192 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/192 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/192 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/192 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/192 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/194 SetAudio/param/1]
+se_112
+
+[CG_npc172_01::command/195 CtrlBg/param/10]
+Zhong
+
+[CG_npc172_01::command/195 CtrlBg/param/11]
+Linear
+
+[CG_npc172_01::command/196 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/196 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc172_01::command/196 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/196 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/196 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/197 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/197 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/197 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/197 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/197 SetTalk/param/7]
+騙されたッ……！？というかなんて太い針だ！==RT==そんなもの刺されたら……あれ？==W==ちっとも痛くない？
+
+[CG_npc172_01::command/197 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/199 SetMainRoleTalk/param/2]
+015
+
+[CG_npc172_01::command/199 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_npc172_01::command/199 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/199 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/199 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/201 SetMainRoleTalk/param/3]
+close
+
+[CG_npc172_01::command/201 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/201 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/201 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/203 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/203 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/203 CtrlChar/param/2]
+011
+
+[CG_npc172_01::command/203 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/203 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/203 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/203 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/204 SetMainRoleTalk/param/2]
+025
+
+[CG_npc172_01::command/204 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/204 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/204 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/204 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/205 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/205 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/205 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/205 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/205 SetTalk/param/7]
+（それどころか……みるみる腫れが引いていくぞ！？）
+
+[CG_npc172_01::command/205 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/206 SetMainRoleTalk/param/2]
+009
+
+[CG_npc172_01::command/206 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_npc172_01::command/206 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/206 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/206 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/207 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/207 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/207 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/207 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/207 SetTalk/param/7]
+（しかし、私には魔法が効かないはず……==RT==ということはこの注射、魔法ではないのか？）
+
+[CG_npc172_01::command/207 SetTalk/param/8]
+（しかし、僕には魔法が効かないはず……==RT==ということは、これは魔法ではないということか？）
+
+[CG_npc172_01::command/208 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/208 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/208 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/208 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/210 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/210 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/210 CtrlChar/param/2]
+002
+
+[CG_npc172_01::command/210 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/210 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/210 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/210 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/211 SetMainRoleTalk/param/2]
+013
+
+[CG_npc172_01::command/211 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_npc172_01::command/211 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/211 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/211 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/212 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/212 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/212 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/212 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/212 SetTalk/param/7]
+助かったよ、ありがとう。私は空白旅団の……==RT==ボスでも魔王でも、好きなように呼んでくれ。
+
+[CG_npc172_01::command/212 SetTalk/param/8]
+助かったよ、ありがとう。僕は空白旅団の……==RT==ボスでも魔王でも、好きなように呼んでくれ。
+
+[CG_npc172_01::command/213 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/213 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/213 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/213 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/215 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/215 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/215 CtrlChar/param/2]
+004
+
+[CG_npc172_01::command/215 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc172_01::command/215 CtrlChar/param/11]
+JuGong1
+
+[CG_npc172_01::command/215 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/215 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/216 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/216 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/216 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/216 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/216 SetTalk/param/7]
+私はベアトリス。==RT==星ノ塔のスタッフで、傷ついた巡遊者を癒すのが仕事です。
+
+[CG_npc172_01::command/216 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/218 SetMainRoleTalk/param/2]
+002
+
+[CG_npc172_01::command/218 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/218 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/218 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/218 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/219 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/219 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/219 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/219 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/219 SetTalk/param/7]
+星ノ塔のスタッフ？ということは……==RT==コンビニのポーシアと同じようなものなのか？
+
+[CG_npc172_01::command/219 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/220 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/220 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/220 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/220 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/222 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/222 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/222 CtrlChar/param/2]
+003
+
+[CG_npc172_01::command/222 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[CG_npc172_01::command/222 CtrlChar/param/11]
+chijing
+
+[CG_npc172_01::command/222 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/222 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/223 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/223 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/223 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/223 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/223 SetTalk/param/7]
+はい。その認識で問題ありません。
+
+[CG_npc172_01::command/223 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/225 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/225 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/225 CtrlChar/param/2]
+004
+
+[CG_npc172_01::command/225 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/225 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/225 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/225 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/226 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/226 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/226 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/226 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/226 SetTalk/param/7]
+とにかく私に声をかけてくれれば、タダで治療してあげますよ。==RT==とはいえ余計な仕事を増やされても困りますから、==RT==ケガには十分注意してくださいね。
+
+[CG_npc172_01::command/226 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/228 SetAudio/param/1]
+se_077
+
+[CG_npc172_01::command/229 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/229 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/229 CtrlChar/param/2]
+003
+
+[CG_npc172_01::command/229 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/229 CtrlChar/param/11]
+JuGong1
+
+[CG_npc172_01::command/229 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/229 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/230 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/230 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/230 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/230 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/230 SetTalk/param/7]
+それでは、私はこれで――
+
+[CG_npc172_01::command/230 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/232 SetAudio/param/1]
+se_074
+
+[CG_npc172_01::command/233 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/233 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/233 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/233 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/233 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/233 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/235 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc172_01::command/235 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/235 SetBGM/param/4]
+4000ms
+
+[CG_npc172_01::command/236 SetMainRoleTalk/param/2]
+015
+
+[CG_npc172_01::command/236 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc172_01::command/236 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/236 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/236 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/237 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/237 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/237 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/237 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/237 SetTalk/param/7]
+消えた……人の姿をしているが、==W====RT==本当に彼女も星ノ塔のスタッフなのだな。
+
+[CG_npc172_01::command/237 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/239 SetMainRoleTalk/param/2]
+009
+
+[CG_npc172_01::command/239 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_npc172_01::command/239 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/239 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/239 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/241 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/241 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/241 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/241 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/243 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/243 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/244 SetChar/param/2]
+none
+
+[CG_npc172_01::command/244 SetChar/param/3]
+avg2_954
+
+[CG_npc172_01::command/244 SetChar/param/4]
+a
+
+[CG_npc172_01::command/244 SetChar/param/5]
+002
+
+[CG_npc172_01::command/244 SetChar/param/6]
+none
+
+[CG_npc172_01::command/245 SetAudio/param/1]
+se_152
+
+[CG_npc172_01::command/246 CtrlChar/param/0]
+avg2_954
+
+[CG_npc172_01::command/246 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/246 CtrlChar/param/2]
+002
+
+[CG_npc172_01::command/246 CtrlChar/param/3]
+close
+
+[CG_npc172_01::command/246 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/246 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/246 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/247 SetAudio/param/1]
+se_151
+
+[CG_npc172_01::command/248 CtrlChar/param/0]
+avg2_954
+
+[CG_npc172_01::command/248 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/248 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/248 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/248 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/248 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/249 SetFx/param/1]
+fx_avg_arrow
+
+[CG_npc172_01::command/250 CtrlChar/param/0]
+avg2_954
+
+[CG_npc172_01::command/250 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/250 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/250 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/250 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/250 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/251 SetBg/param/1]
+BG_Black
+
+[CG_npc172_01::command/251 SetBg/param/2]
+0
+
+[CG_npc172_01::command/251 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/251 SetBg/param/6]
+default
+
+[CG_npc172_01::command/253 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/253 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc172_01::command/253 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/253 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/253 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/254 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/254 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/254 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/254 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/254 SetTalk/param/7]
+イタタッ！おい、なにをする！？==RT==くそっ……さっきの星骸、もう追いついてきたのか？==RT==また逃げないと――
+
+[CG_npc172_01::command/254 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/255 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/255 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/255 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/255 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/257 SetTrans/param/2]
+16
+
+[CG_npc172_01::command/257 SetTrans/param/3]
+OutSine
+
+[CG_npc172_01::command/257 SetTrans/param/8]
+AvgStageEffect_fade_left
+
+[CG_npc172_01::command/258 SetBg/param/1]
+tower_common
+
+[CG_npc172_01::command/258 SetBg/param/2]
+0
+
+[CG_npc172_01::command/258 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/258 SetBg/param/6]
+default
+
+[CG_npc172_01::command/259 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/259 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/260 SetAudio/param/1]
+se_148
+
+[CG_npc172_01::command/261 SetTrans/param/2]
+16
+
+[CG_npc172_01::command/261 SetTrans/param/3]
+OutSine
+
+[CG_npc172_01::command/261 SetTrans/param/8]
+AvgStageEffect_fade_left
+
+[CG_npc172_01::command/263 SetMainRoleTalk/param/2]
+010
+
+[CG_npc172_01::command/263 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc172_01::command/263 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/263 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/263 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/264 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/264 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/264 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/264 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/264 SetTalk/param/7]
+はあ、はあ、はあ、はあ……これだけ、逃げれば……==RT==さすがに、もう……大丈夫だろう……
+
+[CG_npc172_01::command/264 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/265 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/265 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/265 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/265 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/267 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc172_01::command/267 SetBGM/param/3]
+m44
+
+[CG_npc172_01::command/267 SetBGM/param/4]
+none
+
+[CG_npc172_01::command/268 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/268 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/268 CtrlChar/param/2]
+002
+
+[CG_npc172_01::command/268 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/268 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/268 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/268 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/269 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/269 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/269 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/269 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/269 SetTalk/param/7]
+こんにちは。また会いましたね。
+
+[CG_npc172_01::command/269 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/271 SetMainRoleTalk/param/2]
+013
+
+[CG_npc172_01::command/271 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/271 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/271 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/271 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/272 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/272 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/272 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/272 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/272 SetTalk/param/7]
+ベアトリス……！？==RT==こんなところで会うなんて、奇遇だな。
+
+[CG_npc172_01::command/272 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/273 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/273 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/273 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/273 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/275 SetAudio/param/1]
+se_046
+
+[CG_npc172_01::command/276 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/276 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/276 CtrlChar/param/2]
+013
+
+[CG_npc172_01::command/276 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/276 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/276 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/276 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/277 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/277 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/277 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/277 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/277 SetTalk/param/7]
+奇遇？あなたがケガをしたからこうしてわざわざ……はぁ。==RT==私、言いましたよね？余計な仕事を増やさないでくださいと。==RT==こんな簡単なことも覚えられないんですか？
+
+[CG_npc172_01::command/277 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/279 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/279 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc172_01::command/279 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/279 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/279 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/280 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/280 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/280 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/280 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/280 SetTalk/param/7]
+す、すまない……だが先ほどは星骸に不意打ちされて……==RT==もうケガしないように気をつけるよ。
+
+[CG_npc172_01::command/280 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/281 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/281 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/281 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/281 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/283 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/283 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/283 CtrlChar/param/2]
+006
+
+[CG_npc172_01::command/283 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/283 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/283 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/283 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/284 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/284 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/284 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/284 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/284 SetTalk/param/7]
+ええ、ぜひそうしてください。
+
+[CG_npc172_01::command/284 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/286 SetAudio/param/1]
+se_077
+
+[CG_npc172_01::command/287 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/287 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/287 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/287 CtrlChar/param/11]
+JuGong1
+
+[CG_npc172_01::command/287 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/287 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/289 SetAudio/param/1]
+se_075
+
+[CG_npc172_01::command/290 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/290 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/290 CtrlChar/param/2]
+012
+
+[CG_npc172_01::command/290 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/290 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/290 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/290 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/291 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/291 SetTalk/param/7]
+では、永遠にさようなら――
+
+[CG_npc172_01::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/293 SetAudio/param/1]
+se_074
+
+[CG_npc172_01::command/294 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/294 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/294 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/294 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/294 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/294 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/295 SetMainRoleTalk/param/2]
+023
+
+[CG_npc172_01::command/295 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc172_01::command/295 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/295 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/295 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/296 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/296 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/296 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/296 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/296 SetTalk/param/7]
+（なんだかんだ言っても、==RT==きちんと仕事はしてくれるのだな）
+
+[CG_npc172_01::command/296 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/297 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/297 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/297 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/297 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/299 SetMainRoleTalk/param/2]
+012
+
+[CG_npc172_01::command/299 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/299 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/299 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/299 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/300 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/300 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/300 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/300 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/300 SetTalk/param/7]
+……さて、気を取り直してみんなとの合流を――==W====RT==って、うわっ！？
+
+[CG_npc172_01::command/300 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/302 SetAudio/param/1]
+se_200
+
+[CG_npc172_01::command/303 CtrlStage/param/9]
+none
+
+[CG_npc172_01::command/303 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/304 CtrlStage/param/9]
+Zhong
+
+[CG_npc172_01::command/304 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/305 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/305 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc172_01::command/305 SetMainRoleTalk/param/4]
+chijing
+
+[CG_npc172_01::command/305 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/305 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/306 SetBg/param/1]
+BG_Black
+
+[CG_npc172_01::command/306 SetBg/param/2]
+16
+
+[CG_npc172_01::command/306 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/306 SetBg/param/6]
+AvgStageEffect_wipe_down
+
+[CG_npc172_01::command/308 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/308 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/308 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/308 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/309 SetAudio/param/1]
+se_096
+
+[CG_npc172_01::command/311 SetMainRoleTalk/param/2]
+016
+
+[CG_npc172_01::command/311 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_npc172_01::command/311 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/311 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/311 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/312 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/312 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/312 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/312 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/312 SetTalk/param/7]
+イタタ……どうしてこんなところに穴が？==RT==ってよく見ると、ここも床が崩れてボロボロじゃないか。
+
+[CG_npc172_01::command/312 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/313 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/313 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/313 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/313 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/315 SetBg/param/1]
+tower_common
+
+[CG_npc172_01::command/315 SetBg/param/2]
+0
+
+[CG_npc172_01::command/315 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/315 SetBg/param/6]
+default
+
+[CG_npc172_01::command/316 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/316 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/316 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_npc172_01::command/316 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/316 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/316 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/317 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/317 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/317 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/317 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/317 SetTalk/param/7]
+あの……もしかして、わざとやってます？
+
+[CG_npc172_01::command/317 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/319 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/319 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc172_01::command/319 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/319 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/319 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/320 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/320 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/320 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/320 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/320 SetTalk/param/7]
+そ、そんなわけないだろう！==RT==好き好んで痛い思いをする趣味はない！
+
+[CG_npc172_01::command/320 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/321 SetMainRoleTalk/param/2]
+015
+
+[CG_npc172_01::command/321 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc172_01::command/321 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/321 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/321 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/322 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/322 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/322 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/322 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/322 SetTalk/param/7]
+ところで、さっきは消えるように姿を消したが、==RT==君はどこに行っていたんだ？
+
+[CG_npc172_01::command/322 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/323 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/323 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/323 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/323 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/325 SetAudio/param/1]
+se_251
+
+[CG_npc172_01::command/326 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/326 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/326 CtrlChar/param/2]
+006
+
+[CG_npc172_01::command/326 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/326 CtrlChar/param/11]
+chijing
+
+[CG_npc172_01::command/326 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/326 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/327 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/327 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/327 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/327 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/327 SetTalk/param/7]
+別の星ノ塔です。塔内の医療スタッフは私ひとりだけですから。==RT==こう見えて、世界中の塔で引っ張りだこなんですよ。==RT==というかさっきから言ってますよね？私は暇じゃないと。
+
+[CG_npc172_01::command/327 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/329 SetMainRoleTalk/param/2]
+025
+
+[CG_npc172_01::command/329 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc172_01::command/329 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/329 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/329 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/330 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/330 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/330 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/330 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/330 SetTalk/param/7]
+まさか『忙しい』がそのような意味だったとは……==RT==それにしてもすごいな。どんなに遠くの塔でも、==RT==一瞬で行き来できるものなのか？
+
+[CG_npc172_01::command/330 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/331 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/331 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/331 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/331 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/333 SetAudio/param/1]
+se_074
+
+[CG_npc172_01::command/334 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/334 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/334 CtrlChar/param/2]
+013
+
+[CG_npc172_01::command/334 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/334 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/334 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/334 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/335 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/335 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/335 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/335 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/335 SetTalk/param/7]
+チッ……初対面の相手に、どうしてそんなこと教えないといけないんです？==RT==だいたいその程度のケガなら、唾でもつけておけば治りますよ。==RT==それでは別の患者が待っているので――
+
+[CG_npc172_01::command/335 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/337 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/337 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc172_01::command/337 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/337 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/337 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/338 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/338 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/338 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/338 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/338 SetTalk/param/7]
+この医療スタッフ、態度悪すぎないか！？
+
+[CG_npc172_01::command/338 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/339 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/339 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/339 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/339 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/340 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc172_01::command/340 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/340 SetBGM/param/4]
+1000ms
+
+[CG_npc172_01::command/342 SetAudio/param/1]
+se_230
+
+[CG_npc172_01::command/343 SetBg/param/1]
+mood_5
+
+[CG_npc172_01::command/343 SetBg/param/2]
+16
+
+[CG_npc172_01::command/343 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/343 SetBg/param/6]
+AvgStageEffect_wipe_up
+
+[CG_npc172_01::command/344 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/344 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/344 CtrlChar/param/2]
+006
+
+[CG_npc172_01::command/344 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/344 CtrlChar/param/11]
+chijing
+
+[CG_npc172_01::command/344 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/344 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/345 SetTalk/param/1]
+avg3_172
+
+[CG_npc172_01::command/345 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/345 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/345 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/345 SetTalk/param/7]
+はぁ……いちいち文句が多い患者ですね。
+
+[CG_npc172_01::command/345 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/347 SetAudio/param/1]
+se_176
+
+[CG_npc172_01::command/348 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/348 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/348 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/348 CtrlChar/param/11]
+JuGong1
+
+[CG_npc172_01::command/348 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/348 CtrlChar/param/13]
+Linear
+
+[CG_npc172_01::command/350 SetBg/param/1]
+tower_common
+
+[CG_npc172_01::command/350 SetBg/param/2]
+0
+
+[CG_npc172_01::command/350 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/350 SetBg/param/6]
+default
+
+[CG_npc172_01::command/351 CtrlChar/param/0]
+avg3_172
+
+[CG_npc172_01::command/351 CtrlChar/param/1]
+a
+
+[CG_npc172_01::command/351 CtrlChar/param/3]
+none
+
+[CG_npc172_01::command/351 CtrlChar/param/11]
+none
+
+[CG_npc172_01::command/351 CtrlChar/param/12]
+none
+
+[CG_npc172_01::command/351 CtrlChar/param/13]
+OutSine
+
+[CG_npc172_01::command/352 SetAudio/param/1]
+se_070
+
+[CG_npc172_01::command/353 CtrlStage/param/9]
+Zhong
+
+[CG_npc172_01::command/353 CtrlStage/param/10]
+Linear
+
+[CG_npc172_01::command/354 SetMainRoleTalk/param/2]
+007
+
+[CG_npc172_01::command/354 SetMainRoleTalk/param/3]
+close
+
+[CG_npc172_01::command/354 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/354 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/354 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/355 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/355 SetTalk/param/7]
+<size=50>あうッ……！？
+
+[CG_npc172_01::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/356 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/356 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/356 SetMainRoleTalk/param/5]
+z
+
+[CG_npc172_01::command/356 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/358 SetAudio/param/1]
+se_174
+
+[CG_npc172_01::command/359 SetBg/param/1]
+mood_4
+
+[CG_npc172_01::command/359 SetBg/param/2]
+16
+
+[CG_npc172_01::command/359 SetBg/param/3]
+OutSine
+
+[CG_npc172_01::command/359 SetBg/param/6]
+AvgStageEffect_wipe_down
+
+[CG_npc172_01::command/360 SetTalk/param/1]
+0
+
+[CG_npc172_01::command/360 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/360 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/360 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/360 SetTalk/param/7]
+ものすごく嫌そうな顔をしたベアトリスが、私の足に注射器を突き刺した。
+
+[CG_npc172_01::command/360 SetTalk/param/8]
+ものすごく嫌そうな顔をしたベアトリスが、僕の足に注射器を突き刺した。
+
+[CG_npc172_01::command/361 SetAudio/param/1]
+se_055
+
+[CG_npc172_01::command/362 SetTalk/param/1]
+0
+
+[CG_npc172_01::command/362 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/362 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/362 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/362 SetTalk/param/7]
+その後、塔に入る前よりも元気になった私は、==RT==無事に空白旅団のみんなと合流することができたわけだが――
+
+[CG_npc172_01::command/362 SetTalk/param/8]
+その後、塔に入る前よりも元気になった僕は、==RT==無事に空白旅団のみんなと合流することができたわけだが――
+
+[CG_npc172_01::command/364 SetBg/param/1]
+BG_Black
+
+[CG_npc172_01::command/364 SetBg/param/2]
+0
+
+[CG_npc172_01::command/364 SetBg/param/3]
+Linear
+
+[CG_npc172_01::command/364 SetBg/param/6]
+default
+
+[CG_npc172_01::command/365 SetMainRoleTalk/param/2]
+010
+
+[CG_npc172_01::command/365 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_npc172_01::command/365 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/365 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/365 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc172_01::command/366 SetTalk/param/1]
+avg3_100
+
+[CG_npc172_01::command/366 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/366 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/366 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/366 SetTalk/param/7]
+ベアトリスには申し訳ないことをしたし、==RT==これからはなるべく、ケガをしないようにしないとな。
+
+[CG_npc172_01::command/366 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc172_01::command/367 SetMainRoleTalk/param/3]
+none
+
+[CG_npc172_01::command/367 SetMainRoleTalk/param/4]
+none
+
+[CG_npc172_01::command/367 SetMainRoleTalk/param/5]
+y
+
+[CG_npc172_01::command/367 SetMainRoleTalk/param/8]
+avg3_100
+

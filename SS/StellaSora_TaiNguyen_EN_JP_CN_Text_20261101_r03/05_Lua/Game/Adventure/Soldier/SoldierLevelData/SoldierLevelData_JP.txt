@@ -1,0 +1,189 @@
+Game/Adventure/Soldier/SoldierLevelData.lua | JP
+46 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/12:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 13416
+[Soldier] 服务器下发的SoldierInfo为空！！！
+
+[0/12:K23] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 13655
+[Soldier] 服务器下发的 SoldierNode 为空！！！
+
+[0/14:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 17832
+自走棋沙盘场景找不到！！！stage = 
+
+[0/45:K26] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 37661
+[Soldier][Warn] Consume UID=%s 本地无记录
+
+[0/45:K36] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 37802
+[Soldier][Warn] Update UID=%s 本地无记录
+
+[0/54:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 44911
+[Soldier][%s] ===== 棋子阵容 =====
+
+[0/54:K18] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45012
+[Soldier] 出战席-主控位[%s]: %s
+
+[0/54:K22] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45076
+[Soldier] 出战席-主控位 (总数=%d)
+
+[0/54:K23] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45119
+[Soldier] 出战席-支援位[%s]: %s
+
+[0/54:K24] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45158
+[Soldier] 出战席-支援位 (总数=%d)
+
+[0/54:K26] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45217
+[Soldier] 备战席[%s]: %s
+
+[0/54:K27] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45246
+[Soldier] 备战席 (总数=%d)
+
+[0/54:K30] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45300
+[Soldier] 背包[%d]: %s
+
+[0/54:K31] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45326
+[Soldier] 背包 (总数=%d)
+
+[0/54:K34] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 45395
+[Soldier] Other (总数=%d)
+
+[0/54/2:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 46026
+%s-%s星[%s]
+
+[0/54/3:K2] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 46297
+%s-%s星[%s]-%s
+
+[0/83:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 73341
+[Soldier] Case为空！！！ caseType = 
+
+[0/84:K2] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 73669
+[Soldier] _SendInteract 缺少 mapMsgData
+
+[0/84:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 73725
+[Soldier] _SendInteract 缺少有效 Case Id
+
+[0/85:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 74418
+[Soldier] SendMove 无效 UID: 
+
+[0/85:K8] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 74491
+[Soldier]移动棋子 UID=%s -> Slot=%s
+
+[0/86:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 75020
+[Soldier]购买商品  --  
+
+[0/87:K10] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 75714
+[Soldier] SendShopSell 找不到棋子 UID
+
+[0/87:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 75758
+[Soldier] SendShopSell UID 无对应棋子: 
+
+[0/87:K16] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 75844
+[Soldier]出售棋子 -- UID=%s Tid=%s Star=%s Slot=%s
+
+[0/88:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 76671
+[Soldier]商店刷新
+
+[0/89:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 76996
+[Soldier]购买经验
+
+[0/90:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 77321
+[Soldier]商店锁定
+
+[0/91:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 77651
+[Soldier]备战界面点出发
+
+[0/92:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 78044
+[Soldier]节点胜利结算, 本场战斗获得金币数：
+
+[0/93:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 78837
+[Soldier]节点失败结算, 本场战斗获得金币数：
+
+[0/94:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 79537
+[Soldier]事件争端选择奖励  --  
+
+[0/95:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 80011
+[Soldier]事件争端战斗胜利, 本场战斗获得金币数：
+
+[0/96:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 80858
+[Soldier]事件争端战斗失败, 本场战斗获得金币数：
+
+[0/97:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 81740
+[Soldier]buff卡三选一  -- 
+
+[0/97:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 81848
+[Soldier]代价剧情三选一  -- 
+
+[0/98:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 82279
+[Soldier]开局buff卡重随
+
+[0/100:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 82967
+[Soldier]选择魔王能力  --  
+
+[0/101:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 83615
+[Soldier]木桩关结算 DpsId=%s TimeId=%s
+
+[0/104:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 85027
+[Soldier]性格剧情选择选项 -- 
+
+[0/105:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 85456
+[Soldier]性格剧情掷骰子
+
+[0/109:K19] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 88885
+[Soldier] SoldierChessChange 版本号不匹配 base=%s local=%s next=%s, 丢弃; 等 DeploySyncResp.Deploy 兜底
+
+[0/109:K31] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 89131
+<color='#CF584E'>[[Soldier]失去棋子 UID=%s %s-%s星[%s]</color>
+
+[0/109:K35] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 89219
+<color='#4DC382'>[[Soldier]获得棋子 UID=%s %s-%s星[%s] Slot=%s</color>
+
+[0/109:K38] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf6b61d369a4de824 | offset: 89310
+[Soldier]移动棋子 UID=%s -> Slot=%s
+

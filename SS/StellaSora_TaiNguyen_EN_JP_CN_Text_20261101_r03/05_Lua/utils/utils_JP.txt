@@ -1,0 +1,265 @@
+utils.lua | JP
+65 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0:K122] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 3910
+中文
+
+[0:K131] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 3989
+韩文
+
+[0:K136] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 4033
+日文
+
+[0:K139] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 4059
+全角符号
+
+[0/33:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 21040
+json文本配置格式有误，该文本为：
+
+[0/40:K8] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 25923
+ChangeInfo 格式错误
+
+[0/47:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 32329
+nIndex must be a positive integer
+
+[0/55:K18] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 35138
+<color=#BD3059>配置错误，无法读取对应表名和ID：%s</color>
+
+[0/55:K19] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 35212
+<color=#BD3059>表ID配置错误，无法转为number：%s</color>
+
+[0/55:K27] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 35389
+<color=#BD3059>未支持的表名：%s</color>
+
+[0/55/0:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 36132
+词条 id 错误:
+
+[0/55/0:K14] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 36185
+该词条 id 找不到数据:
+
+[0/55/0:K15] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 36216
+该词条 id 找不到Icon:
+
+[0/55/0:K28] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 36409
+该<潜能>词条 id 找不到角色:
+
+[0/55/1:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 37836
+<color=#BD3059>该 hit damage id 找不到数据:%s</color>
+
+[0/55/1:K7] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 37931
+<color=#BD3059>该技能等级在 HitDamage 表中找不到数据, hit damage id:%d, level:%d</color>
+
+[0/55/3:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 39258
+<color=#BD3059>该EffectId找不到数据:%s</color>
+
+[0/55/3:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 39349
+<color=#BD3059>该EffectId和等级找不到Value数据:%s，%s</color>
+
+[0/55/3:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 39450
+<color=#BD3059>该EffectValueId配置的数据不支持显示:%s</color>
+
+[0/55/4:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 40301
+<color=#BD3059>该OnceAdditionalAttributeId找不到数据:%s</color>
+
+[0/55/4:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 40417
+<color=#BD3059>该OnceAdditionalAttributeId和等级找不到Value数据:%s，%s，%s</color>
+
+[0/55/5:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 41249
+<color=#BD3059>该ShieldId找不到数据:%s</color>
+
+[0/55/5:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 41331
+<color=#BD3059>该ShieldId和等级找不到Value数据:%s，%s</color>
+
+[0/55/6:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 42158
+<color=#BD3059>该SriptId找不到数据:%s</color>
+
+[0/55/6:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 42248
+<color=#BD3059>该SriptId和等级找不到Value数据:%s，%s</color>
+
+[0/56:K2] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 45908
+解析描述失败!
+
+[0/56:K25] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 46109
+<color=#BD3059>配置错误，无法读取对应表名和ID：%s</color>
+
+[0/56:K28] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 46204
+<color=#BD3059>表ID配置错误，无法转为number：%s</color>
+
+[0/56:K47] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 46515
+<color=#BD3059>%s表中该Id找不到数据:%s</color>
+
+[0/56:K48] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 46571
+<color=#BD3059>找不到该配置表:%s</color>
+
+[0/56/2:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 48226
+词条 id 错误:
+
+[0/56/2:K14] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 48279
+该词条 id 找不到数据:
+
+[0/56/2:K15] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 48310
+该词条 id 找不到Icon:
+
+[0/56/2:K28] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 48503
+该<潜能>词条 id 找不到角色:
+
+[0/56/3:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 50012
+<color=#BD3059>该 hit damage id 找不到数据:%s</color>
+
+[0/56/3:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 50159
+<color=#BD3059>该技能等级在 HitDamage 表中找不到数据, hit damage id:%d, level:%d</color>
+
+[0/56/4:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 51554
+枚举未找到值:
+
+[0/56/4:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 51575
+枚举值填写错误:
+
+[0/56/4:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 51599
+枚举类型填写错误:
+
+[0/56/4:K14] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 51626
+枚举类型未填写
+
+[0/56/5:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 53046
+<color=#BD3059>%s表中该ValueId配置的数据解析失败:%s</color>
+
+[0/56/5:K7] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 53119
+<color=#BD3059>%s表中没有该字段:%s</color>
+
+[0/56/5:K8] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 53170
+<color=#BD3059>%s表中该Id找不到数据:%s</color>
+
+[0/56/5:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 53226
+<color=#BD3059>找不到该配置表:%s</color>
+
+[0/56/5:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 53289
+描述解析失败
+
+[0/56/6:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 54400
+<color=#BD3059>%s表中该Id配置的数据解析失败:%s</color>
+
+[0/56/6:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 54468
+<color=#BD3059>%s表中没有该字段:%s</color>
+
+[0/56/6:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 54519
+<color=#BD3059>%s表中该Id找不到数据:%s</color>
+
+[0/56/6:K7] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 54575
+<color=#BD3059>找不到该配置表:%s</color>
+
+[0/56/6:K10] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 54638
+描述解析失败
+
+[0/57:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 57870
+wordId error:
+
+[0/57:K16] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 57932
+{未找到参数配置}
+
+[0/58:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 59388
+wordId error:
+
+[0/58:K18] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 59464
+{未找到参数配置}
+
+[0/59:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 60435
+物品数量配置错误，应有至少3个参数
+
+[0/61:K30] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 61860
+{未找到参数配置}
+
+[0/64:K5] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 64314
+Effect Id missing
+
+[0/64:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 64395
+EffectValue Id missing
+
+[0/64:K16] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 64455
+效果次数已用完:
+
+[0/65:K2] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 65126
+效果次数已用完:
+
+[0/68:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 69971
+【战报】传入的 fileName 为空
+
+[0/72:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 73951
+sWordId为空
+
+[0/72:K7] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 73966
+wordId error:
+
+[0/72:K25] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 74136
+该<潜能>词条 id 找不到角色:
+
+[0/88:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x7eb7ae254de6d5c9 | offset: 84942
+id exceeds max integer
+

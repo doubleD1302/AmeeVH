@@ -1,0 +1,145 @@
+GameCore/UI/BaseCtrl.lua | CN
+35 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/8:K40] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 9444
+UIText缺失配置:
+
+[0/8:K44] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 9489
+节点找到了但组件没找到，节点名：
+
+[0/8:K45] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 9539
+，组件名：
+
+[0/8:K46] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 9556
+，panel id：
+
+[0/8:K50] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 9599
+界面预设体中配置的节点没找到，预设体名字：
+
+[0/8:K52] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 9670
+，节点名字：
+
+[0/9:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 12746
+没有找到组件的回调函数，节点名字：
+
+[0/9:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 12799
+，回调函数名字：
+
+[0/10:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 16002
+没有找到组件的回调函数，节点名字：
+
+[0/10:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 16055
+，回调函数名字：
+
+[0/14:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 20272
+[%s.%s] 预设体：%s，计时器数量：%d，自理预设体实例数量：%d，回调数量：%d，节点数量：%d。
+
+[0/15:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 21030
+绑定红点失败！！！ 找不到红点节点.key = %s, nodeName = %s
+
+[0/19:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 22103
+新版UI在换过图集做法后，从图集中取Sprite时不应出现/CommonEx/目录 或 /Common/ 目录。
+
+[0/19:K8] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 22218
+panel id:
+
+[0/19:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 22248
+，ctrl name:
+
+[0/20:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 23186
+调用接口处需更新，panel id:
+
+[0/20:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 23243
+，ctrl name:
+
+[0/20:K18] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 23340
+配置表中 Icon 资源字段内容填写错误，应填路径，如：Icon/Item/item_1，panel id:
+
+[0/20:K25] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 23484
+未找到 icon 资源：%s，panel id：%s，ctrl name：%s
+
+[0/24:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 25475
+Sprite设置失败：%s，panel id：%s，ctrl name：%s
+
+[0/25:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 26104
+新版UI在换过图集做法后，从图集中取Sprite时不应出现/CommonEx/目录 或 /Common/ 目录。
+
+[0/25:K8] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 26219
+panel id:
+
+[0/25:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 26249
+，ctrl name:
+
+[0/25:K18] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 26352
+icon设置失败：%s，panel id：%s，ctrl name：%s
+
+[0/26:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 27028
+icon设置失败：%s，panel id：%s，ctrl name：%s
+
+[0/27:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 27599
+icon设置失败：%s，panel id：%s，ctrl name：%s
+
+[0/28:K26] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 28802
+【抽卡角色头像 icon 自适应】未自适应
+
+[0/28:K29] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 28871
+【抽卡角色头像 icon 自适应】全局缩放：x%f，y%f，最终取%f，应用处算上全局缩放后的尺寸：w%f，h%f，自适应至后缀：%s，宽%f，高%f。
+
+[0/28:K34] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 29082
+抽卡角色头像 icon 自适应失败，资源缺失。%s 将 %s 自适应调整为 %s
+
+[0/29:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 30871
+调用接口处需更新，panel id:
+
+[0/29:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 30928
+，ctrl name:
+
+[0/29:K24] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 31091
+配置表中 Icon 资源字段内容填写错误，应填路径，如：Icon/Item/item_1，panel id:
+
+[0/47:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 41314
+Ctrl Lua not found, path:
+
+[0/50:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 43066
+该 hit damage id 找不到数据:
+
+[0/50:K10] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x054ac7618af56a8e | offset: 43179
+该技能等级在 HitDamage 表中找不到数据, hit damage id:%d, level:%d
+

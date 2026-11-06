@@ -1,0 +1,4528 @@
+CG_159_02 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1508
+
+[CG_159_02::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_159_02::command/0 SetIntro/param/1]
+第2話
+
+[CG_159_02::command/0 SetIntro/param/2]
+薬と毒は紙一重
+
+[CG_159_02::command/0 SetIntro/param/3]
+クルニスが診察した患者のひとりが倒れ、そのまま目が覚まさないという。結果として彼女の診断ミスが疑われ、取り調べのため白沢管理局で足止めされてしまう。それを聞いた魔王は、クルニスの無実を証明するため証拠を集めることに。
+
+[CG_159_02::command/1 SetTrans/param/2]
+0
+
+[CG_159_02::command/1 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/1 SetTrans/param/8]
+default
+
+[CG_159_02::command/2 SetBg/param/1]
+phoenix_hostel_room
+
+[CG_159_02::command/2 SetBg/param/2]
+0
+
+[CG_159_02::command/2 SetBg/param/3]
+Linear
+
+[CG_159_02::command/2 SetBg/param/6]
+default
+
+[CG_159_02::command/3 CtrlStage/param/9]
+none
+
+[CG_159_02::command/3 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/4 CtrlBg/param/10]
+none
+
+[CG_159_02::command/4 CtrlBg/param/11]
+Linear
+
+[CG_159_02::command/6 SetTrans/param/2]
+0
+
+[CG_159_02::command/6 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/6 SetTrans/param/8]
+default
+
+[CG_159_02::command/8 SetChar/param/2]
+none
+
+[CG_159_02::command/8 SetChar/param/3]
+avg1_159
+
+[CG_159_02::command/8 SetChar/param/4]
+a
+
+[CG_159_02::command/8 SetChar/param/5]
+007
+
+[CG_159_02::command/8 SetChar/param/6]
+none
+
+[CG_159_02::command/9 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/9 CtrlChar/param/1]
+a
+
+[CG_159_02::command/9 CtrlChar/param/3]
+none
+
+[CG_159_02::command/9 CtrlChar/param/11]
+none
+
+[CG_159_02::command/9 CtrlChar/param/12]
+none
+
+[CG_159_02::command/9 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/11 SetMainRoleTalk/param/2]
+025
+
+[CG_159_02::command/11 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_159_02::command/11 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/11 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/11 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/12 SetTalkShake/param/1]
+Xiao
+
+[CG_159_02::command/13 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/13 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/13 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/13 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/13 SetTalk/param/7]
+クルニス無事か！？
+
+[CG_159_02::command/13 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/14 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/14 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/14 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/14 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/16 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/16 SetBGM/param/3]
+m44
+
+[CG_159_02::command/16 SetBGM/param/4]
+none
+
+[CG_159_02::command/17 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/17 CtrlChar/param/1]
+a
+
+[CG_159_02::command/17 CtrlChar/param/2]
+005
+
+[CG_159_02::command/17 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_159_02::command/17 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/17 CtrlChar/param/12]
+none
+
+[CG_159_02::command/17 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/18 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/18 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/18 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/18 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/18 SetTalk/param/7]
+血相変えてどうしたんだい？
+
+[CG_159_02::command/18 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/20 SetMainRoleTalk/param/2]
+010
+
+[CG_159_02::command/20 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_159_02::command/20 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/20 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/20 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/21 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/21 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/21 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/21 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/21 SetTalk/param/7]
+どうしたもこうしたもないぞ。==W====RT==シーミャオから、クルニスが自警団の==RT==取り調べを受けることになったと聞いて……
+
+[CG_159_02::command/21 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/23 SetMainRoleTalk/param/2]
+021
+
+[CG_159_02::command/23 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_159_02::command/23 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/23 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/23 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/25 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/25 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/25 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/25 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/27 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/27 CtrlChar/param/1]
+a
+
+[CG_159_02::command/27 CtrlChar/param/2]
+002
+
+[CG_159_02::command/27 CtrlChar/param/3]
+none
+
+[CG_159_02::command/27 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/27 CtrlChar/param/12]
+none
+
+[CG_159_02::command/27 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/28 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/28 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/28 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/28 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/28 SetTalk/param/7]
+大げさだよ。まあ、このとおり取り込み中ではあるんだけど。
+
+[CG_159_02::command/28 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/30 SetMainRoleTalk/param/2]
+020
+
+[CG_159_02::command/30 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_159_02::command/30 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/30 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/30 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/31 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/31 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/31 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/31 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/31 SetTalk/param/7]
+（自警団がクルニスの荷物を調べている最中か……）
+
+[CG_159_02::command/31 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/33 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/33 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_159_02::command/33 SetMainRoleTalk/param/4]
+jushou
+
+[CG_159_02::command/33 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/33 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/34 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/34 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/34 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/34 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/34 SetTalk/param/7]
+いったいなにがあったんだ？
+
+[CG_159_02::command/34 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/35 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/35 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/35 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/35 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/37 SetAudio/param/1]
+se_062
+
+[CG_159_02::command/38 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/38 CtrlChar/param/1]
+a
+
+[CG_159_02::command/38 CtrlChar/param/3]
+none
+
+[CG_159_02::command/38 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/38 CtrlChar/param/12]
+none
+
+[CG_159_02::command/38 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/39 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/39 CtrlChar/param/1]
+a
+
+[CG_159_02::command/39 CtrlChar/param/2]
+008
+
+[CG_159_02::command/39 CtrlChar/param/3]
+none
+
+[CG_159_02::command/39 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/39 CtrlChar/param/12]
+none
+
+[CG_159_02::command/39 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/40 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/40 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/40 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/40 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/40 SetTalk/param/7]
+なんでも私が治療した患者のひとりが倒れて、==RT==目を覚まさないらしくてね。
+
+[CG_159_02::command/40 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/42 SetMainRoleTalk/param/2]
+010
+
+[CG_159_02::command/42 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/42 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/42 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/42 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/43 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/43 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/43 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/43 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/43 SetTalk/param/7]
+心当たりはあるのか？==W==
+
+[CG_159_02::command/43 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/45 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/45 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_159_02::command/45 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/45 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/45 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/47 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/47 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/47 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/47 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/49 SetBg/param/1]
+mood_3
+
+[CG_159_02::command/49 SetBg/param/2]
+AvgStageEffect_wipe_down
+
+[CG_159_02::command/49 SetBg/param/3]
+Linear
+
+[CG_159_02::command/49 SetBg/param/6]
+default
+
+[CG_159_02::command/50 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/50 CtrlChar/param/1]
+a
+
+[CG_159_02::command/50 CtrlChar/param/2]
+009
+
+[CG_159_02::command/50 CtrlChar/param/3]
+none
+
+[CG_159_02::command/50 CtrlChar/param/11]
+ChanDou
+
+[CG_159_02::command/50 CtrlChar/param/12]
+none
+
+[CG_159_02::command/50 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/51 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/51 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/51 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/51 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/51 SetTalk/param/7]
+いや、まったく。==W==昏睡するような病気でもなかったし、==RT==診断に間違いはないと思うんだけど……
+
+[CG_159_02::command/51 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/53 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/53 CtrlChar/param/1]
+a
+
+[CG_159_02::command/53 CtrlChar/param/2]
+011
+
+[CG_159_02::command/53 CtrlChar/param/3]
+none
+
+[CG_159_02::command/53 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/53 CtrlChar/param/12]
+none
+
+[CG_159_02::command/53 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/56 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/56 CtrlChar/param/1]
+a
+
+[CG_159_02::command/56 CtrlChar/param/2]
+004
+
+[CG_159_02::command/56 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_159_02::command/56 CtrlChar/param/11]
+none
+
+[CG_159_02::command/56 CtrlChar/param/12]
+none
+
+[CG_159_02::command/56 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/57 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/57 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/57 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/57 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/57 SetTalk/param/7]
+念のためもう一度診察させてほしいって頼んでいるんだが、==RT==証拠を隠滅しようとしている可能性があるからって、==RT==外出許可が下りないんだ。
+
+[CG_159_02::command/57 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/59 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/59 CtrlChar/param/1]
+a
+
+[CG_159_02::command/59 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_159_02::command/59 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/59 CtrlChar/param/12]
+none
+
+[CG_159_02::command/59 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/60 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/60 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/60 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/60 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/60 SetTalk/param/7]
+で、こうして荷物検査の立ち合いと取り調べが始まったというわけさ。==W====RT==まったく……困ったものだよ。
+
+[CG_159_02::command/60 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/62 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/62 CtrlChar/param/1]
+a
+
+[CG_159_02::command/62 CtrlChar/param/2]
+009
+
+[CG_159_02::command/62 CtrlChar/param/3]
+none
+
+[CG_159_02::command/62 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/62 CtrlChar/param/12]
+none
+
+[CG_159_02::command/62 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/65 SetMainRoleTalk/param/2]
+020
+
+[CG_159_02::command/65 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_159_02::command/65 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/65 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/65 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/66 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/66 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/66 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/66 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/66 SetTalk/param/7]
+（だいぶ参っているようだが……==W==無理もないか。==RT==突然このように疑われてはな）
+
+[CG_159_02::command/66 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/68 SetMainRoleTalk/param/2]
+010
+
+[CG_159_02::command/68 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/68 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/68 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/68 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/70 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/70 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/70 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/70 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/72 SetBg/param/1]
+phoenix_hostel_room
+
+[CG_159_02::command/72 SetBg/param/2]
+0
+
+[CG_159_02::command/72 SetBg/param/3]
+Linear
+
+[CG_159_02::command/72 SetBg/param/6]
+default
+
+[CG_159_02::command/73 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/73 CtrlChar/param/1]
+a
+
+[CG_159_02::command/73 CtrlChar/param/2]
+008
+
+[CG_159_02::command/73 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_159_02::command/73 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/73 CtrlChar/param/12]
+none
+
+[CG_159_02::command/73 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/74 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/74 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/74 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/74 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/74 SetTalk/param/7]
+こんな症例は聞いたことがないのに、==W==直接診られないなんて……！==W====RT==実にもったいない！！
+
+[CG_159_02::command/74 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/76 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/76 CtrlChar/param/1]
+a
+
+[CG_159_02::command/76 CtrlChar/param/2]
+004
+
+[CG_159_02::command/76 CtrlChar/param/3]
+none
+
+[CG_159_02::command/76 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/76 CtrlChar/param/12]
+none
+
+[CG_159_02::command/76 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/79 SetAudio/param/1]
+se_070
+
+[CG_159_02::command/80 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/80 CtrlChar/param/1]
+a
+
+[CG_159_02::command/80 CtrlChar/param/2]
+011
+
+[CG_159_02::command/80 CtrlChar/param/3]
+none
+
+[CG_159_02::command/80 CtrlChar/param/11]
+jushou
+
+[CG_159_02::command/80 CtrlChar/param/12]
+none
+
+[CG_159_02::command/80 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/81 SetTalkShake/param/1]
+Xiao
+
+[CG_159_02::command/84 SetMainRoleTalk/param/2]
+021
+
+[CG_159_02::command/84 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_159_02::command/84 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/84 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/84 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/85 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/85 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/85 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/85 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/85 SetTalk/param/7]
+（そうだ、クルニスはこういう性格だった……）
+
+[CG_159_02::command/85 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/86 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/86 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/86 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/86 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/88 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/88 CtrlChar/param/1]
+a
+
+[CG_159_02::command/88 CtrlChar/param/2]
+012
+
+[CG_159_02::command/88 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_159_02::command/88 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/88 CtrlChar/param/12]
+none
+
+[CG_159_02::command/88 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/89 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/89 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/89 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/89 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/89 SetTalk/param/7]
+でも運はこちらに向いてきた。==RT==こうしてキミが来てくれたんだからね。
+
+[CG_159_02::command/89 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/91 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/91 CtrlChar/param/1]
+a
+
+[CG_159_02::command/91 CtrlChar/param/2]
+007
+
+[CG_159_02::command/91 CtrlChar/param/3]
+none
+
+[CG_159_02::command/91 CtrlChar/param/11]
+zuochupeng
+
+[CG_159_02::command/91 CtrlChar/param/12]
+none
+
+[CG_159_02::command/91 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/92 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/92 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/92 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/92 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/92 SetTalk/param/7]
+というわけで、助手くん。==RT==この事件を調査してくれないか？
+
+[CG_159_02::command/92 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/94 SetMainRoleTalk/param/2]
+021
+
+[CG_159_02::command/94 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_159_02::command/94 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/94 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/94 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/95 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/95 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/95 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/95 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/95 SetTalk/param/7]
+…………え？
+
+[CG_159_02::command/95 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/96 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/96 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/96 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/96 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/98 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/98 CtrlChar/param/1]
+a
+
+[CG_159_02::command/98 CtrlChar/param/2]
+009
+
+[CG_159_02::command/98 CtrlChar/param/3]
+none
+
+[CG_159_02::command/98 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/98 CtrlChar/param/12]
+none
+
+[CG_159_02::command/98 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/99 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/99 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/99 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/99 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/99 SetTalk/param/7]
+説明したとおり、あいにく私はここから出られない。==W====RT==だから私の代わりに、倒れた患者の様子を見てきてほしいんだ。
+
+[CG_159_02::command/99 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/101 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/101 CtrlChar/param/1]
+a
+
+[CG_159_02::command/101 CtrlChar/param/2]
+005
+
+[CG_159_02::command/101 CtrlChar/param/3]
+none
+
+[CG_159_02::command/101 CtrlChar/param/11]
+none
+
+[CG_159_02::command/101 CtrlChar/param/12]
+none
+
+[CG_159_02::command/101 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/104 SetMainRoleTalk/param/2]
+003
+
+[CG_159_02::command/104 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/104 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/104 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/104 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/105 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/105 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/105 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/105 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/105 SetTalk/param/7]
+だが前にも言ったが、==W====RT==私は医学について、素人もいいところだぞ？
+
+[CG_159_02::command/105 SetTalk/param/8]
+だが前にも言ったが、==W====RT==僕は医学について、素人もいいところだぞ？
+
+[CG_159_02::command/107 SetMainRoleTalk/param/2]
+015
+
+[CG_159_02::command/107 SetMainRoleTalk/param/3]
+none
+
+[CG_159_02::command/107 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/107 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/107 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/109 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/109 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/109 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/109 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/111 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/111 CtrlChar/param/1]
+a
+
+[CG_159_02::command/111 CtrlChar/param/2]
+007
+
+[CG_159_02::command/111 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_159_02::command/111 CtrlChar/param/11]
+none
+
+[CG_159_02::command/111 CtrlChar/param/12]
+none
+
+[CG_159_02::command/111 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/112 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/112 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/112 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/112 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/112 SetTalk/param/7]
+別に診察しろと言っているわけじゃない。==W====RT==『調べて』、『報告』してほしいんだ。
+
+[CG_159_02::command/112 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/114 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/114 CtrlChar/param/1]
+a
+
+[CG_159_02::command/114 CtrlChar/param/2]
+006
+
+[CG_159_02::command/114 CtrlChar/param/3]
+none
+
+[CG_159_02::command/114 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/114 CtrlChar/param/12]
+none
+
+[CG_159_02::command/114 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/117 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/117 CtrlChar/param/1]
+a
+
+[CG_159_02::command/117 CtrlChar/param/2]
+002
+
+[CG_159_02::command/117 CtrlChar/param/3]
+none
+
+[CG_159_02::command/117 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/117 CtrlChar/param/12]
+none
+
+[CG_159_02::command/117 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/118 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/118 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/118 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/118 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/118 SetTalk/param/7]
+情報さえあれば、なにかしら思い当たることがあるかもしれないからね。
+
+[CG_159_02::command/118 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/120 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/120 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_159_02::command/120 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/120 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/120 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/121 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/121 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/121 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/121 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/121 SetTalk/param/7]
+原因がわかれば、君の潔白も証明できるだろうし……==W====RT==わかった、協力しよう。
+
+[CG_159_02::command/121 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/123 SetMainRoleTalk/param/2]
+002
+
+[CG_159_02::command/123 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/123 SetMainRoleTalk/param/4]
+diantou
+
+[CG_159_02::command/123 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/123 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/125 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/125 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/125 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/125 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/127 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/127 CtrlChar/param/1]
+a
+
+[CG_159_02::command/127 CtrlChar/param/2]
+007
+
+[CG_159_02::command/127 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_159_02::command/127 CtrlChar/param/11]
+diantou2
+
+[CG_159_02::command/127 CtrlChar/param/12]
+none
+
+[CG_159_02::command/127 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/128 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/128 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/128 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/128 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/128 SetTalk/param/7]
+頼んだよ。私の助手くん。
+
+[CG_159_02::command/128 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/130 SetMainRoleTalk/param/2]
+020
+
+[CG_159_02::command/130 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_159_02::command/130 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/130 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/130 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/131 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/131 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/131 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/131 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/131 SetTalk/param/7]
+（シーミャオに口をきいてもらえて助かった。==RT==倒れた患者の家に急ごう）
+
+[CG_159_02::command/131 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/132 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/132 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/132 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/132 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/133 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/133 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/133 SetBGM/param/4]
+1500ms
+
+[CG_159_02::command/135 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[CG_159_02::command/135 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/135 SetTrans/param/8]
+default
+
+[CG_159_02::command/136 SetBg/param/1]
+phoenix_food_street
+
+[CG_159_02::command/136 SetBg/param/2]
+0
+
+[CG_159_02::command/136 SetBg/param/3]
+Linear
+
+[CG_159_02::command/136 SetBg/param/6]
+default
+
+[CG_159_02::command/137 CtrlStage/param/9]
+none
+
+[CG_159_02::command/137 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/138 CtrlBg/param/10]
+none
+
+[CG_159_02::command/138 CtrlBg/param/11]
+Linear
+
+[CG_159_02::command/140 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[CG_159_02::command/140 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/140 SetTrans/param/8]
+default
+
+[CG_159_02::command/142 SetChar/param/2]
+none
+
+[CG_159_02::command/142 SetChar/param/3]
+avg3_176
+
+[CG_159_02::command/142 SetChar/param/4]
+a
+
+[CG_159_02::command/142 SetChar/param/5]
+006
+
+[CG_159_02::command/142 SetChar/param/6]
+none
+
+[CG_159_02::command/143 CtrlBg/param/10]
+none
+
+[CG_159_02::command/143 CtrlBg/param/11]
+OutQuad
+
+[CG_159_02::command/144 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/144 CtrlChar/param/1]
+a
+
+[CG_159_02::command/144 CtrlChar/param/3]
+none
+
+[CG_159_02::command/144 CtrlChar/param/11]
+none
+
+[CG_159_02::command/144 CtrlChar/param/12]
+none
+
+[CG_159_02::command/144 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/146 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/146 SetBGM/param/3]
+m30
+
+[CG_159_02::command/146 SetBGM/param/4]
+none
+
+[CG_159_02::command/147 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/147 CtrlChar/param/1]
+a
+
+[CG_159_02::command/147 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_159_02::command/147 CtrlChar/param/11]
+jushou
+
+[CG_159_02::command/147 CtrlChar/param/12]
+none
+
+[CG_159_02::command/147 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/148 SetTalk/param/1]
+お茶屋台の店主
+
+[CG_159_02::command/148 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/148 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/148 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/148 SetTalk/param/7]
+あの、すみません……！==RT==昨日、クルニス先生と一緒にいた方よね？
+
+[CG_159_02::command/148 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/150 SetMainRoleTalk/param/2]
+002
+
+[CG_159_02::command/150 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/150 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/150 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/150 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/151 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/151 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/151 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/151 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/151 SetTalk/param/7]
+薬膳茶の屋台の……？==W==
+
+[CG_159_02::command/151 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/153 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/153 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_159_02::command/153 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/153 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/153 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/155 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/155 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/155 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/155 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/157 SetAudio/param/1]
+se_062
+
+[CG_159_02::command/158 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/158 CtrlChar/param/1]
+a
+
+[CG_159_02::command/158 CtrlChar/param/2]
+007
+
+[CG_159_02::command/158 CtrlChar/param/3]
+none
+
+[CG_159_02::command/158 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/158 CtrlChar/param/12]
+none
+
+[CG_159_02::command/158 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/159 SetTalk/param/1]
+お茶屋台の店主
+
+[CG_159_02::command/159 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/159 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/159 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/159 SetTalk/param/7]
+クルニス先生が取り調べを受けているって聞いて、==W====RT==私……==W==居ても立ってもいられなくて。
+
+[CG_159_02::command/159 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/161 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/161 CtrlChar/param/1]
+a
+
+[CG_159_02::command/161 CtrlChar/param/2]
+005
+
+[CG_159_02::command/161 CtrlChar/param/3]
+none
+
+[CG_159_02::command/161 CtrlChar/param/11]
+none
+
+[CG_159_02::command/161 CtrlChar/param/12]
+none
+
+[CG_159_02::command/161 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/164 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/164 CtrlChar/param/1]
+a
+
+[CG_159_02::command/164 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_159_02::command/164 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/164 CtrlChar/param/12]
+none
+
+[CG_159_02::command/164 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/167 SetMainRoleTalk/param/2]
+002
+
+[CG_159_02::command/167 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/167 SetMainRoleTalk/param/4]
+jushou
+
+[CG_159_02::command/167 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/167 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/168 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/168 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/168 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/168 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/168 SetTalk/param/7]
+取り調べを受けているのは事実だよ。==RT==それで私が調査しているんだ。
+
+[CG_159_02::command/168 SetTalk/param/8]
+取り調べを受けているのは事実だよ。==RT==それで僕が調査しているんだ。
+
+[CG_159_02::command/169 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/169 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/169 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/169 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/171 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/171 CtrlChar/param/1]
+a
+
+[CG_159_02::command/171 CtrlChar/param/2]
+006
+
+[CG_159_02::command/171 CtrlChar/param/3]
+none
+
+[CG_159_02::command/171 CtrlChar/param/11]
+jushou
+
+[CG_159_02::command/171 CtrlChar/param/12]
+none
+
+[CG_159_02::command/171 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/172 SetTalk/param/1]
+お茶屋台の店主
+
+[CG_159_02::command/172 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/172 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/172 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/172 SetTalk/param/7]
+そうだったのね。==W==でも、なにも見つからないと思うわ……==RT==私も医者として、クルニス先生が出したお薬の処方や==RT==お茶を見させてもらったの。でも危険なものはなかったのよね……
+
+[CG_159_02::command/172 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/174 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/174 CtrlChar/param/1]
+a
+
+[CG_159_02::command/174 CtrlChar/param/2]
+005
+
+[CG_159_02::command/174 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_159_02::command/174 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/174 CtrlChar/param/12]
+none
+
+[CG_159_02::command/174 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/177 SetMainRoleTalk/param/2]
+020
+
+[CG_159_02::command/177 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_159_02::command/177 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/177 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/177 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/178 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/178 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/178 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/178 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/178 SetTalk/param/7]
+お茶？==W==
+
+[CG_159_02::command/178 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/180 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/180 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_159_02::command/180 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/180 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/180 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/182 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/182 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/182 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/182 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/184 CtrlChar/param/0]
+avg3_176
+
+[CG_159_02::command/184 CtrlChar/param/1]
+a
+
+[CG_159_02::command/184 CtrlChar/param/2]
+007
+
+[CG_159_02::command/184 CtrlChar/param/3]
+none
+
+[CG_159_02::command/184 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/184 CtrlChar/param/12]
+none
+
+[CG_159_02::command/184 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/185 SetTalk/param/1]
+お茶屋台の店主
+
+[CG_159_02::command/185 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/185 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/185 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/185 SetTalk/param/7]
+ええ。クルニス先生、薬と一緒に薬膳茶を出していて。==RT==昨日も言ったけど、先生のお茶はおいしくて評判がいいの。
+
+[CG_159_02::command/185 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/187 SetMainRoleTalk/param/2]
+009
+
+[CG_159_02::command/187 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/187 SetMainRoleTalk/param/4]
+diantou
+
+[CG_159_02::command/187 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/187 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/188 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/188 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/188 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/188 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/188 SetTalk/param/7]
+なるほど……
+
+[CG_159_02::command/188 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/189 SetMainRoleTalk/param/3]
+none
+
+[CG_159_02::command/189 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/189 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/189 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/190 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/190 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/190 SetBGM/param/4]
+1500ms
+
+[CG_159_02::command/192 SetAudio/param/1]
+se_076
+
+[CG_159_02::command/193 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_159_02::command/193 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/193 SetTrans/param/8]
+default
+
+[CG_159_02::command/194 SetBg/param/1]
+phoenix_hostel_room
+
+[CG_159_02::command/194 SetBg/param/2]
+0
+
+[CG_159_02::command/194 SetBg/param/3]
+Linear
+
+[CG_159_02::command/194 SetBg/param/6]
+default
+
+[CG_159_02::command/195 CtrlStage/param/9]
+none
+
+[CG_159_02::command/195 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/196 CtrlBg/param/10]
+none
+
+[CG_159_02::command/196 CtrlBg/param/11]
+Linear
+
+[CG_159_02::command/198 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_159_02::command/198 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/198 SetTrans/param/8]
+default
+
+[CG_159_02::command/200 SetAudio/param/1]
+se_072
+
+[CG_159_02::command/201 CtrlBg/param/10]
+none
+
+[CG_159_02::command/201 CtrlBg/param/11]
+OutQuad
+
+[CG_159_02::command/202 SetMainRoleTalk/param/2]
+010
+
+[CG_159_02::command/202 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/202 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/202 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/202 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/203 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/203 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/203 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/203 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/203 SetTalk/param/7]
+ただいま、クルニス……==W==って、なっ！？
+
+[CG_159_02::command/203 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/205 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/205 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_159_02::command/205 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/205 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/205 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/206 SetTalkShake/param/1]
+Xiao
+
+[CG_159_02::command/208 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/208 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/208 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/208 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/210 SetChar/param/2]
+none
+
+[CG_159_02::command/210 SetChar/param/3]
+avg3_199
+
+[CG_159_02::command/210 SetChar/param/4]
+b
+
+[CG_159_02::command/210 SetChar/param/5]
+005
+
+[CG_159_02::command/210 SetChar/param/6]
+none
+
+[CG_159_02::command/211 SetChar/param/2]
+none
+
+[CG_159_02::command/211 SetChar/param/3]
+avg3_198
+
+[CG_159_02::command/211 SetChar/param/4]
+b
+
+[CG_159_02::command/211 SetChar/param/5]
+005
+
+[CG_159_02::command/211 SetChar/param/6]
+none
+
+[CG_159_02::command/212 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/212 CtrlChar/param/1]
+b
+
+[CG_159_02::command/212 CtrlChar/param/3]
+none
+
+[CG_159_02::command/212 CtrlChar/param/11]
+none
+
+[CG_159_02::command/212 CtrlChar/param/12]
+none
+
+[CG_159_02::command/212 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/213 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/213 CtrlChar/param/1]
+b
+
+[CG_159_02::command/213 CtrlChar/param/3]
+none
+
+[CG_159_02::command/213 CtrlChar/param/11]
+none
+
+[CG_159_02::command/213 CtrlChar/param/12]
+none
+
+[CG_159_02::command/213 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/214 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/214 CtrlChar/param/1]
+b
+
+[CG_159_02::command/214 CtrlChar/param/3]
+none
+
+[CG_159_02::command/214 CtrlChar/param/11]
+none
+
+[CG_159_02::command/214 CtrlChar/param/12]
+none
+
+[CG_159_02::command/214 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/215 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/215 CtrlChar/param/1]
+b
+
+[CG_159_02::command/215 CtrlChar/param/3]
+none
+
+[CG_159_02::command/215 CtrlChar/param/11]
+none
+
+[CG_159_02::command/215 CtrlChar/param/12]
+none
+
+[CG_159_02::command/215 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/217 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/217 SetBGM/param/3]
+m4
+
+[CG_159_02::command/217 SetBGM/param/4]
+none
+
+[CG_159_02::command/218 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/218 CtrlChar/param/1]
+b
+
+[CG_159_02::command/218 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_159_02::command/218 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/218 CtrlChar/param/12]
+none
+
+[CG_159_02::command/218 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/219 SetTalk/param/1]
+気絶している自警団
+
+[CG_159_02::command/219 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/219 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/219 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/219 SetTalk/param/7]
+うーん…………
+
+[CG_159_02::command/219 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/221 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/221 CtrlChar/param/1]
+b
+
+[CG_159_02::command/221 CtrlChar/param/3]
+none
+
+[CG_159_02::command/221 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/221 CtrlChar/param/12]
+none
+
+[CG_159_02::command/221 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/222 SetTalk/param/1]
+泡をふいている自警団
+
+[CG_159_02::command/222 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/222 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/222 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/222 SetTalk/param/7]
+あわ、==W==あわあわ、あわ……
+
+[CG_159_02::command/222 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/224 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/224 CtrlChar/param/1]
+b
+
+[CG_159_02::command/224 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_159_02::command/224 CtrlChar/param/11]
+chijing
+
+[CG_159_02::command/224 CtrlChar/param/12]
+none
+
+[CG_159_02::command/224 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/227 PlayCharAnim/param/0]
+avg3_198
+
+[CG_159_02::command/227 PlayCharAnim/param/1]
+shake_L
+
+[CG_159_02::command/228 SetAudio/param/1]
+se_406
+
+[CG_159_02::command/229 SetMainRoleTalk/param/2]
+025
+
+[CG_159_02::command/229 SetMainRoleTalk/param/3]
+none
+
+[CG_159_02::command/229 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/229 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/229 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/230 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/230 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/230 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/230 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/230 SetTalk/param/7]
+なんだ、この惨状は……==W====RT==クルニス、まさか彼女たちを……！
+
+[CG_159_02::command/230 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/232 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/232 CtrlChar/param/1]
+b
+
+[CG_159_02::command/232 CtrlChar/param/3]
+none
+
+[CG_159_02::command/232 CtrlChar/param/11]
+none
+
+[CG_159_02::command/232 CtrlChar/param/12]
+none
+
+[CG_159_02::command/232 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/233 SetMainRoleTalk/param/2]
+021
+
+[CG_159_02::command/233 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_159_02::command/233 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/233 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/233 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/235 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/235 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/235 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/235 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/237 SetChar/param/2]
+none
+
+[CG_159_02::command/237 SetChar/param/3]
+avg1_159
+
+[CG_159_02::command/237 SetChar/param/4]
+a
+
+[CG_159_02::command/237 SetChar/param/5]
+002
+
+[CG_159_02::command/237 SetChar/param/6]
+none
+
+[CG_159_02::command/238 SetAudio/param/1]
+se_062
+
+[CG_159_02::command/239 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/239 CtrlChar/param/1]
+b
+
+[CG_159_02::command/239 CtrlChar/param/3]
+none
+
+[CG_159_02::command/239 CtrlChar/param/11]
+none
+
+[CG_159_02::command/239 CtrlChar/param/12]
+none
+
+[CG_159_02::command/239 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/240 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/240 CtrlChar/param/1]
+b
+
+[CG_159_02::command/240 CtrlChar/param/3]
+none
+
+[CG_159_02::command/240 CtrlChar/param/11]
+none
+
+[CG_159_02::command/240 CtrlChar/param/12]
+none
+
+[CG_159_02::command/240 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/241 CtrlBg/param/10]
+none
+
+[CG_159_02::command/241 CtrlBg/param/11]
+OutQuad
+
+[CG_159_02::command/242 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/242 CtrlChar/param/1]
+a
+
+[CG_159_02::command/242 CtrlChar/param/3]
+none
+
+[CG_159_02::command/242 CtrlChar/param/11]
+none
+
+[CG_159_02::command/242 CtrlChar/param/12]
+none
+
+[CG_159_02::command/242 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/244 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/244 CtrlChar/param/1]
+a
+
+[CG_159_02::command/244 CtrlChar/param/2]
+009
+
+[CG_159_02::command/244 CtrlChar/param/3]
+none
+
+[CG_159_02::command/244 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/244 CtrlChar/param/12]
+none
+
+[CG_159_02::command/244 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/245 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/245 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/245 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/245 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/245 SetTalk/param/7]
+安心して。==RT==私はなにもしてないよ……まだね。
+
+[CG_159_02::command/245 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/247 SetMainRoleTalk/param/2]
+021
+
+[CG_159_02::command/247 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_159_02::command/247 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/247 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/247 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/248 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/248 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/248 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/248 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/248 SetTalk/param/7]
+『まだ』って……==RT==では彼女らはいったい？
+
+[CG_159_02::command/248 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/249 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/249 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/249 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/249 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/251 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/251 CtrlChar/param/1]
+a
+
+[CG_159_02::command/251 CtrlChar/param/2]
+008
+
+[CG_159_02::command/251 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_159_02::command/251 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/251 CtrlChar/param/12]
+none
+
+[CG_159_02::command/251 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/252 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/252 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/252 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/252 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/252 SetTalk/param/7]
+取り調べの結果……==W==かな？
+
+[CG_159_02::command/252 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/254 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/254 CtrlChar/param/1]
+a
+
+[CG_159_02::command/254 CtrlChar/param/2]
+007
+
+[CG_159_02::command/254 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_159_02::command/254 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/254 CtrlChar/param/12]
+none
+
+[CG_159_02::command/254 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/257 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/257 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/257 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/257 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/257 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/258 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/258 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/258 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/258 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/258 SetTalk/param/7]
+どんな取り調べをしたら、こんなことになるんだ……
+
+[CG_159_02::command/258 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/259 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/259 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/259 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/259 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/260 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/260 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/260 SetBGM/param/4]
+1500ms
+
+[CG_159_02::command/262 SetAudio/param/1]
+se_169
+
+[CG_159_02::command/263 SetTrans/param/2]
+0
+
+[CG_159_02::command/263 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/263 SetTrans/param/8]
+default
+
+[CG_159_02::command/264 SetBg/param/1]
+phoenix_hostel_room
+
+[CG_159_02::command/264 SetBg/param/2]
+0
+
+[CG_159_02::command/264 SetBg/param/3]
+Linear
+
+[CG_159_02::command/264 SetBg/param/6]
+default
+
+[CG_159_02::command/265 CtrlStage/param/9]
+none
+
+[CG_159_02::command/265 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/266 CtrlBg/param/10]
+none
+
+[CG_159_02::command/266 CtrlBg/param/11]
+Linear
+
+[CG_159_02::command/267 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_159_02::command/269 SetTrans/param/2]
+0
+
+[CG_159_02::command/269 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/269 SetTrans/param/8]
+default
+
+[CG_159_02::command/271 SetChar/param/2]
+none
+
+[CG_159_02::command/271 SetChar/param/3]
+avg3_199
+
+[CG_159_02::command/271 SetChar/param/4]
+b
+
+[CG_159_02::command/271 SetChar/param/5]
+009
+
+[CG_159_02::command/271 SetChar/param/6]
+none
+
+[CG_159_02::command/272 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/272 CtrlChar/param/1]
+b
+
+[CG_159_02::command/272 CtrlChar/param/2]
+009
+
+[CG_159_02::command/272 CtrlChar/param/3]
+none
+
+[CG_159_02::command/272 CtrlChar/param/11]
+none
+
+[CG_159_02::command/272 CtrlChar/param/12]
+none
+
+[CG_159_02::command/272 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/274 SetAudio/param/1]
+se_100
+
+[CG_159_02::command/275 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/275 CtrlChar/param/1]
+b
+
+[CG_159_02::command/275 CtrlChar/param/3]
+none
+
+[CG_159_02::command/275 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/275 CtrlChar/param/12]
+none
+
+[CG_159_02::command/275 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/277 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/277 SetBGM/param/3]
+m42
+
+[CG_159_02::command/277 SetBGM/param/4]
+none
+
+[CG_159_02::command/278 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/278 CtrlChar/param/1]
+b
+
+[CG_159_02::command/278 CtrlChar/param/2]
+007
+
+[CG_159_02::command/278 CtrlChar/param/3]
+none
+
+[CG_159_02::command/278 CtrlChar/param/11]
+chijing
+
+[CG_159_02::command/278 CtrlChar/param/12]
+none
+
+[CG_159_02::command/278 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/279 SetTalk/param/1]
+新人自警団
+
+[CG_159_02::command/279 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/279 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/279 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/279 SetTalk/param/7]
+わああああっ！？ほ、==W==骨……！？
+
+[CG_159_02::command/279 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/281 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/281 CtrlChar/param/1]
+b
+
+[CG_159_02::command/281 CtrlChar/param/3]
+avg_emoji_symbol
+
+[CG_159_02::command/281 CtrlChar/param/11]
+jushou
+
+[CG_159_02::command/281 CtrlChar/param/12]
+none
+
+[CG_159_02::command/281 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/284 SetChar/param/2]
+none
+
+[CG_159_02::command/284 SetChar/param/3]
+avg1_159
+
+[CG_159_02::command/284 SetChar/param/4]
+a
+
+[CG_159_02::command/284 SetChar/param/5]
+002
+
+[CG_159_02::command/284 SetChar/param/6]
+none
+
+[CG_159_02::command/285 CtrlStage/param/9]
+none
+
+[CG_159_02::command/285 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/286 CtrlBg/param/10]
+none
+
+[CG_159_02::command/286 CtrlBg/param/11]
+Linear
+
+[CG_159_02::command/287 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/287 CtrlChar/param/1]
+b
+
+[CG_159_02::command/287 CtrlChar/param/3]
+none
+
+[CG_159_02::command/287 CtrlChar/param/11]
+none
+
+[CG_159_02::command/287 CtrlChar/param/12]
+none
+
+[CG_159_02::command/287 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/288 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/288 CtrlChar/param/1]
+a
+
+[CG_159_02::command/288 CtrlChar/param/3]
+none
+
+[CG_159_02::command/288 CtrlChar/param/11]
+none
+
+[CG_159_02::command/288 CtrlChar/param/12]
+none
+
+[CG_159_02::command/288 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/290 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/290 CtrlChar/param/1]
+a
+
+[CG_159_02::command/290 CtrlChar/param/2]
+012
+
+[CG_159_02::command/290 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_159_02::command/290 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/290 CtrlChar/param/12]
+none
+
+[CG_159_02::command/290 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/291 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/291 SetTalk/param/7]
+ああ、蒼梧城の郊外で見つけたんだ。==W====RT==なかなかキレイな形だろう？==W====RT==そうだ、なんの魔獣の骨か教えて――
+
+[CG_159_02::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/293 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/293 CtrlChar/param/1]
+a
+
+[CG_159_02::command/293 CtrlChar/param/2]
+007
+
+[CG_159_02::command/293 CtrlChar/param/3]
+none
+
+[CG_159_02::command/293 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/293 CtrlChar/param/12]
+none
+
+[CG_159_02::command/293 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/296 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/296 CtrlChar/param/1]
+b
+
+[CG_159_02::command/296 CtrlChar/param/2]
+010
+
+[CG_159_02::command/296 CtrlChar/param/3]
+none
+
+[CG_159_02::command/296 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/296 CtrlChar/param/12]
+none
+
+[CG_159_02::command/296 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/297 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/297 CtrlChar/param/1]
+a
+
+[CG_159_02::command/297 CtrlChar/param/2]
+005
+
+[CG_159_02::command/297 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_159_02::command/297 CtrlChar/param/11]
+youchupeng
+
+[CG_159_02::command/297 CtrlChar/param/12]
+none
+
+[CG_159_02::command/297 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/300 SetAudio/param/1]
+se_306
+
+[CG_159_02::command/301 PlayCharAnim/param/0]
+avg3_199
+
+[CG_159_02::command/301 PlayCharAnim/param/1]
+shake_L
+
+[CG_159_02::command/303 SetAudio/param/1]
+se_406
+
+[CG_159_02::command/304 CtrlStage/param/9]
+Xiao
+
+[CG_159_02::command/304 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/305 SetTalk/param/1]
+新人自警団
+
+[CG_159_02::command/305 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/305 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/305 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/305 SetTalk/param/7]
+あわあわ……
+
+[CG_159_02::command/305 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/307 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/307 CtrlChar/param/1]
+a
+
+[CG_159_02::command/307 CtrlChar/param/2]
+004
+
+[CG_159_02::command/307 CtrlChar/param/3]
+none
+
+[CG_159_02::command/307 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/307 CtrlChar/param/12]
+none
+
+[CG_159_02::command/307 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/308 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/308 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/308 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/308 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/308 SetTalk/param/7]
+おや、泡を吹いて倒れた？==W====RT==……うん、==W==呼吸は問題なさそうだ。
+
+[CG_159_02::command/308 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/310 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/310 CtrlChar/param/1]
+a
+
+[CG_159_02::command/310 CtrlChar/param/2]
+009
+
+[CG_159_02::command/310 CtrlChar/param/3]
+none
+
+[CG_159_02::command/310 CtrlChar/param/11]
+none
+
+[CG_159_02::command/310 CtrlChar/param/12]
+none
+
+[CG_159_02::command/310 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/311 SetAudio/param/1]
+se_208
+
+[CG_159_02::command/314 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/314 CtrlChar/param/1]
+a
+
+[CG_159_02::command/314 CtrlChar/param/2]
+007
+
+[CG_159_02::command/314 CtrlChar/param/3]
+none
+
+[CG_159_02::command/314 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/314 CtrlChar/param/12]
+none
+
+[CG_159_02::command/314 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/317 CtrlChar/param/0]
+avg3_199
+
+[CG_159_02::command/317 CtrlChar/param/1]
+b
+
+[CG_159_02::command/317 CtrlChar/param/3]
+none
+
+[CG_159_02::command/317 CtrlChar/param/11]
+none
+
+[CG_159_02::command/317 CtrlChar/param/12]
+none
+
+[CG_159_02::command/317 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/318 SetChar/param/2]
+none
+
+[CG_159_02::command/318 SetChar/param/3]
+avg3_198
+
+[CG_159_02::command/318 SetChar/param/4]
+b
+
+[CG_159_02::command/318 SetChar/param/5]
+004
+
+[CG_159_02::command/318 SetChar/param/6]
+none
+
+[CG_159_02::command/319 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/319 CtrlChar/param/1]
+a
+
+[CG_159_02::command/319 CtrlChar/param/3]
+none
+
+[CG_159_02::command/319 CtrlChar/param/11]
+none
+
+[CG_159_02::command/319 CtrlChar/param/12]
+none
+
+[CG_159_02::command/319 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/320 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/320 CtrlChar/param/1]
+b
+
+[CG_159_02::command/320 CtrlChar/param/3]
+none
+
+[CG_159_02::command/320 CtrlChar/param/11]
+none
+
+[CG_159_02::command/320 CtrlChar/param/12]
+none
+
+[CG_159_02::command/320 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/322 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/322 CtrlChar/param/1]
+b
+
+[CG_159_02::command/322 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_159_02::command/322 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/322 CtrlChar/param/12]
+none
+
+[CG_159_02::command/322 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/323 SetTalk/param/1]
+ベテラン自警団
+
+[CG_159_02::command/323 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/323 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/323 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/323 SetTalk/param/7]
+たかが骨くらいで、情けない……==W====RT==おっ？これはドライフルーツか？
+
+[CG_159_02::command/323 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/325 SetAudio/param/1]
+se_100
+
+[CG_159_02::command/326 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/326 CtrlChar/param/1]
+b
+
+[CG_159_02::command/326 CtrlChar/param/2]
+007
+
+[CG_159_02::command/326 CtrlChar/param/3]
+none
+
+[CG_159_02::command/326 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/326 CtrlChar/param/12]
+none
+
+[CG_159_02::command/326 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/329 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/329 CtrlChar/param/1]
+a
+
+[CG_159_02::command/329 CtrlChar/param/2]
+012
+
+[CG_159_02::command/329 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_159_02::command/329 CtrlChar/param/11]
+youchupeng
+
+[CG_159_02::command/329 CtrlChar/param/12]
+none
+
+[CG_159_02::command/329 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/330 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/330 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/330 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/330 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/330 SetTalk/param/7]
+それはフルーツじゃなくて、マスクボアの肝だよ。==RT==蒼梧城では薬に使うらしいね。
+
+[CG_159_02::command/330 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/332 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/332 CtrlChar/param/1]
+b
+
+[CG_159_02::command/332 CtrlChar/param/2]
+010
+
+[CG_159_02::command/332 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_159_02::command/332 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/332 CtrlChar/param/12]
+none
+
+[CG_159_02::command/332 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/333 SetTalk/param/1]
+ベテラン自警団
+
+[CG_159_02::command/333 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/333 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/333 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/333 SetTalk/param/7]
+き、肝……！？==RT==気味が悪いものばかり出てくるな……==W==ん？
+
+[CG_159_02::command/333 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/335 SetAudio/param/1]
+se_192
+
+[CG_159_02::command/336 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/336 CtrlChar/param/1]
+b
+
+[CG_159_02::command/336 CtrlChar/param/3]
+none
+
+[CG_159_02::command/336 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/336 CtrlChar/param/12]
+none
+
+[CG_159_02::command/336 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/339 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/339 CtrlChar/param/1]
+a
+
+[CG_159_02::command/339 CtrlChar/param/3]
+none
+
+[CG_159_02::command/339 CtrlChar/param/11]
+none
+
+[CG_159_02::command/339 CtrlChar/param/12]
+none
+
+[CG_159_02::command/339 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/340 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/340 CtrlChar/param/1]
+b
+
+[CG_159_02::command/340 CtrlChar/param/3]
+none
+
+[CG_159_02::command/340 CtrlChar/param/11]
+none
+
+[CG_159_02::command/340 CtrlChar/param/12]
+none
+
+[CG_159_02::command/340 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/341 SetFrontObj/param/2]
+qstory_side_118_001
+
+[CG_159_02::command/342 SetTalk/param/1]
+ベテラン自警団
+
+[CG_159_02::command/342 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/342 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/342 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/342 SetTalk/param/7]
+なんだこれは？==W====RT==なんで工具がこんなところに……
+
+[CG_159_02::command/342 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/344 SetAudio/param/1]
+se_048
+
+[CG_159_02::command/345 SetTalkShake/param/1]
+Xiao
+
+[CG_159_02::command/348 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/348 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/348 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/348 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/348 SetTalk/param/7]
+それは骨剪刀、骨を断つハサミさ。==RT==いつ必要になるかわからないから、常に持ち歩いているんだ。
+
+[CG_159_02::command/348 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/350 SetFrontObj/param/2]
+qstory_side_118_001
+
+[CG_159_02::command/351 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/351 CtrlChar/param/1]
+a
+
+[CG_159_02::command/351 CtrlChar/param/3]
+none
+
+[CG_159_02::command/351 CtrlChar/param/11]
+none
+
+[CG_159_02::command/351 CtrlChar/param/12]
+none
+
+[CG_159_02::command/351 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/352 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/352 CtrlChar/param/1]
+b
+
+[CG_159_02::command/352 CtrlChar/param/3]
+none
+
+[CG_159_02::command/352 CtrlChar/param/11]
+none
+
+[CG_159_02::command/352 CtrlChar/param/12]
+none
+
+[CG_159_02::command/352 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/354 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/354 CtrlChar/param/1]
+b
+
+[CG_159_02::command/354 CtrlChar/param/3]
+avg_emoji_angry
+
+[CG_159_02::command/354 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/354 CtrlChar/param/12]
+none
+
+[CG_159_02::command/354 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/355 SetTalk/param/1]
+ベテラン自警団
+
+[CG_159_02::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/355 SetTalk/param/7]
+ほ、骨を……！？==W====RT==やはり貴様、旅行者に扮した危険人物だな！
+
+[CG_159_02::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/357 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/357 CtrlChar/param/1]
+b
+
+[CG_159_02::command/357 CtrlChar/param/3]
+avg_emoji_resentful
+
+[CG_159_02::command/357 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/357 CtrlChar/param/12]
+none
+
+[CG_159_02::command/357 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/360 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/360 CtrlChar/param/1]
+a
+
+[CG_159_02::command/360 CtrlChar/param/2]
+010
+
+[CG_159_02::command/360 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_159_02::command/360 CtrlChar/param/11]
+none
+
+[CG_159_02::command/360 CtrlChar/param/12]
+none
+
+[CG_159_02::command/360 CtrlChar/param/13]
+OutSine
+
+[CG_159_02::command/361 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/361 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/361 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/361 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/361 SetTalk/param/7]
+あ、そこに手を触れちゃ――
+
+[CG_159_02::command/361 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/363 SetAudio/param/1]
+se_070
+
+[CG_159_02::command/364 CtrlStage/param/9]
+Xiao
+
+[CG_159_02::command/364 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/365 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/365 CtrlChar/param/1]
+b
+
+[CG_159_02::command/365 CtrlChar/param/3]
+none
+
+[CG_159_02::command/365 CtrlChar/param/11]
+none
+
+[CG_159_02::command/365 CtrlChar/param/12]
+none
+
+[CG_159_02::command/365 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/366 SetTalkShake/param/1]
+Xiao
+
+[CG_159_02::command/367 SetTalk/param/1]
+ベテラン自警団
+
+[CG_159_02::command/367 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/367 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/367 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/367 SetTalk/param/7]
+ぎゃああああ！葉っぱが噛みついてきたあああ！？
+
+[CG_159_02::command/367 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/369 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/369 CtrlChar/param/1]
+a
+
+[CG_159_02::command/369 CtrlChar/param/2]
+008
+
+[CG_159_02::command/369 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_159_02::command/369 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/369 CtrlChar/param/12]
+none
+
+[CG_159_02::command/369 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/370 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/370 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/370 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/370 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/370 SetTalk/param/7]
+感覚毛に触ったからだね。==W====RT==ほら、落ち着いて。外してあげるよ。
+
+[CG_159_02::command/370 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/372 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/372 CtrlChar/param/1]
+a
+
+[CG_159_02::command/372 CtrlChar/param/2]
+004
+
+[CG_159_02::command/372 CtrlChar/param/3]
+none
+
+[CG_159_02::command/372 CtrlChar/param/11]
+none
+
+[CG_159_02::command/372 CtrlChar/param/12]
+none
+
+[CG_159_02::command/372 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/375 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/375 CtrlChar/param/1]
+a
+
+[CG_159_02::command/375 CtrlChar/param/2]
+002
+
+[CG_159_02::command/375 CtrlChar/param/3]
+none
+
+[CG_159_02::command/375 CtrlChar/param/11]
+youchupeng
+
+[CG_159_02::command/375 CtrlChar/param/12]
+none
+
+[CG_159_02::command/375 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/376 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/376 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/376 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/376 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/376 SetTalk/param/7]
+ちょっとサイズが大きいけど、蒼梧城近郊で育つ食虫植物だ。==RT==毒のない種類みたいだから心配はいらない……==W==って、あれ？
+
+[CG_159_02::command/376 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/378 PlayCharAnim/param/0]
+avg3_198
+
+[CG_159_02::command/378 PlayCharAnim/param/1]
+shake_L
+
+[CG_159_02::command/380 SetAudio/param/1]
+se_406
+
+[CG_159_02::command/381 CtrlChar/param/0]
+avg3_198
+
+[CG_159_02::command/381 CtrlChar/param/1]
+b
+
+[CG_159_02::command/381 CtrlChar/param/3]
+none
+
+[CG_159_02::command/381 CtrlChar/param/11]
+none
+
+[CG_159_02::command/381 CtrlChar/param/12]
+none
+
+[CG_159_02::command/381 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/382 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/382 CtrlChar/param/1]
+a
+
+[CG_159_02::command/382 CtrlChar/param/2]
+005
+
+[CG_159_02::command/382 CtrlChar/param/3]
+none
+
+[CG_159_02::command/382 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/382 CtrlChar/param/12]
+none
+
+[CG_159_02::command/382 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/385 SetAudio/param/1]
+se_146
+
+[CG_159_02::command/386 SetTalkShake/param/1]
+Xiao
+
+[CG_159_02::command/387 SetTalk/param/1]
+ベテラン自警団
+
+[CG_159_02::command/387 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/387 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/387 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/387 SetTalk/param/7]
+う、==W==うーん……
+
+[CG_159_02::command/387 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/391 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/391 CtrlChar/param/1]
+a
+
+[CG_159_02::command/391 CtrlChar/param/2]
+009
+
+[CG_159_02::command/391 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_159_02::command/391 CtrlChar/param/11]
+lengzhan
+
+[CG_159_02::command/391 CtrlChar/param/12]
+none
+
+[CG_159_02::command/391 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/392 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/392 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/392 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/392 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/392 SetTalk/param/7]
+気絶、しちゃったねえ……
+
+[CG_159_02::command/392 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/393 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/393 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/393 SetBGM/param/4]
+1500ms
+
+[CG_159_02::command/395 SetAudio/param/1]
+se_169
+
+[CG_159_02::command/396 SetTrans/param/2]
+0
+
+[CG_159_02::command/396 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/396 SetTrans/param/8]
+default
+
+[CG_159_02::command/397 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_159_02::command/398 SetBg/param/1]
+phoenix_hostel_room
+
+[CG_159_02::command/398 SetBg/param/2]
+0
+
+[CG_159_02::command/398 SetBg/param/3]
+Linear
+
+[CG_159_02::command/398 SetBg/param/6]
+default
+
+[CG_159_02::command/399 CtrlStage/param/9]
+none
+
+[CG_159_02::command/399 CtrlStage/param/10]
+Linear
+
+[CG_159_02::command/400 CtrlBg/param/10]
+none
+
+[CG_159_02::command/400 CtrlBg/param/11]
+Linear
+
+[CG_159_02::command/402 SetTrans/param/2]
+0
+
+[CG_159_02::command/402 SetTrans/param/3]
+Linear
+
+[CG_159_02::command/402 SetTrans/param/8]
+default
+
+[CG_159_02::command/404 SetChar/param/2]
+none
+
+[CG_159_02::command/404 SetChar/param/3]
+avg1_159
+
+[CG_159_02::command/404 SetChar/param/4]
+a
+
+[CG_159_02::command/404 SetChar/param/5]
+002
+
+[CG_159_02::command/404 SetChar/param/6]
+none
+
+[CG_159_02::command/405 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/405 CtrlChar/param/1]
+a
+
+[CG_159_02::command/405 CtrlChar/param/3]
+none
+
+[CG_159_02::command/405 CtrlChar/param/11]
+none
+
+[CG_159_02::command/405 CtrlChar/param/12]
+none
+
+[CG_159_02::command/405 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/407 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/407 SetBGM/param/3]
+m12
+
+[CG_159_02::command/407 SetBGM/param/4]
+none
+
+[CG_159_02::command/408 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/408 CtrlChar/param/1]
+a
+
+[CG_159_02::command/408 CtrlChar/param/2]
+008
+
+[CG_159_02::command/408 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_159_02::command/408 CtrlChar/param/11]
+JuGong
+
+[CG_159_02::command/408 CtrlChar/param/12]
+none
+
+[CG_159_02::command/408 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/409 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/409 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/409 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/409 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/409 SetTalk/param/7]
+……といった感じでね。==RT==実は取り調べも終わっていないんだよ。
+
+[CG_159_02::command/409 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/411 SetMainRoleTalk/param/2]
+020
+
+[CG_159_02::command/411 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_159_02::command/411 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/411 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/411 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/412 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/412 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/412 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/412 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/412 SetTalk/param/7]
+（ほかの自警団員が、壁際で震えていた理由が==RT==わかった気がする……）==W==
+
+[CG_159_02::command/412 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/414 SetMainRoleTalk/param/2]
+021
+
+[CG_159_02::command/414 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_159_02::command/414 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/414 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/414 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/416 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/416 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/416 SetMainRoleTalk/param/5]
+y
+
+[CG_159_02::command/416 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/418 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/418 CtrlChar/param/1]
+a
+
+[CG_159_02::command/418 CtrlChar/param/2]
+002
+
+[CG_159_02::command/418 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_159_02::command/418 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/418 CtrlChar/param/12]
+none
+
+[CG_159_02::command/418 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/419 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/419 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/419 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/419 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/419 SetTalk/param/7]
+それで、調査の結果はどうだい？==RT==なにかわかったかな？
+
+[CG_159_02::command/419 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/421 SetMainRoleTalk/param/2]
+002
+
+[CG_159_02::command/421 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/421 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/421 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/421 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/422 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/422 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/422 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/422 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/422 SetTalk/param/7]
+ああ、そうだった。==RT==患者の家を訪ねてみたが、特に気になるものはなかった。
+
+[CG_159_02::command/422 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/424 SetMainRoleTalk/param/2]
+013
+
+[CG_159_02::command/424 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_159_02::command/424 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/424 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/424 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/425 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/425 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/425 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/425 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/425 SetTalk/param/7]
+薬膳茶の店の主人に意見も聞いたが、==RT==クルニスの処方に問題はなさそうだったよ。==RT==だから誤診という可能性は低い。
+
+[CG_159_02::command/425 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/426 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/426 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/426 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/426 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/428 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/428 CtrlChar/param/1]
+a
+
+[CG_159_02::command/428 CtrlChar/param/2]
+009
+
+[CG_159_02::command/428 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_159_02::command/428 CtrlChar/param/11]
+none
+
+[CG_159_02::command/428 CtrlChar/param/12]
+none
+
+[CG_159_02::command/428 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/429 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/429 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/429 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/429 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/429 SetTalk/param/7]
+……ふむ、==W==処方した薬やお茶の残量は確認した？
+
+[CG_159_02::command/429 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/431 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/431 CtrlChar/param/1]
+a
+
+[CG_159_02::command/431 CtrlChar/param/2]
+011
+
+[CG_159_02::command/431 CtrlChar/param/3]
+close
+
+[CG_159_02::command/431 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/431 CtrlChar/param/12]
+none
+
+[CG_159_02::command/431 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/434 SetMainRoleTalk/param/2]
+009
+
+[CG_159_02::command/434 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/434 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/434 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/434 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/435 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/435 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/435 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/435 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/435 SetTalk/param/7]
+もちろん。薬の服用ミスもありえるからな。==W====RT==だがおかしな点はなかったよ。
+
+[CG_159_02::command/435 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/437 SetMainRoleTalk/param/2]
+012
+
+[CG_159_02::command/437 SetMainRoleTalk/param/3]
+none
+
+[CG_159_02::command/437 SetMainRoleTalk/param/4]
+diantou
+
+[CG_159_02::command/437 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/437 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/439 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/439 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/439 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/439 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/441 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/441 CtrlChar/param/1]
+a
+
+[CG_159_02::command/441 CtrlChar/param/2]
+005
+
+[CG_159_02::command/441 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_159_02::command/441 CtrlChar/param/11]
+none
+
+[CG_159_02::command/441 CtrlChar/param/12]
+none
+
+[CG_159_02::command/441 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/442 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/442 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/442 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/442 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/442 SetTalk/param/7]
+調べたのは薬だけ？お茶はどうだった？
+
+[CG_159_02::command/442 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/444 SetMainRoleTalk/param/2]
+003
+
+[CG_159_02::command/444 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/444 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_159_02::command/444 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/444 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/445 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/445 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/445 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/445 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/445 SetTalk/param/7]
+お茶？==RT==全部飲み切ったのか、茶葉は残っていなかったが……
+
+[CG_159_02::command/445 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/446 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/446 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/446 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/446 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/448 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/448 CtrlChar/param/1]
+a
+
+[CG_159_02::command/448 CtrlChar/param/2]
+011
+
+[CG_159_02::command/448 CtrlChar/param/3]
+none
+
+[CG_159_02::command/448 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/448 CtrlChar/param/12]
+none
+
+[CG_159_02::command/448 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/449 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/449 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/449 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/449 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/449 SetTalk/param/7]
+なるほどね。原因に予想がついた。
+
+[CG_159_02::command/449 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/451 SetMainRoleTalk/param/2]
+025
+
+[CG_159_02::command/451 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_159_02::command/451 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/451 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/451 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/452 SetTalkShake/param/1]
+Xiao
+
+[CG_159_02::command/453 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/453 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/453 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/453 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/453 SetTalk/param/7]
+いまの話だけで！？
+
+[CG_159_02::command/453 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/454 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/454 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/454 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/454 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/456 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/456 CtrlChar/param/1]
+a
+
+[CG_159_02::command/456 CtrlChar/param/2]
+007
+
+[CG_159_02::command/456 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_159_02::command/456 CtrlChar/param/11]
+none
+
+[CG_159_02::command/456 CtrlChar/param/12]
+none
+
+[CG_159_02::command/456 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/457 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/457 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/457 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/457 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/457 SetTalk/param/7]
+蓋を開けてみれば、単純な話だったよ。==W====RT==やっぱりキミに調査を頼んで、正解だったみたいだね。
+
+[CG_159_02::command/457 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/459 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/459 CtrlChar/param/1]
+a
+
+[CG_159_02::command/459 CtrlChar/param/2]
+006
+
+[CG_159_02::command/459 CtrlChar/param/3]
+none
+
+[CG_159_02::command/459 CtrlChar/param/11]
+none
+
+[CG_159_02::command/459 CtrlChar/param/12]
+none
+
+[CG_159_02::command/459 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/462 SetAudio/param/1]
+se_062
+
+[CG_159_02::command/463 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/463 CtrlChar/param/1]
+a
+
+[CG_159_02::command/463 CtrlChar/param/2]
+002
+
+[CG_159_02::command/463 CtrlChar/param/3]
+none
+
+[CG_159_02::command/463 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/463 CtrlChar/param/12]
+none
+
+[CG_159_02::command/463 CtrlChar/param/13]
+OutQuad
+
+[CG_159_02::command/464 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/464 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/464 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/464 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/464 SetTalk/param/7]
+ただ……悪いけど、もう少しだけ協力してくれないかな？
+
+[CG_159_02::command/464 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/466 SetMainRoleTalk/param/2]
+003
+
+[CG_159_02::command/466 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/466 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/466 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/466 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/467 SetTalk/param/1]
+avg3_100
+
+[CG_159_02::command/467 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/467 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/467 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/467 SetTalk/param/7]
+ここまで来て、いまさら投げ出すはずがないだろう。==W====RT==最後まで付き合うよ。
+
+[CG_159_02::command/467 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/469 SetMainRoleTalk/param/2]
+018
+
+[CG_159_02::command/469 SetMainRoleTalk/param/3]
+avg_emoji_star
+
+[CG_159_02::command/469 SetMainRoleTalk/param/4]
+diantou
+
+[CG_159_02::command/469 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/469 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/471 SetMainRoleTalk/param/3]
+close
+
+[CG_159_02::command/471 SetMainRoleTalk/param/4]
+none
+
+[CG_159_02::command/471 SetMainRoleTalk/param/5]
+z
+
+[CG_159_02::command/471 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_159_02::command/473 CtrlChar/param/0]
+avg1_159
+
+[CG_159_02::command/473 CtrlChar/param/1]
+a
+
+[CG_159_02::command/473 CtrlChar/param/2]
+007
+
+[CG_159_02::command/473 CtrlChar/param/3]
+none
+
+[CG_159_02::command/473 CtrlChar/param/11]
+diantou
+
+[CG_159_02::command/473 CtrlChar/param/12]
+none
+
+[CG_159_02::command/473 CtrlChar/param/13]
+Linear
+
+[CG_159_02::command/474 SetTalk/param/1]
+avg1_159
+
+[CG_159_02::command/474 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/474 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/474 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/474 SetTalk/param/7]
+そう言ってくれると信じていたよ。==RT==さあ、眠れる患者を起こしに行こうか。
+
+[CG_159_02::command/474 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/475 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_159_02::command/475 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_159_02::command/475 SetBGM/param/4]
+1500ms
+
