@@ -166,6 +166,9 @@ def upload_asset(rel: dict, file_path: Path, headers: dict, existing_assets: dic
 
 def main():
     validate_release()
+    # Abort before any external mutation if metadata and upload bytes diverge.
+    from verify_release_payloads import verify_release_payloads
+    verify_release_payloads(DIST_DIR)
     token = get_github_token()
     assert token, "Could not get GitHub token from git credentials."
     headers = {

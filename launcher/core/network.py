@@ -1,11 +1,13 @@
 """Bounded JSON/network adapters for the existing Stella Sora release provider."""
 from __future__ import annotations
-import http.client,json,os,re,shutil,time,urllib.request,urllib.parse,uuid,zipfile,hashlib
+import http.client,json,logging,os,re,shutil,time,urllib.request,urllib.parse,uuid,zipfile,hashlib
 from datetime import datetime,timezone
 from pathlib import Path
 from .types import NotificationItem,SupporterData,OperationPhase,OperationEvent
 from .safety import InstallerError,sha256_file,safe_path,relative_name,normalize_manifest,atomic_json
 from .config import LAUNCHER_VERSION
+
+log = logging.getLogger(__name__)
 
 def valid_url(url):
     try:
@@ -160,6 +162,7 @@ class NetworkService:
         attempt=0
         last_error=None
         while attempt<max_retries:
+            if time.monotonic()>total_deadline:break
             attempt+=1
             current_size=part.stat().st_size if part.is_file() else 0
             if current_size>size:
@@ -168,18 +171,37 @@ class NetworkService:
                 if not sha or sha256_file(part)==sha.lower():
                     os.replace(part,dest);return dest
                 part.unlink(missing_ok=True);current_size=0
-            headers={'User-Agent':f'StellaSora-Launcher/{LAUNCHER_VERSION}'}
+            headers={'User-Agent':f'StellaSora-Launcher/{LAUNCHER_VERSION}','Accept-Encoding':'identity'}
             if current_size>0:
                 headers['Range']=f'bytes={current_size}-'
             try:
+                log.info('Download attempt=%s/%s file=%s host=%s offset=%s expected=%s',attempt,max_retries,dest.name,urllib.parse.urlparse(url).hostname,current_size,size)
                 req=urllib.request.Request(url,headers=headers)
                 with urllib.request.urlopen(req,timeout=stream_timeout) as resp:
                     status=getattr(resp,'status',200)
-                    is_resume=(status==206)
-                    if not is_resume and current_size>0:
+                    response_headers=getattr(resp,'headers',{})
+                    response_limit=size
+                    if status==206:
+                        # Never append bytes merely because the status says 206.
+                        # The range must describe exactly this file and offset.
+                        match=re.fullmatch(r'bytes (\d+)-(\d+)/(\d+)',response_headers.get('Content-Range',''))
+                        if not match:
+                            raise InstallerError('Máy chủ trả phạm vi tải tiếp không hợp lệ.','DOWNLOAD_RANGE_INVALID')
+                        start,end,total=map(int,match.groups())
+                        length=response_headers.get('Content-Length')
+                        if start!=current_size or total!=size or not 0<=start<=end<size or (length is not None and (not re.fullmatch(r'\d+',length) or int(length)!=end-start+1)):
+                            raise InstallerError('Phạm vi tải tiếp không khớp tệp cần tải.','DOWNLOAD_RANGE_INVALID')
+                        response_limit=end+1
+                        mode='ab' if current_size>0 else 'wb'
+                    elif status==200:
+                        length=response_headers.get('Content-Length')
+                        if length is not None and (not re.fullmatch(r'\d+',length) or int(length)!=size):
+                            raise InstallerError(f'Máy chủ công bố kích thước tệp khác bảng kê ({length}/{size} bytes).','SIZE_MISMATCH')
+                        if current_size:
+                            log.info('Download server ignored Range; restarting file=%s',dest.name)
                         current_size=0;mode='wb'
                     else:
-                        mode='ab' if current_size>0 else 'wb'
+                        raise InstallerError('Máy chủ trả trạng thái tải không hợp lệ.','DOWNLOAD_RESPONSE_INVALID')
                     with part.open(mode) as out:
                         n=current_size
                         while True:
@@ -188,27 +210,40 @@ class NetworkService:
                             chunk=resp.read(chunk_size)
                             if not chunk:break
                             n+=len(chunk)
-                            if n>size:raise InstallerError('Máy chủ trả về dung lượng lớn hơn dự kiến.','SIZE_MISMATCH')
+                            if n>response_limit:raise InstallerError('Máy chủ trả về dung lượng lớn hơn dự kiến.','SIZE_MISMATCH')
                             out.write(chunk)
                             if event_cb:event_cb(OperationEvent(operation_id,OperationPhase.DOWNLOAD,dest.name,n,size,'bytes'))
                         out.flush();os.fsync(out.fileno())
                 if part.stat().st_size!=size:
-                    raise InstallerError(f'Tải chưa đủ dữ liệu ({part.stat().st_size}/{size} bytes).','SIZE_MISMATCH')
+                    # HTTPResponse.read(n) can return b'' on a truncated body
+                    # without raising IncompleteRead. Keep the received prefix
+                    # and retry through the same bounded resume loop as timeouts.
+                    raise InstallerError(f'Tải chưa đủ dữ liệu ({part.stat().st_size}/{size} bytes).','DOWNLOAD_INCOMPLETE')
                 if sha and sha256_file(part)!=sha.lower():
                     part.unlink(missing_ok=True)
                     raise InstallerError('Tệp tải về không khớp mã SHA256.','HASH_MISMATCH')
                 os.replace(part,dest);return dest
             except (TimeoutError,urllib.error.URLError,http.client.IncompleteRead,ConnectionError,OSError) as exc:
-                last_error=exc
-                if time.monotonic()>total_deadline:break
-                time.sleep(min(5,1.5*attempt))
-                continue
-            except InstallerError:
-                part.unlink(missing_ok=True);raise
+                # Do not put exception URLs (possibly signed) in logs/messages.
+                detail=f'HTTP {exc.code}' if isinstance(exc,urllib.error.HTTPError) else type(exc).__name__
+                last_error=f'Lỗi kết nối: {detail}.'
+                if isinstance(exc,urllib.error.HTTPError) and exc.code==416:
+                    part.unlink(missing_ok=True)
+                log.warning('Download interrupted attempt=%s/%s file=%s reason=%s',attempt,max_retries,dest.name,detail)
+            except InstallerError as exc:
+                if exc.code not in ('DOWNLOAD_INCOMPLETE','DOWNLOAD_RANGE_INVALID'):
+                    part.unlink(missing_ok=True);raise
+                last_error=str(exc)
+                log.warning('Download retry attempt=%s/%s file=%s code=%s detail=%s',attempt,max_retries,dest.name,exc.code,str(exc))
+                if exc.code=='DOWNLOAD_RANGE_INVALID':
+                    part.unlink(missing_ok=True)
             except Exception as exc:
-                last_error=exc;break
+                last_error=type(exc).__name__;break
+            if attempt>=max_retries or time.monotonic()>total_deadline:break
+            time.sleep(min(5,1.5*attempt))
         err_msg=str(last_error) if last_error else 'Lỗi kết nối mạng.'
-        part.unlink(missing_ok=True)
+        # A bounded transient failure keeps its prefix for the next user retry.
+        # Size/SHA checks above still gate every completed download.
         raise InstallerError(f'Tải tệp không thành công sau {attempt} lần thử ({err_msg}).','DOWNLOAD_FAILED')
     def prepare_payload(self,cache_root,manifest_url=None,event_cb=None,operation_id='download'):
         try:release=self.release()
@@ -225,6 +260,21 @@ class NetworkService:
             candidate=release_assets.get(package['filename']);digest=package.get('sha256');size=package.get('size_bytes')
             if candidate and isinstance(digest,str) and re.fullmatch('[0-9a-fA-F]{64}',digest) and isinstance(size,int) and not isinstance(size,bool) and size>0 and candidate['size']==size and self._asset_digest(candidate)==digest.lower():
                 assets={package['filename']:candidate};binding={**binding,'explicit_package_asset':package['filename'],'explicit_package_sha256':digest.lower()}
+        # Bind direct files before downloading anything. A stale manifest must
+        # not turn a complete, smaller release asset into an endless retry.
+        file_urls={}
+        raw_files = raw.get('files') or {}  # legacy manifests may use bundles/data_arcx instead
+        for rel,meta in manifest['files'].items():
+            original=raw_files.get(rel,{})
+            url=original.get('url') or original.get('download_url')
+            asset=assets.get(Path(meta['source']).name)
+            if not url and asset:url=asset['browser_download_url']
+            source_asset=next((a for a in release_assets.values() if a['browser_download_url']==url),None) if url else None
+            if source_asset:
+                digest=self._asset_digest(source_asset)
+                if source_asset['size']!=meta['size'] or (digest and digest!=meta['sha256'].lower()):
+                    raise InstallerError(f"Bản phát hành không đồng bộ: {source_asset['name']} có kích thước hoặc SHA256 khác bảng kê ({source_asset['size']}/{meta['size']} bytes). Vui lòng báo người phát hành cập nhật gói tải.",'RELEASE_ASSET_MISMATCH')
+            file_urls[rel]=url
         zasset=assets.get(package.get('filename')) if package.get('filename') else next((a for a in assets.values() if 'AssetBundles' in a['name'] and a['name'].endswith('.zip')),None)
         bundle_entries={r:v for r,v in manifest['files'].items() if r.startswith('Persistent_Store/AssetBundles/')}
         if bundle_entries and zasset:
@@ -254,10 +304,7 @@ class NetworkService:
         for rel,meta in manifest['files'].items():
             target=safe_path(stage,meta['source'])
             if target.is_file():continue
-            original=raw.get('files',{}).get(rel,{})
-            url=original.get('url') or original.get('download_url')
-            asset=assets.get(Path(meta['source']).name)
-            if not url and asset:url=asset['browser_download_url']
+            url=file_urls[rel]
             if not url:raise InstallerError('Gói chưa cung cấp đường dẫn tải cho '+rel+'. Nguồn tùy chỉnh cần đường dẫn tệp trực tiếp hoặc một gói ZIP được khai báo đúng tên, kích thước và mã xác minh.','PAYLOAD_UNAVAILABLE')
             cached_item=downloads_dir/f"{Path(meta['source']).name}_{meta['sha256']}"
             self.download(url,cached_item,meta['size'],meta['sha256'],event_cb,operation_id)

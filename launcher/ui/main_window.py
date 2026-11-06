@@ -173,7 +173,7 @@ class MainWindow(QMainWindow):
                 self._show(MessageDialog('Cập nhật launcher',result.get('message','Chưa có tệp cập nhật tự động được xác minh.'),parent=self))
             else:QTimer.singleShot(0,lambda:self._confirm_update(result))
         elif self.operation_kind=='apply_self_update':
-            self.overview_view.show_completed('✓ Cập nhật hoàn tất! Đang khởi động lại launcher…')
+            self.overview_view.show_completed('Đã tải bản cập nhật. Launcher sẽ khởi động lại để hoàn tất…')
             self._close_after_worker=True
         elif self.operation_kind=='install':
             msg=result.get('message','')
