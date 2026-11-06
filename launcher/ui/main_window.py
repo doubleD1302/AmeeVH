@@ -259,14 +259,14 @@ class MainWindow(QMainWindow):
         self.config_manager.save()
         network=self.network_service;manifest_url=self._channel['manifest_url']
         def work(cb,op):
-            payload=Path(local) if local else network.prepare_payload(self.path_manager.payload_root,manifest_url,cb,op)
-            if is_update:
-                # The release can change while the user reads the confirmation.
-                # Re-check the actual freshly downloaded manifest before writing.
-                manifest=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
-                state=translation_state({'release_status':'online','manifest_status':'online','translation_version':manifest.get('version'),'translation_game':manifest.get('client_game_version'),'translation_resource':manifest.get('resource_version')},info)
-                if not state['available']:raise RuntimeError('Không còn bản Việt hoá mới hơn: '+state['message'])
-            r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"✓ Hoàn tất cài đặt! Đã nạp thành công {r['files_count']} tệp bản dịch (v{r['version']})."}
+            with network.payload_for_install(self.path_manager.payload_root,local,manifest_url,cb,op) as payload:
+                if is_update:
+                    # The release can change while the user reads the confirmation.
+                    # Re-check the actual freshly downloaded manifest before writing.
+                    manifest=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
+                    state=translation_state({'release_status':'online','manifest_status':'online','translation_version':manifest.get('version'),'translation_game':manifest.get('client_game_version'),'translation_resource':manifest.get('resource_version')},info)
+                    if not state['available']:raise RuntimeError('Không còn bản Việt hoá mới hơn: '+state['message'])
+                r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"✓ Hoàn tất cài đặt! Đã nạp thành công {r['files_count']} tệp bản dịch (v{r['version']})."}
         self._start('install',work)
     def _action_target(self,action,require_receipt=True):
         if self.active_worker is not None:
