@@ -609,114 +609,62 @@
             transform: translateY(-1px) scale(0.98);
         }
 
-        /* ================= 6. MINIMALIST GLASS FOOTER ================= */
+        /* ================= 6. PROJECT CREDITS ================= */
         .minimal-footer {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100vw;
+            inset: auto 0 0;
             z-index: 20;
             display: flex;
             justify-content: center;
-            padding: 12px 20px 16px;
-            background: linear-gradient(to top, rgba(7, 12, 24, 0.8) 0%, rgba(7, 12, 24, 0.45) 60%, transparent 100%);
-            pointer-events: auto;
+            padding: 16px 20px 18px;
+            background: linear-gradient(to top, rgba(7, 12, 24, .9), transparent);
         }
 
         .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            max-width: 900px;
+            width: min(820px, 100%);
             text-align: center;
         }
 
-        .footer-meta-row {
+        .credit-panel {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.84rem;
-            color: #cbd5e1;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 12px 18px;
+            border: 1px solid rgba(173, 216, 248, .22);
+            border-radius: 16px;
+            background: linear-gradient(120deg, rgba(23, 39, 61, .88), rgba(10, 19, 35, .88));
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .28), inset 0 1px rgba(255, 255, 255, .09);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            text-align: left;
         }
 
-        .author-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-            color: #94a3b8;
+        .credit-identity { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
+        .credit-star {
+            display: grid; place-items: center;
+            width: 36px; height: 36px; flex-shrink: 0;
+            border: 1px solid rgba(125, 211, 252, .35);
+            border-radius: 12px;
+            background: rgba(56, 189, 248, .1);
+            color: #a5e5ff; font-size: 20px;
         }
-
-        .link-author {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.2s ease;
-        }
-
-        .link-author:hover {
-            color: #7dd3fc;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
-            text-decoration: underline;
-        }
-
-        .meta-divider {
-            color: rgba(255, 255, 255, 0.25);
-            font-size: 0.8rem;
-        }
-
-        .social-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        .credit-label { display: block; color: #a9c4d7; font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .link-author { display: inline-block; margin-top: 3px; color: #fff; font-size: .9rem; font-weight: 800; text-decoration: none; }
+        .credit-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px; }
         .social-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            color: #e2e8f0;
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 600;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+            min-height: 32px; padding: 6px 10px;
+            border: 1px solid rgba(188, 218, 239, .18); border-radius: 9px;
+            background: rgba(255, 255, 255, .05); color: #e3eef8;
+            text-decoration: none; font-size: .72rem; font-weight: 700;
+            transition: background .2s ease, border-color .2s ease, color .2s ease;
         }
-
-        .social-chip svg {
-            width: 14px;
-            height: 14px;
-            flex-shrink: 0;
-        }
-
-        .social-chip:hover {
-            background: rgba(56, 189, 248, 0.22);
-            border-color: #38bdf8;
-            color: #ffffff;
-            box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .social-chip.facebook:hover {
-            background: rgba(24, 119, 242, 0.25);
-            border-color: #1877f2;
-            box-shadow: 0 0 14px rgba(24, 119, 242, 0.4);
-        }
-
-        .footer-copyright-row {
-            font-size: 0.72rem;
-            color: #64748b;
-            font-weight: 500;
-            letter-spacing: 0.2px;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-        }
+        .social-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+        .social-chip:hover, .link-author:hover { color: #a5e5ff; }
+        .social-chip:hover { background: rgba(56, 189, 248, .15); border-color: rgba(125, 211, 252, .65); }
+        .social-chip:focus-visible, .link-author:focus-visible { outline: 2px solid #a5e5ff; outline-offset: 3px; }
+        .footer-copyright-row { margin-top: 8px; color: #b4c2d1; font-size: .67rem; line-height: 1.5; text-shadow: 0 1px 4px #000; }
 
         /* Responsive Optimization */
         @media (max-width: 600px) {
@@ -724,8 +672,9 @@
                 top: 45%;
             }
             .download-cluster {
-                gap: 14px;
+                gap: 10px;
                 margin-top: 18px;
+                flex-wrap: wrap;
             }
             .btn-crystal {
                 padding: 11px 22px;
@@ -745,13 +694,19 @@
             .minimal-footer {
                 padding: 8px 12px 14px;
             }
-            .footer-meta-row {
-                gap: 8px;
-                font-size: 0.76rem;
-            }
+            .credit-panel { flex-direction: column; gap: 9px; padding: 10px 12px; text-align: center; }
+            .credit-identity { justify-content: center; }
+            .credit-star { width: 30px; height: 30px; font-size: 17px; }
+            .credit-links { justify-content: center; }
+            .social-chip { min-height: 30px; padding: 5px 8px; font-size: .68rem; }
             .footer-copyright-row {
                 font-size: 0.65rem;
             }
+        }
+        @media (max-height: 650px) {
+            html, body { height: auto; min-height: 100%; overflow-y: auto; }
+            .center-stage { position: relative; top: auto; left: auto; transform: none; margin: 0 auto; padding: 80px 20px 30px; }
+            .minimal-footer { position: relative; }
         }
     </style>
 </head>
@@ -881,46 +836,26 @@
         </div>
     </div>
 
-    <!-- ================= 6. MINIMALIST GLASS FOOTER ================= -->
+    <!-- ================= 6. PROJECT CREDITS ================= -->
     <footer class="minimal-footer">
         <div class="footer-content">
-            <!-- Author & Social Links Row -->
-            <div class="footer-meta-row">
-                <span class="author-tag">
-                    Tác giả: 
-                    <a href="https://github.com/doubleD1302" target="_blank" rel="noopener noreferrer" class="link-author" title="Trang GitHub tác giả DoubleD1302">
-                        DoubleD1302
-                    </a>
-                </span>
-                <span class="meta-divider">•</span>
-                <div class="social-links">
-                    <!-- Facebook Link -->
-                    <a href="https://www.facebook.com/datnguyen.kei" target="_blank" rel="noopener noreferrer" class="social-chip facebook" title="Liên hệ Facebook: datnguyen.kei">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                        <span>Facebook</span>
-                    </a>
-                    <!-- GitHub Link -->
-                    <a href="https://github.com/doubleD1302" target="_blank" rel="noopener noreferrer" class="social-chip" title="GitHub: doubleD1302">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
-                        <span>doubleD1302</span>
-                    </a>
+            <div class="credit-panel" aria-label="Đội ngũ và cộng đồng">
+                <div class="credit-identity">
+                    <span class="credit-star" aria-hidden="true">✦</span>
+                    <div>
+                        <span class="credit-label">Tác giả dự án</span>
+                        <a href="https://github.com/doubleD1302" target="_blank" rel="noopener noreferrer" class="link-author">DoubleD1302</a>
+                    </div>
                 </div>
+                <nav class="credit-links" aria-label="Liên kết đội ngũ và cộng đồng">
+                    <a href="https://www.facebook.com/datnguyen.kei" target="_blank" rel="noopener noreferrer" class="social-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span>Facebook</span></a>
+                    <a href="https://github.com/doubleD1302" target="_blank" rel="noopener noreferrer" class="social-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.125 1.875 1.125 3.18 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg><span>GitHub</span></a>
+                    <a href="https://www.facebook.com/DarciaLoyalServant/" target="_blank" rel="noopener noreferrer" class="social-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg><span>Biên tập &amp; hiệu đính</span></a>
+                    <a href="https://www.facebook.com/profile.php?id=61594070187511" target="_blank" rel="noopener noreferrer" class="social-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg><span>Moderator</span></a>
+                    <a href="https://discord.gg/a7t5tEasu" target="_blank" rel="noopener noreferrer" class="social-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.73 5.17a18.3 18.3 0 0 0-4.53-1.4l-.56 1.15a16.8 16.8 0 0 0-5.28 0L8.8 3.77a18.3 18.3 0 0 0-4.53 1.4C1.4 9.4.62 13.53 1.01 17.6a18.4 18.4 0 0 0 5.56 2.8l1.2-1.95a12 12 0 0 1-1.9-.92l.46-.36a13.1 13.1 0 0 0 11.34 0l.46.36c-.61.36-1.25.67-1.91.92l1.2 1.95a18.4 18.4 0 0 0 5.57-2.8c.46-4.72-.78-8.81-3.26-12.43ZM8.45 15.16c-1.09 0-1.98-1-1.98-2.23 0-1.24.87-2.24 1.98-2.24 1.1 0 1.99 1 1.97 2.24 0 1.23-.87 2.23-1.97 2.23Zm7.1 0c-1.09 0-1.98-1-1.98-2.23 0-1.24.87-2.24 1.98-2.24 1.1 0 1.99 1 1.97 2.24 0 1.23-.87 2.23-1.97 2.23Z"/></svg><span>Discord</span></a>
+                </nav>
             </div>
-
-            <div class="footer-meta-row" aria-label="Đội ngũ và cộng đồng">
-                <a href="https://www.facebook.com/DarciaLoyalServant/" target="_blank" rel="noopener noreferrer" class="social-chip facebook">Biên tập &amp; hiệu đính</a>
-                <a href="https://www.facebook.com/profile.php?id=61594070187511" target="_blank" rel="noopener noreferrer" class="social-chip facebook">Moderator</a>
-                <a href="https://discord.gg/a7t5tEasu" target="_blank" rel="noopener noreferrer" class="social-chip">Discord</a>
-            </div>
-
-            <!-- Copyright Notice Row -->
-            <div class="footer-copyright-row">
-                <span>© 2026 Dự án Việt Hóa Stella Sora • Bản quyền tài nguyên & nội dung gốc thuộc về Yostar Games & Developers</span>
-            </div>
+            <div class="footer-copyright-row">© 2026 Dự án Việt Hóa Stella Sora • Bản quyền tài nguyên &amp; nội dung gốc thuộc về Yostar Games &amp; Developers</div>
         </div>
     </footer>
 
