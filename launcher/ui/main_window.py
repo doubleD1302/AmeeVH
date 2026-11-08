@@ -19,7 +19,6 @@ from .components.title_bar import TitleBar
 from .views.overview_view import OverviewView
 from .views.notifications_modal import NotificationsModal
 from .views.guide_modal import GuideModal
-from .views.support_modal import SupportModal
 from .views.settings_modal import SettingsModal
 from .views.advanced_tools_modal import AdvancedToolsModal
 from .views.confirmation_dialog import ConfirmationDialog
@@ -419,7 +418,7 @@ class MainWindow(QMainWindow):
         if dest=='check_update':self._check_update();return
         if dest=='notifications':self._show(NotificationsModal(self.notifications,self))
         elif dest=='guide':self._show(GuideModal(self))
-        elif dest=='support':self._show(SupportModal(self.network_service.get_supporter_data(),self))
+        elif dest=='support':self._show(MessageDialog('Tính năng đang bảo trì','Tính năng đang bảo trì. Bản Việt hoá luôn luôn miễn phí.',parent=self))
         elif dest=='settings':
             if self.active_worker:return
             d=SettingsModal(self.config_manager,self.network_service,self);d.game_path_changed.connect(lambda _:QTimer.singleShot(0,self._scan));d.github_sync_requested.connect(self._sync_github);d.channel_changed.connect(self._sync_github);self._show(d)
