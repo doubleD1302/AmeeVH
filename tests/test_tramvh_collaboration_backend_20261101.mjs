@@ -241,6 +241,8 @@ test('admin portal APIs are server enforced and exports replay immutably',async(
   const first=await call(f.env,`/api/admin/exports/${id}/download?file=manifest.json`,undefined,'private-review-code');
   const second=await call(f.env,`/api/admin/exports/${id}/download?file=manifest.json`,undefined,'private-review-code');
   assert.equal(first.status,200); assert.equal(second.status,200); assert.deepEqual(second.body,first.body);
+  const task=await call(f.env,`/api/admin/exports/${id}/download?file=TASK.json`,undefined,'private-review-code');
+  assert.equal(task.status,200); assert.ok(task.body.agent_prompt.startsWith('Ưu tiên kiểm tra story trước.')); assert.ok(task.body.agent_prompt.includes(`chapter_id=${chapterId}`));
   const listed=await call(f.env,'/api/admin/exports',undefined,'private-review-code'); assert.equal(listed.body.data.items[0].id,id);
  } finally { f.close(); }
 });

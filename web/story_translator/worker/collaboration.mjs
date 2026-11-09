@@ -369,7 +369,7 @@ async function adminFiles(request,env,kind,chapterId,baseExportId,agentInstructi
  if(changes.length>2000)fail(413,'export_too_large','Phạm vi vượt giới hạn D1 của Admin Portal. Hãy chia nhỏ theo chapter hoặc cấu hình storage file trước khi xuất.');
  const mapping=selected.map(line=>({chapter_id:chapterId,line_id:line.line_id,file_id:null,block_order:null,mapping_status:'needs_catalog_verification',evidence:'TramVH source hash only; Merge/game locator chưa được xác minh'}));
  const scopedIssues=issues.map(issue=>({issue_id:issue.issue_id,chapter_id:issue.chapter_id,line_id:issue.line_id,reason:issue.reason,created_at:issue.created_at,en:issue.en||'',source_hash:issue.source_hash||null}));
- const prompt=[
+ const defaultPrompt=[
   'Bạn là coding agent tiếp tục dự án Stella Sora Việt Hóa.',
   `Nhiệm vụ: ${kind==='handoff'?'đối chiếu Merge và chuẩn bị proposal tích hợp':kind==='delta'?'đối chiếu delta với bản xuất mốc':'đối chiếu snapshot TrạmVH'}.`,
   `Phạm vi: chapter_id=${chapterId}; dataset_version=${release.version}.`,
@@ -378,8 +378,8 @@ async function adminFiles(request,env,kind,chapterId,baseExportId,agentInstructi
   'Bảo toàn source, ID, token, thứ tự block và nội dung ngoài phạm vi. Không ghi trực tiếp vào game khi locator chưa được xác minh.',
   'Khi đủ căn cứ, tạo proposal/staging theo workflow repo; chạy audit đúng phạm vi và trả receipt/checkpoint.',
   'Dừng ngay nếu source_hash đổi, locator trùng, thiếu source thật hoặc mapping chưa đủ bằng chứng.',
-  agentInstructions ? `Chỉ dẫn thêm từ Admin:\n${agentInstructions}` : 'Không có chỉ dẫn thêm từ Admin.'
  ].join('\n\n');
+ const prompt=agentInstructions ? `${agentInstructions}\n\nPhạm vi: chapter_id=${chapterId}; dataset_version=${release.version}.` : defaultPrompt;
  const task={task:kind==='handoff'?'Đối chiếu Merge / chuẩn bị proposal tích hợp':kind==='delta'?'Đối chiếu delta với bản xuất mốc':'Snapshot đối chiếu dữ liệu TrạmVH',read_first:['docs/HACHIMINH_WORKFLOW_INTEGRATION.md','SS/.agents/skills/workflow/SKILL.md'],scope:{chapter_id:chapterId,dataset_version:release.version},allowed_paths:['SS/','proposals/'],stop_when:['source hash thay đổi','locator trùng','thiếu bằng chứng'],agent_prompt:prompt};
  const files={'changes.jsonl':changes.map(item=>JSON.stringify(item)).join('\n'),'mapping.jsonl':mapping.map(item=>JSON.stringify(item)).join('\n'),'issues.jsonl':scopedIssues.map(item=>JSON.stringify(item)).join('\n'),'TASK.json':JSON.stringify(task,null,2),'AGENT_PROMPT.md':`# Prompt cho coding agent\n\n${prompt}\n`,'README.md':`# TrạmVH handoff\n\nExport type: ${kind}\nDataset: ${release.version}\nChapter: ${chapterId}\n\nĐọc AGENT_PROMPT.md trước khi bắt đầu. Gói này là input cho workflow; agent vẫn phải xác minh catalog và tạo receipt trong repo.`};
  if(kind==='snapshot')files['chapter.json']=JSON.stringify(overlay,null,2);

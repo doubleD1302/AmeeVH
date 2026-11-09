@@ -96,7 +96,7 @@ a { color: inherit; text-decoration: none; }
 .pill.red { border-color: #efd0ce; background: #fff1f0; color: #ac514b; }
 .pill.purple { border-color: #ded2ef; background: #f6f0fd; color: #72539b; }
 
-.stats-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 13px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
 .stat-card, .panel, .surface { border: 1px solid var(--admin-line); border-radius: var(--admin-radius); background: var(--admin-card); box-shadow: var(--admin-shadow); }
 .stat-card { padding: 16px; }
 .secondary-stats { margin-top: 10px; border: 1px solid var(--admin-line); border-radius: 14px; background: rgba(255,255,255,.62); }
@@ -342,7 +342,7 @@ a { color: inherit; text-decoration: none; }
 .admin-dialog::backdrop { background: rgba(23,53,68,.38); backdrop-filter: blur(4px); }
 .admin-modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .admin-modal-head h2 { margin: 0; color: var(--admin-ink); font-size: 19px; letter-spacing: -.03em; }
-.admin-modal-message { margin: 14px 0 0; color: var(--admin-muted); font-size: 11px; line-height: 1.6; }
+.admin-modal-message { white-space: pre-line; margin: 14px 0 0; color: var(--admin-muted); font-size: 11px; line-height: 1.6; }
 .admin-modal-fields { display: grid; gap: 12px; margin-top: 16px; }
 .modal-field { display: block; color: var(--admin-ink-2); font-size: 10px; font-weight: 800; }
 .modal-field input, .modal-field select, .modal-field textarea { display: block; width: 100%; margin-top: 6px; border: 1px solid var(--admin-line); border-radius: 10px; background: #f8fbfc; outline: 0; padding: 10px 11px; color: var(--admin-ink); font-size: 12px; font-weight: 500; }
@@ -402,3 +402,42 @@ a { color: inherit; text-decoration: none; }
     .history-card { grid-template-columns: 1fr; }
     .history-card .history-main { grid-column: auto; }
 }
+
+.admin-modal-card { max-height: calc(100vh - 36px); overflow-y: auto; }
+
+.admin-guide { width: min(700px, calc(100vw - 28px)); }
+.admin-guide-intro { color: var(--admin-muted); font-size: 13px; line-height: 1.65; margin: 14px 0 18px; }
+.admin-guide-sections { display: grid; gap: 9px; }
+.admin-guide-sections details { border: 1px solid var(--admin-line); border-radius: 12px; background: #f9fcfd; }
+.admin-guide-sections summary { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 13px; color: var(--admin-ink); font-size: 13px; font-weight: 800; list-style: none; }
+.admin-guide-sections summary::-webkit-details-marker { display: none; }
+.admin-guide-sections summary::after { content: "+"; margin-left: auto; font-size: 18px; }
+.admin-guide-sections details[open] summary::after { content: "−"; }
+.admin-guide-sections summary span { color: var(--admin-cyan); font-size: 11px; }
+.admin-guide-sections details > div { padding: 0 16px 14px; color: var(--admin-ink-2); font-size: 13px; line-height: 1.7; }
+.admin-guide-sections ol, .admin-guide-sections ul { margin: 0; padding-left: 22px; }
+.admin-guide-sections li + li { margin-top: 8px; }
+.admin-guide-sections p { margin: 12px 0 0; }
+
+/* Logo portal dùng hình gốc của dự án, với chữ Admin cùng phong cách viền xanh. */
+.admin-brand { display: block; padding: 0 9px; }
+.admin-brand-lockup { display: flex; width: 172px; flex-direction: column; align-items: center; }
+.admin-brand-logo { display: block; width: 124px; height: 106px; object-fit: contain; }
+.admin-brand-word { display: block; position: relative; margin-top: -9px; color: #fff; font-family: Arial, sans-serif; font-size: 29px; font-weight: 1000; font-style: italic; line-height: .95; letter-spacing: 1px; -webkit-text-stroke: 1.4px #0346a9; paint-order: stroke fill; text-shadow: 2px 2px 0 #0061ec, -2px -2px 0 #0061ec, 2px -2px 0 #0061ec, -2px 2px 0 #0061ec, 3px 4px 0 #073578; }
+.login-card .admin-brand-lockup { width: 200px; }
+.login-card .admin-brand-logo { width: 145px; height: 122px; }
+.login-card .admin-brand-word { font-size: 34px; }
+.admin-guide-sections a.admin-guide-link { color: #075ed3; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Ô tìm kiếm */
+.quick-search, .search-box { min-height: 42px; gap: 10px; border: 1px solid #d8e6eb; border-radius: 12px; background: #fff; padding: 10px 13px; box-shadow: 0 2px 8px rgba(31, 76, 94, .04); transition: border-color .18s, box-shadow .18s; }
+.quick-search { width: min(310px, 28vw); }
+.quick-search:focus-within, .search-box:focus-within { border-color: #69aebc; box-shadow: 0 0 0 3px rgba(82, 164, 180, .14); }
+.search-icon { width: 19px; height: 19px; flex: 0 0 19px; stroke: #568295; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.quick-search input, .search-box input { min-width: 0; background: transparent; font-size: 12px; }
+.quick-search input::placeholder, .search-box input::placeholder { color: #8ba1ac; opacity: 1; }
+
+.admin-brand-logo { width: 148px; height: auto; }
+.login-card .admin-brand-logo { width: 172px; height: auto; }
+
+.login-card .admin-brand-lockup { margin-inline: auto; }
