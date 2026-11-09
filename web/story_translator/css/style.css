@@ -2340,15 +2340,10 @@
         .chapter-loading-overlay[hidden] { display: none; }
         .chapter-loading-window {
             width: min(980px, 100%);
-            min-height: 500px;
-            overflow: hidden;
-            border: 1px solid #365c6d;
-            border-radius: 24px;
-            background: linear-gradient(120deg, rgba(13,31,45,.98), rgba(10,24,37,.94));
-            box-shadow: 0 24px 80px rgba(0,0,0,.42);
+            overflow: visible;
         }
         .chapter-loading-header {
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             padding: 18px 22px;
@@ -2358,9 +2353,9 @@
             letter-spacing: .08em;
         }
         .chapter-loading-header span:last-child { color: var(--text-sub); font-family: var(--font-main); font-weight: 600; letter-spacing: 0; }
-        .chapter-loading-stage { position: relative; display: flex; align-items: center; min-height: 440px; padding: 36px 44px; overflow: hidden; }
-        .chapter-loading-stage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,22,33,.98) 0 59%, rgba(8,22,33,.62) 75%, rgba(8,22,33,.08)); pointer-events: none; }
-        .chapter-loading-orbit { position: absolute; right: 11%; bottom: 18px; z-index: 1; width: 230px; height: 300px; opacity: .4; filter: drop-shadow(0 0 24px rgba(101,201,223,.26)); }
+        .chapter-loading-stage { position: relative; display: grid; place-items: center; min-height: 0; padding: 0; overflow: visible; }
+        .chapter-loading-stage::after { display: none; }
+        .chapter-loading-orbit { display: none; }
         .chapter-loading-orbit::before { content: ""; position: absolute; left: 65px; top: 42px; width: 100px; height: 100px; border: 2px solid rgba(101,201,223,.55); border-radius: 50%; box-shadow: 0 0 30px rgba(101,201,223,.26); animation: chapter-loading-spin 5s linear infinite; }
         .chapter-loading-orbit span { position: absolute; left: 113px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--cyan-light); box-shadow: 0 0 18px var(--cyan-light); animation: chapter-loading-orbit 2.6s ease-in-out infinite; }
         .chapter-loading-orbit i, .chapter-loading-orbit b { position: absolute; display: block; border-radius: 50%; border: 1px solid rgba(242,208,139,.52); transform: rotate(-28deg); }
@@ -2390,7 +2385,7 @@
         @keyframes chapter-loading-dots { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75%,100% { content: "..."; } }
         @media (max-width: 700px) {
             .chapter-loading-overlay { padding: 12px; }
-            .chapter-loading-window { min-height: 520px; }
+            .chapter-loading-window { min-height: 0; }
             .chapter-loading-header { padding: 15px 16px; }
             .chapter-loading-stage { align-items: flex-end; padding: 24px 18px; }
             .chapter-loading-card { padding: 22px 20px; }
