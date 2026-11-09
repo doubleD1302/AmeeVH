@@ -349,6 +349,12 @@ a { color: inherit; text-decoration: none; }
 .modal-field textarea { resize: vertical; line-height: 1.55; }
 .modal-field input:focus, .modal-field select:focus, .modal-field textarea:focus { border-color: #79bfca; box-shadow: 0 0 0 3px #daf1f3; }
 .admin-modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; }
+.prompt-editor { width: 100%; min-height: 260px; margin-top: 12px; border: 1px solid #cfe3e8; border-radius: 12px; background: #f7fbfc; color: var(--admin-ink); padding: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; line-height: 1.65; resize: vertical; }
+.prompt-editor:focus { border-color: #79bfca; box-shadow: 0 0 0 3px #daf1f3; outline: 0; }
+.guide-checklist { display: grid; gap: 9px; margin-top: 16px; }
+.guide-checklist > div { display: grid; gap: 3px; border: 1px solid #edf2f3; border-radius: 10px; padding: 10px; }
+.guide-checklist b { color: var(--admin-ink); font-size: 11px; }
+.guide-checklist span { color: var(--admin-muted); font-size: 10px; line-height: 1.5; }
 .loading { display: grid; min-height: 260px; place-items: center; color: var(--admin-muted); font-size: 11px; }
 .spinner { display: inline-block; width: 15px; height: 15px; margin-right: 8px; border: 2px solid #c7e4e9; border-right-color: var(--admin-cyan); border-radius: 50%; vertical-align: -3px; animation: admin-spin .8s linear infinite; }
 @keyframes admin-spin { to { transform: rotate(360deg); } }
