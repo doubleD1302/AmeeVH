@@ -199,7 +199,7 @@ function openAdminGuide() {
     dialog.innerHTML = `<div class="admin-modal-card admin-guide"><div class="admin-modal-head"><div><p class="eyebrow">TrạmVH · Admin Portal</p><h2>Hướng dẫn cho admin</h2></div><button type="button" class="icon-btn" data-guide-close aria-label="Đóng">×</button></div>
     <p class="admin-guide-intro">Mới dùng trang này? Bạn cứ làm lần lượt từ phần 1. Bấm vào từng mục để xem các bước.</p>
     <div class="admin-guide-sections">
-    <details open><summary><span>01</span> Vào trang quản trị</summary><div><ol><li>Nhập mã duyệt được cấp vào ô <b>Mã reviewer</b>, rồi bấm <b>Bật quyền reviewer</b>.</li><li>Vào <b>Tổng quan</b> để xem còn bao nhiêu câu đang chờ bạn kiểm tra.</li><li>Nếu cần biết trang đang dùng phiên bản dữ liệu nào, mở <b>Phiên dữ liệu</b>. Mã reviewer là mã riêng của bạn, đừng gửi mã này cho agent.</li></ol><p><b>Đang xem thử trên máy?</b> Bấm “Mở bản xem trước local”. Những gì bạn làm ở bản này chỉ để xem thử, không cập nhật lên trang chính.</p></div></details>
+    <details open><summary><span>01</span> Vào trang quản trị</summary><div><ol><li>Nhập mã được cấp vào ô <b>Mã quản trị</b>, rồi bấm <b>Đăng nhập</b>.</li><li>Vào <b>Tổng quan</b> để xem còn bao nhiêu câu đang chờ bạn kiểm tra.</li><li>Nếu cần biết trang đang dùng phiên bản dữ liệu nào, mở <b>Phiên dữ liệu</b>. Mã reviewer là mã riêng của bạn, đừng gửi mã này cho agent.</li></ol><p><b>Đang xem thử trên máy?</b> Bấm “Mở bản xem trước local”. Những gì bạn làm ở bản này chỉ để xem thử, không cập nhật lên trang chính.</p></div></details>
     <details><summary><span>02</span> Duyệt câu dịch</summary><div><ol><li>Bấm <b>Hàng chờ duyệt</b> bên trái. Nếu cần tìm một câu cụ thể, nhập nội dung hoặc mã câu vào ô tìm kiếm.</li><li>Bấm vào câu cần xem. Đọc bản tiếng Anh trong ô <b>EN · nguồn gốc</b>, rồi đọc bản dịch trong ô <b>VI · đang dùng</b>.</li><li>Để xem bản dịch người khác đề xuất, bấm <b>Xem lịch sử &amp; đề xuất</b>. Đọc xong, bấm <b>Chấp nhận</b> nếu đồng ý hoặc <b>Từ chối</b> nếu không đồng ý.</li><li>Nếu bản dịch đang dùng đã ổn, bấm <b>Duyệt bản hiện tại</b>. Nếu cần sửa câu, bấm <b>Mở workspace</b> để về trang dịch.</li></ol><p>Nếu chưa biết câu dịch có đúng không, đừng vội duyệt. Hãy báo lại theo phần 3.</p></div></details>
     <details><summary><span>03</span> Báo câu cần kiểm tra</summary><div><ol><li>Chọn câu cần kiểm tra, rồi bấm <b>Báo issue</b>.</li><li>Ghi lý do, ví dụ: “Chưa rõ câu này đang nói về ai”. Sau đó bấm <b>Ghi issue</b>.</li><li>Mở <b>Câu cần kiểm tra</b> để xem lại danh sách. Nếu cần lưu riêng, bấm <b>Tải issues.jsonl</b>.</li></ol><p>Những câu này sẽ được ghi lại để người xử lý sau biết cần kiểm tra chỗ nào.</p></div></details>
     <details><summary><span>04</span> Chuẩn bị lời nhắn cho agent</summary><div><ol><li>Bấm <b>Prompt cho agent</b> trong menu. “Prompt” ở đây là lời nhắn bạn gửi cho Codex hoặc AI đang giúp bạn.</li><li>Đọc lời nhắn mẫu, rồi sửa theo việc bạn muốn giao: làm chương nào, cần làm gì và báo lại cho bạn những gì.</li><li>Nếu mẫu đã đúng ý, bạn có thể để nguyên. Nhớ giữ lời dặn kiểm tra nguồn và không sửa ngoài phần được giao.</li></ol><p><b>Ví dụ bạn có thể thêm:</b> “Chỉ xử lý chương đã chọn. Nếu không tìm thấy câu gốc, hãy dừng và liệt kê câu cần tôi kiểm tra.” Lời nhắn bạn sửa được giữ trong tab này. Khi tạo gói, trang sẽ lưu lời nhắn vào gói.</p></div></details>
@@ -236,7 +236,7 @@ function renderHeader() {
 }
 
 function renderLogin() {
-    return `<div class="login-wrap"><div class="login-card">${brandMarkup()}<h1>Admin Portal TrạmVH</h1><p>Điều phối duyệt câu, kiểm tra ánh xạ và tạo gói bàn giao bất biến cho coding agent.</p><form data-form="login"><label class="login-label">Mã reviewer<span class="login-input-wrap"><input id="reviewerKeyInput" class="login-input" name="key" type="password" autocomplete="off" placeholder="Nhập mã được cấp" required><button type="button" class="login-toggle" data-action="toggle-key" aria-controls="reviewerKeyInput" aria-pressed="false">Hiện</button></span></label><button class="btn primary" type="submit">Bật quyền reviewer <span>→</span></button></form>${previewMode ? '<button type="button" class="btn" data-action="preview-login" style="width:100%;margin-top:9px">Mở bản xem trước local</button>' : ''}<div class="login-note">Mã chỉ nằm trong bộ nhớ của tab này và được gửi qua header <code>X-Reviewer-Key</code>. Portal không ghi mã vào gói bàn giao hay repository.</div></div></div>`;
+    return `<div class="login-wrap"><div class="login-card">${brandMarkup()}<h1>Admin Portal TrạmVH</h1><p>Điều phối duyệt câu, kiểm tra ánh xạ và tạo gói bàn giao bất biến cho coding agent.</p>${state.error ? `<div class="error" role="alert">${esc(state.error)}</div>` : ''}<form data-form="login"><label class="login-label">Mã quản trị<span class="login-input-wrap"><input id="reviewerKeyInput" class="login-input" name="key" type="password" autocomplete="off" placeholder="Nhập mã được cấp" required><button type="button" class="login-toggle" data-action="toggle-key" aria-controls="reviewerKeyInput" aria-pressed="false">Hiện</button></span></label><button class="btn primary" type="submit">Đăng nhập <span>→</span></button></form>${previewMode ? '<button type="button" class="btn" data-action="preview-login" style="width:100%;margin-top:9px">Mở bản xem trước local</button>' : ''}<div class="login-note">Mã chỉ nằm trong bộ nhớ của tab này và được gửi qua header <code>X-Reviewer-Key</code>. Portal không ghi mã vào gói bàn giao hay repository.</div></div></div>`;
 }
 
 function renderOverview() {
@@ -483,12 +483,13 @@ async function bootstrapPortal() {
             state.key = handoffKey;
             try {
                 const response = await fetch('/api/collab/release', { headers: { Accept: 'application/json', 'X-Reviewer-Key': handoffKey }, cache: 'no-store' });
-                if (!response.ok) throw new Error('Reviewer session hết hạn.');
+                if (response.status === 401 || response.status === 403) { sessionStorage.removeItem(HANDOFF_KEY); throw new Error('Mã quản trị không còn hợp lệ.'); }
+                if (!response.ok) throw new Error('Không thể kiểm tra quyền quản trị. Hãy tải lại trang.');
                 await loadWorkspace();
                 return;
-            } catch (_) {
+            } catch (error) {
                 state.key = '';
-                sessionStorage.removeItem(HANDOFF_KEY);
+                state.error = error.message || 'Không thể kiểm tra quyền quản trị. Hãy tải lại trang.';
             }
         }
     }

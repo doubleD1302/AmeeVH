@@ -79,6 +79,7 @@
         catch (error) { reviewerKey = ''; M.canReview = false; throw error; }
         M.updateNotice();
     };
+    M.openAdminPortal = () => { if (!M.canReview || !reviewerKey) return false; sessionStorage.setItem('tramvh_reviewer_key', reviewerKey); window.location.assign('admin.html'); return true; };
     M.logout = () => { reviewerKey = ''; M.canReview = false; M.updateNotice(); };
     M.ref = line => ({ chapter_id:line.chapter_id || currentChapterData.chapter_id, line_id:line.line_id });
     M.query = line => new URLSearchParams(M.ref(line)).toString();
