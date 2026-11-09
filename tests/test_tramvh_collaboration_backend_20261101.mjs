@@ -199,3 +199,15 @@ test('Pages glossary proxy ignores caller actions in query and body',async()=>{
   assert.equal(response.status,200);assert.equal(target.searchParams.get('action'),'add_glossary_term');assert.equal(payload.action,'add_glossary_term');
  }finally{globalThis.fetch=originalFetch;}
 });
+
+test('other reason accepts empty explanation and preserves supplied context',async()=>{
+ const f=fixture({new_vi:'Xin chào {0}',status:'Đã duyệt',notes:'Bối cảnh có sẵn'});
+ try {
+  const result=await call(f.env,'/api/collab/submit',translate(await current(f.env),'Chào bạn {0}',{reason:'other',reason_detail:'',notes:'Bối cảnh có sẵn'}));
+  assert.equal(result.status,200,JSON.stringify(result.body));
+  assert.equal(result.body.proposal.reason,'other');
+  assert.equal(result.body.proposal.reason_detail,'');
+  assert.equal(result.body.proposal.notes,'Bối cảnh có sẵn');
+  assert.equal(result.body.line.new_vi,'Xin chào {0}');
+ } finally { f.close(); }
+});

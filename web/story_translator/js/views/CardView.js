@@ -36,6 +36,7 @@ function renderOriginalLanguage(item) {
         button.classList.toggle('active', active);
         button.setAttribute('aria-pressed', String(active));
         button.disabled = !available;
+        button.title = available ? `Xem nguồn ${labels[button.dataset.originalLanguage]}` : `Chưa có nguồn ${labels[button.dataset.originalLanguage]} cho câu này`;
     });
 }
 
@@ -62,7 +63,6 @@ function renderCurrentLine() {
         document.getElementById("actorNameText").innerText = "Trống";
         document.getElementById("counterIndicator").innerText = "0 / 0";
         document.getElementById("actorStandee").style.display = "none";
-        document.getElementById("voiceControlsBox").style.display = "none";
         document.getElementById("currentLineCollaboration")?.replaceChildren();
         return;
     }
@@ -85,7 +85,6 @@ function renderCurrentLine() {
     const avatarImg = document.getElementById("actorAvatarImg");
     const avatarCircle = document.getElementById("actorAvatarCircle");
     const standeeImg = document.getElementById("actorStandee");
-    const voiceBox = document.getElementById("voiceControlsBox");
 
     if (charData) {
         // Official Character Details
@@ -105,12 +104,6 @@ function renderCurrentLine() {
             standeeImg.style.display = "none";
         }
 
-        // Voice controls
-        if (charData.voices_jp && charData.voices_jp.length > 0) {
-            voiceBox.style.display = "flex";
-        } else {
-            voiceBox.style.display = "none";
-        }
     } else {
         // Narrator / System
         avatarImg.src = "web_assets/favicon.png";
@@ -118,7 +111,6 @@ function renderCurrentLine() {
         avatarCircle.style.boxShadow = "0 0 15px rgba(56, 189, 248, 0.4)";
         document.getElementById("actorQuoteText").innerText = spk.includes("Hệ thống") ? "Lệnh hệ thống game" : "Bối cảnh câu chuyện";
         standeeImg.style.display = "none";
-        voiceBox.style.display = "none";
     }
 
     // Reference old translation

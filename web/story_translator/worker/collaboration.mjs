@@ -211,7 +211,6 @@ async function submit(request,env,body,user){
   return commitMutation(env,body,ctx.payload_hash,current,after,'translation_saved',actor,'Bản dịch đầu tiên.','saved');
  }
  if(!['meaning','pronouns','naturalness','other'].includes(body.reason))fail(400,'reason_required','Chọn lý do đề xuất sửa.');
- if(body.reason==='other'&&!detail)fail(400,'reason_required','Nhập lý do đề xuất sửa.');
  if(text===current.new_vi&&notes===current.notes)fail(400,'no_change','Đề xuất chưa có thay đổi.');
  const existing=await stmt(env,'SELECT * FROM proposals WHERE chapter_id=? AND line_id=? AND dataset_version=? AND user_id=?',[current.chapter_id,current.line_id,ctx.release.version,user.id]).first();
  if(existing?.state!=='pending'&&existing)fail(409,'proposal_closed','Đề xuất của bạn trong phiên này đã được xử lý.');

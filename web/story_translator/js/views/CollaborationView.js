@@ -32,7 +32,6 @@
             panel.append(make('strong','',label),make('p','collab-source',typeof value==='string'&&value?value:'Chưa có nguồn '+label+' cho câu này.'));
             grid.append(panel);
         }
-        if(line.sheet_vi||line.sheet_old_vi){const panel=make('section','collab-source-panel');panel.append(make('strong','',line.sheet_vi?'VI trên Google Sheet':'VI cũ trên Google Sheet'),make('p','collab-source',line.sheet_vi||line.sheet_old_vi));grid.append(panel);}
         return grid;
     };
     V.diff = (before, after) => {
@@ -120,7 +119,7 @@
         let base;
         try { base={...item,...await M().getLine(item)}; } catch(error) { body.replaceChildren(make('p','collab-error',error.message));return; }
         if (serial!==requestSerial || !dialog().open) return;
-        M().patch(base);body.replaceChildren();body.append(make('p','collab-line-id','#'+base.line_id),V.sources(base),V.summary(base));
+        M().patch(base);body.replaceChildren();const sourceDetails=make('details','collab-sources-details');sourceDetails.append(make('summary','','Xem nguồn EN / JP / CN'),V.sources(base));body.append(make('p','collab-line-id','#'+base.line_id),sourceDetails,V.summary(base));
         const mode=options.mode || 'edit';
         let ownProposal=null;
         if(mode==='edit')try{ownProposal=await M().myProposal(base);}catch(_){}
@@ -128,21 +127,19 @@
         const ownDraft=ownProposal?.state==='pending'?{text:ownProposal.text_vi,origin:ownProposal.origin,notes:ownProposal.notes,reason:ownProposal.reason,reason_detail:ownProposal.reason_detail}:null;
         const stored=M().readDraft(base)||ownDraft;
         const form=make('form','collab-form'),label=make('label','',mode==='restore'?'Phiên bản sẽ khôi phục':'Bản đề xuất');
-        const input=make('textarea');input.id='collabDraft';input.rows=5;input.value=mode==='restore'?(options.history.new_text || options.history.snapshot?.new_vi || ''):(suppliedDraft!==undefined?suppliedDraft:stored?.text ?? base.new_vi ?? '');input.readOnly=mode==='restore';label.append(input);
-        const diff=make('div','collab-diff-wrap');
-        const originLabel=make('label','','Nguồn bản dịch'),origin=make('select');for(const [value,text]of [['human','Tự dịch / biên tập'],['machine','Bản dịch máy/AI'],['','Chọn nguồn bản đề xuất']]){const o=make('option','',text);o.value=value;origin.append(o);}origin.value=stored?.origin || (M().hasText(base) ? base.translation_origin || '' : 'human');originLabel.append(origin);
-        const notesLabel=make('label','','Ghi chú ngữ cảnh'),notes=make('textarea');notes.rows=2;notes.value=stored?.notes ?? base.notes ?? '';notesLabel.append(notes);
+        const input=make('textarea');input.id='collabDraft';input.rows=3;input.value=mode==='restore'?(options.history.new_text || options.history.snapshot?.new_vi || ''):(suppliedDraft!==undefined?suppliedDraft:stored?.text ?? base.new_vi ?? '');input.readOnly=mode==='restore';label.append(input);
+        const diffDetails=make('details','collab-diff-details');diffDetails.append(make('summary','','So sánh thay đổi'));const diff=make('div','collab-diff-wrap');diffDetails.append(diff);
+        // Keep existing draft/proposal metadata; new proposals default to human.
+        const origin=make('input');origin.type='hidden';origin.value=['human','machine'].includes(stored?.origin)?stored.origin:'human';
+        const notes=make('input');notes.type='hidden';notes.value=stored?.notes ?? base.notes ?? '';
         const reasonLabel=make('label','','Lý do'),reason=make('select');const empty=make('option','','Chọn lý do');empty.value='';reason.append(empty);for(const [value,text]of Object.entries(reasonLabels)){const o=make('option','',text);o.value=value;reason.append(o);}reason.value=stored?.reason || '';reason.required=mode!=='edit' || M().hasText(base);reasonLabel.append(reason);
-        const detailLabel=make('label','','Giải thích thêm (bắt buộc nếu chọn Khác)'),detail=make('textarea');detail.rows=2;detail.value=stored?.reason_detail || '';detailLabel.append(detail);
+        const detailLabel=make('label','','Giải thích thêm (không bắt buộc)'),detail=make('textarea');detail.rows=2;detail.value=stored?.reason_detail || '';detailLabel.append(detail);
         const error=make('p','collab-error');error.hidden=true;error.role='alert';const reload=action('Tải bản mới để đối chiếu',async()=>{const active=session,activeSerial=requestSerial;if(!active)return;try{const latest={...active.base,...await M().getLine(active.base)};if(requestSerial!==activeSerial||session!==active||!dialog().open)return;active.base=latest;M().patch(latest);canonical.replaceChildren(V.summary(latest));const refreshed=V.sources(latest);sourceNode.replaceWith(refreshed);sourceNode=refreshed;reason.required=mode!=='edit'||M().hasText(latest);if(reason.required&&!reasonLabel.isConnected){form.insertBefore(reasonLabel,error);form.insertBefore(detailLabel,error);}if(mode==='edit')submit.textContent=M().hasText(latest)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt';error.textContent='Đã tải bản mới. Bản nháp của bạn được giữ nguyên; kiểm tra phần khác biệt rồi gửi lại.';reload.hidden=true;active.payloadKey='';updateDiff();}catch(err){if(requestSerial===activeSerial&&session===active)showError(error,err);}},'collab-link');reload.hidden=true;
         const submit=make('button','btn-save-glow',mode==='report'?'Báo cần xem lại':mode==='restore'?'Khôi phục phiên bản':M().hasText(base)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt');submit.type='submit';submit.disabled=!M().ready;
         let sourceNode=body.querySelector('.collab-source-grid');
-        const canonical=make('div');canonical.append(V.summary(base));body.lastChild.replaceWith(canonical);
-        if(mode!=='report')form.append(label,diff);
-        origin.required=mode==='edit';
-        if(!['human','machine'].includes(origin.value))origin.value='';
-        reason.addEventListener('change',()=>{detail.required=reason.value==='other';});
-        if(mode==='edit')form.append(originLabel,notesLabel);
+        const canonical=make('div',mode==='edit'?'collab-proposal-current':'');canonical.append(V.summary(base));body.lastChild.replaceWith(canonical);
+        if(mode!=='report')form.append(label,diffDetails);
+        if(mode==='edit' && origin.value==='machine')body.prepend(make('p','collab-info','Bản nháp hoặc đề xuất trước đó được đánh dấu là bản dịch máy/AI; trạng thái này được giữ lại.'));
         if(reason.required)form.append(reasonLabel,detailLabel);
         form.append(error,reload,submit);body.append(form);
         if(ownProposal?.state==='pending')body.prepend(make('p','collab-info','Bạn đã có một đề xuất cho câu này trong phiên hiện tại. Gửi lại sẽ sửa đề xuất đó.'));
