@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Stella Sora — Trạm Dịch Thuật Cốt Truyện</title>
     
     <!-- PWA & Favicon -->
@@ -12,6 +12,29 @@
     <meta name="theme-color" content="#eaf3f8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Chọn layout sớm để mobile không bị nháy giao diện desktop khi tải trang. -->
+    <script>
+        (() => {
+            const root = document.documentElement;
+            const updateDeviceLayout = () => {
+                const width = window.innerWidth || root.clientWidth;
+                const touch = window.matchMedia?.('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+                const device = width <= 700 ? 'mobile' : (width <= 1100 || (touch && width <= 1280) ? 'tablet' : 'desktop');
+                const platform = /Android/i.test(navigator.userAgent) ? 'android'
+                    : /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'ios'
+                    : /Windows/i.test(navigator.userAgent) ? 'windows'
+                    : /Macintosh|Mac OS X/i.test(navigator.userAgent) ? 'mac'
+                    : 'other';
+                root.dataset.device = device;
+                root.dataset.platform = platform;
+                root.dataset.touch = touch ? 'true' : 'false';
+            };
+            updateDeviceLayout();
+            window.addEventListener('resize', updateDeviceLayout, { passive: true });
+            window.addEventListener('orientationchange', updateDeviceLayout, { passive: true });
+        })();
+    </script>
 
     <!-- Fonts: Chuẩn quốc tế, 100% tiếng Việt hoàn hảo, cực kỳ sắc nét và êm mắt -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +48,7 @@
     <link rel="stylesheet" href="css/icon-controls.css?v=1.4.0">
     <link rel="stylesheet" href="css/wordmark.css?v=1.4.0">
     <link rel="stylesheet" href="css/translation-guide.css?v=guide-r04">
-    <link rel="stylesheet" href="css/collaboration.css?v=collab-r02">
+    <link rel="stylesheet" href="css/collaboration.css?v=collab-r03">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -403,13 +426,13 @@
     <script src="js/models/TokenModel.js?v=1.4.0"></script>
     <script src="js/models/GlossaryModel.js?v=1.4.0"></script>
     <script src="js/models/CollaborationModel.js?v=collab-r01"></script>
-    <script src="js/models/StoryModel.js?v=collab-r02"></script>
+    <script src="js/models/StoryModel.js?v=collab-r03"></script>
 
     <!-- Views -->
     <script src="js/views/ToastView.js?v=1.4.0"></script>
     <script src="js/views/HudView.js?v=collab-r01"></script>
     <script src="js/views/CardView.js?v=collab-r01"></script>
-    <script src="js/views/CollaborationView.js?v=collab-r02"></script>
+    <script src="js/views/CollaborationView.js?v=collab-r03"></script>
     <script src="js/views/TableView.js?v=collab-r01"></script>
     <script src="js/views/GlossaryView.js?v=1.4.0"></script>
     <script src="js/views/ProfileView.js?v=1.4.0"></script>
