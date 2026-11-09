@@ -48,7 +48,8 @@
     <link rel="stylesheet" href="css/icon-controls.css?v=1.4.0">
     <link rel="stylesheet" href="css/wordmark.css?v=1.4.0">
     <link rel="stylesheet" href="css/translation-guide.css?v=guide-r04">
-    <link rel="stylesheet" href="css/collaboration.css?v=collab-r03">
+    <link rel="stylesheet" href="css/collaboration.css?v=collab-r04">
+    <link rel="stylesheet" href="css/workspace-ux.css?v=ux-r01">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -62,7 +63,7 @@
     <!-- Floating XP Toast -->
     <div id="toastNotification" class="toast-popup">
         <span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/xp.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/xp.svg" alt=""></span>
-        <span id="toastNotificationText">+50 EXP! Đã cập nhật lên Google Sheets!</span>
+        <span id="toastNotificationText">+50 EXP! Đã cập nhật!</span>
     </div>
 
     <!-- Animated chapter loading state -->
@@ -115,24 +116,27 @@
         <!-- Actions HUD -->
         <div class="hud-tools">
             <a href="merge-reference.html" class="collab-link">Nguồn Merge</a>
-            <button id="reviewerAccessBtn" class="btn-circle" type="button" title="Nhập mã quản trị để duyệt" aria-label="Quyền duyệt" aria-pressed="false" onclick="openReviewerAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/approved.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/approved.svg" alt=""></span></button>
             <button id="translationGuideBtn" class="btn-circle guide-open-button" type="button" title="Hướng dẫn dịch thuật" aria-label="Hướng dẫn dịch thuật" aria-haspopup="dialog" onclick="openTranslationGuide()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/translation-guide-r01/guide-light.svg" alt=""><img class="tram-icon-dark" src="assets/translation-guide-r01/guide-dark.svg" alt=""></span><span>Hướng dẫn</span></button>
+            <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span><span>Thuật ngữ</span></button>
+            <details class="hud-more"><summary>Cài đặt &amp; công cụ</summary><div class="hud-more-panel">
+            <button id="reviewerAccessBtn" class="btn-circle" type="button" title="Nhập mã quản trị để duyệt" aria-label="Quyền duyệt" aria-pressed="false" onclick="openReviewerAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/approved.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/approved.svg" alt=""></span></button>
             <button id="installAppBtn" class="btn-circle install-app-btn" type="button" title="Cài đặt Trạm Dịch Thuật trên thiết bị" aria-label="Cài đặt ứng dụng"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/download.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/download.svg" alt=""></span><span class="install-app-label">Cài đặt</span></button>
             <button id="bgmToggleBtn" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/music.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/music.svg" alt=""></span></button>
             <button id="bgmNextBtn" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 2 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
             <button id="themeToggleBtn" class="btn-circle" type="button" title="Chuyển sang chế độ tối" aria-label="Chuyển sang chế độ tối" aria-pressed="false" onclick="toggleTheme()"><span class="tram-theme-night"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/moon.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/moon.svg" alt=""></span></span><span class="tram-theme-day"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sun.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sun.svg" alt=""></span></span></button>
             <button class="btn-circle" title="Bảng Phong Thần Dịch Giả" aria-label="Bảng Phong Thần Dịch Giả" onclick="openLeaderboardModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/trophy.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/trophy.svg" alt=""></span></button>
-            <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span></button>
             <a href="https://docs.google.com/spreadsheets/d/13ooFrJLyeP9LsSFrkzp4SWpQY5ePd6ap5muvWCwWOdM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-circle" title="Google Sheets — bản tham khảo trước khi bật cộng tác" aria-label="Mở Google Sheets tham khảo"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sheet.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sheet.svg" alt=""></span></a>
+            </div></details>
         </div>
     </header>
 
     <!-- Navigation Sub-Bar -->
     <div class="sub-bar">
+        <details class="scope-disclosure" open><summary>Phạm vi &amp; bộ lọc</summary>
         <div class="selectors-wrap">
             <select id="groupSelect" aria-label="Chọn nhóm nội dung" class="app-select" onchange="onGroupChange()"></select>
-            <select id="chapterSelect" aria-label="Chọn trang hoặc chương" class="app-select" onchange="onChapterChange()"></select>
-            <select id="sceneSelect" aria-label="Chọn file hoặc cảnh" class="app-select" onchange="onSceneChange()"></select>
+            <select id="chapterSelect" aria-label="Chọn chương" class="app-select" onchange="onChapterChange()"></select>
+            <select id="sceneSelect" aria-label="Chọn cảnh" class="app-select" onchange="onSceneChange()"></select>
             <select id="filterSelect" aria-label="Lọc câu thoại" class="app-select" onchange="applyFilters()">
                 <option value="all">Tất cả câu thoại</option>
                 <option value="untranslated">Chưa dịch</option>
@@ -144,6 +148,8 @@
             </select>
         </div>
 
+        </details>
+        <script>if (document.documentElement.dataset.device === "mobile") document.querySelector(".scope-disclosure").open = false;</script>
         <div class="mode-switch-box">
             <button id="tabGameMode" class="mode-tab-btn active" onclick="switchMode('game')"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/visual-novel.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/visual-novel.svg" alt=""></span> Visual Novel</button>
             <button id="tabListMode" class="mode-tab-btn" onclick="switchMode('list')"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/list.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/list.svg" alt=""></span> Danh Sách</button>
@@ -277,7 +283,7 @@
                 <button class="btn-circle" onclick="closeProfileModal()" aria-label="Đóng"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
             </div>
             <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.6;">
-                Tên của bạn sẽ được tự động cập nhật vào cột <b>Dịch giả</b> trên Google Sheets mỗi khi bạn hoàn thành một câu thoại!
+                Tên này được dùng để ghi nhận đóng góp trong Trạm Dịch Thuật khi tính năng cộng tác hoạt động.
             </p>
             <div style="display:flex; flex-direction:column; gap:8px;">
                 <label style="font-size:0.82rem; color:var(--cyan-primary); font-weight:700;">BIỆT DANH / TÊN DỊCH GIẢ</label>
@@ -435,21 +441,21 @@
     <!-- ================= MVC ARCHITECTURE ================= -->
     <script src="js/views/TranslationGuideView.js?v=collab-r01"></script>
     <script src="js/views/IconView.js?v=1.4.0"></script>
-    <script src="js/views/SelectView.js?v=collab-r02"></script>
+    <script src="js/views/SelectView.js?v=ux-r01"></script>
     <!-- Models -->
     <script src="js/models/UserModel.js?v=1.4.0"></script>
     <script src="js/models/CharacterModel.js?v=1.4.0"></script>
     <script src="js/models/TokenModel.js?v=1.4.0"></script>
     <script src="js/models/GlossaryModel.js?v=1.4.0"></script>
-    <script src="js/models/CollaborationModel.js?v=collab-r01"></script>
+    <script src="js/models/CollaborationModel.js?v=ux-r01"></script>
     <script src="js/models/StoryModel.js?v=collab-r03"></script>
 
     <!-- Views -->
     <script src="js/views/ToastView.js?v=1.4.0"></script>
     <script src="js/views/HudView.js?v=collab-r01"></script>
     <script src="js/views/CardView.js?v=collab-r01"></script>
-    <script src="js/views/CollaborationView.js?v=collab-r03"></script>
-    <script src="js/views/TableView.js?v=collab-r01"></script>
+    <script src="js/views/CollaborationView.js?v=ux-r01"></script>
+    <script src="js/views/TableView.js?v=ux-r01"></script>
     <script src="js/views/GlossaryView.js?v=1.4.0"></script>
     <script src="js/views/ProfileView.js?v=1.4.0"></script>
     <script src="js/views/LeaderboardView.js?v=1.4.0"></script>

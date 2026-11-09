@@ -1,0 +1,74 @@
+/* Workspace hierarchy: keep navigation and secondary tools compact. */
+.hud-tools { flex-wrap: wrap; gap: 6px; }
+.hud-tools > .btn-circle { width:auto; height:auto; min-height:44px; padding:8px 12px; border-radius:10px; gap:7px; font-size:.85rem; font-weight:700; }
+.hud-more { position:relative; }
+.hud-more > summary, .scope-disclosure > summary { cursor:pointer; font-weight:700; color:var(--text-pure); }
+.hud-more > summary { list-style:none; padding:10px 12px; border:1px solid var(--card-border); border-radius:10px; min-height:44px; box-sizing:border-box; }
+.hud-more > summary::-webkit-details-marker { display:none; }
+.hud-more-panel { position:absolute; right:0; z-index:200; display:flex; flex-wrap:wrap; gap:8px; width:230px; padding:12px; background:var(--bg-deep); border:1px solid var(--card-border); border-radius:12px; box-shadow:0 12px 30px #0003; }
+.hud-more-panel .btn-circle { min-width:44px; min-height:44px; }
+.hud-more-panel .install-app-btn { width:auto; padding:0 10px; border-radius:10px; }
+.scope-disclosure { flex:1 1 600px; min-width:0; }
+.scope-disclosure > summary { font-size:.83rem; padding:4px 0 8px; }
+.selectors-wrap { width:100%; align-items:end; }
+.selectors-wrap > .tram-select-wrap::before { display:block; margin:0 0 4px 2px; color:var(--text-pure); font-size:.78rem; font-weight:700; }
+.selectors-wrap > .tram-select-wrap:has(#groupSelect)::before { content:'1. Nhóm truyện'; }
+.selectors-wrap > .tram-select-wrap:has(#chapterSelect)::before { content:'2. Chương'; }
+.selectors-wrap > .tram-select-wrap:has(#sceneSelect)::before { content:'3. Cảnh'; }
+.selectors-wrap > .tram-select-wrap:has(#filterSelect)::before { content:'4. Lọc câu'; }
+.progress-ribbon { padding-top:6px; padding-bottom:6px; }
+.vn-stage-container { min-height:0; gap:10px; padding-top:16px; }
+.vn-character-header { gap:8px; }
+#currentLineCollaboration { padding:10px 14px; }
+#currentLineCollaboration .collab-summary { gap:5px; }
+#currentLineCollaboration .collab-current-label { margin-top:2px; }
+#currentLineCollaboration .collab-current-text { line-height:1.5; }
+.list-mode-container { gap:8px; }
+.list-context-notice { margin:0; padding:10px 14px; border:1px solid var(--card-border); border-radius:10px; background:var(--card-glass); color:var(--text-pure); font-size:.87rem; line-height:1.5; }
+.table-row-card.compact-row { padding:12px 16px; gap:8px; border-color:var(--card-border); }
+.compact-row .table-row-top { gap:10px; flex-wrap:wrap; }
+.compact-row-texts { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.compact-row-column { min-width:0; }
+.compact-row-column p { margin:2px 0 0; white-space:pre-wrap; overflow-wrap:anywhere; color:var(--text-pure); line-height:1.5; }
+.compact-row-label { color:var(--text-body); font-size:.78rem; font-weight:800; }
+.compact-row-details > summary { cursor:pointer; color:var(--text-pure); font-size:.85rem; font-weight:700; min-height:32px; }
+.compact-row-details .collab-summary { border-top:1px solid var(--card-border); padding-top:10px; }
+.collab-meta,.collab-muted,.collab-line-id,.collab-current-label { color:var(--text-body); font-size:.85rem; }
+:focus-visible { outline:3px solid var(--cyan-primary); outline-offset:3px; }
+@media(max-width:700px) {
+ html[data-device="mobile"] .hud-tools { display:flex; justify-content:flex-start; }
+ html[data-device="mobile"] .hud-tools > .btn-circle { width:auto; }
+ html[data-device="mobile"] .sub-bar { padding:8px 12px; }
+ html[data-device="mobile"] .selectors-wrap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ html[data-device="mobile"] .selectors-wrap > .tram-select-wrap:first-child { grid-column:auto; }
+ .scope-disclosure { flex-basis:100%; }
+ .compact-row-texts { grid-template-columns:1fr; gap:8px; }
+ .hud-more-panel { right:auto; left:0; }
+}
+
+@media(min-width:1101px) {
+ .selectors-wrap { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
+ .vn-stage-container:not([style*="display: none"]) { display:grid!important; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; padding:16px; }
+ .vn-stage-container .character-standee-visual { display:none!important; }
+ .vn-character-header, .stage-action-toolbar { grid-column:1 / -1; }
+ .dialogue-speech-box { grid-column:1; grid-row:2 / 4; }
+ #currentLineCollaboration { grid-column:2; grid-row:2; }
+ .translation-input-box { grid-column:2; grid-row:3; }
+}
+@media(min-width:1101px) {
+ .vn-stage-container .dialogue-speech-box, .vn-stage-container #currentLineCollaboration, .vn-stage-container .translation-input-box, .vn-stage-container .stage-action-toolbar { max-width:none; min-width:0; width:100%; box-sizing:border-box; }
+}
+
+@media(max-width:700px) {
+ html[data-device="mobile"] .hud-tools .collab-link { display:inline-flex; align-items:center; min-height:44px; padding:4px 6px; font-size:.8rem; }
+ html[data-device="mobile"] .guide-open-button > span:last-child { display:inline; }
+ html[data-device="mobile"] .hud-tools { flex-wrap:wrap; }
+ html[data-device="mobile"] .stage-action-toolbar { position:static; }
+}
+@media(max-width:700px) {
+ html[data-device="mobile"] .hud-tools { justify-content:flex-start; gap:6px; }
+ html[data-device="mobile"] .hud-tools > * { flex:0 0 auto; }
+ html[data-device="mobile"] .hud-tools > .btn-circle { width:auto; min-width:0; padding:8px; }
+ html[data-device="mobile"] .hud-tools .guide-open-button { width:auto; }
+ html[data-device="mobile"] .hud-more > summary { font-size:.8rem; padding:10px 8px; }
+}

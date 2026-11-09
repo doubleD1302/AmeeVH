@@ -2,10 +2,10 @@
 (() => {
     const controls = new Map();
     const definitions = {
-        groupSelect: { label: "Chọn nhóm", icon: () => "chapters" },
-        chapterSelect: { label: "Chọn trang", icon: () => "chapters" },
-        sceneSelect: { label: "Chọn file / cảnh", icon: value => value === "all" ? "star" : "scenes" },
-        filterSelect: { label: "Lọc câu thoại", icon: value => ({ all: "search", untranslated: "pending", translated: "translated", approved: "approved", dialogue_only: "dialogue" })[value] || "filter" }
+        groupSelect: { label: "Nhóm truyện", icon: () => "chapters" },
+        chapterSelect: { label: "Chương", icon: () => "chapters" },
+        sceneSelect: { label: "Cảnh", icon: value => value === "all" ? "star" : "scenes" },
+        filterSelect: { label: "Trạng thái câu", icon: value => ({ all: "search", untranslated: "pending", translated: "translated", approved: "approved", dialogue_only: "dialogue" })[value] || "filter" }
     };
     const normalize = value => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[đĐ]/g, "d").toLowerCase();
 

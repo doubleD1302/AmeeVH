@@ -10,7 +10,7 @@
         return line.new_vi && line.new_vi !== line.en ? (line.translation_origin === 'machine' ? 'machine_pending' : 'pending') : 'untranslated';
     };
     M.hasText = line => Boolean((line.new_vi || '').trim());
-    M.origin = line => line.translation_origin === 'machine' ? 'Bản dịch máy/AI' : line.translation_origin === 'human' ? 'Người dịch tự nhập' : 'Nguồn nhập cũ · Chưa xác minh';
+    M.origin = line => line.translation_origin === 'machine' ? 'Bản dịch máy/AI' : line.translation_origin === 'human' ? 'Người dịch tự nhập' : 'Nguồn bản dịch: dữ liệu cũ';
     M.time = value => {
         if (!value) return 'Chưa rõ thời gian';
         const date = new Date(value), elapsed = Math.max(0, Date.now() - date.getTime());

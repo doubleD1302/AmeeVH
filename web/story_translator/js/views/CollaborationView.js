@@ -6,7 +6,7 @@
     const action = (text, handler, cls = 'btn-direction') => { const b = make('button', cls, text); b.type = 'button'; b.addEventListener('click', handler); return b; };
     const reasonLabels = { meaning:'Sai nghĩa', pronouns:'Sai xưng hô', naturalness:'Câu chưa tự nhiên', other:'Khác' };
     let session = null, requestSerial = 0, previousFocus = null;
-    V.badge = line => make('span', 'collab-badge collab-' + M().status(line), M().labels[M().status(line)]);
+    V.badge = line => { const legacy = line.provenance === 'legacy_import' && !line.approved_at && M().status(line) === 'approved'; return make('span', 'collab-badge collab-' + M().status(line), legacy ? 'Trạng thái nhập cũ: Đã duyệt' : M().labels[M().status(line)]); };
     V.metadata = line => {
         const wrap = make('div','collab-meta');
         wrap.append(make('span','', 'Người dịch: ' + (line.translator || 'Chưa có')));
@@ -21,7 +21,7 @@
         e.append(make('p','collab-current-text',line.new_vi || 'Chưa có bản dịch tiếng Việt.'));
         e.append(V.metadata(line));
         if (line.notes) e.append(make('p','collab-context','Ngữ cảnh: ' + line.notes));
-        if (line.provenance === 'legacy_import') e.append(make('small','collab-muted','Dữ liệu nhập từ bản cũ; chưa có nhật ký hoặc thời gian của các lần sửa trước.'));
+        if (line.provenance === 'legacy_import') e.append(make('small','collab-muted','Bản dịch có nguồn từ dữ liệu cũ; lịch sử trước khi bật cộng tác chưa được xác minh.'));
         return e;
     };
     V.sources = line => {
