@@ -87,13 +87,34 @@ const reviewerKeys = env => [env.REVIEWER_KEY, env.REVIEWER_KEY_2, env.REVIEWER_
 async function reviewerAllowed(request,env){
  const supplied=request.headers.get('X-Reviewer-Key')||'',keys=reviewerKeys(env);
  if(!keys.length||!supplied)return false;
+ const fingerprint=await sourceHash(`${request.headers.get('CF-Connecting-IP')||'unknown'}:${supplied}`),nowMs=Date.now();
+ try{
+  const attempt=await stmt(env,'SELECT failures,window_started,locked_until FROM admin_auth_attempts WHERE key_hash=?',[fingerprint]).first();
+  if(attempt?.locked_until&&Date.parse(attempt.locked_until)>nowMs)return false;
+  if(attempt?.window_started&&nowMs-Date.parse(attempt.window_started)>300000)await stmt(env,'DELETE FROM admin_auth_attempts WHERE key_hash=?',[fingerprint]).run();
+ }catch(_){/* Older deployments may not have migration 0004 yet; key checks still fail closed. */}
  const a=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(supplied)));
  let matched=0;
  for(const key of keys){
   const b=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(key)));
   let difference=0;for(let i=0;i<a.length;i++)difference|=a[i]^b[i];matched|=Number(difference===0);
  }
- return matched===1;
+ if(matched===1){try{await stmt(env,'DELETE FROM admin_auth_attempts WHERE key_hash=?',[fingerprint]).run();}catch(_){}return true;}
+ try{
+  const previous=await stmt(env,'SELECT failures,window_started FROM admin_auth_attempts WHERE key_hash=?',[fingerprint]).first(),window=previous&&nowMs-Date.parse(previous.window_started)<=300000?previous:{failures:0,window_started:new Date(nowMs).toISOString()};
+  const failures=Number(window.failures||0)+1,locked=failures>=5?new Date(nowMs+300000).toISOString():null;
+  await stmt(env,'INSERT INTO admin_auth_attempts(key_hash,failures,window_started,locked_until) VALUES(?,?,?,?) ON CONFLICT(key_hash) DO UPDATE SET failures=excluded.failures,window_started=excluded.window_started,locked_until=excluded.locked_until',[fingerprint,failures,window.window_started,locked]).run();
+ }catch(_){}
+ return false;
+}
+async function scopedReviewerAllowed(request,env,scope='review'){
+ const variable={read:'ADMIN_READ_KEY',review:'REVIEWER_KEY',export:'ADMIN_EXPORT_KEY',recovery:'ADMIN_RECOVERY_KEY',release:'ADMIN_RELEASE_KEY'}[scope]||'REVIEWER_KEY';
+ const configured=env[variable];
+ if(typeof configured!=='string'||!configured.length)return reviewerAllowed(request,env);
+ const supplied=request.headers.get('X-Reviewer-Key')||'';
+ const a=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(supplied)));
+ const b=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(configured)));
+ let difference=0;for(let i=0;i<a.length;i++)difference|=a[i]^b[i];return difference===0;
 }
 async function publishedManifest(env,verifyFiles=false){
  const response=await env.ASSETS.fetch(new Request('https://assets.invalid/data/dataset-manifest.json'));
@@ -233,10 +254,10 @@ async function report(request,env,body,user){
  return commitMutation(env,body,ctx.payload_hash,ctx.current,after,'reported',actor,reason,'reported');
 }
 async function review(request,env,body,user){
- if(!reviewerKeys(env).length)fail(503,'review_unavailable','Chưa cấu hình quyền duyệt.');
- if(!await reviewerAllowed(request,env))fail(403,'forbidden','Mã quản trị không hợp lệ hoặc chưa được nhập.');
+ if(!reviewerKeys(env).length&&!env.ADMIN_RECOVERY_KEY&&!env.ADMIN_READ_KEY)fail(503,'review_unavailable','Chưa cấu hình quyền duyệt.');
  const actor=user.display_name,reason=bounded(body.reason??'','Lý do',2000);
  if(!['approve','accept','reject','restore'].includes(body.action))fail(400,'invalid_action','Thao tác duyệt không hợp lệ.');
+ if(!await scopedReviewerAllowed(request,env,body.action==='restore'?'recovery':'review'))fail(403,'forbidden','Mã quản trị không hợp lệ hoặc chưa được nhập.');
  const ctx=await mutationContext(request,env,body,'review');if(ctx.replay)return ctx.replay;
  const current=ctx.current,time=now();let after={...current,revision:current.revision+1},eventType,resultKind,proposalId=null;const extra=[];
  if(body.action==='approve'){
@@ -281,6 +302,110 @@ async function historyResponse(env,chapter,line,cursor,proposalCursor){
  const proposals=proposalRows.slice(0,100),lastProposal=proposals.at(-1),proposals_next_cursor=proposalRows.length>100?lastProposal.created_at+'|'+lastProposal.id:null;
  return json({success:true,line:withDataset(current,release),dataset_version:release.version,dataset_phase:release.phase,history,proposals,proposals_next_cursor,next_cursor:more?`${last.revision}:${last.id}`:null,history_provenance:'History records reflect operations since collaboration was enabled; earlier edits may be unavailable.'});
 }
+
+function adminAuthError(env){
+ if(!reviewerKeys(env).length&&!['ADMIN_READ_KEY','ADMIN_EXPORT_KEY','ADMIN_RECOVERY_KEY','ADMIN_RELEASE_KEY'].some(name=>typeof env[name]==='string'&&env[name].length))return new DomainError(503,'review_unavailable','Chưa cấu hình quyền reviewer.');
+ return new DomainError(403,'forbidden','Mã reviewer không hợp lệ hoặc chưa được nhập.');
+}
+async function requireAdmin(request,env,scope='read'){
+ const hasConfigured=reviewerKeys(env).length||['ADMIN_READ_KEY','ADMIN_EXPORT_KEY','ADMIN_RECOVERY_KEY','ADMIN_RELEASE_KEY'].some(name=>typeof env[name]==='string'&&env[name].length);
+ if(!hasConfigured||!await scopedReviewerAllowed(request,env,scope))throw adminAuthError(env);
+}
+function adminLimit(value, fallback=50, max=200){
+ const parsed=Number(value);return Number.isSafeInteger(parsed)&&parsed>0?Math.min(parsed,max):fallback;
+}
+async function adminChapterAsset(request,env,chapter){
+ if(!CHAPTERS.has(chapter))fail(400,'invalid_id','Chương không hợp lệ.');
+ const response=await env.ASSETS.fetch(new Request(new URL(`/data/chapters/${chapter}.json`,request.url)));
+ if(!response.ok)fail(404,'not_found','Không tìm thấy chương.');
+ return response.json();
+}
+function adminFlatten(chapter){
+ return (chapter.scenes||[]).flatMap(scene=>(scene.lines||[]).map(line=>({...line,chapter_id:chapter.chapter_id,scene_id:scene.scene_id,scene_title:scene.title})));
+}
+async function adminQueue(request,env,url){
+ await requireAdmin(request,env);
+ const chapter=url.searchParams.get('chapter_id'),limit=adminLimit(url.searchParams.get('limit')),offset=Math.max(0,Number(url.searchParams.get('offset')||0)||0);
+ const where=chapter?' AND l.chapter_id=?':'',values=chapter?[chapter]:[];
+ const count=await stmt(env,`SELECT count(*) AS n FROM lines l WHERE (l.status IN ('pending','needs_review','machine_pending') OR EXISTS(SELECT 1 FROM proposals p WHERE p.chapter_id=l.chapter_id AND p.line_id=l.line_id AND p.state='pending') )${where}`,values).first();
+ const rows=(await stmt(env,`SELECT l.*,(SELECT count(*) FROM proposals p WHERE p.chapter_id=l.chapter_id AND p.line_id=l.line_id AND p.state='pending') AS pending_proposals FROM lines l WHERE (l.status IN ('pending','needs_review','machine_pending') OR EXISTS(SELECT 1 FROM proposals p WHERE p.chapter_id=l.chapter_id AND p.line_id=l.line_id AND p.state='pending') )${where} ORDER BY CASE l.status WHEN 'needs_review' THEN 0 WHEN 'pending' THEN 1 ELSE 2 END,l.updated_at DESC,l.chapter_id,l.line_id LIMIT ? OFFSET ?`,[...values,limit,offset]).all()).results||[];
+ return json({success:true,data:{items:rows,total:Number(count?.n||0),limit,offset,next_offset:offset+rows.length<Number(count?.n||0)?offset+rows.length:null}});
+}
+async function adminOverview(request,env,url){
+ await requireAdmin(request,env);
+ const row=await stmt(env,`SELECT count(*) AS total,
+  sum(CASE WHEN status='approved' THEN 1 ELSE 0 END) AS approved,
+  sum(CASE WHEN length(trim(new_vi))>0 THEN 1 ELSE 0 END) AS translated,
+  sum(CASE WHEN status IN ('pending','needs_review','machine_pending') THEN 1 ELSE 0 END) AS queue,
+  sum(CASE WHEN status='needs_review' THEN 1 ELSE 0 END) AS issues
+  FROM lines`).first();
+ const exports=(await stmt(env,'SELECT count(*) AS n FROM admin_exports').first())?.n||0;
+ return json({success:true,data:{total:Number(row?.total||0),approved:Number(row?.approved||0),translated:Number(row?.translated||0),queue:Number(row?.queue||0),issues:Number(row?.issues||0),exports:Number(exports)}});
+}
+async function adminIssues(request,env,url){
+ await requireAdmin(request,env);
+ const chapter=url.searchParams.get('chapter_id'),limit=adminLimit(url.searchParams.get('limit'),100),offset=Math.max(0,Number(url.searchParams.get('offset')||0)||0),where=chapter?' AND h.chapter_id=?':'',values=chapter?[chapter]:[];
+ const reported=(await stmt(env,`SELECT h.id AS issue_id,h.chapter_id,h.line_id,h.event_type,h.actor,h.created_at,h.reason,h.old_text,h.new_text,h.new_status,l.en,l.source_hash,l.revision,l.translator FROM history h JOIN lines l ON l.chapter_id=h.chapter_id AND l.line_id=h.line_id WHERE h.event_type='reported'${where} ORDER BY h.created_at DESC,h.id DESC LIMIT ? OFFSET ?`,[...values,limit,offset]).all()).results||[];
+ const reviewed=(await stmt(env,`SELECT 'status:'||l.chapter_id||':'||l.line_id AS issue_id,l.chapter_id,l.line_id,'needs_review' AS event_type,'Hệ thống' AS actor,l.updated_at AS created_at,'Câu cần đối chiếu sau thay đổi nguồn' AS reason,l.new_vi AS old_text,l.new_vi AS new_text,l.status AS new_status,l.en,l.source_hash,l.revision,l.translator FROM lines l WHERE l.status='needs_review' AND NOT EXISTS(SELECT 1 FROM history h WHERE h.chapter_id=l.chapter_id AND h.line_id=l.line_id AND h.event_type='reported')${chapter?' AND l.chapter_id=?':''} ORDER BY l.updated_at DESC,l.chapter_id,l.line_id LIMIT ? OFFSET ?`,chapter?[chapter,limit,offset]:[limit,offset])).results||[];
+ const items=[...reported,...reviewed].slice(0,limit);
+ return json({success:true,data:{items,total:items.length,limit,offset,next_offset:null}});
+}
+async function adminFiles(request,env,kind,chapterId,baseExportId){
+ const release=await dataset(env),source=await adminChapterAsset(request,env,chapterId),overlay=await overlayChapter(source,env),lines=adminFlatten(overlay);
+ const currentRelease=await dataset(env);if(currentRelease.version!==release.version||currentRelease.phase!==release.phase)fail(409,'dataset_changed','Phiên dữ liệu đã đổi trong lúc chụp snapshot. Hãy thử lại.');
+ const issues=(await stmt(env,`SELECT h.id AS issue_id,h.chapter_id,h.line_id,h.reason,h.created_at,l.en,l.source_hash FROM history h JOIN lines l ON l.chapter_id=h.chapter_id AND l.line_id=h.line_id WHERE h.event_type='reported' AND h.chapter_id=? ORDER BY h.created_at DESC,h.id DESC`,[chapterId]).all()).results||[];
+ const approved=lines.filter(line=>line.status==='approved'&&String(line.new_vi||'').trim());
+ let selected=kind==='handoff'?approved:lines;
+ let base=null;
+ if(kind==='delta'){
+  if(!baseExportId)fail(400,'base_export_required','Delta cần export_id làm mốc so sánh.');
+  base=await stmt(env,'SELECT * FROM admin_exports WHERE id=?',[baseExportId]).first();
+  if(!base)fail(404,'base_export_not_found','Không tìm thấy bản xuất làm mốc delta.');
+  let oldFiles;try{oldFiles=JSON.parse(base.files_json);}catch{fail(409,'base_export_invalid','Bản xuất làm mốc không hợp lệ.');}
+  const oldChanges=String(oldFiles['changes.jsonl']||'').split('\n').filter(Boolean).map(row=>{try{return JSON.parse(row);}catch{return null;}}).filter(Boolean),oldById=new Map(oldChanges.map(row=>[`${row.chapter_id}:${row.line_id}`,row]));
+  selected=selected.filter(line=>JSON.stringify(oldById.get(`${chapterId}:${line.line_id}`)||null)!==JSON.stringify({chapter_id:chapterId,line_id:line.line_id,en:line.en||'',vi:line.new_vi||'',source_hash:line.source_hash||null,revision:line.revision??null,status:line.status}));
+ }
+ const changes=selected.map(line=>({chapter_id:chapterId,line_id:line.line_id,en:line.en||'',vi:line.new_vi||'',source_hash:line.source_hash||null,revision:line.revision??null,status:line.status,scene_id:line.scene_id||null}));
+ if(changes.length>2000)fail(413,'export_too_large','Phạm vi vượt giới hạn D1 của Admin Portal. Hãy chia nhỏ theo chapter hoặc cấu hình storage file trước khi xuất.');
+ const mapping=selected.map(line=>({chapter_id:chapterId,line_id:line.line_id,file_id:null,block_order:null,mapping_status:'needs_catalog_verification',evidence:'TramVH source hash only; Merge/game locator chưa được xác minh'}));
+ const scopedIssues=issues.map(issue=>({issue_id:issue.issue_id,chapter_id:issue.chapter_id,line_id:issue.line_id,reason:issue.reason,created_at:issue.created_at,en:issue.en||'',source_hash:issue.source_hash||null}));
+ const task={task:kind==='handoff'?'Đối chiếu Merge / chuẩn bị proposal tích hợp':kind==='delta'?'Đối chiếu delta với bản xuất mốc':'Snapshot đối chiếu dữ liệu TrạmVH',read_first:['docs/HACHIMINH_WORKFLOW_INTEGRATION.md','SS/.agents/skills/workflow/SKILL.md'],scope:{chapter_id:chapterId,dataset_version:release.version},allowed_paths:['SS/','proposals/'],stop_when:['source hash thay đổi','locator trùng','thiếu bằng chứng']};
+ const files={'changes.jsonl':changes.map(item=>JSON.stringify(item)).join('\n'),'mapping.jsonl':mapping.map(item=>JSON.stringify(item)).join('\n'),'issues.jsonl':scopedIssues.map(item=>JSON.stringify(item)).join('\n'),'TASK.json':JSON.stringify(task,null,2),'README.md':`# TrạmVH handoff\n\nExport type: ${kind}\nDataset: ${release.version}\nChapter: ${chapterId}\n\nGói này là input cho workflow; agent vẫn phải xác minh catalog và tạo receipt trong repo.`};
+ if(kind==='snapshot')files['chapter.json']=JSON.stringify(overlay,null,2);
+ const hashes={};for(const [name,content] of Object.entries(files)){hashes[name]={sha256:await byteHash(new TextEncoder().encode(content)),bytes:new TextEncoder().encode(content).byteLength};}
+ const manifest={schema:1,export_id:crypto.randomUUID(),created_at:now(),kind,chapter_id:chapterId,dataset_version:release.version,dataset_phase:release.phase,base_export_id:base?.id||null,scope:{lines:changes.length,issues:scopedIssues.length},files:hashes};
+ return {manifest,files};
+}
+async function adminCreateExport(request,env,body,user){
+ await requireAdmin(request,env,'export');
+ if(!body||!['snapshot','delta','handoff'].includes(body.kind))fail(400,'invalid_export_kind','Loại bản xuất không hợp lệ.');
+ const chapter=bounded(body.chapter_id,'Chapter',120,true),bundle=await adminFiles(request,env,body.kind,chapter,body.base_export_id||null),created=now();
+ await stmt(env,'INSERT INTO admin_exports(id,kind,chapter_id,dataset_version,base_export_id,created_by,created_at,status,manifest_json,files_json) VALUES(?,?,?,?,?,?,?,?,?,?)',[bundle.manifest.export_id,body.kind,chapter,bundle.manifest.dataset_version,bundle.manifest.base_export_id,user.display_name,created,'ready',JSON.stringify(bundle.manifest),JSON.stringify(bundle.files)]).run();
+ return json({success:true,data:{export_id:bundle.manifest.export_id,manifest:bundle.manifest}},201);
+}
+async function adminExports(request,env,url){
+ await requireAdmin(request,env);
+ const rows=(await stmt(env,'SELECT id,kind,chapter_id,dataset_version,base_export_id,created_by,created_at,status,manifest_json FROM admin_exports ORDER BY created_at DESC,id DESC LIMIT 100').all()).results||[];
+ return json({success:true,data:{items:rows.map(row=>{let manifest=null;try{manifest=JSON.parse(row.manifest_json);}catch{}return {...row,manifest};})}});
+}
+async function adminDownload(request,env,url,id){
+ await requireAdmin(request,env,'read');const row=await stmt(env,'SELECT * FROM admin_exports WHERE id=?',[id]).first();if(!row)fail(404,'export_not_found','Không tìm thấy bản xuất.');let files;try{files=JSON.parse(row.files_json);}catch{fail(500,'export_invalid','Bản xuất không hợp lệ.');}const file=url.searchParams.get('file')||'manifest.json';let body=file==='manifest.json'?row.manifest_json:files[file];if(typeof body!=='string')fail(404,'file_not_found','Không tìm thấy tệp trong bản xuất.');const safeName=file.replace(/[^A-Za-z0-9._-]/g,'_');return new Response(body,{headers:{'Content-Type':file.endsWith('.jsonl')?'application/jsonl; charset=utf-8':'application/json; charset=utf-8','Content-Disposition':`attachment; filename="${safeName}"`,'Cache-Control':'no-store'}});
+}
+async function adminAudit(request,env,url){
+ await requireAdmin(request,env);const rows=(await stmt(env,`SELECT created_at,actor,event_type,chapter_id,line_id,reason FROM history ORDER BY created_at DESC,id DESC LIMIT 100`).all()).results||[];const releases=(await stmt(env,`SELECT created_at,actor,old_version,new_version,old_phase,new_phase,reason FROM dataset_events ORDER BY created_at DESC,id DESC LIMIT 50`).all()).results||[];return json({success:true,data:{events:[...rows.map(row=>({...row,target:row.chapter_id+':'+row.line_id})),...releases.map(row=>({...row,event_type:'dataset_transition',target:row.new_version}))].sort((a,b)=>String(b.created_at).localeCompare(String(a.created_at))).slice(0,100)}});
+}
+async function handleAdmin(request,env,url,body,session){
+ const path=url.pathname.replace(/^\/api\/admin/,'')||'/';
+ if(path==='/permissions'&&request.method==='GET'){await requireAdmin(request,env);const scopes=['read','review'];if(env.ADMIN_EXPORT_KEY||reviewerKeys(env).length)scopes.push('export');if(env.ADMIN_RECOVERY_KEY||reviewerKeys(env).length)scopes.push('recovery');if(env.ADMIN_RELEASE_KEY||reviewerKeys(env).length)scopes.push('release');return json({success:true,data:{scopes,identity:session.user.display_name}});}
+ if(path==='/overview'&&request.method==='GET')return adminOverview(request,env,url);
+ if(path==='/queue'&&request.method==='GET')return adminQueue(request,env,url);
+ if(path==='/issues'&&request.method==='GET')return adminIssues(request,env,url);
+ if(path==='/exports'&&request.method==='GET')return adminExports(request,env,url);
+ if(path==='/exports'&&request.method==='POST')return adminCreateExport(request,env,body,session.user);
+ if(path==='/audit'&&request.method==='GET')return adminAudit(request,env,url);
+ const match=path.match(/^\/exports\/([^/]+)\/download$/);if(match&&request.method==='GET')return adminDownload(request,env,url,match[1]);
+ return json({success:false,code:'not_found',message:'Không tìm thấy Admin API.'},404);
+}
 export async function handleCollaboration(request,env){
  try{
   const url=new URL(request.url),path=url.pathname;
@@ -290,6 +415,10 @@ export async function handleCollaboration(request,env){
    catch{return json({success:true,version:2,can_write:false,dataset_phase:'unavailable'});}
   }
   if(!env.DB)fail(503,'unavailable','Kho cộng tác chưa khả dụng. Bản nháp chưa được gửi.');
+  if(path.startsWith('/api/admin/')&&request.method==='GET'){
+   const adminSession=await sessionUser(request,env,true);
+   return attachSession(await handleAdmin(request,env,url,null,adminSession),adminSession);
+  }
   if(path==='/api/collab/me'&&request.method==='GET'){
    const session=await sessionUser(request,env,true);
    return attachSession(json({success:true,user:session.user,new_user:session.created}),session);
@@ -320,6 +449,7 @@ export async function handleCollaboration(request,env){
   if(!body||typeof body!=='object'||Array.isArray(body))fail(400,'invalid_payload','Nội dung gửi không hợp lệ.');
   const session=await sessionUser(request,env);
   if(!session.user)fail(401,'identity_required','Cần mở lại trang để nhận danh tính người dùng.');
+  if(path.startsWith('/api/admin/'))return attachSession(await handleAdmin(request,env,url,body,session),session);
   if(path==='/api/collab/profile'){
    const name=bounded(body.display_name,'Tên hiển thị',80,true);
    await stmt(env,'UPDATE users SET display_name=?,updated_at=? WHERE id=?',[name,now(),session.user.id]).run();

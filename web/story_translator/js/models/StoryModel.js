@@ -143,10 +143,21 @@ async function loadChaptersList() {
             const option=document.createElement('option'); option.value=id; option.textContent=label; groupSelect.append(option);
         }
         if (allChapters.length > 0) {
-            const preferred=allChapters.some(chapter=>chapter.id==='Chuong_3_MainStory')?'Chuong_3_MainStory':allChapters[0].id;
+            const requested=new URLSearchParams(window.location.search).get('chapter');
+            const preferred=requested&&allChapters.some(chapter=>chapter.id===requested)?requested:(allChapters.some(chapter=>chapter.id==='Chuong_3_MainStory')?'Chuong_3_MainStory':allChapters[0].id);
             groupSelect.value=groupForChapter(preferred);
             renderChapterOptions(groupSelect.value,preferred);
             await loadChapterData(document.getElementById('chapterSelect').value);
+            const requestedLine=new URLSearchParams(window.location.search).get('line');
+            if(requestedLine){
+                const targetIndex=currentLines.findIndex(line=>line.line_id===requestedLine);
+                if(targetIndex>=0){
+                    const target=currentLines[targetIndex],sceneIndex=currentChapterData.scenes.findIndex(scene=>(scene.lines||[]).some(line=>line.line_id===requestedLine));
+                    if(sceneIndex>=0)selectScene(sceneIndex);
+                    const filteredIndex=filteredLines.findIndex(line=>line.line_id===requestedLine);
+                    if(filteredIndex>=0){currentIndex=filteredIndex;renderCurrentLine();}
+                }
+            }
         }
     } catch (e) {
         console.error("Lỗi nạp chapters:", e);

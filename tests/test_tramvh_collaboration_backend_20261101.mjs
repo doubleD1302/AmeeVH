@@ -225,3 +225,22 @@ test('multiple admin secrets retain the existing key and reject invalid keys',as
   assert.equal(approved.status,200,JSON.stringify(approved.body));
  } finally { f.close(); }
 });
+test('admin portal APIs are server enforced and exports replay immutably',async()=>{
+ const f=fixture({new_vi:'Xin chào {0}',status:'Đã duyệt'});
+ try {
+  await current(f.env);
+  const overview=await call(f.env,'/api/admin/overview',undefined,'private-review-code');
+  assert.equal(overview.status,200,JSON.stringify(overview.body));
+  assert.equal(overview.body.data.approved,1);
+  const queue=await call(f.env,`/api/admin/queue?chapter_id=${chapterId}`,undefined,'private-review-code');
+  assert.equal(queue.status,200); assert.equal(queue.body.data.total,0);
+  const denied=await call(f.env,'/api/admin/overview',undefined,'invalid-key'); assert.equal(denied.status,403);
+  const created=await call(f.env,'/api/admin/exports',{kind:'handoff',chapter_id:chapterId},'private-review-code');
+  assert.equal(created.status,201,JSON.stringify(created.body));
+  const id=created.body.data.export_id; assert.ok(created.body.data.manifest.files['changes.jsonl']);
+  const first=await call(f.env,`/api/admin/exports/${id}/download?file=manifest.json`,undefined,'private-review-code');
+  const second=await call(f.env,`/api/admin/exports/${id}/download?file=manifest.json`,undefined,'private-review-code');
+  assert.equal(first.status,200); assert.equal(second.status,200); assert.deepEqual(second.body,first.body);
+  const listed=await call(f.env,'/api/admin/exports',undefined,'private-review-code'); assert.equal(listed.body.data.items[0].id,id);
+ } finally { f.close(); }
+});

@@ -25,7 +25,7 @@ export default {
     try{
         const origin=request.headers.get('Origin');
         if(request.method!=='GET'&&origin&&origin!==url.origin)return json({success:false,error:'Yêu cầu khác nguồn bị từ chối.'},403);
-        if(path.startsWith('/api/collab/'))return await handleCollaboration(request,env);
+        if(path.startsWith('/api/collab/')||path.startsWith('/api/admin/'))return await handleCollaboration(request,env);
         if(path==='/api/save_line')return json({success:false,code:'upgrade_required',error:'Luồng lưu cũ đã đóng. Tải lại TramVH để gửi bản dịch có kiểm tra phiên bản.'},426);
         if((path==='/api/glossary'||path==='/api/sync_glossary')&&request.method==='GET')return json({success:true,terms:await getGlossary(),source:'google_sheet'});
         if(path==='/api/sheet_reference'&&request.method==='GET')return json(await getMerge(url.searchParams.get('group')));
