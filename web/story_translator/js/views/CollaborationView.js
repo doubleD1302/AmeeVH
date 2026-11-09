@@ -23,6 +23,15 @@
         if (line.provenance === 'legacy_import') e.append(make('small','collab-muted','Dữ liệu nhập từ bản cũ; chưa có nhật ký hoặc thời gian của các lần sửa trước.'));
         return e;
     };
+    V.sources = line => {
+        const grid=make('div','collab-source-grid');
+        for(const [label,value] of [['EN',line.en],['JP',line.jp ?? line.text_jp ?? line.source_jp],['CN',line.cn ?? line.text_cn ?? line.source_cn]]){
+            const panel=make('section','collab-source-panel');
+            panel.append(make('strong','',label),make('p','collab-source',typeof value==='string'&&value?value:'Chưa có nguồn '+label+' cho câu này.'));
+            grid.append(panel);
+        }
+        return grid;
+    };
     V.diff = (before, after) => {
         const grid = make('div','collab-diff');
         let prefix = 0, suffix = 0;
@@ -108,7 +117,7 @@
         let base;
         try { base={...item,...await M().getLine(item)}; } catch(error) { body.replaceChildren(make('p','collab-error',error.message));return; }
         if (serial!==requestSerial || !dialog().open) return;
-        M().patch(base);body.replaceChildren();body.append(make('p','collab-line-id','#'+base.line_id),make('p','collab-source',base.en || item.en),V.summary(base));
+        M().patch(base);body.replaceChildren();body.append(make('p','collab-line-id','#'+base.line_id),V.sources(base),V.summary(base));
         const mode=options.mode || 'edit';
         let ownProposal=null;
         if(mode==='edit')try{ownProposal=await M().myProposal(base);}catch(_){}
@@ -122,9 +131,9 @@
         const notesLabel=make('label','','Ghi chú ngữ cảnh'),notes=make('textarea');notes.rows=2;notes.value=stored?.notes ?? base.notes ?? '';notesLabel.append(notes);
         const reasonLabel=make('label','','Lý do'),reason=make('select');const empty=make('option','','Chọn lý do');empty.value='';reason.append(empty);for(const [value,text]of Object.entries(reasonLabels)){const o=make('option','',text);o.value=value;reason.append(o);}reason.value=stored?.reason || '';reason.required=mode!=='edit' || M().hasText(base);reasonLabel.append(reason);
         const detailLabel=make('label','','Giải thích thêm (bắt buộc nếu chọn Khác)'),detail=make('textarea');detail.rows=2;detail.value=stored?.reason_detail || '';detailLabel.append(detail);
-        const error=make('p','collab-error');error.hidden=true;error.role='alert';const reload=action('Tải bản mới để đối chiếu',async()=>{const active=session,activeSerial=requestSerial;if(!active)return;try{const latest={...active.base,...await M().getLine(active.base)};if(requestSerial!==activeSerial||session!==active||!dialog().open)return;active.base=latest;M().patch(latest);canonical.replaceChildren(V.summary(latest));sourceNode.textContent=latest.en || '';reason.required=mode!=='edit'||M().hasText(latest);if(reason.required&&!reasonLabel.isConnected){form.insertBefore(reasonLabel,error);form.insertBefore(detailLabel,error);}if(mode==='edit')submit.textContent=M().hasText(latest)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt';error.textContent='Đã tải bản mới. Bản nháp của bạn được giữ nguyên; kiểm tra phần khác biệt rồi gửi lại.';reload.hidden=true;active.payloadKey='';updateDiff();}catch(err){if(requestSerial===activeSerial&&session===active)showError(error,err);}},'collab-link');reload.hidden=true;
+        const error=make('p','collab-error');error.hidden=true;error.role='alert';const reload=action('Tải bản mới để đối chiếu',async()=>{const active=session,activeSerial=requestSerial;if(!active)return;try{const latest={...active.base,...await M().getLine(active.base)};if(requestSerial!==activeSerial||session!==active||!dialog().open)return;active.base=latest;M().patch(latest);canonical.replaceChildren(V.summary(latest));const refreshed=V.sources(latest);sourceNode.replaceWith(refreshed);sourceNode=refreshed;reason.required=mode!=='edit'||M().hasText(latest);if(reason.required&&!reasonLabel.isConnected){form.insertBefore(reasonLabel,error);form.insertBefore(detailLabel,error);}if(mode==='edit')submit.textContent=M().hasText(latest)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt';error.textContent='Đã tải bản mới. Bản nháp của bạn được giữ nguyên; kiểm tra phần khác biệt rồi gửi lại.';reload.hidden=true;active.payloadKey='';updateDiff();}catch(err){if(requestSerial===activeSerial&&session===active)showError(error,err);}},'collab-link');reload.hidden=true;
         const submit=make('button','btn-save-glow',mode==='report'?'Báo cần xem lại':mode==='restore'?'Khôi phục phiên bản':M().hasText(base)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt');submit.type='submit';submit.disabled=!M().ready;
-        const sourceNode=body.querySelector('.collab-source');
+        let sourceNode=body.querySelector('.collab-source-grid');
         const canonical=make('div');canonical.append(V.summary(base));body.lastChild.replaceWith(canonical);
         if(mode!=='report')form.append(label,diff);
         origin.required=mode==='edit';

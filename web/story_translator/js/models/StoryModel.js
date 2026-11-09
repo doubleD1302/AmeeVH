@@ -10,6 +10,39 @@ let filteredLines = [];
 let currentIndex = 0;
 let viewMode = "game";
 
+const chapterGroups = {
+    main: 'Cốt truyện chính',
+    side: 'Ngoại truyện',
+    guild: 'Ủy thác hội quán',
+    dating: 'Hẹn hò',
+    messages: 'Tin nhắn điện thoại',
+    events: 'Cốt truyện sự kiện',
+    memory: 'Ký ức CG',
+    other: 'Nội dung khác'
+};
+function groupForChapter(id) {
+    if (id.includes('MainStory')) return 'main';
+    if (id.startsWith('Ngoai_Truyen')) return 'side';
+    if (id.startsWith('Uy_Thac')) return 'guild';
+    if (id.startsWith('Hen_Ho')) return 'dating';
+    if (id.startsWith('Tin_Nhan')) return 'messages';
+    if (id.startsWith('Cot_Truyen_Su_Kien')) return 'events';
+    if (id.startsWith('Kich_Ban_CG')) return 'memory';
+    return 'other';
+}
+function renderChapterOptions(group, preferredId) {
+    const select = document.getElementById('chapterSelect');
+    select.replaceChildren();
+    for (const chapter of allChapters.filter(item => groupForChapter(item.id) === group)) {
+        const option = document.createElement('option');
+        option.value = chapter.id;
+        option.textContent = `${chapter.title} (${chapter.progress_pct}%)`;
+        select.append(option);
+    }
+    if (preferredId && [...select.options].some(option => option.value === preferredId)) select.value = preferredId;
+    if (typeof syncTramSelects === 'function') syncTramSelects();
+}
+
 async function loadChaptersList() {
     try {
         let data = null;
@@ -22,17 +55,17 @@ async function loadChaptersList() {
             if (res.ok) data = await res.json();
         }
         allChapters = data || [];
-        const sel = document.getElementById("chapterSelect");
-        sel.innerHTML = "";
-        allChapters.forEach(c => {
-            const opt = document.createElement("option");
-            opt.value = c.id;
-            opt.innerText = `${c.title} (${c.progress_pct}%)`;
-            sel.appendChild(opt);
-        });
+        const groupSelect = document.getElementById('groupSelect');
+        groupSelect.replaceChildren();
+        for (const [id,label] of Object.entries(chapterGroups)) {
+            if (!allChapters.some(chapter => groupForChapter(chapter.id) === id)) continue;
+            const option=document.createElement('option'); option.value=id; option.textContent=label; groupSelect.append(option);
+        }
         if (allChapters.length > 0) {
-            sel.value = "Chuong_3_MainStory";
-            await loadChapterData(sel.value);
+            const preferred=allChapters.some(chapter=>chapter.id==='Chuong_3_MainStory')?'Chuong_3_MainStory':allChapters[0].id;
+            groupSelect.value=groupForChapter(preferred);
+            renderChapterOptions(groupSelect.value,preferred);
+            await loadChapterData(document.getElementById('chapterSelect').value);
         }
     } catch (e) {
         console.error("Lỗi nạp chapters:", e);

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/icon-controls.css?v=1.4.0">
     <link rel="stylesheet" href="css/wordmark.css?v=1.4.0">
     <link rel="stylesheet" href="css/translation-guide.css?v=guide-r04">
-    <link rel="stylesheet" href="css/collaboration.css?v=collab-r01">
+    <link rel="stylesheet" href="css/collaboration.css?v=collab-r02">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -82,8 +82,9 @@
     <!-- Navigation Sub-Bar -->
     <div class="sub-bar">
         <div class="selectors-wrap">
-            <select id="chapterSelect" aria-label="Chọn chương" class="app-select" onchange="onChapterChange()"></select>
-            <select id="sceneSelect" aria-label="Chọn cảnh" class="app-select" onchange="onSceneChange()"></select>
+            <select id="groupSelect" aria-label="Chọn nhóm nội dung" class="app-select" onchange="onGroupChange()"></select>
+            <select id="chapterSelect" aria-label="Chọn trang hoặc chương" class="app-select" onchange="onChapterChange()"></select>
+            <select id="sceneSelect" aria-label="Chọn file hoặc cảnh" class="app-select" onchange="onSceneChange()"></select>
             <select id="filterSelect" aria-label="Lọc câu thoại" class="app-select" onchange="applyFilters()">
                 <option value="all">Tất cả câu thoại</option>
                 <option value="untranslated">Chưa dịch</option>
@@ -366,20 +367,20 @@
     <!-- ================= MVC ARCHITECTURE ================= -->
     <script src="js/views/TranslationGuideView.js?v=collab-r01"></script>
     <script src="js/views/IconView.js?v=1.4.0"></script>
-    <script src="js/views/SelectView.js?v=1.4.0"></script>
+    <script src="js/views/SelectView.js?v=collab-r02"></script>
     <!-- Models -->
     <script src="js/models/UserModel.js?v=1.4.0"></script>
     <script src="js/models/CharacterModel.js?v=1.4.0"></script>
     <script src="js/models/TokenModel.js?v=1.4.0"></script>
     <script src="js/models/GlossaryModel.js?v=1.4.0"></script>
     <script src="js/models/CollaborationModel.js?v=collab-r01"></script>
-    <script src="js/models/StoryModel.js?v=collab-r01"></script>
+    <script src="js/models/StoryModel.js?v=collab-r02"></script>
 
     <!-- Views -->
     <script src="js/views/ToastView.js?v=1.4.0"></script>
     <script src="js/views/HudView.js?v=collab-r01"></script>
     <script src="js/views/CardView.js?v=collab-r01"></script>
-    <script src="js/views/CollaborationView.js?v=collab-r01"></script>
+    <script src="js/views/CollaborationView.js?v=collab-r02"></script>
     <script src="js/views/TableView.js?v=collab-r01"></script>
     <script src="js/views/GlossaryView.js?v=1.4.0"></script>
     <script src="js/views/ProfileView.js?v=1.4.0"></script>
@@ -388,7 +389,7 @@
     <!-- Controllers -->
     <script src="js/controllers/AudioController.js?v=1.4.1"></script>
     <script src="js/controllers/EditorController.js?v=collab-r01"></script>
-    <script src="js/controllers/NavigationController.js?v=1.4.0"></script>
+    <script src="js/controllers/NavigationController.js?v=collab-r02"></script>
     <script src="js/controllers/AppController.js?v=collab-r01"></script>
 
     <!-- Main Bootstrapper -->

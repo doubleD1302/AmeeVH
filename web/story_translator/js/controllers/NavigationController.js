@@ -27,6 +27,13 @@ function onChapterChange() {
     loadChapterData(cid);
 }
 
+function onGroupChange() {
+    const group = document.getElementById("groupSelect").value;
+    renderChapterOptions(group);
+    const chapter = document.getElementById("chapterSelect").value;
+    if (chapter) loadChapterData(chapter);
+}
+
 function onSceneChange() {
     applyFilters();
 }

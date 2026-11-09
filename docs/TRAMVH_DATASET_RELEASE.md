@@ -4,7 +4,7 @@ TramVH dùng D1 làm dữ liệu cộng tác. `dataset_state` giữ một phiên
 
 ## Bản đang chạy
 
-Phiên đầu sau migration là `legacy-1`. Manifest tương ứng nằm ở `web/story_translator/data/dataset-manifest.json`; nó ghi SHA-256 của `chapters.json` và từng chương. Dữ liệu web hiện có 16 chương, 63.349 câu EN/VI. Chưa có JP/CN trong các JSON chương; không coi việc kiểm tra EN/VI là kiểm tra đủ ba ngôn ngữ.
+Phiên đầu sau migration là `legacy-1`. Manifest tương ứng nằm ở `web/story_translator/data/dataset-manifest.json`; nó ghi SHA-256 của `chapters.json` và từng chương. Dữ liệu web hiện có 16 chương, 63.349 câu EN/VI. Giao diện chọn nhóm → chương/trang → cảnh/file → câu và dành chỗ đối chiếu EN/JP/CN khi soạn đề xuất. Chưa có JP/CN trong các JSON chương, nên hai ô đó hiện báo thiếu nguồn; không coi việc kiểm tra EN/VI là kiểm tra đủ ba ngôn ngữ.
 
 Migration `web/story_translator/worker/migrations/0002_dataset_identity.sql` chỉ chạy một lần trên D1 schema v1, trước khi triển khai Worker v2. Sao lưu D1 trước khi chạy. Cloudflare hỗ trợ `wrangler d1 export ... --remote --output ...` và `wrangler d1 execute ... --remote --file ...`; luôn chỉ định `--remote` rõ ràng. Không chạy migration này trên DB đã là v2 vì `ALTER TABLE` sẽ báo cột trùng.
 
