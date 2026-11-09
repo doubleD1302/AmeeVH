@@ -57,7 +57,7 @@ function showChapterLoading(chapterId = '') {
     overlay.classList.remove('is-error');
     const chapter = document.getElementById('chapterLoadingChapter');
     if (chapter) chapter.textContent = chapterId ? (allChapters.find(item => item.id === chapterId)?.title || chapterId) : 'Đang kết nối';
-    updateChapterLoading('catalog', 12, 'Kết nối kho dữ liệu', 'Đang chuẩn bị nguồn EN, JP, CN và trạng thái cộng tác.');
+    updateChapterLoading('catalog', 8, 'Kết nối kho dữ liệu', 'Đang chuẩn bị nguồn EN, JP, CN và trạng thái cộng tác.');
 }
 
 function updateChapterLoading(stepName, percent, phase, subtitle) {
@@ -75,6 +75,8 @@ function updateChapterLoading(stepName, percent, phase, subtitle) {
     if (percentEl) percentEl.textContent = `${percent}%`;
     if (bar) bar.style.width = `${percent}%`;
     if (progress) progress.setAttribute('aria-valuenow', String(percent));
+    const state = document.getElementById('chapterLoadingState');
+    if (state && percent >= 100) state.textContent = 'Sẵn sàng';
     overlay.querySelectorAll('[data-loading-step]').forEach(step => {
         const order = { catalog: 1, collab: 2, sources: 3 }[step.dataset.loadingStep] || 0;
         const current = { catalog: 1, collab: 2, sources: 3 }[stepName] || 1;
@@ -133,7 +135,7 @@ async function loadChaptersList() {
             if (res.ok) data = await res.json();
         }
         allChapters = data || [];
-        updateChapterLoading('catalog', 28, 'Nạp danh sách chương', 'Đang mở danh sách chương và các cảnh có thể dịch.');
+        updateChapterLoading('catalog', 24, 'Nạp danh sách chương', 'Đã nhận danh sách chương, đang chuẩn bị chương được chọn.');
         const groupSelect = document.getElementById('groupSelect');
         groupSelect.replaceChildren();
         for (const [id,label] of Object.entries(chapterGroups)) {
@@ -157,7 +159,7 @@ async function loadChapterData(chapterId) {
     document.getElementById("progressSummaryText").innerText = "Đang nạp dữ liệu chương...";
     try {
         let data = null;
-        updateChapterLoading('collab', 48, 'Khôi phục bản dịch cộng tác', 'Đang lấy trạng thái D1 và các đề xuất hiện tại.');
+        updateChapterLoading('collab', 38, 'Khôi phục bản dịch cộng tác', 'Đang lấy trạng thái D1 và các đề xuất hiện tại.');
         try {
             const res = await fetch(`/api/chapter_data?id=${chapterId}`);
             if (res.ok) data = await res.json();
@@ -166,7 +168,7 @@ async function loadChapterData(chapterId) {
             const res = await fetch(`data/chapters/${chapterId}.json`);
             if (res.ok) { data = await res.json(); data.collaboration_available = false; }
         }
-        updateChapterLoading('sources', 76, 'Đối chiếu nguồn đa ngôn ngữ', 'Đang ghép EN, JP, CN và lọc các mục thuần mã hệ thống.');
+        updateChapterLoading('sources', 72, 'Đối chiếu nguồn đa ngôn ngữ', 'Đã nhận dữ liệu chương, đang ghép EN, JP, CN và lọc mã hệ thống.');
         currentChapterData = data || { scenes: [] };
         if (data && typeof data.collaboration_available === "boolean") {
             Collaboration.available = data.collaboration_available;
@@ -213,7 +215,8 @@ async function loadChapterData(chapterId) {
 
         applyFilters();
         updateProgressBar();
-        updateChapterLoading('sources', 100, 'Hoàn tất', 'Chương đã sẵn sàng để dịch.');
+        updateChapterLoading('sources', 94, 'Chuẩn bị giao diện dịch', 'Đang sắp xếp câu cần Việt hoá và khôi phục vị trí làm việc.');
+        updateChapterLoading('sources', 100, 'Sẵn sàng', 'Chương đã sẵn sàng để dịch.');
         setTimeout(hideChapterLoading, 260);
     } catch (e) {
         console.error("Lỗi nạp chapter data:", e);
