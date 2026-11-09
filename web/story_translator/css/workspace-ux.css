@@ -155,3 +155,45 @@ html[data-theme="dark"] .compact-detail-note { color:#afc9d0; }
 @media(min-width:701px) { .sub-bar { align-items:flex-end; } }
 textarea#vietnameseInput::placeholder, #collaborationDialog #collabDraft::placeholder { color:#718a95; opacity:1; }
 html[data-theme="dark"] textarea#vietnameseInput::placeholder, html[data-theme="dark"] #collaborationDialog #collabDraft::placeholder { color:#a6bdc5; }
+
+/* Keep the workspace focused and distinguish progress from review status. */
+.progress-ribbon { gap:10px; line-height:1.35; }
+.progress-ribbon .progress-track { margin:0; min-width:48px; }
+.progress-ribbon .collab-link { min-height:36px; padding:6px; white-space:nowrap; }
+.scene-card-title { line-height:1.4; overflow-wrap:anywhere; }
+.scene-card-meta { display:flex; flex-wrap:wrap; gap:4px 10px; align-items:baseline; line-height:1.4; }
+.scene-card-id { color:var(--text-body); font-family:var(--font-code); font-size:.75rem; overflow-wrap:anywhere; }
+.scene-card-count { margin-left:auto; white-space:nowrap; }
+.compact-row-hint { color:#356d7b; font-size:.8rem; font-weight:700; }
+html[data-theme="dark"] .compact-row-hint { color:#b6e2e8; }
+.table-row-card.compact-row:focus-visible, .table-row-card.compact-row[data-row-tone]:hover { outline:2px solid var(--cyan-primary); outline-offset:2px; }
+.collab-source-preview { padding:10px 12px; border-left:3px solid var(--cyan-primary); border-radius:8px; background:var(--card-glass); }
+.collab-source-preview strong { color:var(--text-pure); font-size:.8rem; }
+.collab-source-preview p { margin:3px 0 0; color:var(--text-pure); white-space:pre-wrap; overflow-wrap:anywhere; line-height:1.5; }
+.collab-dialog-footer { flex:none; display:flex; justify-content:flex-end; padding:10px 22px max(10px,env(safe-area-inset-bottom)); border-top:1px solid var(--card-border); background:var(--bg-deep); }
+.collab-dialog-footer .btn-save-glow { min-width:200px; min-height:48px; justify-content:center; }
+@media(max-width:700px) {
+ .progress-ribbon { flex-wrap:wrap; }
+ .progress-ribbon #progressSummaryText { flex:1 1 100%; }
+ .collab-dialog-footer { padding:10px 14px max(10px,env(safe-area-inset-bottom)); }
+ .collab-dialog-footer .btn-save-glow { width:100%; }
+}
+
+/* Keep the active Vietnamese translation prominent and secondary details quiet. */
+#currentLineCollaboration { padding:16px; background:var(--card-glass); }
+#currentLineCollaboration .collab-summary { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; align-items:center; }
+#currentLineCollaboration .collab-current-label { grid-column:1; grid-row:1; margin:0; color:var(--text-body); font-size:.82rem; letter-spacing:.04em; }
+#currentLineCollaboration .collab-badge { grid-column:2; grid-row:1; align-self:center; }
+#currentLineCollaboration .collab-current-text { grid-column:1 / -1; grid-row:2; padding:14px 16px; border:1px solid #b9dce4; border-left:4px solid #459eb1; border-radius:10px; background:#edf8fa; color:#173d4a; font-size:1.12rem; font-weight:700; line-height:1.55; }
+#currentLineCollaboration .current-translation-details { margin-top:10px; color:var(--text-body); font-size:.82rem; }
+#currentLineCollaboration .current-translation-details > summary { width:fit-content; cursor:pointer; color:var(--cyan-primary); font-weight:700; padding:5px 0; }
+#currentLineCollaboration .current-translation-details .collab-meta { margin-top:6px; }
+#currentLineCollaboration .current-translation-details .collab-context, #currentLineCollaboration .current-translation-details .collab-muted { display:block; margin-top:6px; }
+#currentLineCollaboration .collab-actions { margin-top:7px; }
+html[data-theme="dark"] #currentLineCollaboration .collab-current-text { border-color:#507d8b; border-left-color:#84cbd8; background:#1a3c49; color:#f0fafb; }
+.collab-service-notice:not([hidden]) { position:relative; z-index:11; margin:6px auto 0; padding:7px 14px; width:calc(100% - 40px); box-sizing:border-box; line-height:1.4; }
+@media(max-width:700px) {
+ #currentLineCollaboration .collab-summary { grid-template-columns:1fr; }
+ #currentLineCollaboration .collab-badge { grid-column:1; grid-row:2; justify-self:start; }
+ #currentLineCollaboration .collab-current-text { grid-row:3; font-size:1.04rem; }
+}

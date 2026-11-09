@@ -40,10 +40,14 @@ function updateHud() {
 
 function updateProgressBar() {
     if (!currentLines || currentLines.length === 0) return;
-    let trans = 0;
+    let trans = 0, approved = 0, legacyApproved = 0;
     currentLines.forEach(l => {
-        if (l.new_vi && Collaboration.status(l) !== "untranslated") {
+        if (Collaboration.hasText(l)) {
             trans++;
+        }
+        if (Collaboration.status(l) === 'approved') {
+            approved++;
+            if (l.provenance === 'legacy_import' && !l.approved_at) legacyApproved++;
         }
     });
     const pct = Math.round((trans / currentLines.length) * 100);
@@ -53,6 +57,7 @@ function updateProgressBar() {
     if (pctEl) pctEl.innerText = `${pct}%`;
     const summaryEl = document.getElementById("progressSummaryText");
     if (summaryEl && currentChapterData) {
-        summaryEl.innerText = `Tiến độ ${currentChapterData.title}: Đã dịch ${trans} / ${currentLines.length} câu`;
+        summaryEl.innerText = `Có bản dịch ${trans}/${currentLines.length} · Trạng thái đã duyệt ${approved}${legacyApproved ? ` (gồm ${legacyApproved} câu nhập cũ)` : ''}`;
+        summaryEl.title = 'Số đã duyệt bao gồm cả trạng thái nhập cũ; lịch sử duyệt trước khi cộng tác có thể chưa được xác minh.';
     }
 }

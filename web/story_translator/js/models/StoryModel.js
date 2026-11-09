@@ -192,13 +192,13 @@ async function loadChapterData(chapterId) {
 
             const btn = document.createElement("button");
             btn.className = `scene-card-btn ${scIdx === 0 ? "active" : ""}`;
+            btn.title = sc.title;
             btn.onclick = () => selectScene(scIdx);
             btn.innerHTML = `
                 <span class="scene-card-title">${sc.title}</span>
                 <div class="scene-card-meta">
-                    <span style="color:var(--cyan-light); font-weight:700;">${sc.badge || ''}</span>
-                    <span style="color:var(--text-dim); font-family:var(--font-code); font-size:0.72rem;">${sc.scene_id ? `[${sc.scene_id}]` : ''}</span>
-                    <span>${sc.lines.length} câu</span>
+                    <span class="scene-card-id">${sc.scene_id ? `[${sc.scene_id}]` : ''}</span>
+                    <span class="scene-card-count">${sc.lines.length} câu</span>
                 </div>
             `;
             drawer.appendChild(btn);

@@ -44,7 +44,8 @@ function renderListMode() {
             for (const [text, handler] of [[Collaboration.hasText(item) ? 'Đề xuất sửa' : 'Dịch câu này', () => CollaborationView.openEdit(item)], ['Xem lịch sử', () => CollaborationView.openHistory(item)], ['Báo vấn đề', () => CollaborationView.openEdit(item, undefined, { mode: 'report' })]]) {
                 const button = el('button', 'btn-direction', text); button.type = 'button'; button.addEventListener('click', handler); buttons.append(button);
             }
-            panel.append(buttons); card.append(top, texts, details); container.append(card);
+            const hint = el('span', 'compact-row-hint', Collaboration.hasText(item) ? 'Nhấn để đề xuất sửa' : 'Nhấn để dịch câu này');
+            panel.append(buttons); card.append(top, texts, hint, details); container.append(card);
         }
         rendered = end;
         if (rendered < filteredLines.length) { more.textContent = `Xem thêm câu (${rendered}/${filteredLines.length})`; container.append(more); }
