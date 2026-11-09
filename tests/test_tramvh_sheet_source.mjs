@@ -48,3 +48,19 @@ test('glossary UI keeps entries that share EN but have different source IDs',()=
  const context=vm.createContext({localStorage:{getItem:()=>null},console});vm.runInContext(code,context);
  const out=context.normalizeLoadedGlossaryTerms([{id:'term',en:'Boss',vi:'Boss'},{id:'character',en:'Boss',vi:'Sếp'}]);assert.equal(out.length,2);
 });
+test('story UI skips code-only sources but keeps formatted prose',()=>{
+ const code=readFileSync(new URL('../web/story_translator/js/models/StoryModel.js',import.meta.url),'utf8');
+ const context=vm.createContext({localStorage:{getItem:()=>null},console});vm.runInContext(code,context);
+ assert.equal(context.isCodeOnlySource('ep_mainline_001'),true);
+ assert.equal(context.isCodeOnlySource('SetChoiceBegin'),true);
+ assert.equal(context.isCodeOnlySource('story_main_00_007'),true);
+ assert.equal(context.isCodeOnlySource('<size=47>==RT==A bright future awaits.</size>'),false);
+ assert.equal(context.isCodeOnlySource('The Beginning'),false);
+});
+test('leaderboard UI accepts the Worker envelope and normalizes levels',()=>{
+ const code=readFileSync(new URL('../web/story_translator/js/views/LeaderboardView.js',import.meta.url),'utf8');
+ const context=vm.createContext({console});vm.runInContext(code,context);
+ assert.equal(context.normalizeLeaderboardPayload({success:true,leaders:[{name:'A'}]}).length,1);
+ assert.equal(context.formatLeaderboardLevel('Cấp 2'),'Lv. 2');
+ assert.equal(context.formatLeaderboardLevel(3),'Lv. 3');
+});

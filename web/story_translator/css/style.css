@@ -611,6 +611,42 @@
             letter-spacing: 0.8px;
         }
 
+        .original-language-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            margin-left: auto;
+            margin-right: 10px;
+            padding: 3px;
+            border: 1px solid rgba(125, 211, 252, 0.28);
+            border-radius: 9px;
+            background: rgba(7, 13, 26, 0.5);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .original-language-btn {
+            min-width: 34px;
+            padding: 4px 7px;
+            border: 0;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--text-sub);
+            font: 700 0.7rem/1 var(--font-code);
+            cursor: pointer;
+        }
+
+        .original-language-btn:hover:not(:disabled),
+        .original-language-btn.active {
+            background: var(--cyan-primary);
+            color: #06121c;
+        }
+
+        .original-language-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.35;
+        }
+
         /* Khung lời thoại gốc nổi bật (High-Contrast Framed Card) */
         .speech-original-frame {
             background: rgba(7, 13, 26, 0.94);

@@ -30,6 +30,25 @@ function groupForChapter(id) {
     if (id.startsWith('Kich_Ban_CG')) return 'memory';
     return 'other';
 }
+
+function isCodeOnlySource(value) {
+    const raw = String(value ?? '').trim();
+    if (!raw) return true;
+    const text = raw
+        .replace(/==[A-Za-z0-9_]+==/g, '')
+        .replace(/<[^>]*>/g, '')
+        .replace(/\{[^{}]+\}/g, '')
+        .trim();
+    if (!text || /^#(?:ERROR|N\/A)!?$/i.test(text)) return true;
+    if (/\s/.test(text) || /[.,!?;:'"“”‘’()[\]<>/\\]/.test(text)) return false;
+    if (/^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+$/.test(text)) return true;
+    if (/^(?:Set|Get|Add|Remove|Play|Stop|Open|Close|Show|Hide|Load|Save|Jump|Choice|Wait|End|Start|Ctrl|On|Off)[A-Z][A-Za-z0-9]*$/.test(text)) return true;
+    return /^(?:ep|fx|q?story|vo|cg|bg|bgm|ui|sfx|se|audio|sound|asset|char|item|quest|battle|event|avg)[A-Za-z0-9_]*$/i.test(text);
+}
+
+function isTranslatableLine(line) {
+    return !!line && !isCodeOnlySource(line.en);
+}
 function renderChapterOptions(group, preferredId) {
     const select = document.getElementById('chapterSelect');
     select.replaceChildren();
@@ -118,6 +137,7 @@ async function loadChapterData(chapterId) {
             `;
             drawer.appendChild(btn);
 
+            sc.lines = (sc.lines || []).filter(isTranslatableLine);
             sc.lines.forEach(l => {
                 l.chapter_id = cidFromChapter();
                 l.sheet_sync_status = data?.sheet_sync?.status || 'unavailable';

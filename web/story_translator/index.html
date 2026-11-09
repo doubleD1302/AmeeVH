@@ -157,7 +157,12 @@
                 <!-- Speech Box (Original English / Japanese text) -->
                 <div class="dialogue-speech-box">
                     <div class="speech-box-top">
-                        <span class="speech-badge-title"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/dialogue.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/dialogue.svg" alt=""></span> LỜI THOẠI GỐC (EN)</span>
+                        <span class="speech-badge-title"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/dialogue.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/dialogue.svg" alt=""></span> <span id="originalLanguageTitle">LỜI THOẠI GỐC (EN)</span></span>
+                        <div class="original-language-switch" role="group" aria-label="Chọn ngôn ngữ lời thoại gốc">
+                            <button type="button" class="original-language-btn active" data-original-language="en" onclick="setOriginalLanguage('en')" aria-pressed="true">EN</button>
+                            <button type="button" class="original-language-btn" data-original-language="jp" onclick="setOriginalLanguage('jp')" aria-pressed="false">JP</button>
+                            <button type="button" class="original-language-btn" data-original-language="cn" onclick="setOriginalLanguage('cn')" aria-pressed="false">CN</button>
+                        </div>
                         <span id="lineIdLabel" style="font-family:var(--font-code);">ID #</span>
                     </div>
                     <!-- Khung lời thoại gốc nổi bật -->

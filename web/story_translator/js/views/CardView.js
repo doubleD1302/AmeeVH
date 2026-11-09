@@ -3,6 +3,42 @@
  * Quản lý chế độ Studio / Card Mode (Hộp thoại câu, Standee nhân vật, mã thẻ thông minh và cảnh báo token)
  */
 
+let originalLanguage = (() => {
+    try {
+        const value = localStorage.getItem('tramvh_original_language');
+        return ['en', 'jp', 'cn'].includes(value) ? value : 'en';
+    } catch (_) { return 'en'; }
+})();
+
+function originalTextForLanguage(item, language) {
+    if (language === 'jp') return item.jp ?? item.text_jp ?? item.source_jp ?? '';
+    if (language === 'cn') return item.cn ?? item.text_cn ?? item.source_cn ?? '';
+    return item.en ?? item.text_en ?? '';
+}
+
+function setOriginalLanguage(language) {
+    if (!['en', 'jp', 'cn'].includes(language)) return;
+    originalLanguage = language;
+    try { localStorage.setItem('tramvh_original_language', language); } catch (_) {}
+    renderCurrentLine();
+}
+
+function renderOriginalLanguage(item) {
+    const title = document.getElementById('originalLanguageTitle');
+    const text = document.getElementById('speechOriginalText');
+    const labels = { en: 'EN', jp: 'JP', cn: 'CN' };
+    const value = originalTextForLanguage(item, originalLanguage);
+    if (title) title.textContent = `LỜI THOẠI GỐC (${labels[originalLanguage]})`;
+    if (text) text.innerHTML = highlightTokensInText(value || `Chưa có nguồn ${labels[originalLanguage]} cho câu này.`);
+    document.querySelectorAll('[data-original-language]').forEach(button => {
+        const active = button.dataset.originalLanguage === originalLanguage;
+        const available = !!originalTextForLanguage(item, button.dataset.originalLanguage);
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+        button.disabled = !available;
+    });
+}
+
 function highlightTokensInText(rawText) {
     if (!rawText) return "";
     const regex = new RegExp(SYSTEM_TOKEN_REGEX.source, 'g');
@@ -34,7 +70,7 @@ function renderCurrentLine() {
     const item = filteredLines[currentIndex];
     document.getElementById("counterIndicator").innerText = `${currentIndex + 1} / ${filteredLines.length}`;
     document.getElementById("lineIdLabel").innerText = `${item.line_id} [${item.sceneBadge || item.scene_id || ''}]`;
-    document.getElementById("speechOriginalText").innerHTML = highlightTokensInText(item.en);
+    renderOriginalLanguage(item);
     const speechFrame = document.querySelector(".speech-original-frame");
     if (speechFrame) speechFrame.scrollTop = 0;
 
