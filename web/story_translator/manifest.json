@@ -1,7 +1,9 @@
 {
   "name": "Stella Sora - Trạm Dịch Thuật Cốt Truyện",
   "short_name": "Stella Dịch Thuật",
+  "id": "./",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#eaf3f8",
   "theme_color": "#f9fdfd",
@@ -9,7 +11,13 @@
   "icons": [
     {
       "src": "web_assets/app_icon.png",
-      "sizes": "1254x1254",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "web_assets/app_icon.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }

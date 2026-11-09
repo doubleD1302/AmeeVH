@@ -8,7 +8,7 @@
     <!-- PWA & Favicon -->
     <link rel="icon" type="image/png" href="web_assets/favicon.png?v=1.4.0">
     <link rel="apple-touch-icon" href="web_assets/app_icon.png?v=1.4.0">
-    <link rel="manifest" href="manifest.json?v=1.4.0">
+    <link rel="manifest" href="manifest.json?v=1.5.0">
     <meta name="theme-color" content="#eaf3f8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -40,7 +40,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1.4.0">
+    <link rel="stylesheet" href="css/style.css?v=1.5.0">
     <script>try { if (localStorage.getItem("stella_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (_) {}</script>
     <link rel="stylesheet" href="assets/soft-sky/theme.css?v=1.4.0">
     <link rel="stylesheet" href="assets/soft-sky/theme-dark.css?v=1.4.0">
@@ -117,6 +117,7 @@
             <a href="merge-reference.html" class="collab-link">Nguồn Merge</a>
             <button id="reviewerAccessBtn" class="btn-circle" type="button" title="Nhập mã quản trị để duyệt" aria-label="Quyền duyệt" aria-pressed="false" onclick="openReviewerAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/approved.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/approved.svg" alt=""></span></button>
             <button id="translationGuideBtn" class="btn-circle guide-open-button" type="button" title="Hướng dẫn dịch thuật" aria-label="Hướng dẫn dịch thuật" aria-haspopup="dialog" onclick="openTranslationGuide()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/translation-guide-r01/guide-light.svg" alt=""><img class="tram-icon-dark" src="assets/translation-guide-r01/guide-dark.svg" alt=""></span><span>Hướng dẫn</span></button>
+            <button id="installAppBtn" class="btn-circle install-app-btn" type="button" title="Cài đặt Trạm Dịch Thuật trên thiết bị" aria-label="Cài đặt ứng dụng"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/download.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/download.svg" alt=""></span><span class="install-app-label">Cài đặt</span></button>
             <button id="bgmToggleBtn" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/music.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/music.svg" alt=""></span></button>
             <button id="bgmNextBtn" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 2 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
             <button id="themeToggleBtn" class="btn-circle" type="button" title="Chuyển sang chế độ tối" aria-label="Chuyển sang chế độ tối" aria-pressed="false" onclick="toggleTheme()"><span class="tram-theme-night"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/moon.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/moon.svg" alt=""></span></span><span class="tram-theme-day"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/sun.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/sun.svg" alt=""></span></span></button>
@@ -415,6 +416,21 @@
     <!-- Reading help never submits or changes the current translation. -->
     <dialog id="translationGuideDialog" aria-labelledby="translationGuideTitle" aria-describedby="translationGuideIntro"></dialog>
 
+    <dialog id="installHelpDialog" class="install-help-dialog" aria-labelledby="installHelpTitle">
+        <div class="install-help-content">
+            <div class="install-help-header">
+                <div>
+                    <span class="install-help-eyebrow">TRAMVH · ỨNG DỤNG WEB</span>
+                    <h2 id="installHelpTitle">Cài đặt Trạm Dịch Thuật</h2>
+                </div>
+                <button type="button" class="btn-circle" id="installHelpClose" aria-label="Đóng hướng dẫn cài đặt"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
+            </div>
+            <p id="installHelpText"></p>
+            <ol id="installHelpSteps" class="install-help-steps"></ol>
+            <button type="button" class="btn-save-glow install-help-dismiss" id="installHelpDismiss">Đã hiểu</button>
+        </div>
+    </dialog>
+
     <dialog id="collaborationDialog" aria-labelledby="collabDialogTitle"></dialog>
     <!-- ================= MVC ARCHITECTURE ================= -->
     <script src="js/views/TranslationGuideView.js?v=collab-r01"></script>
@@ -443,6 +459,9 @@
     <script src="js/controllers/EditorController.js?v=collab-r01"></script>
     <script src="js/controllers/NavigationController.js?v=collab-r02"></script>
     <script src="js/controllers/AppController.js?v=collab-r01"></script>
+
+    <!-- PWA install prompt / hướng dẫn thêm vào màn hình chính -->
+    <script src="js/install.js?v=1.5.0"></script>
 
     <!-- Main Bootstrapper -->
     <script src="js/app.js?v=1.4.0"></script>

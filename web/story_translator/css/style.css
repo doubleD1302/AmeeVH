@@ -2504,6 +2504,92 @@
     padding: 0 2px;
     border-radius: 3px;
 }
+
+/* PWA / shortcut install control */
+.install-app-btn {
+    width: auto;
+    max-width: none;
+    flex: none;
+    gap: 7px;
+    padding: 0 12px;
+    font: 700 .8rem var(--font-main);
+}
+
+.install-app-btn .install-app-label {
+    white-space: nowrap;
+}
+
+.install-app-btn:hover {
+    border-color: var(--green-accent);
+    color: var(--green-accent);
+    background: rgba(52, 211, 153, 0.14);
+}
+
+.install-help-dialog {
+    width: min(480px, calc(100vw - 32px));
+    max-width: none;
+    border: 1px solid var(--cyan-primary);
+    border-radius: 22px;
+    padding: 0;
+    color: var(--text-body);
+    background: #0b1220;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .8), 0 0 35px rgba(56, 189, 248, .28);
+}
+
+.install-help-dialog::backdrop {
+    background: rgba(3, 7, 18, .78);
+    backdrop-filter: blur(12px);
+}
+
+.install-help-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+}
+
+.install-help-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.install-help-eyebrow {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--cyan-light);
+    font: 800 .68rem/1 var(--font-code);
+    letter-spacing: .08em;
+}
+
+.install-help-header h2 {
+    color: var(--text-pure);
+    font: 800 1.25rem/1.25 var(--font-display);
+}
+
+.install-help-content p {
+    color: var(--text-sub);
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+.install-help-steps {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding-left: 24px;
+    color: var(--text-body);
+    font-size: .88rem;
+    line-height: 1.55;
+}
+
+.install-help-dismiss {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+    font-size: .9rem;
+}
 html:not([data-theme="dark"]) .quick-glossary-search-wrap {
     background: rgba(240, 246, 252, 0.85);
     border-color: rgba(0, 120, 212, 0.25);
@@ -2518,4 +2604,437 @@ html:not([data-theme="dark"]) .quick-glossary-results-tray {
 html:not([data-theme="dark"]) .glossary-kw-highlight {
     background: #fef08a;
     color: #0f172a;
+}
+
+/* ================= DEVICE-AWARE MOBILE WORKSPACE =================
+   The mobile shell intentionally changes the information hierarchy instead of
+   shrinking the desktop HUD.  The data-device attribute is set in <head> so
+   the correct shell is selected before the first paint. */
+html[data-device="mobile"] {
+    --mobile-gutter: 12px;
+    --mobile-control-height: 46px;
+    font-size: 16px;
+}
+
+html[data-device="mobile"] body {
+    min-height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+html[data-device="mobile"] .scenic-wallpaper {
+    background-position: 62% center;
+    filter: brightness(0.48) saturate(1.05);
+}
+
+html[data-device="mobile"] .scenic-overlay-gradient {
+    background: linear-gradient(180deg, rgba(5, 8, 17, 0.92) 0%, rgba(5, 8, 17, 0.72) 34%, rgba(5, 8, 17, 0.97) 100%);
+}
+
+html[data-device="mobile"] header {
+    padding: 8px var(--mobile-gutter);
+    padding-top: max(8px, env(safe-area-inset-top));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    align-items: center;
+}
+
+html[data-device="mobile"] .brand-box {
+    min-width: 0;
+}
+
+html[data-device="mobile"] .tram-brand-wordmark {
+    width: min(58vw, 230px);
+    height: 48px;
+}
+
+html[data-device="mobile"] .hud-profile-pill {
+    width: 44px;
+    height: 44px;
+    padding: 3px;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+html[data-device="mobile"] .hud-profile-meta {
+    display: none;
+}
+
+html[data-device="mobile"] .hud-avatar-frame {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
+}
+
+html[data-device="mobile"] .hud-tools {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 7px;
+    width: 100%;
+}
+
+html[data-device="mobile"] .hud-tools .collab-link {
+    display: none;
+}
+
+html[data-device="mobile"] .hud-tools .btn-circle {
+    width: 100%;
+    min-width: 0;
+    height: var(--mobile-control-height);
+    min-height: var(--mobile-control-height);
+    border-radius: 13px;
+}
+
+html[data-device="mobile"] .hud-tools .guide-open-button {
+    grid-column: span 2;
+    border-radius: 13px;
+    gap: 6px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+}
+
+html[data-device="mobile"] .hud-tools .install-app-btn {
+    grid-column: span 2;
+    width: 100%;
+    min-height: var(--mobile-control-height);
+    justify-content: center;
+    border-radius: 13px;
+    padding: 0 8px;
+    font-size: .76rem;
+}
+
+html[data-device="mobile"] .sub-bar {
+    padding: 10px var(--mobile-gutter);
+    gap: 10px;
+}
+
+html[data-device="mobile"] .selectors-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+html[data-device="mobile"] .selectors-wrap > .tram-select-wrap,
+html[data-device="mobile"] .selectors-wrap > .app-select {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+}
+
+html[data-device="mobile"] .selectors-wrap > :first-child {
+    grid-column: 1 / -1;
+}
+
+html[data-device="mobile"] .tram-select-trigger,
+html[data-device="mobile"] .app-select {
+    min-height: var(--mobile-control-height);
+    padding: 10px 12px;
+    font-size: 0.82rem;
+}
+
+html[data-device="mobile"] .mode-switch-box {
+    width: 100%;
+}
+
+html[data-device="mobile"] .mode-tab-btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 8px;
+    font-size: 0.78rem;
+}
+
+html[data-device="mobile"] .progress-ribbon {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 7px 10px;
+    padding: 10px var(--mobile-gutter);
+}
+
+html[data-device="mobile"] #progressSummaryText {
+    grid-column: 1 / -1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.74rem;
+}
+
+html[data-device="mobile"] .progress-track {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: 8px;
+    margin: 0;
+}
+
+html[data-device="mobile"] #exportChapterBtn {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+html[data-device="mobile"] main {
+    display: block;
+    width: 100%;
+    padding: 10px var(--mobile-gutter) 24px;
+}
+
+html[data-device="mobile"] .workspace-arena {
+    gap: 12px;
+}
+
+html[data-device="mobile"] .vn-stage-container {
+    --standee-gutter: 0px;
+    min-height: 0;
+    padding: 14px;
+    gap: 14px;
+    border-radius: 18px;
+    overflow: visible;
+}
+
+html[data-device="mobile"] .vn-character-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+}
+
+html[data-device="mobile"] .actor-id-badge {
+    min-width: 0;
+    gap: 10px;
+}
+
+html[data-device="mobile"] .actor-avatar-circle {
+    width: 52px;
+    height: 52px;
+    border-width: 2px;
+}
+
+html[data-device="mobile"] .actor-name-title {
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+html[data-device="mobile"] .actor-name-text {
+    font-size: 1.08rem;
+}
+
+html[data-device="mobile"] .actor-quote-desc {
+    max-width: none;
+    font-size: 0.76rem;
+}
+
+html[data-device="mobile"] .voice-controls-box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+}
+
+html[data-device="mobile"] .btn-voice {
+    min-height: 42px;
+    justify-content: center;
+    padding: 8px 6px;
+    font-size: 0.74rem;
+}
+
+html[data-device="mobile"] .dialogue-speech-box,
+html[data-device="mobile"] .translation-input-box,
+html[data-device="mobile"] .stage-action-toolbar {
+    width: 100%;
+    max-width: none;
+}
+
+html[data-device="mobile"] .speech-box-top {
+    flex-wrap: wrap;
+    gap: 7px;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+html[data-device="mobile"] .speech-badge-title {
+    max-width: 100%;
+}
+
+html[data-device="mobile"] .original-language-switch {
+    order: 3;
+    margin: 0;
+}
+
+html[data-device="mobile"] #lineIdLabel {
+    margin-left: auto;
+}
+
+html[data-device="mobile"] .speech-original-frame {
+    min-height: 112px;
+    max-height: 240px;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+html[data-device="mobile"] .speech-original-text {
+    font-size: 1.03rem;
+    line-height: 1.65;
+}
+
+html[data-device="mobile"] .translation-input-box {
+    padding: 13px;
+    border-radius: 14px;
+}
+
+html[data-device="mobile"] .input-box-header {
+    align-items: flex-start;
+}
+
+html[data-device="mobile"] .input-title {
+    font-size: 0.76rem;
+    line-height: 1.45;
+}
+
+html[data-device="mobile"] textarea#vietnameseInput {
+    min-height: 150px;
+    max-height: 38vh;
+    padding: 12px;
+    font-size: 1.03rem;
+    line-height: 1.65;
+}
+
+html[data-device="mobile"] .stage-action-toolbar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0 -14px -14px;
+    padding: 10px 12px max(10px, env(safe-area-inset-bottom));
+    border-radius: 0 0 18px 18px;
+}
+
+html[data-device="mobile"] .stage-action-toolbar > div {
+    display: contents !important;
+}
+
+html[data-device="mobile"] #counterIndicator {
+    grid-column: 1 / -1;
+    order: -1;
+    text-align: center;
+}
+
+html[data-device="mobile"] .btn-direction {
+    min-height: 46px;
+    justify-content: center;
+    padding: 10px 6px;
+    font-size: 0.8rem;
+}
+
+html[data-device="mobile"] .btn-save-glow {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 50px;
+    justify-content: center;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+}
+
+html[data-device="mobile"] .table-row-card {
+    padding: 13px;
+    border-radius: 14px;
+}
+
+html[data-device="mobile"] .table-row-en {
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+html[data-device="mobile"] .table-row-input {
+    min-height: 46px;
+    font-size: 1rem;
+}
+
+html[data-device="mobile"] .modal-shade {
+    align-items: flex-end;
+    padding: 0;
+}
+
+html[data-device="mobile"] .modal-panel {
+    width: 100%;
+    max-width: none;
+    max-height: min(92dvh, 760px);
+    padding: 20px 14px max(20px, env(safe-area-inset-bottom));
+    border-radius: 22px 22px 0 0;
+}
+
+html[data-device="mobile"] .modal-panel-header h2 {
+    font-size: 1.12rem;
+}
+
+html[data-device="mobile"] .install-help-dialog {
+    width: 100%;
+    margin: 0;
+    border-radius: 22px 22px 0 0;
+}
+
+html[data-device="mobile"] .install-help-content {
+    padding: 20px 14px max(20px, env(safe-area-inset-bottom));
+}
+
+html[data-device="mobile"] .toast-popup {
+    top: auto;
+    right: var(--mobile-gutter);
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    left: var(--mobile-gutter);
+    justify-content: center;
+    text-align: center;
+    font-size: 0.78rem;
+    padding: 11px 14px;
+}
+
+html[data-device="tablet"] header {
+    flex-wrap: wrap;
+}
+
+html[data-device="tablet"] .hud-tools {
+    margin-left: auto;
+}
+
+html[data-device="tablet"] .vn-stage-container,
+html[data-device="tablet"] .dialogue-speech-box,
+html[data-device="tablet"] .translation-input-box,
+html[data-device="tablet"] .stage-action-toolbar {
+    max-width: 100%;
+}
+
+@media (max-width: 380px) {
+    html[data-device="mobile"] .hud-tools {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    html[data-device="mobile"] .hud-tools .guide-open-button {
+        grid-column: span 2;
+    }
+
+    html[data-device="mobile"] .hud-tools .install-app-btn {
+        grid-column: span 2;
+    }
+
+    html[data-device="mobile"] .selectors-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    html[data-device="mobile"] .selectors-wrap > :first-child {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html[data-device="mobile"] *,
+    html[data-device="mobile"] *::before,
+    html[data-device="mobile"] *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
