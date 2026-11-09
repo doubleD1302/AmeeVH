@@ -71,7 +71,7 @@
         d.addEventListener('close',()=>{ if(d.open)return;requestSerial++; session=null; if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true}); });
     };
     V.login = () => {
-        const body = clear('Quyền duyệt'), serial=requestSerial;
+        const body = clear('Admin Portal'), serial=requestSerial;
         if (M().canReview) { body.append(make('p','', 'Quyền duyệt đang bật trong tab này.'),action('Quản lý phiên dữ liệu',()=>V.release()),action('Tắt quyền duyệt',()=>{M().logout();dialog().close();rerender();}));return; }
         body.append(make('p','','Nhập mã quản trị được cấp để duyệt, chấp nhận đề xuất hoặc khôi phục phiên bản. Mã chỉ giữ trong bộ nhớ của tab đang mở.'));
         const form=make('form','collab-form'),label=make('label','','Mã quản trị'),input=make('input');input.type='password';input.autocomplete='off';input.required=true;label.append(input);
@@ -127,7 +127,7 @@
         const ownDraft=ownProposal?.state==='pending'?{text:ownProposal.text_vi,origin:ownProposal.origin,notes:ownProposal.notes,reason:ownProposal.reason,reason_detail:ownProposal.reason_detail}:null;
         const stored=M().readDraft(base)||ownDraft;
         const form=make('form','collab-form'),label=make('label','',mode==='restore'?'Phiên bản sẽ khôi phục':'Bản đề xuất');
-        const input=make('textarea');input.id='collabDraft';input.rows=3;input.value=mode==='restore'?(options.history.new_text || options.history.snapshot?.new_vi || ''):(suppliedDraft!==undefined?suppliedDraft:stored?.text ?? base.new_vi ?? '');input.readOnly=mode==='restore';label.append(input);
+        const input=make('textarea');input.id='collabDraft';input.rows=3;input.value=mode==='restore'?(options.history.new_text || options.history.snapshot?.new_vi || ''):(suppliedDraft ? suppliedDraft : stored?.text ?? '');input.placeholder='Nhập chỉnh sửa vào đây';input.readOnly=mode==='restore';label.append(input);
         const diffDetails=make('details','collab-diff-details');diffDetails.append(make('summary','','So sánh thay đổi'));const diff=make('div','collab-diff-wrap');diffDetails.append(diff);
         // Keep existing draft/proposal metadata; new proposals default to human.
         const origin=make('input');origin.type='hidden';origin.value=['human','machine'].includes(stored?.origin)?stored.origin:'human';

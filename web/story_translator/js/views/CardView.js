@@ -124,7 +124,7 @@ function renderCurrentLine() {
 
     // Translation textarea
     const input = document.getElementById("vietnameseInput");
-    input.value = window.Collaboration ? (Collaboration.readDraft(item)?.text ?? item.new_vi ?? item.old_vi ?? "") : (item.new_vi || item.old_vi || "");
+    input.value = window.Collaboration ? (Collaboration.readDraft(item)?.text ?? "") : "";
     renderSmartTags(item.en);
     renderGlossarySuggestions(item.en);
     if (typeof clearQuickGlossarySearch === "function") clearQuickGlossarySearch();

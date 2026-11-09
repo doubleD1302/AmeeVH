@@ -211,3 +211,17 @@ test('other reason accepts empty explanation and preserves supplied context',asy
   assert.equal(result.body.line.new_vi,'Xin chào {0}');
  } finally { f.close(); }
 });
+
+
+test('multiple admin secrets retain the existing key and reject invalid keys',async()=>{
+ const f=fixture();
+ try {
+  f.env.REVIEWER_KEY_2='test-admin-two'; f.env.REVIEWER_KEY_3='test-admin-three';
+  for(const key of ['private-review-code','test-admin-two','test-admin-three']) assert.equal((await call(f.env,'/api/collab/role',undefined,key)).body.can_review,true);
+  assert.equal((await call(f.env,'/api/collab/role',undefined,'invalid-key')).body.can_review,false);
+  delete f.env.REVIEWER_KEY;
+  const saved=await call(f.env,'/api/collab/submit',translate(await current(f.env)));
+  const approved=await call(f.env,'/api/collab/review',reviewBody(saved.body.line,'approve'),'test-admin-three');
+  assert.equal(approved.status,200,JSON.stringify(approved.body));
+ } finally { f.close(); }
+});

@@ -49,7 +49,7 @@
     <link rel="stylesheet" href="css/wordmark.css?v=1.4.0">
     <link rel="stylesheet" href="css/translation-guide.css?v=guide-r04">
     <link rel="stylesheet" href="css/collaboration.css?v=collab-r04">
-    <link rel="stylesheet" href="css/workspace-ux.css?v=ux-r07">
+    <link rel="stylesheet" href="css/workspace-ux.css?v=ux-r08">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -115,10 +115,10 @@
 
         <!-- Actions HUD -->
         <div class="hud-tools">
-            <button id="translationGuideBtn" class="btn-circle guide-open-button" type="button" title="Hướng dẫn dịch thuật" aria-label="Hướng dẫn dịch thuật" aria-haspopup="dialog" onclick="openTranslationGuide()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/translation-guide-r01/guide-light.svg" alt=""><img class="tram-icon-dark" src="assets/translation-guide-r01/guide-dark.svg" alt=""></span><span>Hướng dẫn</span></button>
+            <button id="translationGuideBtn" class="btn-circle guide-open-button" type="button" title="Hướng dẫn dịch thuật" aria-label="Hướng dẫn dịch thuật" aria-haspopup="dialog" onclick="openTranslationGuide()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/help.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/help.svg" alt=""></span><span>Hướng dẫn</span></button>
             <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span><span>Thuật ngữ</span></button>
             <details class="hud-more"><summary><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/settings.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/settings.svg" alt=""></span><span>Công cụ</span><span class="hud-more-chevron" aria-hidden="true"></span></summary><div class="hud-more-panel">
-            <button id="reviewerAccessBtn" data-menu-label="Quyền duyệt" class="btn-circle" type="button" title="Nhập mã quản trị để duyệt" aria-label="Quyền duyệt" aria-pressed="false" onclick="openReviewerAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/approved.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/approved.svg" alt=""></span></button>
+            <button id="reviewerAccessBtn" data-menu-label="Admin Portal" class="btn-circle" type="button" title="Nhập mã quản trị để duyệt" aria-label="Admin Portal" aria-pressed="false" onclick="openReviewerAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/approved.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/approved.svg" alt=""></span></button>
             <button id="installAppBtn" class="btn-circle install-app-btn" type="button" title="Cài đặt Trạm Dịch Thuật trên thiết bị" aria-label="Cài đặt ứng dụng"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/download.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/download.svg" alt=""></span><span class="install-app-label">Cài đặt</span></button>
             <button id="bgmToggleBtn" data-menu-label="Phát / tạm dừng nhạc" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/music.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/music.svg" alt=""></span></button>
             <button id="bgmNextBtn" data-menu-label="Bài nhạc tiếp theo" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 2 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
@@ -242,7 +242,7 @@
                         </div>
                         <div class="suggestions-chips-tray" id="suggestionsChipsTray"></div>
                     </div>
-                    <textarea id="vietnameseInput" placeholder="Nhập câu dịch tiếng Việt mượt mà, văn phong anime RPG tự nhiên..." oninput="onTranslationDraftInput()" onkeydown="handleTextareaKeydown(event)"></textarea>
+                    <textarea id="vietnameseInput" placeholder="Nhập chỉnh sửa vào đây" oninput="onTranslationDraftInput()" onkeydown="handleTextareaKeydown(event)"></textarea>
                 </div>
 
                 <!-- Action Toolbar -->
@@ -443,8 +443,8 @@
     <!-- Views -->
     <script src="js/views/ToastView.js?v=1.4.0"></script>
     <script src="js/views/HudView.js?v=collab-r01"></script>
-    <script src="js/views/CardView.js?v=ux-r05"></script>
-    <script src="js/views/CollaborationView.js?v=ux-r03"></script>
+    <script src="js/views/CardView.js?v=ux-r06"></script>
+    <script src="js/views/CollaborationView.js?v=ux-r05"></script>
     <script src="js/views/TableView.js?v=ux-r03"></script>
     <script src="js/views/GlossaryView.js?v=1.4.0"></script>
     <script src="js/views/ProfileView.js?v=1.4.0"></script>

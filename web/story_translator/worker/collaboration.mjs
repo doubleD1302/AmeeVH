@@ -83,12 +83,17 @@ export async function overlayChapter(chapter,env){
  for(const scene of chapter.scenes||[]){const lines=[];for(const raw of scene.lines||[]){let state=byId.get(String(raw.line_id));if(!state||state.en!==String(raw.en||''))state=await ensureLine(env,chapterId,String(raw.line_id),raw);lines.push({...raw,...withDataset(state,release),pending_proposals:pending.get(String(raw.line_id))||0});}scenes.push({...scene,lines});}
  return {...chapter,dataset_version:release.version,dataset_phase:release.phase,scenes};
 }
+const reviewerKeys = env => [env.REVIEWER_KEY, env.REVIEWER_KEY_2, env.REVIEWER_KEY_3].filter(key => typeof key === 'string' && key.length > 0);
 async function reviewerAllowed(request,env){
- const supplied=request.headers.get('X-Reviewer-Key')||'';
- if(!env.REVIEWER_KEY||!supplied)return false;
+ const supplied=request.headers.get('X-Reviewer-Key')||'',keys=reviewerKeys(env);
+ if(!keys.length||!supplied)return false;
  const a=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(supplied)));
- const b=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(env.REVIEWER_KEY)));
- let difference=0;for(let i=0;i<a.length;i++)difference|=a[i]^b[i];return difference===0;
+ let matched=0;
+ for(const key of keys){
+  const b=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(key)));
+  let difference=0;for(let i=0;i<a.length;i++)difference|=a[i]^b[i];matched|=Number(difference===0);
+ }
+ return matched===1;
 }
 async function publishedManifest(env,verifyFiles=false){
  const response=await env.ASSETS.fetch(new Request('https://assets.invalid/data/dataset-manifest.json'));
@@ -116,7 +121,7 @@ async function publishedManifest(env,verifyFiles=false){
  return manifest;
 }
 async function releaseAction(request,env,body,user){
- if(!env.REVIEWER_KEY||!await reviewerAllowed(request,env))fail(403,'forbidden','Cần quyền duyệt để chuyển phiên dữ liệu.');
+ if(!reviewerKeys(env).length||!await reviewerAllowed(request,env))fail(403,'forbidden','Cần quyền duyệt để chuyển phiên dữ liệu.');
  const current=await dataset(env);
  const action=bounded(body.action,'Thao tác',32,true);
  const reason=bounded(body.reason,'Lý do',2000,true);
@@ -228,7 +233,7 @@ async function report(request,env,body,user){
  return commitMutation(env,body,ctx.payload_hash,ctx.current,after,'reported',actor,reason,'reported');
 }
 async function review(request,env,body,user){
- if(!env.REVIEWER_KEY)fail(503,'review_unavailable','Chưa cấu hình quyền duyệt.');
+ if(!reviewerKeys(env).length)fail(503,'review_unavailable','Chưa cấu hình quyền duyệt.');
  if(!await reviewerAllowed(request,env))fail(403,'forbidden','Mã quản trị không hợp lệ hoặc chưa được nhập.');
  const actor=user.display_name,reason=bounded(body.reason??'','Lý do',2000);
  if(!['approve','accept','reject','restore'].includes(body.action))fail(400,'invalid_action','Thao tác duyệt không hợp lệ.');
@@ -290,7 +295,7 @@ export async function handleCollaboration(request,env){
    return attachSession(json({success:true,user:session.user,new_user:session.created}),session);
   }
   if(path==='/api/collab/release'&&request.method==='GET'){
-   if(!env.REVIEWER_KEY||!await reviewerAllowed(request,env))fail(403,'forbidden','Cần quyền duyệt để xem quản lý phiên.');
+   if(!reviewerKeys(env).length||!await reviewerAllowed(request,env))fail(403,'forbidden','Cần quyền duyệt để xem quản lý phiên.');
    const pending=await stmt(env,"SELECT count(*) AS n FROM proposals WHERE state='pending'").first();
    return json({success:true,dataset:await dataset(env),pending_proposals:pending.n});
   }

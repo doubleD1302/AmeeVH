@@ -11,11 +11,6 @@
 .scope-disclosure { flex:1 1 600px; min-width:0; }
 .scope-disclosure > summary { font-size:.83rem; padding:4px 0 8px; }
 .selectors-wrap { width:100%; align-items:end; }
-.selectors-wrap > .tram-select-wrap::before { display:block; margin:0 0 4px 2px; color:var(--text-pure); font-size:.78rem; font-weight:700; }
-.selectors-wrap > .tram-select-wrap:has(#groupSelect)::before { content:'1. Nhóm truyện'; }
-.selectors-wrap > .tram-select-wrap:has(#chapterSelect)::before { content:'2. Chương'; }
-.selectors-wrap > .tram-select-wrap:has(#sceneSelect)::before { content:'3. Cảnh'; }
-.selectors-wrap > .tram-select-wrap:has(#filterSelect)::before { content:'4. Lọc câu'; }
 .progress-ribbon { padding-top:6px; padding-bottom:6px; }
 .vn-stage-container { min-height:0; gap:10px; padding-top:16px; }
 .vn-character-header { gap:8px; }
@@ -156,3 +151,7 @@ html[data-theme="dark"] .compact-row-details > summary:hover { background:#35596
 html[data-theme="dark"] .compact-detail-panel { background:#162d3a; border-color:#466573; }
 html[data-theme="dark"] .compact-detail-heading { color:#c4e5e9; }
 html[data-theme="dark"] .compact-detail-note { color:#afc9d0; }
+
+@media(min-width:701px) { .sub-bar { align-items:flex-end; } }
+textarea#vietnameseInput::placeholder, #collaborationDialog #collabDraft::placeholder { color:#718a95; opacity:1; }
+html[data-theme="dark"] textarea#vietnameseInput::placeholder, html[data-theme="dark"] #collaborationDialog #collabDraft::placeholder { color:#a6bdc5; }
