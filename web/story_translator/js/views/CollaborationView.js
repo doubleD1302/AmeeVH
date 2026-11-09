@@ -73,7 +73,6 @@
     V.login = () => {
         const body = clear('Admin Portal'), serial=requestSerial;
         if (M().canReview) { body.append(make('p','', 'Quyền duyệt đang bật trong tab này.'),action('Mở Admin Portal',()=>{window.location.href='admin.html'}),action('Quản lý phiên dữ liệu',()=>V.release()),action('Tắt quyền duyệt',()=>{M().logout();sessionStorage.removeItem('tramvh_reviewer_key');dialog().close();rerender();}));return; }
-        body.append(make('p','','Nhập mã quản trị được cấp để duyệt, chấp nhận đề xuất hoặc khôi phục phiên bản. Sau khi xác thực, portal sẽ mở ngay trong cùng phiên tab.'));
         const form=make('form','collab-form'),label=make('label','','Mã quản trị'),input=make('input');input.type='password';input.autocomplete='off';input.required=true;label.append(input);
         const error=make('p','collab-error');error.hidden=true;error.role='alert';const submit=make('button','btn-save-glow','Bật quyền duyệt');submit.type='submit';form.append(label,error,submit);body.append(form);
         form.addEventListener('submit',async e=>{e.preventDefault();submit.disabled=true;const key=input.value;try{await M().login(key);sessionStorage.setItem('tramvh_reviewer_key',key);input.value='';window.location.href='admin.html';}catch(err){input.value='';showError(error,err);}finally{submit.disabled=false;}});
