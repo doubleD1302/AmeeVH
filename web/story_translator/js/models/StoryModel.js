@@ -49,6 +49,64 @@ function isCodeOnlySource(value) {
 function isTranslatableLine(line) {
     return !!line && !isCodeOnlySource(line.en);
 }
+
+function showChapterLoading(chapterId = '') {
+    const overlay = document.getElementById('chapterLoadingOverlay');
+    if (!overlay) return;
+    overlay.hidden = false;
+    overlay.classList.remove('is-error');
+    const chapter = document.getElementById('chapterLoadingChapter');
+    if (chapter) chapter.textContent = chapterId ? (allChapters.find(item => item.id === chapterId)?.title || chapterId) : 'Đang kết nối';
+    updateChapterLoading('catalog', 12, 'Kết nối kho dữ liệu', 'Đang chuẩn bị nguồn EN, JP, CN và trạng thái cộng tác.');
+}
+
+function updateChapterLoading(stepName, percent, phase, subtitle) {
+    const overlay = document.getElementById('chapterLoadingOverlay');
+    if (!overlay) return;
+    const title = document.getElementById('chapterLoadingTitle');
+    const sub = document.getElementById('chapterLoadingSubtitle');
+    const phaseEl = document.getElementById('chapterLoadingPhase');
+    const percentEl = document.getElementById('chapterLoadingPercent');
+    const bar = document.getElementById('chapterLoadingBar');
+    const progress = overlay.querySelector('[role="progressbar"]');
+    if (title) title.innerHTML = 'Đang nạp chương<span class="chapter-loading-dots"></span>';
+    if (sub && subtitle) sub.textContent = subtitle;
+    if (phaseEl) phaseEl.textContent = phase;
+    if (percentEl) percentEl.textContent = `${percent}%`;
+    if (bar) bar.style.width = `${percent}%`;
+    if (progress) progress.setAttribute('aria-valuenow', String(percent));
+    overlay.querySelectorAll('[data-loading-step]').forEach(step => {
+        const order = { catalog: 1, collab: 2, sources: 3 }[step.dataset.loadingStep] || 0;
+        const current = { catalog: 1, collab: 2, sources: 3 }[stepName] || 1;
+        step.classList.toggle('is-done', order < current);
+        step.classList.toggle('is-active', order === current);
+        const icon = step.querySelector('span:first-child');
+        if (icon) icon.textContent = order < current ? '✓' : '·';
+    });
+}
+
+function hideChapterLoading() {
+    const overlay = document.getElementById('chapterLoadingOverlay');
+    if (!overlay) return;
+    overlay.hidden = true;
+    overlay.classList.remove('is-error');
+}
+
+function failChapterLoading(message) {
+    const overlay = document.getElementById('chapterLoadingOverlay');
+    if (!overlay) return;
+    overlay.hidden = false;
+    overlay.classList.add('is-error');
+    const title = document.getElementById('chapterLoadingTitle');
+    const sub = document.getElementById('chapterLoadingSubtitle');
+    const phase = document.getElementById('chapterLoadingPhase');
+    const state = document.getElementById('chapterLoadingState');
+    if (title) title.textContent = 'Không thể nạp chương';
+    if (sub) sub.textContent = message || 'Hãy thử chọn lại chương hoặc tải lại trang.';
+    if (phase) phase.textContent = 'Đã dừng';
+    if (state) state.textContent = 'Có lỗi';
+}
+
 function renderChapterOptions(group, preferredId) {
     const select = document.getElementById('chapterSelect');
     select.replaceChildren();
@@ -63,6 +121,7 @@ function renderChapterOptions(group, preferredId) {
 }
 
 async function loadChaptersList() {
+    showChapterLoading();
     try {
         let data = null;
         try {
@@ -74,6 +133,7 @@ async function loadChaptersList() {
             if (res.ok) data = await res.json();
         }
         allChapters = data || [];
+        updateChapterLoading('catalog', 28, 'Nạp danh sách chương', 'Đang mở danh sách chương và các cảnh có thể dịch.');
         const groupSelect = document.getElementById('groupSelect');
         groupSelect.replaceChildren();
         for (const [id,label] of Object.entries(chapterGroups)) {
@@ -88,13 +148,16 @@ async function loadChaptersList() {
         }
     } catch (e) {
         console.error("Lỗi nạp chapters:", e);
+        failChapterLoading(e.message);
     }
 }
 
 async function loadChapterData(chapterId) {
+    showChapterLoading(chapterId);
     document.getElementById("progressSummaryText").innerText = "Đang nạp dữ liệu chương...";
     try {
         let data = null;
+        updateChapterLoading('collab', 48, 'Khôi phục bản dịch cộng tác', 'Đang lấy trạng thái D1 và các đề xuất hiện tại.');
         try {
             const res = await fetch(`/api/chapter_data?id=${chapterId}`);
             if (res.ok) data = await res.json();
@@ -103,6 +166,7 @@ async function loadChapterData(chapterId) {
             const res = await fetch(`data/chapters/${chapterId}.json`);
             if (res.ok) { data = await res.json(); data.collaboration_available = false; }
         }
+        updateChapterLoading('sources', 76, 'Đối chiếu nguồn đa ngôn ngữ', 'Đang ghép EN, JP, CN và lọc các mục thuần mã hệ thống.');
         currentChapterData = data || { scenes: [] };
         if (data && typeof data.collaboration_available === "boolean") {
             Collaboration.available = data.collaboration_available;
@@ -149,8 +213,11 @@ async function loadChapterData(chapterId) {
 
         applyFilters();
         updateProgressBar();
+        updateChapterLoading('sources', 100, 'Hoàn tất', 'Chương đã sẵn sàng để dịch.');
+        setTimeout(hideChapterLoading, 260);
     } catch (e) {
         console.error("Lỗi nạp chapter data:", e);
+        failChapterLoading(e.message);
     }
 }
 

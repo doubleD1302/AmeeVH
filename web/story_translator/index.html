@@ -42,6 +42,29 @@
         <span id="toastNotificationText">+50 EXP! Đã cập nhật lên Google Sheets!</span>
     </div>
 
+    <!-- Animated chapter loading state -->
+    <div id="chapterLoadingOverlay" class="chapter-loading-overlay" role="status" aria-live="polite" hidden>
+        <section class="chapter-loading-window" aria-label="Đang nạp dữ liệu chương">
+            <div class="chapter-loading-header"><span>TRAMVH / STORY TRANSLATOR</span><span id="chapterLoadingChapter">Đang kết nối</span></div>
+            <div class="chapter-loading-stage">
+                <div class="chapter-loading-orbit" aria-hidden="true"><span></span><i></i><b></b></div>
+                <div class="chapter-loading-card">
+                    <div class="chapter-loading-eyebrow"><span class="chapter-loading-pulse"></span> KẾT NỐI DỮ LIỆU</div>
+                    <h2 id="chapterLoadingTitle">Đang nạp chương<span class="chapter-loading-dots"></span></h2>
+                    <p id="chapterLoadingSubtitle">Đang chuẩn bị nguồn EN, JP, CN và trạng thái cộng tác.</p>
+                    <div class="chapter-loading-progress-row"><span id="chapterLoadingPhase">Kết nối kho dữ liệu</span><span id="chapterLoadingPercent">12%</span></div>
+                    <div class="chapter-loading-progress" role="progressbar" aria-label="Tiến trình nạp chương" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12"><span id="chapterLoadingBar"></span></div>
+                    <div class="chapter-loading-steps">
+                        <div class="chapter-loading-step" data-loading-step="catalog"><span>·</span><span>Nạp danh sách cảnh</span></div>
+                        <div class="chapter-loading-step" data-loading-step="collab"><span>·</span><span>Khôi phục bản dịch cộng tác</span></div>
+                        <div class="chapter-loading-step" data-loading-step="sources"><span>·</span><span>Đối chiếu nguồn đa ngôn ngữ</span></div>
+                    </div>
+                    <div class="chapter-loading-foot"><span>Không ghi đè bản dịch của bạn</span><span id="chapterLoadingState">Đang xử lý</span></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- Header HUD -->
     <header>
         <div class="brand-box" onclick="openProfileModal()">
