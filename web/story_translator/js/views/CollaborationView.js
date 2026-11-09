@@ -12,11 +12,12 @@
         wrap.append(make('span','', 'Người dịch: ' + (line.translator || 'Chưa có')));
         const time = make('time','', 'Cập nhật: ' + M().time(line.updated_at)); if (line.updated_at) { time.dateTime = line.updated_at; time.title = new Date(line.updated_at).toLocaleString('vi-VN'); } wrap.append(time);
         if (M().hasText(line)) wrap.append(make('span','collab-origin',M().origin(line)));
-        if (line.pending_proposals) wrap.append(make('span','collab-pending-count',line.pending_proposals + ' đề xuất chờ duyệt'));
+        if (line.pending_proposals) wrap.append(action(`${line.pending_proposals} đề xuất chờ duyệt`,()=>V.openHistory(line),'collab-proposal-link'));
         return wrap;
     };
     V.summary = line => {
         const e = make('div','collab-summary'); e.append(V.badge(line));
+        e.append(make('span','collab-current-label','Bản đang dùng'));
         e.append(make('p','collab-current-text',line.new_vi || 'Chưa có bản dịch tiếng Việt.'));
         e.append(V.metadata(line));
         if (line.notes) e.append(make('p','collab-context','Ngữ cảnh: ' + line.notes));
@@ -203,7 +204,7 @@
     };
     V.renderCurrent = item => {
         const target=document.getElementById('currentLineCollaboration');if(!target)return;target.replaceChildren(V.summary(item));
-        const buttons=make('div','collab-actions');buttons.append(action('Xem lịch sử',()=>V.openHistory(item)),action('Báo vấn đề',()=>V.openEdit(item,undefined,{mode:'report'})));target.append(buttons);
+        const buttons=make('div','collab-actions');buttons.append(action(item.pending_proposals?`Xem ${item.pending_proposals} đề xuất`:'Xem lịch sử',()=>V.openHistory(item)),action('Báo vấn đề',()=>V.openEdit(item,undefined,{mode:'report'})));target.append(buttons);
         const save=document.querySelector('.btn-save-glow[onclick="saveCurrentLine()"] span');if(save)save.textContent=M().hasText(item)?'Đề xuất sửa':'Lưu bản dịch · Chờ duyệt';
         const title=document.querySelector('.translation-input-box .input-title');if(title)title.textContent=M().hasText(item)?'SOẠN ĐỀ XUẤT SỬA':'BẢN DỊCH TIẾNG VIỆT MỚI';
     };

@@ -9,6 +9,9 @@
 .collab-current-text,.collab-diff-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.75;margin:0;color:var(--text-pure)}
 .collab-meta{display:flex;flex-wrap:wrap;gap:5px 14px;color:var(--text-sub);font-size:.79rem;line-height:1.6}
 .collab-origin,.collab-pending-count{color:var(--cyan-primary)}
+.collab-current-label{display:block;margin-top:9px;color:var(--text-sub);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.collab-proposal-link{display:inline-flex;align-items:center;min-height:28px;padding:3px 9px;border:1px solid var(--cyan-primary);border-radius:999px;background:transparent;color:var(--cyan-light);font:700 .74rem/1.2 var(--font-main);cursor:pointer}
+.collab-proposal-link:hover{background:var(--cyan-primary);color:var(--bg-deep)}
 .collab-context{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--text-sub);font-size:.85rem;margin:0}
 .collab-muted{font-size:.78rem;line-height:1.6;color:var(--text-sub)}
 .collab-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
