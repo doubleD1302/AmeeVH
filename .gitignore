@@ -57,3 +57,8 @@ docs/LOCAL_DISCOVERY.md
 docs/PATCH_AND_ROLLBACK.md
 docs/TOOLS.md
 tests/
+!tests/
+tests/*
+!tests/test_release_payloads.py
+!tests/test_tramvh_collaboration_backend_20261101.mjs
+!tests/test_tramvh_sheet_source.mjs

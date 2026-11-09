@@ -1,4 +1,5 @@
 import { handleCollaboration, overlayChapter } from './collaboration.mjs';
+import { getGlossary, getMerge, getChapterReferences } from './sheets-source.mjs';
 const GAS = 'https://script.google.com/macros/s/AKfycbwhB90dQ5YL27wBkeXeQIoI18TZO3KXXhgwdb0iG96rqwBQUfk7ztZwGjdG_tEwElDhFw/exec';
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 const json=(body,status=200)=>new Response(JSON.stringify(body),{status,headers});
@@ -7,7 +8,8 @@ async function chapter(env,request,id){
     const chapters=await assetJSON(env,request,'/data/chapters.json');
     if(!chapters.some(c=>c.id===id))throw Error('Chương không hợp lệ.');
     const data=await assetJSON(env,request,'/data/chapters/'+encodeURIComponent(id)+'.json');
-    return overlayChapter(data,env);
+    const live=await overlayChapter(data,env);
+    try{return await getChapterReferences(live);}catch{return {...live,sheet_sync:{status:'unavailable',matched:0}};}
 }
 export default {
  async fetch(request,env){
@@ -18,6 +20,8 @@ export default {
         if(request.method!=='GET'&&origin&&origin!==url.origin)return json({success:false,error:'Yêu cầu khác nguồn bị từ chối.'},403);
         if(path.startsWith('/api/collab/'))return await handleCollaboration(request,env);
         if(path==='/api/save_line')return json({success:false,code:'upgrade_required',error:'Luồng lưu cũ đã đóng. Tải lại TramVH để gửi bản dịch có kiểm tra phiên bản.'},426);
+        if((path==='/api/glossary'||path==='/api/sync_glossary')&&request.method==='GET')return json({success:true,terms:await getGlossary(),source:'google_sheet'});
+        if(path==='/api/sheet_reference'&&request.method==='GET')return json(await getMerge(url.searchParams.get('group')));
         if(path==='/api/chapter_data'&&request.method==='GET')return json({...await chapter(env,request,url.searchParams.get('id')),collaboration_available:true});
         if(path==='/api/export_chapter'&&request.method==='GET'){
             const data=await chapter(env,request,url.searchParams.get('id'));
@@ -31,7 +35,7 @@ export default {
         }
         if(path==='/api/characters'&&request.method==='GET')return json(await assetJSON(env,request,'/data/characters.json'));
         // Preserve the existing glossary/leaderboard integration, never proxy old line saves.
-        const proxy={ '/api/glossary':'get_glossary','/api/sync_glossary':'get_glossary','/api/leaderboard':'get_leaderboard','/api/add_glossary_term':'add_glossary_term' };
+        const proxy={ '/api/leaderboard':'get_leaderboard','/api/add_glossary_term':'add_glossary_term' };
         if(proxy[path]){
             if(path==='/api/add_glossary_term'&&request.method!=='POST')return json({success:false,error:'POST required'},405);
             const target=new URL(GAS);target.searchParams.set('action',proxy[path]);

@@ -120,6 +120,7 @@ async function loadChapterData(chapterId) {
 
             sc.lines.forEach(l => {
                 l.chapter_id = cidFromChapter();
+                l.sheet_sync_status = data?.sheet_sync?.status || 'unavailable';
                 l.sceneTitle = sc.title;
                 l.sceneBadge = sc.badge || sc.scene_id;
                 currentLines.push(l);

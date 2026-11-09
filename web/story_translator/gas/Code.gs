@@ -305,18 +305,29 @@ function recordTranslatorContribution(ss, translatorName, expToAdd, chapterName)
   }
 }
 
-/**
- * Đọc thuật ngữ từ tab '01. Thống Nhất Danh Từ'
- */
-function getGlossaryTerms() {
+/** Return the current glossary tab, with the former name kept for old deployments. */
+function getGlossarySheet() {
   var ss = getSpreadsheet();
-  var sheet = ss.getSheetByName("01. Thống Nhất Danh Từ");
+  return ss.getSheetByName("01. Glossary") || ss.getSheetByName("01. Thống Nhất Danh Từ");
+}
+
+/** Read terms from the current glossary tab. */
+function getGlossaryTerms() {
+  var sheet = getGlossarySheet();
   if (!sheet) {
-    return { success: false, error: "Không tìm thấy tab '01. Thống Nhất Danh Từ'" };
+    return { success: false, error: "Không tìm thấy tab '01. Glossary'" };
   }
   var data = sheet.getDataRange().getValues();
+  var headerRow = -1;
+  for (var h = 0; h < data.length; h++) {
+    if (String(data[h][0] || "").trim() === "Danh từ gốc (EN)") {
+      headerRow = h;
+      break;
+    }
+  }
+  if (headerRow < 0) return { success: false, error: "Không nhận diện được tiêu đề tab Glossary" };
   var terms = [];
-  for (var i = 1; i < data.length; i++) {
+  for (var i = headerRow + 1; i < data.length; i++) {
     var row = data[i];
     if (row.length >= 2 && String(row[0]).trim() !== "") {
       var col0 = String(row[0]).trim();
@@ -335,14 +346,12 @@ function getGlossaryTerms() {
   return { success: true, total: terms.length, terms: terms };
 }
 
-/**
- * Thêm hoặc cập nhật thuật ngữ vào tab '01. Thống Nhất Danh Từ'
- */
+/** Add or update a term in the current glossary tab. */
 function handleAddGlossaryTerm(data) {
   var ss = getSpreadsheet();
-  var sheet = ss.getSheetByName("01. Thống Nhất Danh Từ");
+  var sheet = getGlossarySheet();
   if (!sheet) {
-    return { success: false, error: "Không tìm thấy tab '01. Thống Nhất Danh Từ' trên Google Sheets!" };
+    return { success: false, error: "Không tìm thấy tab '01. Glossary' trên Google Sheets!" };
   }
 
   var en = String(data.en || data.term_en || data.source || "").trim();
@@ -357,9 +366,18 @@ function handleAddGlossaryTerm(data) {
   }
 
   var values = sheet.getDataRange().getValues();
+  var headerRow = -1;
+  for (var h = 0; h < values.length; h++) {
+    if (String(values[h][0] || "").trim() === "Danh từ gốc (EN)") {
+      headerRow = h;
+      break;
+    }
+  }
+  if (headerRow < 0) return { success: false, error: "Không nhận diện được tiêu đề tab Glossary" };
   var existingRow = -1;
-  for (var i = 1; i < values.length; i++) {
+  for (var i = headerRow + 1; i < values.length; i++) {
     var rowEn = String(values[i][0]).trim();
+    if (!rowEn || rowEn.indexOf("---") === 0) continue;
     if (rowEn.toLowerCase() === en.toLowerCase()) {
       existingRow = i + 1;
       break;

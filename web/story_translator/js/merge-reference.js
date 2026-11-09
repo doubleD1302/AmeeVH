@@ -21,7 +21,7 @@
     async function selectGroup(){
         const request=++serial;status.textContent='Đang tải dữ liệu…';blocks.replaceChildren();more.hidden=true;file.replaceChildren();
         try{
-            const response=await fetch('data/merge-reference/'+encodeURIComponent(group.value)+'.json');if(!response.ok)throw Error('Không tải được nguồn Merge.');
+            const response=await fetch('/api/sheet_reference?group='+encodeURIComponent(group.value),{cache:'no-store'});if(!response.ok)throw Error('Không tải được nguồn Merge từ Google Sheet.');
             const result=await response.json();if(request!==serial)return;data=result;
             for(const item of data.files){const option=node('option',`${item.file_id} (${item.blocks.length} khối)`);option.value=item.file_id;file.append(option);}
             selectFile();

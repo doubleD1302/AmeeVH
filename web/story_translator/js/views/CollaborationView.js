@@ -25,11 +25,13 @@
     };
     V.sources = line => {
         const grid=make('div','collab-source-grid');
+        if(line.sheet_sync_status==='unavailable')grid.append(make('p','collab-error','Không kết nối được Google Sheet; nguồn đối chiếu có thể chưa cập nhật.'));
         for(const [label,value] of [['EN',line.en],['JP',line.jp ?? line.text_jp ?? line.source_jp],['CN',line.cn ?? line.text_cn ?? line.source_cn]]){
             const panel=make('section','collab-source-panel');
             panel.append(make('strong','',label),make('p','collab-source',typeof value==='string'&&value?value:'Chưa có nguồn '+label+' cho câu này.'));
             grid.append(panel);
         }
+        if(line.sheet_vi||line.sheet_old_vi){const panel=make('section','collab-source-panel');panel.append(make('strong','',line.sheet_vi?'VI trên Google Sheet':'VI cũ trên Google Sheet'),make('p','collab-source',line.sheet_vi||line.sheet_old_vi));grid.append(panel);}
         return grid;
     };
     V.diff = (before, after) => {

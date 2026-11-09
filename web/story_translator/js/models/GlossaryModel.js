@@ -46,11 +46,12 @@ function normalizeLoadedGlossaryTerms(rawList) {
             continue;
         }
 
-        const enKey = en.toLowerCase();
+        const enKey = item.id ? `id:${item.id}` : `en:${en.toLowerCase()}`;
         if (seenEn.has(enKey)) continue;
         seenEn.add(enKey);
 
         cleaned.push({
+            id: item.id || "",
             en: en,
             vi: vi,
             category: cat || "Chung",
@@ -65,8 +66,8 @@ function normalizeLoadedGlossaryTerms(rawList) {
         const localCustoms = JSON.parse(localStorage.getItem("ss_custom_glossary") || "[]");
         if (Array.isArray(localCustoms)) {
             for (const c of localCustoms) {
-                if (c && c.en && !seenEn.has(c.en.toLowerCase())) {
-                    seenEn.add(c.en.toLowerCase());
+                if (c && c.en && !seenEn.has(`en:${c.en.toLowerCase()}`)) {
+                    seenEn.add(`en:${c.en.toLowerCase()}`);
                     cleaned.push(c);
                 }
             }
@@ -315,23 +316,6 @@ async function syncGlossaryFromSheets() {
                 }
             }
         } catch (_) {}
-
-        // Fallback nạp lại từ data/glossary.json
-        if (!syncedTerms) {
-            try {
-                const localRes = await fetch("data/glossary.json?t=" + Date.now());
-                if (localRes.ok) {
-                    const localText = await localRes.text();
-                    if (localText && localText.trim().length > 0) {
-                        try {
-                            const localData = JSON.parse(localText);
-                            syncedTerms = Array.isArray(localData) ? localData : (localData.terms || []);
-                            message = `Đã làm mới ${syncedTerms.length} thuật ngữ từ cơ sở dữ liệu!`;
-                        } catch (_) {}
-                    }
-                }
-            } catch (_) {}
-        }
 
         if (syncedTerms && Array.isArray(syncedTerms) && syncedTerms.length > 0) {
             allGlossaryTerms = normalizeLoadedGlossaryTerms(syncedTerms);
