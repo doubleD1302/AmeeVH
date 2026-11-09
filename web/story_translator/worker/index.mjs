@@ -22,6 +22,7 @@ export default {
         if(path==='/api/save_line')return json({success:false,code:'upgrade_required',error:'Luồng lưu cũ đã đóng. Tải lại TramVH để gửi bản dịch có kiểm tra phiên bản.'},426);
         if((path==='/api/glossary'||path==='/api/sync_glossary')&&request.method==='GET')return json({success:true,terms:await getGlossary(),source:'google_sheet'});
         if(path==='/api/sheet_reference'&&request.method==='GET')return json(await getMerge(url.searchParams.get('group')));
+        if(path==='/api/add_glossary_term')return json({success:false,code:'read_only',error:'Glossary trên web chỉ đọc từ Google Sheet; chưa bật ghi hai chiều.'},501);
         if(path==='/api/chapter_data'&&request.method==='GET')return json({...await chapter(env,request,url.searchParams.get('id')),collaboration_available:true});
         if(path==='/api/export_chapter'&&request.method==='GET'){
             const data=await chapter(env,request,url.searchParams.get('id'));
@@ -35,12 +36,10 @@ export default {
         }
         if(path==='/api/characters'&&request.method==='GET')return json(await assetJSON(env,request,'/data/characters.json'));
         // Preserve the existing glossary/leaderboard integration, never proxy old line saves.
-        const proxy={ '/api/leaderboard':'get_leaderboard','/api/add_glossary_term':'add_glossary_term' };
+        const proxy={ '/api/leaderboard':'get_leaderboard' };
         if(proxy[path]){
-            if(path==='/api/add_glossary_term'&&request.method!=='POST')return json({success:false,error:'POST required'},405);
             const target=new URL(GAS);target.searchParams.set('action',proxy[path]);
-            const options={method:path==='/api/add_glossary_term'?'POST':'GET',redirect:'follow',signal:AbortSignal.timeout(15000)};
-            if(options.method==='POST'){const body=await request.json();options.body=JSON.stringify({...body,action:'add_glossary_term'});options.headers={'Content-Type':'text/plain;charset=utf-8'};}
+            const options={method:'GET',redirect:'follow',signal:AbortSignal.timeout(15000)};
             const response=await fetch(target,options);if(!response.ok)throw Error('Kho thuật ngữ chưa phản hồi.');const data=await response.json();return json(data);
         }
         return json({success:false,error:'Không tìm thấy API.'},404);
