@@ -72,3 +72,16 @@
  html[data-device="mobile"] .hud-tools .guide-open-button { width:auto; }
  html[data-device="mobile"] .hud-more > summary { font-size:.8rem; padding:10px 8px; }
 }
+
+/* Secondary tools are a labelled vertical menu, not a second row of icons. */
+.hud-more-panel { flex-direction:column; flex-wrap:nowrap; gap:2px; width:min(270px, calc(100vw - 24px)); box-sizing:border-box; padding:6px; }
+.hud-more-panel .btn-circle, .hud-more-panel .install-app-btn { display:flex; width:100%; max-width:none; height:auto; min-height:44px; box-sizing:border-box; justify-content:flex-start; gap:10px; padding:9px 10px; border-radius:8px; background:transparent; border:1px solid transparent; color:var(--text-pure); font:600 .85rem/1.3 var(--font-main); text-align:left; text-decoration:none; }
+.hud-more-panel [data-menu-label]::after { content:attr(data-menu-label); }
+.hud-more-panel .btn-circle:hover, .hud-more-panel .btn-circle:focus-visible { background:var(--card-glass); border-color:var(--card-border); transform:none; }
+.hud-more-panel .btn-circle .tram-icon { flex:0 0 auto; }
+.hud-more-panel .install-app-label { display:inline; }
+/* Blocks follow the same available width at every breakpoint. */
+.vn-stage-container .dialogue-speech-box, .vn-stage-container #currentLineCollaboration, .vn-stage-container .translation-input-box, .vn-stage-container .stage-action-toolbar { width:100%; max-width:none; min-width:0; box-sizing:border-box; }
+@media(max-width:700px) {
+ html[data-device="mobile"] .hud-more-panel .btn-circle, html[data-device="mobile"] .hud-more-panel .install-app-btn { width:100%; max-width:none; height:auto; justify-content:flex-start; }
+}
