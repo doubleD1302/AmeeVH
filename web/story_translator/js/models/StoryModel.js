@@ -52,7 +52,13 @@ async function loadChapterData(chapterId) {
             if (res.ok) { data = await res.json(); data.collaboration_available = false; }
         }
         currentChapterData = data || { scenes: [] };
-        if (data && typeof data.collaboration_available === "boolean") { Collaboration.ready=data.collaboration_available; Collaboration.updateNotice(); }
+        if (data && typeof data.collaboration_available === "boolean") {
+            Collaboration.available = data.collaboration_available;
+            if (data.dataset_version) Collaboration.datasetVersion = data.dataset_version;
+            Collaboration.phase = data.dataset_phase || 'unavailable';
+            Collaboration.ready = Collaboration.available && Collaboration.phase === 'open';
+            Collaboration.updateNotice();
+        }
 
         const sceneSel = document.getElementById("sceneSelect");
         const drawer = document.getElementById("scenesDrawer");

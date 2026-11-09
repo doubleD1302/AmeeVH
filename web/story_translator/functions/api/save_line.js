@@ -1,5 +1,5 @@
 /**
- * Cloudflare Pages Functions - Direct Save Line Proxy
+ * Cloudflare Pages Functions - legacy save route (returns 426)
  * Đường dẫn: functions/api/save_line.js
  */
 

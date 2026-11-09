@@ -7,8 +7,6 @@ let allGlossaryTerms = [];
 let activeGlossaryCategory = "ALL";
 let glossarySearchTerm = "";
 
-const GAS_GLOSSARY_URL = "https://script.google.com/macros/s/AKfycbwhB90dQ5YL27wBkeXeQIoI18TZO3KXXhgwdb0iG96rqwBQUfk7ztZwGjdG_tEwElDhFw/exec?action=get_glossary";
-
 /**
  * Xóa dấu tiếng Việt phục vụ tra cứu linh hoạt (không dấu vẫn tìm ra có dấu)
  */
@@ -79,44 +77,28 @@ function normalizeLoadedGlossaryTerms(rawList) {
 }
 
 /**
- * Nạp danh sách thuật ngữ từ API, GAS hoặc bản sao nội bộ data/glossary.json
+ * Nạp danh sách thuật ngữ từ API hoặc bản sao nội bộ data/glossary.json
  */
 async function loadGlossaryTerms(refresh = false) {
     try {
         let loadedTerms = null;
 
-        if (!refresh) {
-            // 1. Thử API local
-            try {
-                const res = await fetch("/api/glossary");
-                if (res.ok) {
-                    const text = await res.text();
-                    if (text && text.trim().length > 0) {
-                        const parsed = JSON.parse(text);
-                        loadedTerms = Array.isArray(parsed) ? parsed : (parsed.terms || null);
-                    }
+        // 1. Thử API local
+        try {
+            const res = await fetch("/api/glossary", { cache: refresh ? "no-store" : "default" });
+            if (res.ok) {
+                const text = await res.text();
+                if (text && text.trim().length > 0) {
+                    const parsed = JSON.parse(text);
+                    loadedTerms = Array.isArray(parsed) ? parsed : (parsed.terms || null);
                 }
-            } catch (_) {}
-
-            // 2. Thử tệp data/glossary.json
-            if (!loadedTerms) {
-                try {
-                    const res = await fetch("data/glossary.json");
-                    if (res.ok) {
-                        const text = await res.text();
-                        if (text && text.trim().length > 0) {
-                            const parsed = JSON.parse(text);
-                            loadedTerms = Array.isArray(parsed) ? parsed : (parsed.terms || null);
-                        }
-                    }
-                } catch (_) {}
             }
-        }
+        } catch (_) {}
 
-        // 3. Nếu yêu cầu refresh hoặc các bước trên chưa có, thử GAS Web App
+        // 2. Thử tệp data/glossary.json
         if (!loadedTerms) {
             try {
-                const res = await fetch(GAS_GLOSSARY_URL);
+                const res = await fetch("data/glossary.json", { cache: refresh ? "no-store" : "default" });
                 if (res.ok) {
                     const text = await res.text();
                     if (text && text.trim().length > 0) {
@@ -257,7 +239,7 @@ async function addGlossaryTerm(termData) {
         localStorage.setItem("ss_custom_glossary", JSON.stringify(localCustoms));
     } catch (_) {}
 
-    // 2. Gửi yêu cầu đồng bộ lên Google Sheets qua các tầng kết nối
+    // 2. Gửi yêu cầu đồng bộ qua backend
     let syncSuccess = false;
     let syncMessage = "";
 
@@ -271,7 +253,7 @@ async function addGlossaryTerm(termData) {
         translator: translator
     };
 
-    // Tầng 1: Gọi qua API Local Server hoặc Cloudflare Pages Functions (/api/add_glossary_term)
+    // Google Sheets chỉ được truy cập từ backend.
     try {
         const res = await fetch("/api/add_glossary_term", {
             method: "POST",
@@ -292,39 +274,15 @@ async function addGlossaryTerm(termData) {
         }
     } catch (_) {}
 
-    // Tầng 2: Nếu chưa đồng bộ được (trên môi trường Static không có Functions), gọi trực tiếp sang Google Apps Script Web App
-    if (!syncSuccess) {
-        try {
-            const gasUrl = GAS_GLOSSARY_URL.split("?")[0];
-            const gasRes = await fetch(gasUrl, {
-                method: "POST",
-                headers: { "Content-Type": "text/plain;charset=utf-8" },
-                body: JSON.stringify(payload)
-            });
-            if (gasRes.ok) {
-                const gasText = await gasRes.text();
-                if (gasText && gasText.trim().length > 0) {
-                    try {
-                        const gasData = JSON.parse(gasText);
-                        if (gasData && (gasData.success || gasData.term)) {
-                            syncSuccess = true;
-                            syncMessage = gasData.message || "Đã đồng bộ trực tiếp lên Google Sheets (Live)!";
-                        }
-                    } catch (_) {}
-                }
-            }
-        } catch (_) {}
-    }
-
     if (syncSuccess) {
         showToastAlert(`🎉 ${syncMessage || 'Đã thêm thuật ngữ và đồng bộ Google Sheets!'}`);
     } else {
-        showToastAlert(`💾 Đã lưu tạm thuật ngữ vào máy (sẽ tự đẩy lên Google Sheets khi có mạng)!`);
+        showToastAlert(`💾 Chỉ lưu trên máy; chưa gửi lên máy chủ. Hãy thử đồng bộ lại khi có mạng.`);
     }
 
     return {
         success: true,
-        message: syncMessage || "Đã lưu thuật ngữ!",
+        message: syncMessage || "Chỉ lưu thuật ngữ trên máy; chưa đồng bộ.",
         term: newOrUpdatedTerm
     };
 }
@@ -341,12 +299,9 @@ async function syncGlossaryFromSheets() {
     let message = "";
 
     try {
-        // 1. Thử gọi API backend (Local Server)
+        // Chỉ gọi API backend.
         try {
-            const res = await fetch("/api/sync_glossary", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" }
-            });
+            const res = await fetch("/api/sync_glossary", { cache: "no-store" });
             if (res.ok) {
                 const text = await res.text();
                 if (text && text.trim().length > 0) {
@@ -361,26 +316,7 @@ async function syncGlossaryFromSheets() {
             }
         } catch (_) {}
 
-        // 2. Nếu Backend không phản hồi JSON (Static / Cloudflare Pages / GitHub Pages), kết nối trực tiếp GAS Web App
-        if (!syncedTerms) {
-            try {
-                const gasRes = await fetch(GAS_GLOSSARY_URL, { method: "GET" });
-                if (gasRes.ok) {
-                    const gasText = await gasRes.text();
-                    if (gasText && gasText.trim().length > 0) {
-                        try {
-                            const gasData = JSON.parse(gasText);
-                            if (gasData && gasData.terms) {
-                                syncedTerms = gasData.terms;
-                                message = `Đã đồng bộ trực tiếp ${syncedTerms.length} thuật ngữ từ Google Sheets (Live)!`;
-                            }
-                        } catch (_) {}
-                    }
-                }
-            } catch (_) {}
-        }
-
-        // 3. Fallback nạp lại từ data/glossary.json
+        // Fallback nạp lại từ data/glossary.json
         if (!syncedTerms) {
             try {
                 const localRes = await fetch("data/glossary.json?t=" + Date.now());

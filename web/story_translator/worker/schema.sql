@@ -12,10 +12,11 @@ CREATE TABLE IF NOT EXISTS proposals (
  translator TEXT NOT NULL, origin TEXT NOT NULL, notes TEXT NOT NULL DEFAULT '', reason TEXT NOT NULL, reason_detail TEXT NOT NULL DEFAULT '',
  created_at TEXT NOT NULL, state TEXT NOT NULL DEFAULT 'pending' CHECK(state IN ('pending','accepted','rejected')),
  base_revision INTEGER NOT NULL, base_source_hash TEXT NOT NULL, base_text TEXT NOT NULL,
- reviewed_by TEXT, reviewed_at TEXT,
+ reviewed_by TEXT, reviewed_at TEXT, user_id TEXT, dataset_version TEXT, updated_at TEXT,
  FOREIGN KEY(chapter_id,line_id) REFERENCES lines(chapter_id,line_id)
 );
 CREATE INDEX IF NOT EXISTS proposals_line ON proposals(chapter_id,line_id,state,created_at);
+CREATE UNIQUE INDEX IF NOT EXISTS proposals_one_per_user_version ON proposals(chapter_id,line_id,dataset_version,user_id) WHERE user_id IS NOT NULL;
 CREATE TABLE IF NOT EXISTS history (
  id TEXT PRIMARY KEY, chapter_id TEXT NOT NULL, line_id TEXT NOT NULL, event_type TEXT NOT NULL,
  actor TEXT NOT NULL, created_at TEXT NOT NULL, reason TEXT NOT NULL DEFAULT '',
@@ -31,4 +32,17 @@ CREATE TABLE IF NOT EXISTS operations (
 );
 CREATE INDEX IF NOT EXISTS operations_line ON operations(chapter_id,line_id,created_at);
 CREATE TABLE IF NOT EXISTS collaboration_meta (key TEXT PRIMARY KEY,value TEXT NOT NULL);
-INSERT OR IGNORE INTO collaboration_meta(key,value) VALUES('schema_version','1');
+INSERT OR IGNORE INTO collaboration_meta(key,value) VALUES('schema_version','2');
+CREATE TABLE IF NOT EXISTS dataset_state (
+ id INTEGER PRIMARY KEY CHECK(id=1), version TEXT NOT NULL, phase TEXT NOT NULL CHECK(phase IN ('open','locked','publishing')),
+ manifest_hash TEXT, updated_at TEXT NOT NULL, updated_by TEXT NOT NULL
+);
+INSERT OR IGNORE INTO dataset_state(id,version,phase,manifest_hash,updated_at,updated_by) VALUES(1,'legacy-1','open',NULL,datetime('now'),'migration');
+CREATE TABLE IF NOT EXISTS dataset_events (
+ id TEXT PRIMARY KEY, old_version TEXT NOT NULL, new_version TEXT NOT NULL, old_phase TEXT NOT NULL, new_phase TEXT NOT NULL,
+ manifest_hash TEXT, actor TEXT NOT NULL, reason TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS users (
+ id TEXT PRIMARY KEY, session_hash TEXT NOT NULL UNIQUE, display_name TEXT NOT NULL,
+ created_at TEXT NOT NULL, updated_at TEXT NOT NULL
+);
