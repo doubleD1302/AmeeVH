@@ -4,6 +4,13 @@ const GAS = 'https://script.google.com/macros/s/AKfycbwhB90dQ5YL27wBkeXeQIoI18TZ
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 const json=(body,status=200)=>new Response(JSON.stringify(body),{status,headers});
 async function assetJSON(env, request, path){const response=await env.ASSETS.fetch(new Request(new URL(path,request.url)));if(!response.ok)throw Error('Không tìm thấy dữ liệu.');return response.json();}
+async function pageAsset(env,request){
+    const response=await env.ASSETS.fetch(request);
+    const pageHeaders=new Headers(response.headers);
+    pageHeaders.set('Cache-Control','no-store, max-age=0');
+    pageHeaders.set('X-TramVH-Page','current');
+    return new Response(response.body,{status:response.status,statusText:response.statusText,headers:pageHeaders});
+}
 async function chapter(env,request,id){
     const chapters=await assetJSON(env,request,'/data/chapters.json');
     if(!chapters.some(c=>c.id===id))throw Error('Chương không hợp lệ.');
@@ -14,7 +21,7 @@ async function chapter(env,request,id){
 export default {
  async fetch(request,env){
     const url=new URL(request.url),path=url.pathname;
-    if(!path.startsWith('/api/'))return env.ASSETS.fetch(request);
+    if(!path.startsWith('/api/'))return (path==='/'||path==='/index.html')?pageAsset(env,request):env.ASSETS.fetch(request);
     try{
         const origin=request.headers.get('Origin');
         if(request.method!=='GET'&&origin&&origin!==url.origin)return json({success:false,error:'Yêu cầu khác nguồn bị từ chối.'},403);
