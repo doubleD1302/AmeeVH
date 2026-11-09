@@ -281,7 +281,7 @@
                 </div>
 
                 <div class="glossary-header-actions">
-                    <button class="btn-action-primary btn-add-term" id="btnOpenAddTerm" onclick="toggleAddTermDrawer()" title="Thêm thuật ngữ mới và đồng bộ Google Sheets">
+                    <button class="btn-action-primary btn-add-term" id="btnOpenAddTerm" onclick="toggleAddTermDrawer()" title="Thêm thuật ngữ mới và lưu trên máy">
                         <span class="btn-icon">➕</span>
                         <span class="btn-text">Thêm Thuật Ngữ</span>
                     </button>
@@ -295,13 +295,13 @@
                 </div>
             </div>
 
-            <!-- Inline Collapsible Drawer: Add New Term -->
+            <!-- Inline Collapsible Drawer: Add or Edit Term -->
             <div class="add-term-drawer" id="addTermDrawer" style="display:none;">
                 <div class="add-term-panel">
                     <div class="add-term-panel-header">
                         <div class="add-term-title">
                             <span class="add-term-icon">✨</span>
-                            <span>THÊM THUẬT NGỮ MỚI & ĐỒNG BỘ GOOGLE SHEETS</span>
+                            <span id="addTermDrawerTitle">THÊM THUẬT NGỮ MỚI · LƯU TRÊN MÁY</span>
                         </div>
                         <button type="button" class="btn-circle-mini" onclick="toggleAddTermDrawer(false)" aria-label="Đóng biểu mẫu thêm">✕</button>
                     </div>
@@ -344,7 +344,7 @@
                             <button type="button" class="btn-secondary-cancel" onclick="toggleAddTermDrawer(false)">Hủy</button>
                             <button type="submit" class="btn-submit-term" id="btnSubmitAddTerm">
                                 <span class="btn-submit-icon">💾</span>
-                                <span class="btn-submit-text">Lưu & Đồng Bộ Lên Sheet</span>
+                                <span class="btn-submit-text">Lưu thuật ngữ</span>
                             </button>
                         </div>
                     </form>

@@ -4,6 +4,13 @@
  * hỗ trợ đa nền tảng PC & Android, khay thêm thuật ngữ mới và tìm kiếm tức thì.
  */
 
+let glossaryEditTarget = null;
+const glossaryRenderTerms = new Map();
+
+function glossaryTermKey(term) {
+    return `${term.id || ""}::${term.en || ""}`;
+}
+
 function updateGlossaryCountBadge() {
     const badge = document.getElementById("glossaryTotalBadge");
     if (badge) {
@@ -120,6 +127,7 @@ function toggleAddTermDrawer(forceState) {
     const shouldOpen = forceState !== undefined ? forceState : !isOpen;
 
     if (shouldOpen) {
+        if (!glossaryEditTarget) resetGlossaryTermForm();
         drawer.style.display = "block";
         requestAnimationFrame(() => {
             drawer.classList.add("open");
@@ -138,6 +146,49 @@ function toggleAddTermDrawer(forceState) {
             }
         }, 220);
     }
+}
+
+function resetGlossaryTermForm() {
+    glossaryEditTarget = null;
+    const title = document.getElementById("addTermDrawerTitle");
+    const submit = document.getElementById("btnSubmitAddTerm");
+    const en = document.getElementById("inputTermEn");
+    const vi = document.getElementById("inputTermVi");
+    const notes = document.getElementById("inputTermNotes");
+    if (title) title.textContent = "THÊM THUẬT NGỮ MỚI · LƯU TRÊN MÁY";
+    if (submit) submit.querySelector(".btn-submit-text").textContent = "Lưu thuật ngữ";
+    if (en) en.value = "";
+    if (vi) vi.value = "";
+    if (notes) notes.value = "";
+}
+
+function openGlossaryEdit(term) {
+    if (!term) return;
+    glossaryEditTarget = { ...term };
+    const drawer = document.getElementById("addTermDrawer");
+    if (!drawer) return;
+    drawer.style.display = "block";
+    requestAnimationFrame(() => drawer.classList.add("open"));
+    const title = document.getElementById("addTermDrawerTitle");
+    const submit = document.getElementById("btnSubmitAddTerm");
+    const en = document.getElementById("inputTermEn");
+    const vi = document.getElementById("inputTermVi");
+    const category = document.getElementById("selectTermCategory");
+    const notes = document.getElementById("inputTermNotes");
+    if (title) title.textContent = "CHỈNH SỬA THUẬT NGỮ · LƯU TRÊN MÁY";
+    if (submit) submit.querySelector(".btn-submit-text").textContent = "Lưu chỉnh sửa";
+    if (en) en.value = term.en || "";
+    if (vi) vi.value = term.vi || "";
+    if (category) category.value = term.category || "Chung";
+    if (notes) notes.value = term.notes || "";
+    const btn = document.getElementById("btnOpenAddTerm");
+    if (btn) btn.classList.add("active");
+    setTimeout(() => en?.focus(), 100);
+}
+
+function openGlossaryEditByKey(encodedKey) {
+    const term = glossaryRenderTerms.get(decodeURIComponent(encodedKey || ""));
+    if (term) openGlossaryEdit(term);
 }
 
 /**
@@ -168,17 +219,14 @@ async function submitAddTermForm() {
     }
 
     try {
-        await addGlossaryTerm({
-            en: en,
-            vi: vi,
-            category: category,
-            notes: notes
-        });
+        if (glossaryEditTarget) {
+            await updateGlossaryTerm({ id: glossaryEditTarget.id, previous_en: glossaryEditTarget.en, en, vi, category, notes });
+        } else {
+            await addGlossaryTerm({ en, vi, category, notes });
+        }
 
         // Reset form và đóng ngăn kéo
-        if (inputEn) inputEn.value = "";
-        if (inputVi) inputVi.value = "";
-        if (inputNotes) inputNotes.value = "";
+        resetGlossaryTermForm();
         toggleAddTermDrawer(false);
 
         // Đặt từ khóa tìm kiếm vào thuật ngữ vừa thêm để người dùng nhìn thấy ngay
@@ -293,7 +341,7 @@ function renderGlossaryList() {
             <div class="empty-icon">${tramIcon("search")}</div>
             <p class="empty-title">Không tìm thấy thuật ngữ phù hợp!</p>
             <p class="empty-desc">
-                Bạn có thể thử tìm bằng từ tiếng Anh, tiếng Việt (có dấu hoặc không dấu), hoặc bấm <b>"+ Thêm Thuật Ngữ"</b> để đóng góp từ mới.
+                Bạn có thể thử tìm bằng từ tiếng Anh, tiếng Việt (có dấu hoặc không dấu), hoặc bấm <b>"+ Thêm Thuật Ngữ"</b> để lưu một mục mới trên máy.
             </p>
             <button class="btn-action-primary empty-add-btn" onclick="toggleAddTermDrawer(true)">
                 <span>➕ Thêm "${escapeHtml(glossarySearchTerm)}" Vào Từ Điển</span>
@@ -302,6 +350,8 @@ function renderGlossaryList() {
         return;
     }
 
+    glossaryRenderTerms.clear();
+    filtered.forEach(item => glossaryRenderTerms.set(glossaryTermKey(item), item));
     container.innerHTML = filtered.map(item => `
         <div class="glossary-card">
             <div class="glossary-card-topbar">
@@ -311,9 +361,9 @@ function renderGlossaryList() {
                         <span class="btn-act-icon">${tramIcon("copy")}</span>
                         <span class="btn-act-text">Sao chép</span>
                     </button>
-                    <button class="glossary-action-btn action-insert" onclick="insertGlossaryFromModal('${escapeHtml(item.vi)}')" title="Chèn trực tiếp vào ô dịch câu hiện tại">
-                        <span class="btn-act-icon">➕</span>
-                        <span class="btn-act-text">Chèn</span>
+                    <button class="glossary-action-btn action-edit" onclick="openGlossaryEditByKey('${encodeURIComponent(glossaryTermKey(item))}')" title="Chỉnh sửa thuật ngữ này trên máy">
+                        <span class="btn-act-icon">✎</span>
+                        <span class="btn-act-text">Chỉnh sửa</span>
                     </button>
                 </div>
             </div>

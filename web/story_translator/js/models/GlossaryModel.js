@@ -61,12 +61,17 @@ function normalizeLoadedGlossaryTerms(rawList) {
         });
     }
 
-    // Gộp thêm các thuật ngữ tùy chỉnh đã lưu offline (nếu có)
+    // Áp dụng các chỉnh sửa cục bộ trước đó; Sheet vẫn là nguồn đọc mặc định.
     try {
         const localCustoms = JSON.parse(localStorage.getItem("ss_custom_glossary") || "[]");
         if (Array.isArray(localCustoms)) {
             for (const c of localCustoms) {
-                if (c && c.en && !seenEn.has(`en:${c.en.toLowerCase()}`)) {
+                if (!c || !c.en) continue;
+                const index = c.id
+                    ? cleaned.findIndex(item => item.id && item.id === c.id)
+                    : cleaned.findIndex(item => item.en.toLowerCase() === c.en.toLowerCase());
+                if (index >= 0) cleaned[index] = { ...cleaned[index], ...c };
+                else if (!seenEn.has(`en:${c.en.toLowerCase()}`)) {
                     seenEn.add(`en:${c.en.toLowerCase()}`);
                     cleaned.push(c);
                 }
@@ -208,6 +213,7 @@ async function addGlossaryTerm(termData) {
     // 1. Cập nhật lạc quan (Optimistic UI Update) ngay trên giao diện
     let existingIndex = allGlossaryTerms.findIndex(t => (t.en || "").trim().toLowerCase() === en.toLowerCase());
     let newOrUpdatedTerm = {
+        id: termData.id || "",
         en: en,
         vi: vi,
         category: category,
@@ -232,13 +238,7 @@ async function addGlossaryTerm(termData) {
     }
 
     // Lưu vào cache offline localStorage
-    try {
-        const localCustoms = JSON.parse(localStorage.getItem("ss_custom_glossary") || "[]");
-        const idx = localCustoms.findIndex(c => (c.en || "").toLowerCase() === en.toLowerCase());
-        if (idx >= 0) localCustoms[idx] = newOrUpdatedTerm;
-        else localCustoms.push(newOrUpdatedTerm);
-        localStorage.setItem("ss_custom_glossary", JSON.stringify(localCustoms));
-    } catch (_) {}
+    persistLocalGlossaryTerm(newOrUpdatedTerm, termData.previous_en || "");
 
     // 2. Gửi yêu cầu đồng bộ qua backend
     let syncSuccess = false;
@@ -286,6 +286,49 @@ async function addGlossaryTerm(termData) {
         message: syncMessage || "Chỉ lưu thuật ngữ trên máy; chưa đồng bộ.",
         term: newOrUpdatedTerm
     };
+}
+
+function persistLocalGlossaryTerm(term, previousEn = "") {
+    try {
+        const localCustoms = JSON.parse(localStorage.getItem("ss_custom_glossary") || "[]");
+        const index = localCustoms.findIndex(item =>
+            (term.id && item.id === term.id) ||
+            (previousEn && (item.en || "").toLowerCase() === previousEn.toLowerCase()) ||
+            (!previousEn && !term.id && (item.en || "").toLowerCase() === term.en.toLowerCase())
+        );
+        if (index >= 0) localCustoms[index] = term;
+        else localCustoms.push(term);
+        localStorage.setItem("ss_custom_glossary", JSON.stringify(localCustoms));
+    } catch (_) {}
+}
+
+async function updateGlossaryTerm(termData) {
+    const en = (termData.en || "").trim();
+    const vi = (termData.vi || "").trim();
+    if (!en || !vi) throw new Error("Thuật ngữ EN và bản dịch VI không được để trống.");
+    const index = allGlossaryTerms.findIndex(item =>
+        (termData.id && item.id === termData.id) ||
+        (!termData.id && item.en.toLowerCase() === (termData.previous_en || en).toLowerCase())
+    );
+    if (index < 0) throw new Error("Không tìm thấy thuật ngữ cần chỉnh sửa.");
+    const updated = {
+        ...allGlossaryTerms[index],
+        id: termData.id || allGlossaryTerms[index].id || "",
+        en,
+        vi,
+        category: (termData.category || "Chung").trim() || "Chung",
+        raw_category: (termData.category || "Chung").trim() || "Chung",
+        notes: (termData.notes || "").trim(),
+        status: allGlossaryTerms[index].status || "approved"
+    };
+    allGlossaryTerms[index] = updated;
+    persistLocalGlossaryTerm(updated, termData.previous_en || "");
+    allGlossaryTerms.sort((a, b) => (b.en || "").length - (a.en || "").length);
+    updateGlossaryCountBadge();
+    renderGlossaryCategories();
+    renderGlossaryList();
+    showToastAlert("✏️ Đã cập nhật thuật ngữ trên máy. Google Sheet hiện chỉ đọc.");
+    return { success: true, term: updated };
 }
 
 /**

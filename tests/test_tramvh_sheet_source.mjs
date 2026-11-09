@@ -64,3 +64,10 @@ test('leaderboard UI accepts the Worker envelope and normalizes levels',()=>{
  assert.equal(context.formatLeaderboardLevel('Cấp 2'),'Lv. 2');
  assert.equal(context.formatLeaderboardLevel(3),'Lv. 3');
 });
+test('glossary local edits override the matching Sheet term',()=>{
+ const store={ss_custom_glossary:JSON.stringify([{id:'term-id',en:'Boss',vi:'Trùm sửa',category:'Nhân Vật & Đại Từ',notes:'local'}])};
+ const code=readFileSync(new URL('../web/story_translator/js/models/GlossaryModel.js',import.meta.url),'utf8');
+ const context=vm.createContext({localStorage:{getItem:key=>store[key]||null},console});vm.runInContext(code,context);
+ const out=context.normalizeLoadedGlossaryTerms([{id:'term-id',en:'Boss',vi:'Boss',category:'General'}]);
+ assert.equal(out.length,1);assert.equal(out[0].vi,'Trùm sửa');assert.equal(out[0].notes,'local');
+});
