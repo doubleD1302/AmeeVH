@@ -97,16 +97,21 @@ async function publishedManifest(env,verifyFiles=false){
  if(manifest?.schema!==1||!validId(manifest.version,120)||!Array.isArray(manifest.files)||manifest.files.length<2||manifest.files.length>200||typeof manifest.hash!=='string'||!/^[a-f0-9]{64}$/.test(manifest.hash))fail(409,'manifest_invalid','Manifest dữ liệu không hợp lệ.');
  const paths=new Set();
  for(const [index,file] of manifest.files.entries()){
-  if(!file||typeof file.path!=='string'||(index===0?file.path!=='chapters.json':!/^chapters\/[A-Za-z0-9_]+\.json$/.test(file.path))||paths.has(file.path)||!Number.isSafeInteger(file.bytes)||file.bytes<1||file.bytes>50000000||!/^([a-f0-9]{64})$/.test(file.sha256))fail(409,'manifest_invalid','Danh sách tệp trong manifest không hợp lệ.');
+  if(!file||typeof file.path!=='string'||(index===0?file.path!=='chapters.json':!/^chapters\/[A-Za-z0-9_]+\.json$/.test(file.path))||paths.has(file.path)||!Number.isSafeInteger(file.bytes)||file.bytes<1||file.bytes>50000000||!/^([a-f0-9]{64})$/.test(file.sha256)||(index>0&&(!Number.isSafeInteger(file.lines)||file.lines<0)))fail(409,'manifest_invalid','Danh sách tệp trong manifest không hợp lệ.');
   paths.add(file.path);
  }
+ if(manifest.chapters!==manifest.files.length-1||manifest.lines!==manifest.files.slice(1).reduce((total,file)=>total+file.lines,0))fail(409,'manifest_invalid','Tổng chương hoặc câu trong manifest không hợp lệ.');
  const payload={schema:1,version:manifest.version,files:manifest.files};
  if(await sourceHash(JSON.stringify(payload))!==manifest.hash)fail(409,'manifest_invalid','Hash manifest không khớp nội dung khai báo.');
- if(verifyFiles)for(const file of manifest.files){
+ if(verifyFiles)for(const [index,file] of manifest.files.entries()){
   const asset=await env.ASSETS.fetch(new Request('https://assets.invalid/data/'+file.path));
   if(!asset.ok)fail(409,'asset_missing','Thiếu tệp dữ liệu trên bản web: '+file.path);
   const bytes=await asset.arrayBuffer();
   if(bytes.byteLength!==file.bytes||await byteHash(bytes)!==file.sha256)fail(409,'asset_mismatch','Tệp dữ liệu trên bản web không khớp manifest: '+file.path);
+  if(index===0){
+   let chapters;try{chapters=JSON.parse(new TextDecoder().decode(bytes));}catch{fail(409,'asset_mismatch','Chỉ mục chương không phải JSON hợp lệ.');}
+   if(!Array.isArray(chapters)||chapters.length!==manifest.chapters||new Set(chapters.map(chapter=>chapter?.id)).size!==chapters.length||chapters.some(chapter=>!chapter||typeof chapter.id!=='string'||!paths.has(`chapters/${chapter.id}.json`)||manifest.files.find(file=>file.path===`chapters/${chapter.id}.json`)?.lines!==chapter.total_lines))fail(409,'asset_mismatch','Manifest không liệt kê đúng toàn bộ chương trong chỉ mục.');
+  }
  }
  return manifest;
 }
