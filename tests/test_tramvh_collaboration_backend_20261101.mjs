@@ -1,3 +1,4 @@
+import {HANDOFF_RESOURCES,HANDOFF_RESOURCE_HASHES} from '../web/story_translator/worker/handoff-resources.mjs';
 import test from 'node:test';
 import {runInNewContext} from 'node:vm';
 import assert from 'node:assert/strict';
@@ -310,5 +311,26 @@ test('shared API cookie keeps existing identity and works for admin exports',asy
   assert.equal(listed.body.data.items[0].created_by,'Minh');
   const withoutSession=await handleCollaboration(new Request('https://tramvh.test/api/admin/exports',{method:'POST',headers:{'Content-Type':'application/json','X-Reviewer-Key':'private-review-code'},body:JSON.stringify({kind:'handoff',chapter_id:chapterId})}),f.env);
   assert.equal(withoutSession.status,401);
+ } finally { f.close(); }
+});
+
+test('all export kinds include exact workflow and complete GitHub skill resources',async()=>{
+ const f=fixture({new_vi:'Xin chào {0}',status:'Đã duyệt'});
+ try {
+  await current(f.env);let base=null;
+  assert.equal(Object.keys(HANDOFF_RESOURCES).length,4);
+  for(const kind of ['snapshot','handoff','delta']){
+   const made=await call(f.env,'/api/admin/exports',{kind,chapter_id:chapterId,base_export_id:base},'private-review-code');
+   assert.equal(made.status,201,JSON.stringify(made.body));base=made.body.data.export_id;
+   for(const [file,text] of Object.entries(HANDOFF_RESOURCES)){
+    const expectedHash=await sourceHash(text);assert.equal(expectedHash,HANDOFF_RESOURCE_HASHES[file]);
+    assert.equal(made.body.data.manifest.files[file].sha256,expectedHash);
+    assert.equal(made.body.data.manifest.files[file].bytes,new TextEncoder().encode(text).length);
+    const response=await handleCollaboration(new Request(`https://tramvh.test/api/admin/exports/${base}/download?file=${encodeURIComponent(file)}`,{headers:{Cookie:await testCookie(f.env),'X-Reviewer-Key':'private-review-code'}}),f.env);
+    assert.equal(response.status,200);assert.equal(await response.text(),text);
+   }
+   const task=await call(f.env,`/api/admin/exports/${base}/download?file=TASK.json`,undefined,'private-review-code');
+   assert.deepEqual(task.body.support_files,Object.keys(HANDOFF_RESOURCES));assert.ok(task.body.agent_prompt.includes('skills/stella-github-translation-sync/SKILL.md'));
+  }
  } finally { f.close(); }
 });

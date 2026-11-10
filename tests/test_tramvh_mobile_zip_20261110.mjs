@@ -3,7 +3,7 @@ import {runInNewContext} from 'node:vm';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 const source = await readFile(new URL('../web/story_translator/js/handoff-zip.js', import.meta.url), 'utf8');
-const { createZip } = await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
+const { createZip, isSafeArchivePath } = await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
 test('ZIP giữ nguyên byte, tên tệp và CRC của từng tệp', async () => {
     const files = [{ name: 'manifest.json', bytes: new TextEncoder().encode('123456789') }, { name: 'changes.jsonl', bytes: new TextEncoder().encode('Tiếng Việt\n') }];
     const data = new Uint8Array(await createZip(files).arrayBuffer());
@@ -36,8 +36,15 @@ test('ZIP auto-download verifies bytes and provides a reusable download URL',asy
  const bytes=new TextEncoder().encode('Nội dung gói');
  const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');
  const manifest={export_id:'test-export',files:{'TASK.json':{bytes:bytes.length,sha256:hash}}};let clicks=0,createdBlob;
- const ctx={state:{lastDownload:null},TextDecoder,Uint8Array,crypto,JSON,createZip,render(){},URL:{createObjectURL(blob){createdBlob=blob;return 'blob:test';},revokeObjectURL(){}},document:{body:{append(){}},createElement(){return {click(){clicks++;},remove(){}};}},async request(path){return new Response(path.endsWith('manifest.json')?JSON.stringify(manifest):bytes);},async openModal(){throw Error('unexpected error');}};
+ const ctx={state:{lastDownload:null},TextDecoder,Uint8Array,crypto,JSON,createZip,isSafeArchivePath,render(){},URL:{createObjectURL(blob){createdBlob=blob;return 'blob:test';},revokeObjectURL(){}},document:{body:{append(){}},createElement(){return {click(){clicks++;},remove(){}};}},async request(path){return new Response(path.endsWith('manifest.json')?JSON.stringify(manifest):bytes);},async openModal(){throw Error('unexpected error');}};
  const start=portal.indexOf('async function downloadHandoffZip('),end=portal.indexOf('async function createHandoff()',start);
  runInNewContext(portal.slice(start,end)+';globalThis.download=downloadHandoffZip;',ctx);
  await ctx.download('test-export');assert.equal(clicks,1);assert.equal(ctx.state.lastDownload.url,'blob:test');assert.equal(ctx.state.lastDownload.name,'test-export.zip');assert.equal(createdBlob.type,'application/zip');
+});
+
+test('ZIP accepts document and skill folders but rejects traversal and absolute paths',async()=>{
+ for(const name of ['docs/HACHIMINH_WORKFLOW_INTEGRATION.md','skills/stella-github-translation-sync/references/git-workflow.md']){
+  assert.equal(isSafeArchivePath(name),true);assert.ok((await createZip([{name,bytes:new Uint8Array([1,2,3])}]).arrayBuffer()).byteLength>0);
+ }
+ for(const name of ['../file','docs/../file','/absolute','C:/file','docs//file','docs/./file','docs\\file'])assert.equal(isSafeArchivePath(name),false,name);
 });

@@ -8,10 +8,13 @@ function crc32(bytes) {
     }
     return (crc ^ 0xffffffff) >>> 0;
 }
+export function isSafeArchivePath(name) {
+    return typeof name === 'string' && name.length > 0 && name.length <= 240 && name.split('/').every(part => /^[A-Za-z0-9._-]+$/.test(part) && part !== '.' && part !== '..');
+}
 export function createZip(files) {
     const local = [], central = []; let offset = 0;
     for (const { name, bytes } of files) {
-        if (!/^[A-Za-z0-9._-]+$/.test(name) || !(bytes instanceof Uint8Array)) throw new Error('Tên hoặc dữ liệu tệp không hợp lệ.');
+        if (!isSafeArchivePath(name) || !(bytes instanceof Uint8Array)) throw new Error('Tên hoặc dữ liệu tệp không hợp lệ.');
         const encoded = encoder.encode(name), crc = crc32(bytes);
         const head = new Uint8Array(30 + encoded.length), h = new DataView(head.buffer);
         h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true);
