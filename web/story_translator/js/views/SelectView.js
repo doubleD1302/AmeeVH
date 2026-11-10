@@ -16,19 +16,22 @@
     }
     function position(state) {
         if (state.menu.hidden) return;
-        const rect = state.button.getBoundingClientRect();
+        const physical = state.button.getBoundingClientRect();
+        const scale = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
+        const rect = { width: physical.width / scale, left: physical.left / scale, top: physical.top / scale, bottom: physical.bottom / scale };
+        const viewportWidth = window.innerWidth / scale, viewportHeight = window.innerHeight / scale;
         const margin = 12;
-        const width = Math.min(Math.max(rect.width, 240), window.innerWidth - margin * 2);
-        const below = window.innerHeight - rect.bottom - margin - 6;
+        const width = Math.min(Math.max(rect.width, 240), viewportWidth - margin * 2);
+        const below = viewportHeight - rect.bottom - margin - 6;
         const above = rect.top - margin - 6;
         const upwards = below < 170 && above > below;
         const available = Math.max(48, upwards ? above : below);
         state.menu.style.width = `${width}px`;
         state.menu.style.maxHeight = `${Math.min(340, available)}px`;
-        state.menu.style.left = `${Math.max(margin, Math.min(rect.left, window.innerWidth - width - margin))}px`;
+        state.menu.style.left = `${Math.max(margin, Math.min(rect.left, viewportWidth - width - margin))}px`;
         if (upwards) {
             state.menu.style.top = "auto";
-            state.menu.style.bottom = `${window.innerHeight - rect.top + 6}px`;
+            state.menu.style.bottom = `${viewportHeight - rect.top + 6}px`;
         } else {
             state.menu.style.bottom = "auto";
             state.menu.style.top = `${rect.bottom + 6}px`;

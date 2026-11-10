@@ -33,9 +33,10 @@
     const updateViewport=()=>{
         if(!mobile())return;
         const viewport=window.visualViewport, dialog=document.getElementById('collaborationDialog');
+        const scale=parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
         const keyboard=viewport && viewport.height < innerHeight-140;
-        document.documentElement.style.setProperty('--mobile-visible-height',`${viewport?.height || innerHeight}px`);
-        document.documentElement.style.setProperty('--mobile-visible-top',`${viewport?.offsetTop || 0}px`);
+        document.documentElement.style.setProperty('--mobile-visible-height',`${(viewport?.height || innerHeight)/scale}px`);
+        document.documentElement.style.setProperty('--mobile-visible-top',`${(viewport?.offsetTop || 0)/scale}px`);
         document.body.classList.toggle('mobile-keyboard-open',!!keyboard);
         if(dialog.open && dialog.contains(document.activeElement))requestAnimationFrame(()=>document.activeElement?.scrollIntoView({block:'nearest'}));
     };

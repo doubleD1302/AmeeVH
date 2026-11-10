@@ -197,3 +197,6 @@ html[data-theme="dark"] #currentLineCollaboration .collab-current-text { border-
  #currentLineCollaboration .collab-badge { grid-column:1; grid-row:2; justify-self:start; }
  #currentLineCollaboration .collab-current-text { grid-row:3; font-size:1.04rem; }
 }
+
+/* Default density on desktop, tablet and mobile. */
+html { zoom: .8; }
