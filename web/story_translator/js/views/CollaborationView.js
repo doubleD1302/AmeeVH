@@ -5,7 +5,7 @@
     const make = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
     const action = (text, handler, cls = 'btn-direction') => { const b = make('button', cls, text); b.type = 'button'; b.addEventListener('click', handler); return b; };
     const reasonLabels = { meaning:'Sai nghĩa', pronouns:'Sai xưng hô', naturalness:'Câu chưa tự nhiên', other:'Khác' };
-    let session = null, requestSerial = 0, previousFocus = null;
+    let session = null, requestSerial = 0, previousFocus = null, mobileReturnY = null;
     V.badge = line => { const legacy = line.provenance === 'legacy_import' && !line.approved_at && M().status(line) === 'approved'; const badge = make('span', 'collab-badge collab-' + M().status(line), legacy ? 'Đã duyệt · Nhập cũ' : M().labels[M().status(line)]); if (legacy) badge.title = 'Trạng thái từ dữ liệu nhập cũ; lịch sử duyệt trước khi cộng tác chưa được xác minh.'; return badge; };
     V.metadata = line => {
         const wrap = make('div','collab-meta');
@@ -50,7 +50,7 @@
     const showError = (box,error) => { box.hidden = false; box.textContent = error.message || String(error); };
     const dialog = () => document.getElementById('collaborationDialog');
     const clear = title => {
-        const d = dialog(); requestSerial++; previousFocus = d.open ? previousFocus : document.activeElement; d.replaceChildren();
+        const d = dialog(); if(!d.open && matchMedia('(max-width:700px)').matches)mobileReturnY=scrollY; requestSerial++; previousFocus = d.open ? previousFocus : document.activeElement; d.replaceChildren();
         const header = make('div','collab-dialog-header'), h = make('h2','',title); h.id = 'collabDialogTitle'; h.tabIndex = -1;
         header.append(h,action('Đóng',()=>d.close(),'collab-close'));
         const content = make('div','collab-dialog-body'); d.append(header,content);
@@ -68,7 +68,7 @@
             if (e.shiftKey && (document.activeElement===first || !controls.includes(document.activeElement))) { e.preventDefault();last?.focus(); }
             else if (!e.shiftKey && document.activeElement===last) { e.preventDefault();first?.focus(); }
         });
-        d.addEventListener('close',()=>{ if(d.open)return;requestSerial++; session=null; if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true}); });
+        d.addEventListener('close',()=>{ if(d.open)return;requestSerial++; session=null; if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true}); if(mobileReturnY!==null){const y=mobileReturnY;mobileReturnY=null;requestAnimationFrame(()=>window.scrollTo({top:y,behavior:'instant'}));} });
     };
     V.login = () => {
         const body = clear('Admin Portal'), serial=requestSerial;
@@ -140,7 +140,7 @@
         const error=make('p','collab-error');error.hidden=true;error.role='alert';const reload=action('Tải bản mới để đối chiếu',async()=>{const active=session,activeSerial=requestSerial;if(!active)return;try{const latest={...active.base,...await M().getLine(active.base)};if(requestSerial!==activeSerial||session!==active||!dialog().open)return;active.base=latest;M().patch(latest);canonical.replaceChildren(V.summary(latest));sourcePreview.querySelector('p').textContent=latest.en || 'Chưa có nguồn EN cho câu này.';const refreshed=V.sources(latest);sourceNode.replaceWith(refreshed);sourceNode=refreshed;reason.required=mode!=='edit'||M().hasText(latest);if(reason.required&&!reasonLabel.isConnected){form.insertBefore(reasonLabel,error);form.insertBefore(detailLabel,error);}if(mode==='edit')submit.textContent=M().hasText(latest)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt';error.textContent='Đã tải bản mới. Bản nháp của bạn được giữ nguyên; kiểm tra phần khác biệt rồi gửi lại.';reload.hidden=true;active.payloadKey='';updateDiff();}catch(err){if(requestSerial===activeSerial&&session===active)showError(error,err);}},'collab-link');reload.hidden=true;
         const submit=make('button','btn-save-glow',mode==='report'?'Báo cần xem lại':mode==='restore'?'Khôi phục phiên bản':M().hasText(base)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt');submit.type='submit';submit.disabled=!M().ready;
         let sourceNode=body.querySelector('.collab-source-grid');
-        const canonical=make('div',mode==='edit'?'collab-proposal-current':'');canonical.append(V.summary(base));if(mode==='edit')body.lastChild.remove();else body.lastChild.replaceWith(canonical);
+        const canonical=make('div',mode==='edit'?'collab-proposal-current':'');canonical.append(V.summary(base));if(mode==='edit'){body.lastChild.remove();if(matchMedia('(max-width:700px)').matches)body.append(canonical);}else body.lastChild.replaceWith(canonical);
         if(mode!=='report')form.append(label,diffDetails);
         if(mode==='edit' && origin.value==='machine')body.prepend(make('p','collab-info','Bản nháp hoặc đề xuất trước đó được đánh dấu là bản dịch máy/AI; trạng thái này được giữ lại.'));
         if(reason.required)form.append(reasonLabel,detailLabel);
@@ -150,6 +150,7 @@
         session={base,mode,payloadKey:'',requestId:'',input};
         const updateDiff=()=>{diff.replaceChildren(V.diff(session?.base.new_vi || base.new_vi || '',input.value));};updateDiff();
         const saveLocal=()=>{if(mode==='edit')M().saveDraft(base,{text:input.value,origin:origin.value,notes:notes.value,reason:reason.value,reason_detail:detail.value,base_revision:base.revision});};
+        if(mode==='edit' && matchMedia('(max-width:700px)').matches && base.new_vi){const useCurrent=action('Dùng bản hiện tại để sửa',()=>{if(input.value && input.value!==session.base.new_vi && !confirm('Thay nội dung đang soạn bằng bản hiện tại?'))return;input.value=session.base.new_vi || '';saveLocal();updateDiff();input.focus();},'btn-direction');form.insertBefore(useCurrent,label);}
         for(const field of [input,origin,notes,reason,detail])field.addEventListener('input',()=>{saveLocal();updateDiff();});
         input.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();form.requestSubmit();}});
         form.addEventListener('submit',async e=>{

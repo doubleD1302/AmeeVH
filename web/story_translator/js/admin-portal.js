@@ -1,3 +1,5 @@
+import { createZip } from './handoff-zip.js?v=1';
+
 const NAV = [
     { group: 'Workspace', items: [
         { id: 'overview', label: 'Tổng quan', icon: '◫' },
@@ -226,13 +228,17 @@ function renderSidebar() {
     const side = $('#adminSidebar');
     const s = stats();
     side.classList.toggle('open', state.mobileOpen);
+    $('#adminBackdrop').hidden = !state.mobileOpen;
+    document.body.classList.toggle('mobile-menu-open', state.mobileOpen);
+    const toggle = $('[data-action="toggle-mobile"]');
+    if (toggle) toggle.setAttribute('aria-expanded', String(state.mobileOpen));
     const ready = Boolean(state.key);
     side.innerHTML = `${brandMarkup()}<div class="workspace-status ${ready ? '' : 'is-locked'}"><div class="workspace-status-row"><span class="pulse"></span> ${ready ? 'SYNC READY' : 'REVIEWER REQUIRED'}</div><p>${ready && state.release?.dataset?.version ? esc(state.release.dataset.version) : 'Chưa mở phiên reviewer'}<br>${ready && state.release?.dataset?.phase ? `Phase · ${esc(state.release.dataset.phase)}` : 'Nhập mã để truy cập workspace'}</p></div>${state.key ? `<nav class="side-nav">${NAV.map(group => `<section class="nav-group"><p class="nav-label">${esc(group.group)}</p><div>${group.items.map(item => { const count = item.id === 'queue' ? s.queue : item.id === 'issues' ? s.issues : item.count; return `<button type="button" class="nav-item ${state.view === item.id ? 'active' : ''}" aria-current="${state.view === item.id ? 'page' : 'false'}" data-nav="${item.id}"><span class="nav-item-main">${icon(item.icon, 'nav-icon')}<span>${esc(item.label)}</span></span>${count ? `<span class="nav-count">${count}</span>` : ''}</button>`; }).join('')}</div></section>`).join('')}</nav>` : '<div class="side-nav"></div>'}<div class="side-footer">${state.key ? `<div class="side-user"><span class="avatar">R</span><span class="side-user-copy"><strong>Reviewer session</strong><span>Key chỉ giữ trong tab này</span></span><button type="button" data-action="logout" title="Tắt quyền duyệt">×</button></div>` : `<a class="side-user" href="index.html"><span class="avatar">←</span><span class="side-user-copy"><strong>Quay lại workspace</strong><span>Trang dịch hiện tại</span></span></a>`}</div>`;
 }
 
 function renderHeader() {
     const label = state.key ? (NAV.flatMap(group => group.items).find(item => item.id === state.view)?.label || 'Tổng quan') : 'Đăng nhập';
-    $('#adminHeader').innerHTML = `<div class="header-left"><button type="button" class="mobile-menu" data-action="toggle-mobile" aria-label="Mở menu">☰</button><div><div class="crumbs"><span>TrạmVH</span><b>/</b><span>Admin</span><b>/</b><b>${esc(label)}</b></div><p class="header-title">${esc(label)}</p></div></div><div class="header-right">${state.key ? '<label class="quick-search"><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.75"/><path d="m16 16 4 4"/></svg><input id="globalSearch" aria-label="Tìm câu dịch" placeholder="Tìm câu dịch, mã câu..." autocomplete="off"></label>' : ''}<button type="button" class="btn header-guide" data-action="help">Hướng dẫn</button><span class="header-avatar"><span class="avatar">${state.key ? 'R' : '?'}</span><span>${state.key ? 'Reviewer' : 'Chưa xác thực'}</span></span></div>`;
+    $('#adminHeader').innerHTML = `<div class="header-left"><button type="button" class="mobile-menu" data-action="toggle-mobile" aria-controls="adminSidebar" aria-expanded="${state.mobileOpen}" aria-label="Mở menu">☰</button><div><div class="crumbs"><span>TrạmVH</span><b>/</b><span>Admin</span><b>/</b><b>${esc(label)}</b></div><p class="header-title">${esc(label)}</p></div></div><div class="header-right">${state.key ? '<label class="quick-search"><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.75"/><path d="m16 16 4 4"/></svg><input id="globalSearch" aria-label="Tìm câu dịch" placeholder="Tìm câu dịch, mã câu..." autocomplete="off"></label>' : ''}${state.key ? '<button type="button" class="mobile-search" data-action="mobile-search" aria-label="Tìm câu dịch" title="Tìm câu dịch"><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.75"/><path d="m16 16 4 4"/></svg></button>' : ''}<button type="button" class="btn header-guide" data-action="help">Hướng dẫn</button><span class="header-avatar"><span class="avatar">${state.key ? 'R' : '?'}</span><span>${state.key ? 'Reviewer' : 'Chưa xác thực'}</span></span></div>`;
 }
 
 function renderLogin() {
@@ -253,7 +259,7 @@ function renderQueue() {
     if (selected && selected.line_id !== state.selectedLineId) state.selectedLineId = selected.line_id;
     const filters = ['all', 'pending', 'needs_review', 'untranslated'];
     const rows = list.length ? list.map(line => `<button type="button" class="queue-row ${line.line_id === state.selectedLineId ? 'selected' : ''}" data-line="${esc(line.line_id)}" data-chapter="${esc(line.chapter_id || state.chapterId)}"><div class="queue-row-top"><b>${esc(line.line_id)}</b><time>${esc(line.updated_at ? new Date(line.updated_at).toLocaleDateString('vi-VN') : 'Chưa ghi thời gian')}</time></div><p>${esc(line.scene_title || line.speaker || line.chapter_id || 'Không có cảnh')} · ${esc(line.speaker || 'Hệ thống')}</p><div class="queue-row-bottom"><span>${esc(line.en || 'Chưa có EN')}</span>${pill(labelStatus(statusOf(line)), toneFor(statusOf(line)))}</div></button>`).join('') : emptyState('Hàng chờ đang trống', 'Không có câu phù hợp với bộ lọc hiện tại. Tải lại dữ liệu hoặc đổi bộ lọc.', 'reload', 'Tải lại dữ liệu');
-    return `<div class="view-head"><div><p class="eyebrow">Review gate · 01</p><h1>Hàng chờ duyệt</h1><p>Duyệt câu dịch với đúng nguồn, bản đang dùng và đề xuất. Quyết định thật được gửi qua API cộng tác với revision guard.</p></div><div class="button-row"><button type="button" class="btn" data-action="reload">↻ Tải lại</button><button type="button" class="btn" data-nav="export">Đối chiếu trước khi xuất →</button></div></div><div class="toolbar"><label class="search-box"><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.75"/><path d="m16 16 4 4"/></svg><input id="queueSearch" aria-label="Tìm trong hàng chờ duyệt" value="${esc(state.queueSearch)}" placeholder="Tìm mã câu hoặc nội dung..." autocomplete="off"></label>${filters.map(filter => `<button type="button" class="filter-btn ${filter === state.queueFilter ? 'active' : ''}" data-filter="${filter}">${filter === 'all' ? `Tất cả · ${all.length}` : labelStatus(filter)}</button>`).join('')}</div><section class="panel queue-shell"><div class="queue-list"><div class="queue-list-head"><strong>${list.length} dòng trong phạm vi</strong>${pill('Reviewer gate', 'gold')}</div><div id="queueRows">${rows}</div></div><div class="detail-pane">${selected ? detailMarkup(selected) : emptyState('Chưa chọn câu', 'Chọn một dòng ở hàng chờ để xem nguồn và bằng chứng.')}</div></section>`;
+    return `<div class="view-head"><div><p class="eyebrow">Review gate · 01</p><h1>Hàng chờ duyệt</h1><p>Duyệt câu dịch với đúng nguồn, bản đang dùng và đề xuất. Quyết định thật được gửi qua API cộng tác với revision guard.</p></div><div class="button-row"><button type="button" class="btn" data-action="reload">↻ Tải lại</button><button type="button" class="btn" data-nav="export">Đối chiếu trước khi xuất →</button></div></div><div class="toolbar"><label class="search-box"><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.75"/><path d="m16 16 4 4"/></svg><input id="queueSearch" aria-label="Tìm trong hàng chờ duyệt" value="${esc(state.queueSearch)}" placeholder="Tìm mã câu hoặc nội dung..." autocomplete="off"></label>${filters.map(filter => `<button type="button" class="filter-btn ${filter === state.queueFilter ? 'active' : ''}" data-filter="${filter}">${filter === 'all' ? `Tất cả · ${all.length}` : labelStatus(filter)}</button>`).join('')}</div><section class="panel queue-shell"><div class="queue-list" id="queueList"><div class="queue-list-head"><strong>${list.length} dòng trong phạm vi</strong>${pill('Reviewer gate', 'gold')}</div><div id="queueRows">${rows}</div></div><div class="detail-pane" id="queueDetail" tabindex="-1"><button type="button" class="btn mobile-queue-back" data-action="queue-back">← Quay lại danh sách</button>${selected ? detailMarkup(selected) : emptyState('Chưa chọn câu', 'Chọn một dòng ở hàng chờ để xem nguồn và bằng chứng.')}</div></section>`;
 }
 
 function detailMarkup(line) {
@@ -271,7 +277,7 @@ function historyMarkup(data) {
 function renderIssues() {
     const issues = issueLines();
     const rows = issues.length ? issues.map(line => { const severe = line.event_type === 'needs_review' || statusOf(line) === 'needs_review'; return `<div class="table-row"><div><code>${esc(line.issue_id || 'ISS-REVIEW')}</code><small>${esc(line.line_id)}</small></div><div><b>${esc(line.reason || 'Cần đối chiếu')}</b><small>${esc(line.en || 'Không có EN')}</small></div><div>${pill(severe ? 'Cao' : 'Vừa', severe ? 'red' : 'gold')}</div><div>${icon('→')} Mở lịch sử và đối chiếu</div><div>${esc(line.translator || line.actor || 'Chưa giao')}</div></div>`; }).join('') : emptyState('Chưa có issue', 'Các câu cần kiểm tra sẽ xuất hiện ở đây sau khi reviewer báo vấn đề hoặc nguồn thay đổi.', 'queue', 'Mở hàng chờ');
-    return `<div class="view-head"><div><p class="eyebrow">Evidence gate · 02</p><h1>Câu cần kiểm tra</h1><p>Danh sách vướng được lấy từ history/needs_review server-side. Mỗi issue có ID ổn định và bằng chứng nguồn.</p></div><button type="button" class="btn" data-action="download-issues">⇩ Tải issues.jsonl</button></div><div class="toolbar"><span class="pill red">${issues.length} issue trong phạm vi hiện tại</span><span class="pill">Nguồn: server audit</span></div><div class="table"><div class="table-head"><span>Issue / line</span><span>Nguyên nhân</span><span>Mức độ</span><span>Hành động tiếp theo</span><span>Owner</span></div>${rows}</div>`;
+    return `<div class="view-head"><div><p class="eyebrow">Evidence gate · 02</p><h1>Câu cần kiểm tra</h1><p>Danh sách vướng được lấy từ history/needs_review server-side. Mỗi issue có ID ổn định và bằng chứng nguồn.</p></div><button type="button" class="btn" data-action="download-issues">⇩ Tải issues.jsonl</button></div><div class="toolbar"><span class="pill red">${issues.length} issue trong phạm vi hiện tại</span><span class="pill">Nguồn: server audit</span></div><div class="table issues-table"><div class="table-head"><span>Issue / line</span><span>Nguyên nhân</span><span>Mức độ</span><span>Hành động tiếp theo</span><span>Owner</span></div>${rows}</div>`;
 }
 
 function renderExport() {
@@ -282,7 +288,7 @@ function renderExport() {
 
 function renderHistory() {
     const records = state.exportRecords.length ? state.exportRecords : (state.exports.length ? state.exports : [{ id: 'LOCAL-PREVIEW', kind: 'Bản xem trước', chapter_id: state.chapterId, status: 'Chưa tải xuống', rows: stats().ready, hash: 'sẽ tính khi tải', created_at: 'Trong tab hiện tại', created_by: 'Reviewer session' }]);
-    return `<div class="view-head"><div><p class="eyebrow">Immutable exports · 04</p><h1>Lịch sử bản xuất</h1><p>Mỗi bản xuất được lưu server-side theo export_id; tải lại cùng ID trả về đúng tệp đã khóa.</p></div><button type="button" class="btn" data-nav="export">+ Tạo bản xuất</button></div>${state.completedHandoff ? `<section class="panel panel-pad" style="margin-bottom:16px"><h2 class="panel-title">Đã tạo gói ${esc(state.completedHandoff.id)}</h2><p class="panel-sub">Tải các tệp của gói bên dưới và gửi cùng prompt cho agent.</p>${state.completedHandoff.prompt ? `<textarea class="prompt-editor" rows="8" readonly aria-label="Prompt của gói vừa tạo">${esc(state.completedHandoff.prompt)}</textarea><button type="button" class="btn primary" data-action="copy-handoff-prompt">Sao chép prompt</button>` : `<p>Không tải được prompt. Hãy tải AGENT_PROMPT.md trong danh sách tệp bên dưới.</p>`}</section>` : ''}<div class="export-history">${records.map(record => { const manifest = record.manifest || {}; return `<article class="history-card"><div class="history-main"><span class="history-icon">▣</span><div><b>${esc(record.id || record.export_id)}</b><span>${esc(record.kind || manifest.kind)} · ${esc(record.chapter_id || manifest.chapter_id || state.chapterId)}</span></div></div><div class="history-meta"><label>Rows</label><strong>${esc(manifest.scope?.lines ?? record.rows ?? '—')}</strong></div><div class="history-meta"><label>Hash</label><strong>${esc(manifest.files?.['changes.jsonl']?.sha256?.slice(0, 12) || record.hash || '—')}…</strong></div><div class="button-row">${record.manifest ? ['manifest.json', ...Object.keys(record.manifest.files || {})].map(file => `<button type="button" class="btn small" data-action="download-export" data-id="${esc(record.id || record.export_id)}" data-file="${esc(file)}">Tải ${esc(file)}</button>`).join('') : ''}${pill(record.status || 'ready', 'green')}</div></article>`; }).join('')}</div><div class="history-detail"><div class="panel-head" style="padding:0 0 12px;border:0"><div><h2>Contract của gói</h2><p>File được lưu cùng manifest và hash server-side.</p></div>${pill('6 tệp lõi', 'blue')}</div><div class="file-grid">${['manifest.json', 'changes.jsonl', 'mapping.jsonl', 'issues.jsonl', 'TASK.json', 'AGENT_PROMPT.md / README.md'].map(file => `<div class="file-chip"><b>${file}</b><span>hash locked · server</span></div>`).join('')}</div></div>`;
+    return `<div class="view-head"><div><p class="eyebrow">Immutable exports · 04</p><h1>Lịch sử bản xuất</h1><p>Mỗi bản xuất được lưu server-side theo export_id; tải lại cùng ID trả về đúng tệp đã khóa.</p></div><button type="button" class="btn" data-nav="export">+ Tạo bản xuất</button></div>${state.completedHandoff ? `<section class="panel panel-pad completed-handoff" style="margin-bottom:16px"><h2 class="panel-title">Đã tạo gói ${esc(state.completedHandoff.id)}</h2><p class="panel-sub">Tải các tệp của gói bên dưới và gửi cùng prompt cho agent.</p>${state.completedHandoff.prompt ? `<textarea class="prompt-editor" rows="8" readonly aria-label="Prompt của gói vừa tạo">${esc(state.completedHandoff.prompt)}</textarea><button type="button" class="btn primary" data-action="copy-handoff-prompt">Sao chép prompt</button>` : `<p>Không tải được prompt. Hãy tải AGENT_PROMPT.md trong danh sách tệp bên dưới.</p>`}</section>` : ''}<div class="export-history">${records.map(record => { const manifest = record.manifest || {}; return `<article class="history-card"><div class="history-main"><span class="history-icon">▣</span><div><b>${esc(record.id || record.export_id)}</b><span>${esc(record.kind || manifest.kind)} · ${esc(record.chapter_id || manifest.chapter_id || state.chapterId)}</span></div></div><div class="history-meta"><label>Rows</label><strong>${esc(manifest.scope?.lines ?? record.rows ?? '—')}</strong></div><div class="history-meta"><label>Hash</label><strong>${esc(manifest.files?.['changes.jsonl']?.sha256?.slice(0, 12) || record.hash || '—')}…</strong></div><div class="button-row">${record.manifest ? `<button type="button" class="btn primary mobile-download-zip" data-action="download-zip" data-id="${esc(record.id || record.export_id)}">Tải cả gói (.zip)</button>` : ''}${record.manifest ? ['manifest.json', ...Object.keys(record.manifest.files || {})].map(file => `<button type="button" class="btn small" data-action="download-export" data-id="${esc(record.id || record.export_id)}" data-file="${esc(file)}">Tải ${esc(file)}</button>`).join('') : ''}${pill(record.status || 'ready', 'green')}</div></article>`; }).join('')}</div><div class="history-detail"><div class="panel-head" style="padding:0 0 12px;border:0"><div><h2>Contract của gói</h2><p>File được lưu cùng manifest và hash server-side.</p></div>${pill('6 tệp lõi', 'blue')}</div><div class="file-grid">${['manifest.json', 'changes.jsonl', 'mapping.jsonl', 'issues.jsonl', 'TASK.json', 'AGENT_PROMPT.md / README.md'].map(file => `<div class="file-chip"><b>${file}</b><span>hash locked · server</span></div>`).join('')}</div></div>`;
 }
 
 function renderRecovery() {
@@ -372,6 +378,34 @@ async function downloadExport(exportId, file = 'manifest.json') {
     } catch (error) { state.error = error.message || 'Không thể tải tệp export.'; render(); }
 }
 
+async function downloadHandoffZip(exportId, button) {
+    if (!exportId || button.disabled) return;
+    const previous = button.textContent; button.disabled = true; button.textContent = 'Đang chuẩn bị…';
+    try {
+        const path = `/api/admin/exports/${encodeURIComponent(exportId)}/download?file=`;
+        const manifestResponse = await request(path + 'manifest.json', {}, true);
+        const manifestBytes = new Uint8Array(await manifestResponse.arrayBuffer());
+        const manifest = JSON.parse(new TextDecoder().decode(manifestBytes));
+        if (manifest.export_id !== exportId || !manifest.files || typeof manifest.files !== 'object') throw new Error('Manifest không khớp với gói đã chọn.');
+        const names = Object.keys(manifest.files);
+        if (!names.length || names.includes('manifest.json') || names.some(name => !/^[A-Za-z0-9._-]+$/.test(name))) throw new Error('Danh sách tệp trong gói không hợp lệ.');
+        const files = [{ name: 'manifest.json', bytes: manifestBytes }];
+        for (const name of names) {
+            const response = await request(path + encodeURIComponent(name), {}, true);
+            const bytes = new Uint8Array(await response.arrayBuffer()), expected = manifest.files[name];
+            if (bytes.length !== expected.bytes) throw new Error(`Tệp ${name} không đúng kích thước.`);
+            if (!crypto.subtle) throw new Error('Trình duyệt không hỗ trợ kiểm tra tệp. Hãy mở trang bằng HTTPS.');
+            const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(value => value.toString(16).padStart(2, '0')).join('');
+            if (hash !== expected.sha256) throw new Error(`Tệp ${name} không khớp mã kiểm tra.`);
+            files.push({ name, bytes });
+        }
+        const blob = createZip(files), url = URL.createObjectURL(blob), link = document.createElement('a');
+        link.href = url; link.download = `${exportId.replace(/[^A-Za-z0-9._-]/g, '_')}.zip`; link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 60000);
+    } catch (error) { await openModal({ title: 'Chưa tải được gói', message: `${error.message || 'Không thể tải đủ tệp.'} Hãy thử lại hoặc tải từng tệp bên dưới.`, confirmLabel: 'Đóng' }); }
+    finally { button.disabled = false; button.textContent = previous; }
+}
+
 async function createHandoff() {
     if (!previewMode) {
         state.loading = true; state.error = ''; render();
@@ -421,11 +455,13 @@ async function manageRelease() {
     catch (error) { state.error = error.message || 'Không thể chuyển phase phiên dữ liệu.'; state.loading = false; render(); }
 }
 
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && state.mobileOpen) { state.mobileOpen = false; renderSidebar(); $('[data-action="toggle-mobile"]')?.focus(); } });
+
 document.body.addEventListener('click', async event => {
     const nav = event.target.closest('[data-nav]');
     if (nav) { state.view = nav.dataset.nav; if (nav.dataset.line) state.selectedLineId = nav.dataset.line; state.mobileOpen = false; state.error = ''; render(); return; }
     const lineButton = event.target.closest('[data-line]');
-    if (lineButton) { state.selectedLineId = lineButton.dataset.line; state.history = null; const chapter = lineButton.dataset.chapter; if (chapter && chapter !== state.chapterId && !previewMode) { await loadChapter(chapter); } render(); return; }
+    if (lineButton) { state.selectedLineId = lineButton.dataset.line; state.history = null; const chapter = lineButton.dataset.chapter; if (chapter && chapter !== state.chapterId && !previewMode) { await loadChapter(chapter); } render(); if (matchMedia('(max-width: 700px)').matches) { const detail = $('#queueDetail'); detail?.scrollIntoView({ behavior: 'smooth', block: 'start' }); detail?.focus({ preventScroll: true }); } return; }
     const filter = event.target.closest('[data-filter]');
     if (filter) { state.queueFilter = filter.dataset.filter; render(); return; }
     const exportType = event.target.closest('[data-export-type]');
@@ -434,7 +470,11 @@ document.body.addEventListener('click', async event => {
     if (role) { role.classList.toggle('on'); return; }
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (!action) return;
+    if (action === 'mobile-search') { state.view = 'queue'; state.mobileOpen = false; state.error = ''; render(); const input = $('#queueSearch'); input?.focus(); input?.scrollIntoView({ block: 'center' }); return; }
     if (action === 'toggle-mobile') { state.mobileOpen = !state.mobileOpen; renderSidebar(); return; }
+    if (action === 'close-mobile') { state.mobileOpen = false; renderSidebar(); $('[data-action="toggle-mobile"]')?.focus(); return; }
+    if (action === 'queue-back') { $('#queueList')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('#queueList .queue-row.selected')?.focus({ preventScroll: true }); return; }
+    if (action === 'download-zip') { await downloadHandoffZip(event.target.closest('[data-id]')?.dataset.id, event.target.closest('button')); return; }
     if (action === 'logout') { state.key = ''; state.release = null; state.lines = []; state.history = null; state.error = ''; sessionStorage.removeItem(HANDOFF_KEY); render(); return; }
     if (action === 'help') { openAdminGuide(); return; }
     if (action === 'reload') { await loadWorkspace(); return; }

@@ -6,12 +6,23 @@ function renderListMode() {
     const el = (tag, cls, text) => { const node = document.createElement(tag); node.className = cls; if (text !== undefined) node.textContent = text; return node; };
     const notice = el('p', 'list-context-notice', 'Nhấn vào một câu để đề xuất sửa. Dữ liệu nhập cũ có thể không có lịch sử duyệt trước khi nhập.');
     container.append(notice);
+    const mobile=matchMedia('(max-width:700px)').matches;
+    const scope=filteredLines.map(line=>line.line_id).join('|');
+    const saved=window.tramMobileListState;
+    if(mobile && (!saved || saved.scope!==scope))window.tramMobileListState={scope,query:'',count:30};
+    const state=mobile?window.tramMobileListState:null;
+    const query=state?.query || '';
+    const search=mobile?el('input','mobile-line-search'):null;
+    const count=mobile?el('p','mobile-list-count'):null;
+    if(mobile){const label=el('label','mobile-list-search','Tìm câu trong phạm vi đang chọn');search.type='search';search.placeholder='Nội dung hoặc mã câu…';search.value=query;search.setAttribute('aria-label','Tìm câu theo nội dung hoặc mã');label.append(search);container.append(label,count);search.addEventListener('input',()=>{state.query=search.value;state.count=30;const position=search.selectionStart;renderListMode();const next=container.querySelector('.mobile-line-search');next.focus({preventScroll:true});try{next.setSelectionRange(position,position);}catch{}});}
+    const needle=query.trim().toLocaleLowerCase('vi');
+    const visible=mobile && needle?filteredLines.filter(line=>[line.line_id,line.en,line.new_vi,line.speaker].join(' ').toLocaleLowerCase('vi').includes(needle)):filteredLines;
     let rendered = 0;
     const more = el('button', 'btn-direction collab-load-more'); more.type = 'button';
     const append = () => {
-        more.remove(); const end = Math.min(filteredLines.length, rendered + 80);
+        more.remove(); const end = Math.min(visible.length, rendered + (mobile ? Math.max(30,state.count-rendered) : 80));
         for (let idx = rendered; idx < end; idx++) {
-            const item = filteredLines[idx], card = el('article', 'table-row-card compact-row'); card.dataset.lineId = item.line_id; card.dataset.rowTone = idx % 2 ? 'alternate' : 'default';
+            const item = visible[idx], card = el('article', 'table-row-card compact-row'); card.dataset.lineId = item.line_id; card.dataset.rowTone = idx % 2 ? 'alternate' : 'default';
             card.tabIndex = 0;
             card.setAttribute('role', 'group');
             card.setAttribute('aria-label', `${item.speaker || 'Dẫn chuyện'}, ${item.line_id}. Nhấn Enter để mở đề xuất sửa.`);
@@ -48,7 +59,8 @@ function renderListMode() {
             panel.append(buttons); card.append(top, texts, hint, details); container.append(card);
         }
         rendered = end;
-        if (rendered < filteredLines.length) { more.textContent = `Xem thêm câu (${rendered}/${filteredLines.length})`; container.append(more); }
+        if(mobile){state.count=rendered;count.textContent=visible.length?`Đang hiện ${rendered} / ${visible.length} câu${needle?' tìm được':''}`:'Không tìm thấy câu phù hợp.';}
+        if (rendered < visible.length) { more.textContent = `Xem thêm câu (${rendered}/${visible.length})`; container.append(more); }
     };
     more.onclick = append; append();
 }

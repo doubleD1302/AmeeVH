@@ -441,3 +441,62 @@ a { color: inherit; text-decoration: none; }
 .login-card .admin-brand-logo { width: 172px; height: auto; }
 
 .login-card .admin-brand-lockup { margin-inline: auto; }
+
+.mobile-queue-back, .mobile-download-zip { display: none; }
+@media (max-width: 900px) {
+    body.mobile-menu-open { overflow: hidden; }
+    .admin-sidebar { width: min(272px, 85vw); height: 100dvh; min-height: 0; overflow: hidden; }
+    .side-nav { min-height: 0; overscroll-behavior: contain; }
+}
+@media (max-width: 700px) {
+    .queue-list, .detail-pane { scroll-margin-top: 82px; }
+    .mobile-queue-back, .mobile-download-zip { display: inline-flex; min-height: 44px; }
+    .mobile-queue-back { margin-bottom: 16px; }
+    .mobile-download-zip { width: 100%; }
+    .issues-table { overflow: visible; border: 0; background: transparent; box-shadow: none; }
+    .issues-table .table-head { display: none; }
+    .issues-table .table-row { min-width: 0; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin-bottom: 10px; border: 1px solid var(--admin-line); border-radius: 14px; background: #fff; padding: 15px; overflow-wrap: anywhere; }
+    .issues-table .table-row > div:nth-child(1), .issues-table .table-row > div:nth-child(2) { grid-column: 1; }
+    .issues-table .table-row > div:nth-child(3) { grid-column: 2; grid-row: 1; }
+    .issues-table .table-row > div:nth-child(4), .issues-table .table-row > div:nth-child(5) { grid-column: 1 / -1; }
+    .issues-table .table-row > div:nth-child(5)::before { content: 'Người xử lý: '; font-weight: 700; }
+}
+
+.mobile-search { display: none; }
+@media (max-width: 900px) {
+    .mobile-search { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid var(--admin-line); border-radius: 12px; background: #fff; }
+    .mobile-menu { width: 44px; height: 44px; }
+    .admin-header { gap: 8px; }
+    .header-right { gap: 6px; }
+    .header-left { min-width: 0; }
+    .nav-item { min-height: 48px; font-size: 14px; }
+    .side-user button { min-width: 44px; min-height: 44px; }
+}
+@media (max-width: 700px) {
+    .btn, .btn.small, .filter-btn, .text-link { min-height: 44px; font-size: 14px; }
+    .queue-row { min-height: 56px; }
+    .queue-row b, .queue-row p, .queue-row-bottom span, .detail-head p, .meta-cell b, .stat-label, .stat-note, .panel-sub { font-size: 13px; }
+    .source-card label, .compare-card label, .meta-cell span { font-size: 12px; }
+    .source-card p, .compare-card p, .issues-table .table-row, .issues-table .table-row b { font-size: 14px; }
+    input, select, textarea, .login-input, .quick-search input, .search-box input, .field select, .field input, .modal-field input, .modal-field select, .modal-field textarea, .prompt-editor { font-size: 16px; }
+    .admin-dialog { max-width: calc(100vw - 20px); max-height: calc(100dvh - 20px); }
+    .admin-modal-card { max-height: calc(100dvh - 24px); overscroll-behavior: contain; scroll-padding-bottom: 30vh; }
+    .admin-guide-sections summary { min-height: 48px; font-size: 15px; }
+    .admin-guide-intro, .admin-guide-sections details > div { font-size: 15px; }
+    .prompt-editor { min-height: 180px; max-height: min(45dvh, 360px); }
+    .completed-handoff { display: flex; flex-direction: column; align-items: stretch; }
+    .completed-handoff h2 { order: 0; overflow-wrap: anywhere; }
+    .completed-handoff p { order: 1; }
+    .completed-handoff [data-action="copy-handoff-prompt"] { order: 2; margin-top: 12px; }
+    .completed-handoff textarea { order: 3; }
+    .login-wrap { min-height: auto; padding: 8px 0 20px; }
+    .login-card { padding: 20px; }
+    .login-card .admin-brand-logo { width: 130px; }
+    .login-card h1 { margin-top: 12px; font-size: 22px; }
+    .login-card form { margin-top: 16px; }
+    .login-card > p, .login-note, .login-label { font-size: 13px; }
+}
+@media (max-width: 390px) {
+    .header-avatar { display: none; }
+    .header-guide { padding-inline: 10px; }
+}
