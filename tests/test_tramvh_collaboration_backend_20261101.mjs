@@ -291,3 +291,24 @@ test('all configured reviewer keys can approve, accept and reject with primary k
   } finally { f.close(); }
  }
 });
+
+test('shared API cookie keeps existing identity and works for admin exports',async()=>{
+ const f=fixture({new_vi:'Xin chào {0}',status:'Đã duyệt'});
+ try {
+  const oldCookie=await testCookie(f.env);
+  const me=await handleCollaboration(new Request('https://tramvh.test/api/collab/me',{headers:{Cookie:oldCookie}}),f.env);
+  const identity=await me.json();assert.equal(identity.new_user,false);assert.equal(identity.user.display_name,'Minh');
+  const cookies=me.headers.getSetCookie();
+  assert.ok(cookies.some(value=>value.startsWith(oldCookie+';')&&value.includes('Path=/api;')));
+  assert.ok(cookies.some(value=>value.includes('Path=/api/collab;')&&value.includes('Max-Age=0')));
+  // Only the shared cookie is eligible for the admin path in a browser.
+  const shared=cookies.find(value=>value.includes('Path=/api;')).split(';')[0];
+  await current(f.env);
+  const exported=await call(f.env,'/api/admin/exports',{kind:'handoff',chapter_id:chapterId},'private-review-code',shared);
+  assert.equal(exported.status,201,JSON.stringify(exported.body));
+  const listed=await call(f.env,'/api/admin/exports',undefined,'private-review-code',shared);
+  assert.equal(listed.body.data.items[0].created_by,'Minh');
+  const withoutSession=await handleCollaboration(new Request('https://tramvh.test/api/admin/exports',{method:'POST',headers:{'Content-Type':'application/json','X-Reviewer-Key':'private-review-code'},body:JSON.stringify({kind:'handoff',chapter_id:chapterId})}),f.env);
+  assert.equal(withoutSession.status,401);
+ } finally { f.close(); }
+});

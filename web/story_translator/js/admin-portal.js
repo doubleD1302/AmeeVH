@@ -137,6 +137,7 @@ async function loadWorkspace() {
     state.error = '';
     render();
     try {
+        if (!previewMode) await request('/api/collab/me');
         await loadChapters();
         await loadChapter();
         if (!previewMode) {
