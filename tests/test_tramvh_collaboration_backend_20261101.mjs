@@ -274,3 +274,20 @@ test('portal accepts revision zero, refreshes after review and refuses missing g
  await context.review({...line,revision:-1});assert.equal(sends,1);
  await context.review({...line,source_hash:'invalid'});assert.equal(sends,1);
 });
+
+test('all configured reviewer keys can approve, accept and reject with primary key present',async()=>{
+ for(const key of ['private-review-code','test-admin-two','test-admin-three'])for(const action of ['accept','reject']){
+  const f=fixture({new_vi:'Xin chào {0}',status:'pending'});
+  try {
+   f.env.REVIEWER_KEY_2='test-admin-two';f.env.REVIEWER_KEY_3='test-admin-three';
+   assert.equal((await call(f.env,'/api/collab/role',undefined,key)).body.can_review,true);
+   const line=await current(f.env);
+   const denied=await call(f.env,'/api/collab/review',reviewBody(line,'approve'),'invalid-key');assert.equal(denied.status,403);
+   const approved=await call(f.env,'/api/collab/review',reviewBody(line,'approve'),key);assert.equal(approved.status,200,JSON.stringify(approved.body));
+   const proposed=await call(f.env,'/api/collab/submit',translate(await current(f.env),'Xin chào bạn {0}',{reason:'naturalness',reason_detail:'Kiểm thử quyền duyệt'}));
+   assert.equal(proposed.status,200,JSON.stringify(proposed.body));
+   const reviewed=await call(f.env,'/api/collab/review',reviewBody(await current(f.env),action,{proposal_id:proposed.body.proposal.id}),key);
+   assert.equal(reviewed.status,200,JSON.stringify(reviewed.body));
+  } finally { f.close(); }
+ }
+});

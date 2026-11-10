@@ -108,6 +108,7 @@ async function reviewerAllowed(request,env){
  return false;
 }
 async function scopedReviewerAllowed(request,env,scope='review'){
+ if(scope==='review')return reviewerAllowed(request,env);
  const variable={read:'ADMIN_READ_KEY',review:'REVIEWER_KEY',export:'ADMIN_EXPORT_KEY',recovery:'ADMIN_RECOVERY_KEY',release:'ADMIN_RELEASE_KEY'}[scope]||'REVIEWER_KEY';
  const configured=env[variable];
  if(typeof configured!=='string'||!configured.length)return reviewerAllowed(request,env);
