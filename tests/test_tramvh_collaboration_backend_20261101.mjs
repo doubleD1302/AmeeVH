@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {runInNewContext} from 'node:vm';
 import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
 import {readFileSync} from 'node:fs';
@@ -245,4 +246,31 @@ test('admin portal APIs are server enforced and exports replay immutably',async(
   assert.equal(task.status,200); assert.ok(task.body.agent_prompt.startsWith('Ưu tiên kiểm tra story trước.')); assert.ok(task.body.agent_prompt.includes(`chapter_id=${chapterId}`));
   const listed=await call(f.env,'/api/admin/exports',undefined,'private-review-code'); assert.equal(listed.body.data.items[0].id,id);
  } finally { f.close(); }
+});
+
+test('admin queue includes review guards for revision zero and supports approval',async()=>{
+ const f=fixture({new_vi:'Xin chào {0}',status:'pending'});
+ try {
+  await current(f.env);
+  const queue=await call(f.env,'/api/admin/queue',undefined,'private-review-code');
+  assert.equal(queue.status,200); assert.equal(queue.body.data.items.length,1);
+  const line=queue.body.data.items[0]; assert.equal(line.revision,0); assert.match(line.source_hash,/^[a-f0-9]{64}$/); assert.equal(line.dataset_version,queue.body.data.dataset_version);
+  const approved=await call(f.env,'/api/collab/review',reviewBody(line,'approve'),'private-review-code');
+  assert.equal(approved.status,200,JSON.stringify(approved.body)); assert.equal(approved.body.line.status,'approved');
+  const next=await call(f.env,'/api/admin/queue',undefined,'private-review-code'); assert.equal(next.body.data.total,0);
+  const stale=await call(f.env,'/api/collab/review',reviewBody(line,'approve'),'private-review-code'); assert.equal(stale.status,409);
+ } finally { f.close(); }
+});
+test('portal accepts revision zero, refreshes after review and refuses missing guards',async()=>{
+ const source=readFileSync(new URL('../web/story_translator/js/admin-portal.js',import.meta.url),'utf8');
+ const start=source.indexOf('async function approveLine('),end=source.indexOf('async function loadHistory(',start);
+ const line={chapter_id:chapterId,line_id:lineId,revision:0,source_hash:'a'.repeat(64),dataset_version:'test-version'};
+ let sends=0,refreshes=0,payload;
+ const state={chapterId,lines:[line],queueItems:[line]};
+ const context={state,previewMode:false,render(){},crypto,async loadWorkspace(){refreshes++;},async request(path,options){sends++;payload=JSON.parse(options.body);return {line:{...line,revision:1,status:'approved'}};}};
+ runInNewContext(source.slice(start,end)+';globalThis.review=approveLine;',context);
+ await context.review(line); assert.equal(sends,1);assert.equal(payload.base_revision,0);assert.equal(refreshes,1);assert.equal(state.error,'');
+ await context.review({...line,dataset_version:undefined});assert.equal(sends,1);assert.ok(state.error.includes('Tải lại'));
+ await context.review({...line,revision:-1});assert.equal(sends,1);
+ await context.review({...line,source_hash:'invalid'});assert.equal(sends,1);
 });

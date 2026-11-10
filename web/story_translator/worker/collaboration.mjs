@@ -325,11 +325,12 @@ function adminFlatten(chapter){
 }
 async function adminQueue(request,env,url){
  await requireAdmin(request,env);
+ const release=await dataset(env);
  const chapter=url.searchParams.get('chapter_id'),limit=adminLimit(url.searchParams.get('limit')),offset=Math.max(0,Number(url.searchParams.get('offset')||0)||0);
  const where=chapter?' AND l.chapter_id=?':'',values=chapter?[chapter]:[];
  const count=await stmt(env,`SELECT count(*) AS n FROM lines l WHERE (l.status IN ('pending','needs_review','machine_pending') OR EXISTS(SELECT 1 FROM proposals p WHERE p.chapter_id=l.chapter_id AND p.line_id=l.line_id AND p.state='pending') )${where}`,values).first();
  const rows=(await stmt(env,`SELECT l.*,(SELECT count(*) FROM proposals p WHERE p.chapter_id=l.chapter_id AND p.line_id=l.line_id AND p.state='pending') AS pending_proposals FROM lines l WHERE (l.status IN ('pending','needs_review','machine_pending') OR EXISTS(SELECT 1 FROM proposals p WHERE p.chapter_id=l.chapter_id AND p.line_id=l.line_id AND p.state='pending') )${where} ORDER BY CASE l.status WHEN 'needs_review' THEN 0 WHEN 'pending' THEN 1 ELSE 2 END,l.updated_at DESC,l.chapter_id,l.line_id LIMIT ? OFFSET ?`,[...values,limit,offset]).all()).results||[];
- return json({success:true,data:{items:rows,total:Number(count?.n||0),limit,offset,next_offset:offset+rows.length<Number(count?.n||0)?offset+rows.length:null}});
+ return json({success:true,data:{items:rows.map(line=>withDataset(line,release)),dataset_version:release.version,total:Number(count?.n||0),limit,offset,next_offset:offset+rows.length<Number(count?.n||0)?offset+rows.length:null}});
 }
 async function adminOverview(request,env,url){
  await requireAdmin(request,env);

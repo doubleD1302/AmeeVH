@@ -42,6 +42,7 @@ const state = {
     exportType: 'handoff',
     agentInstructions: '',
     completedHandoff: null,
+    feedback: '',
     mobileOpen: false,
 };
 const previewMode = new URLSearchParams(window.location.search).get('preview') === '1' && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
@@ -125,8 +126,8 @@ async function loadChapters() {
 
 async function loadChapter(id = state.chapterId) {
     state.chapterId = id;
-    try { state.chapter = await request(`/api/chapter_data?id=${encodeURIComponent(id)}`); }
-    catch (_) { state.chapter = await fetch(`data/chapters/${encodeURIComponent(id)}.json`, { cache: 'no-store' }).then(response => response.json()); }
+    if (previewMode) state.chapter = await fetch(`data/chapters/${encodeURIComponent(id)}.json`, { cache: 'no-store' }).then(response => { if (!response.ok) throw new Error('Không tải được dữ liệu xem thử.'); return response.json(); });
+    else state.chapter = await request(`/api/chapter_data?id=${encodeURIComponent(id)}`);
     state.lines = flattenChapter(state.chapter);
     state.selectedLineId = state.selectedLineId && state.lines.some(line => line.line_id === state.selectedLineId) ? state.selectedLineId : state.lines[0]?.line_id || '';
 }
@@ -317,26 +318,26 @@ function renderContent() {
     if (state.loading) { content.innerHTML = '<div class="loading"><span class="spinner"></span> Đang tải dữ liệu TrạmVH…</div>'; return; }
     if (state.error && !state.lines.length) { content.innerHTML = `<div class="error">${esc(state.error)}<div style="margin-top:10px"><button type="button" class="btn" data-action="logout">Nhập lại mã reviewer</button></div></div>`; return; }
     const views = { overview: renderOverview, queue: renderQueue, issues: renderIssues, export: renderExport, history: renderHistory, recovery: renderRecovery, sessions: renderSessions, prompt: renderPrompt, governance: renderGovernance };
-    content.innerHTML = (views[state.view] || renderOverview)();
+    content.innerHTML = `${state.feedback ? `<div class="feedback" role="status" style="margin-bottom:14px">${esc(state.feedback)}</div>` : ''}${state.error ? `<div class="error" role="alert" style="margin-bottom:14px">${esc(state.error)} <button type="button" class="btn small" data-action="reload">Tải lại</button></div>` : ''}${(views[state.view] || renderOverview)()}`;
 }
 
 function render() { renderSidebar(); renderHeader(); renderContent(); }
 
 async function approveLine(line, action = 'approve', proposalId = null, historyId = null) {
-    if (!line?.revision || !line?.source_hash || !line?.dataset_version) {
-        state.error = 'Bản local chưa có revision/source_hash/dataset_version. Tải dữ liệu qua Worker trước khi gửi quyết định.';
+    if (!Number.isSafeInteger(line?.revision) || line.revision < 0 || typeof line.source_hash !== 'string' || !/^[a-f0-9]{64}$/.test(line.source_hash) || typeof line.dataset_version !== 'string' || !line.dataset_version.trim()) {
+        state.error = previewMode ? 'Bản xem thử không gửi quyết định duyệt. Hãy mở web chính thức để duyệt câu.' : 'Chưa tải đủ thông tin của câu. Bấm Tải lại rồi kiểm tra câu trước khi duyệt.';
         render();
         return;
     }
     const payload = { chapter_id: line.chapter_id || state.chapterId, line_id: line.line_id, base_revision: line.revision, base_source_hash: line.source_hash, base_dataset_version: line.dataset_version, action, proposal_id: proposalId, history_id: historyId, reason: action === 'approve' ? 'Duyệt từ Admin Portal' : action === 'accept' ? 'Chấp nhận đề xuất từ Admin Portal' : action === 'restore' ? 'Khôi phục từ Admin Portal' : 'Không chấp nhận đề xuất từ Admin Portal', request_id: crypto.randomUUID() };
-    state.loading = true; render();
-    try { const result = await request('/api/collab/review', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); if (result.line) { const index = state.lines.findIndex(item => item.line_id === result.line.line_id); if (index >= 0) state.lines[index] = { ...state.lines[index], ...result.line }; } state.history = null; state.error = ''; }
-    catch (error) { state.error = error.message || 'Không thể ghi quyết định review.'; }
+    state.loading = true; state.error = ''; state.feedback = ''; render();
+    try { const result = await request('/api/collab/review', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); if (result.line) { const index = state.lines.findIndex(item => item.line_id === result.line.line_id); if (index >= 0) state.lines[index] = { ...state.lines[index], ...result.line }; } state.history = null; state.error = ''; state.feedback = ({ approve: 'Đã duyệt bản hiện tại.', accept: 'Đã chấp nhận đề xuất.', reject: 'Đã từ chối đề xuất.', restore: 'Đã khôi phục phiên bản.' })[action]; await loadWorkspace(); }
+    catch (error) { state.error = error.status === 409 ? 'Câu hoặc đề xuất đã thay đổi. Bấm Tải lại, xem bản mới rồi duyệt lại.' : (error.message || 'Không thể ghi quyết định duyệt.'); }
     finally { state.loading = false; render(); }
 }
 
 async function loadHistory(lineId) {
-    const line = state.lines.find(item => item.line_id === lineId);
+    const line = state.lines.find(item => item.line_id === lineId) || state.queueItems.find(item => item.line_id === lineId);
     if (!line) return;
     state.loading = true; state.error = ''; render();
     try { state.history = await request(`/api/collab/history?chapter_id=${encodeURIComponent(line.chapter_id || state.chapterId)}&line_id=${encodeURIComponent(line.line_id)}`); if (state.history.line) { const index = state.lines.findIndex(item => item.line_id === line.line_id); if (index >= 0) state.lines[index] = { ...state.lines[index], ...state.history.line }; } state.selectedLineId = line.line_id; state.view = 'queue'; }
@@ -461,7 +462,7 @@ document.body.addEventListener('click', async event => {
     const nav = event.target.closest('[data-nav]');
     if (nav) { state.view = nav.dataset.nav; if (nav.dataset.line) state.selectedLineId = nav.dataset.line; state.mobileOpen = false; state.error = ''; render(); return; }
     const lineButton = event.target.closest('[data-line]');
-    if (lineButton) { state.selectedLineId = lineButton.dataset.line; state.history = null; const chapter = lineButton.dataset.chapter; if (chapter && chapter !== state.chapterId && !previewMode) { await loadChapter(chapter); } render(); if (matchMedia('(max-width: 700px)').matches) { const detail = $('#queueDetail'); detail?.scrollIntoView({ behavior: 'smooth', block: 'start' }); detail?.focus({ preventScroll: true }); } return; }
+    if (lineButton) { state.selectedLineId = lineButton.dataset.line; state.history = null; const chapter = lineButton.dataset.chapter; if (chapter && chapter !== state.chapterId && !previewMode) { try { await loadChapter(chapter); } catch (error) { state.error = error.message || 'Không tải được câu từ server.'; render(); return; } } render(); if (matchMedia('(max-width: 700px)').matches) { const detail = $('#queueDetail'); detail?.scrollIntoView({ behavior: 'smooth', block: 'start' }); detail?.focus({ preventScroll: true }); } return; }
     const filter = event.target.closest('[data-filter]');
     if (filter) { state.queueFilter = filter.dataset.filter; render(); return; }
     const exportType = event.target.closest('[data-export-type]');
