@@ -42,6 +42,7 @@ const state = {
     exportType: 'handoff',
     agentInstructions: '',
     completedHandoff: null,
+    lastDownload: null,
     feedback: '',
     mobileOpen: false,
 };
@@ -290,7 +291,7 @@ function renderExport() {
 
 function renderHistory() {
     const records = state.exportRecords.length ? state.exportRecords : (state.exports.length ? state.exports : [{ id: 'LOCAL-PREVIEW', kind: 'Bản xem trước', chapter_id: state.chapterId, status: 'Chưa tải xuống', rows: stats().ready, hash: 'sẽ tính khi tải', created_at: 'Trong tab hiện tại', created_by: 'Reviewer session' }]);
-    return `<div class="view-head"><div><p class="eyebrow">Immutable exports · 04</p><h1>Lịch sử bản xuất</h1><p>Mỗi bản xuất được lưu server-side theo export_id; tải lại cùng ID trả về đúng tệp đã khóa.</p></div><button type="button" class="btn" data-nav="export">+ Tạo bản xuất</button></div>${state.completedHandoff ? `<section class="panel panel-pad completed-handoff" style="margin-bottom:16px"><h2 class="panel-title">Đã tạo gói ${esc(state.completedHandoff.id)}</h2><p class="panel-sub">Tải các tệp của gói bên dưới và gửi cùng prompt cho agent.</p>${state.completedHandoff.prompt ? `<textarea class="prompt-editor" rows="8" readonly aria-label="Prompt của gói vừa tạo">${esc(state.completedHandoff.prompt)}</textarea><button type="button" class="btn primary" data-action="copy-handoff-prompt">Sao chép prompt</button>` : `<p>Không tải được prompt. Hãy tải AGENT_PROMPT.md trong danh sách tệp bên dưới.</p>`}</section>` : ''}<div class="export-history">${records.map(record => { const manifest = record.manifest || {}; return `<article class="history-card"><div class="history-main"><span class="history-icon">▣</span><div><b>${esc(record.id || record.export_id)}</b><span>${esc(record.kind || manifest.kind)} · ${esc(record.chapter_id || manifest.chapter_id || state.chapterId)}</span></div></div><div class="history-meta"><label>Rows</label><strong>${esc(manifest.scope?.lines ?? record.rows ?? '—')}</strong></div><div class="history-meta"><label>Hash</label><strong>${esc(manifest.files?.['changes.jsonl']?.sha256?.slice(0, 12) || record.hash || '—')}…</strong></div><div class="button-row">${record.manifest ? `<button type="button" class="btn primary mobile-download-zip" data-action="download-zip" data-id="${esc(record.id || record.export_id)}">Tải cả gói (.zip)</button>` : ''}${record.manifest ? ['manifest.json', ...Object.keys(record.manifest.files || {})].map(file => `<button type="button" class="btn small" data-action="download-export" data-id="${esc(record.id || record.export_id)}" data-file="${esc(file)}">Tải ${esc(file)}</button>`).join('') : ''}${pill(record.status || 'ready', 'green')}</div></article>`; }).join('')}</div><div class="history-detail"><div class="panel-head" style="padding:0 0 12px;border:0"><div><h2>Contract của gói</h2><p>File được lưu cùng manifest và hash server-side.</p></div>${pill('6 tệp lõi', 'blue')}</div><div class="file-grid">${['manifest.json', 'changes.jsonl', 'mapping.jsonl', 'issues.jsonl', 'TASK.json', 'AGENT_PROMPT.md / README.md'].map(file => `<div class="file-chip"><b>${file}</b><span>hash locked · server</span></div>`).join('')}</div></div>`;
+    return `<div class="view-head"><div><p class="eyebrow">Immutable exports · 04</p><h1>Lịch sử bản xuất</h1><p>Mỗi bản xuất được lưu server-side theo export_id; tải lại cùng ID trả về đúng tệp đã khóa.</p></div><button type="button" class="btn" data-nav="export">+ Tạo bản xuất</button></div>${state.completedHandoff ? `<section class="panel panel-pad completed-handoff" style="margin-bottom:16px"><h2 class="panel-title">Đã tạo gói ${esc(state.completedHandoff.id)}</h2><p class="panel-sub">Tải các tệp của gói bên dưới và gửi cùng prompt cho agent.</p>${state.completedHandoff.prompt ? `<textarea class="prompt-editor" rows="8" readonly aria-label="Prompt của gói vừa tạo">${esc(state.completedHandoff.prompt)}</textarea><button type="button" class="btn primary" data-action="copy-handoff-prompt">Sao chép prompt</button>` : `<p>Không tải được prompt. Hãy tải AGENT_PROMPT.md trong danh sách tệp bên dưới.</p>`}</section>` : ''}${state.lastDownload ? `<div class="panel panel-pad" style="margin-bottom:16px"><p class="panel-sub">Gói ZIP đã sẵn sàng. Nếu trình duyệt chưa tải xuống, bấm nút bên dưới.</p><a class="btn primary" href="${esc(state.lastDownload.url)}" download="${esc(state.lastDownload.name)}">Tải lại ZIP</a></div>` : ''}<div class="export-history">${records.map(record => { const manifest = record.manifest || {}; return `<article class="history-card"><div class="history-main"><span class="history-icon">▣</span><div><b>${esc(record.id || record.export_id)}</b><span>${esc(record.kind || manifest.kind)} · ${esc(record.chapter_id || manifest.chapter_id || state.chapterId)}</span></div></div><div class="history-meta"><label>Rows</label><strong>${esc(manifest.scope?.lines ?? record.rows ?? '—')}</strong></div><div class="history-meta"><label>Hash</label><strong>${esc(manifest.files?.['changes.jsonl']?.sha256?.slice(0, 12) || record.hash || '—')}…</strong></div><div class="button-row">${record.manifest ? `<button type="button" class="btn primary download-zip-btn" data-action="download-zip" data-id="${esc(record.id || record.export_id)}">Tải cả gói (.zip)</button>` : ''}${record.manifest ? ['manifest.json', ...Object.keys(record.manifest.files || {})].map(file => `<button type="button" class="btn small" data-action="download-export" data-id="${esc(record.id || record.export_id)}" data-file="${esc(file)}">Tải ${esc(file)}</button>`).join('') : ''}${pill(record.status || 'ready', 'green')}</div></article>`; }).join('')}</div><div class="history-detail"><div class="panel-head" style="padding:0 0 12px;border:0"><div><h2>Contract của gói</h2><p>File được lưu cùng manifest và hash server-side.</p></div>${pill('6 tệp lõi', 'blue')}</div><div class="file-grid">${['manifest.json', 'changes.jsonl', 'mapping.jsonl', 'issues.jsonl', 'TASK.json', 'AGENT_PROMPT.md / README.md'].map(file => `<div class="file-chip"><b>${file}</b><span>hash locked · server</span></div>`).join('')}</div></div>`;
 }
 
 function renderRecovery() {
@@ -380,9 +381,9 @@ async function downloadExport(exportId, file = 'manifest.json') {
     } catch (error) { state.error = error.message || 'Không thể tải tệp export.'; render(); }
 }
 
-async function downloadHandoffZip(exportId, button) {
-    if (!exportId || button.disabled) return;
-    const previous = button.textContent; button.disabled = true; button.textContent = 'Đang chuẩn bị…';
+async function downloadHandoffZip(exportId, button = null) {
+    if (!exportId || button?.disabled) return;
+    const previous = button?.textContent; if (button) { button.disabled = true; button.textContent = 'Đang chuẩn bị…'; }
     try {
         const path = `/api/admin/exports/${encodeURIComponent(exportId)}/download?file=`;
         const manifestResponse = await request(path + 'manifest.json', {}, true);
@@ -402,10 +403,14 @@ async function downloadHandoffZip(exportId, button) {
             files.push({ name, bytes });
         }
         const blob = createZip(files), url = URL.createObjectURL(blob), link = document.createElement('a');
-        link.href = url; link.download = `${exportId.replace(/[^A-Za-z0-9._-]/g, '_')}.zip`; link.click();
-        setTimeout(() => URL.revokeObjectURL(url), 60000);
-    } catch (error) { await openModal({ title: 'Chưa tải được gói', message: `${error.message || 'Không thể tải đủ tệp.'} Hãy thử lại hoặc tải từng tệp bên dưới.`, confirmLabel: 'Đóng' }); }
-    finally { button.disabled = false; button.textContent = previous; }
+        link.href = url; link.download = `${exportId.replace(/[^A-Za-z0-9._-]/g, '_')}.zip`;
+        if (state.lastDownload) URL.revokeObjectURL(state.lastDownload.url);
+        state.lastDownload = { id: exportId, url, name: link.download };
+        state.feedback = 'Gói ZIP đã sẵn sàng để tải.';
+        document.body.append(link); link.click(); link.remove();
+        render();
+    } catch (error) { state.feedback = 'Gói vẫn được lưu trong lịch sử. Bấm Tải cả gói để thử tải lại.'; render(); await openModal({ title: 'Chưa tải được gói', message: `${error.message || 'Không thể tải đủ tệp.'} Hãy thử lại hoặc tải từng tệp bên dưới.`, confirmLabel: 'Đóng' }); }
+    finally { if (button) { button.disabled = false; button.textContent = previous; } }
 }
 
 async function createHandoff() {
@@ -415,12 +420,14 @@ async function createHandoff() {
             const base = state.exportType === 'delta' ? (state.exportRecords[0]?.id || null) : null;
             const result = await request('/api/admin/exports', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ kind: state.exportType, chapter_id: state.chapterId, base_export_id: base, agent_instructions: state.agentInstructions.trim() }) });
             state.exportRecords.unshift({ id: result.data.export_id, export_id: result.data.export_id, kind: state.exportType, chapter_id: state.chapterId, status: 'ready', manifest: result.data.manifest });
+            if (state.lastDownload) { URL.revokeObjectURL(state.lastDownload.url); state.lastDownload = null; }
             state.completedHandoff = null;
             if (state.exportType === 'handoff') {
                 try { const task = await request(`/api/admin/exports/${encodeURIComponent(result.data.export_id)}/download?file=TASK.json`); state.completedHandoff = { id: result.data.export_id, prompt: task.agent_prompt }; }
                 catch { state.completedHandoff = { id: result.data.export_id, prompt: '' }; }
             }
-            state.view = 'history';
+            state.view = 'history'; state.loading = false; state.feedback = 'Đã lưu gói. Đang chuẩn bị file ZIP…'; render();
+            await downloadHandoffZip(result.data.export_id);
         } catch (error) { state.error = error.message || 'Không thể tạo bản xuất server-side.'; }
         finally { state.loading = false; render(); }
         return;
