@@ -19,7 +19,7 @@ class ArtDialog(QDialog):
         header=QHBoxLayout();self.header=header;header.setSpacing(15)
         if icon and icon!='star_small':header.addWidget(AssetImage('icons/'+icon+'_white',32))
         text=QVBoxLayout();text.setSpacing(3);self.heading=text_label(title,27,bold=True,wrap=True);self.heading.setFont(ui_font(27,QFont.Weight.Bold));text.addWidget(self.heading);self.subtitle=text_label(subtitle,14,'#5f7094',wrap=True);text.addWidget(self.subtitle);header.addLayout(text,1);self.header_extra=QHBoxLayout();header.addLayout(self.header_extra)
-        close=StarlitButton('',variant='ghost',icon='close');close.setFixedSize(36,36);close.setToolTip('Đóng');close.setAccessibleName('Đóng hộp thoại');close.clicked.connect(self.reject);header.addWidget(close,0,Qt.AlignmentFlag.AlignTop);self.root.addLayout(header);self.root.addWidget(ArtDivider())
+        close=StarlitButton('',variant='ghost',icon='close');close.setFixedSize(54,48);close.setToolTip('Đóng');close.setAccessibleName('Đóng hộp thoại');close.clicked.connect(self.reject);header.addWidget(close,0,Qt.AlignmentFlag.AlignTop);self.root.addLayout(header);self.root.addWidget(ArtDivider())
         self.body_widget=QWidget();self.body_widget.setMinimumWidth(0);self.body=QVBoxLayout(self.body_widget);self.body.setContentsMargins(0,0,0,0);self.body.setSpacing(12);self.body_scroll=scroll_area(self.body_widget);self.root.addWidget(self.body_scroll,1);self.root.setSizeConstraint(QLayout.SizeConstraint.SetNoConstraint)
         self.footer=QHBoxLayout();self.footer.setSpacing(12);self.root.addWidget(ArtDivider());self.root.addLayout(self.footer)
     def compact_layout(self,width):

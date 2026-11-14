@@ -2,7 +2,7 @@
 (() => {
     let reviewerKey = '';
     const labels = { untranslated:'Chưa dịch', pending:'Đã Việt hoá · Chờ duyệt', approved:'Đã duyệt', needs_review:'Cần xem lại', machine_pending:'Bản dịch máy · Chưa duyệt' };
-    const M = window.Collaboration = { ready:false, canReview:false, labels };
+    const M = window.Collaboration = { ready:false, available:false, canReview:false, datasetVersion:null, phase:'unavailable', user:null, labels };
     M.status = line => {
         if (labels[line.status]) return line.status;
         if (line.status === 'Đã duyệt') return 'approved';
@@ -31,18 +31,37 @@
         let data;
         try { data = await response.json(); } catch (_) { throw new Error('Máy chủ chưa sẵn sàng cho tính năng cộng tác. Bản nháp chưa được gửi.'); }
         if (!response.ok || data.success === false) throw Object.assign(new Error(data.message || data.error || 'Không thể thực hiện thao tác.'), { status:response.status, code:data.code, latest:data.line });
+        if (data.dataset_version) M.datasetVersion = data.dataset_version;
+        if (data.dataset_phase) { M.phase = data.dataset_phase; M.ready = M.available && M.phase === 'open'; }
         return data;
     };
     M.init = async () => {
-        try { const data = await M.request('status'); M.ready = data.can_write !== false; }
-        catch (_) { M.ready = false; }
+        try {
+            const data = await M.request('status');
+            M.available = !!data.dataset_version;
+            M.datasetVersion = data.dataset_version || null;
+            M.phase = data.dataset_phase || 'unavailable';
+            M.ready = M.available && M.phase === 'open' && data.can_write !== false;
+            if (M.available) {
+                const identity = await M.request('me');
+                M.user = identity.user;
+                // Only migrate a name the visitor actually saved; the starter profile is shared by everyone.
+                if (identity.new_user && localStorage.getItem('stella_user_profile') && currentUser.name) await M.setDisplayName(currentUser.name);
+                else if (M.user?.display_name) {
+                    currentUser.name = M.user.display_name;
+                    localStorage.setItem('stella_user_profile', JSON.stringify(currentUser));
+                    updateHud();
+                }
+            }
+        } catch (_) { M.ready = false; }
         M.updateNotice();
     };
+    M.setDisplayName = async name => { const result = await M.request('profile',{display_name:name}); M.user = result.user; return result.user; };
     M.updateNotice = () => {
         const element = document.getElementById('collabServiceNotice');
         if (!element) return;
         element.replaceChildren();
-        if (!M.ready) { element.hidden = false; element.textContent = 'Chế độ chỉ đọc: chưa kết nối kho cộng tác. Chưa gửi thay đổi được; các bản nháp đã có vẫn được giữ trên máy.'; }
+        if (!M.ready) { element.hidden = false; element.textContent = M.available ? `Phiên ${M.datasetVersion} đang ${M.phase === 'publishing' ? 'xuất bản' : 'khóa cập nhật'}. Chưa gửi thay đổi được; bản nháp vẫn ở trên máy.` : 'Chế độ chỉ đọc: chưa kết nối kho cộng tác. Chưa gửi thay đổi được; các bản nháp đã có vẫn được giữ trên máy.'; }
         else {
             const count = M.legacyQueue().length;
             element.hidden = count === 0;
@@ -64,6 +83,7 @@
     M.ref = line => ({ chapter_id:line.chapter_id || currentChapterData.chapter_id, line_id:line.line_id });
     M.query = line => new URLSearchParams(M.ref(line)).toString();
     M.getLine = async line => (await M.request('line?' + M.query(line))).line;
+    M.myProposal = async line => (await M.request('my-proposal?' + M.query(line))).proposal;
     M.history = (line, cursor, proposalCursor) => M.request('history?' + M.query(line) + (cursor ? '&cursor=' + encodeURIComponent(cursor) : '') + (proposalCursor ? '&proposal_cursor=' + encodeURIComponent(proposalCursor) : ''));
     M.patch = line => {
         if (!currentChapterData || line.chapter_id !== currentChapterData.chapter_id) return;
@@ -72,7 +92,7 @@
         updateProgressBar();
     };
     M.draftKey = line => { const ref = M.ref(line); return 'tramvh_draft_v2:' + ref.chapter_id + ':' + ref.line_id; };
-    M.saveDraft = (line, draft) => { try { localStorage.setItem(M.draftKey(line), JSON.stringify(draft)); } catch (_) {} };
+    M.saveDraft = (line, draft) => { try { localStorage.setItem(M.draftKey(line), JSON.stringify({...draft,base_dataset_version:draft.base_dataset_version || line.dataset_version || M.datasetVersion})); } catch (_) {} };
     M.readDraft = line => {
         try { const stored = localStorage.getItem(M.draftKey(line)); if (stored) return JSON.parse(stored); } catch (_) {}
         const ref = M.ref(line), old = M.legacyQueue().find(entry => entry.payload && entry.payload.chapter_id === ref.chapter_id && entry.payload.line_id === ref.line_id);

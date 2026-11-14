@@ -1,5 +1,7 @@
 # Stella Sora — Master Glossary & Bản Đồ Thuật Ngữ Chuẩn Hóa
 
+> **Lưu ý đồng bộ 09/11/2026:** Tài liệu bên dưới là snapshot lịch sử. Với các term trùng, target hiện hành nằm trong `SS/glossary/glossary.csv`; các ví dụ, quy tắc cấm và bảng cũ có thể mâu thuẫn và không được ghi đè target CSV. Xem `docs/HACHIMINH_WORKFLOW_INTEGRATION.md` và kiểm tra các bản JSON tương thích trước khi dùng công cụ cũ.
+
 > Cập nhật tự động phiên bản v0.6.0 (2026-10-20). Tổng số thuật ngữ chuẩn hóa: **1531**, quy tắc cấm calque: **144**.
 
 ## 1. Nguyên Tắc Cốt Lõi Bản Địa Hóa

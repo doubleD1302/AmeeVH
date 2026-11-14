@@ -1,20 +1,22 @@
 {
   "schema": 2,
-  "policy": "Mandatory Project Glossary. All approved entries are strictly enforced for all agents and translation pipelines.",
+  "policy": "SS/glossary/glossary.csv is authoritative for matching term targets; statuses and local-only entries retain their existing meaning.",
   "entries": [
     {
       "source": "Trekker",
-      "target": "Lữ Khách",
+      "target": "Tuần du giả",
       "status": "approved",
       "category": "Lore",
-      "notes": "Nhân vật người chơi điều khiển/chiêu mộ trong hành trình"
+      "notes": "Nhân vật người chơi điều khiển/chiêu mộ trong hành trình",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Monolith",
-      "target": "Cự Tháp",
+      "target": "Tháp sao",
       "status": "approved",
       "category": "Lore",
-      "notes": "Cự Tháp - Tuyệt đối không dịch là Cự Thạch hay khối đá"
+      "notes": "Cự Tháp - Tuyệt đối không dịch là Cự Thạch hay khối đá",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Novian",
@@ -25,10 +27,11 @@
     },
     {
       "source": "Novians",
-      "target": "Dân Novian",
+      "target": "Người Nova",
       "status": "approved",
       "category": "Lore",
-      "notes": "Số nhiều của Novian"
+      "notes": "Số nhiều của Novian",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Nova Continent",
@@ -60,17 +63,19 @@
     },
     {
       "source": "Deepsea Finance",
-      "target": "Tài Chính Biển Sâu",
+      "target": "Tài chính Hải Uyên",
       "status": "approved",
       "category": "Lore",
-      "notes": "Tập đoàn tài chính phát hành Dorra"
+      "notes": "Tập đoàn tài chính phát hành Dorra",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Dorra",
       "target": "Dorra",
       "status": "approved",
       "category": "Lore",
-      "notes": "Đơn vị tiền tệ chính thức của Nova, giữ nguyên"
+      "notes": "Đơn vị tiền tệ chính thức của Nova, giữ nguyên",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Stellanite Lumina",
@@ -88,10 +93,11 @@
     },
     {
       "source": "Infinite Arena",
-      "target": "Đấu Trường Vô Tận",
+      "target": "Giác đấu vô tận",
       "status": "approved",
       "category": "Lore",
-      "notes": "Chế độ vượt tầng thử thách"
+      "notes": "Chế độ vượt tầng thử thách",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Infinity Tower",
@@ -214,10 +220,11 @@
     },
     {
       "source": "Main Skill",
-      "target": "Kỹ Năng Chính",
+      "target": "Kỹ năng chính",
       "status": "approved",
       "category": "Combat",
-      "notes": "Chiêu thức kích hoạt chủ đạo"
+      "notes": "Chiêu thức kích hoạt chủ đạo",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Secondary Skill",
@@ -228,10 +235,11 @@
     },
     {
       "source": "Ultimate",
-      "target": "Tuyệt Kỹ",
+      "target": "Tuyệt kỹ",
       "status": "approved",
       "category": "Combat",
-      "notes": "Chiêu cuối năng lượng cao"
+      "notes": "Chiêu cuối năng lượng cao",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Burst",
@@ -333,10 +341,11 @@
     },
     {
       "source": "Potential",
-      "target": "Tiềm Năng",
+      "target": "Tiềm năng",
       "status": "approved",
       "category": "Progression",
-      "notes": "Cường hóa chiêu thức đột phá"
+      "notes": "Cường hóa chiêu thức đột phá",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "FateCard",
@@ -914,17 +923,19 @@
     },
     {
       "source": "New Star Guild",
-      "target": "Lữ Đoàn Tân Tinh",
+      "target": "Đội Sao Mai",
       "category": "Lore",
       "notes": "Lữ đoàn của người chơi và đồng đội (CN: 空白旅团)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Imperial Guard",
-      "target": "Cận Vệ Hoàng Gia",
+      "target": "Vệ binh đế quốc",
       "category": "Lore",
       "notes": "Đội Cận Vệ Hoàng Gia",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "White Cat Troupe",
@@ -935,10 +946,11 @@
     },
     {
       "source": "United Harvest",
-      "target": "Liên Hợp Thu Hoạch",
+      "target": "United Harvest",
       "category": "Lore",
       "notes": "Tập đoàn Nông Nghiệp Liên Hợp / Liên Hợp Thu Hoạch",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Baize Bureau",
@@ -984,10 +996,11 @@
     },
     {
       "source": "Ashwind Clan",
-      "target": "Bang Tro Gió",
+      "target": "băng Ashwind",
       "category": "Lore",
       "notes": "Tổ chức ngầm hoạt động nơi hoang dã (CN: 灰风俱乐部)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Scarlet Sights Media",
@@ -1005,10 +1018,11 @@
     },
     {
       "source": "Grace Imperium",
-      "target": "Đế Quốc Grace",
+      "target": "Ý chí Ân điển",
       "category": "Lore",
       "notes": "Đế Quốc Grace",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Petal Bloom",
@@ -1033,45 +1047,51 @@
     },
     {
       "source": "Nocturn Eterna",
-      "target": "Đêm Trường Vĩnh Cửu",
+      "target": "Nocturn Eterna",
       "category": "Lore",
       "notes": "Thế lực Đêm Trường Vĩnh Cửu",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Evernight Emberflies",
-      "target": "Đom Đóm Đêm Trường",
+      "target": "Đom đóm đêm dài",
       "category": "Monster",
       "notes": "Region Boss đom đóm rực lửa (CN: 终宵萤辉)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Count of the Duloos",
-      "target": "Nam Tước Duloo",
+      "target": "Bá tước Duloos",
       "category": "Monster",
       "notes": "Boss tộc Duloo (CN: 热嘟噜噗男爵)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Grotesque Dancer",
-      "target": "Vũ Công Quái Dị",
+      "target": "Vũ công kỳ dị",
       "category": "Monster",
       "notes": "Boss vũ công bóng ma (CN: 怪诞舞者)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Garden of Parasite",
-      "target": "Khu Vườn Ký Sinh",
+      "target": "Khu vườn ký sinh",
       "category": "Monster",
       "notes": "Boss đại thụ ký sinh (CN: 寄生之庭)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Spirit of Brutality",
-      "target": "Linh Thú Cuồng Bạo",
+      "target": "Linh hồn cuồng bạo",
       "category": "Monster",
       "notes": "Boss tuần linh thú hung bạo (CN: 猛进之灵)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Tusk Stomper",
@@ -1082,24 +1102,27 @@
     },
     {
       "source": "Spellbound Golem",
-      "target": "Cự Tượng Ma Thị",
+      "target": "Golem phù phép",
       "category": "Monster",
       "notes": "Boss golem cổ đại khổng lồ (CN: 魔侍巨像)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Lithe Beauty",
-      "target": "Mỹ Nhân Lưu Phong",
+      "target": "Mỹ nhân uyển chuyển",
       "category": "Monster",
       "notes": "Boss nữ kiếm vũ tốc độ cao (CN: 流风美人)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Blade of Jade",
-      "target": "Thúy Hoàng Chi Nhận",
+      "target": "Lưỡi kiếm ngọc bích",
       "category": "Monster",
       "notes": "Boss đao khách bích ngọc hoàng kim (CN: 翠煌之刃)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Gobble Hexhorn Whale",
@@ -1152,10 +1175,11 @@
     },
     {
       "source": "Nightmare Executioner",
-      "target": "Đao Phủ Ác Mộng",
+      "target": "Đao phủ ác mộng",
       "category": "Monster",
       "notes": "Quái vật trảm thủ mộng cảnh (CN: 梦魇处刑人)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Plundering Dual Blades",
@@ -1194,10 +1218,11 @@
     },
     {
       "source": "Wrath Juggernaut",
-      "target": "Cự Nhân Oán Hận",
+      "target": "Đại lực sĩ oán nộ",
       "category": "Monster",
       "notes": "Quái vật khổng lồ thịnh nộ (CN: 仇厄力士)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Whimagus",
@@ -1292,10 +1317,11 @@
     },
     {
       "source": "Emor",
-      "target": "Thành Phố Emor",
+      "target": "Emor",
       "category": "Lore",
       "notes": "Đại đô thị trung tâm văn minh đại lục Nova (CN: 埃摩)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Emor Market",
@@ -1320,10 +1346,11 @@
     },
     {
       "source": "Philae",
-      "target": "Thành Phố Philae",
+      "target": "Philae",
       "category": "Lore",
       "notes": "Đô thị nông nghiệp trù phú (CN: 菲莱)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Mirage",
@@ -1334,80 +1361,91 @@
     },
     {
       "source": "Waterway Bridge",
-      "target": "Cầu Thủy Đạo",
+      "target": "cầu đường thủy",
       "category": "Lore",
       "notes": "Cầu vòm dẫn nước cổ đại liên kết khu vực (CN: 水道桥)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Currents and Shadows",
-      "target": "Dòng Chảy & Bóng Tối",
+      "target": "Dòng chảy và bóng tối",
       "category": "Lore",
       "notes": "Phân tầng Tháp Sao hệ Thủy/Ám (CN: 暗影与水流)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Dust and Flames",
-      "target": "Bụi Trần & Lửa Đỏ",
+      "target": "Bụi đất và lửa cháy",
       "category": "Lore",
       "notes": "Phân tầng Tháp Sao hệ Hỏa/Địa (CN: 烈焰与尘埃)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Storm and Thunder",
-      "target": "Cuồng Phong & Sấm Sét",
+      "target": "Bão tố và sấm sét",
       "category": "Lore",
       "notes": "Phân tầng Tháp Sao hệ Phong/Lôi (CN: 风暴与闪电)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Misstep On One",
-      "target": "Lạc Lối Nguyên Sơ",
+      "target": "Bước đầu lạc lối",
       "category": "Lore",
       "notes": "Phân tầng Tháp Sao khởi đầu (CN: 原初的迷途)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Thrilling Beat",
-      "target": "Tiết Tấu Sảng Khoái",
+      "target": "Nhịp điệu phấn khích",
       "category": "Lore",
       "notes": "Phân khu thử thách Tháp Vô Tận (CN: 飒爽疾奏)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Shake The Floor",
-      "target": "Chấn Động Chiến Lũy",
+      "target": "Rung chuyển sàn đấu",
       "category": "Lore",
       "notes": "Phân khu thử thách Tháp Vô Tận (CN: 荒垒震音)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Sinister Ritual",
-      "target": "Mật Nghi Biệt Lập",
+      "target": "Nghi lễ hắc ám",
       "category": "Lore",
       "notes": "Phân khu thử thách Tháp Vô Tận (CN: 幽闭仪典)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Flames and Beats",
-      "target": "Cuồng Vũ Rực Lửa",
+      "target": "Lửa và nhịp điệu",
       "category": "Lore",
       "notes": "Phân khu thử thách Tháp Vô Tận (CN: 炽热狂舞)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Elegance and Flow",
-      "target": "Lưu Ca Thanh Nhã",
+      "target": "Thanh nhã tuôn trào",
       "category": "Lore",
       "notes": "Phân khu thử thách Tháp Vô Tận (CN: 清雅流歌)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Upbeat Party",
-      "target": "Tiệc Vui Lấp Lánh",
+      "target": "Bữa tiệc sôi động",
       "category": "Lore",
       "notes": "Phân khu thử thách Tháp Vô Tận (CN: 纷闪派对)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Monolith Calendar",
@@ -1421,42 +1459,48 @@
       "target": "Thủy",
       "category": "Combat",
       "notes": "Nguyên tố Nước (CN: 水 / 水系)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Ignis",
       "target": "Hỏa",
       "category": "Combat",
       "notes": "Nguyên tố Lửa (CN: 火 / 火系)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Ventus",
       "target": "Phong",
       "category": "Combat",
       "notes": "Nguyên tố Gió (CN: 风 / 风系)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Terra",
-      "target": "Địa",
+      "target": "Thổ",
       "category": "Combat",
       "notes": "Nguyên tố Đất / Nham (CN: 地 / 岩系)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Lux",
       "target": "Quang",
       "category": "Combat",
       "notes": "Nguyên tố Ánh Sáng (CN: 光 / 光系)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Umbra",
       "target": "Ám",
       "category": "Combat",
       "notes": "Nguyên tố Bóng Tối (CN: 暗 / 暗系)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Base ATK",
@@ -1537,10 +1581,11 @@
     },
     {
       "source": "Resilience Break",
-      "target": "Phá Bền",
+      "target": "Phá bền",
       "category": "Combat",
       "notes": "Đánh sập thanh kiên cường đưa địch vào thế suy yếu (CN: 破韧)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Resilience Break Efficiency",
@@ -1614,10 +1659,11 @@
     },
     {
       "source": "Support Skill",
-      "target": "Kỹ Năng Viện Trợ",
+      "target": "Kỹ năng hỗ trợ",
       "category": "Combat",
       "notes": "Kỹ năng của nhân vật hàng sau hỗ trợ (CN: 援护技能)",
-      "status": "approved"
+      "status": "approved",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Support Ultimate",
@@ -1747,17 +1793,19 @@
     },
     {
       "source": "City of a Thousand Monoliths",
-      "target": "Thiên Tháp Chi Thành",
+      "target": "Thành phố ngàn Tháp sao",
       "status": "approved",
       "category": "Location",
-      "notes": "Thành phố ngàn Cự Tháp. CẤM calque thành 'Thành phố ngàn khối đá'."
+      "notes": "Thành phố ngàn Cự Tháp. CẤM calque thành 'Thành phố ngàn khối đá'.",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Soul Stone",
-      "target": "Hồn Thạch",
+      "target": "Đá linh hồn",
       "status": "approved",
       "category": "Item",
-      "notes": "Hồn Thạch - Tuyệt đối không dịch là Hòn Hồn Thạch hay Viên Hồn Thạch"
+      "notes": "Hồn Thạch - Tuyệt đối không dịch là Hòn Hồn Thạch hay Viên Hồn Thạch",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Dusk Arbiter",
@@ -1810,10 +1858,11 @@
     },
     {
       "source": "Cangwu",
-      "target": "Thương Ngô",
+      "target": "Cangwu",
       "status": "approved",
       "category": "Location",
-      "notes": "Vùng đất Thương Ngô"
+      "notes": "Vùng đất Thương Ngô",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Cangwu City",
@@ -1831,10 +1880,11 @@
     },
     {
       "source": "Tyrant",
-      "target": "Bạo Chúa",
+      "target": "Ma vương",
       "status": "approved",
       "category": "Lore / Identity",
-      "notes": "Bạo Chúa huyền thoại trong quá khứ gắn liền với Sếp. CẤM dịch là Bạo Quân."
+      "notes": "Bạo Chúa huyền thoại trong quá khứ gắn liền với Sếp. CẤM dịch là Bạo Quân.",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Captain",
@@ -1845,10 +1895,11 @@
     },
     {
       "source": "Boss",
-      "target": "Sếp",
+      "target": "Boss",
       "status": "approved",
       "category": "Title",
-      "notes": "Sếp - Nhân vật chính"
+      "notes": "Sếp - Nhân vật chính",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Boss Accord",
@@ -1859,10 +1910,11 @@
     },
     {
       "source": "Artifact",
-      "target": "Di Vật",
+      "target": "Thánh vật",
       "status": "approved",
       "category": "Item",
-      "notes": "Di Vật - Tuyệt đối không dùng Cổ vật"
+      "notes": "Di Vật - Tuyệt đối không dùng Cổ vật",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Parasitic Garden",
@@ -1873,10 +1925,11 @@
     },
     {
       "source": "Runic Disc",
-      "target": "Đĩa Runic",
+      "target": "Đĩa phù văn",
       "status": "approved",
       "category": "Item",
-      "notes": "Đĩa Runic"
+      "notes": "Đĩa Runic",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Ridge Greenhouse",
@@ -1901,10 +1954,11 @@
     },
     {
       "source": "Loong",
-      "target": "Tộc Long",
+      "target": "(tộc/người) Loong",
       "status": "approved",
       "category": "Lore",
-      "notes": "Tộc Long / Long tộc"
+      "notes": "Tộc Long / Long tộc",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Loong Gate",
@@ -1936,10 +1990,11 @@
     },
     {
       "source": "Wishing Box",
-      "target": "Hộp Ước Nguyện",
+      "target": "Hộp ước nguyện",
       "status": "approved",
       "category": "Item",
-      "notes": "Hộp Ước Nguyện"
+      "notes": "Hộp Ước Nguyện",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Flavor Dread",
@@ -1992,10 +2047,11 @@
     },
     {
       "source": "Sentinel of Dawn",
-      "target": "Vệ Binh Rạng Đông",
+      "target": "Cận vệ Bình minh",
       "status": "approved",
       "category": "Faction",
-      "notes": "Lực lượng Vệ Binh Rạng Đông"
+      "notes": "Lực lượng Vệ Binh Rạng Đông",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Midas",
@@ -2020,10 +2076,11 @@
     },
     {
       "source": "Calor Month",
-      "target": "Tháng Calor",
+      "target": "Tháng tám",
       "status": "approved",
       "category": "Lore",
-      "notes": "Tháng Calor trong lịch Nova"
+      "notes": "Tháng Calor trong lịch Nova",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Never Ending Summer",
@@ -2132,10 +2189,11 @@
     },
     {
       "source": "Messis Month",
-      "target": "Tháng Messis",
+      "target": "Tháng chín",
       "status": "approved",
       "category": "Calendar",
-      "notes": "Tháng Messis trong lịch thế giới Stella Sora. CẤM calque thành Tháng Messi."
+      "notes": "Tháng Messis trong lịch thế giới Stella Sora. CẤM calque thành Tháng Messi.",
+      "term_source": "SS/glossary/glossary.csv"
     },
     {
       "source": "Director Knight",
@@ -2255,6 +2313,854 @@
       "status": "approved",
       "category": "Event / Lore",
       "notes": "Triển lãm/Hội nghị khoa học kỹ thuật ngầm tại Philae trong STev_08."
+    },
+    {
+      "source": "Grace",
+      "target": "Ân điển",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Stellaroid",
+      "target": "Stellaroid",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "God of Grace",
+      "target": "Thần Ân điển",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Chronicles of New Nova",
+      "target": "Biên niên sử Tân Nova",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Ash District",
+      "target": "Quận Tro",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Silver District",
+      "target": "Quận Bạc",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Gold District",
+      "target": "Quận Vàng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Ash Orphanage",
+      "target": "Cô nhi viện Quận Tro",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Soul Shop",
+      "target": "Tiệm linh hồn",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Senators",
+      "target": "Ủy viên",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "tamago",
+      "target": "trứng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Creta Trading",
+      "target": "Creta Trading",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Nivis Month",
+      "target": "Tháng một",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Iter Month",
+      "target": "Tháng hai",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Sonus Month",
+      "target": "Tháng ba",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Clarus Month",
+      "target": "Tháng tư",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Floris Month",
+      "target": "Tháng năm",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Pluvia Month",
+      "target": "Tháng sáu",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Tonitrua Month",
+      "target": "Tháng bảy",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Venatio Month",
+      "target": "Tháng mười",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Nebula Month",
+      "target": "Tháng mười một",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Gelu Month",
+      "target": "Tháng mười hai",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Tawny Nightingale",
+      "target": "bánh Họa mi nâu",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Seal of Grace",
+      "target": "Dấu mộc Ân điển",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Platinum Academy",
+      "target": "Học viện Bạch Kim",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "CEO",
+      "target": "CEO",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Senate",
+      "target": "Hội đồng quản trị",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Frozen Path",
+      "target": "Băng tiêu dẫn lối",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "The White Room",
+      "target": "Phòng Trắng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Pep Pep Juice",
+      "target": "Nước Pep Pep",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Monolith Coins",
+      "target": "(đồng) xu Tháp sao",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "franchise patent",
+      "target": "đặc quyền kinh doanh",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Authorization",
+      "target": "Quyền hạn",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Journey Ticket",
+      "target": "Vé Hành trình",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Recruitment",
+      "target": "Chiêu mộ",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Tyrant Growth",
+      "target": "Bồi dưỡng Ma vương",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Record",
+      "target": "Bản ghi",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Average Record",
+      "target": "Bản ghi Thường",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Advanced Record",
+      "target": "Bản ghi Cao cấp",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Expert Record",
+      "target": "Bản ghi Chuyên gia",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Master Record",
+      "target": "Bản ghi Bậc thầy",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Monolith Shop",
+      "target": "Cửa hàng Tháp sao",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Stella Coin",
+      "target": "Xu Stella",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Pummel",
+      "target": "Âm điệu Cường kích",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Luck",
+      "target": "Âm điệu May mắn",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Burst",
+      "target": "Âm điệu Bộc phát",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Stamina",
+      "target": "Âm điệu Thể lực",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Focus",
+      "target": "Âm điệu Tập trung",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Skill",
+      "target": "Âm điệu Kỹ xảo",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Ultimate",
+      "target": "Âm điệu Tuyệt kỹ",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Aqua",
+      "target": "Âm điệu Thủy",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Ignis",
+      "target": "Âm điệu Hỏa",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Ventus",
+      "target": "Âm điệu Phong",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Terra",
+      "target": "Âm điệu Thổ",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Lux",
+      "target": "Âm điệu Quang",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Melody of Umbra",
+      "target": "Âm điệu Ám",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Battle Domain",
+      "target": "Gian chiến đấu",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Rival's Domain",
+      "target": "Gian đối thủ",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Leader's Domain",
+      "target": "Gian thủ lĩnh",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Boss's Domain",
+      "target": "Gian Boss",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Trade Domain",
+      "target": "Gian giao dịch",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Choice Domain",
+      "target": "Gian lựa chọn",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Skill Trial",
+      "target": "Thử thách kỹ năng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Tier-up Trial",
+      "target": "Thử thách thăng bậc",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Basic Trial",
+      "target": "Thử thách cơ bản",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Menace Arena",
+      "target": "Đấu trường hiểm nguy",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Mark",
+      "target": "Ấn",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Cataclysm Survivor",
+      "target": "Sống sót qua đại họa",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Monolith Log",
+      "target": "Sổ tra cứu Tháp sao",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Anecdote",
+      "target": "Giai thoại",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Enhancement Machine",
+      "target": "Máy cường hóa",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Disc Harmony Skill",
+      "target": "Kỹ năng hòa tấu Đĩa phù văn",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Emblem Trial",
+      "target": "Thử thách huy hiệu",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Wild Rush",
+      "target": "Cuồng bạo xung phong",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "King Glopo",
+      "target": "Vua Glopo",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Rotting Silencer",
+      "target": "Kẻ triệt âm mục rữa",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Abyssal Sea Sovereign",
+      "target": "Chúa tể biển thẳm",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Shadow Poison Pool",
+      "target": "Vũng độc bóng tối",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Repeated Performance",
+      "target": "Biểu diễn lặp lại",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Golem Guard",
+      "target": "Golem hộ vệ",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Gloomfiend",
+      "target": "Ma ảnh",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Total Bombardment",
+      "target": "Tổng oanh tạc",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Crispy Hooves Deluxe",
+      "target": "Móng giò giòn thượng hạng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Cursipot",
+      "target": "Cursipot",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Operation: Shadow Siege",
+      "target": "Chiến dịch: Vây bắt bóng ảnh",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Through Hostile Depths",
+      "target": "Xuyên vùng sâu hiểm địa",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "A Future Without Trekkers",
+      "target": "Tương lai không còn Tuần du giả",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Eternity",
+      "target": "Vĩnh hằng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Overture of a Shadowy Enigma",
+      "target": "Dạo khúc ẩn đố bóng đêm",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Soul trading",
+      "target": "Giao dịch linh hồn",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Tyrant Accord",
+      "target": "Giao ước Ma vương",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Boss Accord Staffing Co.",
+      "target": "Công ty nhân lực Giao ước Boss",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Tyrant Accord Staffing Co.",
+      "target": "Công ty nhân lực Giao ước Ma vương",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Grace Imperium Vault",
+      "target": "Kho lưu trữ Ý chí Ân điển",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Matsukawa",
+      "target": "Matsukawa",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Flavio",
+      "target": "Flavio",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Scarlet Sights Street",
+      "target": "Phố Mắt Đỏ",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Tetrad Aspects",
+      "target": "Tứ Giác Tâm Tướng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "company war",
+      "target": "Chiến tranh công ty",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Imperial Guard Security Solutions Company",
+      "target": "Công ty Giải pháp An ninh Vệ binh đế quốc",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Monolith Meltdown",
+      "target": "Biến cố Tháp sao",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Lux Stealer",
+      "target": "Kẻ trộm ánh sáng",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "sageo",
+      "target": "dây buộc vỏ kiếm",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Knight's Code",
+      "target": "Quy tắc Kỵ sĩ",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Well of Worlds Tyrant Development System",
+      "target": "Hệ thống Bồi dưỡng Ma vương Giếng Chư Giới",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
+    },
+    {
+      "source": "Nova",
+      "target": "Nova",
+      "status": "proposed",
+      "category": "SS term",
+      "notes": "Imported term target; status does not represent semantic review.",
+      "term_source": "SS/glossary/glossary.csv"
     }
   ],
   "forbidden_calques": [

@@ -1,6 +1,6 @@
 """Manifest-bound transaction with preimages, atomic journal and restart recovery."""
 from __future__ import annotations
-import contextlib,json,os,shutil,uuid
+import contextlib,json,os,shutil,time,uuid
 from datetime import datetime,timezone
 from pathlib import Path
 from .game_detection import canonicalize_path,is_game_process_running
@@ -40,6 +40,25 @@ class PatchInstaller:
         if is_game_process_running():raise InstallerError('Hãy đóng game trước khi thay đổi tài nguyên.','GAME_RUNNING')
     def _emit(self,cb,op,phase,msg,n=0,total=0,receipt=None):
         if cb:cb(OperationEvent(op,phase,msg,n,total,receipt=receipt))
+    def _replace_patch(self,root,tmp,target,before,after,rel):
+        # Windows may report access denied (5) as well as sharing/lock errors
+        # for an open destination. Retry briefly without changing ACLs/attributes.
+        for attempt in range(3):
+            self._preflight(root)
+            if not same(target,before):raise InstallerError('Tệp đã đổi trước ghi: '+rel,'PREIMAGE_CONFLICT')
+            if not same(tmp,after):raise InstallerError('Tệp tạm đã đổi trước ghi: '+rel,'SOURCE_CHANGED')
+            try:
+                os.replace(tmp,target)
+                return
+            except OSError as e:
+                winerror=getattr(e,'winerror',None)
+                if winerror in (5,32,33) and attempt<2:
+                    time.sleep((0.2,0.5)[attempt]);continue
+                if winerror in (32,33):
+                    raise InstallerError('Không thể thay '+rel+' vì tệp đang bị chương trình khác sử dụng. Hãy đóng game và trình cập nhật, rồi thử lại.','FILE_IN_USE') from e
+                if winerror==5:
+                    raise InstallerError('Windows từ chối thay '+rel+'. Hãy đóng game và trình cập nhật, kiểm tra thuộc tính chỉ đọc và quyền thay hoặc xóa tệp trong thư mục game; nếu cần, mở launcher bằng quyền quản trị rồi thử lại.','FILE_ACCESS_DENIED') from e
+                raise
     def pending(self,root):
         out=[]
         for p in self.journals_dir.glob('*.json'):
@@ -128,10 +147,12 @@ class PatchInstaller:
                     if not same(target,item['before']):raise InstallerError('Tệp đã đổi trước ghi: '+rel,'PREIMAGE_CONFLICT')
                     target.parent.mkdir(parents=True,exist_ok=True);tmp=target.with_name('.patch_'+uuid.uuid4().hex)
                     try:
-                        shutil.copy2(safe_path(payload,item['source']),tmp)
+                        # File bytes are manifest-bound; source attributes (including
+                        # read-only) must not leak onto the replacement temporary file.
+                        shutil.copyfile(safe_path(payload,item['source']),tmp)
                         if not same(tmp,item['after']):raise InstallerError('Nguồn đổi hoặc tệp tạm sai hash.','SOURCE_CHANGED')
                         if not same(target,item['before']):raise InstallerError('Tệp đã đổi trong lúc staging.','PREIMAGE_CONFLICT')
-                        j['state']='applying';j['pending']=rel;atomic_json(jfile,j);os.replace(tmp,target)
+                        j['state']='applying';j['pending']=rel;atomic_json(jfile,j);self._replace_patch(root,tmp,target,item['before'],item['after'],rel)
                     finally:tmp.unlink(missing_ok=True)
                     emit(OperationPhase.APPLY,target.name,i+1,total)
                 for i,(rel,item) in enumerate(plan.items()):
@@ -144,6 +165,8 @@ class PatchInstaller:
                 except Exception as recovery:
                     j['state']='recovery_required';j['error']=str(e);j['recovery_error']=str(recovery);atomic_json(jfile,j)
                     raise InstallerError('Thao tác bị ngắt; cần phục hồi từ nhật ký. Chi tiết: '+str(recovery),'RECOVERY_REQUIRED') from e
+                if isinstance(e,InstallerError) and e.code in ('FILE_IN_USE','FILE_ACCESS_DENIED'):
+                    raise InstallerError('Cài đặt thất bại; đã phục hồi trạng thái trước thao tác. '+str(e),e.code) from e
                 raise InstallerError('Cài đặt thất bại; đã phục hồi trạng thái trước thao tác: '+str(e),'TRANSACTION_FAILED') from e
             emit(OperationPhase.DONE,f"Đã cài {total} tệp trong manifest {m['version']}.",total,total,receipt);return receipt
     def verify_installed(self,root,event_cb=None,operation_id='verify'):

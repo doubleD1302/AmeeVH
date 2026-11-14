@@ -41,9 +41,9 @@ class PaymentTile(StarlitButton):
     # radio glyph over the caption would reintroduce the overlap defect.
     pass
 class FactIcon(QWidget):
-    def __init__(self,name):super().__init__();self.name=name;self.setFixedSize(42,42)
+    def __init__(self,name):super().__init__();self.name=name;self.setFixedSize(60,60)
     def paintEvent(self,e):
-        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing);p.setPen(QPen(QColor('#c7b79a'),1));p.setBrush(QColor('#d8f0ef'));p.drawEllipse(QRectF(2,2,38,38));AssetManager.get().paint(p,'icons/'+self.name+'_white',QRectF(9,9,24,24),'contain')
+        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.Antialiasing);p.setPen(QPen(QColor('#c7b79a'),1));p.setBrush(QColor('#d8f0ef'));p.drawEllipse(QRectF(2,2,56,56));AssetManager.get().paint(p,'icons/'+self.name+'_white',QRectF(9,9,42,42),'contain')
 class SupportModal(ArtDialog):
     def __init__(self,supporter_data,parent=None):
         super().__init__('Ủng hộ dự án','Cảm ơn bạn đã tiếp sức cho Stella Sora Việt hoá.','star_small',parent,width=1160,height=790,panel='panels/support');self.body_widget.setMinimumWidth(0);self.supporter_data=supporter_data
@@ -77,6 +77,14 @@ class SupportModal(ArtDialog):
         arthead=Header();arthead.setFixedHeight(38);artlayout=QHBoxLayout(arthead);artlayout.setContentsMargins(0,0,0,0);artlayout.addWidget(header);rl.addWidget(arthead)
         self.rows=QWidget();self.rows_layout=QVBoxLayout(self.rows);self.rows_layout.setContentsMargins(0,0,0,0);self.rows_layout.setSpacing(0);rl.addWidget(scroll_area(self.rows),1);rl.addWidget(text_label('Trân trọng sự đồng hành của bạn.',12,'#bed9f0'));columns.addWidget(right,54);self.body.addLayout(columns,1)
         reminder=text_label('Bản Việt hoá luôn luôn miễn phí.',23,'#a4efff',True,True);reminder.setFont(ui_font(23,QFont.Weight.Bold));reminder.setMinimumHeight(40);reminder.setAccessibleName('Bản Việt hoá luôn luôn miễn phí.');self.footer.addWidget(reminder,1);self.footer.addSpacing(16);b=StarlitButton('Đóng',variant='primary');b.setMinimumWidth(150);b.clicked.connect(self.reject);self.footer.addWidget(b);self._populate();self._responsive_callback=self._layout_support_columns;self._apply_panel_layout()
+    def _apply_support_icon_scale(self):
+        # Support overrides the common150% scale using original/base dimensions.
+        for widget in self.findChildren(StarlitButton):
+            widget.set_icon_scale(1.75)
+            if not widget.icon().isNull() and widget.maximumHeight()<widget.iconSize().height()+8:
+                widget.setFixedHeight(widget.iconSize().height()+8)
+        for widget in self.findChildren(AssetImage):widget.set_icon_scale(1.75)
+        for widget in self.findChildren(ArtInput):widget.set_icon_scale(1.75)
     def _layout_support_columns(self,width):
         compact=width<760
         self.support_columns.setDirection(QBoxLayout.Direction.TopToBottom if compact else QBoxLayout.Direction.LeftToRight)
@@ -101,3 +109,4 @@ class SupportModal(ArtDialog):
         else:
             for i,s in enumerate(items):self.rows_layout.addWidget(ArtTableRow(s.name,s.tier,s.date,s.message,i))
         self.rows_layout.addStretch()
+        self._apply_support_icon_scale()

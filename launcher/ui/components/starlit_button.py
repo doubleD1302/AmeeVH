@@ -6,9 +6,16 @@ from ..assets import AssetManager
 from ..typography import font
 class StarlitButton(QPushButton):
     def __init__(self,text='',variant='primary',icon=None,parent=None):
-        super().__init__(text,parent);self.variant=variant;self.art_icon_name=icon if isinstance(icon,str) else None;self.icon_side='left';self.text_alignment='center';self.caption_wrap=True;self.stretch_background=False;self._keyboard_focus=False;self.setCursor(Qt.CursorShape.PointingHandCursor);self.setFocusPolicy(Qt.FocusPolicy.StrongFocus);self.setMinimumHeight(40 if variant in ('ghost','square') else 44);self.setMouseTracking(True);self.setFont(font(16,QFont.Weight.DemiBold));self.setIconSize(QSize(24,24));self.setMinimumWidth(0);self.setSizePolicy(QSizePolicy.Policy.Expanding,QSizePolicy.Policy.Fixed);self.setAccessibleName(text or 'Thao tác')
+        super().__init__(text,parent);self.variant=variant;self.art_icon_name=icon if isinstance(icon,str) else None;self.icon_side='left';self.text_alignment='center';self.center_caption=False;self._icon_scale=1.5;self._base_icon_size=QSize(24,24);self.caption_wrap=True;self.stretch_background=False;self._keyboard_focus=False;self.setCursor(Qt.CursorShape.PointingHandCursor);self.setFocusPolicy(Qt.FocusPolicy.StrongFocus);self.setMinimumHeight(44);self.setMouseTracking(True);self.setFont(font(16,QFont.Weight.DemiBold));self.setIconSize(QSize(24,24));self.setMinimumWidth(0);self.setSizePolicy(QSizePolicy.Policy.Expanding,QSizePolicy.Policy.Fixed);self.setAccessibleName(text or 'Thao tác')
         if icon:self.setIcon(AssetManager.get().get_icon(icon) if isinstance(icon,str) else icon)
         self.setStyleSheet('QPushButton{background:transparent;border:0;padding:0;}')
+    def setIconSize(self,size):
+        # API accepts source/base size; context changes never multiply an already-scaled size.
+        self._base_icon_size=QSize(size)
+        factor=getattr(self,'_icon_scale',1.5)
+        super().setIconSize(QSize(round(size.width()*factor),round(size.height()*factor)))
+    def set_icon_scale(self,factor):
+        self._icon_scale=float(factor);self.setIconSize(self._base_icon_size);self.updateGeometry();self.update()
     def sizeHint(self):return QSize(max(44,self.fontMetrics().horizontalAdvance(self.text())+(self.iconSize().width()+8 if not self.icon().isNull() else 0)+36),46)
     def minimumSizeHint(self):return QSize(0,self.minimumHeight())
     def set_variant(self,value):self.variant=value;self.update()
@@ -48,5 +55,5 @@ class StarlitButton(QPushButton):
             if self.art_icon_name:pix=assets.get_icon_pixmap(self.art_icon_name,'muted' if not self.isEnabled() else 'ink')
             else:pix=self.icon().pixmap(self.iconSize(),QIcon.Mode.Disabled if not self.isEnabled() else QIcon.Mode.Normal)
             painter.drawPixmap(iconrect,pix,QRectF(pix.rect()))
-        painter.drawText(textrect,Qt.AlignmentFlag.AlignVCenter|Qt.AlignmentFlag.AlignLeft|(Qt.TextFlag.TextWordWrap if self.caption_wrap else Qt.TextFlag.TextSingleLine),label)
+        painter.drawText(textrect,Qt.AlignmentFlag.AlignVCenter|(Qt.AlignmentFlag.AlignHCenter if self.center_caption else Qt.AlignmentFlag.AlignLeft)|(Qt.TextFlag.TextWordWrap if self.caption_wrap else Qt.TextFlag.TextSingleLine),label)
         if focus:painter.setPen(QPen(QColor('#037e92'),1));painter.drawRoundedRect(rect.adjusted(3,3,-3,-3),6,6)

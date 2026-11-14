@@ -12,8 +12,15 @@ def text_label(text='',size=15,color='#eef7ff',bold=False,wrap=False):
         if c.lightness()>130:color='#405682'
     w=QLabel(text);w.setTextFormat(Qt.TextFormat.PlainText);w.setWordWrap(wrap);w.setMinimumWidth(0);w.setSizePolicy(QSizePolicy.Policy.Expanding,QSizePolicy.Policy.Preferred);size=13 if size<13 else (15 if size==14 else (20 if size==17 else size));f=ui_font(size,(QFont.Weight.Bold if size>=20 else QFont.Weight.DemiBold) if bold else QFont.Weight.Normal);w.setFont(f);w.setStyleSheet('color:'+color+';background:transparent;');return w
 class AssetImage(QWidget):
-    def __init__(self,asset_id,size=24,parent=None):super().__init__(parent);self.asset_id=asset_id;self.setFixedSize(size,size)
-    def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);AssetManager.get().paint(p,self.asset_id,QRectF(self.rect()),'contain')
+    def __init__(self,asset_id,size=24,parent=None):
+        super().__init__(parent);self.asset_id=asset_id;self.base_icon_size=size
+        self.utility_icon=asset_id.startswith('icons/') or asset_id=='controls/avatar'
+        self.set_icon_scale(1.5)
+    def set_icon_scale(self,factor):
+        self.icon_scale=float(factor) if self.utility_icon else 1.0
+        side=round(self.base_icon_size*self.icon_scale);self.setFixedSize(side,side);self.update()
+    def paintEvent(self,e):
+        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);AssetManager.get().paint(p,self.asset_id,QRectF(self.rect()),'contain')
 class ArtDivider(QWidget):
     def __init__(self,parent=None):super().__init__(parent);self.setFixedHeight(14)
     def paintEvent(self,e):p=QPainter(self);p.setPen(QPen(QColor(190,174,146,120),1));p.drawLine(0,self.height()//2,self.width(),self.height()//2)
@@ -22,9 +29,12 @@ class Badge(QLabel):
     def paintEvent(self,e):p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);AssetManager.get().paint(p,'badges/'+self.kind,QRectF(self.rect()),'stretch');p.setPen(QColor('#073454'));p.setFont(self.font());p.drawText(self.rect(),Qt.AlignmentFlag.AlignCenter,self.text())
 class ArtInput(QLineEdit):
     def __init__(self,text='',placeholder='',icon='search',parent=None):
-        super().__init__(text,parent);self.art_icon=icon;self.setPlaceholderText(placeholder);self.setMinimumHeight(42);self.setTextMargins(40,0,14,0);self.setStyleSheet('QLineEdit{background:transparent;border:0;color:#304679;font-size:17px;padding:0;selection-background-color:#45caff;selection-color:#06223c;}');self.setMouseTracking(True)
+        super().__init__(text,parent);self.art_icon=icon;self.base_icon_size=24;self.set_icon_scale(1.5);self.setPlaceholderText(placeholder);self.setStyleSheet('QLineEdit{background:transparent;border:0;color:#304679;font-size:17px;padding:0;selection-background-color:#45caff;selection-color:#06223c;}');self.setMouseTracking(True)
+    def set_icon_scale(self,factor):
+        self.icon_scale=float(factor);self.icon_pixels=round(self.base_icon_size*self.icon_scale)
+        self.setMinimumHeight(self.icon_pixels+12);self.setTextMargins(self.icon_pixels+24,0,14,0);self.updateGeometry();self.update()
     def paintEvent(self,e):
-        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);a=AssetManager.get();state='disabled' if not self.isEnabled() else ('selected' if self.hasFocus() else ('hover' if self.underMouse() else 'normal'));__import__('launcher.ui.journal_paint',fromlist=['field']).field(p,QRectF(self.rect()),state);a.paint(p,'icons/'+self.art_icon+'_ink',QRectF(12,(self.height()-24)/2,24,24),'contain');p.end();super().paintEvent(e)
+        p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);a=AssetManager.get();state='disabled' if not self.isEnabled() else ('selected' if self.hasFocus() else ('hover' if self.underMouse() else 'normal'));__import__('launcher.ui.journal_paint',fromlist=['field']).field(p,QRectF(self.rect()),state);a.paint(p,'icons/'+self.art_icon+'_ink',QRectF(12,(self.height()-self.icon_pixels)/2,self.icon_pixels,self.icon_pixels),'contain');p.end();super().paintEvent(e)
 class ArtScrollBar(QScrollBar):
     def __init__(self,orientation=Qt.Orientation.Vertical,parent=None):super().__init__(orientation,parent);self.setFixedWidth(14);self.setStyleSheet('QScrollBar{background:transparent;border:0;margin:0;}')
     def paintEvent(self,e):
@@ -95,7 +105,7 @@ class RichRow(QPushButton):
         p=QPainter(self);p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform);a=AssetManager.get();state='disabled' if not self.isEnabled() else ('selected' if self.isChecked() or self.hasFocus() else ('hover' if self.underMouse() else 'normal'));a.paint(p,'controls/list_row_'+state,QRectF(self.rect()));x=18
         if self.badge_text:
             a.paint(p,'badges/'+self.badge_kind,QRectF(15,17,78,25),'stretch');f=ui_font(13,QFont.Weight.DemiBold);p.setFont(f);p.setPen(QColor('#073454'));p.drawText(QRectF(15,17,78,25),Qt.AlignmentFlag.AlignCenter,self.badge_text);x=106
-        f=ui_font(15,QFont.Weight.DemiBold);p.setFont(f);p.setPen(QColor('#304679'));width=max(30,self.width()-x-35);p.drawText(QRectF(x,14,width,29),Qt.AlignmentFlag.AlignVCenter,p.fontMetrics().elidedText(self.title,Qt.TextElideMode.ElideRight,width));f=ui_font(13);p.setFont(f);p.setPen(QColor('#637596'));p.drawText(QRectF(x,43,width,28),Qt.AlignmentFlag.AlignVCenter,p.fontMetrics().elidedText(self.summary,Qt.TextElideMode.ElideRight,width));a.paint(p,'icons/'+self.art_icon+'_white',QRectF(self.width()-29,(self.height()-20)/2,20,20),'contain')
+        f=ui_font(15,QFont.Weight.DemiBold);p.setFont(f);p.setPen(QColor('#304679'));width=max(30,self.width()-x-45);p.drawText(QRectF(x,14,width,29),Qt.AlignmentFlag.AlignVCenter,p.fontMetrics().elidedText(self.title,Qt.TextElideMode.ElideRight,width));f=ui_font(13);p.setFont(f);p.setPen(QColor('#637596'));p.drawText(QRectF(x,43,width,28),Qt.AlignmentFlag.AlignVCenter,p.fontMetrics().elidedText(self.summary,Qt.TextElideMode.ElideRight,width));a.paint(p,'icons/'+self.art_icon+'_white',QRectF(self.width()-39,(self.height()-30)/2,30,30),'contain')
 class ArtTableRow(QWidget):
     def __init__(self,name,tier,date,message='',index=0,parent=None):
         super().__init__(parent);self.index=index;self.setMinimumHeight(46);self.setMouseTracking(True);l=QHBoxLayout(self);l.setContentsMargins(10,3,12,3);avatar=AssetImage('controls/avatar',30);l.addWidget(avatar);l.addWidget(text_label(name,13),3);l.addWidget(text_label(tier,13,'#7ae4ff'),2);l.addWidget(text_label(date,11,'#a4c9e7'),2);self.setToolTip(message)

@@ -23,7 +23,7 @@ function loadProfile() {
     updateHud();
 }
 
-function saveUserProfile() {
+async function saveUserProfile() {
     const name = document.getElementById("inputUsername").value.trim();
     if (name) {
         currentUser.name = name;
@@ -31,5 +31,10 @@ function saveUserProfile() {
     localStorage.setItem("stella_user_profile", JSON.stringify(currentUser));
     updateHud();
     closeProfileModal();
-    showToastAlert(`Chào mừng ${currentUser.name}! Chúc bạn có những bản dịch tuyệt vời!`);
+    try {
+        if (window.Collaboration?.available) await Collaboration.setDisplayName(currentUser.name);
+        showToastAlert(`Đã cập nhật tên hiển thị: ${currentUser.name}.`);
+    } catch (_) {
+        showToastAlert('Tên đã lưu trên máy; máy chủ chưa cập nhật. Đề xuất mới vẫn dùng tên cũ đến khi kết nối lại.');
+    }
 }

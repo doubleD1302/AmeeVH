@@ -2,9 +2,8 @@
  * Cloudflare Pages Functions - API Proxy Router
  * Đường dẫn: functions/api/[[route]].js
  * 
- * Chức năng:
- * Proxy mọi request từ Web Trạm Dịch (/api/save_line, /api/status, /api/glossary...) 
- * sang Google Apps Script Web App của dự án Stella Sora.
+ * Chỉ proxy các API thuật ngữ và bảng xếp hạng còn dùng Google Apps Script.
+ * Mọi lệnh ghi bản dịch phải đi qua Worker/D1.
  */
 
 // URL mặc định của Google Apps Script Web App (Có thể ghi đè bằng Cloudflare Environment Variable 'GAS_WEB_APP_URL')
@@ -12,20 +11,22 @@ const DEFAULT_GAS_URL = "https://script.google.com/macros/s/AKfycbwhB90dQ5YL27wB
 
 export async function onRequest(context) {
     const { request, env } = context;
+    const url = new URL(request.url);
+    const allowed = {
+        "/api/glossary": { action: "get_glossary", method: "GET" },
+        "/api/sync_glossary": { action: "get_glossary", method: "GET" },
+        "/api/leaderboard": { action: "get_leaderboard", method: "GET" },
+        "/api/add_glossary_term": { action: "add_glossary_term", method: "POST" },
+    };
+    const route = url.pathname;
+    const apiHeaders = { "Content-Type": "application/json;charset=utf-8", "Cache-Control": "no-store" };
+    if (route === "/api/save_line") return new Response(JSON.stringify({ success: false, code: "upgrade_required", error: "Luồng lưu cũ đã đóng. Tải lại TramVH để gửi qua Worker/D1." }), { status: 426, headers: apiHeaders });
+    const endpoint = allowed[route];
+    if (!endpoint) return new Response(JSON.stringify({ success: false, code: "not_found", error: "Không tìm thấy API." }), { status: 404, headers: apiHeaders });
+    if (request.method !== endpoint.method) return new Response(JSON.stringify({ success: false, code: "method_not_allowed", error: "Phương thức không được hỗ trợ." }), { status: 405, headers: apiHeaders });
+    const origin = request.headers.get("Origin");
+    if (request.method === "POST" && origin && origin !== url.origin) return new Response(JSON.stringify({ success: false, code: "cross_origin", error: "Yêu cầu khác nguồn bị từ chối." }), { status: 403, headers: apiHeaders });
     const gasUrl = (env && env.GAS_WEB_APP_URL) ? env.GAS_WEB_APP_URL : DEFAULT_GAS_URL;
-
-    // 1. Xử lý preflight CORS OPTIONS request
-    if (request.method === "OPTIONS") {
-        return new Response(null, {
-            status: 204,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
-                "Access-Control-Max-Age": "86400",
-            }
-        });
-    }
 
     if (!gasUrl) {
         return new Response(JSON.stringify({
@@ -41,36 +42,31 @@ export async function onRequest(context) {
     }
 
     try {
-        const url = new URL(request.url);
         const targetUrl = new URL(gasUrl);
 
-        // Copy query parameters
-        url.searchParams.forEach((value, key) => {
-            targetUrl.searchParams.set(key, value);
-        });
-
-        // Xác định action từ subpath (ví dụ: /api/save_line -> action=save_line)
-        const pathSegments = url.pathname.replace(/^\/api\/?/, "").split("/").filter(Boolean);
-        const subAction = pathSegments.length > 0 ? pathSegments[0] : "";
-        if (subAction && !targetUrl.searchParams.has("action")) {
-            if (subAction === "sync_glossary" || subAction === "glossary") {
-                targetUrl.searchParams.set("action", "get_glossary");
-            } else {
-                targetUrl.searchParams.set("action", subAction);
-            }
-        }
+        targetUrl.searchParams.set("action", endpoint.action);
 
         let fetchOptions = {
-            method: (subAction === "sync_glossary" || subAction === "glossary") ? "GET" : request.method,
+            method: endpoint.method,
             headers: {
                 "Content-Type": "text/plain;charset=utf-8"
             },
             redirect: "follow"
         };
 
-        if (fetchOptions.method === "POST" || fetchOptions.method === "PUT") {
-            const bodyText = await request.text();
-            fetchOptions.body = bodyText;
+        if (fetchOptions.method === "POST") {
+            let body;
+            try { body = await request.json(); } catch { return new Response(JSON.stringify({success:false,code:"invalid_json"}), {status:400,headers:apiHeaders}); }
+            if (!body || typeof body !== "object" || Array.isArray(body)) return new Response(JSON.stringify({success:false,code:"invalid_payload"}), {status:400,headers:apiHeaders});
+            fetchOptions.body = JSON.stringify({
+                action: endpoint.action,
+                en: body.en,
+                vi: body.vi,
+                category: body.category,
+                notes: body.notes,
+                status: body.status,
+                translator: body.translator,
+            });
         }
 
         // Gọi sang Google Apps Script
@@ -81,9 +77,7 @@ export async function onRequest(context) {
             status: gasResponse.status,
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization"
+                "Cache-Control": "no-store"
             }
         });
 
@@ -95,7 +89,7 @@ export async function onRequest(context) {
             status: 502,
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
-                "Access-Control-Allow-Origin": "*"
+                "Cache-Control": "no-store"
             }
         });
     }

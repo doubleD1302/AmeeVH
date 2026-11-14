@@ -44,7 +44,8 @@ class MainWindow(QMainWindow):
         area=QGuiApplication.primaryScreen().availableGeometry();self.setMinimumSize(min(480,area.width()),min(320,area.height()));self.resize(min(1280,area.width()-24),min(900,area.height()-24));self.move(area.center()-self.rect().center())
         central=QWidget();central.setObjectName('launcherRoot');central.setStyleSheet('#launcherRoot{background:transparent;}');self.setCentralWidget(central);l=QVBoxLayout(central);l.setContentsMargins(0,0,0,0);l.setSpacing(0)
         self.title_bar=TitleBar(self);self.title_bar.navigate_requested.connect(self._handle_navigation);self.title_bar.minimize_requested.connect(self.showMinimized);self.title_bar.close_requested.connect(self.close);self.setMenuWidget(self.title_bar)
-        scroll=QScrollArea();scroll.setWidgetResizable(True);scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff);scroll.setFrameShape(QScrollArea.Shape.NoFrame);scroll.setStyleSheet('QScrollArea{background:transparent;border:0;}QScrollArea>QWidget>QWidget{background:transparent;}');self.overview_view=OverviewView();self.overview_view.setMinimumHeight(650);scroll.setWidget(self.overview_view);l.addWidget(scroll,1)
+        from .components.overview_viewport import OverviewViewport
+        self.overview_view=OverviewView();self.overview_viewport=OverviewViewport(self.overview_view);l.addWidget(self.overview_viewport,1)
         v=self.overview_view;v.auto_detect_requested.connect(self._auto_detect);v.install_requested.connect(self._on_install_clicked);v.rollback_requested.connect(self._on_rollback_clicked);v.verify_requested.connect(self._on_verify_clicked);v.browse_requested.connect(self._browse);v.launch_requested.connect(self._on_launch_clicked);v.navigate_requested.connect(self._handle_navigation);v.view_notifications_requested.connect(lambda:self._handle_navigation('notifications'));v.notification_selected.connect(self._open_notifications);v.check_translation_requested.connect(self._check_translation_version)
         self.overview_view.update_game_status(self.current_game_info)
         self._release_timer=QTimer(self);self._release_timer.setInterval(30*60*1000);self._release_timer.timeout.connect(lambda:self._sync_github(automatic=True));self._release_timer.start()
@@ -173,7 +174,7 @@ class MainWindow(QMainWindow):
                 self._show(MessageDialog('Cập nhật launcher',result.get('message','Chưa có tệp cập nhật tự động được xác minh.'),parent=self))
             else:QTimer.singleShot(0,lambda:self._confirm_update(result))
         elif self.operation_kind=='apply_self_update':
-            self.overview_view.show_completed('✓ Cập nhật hoàn tất! Đang khởi động lại launcher…')
+            self.overview_view.show_completed('Đã tải bản cập nhật. Launcher sẽ khởi động lại để hoàn tất…')
             self._close_after_worker=True
         elif self.operation_kind=='install':
             msg=result.get('message','')

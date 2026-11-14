@@ -3,7 +3,7 @@ from functools import lru_cache
 import json
 from PySide6.QtCore import QRectF
 from .assets import AssetManager
-KINDS={'notice':'01_notice','action':'02_install','update':'03_update','guide':'04_guide','support':'05_support','confirm':'06_confirm','dialog':'06_confirm','large':'04_guide'}
+KINDS={'notice':'01_notice','action':'07_install_compact','update':'03_update','guide':'04_guide','support':'05_support','confirm':'06_confirm','dialog':'06_confirm','large':'04_guide'}
 @lru_cache(maxsize=1)
 def panel_manifest():
     folder=AssetManager.get().ui_dir/'journey_panels_r01'
