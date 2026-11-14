@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Build Android APK v1.3.0 (versionCode 14) and generate android_localadb_launcher.json.
+Build Android APK v1.3.0 (versionCode 16) and generate android_localadb_launcher.json.
 """
 
 from pathlib import Path
@@ -150,7 +150,7 @@ def build_apk_v130():
         "variant": "localadb",
         "application_id": "com.stellasora.viethoa.localadb",
         "version_name": "1.3.0",
-        "version_code": 14,
+        "version_code": 16,
         "apk_name": "StellaSora-Android_v1.3.0.apk",
         "apk_url": "https://github.com/doubleD1302/AmeeVH/releases/download/v1.3.0/StellaSora-Android_v1.3.0.apk",
         "size": size,
