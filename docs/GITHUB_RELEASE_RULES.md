@@ -129,5 +129,6 @@ Kiểm tra định dạng và số từ không thay thế việc đọc lại n�
 - [ ] Câu chữ ngắn, rõ, không lặp hoặc quảng cáo.
 - [ ] Không có khẳng định kiểm thử/thành công chưa được chứng minh.
 - [ ] Sau khi ghi: nội dung thực tế trên GitHub đã được đọc lại.
+- [ ] Đã thêm mục thông báo mới vào `launcher/notifications.json` và push lên `main`, nếu không launcher sẽ không hiển thị gì về bản này. Quy trình: `skills/stella-launcher-auto-update-assurance/SKILL.md`, mục 5.
 
 **Nguyên tắc chốt: Tiêu đề = số phiên bản. Mô tả = những gì đã cập nhật, ngắn gọn nhất có thể và tối đa 100 từ.**

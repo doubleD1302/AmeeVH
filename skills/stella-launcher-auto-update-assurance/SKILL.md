@@ -84,3 +84,29 @@ Mọi bản release phải chạy script kiểm tra `python tools/verify_seamles
 - [x] **Gate 4:** `android_localadb_launcher.json` có SHA256 và size khớp 100% với APK phát hành.
 - [x] **Gate 5:** `android_patch_manifest.json` và `patch_manifest.json` chứa `*` trong `resource_version`.
 - [x] **Gate 6:** `android_patch_manifest.json` tuân thủ nghiêm ngặt hợp đồng ChannelClient: `platform="android"`, `game_package="com.YoStarEN.StellaSora"`, `client_game_version`, `resource_version`, `version`, và mọi bundle đều có `asset_platform="android"`.
+- [x] **Gate 7:** `launcher/notifications.json` có mục `type: "release"` có tiêu đề chứa `v{LAUNCHER_VERSION}`, ID không trùng, `version` của file = `LAUNCHER_VERSION`.
+
+---
+
+## 5. Thông báo trong launcher (BẮT BUỘC cho mọi lần cập nhật)
+
+Khung **Thông báo** của launcher PC và Android đọc `launcher/notifications.json` trên nhánh `main`
+(`https://raw.githubusercontent.com/doubleD1302/AmeeVH/main/launcher/notifications.json`) mỗi lần mở và mỗi 30 phút.
+File này **không tự sinh**: nếu không ai thêm mục, người chơi không thấy gì dù release đã mới
+(sự cố thực tế: v1.2.1 → v1.3.0 và hotfix 2611141949 từng không có thông báo vì file dừng ở NOTIF-025).
+
+**Mỗi lần có bản mới đến người chơi thì phải thêm thông báo.** Gồm: phiên bản launcher mới, cập nhật hay sửa lỗi bản dịch
+(data/lua/texture), hỗ trợ bản game hoặc hotfix mới, thay đổi người chơi nhận thấy.
+
+Quy trình:
+1. Thêm mục mới **lên đầu** mảng `announcements`: `id` = `NOTIF-` + số kế tiếp (không trùng, không đánh lại số cũ),
+   `date` = ngày phát hành `YYYY-MM-DD`, `title` = `Bản cập nhật vX.Y.Z: <ý chính>` (hoặc `Bản vá dữ liệu vX.Y.Z: ...`),
+   `type` = `"release"`, `content` = 1–3 câu, chỉ ghi thay đổi thật đã có trong artifact. Không ghi đã kiểm thử khi chưa có bằng chứng.
+2. Cập nhật `version` (= `LAUNCHER_VERSION`) và `updated_at` ở đầu file. Lưu UTF-8, thụt 2 dấu cách, kết thúc bằng xuống dòng.
+3. Chạy `python tools/verify_seamless_update_readiness.py` (Gate 7).
+4. Commit và push lên `main`. Không cần upload release hay build lại. Launcher nhận trong tối đa 30 phút.
+5. Xác minh từ xa: tải raw URL ở trên, thấy ID mới ở đầu danh sách.
+
+Lưu ý:
+- Bản `launcher/resources/ui/notifications.json` và `android/app/src/main/assets/ui/notifications.json` chỉ là bản đóng gói dự phòng khi mất mạng. Chúng cập nhật khi build launcher mới, không phải điều kiện để thông báo hiện ra.
+- `git push` không cập nhật bản dịch: file `data/lua/manifest` phải được upload vào release (xem `docs/RELEASE_ASSET_UPLOAD.md`). Đừng đăng thông báo "đã có bản mới" trước khi asset trên release khớp manifest.

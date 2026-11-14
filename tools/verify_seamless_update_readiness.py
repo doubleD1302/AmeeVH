@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Verification suite for Stella Sora Seamless Update Assurance.
-Checks all 6 gates before release publishing.
+Checks all 7 gates before release publishing.
 """
 
 from pathlib import Path
@@ -96,6 +96,27 @@ def main():
     if cc_ok:
         print("✓ Gate 6: android_patch_manifest.json tuân thủ nghiêm ngặt hợp đồng ChannelClient")
 
+    # Gate 7: launcher/notifications.json phải có thông báo cho bản launcher hiện tại
+    notif_file = ROOT / "launcher" / "notifications.json"
+    try:
+        notif = json.loads(notif_file.read_text(encoding="utf-8"))
+        items = notif.get("announcements", [])
+        ids = [a.get("id") for a in items]
+        has_release = any(a.get("type") == "release" and f"v{current_ver}" in str(a.get("title", "")) for a in items)
+        bad = [a.get("id") for a in items if not all(isinstance(a.get(k), str) and a.get(k) for k in ("id", "title", "content"))]
+        if len(ids) != len(set(ids)):
+            errors.append("Gate 7 thất bại: notifications.json có ID trùng")
+        elif bad:
+            errors.append(f"Gate 7 thất bại: mục thiếu id/title/content: {bad}")
+        elif notif.get("version") != current_ver:
+            errors.append(f"Gate 7 thất bại: notifications.json version={notif.get('version')} khác LAUNCHER_VERSION={current_ver}")
+        elif not has_release:
+            errors.append(f"Gate 7 thất bại: chưa có thông báo type=release có tiêu đề chứa v{current_ver} (xem SKILL mục 5)")
+        else:
+            print(f"✓ Gate 7: notifications.json có thông báo cho v{current_ver} ({len(items)} mục)")
+    except Exception as exc:
+        errors.append(f"Gate 7 thất bại: không đọc được notifications.json: {exc}")
+
     if errors:
         print("\n❌ CÓ LỖI XẢY RA TRONG KIỂM TRA:")
         for err in errors:
@@ -103,7 +124,7 @@ def main():
         sys.exit(1)
 
     print("\n" + "=" * 55)
-    print("🎉 TẤT CẢ 6 CỔNG KIỂM TRA BẢO ĐẢM TỰ ĐỘNG CẬP NHẬT ĐÃ ĐẠT 100%!")
+    print("🎉 TẤT CẢ 7 CỔNG KIỂM TRA BẢO ĐẢM TỰ ĐỘNG CẬP NHẬT ĐÃ ĐẠT 100%!")
     print("=" * 55)
 
 if __name__ == "__main__":
