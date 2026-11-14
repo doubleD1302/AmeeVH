@@ -75,6 +75,58 @@ def merge_value(off_v, vi_v, base_vs, stats):
     return off_v
 
 
+def load_overlay(paths):
+    """rows: {"id": "2.1.0:data:0xHASH:/Key/sub/0", "text_vi": "...", "status": "..."} -> {hash_hex: {locator: text}}"""
+    out = {}
+    for p in paths:
+        for line in Path(p).read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            parts = str(r.get("id", "")).split(":", 3)
+            vi = (r.get("text_vi") or "").strip("\r\n")
+            if len(parts) != 4 or parts[1] != "data" or not vi or r.get("status") == "Giữ EN":
+                continue
+            out.setdefault(parts[2].lower(), {})[parts[3].lstrip("/")] = vi
+    return out
+
+
+def _walk(root, segs):
+    cur = root
+    for sg in segs:
+        if isinstance(cur, dict) and sg in cur:
+            cur = cur[sg]
+        elif isinstance(cur, list) and sg.isdigit() and int(sg) < len(cur):
+            cur = cur[int(sg)]
+        else:
+            return None
+    return cur
+
+
+def apply_overlay(merged, official, rows, stats):
+    """Fill strings that are still official English from the overlay; never overwrite existing Vietnamese."""
+    for loc, vi in rows.items():
+        segs = loc.split("/")
+        parent_m, parent_o = _walk(merged, segs[:-1]), _walk(official, segs[:-1])
+        last = segs[-1]
+        if parent_m is None or parent_o is None:
+            stats["overlay_missing"] = stats.get("overlay_missing", 0) + 1
+            continue
+        if isinstance(parent_m, dict):
+            idx = last
+            ok = last in parent_m and isinstance(parent_m[last], str)
+        elif isinstance(parent_m, list) and last.isdigit() and int(last) < len(parent_m):
+            idx = int(last)
+            ok = isinstance(parent_m[idx], str)
+        else:
+            ok = False
+        if not ok:
+            stats["overlay_missing"] = stats.get("overlay_missing", 0) + 1
+        elif parent_m[idx] == parent_o[idx]:
+            parent_m[idx] = vi
+            stats["overlay_applied"] = stats.get("overlay_applied", 0) + 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--official", required=True, type=Path)
@@ -83,6 +135,8 @@ def main() -> int:
     # NOTE: dist/vanilla/data_original_en.arcx is NOT usable here - it already holds Vietnamese text.
     ap.add_argument("--en-base", type=Path, action="append", default=None)
     ap.add_argument("--out", type=Path, default=ROOT / "dist" / "data_patched_vi.arcx")
+    ap.add_argument("--overlay", type=Path, action="append", default=[],
+                    help="jsonl of extra Vietnamese rows (id 2.1.0:data:<hash>:/<key path>, text_vi, status)")
     args = ap.parse_args()
     if not args.en_base:
         args.en_base = [ROOT / "work" / "subagents" / "update_210_inventory_20261113_r01" / "catalog_crosscheck"
@@ -95,6 +149,7 @@ def main() -> int:
         print("ERROR: no English base archive found; refusing to guess translated keys", file=sys.stderr)
         return 2
 
+    overlay = load_overlay(args.overlay)
     work = Path(tempfile.mkdtemp(prefix="data210_"))
     entries_dir = work / "entries"
     entries_dir.mkdir()
@@ -117,6 +172,8 @@ def main() -> int:
             for k, v in data.items():
                 merged[k] = merge_value(v, vi_json.get(k) if vi_json else None,
                                         [bj.get(k) for bj in base_jsons if bj], stats)
+            if e["hash_hex"].lower() in overlay:
+                apply_overlay(merged, data, overlay[e["hash_hex"].lower()], stats)
             payload = xxtea_encrypt(json.dumps(merged, ensure_ascii=False, indent=2).encode("utf-8"), XXTEA_KEY)
         (entries_dir / fname).write_bytes(payload)
         manifest["entries"].append({"index": e["index"], "hash": h, "hash_hex": e["hash_hex"],
