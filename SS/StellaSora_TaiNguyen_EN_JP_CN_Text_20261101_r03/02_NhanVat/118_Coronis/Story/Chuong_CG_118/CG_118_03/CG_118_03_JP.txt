@@ -1,0 +1,3295 @@
+CG_118_03 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1097
+
+[CG_118_03::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_118_03::command/0 SetIntro/param/1]
+第3話
+
+[CG_118_03::command/0 SetIntro/param/2]
+白衣の死神？
+
+[CG_118_03::command/0 SetIntro/param/3]
+クルニスから退院を告げられたあなた。不治の病は嘘で、原因は過労と栄養失調だったと判明する。「今度倒れたら標本にする」と彼女は妖しく笑うのだった。
+
+[CG_118_03::command/1 SetBg/param/1]
+ward_inside_night
+
+[CG_118_03::command/1 SetBg/param/2]
+0
+
+[CG_118_03::command/1 SetBg/param/3]
+Linear
+
+[CG_118_03::command/1 SetBg/param/6]
+default
+
+[CG_118_03::command/2 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_118_03::command/2 SetBGM/param/3]
+m31
+
+[CG_118_03::command/2 SetBGM/param/4]
+none
+
+[CG_118_03::command/3 SetAudio/param/1]
+se_017
+
+[CG_118_03::command/4 SetChar/param/2]
+none
+
+[CG_118_03::command/4 SetChar/param/3]
+avg1_118
+
+[CG_118_03::command/4 SetChar/param/4]
+a
+
+[CG_118_03::command/4 SetChar/param/5]
+002
+
+[CG_118_03::command/4 SetChar/param/6]
+none
+
+[CG_118_03::command/5 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/5 CtrlChar/param/1]
+a
+
+[CG_118_03::command/5 CtrlChar/param/2]
+002
+
+[CG_118_03::command/5 CtrlChar/param/3]
+none
+
+[CG_118_03::command/5 CtrlChar/param/11]
+none
+
+[CG_118_03::command/5 CtrlChar/param/12]
+none
+
+[CG_118_03::command/5 CtrlChar/param/13]
+OutSine
+
+[CG_118_03::command/6 CtrlStage/param/9]
+none
+
+[CG_118_03::command/6 CtrlStage/param/10]
+Linear
+
+[CG_118_03::command/7 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/7 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/7 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/7 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/7 SetTalk/param/7]
+おや、キミか。こんな時間にどうしたんだい？==RT==悪い夢でも見たのかな？
+
+[CG_118_03::command/7 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/9 SetMainRoleTalk/param/2]
+015
+
+[CG_118_03::command/9 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_118_03::command/9 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/9 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/9 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/10 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/10 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/10 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/10 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/10 SetTalk/param/7]
+……よくわかったな。==W====RT==危うく夢の中で標本にされるところだったよ。
+
+[CG_118_03::command/10 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/13 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/13 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/13 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/13 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/15 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/15 CtrlChar/param/1]
+a
+
+[CG_118_03::command/15 CtrlChar/param/2]
+008
+
+[CG_118_03::command/15 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_118_03::command/15 CtrlChar/param/11]
+diantou
+
+[CG_118_03::command/15 CtrlChar/param/12]
+none
+
+[CG_118_03::command/15 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/16 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/16 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/16 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/16 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/16 SetTalk/param/7]
+ふむ……==W==それは標本になりたいと思っている==RT==潜在意識の表出かもしれないね。==RT==どうだろう、その夢、正夢にする気はないかい？
+
+[CG_118_03::command/16 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/20 SetAudio/param/1]
+se_070
+
+[CG_118_03::command/21 SetMainRoleTalk/param/2]
+007
+
+[CG_118_03::command/21 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/21 SetMainRoleTalk/param/4]
+chijing
+
+[CG_118_03::command/21 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/21 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/22 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/22 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/22 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/22 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/22 SetTalk/param/7]
+……謹んで、お断りいたします。
+
+[CG_118_03::command/22 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/23 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/23 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/23 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/23 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/25 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/25 CtrlChar/param/1]
+a
+
+[CG_118_03::command/25 CtrlChar/param/2]
+009
+
+[CG_118_03::command/25 CtrlChar/param/3]
+none
+
+[CG_118_03::command/25 CtrlChar/param/11]
+none
+
+[CG_118_03::command/25 CtrlChar/param/12]
+none
+
+[CG_118_03::command/25 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/26 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/26 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/26 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/26 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/26 SetTalk/param/7]
+フフ、残念。==RT==ところでこんな時間まで病人が起きているものじゃないよ。
+
+[CG_118_03::command/26 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/28 SetMainRoleTalk/param/2]
+012
+
+[CG_118_03::command/28 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_118_03::command/28 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/28 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/28 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/29 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/29 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/29 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/29 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/29 SetTalk/param/7]
+ああ、もちろんもう寝るよ。==RT==しかし……クルニスはまだ休まないのか？
+
+[CG_118_03::command/29 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/30 SetMainRoleTalk/param/2]
+012
+
+[CG_118_03::command/30 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/30 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/30 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/30 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/32 SetAudio/param/1]
+se_021
+
+[CG_118_03::command/33 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/33 CtrlChar/param/1]
+a
+
+[CG_118_03::command/33 CtrlChar/param/2]
+008
+
+[CG_118_03::command/33 CtrlChar/param/3]
+none
+
+[CG_118_03::command/33 CtrlChar/param/11]
+diantou
+
+[CG_118_03::command/33 CtrlChar/param/12]
+none
+
+[CG_118_03::command/33 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/34 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/34 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/34 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/34 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/34 SetTalk/param/7]
+そうだね。入院患者の状態をチェックしたいから、==RT==もうしばらくは寝ないつもりだよ。
+
+[CG_118_03::command/34 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/36 SetMainRoleTalk/param/2]
+025
+
+[CG_118_03::command/36 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_118_03::command/36 SetMainRoleTalk/param/4]
+ChanDou
+
+[CG_118_03::command/36 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/36 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/37 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/37 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/37 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/37 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/37 SetTalk/param/7]
+そうか……というか寝ている間も==RT==チェックされていたのだな？==RT==もしや、私のことも……？
+
+[CG_118_03::command/37 SetTalk/param/8]
+そうか……というか寝ている間も==RT==チェックされていたのだな？==RT==もしや、僕のことも……？
+
+[CG_118_03::command/38 SetMainRoleTalk/param/2]
+025
+
+[CG_118_03::command/38 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/38 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/38 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/38 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/40 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/40 CtrlChar/param/1]
+a
+
+[CG_118_03::command/40 CtrlChar/param/2]
+009
+
+[CG_118_03::command/40 CtrlChar/param/3]
+avg_emoji_flower
+
+[CG_118_03::command/40 CtrlChar/param/11]
+none
+
+[CG_118_03::command/40 CtrlChar/param/12]
+none
+
+[CG_118_03::command/40 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/41 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/41 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/41 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/41 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/41 SetTalk/param/7]
+当然。もしご希望なら、==RT==寝ている間に言っていた恥ずかしい寝言のメモを見せてあげるよ。
+
+[CG_118_03::command/41 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/43 SetAudio/param/1]
+se_070
+
+[CG_118_03::command/44 SetMainRoleTalk/param/2]
+007
+
+[CG_118_03::command/44 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/44 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/44 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/44 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/45 SetTalkShake/param/1]
+Zhong
+
+[CG_118_03::command/46 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/46 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/46 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/46 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/46 SetTalk/param/7]
+そ、そんなメモまで取っているのか！？
+
+[CG_118_03::command/46 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/47 SetMainRoleTalk/param/2]
+007
+
+[CG_118_03::command/47 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/47 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/47 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/47 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/49 CtrlStage/param/9]
+none
+
+[CG_118_03::command/49 CtrlStage/param/10]
+Linear
+
+[CG_118_03::command/50 SetAudio/param/1]
+se_077
+
+[CG_118_03::command/51 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/51 CtrlChar/param/1]
+a
+
+[CG_118_03::command/51 CtrlChar/param/2]
+003
+
+[CG_118_03::command/51 CtrlChar/param/3]
+close
+
+[CG_118_03::command/51 CtrlChar/param/11]
+jushou0
+
+[CG_118_03::command/51 CtrlChar/param/12]
+none
+
+[CG_118_03::command/51 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/52 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/52 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/52 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/52 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/52 SetTalk/param/7]
+闇医者でも医者は医者だからね。==RT==患者のことは些細なことでも記録するようにしてるんだ。
+
+[CG_118_03::command/52 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/54 SetAudio/param/1]
+se_060
+
+[CG_118_03::command/55 CtrlStage/param/9]
+none
+
+[CG_118_03::command/55 CtrlStage/param/10]
+Linear
+
+[CG_118_03::command/56 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/56 CtrlChar/param/1]
+a
+
+[CG_118_03::command/56 CtrlChar/param/2]
+008
+
+[CG_118_03::command/56 CtrlChar/param/3]
+none
+
+[CG_118_03::command/56 CtrlChar/param/11]
+jushou0
+
+[CG_118_03::command/56 CtrlChar/param/12]
+none
+
+[CG_118_03::command/56 CtrlChar/param/13]
+OutSine
+
+[CG_118_03::command/57 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/57 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/57 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/57 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/57 SetTalk/param/7]
+さて、お話はここまでかな。いつまでも寝ない悪い子は……==RT==薬で無理矢理にでも眠らせてしまおうかな？
+
+[CG_118_03::command/57 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/59 CtrlStage/param/9]
+none
+
+[CG_118_03::command/59 CtrlStage/param/10]
+OutSine
+
+[CG_118_03::command/60 SetAudio/param/1]
+se_100
+
+[CG_118_03::command/61 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/61 CtrlChar/param/1]
+a
+
+[CG_118_03::command/61 CtrlChar/param/2]
+008
+
+[CG_118_03::command/61 CtrlChar/param/3]
+none
+
+[CG_118_03::command/61 CtrlChar/param/11]
+none
+
+[CG_118_03::command/61 CtrlChar/param/12]
+none
+
+[CG_118_03::command/61 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/62 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/62 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/62 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/62 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/62 SetTalk/param/7]
+ちょうどここに、いい薬があるんだ。あまりの苦さに、==RT==飲んだら星骸ですら倒れて眠ってしまうという薬がね。
+
+[CG_118_03::command/62 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/64 CtrlBg/param/10]
+none
+
+[CG_118_03::command/64 CtrlBg/param/11]
+Linear
+
+[CG_118_03::command/65 SetTalk/param/1]
+0
+
+[CG_118_03::command/65 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/65 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/65 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/65 SetTalk/param/7]
+脅すようなことを言ってはいるが、==RT==その表情は驚くほどやわらかく見えた。
+
+[CG_118_03::command/65 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/66 CtrlBg/param/10]
+none
+
+[CG_118_03::command/66 CtrlBg/param/11]
+Linear
+
+[CG_118_03::command/67 SetTalk/param/1]
+0
+
+[CG_118_03::command/67 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/67 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/67 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/67 SetTalk/param/7]
+『白衣の死神』などと呼ばれているクルニスだが、==RT==いま目の前にいる彼女は、==W==死神どころかむしろ天使のようだ。
+
+[CG_118_03::command/67 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/71 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/71 CtrlChar/param/1]
+a
+
+[CG_118_03::command/71 CtrlChar/param/3]
+none
+
+[CG_118_03::command/71 CtrlChar/param/11]
+none
+
+[CG_118_03::command/71 CtrlChar/param/12]
+none
+
+[CG_118_03::command/71 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/72 CtrlStage/param/9]
+none
+
+[CG_118_03::command/72 CtrlStage/param/10]
+InExpo
+
+[CG_118_03::command/73 SetTrans/param/2]
+AvgStageEffect_eyes
+
+[CG_118_03::command/73 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/73 SetTrans/param/8]
+default
+
+[CG_118_03::command/74 SetMainRoleTalk/param/2]
+011
+
+[CG_118_03::command/74 SetMainRoleTalk/param/3]
+avg_emoji_sleepy
+
+[CG_118_03::command/74 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/74 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/74 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/75 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/75 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/75 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/75 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/75 SetTalk/param/7]
+ありがとう、クルニス……==W==君のおかげで、==RT==ちかごろは病気の苦しさも感じないくらいだよ。
+
+[CG_118_03::command/75 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/78 SetMainRoleTalk/param/2]
+011
+
+[CG_118_03::command/78 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/78 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/78 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/78 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/79 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_118_03::command/79 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/79 SetBGM/param/4]
+500ms
+
+[CG_118_03::command/82 CtrlStage/param/9]
+none
+
+[CG_118_03::command/82 CtrlStage/param/10]
+Linear
+
+[CG_118_03::command/83 SetBg/param/1]
+city_alley_daylight
+
+[CG_118_03::command/83 SetBg/param/2]
+0
+
+[CG_118_03::command/83 SetBg/param/3]
+Linear
+
+[CG_118_03::command/83 SetBg/param/6]
+default
+
+[CG_118_03::command/84 SetTalk/param/1]
+0
+
+[CG_118_03::command/84 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/84 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/84 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/84 SetTalk/param/7]
+それから三日後――
+
+[CG_118_03::command/84 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/85 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_118_03::command/85 SetBGM/param/3]
+m30
+
+[CG_118_03::command/85 SetBGM/param/4]
+none
+
+[CG_118_03::command/86 SetTrans/param/2]
+0
+
+[CG_118_03::command/86 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/86 SetTrans/param/8]
+default
+
+[CG_118_03::command/87 SetChar/param/2]
+C_in
+
+[CG_118_03::command/87 SetChar/param/3]
+avg1_118
+
+[CG_118_03::command/87 SetChar/param/4]
+a
+
+[CG_118_03::command/87 SetChar/param/5]
+002
+
+[CG_118_03::command/87 SetChar/param/6]
+none
+
+[CG_118_03::command/88 SetMainRoleTalk/param/2]
+002
+
+[CG_118_03::command/88 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/88 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/88 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/88 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/89 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/89 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/89 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/89 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/89 SetTalk/param/7]
+そういえばハウルさん、==RT==だいぶよくなったようだな。
+
+[CG_118_03::command/89 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/90 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/90 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/90 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/90 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/92 CtrlStage/param/9]
+none
+
+[CG_118_03::command/92 CtrlStage/param/10]
+OutSine
+
+[CG_118_03::command/93 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/93 CtrlChar/param/1]
+a
+
+[CG_118_03::command/93 CtrlChar/param/2]
+005
+
+[CG_118_03::command/93 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_118_03::command/93 CtrlChar/param/11]
+none
+
+[CG_118_03::command/93 CtrlChar/param/12]
+none
+
+[CG_118_03::command/93 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/94 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/94 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/94 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/94 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/94 SetTalk/param/7]
+ハウルさん……？
+
+[CG_118_03::command/94 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/96 SetMainRoleTalk/param/2]
+010
+
+[CG_118_03::command/96 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_118_03::command/96 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/96 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/96 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/97 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/97 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/97 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/97 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/97 SetTalk/param/7]
+えっと……==W==例の体のふるえが==RT==止まらないと言っていた患者さんだ。
+
+[CG_118_03::command/97 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/100 SetMainRoleTalk/param/2]
+010
+
+[CG_118_03::command/100 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/100 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/100 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/100 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/102 SetAudio/param/1]
+se_077
+
+[CG_118_03::command/103 CtrlStage/param/9]
+none
+
+[CG_118_03::command/103 CtrlStage/param/10]
+OutSine
+
+[CG_118_03::command/104 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/104 CtrlChar/param/1]
+a
+
+[CG_118_03::command/104 CtrlChar/param/2]
+002
+
+[CG_118_03::command/104 CtrlChar/param/3]
+none
+
+[CG_118_03::command/104 CtrlChar/param/11]
+JuGong
+
+[CG_118_03::command/104 CtrlChar/param/12]
+none
+
+[CG_118_03::command/104 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/105 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/105 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/105 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/105 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/105 SetTalk/param/7]
+ああ、この前治療を拒んでいた悪い子か……==W====RT==もうすぐ完治すると思うよ。病理解析も終わったからね。
+
+[CG_118_03::command/105 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/109 SetAudio/param/1]
+se_062
+
+[CG_118_03::command/110 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/110 CtrlChar/param/1]
+a
+
+[CG_118_03::command/110 CtrlChar/param/2]
+008
+
+[CG_118_03::command/110 CtrlChar/param/3]
+none
+
+[CG_118_03::command/110 CtrlChar/param/11]
+diantou
+
+[CG_118_03::command/110 CtrlChar/param/12]
+none
+
+[CG_118_03::command/110 CtrlChar/param/13]
+OutSine
+
+[CG_118_03::command/111 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/111 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/111 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/111 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/111 SetTalk/param/7]
+想像より容易に分析できてしまって、拍子抜けだったよ。==RT==まあ、興味深い部分がないこともなかったからいいけど……
+
+[CG_118_03::command/111 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/113 SetAudio/param/1]
+se_019
+
+[CG_118_03::command/114 CtrlStage/param/9]
+jushou
+
+[CG_118_03::command/114 CtrlStage/param/10]
+Linear
+
+[CG_118_03::command/115 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/115 CtrlChar/param/1]
+a
+
+[CG_118_03::command/115 CtrlChar/param/2]
+016
+
+[CG_118_03::command/115 CtrlChar/param/3]
+none
+
+[CG_118_03::command/115 CtrlChar/param/11]
+none
+
+[CG_118_03::command/115 CtrlChar/param/12]
+none
+
+[CG_118_03::command/115 CtrlChar/param/13]
+OutSine
+
+[CG_118_03::command/116 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/116 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/116 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/116 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/116 SetTalk/param/7]
+そうだ。その……ハウルさん、だったかな？==RT==彼のような、ほとんど治った患者の経過観察を==RT==しばらく君に任せたいんだが、いいかな？
+
+[CG_118_03::command/116 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/118 SetMainRoleTalk/param/2]
+002
+
+[CG_118_03::command/118 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_118_03::command/118 SetMainRoleTalk/param/4]
+chijing
+
+[CG_118_03::command/118 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/118 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/119 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/119 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/119 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/119 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/119 SetTalk/param/7]
+えっ、私……！？==RT==まあ、ほとんど治った人なら大丈夫かもしれないが……==W====RT==クルニスに直接お礼を言いたい人もいるのでは？
+
+[CG_118_03::command/119 SetTalk/param/8]
+えっ、僕……！？==RT==まあ、ほとんど治った人なら大丈夫かもしれないが……==W====RT==クルニスに直接お礼を言いたい人もいるのでは？
+
+[CG_118_03::command/122 SetMainRoleTalk/param/2]
+002
+
+[CG_118_03::command/122 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/122 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/122 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/122 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/124 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/124 CtrlChar/param/1]
+a
+
+[CG_118_03::command/124 CtrlChar/param/2]
+009
+
+[CG_118_03::command/124 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_118_03::command/124 CtrlChar/param/11]
+none
+
+[CG_118_03::command/124 CtrlChar/param/12]
+none
+
+[CG_118_03::command/124 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/125 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/125 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/125 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/125 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/125 SetTalk/param/7]
+礼なんていらないよ。==RT==そのために治療してるわけじゃないからね。
+
+[CG_118_03::command/125 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/126 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/126 CtrlChar/param/1]
+a
+
+[CG_118_03::command/126 CtrlChar/param/2]
+002
+
+[CG_118_03::command/126 CtrlChar/param/3]
+none
+
+[CG_118_03::command/126 CtrlChar/param/11]
+none
+
+[CG_118_03::command/126 CtrlChar/param/12]
+none
+
+[CG_118_03::command/126 CtrlChar/param/13]
+OutSine
+
+[CG_118_03::command/127 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/127 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/127 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/127 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/127 SetTalk/param/7]
+私はあくまで、人体の神秘を解き明かしたいだけ。==RT==治療はその過程に過ぎないんだ。むしろ、お礼なんて言われたら困る。
+
+[CG_118_03::command/127 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/129 SetMainRoleTalk/param/2]
+022
+
+[CG_118_03::command/129 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/129 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/129 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/129 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/130 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/130 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/130 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/130 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/130 SetTalk/param/7]
+う～ん……そうは言うが、アッシュエリアの人々は==RT==だいたいみんな、クルニスに感謝しているようだぞ。==RT==以前の私のように、助けられた人は多くいるのだろう？
+
+[CG_118_03::command/130 SetTalk/param/8]
+う～ん……そうは言うが、アッシュエリアの人々は==RT==だいたいみんな、クルニスに感謝しているようだぞ。==RT==以前の僕のように、助けられた人は多くいるのだろう？
+
+[CG_118_03::command/131 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/131 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/131 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/131 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/133 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/133 CtrlChar/param/1]
+a
+
+[CG_118_03::command/133 CtrlChar/param/2]
+010
+
+[CG_118_03::command/133 CtrlChar/param/3]
+avg_emoji_flower
+
+[CG_118_03::command/133 CtrlChar/param/11]
+none
+
+[CG_118_03::command/133 CtrlChar/param/12]
+none
+
+[CG_118_03::command/133 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/134 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/134 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/134 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/134 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/134 SetTalk/param/7]
+フフ……みんな過大評価してるだけだよ。
+
+[CG_118_03::command/134 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/136 SetMainRoleTalk/param/2]
+003
+
+[CG_118_03::command/136 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_118_03::command/136 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/136 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/136 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/137 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/137 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/137 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/137 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/137 SetTalk/param/7]
+そうだろうか……？==RT==まあいい、とりあえず今日の経過観察は私が受け持とう。
+
+[CG_118_03::command/137 SetTalk/param/8]
+そうだろうか……？==RT==まあいい、とりあえず今日の経過観察は僕が受け持とう。
+
+[CG_118_03::command/138 SetMainRoleTalk/param/2]
+019
+
+[CG_118_03::command/138 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/138 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/138 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/138 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/139 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/139 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/139 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/139 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/139 SetTalk/param/7]
+その代わり、診療所に戻って少し休んでくれ。==RT==最近、私をはじめ、入院患者にかかりきりで==RT==あまり寝ていないはずだ。
+
+[CG_118_03::command/139 SetTalk/param/8]
+その代わり、診療所に戻って少し休んでくれ。==RT==最近、僕をはじめ、入院患者にかかりきりで==RT==あまり寝ていないはずだ。
+
+[CG_118_03::command/140 SetMainRoleTalk/param/2]
+019
+
+[CG_118_03::command/140 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/140 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/140 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/140 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/142 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/142 CtrlChar/param/1]
+a
+
+[CG_118_03::command/142 CtrlChar/param/2]
+010
+
+[CG_118_03::command/142 CtrlChar/param/3]
+close
+
+[CG_118_03::command/142 CtrlChar/param/11]
+none
+
+[CG_118_03::command/142 CtrlChar/param/12]
+none
+
+[CG_118_03::command/142 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/143 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/143 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/143 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/143 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/143 SetTalk/param/7]
+フフ、よく私のことを見ているね。==RT==その観察眼、案外キミは医者やその助手が天職なのかもな。
+
+[CG_118_03::command/143 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/145 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/145 CtrlChar/param/1]
+a
+
+[CG_118_03::command/145 CtrlChar/param/2]
+003
+
+[CG_118_03::command/145 CtrlChar/param/3]
+close
+
+[CG_118_03::command/145 CtrlChar/param/11]
+tiao2
+
+[CG_118_03::command/145 CtrlChar/param/12]
+none
+
+[CG_118_03::command/145 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/146 SetAudio/param/1]
+se_061
+
+[CG_118_03::command/147 SetTalk/param/1]
+0
+
+[CG_118_03::command/147 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/147 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/147 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/147 SetTalk/param/7]
+そう言いながら、クルニスは踵を返し、==RT==ひらひらと私に手を振りながら診療所に帰っていった。
+
+[CG_118_03::command/147 SetTalk/param/8]
+そう言いながら、クルニスは踵を返し、==RT==ひらひらと僕に手を振りながら診療所に帰っていった。
+
+[CG_118_03::command/149 SetAudio/param/1]
+se_094
+
+[CG_118_03::command/150 CtrlBg/param/10]
+none
+
+[CG_118_03::command/150 CtrlBg/param/11]
+OutSine
+
+[CG_118_03::command/151 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/151 CtrlChar/param/1]
+a
+
+[CG_118_03::command/151 CtrlChar/param/2]
+012
+
+[CG_118_03::command/151 CtrlChar/param/3]
+none
+
+[CG_118_03::command/151 CtrlChar/param/11]
+none
+
+[CG_118_03::command/151 CtrlChar/param/12]
+none
+
+[CG_118_03::command/151 CtrlChar/param/13]
+OutSine
+
+[CG_118_03::command/153 SetAudio/param/1]
+se_065
+
+[CG_118_03::command/154 SetTrans/param/2]
+24
+
+[CG_118_03::command/154 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/154 SetTrans/param/8]
+default
+
+[CG_118_03::command/156 SetBg/param/1]
+city_alley_night
+
+[CG_118_03::command/156 SetBg/param/2]
+0
+
+[CG_118_03::command/156 SetBg/param/3]
+Linear
+
+[CG_118_03::command/156 SetBg/param/6]
+default
+
+[CG_118_03::command/157 SetTrans/param/2]
+24
+
+[CG_118_03::command/157 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/157 SetTrans/param/8]
+default
+
+[CG_118_03::command/158 SetAudio/param/1]
+se_025
+
+[CG_118_03::command/160 SetTalk/param/1]
+0
+
+[CG_118_03::command/160 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/160 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/160 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/160 SetTalk/param/7]
+――それから数時間後。==RT==経過観察を終え、私が戻るともうかなり遅い時間だったのだが、==RT==診療所の灯りはまだついたままだった。
+
+[CG_118_03::command/160 SetTalk/param/8]
+――それから数時間後。==RT==経過観察を終え、僕が戻るともうかなり遅い時間だったのだが、==RT==診療所の灯りはまだついたままだった。
+
+[CG_118_03::command/162 SetMainRoleTalk/param/2]
+020
+
+[CG_118_03::command/162 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/162 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/162 SetMainRoleTalk/param/5]
+y
+
+[CG_118_03::command/162 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/163 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/163 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/163 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/163 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/163 SetTalk/param/7]
+（また新しく急患でもきたのだろうか？==RT==本当に、医者は大変だな……）
+
+[CG_118_03::command/163 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/164 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/164 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/164 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/164 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/164 SetTalk/param/7]
+（治療費は格安で儲けてるように見えないし、==RT==忙しくて寝る暇もないくらいなのに……==RT==平気な顔をしているクルニスは、本当にすごい……）
+
+[CG_118_03::command/164 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/165 SetMainRoleTalk/param/2]
+020
+
+[CG_118_03::command/165 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/165 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/165 SetMainRoleTalk/param/5]
+y
+
+[CG_118_03::command/165 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/167 SetAudio/param/1]
+se_025_stop
+
+[CG_118_03::command/168 SetTrans/param/2]
+0
+
+[CG_118_03::command/168 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/168 SetTrans/param/8]
+default
+
+[CG_118_03::command/169 SetBg/param/1]
+hospital_inside
+
+[CG_118_03::command/169 SetBg/param/2]
+0
+
+[CG_118_03::command/169 SetBg/param/3]
+Linear
+
+[CG_118_03::command/169 SetBg/param/6]
+default
+
+[CG_118_03::command/170 SetTrans/param/2]
+0
+
+[CG_118_03::command/170 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/170 SetTrans/param/8]
+default
+
+[CG_118_03::command/171 SetTalk/param/1]
+0
+
+[CG_118_03::command/171 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/171 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/171 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/171 SetTalk/param/7]
+助手を務めているわけだから、彼女を手伝ったほうがいいだろう。
+
+[CG_118_03::command/171 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/172 SetChar/param/2]
+C_in
+
+[CG_118_03::command/172 SetChar/param/3]
+avg1_118
+
+[CG_118_03::command/172 SetChar/param/4]
+a
+
+[CG_118_03::command/172 SetChar/param/5]
+014
+
+[CG_118_03::command/172 SetChar/param/6]
+none
+
+[CG_118_03::command/173 SetTalk/param/1]
+0
+
+[CG_118_03::command/173 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/173 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/173 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/173 SetTalk/param/7]
+そう思ってクルニスがいる部屋へ向かうと、==RT==彼女は座ったまま、なにかを大切そうに抱えて独り言を呟いていた。
+
+[CG_118_03::command/173 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/175 SetAudio/param/1]
+se_100
+
+[CG_118_03::command/176 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_118_03::command/176 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/176 SetBGM/param/4]
+1000ms
+
+[CG_118_03::command/177 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/177 CtrlChar/param/1]
+a
+
+[CG_118_03::command/177 CtrlChar/param/2]
+019
+
+[CG_118_03::command/177 CtrlChar/param/3]
+none
+
+[CG_118_03::command/177 CtrlChar/param/11]
+diantou2
+
+[CG_118_03::command/177 CtrlChar/param/12]
+none
+
+[CG_118_03::command/177 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/178 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/178 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/178 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/178 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/178 SetTalk/param/7]
+はぁ……やはりいつ見てもうっとりしてしまう。==RT==手放すのが惜しくなってくるよ。
+
+[CG_118_03::command/178 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/180 SetMainRoleTalk/param/2]
+002
+
+[CG_118_03::command/180 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_118_03::command/180 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/180 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/180 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/181 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/181 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/181 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/181 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/181 SetTalk/param/7]
+えっと……その手に持っているものは……？
+
+[CG_118_03::command/181 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/182 SetMainRoleTalk/param/2]
+002
+
+[CG_118_03::command/182 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/182 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/182 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/182 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/184 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/184 CtrlChar/param/1]
+a
+
+[CG_118_03::command/184 CtrlChar/param/2]
+008
+
+[CG_118_03::command/184 CtrlChar/param/3]
+avg_emoji_love
+
+[CG_118_03::command/184 CtrlChar/param/11]
+none
+
+[CG_118_03::command/184 CtrlChar/param/12]
+none
+
+[CG_118_03::command/184 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/185 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/185 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/185 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/185 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/185 SetTalk/param/7]
+おっと、帰ってきたんだね。ちょうど、よかった。==RT==これはね、キミに贈る退院祝いのプレゼントだよ。
+
+[CG_118_03::command/185 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/187 SetTrans/param/2]
+0
+
+[CG_118_03::command/187 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/187 SetTrans/param/8]
+default
+
+[CG_118_03::command/188 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_118_03::command/188 SetBGM/param/3]
+m26
+
+[CG_118_03::command/188 SetBGM/param/4]
+none
+
+[CG_118_03::command/189 SetTrans/param/2]
+0
+
+[CG_118_03::command/189 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/189 SetTrans/param/8]
+default
+
+[CG_118_03::command/190 SetL2D/param/1]
+avg1_118
+
+[CG_118_03::command/190 SetL2D/param/2]
+a
+
+[CG_118_03::command/191 CtrlL2D/param/0]
+avg1_118
+
+[CG_118_03::command/191 CtrlL2D/param/1]
+a
+
+[CG_118_03::command/191 CtrlL2D/param/2]
+vo_cgstory_118_a
+
+[CG_118_03::command/191 CtrlL2D/param/3]
+vo_cgstory_118_a
+
+[CG_118_03::command/192 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/192 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/192 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/192 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/192 SetTalk/param/7]
+見てよ、==W==このきれいな曲線==W====RT==私が特に気に入っている頭蓋骨の標本でね
+
+[CG_118_03::command/192 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/193 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/193 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/193 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/193 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/193 SetTalk/param/7]
+わかるかな、==W==荒々しさすら感じるこの牙の美しさ……==W====RT==それに、==W==蝶形骨がきれいに残っているのもたまらない……==W====RT==繊細な部位だから、==W==ここまで形を残すのは難しいんだよ
+
+[CG_118_03::command/193 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/0]
+a
+
+[CG_118_03::command/194 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/6]
+a
+
+[CG_118_03::command/194 SetChoiceBegin/param/7]
+002
+
+[CG_118_03::command/194 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/12/0]
+言われてみると……たしかにきれいだな
+
+[CG_118_03::command/194 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/194 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/195 SetChoiceJumpTo/param/0]
+a
+
+[CG_118_03::command/195 SetChoiceJumpTo/param/1]
+1
+
+[CG_118_03::command/196 SetChoiceRollover/param/0]
+a
+
+[CG_118_03::command/197 SetChoiceEnd/param/0]
+a
+
+[CG_118_03::command/198 CtrlL2D/param/0]
+avg1_118
+
+[CG_118_03::command/198 CtrlL2D/param/1]
+a
+
+[CG_118_03::command/198 CtrlL2D/param/2]
+vo_cgstory_118_b
+
+[CG_118_03::command/198 CtrlL2D/param/3]
+vo_cgstory_118_b
+
+[CG_118_03::command/199 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/199 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/199 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/199 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/199 SetTalk/param/7]
+そうだろう、そうだろう。==W====RT==骨というのはね、==W==生き物が死して残す、==W==命の証なんだ
+
+[CG_118_03::command/199 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/200 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/200 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/200 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/200 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/200 SetTalk/param/7]
+肉体は時間に流され朽ちてしまい……==W====RT==記憶は星ノ塔に喰われて消えてゆく……==W====RT==魂でさえ……==W==月日の経過で摩耗し、==W==散逸してしまうのだから……
+
+[CG_118_03::command/200 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/0]
+b
+
+[CG_118_03::command/201 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/6]
+a
+
+[CG_118_03::command/201 SetChoiceBegin/param/7]
+002
+
+[CG_118_03::command/201 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/12/0]
+最後に残るのが、骨ということか……
+
+[CG_118_03::command/201 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/201 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/202 SetChoiceJumpTo/param/0]
+b
+
+[CG_118_03::command/202 SetChoiceJumpTo/param/1]
+1
+
+[CG_118_03::command/203 SetChoiceRollover/param/0]
+b
+
+[CG_118_03::command/204 SetChoiceEnd/param/0]
+b
+
+[CG_118_03::command/205 CtrlL2D/param/0]
+avg1_118
+
+[CG_118_03::command/205 CtrlL2D/param/1]
+a
+
+[CG_118_03::command/205 CtrlL2D/param/2]
+vo_cgstory_118_c
+
+[CG_118_03::command/205 CtrlL2D/param/3]
+vo_cgstory_118_c
+
+[CG_118_03::command/206 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/206 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/206 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/206 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/206 SetTalk/param/7]
+そういうこと。==W==生き物がこの世界に存在した証……==W====RT==それが骨。==W==それが骸なんだ
+
+[CG_118_03::command/206 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/0]
+c
+
+[CG_118_03::command/207 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/6]
+a
+
+[CG_118_03::command/207 SetChoiceBegin/param/7]
+002
+
+[CG_118_03::command/207 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/12/0]
+そう考えると、ロマンチックかもな……
+
+[CG_118_03::command/207 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/207 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/208 SetChoiceJumpTo/param/0]
+c
+
+[CG_118_03::command/208 SetChoiceJumpTo/param/1]
+1
+
+[CG_118_03::command/209 SetChoiceRollover/param/0]
+c
+
+[CG_118_03::command/210 SetChoiceEnd/param/0]
+c
+
+[CG_118_03::command/211 CtrlL2D/param/0]
+avg1_118
+
+[CG_118_03::command/211 CtrlL2D/param/1]
+a
+
+[CG_118_03::command/211 CtrlL2D/param/2]
+vo_cgstory_118_d
+
+[CG_118_03::command/211 CtrlL2D/param/3]
+vo_cgstory_118_d
+
+[CG_118_03::command/212 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/212 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/212 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/212 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/212 SetTalk/param/7]
+キミの骸は……==W====RT==いったいどんなふうに美しく輝くのかな
+
+[CG_118_03::command/212 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/213 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/213 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/213 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/213 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/213 SetTalk/param/7]
+黄金比的な曲線に彩られているのか……==W====RT==はたまたどこまでも真っすぐな直線で構成されているのか……
+
+[CG_118_03::command/213 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/214 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/214 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/214 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/214 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/214 SetTalk/param/7]
+想像しただけで……==W==フフ。==W====RT==夢見心地に達してしまいそうになるよ……==W==フフフフフ。
+
+[CG_118_03::command/214 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/0]
+d
+
+[CG_118_03::command/215 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/6]
+a
+
+[CG_118_03::command/215 SetChoiceBegin/param/7]
+002
+
+[CG_118_03::command/215 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/12/0]
+ははは……誉め言葉として受け取っておくよ
+
+[CG_118_03::command/215 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/215 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/216 SetChoiceJumpTo/param/0]
+d
+
+[CG_118_03::command/216 SetChoiceJumpTo/param/1]
+1
+
+[CG_118_03::command/217 SetChoiceRollover/param/0]
+d
+
+[CG_118_03::command/218 SetChoiceEnd/param/0]
+d
+
+[CG_118_03::command/219 CtrlL2D/param/0]
+avg1_103
+
+[CG_118_03::command/219 CtrlL2D/param/1]
+a
+
+[CG_118_03::command/219 CtrlL2D/param/2]
+vo_cgstory_118_e
+
+[CG_118_03::command/219 CtrlL2D/param/3]
+vo_cgstory_118_e
+
+[CG_118_03::command/220 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/220 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/220 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/220 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/220 SetTalk/param/7]
+キミの体に隠された神秘……==W====RT==いつか、==W==解き明かしてみたいものだね
+
+[CG_118_03::command/220 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/221 SetTrans/param/2]
+0
+
+[CG_118_03::command/221 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/221 SetTrans/param/8]
+default
+
+[CG_118_03::command/222 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_118_03::command/222 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/222 SetBGM/param/4]
+1000ms
+
+[CG_118_03::command/223 SetL2D/param/1]
+avg1_118
+
+[CG_118_03::command/223 SetL2D/param/2]
+a
+
+[CG_118_03::command/224 SetBg/param/1]
+hospital_inside
+
+[CG_118_03::command/224 SetBg/param/2]
+0
+
+[CG_118_03::command/224 SetBg/param/3]
+Linear
+
+[CG_118_03::command/224 SetBg/param/6]
+default
+
+[CG_118_03::command/225 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_118_03::command/225 SetBGM/param/3]
+m4
+
+[CG_118_03::command/225 SetBGM/param/4]
+none
+
+[CG_118_03::command/226 SetChar/param/2]
+none
+
+[CG_118_03::command/226 SetChar/param/3]
+avg1_118
+
+[CG_118_03::command/226 SetChar/param/4]
+a
+
+[CG_118_03::command/226 SetChar/param/5]
+002
+
+[CG_118_03::command/226 SetChar/param/6]
+none
+
+[CG_118_03::command/227 SetTrans/param/2]
+0
+
+[CG_118_03::command/227 SetTrans/param/3]
+Linear
+
+[CG_118_03::command/227 SetTrans/param/8]
+default
+
+[CG_118_03::command/228 SetMainRoleTalk/param/2]
+025
+
+[CG_118_03::command/228 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_118_03::command/228 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/228 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/228 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/229 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/229 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/229 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/229 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/229 SetTalk/param/7]
+待ってくれ、クルニス。==RT==『いつか』……というのは、どういうことだ？
+
+[CG_118_03::command/229 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/230 SetMainRoleTalk/param/2]
+025
+
+[CG_118_03::command/230 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/230 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/230 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/230 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/232 SetAudio/param/1]
+se_070
+
+[CG_118_03::command/233 CtrlStage/param/9]
+none
+
+[CG_118_03::command/233 CtrlStage/param/10]
+OutSine
+
+[CG_118_03::command/234 SetMainRoleTalk/param/2]
+025
+
+[CG_118_03::command/234 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/234 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/234 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/234 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/235 SetTalkShake/param/1]
+Xiao
+
+[CG_118_03::command/236 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/236 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/236 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/236 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/236 SetTalk/param/7]
+たしか私は……不治の病だったはず。だとしたら、==RT====W==まもなく解き明かせるとよろこぶ場面なのでは……！？
+
+[CG_118_03::command/236 SetTalk/param/8]
+たしか僕は……不治の病だったはず。だとしたら、==RT====W==まもなく解き明かせるとよろこぶ場面なのでは……！？
+
+[CG_118_03::command/239 SetMainRoleTalk/param/2]
+021
+
+[CG_118_03::command/239 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/239 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/239 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/239 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/240 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/240 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/240 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/240 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/240 SetTalk/param/7]
+そもそも、つい先ほど『退院祝い』と言っていたが……==W====RT==『不治の病』なら、そんな日は来ないはずだろう？
+
+[CG_118_03::command/240 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/244 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/244 CtrlChar/param/1]
+a
+
+[CG_118_03::command/244 CtrlChar/param/2]
+010
+
+[CG_118_03::command/244 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_118_03::command/244 CtrlChar/param/11]
+JuGong1
+
+[CG_118_03::command/244 CtrlChar/param/12]
+none
+
+[CG_118_03::command/244 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/245 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/245 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/245 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/245 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/245 SetTalk/param/7]
+ああ、そういえばそんな話だったね。==RT==でも……==W==まだ気づいてなかったのかい？
+
+[CG_118_03::command/245 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/247 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/247 CtrlChar/param/1]
+a
+
+[CG_118_03::command/247 CtrlChar/param/2]
+009
+
+[CG_118_03::command/247 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_118_03::command/247 CtrlChar/param/11]
+none
+
+[CG_118_03::command/247 CtrlChar/param/12]
+none
+
+[CG_118_03::command/247 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/250 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/250 CtrlChar/param/1]
+a
+
+[CG_118_03::command/250 CtrlChar/param/2]
+008
+
+[CG_118_03::command/250 CtrlChar/param/3]
+none
+
+[CG_118_03::command/250 CtrlChar/param/11]
+JuGong
+
+[CG_118_03::command/250 CtrlChar/param/12]
+none
+
+[CG_118_03::command/250 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/251 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/251 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/251 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/251 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/251 SetTalk/param/7]
+キミは不治の病なんかじゃない。==RT==ただの過労と栄養失調だったんだよ。フフ。
+
+[CG_118_03::command/251 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/252 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/252 CtrlChar/param/1]
+a
+
+[CG_118_03::command/252 CtrlChar/param/2]
+009
+
+[CG_118_03::command/252 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_118_03::command/252 CtrlChar/param/11]
+none
+
+[CG_118_03::command/252 CtrlChar/param/12]
+none
+
+[CG_118_03::command/252 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/253 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/253 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/253 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/253 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/253 SetTalk/param/7]
+ようするに、彼女たちはあのいい加減なチラシに==RT==騙されていたというわけさ。ついでに言うなら、キミ自身もね。
+
+[CG_118_03::command/253 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/255 SetMainRoleTalk/param/2]
+010
+
+[CG_118_03::command/255 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/255 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/255 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/255 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/256 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/256 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/256 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/256 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/256 SetTalk/param/7]
+え……==W==じゃあ、入院させられてたのは……
+
+[CG_118_03::command/256 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/259 SetMainRoleTalk/param/2]
+010
+
+[CG_118_03::command/259 SetMainRoleTalk/param/3]
+close
+
+[CG_118_03::command/259 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/259 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/259 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/261 SetAudio/param/1]
+se_077
+
+[CG_118_03::command/262 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/262 CtrlChar/param/1]
+a
+
+[CG_118_03::command/262 CtrlChar/param/2]
+018
+
+[CG_118_03::command/262 CtrlChar/param/3]
+close
+
+[CG_118_03::command/262 CtrlChar/param/11]
+JuGong1
+
+[CG_118_03::command/262 CtrlChar/param/12]
+none
+
+[CG_118_03::command/262 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/263 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/263 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/263 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/263 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/263 SetTalk/param/7]
+体調不良の原因を根本的に直す必要があったから。==RT==そのためだよ。ついでに特殊体質のキミを==RT==隅々まで観察させてもらいたかったというのもあるけどね。
+
+[CG_118_03::command/263 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/264 SetAudio/param/1]
+se_062
+
+[CG_118_03::command/265 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/265 CtrlChar/param/1]
+a
+
+[CG_118_03::command/265 CtrlChar/param/2]
+009
+
+[CG_118_03::command/265 CtrlChar/param/3]
+none
+
+[CG_118_03::command/265 CtrlChar/param/11]
+jushou
+
+[CG_118_03::command/265 CtrlChar/param/12]
+none
+
+[CG_118_03::command/265 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/266 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/266 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/266 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/266 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/266 SetTalk/param/7]
+フフフ……==W==もっと早くネタバラししてもよかったが、==RT==案外キミと往診するのが楽しかったから、ついつい先延ばし==RT==してしまったよ。
+
+[CG_118_03::command/266 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/270 SetMainRoleTalk/param/2]
+010
+
+[CG_118_03::command/270 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/270 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/270 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/270 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/271 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/271 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/271 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/271 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/271 SetTalk/param/7]
+そうだったのか……==W==すっかり騙された……
+
+[CG_118_03::command/271 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/275 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/275 CtrlChar/param/1]
+a
+
+[CG_118_03::command/275 CtrlChar/param/2]
+003
+
+[CG_118_03::command/275 CtrlChar/param/3]
+close
+
+[CG_118_03::command/275 CtrlChar/param/11]
+daintou
+
+[CG_118_03::command/275 CtrlChar/param/12]
+none
+
+[CG_118_03::command/275 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/276 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/276 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/276 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/276 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/276 SetTalk/param/7]
+ハハハ、すまなかったね。==RT==今後、また体調を崩したら、格安で治療してあげるから。==RT==それで手を打ってもらえると助かるよ。
+
+[CG_118_03::command/276 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/277 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/277 CtrlChar/param/1]
+a
+
+[CG_118_03::command/277 CtrlChar/param/2]
+003
+
+[CG_118_03::command/277 CtrlChar/param/3]
+avg_emoji_flower
+
+[CG_118_03::command/277 CtrlChar/param/11]
+none
+
+[CG_118_03::command/277 CtrlChar/param/12]
+none
+
+[CG_118_03::command/277 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/278 CtrlStage/param/9]
+none
+
+[CG_118_03::command/278 CtrlStage/param/10]
+Linear
+
+[CG_118_03::command/279 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/279 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/279 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/279 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/279 SetTalk/param/7]
+というわけであらためて……退院、おめでとう。
+
+[CG_118_03::command/279 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/281 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/281 CtrlChar/param/1]
+a
+
+[CG_118_03::command/281 CtrlChar/param/3]
+close
+
+[CG_118_03::command/281 CtrlChar/param/11]
+none
+
+[CG_118_03::command/281 CtrlChar/param/12]
+none
+
+[CG_118_03::command/281 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/282 SetAudio/param/1]
+se_286
+
+[CG_118_03::command/283 CtrlStage/param/9]
+Xiao
+
+[CG_118_03::command/283 CtrlStage/param/10]
+Linear
+
+[CG_118_03::command/284 SetFrontObj/param/2]
+qstory_side_118_006
+
+[CG_118_03::command/285 SetTalk/param/1]
+0
+
+[CG_118_03::command/285 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/285 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/285 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/285 SetTalk/param/7]
+そう言って、クルニスは私の腕にドンと先ほどの頭蓋骨を置いた。
+
+[CG_118_03::command/285 SetTalk/param/8]
+そう言って、クルニスは僕の腕にドンと先ほどの頭蓋骨を置いた。
+
+[CG_118_03::command/286 SetTalk/param/1]
+0
+
+[CG_118_03::command/286 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/286 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/286 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/286 SetTalk/param/7]
+見ると、下顎骨の綺麗な弧が、==RT==私の退院を喜んで微笑んでいるようだった。
+
+[CG_118_03::command/286 SetTalk/param/8]
+見ると、下顎骨の綺麗な弧が、==RT==僕の退院を喜んで微笑んでいるようだった。
+
+[CG_118_03::command/288 SetFrontObj/param/2]
+qstory_side_118_006
+
+[CG_118_03::command/289 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/289 CtrlChar/param/1]
+a
+
+[CG_118_03::command/289 CtrlChar/param/3]
+none
+
+[CG_118_03::command/289 CtrlChar/param/11]
+none
+
+[CG_118_03::command/289 CtrlChar/param/12]
+none
+
+[CG_118_03::command/289 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/290 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/290 CtrlChar/param/1]
+a
+
+[CG_118_03::command/290 CtrlChar/param/2]
+009
+
+[CG_118_03::command/290 CtrlChar/param/3]
+none
+
+[CG_118_03::command/290 CtrlChar/param/11]
+none
+
+[CG_118_03::command/290 CtrlChar/param/12]
+none
+
+[CG_118_03::command/290 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/291 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/291 SetTalk/param/7]
+くれぐれも、体は大切にね。
+
+[CG_118_03::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/292 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/292 CtrlChar/param/1]
+a
+
+[CG_118_03::command/292 CtrlChar/param/2]
+008
+
+[CG_118_03::command/292 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_118_03::command/292 CtrlChar/param/11]
+jushou
+
+[CG_118_03::command/292 CtrlChar/param/12]
+none
+
+[CG_118_03::command/292 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/293 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/293 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/293 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/293 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/293 SetTalk/param/7]
+またつまらない理由で体調を崩して入院するようなことがあれば……==W====RT==今度こそ、標本にしてしまうかもしれないよ。==RT==ついでに秘密の部屋に閉じ込めて、==W==隅々まで人体実験もさせてもらおう。
+
+[CG_118_03::command/293 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/297 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/297 CtrlChar/param/1]
+a
+
+[CG_118_03::command/297 CtrlChar/param/2]
+009
+
+[CG_118_03::command/297 CtrlChar/param/3]
+none
+
+[CG_118_03::command/297 CtrlChar/param/11]
+none
+
+[CG_118_03::command/297 CtrlChar/param/12]
+none
+
+[CG_118_03::command/297 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/300 SetMainRoleTalk/param/2]
+018
+
+[CG_118_03::command/300 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/300 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/300 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/300 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/301 SetTalk/param/1]
+avg3_100
+
+[CG_118_03::command/301 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/301 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/301 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/301 SetTalk/param/7]
+ははは……そうならないように善処するとしよう。==RT==でも、心配はいらないと思う。==RT==君のおかげで、元気になったからな。
+
+[CG_118_03::command/301 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/302 SetMainRoleTalk/param/2]
+018
+
+[CG_118_03::command/302 SetMainRoleTalk/param/3]
+none
+
+[CG_118_03::command/302 SetMainRoleTalk/param/4]
+none
+
+[CG_118_03::command/302 SetMainRoleTalk/param/5]
+z
+
+[CG_118_03::command/302 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_118_03::command/304 CtrlChar/param/0]
+avg1_118
+
+[CG_118_03::command/304 CtrlChar/param/1]
+a
+
+[CG_118_03::command/304 CtrlChar/param/2]
+016
+
+[CG_118_03::command/304 CtrlChar/param/3]
+none
+
+[CG_118_03::command/304 CtrlChar/param/11]
+none
+
+[CG_118_03::command/304 CtrlChar/param/12]
+none
+
+[CG_118_03::command/304 CtrlChar/param/13]
+Linear
+
+[CG_118_03::command/305 SetTalk/param/1]
+avg1_118
+
+[CG_118_03::command/305 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/305 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/305 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_118_03::command/305 SetTalk/param/7]
+どうかな。死神は身構えていない時にこそやってくる。==RT==まあ……==W==いまはキミの言葉を信じるとして、==RT==その日が来るのを、気長に待たせてもらうとするよ。
+
+[CG_118_03::command/305 SetTalk/param/8]
+[EMPTY_SOURCE]
+

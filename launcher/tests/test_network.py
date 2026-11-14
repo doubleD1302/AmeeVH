@@ -319,5 +319,60 @@ class TestNetworkService(unittest.TestCase):
             self.assertFalse(list(Path(td).glob('*.part')))
 
 
+    def test_payload_stage_cleaned_after_install_success_and_failure(self):
+        data=b'payload'; digest=hashlib.sha256(data).hexdigest()
+        raw={'version':'1.2.0','client_game_version':'2.0.1','resource_version':'*',
+             'files':{'Persistent_Store/Tables/data.arcx':{'source':'data.arcx','size':len(data),'sha256':digest,'url':'https://example.test/data'}}}
+        def download(url,dest,*args):
+            Path(dest).write_bytes(data)
+            return Path(dest)
+        with tempfile.TemporaryDirectory() as td, patch.object(self.net,'release',return_value={'assets':[]}), \
+             patch.object(self.net,'_manifest_for_release',return_value=(raw,{'source':'release_asset'})), \
+             patch.object(self.net,'download',side_effect=download):
+            with self.net.payload_for_install(td) as first:
+                self.assertTrue((first/'data.arcx').exists())
+                with self.net.payload_for_install(td) as second:
+                    self.assertNotEqual(first,second)
+                    self.assertTrue(first.exists())
+                self.assertFalse(second.exists())
+                self.assertTrue(first.exists())
+            self.assertFalse(first.exists())
+            with self.assertRaisesRegex(RuntimeError,'install failed'):
+                with self.net.payload_for_install(td) as failed:
+                    self.assertTrue(failed.exists())
+                    raise RuntimeError('install failed')
+            self.assertFalse(failed.exists())
+            self.assertTrue((Path(td)/'shared_downloads').exists())
+
+    def test_payload_prepare_failure_cleans_only_partial_stage(self):
+        data=b'payload'; digest=hashlib.sha256(data).hexdigest()
+        raw={'version':'1.2.0','client_game_version':'2.0.1','resource_version':'*',
+             'files':{'Persistent_Store/Tables/data.arcx':{'source':'data.arcx','size':len(data),'sha256':digest,'url':'https://example.test/data'}}}
+        with tempfile.TemporaryDirectory() as td, patch.object(self.net,'release',return_value={'assets':[]}), \
+             patch.object(self.net,'_manifest_for_release',return_value=(raw,{'source':'release_asset'})), \
+             patch.object(self.net,'download',side_effect=RuntimeError('network failed')):
+            other=Path(td)/('payload_'+'a'*32);other.mkdir();(other/'sentinel').write_text('other')
+            with self.assertRaisesRegex(RuntimeError,'network failed'):
+                self.net.prepare_payload(td)
+            self.assertEqual([p.name for p in Path(td).glob('payload_*')],[other.name])
+            self.assertTrue((other/'sentinel').exists())
+
+    def test_user_owned_payload_never_deleted(self):
+        with tempfile.TemporaryDirectory() as td:
+            local=Path(td)/('payload_'+'a'*32);local.mkdir(); (local/'user-file').write_text('keep')
+            with self.assertRaisesRegex(RuntimeError,'install failed'):
+                with self.net.payload_for_install(td,local) as payload:
+                    self.assertEqual(payload,local)
+                    raise RuntimeError('install failed')
+            self.assertTrue((local/'user-file').exists())
+
+    def test_cleanup_rejects_paths_outside_cache(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)/'cache';root.mkdir();outside=Path(td)/('payload_'+'a'*32);outside.mkdir()
+            (outside/'sentinel').write_text('keep')
+            self.net._cleanup_owned_stage(root,outside)
+            self.assertTrue((outside/'sentinel').exists())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,33 @@
+# Keep SS files eligible despite ignore rules inherited from AmeeVH.
+# SS-specific exclusions below still apply.
+!*
+!*/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local Sheet sync cache, locks, receipts and work files.
+# Keep .ss-sync/*/partition_manifest.json as the shared published baseline.
+/.ss-sync/update-sheet/
+/.ss-sync/Chuong_STm01/payload.json
+
+# Workflow lock and recovery copy. Keep state.json for completed handoffs.
+/.ss-workflow/state.lock
+/.ss-workflow/state.backup.json
+
+# Temporary/recovery files, not source data or reports.
+*.tmp
+*.pending
+~$*
+
+# Local secrets, if introduced later. Allow sanitized environment examples.
+.env
+.env.*
+!.env.example
+!.env.sample

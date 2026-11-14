@@ -1,0 +1,9274 @@
+CG_disc4045 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 3090
+
+[CG_disc4045::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_disc4045::command/0 SetIntro/param/1]
+記憶回想
+
+[CG_disc4045::command/0 SetIntro/param/2]
+夢幻の策士
+
+[CG_disc4045::command/0 SetIntro/param/3]
+怪盗の予告状を受け取った魔王は、オトハに護衛を依頼する。オトハは数々の罠と分身魔法を駆使し、怪盗から恩恵の印証を守りきる。魔王はオトハに感謝しつつも、目の前にいる彼女が本物か否かを問う。オトハは笑って本物だと答えるのだった。
+
+[CG_disc4045::command/1 SetTrans/param/2]
+0
+
+[CG_disc4045::command/1 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/1 SetTrans/param/8]
+default
+
+[CG_disc4045::command/2 SetBg/param/1]
+carriage_inside
+
+[CG_disc4045::command/2 SetBg/param/2]
+0
+
+[CG_disc4045::command/2 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/2 SetBg/param/6]
+default
+
+[CG_disc4045::command/3 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/3 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/4 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/4 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/6 SetAudio/param/1]
+se_458
+
+[CG_disc4045::command/8 SetTalk/param/1]
+0
+
+[CG_disc4045::command/8 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/8 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/8 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/8 SetTalk/param/7]
+今夜0時、美しき純白の駒をいただきに参上する。==RT====RT==<margin-right=6em><align=right>怪盗ムメイーヌ</align></margin>
+
+[CG_disc4045::command/8 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/10 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/10 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/11 SetTrans/param/2]
+0
+
+[CG_disc4045::command/11 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/11 SetTrans/param/8]
+default
+
+[CG_disc4045::command/13 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/13 SetBGM/param/3]
+m4
+
+[CG_disc4045::command/13 SetBGM/param/4]
+none
+
+[CG_disc4045::command/14 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/14 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/14 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/14 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/14 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/15 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/15 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/15 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/15 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/15 SetTalk/param/7]
+これは犯行予告……==W==なのか？==W====RT==だがこんな名前の怪盗など聞いたことないし、==W====RT==やはりイタズラという線も……
+
+[CG_disc4045::command/15 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/17 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4045::command/17 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/17 SetMainRoleTalk/param/4]
+jushou
+
+[CG_disc4045::command/17 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/17 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/20 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4045::command/20 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_disc4045::command/20 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/20 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/20 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/23 SetFrontObj/param/2]
+qstory_main_011
+
+[CG_disc4045::command/24 SetMainRoleTalk/param/2]
+015
+
+[CG_disc4045::command/24 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/24 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/24 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/24 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/26 SetFrontObj/param/2]
+qstory_main_011
+
+[CG_disc4045::command/28 SetMainRoleTalk/param/2]
+003
+
+[CG_disc4045::command/28 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_disc4045::command/28 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/28 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/28 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/29 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/29 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/29 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/29 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/29 SetTalk/param/7]
+しかし『美しき純白の駒』とは、==W====RT==おそらく恩恵の印章のこと。==W====RT==もしイタズラでないのなら、大変なことになる。
+
+[CG_disc4045::command/29 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/31 SetMainRoleTalk/param/2]
+015
+
+[CG_disc4045::command/31 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/31 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/31 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/31 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/34 SetMainRoleTalk/param/2]
+009
+
+[CG_disc4045::command/34 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_disc4045::command/34 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/34 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/34 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/36 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/36 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/36 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/36 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/38 SetAudio/param/1]
+se_061
+
+[CG_disc4045::command/39 SetChar/param/2]
+none
+
+[CG_disc4045::command/39 SetChar/param/3]
+avg3_100
+
+[CG_disc4045::command/39 SetChar/param/4]
+c
+
+[CG_disc4045::command/39 SetChar/param/5]
+009
+
+[CG_disc4045::command/39 SetChar/param/6]
+none
+
+[CG_disc4045::command/40 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/40 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/40 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/40 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/40 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/40 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/40 CtrlChar/param/13]
+OutBack
+
+[CG_disc4045::command/42 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/42 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/42 CtrlChar/param/2]
+010
+
+[CG_disc4045::command/42 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_disc4045::command/42 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/42 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/42 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/43 SetTalk/param/1]
+1
+
+[CG_disc4045::command/43 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/43 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/43 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/43 SetTalk/param/7]
+とはいえ、どうしたらいいんだ……==W====RT==空白旅団の3人は依頼で明後日までいないし、==RT==私ひとりではあっという間に奪われるだろうし……
+
+[CG_disc4045::command/43 SetTalk/param/8]
+とはいえ、どうしたらいいんだ……==W====RT==空白旅団の3人は依頼で明後日までいないし、==RT==僕ひとりではあっという間に奪われるだろうし……
+
+[CG_disc4045::command/45 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/45 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/45 CtrlChar/param/2]
+021
+
+[CG_disc4045::command/45 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_disc4045::command/45 CtrlChar/param/11]
+ChanDou
+
+[CG_disc4045::command/45 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/45 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/48 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/48 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/48 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/48 CtrlChar/param/3]
+avg_emoji_idea
+
+[CG_disc4045::command/48 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/48 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/48 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/49 SetTalk/param/1]
+1
+
+[CG_disc4045::command/49 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/49 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/49 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/49 SetTalk/param/7]
+あ、そういえば――==W====RT==もしや、いまがあの名刺の使いどきなのでは？
+
+[CG_disc4045::command/49 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/51 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/51 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/51 CtrlChar/param/2]
+014
+
+[CG_disc4045::command/51 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/51 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/51 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/51 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/53 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/53 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/53 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/55 SetAudio/param/1]
+se_076
+
+[CG_disc4045::command/56 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/56 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/56 SetTrans/param/8]
+default
+
+[CG_disc4045::command/57 SetBg/param/1]
+city_park_daylight
+
+[CG_disc4045::command/57 SetBg/param/2]
+0
+
+[CG_disc4045::command/57 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/57 SetBg/param/6]
+default
+
+[CG_disc4045::command/58 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/58 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/59 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/59 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/61 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/61 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/62 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/62 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/62 SetTrans/param/8]
+default
+
+[CG_disc4045::command/64 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/64 SetBGM/param/3]
+m1
+
+[CG_disc4045::command/64 SetBGM/param/4]
+none
+
+[CG_disc4045::command/65 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4045::command/65 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/65 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/65 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/65 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/66 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/66 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/66 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/66 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/66 SetTalk/param/7]
+……遅いな。==W==待ち合わせ場所はこの辺りのはずなのだが。
+
+[CG_disc4045::command/66 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/68 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/68 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_disc4045::command/68 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/68 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/68 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/70 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/70 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/70 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/70 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/72 SetAudio/param/1]
+se_062
+
+[CG_disc4045::command/73 SetChar/param/2]
+none
+
+[CG_disc4045::command/73 SetChar/param/3]
+avg3_202
+
+[CG_disc4045::command/73 SetChar/param/4]
+a
+
+[CG_disc4045::command/73 SetChar/param/5]
+003
+
+[CG_disc4045::command/73 SetChar/param/6]
+none
+
+[CG_disc4045::command/74 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/74 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/74 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/74 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/74 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/74 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/76 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/76 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/76 CtrlChar/param/2]
+010
+
+[CG_disc4045::command/76 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_disc4045::command/76 CtrlChar/param/11]
+tiao2
+
+[CG_disc4045::command/76 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/76 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/77 SetTalk/param/1]
+元気なメイド少女
+
+[CG_disc4045::command/77 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/77 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/77 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/77 SetTalk/param/7]
+お待たせいたしましたー！谷風家政でーす！==W====RT==ボディガードをお求めの魔王さんでお間違いないでしょうか？
+
+[CG_disc4045::command/77 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/79 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/79 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/79 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/79 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_disc4045::command/79 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/79 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/79 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/82 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4045::command/82 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/82 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/82 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/82 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/83 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/83 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/83 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/83 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/83 SetTalk/param/7]
+ぬ？==W==あ、ああ。==W==たしかにボディガードを頼んだが……==RT==君は？
+
+[CG_disc4045::command/83 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/85 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4045::command/85 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_disc4045::command/85 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/85 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/85 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/88 SetMainRoleTalk/param/2]
+015
+
+[CG_disc4045::command/88 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/88 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/88 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/88 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/90 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/90 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/90 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/90 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/92 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/92 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/92 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/92 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/92 CtrlChar/param/11]
+niunie1
+
+[CG_disc4045::command/92 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/92 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/93 SetTalk/param/1]
+元気なメイド少女
+
+[CG_disc4045::command/93 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/93 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/93 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/93 SetTalk/param/7]
+ナノハ先輩は手が塞がってるので、あたしはその代理で参りました。==W====RT==精いっぱい務めさせていただきますので、よろしくお願いします！！
+
+[CG_disc4045::command/93 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/95 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/95 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/95 CtrlChar/param/2]
+011
+
+[CG_disc4045::command/95 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_disc4045::command/95 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/95 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/95 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/98 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4045::command/98 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/98 SetMainRoleTalk/param/4]
+jushou
+
+[CG_disc4045::command/98 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/98 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/99 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/99 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/99 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/99 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/99 SetTalk/param/7]
+……ふむ、代理か。たしかに突然の依頼だったからな。==W====RT==それではよろしく頼むよ。
+
+[CG_disc4045::command/99 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/101 SetMainRoleTalk/param/2]
+013
+
+[CG_disc4045::command/101 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_disc4045::command/101 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/101 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/101 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/103 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/103 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/103 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/103 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/105 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/105 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/105 CtrlChar/param/2]
+012
+
+[CG_disc4045::command/105 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_disc4045::command/105 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/105 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/105 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/106 SetTalk/param/1]
+元気なメイド少女
+
+[CG_disc4045::command/106 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/106 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/106 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/106 SetTalk/param/7]
+お任せください！==W====RT==ですが依頼に取り掛かる前に、問題の印章を見せていただけますか？
+
+[CG_disc4045::command/106 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/108 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/108 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/108 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/108 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/108 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/108 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/108 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/111 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/111 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/111 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/111 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/111 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/111 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/111 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/112 SetTalk/param/1]
+元気なメイド少女
+
+[CG_disc4045::command/112 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/112 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/112 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/112 SetTalk/param/7]
+本物を見ておかないと、==RT==万が一すり替えられても気づかないかもしれませんからね！
+
+[CG_disc4045::command/112 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/114 SetMainRoleTalk/param/2]
+009
+
+[CG_disc4045::command/114 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/114 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/114 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/114 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/115 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/115 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/115 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/115 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/115 SetTalk/param/7]
+そういうことならかまわないよ。==W====RT==印章ならここに――
+
+[CG_disc4045::command/115 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/117 SetAudio/param/1]
+se_228
+
+[CG_disc4045::command/118 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4045::command/118 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/118 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/118 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/118 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/120 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/120 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/120 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/120 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/121 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/121 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/121 SetBGM/param/4]
+1000ms
+
+[CG_disc4045::command/123 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/123 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/123 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/123 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4045::command/123 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/123 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/123 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/124 SetTalk/param/1]
+元気なメイド少女
+
+[CG_disc4045::command/124 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/124 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/124 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/124 SetTalk/param/7]
+……ふふ。==W==ヌシは相変わらずのお人好しでありんすなぁ。
+
+[CG_disc4045::command/124 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/126 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/126 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/126 CtrlChar/param/2]
+012
+
+[CG_disc4045::command/126 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/126 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/126 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/126 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/129 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/129 SetBGM/param/3]
+m12
+
+[CG_disc4045::command/129 SetBGM/param/4]
+none
+
+[CG_disc4045::command/130 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/130 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/130 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/130 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/130 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/130 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/130 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/131 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4045::command/131 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_disc4045::command/131 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/131 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/131 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/132 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/132 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/132 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/132 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/132 SetTalk/param/7]
+…………ぬ？ありんす？==W====RT==君はいったい――
+
+[CG_disc4045::command/132 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/134 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4045::command/134 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/134 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/134 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/134 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/136 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/136 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/136 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/136 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/138 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/138 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/138 CtrlChar/param/2]
+011
+
+[CG_disc4045::command/138 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/138 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/138 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/138 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/139 SetTalk/param/1]
+avg3_999
+
+[CG_disc4045::command/139 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/139 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/139 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/139 SetTalk/param/7]
+もっと用心しなんし。==W==アチキが件の怪盗でありんしたら、==RT==印章はとっくに賊の手の中でありんしょう。
+
+[CG_disc4045::command/139 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/141 SetAudio/param/1]
+se_100
+
+[CG_disc4045::command/142 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/142 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/142 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/142 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/142 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/142 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/143 CtrlChar/param/0]
+avg3_202
+
+[CG_disc4045::command/143 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/143 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/143 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/143 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/143 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/144 SetChar/param/2]
+none
+
+[CG_disc4045::command/144 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/144 SetChar/param/4]
+a
+
+[CG_disc4045::command/144 SetChar/param/5]
+002
+
+[CG_disc4045::command/144 SetChar/param/6]
+none
+
+[CG_disc4045::command/145 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/145 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/145 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/145 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/145 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/145 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/146 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/146 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/146 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/146 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/146 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/146 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/148 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/148 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/148 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/148 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/148 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/148 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/148 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/151 SetAudio/param/1]
+se_070
+
+[CG_disc4045::command/152 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4045::command/152 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/152 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/152 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/152 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/153 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/154 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/154 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/154 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/154 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/154 SetTalk/param/7]
+オトハ……！？==W====RT==そうか、いまのは君の変装だったのか……
+
+[CG_disc4045::command/154 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/156 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4045::command/156 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/156 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/156 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/156 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/158 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/158 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/159 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/159 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/159 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/159 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/159 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/159 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/161 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/161 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/162 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/162 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/162 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/162 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/162 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/162 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/163 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4045::command/163 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/163 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/163 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/163 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/164 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/164 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/164 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/164 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/164 SetTalk/param/7]
+見た目も声もまるで別人だったから、すっかり騙され――==W====RT==うわあっ！？
+
+[CG_disc4045::command/164 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/166 SetFx/param/1]
+fx_speedline_center
+
+[CG_disc4045::command/167 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/167 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/168 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/168 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/168 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/168 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/168 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/168 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/169 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/169 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/169 SetBGM/param/4]
+1000ms
+
+[CG_disc4045::command/171 SetAudio/param/1]
+se_459
+
+[CG_disc4045::command/172 CtrlStage/param/9]
+Xiao
+
+[CG_disc4045::command/172 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/173 SetChar/param/2]
+none
+
+[CG_disc4045::command/173 SetChar/param/3]
+avg3_178
+
+[CG_disc4045::command/173 SetChar/param/4]
+a
+
+[CG_disc4045::command/173 SetChar/param/5]
+002
+
+[CG_disc4045::command/173 SetChar/param/6]
+none
+
+[CG_disc4045::command/174 CtrlChar/param/0]
+avg3_178
+
+[CG_disc4045::command/174 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/174 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/174 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/174 CtrlChar/param/11]
+chijing
+
+[CG_disc4045::command/174 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/174 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/175 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4045::command/175 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/175 SetMainRoleTalk/param/4]
+dabian
+
+[CG_disc4045::command/175 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/175 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/176 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/178 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/178 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/178 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/178 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/180 SetAudio/param/1]
+se_112
+
+[CG_disc4045::command/181 CtrlChar/param/0]
+avg3_178
+
+[CG_disc4045::command/181 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/181 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/181 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/181 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/181 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/181 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/182 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/183 SetTalk/param/1]
+通行人
+
+[CG_disc4045::command/183 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/183 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/183 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/183 SetTalk/param/7]
+ご、ごめんなさい！==W==ちょっと急いでて……！！==RT==本当にごめんなさーい！！
+
+[CG_disc4045::command/183 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/185 SetAudio/param/1]
+se_094
+
+[CG_disc4045::command/186 CtrlChar/param/0]
+avg3_178
+
+[CG_disc4045::command/186 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/186 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/186 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/186 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/186 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/187 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/190 SetMainRoleTalk/param/2]
+016
+
+[CG_disc4045::command/190 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_disc4045::command/190 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/190 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/190 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/191 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/191 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/191 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/191 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/191 SetTalk/param/7]
+まったく……==W==急ぐにしても、周りは見てほしいな。==W====RT==すまない、オトハ――
+
+[CG_disc4045::command/191 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/193 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/193 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/193 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/193 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/193 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/196 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/196 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/197 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4045::command/197 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_disc4045::command/197 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/197 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/197 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/200 SetAudio/param/1]
+se_095
+
+[CG_disc4045::command/201 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/201 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/202 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/202 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/202 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/202 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/202 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/203 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/203 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/203 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/203 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/203 SetTalk/param/7]
+あれ、オトハ……？
+
+[CG_disc4045::command/203 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/205 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/205 SetBGM/param/3]
+m53
+
+[CG_disc4045::command/205 SetBGM/param/4]
+none
+
+[CG_disc4045::command/206 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/206 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/207 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4045::command/207 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/207 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/207 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/207 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/208 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/208 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/208 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/208 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/208 SetTalk/param/7]
+目の前にいたはずなのに……==W====RT==いまの一瞬でいったいどこに消えたんだ？
+
+[CG_disc4045::command/208 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/210 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/210 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/211 SetMainRoleTalk/param/2]
+015
+
+[CG_disc4045::command/211 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/211 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/211 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/211 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/213 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/213 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/213 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/213 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/215 SetAudio/param/1]
+se_049
+
+[CG_disc4045::command/216 SetTalk/param/1]
+avg3_999
+
+[CG_disc4045::command/216 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/216 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/216 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/216 SetTalk/param/7]
+ふふ――
+
+[CG_disc4045::command/216 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/218 SetAudio/param/1]
+se_075
+
+[CG_disc4045::command/219 SetChar/param/2]
+none
+
+[CG_disc4045::command/219 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/219 SetChar/param/4]
+b
+
+[CG_disc4045::command/219 SetChar/param/5]
+002
+
+[CG_disc4045::command/219 SetChar/param/6]
+none
+
+[CG_disc4045::command/220 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/220 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/220 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/220 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/220 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/220 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/222 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/222 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/222 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/222 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/222 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/222 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/222 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/223 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/223 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/223 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/223 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/223 SetTalk/param/7]
+ヌシが探しておりんすアチキは、==RT==分身魔法で作ったもうひとりのアチキでありんす。
+
+[CG_disc4045::command/223 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/225 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/225 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/225 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/225 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/225 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/225 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/225 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/226 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4045::command/226 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_disc4045::command/226 SetMainRoleTalk/param/4]
+jushou
+
+[CG_disc4045::command/226 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/226 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/227 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/227 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/227 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/227 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/227 SetTalk/param/7]
+なんだ、そこにいたのか。だが分身とは？==W====RT==まさかと思うが、先ほど私と話していたのは――
+
+[CG_disc4045::command/227 SetTalk/param/8]
+なんだ、そこにいたのか。だが分身とは？==W====RT==まさかと思うが、先ほど僕と話していたのは――
+
+[CG_disc4045::command/229 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4045::command/229 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/229 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/229 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/229 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/231 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/231 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/231 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/231 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/233 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/233 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/233 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/233 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/233 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/233 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/233 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/234 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/234 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/234 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/234 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/234 SetTalk/param/7]
+ヌシの想像しているとおりでありんす。==W====RT==先ほどは、アチキの分身を谷風家政の者に変装させておりんした。
+
+[CG_disc4045::command/234 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/236 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/236 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/236 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/236 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4045::command/236 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/236 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/236 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/239 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4045::command/239 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/239 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/239 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/239 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/240 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/240 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/240 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/240 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/240 SetTalk/param/7]
+分身魔法で生み出したオトハが他人になりすまして、==RT==本物の君は陰でその様子を眺めていたと？==W====RT==技術はすごいが……なぜそんなややこしいことを？
+
+[CG_disc4045::command/240 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/242 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4045::command/242 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/242 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/242 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/242 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/244 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/244 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/244 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/244 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/246 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/246 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/246 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/246 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/246 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/246 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/246 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/247 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/247 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/247 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/247 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/247 SetTalk/param/7]
+決まっているでありんしょう？==W====RT==魔王さんのうろたえる姿を楽しむため……でありんすぇ♪
+
+[CG_disc4045::command/247 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/249 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/249 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/249 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/249 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/249 CtrlChar/param/11]
+niunie1
+
+[CG_disc4045::command/249 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/249 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/252 SetAudio/param/1]
+se_070
+
+[CG_disc4045::command/253 SetMainRoleTalk/param/2]
+007
+
+[CG_disc4045::command/253 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/253 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/253 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/253 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/254 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/255 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/255 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/255 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/255 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/255 SetTalk/param/7]
+技術の無駄遣いにもほどがある！！
+
+[CG_disc4045::command/255 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/256 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/256 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/256 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/256 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/257 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/257 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/257 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/259 SetAudio/param/1]
+se_076
+
+[CG_disc4045::command/260 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/260 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/260 SetTrans/param/8]
+default
+
+[CG_disc4045::command/261 SetBg/param/1]
+city_park_daylight
+
+[CG_disc4045::command/261 SetBg/param/2]
+0
+
+[CG_disc4045::command/261 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/261 SetBg/param/6]
+default
+
+[CG_disc4045::command/262 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/262 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/263 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/263 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/265 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/265 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/265 SetTrans/param/8]
+default
+
+[CG_disc4045::command/267 SetChar/param/2]
+none
+
+[CG_disc4045::command/267 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/267 SetChar/param/4]
+a
+
+[CG_disc4045::command/267 SetChar/param/5]
+002
+
+[CG_disc4045::command/267 SetChar/param/6]
+none
+
+[CG_disc4045::command/268 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/268 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/268 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/268 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/268 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/268 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/270 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/270 SetBGM/param/3]
+m30
+
+[CG_disc4045::command/270 SetBGM/param/4]
+none
+
+[CG_disc4045::command/271 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/271 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/271 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/271 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_disc4045::command/271 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/271 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/271 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/272 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/272 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/272 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/272 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/272 SetTalk/param/7]
+……ふむ、==W==怪盗からの予告状でありんすか。
+
+[CG_disc4045::command/272 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/274 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/274 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/274 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/274 CtrlChar/param/3]
+close
+
+[CG_disc4045::command/274 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/274 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/274 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/277 SetMainRoleTalk/param/2]
+022
+
+[CG_disc4045::command/277 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/277 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/277 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/277 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/278 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/278 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/278 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/278 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/278 SetTalk/param/7]
+ああ。そういうわけだから、==RT==万が一に備えて護衛を頼みたいんだ。
+
+[CG_disc4045::command/278 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/279 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/279 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/279 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/279 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/281 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/281 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/281 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/281 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/281 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/281 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/281 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/282 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/282 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/282 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/282 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/282 SetTalk/param/7]
+もちろんかまいんせんけど……==W==魔王さん？==W====RT==その予告状、怪しくは思いんせんのかぇ？==W====RT==アチキの自作自演――==W==ということもありんしょう？
+
+[CG_disc4045::command/282 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/284 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/284 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/284 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/284 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/284 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/284 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/284 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/287 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/287 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/287 CtrlChar/param/2]
+010
+
+[CG_disc4045::command/287 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/287 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/287 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/287 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/290 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/290 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/290 CtrlChar/param/2]
+008
+
+[CG_disc4045::command/290 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/290 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/290 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/290 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/293 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/293 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/293 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/293 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/293 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/293 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/293 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/296 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/296 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/296 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/296 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/296 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/296 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/296 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/297 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4045::command/297 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/297 SetMainRoleTalk/param/4]
+jushou
+
+[CG_disc4045::command/297 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/297 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/298 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/298 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/298 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/298 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/298 SetTalk/param/7]
+ここまでのやり取りもあるし、==RT==疑わなかったと言えば嘘になる。==RT==だが君には、そんなことをする理由がない。
+
+[CG_disc4045::command/298 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/299 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/299 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/299 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/299 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/301 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/301 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/301 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/301 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/301 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/301 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/301 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/302 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/302 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/302 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/302 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/302 SetTalk/param/7]
+どうでござりんしょう？==W====RT==魔王さんに会いたいあまり、ひと芝居打ったとは？
+
+[CG_disc4045::command/302 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/304 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/304 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/304 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/304 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/304 CtrlChar/param/11]
+niunie1
+
+[CG_disc4045::command/304 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/304 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/307 SetMainRoleTalk/param/2]
+003
+
+[CG_disc4045::command/307 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/307 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/307 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/307 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/308 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/308 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/308 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/308 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/308 SetTalk/param/7]
+君ほどの実力者なら、そんな周りくどいことをせず、==RT==直接訪ねてくるはずだ。
+
+[CG_disc4045::command/308 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/310 SetMainRoleTalk/param/2]
+004
+
+[CG_disc4045::command/310 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/310 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/310 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/310 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/311 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/311 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/311 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/311 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/311 SetTalk/param/7]
+私に言えない用件なら、親しい誰かの==RT==フリをして近づくはず。==W==オトハが本気を出せば、==RT==完璧にその人になりきれるだろう？
+
+[CG_disc4045::command/311 SetTalk/param/8]
+僕に言えない用件なら、親しい誰かの==RT==フリをして近づくはず。==W==オトハが本気を出せば、==RT==完璧にその人になりきれるだろう？
+
+[CG_disc4045::command/313 SetMainRoleTalk/param/2]
+020
+
+[CG_disc4045::command/313 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/313 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/313 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/313 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/316 SetMainRoleTalk/param/2]
+014
+
+[CG_disc4045::command/316 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/316 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/316 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/316 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/317 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/317 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/317 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/317 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/317 SetTalk/param/7]
+先ほど谷風家政のメイドを装ったようにね。
+
+[CG_disc4045::command/317 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/318 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/318 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/318 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/318 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/320 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/320 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/320 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/320 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4045::command/320 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/320 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/320 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/321 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/321 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/321 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/321 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/321 SetTalk/param/7]
+……ふふ。==W====RT==おっせえすとおりでありんす。
+
+[CG_disc4045::command/321 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/323 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/323 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/323 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/323 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/323 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/323 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/323 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/326 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/326 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/326 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/326 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/326 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/326 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/326 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/327 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/327 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/327 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/327 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/327 SetTalk/param/7]
+試すような真似をいたしんしたこと、堪忍しておくんなんし。==W====RT==魔王さんの考えるとおり、アチキはなにも関係ござりんせん。
+
+[CG_disc4045::command/327 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/329 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/329 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/329 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/329 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4045::command/329 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/329 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/329 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/332 SetAudio/param/1]
+se_077
+
+[CG_disc4045::command/333 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/333 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/333 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/333 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/333 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/333 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/333 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/334 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/334 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/334 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/334 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/334 SetTalk/param/7]
+それではあらためて、怪盗とやらの襲撃に備えておきんしょう。
+
+[CG_disc4045::command/334 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/335 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/335 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/335 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/337 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/337 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/337 SetTrans/param/8]
+default
+
+[CG_disc4045::command/338 SetBg/param/1]
+ttc_parkbase_daylight
+
+[CG_disc4045::command/338 SetBg/param/2]
+0
+
+[CG_disc4045::command/338 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/338 SetBg/param/6]
+default
+
+[CG_disc4045::command/339 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/339 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/340 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/340 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/342 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/342 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/342 SetTrans/param/8]
+default
+
+[CG_disc4045::command/344 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/344 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/345 SetAudio/param/1]
+se_251
+
+[CG_disc4045::command/346 SetMainRoleTalk/param/2]
+004
+
+[CG_disc4045::command/346 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/346 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/346 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/346 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/347 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/347 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/347 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/347 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/347 SetTalk/param/7]
+あとは紐を張って、固定して……==W====RT==よし、こんなものか。
+
+[CG_disc4045::command/347 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/349 SetMainRoleTalk/param/2]
+003
+
+[CG_disc4045::command/349 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_disc4045::command/349 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/349 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/349 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/352 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/352 SetBGM/param/3]
+m45
+
+[CG_disc4045::command/352 SetBGM/param/4]
+none
+
+[CG_disc4045::command/353 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/353 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_disc4045::command/353 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/353 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4045::command/353 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/354 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/354 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/354 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/354 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/354 SetTalk/param/7]
+（しかし、ひとつ罠を仕掛けるだけでもひと苦労だな。==RT==向こうは大丈夫だろうか）
+
+[CG_disc4045::command/354 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/355 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/355 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/355 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/355 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/357 SetAudio/param/1]
+se_061
+
+[CG_disc4045::command/358 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/358 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/359 SetChar/param/2]
+none
+
+[CG_disc4045::command/359 SetChar/param/3]
+avg3_100
+
+[CG_disc4045::command/359 SetChar/param/4]
+c
+
+[CG_disc4045::command/359 SetChar/param/5]
+002
+
+[CG_disc4045::command/359 SetChar/param/6]
+none
+
+[CG_disc4045::command/360 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/360 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/360 CtrlChar/param/2]
+022
+
+[CG_disc4045::command/360 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/360 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/360 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/360 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/362 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/362 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/362 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/362 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4045::command/362 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/362 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/362 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/363 SetTalk/param/1]
+1
+
+[CG_disc4045::command/363 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/363 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/363 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/363 SetTalk/param/7]
+オトハ、こっちは終わったよ。==RT==なにか手伝えることはないか？
+
+[CG_disc4045::command/363 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/365 SetAudio/param/1]
+se_060
+
+[CG_disc4045::command/366 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/366 CtrlStage/param/10]
+InOutQuad
+
+[CG_disc4045::command/367 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/367 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/367 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/367 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/367 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/367 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/368 SetFx/param/1]
+fx_avg_flash_light
+
+[CG_disc4045::command/369 SetCharHead/param/5]
+avg1_145
+
+[CG_disc4045::command/369 SetCharHead/param/6]
+a
+
+[CG_disc4045::command/369 SetCharHead/param/7]
+009
+
+[CG_disc4045::command/369 SetCharHead/param/8]
+none
+
+[CG_disc4045::command/370 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/370 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/370 CtrlChar/param/2]
+010
+
+[CG_disc4045::command/370 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_disc4045::command/370 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/370 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/370 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/371 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/371 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/371 CtrlChar/param/2]
+021
+
+[CG_disc4045::command/371 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/371 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/371 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/371 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/372 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/373 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/373 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/373 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/373 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/373 SetTalk/param/7]
+あっ、魔王さん！そこを通っちゃ――
+
+[CG_disc4045::command/373 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/374 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/374 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/374 SetBGM/param/4]
+1000ms
+
+[CG_disc4045::command/376 CtrlStage/param/9]
+jushou
+
+[CG_disc4045::command/376 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/377 SetAudio/param/1]
+se_352
+
+[CG_disc4045::command/378 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/378 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/378 CtrlChar/param/2]
+025
+
+[CG_disc4045::command/378 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/378 CtrlChar/param/11]
+xiangjiao
+
+[CG_disc4045::command/378 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/378 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/379 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/379 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/379 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/379 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/379 CtrlChar/param/11]
+ChanDou
+
+[CG_disc4045::command/379 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/379 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/380 SetTalk/param/1]
+1
+
+[CG_disc4045::command/380 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/380 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/380 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/380 SetTalk/param/7]
+いったぁあああああッ！！？==W====RT==ス、スネが！==W==スネがぁああああああッ！！！！
+
+[CG_disc4045::command/380 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/382 SetAudio/param/1]
+se_110
+
+[CG_disc4045::command/383 CtrlChar/param/0]
+avg3_100
+
+[CG_disc4045::command/383 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/383 CtrlChar/param/2]
+010
+
+[CG_disc4045::command/383 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/383 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/383 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/383 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/384 SetCharHead/param/5]
+avg1_145
+
+[CG_disc4045::command/384 SetCharHead/param/6]
+a
+
+[CG_disc4045::command/384 SetCharHead/param/7]
+002
+
+[CG_disc4045::command/384 SetCharHead/param/8]
+none
+
+[CG_disc4045::command/385 SetTrans/param/2]
+0
+
+[CG_disc4045::command/385 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/385 SetTrans/param/8]
+default
+
+[CG_disc4045::command/389 SetAudio/param/1]
+se_070
+
+[CG_disc4045::command/390 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/393 SetChar/param/2]
+none
+
+[CG_disc4045::command/393 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/393 SetChar/param/4]
+a
+
+[CG_disc4045::command/393 SetChar/param/5]
+007
+
+[CG_disc4045::command/393 SetChar/param/6]
+none
+
+[CG_disc4045::command/394 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/394 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/394 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/394 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/394 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/394 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/395 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/395 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/396 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/396 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/397 SetTrans/param/2]
+0
+
+[CG_disc4045::command/397 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/397 SetTrans/param/8]
+default
+
+[CG_disc4045::command/399 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/399 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/399 CtrlChar/param/2]
+012
+
+[CG_disc4045::command/399 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/399 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/399 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/399 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/400 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/400 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/400 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/400 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/400 SetTalk/param/7]
+この辺りにはアチキが罠をわんさと仕掛けておりんすから、==W====RT==うかつに動いちゃなりんせん。
+
+[CG_disc4045::command/400 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/402 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/402 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/402 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/402 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/402 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/402 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/402 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/405 SetAudio/param/1]
+se_062
+
+[CG_disc4045::command/406 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/406 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/407 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/407 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/407 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/407 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/407 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/407 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/407 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/408 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/408 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/408 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/408 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/408 SetTalk/param/7]
+それで足のほうは障りないかぇ？
+
+[CG_disc4045::command/408 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/410 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/410 SetBGM/param/3]
+m44
+
+[CG_disc4045::command/410 SetBGM/param/4]
+none
+
+[CG_disc4045::command/411 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4045::command/411 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_disc4045::command/411 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/411 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/411 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/412 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/412 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/412 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/412 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/412 SetTalk/param/7]
+ああ、私は問題ないよ。==W====RT==だが罠をひとつダメにしてしまったな。==RT==すまない……
+
+[CG_disc4045::command/412 SetTalk/param/8]
+ああ、僕は問題ないよ。==W====RT==だが罠をひとつダメにしてしまったな。==RT==すまない……
+
+[CG_disc4045::command/414 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/414 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/414 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/414 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/414 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/414 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/414 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/415 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/415 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/415 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/415 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/415 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/417 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/417 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/417 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/417 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/419 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/419 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/419 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/419 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/419 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/419 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/419 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/420 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/420 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/420 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/420 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/420 SetTalk/param/7]
+気にすることはござりんせん。==W==アチキにかかれば、こんな罠――==W====RT==ほら、このとおり。
+
+[CG_disc4045::command/420 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/422 SetAudio/param/1]
+se_020
+
+[CG_disc4045::command/423 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/423 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/423 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/423 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/423 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/423 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/423 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/426 SetAudio/param/1]
+se_020_stop
+
+[CG_disc4045::command/427 SetAudio/param/1]
+se_077
+
+[CG_disc4045::command/428 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/428 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/428 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/428 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/428 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/428 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/428 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/430 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/430 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/430 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/430 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_disc4045::command/430 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/430 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/430 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/433 SetMainRoleTalk/param/2]
+025
+
+[CG_disc4045::command/433 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/433 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/433 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/433 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/434 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/434 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/434 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/434 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/434 SetTalk/param/7]
+す、すごい……==W==あっという間に元通りだ。==RT==私はひとつ仕掛けるのさえ時間がかかったのに……
+
+[CG_disc4045::command/434 SetTalk/param/8]
+す、すごい……==W==あっという間に元通りだ。==RT==僕はひとつ仕掛けるのさえ時間がかかったのに……
+
+[CG_disc4045::command/436 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/436 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_disc4045::command/436 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/436 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/436 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/438 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/438 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/438 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/438 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/440 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/440 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/440 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/440 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/440 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/440 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/440 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/441 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/441 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/441 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/441 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/441 SetTalk/param/7]
+仕事柄、罠を作るのには慣れておりんすから。
+
+[CG_disc4045::command/441 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/443 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/443 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/443 CtrlChar/param/2]
+012
+
+[CG_disc4045::command/443 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/443 CtrlChar/param/11]
+niunie1
+
+[CG_disc4045::command/443 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/443 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/444 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/444 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/444 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/444 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/444 SetTalk/param/7]
+魔王さんが引っかかったスネ叩きの罠のほかにも、==RT==矢が飛んできたり、岩が転がってきたり、爆発したり……==W====RT==いろいろとおもしろ――==W==愉快な罠を仕掛けておりんす。
+
+[CG_disc4045::command/444 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/446 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/446 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/446 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/446 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/446 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/446 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/446 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/449 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/449 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/449 CtrlChar/param/2]
+008
+
+[CG_disc4045::command/449 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/449 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/449 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/449 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/452 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/452 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/452 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/452 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/452 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/452 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/452 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/453 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/453 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_disc4045::command/453 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/453 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/453 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/454 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/454 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/454 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/454 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/454 SetTalk/param/7]
+……それは言い直した意味がないからな？==W====RT==とはいえ引っかかったのが、安全な部類でよかったよ。
+
+[CG_disc4045::command/454 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/456 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4045::command/456 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/456 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/456 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/456 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/459 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4045::command/459 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/459 SetMainRoleTalk/param/4]
+jushou
+
+[CG_disc4045::command/459 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/459 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/460 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/460 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/460 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/460 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/460 SetTalk/param/7]
+しかし、人通りが少ないとはいえ、==RT==公共の場を罠まみれにして大丈夫なのか？
+
+[CG_disc4045::command/460 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/461 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/461 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/461 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/461 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/463 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/463 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/463 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/463 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/463 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/463 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/463 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/464 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/464 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/464 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/464 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/464 SetTalk/param/7]
+心配いりんせん。==W==なにせこの通りで危険物が見つかったと、==RT==アチキがデマを流しておりんすからなぁ。==RT==明日いっぱいは、なんとか誤魔化しきれんしょう。
+
+[CG_disc4045::command/464 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/466 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/466 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/466 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/466 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4045::command/466 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/466 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/466 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/469 SetMainRoleTalk/param/2]
+003
+
+[CG_disc4045::command/469 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/469 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/469 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/469 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/470 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/470 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/470 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/470 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/470 SetTalk/param/7]
+……さすが、==W==抜かりないな。
+
+[CG_disc4045::command/470 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/472 SetMainRoleTalk/param/2]
+017
+
+[CG_disc4045::command/472 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[CG_disc4045::command/472 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/472 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/472 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/474 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/474 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/474 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/474 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/476 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/476 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/476 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/476 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4045::command/476 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/476 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/476 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/477 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/477 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/477 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/477 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/477 SetTalk/param/7]
+ふふ。無関係の者を巻き込むようじゃ、プロは名乗れんせん。
+
+[CG_disc4045::command/477 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/479 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/479 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/479 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/479 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/479 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/479 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/479 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/480 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/480 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/480 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/480 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/480 SetTalk/param/7]
+――さて、==W==準備はこれくらいにして。==RT==あとは甘味と茶でもいただきながら……==RT==ゆっくり向こうさんを待つといたしんしょう。
+
+[CG_disc4045::command/480 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/482 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/482 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/482 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/482 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/482 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/482 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/482 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/484 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/484 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/484 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/486 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/486 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/486 SetTrans/param/8]
+default
+
+[CG_disc4045::command/487 SetBg/param/1]
+ttc_parkbase_night
+
+[CG_disc4045::command/487 SetBg/param/2]
+0
+
+[CG_disc4045::command/487 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/487 SetBg/param/6]
+default
+
+[CG_disc4045::command/488 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/488 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/489 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/489 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/491 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_disc4045::command/491 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/491 SetTrans/param/8]
+default
+
+[CG_disc4045::command/493 SetChar/param/2]
+none
+
+[CG_disc4045::command/493 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/493 SetChar/param/4]
+a
+
+[CG_disc4045::command/493 SetChar/param/5]
+002
+
+[CG_disc4045::command/493 SetChar/param/6]
+none
+
+[CG_disc4045::command/494 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/494 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/494 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/494 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/494 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/494 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/496 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/496 SetBGM/param/3]
+m14
+
+[CG_disc4045::command/496 SetBGM/param/4]
+none
+
+[CG_disc4045::command/497 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/497 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/497 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/497 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/497 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/497 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/497 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/498 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/498 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/498 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/498 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/498 SetTalk/param/7]
+……魔王さん、==W==覚悟はようござんすか？
+
+[CG_disc4045::command/498 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/500 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/500 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/500 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/500 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/500 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/500 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/500 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/503 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4045::command/503 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/503 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/503 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/503 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/504 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/504 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/504 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/504 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/504 SetTalk/param/7]
+ああこちらは問題ない。
+
+[CG_disc4045::command/504 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/505 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/505 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/505 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/505 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/507 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/507 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/507 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/507 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/507 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/507 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/507 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/508 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/508 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/508 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/508 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/508 SetTalk/param/7]
+その意気でありんす。==RT==さあ、24時まで……==W==3、==W==2、==W==1――
+
+[CG_disc4045::command/508 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/509 SetAudio/param/1]
+se_187
+
+[CG_disc4045::command/511 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/511 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/512 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/512 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/512 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/512 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/512 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/512 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/512 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/515 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/515 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/516 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/516 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/516 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/516 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/516 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/516 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/519 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/519 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/520 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/520 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/520 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/520 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/520 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/520 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/522 SetAudio/param/1]
+se_187_stop
+
+[CG_disc4045::command/524 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/524 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/525 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/525 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/526 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/526 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/526 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/526 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/526 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/526 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/528 SetChar/param/2]
+none
+
+[CG_disc4045::command/528 SetChar/param/3]
+avg3_138
+
+[CG_disc4045::command/528 SetChar/param/4]
+a
+
+[CG_disc4045::command/528 SetChar/param/5]
+002
+
+[CG_disc4045::command/528 SetChar/param/6]
+none
+
+[CG_disc4045::command/529 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/529 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/529 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/529 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/529 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/529 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/531 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/531 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/531 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4045::command/531 CtrlChar/param/11]
+tiao2
+
+[CG_disc4045::command/531 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/531 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/532 SetTalk/param/1]
+avg3_999
+
+[CG_disc4045::command/532 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/532 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/532 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/532 SetTalk/param/7]
+はーっはっはっはー！
+
+[CG_disc4045::command/532 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/534 SetAudio/param/1]
+se_077
+
+[CG_disc4045::command/535 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/535 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/535 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/535 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/535 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/535 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/536 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/536 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/536 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/536 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/536 SetTalk/param/7]
+ワタシこそ怪盗界の超新星、怪盗ムメイーヌ！==RT==予告状の通り、純白の駒を――
+
+[CG_disc4045::command/536 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/537 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/537 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/537 SetBGM/param/4]
+1000ms
+
+[CG_disc4045::command/539 SetAudio/param/1]
+se_174
+
+[CG_disc4045::command/540 CtrlStage/param/9]
+xiaozhen
+
+[CG_disc4045::command/540 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/541 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/541 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/541 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/541 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/541 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/541 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/543 SetAudio/param/1]
+se_114
+
+[CG_disc4045::command/544 SetFx/param/1]
+fx_avg_fire_attack
+
+[CG_disc4045::command/545 CtrlStage/param/9]
+Xiao
+
+[CG_disc4045::command/545 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/546 PlayCharAnim/param/0]
+avg3_138
+
+[CG_disc4045::command/546 PlayCharAnim/param/1]
+shake_L
+
+[CG_disc4045::command/548 SetAudio/param/1]
+se_127
+
+[CG_disc4045::command/549 CtrlStage/param/9]
+jushou
+
+[CG_disc4045::command/549 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/550 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/550 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/550 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/550 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/550 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/550 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/551 SetFx/param/1]
+fx_avg_dust_heave
+
+[CG_disc4045::command/553 SetAudio/param/1]
+se_070
+
+[CG_disc4045::command/554 SetTrans/param/2]
+0
+
+[CG_disc4045::command/554 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/554 SetTrans/param/8]
+default
+
+[CG_disc4045::command/555 SetTalkShake/param/1]
+Zhong
+
+[CG_disc4045::command/556 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/556 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/556 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/556 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/556 SetTalk/param/7]
+うわぁぁぁああああああ～～～～っ！？
+
+[CG_disc4045::command/556 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/558 SetAudio/param/1]
+se_374
+
+[CG_disc4045::command/559 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/559 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/559 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/559 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4045::command/559 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/560 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/560 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/560 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/560 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/560 SetTalk/param/7]
+（え、えげつない……==W====RT==いったいどれだけ罠を仕掛けたんだ……）
+
+[CG_disc4045::command/560 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/562 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/562 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_disc4045::command/562 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/562 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4045::command/562 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/564 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/564 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/564 SetMainRoleTalk/param/5]
+y
+
+[CG_disc4045::command/564 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/566 SetTrans/param/2]
+0
+
+[CG_disc4045::command/566 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/566 SetTrans/param/8]
+default
+
+[CG_disc4045::command/568 SetAudio/param/1]
+se_112
+
+[CG_disc4045::command/569 SetChar/param/2]
+none
+
+[CG_disc4045::command/569 SetChar/param/3]
+avg3_138
+
+[CG_disc4045::command/569 SetChar/param/4]
+a
+
+[CG_disc4045::command/569 SetChar/param/5]
+008
+
+[CG_disc4045::command/569 SetChar/param/6]
+none
+
+[CG_disc4045::command/570 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/570 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/570 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/570 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/570 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/570 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/572 SetAudio/param/1]
+se_349
+
+[CG_disc4045::command/573 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/573 SetBGM/param/3]
+m36
+
+[CG_disc4045::command/573 SetBGM/param/4]
+none
+
+[CG_disc4045::command/574 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/574 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/574 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/574 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/574 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/574 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/574 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/575 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/575 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/575 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/575 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/575 SetTalk/param/7]
+はぁ、はぁ……弱いと噂の魔王からなら、簡単に盗めると思ったのに……==RT==とんでもないプレゼントを用意してくれたね……
+
+[CG_disc4045::command/575 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/577 SetAudio/param/1]
+se_063
+
+[CG_disc4045::command/578 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/578 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/579 SetFx/param/1]
+fx_speedline_center_w
+
+[CG_disc4045::command/580 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/580 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/580 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/580 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/580 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/580 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/580 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/581 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/581 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/581 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/581 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/581 SetTalk/param/7]
+だがワタシは怪盗、狙った獲物を逃すなんて言語道断！==RT==予告通り、恩恵の印章はいただいていくわ！
+
+[CG_disc4045::command/581 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/583 SetAudio/param/1]
+se_062
+
+[CG_disc4045::command/584 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/584 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/585 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/585 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/586 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/586 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/586 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/586 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/586 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/586 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/587 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/587 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/587 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/587 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/587 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/587 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/588 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/588 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/588 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/588 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/588 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/588 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/590 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/590 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/590 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/590 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/590 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/590 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/590 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/591 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/591 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/591 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/591 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/591 SetTalk/param/7]
+おやまあ。まだ立っておりんすとは、頑丈でありんすなぁ。==W====RT==魔王さん、そこを動きなんすなぇ。
+
+[CG_disc4045::command/591 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/593 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/593 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/593 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/593 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4045::command/593 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/593 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/593 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/596 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/596 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/596 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/596 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/596 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/596 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/596 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/597 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/597 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/597 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/597 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/597 SetTalk/param/7]
+くっ、魔王にこんな護衛がいたとは……
+
+[CG_disc4045::command/597 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/599 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/599 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/599 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/599 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/599 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/599 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/599 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/600 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/600 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/600 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/600 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/600 SetTalk/param/7]
+アチキは雇われの身でありんすからなぁ。==RT==依頼人の期待には、全身全霊をもって応えるのが筋というもの。==RT==ふふ……==W==覚悟しなんし。
+
+[CG_disc4045::command/600 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/601 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/601 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/601 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/603 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/603 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/603 CtrlChar/param/2]
+008
+
+[CG_disc4045::command/603 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/603 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/603 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/603 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/606 SetAudio/param/1]
+se_062
+
+[CG_disc4045::command/607 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/607 SetBGM/param/3]
+m59
+
+[CG_disc4045::command/607 SetBGM/param/4]
+none
+
+[CG_disc4045::command/608 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/608 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/609 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/609 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/609 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/609 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/609 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/609 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/610 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/610 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/610 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/610 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/610 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/610 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/611 SetBg/param/1]
+sky_night_b
+
+[CG_disc4045::command/611 SetBg/param/2]
+0
+
+[CG_disc4045::command/611 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/611 SetBg/param/6]
+default
+
+[CG_disc4045::command/612 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/612 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/613 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/613 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/614 SetChar/param/2]
+none
+
+[CG_disc4045::command/614 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/614 SetChar/param/4]
+a
+
+[CG_disc4045::command/614 SetChar/param/5]
+002
+
+[CG_disc4045::command/614 SetChar/param/6]
+none
+
+[CG_disc4045::command/615 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/615 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/615 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/615 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/615 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/615 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/616 SetStage/param/2]
+OutQuad
+
+[CG_disc4045::command/617 SetAudio/param/1]
+se_494
+
+[CG_disc4045::command/618 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/618 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/618 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/618 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/618 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/618 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/619 SetBg/param/1]
+sky_night_b
+
+[CG_disc4045::command/619 SetBg/param/2]
+0
+
+[CG_disc4045::command/619 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/619 SetBg/param/6]
+default
+
+[CG_disc4045::command/620 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/620 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/621 SetChar/param/2]
+none
+
+[CG_disc4045::command/621 SetChar/param/3]
+avg3_138
+
+[CG_disc4045::command/621 SetChar/param/4]
+a
+
+[CG_disc4045::command/621 SetChar/param/5]
+002
+
+[CG_disc4045::command/621 SetChar/param/6]
+none
+
+[CG_disc4045::command/622 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/622 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/622 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/622 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/622 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/622 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/622 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/623 SetStage/param/2]
+OutQuad
+
+[CG_disc4045::command/624 SetAudio/param/1]
+se_036
+
+[CG_disc4045::command/625 SetFx/param/1]
+fx_avg_line_goright_lp
+
+[CG_disc4045::command/626 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/626 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/627 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/627 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/627 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/627 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/627 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/627 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/629 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/629 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/629 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_disc4045::command/629 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/629 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/629 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/630 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/630 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/630 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/630 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/630 SetTalk/param/7]
+ん？その傘は……==W==ま、まさかそれが武器！？
+
+[CG_disc4045::command/630 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/632 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/632 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/632 CtrlChar/param/3]
+avg_emoji_symbol
+
+[CG_disc4045::command/632 CtrlChar/param/11]
+chijing
+
+[CG_disc4045::command/632 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/632 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/633 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/636 SetAudio/param/1]
+se_487
+
+[CG_disc4045::command/637 SetFx/param/1]
+fx_avg_dark_attack
+
+[CG_disc4045::command/638 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/638 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/638 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/638 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/638 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/638 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/639 SetStage/param/2]
+Linear
+
+[CG_disc4045::command/641 SetAudio/param/1]
+se_099
+
+[CG_disc4045::command/642 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/642 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/642 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/642 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/642 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/642 CtrlChar/param/13]
+InQuad
+
+[CG_disc4045::command/643 SetStage/param/2]
+OutQuad
+
+[CG_disc4045::command/644 SetFx/param/1]
+fx_avg_line_goright_lp
+
+[CG_disc4045::command/645 SetChar/param/2]
+none
+
+[CG_disc4045::command/645 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/645 SetChar/param/4]
+a
+
+[CG_disc4045::command/645 SetChar/param/5]
+002
+
+[CG_disc4045::command/645 SetChar/param/6]
+none
+
+[CG_disc4045::command/646 SetChar/param/2]
+none
+
+[CG_disc4045::command/646 SetChar/param/3]
+avg3_138
+
+[CG_disc4045::command/646 SetChar/param/4]
+a
+
+[CG_disc4045::command/646 SetChar/param/5]
+002
+
+[CG_disc4045::command/646 SetChar/param/6]
+none
+
+[CG_disc4045::command/647 SetAudio/param/1]
+se_036_stop
+
+[CG_disc4045::command/649 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/649 CtrlStage/param/10]
+OutQuad
+
+[CG_disc4045::command/650 SetChar/param/2]
+none
+
+[CG_disc4045::command/650 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/650 SetChar/param/4]
+a
+
+[CG_disc4045::command/650 SetChar/param/5]
+002
+
+[CG_disc4045::command/650 SetChar/param/6]
+none
+
+[CG_disc4045::command/651 SetChar/param/2]
+none
+
+[CG_disc4045::command/651 SetChar/param/3]
+avg3_138
+
+[CG_disc4045::command/651 SetChar/param/4]
+a
+
+[CG_disc4045::command/651 SetChar/param/5]
+002
+
+[CG_disc4045::command/651 SetChar/param/6]
+none
+
+[CG_disc4045::command/652 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/652 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/652 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/652 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/652 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/652 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/652 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/653 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/653 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/653 CtrlChar/param/2]
+008
+
+[CG_disc4045::command/653 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/653 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/653 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/653 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/655 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/655 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/655 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/655 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/655 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/655 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/655 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/656 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/656 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/656 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/656 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/656 SetTalk/param/7]
+なかなか粋でありんしょう？
+
+[CG_disc4045::command/656 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/658 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/658 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/658 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/658 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/658 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/658 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/658 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/659 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/659 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/659 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/659 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/659 SetTalk/param/7]
+そちらさんは随分と疲れてるようだし……==W====RT==そろそろ諦めてはどうかぇ？
+
+[CG_disc4045::command/659 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/661 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/661 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/661 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/661 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/661 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/661 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/661 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/664 SetAudio/param/1]
+se_063
+
+[CG_disc4045::command/665 SetFx/param/1]
+fx_avg_line_goleft_lp
+
+[CG_disc4045::command/666 SetBg/param/1]
+white
+
+[CG_disc4045::command/666 SetBg/param/2]
+0
+
+[CG_disc4045::command/666 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/666 SetBg/param/6]
+default
+
+[CG_disc4045::command/667 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/667 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/667 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/667 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/667 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/667 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/668 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/668 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/668 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/668 CtrlChar/param/11]
+shouji
+
+[CG_disc4045::command/668 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/668 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/670 SetAudio/param/1]
+se_128
+
+[CG_disc4045::command/672 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/673 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/673 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/673 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/673 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/673 SetTalk/param/7]
+生憎こっちにも、事情があるんでね！！
+
+[CG_disc4045::command/673 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/674 SetBg/param/1]
+ttc_parkbase_night
+
+[CG_disc4045::command/674 SetBg/param/2]
+0
+
+[CG_disc4045::command/674 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/674 SetBg/param/6]
+default
+
+[CG_disc4045::command/675 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/675 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/676 SetFx/param/1]
+fx_avg_line_goleft_lp
+
+[CG_disc4045::command/677 SetAudio/param/1]
+se_459
+
+[CG_disc4045::command/678 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/678 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/678 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/678 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/678 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/678 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/679 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/679 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/679 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/679 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/679 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/679 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/679 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/681 SetMainRoleTalk/param/2]
+026
+
+[CG_disc4045::command/681 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_disc4045::command/681 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/681 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/681 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/682 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/683 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/683 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/683 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/683 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/683 SetTalk/param/7]
+オトハ……！？
+
+[CG_disc4045::command/683 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/684 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/684 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/684 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/684 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/686 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/686 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/686 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/686 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/686 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/686 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/686 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/687 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/687 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/687 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/687 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/687 SetTalk/param/7]
+ははははっ！！さっきの素敵なプレゼントのお返しだよ！==W====RT==どうどう？ワタシの魔法の味は！
+
+[CG_disc4045::command/687 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/689 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/689 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/689 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/689 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/689 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/689 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/692 SetAudio/param/1]
+se_062
+
+[CG_disc4045::command/693 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/693 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/693 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/693 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/693 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/693 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/693 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/694 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/694 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/694 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/694 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/694 SetTalk/param/7]
+さて、今度こそ恩恵の印章をいただいて――
+
+[CG_disc4045::command/694 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/696 SetAudio/param/1]
+se_176
+
+[CG_disc4045::command/697 SetChar/param/2]
+none
+
+[CG_disc4045::command/697 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/697 SetChar/param/4]
+a
+
+[CG_disc4045::command/697 SetChar/param/5]
+008
+
+[CG_disc4045::command/697 SetChar/param/6]
+none
+
+[CG_disc4045::command/698 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/698 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/698 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/698 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/698 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/698 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/699 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/699 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/699 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/699 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/699 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/699 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/699 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/701 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/701 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/701 CtrlChar/param/2]
+012
+
+[CG_disc4045::command/701 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/701 CtrlChar/param/11]
+zuochupeng
+
+[CG_disc4045::command/701 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/701 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/702 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/702 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/702 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/702 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/702 SetTalk/param/7]
+まだ勝負はついておりんせんのに、どこへ行くつもりかぇ？
+
+[CG_disc4045::command/702 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/704 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/704 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/704 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/704 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/704 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/704 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/705 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/705 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/705 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/705 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/705 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/705 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/706 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/707 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/707 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/707 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/707 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/707 SetTalk/param/7]
+……っ！？==RT==なぜだ！？お前はたしかに倒したはず――
+
+[CG_disc4045::command/707 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/709 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/709 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/709 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/709 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/709 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/709 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/709 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/710 SetAudio/param/1]
+se_372
+
+[CG_disc4045::command/711 SetChar/param/2]
+none
+
+[CG_disc4045::command/711 SetChar/param/3]
+avg3_1285
+
+[CG_disc4045::command/711 SetChar/param/4]
+a
+
+[CG_disc4045::command/711 SetChar/param/5]
+002
+
+[CG_disc4045::command/711 SetChar/param/6]
+none
+
+[CG_disc4045::command/712 SetChar/param/2]
+none
+
+[CG_disc4045::command/712 SetChar/param/3]
+avg3_1286
+
+[CG_disc4045::command/712 SetChar/param/4]
+a
+
+[CG_disc4045::command/712 SetChar/param/5]
+002
+
+[CG_disc4045::command/712 SetChar/param/6]
+none
+
+[CG_disc4045::command/713 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/713 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/713 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/713 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/713 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/713 CtrlChar/param/13]
+InQuad
+
+[CG_disc4045::command/714 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/714 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/714 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/714 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/714 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/714 CtrlChar/param/13]
+InQuad
+
+[CG_disc4045::command/715 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/715 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/715 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/715 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/715 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/715 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/716 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/716 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/716 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/716 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/716 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/716 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/718 SetAudio/param/1]
+se_112
+
+[CG_disc4045::command/719 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/719 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/719 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/719 CtrlChar/param/11]
+chijing
+
+[CG_disc4045::command/719 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/719 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/720 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/720 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/720 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/720 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/720 SetTalk/param/7]
+ぶ、分身魔法……！？==W====RT==まさか、ワタシが倒したと思ったのはお前の分身だったのか！？
+
+[CG_disc4045::command/720 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/722 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/722 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/722 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/722 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_disc4045::command/722 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/722 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/722 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/725 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/725 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/725 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/725 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/725 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/725 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/726 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/726 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/726 CtrlChar/param/2]
+002
+
+[CG_disc4045::command/726 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/726 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/726 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/726 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/727 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/727 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/727 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/727 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/727 SetTalk/param/7]
+ふふ。ようやく気づきんしたかぇ。==RT==なら今度こそ、よーく狙いなんし。
+
+[CG_disc4045::command/727 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/729 SetAudio/param/1]
+se_484
+
+[CG_disc4045::command/730 SetAudio/param/1]
+se_063
+
+[CG_disc4045::command/731 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/731 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/732 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/732 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/732 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/732 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/732 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/732 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/733 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/733 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/733 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/733 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/733 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/733 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/735 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/735 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/735 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/735 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/735 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/735 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/737 SetAudio/param/1]
+se_274
+
+[CG_disc4045::command/738 CtrlStage/param/9]
+Xiao
+
+[CG_disc4045::command/738 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/739 SetFx/param/1]
+fx_avg_arrow
+
+[CG_disc4045::command/740 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/740 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/740 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/740 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/740 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/740 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/742 SetAudio/param/1]
+se_075
+
+[CG_disc4045::command/743 SetChar/param/2]
+none
+
+[CG_disc4045::command/743 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/743 SetChar/param/4]
+a
+
+[CG_disc4045::command/743 SetChar/param/5]
+010
+
+[CG_disc4045::command/743 SetChar/param/6]
+none
+
+[CG_disc4045::command/744 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/744 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/744 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/744 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/744 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/744 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/745 SetAudio/param/1]
+se_240
+
+[CG_disc4045::command/746 CtrlStage/param/9]
+Xiao
+
+[CG_disc4045::command/746 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/747 SetFx/param/1]
+fx_avg_dash
+
+[CG_disc4045::command/748 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/748 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/748 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/748 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/748 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/748 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/750 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/750 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/750 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/750 CtrlChar/param/11]
+chijing
+
+[CG_disc4045::command/750 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/750 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/752 CtrlStage/param/9]
+Xiao
+
+[CG_disc4045::command/752 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/753 SetAudio/param/1]
+se_114
+
+[CG_disc4045::command/754 SetFx/param/1]
+fx_avg_arrow
+
+[CG_disc4045::command/755 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/755 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/755 CtrlChar/param/2]
+009
+
+[CG_disc4045::command/755 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/755 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/755 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/755 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/757 SetAudio/param/1]
+se_114
+
+[CG_disc4045::command/758 SetFx/param/1]
+fx_avg_arrow
+
+[CG_disc4045::command/760 SetAudio/param/1]
+se_114
+
+[CG_disc4045::command/761 SetFx/param/1]
+fx_avg_arrow
+
+[CG_disc4045::command/763 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/763 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/763 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/763 CtrlChar/param/3]
+avg_emoji_resentful
+
+[CG_disc4045::command/763 CtrlChar/param/11]
+diantou2
+
+[CG_disc4045::command/763 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/763 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/764 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/764 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/764 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/764 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/764 SetTalk/param/7]
+くっ、当たれええええ！！
+
+[CG_disc4045::command/764 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/766 SetAudio/param/1]
+se_061
+
+[CG_disc4045::command/767 SetChar/param/2]
+none
+
+[CG_disc4045::command/767 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/767 SetChar/param/4]
+a
+
+[CG_disc4045::command/767 SetChar/param/5]
+002
+
+[CG_disc4045::command/767 SetChar/param/6]
+none
+
+[CG_disc4045::command/768 SetChar/param/2]
+none
+
+[CG_disc4045::command/768 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/768 SetChar/param/4]
+c
+
+[CG_disc4045::command/768 SetChar/param/5]
+002
+
+[CG_disc4045::command/768 SetChar/param/6]
+none
+
+[CG_disc4045::command/769 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/769 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/769 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/769 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/769 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/769 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/770 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/770 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/770 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/770 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/770 SetTalk/param/7]
+狙いは悪くありんせんけど……==W====RT==見極めが足りておりんせん。
+
+[CG_disc4045::command/770 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/772 CtrlStage/param/9]
+jushou
+
+[CG_disc4045::command/772 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/773 SetAudio/param/1]
+se_176
+
+[CG_disc4045::command/774 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/774 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/774 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/774 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/774 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/774 CtrlChar/param/13]
+InQuad
+
+[CG_disc4045::command/776 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/776 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/776 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/776 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/776 CtrlChar/param/11]
+chijing
+
+[CG_disc4045::command/776 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/776 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/778 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/778 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/778 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/780 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/780 SetBGM/param/3]
+m103
+
+[CG_disc4045::command/780 SetBGM/param/4]
+none
+
+[CG_disc4045::command/781 SetTrans/param/2]
+0
+
+[CG_disc4045::command/781 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/781 SetTrans/param/8]
+default
+
+[CG_disc4045::command/782 SetBg/param/1]
+city_street_night
+
+[CG_disc4045::command/782 SetBg/param/2]
+0
+
+[CG_disc4045::command/782 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/782 SetBg/param/6]
+default
+
+[CG_disc4045::command/783 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/783 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/784 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/784 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/786 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/786 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/787 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4045::command/788 SetTrans/param/2]
+0
+
+[CG_disc4045::command/788 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/788 SetTrans/param/8]
+default
+
+[CG_disc4045::command/790 SetBg/param/1]
+city_street_water_night
+
+[CG_disc4045::command/790 SetBg/param/2]
+0
+
+[CG_disc4045::command/790 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/790 SetBg/param/6]
+default
+
+[CG_disc4045::command/791 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/791 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/792 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/792 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/793 SetBg/param/1]
+ttc_harbour_2_night
+
+[CG_disc4045::command/793 SetBg/param/2]
+0
+
+[CG_disc4045::command/793 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/793 SetBg/param/6]
+default
+
+[CG_disc4045::command/794 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/794 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/795 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/795 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/796 SetBg/param/1]
+tanikaze_court_night_snow
+
+[CG_disc4045::command/796 SetBg/param/2]
+0
+
+[CG_disc4045::command/796 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/796 SetBg/param/6]
+default
+
+[CG_disc4045::command/797 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/797 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/798 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/798 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/799 SetFx/param/1]
+fx_avg_noise
+
+[CG_disc4045::command/801 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/801 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/803 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/803 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/805 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/805 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/806 SetFx/param/1]
+fx_avg_noise
+
+[CG_disc4045::command/808 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/808 CtrlStage/param/10]
+InOutQuad
+
+[CG_disc4045::command/809 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4045::command/811 SetFx/param/1]
+fx_avg_noise
+
+[CG_disc4045::command/813 SetBg/param/1]
+BG_Black
+
+[CG_disc4045::command/813 SetBg/param/2]
+0
+
+[CG_disc4045::command/813 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/813 SetBg/param/6]
+default
+
+[CG_disc4045::command/814 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/814 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/815 SetChar/param/2]
+none
+
+[CG_disc4045::command/815 SetChar/param/3]
+avg3_1286
+
+[CG_disc4045::command/815 SetChar/param/4]
+a
+
+[CG_disc4045::command/815 SetChar/param/5]
+012
+
+[CG_disc4045::command/815 SetChar/param/6]
+none
+
+[CG_disc4045::command/816 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/816 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/816 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/816 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/816 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/816 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/817 SetChar/param/2]
+none
+
+[CG_disc4045::command/817 SetChar/param/3]
+avg3_1285
+
+[CG_disc4045::command/817 SetChar/param/4]
+a
+
+[CG_disc4045::command/817 SetChar/param/5]
+012
+
+[CG_disc4045::command/817 SetChar/param/6]
+none
+
+[CG_disc4045::command/818 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/818 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/818 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/818 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/818 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/818 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/819 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/819 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/819 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/819 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/819 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/819 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/821 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/821 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/821 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/821 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/821 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/821 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/822 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/822 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/822 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/822 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/822 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/822 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/823 SetFx/param/1]
+fx_avg_noise
+
+[CG_disc4045::command/824 SetBg/param/1]
+city_street_night
+
+[CG_disc4045::command/824 SetBg/param/2]
+0
+
+[CG_disc4045::command/824 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/824 SetBg/param/6]
+default
+
+[CG_disc4045::command/825 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/825 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/826 SetChar/param/2]
+none
+
+[CG_disc4045::command/826 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/826 SetChar/param/4]
+a
+
+[CG_disc4045::command/826 SetChar/param/5]
+002
+
+[CG_disc4045::command/826 SetChar/param/6]
+none
+
+[CG_disc4045::command/827 SetChar/param/2]
+none
+
+[CG_disc4045::command/827 SetChar/param/3]
+avg3_147
+
+[CG_disc4045::command/827 SetChar/param/4]
+a
+
+[CG_disc4045::command/827 SetChar/param/5]
+002
+
+[CG_disc4045::command/827 SetChar/param/6]
+none
+
+[CG_disc4045::command/828 SetChar/param/2]
+none
+
+[CG_disc4045::command/828 SetChar/param/3]
+avg3_146
+
+[CG_disc4045::command/828 SetChar/param/4]
+a
+
+[CG_disc4045::command/828 SetChar/param/5]
+002
+
+[CG_disc4045::command/828 SetChar/param/6]
+none
+
+[CG_disc4045::command/829 SetStage/param/2]
+OutQuad
+
+[CG_disc4045::command/830 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/830 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/830 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/830 CtrlChar/param/11]
+manbu_loop
+
+[CG_disc4045::command/830 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/830 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/832 CtrlChar/param/0]
+avg3_147
+
+[CG_disc4045::command/832 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/832 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/832 CtrlChar/param/11]
+manbu_loop
+
+[CG_disc4045::command/832 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/832 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/833 CtrlChar/param/0]
+avg3_146
+
+[CG_disc4045::command/833 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/833 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/833 CtrlChar/param/11]
+manbu_loop
+
+[CG_disc4045::command/833 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/833 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/834 SetChar/param/2]
+none
+
+[CG_disc4045::command/834 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/834 SetChar/param/4]
+a
+
+[CG_disc4045::command/834 SetChar/param/5]
+002
+
+[CG_disc4045::command/834 SetChar/param/6]
+none
+
+[CG_disc4045::command/835 SetFx/param/1]
+fx_avg_sakura
+
+[CG_disc4045::command/836 SetChar/param/2]
+none
+
+[CG_disc4045::command/836 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/836 SetChar/param/4]
+c
+
+[CG_disc4045::command/836 SetChar/param/5]
+006
+
+[CG_disc4045::command/836 SetChar/param/6]
+none
+
+[CG_disc4045::command/837 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/837 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/837 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/837 CtrlChar/param/11]
+manbu_loop
+
+[CG_disc4045::command/837 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/837 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/838 CtrlChar/param/0]
+avg3_147
+
+[CG_disc4045::command/838 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/838 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/838 CtrlChar/param/11]
+manbu_loop
+
+[CG_disc4045::command/838 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/838 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/839 CtrlChar/param/0]
+avg3_146
+
+[CG_disc4045::command/839 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/839 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/839 CtrlChar/param/11]
+manbu_loop
+
+[CG_disc4045::command/839 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/839 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/841 SetAudio/param/1]
+se_074
+
+[CG_disc4045::command/842 SetStage/param/2]
+Linear
+
+[CG_disc4045::command/843 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4045::command/844 SetFx/param/1]
+fx_fog_lp
+
+[CG_disc4045::command/845 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/845 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/846 SetChar/param/2]
+none
+
+[CG_disc4045::command/846 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/846 SetChar/param/4]
+a
+
+[CG_disc4045::command/846 SetChar/param/5]
+002
+
+[CG_disc4045::command/846 SetChar/param/6]
+none
+
+[CG_disc4045::command/847 SetChar/param/2]
+none
+
+[CG_disc4045::command/847 SetChar/param/3]
+avg3_147
+
+[CG_disc4045::command/847 SetChar/param/4]
+a
+
+[CG_disc4045::command/847 SetChar/param/5]
+002
+
+[CG_disc4045::command/847 SetChar/param/6]
+none
+
+[CG_disc4045::command/848 SetChar/param/2]
+none
+
+[CG_disc4045::command/848 SetChar/param/3]
+avg3_146
+
+[CG_disc4045::command/848 SetChar/param/4]
+a
+
+[CG_disc4045::command/848 SetChar/param/5]
+002
+
+[CG_disc4045::command/848 SetChar/param/6]
+none
+
+[CG_disc4045::command/849 SetChar/param/2]
+none
+
+[CG_disc4045::command/849 SetChar/param/3]
+avg3_1285
+
+[CG_disc4045::command/849 SetChar/param/4]
+b
+
+[CG_disc4045::command/849 SetChar/param/5]
+004
+
+[CG_disc4045::command/849 SetChar/param/6]
+none
+
+[CG_disc4045::command/850 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/850 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/850 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/850 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/850 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/850 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/851 SetChar/param/2]
+none
+
+[CG_disc4045::command/851 SetChar/param/3]
+avg3_1286
+
+[CG_disc4045::command/851 SetChar/param/4]
+b
+
+[CG_disc4045::command/851 SetChar/param/5]
+004
+
+[CG_disc4045::command/851 SetChar/param/6]
+none
+
+[CG_disc4045::command/852 SetFx/param/1]
+fx_avg_snow
+
+[CG_disc4045::command/853 SetBg/param/1]
+sky_dusk_b
+
+[CG_disc4045::command/853 SetBg/param/2]
+0
+
+[CG_disc4045::command/853 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/853 SetBg/param/6]
+default
+
+[CG_disc4045::command/854 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/854 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/855 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/855 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/856 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/856 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/856 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/856 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/856 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/856 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/857 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/857 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/857 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/857 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/857 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/857 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/858 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/858 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/858 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/858 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/858 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/858 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/859 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/859 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/859 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/859 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/859 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/859 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/861 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/861 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/861 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/861 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/861 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/861 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/861 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/863 SetBg/param/1]
+white
+
+[CG_disc4045::command/863 SetBg/param/2]
+0
+
+[CG_disc4045::command/863 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/863 SetBg/param/6]
+default
+
+[CG_disc4045::command/864 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_disc4045::command/865 SetFx/param/1]
+fx_avg_snow
+
+[CG_disc4045::command/866 CtrlChar/param/0]
+avg3_1285
+
+[CG_disc4045::command/866 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/866 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/866 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/866 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/866 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/867 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/867 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/867 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/867 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/867 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/867 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/867 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/869 SetTrans/param/2]
+AvgStageEffect_flurry
+
+[CG_disc4045::command/869 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/869 SetTrans/param/8]
+default
+
+[CG_disc4045::command/870 SetChar/param/2]
+none
+
+[CG_disc4045::command/870 SetChar/param/3]
+avg3_1285
+
+[CG_disc4045::command/870 SetChar/param/4]
+a
+
+[CG_disc4045::command/870 SetChar/param/5]
+002
+
+[CG_disc4045::command/870 SetChar/param/6]
+none
+
+[CG_disc4045::command/871 SetChar/param/2]
+none
+
+[CG_disc4045::command/871 SetChar/param/3]
+avg3_1286
+
+[CG_disc4045::command/871 SetChar/param/4]
+a
+
+[CG_disc4045::command/871 SetChar/param/5]
+002
+
+[CG_disc4045::command/871 SetChar/param/6]
+none
+
+[CG_disc4045::command/872 SetFx/param/1]
+fx_fog_lp
+
+[CG_disc4045::command/873 SetFilm/param/1]
+Linear
+
+[CG_disc4045::command/874 SetBg/param/1]
+BG_Black
+
+[CG_disc4045::command/874 SetBg/param/2]
+0
+
+[CG_disc4045::command/874 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/874 SetBg/param/6]
+default
+
+[CG_disc4045::command/875 SetChar/param/2]
+none
+
+[CG_disc4045::command/875 SetChar/param/3]
+avg3_1285
+
+[CG_disc4045::command/875 SetChar/param/4]
+b
+
+[CG_disc4045::command/875 SetChar/param/5]
+004
+
+[CG_disc4045::command/875 SetChar/param/6]
+none
+
+[CG_disc4045::command/876 SetChar/param/2]
+none
+
+[CG_disc4045::command/876 SetChar/param/3]
+avg3_1286
+
+[CG_disc4045::command/876 SetChar/param/4]
+c
+
+[CG_disc4045::command/876 SetChar/param/5]
+004
+
+[CG_disc4045::command/876 SetChar/param/6]
+none
+
+[CG_disc4045::command/877 SetStage/param/2]
+Linear
+
+[CG_disc4045::command/878 SetTrans/param/2]
+AvgStageEffect_flurry
+
+[CG_disc4045::command/878 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/878 SetTrans/param/8]
+default
+
+[CG_disc4045::command/880 SetChar/param/2]
+none
+
+[CG_disc4045::command/880 SetChar/param/3]
+avg1_119
+
+[CG_disc4045::command/880 SetChar/param/4]
+a
+
+[CG_disc4045::command/880 SetChar/param/5]
+004
+
+[CG_disc4045::command/880 SetChar/param/6]
+none
+
+[CG_disc4045::command/881 SetBg/param/1]
+tanikaze_court_night_snow
+
+[CG_disc4045::command/881 SetBg/param/2]
+0
+
+[CG_disc4045::command/881 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/881 SetBg/param/6]
+default
+
+[CG_disc4045::command/882 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/882 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/883 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/883 CtrlBg/param/11]
+OutQuad
+
+[CG_disc4045::command/884 SetStage/param/2]
+InQuad
+
+[CG_disc4045::command/885 SetFx/param/1]
+fx_avg_snow
+
+[CG_disc4045::command/887 CtrlChar/param/0]
+avg1_119
+
+[CG_disc4045::command/887 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/887 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/887 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/887 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/887 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/888 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/888 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/888 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/888 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/888 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/888 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/888 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/890 SetBg/param/1]
+tanikaze_court_daylight
+
+[CG_disc4045::command/890 SetBg/param/2]
+0
+
+[CG_disc4045::command/890 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/890 SetBg/param/6]
+default
+
+[CG_disc4045::command/891 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/891 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/892 SetFx/param/1]
+fx_avg_snow
+
+[CG_disc4045::command/893 SetFx/param/1]
+fx_avg_rain
+
+[CG_disc4045::command/894 CtrlChar/param/0]
+avg1_119
+
+[CG_disc4045::command/894 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/894 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/894 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/894 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/894 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/895 CtrlChar/param/0]
+avg3_1286
+
+[CG_disc4045::command/895 CtrlChar/param/1]
+c
+
+[CG_disc4045::command/895 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/895 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/895 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/895 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/895 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/896 SetChar/param/2]
+none
+
+[CG_disc4045::command/896 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/896 SetChar/param/4]
+b
+
+[CG_disc4045::command/896 SetChar/param/5]
+007
+
+[CG_disc4045::command/896 SetChar/param/6]
+none
+
+[CG_disc4045::command/897 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/897 CtrlChar/param/1]
+b
+
+[CG_disc4045::command/897 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/897 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/897 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/897 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/899 SetTrans/param/2]
+0
+
+[CG_disc4045::command/899 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/899 SetTrans/param/8]
+default
+
+[CG_disc4045::command/900 SetFx/param/1]
+fx_avg_rain
+
+[CG_disc4045::command/901 SetBg/param/1]
+4045_B
+
+[CG_disc4045::command/901 SetBg/param/2]
+0
+
+[CG_disc4045::command/901 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/901 SetBg/param/6]
+default
+
+[CG_disc4045::command/902 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/902 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/903 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/903 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/904 SetTrans/param/2]
+0
+
+[CG_disc4045::command/904 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/904 SetTrans/param/8]
+default
+
+[CG_disc4045::command/906 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/906 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/906 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/906 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/906 SetTalk/param/7]
+ホンモノがいるからこそ、ニセモノを作るこの分身魔法は成立するのさ。
+
+[CG_disc4045::command/906 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/908 SetFilm/param/1]
+Linear
+
+[CG_disc4045::command/909 SetBg/param/1]
+4045_B
+
+[CG_disc4045::command/909 SetBg/param/2]
+0
+
+[CG_disc4045::command/909 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/909 SetBg/param/6]
+default
+
+[CG_disc4045::command/910 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/910 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/911 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/911 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/911 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/911 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/911 SetTalk/param/7]
+もっともアチキの場合……==W====RT==どれを『本物』と呼ぶべきか、自分にもわかりんせんけど♪
+
+[CG_disc4045::command/911 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/912 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/912 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/916 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/916 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/916 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/916 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/916 SetTalk/param/7]
+おっと……==W==少しおしゃべりが過ぎんしたね。==RT==そろそろ幕引きとしんしょう。
+
+[CG_disc4045::command/916 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/920 SetAudio/param/1]
+se_494
+
+[CG_disc4045::command/921 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/921 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/921 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/921 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/921 SetTalk/param/7]
+――おさらばえ。
+
+[CG_disc4045::command/921 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/923 SetTrans/param/2]
+0
+
+[CG_disc4045::command/923 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/923 SetTrans/param/8]
+default
+
+[CG_disc4045::command/925 SetAudio/param/1]
+se_070
+
+[CG_disc4045::command/926 SetTalkShake/param/1]
+Xiao
+
+[CG_disc4045::command/927 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/927 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/927 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/927 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/927 SetTalk/param/7]
+うぎゃぁああああ～～～～っ！！
+
+[CG_disc4045::command/927 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/928 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/928 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/928 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/930 SetBg/param/1]
+ttc_parkbase_night
+
+[CG_disc4045::command/930 SetBg/param/2]
+0
+
+[CG_disc4045::command/930 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/930 SetBg/param/6]
+default
+
+[CG_disc4045::command/931 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/931 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/932 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/932 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/934 SetTrans/param/2]
+0
+
+[CG_disc4045::command/934 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/934 SetTrans/param/8]
+default
+
+[CG_disc4045::command/936 SetChar/param/2]
+none
+
+[CG_disc4045::command/936 SetChar/param/3]
+avg3_138
+
+[CG_disc4045::command/936 SetChar/param/4]
+a
+
+[CG_disc4045::command/936 SetChar/param/5]
+005
+
+[CG_disc4045::command/936 SetChar/param/6]
+none
+
+[CG_disc4045::command/937 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/937 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/937 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/937 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/937 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/937 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/939 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/939 SetBGM/param/3]
+m49
+
+[CG_disc4045::command/939 SetBGM/param/4]
+none
+
+[CG_disc4045::command/940 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/940 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/940 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_disc4045::command/940 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/940 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/940 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/941 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/941 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/941 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/941 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/941 SetTalk/param/7]
+ううっ、ぐすっ……す、すみませんでした……==W====RT==ものすごく、反省してます……
+
+[CG_disc4045::command/941 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/943 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/943 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/943 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/943 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/943 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/943 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/943 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/946 SetMainRoleTalk/param/2]
+002
+
+[CG_disc4045::command/946 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/946 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/946 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/946 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/947 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/947 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/947 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/947 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/947 SetTalk/param/7]
+見たところ、君は一般人だろう？==RT==なぜ怪盗の真似事を？==W====RT==しかも恩恵の印章を狙うなんて。
+
+[CG_disc4045::command/947 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/949 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/949 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_disc4045::command/949 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/949 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/949 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/951 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/951 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/951 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/951 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/953 SetBg/param/1]
+mood_3
+
+[CG_disc4045::command/953 SetBg/param/2]
+31
+
+[CG_disc4045::command/953 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/953 SetBg/param/6]
+default
+
+[CG_disc4045::command/954 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/954 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/954 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/954 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/954 CtrlChar/param/11]
+niunie
+
+[CG_disc4045::command/954 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/954 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/955 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/955 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/955 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/955 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/955 SetTalk/param/7]
+兄弟たちを食べさせるために、お金が必要で……==RT==恩恵の印章なら、高値で売れると思ったんです。
+
+[CG_disc4045::command/955 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/957 SetBg/param/1]
+ttc_parkbase_night
+
+[CG_disc4045::command/957 SetBg/param/2]
+0
+
+[CG_disc4045::command/957 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/957 SetBg/param/6]
+default
+
+[CG_disc4045::command/958 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/958 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/960 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/960 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/960 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/960 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/960 CtrlChar/param/11]
+niunie1
+
+[CG_disc4045::command/960 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/960 CtrlChar/param/13]
+OutSine
+
+[CG_disc4045::command/961 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/961 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/961 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/961 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/961 SetTalk/param/7]
+それに怪盗って……==W==ちょっとカッコよくありません？
+
+[CG_disc4045::command/961 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/963 SetAudio/param/1]
+se_084
+
+[CG_disc4045::command/964 SetBg/param/1]
+mood_2
+
+[CG_disc4045::command/964 SetBg/param/2]
+31
+
+[CG_disc4045::command/964 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/964 SetBg/param/6]
+default
+
+[CG_disc4045::command/965 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/965 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/965 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/965 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/965 CtrlChar/param/11]
+diantou2
+
+[CG_disc4045::command/965 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/965 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/968 SetBg/param/1]
+ttc_parkbase_night
+
+[CG_disc4045::command/968 SetBg/param/2]
+0
+
+[CG_disc4045::command/968 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/968 SetBg/param/6]
+default
+
+[CG_disc4045::command/969 SetChar/param/2]
+none
+
+[CG_disc4045::command/969 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/969 SetChar/param/4]
+a
+
+[CG_disc4045::command/969 SetChar/param/5]
+009
+
+[CG_disc4045::command/969 SetChar/param/6]
+none
+
+[CG_disc4045::command/970 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/970 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/970 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/970 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/970 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/970 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/971 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/971 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/971 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/971 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/971 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/971 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/972 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/972 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/972 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/972 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/972 SetTalk/param/7]
+やっていることは盗人と変わりありんせん。
+
+[CG_disc4045::command/972 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/974 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/974 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/974 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/974 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_disc4045::command/974 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/974 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/974 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/975 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/975 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/975 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/975 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/975 SetTalk/param/7]
+うっ……==W==それはそうなんですけど……
+
+[CG_disc4045::command/975 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/977 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/977 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/977 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/977 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/977 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/977 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/980 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/980 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/980 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/980 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/980 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/980 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/980 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/981 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/981 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/981 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/981 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/981 SetTalk/param/7]
+お金を稼ぐなら、まっとうな仕事に就くべきでありんしょう。==RT==……==W==この名刺を持っていきなんし。
+
+[CG_disc4045::command/981 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/983 SetAudio/param/1]
+se_113
+
+[CG_disc4045::command/984 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/984 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/984 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/984 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/984 CtrlChar/param/11]
+JuGong
+
+[CG_disc4045::command/984 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/984 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/987 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/987 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/987 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/987 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/987 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/987 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/987 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/988 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/988 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/988 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/988 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/988 SetTalk/param/7]
+アチキの顔見知りがやっている工房でありんす。==W====RT==ヌシの魔法の技術があれば、ある程度の給料は受け取れんしょう。
+
+[CG_disc4045::command/988 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/990 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/990 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/990 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/990 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_disc4045::command/990 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/990 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/990 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/993 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/993 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/993 CtrlChar/param/2]
+007
+
+[CG_disc4045::command/993 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_disc4045::command/993 CtrlChar/param/11]
+jushou
+
+[CG_disc4045::command/993 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/993 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/994 SetTalk/param/1]
+怪盗ムメイーヌ
+
+[CG_disc4045::command/994 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/994 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/994 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/994 SetTalk/param/7]
+あ、ありがとうございます……！==W==このご恩は一生忘れません！
+
+[CG_disc4045::command/994 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/996 CtrlChar/param/0]
+avg3_138
+
+[CG_disc4045::command/996 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/996 CtrlChar/param/2]
+006
+
+[CG_disc4045::command/996 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_disc4045::command/996 CtrlChar/param/11]
+lengzhan
+
+[CG_disc4045::command/996 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/996 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/998 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/998 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/998 SetBGM/param/4]
+1500ms
+
+[CG_disc4045::command/1000 SetTrans/param/2]
+0
+
+[CG_disc4045::command/1000 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/1000 SetTrans/param/8]
+default
+
+[CG_disc4045::command/1001 SetBg/param/1]
+carriage_inside_night
+
+[CG_disc4045::command/1001 SetBg/param/2]
+0
+
+[CG_disc4045::command/1001 SetBg/param/3]
+Linear
+
+[CG_disc4045::command/1001 SetBg/param/6]
+default
+
+[CG_disc4045::command/1002 CtrlStage/param/9]
+none
+
+[CG_disc4045::command/1002 CtrlStage/param/10]
+Linear
+
+[CG_disc4045::command/1003 CtrlBg/param/10]
+none
+
+[CG_disc4045::command/1003 CtrlBg/param/11]
+Linear
+
+[CG_disc4045::command/1005 SetTrans/param/2]
+0
+
+[CG_disc4045::command/1005 SetTrans/param/3]
+Linear
+
+[CG_disc4045::command/1005 SetTrans/param/8]
+default
+
+[CG_disc4045::command/1007 SetChar/param/2]
+none
+
+[CG_disc4045::command/1007 SetChar/param/3]
+avg1_145
+
+[CG_disc4045::command/1007 SetChar/param/4]
+a
+
+[CG_disc4045::command/1007 SetChar/param/5]
+002
+
+[CG_disc4045::command/1007 SetChar/param/6]
+none
+
+[CG_disc4045::command/1008 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/1008 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/1008 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/1008 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/1008 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/1008 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/1010 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/1010 SetBGM/param/3]
+m31
+
+[CG_disc4045::command/1010 SetBGM/param/4]
+none
+
+[CG_disc4045::command/1011 SetMainRoleTalk/param/2]
+010
+
+[CG_disc4045::command/1011 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_disc4045::command/1011 SetMainRoleTalk/param/4]
+diantou
+
+[CG_disc4045::command/1011 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/1011 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/1012 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/1012 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1012 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1012 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1012 SetTalk/param/7]
+ふぅ……==W==やれやれ、一件落着だな。==W====RT==ありがとう、オトハ。==RT==おかげで恩恵の印章を守り抜けたよ。
+
+[CG_disc4045::command/1012 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1014 SetMainRoleTalk/param/2]
+011
+
+[CG_disc4045::command/1014 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/1014 SetMainRoleTalk/param/4]
+niunie1
+
+[CG_disc4045::command/1014 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/1014 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/1017 SetMainRoleTalk/param/2]
+013
+
+[CG_disc4045::command/1017 SetMainRoleTalk/param/3]
+none
+
+[CG_disc4045::command/1017 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/1017 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/1017 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/1019 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/1019 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/1019 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/1019 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/1021 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/1021 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/1021 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/1021 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/1021 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/1021 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/1021 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/1022 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/1022 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1022 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1022 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1022 SetTalk/param/7]
+ふふ。ほかでもない魔王さんの頼みでありんすからなぁ。==W====RT==それにヌシに貸しを作っておくというのは、==RT==アチキにとっても悪い話ではござりんせん。
+
+[CG_disc4045::command/1022 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1024 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/1024 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/1024 CtrlChar/param/2]
+004
+
+[CG_disc4045::command/1024 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_disc4045::command/1024 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/1024 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/1024 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/1027 SetMainRoleTalk/param/2]
+021
+
+[CG_disc4045::command/1027 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/1027 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_disc4045::command/1027 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/1027 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/1028 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/1028 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1028 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1028 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1028 SetTalk/param/7]
+こちらにとってはあまりいい話ではなさそうだが……
+
+[CG_disc4045::command/1028 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1030 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/1030 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/1030 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/1030 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/1030 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/1030 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/1030 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/1031 SetMainRoleTalk/param/2]
+012
+
+[CG_disc4045::command/1031 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_disc4045::command/1031 SetMainRoleTalk/param/4]
+jushou
+
+[CG_disc4045::command/1031 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/1031 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/1032 SetTalk/param/1]
+avg3_100
+
+[CG_disc4045::command/1032 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1032 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1032 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1032 SetTalk/param/7]
+ところでオトハ、いまの君は本物のオトハなのか？==RT==それとも分身なのか？
+
+[CG_disc4045::command/1032 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1033 SetMainRoleTalk/param/3]
+close
+
+[CG_disc4045::command/1033 SetMainRoleTalk/param/4]
+none
+
+[CG_disc4045::command/1033 SetMainRoleTalk/param/5]
+z
+
+[CG_disc4045::command/1033 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_disc4045::command/1035 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/1035 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/1035 CtrlChar/param/2]
+003
+
+[CG_disc4045::command/1035 CtrlChar/param/3]
+none
+
+[CG_disc4045::command/1035 CtrlChar/param/11]
+none
+
+[CG_disc4045::command/1035 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/1035 CtrlChar/param/13]
+OutQuad
+
+[CG_disc4045::command/1036 SetTalk/param/1]
+avg1_145
+
+[CG_disc4045::command/1036 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1036 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1036 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1036 SetTalk/param/7]
+ふふ。それはもちろん――==W====RT==正真正銘、本物のアチキでありんすぇ♪
+
+[CG_disc4045::command/1036 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1038 CtrlChar/param/0]
+avg1_145
+
+[CG_disc4045::command/1038 CtrlChar/param/1]
+a
+
+[CG_disc4045::command/1038 CtrlChar/param/2]
+005
+
+[CG_disc4045::command/1038 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_disc4045::command/1038 CtrlChar/param/11]
+diantou
+
+[CG_disc4045::command/1038 CtrlChar/param/12]
+none
+
+[CG_disc4045::command/1038 CtrlChar/param/13]
+Linear
+
+[CG_disc4045::command/1040 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_disc4045::command/1040 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_disc4045::command/1040 SetBGM/param/4]
+1500ms
+

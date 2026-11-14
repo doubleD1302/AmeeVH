@@ -1,0 +1,14 @@
+Game/UI/StarTowerLevelSelect/StarTowerLevelSelectCtrl.lua | JP
+2 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/7:K5] TRUY VẾT TĨNH TỚI UI — ui_fallback
+Archive: 0xf81c6f0b3358beec | offset: 7088
+Chứng cứ: Khi GetUIText trả nil, ghép hậu tố rồi truyền tới SetText.
+需要配置语言表Diffculty_
+
+[0/13:K68] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xf81c6f0b3358beec | offset: 14564
+not have this story ID
+

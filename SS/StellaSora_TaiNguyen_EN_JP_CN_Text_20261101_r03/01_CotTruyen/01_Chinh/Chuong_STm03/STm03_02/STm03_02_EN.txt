@@ -1,0 +1,7360 @@
+STm03_02 | EN | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 2452
+
+[STm03_02::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STm03_02::command/0 SetIntro/param/1]
+Act Two
+
+[STm03_02::command/0 SetIntro/param/2]
+The Hidden Lord in the Forest
+
+[STm03_02::command/0 SetIntro/param/3]
+Following the clues, you arrive at Serena's location. Here, you meet a girl who calls herself the "Lord of the Prize Claw". She is engaged in an intense claw machine competition with Amber.
+
+[STm03_02::command/1 SetBg/param/1]
+forest_daylight_2
+
+[STm03_02::command/1 SetBg/param/2]
+0
+
+[STm03_02::command/1 SetBg/param/3]
+Linear
+
+[STm03_02::command/1 SetBg/param/6]
+default
+
+[STm03_02::command/2 CtrlBg/param/10]
+none
+
+[STm03_02::command/2 CtrlBg/param/11]
+InQuad
+
+[STm03_02::command/3 SetAudio/param/1]
+se_103
+
+[STm03_02::command/4 SetSceneHeading/param/0]
+09:00
+
+[STm03_02::command/4 SetSceneHeading/param/1]
+Pluvia Month
+
+[STm03_02::command/4 SetSceneHeading/param/2]
+16th
+
+[STm03_02::command/4 SetSceneHeading/param/3]
+Outside Philae
+
+[STm03_02::command/4 SetSceneHeading/param/4]
+Forest Path
+
+[STm03_02::command/5 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/5 SetBGM/param/3]
+m53
+
+[STm03_02::command/5 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/7 SetBg/param/1]
+ruin_travellers_home_outside
+
+[STm03_02::command/7 SetBg/param/2]
+0
+
+[STm03_02::command/7 SetBg/param/3]
+Linear
+
+[STm03_02::command/7 SetBg/param/6]
+default
+
+[STm03_02::command/8 CtrlBg/param/10]
+none
+
+[STm03_02::command/8 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/10 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/10 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/10 SetChar/param/4]
+a
+
+[STm03_02::command/10 SetChar/param/5]
+002
+
+[STm03_02::command/10 SetChar/param/6]
+none
+
+[STm03_02::command/11 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/11 CtrlChar/param/1]
+a
+
+[STm03_02::command/11 CtrlChar/param/2]
+005
+
+[STm03_02::command/11 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/11 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/11 CtrlChar/param/12]
+none
+
+[STm03_02::command/11 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/12 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/12 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/12 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/12 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/12 SetTalk/param/7]
+This is it!
+
+[STm03_02::command/12 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/13 SetChar/param/2]
+L_in
+
+[STm03_02::command/13 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/13 SetChar/param/4]
+a
+
+[STm03_02::command/13 SetChar/param/5]
+002
+
+[STm03_02::command/13 SetChar/param/6]
+none
+
+[STm03_02::command/14 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/14 CtrlChar/param/1]
+a
+
+[STm03_02::command/14 CtrlChar/param/3]
+none
+
+[STm03_02::command/14 CtrlChar/param/11]
+none
+
+[STm03_02::command/14 CtrlChar/param/12]
+none
+
+[STm03_02::command/14 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/15 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/15 CtrlChar/param/1]
+a
+
+[STm03_02::command/15 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/15 CtrlChar/param/11]
+none
+
+[STm03_02::command/15 CtrlChar/param/12]
+none
+
+[STm03_02::command/15 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/16 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/16 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/16 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/16 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/16 SetTalk/param/7]
+Wait ... this is it? This shack?
+
+[STm03_02::command/16 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/17 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/17 CtrlChar/param/1]
+a
+
+[STm03_02::command/17 CtrlChar/param/3]
+none
+
+[STm03_02::command/17 CtrlChar/param/11]
+none
+
+[STm03_02::command/17 CtrlChar/param/12]
+none
+
+[STm03_02::command/17 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/18 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/18 CtrlChar/param/1]
+a
+
+[STm03_02::command/18 CtrlChar/param/3]
+none
+
+[STm03_02::command/18 CtrlChar/param/11]
+none
+
+[STm03_02::command/18 CtrlChar/param/12]
+none
+
+[STm03_02::command/18 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/20 SetChar/param/2]
+none
+
+[STm03_02::command/20 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/20 SetChar/param/4]
+a
+
+[STm03_02::command/20 SetChar/param/5]
+002
+
+[STm03_02::command/20 SetChar/param/6]
+none
+
+[STm03_02::command/21 CtrlBg/param/10]
+none
+
+[STm03_02::command/21 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/22 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/22 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/22 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/22 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/22 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/23 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/23 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/23 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/23 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/23 SetTalk/param/7]
+Looks abandoned.
+
+[STm03_02::command/23 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/24 SetCharHead/param/5]
+avg1_112
+
+[STm03_02::command/24 SetCharHead/param/6]
+a
+
+[STm03_02::command/24 SetCharHead/param/7]
+002
+
+[STm03_02::command/24 SetCharHead/param/8]
+none
+
+[STm03_02::command/25 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/25 CtrlChar/param/1]
+a
+
+[STm03_02::command/25 CtrlChar/param/2]
+003
+
+[STm03_02::command/25 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm03_02::command/25 CtrlChar/param/11]
+none
+
+[STm03_02::command/25 CtrlChar/param/12]
+none
+
+[STm03_02::command/25 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/26 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/26 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/26 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/26 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/26 SetTalk/param/7]
+Hey, the greatest Trekkers always live in places like this.
+
+[STm03_02::command/26 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/27 SetCharHead/param/5]
+avg1_112
+
+[STm03_02::command/27 SetCharHead/param/6]
+a
+
+[STm03_02::command/27 SetCharHead/param/7]
+002
+
+[STm03_02::command/27 SetCharHead/param/8]
+none
+
+[STm03_02::command/28 SetChar/param/2]
+none
+
+[STm03_02::command/28 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/28 SetChar/param/4]
+a
+
+[STm03_02::command/28 SetChar/param/5]
+002
+
+[STm03_02::command/28 SetChar/param/6]
+none
+
+[STm03_02::command/29 CtrlBg/param/10]
+none
+
+[STm03_02::command/29 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/30 SetAudio/param/1]
+se_061
+
+[STm03_02::command/32 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/32 CtrlChar/param/1]
+a
+
+[STm03_02::command/32 CtrlChar/param/3]
+none
+
+[STm03_02::command/32 CtrlChar/param/11]
+none
+
+[STm03_02::command/32 CtrlChar/param/12]
+none
+
+[STm03_02::command/32 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/33 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/33 CtrlChar/param/1]
+a
+
+[STm03_02::command/33 CtrlChar/param/3]
+none
+
+[STm03_02::command/33 CtrlChar/param/11]
+none
+
+[STm03_02::command/33 CtrlChar/param/12]
+none
+
+[STm03_02::command/33 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/34 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/34 CtrlChar/param/1]
+a
+
+[STm03_02::command/34 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/34 CtrlChar/param/11]
+diantou2
+
+[STm03_02::command/34 CtrlChar/param/12]
+none
+
+[STm03_02::command/34 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/35 SetAudio/param/1]
+se_065
+
+[STm03_02::command/36 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/36 CtrlChar/param/1]
+a
+
+[STm03_02::command/36 CtrlChar/param/2]
+013
+
+[STm03_02::command/36 CtrlChar/param/3]
+none
+
+[STm03_02::command/36 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/36 CtrlChar/param/12]
+none
+
+[STm03_02::command/36 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/37 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/37 CtrlChar/param/1]
+a
+
+[STm03_02::command/37 CtrlChar/param/3]
+none
+
+[STm03_02::command/37 CtrlChar/param/11]
+none
+
+[STm03_02::command/37 CtrlChar/param/12]
+none
+
+[STm03_02::command/37 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/38 CtrlBg/param/10]
+none
+
+[STm03_02::command/38 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/39 CtrlStage/param/9]
+none
+
+[STm03_02::command/39 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/40 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/40 CtrlChar/param/1]
+a
+
+[STm03_02::command/40 CtrlChar/param/3]
+avg_emoji_star
+
+[STm03_02::command/40 CtrlChar/param/11]
+none
+
+[STm03_02::command/40 CtrlChar/param/12]
+none
+
+[STm03_02::command/40 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/41 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/41 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/41 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/41 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/41 SetTalk/param/7]
+Like in those Stella Dramas, you know? The little green swordmaster hiding out in a spooky cave.
+
+[STm03_02::command/41 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/42 CtrlBg/param/10]
+none
+
+[STm03_02::command/42 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/44 CtrlStage/param/9]
+none
+
+[STm03_02::command/44 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/45 SetMainRoleTalk/param/2]
+009
+
+[STm03_02::command/45 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/45 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/45 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/45 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/46 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/46 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/46 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/46 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/46 SetTalk/param/7]
+But Bastelina said ...==B== the info broker was staying at the Trekkers' House.
+
+[STm03_02::command/46 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/47 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/47 SetMainRoleTalk/param/3]
+close
+
+[STm03_02::command/47 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/47 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/47 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/48 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/48 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/48 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/48 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/48 SetTalk/param/7]
+Trekkers' Houses are supposed to be outposts for the Trekker Association, places to help Trekkers and hand out commissions.
+
+[STm03_02::command/48 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/49 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/49 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm03_02::command/49 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/49 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/49 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/50 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/50 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/50 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/50 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/50 SetTalk/param/7]
+What happened here?==RT==This path is totally overgrown. No one's used it in forever.
+
+[STm03_02::command/50 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/51 SetAudio/param/1]
+se_061
+
+[STm03_02::command/52 SetChar/param/2]
+C_in
+
+[STm03_02::command/52 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/52 SetChar/param/4]
+a
+
+[STm03_02::command/52 SetChar/param/5]
+002
+
+[STm03_02::command/52 SetChar/param/6]
+none
+
+[STm03_02::command/53 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/53 CtrlChar/param/1]
+a
+
+[STm03_02::command/53 CtrlChar/param/2]
+005
+
+[STm03_02::command/53 CtrlChar/param/3]
+none
+
+[STm03_02::command/53 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/53 CtrlChar/param/12]
+none
+
+[STm03_02::command/53 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/54 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/54 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/54 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/54 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/54 SetTalk/param/7]
+Suspicious. Dangerous.
+
+[STm03_02::command/54 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/55 SetChar/param/2]
+none
+
+[STm03_02::command/55 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/55 SetChar/param/4]
+a
+
+[STm03_02::command/55 SetChar/param/5]
+002
+
+[STm03_02::command/55 SetChar/param/6]
+none
+
+[STm03_02::command/56 SetAudio/param/1]
+se_101
+
+[STm03_02::command/57 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/57 CtrlChar/param/1]
+a
+
+[STm03_02::command/57 CtrlChar/param/3]
+none
+
+[STm03_02::command/57 CtrlChar/param/11]
+none
+
+[STm03_02::command/57 CtrlChar/param/12]
+none
+
+[STm03_02::command/57 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/58 SetAudio/param/1]
+se_101
+
+[STm03_02::command/59 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/59 CtrlChar/param/1]
+a
+
+[STm03_02::command/59 CtrlChar/param/3]
+none
+
+[STm03_02::command/59 CtrlChar/param/11]
+none
+
+[STm03_02::command/59 CtrlChar/param/12]
+none
+
+[STm03_02::command/59 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/60 CtrlStage/param/9]
+none
+
+[STm03_02::command/60 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/61 SetAudio/param/1]
+se_047
+
+[STm03_02::command/62 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/62 CtrlChar/param/1]
+a
+
+[STm03_02::command/62 CtrlChar/param/2]
+004
+
+[STm03_02::command/62 CtrlChar/param/3]
+none
+
+[STm03_02::command/62 CtrlChar/param/11]
+youchupeng
+
+[STm03_02::command/62 CtrlChar/param/12]
+none
+
+[STm03_02::command/62 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/63 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/63 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/63 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/63 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/63 SetTalk/param/7]
+Quit overthinking it! Only one way to find out—let's go!
+
+[STm03_02::command/63 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/64 SetAudio/param/1]
+se_102
+
+[STm03_02::command/65 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[STm03_02::command/65 SetTrans/param/3]
+Linear
+
+[STm03_02::command/65 SetTrans/param/8]
+default
+
+[STm03_02::command/66 CtrlStage/param/9]
+none
+
+[STm03_02::command/66 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/67 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/67 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/67 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/68 SetBg/param/1]
+ruin_travellers_home_inside
+
+[STm03_02::command/68 SetBg/param/2]
+0
+
+[STm03_02::command/68 SetBg/param/3]
+Linear
+
+[STm03_02::command/68 SetBg/param/6]
+default
+
+[STm03_02::command/69 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STm03_02::command/69 SetTrans/param/3]
+Linear
+
+[STm03_02::command/69 SetTrans/param/8]
+default
+
+[STm03_02::command/70 SetAudio/param/1]
+se_005
+
+[STm03_02::command/71 SetSceneHeading/param/0]
+09:05
+
+[STm03_02::command/71 SetSceneHeading/param/1]
+Pluvia Month
+
+[STm03_02::command/71 SetSceneHeading/param/2]
+16th
+
+[STm03_02::command/71 SetSceneHeading/param/3]
+Outside Philae
+
+[STm03_02::command/71 SetSceneHeading/param/4]
+Old Trekkers' House
+
+[STm03_02::command/73 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/73 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/73 SetChar/param/4]
+a
+
+[STm03_02::command/73 SetChar/param/5]
+007
+
+[STm03_02::command/73 SetChar/param/6]
+none
+
+[STm03_02::command/74 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/74 CtrlChar/param/1]
+a
+
+[STm03_02::command/74 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/74 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/74 CtrlChar/param/12]
+none
+
+[STm03_02::command/74 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/75 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/75 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/75 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/75 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/75 SetTalk/param/7]
+Hello? Anyone home?==W====RT==<size=50>He==W==lloooo==W==?==W==
+
+[STm03_02::command/75 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/76 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/76 CtrlChar/param/1]
+a
+
+[STm03_02::command/76 CtrlChar/param/3]
+close
+
+[STm03_02::command/76 CtrlChar/param/11]
+none
+
+[STm03_02::command/76 CtrlChar/param/12]
+none
+
+[STm03_02::command/76 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/84 SetChar/param/2]
+L_in
+
+[STm03_02::command/84 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/84 SetChar/param/4]
+a
+
+[STm03_02::command/84 SetChar/param/5]
+007
+
+[STm03_02::command/84 SetChar/param/6]
+none
+
+[STm03_02::command/85 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/85 CtrlChar/param/1]
+a
+
+[STm03_02::command/85 CtrlChar/param/3]
+none
+
+[STm03_02::command/85 CtrlChar/param/11]
+none
+
+[STm03_02::command/85 CtrlChar/param/12]
+none
+
+[STm03_02::command/85 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/86 CtrlStage/param/9]
+none
+
+[STm03_02::command/86 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/87 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/87 CtrlChar/param/1]
+a
+
+[STm03_02::command/87 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/87 CtrlChar/param/11]
+none
+
+[STm03_02::command/87 CtrlChar/param/12]
+none
+
+[STm03_02::command/87 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/88 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/88 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/88 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/88 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/88 SetTalk/param/7]
+You dummy! You'll give them a heart attack.
+
+[STm03_02::command/88 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/89 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/89 CtrlChar/param/1]
+a
+
+[STm03_02::command/89 CtrlChar/param/2]
+012
+
+[STm03_02::command/89 CtrlChar/param/3]
+none
+
+[STm03_02::command/89 CtrlChar/param/11]
+none
+
+[STm03_02::command/89 CtrlChar/param/12]
+none
+
+[STm03_02::command/89 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/90 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/90 CtrlChar/param/1]
+a
+
+[STm03_02::command/90 CtrlChar/param/2]
+008
+
+[STm03_02::command/90 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm03_02::command/90 CtrlChar/param/11]
+none
+
+[STm03_02::command/90 CtrlChar/param/12]
+none
+
+[STm03_02::command/90 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/91 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/91 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/91 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/91 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/91 SetTalk/param/7]
+Ahem... Pardon the intrusion. We're the New Star Guild...==W== It's empty?
+
+[STm03_02::command/91 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/92 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/92 CtrlChar/param/1]
+a
+
+[STm03_02::command/92 CtrlChar/param/2]
+009
+
+[STm03_02::command/92 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/92 CtrlChar/param/11]
+none
+
+[STm03_02::command/92 CtrlChar/param/12]
+none
+
+[STm03_02::command/92 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/95 CtrlStage/param/9]
+none
+
+[STm03_02::command/95 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/96 CtrlBg/param/10]
+none
+
+[STm03_02::command/96 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/97 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/97 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/97 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/97 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/97 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/98 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/98 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/98 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/98 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/98 SetTalk/param/7]
+Hm, the inside's actually pretty clean. It looks like someone lives here after all.
+
+[STm03_02::command/98 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/99 SetAudio/param/1]
+se_075
+
+[STm03_02::command/100 CtrlBg/param/10]
+none
+
+[STm03_02::command/100 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/101 SetChar/param/2]
+none
+
+[STm03_02::command/101 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/101 SetChar/param/4]
+a
+
+[STm03_02::command/101 SetChar/param/5]
+002
+
+[STm03_02::command/101 SetChar/param/6]
+none
+
+[STm03_02::command/102 SetAudio/param/1]
+se_062
+
+[STm03_02::command/103 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/103 CtrlChar/param/1]
+a
+
+[STm03_02::command/103 CtrlChar/param/3]
+none
+
+[STm03_02::command/103 CtrlChar/param/11]
+none
+
+[STm03_02::command/103 CtrlChar/param/12]
+none
+
+[STm03_02::command/103 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/104 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/104 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/104 SetTalk/param/7]
+Someone's here.
+
+[STm03_02::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/106 SetAudio/param/1]
+se_052
+
+[STm03_02::command/107 CtrlBg/param/10]
+none
+
+[STm03_02::command/107 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/108 SetChar/param/2]
+none
+
+[STm03_02::command/108 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/108 SetChar/param/4]
+a
+
+[STm03_02::command/108 SetChar/param/5]
+002
+
+[STm03_02::command/108 SetChar/param/6]
+none
+
+[STm03_02::command/109 SetAudio/param/1]
+se_077
+
+[STm03_02::command/110 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/110 SetBGM/param/3]
+m36
+
+[STm03_02::command/110 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/111 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/111 CtrlChar/param/1]
+a
+
+[STm03_02::command/111 CtrlChar/param/3]
+none
+
+[STm03_02::command/111 CtrlChar/param/11]
+none
+
+[STm03_02::command/111 CtrlChar/param/12]
+none
+
+[STm03_02::command/111 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/112 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/112 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/112 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/112 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/112 SetTalk/param/7]
+Shhh! This is the crucial moment...
+
+[STm03_02::command/112 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/1]
+0
+
+[STm03_02::command/114 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/114 SetTalk/param/7]
+In a dim corner of the lobby stand several prize claw machines. The girl who spoke is hunched over one of them.
+
+[STm03_02::command/114 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/115 SetAudio/param/1]
+se_288
+
+[STm03_02::command/116 SetTalk/param/1]
+0
+
+[STm03_02::command/116 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/116 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/116 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/116 SetTalk/param/7]
+She grips the joystick, her focus absolute as the gleaming silver claw descends toward its prize.
+
+[STm03_02::command/116 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/117 SetAudio/param/1]
+se_084
+
+[STm03_02::command/118 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/119 SetTalk/param/1]
+0
+
+[STm03_02::command/119 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/119 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/119 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/119 SetTalk/param/7]
+The claw seizes a plushie of a black-and-white penguin named Sherlock—a common sight in the Monoliths.
+
+[STm03_02::command/119 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/120 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/121 SetChar/param/2]
+none
+
+[STm03_02::command/121 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/121 SetChar/param/4]
+a
+
+[STm03_02::command/121 SetChar/param/5]
+002
+
+[STm03_02::command/121 SetChar/param/6]
+none
+
+[STm03_02::command/122 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/122 CtrlChar/param/1]
+a
+
+[STm03_02::command/122 CtrlChar/param/3]
+none
+
+[STm03_02::command/122 CtrlChar/param/11]
+none
+
+[STm03_02::command/122 CtrlChar/param/12]
+none
+
+[STm03_02::command/122 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/123 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/123 CtrlChar/param/1]
+a
+
+[STm03_02::command/123 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm03_02::command/123 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/123 CtrlChar/param/12]
+none
+
+[STm03_02::command/123 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/124 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/124 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/124 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/124 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/124 SetTalk/param/7]
+...Phew! Nailed it.
+
+[STm03_02::command/124 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/125 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/125 CtrlChar/param/1]
+a
+
+[STm03_02::command/125 CtrlChar/param/3]
+none
+
+[STm03_02::command/125 CtrlChar/param/11]
+none
+
+[STm03_02::command/125 CtrlChar/param/12]
+none
+
+[STm03_02::command/125 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/126 SetChar/param/2]
+L_in
+
+[STm03_02::command/126 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/126 SetChar/param/4]
+a
+
+[STm03_02::command/126 SetChar/param/5]
+002
+
+[STm03_02::command/126 SetChar/param/6]
+none
+
+[STm03_02::command/127 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/127 CtrlChar/param/1]
+a
+
+[STm03_02::command/127 CtrlChar/param/3]
+none
+
+[STm03_02::command/127 CtrlChar/param/11]
+none
+
+[STm03_02::command/127 CtrlChar/param/12]
+none
+
+[STm03_02::command/127 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/128 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/128 CtrlChar/param/1]
+a
+
+[STm03_02::command/128 CtrlChar/param/2]
+007
+
+[STm03_02::command/128 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/128 CtrlChar/param/11]
+daintou
+
+[STm03_02::command/128 CtrlChar/param/12]
+none
+
+[STm03_02::command/128 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/129 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/129 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/129 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/129 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/129 SetTalk/param/7]
+Whoa, nice one!
+
+[STm03_02::command/129 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/130 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/130 CtrlChar/param/1]
+a
+
+[STm03_02::command/130 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/130 CtrlChar/param/11]
+none
+
+[STm03_02::command/130 CtrlChar/param/12]
+none
+
+[STm03_02::command/130 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/131 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/131 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/131 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/131 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/131 SetTalk/param/7]
+Hehe, thanks!
+
+[STm03_02::command/131 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/133 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/133 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/133 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/133 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/133 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/134 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/134 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/134 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/134 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/134 SetTalk/param/7]
+Could she be...?==B== No, doesn't seem likely.
+
+[STm03_02::command/134 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/135 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/135 CtrlChar/param/1]
+a
+
+[STm03_02::command/135 CtrlChar/param/2]
+013
+
+[STm03_02::command/135 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/135 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/135 CtrlChar/param/12]
+none
+
+[STm03_02::command/135 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/136 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/136 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/136 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/136 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/136 SetTalk/param/7]
+Green ... nimble fingers...
+
+[STm03_02::command/136 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/137 SetAudio/param/1]
+se_072
+
+[STm03_02::command/138 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/138 CtrlChar/param/1]
+a
+
+[STm03_02::command/138 CtrlChar/param/2]
+005
+
+[STm03_02::command/138 CtrlChar/param/3]
+none
+
+[STm03_02::command/138 CtrlChar/param/11]
+none
+
+[STm03_02::command/138 CtrlChar/param/12]
+none
+
+[STm03_02::command/138 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/139 CtrlStage/param/9]
+none
+
+[STm03_02::command/139 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/140 SetAudio/param/1]
+se_077
+
+[STm03_02::command/141 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/141 CtrlChar/param/1]
+a
+
+[STm03_02::command/141 CtrlChar/param/2]
+006
+
+[STm03_02::command/141 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/141 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/141 CtrlChar/param/12]
+none
+
+[STm03_02::command/141 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/142 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/142 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/142 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/142 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/142 SetTalk/param/7]
+Excuse me ... are you a swordmaster?
+
+[STm03_02::command/142 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/143 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/143 CtrlChar/param/1]
+a
+
+[STm03_02::command/143 CtrlChar/param/2]
+011
+
+[STm03_02::command/143 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/143 CtrlChar/param/11]
+none
+
+[STm03_02::command/143 CtrlChar/param/12]
+none
+
+[STm03_02::command/143 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/144 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/144 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/144 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/144 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/144 SetTalk/param/7]
+Eh?
+
+[STm03_02::command/144 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/146 CtrlStage/param/9]
+none
+
+[STm03_02::command/146 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/147 SetChar/param/2]
+C_in
+
+[STm03_02::command/147 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/147 SetChar/param/4]
+a
+
+[STm03_02::command/147 SetChar/param/5]
+002
+
+[STm03_02::command/147 SetChar/param/6]
+none
+
+[STm03_02::command/148 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/148 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/148 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/148 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/148 SetTalk/param/7]
+Noya, reality is not a Stella Drama.
+
+[STm03_02::command/148 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/149 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/149 CtrlChar/param/1]
+a
+
+[STm03_02::command/149 CtrlChar/param/2]
+006
+
+[STm03_02::command/149 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm03_02::command/149 CtrlChar/param/11]
+none
+
+[STm03_02::command/149 CtrlChar/param/12]
+none
+
+[STm03_02::command/149 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/150 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/150 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/150 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/150 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/150 SetTalk/param/7]
+A-Anyway, we're the New Star Guild. Terribly sorry to barge in like this.
+
+[STm03_02::command/150 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/151 SetAudio/param/1]
+se_077
+
+[STm03_02::command/152 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/152 CtrlChar/param/1]
+a
+
+[STm03_02::command/152 CtrlChar/param/3]
+none
+
+[STm03_02::command/152 CtrlChar/param/11]
+JuGong
+
+[STm03_02::command/152 CtrlChar/param/12]
+none
+
+[STm03_02::command/152 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/153 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/153 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/153 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/153 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/153 SetTalk/param/7]
+We're looking for an information broker named Serena.
+
+[STm03_02::command/153 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/155 SetChar/param/2]
+C_in
+
+[STm03_02::command/155 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/155 SetChar/param/4]
+a
+
+[STm03_02::command/155 SetChar/param/5]
+018
+
+[STm03_02::command/155 SetChar/param/6]
+none
+
+[STm03_02::command/156 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/156 CtrlChar/param/1]
+a
+
+[STm03_02::command/156 CtrlChar/param/2]
+002
+
+[STm03_02::command/156 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/156 CtrlChar/param/11]
+none
+
+[STm03_02::command/156 CtrlChar/param/12]
+none
+
+[STm03_02::command/156 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/157 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/157 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/157 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/157 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/157 SetTalk/param/7]
+Looking for Serena, huh? Heh.
+
+[STm03_02::command/157 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/158 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/158 CtrlChar/param/1]
+a
+
+[STm03_02::command/158 CtrlChar/param/2]
+007
+
+[STm03_02::command/158 CtrlChar/param/3]
+none
+
+[STm03_02::command/158 CtrlChar/param/11]
+none
+
+[STm03_02::command/158 CtrlChar/param/12]
+none
+
+[STm03_02::command/158 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/159 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/159 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/159 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/159 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/159 SetTalk/param/7]
+Yeah, well, bad news: she's not here. She's not one for public appearances.
+
+[STm03_02::command/159 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/160 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/160 CtrlChar/param/1]
+a
+
+[STm03_02::command/160 CtrlChar/param/2]
+003
+
+[STm03_02::command/160 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/160 CtrlChar/param/11]
+none
+
+[STm03_02::command/160 CtrlChar/param/12]
+none
+
+[STm03_02::command/160 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/161 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/161 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/161 SetTalk/param/7]
+But lucky for you, I know how you can find her.
+
+[STm03_02::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/162 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/162 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/162 SetChar/param/4]
+a
+
+[STm03_02::command/162 SetChar/param/5]
+010
+
+[STm03_02::command/162 SetChar/param/6]
+none
+
+[STm03_02::command/163 CtrlStage/param/9]
+none
+
+[STm03_02::command/163 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/164 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/164 CtrlChar/param/1]
+a
+
+[STm03_02::command/164 CtrlChar/param/3]
+close
+
+[STm03_02::command/164 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/164 CtrlChar/param/12]
+none
+
+[STm03_02::command/164 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/165 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/165 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/165 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/165 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/165 SetTalk/param/7]
+Oh, thank goodness! Could you take us to her, please? About the price...
+
+[STm03_02::command/165 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/166 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/166 CtrlChar/param/1]
+a
+
+[STm03_02::command/166 CtrlChar/param/2]
+009
+
+[STm03_02::command/166 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/166 CtrlChar/param/11]
+none
+
+[STm03_02::command/166 CtrlChar/param/12]
+none
+
+[STm03_02::command/166 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/167 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/167 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/167 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/167 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/167 SetTalk/param/7]
+Hmm, okay. But first, you have to play with me... Er, I mean, pass my trial! Can't just help any random crew that wanders in, you know.
+
+[STm03_02::command/167 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/168 SetChar/param/2]
+R_in
+
+[STm03_02::command/168 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/168 SetChar/param/4]
+a
+
+[STm03_02::command/168 SetChar/param/5]
+006
+
+[STm03_02::command/168 SetChar/param/6]
+none
+
+[STm03_02::command/169 CtrlStage/param/9]
+none
+
+[STm03_02::command/169 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/170 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/170 CtrlChar/param/1]
+a
+
+[STm03_02::command/170 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/170 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/170 CtrlChar/param/12]
+none
+
+[STm03_02::command/170 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/171 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/171 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/171 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/171 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/171 SetTalk/param/7]
+Ooh, I get it! It's just like in the stories! To meet the legendary hermit, you have to defeat their loyal guardian first!
+
+[STm03_02::command/171 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/172 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/172 CtrlChar/param/1]
+a
+
+[STm03_02::command/172 CtrlChar/param/2]
+011
+
+[STm03_02::command/172 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/172 CtrlChar/param/11]
+none
+
+[STm03_02::command/172 CtrlChar/param/12]
+none
+
+[STm03_02::command/172 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/173 SetAudio/param/1]
+se_070
+
+[STm03_02::command/174 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/174 CtrlChar/param/1]
+a
+
+[STm03_02::command/174 CtrlChar/param/2]
+017
+
+[STm03_02::command/174 CtrlChar/param/3]
+close
+
+[STm03_02::command/174 CtrlChar/param/11]
+buman
+
+[STm03_02::command/174 CtrlChar/param/12]
+none
+
+[STm03_02::command/174 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/175 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/175 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/175 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/175 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/175 SetTalk/param/7]
+I am NOT her guardian!
+
+[STm03_02::command/175 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/176 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/176 CtrlChar/param/1]
+a
+
+[STm03_02::command/176 CtrlChar/param/2]
+007
+
+[STm03_02::command/176 CtrlChar/param/3]
+close
+
+[STm03_02::command/176 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/176 CtrlChar/param/12]
+none
+
+[STm03_02::command/176 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/177 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/177 CtrlChar/param/1]
+a
+
+[STm03_02::command/177 CtrlChar/param/2]
+008
+
+[STm03_02::command/177 CtrlChar/param/3]
+none
+
+[STm03_02::command/177 CtrlChar/param/11]
+none
+
+[STm03_02::command/177 CtrlChar/param/12]
+none
+
+[STm03_02::command/177 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/178 SetMainRoleTalk/param/2]
+025
+
+[STm03_02::command/178 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STm03_02::command/178 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/178 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/178 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/179 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/179 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/179 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/179 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/179 SetTalk/param/7]
+S-Sorry! Apologies for Noya...==B====RT==So, about this trial...
+
+[STm03_02::command/179 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/180 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/180 CtrlChar/param/1]
+a
+
+[STm03_02::command/180 CtrlChar/param/3]
+none
+
+[STm03_02::command/180 CtrlChar/param/11]
+none
+
+[STm03_02::command/180 CtrlChar/param/12]
+none
+
+[STm03_02::command/180 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/181 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/181 CtrlChar/param/1]
+a
+
+[STm03_02::command/181 CtrlChar/param/3]
+none
+
+[STm03_02::command/181 CtrlChar/param/11]
+none
+
+[STm03_02::command/181 CtrlChar/param/12]
+none
+
+[STm03_02::command/181 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/182 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/182 CtrlChar/param/1]
+a
+
+[STm03_02::command/182 CtrlChar/param/2]
+024
+
+[STm03_02::command/182 CtrlChar/param/3]
+none
+
+[STm03_02::command/182 CtrlChar/param/11]
+none
+
+[STm03_02::command/182 CtrlChar/param/12]
+none
+
+[STm03_02::command/182 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/183 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/183 CtrlChar/param/1]
+a
+
+[STm03_02::command/183 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/183 CtrlChar/param/11]
+none
+
+[STm03_02::command/183 CtrlChar/param/12]
+none
+
+[STm03_02::command/183 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/184 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/184 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/184 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/184 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/184 SetTalk/param/7]
+This, of course! A prize claw duel! You each control a claw, and whoever snags the most plushies before time's up wins.
+
+[STm03_02::command/184 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/185 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/185 CtrlChar/param/1]
+a
+
+[STm03_02::command/185 CtrlChar/param/2]
+009
+
+[STm03_02::command/185 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/185 CtrlChar/param/11]
+diantou2
+
+[STm03_02::command/185 CtrlChar/param/12]
+none
+
+[STm03_02::command/185 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/186 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/186 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/186 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/187 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/187 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/187 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/187 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/187 SetTalk/param/7]
+Sounds like a real challenge, huh?
+
+[STm03_02::command/187 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/189 SetChar/param/2]
+L_in
+
+[STm03_02::command/189 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/189 SetChar/param/4]
+a
+
+[STm03_02::command/189 SetChar/param/5]
+007
+
+[STm03_02::command/189 SetChar/param/6]
+none
+
+[STm03_02::command/190 SetChar/param/2]
+R_in
+
+[STm03_02::command/190 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/190 SetChar/param/4]
+a
+
+[STm03_02::command/190 SetChar/param/5]
+008
+
+[STm03_02::command/190 SetChar/param/6]
+none
+
+[STm03_02::command/191 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/191 CtrlChar/param/1]
+a
+
+[STm03_02::command/191 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/191 CtrlChar/param/11]
+none
+
+[STm03_02::command/191 CtrlChar/param/12]
+none
+
+[STm03_02::command/191 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/192 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/192 CtrlChar/param/1]
+a
+
+[STm03_02::command/192 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/192 CtrlChar/param/11]
+none
+
+[STm03_02::command/192 CtrlChar/param/12]
+none
+
+[STm03_02::command/192 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/193 SetMainRoleTalk/param/2]
+025
+
+[STm03_02::command/193 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/193 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/193 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/193 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/194 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/194 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/194 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/194 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/194 SetTalk/param/7]
+...
+
+[STm03_02::command/194 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/195 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/195 CtrlChar/param/1]
+a
+
+[STm03_02::command/195 CtrlChar/param/3]
+close
+
+[STm03_02::command/195 CtrlChar/param/11]
+none
+
+[STm03_02::command/195 CtrlChar/param/12]
+none
+
+[STm03_02::command/195 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/196 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/196 CtrlChar/param/1]
+a
+
+[STm03_02::command/196 CtrlChar/param/3]
+close
+
+[STm03_02::command/196 CtrlChar/param/11]
+none
+
+[STm03_02::command/196 CtrlChar/param/12]
+none
+
+[STm03_02::command/196 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/197 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/197 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/197 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/197 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/197 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/198 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/198 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/198 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/198 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/198 SetTalk/param/7]
+She just wants someone to play with, doesn't she?
+
+[STm03_02::command/198 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/199 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/199 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/199 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/199 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/201 SetAudio/param/1]
+se_014
+
+[STm03_02::command/203 SetPhone/param/2]
+103
+
+[STm03_02::command/204 SetPhoneMsg/param/1]
+avg1_103
+
+[STm03_02::command/204 SetPhoneMsg/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/204 SetPhoneMsg/param/3]
+0
+
+[STm03_02::command/204 SetPhoneMsg/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/204 SetPhoneMsg/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/204 SetPhoneMsg/param/7]
+==PLAYER_NAME==, I want it.
+
+[STm03_02::command/204 SetPhoneMsg/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/1]
+avg3_100
+
+[STm03_02::command/205 SetPhoneMsg/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/3]
+0
+
+[STm03_02::command/205 SetPhoneMsg/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/205 SetPhoneMsg/param/7]
+?
+
+[STm03_02::command/205 SetPhoneMsg/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/1]
+avg1_103
+
+[STm03_02::command/206 SetPhoneMsg/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/3]
+0
+
+[STm03_02::command/206 SetPhoneMsg/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/206 SetPhoneMsg/param/7]
+I want that plushie.
+
+[STm03_02::command/206 SetPhoneMsg/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/207 SetPhone/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/208 SetAudio/param/1]
+se_065
+
+[STm03_02::command/209 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/209 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/209 SetChar/param/4]
+b
+
+[STm03_02::command/209 SetChar/param/5]
+002
+
+[STm03_02::command/209 SetChar/param/6]
+none
+
+[STm03_02::command/210 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/210 CtrlChar/param/1]
+b
+
+[STm03_02::command/210 CtrlChar/param/3]
+none
+
+[STm03_02::command/210 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/210 CtrlChar/param/12]
+none
+
+[STm03_02::command/210 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/211 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/211 CtrlChar/param/1]
+b
+
+[STm03_02::command/211 CtrlChar/param/3]
+avg_emoji_star
+
+[STm03_02::command/211 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/211 CtrlChar/param/12]
+none
+
+[STm03_02::command/211 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/212 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/212 CtrlChar/param/1]
+b
+
+[STm03_02::command/212 CtrlChar/param/3]
+none
+
+[STm03_02::command/212 CtrlChar/param/11]
+none
+
+[STm03_02::command/212 CtrlChar/param/12]
+none
+
+[STm03_02::command/212 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/214 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/214 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/214 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/214 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/214 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/215 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/215 SetTalk/param/7]
+Whoa, I've never seen Amber get this excited about anything.
+
+[STm03_02::command/215 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/216 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/216 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/216 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/216 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/216 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/217 SetChar/param/2]
+C_in
+
+[STm03_02::command/217 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/217 SetChar/param/4]
+a
+
+[STm03_02::command/217 SetChar/param/5]
+002
+
+[STm03_02::command/217 SetChar/param/6]
+none
+
+[STm03_02::command/218 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/218 CtrlChar/param/1]
+a
+
+[STm03_02::command/218 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/218 CtrlChar/param/11]
+none
+
+[STm03_02::command/218 CtrlChar/param/12]
+none
+
+[STm03_02::command/218 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/219 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/219 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/219 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/219 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/219 SetTalk/param/7]
+Knew you couldn't resist! See? Your friend is already raring to go♪
+
+[STm03_02::command/219 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/220 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/220 CtrlChar/param/1]
+a
+
+[STm03_02::command/220 CtrlChar/param/2]
+006
+
+[STm03_02::command/220 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/220 CtrlChar/param/11]
+none
+
+[STm03_02::command/220 CtrlChar/param/12]
+none
+
+[STm03_02::command/220 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/221 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/221 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/221 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/221 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/221 SetTalk/param/7]
+Hmph. Oh, I get it now! You weren't looking for Serena at all. You came for ME!
+
+[STm03_02::command/221 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/222 SetAudio/param/1]
+se_095
+
+[STm03_02::command/223 SetMainRoleTalk/param/2]
+021
+
+[STm03_02::command/223 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/223 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/223 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/223 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/224 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/224 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/224 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/224 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/224 SetTalk/param/7]
+...
+
+[STm03_02::command/224 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/225 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/225 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/225 SetBGM/param/4]
+4000ms
+
+[STm03_02::command/226 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/226 CtrlChar/param/1]
+a
+
+[STm03_02::command/226 CtrlChar/param/2]
+003
+
+[STm03_02::command/226 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/226 CtrlChar/param/11]
+niunie
+
+[STm03_02::command/226 CtrlChar/param/12]
+none
+
+[STm03_02::command/226 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/227 SetTalk/param/1]
+avg3_999
+
+[STm03_02::command/227 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/227 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/227 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/227 SetTalk/param/7]
+You must've heard stories about the Hidden Lord of the Prize Claw and came looking for a challenge, right?
+
+[STm03_02::command/227 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/228 CtrlStage/param/9]
+none
+
+[STm03_02::command/228 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/229 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/229 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/229 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/229 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/229 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/230 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/230 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/230 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/230 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/230 SetTalk/param/7]
+Okay, looks like we're not getting any answers until we play along.
+
+[STm03_02::command/230 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/232 CtrlStage/param/9]
+none
+
+[STm03_02::command/232 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/233 SetPersonalityChoice/param/2]
+Accept her challenge
+
+[STm03_02::command/233 SetPersonalityChoice/param/3]
+Show her what you're made of
+
+[STm03_02::command/233 SetPersonalityChoice/param/4]
+Scare her off
+
+[STm03_02::command/233 SetPersonalityChoice/param/5]
+a
+
+[STm03_02::command/233 SetPersonalityChoice/param/6]
+002
+
+[STm03_02::command/233 SetPersonalityChoice/param/7]
+none
+
+[STm03_02::command/233 SetPersonalityChoice/param/8]
+What will it be?
+
+[STm03_02::command/233 SetPersonalityChoice/param/9]
+[EMPTY_SOURCE]
+
+[STm03_02::command/235 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/235 SetBGM/param/3]
+m44
+
+[STm03_02::command/235 SetBGM/param/4]
+none
+
+[STm03_02::command/236 CtrlStage/param/9]
+none
+
+[STm03_02::command/236 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/237 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/237 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/237 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/237 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/237 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/238 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/238 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/238 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/238 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/238 SetTalk/param/7]
+Since Amber wants to play, might as well go along with it.
+
+[STm03_02::command/238 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/239 CtrlStage/param/9]
+none
+
+[STm03_02::command/239 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/240 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/240 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STm03_02::command/240 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/240 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/240 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/241 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/241 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/241 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/241 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/241 SetTalk/param/7]
+Fine, we accept your challenge. But if we win, you have to take us to Serena.
+
+[STm03_02::command/241 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/242 SetChar/param/2]
+C_in
+
+[STm03_02::command/242 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/242 SetChar/param/4]
+a
+
+[STm03_02::command/242 SetChar/param/5]
+011
+
+[STm03_02::command/242 SetChar/param/6]
+none
+
+[STm03_02::command/243 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/243 CtrlChar/param/1]
+a
+
+[STm03_02::command/243 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/243 CtrlChar/param/11]
+none
+
+[STm03_02::command/243 CtrlChar/param/12]
+none
+
+[STm03_02::command/243 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/244 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/244 CtrlChar/param/1]
+a
+
+[STm03_02::command/244 CtrlChar/param/2]
+002
+
+[STm03_02::command/244 CtrlChar/param/3]
+close
+
+[STm03_02::command/244 CtrlChar/param/11]
+none
+
+[STm03_02::command/244 CtrlChar/param/12]
+none
+
+[STm03_02::command/244 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/245 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/245 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/245 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/245 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/245 SetTalk/param/7]
+You do realize you're challenging the Lord of the Prize Claw, right? Finding Serena is nothing. If you beat me, I'll do anything you want.
+
+[STm03_02::command/245 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/246 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/246 CtrlChar/param/1]
+a
+
+[STm03_02::command/246 CtrlChar/param/3]
+none
+
+[STm03_02::command/246 CtrlChar/param/11]
+none
+
+[STm03_02::command/246 CtrlChar/param/12]
+none
+
+[STm03_02::command/246 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/247 SetChar/param/2]
+none
+
+[STm03_02::command/247 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/247 SetChar/param/4]
+a
+
+[STm03_02::command/247 SetChar/param/5]
+002
+
+[STm03_02::command/247 SetChar/param/6]
+none
+
+[STm03_02::command/248 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/248 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm03_02::command/248 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/248 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/248 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/249 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/249 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/249 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/249 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/249 SetTalk/param/7]
+Then...==B== Amber...
+
+[STm03_02::command/249 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/250 SetChar/param/2]
+C_in
+
+[STm03_02::command/250 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/250 SetChar/param/4]
+a
+
+[STm03_02::command/250 SetChar/param/5]
+002
+
+[STm03_02::command/250 SetChar/param/6]
+none
+
+[STm03_02::command/251 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/251 CtrlChar/param/1]
+a
+
+[STm03_02::command/251 CtrlChar/param/2]
+014
+
+[STm03_02::command/251 CtrlChar/param/3]
+none
+
+[STm03_02::command/251 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/251 CtrlChar/param/12]
+none
+
+[STm03_02::command/251 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/252 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/252 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/252 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/252 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/252 SetTalk/param/7]
+Yeah!
+
+[STm03_02::command/252 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/253 SetChar/param/2]
+R_in
+
+[STm03_02::command/253 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/253 SetChar/param/4]
+a
+
+[STm03_02::command/253 SetChar/param/5]
+002
+
+[STm03_02::command/253 SetChar/param/6]
+none
+
+[STm03_02::command/254 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/254 CtrlChar/param/1]
+a
+
+[STm03_02::command/254 CtrlChar/param/3]
+none
+
+[STm03_02::command/254 CtrlChar/param/11]
+none
+
+[STm03_02::command/254 CtrlChar/param/12]
+none
+
+[STm03_02::command/254 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/255 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/255 CtrlChar/param/1]
+a
+
+[STm03_02::command/255 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/255 CtrlChar/param/11]
+none
+
+[STm03_02::command/255 CtrlChar/param/12]
+none
+
+[STm03_02::command/255 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/256 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/256 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/256 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/256 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/256 SetTalk/param/7]
+Haha, I knew you'd be the challenger! Come on, have a seat.
+
+[STm03_02::command/256 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/257 SetAudio/param/1]
+se_112
+
+[STm03_02::command/258 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/258 CtrlChar/param/1]
+a
+
+[STm03_02::command/258 CtrlChar/param/3]
+none
+
+[STm03_02::command/258 CtrlChar/param/11]
+none
+
+[STm03_02::command/258 CtrlChar/param/12]
+none
+
+[STm03_02::command/258 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/259 CtrlStage/param/9]
+none
+
+[STm03_02::command/259 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/260 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/260 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/260 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/260 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/260 SetTalk/param/7]
+Ready.
+
+[STm03_02::command/260 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/261 SetAudio/param/1]
+se_112
+
+[STm03_02::command/262 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/262 CtrlChar/param/1]
+a
+
+[STm03_02::command/262 CtrlChar/param/2]
+012
+
+[STm03_02::command/262 CtrlChar/param/3]
+none
+
+[STm03_02::command/262 CtrlChar/param/11]
+none
+
+[STm03_02::command/262 CtrlChar/param/12]
+none
+
+[STm03_02::command/262 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/263 CtrlStage/param/9]
+none
+
+[STm03_02::command/263 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/264 SetTalkShake/param/1]
+none
+
+[STm03_02::command/265 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/265 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/265 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/265 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/265 SetTalk/param/7]
+<size=50>Let the challenge BEGIN!!!
+
+[STm03_02::command/265 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/266 SetTrans/param/2]
+AvgStageEffect_mosaic
+
+[STm03_02::command/266 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/266 SetTrans/param/8]
+default
+
+[STm03_02::command/267 CtrlStage/param/9]
+none
+
+[STm03_02::command/267 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/268 SetTrans/param/2]
+0
+
+[STm03_02::command/268 SetTrans/param/3]
+Linear
+
+[STm03_02::command/268 SetTrans/param/8]
+default
+
+[STm03_02::command/269 SetFrontObj/param/2]
+qstory_main_03_003
+
+[STm03_02::command/270 SetTalk/param/1]
+0
+
+[STm03_02::command/270 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/270 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/270 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/270 SetTalk/param/7]
+The Lord hops beside Amber and works the controls with expert flair. She deftly maneuvers the claw and, in one swift motion, snags a crocodile plushie.
+
+[STm03_02::command/270 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/271 SetFrontObj/param/2]
+qstory_main_03_003
+
+[STm03_02::command/272 SetChar/param/2]
+C_in
+
+[STm03_02::command/272 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/272 SetChar/param/4]
+a
+
+[STm03_02::command/272 SetChar/param/5]
+002
+
+[STm03_02::command/272 SetChar/param/6]
+none
+
+[STm03_02::command/273 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/273 CtrlChar/param/1]
+a
+
+[STm03_02::command/273 CtrlChar/param/2]
+009
+
+[STm03_02::command/273 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/273 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/273 CtrlChar/param/12]
+none
+
+[STm03_02::command/273 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/274 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/274 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/274 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/274 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/274 SetTalk/param/7]
+Hmph. See that? Pure skill. If you want to surrender now, I won't blame—
+
+[STm03_02::command/274 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/275 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/275 CtrlChar/param/1]
+a
+
+[STm03_02::command/275 CtrlChar/param/2]
+010
+
+[STm03_02::command/275 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/275 CtrlChar/param/11]
+chijing
+
+[STm03_02::command/275 CtrlChar/param/12]
+none
+
+[STm03_02::command/275 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/276 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/276 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/276 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/276 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/276 SetTalk/param/7]
+Wha—wait! How are you so fast?!
+
+[STm03_02::command/276 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/277 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/277 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/277 SetChar/param/4]
+a
+
+[STm03_02::command/277 SetChar/param/5]
+002
+
+[STm03_02::command/277 SetChar/param/6]
+none
+
+[STm03_02::command/278 CtrlStage/param/9]
+none
+
+[STm03_02::command/278 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/279 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/279 CtrlChar/param/1]
+a
+
+[STm03_02::command/279 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/279 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/279 CtrlChar/param/12]
+none
+
+[STm03_02::command/279 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/280 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/280 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/280 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/280 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/280 SetTalk/param/7]
+~<size=60>♪
+
+[STm03_02::command/280 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/281 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/281 CtrlChar/param/1]
+a
+
+[STm03_02::command/281 CtrlChar/param/3]
+none
+
+[STm03_02::command/281 CtrlChar/param/11]
+none
+
+[STm03_02::command/281 CtrlChar/param/12]
+none
+
+[STm03_02::command/281 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/282 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/282 CtrlChar/param/1]
+a
+
+[STm03_02::command/282 CtrlChar/param/3]
+none
+
+[STm03_02::command/282 CtrlChar/param/11]
+none
+
+[STm03_02::command/282 CtrlChar/param/12]
+none
+
+[STm03_02::command/282 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/284 CtrlStage/param/9]
+none
+
+[STm03_02::command/284 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/285 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/286 SetTalk/param/1]
+0
+
+[STm03_02::command/286 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/286 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/286 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/286 SetTalk/param/7]
+In the blink of an eye, a trio of new plushies appears at Amber's feet.
+
+[STm03_02::command/286 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/287 SetFrontObj/param/2]
+qstory_side_119_007
+
+[STm03_02::command/288 SetChar/param/2]
+C_in
+
+[STm03_02::command/288 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/288 SetChar/param/4]
+a
+
+[STm03_02::command/288 SetChar/param/5]
+020
+
+[STm03_02::command/288 SetChar/param/6]
+none
+
+[STm03_02::command/289 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/289 CtrlChar/param/1]
+a
+
+[STm03_02::command/289 CtrlChar/param/2]
+017
+
+[STm03_02::command/289 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STm03_02::command/289 CtrlChar/param/11]
+buman
+
+[STm03_02::command/289 CtrlChar/param/12]
+none
+
+[STm03_02::command/289 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/290 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/290 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/290 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/290 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/290 SetTalk/param/7]
+Oh, playing the lethal, silent type, are we?
+
+[STm03_02::command/290 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/291 SetTalk/param/7]
+Fine! Then I'll just have to show you the true power of the Hidden Lord!
+
+[STm03_02::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/292 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/292 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/292 SetBGM/param/4]
+1500ms
+
+[STm03_02::command/293 SetTrans/param/2]
+0
+
+[STm03_02::command/293 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/293 SetTrans/param/8]
+fade
+
+[STm03_02::command/296 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/296 SetBGM/param/3]
+m44
+
+[STm03_02::command/296 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/297 CtrlStage/param/9]
+none
+
+[STm03_02::command/297 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/298 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/298 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/298 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/298 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/298 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/299 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/299 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/299 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/299 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/299 SetTalk/param/7]
+Well, if this is what it takes to get her to cooperate...
+
+[STm03_02::command/299 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/300 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/300 SetTalk/param/7]
+Besides, Amber seems really into it, so what's the harm?
+
+[STm03_02::command/300 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/301 CtrlStage/param/9]
+none
+
+[STm03_02::command/301 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/302 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/302 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm03_02::command/302 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/302 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/302 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/303 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/303 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/303 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/303 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/303 SetTalk/param/7]
+Alright, you're on. But can we get a feel for the machine first?
+
+[STm03_02::command/303 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/304 SetChar/param/2]
+C_in
+
+[STm03_02::command/304 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/304 SetChar/param/4]
+a
+
+[STm03_02::command/304 SetChar/param/5]
+002
+
+[STm03_02::command/304 SetChar/param/6]
+none
+
+[STm03_02::command/305 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/305 CtrlChar/param/1]
+a
+
+[STm03_02::command/305 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/305 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/305 CtrlChar/param/12]
+none
+
+[STm03_02::command/305 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/306 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/306 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/306 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/306 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/306 SetTalk/param/7]
+But of course. A true challenge demands a level playing field.
+
+[STm03_02::command/306 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/308 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/308 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/308 SetChar/param/4]
+a
+
+[STm03_02::command/308 SetChar/param/5]
+002
+
+[STm03_02::command/308 SetChar/param/6]
+none
+
+[STm03_02::command/309 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/309 CtrlChar/param/1]
+a
+
+[STm03_02::command/309 CtrlChar/param/3]
+none
+
+[STm03_02::command/309 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/309 CtrlChar/param/12]
+none
+
+[STm03_02::command/309 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/310 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/310 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/310 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/310 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/310 SetTalk/param/7]
+I'm up.
+
+[STm03_02::command/310 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/312 SetAudio/param/1]
+se_236
+
+[STm03_02::command/313 SetChar/param/2]
+C_in
+
+[STm03_02::command/313 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/313 SetChar/param/4]
+a
+
+[STm03_02::command/313 SetChar/param/5]
+002
+
+[STm03_02::command/313 SetChar/param/6]
+none
+
+[STm03_02::command/314 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/314 CtrlChar/param/1]
+a
+
+[STm03_02::command/314 CtrlChar/param/2]
+009
+
+[STm03_02::command/314 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/314 CtrlChar/param/11]
+none
+
+[STm03_02::command/314 CtrlChar/param/12]
+none
+
+[STm03_02::command/314 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/315 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/315 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/315 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/315 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/315 SetTalk/param/7]
+Oh? Someone's confident. Just so you know, these machines aren't like those in the Monoliths.
+
+[STm03_02::command/315 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/316 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/316 CtrlChar/param/1]
+a
+
+[STm03_02::command/316 CtrlChar/param/2]
+011
+
+[STm03_02::command/316 CtrlChar/param/3]
+none
+
+[STm03_02::command/316 CtrlChar/param/11]
+none
+
+[STm03_02::command/316 CtrlChar/param/12]
+none
+
+[STm03_02::command/316 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/317 SetAudio/param/1]
+se_288
+
+[STm03_02::command/318 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/318 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/318 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/318 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/318 SetTalk/param/7]
+These are custom-tuned. The claw tension is extremely delicate. A rookie could try a hundred times and still—
+
+[STm03_02::command/318 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/319 SetAudio/param/1]
+se_084
+
+[STm03_02::command/320 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/320 SetCharHead/param/6]
+a
+
+[STm03_02::command/320 SetCharHead/param/7]
+014
+
+[STm03_02::command/320 SetCharHead/param/8]
+none
+
+[STm03_02::command/321 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/321 CtrlChar/param/1]
+a
+
+[STm03_02::command/321 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/321 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/321 CtrlChar/param/12]
+none
+
+[STm03_02::command/321 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/322 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/322 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/322 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/322 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/322 SetTalk/param/7]
+Got one~
+
+[STm03_02::command/322 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/323 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/323 SetCharHead/param/6]
+a
+
+[STm03_02::command/323 SetCharHead/param/7]
+002
+
+[STm03_02::command/323 SetCharHead/param/8]
+none
+
+[STm03_02::command/324 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/324 CtrlChar/param/1]
+a
+
+[STm03_02::command/324 CtrlChar/param/2]
+023
+
+[STm03_02::command/324 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/324 CtrlChar/param/11]
+none
+
+[STm03_02::command/324 CtrlChar/param/12]
+none
+
+[STm03_02::command/324 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/325 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/325 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/325 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/325 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/325 SetTalk/param/7]
+Eh?
+
+[STm03_02::command/325 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/326 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/326 CtrlChar/param/1]
+a
+
+[STm03_02::command/326 CtrlChar/param/2]
+024
+
+[STm03_02::command/326 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STm03_02::command/326 CtrlChar/param/11]
+none
+
+[STm03_02::command/326 CtrlChar/param/12]
+none
+
+[STm03_02::command/326 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/327 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/327 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/327 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/327 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/327 SetTalk/param/7]
+Huh? Ha ... that's just luck. Beginner's luck. It'll run out soon, and then...
+
+[STm03_02::command/327 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/328 SetAudio/param/1]
+se_084
+
+[STm03_02::command/329 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/329 SetCharHead/param/6]
+a
+
+[STm03_02::command/329 SetCharHead/param/7]
+014
+
+[STm03_02::command/329 SetCharHead/param/8]
+none
+
+[STm03_02::command/330 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/330 CtrlChar/param/1]
+a
+
+[STm03_02::command/330 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/330 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/330 CtrlChar/param/12]
+none
+
+[STm03_02::command/330 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/331 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/331 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/331 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/331 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/331 SetTalk/param/7]
+Another.
+
+[STm03_02::command/331 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/332 SetCharHead/param/5]
+avg1_103
+
+[STm03_02::command/332 SetCharHead/param/6]
+a
+
+[STm03_02::command/332 SetCharHead/param/7]
+002
+
+[STm03_02::command/332 SetCharHead/param/8]
+none
+
+[STm03_02::command/333 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/333 CtrlChar/param/1]
+a
+
+[STm03_02::command/333 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/333 CtrlChar/param/11]
+none
+
+[STm03_02::command/333 CtrlChar/param/12]
+none
+
+[STm03_02::command/333 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/334 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/334 CtrlChar/param/1]
+a
+
+[STm03_02::command/334 CtrlChar/param/2]
+013
+
+[STm03_02::command/334 CtrlChar/param/3]
+close
+
+[STm03_02::command/334 CtrlChar/param/11]
+none
+
+[STm03_02::command/334 CtrlChar/param/12]
+none
+
+[STm03_02::command/334 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/335 SetAudio/param/1]
+se_084
+
+[STm03_02::command/336 SetAudio/param/1]
+se_084
+
+[STm03_02::command/337 SetAudio/param/1]
+se_062
+
+[STm03_02::command/338 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/338 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/338 SetChar/param/4]
+a
+
+[STm03_02::command/338 SetChar/param/5]
+002
+
+[STm03_02::command/338 SetChar/param/6]
+none
+
+[STm03_02::command/339 CtrlStage/param/9]
+none
+
+[STm03_02::command/339 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/340 SetAudio/param/1]
+se_077
+
+[STm03_02::command/341 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/341 CtrlChar/param/1]
+a
+
+[STm03_02::command/341 CtrlChar/param/3]
+close
+
+[STm03_02::command/341 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/341 CtrlChar/param/12]
+none
+
+[STm03_02::command/341 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/342 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/342 CtrlChar/param/1]
+a
+
+[STm03_02::command/342 CtrlChar/param/2]
+010
+
+[STm03_02::command/342 CtrlChar/param/3]
+none
+
+[STm03_02::command/342 CtrlChar/param/11]
+none
+
+[STm03_02::command/342 CtrlChar/param/12]
+none
+
+[STm03_02::command/342 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/343 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/343 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/343 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/343 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/343 SetTalk/param/7]
+And that makes three and four.
+
+[STm03_02::command/343 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/344 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/344 CtrlChar/param/1]
+a
+
+[STm03_02::command/344 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/344 CtrlChar/param/11]
+none
+
+[STm03_02::command/344 CtrlChar/param/12]
+none
+
+[STm03_02::command/344 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/345 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/345 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/345 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/345 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/345 SetTalk/param/7]
+Okay. Warmed up. It's simple.
+
+[STm03_02::command/345 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/347 CtrlStage/param/9]
+none
+
+[STm03_02::command/347 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/348 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/348 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/348 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/348 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/348 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/349 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/349 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/349 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/349 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/349 SetTalk/param/7]
+Amber is a prize claw prodigy!
+
+[STm03_02::command/349 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/350 CtrlStage/param/9]
+none
+
+[STm03_02::command/350 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/351 SetChar/param/2]
+C_in
+
+[STm03_02::command/351 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/351 SetChar/param/4]
+a
+
+[STm03_02::command/351 SetChar/param/5]
+015
+
+[STm03_02::command/351 SetChar/param/6]
+none
+
+[STm03_02::command/352 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/352 CtrlChar/param/1]
+a
+
+[STm03_02::command/352 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/352 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/352 CtrlChar/param/12]
+none
+
+[STm03_02::command/352 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/353 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/353 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/353 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/353 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/353 SetTalk/param/7]
+Hmph... Heheheh! How very interesting. A worthy opponent appears at last...
+
+[STm03_02::command/353 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/354 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/354 CtrlChar/param/1]
+a
+
+[STm03_02::command/354 CtrlChar/param/2]
+017
+
+[STm03_02::command/354 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/354 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/354 CtrlChar/param/12]
+none
+
+[STm03_02::command/354 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/355 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/355 SetTalk/param/7]
+Then allow me, the Hidden Lord of the Prize Claw, to utterly CRUSH that confidence!
+
+[STm03_02::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/356 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/356 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/356 SetBGM/param/4]
+1500ms
+
+[STm03_02::command/358 SetTrans/param/2]
+0
+
+[STm03_02::command/358 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/358 SetTrans/param/8]
+fade
+
+[STm03_02::command/361 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/361 SetBGM/param/3]
+m44
+
+[STm03_02::command/361 SetBGM/param/4]
+none
+
+[STm03_02::command/363 SetMainRoleTalk/param/2]
+019
+
+[STm03_02::command/363 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/363 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/363 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/363 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/364 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/364 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/364 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/364 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/364 SetTalk/param/7]
+Hmph... Heh heh.
+
+[STm03_02::command/364 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/365 SetMainRoleTalk/param/2]
+006
+
+[STm03_02::command/365 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STm03_02::command/365 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/365 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/365 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/366 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/366 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/366 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/366 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/366 SetTalk/param/7]
+Hahahahahaha!
+
+[STm03_02::command/366 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/367 SetChar/param/2]
+C_in
+
+[STm03_02::command/367 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/367 SetChar/param/4]
+a
+
+[STm03_02::command/367 SetChar/param/5]
+023
+
+[STm03_02::command/367 SetChar/param/6]
+none
+
+[STm03_02::command/368 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/368 CtrlChar/param/1]
+a
+
+[STm03_02::command/368 CtrlChar/param/2]
+010
+
+[STm03_02::command/368 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/368 CtrlChar/param/11]
+jushou
+
+[STm03_02::command/368 CtrlChar/param/12]
+none
+
+[STm03_02::command/368 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/369 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/369 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/369 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/369 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/369 SetTalk/param/7]
+Uh, you okay there...?
+
+[STm03_02::command/369 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/371 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/371 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/371 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/371 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/371 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/372 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/372 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/372 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/372 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/372 SetTalk/param/7]
+I was just marveling that some mortal would dare challenge ME, the great Boss ... and with such a childish game.
+
+[STm03_02::command/372 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/373 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/373 CtrlChar/param/1]
+a
+
+[STm03_02::command/373 CtrlChar/param/2]
+013
+
+[STm03_02::command/373 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm03_02::command/373 CtrlChar/param/11]
+jinzhang
+
+[STm03_02::command/373 CtrlChar/param/12]
+none
+
+[STm03_02::command/373 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/374 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/374 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/374 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/374 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/374 SetTalk/param/7]
+B-Boss?
+
+[STm03_02::command/374 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/376 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/376 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/376 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/376 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/376 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/377 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/377 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/377 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/377 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/377 SetTalk/param/7]
+And so, I must ask you:
+
+[STm03_02::command/377 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/378 SetAudio/param/1]
+se_074
+
+[STm03_02::command/379 CtrlStage/param/9]
+none
+
+[STm03_02::command/379 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/380 SetMainRoleTalk/param/2]
+006
+
+[STm03_02::command/380 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STm03_02::command/380 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/380 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/380 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/381 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/381 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/381 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/381 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/381 SetTalk/param/7]
+Are you prepared to offer your soul?
+
+[STm03_02::command/381 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/382 SetAudio/param/1]
+se_112
+
+[STm03_02::command/383 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/383 CtrlChar/param/1]
+a
+
+[STm03_02::command/383 CtrlChar/param/2]
+023
+
+[STm03_02::command/383 CtrlChar/param/3]
+close
+
+[STm03_02::command/383 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/383 CtrlChar/param/12]
+none
+
+[STm03_02::command/383 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/384 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/384 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/384 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/384 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/384 SetTalk/param/7]
+My ...==B== my soul?!
+
+[STm03_02::command/384 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/386 SetMainRoleTalk/param/2]
+004
+
+[STm03_02::command/386 SetMainRoleTalk/param/3]
+avg_emoji_love
+
+[STm03_02::command/386 SetMainRoleTalk/param/4]
+diantou
+
+[STm03_02::command/386 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/386 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/387 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/387 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/387 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/387 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/387 SetTalk/param/7]
+When you issue a challenge, you must wager your very soul.
+
+[STm03_02::command/387 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/388 SetMainRoleTalk/param/2]
+006
+
+[STm03_02::command/388 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STm03_02::command/388 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/388 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/388 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/389 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/389 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/389 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/389 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/389 SetTalk/param/7]
+Heh heh ... Let the games begin! My champion, the Panther of Darkness, shall teach you a lesson!
+
+[STm03_02::command/389 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/390 SetAudio/param/1]
+se_349
+
+[STm03_02::command/391 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/391 CtrlChar/param/1]
+a
+
+[STm03_02::command/391 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/391 CtrlChar/param/11]
+none
+
+[STm03_02::command/391 CtrlChar/param/12]
+none
+
+[STm03_02::command/391 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/392 SetAudio/param/1]
+se_005
+
+[STm03_02::command/393 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/393 CtrlChar/param/1]
+a
+
+[STm03_02::command/393 CtrlChar/param/2]
+014
+
+[STm03_02::command/393 CtrlChar/param/3]
+close
+
+[STm03_02::command/393 CtrlChar/param/11]
+none
+
+[STm03_02::command/393 CtrlChar/param/12]
+none
+
+[STm03_02::command/393 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/394 CtrlStage/param/9]
+none
+
+[STm03_02::command/394 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/395 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/395 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/395 SetChar/param/4]
+a
+
+[STm03_02::command/395 SetChar/param/5]
+002
+
+[STm03_02::command/395 SetChar/param/6]
+none
+
+[STm03_02::command/396 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/396 CtrlChar/param/1]
+a
+
+[STm03_02::command/396 CtrlChar/param/3]
+none
+
+[STm03_02::command/396 CtrlChar/param/11]
+none
+
+[STm03_02::command/396 CtrlChar/param/12]
+none
+
+[STm03_02::command/396 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/397 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/397 CtrlChar/param/1]
+a
+
+[STm03_02::command/397 CtrlChar/param/2]
+014
+
+[STm03_02::command/397 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/397 CtrlChar/param/11]
+jushou0
+
+[STm03_02::command/397 CtrlChar/param/12]
+none
+
+[STm03_02::command/397 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/398 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/398 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/398 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/398 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/398 SetTalk/param/7]
+Meow~
+
+[STm03_02::command/398 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/400 SetAudio/param/1]
+se_070
+
+[STm03_02::command/401 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/401 CtrlChar/param/1]
+a
+
+[STm03_02::command/401 CtrlChar/param/2]
+010
+
+[STm03_02::command/401 CtrlChar/param/3]
+none
+
+[STm03_02::command/401 CtrlChar/param/11]
+chijing
+
+[STm03_02::command/401 CtrlChar/param/12]
+none
+
+[STm03_02::command/401 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/402 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/402 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/402 SetBGM/param/4]
+1000ms
+
+[STm03_02::command/403 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/403 CtrlChar/param/1]
+a
+
+[STm03_02::command/403 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm03_02::command/403 CtrlChar/param/11]
+none
+
+[STm03_02::command/403 CtrlChar/param/12]
+none
+
+[STm03_02::command/403 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/404 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/404 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/404 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/404 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/404 SetTalk/param/7]
+The Panther of Darkness?!
+
+[STm03_02::command/404 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/405 SetTrans/param/2]
+34
+
+[STm03_02::command/405 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/405 SetTrans/param/8]
+default
+
+[STm03_02::command/408 SetAudio/param/1]
+se_288
+
+[STm03_02::command/409 SetTalk/param/1]
+0
+
+[STm03_02::command/409 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/409 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/409 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/409 SetTalk/param/7]
+And so, in the name of gathering intel, a fierce and secret war was waged.
+
+[STm03_02::command/409 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/410 CtrlStage/param/9]
+none
+
+[STm03_02::command/410 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/411 SetBg/param/1]
+ruin_travellers_home_inside
+
+[STm03_02::command/411 SetBg/param/2]
+0
+
+[STm03_02::command/411 SetBg/param/3]
+Linear
+
+[STm03_02::command/411 SetBg/param/6]
+default
+
+[STm03_02::command/412 CtrlBg/param/10]
+none
+
+[STm03_02::command/412 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/413 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/413 SetBGM/param/3]
+m24
+
+[STm03_02::command/413 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/414 SetChar/param/2]
+none
+
+[STm03_02::command/414 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/414 SetChar/param/4]
+a
+
+[STm03_02::command/414 SetChar/param/5]
+003
+
+[STm03_02::command/414 SetChar/param/6]
+none
+
+[STm03_02::command/415 SetTrans/param/2]
+0
+
+[STm03_02::command/415 SetTrans/param/3]
+Linear
+
+[STm03_02::command/415 SetTrans/param/8]
+default
+
+[STm03_02::command/416 CtrlBg/param/10]
+none
+
+[STm03_02::command/416 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/417 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/417 CtrlChar/param/1]
+a
+
+[STm03_02::command/417 CtrlChar/param/3]
+none
+
+[STm03_02::command/417 CtrlChar/param/11]
+none
+
+[STm03_02::command/417 CtrlChar/param/12]
+none
+
+[STm03_02::command/417 CtrlChar/param/13]
+InSine
+
+[STm03_02::command/418 CtrlStage/param/9]
+none
+
+[STm03_02::command/418 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/420 SetBg/param/1]
+mood_2
+
+[STm03_02::command/420 SetBg/param/2]
+0
+
+[STm03_02::command/420 SetBg/param/3]
+OutSine
+
+[STm03_02::command/420 SetBg/param/6]
+default
+
+[STm03_02::command/421 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/421 CtrlChar/param/1]
+a
+
+[STm03_02::command/421 CtrlChar/param/2]
+009
+
+[STm03_02::command/421 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/421 CtrlChar/param/11]
+none
+
+[STm03_02::command/421 CtrlChar/param/12]
+none
+
+[STm03_02::command/421 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/422 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/422 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/422 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/422 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/422 SetTalk/param/7]
+You think you can beat ME? Sorry, pal. I was born to win!
+
+[STm03_02::command/422 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/423 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/423 CtrlChar/param/1]
+a
+
+[STm03_02::command/423 CtrlChar/param/2]
+022
+
+[STm03_02::command/423 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/423 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/423 CtrlChar/param/12]
+none
+
+[STm03_02::command/423 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/424 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/424 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/424 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/424 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/424 SetTalk/param/7]
+There is no "defeat" in the vocabulary of the Hidden Lord of the Prize Claw! Not now, not ever! RAAAAAAAGH!
+
+[STm03_02::command/424 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/425 CtrlStage/param/9]
+none
+
+[STm03_02::command/425 CtrlStage/param/10]
+InSine
+
+[STm03_02::command/426 SetTrans/param/2]
+0
+
+[STm03_02::command/426 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/426 SetTrans/param/8]
+default
+
+[STm03_02::command/427 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/427 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/427 SetBGM/param/4]
+1000ms
+
+[STm03_02::command/428 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/428 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/428 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/428 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/428 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/429 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/429 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/429 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/429 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/429 SetTalk/param/7]
+All that yelling, and for what?
+
+[STm03_02::command/429 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/430 SetAudio/param/1]
+se_084
+
+[STm03_02::command/431 SetBg/param/1]
+story_main_03_001_a
+
+[STm03_02::command/431 SetBg/param/2]
+0
+
+[STm03_02::command/431 SetBg/param/3]
+Linear
+
+[STm03_02::command/431 SetBg/param/6]
+default
+
+[STm03_02::command/432 CtrlBg/param/10]
+none
+
+[STm03_02::command/432 CtrlBg/param/11]
+Linear
+
+[STm03_02::command/433 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm03_02::command/433 SetBGM/param/3]
+m48
+
+[STm03_02::command/433 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/434 SetTrans/param/2]
+0
+
+[STm03_02::command/434 SetTrans/param/3]
+Linear
+
+[STm03_02::command/434 SetTrans/param/8]
+default
+
+[STm03_02::command/435 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/435 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/435 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/435 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/435 SetTalk/param/7]
+I... I actually lost...
+
+[STm03_02::command/435 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/436 SetAudio/param/1]
+se_070
+
+[STm03_02::command/437 CtrlStage/param/9]
+Xiao
+
+[STm03_02::command/437 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/438 CtrlBg/param/10]
+none
+
+[STm03_02::command/438 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/439 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/439 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/439 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/439 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/439 SetTalk/param/7]
+No! It can't be! NOOOOOO!
+
+[STm03_02::command/439 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/440 SetAudio/param/1]
+se_059
+
+[STm03_02::command/441 CtrlBg/param/10]
+chijing
+
+[STm03_02::command/441 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/442 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/442 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/442 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/442 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/442 SetTalk/param/7]
+Th-This time only counts because the claw's tension was off!
+
+[STm03_02::command/442 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/443 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/443 SetTalk/param/7]
+And the prize placement was all wrong! Plus, it's ... really windy today!
+
+[STm03_02::command/443 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/444 SetAudio/param/1]
+se_112
+
+[STm03_02::command/445 SetBg/param/1]
+story_main_03_001_b
+
+[STm03_02::command/445 SetBg/param/2]
+0
+
+[STm03_02::command/445 SetBg/param/3]
+Linear
+
+[STm03_02::command/445 SetBg/param/6]
+default
+
+[STm03_02::command/446 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/446 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/446 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/446 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/446 SetTalk/param/7]
+L-Let's go one more round!
+
+[STm03_02::command/446 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/447 SetAudio/param/1]
+se_288
+
+[STm03_02::command/448 SetAudio/param/1]
+se_084
+
+[STm03_02::command/449 CtrlBg/param/10]
+none
+
+[STm03_02::command/449 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/450 SetAudio/param/1]
+se_051
+
+[STm03_02::command/451 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/451 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/451 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/451 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/451 SetTalk/param/7]
+This is fun~
+
+[STm03_02::command/451 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/452 SetTrans/param/2]
+34
+
+[STm03_02::command/452 SetTrans/param/3]
+OutSine
+
+[STm03_02::command/452 SetTrans/param/8]
+default
+
+[STm03_02::command/453 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/453 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/453 SetBGM/param/4]
+2000ms
+
+[STm03_02::command/454 SetTalk/param/1]
+0
+
+[STm03_02::command/454 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/454 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/454 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/454 SetTalk/param/7]
+Hours flew by in a blur.==RT==The final score was 109 to 58, a landslide victory for Amber.
+
+[STm03_02::command/454 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/455 SetBg/param/1]
+ruin_travellers_home_inside
+
+[STm03_02::command/455 SetBg/param/2]
+0
+
+[STm03_02::command/455 SetBg/param/3]
+Linear
+
+[STm03_02::command/455 SetBg/param/6]
+default
+
+[STm03_02::command/456 SetAudio/param/1]
+se_095
+
+[STm03_02::command/457 SetTrans/param/2]
+0
+
+[STm03_02::command/457 SetTrans/param/3]
+Linear
+
+[STm03_02::command/457 SetTrans/param/8]
+default
+
+[STm03_02::command/458 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/458 SetBGM/param/3]
+m49
+
+[STm03_02::command/458 SetBGM/param/4]
+none
+
+[STm03_02::command/459 SetSceneHeading/param/0]
+11:00
+
+[STm03_02::command/459 SetSceneHeading/param/1]
+Pluvia Month
+
+[STm03_02::command/459 SetSceneHeading/param/2]
+16th
+
+[STm03_02::command/459 SetSceneHeading/param/3]
+Outside Philae
+
+[STm03_02::command/459 SetSceneHeading/param/4]
+Old Trekkers' House
+
+[STm03_02::command/460 SetChar/param/2]
+C_in
+
+[STm03_02::command/460 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/460 SetChar/param/4]
+a
+
+[STm03_02::command/460 SetChar/param/5]
+008
+
+[STm03_02::command/460 SetChar/param/6]
+none
+
+[STm03_02::command/461 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/461 CtrlChar/param/1]
+a
+
+[STm03_02::command/461 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm03_02::command/461 CtrlChar/param/11]
+none
+
+[STm03_02::command/461 CtrlChar/param/12]
+none
+
+[STm03_02::command/461 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/462 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/462 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/462 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/462 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/462 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/463 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/463 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/463 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/463 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/463 SetTalk/param/7]
+... Don't you think that's enough?
+
+[STm03_02::command/463 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/464 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/464 CtrlChar/param/1]
+a
+
+[STm03_02::command/464 CtrlChar/param/2]
+010
+
+[STm03_02::command/464 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm03_02::command/464 CtrlChar/param/11]
+lengzhan
+
+[STm03_02::command/464 CtrlChar/param/12]
+none
+
+[STm03_02::command/464 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/465 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/465 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/465 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/465 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/465 SetTalk/param/7]
+... This has to be ... yeah, a dream. A total nightmare.
+
+[STm03_02::command/465 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/466 SetAudio/param/1]
+se_199
+
+[STm03_02::command/467 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/467 CtrlChar/param/1]
+a
+
+[STm03_02::command/467 CtrlChar/param/2]
+016
+
+[STm03_02::command/467 CtrlChar/param/3]
+none
+
+[STm03_02::command/467 CtrlChar/param/11]
+none
+
+[STm03_02::command/467 CtrlChar/param/12]
+none
+
+[STm03_02::command/467 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/468 CtrlStage/param/9]
+none
+
+[STm03_02::command/468 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/469 SetMainRoleTalk/param/2]
+020
+
+[STm03_02::command/469 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm03_02::command/469 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/469 SetMainRoleTalk/param/5]
+y
+
+[STm03_02::command/469 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/470 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/470 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/470 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/470 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/470 SetTalk/param/7]
+She's taking this hard.
+
+[STm03_02::command/470 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/471 CtrlStage/param/9]
+none
+
+[STm03_02::command/471 CtrlStage/param/10]
+Linear
+
+[STm03_02::command/473 SetAudio/param/1]
+se_059
+
+[STm03_02::command/474 SetAudio/param/1]
+se_062
+
+[STm03_02::command/475 CtrlBg/param/10]
+none
+
+[STm03_02::command/475 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/476 SetAudio/param/1]
+se_100
+
+[STm03_02::command/477 SetCharHead/param/5]
+avg1_156
+
+[STm03_02::command/477 SetCharHead/param/6]
+a
+
+[STm03_02::command/477 SetCharHead/param/7]
+010
+
+[STm03_02::command/477 SetCharHead/param/8]
+none
+
+[STm03_02::command/478 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/478 CtrlChar/param/1]
+a
+
+[STm03_02::command/478 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm03_02::command/478 CtrlChar/param/11]
+none
+
+[STm03_02::command/478 CtrlChar/param/12]
+none
+
+[STm03_02::command/478 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/479 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/479 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/479 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/479 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/479 SetTalk/param/7]
+Huh? My prize collection! All the plushies I wished for from the Monoliths, the ones I gathered one by one... Why are some missing?!
+
+[STm03_02::command/479 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/480 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/480 CtrlChar/param/1]
+a
+
+[STm03_02::command/480 CtrlChar/param/2]
+013
+
+[STm03_02::command/480 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/480 CtrlChar/param/11]
+jinzhang
+
+[STm03_02::command/480 CtrlChar/param/12]
+none
+
+[STm03_02::command/480 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/481 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/481 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/481 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/481 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/481 SetTalk/param/7]
+Ahaha... Oh. So this isn't a dream after all. Whatever. A loss is a loss. I'm not a sore loser or anything...
+
+[STm03_02::command/481 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/482 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/482 CtrlChar/param/1]
+a
+
+[STm03_02::command/482 CtrlChar/param/2]
+019
+
+[STm03_02::command/482 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm03_02::command/482 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/482 CtrlChar/param/12]
+none
+
+[STm03_02::command/482 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/483 CtrlBg/param/10]
+none
+
+[STm03_02::command/483 CtrlBg/param/11]
+OutSine
+
+[STm03_02::command/484 SetCharHead/param/5]
+avg1_156
+
+[STm03_02::command/484 SetCharHead/param/6]
+a
+
+[STm03_02::command/484 SetCharHead/param/7]
+002
+
+[STm03_02::command/484 SetCharHead/param/8]
+none
+
+[STm03_02::command/485 SetChar/param/2]
+C_0.05_in
+
+[STm03_02::command/485 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/485 SetChar/param/4]
+a
+
+[STm03_02::command/485 SetChar/param/5]
+002
+
+[STm03_02::command/485 SetChar/param/6]
+none
+
+[STm03_02::command/486 SetAudio/param/1]
+se_077
+
+[STm03_02::command/487 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/487 CtrlChar/param/1]
+a
+
+[STm03_02::command/487 CtrlChar/param/3]
+none
+
+[STm03_02::command/487 CtrlChar/param/11]
+JuGong
+
+[STm03_02::command/487 CtrlChar/param/12]
+none
+
+[STm03_02::command/487 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/488 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/488 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/488 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/488 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/488 SetTalk/param/7]
+You can have them back.
+
+[STm03_02::command/488 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/490 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/490 CtrlChar/param/1]
+a
+
+[STm03_02::command/490 CtrlChar/param/3]
+none
+
+[STm03_02::command/490 CtrlChar/param/11]
+none
+
+[STm03_02::command/490 CtrlChar/param/12]
+none
+
+[STm03_02::command/490 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/491 SetTalk/param/1]
+0
+
+[STm03_02::command/491 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/491 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/491 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/491 SetTalk/param/7]
+From the mountain of prizes at her feet, Amber picked out a single orange cat plushie.
+
+[STm03_02::command/491 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/492 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/493 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/493 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/493 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/493 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/493 SetTalk/param/7]
+This is the only one I want.
+
+[STm03_02::command/493 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/494 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/495 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/495 CtrlChar/param/1]
+a
+
+[STm03_02::command/495 CtrlChar/param/3]
+none
+
+[STm03_02::command/495 CtrlChar/param/11]
+none
+
+[STm03_02::command/495 CtrlChar/param/12]
+none
+
+[STm03_02::command/495 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/496 SetChar/param/2]
+none
+
+[STm03_02::command/496 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/496 SetChar/param/4]
+a
+
+[STm03_02::command/496 SetChar/param/5]
+019
+
+[STm03_02::command/496 SetChar/param/6]
+none
+
+[STm03_02::command/497 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/497 CtrlChar/param/1]
+a
+
+[STm03_02::command/497 CtrlChar/param/3]
+none
+
+[STm03_02::command/497 CtrlChar/param/11]
+none
+
+[STm03_02::command/497 CtrlChar/param/12]
+none
+
+[STm03_02::command/497 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/498 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/498 CtrlChar/param/1]
+a
+
+[STm03_02::command/498 CtrlChar/param/3]
+none
+
+[STm03_02::command/498 CtrlChar/param/11]
+none
+
+[STm03_02::command/498 CtrlChar/param/12]
+none
+
+[STm03_02::command/498 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/499 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/499 CtrlChar/param/1]
+a
+
+[STm03_02::command/499 CtrlChar/param/3]
+none
+
+[STm03_02::command/499 CtrlChar/param/11]
+buman
+
+[STm03_02::command/499 CtrlChar/param/12]
+none
+
+[STm03_02::command/499 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/500 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/500 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/500 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/500 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/500 SetTalk/param/7]
+… Are you pitying me? I don't need charity from the winner—!
+
+[STm03_02::command/500 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/501 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/501 CtrlChar/param/1]
+a
+
+[STm03_02::command/501 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/501 CtrlChar/param/11]
+none
+
+[STm03_02::command/501 CtrlChar/param/12]
+none
+
+[STm03_02::command/501 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/502 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/502 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/502 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/502 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/502 SetTalk/param/7]
+You don't want them?
+
+[STm03_02::command/502 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/503 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/503 CtrlChar/param/1]
+a
+
+[STm03_02::command/503 CtrlChar/param/2]
+012
+
+[STm03_02::command/503 CtrlChar/param/3]
+none
+
+[STm03_02::command/503 CtrlChar/param/11]
+niunie
+
+[STm03_02::command/503 CtrlChar/param/12]
+none
+
+[STm03_02::command/503 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/504 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/504 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/504 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/504 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/504 SetTalk/param/7]
+Of... Of course I do!
+
+[STm03_02::command/504 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/506 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/506 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm03_02::command/506 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/506 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/506 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/507 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/507 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/507 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/507 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/507 SetTalk/param/7]
+Happy now?
+
+[STm03_02::command/507 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/508 SetAudio/param/1]
+se_056
+
+[STm03_02::command/509 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/510 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/510 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/510 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/510 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/510 SetTalk/param/7]
+Hmm~
+
+[STm03_02::command/510 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/511 SetFrontObj/param/2]
+qstory_main_03_002
+
+[STm03_02::command/512 SetChar/param/2]
+C_in
+
+[STm03_02::command/512 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/512 SetChar/param/4]
+a
+
+[STm03_02::command/512 SetChar/param/5]
+008
+
+[STm03_02::command/512 SetChar/param/6]
+none
+
+[STm03_02::command/513 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/513 CtrlChar/param/1]
+a
+
+[STm03_02::command/513 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm03_02::command/513 CtrlChar/param/11]
+niunie1
+
+[STm03_02::command/513 CtrlChar/param/12]
+none
+
+[STm03_02::command/513 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/514 SetTalk/param/1]
+avg3_976
+
+[STm03_02::command/514 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/514 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/514 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/514 SetTalk/param/7]
+Though I'm unwilling to accept it, the Lord of the Prize Claw is no more. From now on, I will live as Nazuna, just a regular member of Petal Bloom...
+
+[STm03_02::command/514 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/515 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/515 CtrlChar/param/1]
+a
+
+[STm03_02::command/515 CtrlChar/param/3]
+none
+
+[STm03_02::command/515 CtrlChar/param/11]
+none
+
+[STm03_02::command/515 CtrlChar/param/12]
+none
+
+[STm03_02::command/515 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/516 NewCharIntro/param/0]
+avg1_156
+
+[STm03_02::command/516 NewCharIntro/param/1]
+Nazuna
+
+[STm03_02::command/516 NewCharIntro/param/2]
+Self-proclaimed "Lord of the Prize Claw"
+
+[STm03_02::command/516 NewCharIntro/param/3]
+a
+
+[STm03_02::command/516 NewCharIntro/param/4]
+002
+
+[STm03_02::command/517 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/517 CtrlChar/param/1]
+a
+
+[STm03_02::command/517 CtrlChar/param/3]
+none
+
+[STm03_02::command/517 CtrlChar/param/11]
+none
+
+[STm03_02::command/517 CtrlChar/param/12]
+none
+
+[STm03_02::command/517 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/518 SetChar/param/2]
+none
+
+[STm03_02::command/518 SetChar/param/3]
+avg1_103
+
+[STm03_02::command/518 SetChar/param/4]
+a
+
+[STm03_02::command/518 SetChar/param/5]
+002
+
+[STm03_02::command/518 SetChar/param/6]
+none
+
+[STm03_02::command/519 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/519 CtrlChar/param/1]
+a
+
+[STm03_02::command/519 CtrlChar/param/3]
+none
+
+[STm03_02::command/519 CtrlChar/param/11]
+none
+
+[STm03_02::command/519 CtrlChar/param/12]
+none
+
+[STm03_02::command/519 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/520 SetAudio/param/1]
+se_019
+
+[STm03_02::command/521 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/521 CtrlChar/param/1]
+a
+
+[STm03_02::command/521 CtrlChar/param/3]
+none
+
+[STm03_02::command/521 CtrlChar/param/11]
+none
+
+[STm03_02::command/521 CtrlChar/param/12]
+none
+
+[STm03_02::command/521 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/522 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/522 CtrlChar/param/1]
+a
+
+[STm03_02::command/522 CtrlChar/param/3]
+none
+
+[STm03_02::command/522 CtrlChar/param/11]
+none
+
+[STm03_02::command/522 CtrlChar/param/12]
+none
+
+[STm03_02::command/522 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/523 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/523 CtrlChar/param/1]
+a
+
+[STm03_02::command/523 CtrlChar/param/3]
+none
+
+[STm03_02::command/523 CtrlChar/param/11]
+diantou2
+
+[STm03_02::command/523 CtrlChar/param/12]
+none
+
+[STm03_02::command/523 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/524 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/524 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/524 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/524 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/524 SetTalk/param/7]
+So, uh... Amber?==RT==The title is yours now.
+
+[STm03_02::command/524 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/525 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/525 CtrlChar/param/1]
+a
+
+[STm03_02::command/525 CtrlChar/param/2]
+007
+
+[STm03_02::command/525 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/525 CtrlChar/param/11]
+none
+
+[STm03_02::command/525 CtrlChar/param/12]
+none
+
+[STm03_02::command/525 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/526 CtrlChar/param/0]
+avg1_103
+
+[STm03_02::command/526 CtrlChar/param/1]
+a
+
+[STm03_02::command/526 CtrlChar/param/3]
+close
+
+[STm03_02::command/526 CtrlChar/param/11]
+none
+
+[STm03_02::command/526 CtrlChar/param/12]
+none
+
+[STm03_02::command/526 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/527 SetTalk/param/1]
+avg1_103
+
+[STm03_02::command/527 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/527 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/527 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/527 SetTalk/param/7]
+Ah... No.
+
+[STm03_02::command/527 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/528 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/528 CtrlChar/param/1]
+a
+
+[STm03_02::command/528 CtrlChar/param/2]
+014
+
+[STm03_02::command/528 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/528 CtrlChar/param/11]
+none
+
+[STm03_02::command/528 CtrlChar/param/12]
+none
+
+[STm03_02::command/528 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/529 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/529 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/529 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/529 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/529 SetTalk/param/7]
+Why?! Aren't you coming after the title?!
+
+[STm03_02::command/529 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/531 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/531 SetMainRoleTalk/param/3]
+none
+
+[STm03_02::command/531 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/531 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/531 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/532 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/532 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/532 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/532 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/532 SetTalk/param/7]
+No, we're looking for Serena...
+
+[STm03_02::command/532 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/533 SetMainRoleTalk/param/2]
+002
+
+[STm03_02::command/533 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm03_02::command/533 SetMainRoleTalk/param/4]
+none
+
+[STm03_02::command/533 SetMainRoleTalk/param/5]
+z
+
+[STm03_02::command/533 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm03_02::command/534 SetTalk/param/1]
+avg3_100
+
+[STm03_02::command/534 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/534 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/534 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/534 SetTalk/param/7]
+We've been saying that all along...
+
+[STm03_02::command/534 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/536 SetChar/param/2]
+C_in
+
+[STm03_02::command/536 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/536 SetChar/param/4]
+a
+
+[STm03_02::command/536 SetChar/param/5]
+015
+
+[STm03_02::command/536 SetChar/param/6]
+none
+
+[STm03_02::command/537 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/537 CtrlChar/param/1]
+a
+
+[STm03_02::command/537 CtrlChar/param/2]
+015
+
+[STm03_02::command/537 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm03_02::command/537 CtrlChar/param/11]
+none
+
+[STm03_02::command/537 CtrlChar/param/12]
+none
+
+[STm03_02::command/537 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/538 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/538 CtrlChar/param/1]
+a
+
+[STm03_02::command/538 CtrlChar/param/2]
+008
+
+[STm03_02::command/538 CtrlChar/param/3]
+close
+
+[STm03_02::command/538 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/538 CtrlChar/param/12]
+none
+
+[STm03_02::command/538 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/539 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/539 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/539 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/539 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/539 SetTalk/param/7]
+I... I'm completely defeated. Um... you must be Trekkers from another city, right?
+
+[STm03_02::command/539 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/540 SetChar/param/2]
+L_0.05_in
+
+[STm03_02::command/540 SetChar/param/3]
+avg1_111
+
+[STm03_02::command/540 SetChar/param/4]
+a
+
+[STm03_02::command/540 SetChar/param/5]
+002
+
+[STm03_02::command/540 SetChar/param/6]
+none
+
+[STm03_02::command/541 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/541 CtrlChar/param/1]
+a
+
+[STm03_02::command/541 CtrlChar/param/2]
+007
+
+[STm03_02::command/541 CtrlChar/param/3]
+none
+
+[STm03_02::command/541 CtrlChar/param/11]
+none
+
+[STm03_02::command/541 CtrlChar/param/12]
+none
+
+[STm03_02::command/541 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/542 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/542 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/542 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/542 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/542 SetTalk/param/7]
+We're from Emor.
+
+[STm03_02::command/542 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/543 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/543 CtrlChar/param/1]
+a
+
+[STm03_02::command/543 CtrlChar/param/2]
+014
+
+[STm03_02::command/543 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm03_02::command/543 CtrlChar/param/11]
+none
+
+[STm03_02::command/543 CtrlChar/param/12]
+none
+
+[STm03_02::command/543 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/544 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/544 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/544 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/544 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/544 SetTalk/param/7]
+I see. Well then, if you haven't settled on a place to stay yet, you're welcome to stay here.
+
+[STm03_02::command/544 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/545 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/545 CtrlChar/param/1]
+a
+
+[STm03_02::command/545 CtrlChar/param/2]
+002
+
+[STm03_02::command/545 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm03_02::command/545 CtrlChar/param/11]
+daintou
+
+[STm03_02::command/545 CtrlChar/param/12]
+none
+
+[STm03_02::command/545 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/546 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/546 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/546 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/546 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/546 SetTalk/param/7]
+Actually...==B== Serena is just out on business. She'll be back in the evening.
+
+[STm03_02::command/546 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/547 CtrlChar/param/0]
+avg1_111
+
+[STm03_02::command/547 CtrlChar/param/1]
+a
+
+[STm03_02::command/547 CtrlChar/param/2]
+013
+
+[STm03_02::command/547 CtrlChar/param/3]
+none
+
+[STm03_02::command/547 CtrlChar/param/11]
+none
+
+[STm03_02::command/547 CtrlChar/param/12]
+none
+
+[STm03_02::command/547 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/548 SetTalk/param/1]
+avg1_111
+
+[STm03_02::command/548 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/548 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/548 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/548 SetTalk/param/7]
+That would be too much trouble for you. This is your place after all.
+
+[STm03_02::command/548 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/549 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/549 CtrlChar/param/1]
+a
+
+[STm03_02::command/549 CtrlChar/param/2]
+004
+
+[STm03_02::command/549 CtrlChar/param/3]
+avg_emoji_star
+
+[STm03_02::command/549 CtrlChar/param/11]
+huanxin
+
+[STm03_02::command/549 CtrlChar/param/12]
+none
+
+[STm03_02::command/549 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/550 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/550 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/550 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/550 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/550 SetTalk/param/7]
+No worries. Though it looks a bit run-down, this used to be the Trekkers' House of the Trekker Association in Philae—It was always meant to be a resting spot for Trekkers.
+
+[STm03_02::command/550 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/551 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/551 CtrlChar/param/1]
+a
+
+[STm03_02::command/551 CtrlChar/param/2]
+002
+
+[STm03_02::command/551 CtrlChar/param/3]
+avg_emoji_music
+
+[STm03_02::command/551 CtrlChar/param/11]
+none
+
+[STm03_02::command/551 CtrlChar/param/12]
+none
+
+[STm03_02::command/551 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/552 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/552 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/552 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/552 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/552 SetTalk/param/7]
+Besides, no Trekkers have come here recently at all. Otherwise, we wouldn't be so free to do whatever we please.
+
+[STm03_02::command/552 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/554 SetChar/param/2]
+none
+
+[STm03_02::command/554 SetChar/param/3]
+avg1_112
+
+[STm03_02::command/554 SetChar/param/4]
+a
+
+[STm03_02::command/554 SetChar/param/5]
+006
+
+[STm03_02::command/554 SetChar/param/6]
+none
+
+[STm03_02::command/555 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/555 CtrlChar/param/1]
+a
+
+[STm03_02::command/555 CtrlChar/param/3]
+none
+
+[STm03_02::command/555 CtrlChar/param/11]
+none
+
+[STm03_02::command/555 CtrlChar/param/12]
+none
+
+[STm03_02::command/555 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/556 CtrlStage/param/9]
+none
+
+[STm03_02::command/556 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/557 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/557 CtrlChar/param/1]
+a
+
+[STm03_02::command/557 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm03_02::command/557 CtrlChar/param/11]
+none
+
+[STm03_02::command/557 CtrlChar/param/12]
+none
+
+[STm03_02::command/557 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/558 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/558 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/558 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/558 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/558 SetTalk/param/7]
+So this is a Trekkers' House... But how did it end up like this?
+
+[STm03_02::command/558 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/559 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/559 CtrlChar/param/1]
+a
+
+[STm03_02::command/559 CtrlChar/param/3]
+avg_emoji_question
+
+[STm03_02::command/559 CtrlChar/param/11]
+none
+
+[STm03_02::command/559 CtrlChar/param/12]
+none
+
+[STm03_02::command/559 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/560 SetTalk/param/1]
+avg1_112
+
+[STm03_02::command/560 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/560 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/560 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/560 SetTalk/param/7]
+Was it attacked by monsters?
+
+[STm03_02::command/560 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/561 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm03_02::command/561 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm03_02::command/561 SetBGM/param/4]
+1000ms
+
+[STm03_02::command/562 CtrlChar/param/0]
+avg1_112
+
+[STm03_02::command/562 CtrlChar/param/1]
+a
+
+[STm03_02::command/562 CtrlChar/param/3]
+none
+
+[STm03_02::command/562 CtrlChar/param/11]
+none
+
+[STm03_02::command/562 CtrlChar/param/12]
+none
+
+[STm03_02::command/562 CtrlChar/param/13]
+OutSine
+
+[STm03_02::command/564 CtrlStage/param/9]
+none
+
+[STm03_02::command/564 CtrlStage/param/10]
+OutSine
+
+[STm03_02::command/565 SetChar/param/2]
+C_in
+
+[STm03_02::command/565 SetChar/param/3]
+avg1_156
+
+[STm03_02::command/565 SetChar/param/4]
+a
+
+[STm03_02::command/565 SetChar/param/5]
+013
+
+[STm03_02::command/565 SetChar/param/6]
+close
+
+[STm03_02::command/566 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/566 CtrlChar/param/1]
+a
+
+[STm03_02::command/566 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm03_02::command/566 CtrlChar/param/11]
+none
+
+[STm03_02::command/566 CtrlChar/param/12]
+none
+
+[STm03_02::command/566 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/567 SetTalk/param/1]
+avg1_156
+
+[STm03_02::command/567 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm03_02::command/567 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm03_02::command/567 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm03_02::command/567 SetTalk/param/7]
+Well...==W== Um, I'll explain everything properly once everyone gets back tonight.
+
+[STm03_02::command/567 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm03_02::command/568 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/568 CtrlChar/param/1]
+a
+
+[STm03_02::command/568 CtrlChar/param/2]
+008
+
+[STm03_02::command/568 CtrlChar/param/3]
+none
+
+[STm03_02::command/568 CtrlChar/param/11]
+diantou
+
+[STm03_02::command/568 CtrlChar/param/12]
+none
+
+[STm03_02::command/568 CtrlChar/param/13]
+Linear
+
+[STm03_02::command/570 CtrlChar/param/0]
+avg1_156
+
+[STm03_02::command/570 CtrlChar/param/1]
+a
+
+[STm03_02::command/570 CtrlChar/param/2]
+015
+
+[STm03_02::command/570 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm03_02::command/570 CtrlChar/param/11]
+JuGong
+
+[STm03_02::command/570 CtrlChar/param/12]
+none
+
+[STm03_02::command/570 CtrlChar/param/13]
+Linear
+

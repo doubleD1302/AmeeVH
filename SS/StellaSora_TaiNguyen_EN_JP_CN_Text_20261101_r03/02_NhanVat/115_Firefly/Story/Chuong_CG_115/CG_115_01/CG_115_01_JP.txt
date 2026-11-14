@@ -1,0 +1,5413 @@
+CG_115_01 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1803
+
+[CG_115_01::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_115_01::command/0 SetIntro/param/1]
+第1話
+
+[CG_115_01::command/0 SetIntro/param/2]
+友だちの作り方
+
+[CG_115_01::command/0 SetIntro/param/3]
+いつものようにホタルとふたりで遊んでいた魔王。するとホタルは突然『飽きた』と口にする。はじめてのことに驚く魔王だが、話を聞くうちに、『友だちが欲しい』という意味だと理解する。こうしてホタルの友だち作りが始まるのだった。
+
+[CG_115_01::command/1 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/1 SetBGM/param/3]
+m10
+
+[CG_115_01::command/1 SetBGM/param/4]
+none
+
+[CG_115_01::command/2 SetTrans/param/2]
+0
+
+[CG_115_01::command/2 SetTrans/param/3]
+Linear
+
+[CG_115_01::command/2 SetTrans/param/8]
+default
+
+[CG_115_01::command/3 SetAudio/param/1]
+se_094
+
+[CG_115_01::command/4 SetBg/param/1]
+city_park_daylight
+
+[CG_115_01::command/4 SetBg/param/2]
+0
+
+[CG_115_01::command/4 SetBg/param/3]
+Linear
+
+[CG_115_01::command/4 SetBg/param/6]
+default
+
+[CG_115_01::command/5 SetTrans/param/2]
+0
+
+[CG_115_01::command/5 SetTrans/param/3]
+Linear
+
+[CG_115_01::command/5 SetTrans/param/8]
+default
+
+[CG_115_01::command/6 SetFx/param/1]
+fx_avg_line_cen_lp
+
+[CG_115_01::command/7 CtrlBg/param/10]
+loop
+
+[CG_115_01::command/7 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/8 CtrlBg/param/10]
+none
+
+[CG_115_01::command/8 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/9 SetFx/param/1]
+fx_avg_eye_ev
+
+[CG_115_01::command/10 SetBg/param/1]
+circle_light
+
+[CG_115_01::command/10 SetBg/param/2]
+0
+
+[CG_115_01::command/10 SetBg/param/3]
+Linear
+
+[CG_115_01::command/10 SetBg/param/6]
+default
+
+[CG_115_01::command/11 CtrlBg/param/10]
+none
+
+[CG_115_01::command/11 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/13 CtrlBg/param/10]
+none
+
+[CG_115_01::command/13 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/14 CtrlStage/param/9]
+loop
+
+[CG_115_01::command/14 CtrlStage/param/10]
+Linear
+
+[CG_115_01::command/16 SetAudio/param/1]
+se_094
+
+[CG_115_01::command/17 SetMainRoleTalk/param/2]
+010
+
+[CG_115_01::command/17 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_115_01::command/17 SetMainRoleTalk/param/4]
+manbu_loop
+
+[CG_115_01::command/17 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/17 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/18 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/18 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/18 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/18 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/18 SetTalk/param/7]
+（急いで逃げなくてはっ……！）==W==
+
+[CG_115_01::command/18 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/19 CtrlBg/param/10]
+none
+
+[CG_115_01::command/19 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/21 SetAudio/param/1]
+se_094
+
+[CG_115_01::command/23 CtrlBg/param/10]
+none
+
+[CG_115_01::command/23 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/25 SetMainRoleTalk/param/2]
+010
+
+[CG_115_01::command/25 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/25 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/25 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/25 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/27 CtrlStage/param/9]
+none
+
+[CG_115_01::command/27 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/28 CtrlBg/param/10]
+none
+
+[CG_115_01::command/28 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/29 SetBg/param/1]
+city_street_daylight
+
+[CG_115_01::command/29 SetBg/param/2]
+0
+
+[CG_115_01::command/29 SetBg/param/3]
+Linear
+
+[CG_115_01::command/29 SetBg/param/6]
+default
+
+[CG_115_01::command/30 CtrlBg/param/10]
+none
+
+[CG_115_01::command/30 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/31 SetChar/param/2]
+none
+
+[CG_115_01::command/31 SetChar/param/3]
+avg1_115
+
+[CG_115_01::command/31 SetChar/param/4]
+b
+
+[CG_115_01::command/31 SetChar/param/5]
+007
+
+[CG_115_01::command/31 SetChar/param/6]
+none
+
+[CG_115_01::command/32 SetStage/param/2]
+OutCubic
+
+[CG_115_01::command/33 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/33 CtrlChar/param/1]
+b
+
+[CG_115_01::command/33 CtrlChar/param/2]
+007
+
+[CG_115_01::command/33 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/33 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/33 CtrlChar/param/12]
+none
+
+[CG_115_01::command/33 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/34 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/34 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/34 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/34 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/34 SetTalk/param/7]
+さーん。==W==しーい。==W==ごーお。==W==ろーく。
+
+[CG_115_01::command/34 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/36 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/36 CtrlChar/param/1]
+b
+
+[CG_115_01::command/36 CtrlChar/param/3]
+none
+
+[CG_115_01::command/36 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/36 CtrlChar/param/12]
+none
+
+[CG_115_01::command/36 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/39 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/39 CtrlChar/param/1]
+b
+
+[CG_115_01::command/39 CtrlChar/param/3]
+none
+
+[CG_115_01::command/39 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/39 CtrlChar/param/12]
+none
+
+[CG_115_01::command/39 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/42 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/42 CtrlChar/param/1]
+b
+
+[CG_115_01::command/42 CtrlChar/param/3]
+none
+
+[CG_115_01::command/42 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/42 CtrlChar/param/12]
+none
+
+[CG_115_01::command/42 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/44 SetStage/param/2]
+OutCubic
+
+[CG_115_01::command/45 CtrlBg/param/10]
+none
+
+[CG_115_01::command/45 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/46 CtrlStage/param/9]
+none
+
+[CG_115_01::command/46 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/48 SetChar/param/2]
+none
+
+[CG_115_01::command/48 SetChar/param/3]
+avg1_115
+
+[CG_115_01::command/48 SetChar/param/4]
+a
+
+[CG_115_01::command/48 SetChar/param/5]
+002
+
+[CG_115_01::command/48 SetChar/param/6]
+none
+
+[CG_115_01::command/49 SetMainRoleTalk/param/2]
+016
+
+[CG_115_01::command/49 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_115_01::command/49 SetMainRoleTalk/param/4]
+manbu_loop
+
+[CG_115_01::command/49 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/49 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/50 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/50 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/50 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/50 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/50 SetTalk/param/7]
+（本気でやらないと、また一瞬で……！）
+
+[CG_115_01::command/50 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/51 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/51 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/51 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/51 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/53 SetAudio/param/1]
+se_148
+
+[CG_115_01::command/54 CtrlStage/param/9]
+stop
+
+[CG_115_01::command/54 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/55 CtrlBg/param/10]
+none
+
+[CG_115_01::command/55 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/56 SetTrans/param/2]
+4
+
+[CG_115_01::command/56 SetTrans/param/3]
+OutCubic
+
+[CG_115_01::command/56 SetTrans/param/8]
+default
+
+[CG_115_01::command/58 SetFx/param/1]
+fx_avg_line_cen_lp
+
+[CG_115_01::command/59 SetBg/param/1]
+city_street_daylight
+
+[CG_115_01::command/59 SetBg/param/2]
+0
+
+[CG_115_01::command/59 SetBg/param/3]
+Linear
+
+[CG_115_01::command/59 SetBg/param/6]
+default
+
+[CG_115_01::command/60 CtrlBg/param/10]
+none
+
+[CG_115_01::command/60 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/61 CtrlBg/param/10]
+none
+
+[CG_115_01::command/61 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/62 CtrlStage/param/9]
+none
+
+[CG_115_01::command/62 CtrlStage/param/10]
+Linear
+
+[CG_115_01::command/63 CtrlStage/param/9]
+none
+
+[CG_115_01::command/63 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/64 SetTrans/param/2]
+3
+
+[CG_115_01::command/64 SetTrans/param/3]
+OutCubic
+
+[CG_115_01::command/64 SetTrans/param/8]
+default
+
+[CG_115_01::command/65 SetChar/param/2]
+none
+
+[CG_115_01::command/65 SetChar/param/3]
+avg1_115
+
+[CG_115_01::command/65 SetChar/param/4]
+b
+
+[CG_115_01::command/65 SetChar/param/5]
+007
+
+[CG_115_01::command/65 SetChar/param/6]
+none
+
+[CG_115_01::command/66 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/66 CtrlChar/param/1]
+b
+
+[CG_115_01::command/66 CtrlChar/param/3]
+none
+
+[CG_115_01::command/66 CtrlChar/param/11]
+none
+
+[CG_115_01::command/66 CtrlChar/param/12]
+none
+
+[CG_115_01::command/66 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/67 CtrlBg/param/10]
+none
+
+[CG_115_01::command/67 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/68 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/68 CtrlChar/param/1]
+b
+
+[CG_115_01::command/68 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/68 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/68 CtrlChar/param/12]
+none
+
+[CG_115_01::command/68 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/69 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/69 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/69 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/69 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/69 SetTalk/param/7]
+きゅーう。==W==じゅう――――
+
+[CG_115_01::command/69 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/71 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/71 CtrlChar/param/1]
+b
+
+[CG_115_01::command/71 CtrlChar/param/3]
+none
+
+[CG_115_01::command/71 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/71 CtrlChar/param/12]
+none
+
+[CG_115_01::command/71 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/73 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/73 CtrlChar/param/1]
+b
+
+[CG_115_01::command/73 CtrlChar/param/2]
+014
+
+[CG_115_01::command/73 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_115_01::command/73 CtrlChar/param/11]
+diantou2
+
+[CG_115_01::command/73 CtrlChar/param/12]
+none
+
+[CG_115_01::command/73 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/74 CtrlStage/param/9]
+none
+
+[CG_115_01::command/74 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/75 CtrlBg/param/10]
+none
+
+[CG_115_01::command/75 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/76 SetFx/param/1]
+fx_avg_line_cen_lp_w
+
+[CG_115_01::command/77 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/77 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/77 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/77 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/77 SetTalk/param/7]
+じゃあ、いくね。
+
+[CG_115_01::command/77 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/78 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/78 CtrlChar/param/1]
+a
+
+[CG_115_01::command/78 CtrlChar/param/2]
+014
+
+[CG_115_01::command/78 CtrlChar/param/3]
+none
+
+[CG_115_01::command/78 CtrlChar/param/11]
+JuGong
+
+[CG_115_01::command/78 CtrlChar/param/12]
+none
+
+[CG_115_01::command/78 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/79 SetAudio/param/1]
+se_290
+
+[CG_115_01::command/80 CtrlStage/param/9]
+none
+
+[CG_115_01::command/80 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/81 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/81 CtrlChar/param/1]
+a
+
+[CG_115_01::command/81 CtrlChar/param/3]
+none
+
+[CG_115_01::command/81 CtrlChar/param/11]
+none
+
+[CG_115_01::command/81 CtrlChar/param/12]
+none
+
+[CG_115_01::command/81 CtrlChar/param/13]
+InBack
+
+[CG_115_01::command/83 SetAudio/param/1]
+se_063
+
+[CG_115_01::command/85 SetFx/param/1]
+fx_avg_line_cen_lp_w
+
+[CG_115_01::command/86 CtrlStage/param/9]
+none
+
+[CG_115_01::command/86 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/87 CtrlBg/param/10]
+none
+
+[CG_115_01::command/87 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/88 SetBg/param/1]
+sky_sunny
+
+[CG_115_01::command/88 SetBg/param/2]
+0
+
+[CG_115_01::command/88 SetBg/param/3]
+OutCubic
+
+[CG_115_01::command/88 SetBg/param/6]
+default
+
+[CG_115_01::command/89 CtrlBg/param/10]
+none
+
+[CG_115_01::command/89 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/90 CtrlBg/param/10]
+none
+
+[CG_115_01::command/90 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/92 CtrlStage/param/9]
+none
+
+[CG_115_01::command/92 CtrlStage/param/10]
+InOutCubic
+
+[CG_115_01::command/93 CtrlBg/param/10]
+none
+
+[CG_115_01::command/93 CtrlBg/param/11]
+InOutCubic
+
+[CG_115_01::command/94 SetBg/param/1]
+city_park_daylight
+
+[CG_115_01::command/94 SetBg/param/2]
+0
+
+[CG_115_01::command/94 SetBg/param/3]
+InOutCubic
+
+[CG_115_01::command/94 SetBg/param/6]
+default
+
+[CG_115_01::command/96 CtrlStage/param/9]
+chijing
+
+[CG_115_01::command/96 CtrlStage/param/10]
+Linear
+
+[CG_115_01::command/97 CtrlBg/param/10]
+stop
+
+[CG_115_01::command/97 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/98 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/98 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/98 SetBGM/param/4]
+1000ms
+
+[CG_115_01::command/99 SetAudio/param/1]
+se_019
+
+[CG_115_01::command/100 SetMainRoleTalk/param/2]
+025
+
+[CG_115_01::command/100 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_115_01::command/100 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/100 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/100 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/101 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/101 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/101 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/101 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/101 SetTalk/param/7]
+――っ！？
+
+[CG_115_01::command/101 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/102 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/102 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/102 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/102 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/104 SetChar/param/2]
+none
+
+[CG_115_01::command/104 SetChar/param/3]
+avg1_115
+
+[CG_115_01::command/104 SetChar/param/4]
+a
+
+[CG_115_01::command/104 SetChar/param/5]
+002
+
+[CG_115_01::command/104 SetChar/param/6]
+none
+
+[CG_115_01::command/105 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/105 CtrlChar/param/1]
+a
+
+[CG_115_01::command/105 CtrlChar/param/3]
+none
+
+[CG_115_01::command/105 CtrlChar/param/11]
+none
+
+[CG_115_01::command/105 CtrlChar/param/12]
+none
+
+[CG_115_01::command/105 CtrlChar/param/13]
+OutBack
+
+[CG_115_01::command/106 SetAudio/param/1]
+se_050
+
+[CG_115_01::command/108 CtrlStage/param/9]
+none
+
+[CG_115_01::command/108 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/109 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/109 CtrlChar/param/1]
+a
+
+[CG_115_01::command/109 CtrlChar/param/3]
+none
+
+[CG_115_01::command/109 CtrlChar/param/11]
+tiao2
+
+[CG_115_01::command/109 CtrlChar/param/12]
+none
+
+[CG_115_01::command/109 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/110 SetAudio/param/1]
+se_062
+
+[CG_115_01::command/111 SetAudio/param/1]
+se_062
+
+[CG_115_01::command/112 SetAudio/param/1]
+se_147
+
+[CG_115_01::command/113 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/113 CtrlChar/param/1]
+a
+
+[CG_115_01::command/113 CtrlChar/param/3]
+none
+
+[CG_115_01::command/113 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/113 CtrlChar/param/12]
+none
+
+[CG_115_01::command/113 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/114 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/114 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/114 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/114 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/114 SetTalk/param/7]
+はい、捕まえた。
+
+[CG_115_01::command/114 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/116 SetMainRoleTalk/param/2]
+007
+
+[CG_115_01::command/116 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_115_01::command/116 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/116 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/116 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/117 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/117 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/117 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/117 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/117 SetTalk/param/7]
+ぐぅうう！
+
+[CG_115_01::command/117 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/118 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/118 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/118 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/118 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/120 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/120 SetBGM/param/3]
+m33
+
+[CG_115_01::command/120 SetBGM/param/4]
+none
+
+[CG_115_01::command/121 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/121 CtrlChar/param/1]
+a
+
+[CG_115_01::command/121 CtrlChar/param/2]
+009
+
+[CG_115_01::command/121 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/121 CtrlChar/param/11]
+none
+
+[CG_115_01::command/121 CtrlChar/param/12]
+none
+
+[CG_115_01::command/121 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/122 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/122 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/122 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/122 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/122 SetTalk/param/7]
+またホタルの勝ち。==RT====B====W==マオーよわすぎ。ちゃんとやって。
+
+[CG_115_01::command/122 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/123 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/123 CtrlChar/param/1]
+a
+
+[CG_115_01::command/123 CtrlChar/param/2]
+008
+
+[CG_115_01::command/123 CtrlChar/param/3]
+close
+
+[CG_115_01::command/123 CtrlChar/param/11]
+buman
+
+[CG_115_01::command/123 CtrlChar/param/12]
+none
+
+[CG_115_01::command/123 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/124 SetAudio/param/1]
+se_112
+
+[CG_115_01::command/127 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/127 CtrlChar/param/1]
+a
+
+[CG_115_01::command/127 CtrlChar/param/3]
+close
+
+[CG_115_01::command/127 CtrlChar/param/11]
+none
+
+[CG_115_01::command/127 CtrlChar/param/12]
+none
+
+[CG_115_01::command/127 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/128 SetMainRoleTalk/param/2]
+003
+
+[CG_115_01::command/128 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_115_01::command/128 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/128 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/128 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/129 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/129 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/129 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/129 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/129 SetTalk/param/7]
+いやいやいや、==W==ホタルが強すぎるというか……==RT==アバランチで移動するのは反則ではないか？
+
+[CG_115_01::command/129 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/131 SetMainRoleTalk/param/2]
+015
+
+[CG_115_01::command/131 SetMainRoleTalk/param/3]
+none
+
+[CG_115_01::command/131 SetMainRoleTalk/param/4]
+diantou2
+
+[CG_115_01::command/131 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/131 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/132 SetAudio/param/1]
+se_236
+
+[CG_115_01::command/133 CtrlStage/param/9]
+none
+
+[CG_115_01::command/133 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/135 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/135 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/135 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/135 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/137 CtrlStage/param/9]
+none
+
+[CG_115_01::command/137 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/138 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/138 CtrlChar/param/1]
+a
+
+[CG_115_01::command/138 CtrlChar/param/2]
+004
+
+[CG_115_01::command/138 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_115_01::command/138 CtrlChar/param/11]
+none
+
+[CG_115_01::command/138 CtrlChar/param/12]
+none
+
+[CG_115_01::command/138 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/139 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/139 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/139 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/139 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/139 SetTalk/param/7]
+むずかしいこと、わかんない。
+
+[CG_115_01::command/139 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/140 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/140 CtrlChar/param/1]
+a
+
+[CG_115_01::command/140 CtrlChar/param/2]
+009
+
+[CG_115_01::command/140 CtrlChar/param/3]
+none
+
+[CG_115_01::command/140 CtrlChar/param/11]
+none
+
+[CG_115_01::command/140 CtrlChar/param/12]
+none
+
+[CG_115_01::command/140 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/141 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/141 CtrlChar/param/1]
+a
+
+[CG_115_01::command/141 CtrlChar/param/2]
+002
+
+[CG_115_01::command/141 CtrlChar/param/3]
+none
+
+[CG_115_01::command/141 CtrlChar/param/11]
+none
+
+[CG_115_01::command/141 CtrlChar/param/12]
+none
+
+[CG_115_01::command/141 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/142 SetAudio/param/1]
+se_122
+
+[CG_115_01::command/143 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/143 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/143 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/143 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/143 SetTalk/param/7]
+それにいまのはアバランチぶつけてないから、==RT==ホタルはルールやぶってない。
+
+[CG_115_01::command/143 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/145 SetMainRoleTalk/param/2]
+010
+
+[CG_115_01::command/145 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_115_01::command/145 SetMainRoleTalk/param/4]
+JuGong
+
+[CG_115_01::command/145 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/145 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/146 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/146 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/146 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/146 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/146 SetTalk/param/7]
+……………………なるほど。
+
+[CG_115_01::command/146 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/147 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/147 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/147 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/147 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/149 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/149 CtrlChar/param/1]
+a
+
+[CG_115_01::command/149 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/149 CtrlChar/param/11]
+jushou2
+
+[CG_115_01::command/149 CtrlChar/param/12]
+none
+
+[CG_115_01::command/149 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/150 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/150 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/150 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/150 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/150 SetTalk/param/7]
+次はマオーがオニ。
+
+[CG_115_01::command/150 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/151 SetFilm/param/1]
+OutCubic
+
+[CG_115_01::command/152 CtrlBg/param/10]
+none
+
+[CG_115_01::command/152 CtrlBg/param/11]
+OutSine
+
+[CG_115_01::command/153 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/153 CtrlChar/param/1]
+a
+
+[CG_115_01::command/153 CtrlChar/param/3]
+none
+
+[CG_115_01::command/153 CtrlChar/param/11]
+none
+
+[CG_115_01::command/153 CtrlChar/param/12]
+none
+
+[CG_115_01::command/153 CtrlChar/param/13]
+OutSine
+
+[CG_115_01::command/154 CtrlStage/param/9]
+none
+
+[CG_115_01::command/154 CtrlStage/param/10]
+OutSine
+
+[CG_115_01::command/156 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/156 CtrlChar/param/1]
+a
+
+[CG_115_01::command/156 CtrlChar/param/3]
+none
+
+[CG_115_01::command/156 CtrlChar/param/11]
+niunie1
+
+[CG_115_01::command/156 CtrlChar/param/12]
+none
+
+[CG_115_01::command/156 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/157 SetTalk/param/1]
+0
+
+[CG_115_01::command/157 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/157 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/157 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/157 SetTalk/param/7]
+ホタル――==RT==『<r=おんけいいし>恩恵意志</r>』が作り出した兵器『アバランチ』の適合者。
+
+[CG_115_01::command/157 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/158 SetFx/param/1]
+fx_avg_noise
+
+[CG_115_01::command/159 SetBg/param/1]
+wog_lab
+
+[CG_115_01::command/159 SetBg/param/2]
+0
+
+[CG_115_01::command/159 SetBg/param/3]
+Linear
+
+[CG_115_01::command/159 SetBg/param/6]
+default
+
+[CG_115_01::command/160 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/160 CtrlChar/param/1]
+f
+
+[CG_115_01::command/160 CtrlChar/param/3]
+none
+
+[CG_115_01::command/160 CtrlChar/param/11]
+none
+
+[CG_115_01::command/160 CtrlChar/param/12]
+none
+
+[CG_115_01::command/160 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/161 SetTalk/param/1]
+0
+
+[CG_115_01::command/161 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/161 SetTalk/param/7]
+そんな彼女自身は、幼い頃『<r=せいきかい>星輝会</r>』にさらわれ、長期間に渡り特殊な訓練を受けていた。
+
+[CG_115_01::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/162 SetBg/param/1]
+city_park_daylight
+
+[CG_115_01::command/162 SetBg/param/2]
+0
+
+[CG_115_01::command/162 SetBg/param/3]
+Linear
+
+[CG_115_01::command/162 SetBg/param/6]
+default
+
+[CG_115_01::command/163 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/163 CtrlChar/param/1]
+a
+
+[CG_115_01::command/163 CtrlChar/param/3]
+none
+
+[CG_115_01::command/163 CtrlChar/param/11]
+none
+
+[CG_115_01::command/163 CtrlChar/param/12]
+none
+
+[CG_115_01::command/163 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/165 SetFx/param/1]
+fx_avg_noise
+
+[CG_115_01::command/168 SetBg/param/1]
+wog_academy_office
+
+[CG_115_01::command/168 SetBg/param/2]
+0
+
+[CG_115_01::command/168 SetBg/param/3]
+OutSine
+
+[CG_115_01::command/168 SetBg/param/6]
+default
+
+[CG_115_01::command/169 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/169 CtrlChar/param/1]
+a
+
+[CG_115_01::command/169 CtrlChar/param/3]
+none
+
+[CG_115_01::command/169 CtrlChar/param/11]
+none
+
+[CG_115_01::command/169 CtrlChar/param/12]
+none
+
+[CG_115_01::command/169 CtrlChar/param/13]
+OutSine
+
+[CG_115_01::command/170 SetChar/param/2]
+none
+
+[CG_115_01::command/170 SetChar/param/3]
+avg1_120
+
+[CG_115_01::command/170 SetChar/param/4]
+a
+
+[CG_115_01::command/170 SetChar/param/5]
+003
+
+[CG_115_01::command/170 SetChar/param/6]
+none
+
+[CG_115_01::command/171 CtrlChar/param/0]
+avg1_120
+
+[CG_115_01::command/171 CtrlChar/param/1]
+a
+
+[CG_115_01::command/171 CtrlChar/param/3]
+none
+
+[CG_115_01::command/171 CtrlChar/param/11]
+none
+
+[CG_115_01::command/171 CtrlChar/param/12]
+none
+
+[CG_115_01::command/171 CtrlChar/param/13]
+OutSine
+
+[CG_115_01::command/172 SetTalk/param/1]
+0
+
+[CG_115_01::command/172 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/172 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/172 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/172 SetTalk/param/7]
+現在はカナーチェに保護され、<r=せいきふぞくだいがく>星輝附属大学</r>に特待生として通いつつ――
+
+[CG_115_01::command/172 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/173 CtrlChar/param/0]
+avg1_120
+
+[CG_115_01::command/173 CtrlChar/param/1]
+a
+
+[CG_115_01::command/173 CtrlChar/param/3]
+none
+
+[CG_115_01::command/173 CtrlChar/param/11]
+none
+
+[CG_115_01::command/173 CtrlChar/param/12]
+none
+
+[CG_115_01::command/173 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/174 SetBg/param/1]
+city_park_daylight
+
+[CG_115_01::command/174 SetBg/param/2]
+0
+
+[CG_115_01::command/174 SetBg/param/3]
+OutCubic
+
+[CG_115_01::command/174 SetBg/param/6]
+default
+
+[CG_115_01::command/175 CtrlBg/param/10]
+none
+
+[CG_115_01::command/175 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/176 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/176 CtrlChar/param/1]
+a
+
+[CG_115_01::command/176 CtrlChar/param/3]
+none
+
+[CG_115_01::command/176 CtrlChar/param/11]
+none
+
+[CG_115_01::command/176 CtrlChar/param/12]
+none
+
+[CG_115_01::command/176 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/179 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/179 CtrlChar/param/1]
+b
+
+[CG_115_01::command/179 CtrlChar/param/3]
+none
+
+[CG_115_01::command/179 CtrlChar/param/11]
+JuGong
+
+[CG_115_01::command/179 CtrlChar/param/12]
+none
+
+[CG_115_01::command/179 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/181 SetAudio/param/1]
+se_278
+
+[CG_115_01::command/182 SetTalk/param/1]
+0
+
+[CG_115_01::command/182 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/182 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/182 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/182 SetTalk/param/7]
+『普通の女の子』を勉強中である。
+
+[CG_115_01::command/182 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/183 SetFilm/param/1]
+OutCubic
+
+[CG_115_01::command/184 CtrlBg/param/10]
+none
+
+[CG_115_01::command/184 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/185 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/185 CtrlChar/param/1]
+b
+
+[CG_115_01::command/185 CtrlChar/param/2]
+003
+
+[CG_115_01::command/185 CtrlChar/param/3]
+avg_emoji_flower
+
+[CG_115_01::command/185 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/185 CtrlChar/param/12]
+none
+
+[CG_115_01::command/185 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/186 CtrlStage/param/9]
+none
+
+[CG_115_01::command/186 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/187 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/187 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/187 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/187 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/187 SetTalk/param/7]
+ホタル、マオーと遊ぶの好き。==RT==マオーと一緒にいるの楽しい。
+
+[CG_115_01::command/187 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/189 SetMainRoleTalk/param/2]
+011
+
+[CG_115_01::command/189 SetMainRoleTalk/param/3]
+avg_emoji_shy
+
+[CG_115_01::command/189 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/189 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/189 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/190 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/190 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/190 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/190 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/190 SetTalk/param/7]
+（まさかここまで懐かれるとは思わなかったが……）
+
+[CG_115_01::command/190 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/191 SetMainRoleTalk/param/3]
+none
+
+[CG_115_01::command/191 SetMainRoleTalk/param/4]
+niunie1
+
+[CG_115_01::command/191 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/191 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/192 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/192 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/192 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/192 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/192 SetTalk/param/7]
+（母性をくすぐられるというか、==RT==こういう時間も悪くないな）
+
+[CG_115_01::command/192 SetTalk/param/8]
+（父性をくすぐられるというか、==RT==こういう時間も悪くないな）
+
+[CG_115_01::command/193 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/193 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/193 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/193 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/195 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/195 CtrlChar/param/1]
+b
+
+[CG_115_01::command/195 CtrlChar/param/2]
+017
+
+[CG_115_01::command/195 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_115_01::command/195 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/195 CtrlChar/param/12]
+none
+
+[CG_115_01::command/195 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/196 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/196 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/196 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/196 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/196 SetTalk/param/7]
+……けどマオーと遊ぶの、そろそろ飽きてきた。
+
+[CG_115_01::command/196 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/198 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/198 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/198 SetBGM/param/4]
+none
+
+[CG_115_01::command/199 SetMainRoleTalk/param/2]
+013
+
+[CG_115_01::command/199 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_115_01::command/199 SetMainRoleTalk/param/4]
+chijing2
+
+[CG_115_01::command/199 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/199 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/200 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/200 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/200 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/200 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/200 SetTalk/param/7]
+…………………………ぬ？
+
+[CG_115_01::command/200 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/202 SetMainRoleTalk/param/2]
+017
+
+[CG_115_01::command/202 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/202 SetMainRoleTalk/param/4]
+lengzhan2
+
+[CG_115_01::command/202 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/202 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/203 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/203 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/203 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/203 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/203 SetTalk/param/7]
+ホ、ホタル？==RT==い、いま……なんと言ったんだ？
+
+[CG_115_01::command/203 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/204 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/204 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/204 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/204 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/206 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/206 CtrlChar/param/1]
+b
+
+[CG_115_01::command/206 CtrlChar/param/2]
+016
+
+[CG_115_01::command/206 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_115_01::command/206 CtrlChar/param/11]
+none
+
+[CG_115_01::command/206 CtrlChar/param/12]
+none
+
+[CG_115_01::command/206 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/207 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/207 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/207 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/207 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/207 SetTalk/param/7]
+？
+
+[CG_115_01::command/207 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/208 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/208 CtrlChar/param/1]
+b
+
+[CG_115_01::command/208 CtrlChar/param/3]
+none
+
+[CG_115_01::command/208 CtrlChar/param/11]
+none
+
+[CG_115_01::command/208 CtrlChar/param/12]
+none
+
+[CG_115_01::command/208 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/209 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/209 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/209 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/209 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/209 SetTalk/param/7]
+マオーと遊ぶの、そろそろ飽きてきた。
+
+[CG_115_01::command/209 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/210 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/210 SetBGM/param/3]
+m44
+
+[CG_115_01::command/210 SetBGM/param/4]
+500ms
+
+[CG_115_01::command/212 CtrlStage/param/9]
+none
+
+[CG_115_01::command/212 CtrlStage/param/10]
+OutCirc
+
+[CG_115_01::command/213 SetTalkShake/param/1]
+chijing
+
+[CG_115_01::command/214 SetMainRoleTalk/param/2]
+019
+
+[CG_115_01::command/214 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_115_01::command/214 SetMainRoleTalk/param/4]
+diantou2
+
+[CG_115_01::command/214 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/214 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/215 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/215 SetTalk/param/7]
+そ、それは……==RT==私と一緒にいるのは、もうつまらないということか？
+
+[CG_115_01::command/215 SetTalk/param/8]
+そ、それは……==RT==僕と一緒にいるのは、もうつまらないということか？
+
+[CG_115_01::command/216 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/216 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/216 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/216 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/218 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/218 CtrlChar/param/1]
+b
+
+[CG_115_01::command/218 CtrlChar/param/2]
+016
+
+[CG_115_01::command/218 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_115_01::command/218 CtrlChar/param/11]
+none
+
+[CG_115_01::command/218 CtrlChar/param/12]
+none
+
+[CG_115_01::command/218 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/219 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/219 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/219 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/219 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/219 SetTalk/param/7]
+？
+
+[CG_115_01::command/219 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/220 CtrlStage/param/9]
+none
+
+[CG_115_01::command/220 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/221 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/221 CtrlChar/param/1]
+b
+
+[CG_115_01::command/221 CtrlChar/param/2]
+003
+
+[CG_115_01::command/221 CtrlChar/param/3]
+none
+
+[CG_115_01::command/221 CtrlChar/param/11]
+tiao2
+
+[CG_115_01::command/221 CtrlChar/param/12]
+none
+
+[CG_115_01::command/221 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/222 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/222 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/222 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/222 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/222 SetTalk/param/7]
+一緒に遊んでくれるから、マオーはいちばんの友だち。==B====W====RT==いつだって、わくわく。
+
+[CG_115_01::command/222 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/223 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/223 CtrlChar/param/1]
+b
+
+[CG_115_01::command/223 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/223 CtrlChar/param/11]
+daintou
+
+[CG_115_01::command/223 CtrlChar/param/12]
+none
+
+[CG_115_01::command/223 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/226 SetMainRoleTalk/param/2]
+021
+
+[CG_115_01::command/226 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_115_01::command/226 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/226 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/226 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/227 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/227 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/227 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/227 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/227 SetTalk/param/7]
+（う～～ん？）
+
+[CG_115_01::command/227 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/228 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/228 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/228 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/228 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/230 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/230 CtrlChar/param/1]
+b
+
+[CG_115_01::command/230 CtrlChar/param/2]
+017
+
+[CG_115_01::command/230 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_115_01::command/230 CtrlChar/param/11]
+niunie1
+
+[CG_115_01::command/230 CtrlChar/param/12]
+none
+
+[CG_115_01::command/230 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/231 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/231 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/231 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/231 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/231 SetTalk/param/7]
+だからマオーがいないとつまらない。==RT==ほかにホタルと遊んでくれる人、誰もいないから。
+
+[CG_115_01::command/231 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/232 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/232 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/232 SetBGM/param/4]
+1000ms
+
+[CG_115_01::command/234 SetMainRoleTalk/param/2]
+020
+
+[CG_115_01::command/234 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_115_01::command/234 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/234 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/234 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/235 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/235 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/235 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/235 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/235 SetTalk/param/7]
+（ほかの人……ふむ、ホタルの言っていることが==RT==なんとなくわかってきたぞ）
+
+[CG_115_01::command/235 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/236 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/236 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/236 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/236 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/238 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/238 CtrlChar/param/1]
+b
+
+[CG_115_01::command/238 CtrlChar/param/2]
+016
+
+[CG_115_01::command/238 CtrlChar/param/3]
+avg_emoji_shy
+
+[CG_115_01::command/238 CtrlChar/param/11]
+none
+
+[CG_115_01::command/238 CtrlChar/param/12]
+none
+
+[CG_115_01::command/238 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/239 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/239 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/239 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/239 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/239 SetTalk/param/7]
+ホタル、もっと遊びたいのに……
+
+[CG_115_01::command/239 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/240 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/240 SetBGM/param/3]
+m5
+
+[CG_115_01::command/240 SetBGM/param/4]
+1000ms
+
+[CG_115_01::command/242 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/242 CtrlChar/param/1]
+b
+
+[CG_115_01::command/242 CtrlChar/param/3]
+close
+
+[CG_115_01::command/242 CtrlChar/param/11]
+none
+
+[CG_115_01::command/242 CtrlChar/param/12]
+none
+
+[CG_115_01::command/242 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/243 SetMainRoleTalk/param/2]
+003
+
+[CG_115_01::command/243 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/243 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/243 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/243 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/244 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/244 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/244 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/244 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/244 SetTalk/param/7]
+（私と一緒に遊ぶのは楽しいけど、==RT==ほかにも遊び相手が欲しい――そんなところかな）
+
+[CG_115_01::command/244 SetTalk/param/8]
+（僕と一緒に遊ぶのは楽しいけど、==RT==ほかにも遊び相手が欲しい――そんなところかな）
+
+[CG_115_01::command/245 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/245 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/245 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/245 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/247 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/247 CtrlChar/param/1]
+b
+
+[CG_115_01::command/247 CtrlChar/param/2]
+017
+
+[CG_115_01::command/247 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/247 CtrlChar/param/11]
+xuanyun
+
+[CG_115_01::command/247 CtrlChar/param/12]
+none
+
+[CG_115_01::command/247 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/248 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/248 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/248 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/248 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/248 SetTalk/param/7]
+マオーのほかにも、わくわくがあったらきっともっと楽しい。
+
+[CG_115_01::command/248 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/250 SetMainRoleTalk/param/2]
+022
+
+[CG_115_01::command/250 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/250 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/250 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/250 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/251 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/251 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/251 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/251 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/251 SetTalk/param/7]
+……やはりそうか。つまりホタルは、==RT==私以外にも友だちが欲しいということかな？==W==
+
+[CG_115_01::command/251 SetTalk/param/8]
+……やはりそうか。つまりホタルは、==RT==僕以外にも友だちが欲しいということかな？==W==
+
+[CG_115_01::command/252 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/252 CtrlChar/param/1]
+b
+
+[CG_115_01::command/252 CtrlChar/param/2]
+005
+
+[CG_115_01::command/252 CtrlChar/param/3]
+avg_emoji_shock
+
+[CG_115_01::command/252 CtrlChar/param/11]
+chijing
+
+[CG_115_01::command/252 CtrlChar/param/12]
+none
+
+[CG_115_01::command/252 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/254 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/254 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/254 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/254 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/256 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/256 CtrlChar/param/1]
+b
+
+[CG_115_01::command/256 CtrlChar/param/2]
+013
+
+[CG_115_01::command/256 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/256 CtrlChar/param/11]
+diantou2
+
+[CG_115_01::command/256 CtrlChar/param/12]
+none
+
+[CG_115_01::command/256 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/257 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/257 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/257 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/257 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/257 SetTalk/param/7]
+うん。
+
+[CG_115_01::command/257 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/259 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/259 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_115_01::command/259 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/259 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/259 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/260 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/260 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/260 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/260 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/260 SetTalk/param/7]
+なるほどな。だがホタルは、普段学校に通って==RT==いるんだろう？一緒に遊ぶ友だちはいないのか？
+
+[CG_115_01::command/260 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/261 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/261 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/261 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/261 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/263 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/263 CtrlChar/param/1]
+b
+
+[CG_115_01::command/263 CtrlChar/param/2]
+016
+
+[CG_115_01::command/263 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_115_01::command/263 CtrlChar/param/11]
+niunie
+
+[CG_115_01::command/263 CtrlChar/param/12]
+none
+
+[CG_115_01::command/263 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/264 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/264 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/264 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/264 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/264 SetTalk/param/7]
+いない。
+
+[CG_115_01::command/264 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/266 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/266 CtrlChar/param/1]
+b
+
+[CG_115_01::command/266 CtrlChar/param/2]
+017
+
+[CG_115_01::command/266 CtrlChar/param/3]
+close
+
+[CG_115_01::command/266 CtrlChar/param/11]
+none
+
+[CG_115_01::command/266 CtrlChar/param/12]
+none
+
+[CG_115_01::command/266 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/268 SetAudio/param/1]
+se_169
+
+[CG_115_01::command/269 SetTrans/param/2]
+0
+
+[CG_115_01::command/269 SetTrans/param/3]
+OutCubic
+
+[CG_115_01::command/269 SetTrans/param/8]
+default
+
+[CG_115_01::command/270 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_115_01::command/271 CtrlStage/param/9]
+none
+
+[CG_115_01::command/271 CtrlStage/param/10]
+Linear
+
+[CG_115_01::command/272 SetBg/param/1]
+wog_academy_corridor
+
+[CG_115_01::command/272 SetBg/param/2]
+0
+
+[CG_115_01::command/272 SetBg/param/3]
+Linear
+
+[CG_115_01::command/272 SetBg/param/6]
+default
+
+[CG_115_01::command/273 CtrlBg/param/10]
+none
+
+[CG_115_01::command/273 CtrlBg/param/11]
+Linear
+
+[CG_115_01::command/274 SetChar/param/2]
+none
+
+[CG_115_01::command/274 SetChar/param/3]
+avg1_115
+
+[CG_115_01::command/274 SetChar/param/4]
+b
+
+[CG_115_01::command/274 SetChar/param/5]
+002
+
+[CG_115_01::command/274 SetChar/param/6]
+avg_emoji_speechless
+
+[CG_115_01::command/275 SetChar/param/2]
+none
+
+[CG_115_01::command/275 SetChar/param/3]
+avg3_177
+
+[CG_115_01::command/275 SetChar/param/4]
+a
+
+[CG_115_01::command/275 SetChar/param/5]
+006
+
+[CG_115_01::command/275 SetChar/param/6]
+none
+
+[CG_115_01::command/276 SetChar/param/2]
+none
+
+[CG_115_01::command/276 SetChar/param/3]
+avg3_178
+
+[CG_115_01::command/276 SetChar/param/4]
+a
+
+[CG_115_01::command/276 SetChar/param/5]
+006
+
+[CG_115_01::command/276 SetChar/param/6]
+none
+
+[CG_115_01::command/277 SetTrans/param/2]
+0
+
+[CG_115_01::command/277 SetTrans/param/3]
+OutCubic
+
+[CG_115_01::command/277 SetTrans/param/8]
+default
+
+[CG_115_01::command/279 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/279 CtrlChar/param/1]
+b
+
+[CG_115_01::command/279 CtrlChar/param/2]
+005
+
+[CG_115_01::command/279 CtrlChar/param/3]
+avg_emoji_shock
+
+[CG_115_01::command/279 CtrlChar/param/11]
+ChanDou
+
+[CG_115_01::command/279 CtrlChar/param/12]
+none
+
+[CG_115_01::command/279 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/280 CtrlStage/param/9]
+none
+
+[CG_115_01::command/280 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/281 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/281 CtrlChar/param/1]
+b
+
+[CG_115_01::command/281 CtrlChar/param/3]
+close
+
+[CG_115_01::command/281 CtrlChar/param/11]
+none
+
+[CG_115_01::command/281 CtrlChar/param/12]
+none
+
+[CG_115_01::command/281 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/282 CtrlBg/param/10]
+none
+
+[CG_115_01::command/282 CtrlBg/param/11]
+OutCubic
+
+[CG_115_01::command/284 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/284 CtrlChar/param/1]
+b
+
+[CG_115_01::command/284 CtrlChar/param/3]
+close
+
+[CG_115_01::command/284 CtrlChar/param/11]
+none
+
+[CG_115_01::command/284 CtrlChar/param/12]
+none
+
+[CG_115_01::command/284 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/285 CtrlChar/param/0]
+avg3_178
+
+[CG_115_01::command/285 CtrlChar/param/1]
+a
+
+[CG_115_01::command/285 CtrlChar/param/3]
+none
+
+[CG_115_01::command/285 CtrlChar/param/11]
+none
+
+[CG_115_01::command/285 CtrlChar/param/12]
+none
+
+[CG_115_01::command/285 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/286 CtrlChar/param/0]
+avg3_177
+
+[CG_115_01::command/286 CtrlChar/param/1]
+a
+
+[CG_115_01::command/286 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_115_01::command/286 CtrlChar/param/11]
+daintou
+
+[CG_115_01::command/286 CtrlChar/param/12]
+none
+
+[CG_115_01::command/286 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/287 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/287 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/287 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/287 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/287 SetTalk/param/7]
+ホタル、学校だといつもひとり。==RT====B====W==なにをしゃべったらいいかわからないし、みんなも話しかけてこない。
+
+[CG_115_01::command/287 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/288 CtrlChar/param/0]
+avg3_178
+
+[CG_115_01::command/288 CtrlChar/param/1]
+a
+
+[CG_115_01::command/288 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/288 CtrlChar/param/11]
+daintou
+
+[CG_115_01::command/288 CtrlChar/param/12]
+none
+
+[CG_115_01::command/288 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/291 CtrlStage/param/9]
+none
+
+[CG_115_01::command/291 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/292 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/292 CtrlChar/param/1]
+b
+
+[CG_115_01::command/292 CtrlChar/param/2]
+002
+
+[CG_115_01::command/292 CtrlChar/param/3]
+none
+
+[CG_115_01::command/292 CtrlChar/param/11]
+none
+
+[CG_115_01::command/292 CtrlChar/param/12]
+none
+
+[CG_115_01::command/292 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/293 CtrlChar/param/0]
+avg3_177
+
+[CG_115_01::command/293 CtrlChar/param/1]
+a
+
+[CG_115_01::command/293 CtrlChar/param/3]
+none
+
+[CG_115_01::command/293 CtrlChar/param/11]
+manbu_loop
+
+[CG_115_01::command/293 CtrlChar/param/12]
+none
+
+[CG_115_01::command/293 CtrlChar/param/13]
+OutSine
+
+[CG_115_01::command/295 CtrlChar/param/0]
+avg3_178
+
+[CG_115_01::command/295 CtrlChar/param/1]
+a
+
+[CG_115_01::command/295 CtrlChar/param/3]
+none
+
+[CG_115_01::command/295 CtrlChar/param/11]
+manbu_loop
+
+[CG_115_01::command/295 CtrlChar/param/12]
+none
+
+[CG_115_01::command/295 CtrlChar/param/13]
+OutSine
+
+[CG_115_01::command/296 CtrlChar/param/0]
+avg3_177
+
+[CG_115_01::command/296 CtrlChar/param/1]
+a
+
+[CG_115_01::command/296 CtrlChar/param/3]
+none
+
+[CG_115_01::command/296 CtrlChar/param/11]
+none
+
+[CG_115_01::command/296 CtrlChar/param/12]
+none
+
+[CG_115_01::command/296 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/297 CtrlChar/param/0]
+avg3_178
+
+[CG_115_01::command/297 CtrlChar/param/1]
+a
+
+[CG_115_01::command/297 CtrlChar/param/3]
+none
+
+[CG_115_01::command/297 CtrlChar/param/11]
+none
+
+[CG_115_01::command/297 CtrlChar/param/12]
+none
+
+[CG_115_01::command/297 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/299 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/299 CtrlChar/param/1]
+b
+
+[CG_115_01::command/299 CtrlChar/param/3]
+none
+
+[CG_115_01::command/299 CtrlChar/param/11]
+tiao2
+
+[CG_115_01::command/299 CtrlChar/param/12]
+none
+
+[CG_115_01::command/299 CtrlChar/param/13]
+OutQuad
+
+[CG_115_01::command/300 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/300 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/300 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/300 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/300 SetTalk/param/7]
+みんなが楽しそうに話してるのを遠くから見てると……==W====RT==なんだか、シクシクする。
+
+[CG_115_01::command/300 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/302 CtrlStage/param/9]
+none
+
+[CG_115_01::command/302 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/303 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/303 CtrlChar/param/1]
+b
+
+[CG_115_01::command/303 CtrlChar/param/2]
+016
+
+[CG_115_01::command/303 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_115_01::command/303 CtrlChar/param/11]
+JuGong
+
+[CG_115_01::command/303 CtrlChar/param/12]
+none
+
+[CG_115_01::command/303 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/305 SetAudio/param/1]
+se_169
+
+[CG_115_01::command/306 SetTrans/param/2]
+0
+
+[CG_115_01::command/306 SetTrans/param/3]
+OutCubic
+
+[CG_115_01::command/306 SetTrans/param/8]
+default
+
+[CG_115_01::command/307 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_115_01::command/308 SetBg/param/1]
+city_park_daylight
+
+[CG_115_01::command/308 SetBg/param/2]
+0
+
+[CG_115_01::command/308 SetBg/param/3]
+Linear
+
+[CG_115_01::command/308 SetBg/param/6]
+default
+
+[CG_115_01::command/309 SetChar/param/2]
+none
+
+[CG_115_01::command/309 SetChar/param/3]
+avg1_115
+
+[CG_115_01::command/309 SetChar/param/4]
+b
+
+[CG_115_01::command/309 SetChar/param/5]
+016
+
+[CG_115_01::command/309 SetChar/param/6]
+none
+
+[CG_115_01::command/310 SetTrans/param/2]
+0
+
+[CG_115_01::command/310 SetTrans/param/3]
+OutCubic
+
+[CG_115_01::command/310 SetTrans/param/8]
+default
+
+[CG_115_01::command/311 CtrlStage/param/9]
+none
+
+[CG_115_01::command/311 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/312 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/312 CtrlChar/param/1]
+b
+
+[CG_115_01::command/312 CtrlChar/param/2]
+016
+
+[CG_115_01::command/312 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_115_01::command/312 CtrlChar/param/11]
+daintou
+
+[CG_115_01::command/312 CtrlChar/param/12]
+none
+
+[CG_115_01::command/312 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/313 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/313 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/313 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/313 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/313 SetTalk/param/7]
+友だち作るの、むずかしい……
+
+[CG_115_01::command/313 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/315 SetMainRoleTalk/param/2]
+020
+
+[CG_115_01::command/315 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_115_01::command/315 SetMainRoleTalk/param/4]
+diantou
+
+[CG_115_01::command/315 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/315 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/316 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/316 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/316 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/316 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/316 SetTalk/param/7]
+（実際、ホタルは育ってきた環境が特殊すぎたせいで、==RT==相当『世間ズレ』をしている）
+
+[CG_115_01::command/316 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/317 SetMainRoleTalk/param/2]
+009
+
+[CG_115_01::command/317 SetMainRoleTalk/param/3]
+none
+
+[CG_115_01::command/317 SetMainRoleTalk/param/4]
+niunie1
+
+[CG_115_01::command/317 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/317 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/318 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/318 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/318 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/318 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/318 SetTalk/param/7]
+（ましてや通っているのは大学だから、==RT==同年代の子もいないだろうし……==RT==たしかに友だちを作るのは難しいだろうな）
+
+[CG_115_01::command/318 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/319 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/319 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/319 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/319 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/321 SetAudio/param/1]
+se_236
+
+[CG_115_01::command/322 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/322 CtrlChar/param/1]
+b
+
+[CG_115_01::command/322 CtrlChar/param/3]
+none
+
+[CG_115_01::command/322 CtrlChar/param/11]
+tiao2
+
+[CG_115_01::command/322 CtrlChar/param/12]
+none
+
+[CG_115_01::command/322 CtrlChar/param/13]
+OutSine
+
+[CG_115_01::command/323 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/323 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/323 SetBGM/param/4]
+1000ms
+
+[CG_115_01::command/324 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/324 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/324 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/324 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/324 SetTalk/param/7]
+友だちって、どうやって作るの？
+
+[CG_115_01::command/324 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/326 SetMainRoleTalk/param/2]
+012
+
+[CG_115_01::command/326 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_115_01::command/326 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/326 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/326 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/327 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/327 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/327 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/327 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/327 SetTalk/param/7]
+……ぬ？どうやって？
+
+[CG_115_01::command/327 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/328 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/328 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/328 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/328 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/330 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/330 CtrlChar/param/1]
+b
+
+[CG_115_01::command/330 CtrlChar/param/2]
+012
+
+[CG_115_01::command/330 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/330 CtrlChar/param/11]
+daintou
+
+[CG_115_01::command/330 CtrlChar/param/12]
+none
+
+[CG_115_01::command/330 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/331 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/331 SetBGM/param/3]
+m49
+
+[CG_115_01::command/331 SetBGM/param/4]
+none
+
+[CG_115_01::command/332 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/332 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/332 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/332 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/332 SetTalk/param/7]
+マオーのまわり、いつもかわいい女の子でいっぱい。==B====W====RT==マオー、友だち作りのメージン。
+
+[CG_115_01::command/332 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/333 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/333 CtrlChar/param/1]
+b
+
+[CG_115_01::command/333 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_115_01::command/333 CtrlChar/param/11]
+none
+
+[CG_115_01::command/333 CtrlChar/param/12]
+none
+
+[CG_115_01::command/333 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/336 SetMainRoleTalk/param/2]
+007
+
+[CG_115_01::command/336 SetMainRoleTalk/param/3]
+avg_emoji_shy
+
+[CG_115_01::command/336 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/336 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/336 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/337 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/337 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/337 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/337 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/337 SetTalk/param/7]
+その表現は、誤解を生みそうだから==RT==是正しておきたいところだが……
+
+[CG_115_01::command/337 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/338 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/338 CtrlChar/param/1]
+b
+
+[CG_115_01::command/338 CtrlChar/param/3]
+close
+
+[CG_115_01::command/338 CtrlChar/param/11]
+none
+
+[CG_115_01::command/338 CtrlChar/param/12]
+none
+
+[CG_115_01::command/338 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/339 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/339 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/339 SetMainRoleTalk/param/4]
+diantou
+
+[CG_115_01::command/339 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/339 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/340 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/340 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/340 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/340 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/340 SetTalk/param/7]
+まず友だちの定義を定めておきたい。
+
+[CG_115_01::command/340 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/341 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/341 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/341 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/341 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/343 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/343 CtrlChar/param/1]
+b
+
+[CG_115_01::command/343 CtrlChar/param/2]
+004
+
+[CG_115_01::command/343 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_115_01::command/343 CtrlChar/param/11]
+none
+
+[CG_115_01::command/343 CtrlChar/param/12]
+none
+
+[CG_115_01::command/343 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/344 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/344 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/344 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/344 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/344 SetTalk/param/7]
+テーギ？
+
+[CG_115_01::command/344 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/346 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/346 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/346 SetMainRoleTalk/param/4]
+jushou1
+
+[CG_115_01::command/346 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/346 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/347 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/347 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/347 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/347 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/347 SetTalk/param/7]
+既知の仲になってしまえば『友だち』なのか。==B====W====RT==あるいは数回以上の交流をもって『友だち』になるのか。==B====W====RT==はたまたいつも一緒にいる人を『友だち』と呼ぶのか。
+
+[CG_115_01::command/347 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/348 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/348 SetMainRoleTalk/param/3]
+none
+
+[CG_115_01::command/348 SetMainRoleTalk/param/4]
+jushou1
+
+[CG_115_01::command/348 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/348 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/350 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/350 SetMainRoleTalk/param/3]
+none
+
+[CG_115_01::command/350 SetMainRoleTalk/param/4]
+jushou1
+
+[CG_115_01::command/350 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/350 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/352 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/352 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/352 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/352 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/354 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/354 CtrlChar/param/1]
+b
+
+[CG_115_01::command/354 CtrlChar/param/2]
+017
+
+[CG_115_01::command/354 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[CG_115_01::command/354 CtrlChar/param/11]
+none
+
+[CG_115_01::command/354 CtrlChar/param/12]
+none
+
+[CG_115_01::command/354 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/355 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/355 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/355 SetTalk/param/7]
+キチ？コーリュー？
+
+[CG_115_01::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/357 SetMainRoleTalk/param/2]
+003
+
+[CG_115_01::command/357 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/357 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/357 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/357 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/358 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/358 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/358 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/358 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/358 SetTalk/param/7]
+そもそも心の交流がない相手を信用できるのだろうか？
+
+[CG_115_01::command/358 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/359 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/359 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/359 SetMainRoleTalk/param/4]
+diantou
+
+[CG_115_01::command/359 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/359 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/360 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/360 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/360 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/360 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/360 SetTalk/param/7]
+外面や体裁で<r=かたど>象</r>られた関係はいくらでもあるわけで、==RT==そういう人を『友だち』と形容するのには==RT==若干の抵抗がある。
+
+[CG_115_01::command/360 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/361 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/361 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/361 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/361 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/363 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/363 CtrlChar/param/1]
+b
+
+[CG_115_01::command/363 CtrlChar/param/2]
+010
+
+[CG_115_01::command/363 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_115_01::command/363 CtrlChar/param/11]
+none
+
+[CG_115_01::command/363 CtrlChar/param/12]
+none
+
+[CG_115_01::command/363 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/364 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/364 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/364 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/364 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/364 SetTalk/param/7]
+トンズラやテンサイで、カタカタれたカンケー？
+
+[CG_115_01::command/364 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/366 SetMainRoleTalk/param/2]
+009
+
+[CG_115_01::command/366 SetMainRoleTalk/param/3]
+none
+
+[CG_115_01::command/366 SetMainRoleTalk/param/4]
+diantou2
+
+[CG_115_01::command/366 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/366 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/367 SetAudio/param/1]
+se_047
+
+[CG_115_01::command/368 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/368 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/368 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/368 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/368 SetTalk/param/7]
+微妙に間違っているが……==RT==かわいいからよしとしよう。
+
+[CG_115_01::command/368 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/370 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/370 CtrlChar/param/1]
+b
+
+[CG_115_01::command/370 CtrlChar/param/2]
+015
+
+[CG_115_01::command/370 CtrlChar/param/3]
+none
+
+[CG_115_01::command/370 CtrlChar/param/11]
+none
+
+[CG_115_01::command/370 CtrlChar/param/12]
+none
+
+[CG_115_01::command/370 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/371 SetMainRoleTalk/param/2]
+021
+
+[CG_115_01::command/371 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_115_01::command/371 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/371 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/371 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/372 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/372 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/372 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/372 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/372 SetTalk/param/7]
+（そもそも、こちらが友だちだと思っていても、==RT==相手がそう思ってない可能性も否定できないわけで。==RT==どこからどこまで友だちと呼ぶかは議論すべき――）
+
+[CG_115_01::command/372 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/373 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/373 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/373 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/373 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/375 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/375 CtrlChar/param/1]
+b
+
+[CG_115_01::command/375 CtrlChar/param/2]
+015
+
+[CG_115_01::command/375 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_115_01::command/375 CtrlChar/param/11]
+xuanyun
+
+[CG_115_01::command/375 CtrlChar/param/12]
+none
+
+[CG_115_01::command/375 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/376 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/376 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/376 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/376 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/376 SetTalk/param/7]
+マオーが言ってること、むずかしすぎてつまんない。
+
+[CG_115_01::command/376 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/378 SetMainRoleTalk/param/2]
+010
+
+[CG_115_01::command/378 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_115_01::command/378 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/378 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/378 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/379 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/379 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/379 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/379 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/379 SetTalk/param/7]
+……………………すまない。
+
+[CG_115_01::command/379 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/380 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/380 CtrlChar/param/1]
+b
+
+[CG_115_01::command/380 CtrlChar/param/2]
+002
+
+[CG_115_01::command/380 CtrlChar/param/3]
+none
+
+[CG_115_01::command/380 CtrlChar/param/11]
+lengzhan2
+
+[CG_115_01::command/380 CtrlChar/param/12]
+none
+
+[CG_115_01::command/380 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/381 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/381 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/381 SetMainRoleTalk/param/4]
+diantou
+
+[CG_115_01::command/381 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/381 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/382 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/382 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/382 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/382 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/382 SetTalk/param/7]
+話をまとめると、相手が自分のことを認知していないと==RT==友だちの関係にはなれないから、==RT==まずはホタルを知ってもらうことから始めよう。
+
+[CG_115_01::command/382 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/383 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/383 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/383 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/383 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/385 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/385 CtrlChar/param/1]
+b
+
+[CG_115_01::command/385 CtrlChar/param/2]
+007
+
+[CG_115_01::command/385 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_115_01::command/385 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/385 CtrlChar/param/12]
+none
+
+[CG_115_01::command/385 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/386 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/386 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/386 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/386 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/386 SetTalk/param/7]
+ホタルを知ってもらう？
+
+[CG_115_01::command/386 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/388 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/388 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/388 SetMainRoleTalk/param/4]
+daintou
+
+[CG_115_01::command/388 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/388 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/389 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/389 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/389 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/389 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/389 SetTalk/param/7]
+そう。どうすれば他人にホタルを知ってもらえると思う？
+
+[CG_115_01::command/389 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/390 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/390 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/390 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/390 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/392 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/392 CtrlChar/param/1]
+b
+
+[CG_115_01::command/392 CtrlChar/param/2]
+002
+
+[CG_115_01::command/392 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_115_01::command/392 CtrlChar/param/11]
+jushou
+
+[CG_115_01::command/392 CtrlChar/param/12]
+none
+
+[CG_115_01::command/392 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/393 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/393 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/393 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/393 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/393 SetTalk/param/7]
+まず……出会う。
+
+[CG_115_01::command/393 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/395 SetMainRoleTalk/param/2]
+013
+
+[CG_115_01::command/395 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/395 SetMainRoleTalk/param/4]
+JuGong
+
+[CG_115_01::command/395 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/395 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/396 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/396 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/396 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/396 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/396 SetTalk/param/7]
+うん。それは大事な一歩だな。==RT==それじゃあその次は？
+
+[CG_115_01::command/396 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/397 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/397 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/397 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/397 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/398 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/398 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/398 SetBGM/param/4]
+1000ms
+
+[CG_115_01::command/400 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/400 CtrlChar/param/1]
+a
+
+[CG_115_01::command/400 CtrlChar/param/3]
+none
+
+[CG_115_01::command/400 CtrlChar/param/11]
+none
+
+[CG_115_01::command/400 CtrlChar/param/12]
+none
+
+[CG_115_01::command/400 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/401 CtrlStage/param/9]
+none
+
+[CG_115_01::command/401 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/402 SetAudio/param/1]
+se_290
+
+[CG_115_01::command/403 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/403 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/403 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/403 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/403 SetTalk/param/7]
+アバランチをぶつける。
+
+[CG_115_01::command/403 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/405 CtrlStage/param/9]
+chijing
+
+[CG_115_01::command/405 CtrlStage/param/10]
+Linear
+
+[CG_115_01::command/406 SetTalkShake/param/1]
+chijing
+
+[CG_115_01::command/407 SetMainRoleTalk/param/2]
+007
+
+[CG_115_01::command/407 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_115_01::command/407 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/407 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/407 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/408 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/408 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/408 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/408 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/408 SetTalk/param/7]
+なぜだああああああッ！？==RT==大事なステップを省略しすぎではないか？
+
+[CG_115_01::command/408 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/409 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/409 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/409 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/409 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/411 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/411 CtrlChar/param/1]
+a
+
+[CG_115_01::command/411 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_115_01::command/411 CtrlChar/param/11]
+none
+
+[CG_115_01::command/411 CtrlChar/param/12]
+none
+
+[CG_115_01::command/411 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/412 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/412 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/412 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/412 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/412 SetTalk/param/7]
+？
+
+[CG_115_01::command/412 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/414 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/414 CtrlChar/param/1]
+a
+
+[CG_115_01::command/414 CtrlChar/param/2]
+004
+
+[CG_115_01::command/414 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/414 CtrlChar/param/11]
+none
+
+[CG_115_01::command/414 CtrlChar/param/12]
+none
+
+[CG_115_01::command/414 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/415 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/415 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/415 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/415 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/415 SetTalk/param/7]
+ホタル、おもちゃと出会ったらいつもそうしてる。
+
+[CG_115_01::command/415 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/417 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/417 CtrlChar/param/1]
+a
+
+[CG_115_01::command/417 CtrlChar/param/3]
+close
+
+[CG_115_01::command/417 CtrlChar/param/11]
+none
+
+[CG_115_01::command/417 CtrlChar/param/12]
+none
+
+[CG_115_01::command/417 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/418 SetMainRoleTalk/param/2]
+003
+
+[CG_115_01::command/418 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_115_01::command/418 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/418 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/418 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/419 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/419 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/419 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/419 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/419 SetTalk/param/7]
+<r=せいがい>星骸</r>相手なら、それでいいかもしれないが……==RT==人間同士は、出会いがしらに攻撃したりしない。==RT==そんなことをしたら怖がられてしまうからね。
+
+[CG_115_01::command/419 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/420 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/420 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/420 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/420 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/422 CtrlStage/param/9]
+none
+
+[CG_115_01::command/422 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/423 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/423 CtrlChar/param/1]
+b
+
+[CG_115_01::command/423 CtrlChar/param/2]
+017
+
+[CG_115_01::command/423 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_115_01::command/423 CtrlChar/param/11]
+JuGong
+
+[CG_115_01::command/423 CtrlChar/param/12]
+none
+
+[CG_115_01::command/423 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/424 SetAudio/param/1]
+se_290
+
+[CG_115_01::command/425 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/425 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/425 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/425 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/425 SetTalk/param/7]
+……友だち作り、難しい。==W==
+
+[CG_115_01::command/425 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/427 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/427 SetBGM/param/3]
+m39
+
+[CG_115_01::command/427 SetBGM/param/4]
+none
+
+[CG_115_01::command/430 CtrlStage/param/9]
+none
+
+[CG_115_01::command/430 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/431 SetMainRoleTalk/param/2]
+009
+
+[CG_115_01::command/431 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/431 SetMainRoleTalk/param/4]
+manbu2
+
+[CG_115_01::command/431 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/431 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/432 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/432 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/432 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/432 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/432 SetTalk/param/7]
+最初は、==W==普通に話しかけてみるのがいいのではないか？
+
+[CG_115_01::command/432 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/434 SetMainRoleTalk/param/2]
+014
+
+[CG_115_01::command/434 SetMainRoleTalk/param/3]
+none
+
+[CG_115_01::command/434 SetMainRoleTalk/param/4]
+diantou
+
+[CG_115_01::command/434 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/434 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/435 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/435 CtrlChar/param/1]
+b
+
+[CG_115_01::command/435 CtrlChar/param/2]
+012
+
+[CG_115_01::command/435 CtrlChar/param/3]
+none
+
+[CG_115_01::command/435 CtrlChar/param/11]
+none
+
+[CG_115_01::command/435 CtrlChar/param/12]
+none
+
+[CG_115_01::command/435 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/437 SetMainRoleTalk/param/2]
+022
+
+[CG_115_01::command/437 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/437 SetMainRoleTalk/param/4]
+niunie
+
+[CG_115_01::command/437 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/437 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/438 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/438 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/438 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/438 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/438 SetTalk/param/7]
+ホタルは優しくていい子だから、==RT==君の人柄を知ってもらえば、==RT==きっとみんな友だちになってくれると思う。
+
+[CG_115_01::command/438 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/439 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/439 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/439 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/439 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/441 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/441 CtrlChar/param/1]
+b
+
+[CG_115_01::command/441 CtrlChar/param/2]
+012
+
+[CG_115_01::command/441 CtrlChar/param/3]
+avg_emoji_shy
+
+[CG_115_01::command/441 CtrlChar/param/11]
+jushou
+
+[CG_115_01::command/441 CtrlChar/param/12]
+none
+
+[CG_115_01::command/441 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/442 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/442 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/442 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/442 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/442 SetTalk/param/7]
+ほんと？
+
+[CG_115_01::command/442 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/444 SetMainRoleTalk/param/2]
+013
+
+[CG_115_01::command/444 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[CG_115_01::command/444 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/444 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/444 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/445 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/445 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/445 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/445 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/445 SetTalk/param/7]
+ああ、だから自信を持って。
+
+[CG_115_01::command/445 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/446 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/446 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/446 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/446 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/448 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/448 CtrlChar/param/1]
+b
+
+[CG_115_01::command/448 CtrlChar/param/2]
+011
+
+[CG_115_01::command/448 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_115_01::command/448 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/448 CtrlChar/param/12]
+none
+
+[CG_115_01::command/448 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/449 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/449 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/449 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/449 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/449 SetTalk/param/7]
+……わかった。
+
+[CG_115_01::command/449 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/451 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/451 CtrlChar/param/1]
+b
+
+[CG_115_01::command/451 CtrlChar/param/2]
+002
+
+[CG_115_01::command/451 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_115_01::command/451 CtrlChar/param/11]
+none
+
+[CG_115_01::command/451 CtrlChar/param/12]
+none
+
+[CG_115_01::command/451 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/452 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/452 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/452 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/452 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/452 SetTalk/param/7]
+誰に話しかければいい？
+
+[CG_115_01::command/452 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/454 SetMainRoleTalk/param/2]
+020
+
+[CG_115_01::command/454 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/454 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/454 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/454 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/455 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/455 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/455 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/455 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/455 SetTalk/param/7]
+知らない人……は、さすがにハードルが高いか。==RT==私でも緊張するし。
+
+[CG_115_01::command/455 SetTalk/param/8]
+知らない人……は、さすがにハードルが高いか。==RT==僕でも緊張するし。
+
+[CG_115_01::command/456 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/456 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/456 SetMainRoleTalk/param/4]
+jushou
+
+[CG_115_01::command/456 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/456 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/457 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/457 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/457 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/457 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/457 SetTalk/param/7]
+それなら星輝附属大学に通う生徒に==RT==声をかけてみるのはどうだろう？
+
+[CG_115_01::command/457 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/458 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/458 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/458 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/458 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/460 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/460 CtrlChar/param/1]
+b
+
+[CG_115_01::command/460 CtrlChar/param/2]
+009
+
+[CG_115_01::command/460 CtrlChar/param/3]
+none
+
+[CG_115_01::command/460 CtrlChar/param/11]
+daintou
+
+[CG_115_01::command/460 CtrlChar/param/12]
+none
+
+[CG_115_01::command/460 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/461 SetAudio/param/1]
+se_049
+
+[CG_115_01::command/462 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/462 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/462 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/462 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/462 SetTalk/param/7]
+学校の人……わかった。
+
+[CG_115_01::command/462 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/464 CtrlStage/param/9]
+none
+
+[CG_115_01::command/464 CtrlStage/param/10]
+OutCubic
+
+[CG_115_01::command/465 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/465 CtrlChar/param/1]
+b
+
+[CG_115_01::command/465 CtrlChar/param/2]
+012
+
+[CG_115_01::command/465 CtrlChar/param/3]
+none
+
+[CG_115_01::command/465 CtrlChar/param/11]
+manbu2
+
+[CG_115_01::command/465 CtrlChar/param/12]
+none
+
+[CG_115_01::command/465 CtrlChar/param/13]
+OutQuad
+
+[CG_115_01::command/466 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/466 CtrlChar/param/1]
+b
+
+[CG_115_01::command/466 CtrlChar/param/3]
+none
+
+[CG_115_01::command/466 CtrlChar/param/11]
+JuGong2
+
+[CG_115_01::command/466 CtrlChar/param/12]
+none
+
+[CG_115_01::command/466 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/467 SetAudio/param/1]
+se_077
+
+[CG_115_01::command/468 SetTalk/param/1]
+0
+
+[CG_115_01::command/468 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/468 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/468 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/468 SetTalk/param/7]
+その直後、ホタルの小さな手が、私の手をそっと握ってくる。
+
+[CG_115_01::command/468 SetTalk/param/8]
+その直後、ホタルの小さな手が、僕の手をそっと握ってくる。
+
+[CG_115_01::command/470 SetMainRoleTalk/param/2]
+015
+
+[CG_115_01::command/470 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_115_01::command/470 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/470 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/470 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/471 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/471 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/471 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/471 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/471 SetTalk/param/7]
+ホタル？どうしたんだ？
+
+[CG_115_01::command/471 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/472 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/472 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/472 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/472 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/474 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/474 CtrlChar/param/1]
+b
+
+[CG_115_01::command/474 CtrlChar/param/2]
+012
+
+[CG_115_01::command/474 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_115_01::command/474 CtrlChar/param/11]
+niunie1
+
+[CG_115_01::command/474 CtrlChar/param/12]
+none
+
+[CG_115_01::command/474 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/475 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/475 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/475 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/475 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/475 SetTalk/param/7]
+マオーも一緒に学校行こ？
+
+[CG_115_01::command/475 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/477 SetMainRoleTalk/param/2]
+002
+
+[CG_115_01::command/477 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/477 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/477 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/477 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/478 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/478 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/478 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/478 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/478 SetTalk/param/7]
+一緒に？
+
+[CG_115_01::command/478 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/479 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/479 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/479 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/479 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/481 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/481 CtrlChar/param/1]
+b
+
+[CG_115_01::command/481 CtrlChar/param/3]
+none
+
+[CG_115_01::command/481 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/481 CtrlChar/param/12]
+none
+
+[CG_115_01::command/481 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/482 SetAudio/param/1]
+se_029
+
+[CG_115_01::command/483 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/483 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/483 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/483 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/483 SetTalk/param/7]
+うん。ついてきて。
+
+[CG_115_01::command/483 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/485 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/485 CtrlChar/param/1]
+b
+
+[CG_115_01::command/485 CtrlChar/param/2]
+004
+
+[CG_115_01::command/485 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_115_01::command/485 CtrlChar/param/11]
+none
+
+[CG_115_01::command/485 CtrlChar/param/12]
+none
+
+[CG_115_01::command/485 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/486 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/486 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/486 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/486 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/486 SetTalk/param/7]
+ホタル、うまくできる自信ない。==W====RT==でもマオーと一緒ならあんしん。
+
+[CG_115_01::command/486 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/488 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/488 CtrlChar/param/1]
+b
+
+[CG_115_01::command/488 CtrlChar/param/2]
+003
+
+[CG_115_01::command/488 CtrlChar/param/3]
+close
+
+[CG_115_01::command/488 CtrlChar/param/11]
+diantou
+
+[CG_115_01::command/488 CtrlChar/param/12]
+none
+
+[CG_115_01::command/488 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/491 SetMainRoleTalk/param/2]
+009
+
+[CG_115_01::command/491 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_115_01::command/491 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/491 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/491 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/492 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/492 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/492 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/492 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/492 SetTalk/param/7]
+（大学からしたら完全に部外者なのだが……==W====RT==ひとまずカナーチェに話を通しておくか）
+
+[CG_115_01::command/492 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/493 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/493 CtrlChar/param/1]
+b
+
+[CG_115_01::command/493 CtrlChar/param/2]
+012
+
+[CG_115_01::command/493 CtrlChar/param/3]
+none
+
+[CG_115_01::command/493 CtrlChar/param/11]
+manbu2
+
+[CG_115_01::command/493 CtrlChar/param/12]
+none
+
+[CG_115_01::command/493 CtrlChar/param/13]
+OutQuad
+
+[CG_115_01::command/495 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/495 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/495 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/495 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/497 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/497 CtrlChar/param/1]
+b
+
+[CG_115_01::command/497 CtrlChar/param/2]
+011
+
+[CG_115_01::command/497 CtrlChar/param/3]
+avg_emoji_shy
+
+[CG_115_01::command/497 CtrlChar/param/11]
+niunie1
+
+[CG_115_01::command/497 CtrlChar/param/12]
+none
+
+[CG_115_01::command/497 CtrlChar/param/13]
+OutCubic
+
+[CG_115_01::command/498 CtrlStage/param/9]
+niunie1
+
+[CG_115_01::command/498 CtrlStage/param/10]
+Linear
+
+[CG_115_01::command/499 SetAudio/param/1]
+se_208
+
+[CG_115_01::command/500 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/500 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/500 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/500 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/500 SetTalk/param/7]
+……ダメ？
+
+[CG_115_01::command/500 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/502 SetMainRoleTalk/param/2]
+011
+
+[CG_115_01::command/502 SetMainRoleTalk/param/3]
+avg_emoji_flower
+
+[CG_115_01::command/502 SetMainRoleTalk/param/4]
+niunie1
+
+[CG_115_01::command/502 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/502 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/503 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/503 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/503 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/503 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/503 SetTalk/param/7]
+わかった。それじゃあ一緒にやってみようか。==RT==友だち作り。
+
+[CG_115_01::command/503 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/504 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/504 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/504 SetMainRoleTalk/param/5]
+z
+
+[CG_115_01::command/504 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/506 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/506 CtrlChar/param/1]
+b
+
+[CG_115_01::command/506 CtrlChar/param/2]
+013
+
+[CG_115_01::command/506 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_115_01::command/506 CtrlChar/param/11]
+daintou
+
+[CG_115_01::command/506 CtrlChar/param/12]
+none
+
+[CG_115_01::command/506 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/507 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/507 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/507 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/507 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/507 SetTalk/param/7]
+うん。マオーが手伝ってくれたら、よゆー。==W==
+
+[CG_115_01::command/507 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/508 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_115_01::command/508 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/508 SetBGM/param/4]
+4000ms
+
+[CG_115_01::command/510 CtrlChar/param/0]
+avg1_115
+
+[CG_115_01::command/510 CtrlChar/param/1]
+b
+
+[CG_115_01::command/510 CtrlChar/param/2]
+011
+
+[CG_115_01::command/510 CtrlChar/param/3]
+avg_emoji_flower
+
+[CG_115_01::command/510 CtrlChar/param/11]
+xuanyun
+
+[CG_115_01::command/510 CtrlChar/param/12]
+none
+
+[CG_115_01::command/510 CtrlChar/param/13]
+Linear
+
+[CG_115_01::command/511 SetTalk/param/1]
+avg1_115
+
+[CG_115_01::command/511 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/511 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/511 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/511 SetTalk/param/7]
+100人くらい友だちできちゃったら、どうしよう……==RT==マオーと遊ぶ時間、なくなっちゃう。
+
+[CG_115_01::command/511 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/513 CtrlStage/param/9]
+chijing
+
+[CG_115_01::command/513 CtrlStage/param/10]
+Linear
+
+[CG_115_01::command/514 SetMainRoleTalk/param/2]
+007
+
+[CG_115_01::command/514 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_115_01::command/514 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/514 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/514 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_115_01::command/515 SetTalkShake/param/1]
+ChanDou
+
+[CG_115_01::command/516 SetAudio/param/1]
+se_070
+
+[CG_115_01::command/517 SetTalk/param/1]
+avg3_100
+
+[CG_115_01::command/517 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/517 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/517 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/517 SetTalk/param/7]
+（気が早い！！）
+
+[CG_115_01::command/517 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_115_01::command/518 SetMainRoleTalk/param/3]
+close
+
+[CG_115_01::command/518 SetMainRoleTalk/param/4]
+none
+
+[CG_115_01::command/518 SetMainRoleTalk/param/5]
+y
+
+[CG_115_01::command/518 SetMainRoleTalk/param/8]
+avg3_100
+

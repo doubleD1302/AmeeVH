@@ -1,0 +1,8485 @@
+STm04_10 | EN | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 2827
+
+[STm04_10::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STm04_10::command/0 SetIntro/param/1]
+Act Ten
+
+[STm04_10::command/0 SetIntro/param/2]
+Under the Monolith
+
+[STm04_10::command/0 SetIntro/param/3]
+After defeating Garden of Parasite, Nazuka and you venture alone into the forest. Under the pure white Monolith, Nazuka repeats her wish—I hope that from now on, you'll always, always be by my side.
+
+[STm04_10::command/1 SetTrans/param/2]
+0
+
+[STm04_10::command/1 SetTrans/param/3]
+Linear
+
+[STm04_10::command/1 SetTrans/param/8]
+default
+
+[STm04_10::command/2 CtrlStage/param/9]
+none
+
+[STm04_10::command/2 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/3 SetBg/param/1]
+forest_daylight_3
+
+[STm04_10::command/3 SetBg/param/2]
+0
+
+[STm04_10::command/3 SetBg/param/3]
+Linear
+
+[STm04_10::command/3 SetBg/param/6]
+default
+
+[STm04_10::command/4 CtrlBg/param/10]
+none
+
+[STm04_10::command/4 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/5 SetChar/param/2]
+none
+
+[STm04_10::command/5 SetChar/param/3]
+avg2_976
+
+[STm04_10::command/5 SetChar/param/4]
+a
+
+[STm04_10::command/5 SetChar/param/5]
+002
+
+[STm04_10::command/5 SetChar/param/6]
+none
+
+[STm04_10::command/6 SetTrans/param/2]
+0
+
+[STm04_10::command/6 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/6 SetTrans/param/8]
+default
+
+[STm04_10::command/7 PlayCharAnim/param/0]
+avg2_976
+
+[STm04_10::command/7 PlayCharAnim/param/1]
+shake_L
+
+[STm04_10::command/9 SetAudio/param/1]
+se_429
+
+[STm04_10::command/11 CtrlChar/param/0]
+avg2_976
+
+[STm04_10::command/11 CtrlChar/param/1]
+a
+
+[STm04_10::command/11 CtrlChar/param/3]
+none
+
+[STm04_10::command/11 CtrlChar/param/11]
+none
+
+[STm04_10::command/11 CtrlChar/param/12]
+none
+
+[STm04_10::command/11 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/12 CtrlStage/param/9]
+Zhong
+
+[STm04_10::command/12 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/13 SetFx/param/1]
+fx_avg_dust_light
+
+[STm04_10::command/15 SetAudio/param/1]
+se_169
+
+[STm04_10::command/17 SetTrans/param/2]
+0
+
+[STm04_10::command/17 SetTrans/param/3]
+Linear
+
+[STm04_10::command/17 SetTrans/param/8]
+default
+
+[STm04_10::command/18 SetBg/param/1]
+forest_night_1
+
+[STm04_10::command/18 SetBg/param/2]
+0
+
+[STm04_10::command/18 SetBg/param/3]
+OutSine
+
+[STm04_10::command/18 SetBg/param/6]
+default
+
+[STm04_10::command/19 CtrlBg/param/10]
+none
+
+[STm04_10::command/19 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/20 SetTrans/param/2]
+0
+
+[STm04_10::command/20 SetTrans/param/3]
+Linear
+
+[STm04_10::command/20 SetTrans/param/8]
+default
+
+[STm04_10::command/22 SetSceneHeading/param/0]
+18:00
+
+[STm04_10::command/22 SetSceneHeading/param/1]
+Tonitrua Month
+
+[STm04_10::command/22 SetSceneHeading/param/2]
+6th
+
+[STm04_10::command/22 SetSceneHeading/param/3]
+Outside Philae
+
+[STm04_10::command/22 SetSceneHeading/param/4]
+Forest Edge
+
+[STm04_10::command/23 SetChar/param/2]
+none
+
+[STm04_10::command/23 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/23 SetChar/param/4]
+a
+
+[STm04_10::command/23 SetChar/param/5]
+003
+
+[STm04_10::command/23 SetChar/param/6]
+none
+
+[STm04_10::command/24 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/24 CtrlChar/param/1]
+a
+
+[STm04_10::command/24 CtrlChar/param/3]
+none
+
+[STm04_10::command/24 CtrlChar/param/11]
+none
+
+[STm04_10::command/24 CtrlChar/param/12]
+none
+
+[STm04_10::command/24 CtrlChar/param/13]
+OutQuad
+
+[STm04_10::command/26 SetAudio/param/1]
+se_328
+
+[STm04_10::command/27 SetFx/param/1]
+fx_avg_wind_attack
+
+[STm04_10::command/29 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/29 CtrlChar/param/1]
+a
+
+[STm04_10::command/29 CtrlChar/param/2]
+012
+
+[STm04_10::command/29 CtrlChar/param/3]
+none
+
+[STm04_10::command/29 CtrlChar/param/11]
+none
+
+[STm04_10::command/29 CtrlChar/param/12]
+none
+
+[STm04_10::command/29 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/30 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/30 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/30 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/30 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/30 SetTalk/param/7]
+It's over...
+
+[STm04_10::command/30 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/31 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/31 SetBGM/param/3]
+m39
+
+[STm04_10::command/31 SetBGM/param/4]
+none
+
+[STm04_10::command/33 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/33 SetCharHead/param/6]
+a
+
+[STm04_10::command/33 SetCharHead/param/7]
+002
+
+[STm04_10::command/33 SetCharHead/param/8]
+avg_emoji_speechless
+
+[STm04_10::command/35 SetTalk/param/1]
+avg1_134
+
+[STm04_10::command/35 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/35 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/35 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/35 SetTalk/param/7]
+The Garden of Parasite is just ... ash now.
+
+[STm04_10::command/35 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/36 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/36 CtrlChar/param/1]
+a
+
+[STm04_10::command/36 CtrlChar/param/3]
+close
+
+[STm04_10::command/36 CtrlChar/param/11]
+none
+
+[STm04_10::command/36 CtrlChar/param/12]
+none
+
+[STm04_10::command/36 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/38 SetCharHead/param/5]
+avg1_156
+
+[STm04_10::command/38 SetCharHead/param/6]
+a
+
+[STm04_10::command/38 SetCharHead/param/7]
+011
+
+[STm04_10::command/38 SetCharHead/param/8]
+avg_emoji_question
+
+[STm04_10::command/40 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/40 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/40 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/40 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/40 SetTalk/param/7]
+This is what happens when a monster loses all its magic... Does that mean ... we won?
+
+[STm04_10::command/40 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/41 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/41 SetCharHead/param/6]
+a
+
+[STm04_10::command/41 SetCharHead/param/7]
+002
+
+[STm04_10::command/41 SetCharHead/param/8]
+none
+
+[STm04_10::command/43 SetCharHead/param/5]
+avg3_132
+
+[STm04_10::command/43 SetCharHead/param/6]
+a
+
+[STm04_10::command/43 SetCharHead/param/7]
+002
+
+[STm04_10::command/43 SetCharHead/param/8]
+avg_emoji_music
+
+[STm04_10::command/45 SetTalk/param/1]
+avg3_132
+
+[STm04_10::command/45 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/45 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/45 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/45 SetTalk/param/7]
+We won. We've defeated all of the Big Three. The path to the Monolith is clear again.
+
+[STm04_10::command/45 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/46 SetCharHead/param/5]
+avg3_132
+
+[STm04_10::command/46 SetCharHead/param/6]
+a
+
+[STm04_10::command/46 SetCharHead/param/7]
+002
+
+[STm04_10::command/46 SetCharHead/param/8]
+none
+
+[STm04_10::command/47 SetCharHead/param/5]
+avg1_156
+
+[STm04_10::command/47 SetCharHead/param/6]
+a
+
+[STm04_10::command/47 SetCharHead/param/7]
+002
+
+[STm04_10::command/47 SetCharHead/param/8]
+none
+
+[STm04_10::command/49 CtrlStage/param/9]
+none
+
+[STm04_10::command/49 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/50 SetTrans/param/2]
+0
+
+[STm04_10::command/50 SetTrans/param/3]
+Linear
+
+[STm04_10::command/50 SetTrans/param/8]
+default
+
+[STm04_10::command/51 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/51 CtrlChar/param/1]
+a
+
+[STm04_10::command/51 CtrlChar/param/3]
+none
+
+[STm04_10::command/51 CtrlChar/param/11]
+none
+
+[STm04_10::command/51 CtrlChar/param/12]
+none
+
+[STm04_10::command/51 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/52 CtrlStage/param/9]
+none
+
+[STm04_10::command/52 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/53 SetBg/param/1]
+forest_night_1
+
+[STm04_10::command/53 SetBg/param/2]
+0
+
+[STm04_10::command/53 SetBg/param/3]
+Linear
+
+[STm04_10::command/53 SetBg/param/6]
+default
+
+[STm04_10::command/54 CtrlBg/param/10]
+none
+
+[STm04_10::command/54 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/55 SetTrans/param/2]
+0
+
+[STm04_10::command/55 SetTrans/param/3]
+Linear
+
+[STm04_10::command/55 SetTrans/param/8]
+default
+
+[STm04_10::command/56 SetChar/param/2]
+none
+
+[STm04_10::command/56 SetChar/param/3]
+avg1_156
+
+[STm04_10::command/56 SetChar/param/4]
+a
+
+[STm04_10::command/56 SetChar/param/5]
+013
+
+[STm04_10::command/56 SetChar/param/6]
+none
+
+[STm04_10::command/57 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/57 CtrlChar/param/1]
+a
+
+[STm04_10::command/57 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm04_10::command/57 CtrlChar/param/11]
+lengzhan
+
+[STm04_10::command/57 CtrlChar/param/12]
+none
+
+[STm04_10::command/57 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/58 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/58 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/58 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/58 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/58 SetTalk/param/7]
+Ahaha... I can't believe we actually did it... It just feels unreal.
+
+[STm04_10::command/58 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/59 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/59 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/59 SetBGM/param/4]
+1500ms
+
+[STm04_10::command/60 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/60 CtrlChar/param/1]
+a
+
+[STm04_10::command/60 CtrlChar/param/2]
+015
+
+[STm04_10::command/60 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm04_10::command/60 CtrlChar/param/11]
+none
+
+[STm04_10::command/60 CtrlChar/param/12]
+none
+
+[STm04_10::command/60 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/61 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/61 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/61 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/61 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/61 SetTalk/param/7]
+I should be happy, but ...==W== why do I feel so empty? It feels like I suddenly lost my life's purpose.
+
+[STm04_10::command/61 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/63 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/63 CtrlChar/param/1]
+a
+
+[STm04_10::command/63 CtrlChar/param/2]
+008
+
+[STm04_10::command/63 CtrlChar/param/3]
+close
+
+[STm04_10::command/63 CtrlChar/param/11]
+none
+
+[STm04_10::command/63 CtrlChar/param/12]
+none
+
+[STm04_10::command/63 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/66 CtrlStage/param/9]
+none
+
+[STm04_10::command/66 CtrlStage/param/10]
+OutSine
+
+[STm04_10::command/68 SetChar/param/2]
+none
+
+[STm04_10::command/68 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/68 SetChar/param/4]
+a
+
+[STm04_10::command/68 SetChar/param/5]
+016
+
+[STm04_10::command/68 SetChar/param/6]
+none
+
+[STm04_10::command/69 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/69 CtrlChar/param/1]
+a
+
+[STm04_10::command/69 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm04_10::command/69 CtrlChar/param/11]
+none
+
+[STm04_10::command/69 CtrlChar/param/12]
+none
+
+[STm04_10::command/69 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/70 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/70 SetBGM/param/3]
+m49
+
+[STm04_10::command/70 SetBGM/param/4]
+none
+
+[STm04_10::command/71 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/71 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/71 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/71 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/71 SetTalk/param/7]
+Why do you sound like some world-weary old lady who's seen it all?
+
+[STm04_10::command/71 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/73 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/73 CtrlChar/param/1]
+a
+
+[STm04_10::command/73 CtrlChar/param/2]
+012
+
+[STm04_10::command/73 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STm04_10::command/73 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/73 CtrlChar/param/12]
+none
+
+[STm04_10::command/73 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/74 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/74 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/74 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/74 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/74 SetTalk/param/7]
+Hey, you're as old as me!==W== So tell me, Granny Nazuka, how are your joints holding up?
+
+[STm04_10::command/74 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/76 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/76 CtrlChar/param/1]
+a
+
+[STm04_10::command/76 CtrlChar/param/2]
+009
+
+[STm04_10::command/76 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm04_10::command/76 CtrlChar/param/11]
+zuochupeng
+
+[STm04_10::command/76 CtrlChar/param/12]
+none
+
+[STm04_10::command/76 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/79 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/79 CtrlChar/param/1]
+a
+
+[STm04_10::command/79 CtrlChar/param/2]
+010
+
+[STm04_10::command/79 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm04_10::command/79 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/79 CtrlChar/param/12]
+none
+
+[STm04_10::command/79 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/80 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/80 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/80 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/80 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/80 SetTalk/param/7]
+Hah? You're asking for a fight, aren't you?
+
+[STm04_10::command/80 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/82 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/82 CtrlChar/param/1]
+a
+
+[STm04_10::command/82 CtrlChar/param/2]
+020
+
+[STm04_10::command/82 CtrlChar/param/3]
+none
+
+[STm04_10::command/82 CtrlChar/param/11]
+none
+
+[STm04_10::command/82 CtrlChar/param/12]
+none
+
+[STm04_10::command/82 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/83 SetAudio/param/1]
+se_070
+
+[STm04_10::command/84 CtrlStage/param/9]
+Zhong
+
+[STm04_10::command/84 CtrlStage/param/10]
+OutQuad
+
+[STm04_10::command/85 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/85 CtrlChar/param/1]
+a
+
+[STm04_10::command/85 CtrlChar/param/2]
+016
+
+[STm04_10::command/85 CtrlChar/param/3]
+none
+
+[STm04_10::command/85 CtrlChar/param/11]
+none
+
+[STm04_10::command/85 CtrlChar/param/12]
+none
+
+[STm04_10::command/85 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/86 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/86 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/86 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/86 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/86 SetTalk/param/7]
+You started it!
+
+[STm04_10::command/86 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/88 SetCharHead/param/5]
+avg1_112
+
+[STm04_10::command/88 SetCharHead/param/6]
+a
+
+[STm04_10::command/88 SetCharHead/param/7]
+004
+
+[STm04_10::command/88 SetCharHead/param/8]
+avg_emoji_shock
+
+[STm04_10::command/90 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/90 CtrlChar/param/1]
+a
+
+[STm04_10::command/90 CtrlChar/param/2]
+014
+
+[STm04_10::command/90 CtrlChar/param/3]
+none
+
+[STm04_10::command/90 CtrlChar/param/11]
+none
+
+[STm04_10::command/90 CtrlChar/param/12]
+none
+
+[STm04_10::command/90 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/91 SetTalk/param/1]
+avg1_112
+
+[STm04_10::command/91 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/91 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/91 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/91 SetTalk/param/7]
+Hey—==PLAYER_NAME==! Everyone from Petal Bloom!
+
+[STm04_10::command/91 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/92 SetCharHead/param/5]
+avg1_112
+
+[STm04_10::command/92 SetCharHead/param/6]
+a
+
+[STm04_10::command/92 SetCharHead/param/7]
+002
+
+[STm04_10::command/92 SetCharHead/param/8]
+none
+
+[STm04_10::command/94 SetMainRoleTalk/param/2]
+002
+
+[STm04_10::command/94 SetMainRoleTalk/param/3]
+avg_emoji_idea
+
+[STm04_10::command/94 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/94 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/94 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/95 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/95 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/95 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/95 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/95 SetTalk/param/7]
+Oh, sounds like Noya and the others are here.
+
+[STm04_10::command/95 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/96 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/96 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/96 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/96 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/100 CtrlStage/param/9]
+none
+
+[STm04_10::command/100 CtrlStage/param/10]
+OutSine
+
+[STm04_10::command/102 SetChar/param/2]
+none
+
+[STm04_10::command/102 SetChar/param/3]
+avg1_112
+
+[STm04_10::command/102 SetChar/param/4]
+a
+
+[STm04_10::command/102 SetChar/param/5]
+007
+
+[STm04_10::command/102 SetChar/param/6]
+avg_emoji_attention
+
+[STm04_10::command/103 CtrlChar/param/0]
+avg1_112
+
+[STm04_10::command/103 CtrlChar/param/1]
+a
+
+[STm04_10::command/103 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm04_10::command/103 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/103 CtrlChar/param/12]
+none
+
+[STm04_10::command/103 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/104 SetTalk/param/1]
+avg1_112
+
+[STm04_10::command/104 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/104 SetTalk/param/7]
+We were busy fighting off the vines and the mist-crazed monsters when suddenly, everything stopped. The vines withered, and the monsters went quiet. We figured ... you must have succeeded.
+
+[STm04_10::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/106 SetAudio/param/1]
+se_061
+
+[STm04_10::command/107 SetChar/param/2]
+none
+
+[STm04_10::command/107 SetChar/param/3]
+avg1_103
+
+[STm04_10::command/107 SetChar/param/4]
+a
+
+[STm04_10::command/107 SetChar/param/5]
+003
+
+[STm04_10::command/107 SetChar/param/6]
+none
+
+[STm04_10::command/108 CtrlChar/param/0]
+avg1_103
+
+[STm04_10::command/108 CtrlChar/param/1]
+a
+
+[STm04_10::command/108 CtrlChar/param/3]
+none
+
+[STm04_10::command/108 CtrlChar/param/11]
+none
+
+[STm04_10::command/108 CtrlChar/param/12]
+none
+
+[STm04_10::command/108 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/109 CtrlChar/param/0]
+avg1_103
+
+[STm04_10::command/109 CtrlChar/param/1]
+a
+
+[STm04_10::command/109 CtrlChar/param/2]
+014
+
+[STm04_10::command/109 CtrlChar/param/3]
+none
+
+[STm04_10::command/109 CtrlChar/param/11]
+none
+
+[STm04_10::command/109 CtrlChar/param/12]
+none
+
+[STm04_10::command/109 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/110 SetTalk/param/1]
+avg1_103
+
+[STm04_10::command/110 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/110 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/110 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/110 SetTalk/param/7]
+Well done.
+
+[STm04_10::command/110 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/112 CtrlStage/param/9]
+none
+
+[STm04_10::command/112 CtrlStage/param/10]
+OutSine
+
+[STm04_10::command/114 SetChar/param/2]
+none
+
+[STm04_10::command/114 SetChar/param/3]
+avg1_111
+
+[STm04_10::command/114 SetChar/param/4]
+a
+
+[STm04_10::command/114 SetChar/param/5]
+004
+
+[STm04_10::command/114 SetChar/param/6]
+none
+
+[STm04_10::command/115 CtrlChar/param/0]
+avg1_111
+
+[STm04_10::command/115 CtrlChar/param/1]
+a
+
+[STm04_10::command/115 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm04_10::command/115 CtrlChar/param/11]
+none
+
+[STm04_10::command/115 CtrlChar/param/12]
+none
+
+[STm04_10::command/115 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/116 SetTalk/param/1]
+avg1_111
+
+[STm04_10::command/116 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/116 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/116 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/116 SetTalk/param/7]
+You really saved us, in more ways than one.==W== Any longer and those vines would have completely shredded my clothes.
+
+[STm04_10::command/116 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/118 CtrlChar/param/0]
+avg1_111
+
+[STm04_10::command/118 CtrlChar/param/1]
+a
+
+[STm04_10::command/118 CtrlChar/param/2]
+011
+
+[STm04_10::command/118 CtrlChar/param/3]
+none
+
+[STm04_10::command/118 CtrlChar/param/11]
+none
+
+[STm04_10::command/118 CtrlChar/param/12]
+none
+
+[STm04_10::command/118 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/122 CtrlStage/param/9]
+none
+
+[STm04_10::command/122 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/123 SetBg/param/1]
+forest_night_1
+
+[STm04_10::command/123 SetBg/param/2]
+0
+
+[STm04_10::command/123 SetBg/param/3]
+OutSine
+
+[STm04_10::command/123 SetBg/param/6]
+default
+
+[STm04_10::command/124 CtrlBg/param/10]
+none
+
+[STm04_10::command/124 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/126 SetChar/param/2]
+none
+
+[STm04_10::command/126 SetChar/param/3]
+avg3_132
+
+[STm04_10::command/126 SetChar/param/4]
+a
+
+[STm04_10::command/126 SetChar/param/5]
+004
+
+[STm04_10::command/126 SetChar/param/6]
+none
+
+[STm04_10::command/127 CtrlChar/param/0]
+avg3_132
+
+[STm04_10::command/127 CtrlChar/param/1]
+a
+
+[STm04_10::command/127 CtrlChar/param/3]
+avg_emoji_love
+
+[STm04_10::command/127 CtrlChar/param/11]
+none
+
+[STm04_10::command/127 CtrlChar/param/12]
+none
+
+[STm04_10::command/127 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/128 SetTalk/param/1]
+avg3_132
+
+[STm04_10::command/128 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/128 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/128 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/128 SetTalk/param/7]
+We owe our thanks to you, too. We couldn't have faced the Garden of Parasite without you clearing the vines. This victory belongs to all of us.
+
+[STm04_10::command/128 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/130 CtrlStage/param/9]
+none
+
+[STm04_10::command/130 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/133 SetBg/param/1]
+sky_night_b
+
+[STm04_10::command/133 SetBg/param/2]
+0
+
+[STm04_10::command/133 SetBg/param/3]
+OutSine
+
+[STm04_10::command/133 SetBg/param/6]
+default
+
+[STm04_10::command/135 SetAudio/param/1]
+se_147
+
+[STm04_10::command/136 SetChar/param/2]
+none
+
+[STm04_10::command/136 SetChar/param/3]
+avg1_135
+
+[STm04_10::command/136 SetChar/param/4]
+a
+
+[STm04_10::command/136 SetChar/param/5]
+002
+
+[STm04_10::command/136 SetChar/param/6]
+none
+
+[STm04_10::command/137 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/137 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/137 SetBGM/param/4]
+1500ms
+
+[STm04_10::command/138 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/138 CtrlChar/param/1]
+a
+
+[STm04_10::command/138 CtrlChar/param/3]
+none
+
+[STm04_10::command/138 CtrlChar/param/11]
+none
+
+[STm04_10::command/138 CtrlChar/param/12]
+none
+
+[STm04_10::command/138 CtrlChar/param/13]
+OutBack
+
+[STm04_10::command/139 SetTalk/param/1]
+avg1_135
+
+[STm04_10::command/139 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/139 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/139 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/139 SetTalk/param/7]
+I've captured all your heroic struggles on camera!==W== Once I release these images—with a little of this witch's special touch, of course—every Trekker will know you were framed.
+
+[STm04_10::command/139 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/141 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/141 CtrlChar/param/1]
+a
+
+[STm04_10::command/141 CtrlChar/param/2]
+005
+
+[STm04_10::command/141 CtrlChar/param/3]
+avg_emoji_music
+
+[STm04_10::command/141 CtrlChar/param/11]
+none
+
+[STm04_10::command/141 CtrlChar/param/12]
+none
+
+[STm04_10::command/141 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/144 CtrlStage/param/9]
+none
+
+[STm04_10::command/144 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/147 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/147 SetBGM/param/3]
+m12
+
+[STm04_10::command/147 SetBGM/param/4]
+none
+
+[STm04_10::command/149 SetBg/param/1]
+forest_night_1
+
+[STm04_10::command/149 SetBg/param/2]
+0
+
+[STm04_10::command/149 SetBg/param/3]
+OutSine
+
+[STm04_10::command/149 SetBg/param/6]
+default
+
+[STm04_10::command/150 CtrlBg/param/10]
+none
+
+[STm04_10::command/150 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/152 SetChar/param/2]
+none
+
+[STm04_10::command/152 SetChar/param/3]
+avg1_156
+
+[STm04_10::command/152 SetChar/param/4]
+a
+
+[STm04_10::command/152 SetChar/param/5]
+004
+
+[STm04_10::command/152 SetChar/param/6]
+none
+
+[STm04_10::command/153 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/153 CtrlChar/param/1]
+a
+
+[STm04_10::command/153 CtrlChar/param/3]
+avg_emoji_star
+
+[STm04_10::command/153 CtrlChar/param/11]
+none
+
+[STm04_10::command/153 CtrlChar/param/12]
+none
+
+[STm04_10::command/153 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/154 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/154 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/154 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/154 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/154 SetTalk/param/7]
+Nazuka, did you hear that? The rumors can't spread anymore. You don't have to worry...
+
+[STm04_10::command/154 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/155 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/155 CtrlChar/param/1]
+a
+
+[STm04_10::command/155 CtrlChar/param/2]
+010
+
+[STm04_10::command/155 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm04_10::command/155 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/155 CtrlChar/param/12]
+none
+
+[STm04_10::command/155 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/156 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/156 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/156 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/156 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/156 SetTalk/param/7]
+Huh? Where'd Nazuka go? Nazuka—?!
+
+[STm04_10::command/156 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/158 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/158 SetCharHead/param/6]
+a
+
+[STm04_10::command/158 SetCharHead/param/7]
+005
+
+[STm04_10::command/158 SetCharHead/param/8]
+avg_emoji_exclamation
+
+[STm04_10::command/160 SetTalk/param/1]
+avg1_134
+
+[STm04_10::command/160 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/160 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/160 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/160 SetTalk/param/7]
+Nazuka senpai flew off with Master. She said the Monolith in the forest must be crawling with Stellaroids since no one's been there, so she went ahead to clear them out.
+
+[STm04_10::command/160 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/161 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/161 SetCharHead/param/6]
+a
+
+[STm04_10::command/161 SetCharHead/param/7]
+002
+
+[STm04_10::command/161 SetCharHead/param/8]
+none
+
+[STm04_10::command/163 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/163 CtrlChar/param/1]
+a
+
+[STm04_10::command/163 CtrlChar/param/2]
+021
+
+[STm04_10::command/163 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm04_10::command/163 CtrlChar/param/11]
+none
+
+[STm04_10::command/163 CtrlChar/param/12]
+none
+
+[STm04_10::command/163 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/164 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/164 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/164 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/164 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/164 SetTalk/param/7]
+We just finished fighting the Garden of Parasite! Can't she sit still for five minutes?==W== Hey, wait a sec!==W== Why did Boss go with her?!
+
+[STm04_10::command/164 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/166 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/166 CtrlChar/param/1]
+a
+
+[STm04_10::command/166 CtrlChar/param/2]
+023
+
+[STm04_10::command/166 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm04_10::command/166 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/166 CtrlChar/param/12]
+none
+
+[STm04_10::command/166 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/168 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/168 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/168 SetBGM/param/4]
+1000ms
+
+[STm04_10::command/170 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/170 CtrlChar/param/1]
+a
+
+[STm04_10::command/170 CtrlChar/param/2]
+012
+
+[STm04_10::command/170 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STm04_10::command/170 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/170 CtrlChar/param/12]
+none
+
+[STm04_10::command/170 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/173 SetAudio/param/1]
+se_076
+
+[STm04_10::command/174 SetTrans/param/2]
+0
+
+[STm04_10::command/174 SetTrans/param/3]
+Linear
+
+[STm04_10::command/174 SetTrans/param/8]
+default
+
+[STm04_10::command/175 CtrlStage/param/9]
+none
+
+[STm04_10::command/175 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/176 SetBg/param/1]
+forest_night_2_a
+
+[STm04_10::command/176 SetBg/param/2]
+0
+
+[STm04_10::command/176 SetBg/param/3]
+Linear
+
+[STm04_10::command/176 SetBg/param/6]
+default
+
+[STm04_10::command/177 CtrlBg/param/10]
+none
+
+[STm04_10::command/177 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/178 SetTrans/param/2]
+0
+
+[STm04_10::command/178 SetTrans/param/3]
+Linear
+
+[STm04_10::command/178 SetTrans/param/8]
+default
+
+[STm04_10::command/180 SetSceneHeading/param/0]
+19:00
+
+[STm04_10::command/180 SetSceneHeading/param/1]
+Tonitrua Month
+
+[STm04_10::command/180 SetSceneHeading/param/2]
+6th
+
+[STm04_10::command/180 SetSceneHeading/param/3]
+Outside Philae
+
+[STm04_10::command/180 SetSceneHeading/param/4]
+Deep in the Forest
+
+[STm04_10::command/181 CtrlStage/param/9]
+none
+
+[STm04_10::command/181 CtrlStage/param/10]
+OutBack
+
+[STm04_10::command/182 SetChar/param/2]
+none
+
+[STm04_10::command/182 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/182 SetChar/param/4]
+a
+
+[STm04_10::command/182 SetChar/param/5]
+027
+
+[STm04_10::command/182 SetChar/param/6]
+none
+
+[STm04_10::command/183 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/183 CtrlChar/param/1]
+a
+
+[STm04_10::command/183 CtrlChar/param/3]
+none
+
+[STm04_10::command/183 CtrlChar/param/11]
+none
+
+[STm04_10::command/183 CtrlChar/param/12]
+none
+
+[STm04_10::command/183 CtrlChar/param/13]
+OutQuad
+
+[STm04_10::command/185 SetFx/param/1]
+fx_avg_wind_attack
+
+[STm04_10::command/186 SetAudio/param/1]
+se_328
+
+[STm04_10::command/187 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/187 CtrlChar/param/1]
+a
+
+[STm04_10::command/187 CtrlChar/param/2]
+012
+
+[STm04_10::command/187 CtrlChar/param/3]
+none
+
+[STm04_10::command/187 CtrlChar/param/11]
+none
+
+[STm04_10::command/187 CtrlChar/param/12]
+none
+
+[STm04_10::command/187 CtrlChar/param/13]
+OutQuad
+
+[STm04_10::command/188 SetMainRoleTalk/param/2]
+020
+
+[STm04_10::command/188 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm04_10::command/188 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/188 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/188 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/189 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/189 SetBGM/param/3]
+m77
+
+[STm04_10::command/189 SetBGM/param/4]
+none
+
+[STm04_10::command/190 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/190 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/190 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/190 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/190 SetTalk/param/7]
+Nazuka, are you sure it's okay for us to just run off like this?
+
+[STm04_10::command/190 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/191 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/191 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/191 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/191 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/193 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/193 CtrlChar/param/1]
+a
+
+[STm04_10::command/193 CtrlChar/param/2]
+027
+
+[STm04_10::command/193 CtrlChar/param/3]
+none
+
+[STm04_10::command/193 CtrlChar/param/11]
+none
+
+[STm04_10::command/193 CtrlChar/param/12]
+none
+
+[STm04_10::command/193 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/194 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/194 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/194 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/194 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/194 SetTalk/param/7]
+Don't worry. With the Garden of Parasite destroyed, those frenzied monsters should calm down, too. Even if everyone's exhausted, Nazuna and the others can handle whatever comes.
+
+[STm04_10::command/194 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/196 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/196 CtrlChar/param/1]
+a
+
+[STm04_10::command/196 CtrlChar/param/2]
+012
+
+[STm04_10::command/196 CtrlChar/param/3]
+none
+
+[STm04_10::command/196 CtrlChar/param/11]
+none
+
+[STm04_10::command/196 CtrlChar/param/12]
+none
+
+[STm04_10::command/196 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/197 SetMainRoleTalk/param/2]
+002
+
+[STm04_10::command/197 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/197 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/197 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/197 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/198 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/198 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/198 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/198 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/198 SetTalk/param/7]
+That's not my main concern...==W== Well, okay, I am a little worried. But my point is...
+
+[STm04_10::command/198 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/200 SetMainRoleTalk/param/2]
+003
+
+[STm04_10::command/200 SetMainRoleTalk/param/3]
+none
+
+[STm04_10::command/200 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/200 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/200 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/202 SetMainRoleTalk/param/2]
+002
+
+[STm04_10::command/202 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm04_10::command/202 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/202 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/202 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/203 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/203 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/203 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/203 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/203 SetTalk/param/7]
+Shouldn't we have told everyone? They're going to be worried when they realize we're gone.
+
+[STm04_10::command/203 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/204 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/204 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/204 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/204 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/206 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/206 CtrlChar/param/1]
+a
+
+[STm04_10::command/206 CtrlChar/param/2]
+002
+
+[STm04_10::command/206 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm04_10::command/206 CtrlChar/param/11]
+none
+
+[STm04_10::command/206 CtrlChar/param/12]
+none
+
+[STm04_10::command/206 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/207 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/207 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/207 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/207 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/207 SetTalk/param/7]
+Oh, that? Don't worry about it. I asked Fuyuka to pass on a message for us.
+
+[STm04_10::command/207 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/208 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/208 CtrlChar/param/1]
+a
+
+[STm04_10::command/208 CtrlChar/param/2]
+008
+
+[STm04_10::command/208 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm04_10::command/208 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/208 CtrlChar/param/12]
+none
+
+[STm04_10::command/208 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/209 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/209 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/209 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/209 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/209 SetTalk/param/7]
+Besides, months' worth of Stellaroids have probably built up in the Monolith. We need to go clear them out.
+
+[STm04_10::command/209 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/210 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/210 CtrlChar/param/1]
+a
+
+[STm04_10::command/210 CtrlChar/param/2]
+022
+
+[STm04_10::command/210 CtrlChar/param/3]
+none
+
+[STm04_10::command/210 CtrlChar/param/11]
+none
+
+[STm04_10::command/210 CtrlChar/param/12]
+none
+
+[STm04_10::command/210 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/211 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/211 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/211 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/211 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/211 SetTalk/param/7]
+And of course, I cooked up an excuse for you—you're "evaluating the new hire's job performance." Feel better now?
+
+[STm04_10::command/211 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/213 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/213 CtrlChar/param/1]
+a
+
+[STm04_10::command/213 CtrlChar/param/2]
+012
+
+[STm04_10::command/213 CtrlChar/param/3]
+none
+
+[STm04_10::command/213 CtrlChar/param/11]
+none
+
+[STm04_10::command/213 CtrlChar/param/12]
+none
+
+[STm04_10::command/213 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/214 SetMainRoleTalk/param/2]
+009
+
+[STm04_10::command/214 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm04_10::command/214 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/214 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/214 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/215 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/215 SetTalk/param/7]
+"The new hire"...==W== So you do remember. While you were trapped in that illusion, I made a soul trade with you. Anyone who does so automatically becomes an employee of the Boss Accord.
+
+[STm04_10::command/215 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/217 SetMainRoleTalk/param/2]
+020
+
+[STm04_10::command/217 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/217 SetMainRoleTalk/param/4]
+jushou
+
+[STm04_10::command/217 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/217 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/219 SetMainRoleTalk/param/2]
+002
+
+[STm04_10::command/219 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm04_10::command/219 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/219 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/219 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/220 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/220 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/220 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/220 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/220 SetTalk/param/7]
+So you heard everything I said back then?
+
+[STm04_10::command/220 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/221 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/221 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/221 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/221 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/223 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/223 CtrlChar/param/1]
+a
+
+[STm04_10::command/223 CtrlChar/param/2]
+028
+
+[STm04_10::command/223 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm04_10::command/223 CtrlChar/param/11]
+none
+
+[STm04_10::command/223 CtrlChar/param/12]
+none
+
+[STm04_10::command/223 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/224 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/224 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/224 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/224 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/224 SetTalk/param/7]
+To be precise... I couldn't make out a word you were saying. The magic mist completely blocked my mind from the real world. All I could see and hear were illusions.
+
+[STm04_10::command/224 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/225 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/225 CtrlChar/param/1]
+a
+
+[STm04_10::command/225 CtrlChar/param/3]
+close
+
+[STm04_10::command/225 CtrlChar/param/11]
+none
+
+[STm04_10::command/225 CtrlChar/param/12]
+none
+
+[STm04_10::command/225 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/227 SetMainRoleTalk/param/2]
+012
+
+[STm04_10::command/227 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/227 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/227 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/227 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/228 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/228 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/228 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/228 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/228 SetTalk/param/7]
+But.. You still managed to make a wish.
+
+[STm04_10::command/228 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/229 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/229 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/229 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/229 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/231 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/231 CtrlChar/param/1]
+a
+
+[STm04_10::command/231 CtrlChar/param/2]
+027
+
+[STm04_10::command/231 CtrlChar/param/3]
+none
+
+[STm04_10::command/231 CtrlChar/param/11]
+none
+
+[STm04_10::command/231 CtrlChar/param/12]
+none
+
+[STm04_10::command/231 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/232 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/232 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/232 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/232 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/232 SetTalk/param/7]
+Because, even though I couldn't clearly hear what you were saying, I felt like you wanted me to say something.
+
+[STm04_10::command/232 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/233 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/233 CtrlChar/param/1]
+a
+
+[STm04_10::command/233 CtrlChar/param/2]
+017
+
+[STm04_10::command/233 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm04_10::command/233 CtrlChar/param/11]
+none
+
+[STm04_10::command/233 CtrlChar/param/12]
+none
+
+[STm04_10::command/233 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/234 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/234 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/234 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/234 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/234 SetTalk/param/7]
+It's not often you get a chance to just speak your mind. As a result, it happened to align exactly with what you intended.
+
+[STm04_10::command/234 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/236 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/236 CtrlChar/param/1]
+a
+
+[STm04_10::command/236 CtrlChar/param/2]
+012
+
+[STm04_10::command/236 CtrlChar/param/3]
+avg_emoji_love
+
+[STm04_10::command/236 CtrlChar/param/11]
+none
+
+[STm04_10::command/236 CtrlChar/param/12]
+none
+
+[STm04_10::command/236 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/237 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/237 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/237 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/237 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/237 SetTalk/param/7]
+That just proved we are on the same page~
+
+[STm04_10::command/237 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/239 SetMainRoleTalk/param/2]
+010
+
+[STm04_10::command/239 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STm04_10::command/239 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/239 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/239 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/240 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/240 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/240 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/240 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/240 SetTalk/param/7]
+I know, but ... I'm still sorry you had to agree to a soul trade unknowingly.
+
+[STm04_10::command/240 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/241 SetMainRoleTalk/param/2]
+002
+
+[STm04_10::command/241 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STm04_10::command/241 SetMainRoleTalk/param/4]
+daintou
+
+[STm04_10::command/241 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/241 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/242 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/242 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/242 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/242 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/242 SetTalk/param/7]
+You made a wish, and that sealed the deal. I shall make it happen with my life as collateral. Your soul will be temporarily entrusted to my keeping, and become my permanent possession after your wish comes true.
+
+[STm04_10::command/242 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/243 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/243 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/243 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/243 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/245 SetAudio/param/1]
+se_101
+
+[STm04_10::command/246 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/246 CtrlChar/param/1]
+a
+
+[STm04_10::command/246 CtrlChar/param/2]
+027
+
+[STm04_10::command/246 CtrlChar/param/3]
+none
+
+[STm04_10::command/246 CtrlChar/param/11]
+none
+
+[STm04_10::command/246 CtrlChar/param/12]
+none
+
+[STm04_10::command/246 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/247 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/247 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/247 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/247 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/247 SetTalk/param/7]
+I told you, it's fine. Really.==W== In fact, I'm the one who should be thanking you.
+
+[STm04_10::command/247 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/249 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/249 CtrlChar/param/1]
+a
+
+[STm04_10::command/249 CtrlChar/param/2]
+008
+
+[STm04_10::command/249 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm04_10::command/249 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/249 CtrlChar/param/12]
+none
+
+[STm04_10::command/249 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/254 SetAudio/param/1]
+se_224
+
+[STm04_10::command/255 SetFx/param/1]
+fx_avg_movie
+
+[STm04_10::command/256 SetBg/param/1]
+story_main_03_011
+
+[STm04_10::command/256 SetBg/param/2]
+0
+
+[STm04_10::command/256 SetBg/param/3]
+OutSine
+
+[STm04_10::command/256 SetBg/param/6]
+default
+
+[STm04_10::command/257 CtrlBg/param/10]
+none
+
+[STm04_10::command/257 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/259 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm04_10::command/261 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/261 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/261 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/261 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/261 SetTalk/param/7]
+Whether it was back in that hole when I was ready to give up...
+
+[STm04_10::command/261 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/263 SetAudio/param/1]
+se_221
+
+[STm04_10::command/264 SetBg/param/1]
+story_main_03_006
+
+[STm04_10::command/264 SetBg/param/2]
+0
+
+[STm04_10::command/264 SetBg/param/3]
+OutSine
+
+[STm04_10::command/264 SetBg/param/6]
+default
+
+[STm04_10::command/265 CtrlBg/param/10]
+none
+
+[STm04_10::command/265 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/267 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/267 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/267 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/267 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/267 SetTalk/param/7]
+... or when I was heartbroken and alone in the cold rain...
+
+[STm04_10::command/267 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/269 SetAudio/param/1]
+se_221
+
+[STm04_10::command/270 SetBg/param/1]
+story_main_04_003
+
+[STm04_10::command/270 SetBg/param/2]
+0
+
+[STm04_10::command/270 SetBg/param/3]
+Linear
+
+[STm04_10::command/270 SetBg/param/6]
+default
+
+[STm04_10::command/271 CtrlBg/param/10]
+none
+
+[STm04_10::command/271 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/273 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/273 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/273 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/273 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/273 SetTalk/param/7]
+... or even this time, trapped in that beautiful dream the mist created...
+
+[STm04_10::command/273 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/275 SetAudio/param/1]
+se_169
+
+[STm04_10::command/276 SetTrans/param/2]
+0
+
+[STm04_10::command/276 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/276 SetTrans/param/8]
+default
+
+[STm04_10::command/277 SetBg/param/1]
+forest_night_2_a
+
+[STm04_10::command/277 SetBg/param/2]
+0
+
+[STm04_10::command/277 SetBg/param/3]
+Linear
+
+[STm04_10::command/277 SetBg/param/6]
+default
+
+[STm04_10::command/278 CtrlBg/param/10]
+none
+
+[STm04_10::command/278 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/279 SetFx/param/1]
+fx_avg_movie
+
+[STm04_10::command/280 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm04_10::command/281 SetChar/param/2]
+none
+
+[STm04_10::command/281 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/281 SetChar/param/4]
+a
+
+[STm04_10::command/281 SetChar/param/5]
+027
+
+[STm04_10::command/281 SetChar/param/6]
+none
+
+[STm04_10::command/282 SetTrans/param/2]
+0
+
+[STm04_10::command/282 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/282 SetTrans/param/8]
+default
+
+[STm04_10::command/283 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/283 CtrlChar/param/1]
+a
+
+[STm04_10::command/283 CtrlChar/param/3]
+none
+
+[STm04_10::command/283 CtrlChar/param/11]
+none
+
+[STm04_10::command/283 CtrlChar/param/12]
+none
+
+[STm04_10::command/283 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/284 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/284 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/284 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/284 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/284 SetTalk/param/7]
+Boss, you've saved me three times now.==W== I know it sounds dramatic, but each time I felt like I was reborn.
+
+[STm04_10::command/284 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/286 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/286 CtrlChar/param/1]
+a
+
+[STm04_10::command/286 CtrlChar/param/2]
+012
+
+[STm04_10::command/286 CtrlChar/param/3]
+avg_emoji_flower
+
+[STm04_10::command/286 CtrlChar/param/11]
+none
+
+[STm04_10::command/286 CtrlChar/param/12]
+none
+
+[STm04_10::command/286 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/288 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/288 CtrlChar/param/1]
+a
+
+[STm04_10::command/288 CtrlChar/param/2]
+017
+
+[STm04_10::command/288 CtrlChar/param/3]
+none
+
+[STm04_10::command/288 CtrlChar/param/11]
+none
+
+[STm04_10::command/288 CtrlChar/param/12]
+none
+
+[STm04_10::command/288 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/289 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/289 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/289 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/289 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/289 SetTalk/param/7]
+When you look at it that way, maybe ... my soul was already entrusted to you from the start.
+
+[STm04_10::command/289 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/291 SetMainRoleTalk/param/2]
+014
+
+[STm04_10::command/291 SetMainRoleTalk/param/3]
+avg_emoji_music
+
+[STm04_10::command/291 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/291 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/291 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/292 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/292 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/292 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/292 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/292 SetTalk/param/7]
+You're giving me too much credit. You've saved me plenty of times, too.
+
+[STm04_10::command/292 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/293 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/293 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/293 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/293 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/295 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/295 CtrlChar/param/1]
+a
+
+[STm04_10::command/295 CtrlChar/param/2]
+008
+
+[STm04_10::command/295 CtrlChar/param/3]
+avg_emoji_love
+
+[STm04_10::command/295 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/295 CtrlChar/param/12]
+none
+
+[STm04_10::command/295 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/296 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/296 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/296 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/296 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/296 SetTalk/param/7]
+It's okay. Feelings like this are subjective, you know?
+
+[STm04_10::command/296 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/298 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/298 CtrlChar/param/1]
+a
+
+[STm04_10::command/298 CtrlChar/param/2]
+010
+
+[STm04_10::command/298 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm04_10::command/298 CtrlChar/param/11]
+none
+
+[STm04_10::command/298 CtrlChar/param/12]
+none
+
+[STm04_10::command/298 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/299 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/299 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/299 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/299 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/299 SetTalk/param/7]
+Ah, but ... while I have no problem entrusting my soul to you, there is one little thing that's stuck in my mind...
+
+[STm04_10::command/299 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/301 SetMainRoleTalk/param/2]
+012
+
+[STm04_10::command/301 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STm04_10::command/301 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/301 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/301 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/302 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/302 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/302 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/302 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/302 SetTalk/param/7]
+And that is...?
+
+[STm04_10::command/302 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/303 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/303 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/303 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/303 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/305 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/305 CtrlChar/param/1]
+a
+
+[STm04_10::command/305 CtrlChar/param/2]
+027
+
+[STm04_10::command/305 CtrlChar/param/3]
+none
+
+[STm04_10::command/305 CtrlChar/param/11]
+none
+
+[STm04_10::command/305 CtrlChar/param/12]
+none
+
+[STm04_10::command/305 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/306 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/306 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/306 SetBGM/param/4]
+1500ms
+
+[STm04_10::command/307 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/307 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/307 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/307 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/307 SetTalk/param/7]
+Mhmm. It's the reason we're here.==W== Shh, don't startle them. Follow me.
+
+[STm04_10::command/307 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/309 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/309 CtrlChar/param/1]
+a
+
+[STm04_10::command/309 CtrlChar/param/2]
+012
+
+[STm04_10::command/309 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm04_10::command/309 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/309 CtrlChar/param/12]
+none
+
+[STm04_10::command/309 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/312 SetAudio/param/1]
+se_025
+
+[STm04_10::command/314 CtrlStage/param/9]
+none
+
+[STm04_10::command/314 CtrlStage/param/10]
+OutSine
+
+[STm04_10::command/316 SetBg/param/1]
+sky_night_a
+
+[STm04_10::command/316 SetBg/param/2]
+0
+
+[STm04_10::command/316 SetBg/param/3]
+Linear
+
+[STm04_10::command/316 SetBg/param/6]
+default
+
+[STm04_10::command/317 CtrlBg/param/10]
+none
+
+[STm04_10::command/317 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/319 SetTalk/param/1]
+0
+
+[STm04_10::command/319 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/319 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/319 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/319 SetTalk/param/7]
+The air is thick with the scent of damp earth and leaves. The quiet forest feels like a dark labyrinth.
+
+[STm04_10::command/319 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/320 SetTalk/param/1]
+0
+
+[STm04_10::command/320 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/320 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/320 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/320 SetTalk/param/7]
+I follow Nazuka, my footsteps light on the mossy path as we move through dense thickets that rustle in the wind.
+
+[STm04_10::command/320 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/322 CtrlStage/param/9]
+none
+
+[STm04_10::command/322 CtrlStage/param/10]
+OutSine
+
+[STm04_10::command/324 SetTrans/param/2]
+0
+
+[STm04_10::command/324 SetTrans/param/3]
+Linear
+
+[STm04_10::command/324 SetTrans/param/8]
+default
+
+[STm04_10::command/325 CtrlStage/param/9]
+none
+
+[STm04_10::command/325 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/326 SetFilm/param/1]
+Linear
+
+[STm04_10::command/327 SetBg/param/1]
+story_main_04_001_b
+
+[STm04_10::command/327 SetBg/param/2]
+0
+
+[STm04_10::command/327 SetBg/param/3]
+OutSine
+
+[STm04_10::command/327 SetBg/param/6]
+default
+
+[STm04_10::command/328 CtrlBg/param/10]
+none
+
+[STm04_10::command/328 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/330 SetTrans/param/2]
+0
+
+[STm04_10::command/330 SetTrans/param/3]
+InSine
+
+[STm04_10::command/330 SetTrans/param/8]
+default
+
+[STm04_10::command/332 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/332 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/332 SetTalk/param/4]
+vo_STm04_10_001
+
+[STm04_10::command/332 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/332 SetTalk/param/7]
+Here we are.
+
+[STm04_10::command/332 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/333 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/333 SetBGM/param/3]
+m58
+
+[STm04_10::command/333 SetBGM/param/4]
+none
+
+[STm04_10::command/337 SetChoiceBegin/param/0]
+a_14
+
+[STm04_10::command/337 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/337 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/337 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/12/0]
+How beautiful! There's the Monolith, with the light dancing.
+
+[STm04_10::command/337 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/337 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/338 SetChoiceJumpTo/param/0]
+a_14
+
+[STm04_10::command/338 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/339 SetChoiceRollover/param/0]
+a_14
+
+[STm04_10::command/340 SetChoiceEnd/param/0]
+a_14
+
+[STm04_10::command/342 SetFilm/param/1]
+OutSine
+
+[STm04_10::command/343 SetBg/param/1]
+story_main_04_001_a
+
+[STm04_10::command/343 SetBg/param/2]
+0
+
+[STm04_10::command/343 SetBg/param/3]
+OutSine
+
+[STm04_10::command/343 SetBg/param/6]
+default
+
+[STm04_10::command/344 CtrlBg/param/10]
+none
+
+[STm04_10::command/344 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/345 CtrlBg/param/10]
+none
+
+[STm04_10::command/345 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/347 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/347 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/347 SetTalk/param/4]
+vo_STm04_10_002
+
+[STm04_10::command/347 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/347 SetTalk/param/7]
+Every year around this time, lightbugs brimming with magic gather here and fly towards the Monolith. So—
+
+[STm04_10::command/347 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/351 SetBg/param/1]
+story_main_04_001_a
+
+[STm04_10::command/351 SetBg/param/2]
+0
+
+[STm04_10::command/351 SetBg/param/3]
+OutSine
+
+[STm04_10::command/351 SetBg/param/6]
+default
+
+[STm04_10::command/352 CtrlBg/param/10]
+none
+
+[STm04_10::command/352 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/353 CtrlBg/param/10]
+none
+
+[STm04_10::command/353 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/355 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/355 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/355 SetTalk/param/4]
+vo_STm04_10_003
+
+[STm04_10::command/355 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/355 SetTalk/param/7]
+It is said that when you make a wish here, the lightbugs will carry it to the Monolith. Even if the wish remains unfulfilled, it will be forever etched there.
+
+[STm04_10::command/355 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/359 SetBg/param/1]
+story_main_03_008_c
+
+[STm04_10::command/359 SetBg/param/2]
+0
+
+[STm04_10::command/359 SetBg/param/3]
+OutSine
+
+[STm04_10::command/359 SetBg/param/6]
+default
+
+[STm04_10::command/360 CtrlBg/param/10]
+none
+
+[STm04_10::command/360 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/361 CtrlBg/param/10]
+none
+
+[STm04_10::command/361 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/363 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/363 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/363 SetTalk/param/4]
+vo_STm04_10_004
+
+[STm04_10::command/363 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/363 SetTalk/param/7]
+Before the Big Three appeared and brought disaster, this was Philae's finest place for making wishes.
+
+[STm04_10::command/363 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/367 SetTrans/param/2]
+0
+
+[STm04_10::command/367 SetTrans/param/3]
+Linear
+
+[STm04_10::command/367 SetTrans/param/8]
+default
+
+[STm04_10::command/368 SetBg/param/1]
+story_main_04_001_c
+
+[STm04_10::command/368 SetBg/param/2]
+0
+
+[STm04_10::command/368 SetBg/param/3]
+OutSine
+
+[STm04_10::command/368 SetBg/param/6]
+default
+
+[STm04_10::command/369 CtrlBg/param/10]
+none
+
+[STm04_10::command/369 CtrlBg/param/11]
+OutSine
+
+[STm04_10::command/370 SetTrans/param/2]
+0
+
+[STm04_10::command/370 SetTrans/param/3]
+InSine
+
+[STm04_10::command/370 SetTrans/param/8]
+default
+
+[STm04_10::command/372 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/372 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/372 SetTalk/param/4]
+vo_STm04_10_005
+
+[STm04_10::command/372 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/372 SetTalk/param/7]
+That's why, Boss... I was hoping we could perform the soul trading again, right here.
+
+[STm04_10::command/372 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/376 SetBg/param/1]
+story_main_04_001_b
+
+[STm04_10::command/376 SetBg/param/2]
+0
+
+[STm04_10::command/376 SetBg/param/3]
+OutSine
+
+[STm04_10::command/376 SetBg/param/6]
+default
+
+[STm04_10::command/377 CtrlBg/param/10]
+none
+
+[STm04_10::command/377 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/379 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/379 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/379 SetTalk/param/4]
+vo_STm04_10_006
+
+[STm04_10::command/379 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/379 SetTalk/param/7]
+Don't get the wrong idea—I don't mean anything else. After all, a soul can only be "sold" once in a lifetime, right? And such a crucial contract was made in a daze, all thanks to that meddling mist...
+
+[STm04_10::command/379 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/383 SetBg/param/1]
+story_main_04_001_c
+
+[STm04_10::command/383 SetBg/param/2]
+0
+
+[STm04_10::command/383 SetBg/param/3]
+OutSine
+
+[STm04_10::command/383 SetBg/param/6]
+default
+
+[STm04_10::command/384 CtrlBg/param/10]
+none
+
+[STm04_10::command/384 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/386 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/386 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/386 SetTalk/param/4]
+vo_STm04_10_007
+
+[STm04_10::command/386 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/386 SetTalk/param/7]
+It's just not fair.
+
+[STm04_10::command/386 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/0]
+b_13
+
+[STm04_10::command/390 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/390 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/390 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/12/0]
+I see.
+
+[STm04_10::command/390 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/390 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/391 SetChoiceJumpTo/param/0]
+b_13
+
+[STm04_10::command/391 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/392 SetChoiceRollover/param/0]
+b_13
+
+[STm04_10::command/393 SetChoiceEnd/param/0]
+b_13
+
+[STm04_10::command/395 SetChoiceBegin/param/0]
+c_12
+
+[STm04_10::command/395 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/395 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/395 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/12/0]
+So you want to perform the trade again here, to have your wish engraved in the Monolith?
+
+[STm04_10::command/395 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/395 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/396 SetChoiceJumpTo/param/0]
+c_12
+
+[STm04_10::command/396 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/397 SetChoiceRollover/param/0]
+c_12
+
+[STm04_10::command/398 SetChoiceEnd/param/0]
+c_12
+
+[STm04_10::command/400 SetBg/param/1]
+story_main_04_001_a
+
+[STm04_10::command/400 SetBg/param/2]
+0
+
+[STm04_10::command/400 SetBg/param/3]
+OutSine
+
+[STm04_10::command/400 SetBg/param/6]
+default
+
+[STm04_10::command/401 CtrlBg/param/10]
+none
+
+[STm04_10::command/401 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/403 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/403 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/403 SetTalk/param/4]
+vo_STm04_10_008
+
+[STm04_10::command/403 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/403 SetTalk/param/7]
+Well... not exactly. After all, that's just a tale.
+
+[STm04_10::command/403 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/407 SetBg/param/1]
+story_main_04_001_c
+
+[STm04_10::command/407 SetBg/param/2]
+0
+
+[STm04_10::command/407 SetBg/param/3]
+OutSine
+
+[STm04_10::command/407 SetBg/param/6]
+default
+
+[STm04_10::command/408 CtrlBg/param/10]
+none
+
+[STm04_10::command/408 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/410 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/410 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/410 SetTalk/param/4]
+vo_STm04_10_009
+
+[STm04_10::command/410 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/410 SetTalk/param/7]
+Besides, it was you who told me that wishes are things you make happen with your own hands.
+
+[STm04_10::command/410 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/414 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/414 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/414 SetTalk/param/4]
+vo_STm04_10_010
+
+[STm04_10::command/414 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/414 SetTalk/param/7]
+I chose this location simply because it's the first fully-explored Monolith in Philae that reliably grants Artifacts through wishes.
+
+[STm04_10::command/414 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/418 SetBg/param/1]
+story_main_04_001_b
+
+[STm04_10::command/418 SetBg/param/2]
+0
+
+[STm04_10::command/418 SetBg/param/3]
+OutSine
+
+[STm04_10::command/418 SetBg/param/6]
+default
+
+[STm04_10::command/419 CtrlBg/param/10]
+none
+
+[STm04_10::command/419 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/421 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/421 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/421 SetTalk/param/4]
+vo_STm04_10_011
+
+[STm04_10::command/421 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/421 SetTalk/param/7]
+I've scoured every history book in Philae, but I could never find which Trekker first charted it. Maybe it was a tale, too. But thinking about it now... What if it was the One-Armed Saint?
+
+[STm04_10::command/421 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/0]
+d_11
+
+[STm04_10::command/425 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/425 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/425 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/12/0]
+Heh, that's a fascinating theory.
+
+[STm04_10::command/425 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/425 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/426 SetChoiceJumpTo/param/0]
+d_11
+
+[STm04_10::command/426 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/427 SetChoiceRollover/param/0]
+d_11
+
+[STm04_10::command/428 SetChoiceEnd/param/0]
+d_11
+
+[STm04_10::command/430 SetChoiceBegin/param/0]
+d_12
+
+[STm04_10::command/430 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/430 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/430 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/12/0]
+If it's true, that would mean the Saint wasn't a work of fiction.
+
+[STm04_10::command/430 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/430 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/431 SetChoiceJumpTo/param/0]
+d_12
+
+[STm04_10::command/431 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/432 SetChoiceRollover/param/0]
+d_12
+
+[STm04_10::command/433 SetChoiceEnd/param/0]
+d_12
+
+[STm04_10::command/435 SetChoiceBegin/param/0]
+d_13
+
+[STm04_10::command/435 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/435 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/435 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/12/0]
+The legend could be real after all.
+
+[STm04_10::command/435 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/435 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/436 SetChoiceJumpTo/param/0]
+d_13
+
+[STm04_10::command/436 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/437 SetChoiceRollover/param/0]
+d_13
+
+[STm04_10::command/438 SetChoiceEnd/param/0]
+d_13
+
+[STm04_10::command/440 SetBg/param/1]
+story_main_04_001_c
+
+[STm04_10::command/440 SetBg/param/2]
+0
+
+[STm04_10::command/440 SetBg/param/3]
+OutSine
+
+[STm04_10::command/440 SetBg/param/6]
+default
+
+[STm04_10::command/441 CtrlBg/param/10]
+none
+
+[STm04_10::command/441 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/443 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/443 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/443 SetTalk/param/4]
+vo_STm04_10_012
+
+[STm04_10::command/443 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/443 SetTalk/param/7]
+That's right. Speaking of which... You know, Boss, in the illusion created by the Garden of Parasite... I saw a happy future.
+
+[STm04_10::command/443 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/447 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/447 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/447 SetTalk/param/4]
+vo_STm04_10_013
+
+[STm04_10::command/447 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/447 SetTalk/param/7]
+Nazuna's wish, Kaede's wish, Fuyuka's wish ... even mine. They all came true. We were living a warm and peaceful life.
+
+[STm04_10::command/447 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/451 SetBg/param/1]
+story_main_04_001_a
+
+[STm04_10::command/451 SetBg/param/2]
+0
+
+[STm04_10::command/451 SetBg/param/3]
+OutSine
+
+[STm04_10::command/451 SetBg/param/6]
+default
+
+[STm04_10::command/452 CtrlBg/param/10]
+none
+
+[STm04_10::command/452 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/454 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/454 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/454 SetTalk/param/4]
+vo_STm04_10_014
+
+[STm04_10::command/454 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/454 SetTalk/param/7]
+If that's truly the future I had always longed for... Then I really am greedy.
+
+[STm04_10::command/454 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/458 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/458 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/458 SetTalk/param/4]
+vo_STm04_10_015
+
+[STm04_10::command/458 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/458 SetTalk/param/7]
+Right, Boss, do you know? It was you who made me realize that it was nothing more than a dream.
+
+[STm04_10::command/458 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/0]
+f_10
+
+[STm04_10::command/460 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/460 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/460 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/12/0]
+Me? What did I do?
+
+[STm04_10::command/460 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/460 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/461 SetChoiceJumpTo/param/0]
+f_10
+
+[STm04_10::command/461 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/462 SetChoiceRollover/param/0]
+f_10
+
+[STm04_10::command/463 SetChoiceEnd/param/0]
+f_10
+
+[STm04_10::command/465 SetBg/param/1]
+story_main_04_001
+
+[STm04_10::command/465 SetBg/param/2]
+0
+
+[STm04_10::command/465 SetBg/param/3]
+OutSine
+
+[STm04_10::command/465 SetBg/param/6]
+default
+
+[STm04_10::command/466 CtrlBg/param/10]
+none
+
+[STm04_10::command/466 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/468 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/468 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/468 SetTalk/param/4]
+vo_STm04_10_016
+
+[STm04_10::command/468 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/468 SetTalk/param/7]
+Hehe. You didn't do anything at all.
+
+[STm04_10::command/468 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/472 SetFilm/param/1]
+OutSine
+
+[STm04_10::command/473 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm04_10::command/474 SetBg/param/1]
+story_main_04_003
+
+[STm04_10::command/474 SetBg/param/2]
+0
+
+[STm04_10::command/474 SetBg/param/3]
+OutSine
+
+[STm04_10::command/474 SetBg/param/6]
+default
+
+[STm04_10::command/475 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/475 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/475 SetTalk/param/4]
+vo_STm04_10_017
+
+[STm04_10::command/475 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/475 SetTalk/param/7]
+You just ... weren't in that future.
+
+[STm04_10::command/475 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/479 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/479 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/479 SetTalk/param/4]
+vo_STm04_10_018
+
+[STm04_10::command/479 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/479 SetTalk/param/7]
+But even without you, we unconsciously left an empty space. For you.
+
+[STm04_10::command/479 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/0]
+g_09
+
+[STm04_10::command/483 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/483 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/483 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/12/0]
+It's probably because of my immunity to magic...
+
+[STm04_10::command/483 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/483 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/484 SetChoiceJumpTo/param/0]
+g_09
+
+[STm04_10::command/484 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/485 SetChoiceRollover/param/0]
+g_09
+
+[STm04_10::command/486 SetChoiceEnd/param/0]
+g_09
+
+[STm04_10::command/488 SetChoiceBegin/param/0]
+g_08
+
+[STm04_10::command/488 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/488 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/488 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/12/0]
+... that Garden of Parasite couldn't create a mimic.
+
+[STm04_10::command/488 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/488 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/489 SetChoiceJumpTo/param/0]
+g_08
+
+[STm04_10::command/489 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/490 SetChoiceRollover/param/0]
+g_08
+
+[STm04_10::command/491 SetChoiceEnd/param/0]
+g_08
+
+[STm04_10::command/493 SetFilm/param/1]
+OutSine
+
+[STm04_10::command/494 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm04_10::command/495 SetBg/param/1]
+story_main_04_001_c
+
+[STm04_10::command/495 SetBg/param/2]
+0
+
+[STm04_10::command/495 SetBg/param/3]
+OutSine
+
+[STm04_10::command/495 SetBg/param/6]
+default
+
+[STm04_10::command/496 CtrlBg/param/10]
+none
+
+[STm04_10::command/496 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/498 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/498 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/498 SetTalk/param/4]
+vo_STm04_10_019
+
+[STm04_10::command/498 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/498 SetTalk/param/7]
+That makes sense... Alright, Boss. Shall we begin the soul trade now?
+
+[STm04_10::command/498 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/502 SetMainRoleTalk/param/2]
+014
+
+[STm04_10::command/502 SetMainRoleTalk/param/3]
+none
+
+[STm04_10::command/502 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/502 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/502 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/503 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/503 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/503 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/503 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/503 SetTalk/param/7]
+Of course.==W== Then, please state your wish—
+
+[STm04_10::command/503 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/505 SetMainRoleTalk/param/2]
+022
+
+[STm04_10::command/505 SetMainRoleTalk/param/3]
+none
+
+[STm04_10::command/505 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/505 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/505 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/507 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/507 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/507 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/507 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/509 SetAudio/param/1]
+se_169
+
+[STm04_10::command/510 SetTrans/param/2]
+0
+
+[STm04_10::command/510 SetTrans/param/3]
+InSine
+
+[STm04_10::command/510 SetTrans/param/8]
+default
+
+[STm04_10::command/511 SetFilm/param/1]
+Linear
+
+[STm04_10::command/512 SetBg/param/1]
+story_main_04_001_b
+
+[STm04_10::command/512 SetBg/param/2]
+0
+
+[STm04_10::command/512 SetBg/param/3]
+OutSine
+
+[STm04_10::command/512 SetBg/param/6]
+default
+
+[STm04_10::command/513 CtrlBg/param/10]
+none
+
+[STm04_10::command/513 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/514 CtrlBg/param/10]
+none
+
+[STm04_10::command/514 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/515 SetTrans/param/2]
+0
+
+[STm04_10::command/515 SetTrans/param/3]
+InSine
+
+[STm04_10::command/515 SetTrans/param/8]
+default
+
+[STm04_10::command/516 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/516 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/516 SetTalk/param/4]
+vo_STm04_10_020
+
+[STm04_10::command/516 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/516 SetTalk/param/7]
+Boss, hear my wish.
+
+[STm04_10::command/516 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/520 SetFilm/param/1]
+OutSine
+
+[STm04_10::command/522 SetBg/param/1]
+story_main_04_001_c
+
+[STm04_10::command/522 SetBg/param/2]
+0
+
+[STm04_10::command/522 SetBg/param/3]
+OutSine
+
+[STm04_10::command/522 SetBg/param/6]
+default
+
+[STm04_10::command/523 CtrlBg/param/10]
+none
+
+[STm04_10::command/523 CtrlBg/param/11]
+OutSine
+
+[STm04_10::command/525 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/525 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/525 SetTalk/param/4]
+vo_STm04_10_021
+
+[STm04_10::command/525 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/525 SetTalk/param/7]
+I hope that from now on, you'll always, always be by my side.
+
+[STm04_10::command/525 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/0]
+h_10
+
+[STm04_10::command/529 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/529 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/529 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/12/0]
+I accept your wish.
+
+[STm04_10::command/529 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/529 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/530 SetChoiceJumpTo/param/0]
+h_10
+
+[STm04_10::command/530 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/531 SetChoiceRollover/param/0]
+h_10
+
+[STm04_10::command/532 SetChoiceEnd/param/0]
+h_10
+
+[STm04_10::command/534 SetBg/param/1]
+story_main_04_001_a
+
+[STm04_10::command/534 SetBg/param/2]
+0
+
+[STm04_10::command/534 SetBg/param/3]
+OutSine
+
+[STm04_10::command/534 SetBg/param/6]
+default
+
+[STm04_10::command/535 CtrlBg/param/10]
+none
+
+[STm04_10::command/535 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/537 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/537 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/537 SetTalk/param/4]
+vo_STm04_10_022
+
+[STm04_10::command/537 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/537 SetTalk/param/7]
+And when that wish comes true...
+
+[STm04_10::command/537 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/541 SetTrans/param/2]
+0
+
+[STm04_10::command/541 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/541 SetTrans/param/8]
+default
+
+[STm04_10::command/542 SetBg/param/1]
+white
+
+[STm04_10::command/542 SetBg/param/2]
+0
+
+[STm04_10::command/542 SetBg/param/3]
+Linear
+
+[STm04_10::command/542 SetBg/param/6]
+default
+
+[STm04_10::command/543 SetTrans/param/2]
+0
+
+[STm04_10::command/543 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/543 SetTrans/param/8]
+default
+
+[STm04_10::command/544 SetTalk/param/1]
+0
+
+[STm04_10::command/544 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/544 SetTalk/param/4]
+vo_STm04_10_023
+
+[STm04_10::command/544 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/544 SetTalk/param/7]
+<color=black>My soul will be yours to keep.</color>
+
+[STm04_10::command/544 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/548 SetBg/param/1]
+story_main_04_001
+
+[STm04_10::command/548 SetBg/param/2]
+0
+
+[STm04_10::command/548 SetBg/param/3]
+OutSine
+
+[STm04_10::command/548 SetBg/param/6]
+default
+
+[STm04_10::command/549 CtrlBg/param/10]
+none
+
+[STm04_10::command/549 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/551 SetChoiceBegin/param/0]
+z_10
+
+[STm04_10::command/551 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/551 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/551 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/12/0]
+It's over.
+
+[STm04_10::command/551 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/551 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/552 SetChoiceJumpTo/param/0]
+z_10
+
+[STm04_10::command/552 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/553 SetChoiceRollover/param/0]
+z_10
+
+[STm04_10::command/554 SetChoiceEnd/param/0]
+z_10
+
+[STm04_10::command/556 SetChoiceBegin/param/0]
+z_11
+
+[STm04_10::command/556 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/556 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/556 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/12/0]
+Still, don't you wanna make a grander wish?
+
+[STm04_10::command/556 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/556 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/557 SetChoiceJumpTo/param/0]
+z_11
+
+[STm04_10::command/557 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/558 SetChoiceRollover/param/0]
+z_11
+
+[STm04_10::command/559 SetChoiceEnd/param/0]
+z_11
+
+[STm04_10::command/561 SetChoiceBegin/param/0]
+z_12
+
+[STm04_10::command/561 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/6]
+a
+
+[STm04_10::command/561 SetChoiceBegin/param/7]
+002
+
+[STm04_10::command/561 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/12/0]
+I'll help you fulfill it together.
+
+[STm04_10::command/561 SetChoiceBegin/param/12/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/12/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/561 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/562 SetChoiceJumpTo/param/0]
+z_12
+
+[STm04_10::command/562 SetChoiceJumpTo/param/1]
+1
+
+[STm04_10::command/563 SetChoiceRollover/param/0]
+z_12
+
+[STm04_10::command/564 SetChoiceEnd/param/0]
+z_12
+
+[STm04_10::command/566 SetBg/param/1]
+story_main_04_001_a
+
+[STm04_10::command/566 SetBg/param/2]
+0
+
+[STm04_10::command/566 SetBg/param/3]
+OutSine
+
+[STm04_10::command/566 SetBg/param/6]
+default
+
+[STm04_10::command/567 CtrlBg/param/10]
+none
+
+[STm04_10::command/567 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/568 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/568 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/568 SetTalk/param/4]
+vo_STm04_10_024
+
+[STm04_10::command/568 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/568 SetTalk/param/7]
+No, that's not necessary.
+
+[STm04_10::command/568 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/572 SetBg/param/1]
+story_main_04_001_c
+
+[STm04_10::command/572 SetBg/param/2]
+0
+
+[STm04_10::command/572 SetBg/param/3]
+OutSine
+
+[STm04_10::command/572 SetBg/param/6]
+default
+
+[STm04_10::command/573 CtrlBg/param/10]
+none
+
+[STm04_10::command/573 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/575 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/575 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/575 SetTalk/param/4]
+vo_STm04_10_025
+
+[STm04_10::command/575 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/575 SetTalk/param/7]
+The only wish I want to come true is this one.
+
+[STm04_10::command/575 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/576 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/576 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/576 SetBGM/param/4]
+1500ms
+
+[STm04_10::command/580 SetAudio/param/1]
+se_025_stop
+
+[STm04_10::command/581 SetTrans/param/2]
+0
+
+[STm04_10::command/581 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/581 SetTrans/param/8]
+default
+
+[STm04_10::command/582 SetBg/param/1]
+forest_night_2_a
+
+[STm04_10::command/582 SetBg/param/2]
+0
+
+[STm04_10::command/582 SetBg/param/3]
+Linear
+
+[STm04_10::command/582 SetBg/param/6]
+default
+
+[STm04_10::command/583 CtrlBg/param/10]
+none
+
+[STm04_10::command/583 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/585 CtrlStage/param/9]
+none
+
+[STm04_10::command/585 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/586 SetChar/param/2]
+none
+
+[STm04_10::command/586 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/586 SetChar/param/4]
+a
+
+[STm04_10::command/586 SetChar/param/5]
+017
+
+[STm04_10::command/586 SetChar/param/6]
+none
+
+[STm04_10::command/587 SetTrans/param/2]
+0
+
+[STm04_10::command/587 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/587 SetTrans/param/8]
+default
+
+[STm04_10::command/589 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/589 CtrlChar/param/1]
+a
+
+[STm04_10::command/589 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm04_10::command/589 CtrlChar/param/11]
+none
+
+[STm04_10::command/589 CtrlChar/param/12]
+none
+
+[STm04_10::command/589 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/590 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/590 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/590 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/590 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/590 SetTalk/param/7]
+There. Thank you. No more regrets. I feel so much lighter. Come on, Boss, let's head for the Monolith.
+
+[STm04_10::command/590 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/592 SetMainRoleTalk/param/2]
+002
+
+[STm04_10::command/592 SetMainRoleTalk/param/3]
+avg_emoji_idea
+
+[STm04_10::command/592 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/592 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/592 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/593 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/593 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/593 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/593 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/593 SetTalk/param/7]
+Right.
+
+[STm04_10::command/593 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/594 SetMainRoleTalk/param/3]
+none
+
+[STm04_10::command/594 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/594 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/594 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/596 SetAudio/param/1]
+se_090
+
+[STm04_10::command/598 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/598 CtrlChar/param/1]
+a
+
+[STm04_10::command/598 CtrlChar/param/3]
+none
+
+[STm04_10::command/598 CtrlChar/param/11]
+none
+
+[STm04_10::command/598 CtrlChar/param/12]
+none
+
+[STm04_10::command/598 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/600 SetBg/param/1]
+BG_Black
+
+[STm04_10::command/600 SetBg/param/2]
+0
+
+[STm04_10::command/600 SetBg/param/3]
+OutSine
+
+[STm04_10::command/600 SetBg/param/6]
+default
+
+[STm04_10::command/602 SetBg/param/1]
+forest_night_1
+
+[STm04_10::command/602 SetBg/param/2]
+0
+
+[STm04_10::command/602 SetBg/param/3]
+Linear
+
+[STm04_10::command/602 SetBg/param/6]
+default
+
+[STm04_10::command/603 CtrlBg/param/10]
+none
+
+[STm04_10::command/603 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/604 SetAudio/param/1]
+se_090
+
+[STm04_10::command/605 SetStage/param/2]
+OutSine
+
+[STm04_10::command/607 SetMainRoleTalk/param/2]
+026
+
+[STm04_10::command/607 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STm04_10::command/607 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/607 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/607 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/608 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/608 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/608 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/608 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/608 SetTalk/param/7]
+Is that a monster?
+
+[STm04_10::command/608 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/609 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/609 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/609 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/609 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/611 SetStage/param/2]
+OutSine
+
+[STm04_10::command/612 SetBg/param/1]
+forest_night_2_a
+
+[STm04_10::command/612 SetBg/param/2]
+0
+
+[STm04_10::command/612 SetBg/param/3]
+OutSine
+
+[STm04_10::command/612 SetBg/param/6]
+default
+
+[STm04_10::command/613 CtrlBg/param/10]
+none
+
+[STm04_10::command/613 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/615 SetChar/param/2]
+none
+
+[STm04_10::command/615 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/615 SetChar/param/4]
+a
+
+[STm04_10::command/615 SetChar/param/5]
+019
+
+[STm04_10::command/615 SetChar/param/6]
+none
+
+[STm04_10::command/616 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/616 CtrlChar/param/1]
+a
+
+[STm04_10::command/616 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm04_10::command/616 CtrlChar/param/11]
+none
+
+[STm04_10::command/616 CtrlChar/param/12]
+none
+
+[STm04_10::command/616 CtrlChar/param/13]
+OutQuad
+
+[STm04_10::command/617 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/617 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/617 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/617 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/617 SetTalk/param/7]
+Boss, get behind me. I'll take care of it.
+
+[STm04_10::command/617 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/619 CtrlBg/param/10]
+none
+
+[STm04_10::command/619 CtrlBg/param/11]
+OutSine
+
+[STm04_10::command/620 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/620 CtrlChar/param/1]
+a
+
+[STm04_10::command/620 CtrlChar/param/3]
+none
+
+[STm04_10::command/620 CtrlChar/param/11]
+none
+
+[STm04_10::command/620 CtrlChar/param/12]
+none
+
+[STm04_10::command/620 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/622 SetBg/param/1]
+forest_night_1
+
+[STm04_10::command/622 SetBg/param/2]
+0
+
+[STm04_10::command/622 SetBg/param/3]
+Linear
+
+[STm04_10::command/622 SetBg/param/6]
+default
+
+[STm04_10::command/623 CtrlBg/param/10]
+none
+
+[STm04_10::command/623 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/624 SetStage/param/2]
+OutBack
+
+[STm04_10::command/626 SetAudio/param/1]
+se_147
+
+[STm04_10::command/627 SetChar/param/2]
+none
+
+[STm04_10::command/627 SetChar/param/3]
+avg1_134
+
+[STm04_10::command/627 SetChar/param/4]
+a
+
+[STm04_10::command/627 SetChar/param/5]
+005
+
+[STm04_10::command/627 SetChar/param/6]
+none
+
+[STm04_10::command/628 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/628 CtrlChar/param/1]
+a
+
+[STm04_10::command/628 CtrlChar/param/3]
+none
+
+[STm04_10::command/628 CtrlChar/param/11]
+none
+
+[STm04_10::command/628 CtrlChar/param/12]
+none
+
+[STm04_10::command/628 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/629 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/629 CtrlChar/param/1]
+a
+
+[STm04_10::command/629 CtrlChar/param/3]
+none
+
+[STm04_10::command/629 CtrlChar/param/11]
+none
+
+[STm04_10::command/629 CtrlChar/param/12]
+none
+
+[STm04_10::command/629 CtrlChar/param/13]
+OutCubic
+
+[STm04_10::command/630 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/630 CtrlChar/param/1]
+a
+
+[STm04_10::command/630 CtrlChar/param/3]
+none
+
+[STm04_10::command/630 CtrlChar/param/11]
+none
+
+[STm04_10::command/630 CtrlChar/param/12]
+none
+
+[STm04_10::command/630 CtrlChar/param/13]
+OutBack
+
+[STm04_10::command/631 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/631 CtrlChar/param/1]
+a
+
+[STm04_10::command/631 CtrlChar/param/2]
+020
+
+[STm04_10::command/631 CtrlChar/param/3]
+none
+
+[STm04_10::command/631 CtrlChar/param/11]
+none
+
+[STm04_10::command/631 CtrlChar/param/12]
+none
+
+[STm04_10::command/631 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/632 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/632 SetBGM/param/3]
+m28
+
+[STm04_10::command/632 SetBGM/param/4]
+none
+
+[STm04_10::command/633 SetTalk/param/1]
+avg1_134
+
+[STm04_10::command/633 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/633 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/633 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/633 SetTalk/param/7]
+Oof!
+
+[STm04_10::command/633 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/635 SetMainRoleTalk/param/2]
+025
+
+[STm04_10::command/635 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STm04_10::command/635 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/635 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/635 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/636 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/636 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/636 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/636 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/636 SetTalk/param/7]
+Fuyuka? What are you doing here? Wait... Don't tell me...
+
+[STm04_10::command/636 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/637 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/637 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/637 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/637 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/639 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/639 CtrlChar/param/1]
+a
+
+[STm04_10::command/639 CtrlChar/param/2]
+011
+
+[STm04_10::command/639 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm04_10::command/639 CtrlChar/param/11]
+lengzhan
+
+[STm04_10::command/639 CtrlChar/param/12]
+none
+
+[STm04_10::command/639 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/640 SetTalk/param/1]
+avg1_134
+
+[STm04_10::command/640 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/640 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/640 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/640 SetTalk/param/7]
+Ow, don't push... U-Um... Master! I-I'm so sorry! There's a reason for this...!
+
+[STm04_10::command/640 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/642 SetAudio/param/1]
+se_147
+
+[STm04_10::command/643 SetStage/param/2]
+InBack
+
+[STm04_10::command/645 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/645 CtrlChar/param/1]
+a
+
+[STm04_10::command/645 CtrlChar/param/3]
+none
+
+[STm04_10::command/645 CtrlChar/param/11]
+none
+
+[STm04_10::command/645 CtrlChar/param/12]
+none
+
+[STm04_10::command/645 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/647 SetCharHead/param/5]
+avg1_156
+
+[STm04_10::command/647 SetCharHead/param/6]
+a
+
+[STm04_10::command/647 SetCharHead/param/7]
+017
+
+[STm04_10::command/647 SetCharHead/param/8]
+avg_emoji_resentful
+
+[STm04_10::command/649 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/649 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/649 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/649 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/649 SetTalk/param/7]
+Nazuka! You were trying to sneak off without us?!
+
+[STm04_10::command/649 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/651 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/651 CtrlChar/param/1]
+a
+
+[STm04_10::command/651 CtrlChar/param/2]
+016
+
+[STm04_10::command/651 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm04_10::command/651 CtrlChar/param/11]
+none
+
+[STm04_10::command/651 CtrlChar/param/12]
+none
+
+[STm04_10::command/651 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/652 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/652 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/652 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/652 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/652 SetTalk/param/7]
+... I should have known this would happen.
+
+[STm04_10::command/652 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/654 SetCharHead/param/5]
+avg1_112
+
+[STm04_10::command/654 SetCharHead/param/6]
+a
+
+[STm04_10::command/654 SetCharHead/param/7]
+007
+
+[STm04_10::command/654 SetCharHead/param/8]
+avg_emoji_exclamation
+
+[STm04_10::command/656 SetTalk/param/1]
+avg1_112
+
+[STm04_10::command/656 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/656 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/656 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/656 SetTalk/param/7]
+Yo, ==PLAYER_NAME==! You're going to hunt Stellaroids, and you didn't even invite us?
+
+[STm04_10::command/656 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/657 SetCharHead/param/5]
+avg1_112
+
+[STm04_10::command/657 SetCharHead/param/6]
+a
+
+[STm04_10::command/657 SetCharHead/param/7]
+002
+
+[STm04_10::command/657 SetCharHead/param/8]
+none
+
+[STm04_10::command/658 SetCharHead/param/5]
+avg1_156
+
+[STm04_10::command/658 SetCharHead/param/6]
+a
+
+[STm04_10::command/658 SetCharHead/param/7]
+002
+
+[STm04_10::command/658 SetCharHead/param/8]
+none
+
+[STm04_10::command/660 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/660 CtrlChar/param/1]
+a
+
+[STm04_10::command/660 CtrlChar/param/2]
+028
+
+[STm04_10::command/660 CtrlChar/param/3]
+none
+
+[STm04_10::command/660 CtrlChar/param/11]
+none
+
+[STm04_10::command/660 CtrlChar/param/12]
+none
+
+[STm04_10::command/660 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/661 SetCharHead/param/5]
+avg1_111
+
+[STm04_10::command/661 SetCharHead/param/6]
+a
+
+[STm04_10::command/661 SetCharHead/param/7]
+011
+
+[STm04_10::command/661 SetCharHead/param/8]
+avg_emoji_idea
+
+[STm04_10::command/663 SetTalk/param/1]
+avg1_111
+
+[STm04_10::command/663 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/663 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/663 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/663 SetTalk/param/7]
+Forget about the Stellaroids for a second—a Monolith that hasn't seen a wish in ages could create brand-new types of Artifacts! Come on, Boss, this is a huge opportunity for the New Star Guild!
+
+[STm04_10::command/663 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/665 SetCharHead/param/5]
+avg1_103
+
+[STm04_10::command/665 SetCharHead/param/6]
+a
+
+[STm04_10::command/665 SetCharHead/param/7]
+013
+
+[STm04_10::command/665 SetCharHead/param/8]
+avg_emoji_angry
+
+[STm04_10::command/667 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/667 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/667 SetBGM/param/4]
+1500ms
+
+[STm04_10::command/668 SetTalk/param/1]
+avg1_103
+
+[STm04_10::command/668 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/668 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/668 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/668 SetTalk/param/7]
+Boss... You just left without sending me a message. You broke your promise.
+
+[STm04_10::command/668 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/669 SetCharHead/param/5]
+avg1_103
+
+[STm04_10::command/669 SetCharHead/param/6]
+a
+
+[STm04_10::command/669 SetCharHead/param/7]
+002
+
+[STm04_10::command/669 SetCharHead/param/8]
+none
+
+[STm04_10::command/670 SetCharHead/param/5]
+avg1_111
+
+[STm04_10::command/670 SetCharHead/param/6]
+a
+
+[STm04_10::command/670 SetCharHead/param/7]
+002
+
+[STm04_10::command/670 SetCharHead/param/8]
+none
+
+[STm04_10::command/672 SetTrans/param/2]
+0
+
+[STm04_10::command/672 SetTrans/param/3]
+Linear
+
+[STm04_10::command/672 SetTrans/param/8]
+default
+
+[STm04_10::command/673 SetBg/param/1]
+forest_night_2_a
+
+[STm04_10::command/673 SetBg/param/2]
+0
+
+[STm04_10::command/673 SetBg/param/3]
+Linear
+
+[STm04_10::command/673 SetBg/param/6]
+default
+
+[STm04_10::command/674 CtrlBg/param/10]
+none
+
+[STm04_10::command/674 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/675 CtrlStage/param/9]
+none
+
+[STm04_10::command/675 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/676 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/676 CtrlChar/param/1]
+a
+
+[STm04_10::command/676 CtrlChar/param/3]
+none
+
+[STm04_10::command/676 CtrlChar/param/11]
+none
+
+[STm04_10::command/676 CtrlChar/param/12]
+none
+
+[STm04_10::command/676 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/677 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/677 CtrlChar/param/1]
+a
+
+[STm04_10::command/677 CtrlChar/param/3]
+none
+
+[STm04_10::command/677 CtrlChar/param/11]
+none
+
+[STm04_10::command/677 CtrlChar/param/12]
+none
+
+[STm04_10::command/677 CtrlChar/param/13]
+Linear
+
+[STm04_10::command/679 SetTrans/param/2]
+0
+
+[STm04_10::command/679 SetTrans/param/3]
+Linear
+
+[STm04_10::command/679 SetTrans/param/8]
+default
+
+[STm04_10::command/680 SetAudio/param/1]
+se_294
+
+[STm04_10::command/681 SetChar/param/2]
+none
+
+[STm04_10::command/681 SetChar/param/3]
+avg1_103
+
+[STm04_10::command/681 SetChar/param/4]
+a
+
+[STm04_10::command/681 SetChar/param/5]
+013
+
+[STm04_10::command/681 SetChar/param/6]
+none
+
+[STm04_10::command/682 CtrlChar/param/0]
+avg1_103
+
+[STm04_10::command/682 CtrlChar/param/1]
+a
+
+[STm04_10::command/682 CtrlChar/param/3]
+none
+
+[STm04_10::command/682 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/682 CtrlChar/param/12]
+none
+
+[STm04_10::command/682 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/683 SetChar/param/2]
+none
+
+[STm04_10::command/683 SetChar/param/3]
+avg1_111
+
+[STm04_10::command/683 SetChar/param/4]
+a
+
+[STm04_10::command/683 SetChar/param/5]
+011
+
+[STm04_10::command/683 SetChar/param/6]
+none
+
+[STm04_10::command/684 CtrlChar/param/0]
+avg1_111
+
+[STm04_10::command/684 CtrlChar/param/1]
+a
+
+[STm04_10::command/684 CtrlChar/param/3]
+none
+
+[STm04_10::command/684 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/684 CtrlChar/param/12]
+none
+
+[STm04_10::command/684 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/685 SetChar/param/2]
+none
+
+[STm04_10::command/685 SetChar/param/3]
+avg1_156
+
+[STm04_10::command/685 SetChar/param/4]
+a
+
+[STm04_10::command/685 SetChar/param/5]
+020
+
+[STm04_10::command/685 SetChar/param/6]
+none
+
+[STm04_10::command/686 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/686 CtrlChar/param/1]
+a
+
+[STm04_10::command/686 CtrlChar/param/3]
+none
+
+[STm04_10::command/686 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/686 CtrlChar/param/12]
+none
+
+[STm04_10::command/686 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/687 CtrlStage/param/9]
+Xiao
+
+[STm04_10::command/687 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/689 SetAudio/param/1]
+se_294
+
+[STm04_10::command/690 SetChar/param/2]
+none
+
+[STm04_10::command/690 SetChar/param/3]
+avg1_112
+
+[STm04_10::command/690 SetChar/param/4]
+a
+
+[STm04_10::command/690 SetChar/param/5]
+007
+
+[STm04_10::command/690 SetChar/param/6]
+none
+
+[STm04_10::command/691 SetChar/param/2]
+none
+
+[STm04_10::command/691 SetChar/param/3]
+avg1_134
+
+[STm04_10::command/691 SetChar/param/4]
+a
+
+[STm04_10::command/691 SetChar/param/5]
+011
+
+[STm04_10::command/691 SetChar/param/6]
+none
+
+[STm04_10::command/692 CtrlChar/param/0]
+avg1_112
+
+[STm04_10::command/692 CtrlChar/param/1]
+a
+
+[STm04_10::command/692 CtrlChar/param/3]
+none
+
+[STm04_10::command/692 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/692 CtrlChar/param/12]
+none
+
+[STm04_10::command/692 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/693 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/693 CtrlChar/param/1]
+a
+
+[STm04_10::command/693 CtrlChar/param/3]
+none
+
+[STm04_10::command/693 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/693 CtrlChar/param/12]
+none
+
+[STm04_10::command/693 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/694 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/694 CtrlChar/param/1]
+a
+
+[STm04_10::command/694 CtrlChar/param/3]
+none
+
+[STm04_10::command/694 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/694 CtrlChar/param/12]
+none
+
+[STm04_10::command/694 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/695 CtrlChar/param/0]
+avg1_103
+
+[STm04_10::command/695 CtrlChar/param/1]
+a
+
+[STm04_10::command/695 CtrlChar/param/3]
+none
+
+[STm04_10::command/695 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/695 CtrlChar/param/12]
+none
+
+[STm04_10::command/695 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/696 CtrlChar/param/0]
+avg1_111
+
+[STm04_10::command/696 CtrlChar/param/1]
+a
+
+[STm04_10::command/696 CtrlChar/param/3]
+none
+
+[STm04_10::command/696 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/696 CtrlChar/param/12]
+none
+
+[STm04_10::command/696 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/697 CtrlStage/param/9]
+Zhong
+
+[STm04_10::command/697 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/699 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/699 SetBGM/param/3]
+m37
+
+[STm04_10::command/699 SetBGM/param/4]
+none
+
+[STm04_10::command/700 SetMainRoleTalk/param/2]
+007
+
+[STm04_10::command/700 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STm04_10::command/700 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/700 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/700 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/701 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/701 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/701 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/701 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/701 SetTalk/param/7]
+Whoa, hold on! Everyone, please, one at a time...!
+
+[STm04_10::command/701 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/702 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/702 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/702 SetMainRoleTalk/param/5]
+z
+
+[STm04_10::command/702 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/704 SetAudio/param/1]
+se_148
+
+[STm04_10::command/705 CtrlStage/param/9]
+none
+
+[STm04_10::command/705 CtrlStage/param/10]
+InBack
+
+[STm04_10::command/707 SetTrans/param/2]
+4
+
+[STm04_10::command/707 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/707 SetTrans/param/8]
+fade
+
+[STm04_10::command/708 SetBg/param/1]
+forest_night_2_a
+
+[STm04_10::command/708 SetBg/param/2]
+0
+
+[STm04_10::command/708 SetBg/param/3]
+Linear
+
+[STm04_10::command/708 SetBg/param/6]
+default
+
+[STm04_10::command/709 CtrlBg/param/10]
+none
+
+[STm04_10::command/709 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/710 CtrlStage/param/9]
+none
+
+[STm04_10::command/710 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/711 SetTrans/param/2]
+3
+
+[STm04_10::command/711 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/711 SetTrans/param/8]
+fade
+
+[STm04_10::command/712 SetChar/param/2]
+none
+
+[STm04_10::command/712 SetChar/param/3]
+avg3_132
+
+[STm04_10::command/712 SetChar/param/4]
+a
+
+[STm04_10::command/712 SetChar/param/5]
+004
+
+[STm04_10::command/712 SetChar/param/6]
+none
+
+[STm04_10::command/713 CtrlChar/param/0]
+avg3_132
+
+[STm04_10::command/713 CtrlChar/param/1]
+a
+
+[STm04_10::command/713 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm04_10::command/713 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/713 CtrlChar/param/12]
+none
+
+[STm04_10::command/713 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/714 SetTalk/param/1]
+avg3_132
+
+[STm04_10::command/714 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/714 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/714 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/714 SetTalk/param/7]
+Heh. Sorry, Nazuka. I tried to hold them back, but they insisted on coming.
+
+[STm04_10::command/714 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/716 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/716 SetCharHead/param/6]
+a
+
+[STm04_10::command/716 SetCharHead/param/7]
+005
+
+[STm04_10::command/716 SetCharHead/param/8]
+avg_emoji_flurry
+
+[STm04_10::command/718 SetTalk/param/1]
+avg1_134
+
+[STm04_10::command/718 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/718 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/718 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/718 SetTalk/param/7]
+I really thought we shouldn't bother you... I'm so, so sorry!
+
+[STm04_10::command/718 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/720 SetCharHead/param/5]
+avg1_156
+
+[STm04_10::command/720 SetCharHead/param/6]
+a
+
+[STm04_10::command/720 SetCharHead/param/7]
+012
+
+[STm04_10::command/720 SetCharHead/param/8]
+avg_emoji_resentful
+
+[STm04_10::command/722 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/722 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/722 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/722 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/722 SetTalk/param/7]
+Hey! You two are so slick! Stop making me look like the only bad guy here!
+
+[STm04_10::command/722 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/723 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/723 SetCharHead/param/6]
+a
+
+[STm04_10::command/723 SetCharHead/param/7]
+002
+
+[STm04_10::command/723 SetCharHead/param/8]
+none
+
+[STm04_10::command/724 SetCharHead/param/5]
+avg1_156
+
+[STm04_10::command/724 SetCharHead/param/6]
+a
+
+[STm04_10::command/724 SetCharHead/param/7]
+002
+
+[STm04_10::command/724 SetCharHead/param/8]
+none
+
+[STm04_10::command/726 CtrlChar/param/0]
+avg3_132
+
+[STm04_10::command/726 CtrlChar/param/1]
+a
+
+[STm04_10::command/726 CtrlChar/param/3]
+none
+
+[STm04_10::command/726 CtrlChar/param/11]
+none
+
+[STm04_10::command/726 CtrlChar/param/12]
+none
+
+[STm04_10::command/726 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/727 CtrlStage/param/9]
+none
+
+[STm04_10::command/727 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/729 SetBg/param/1]
+forest_night_2_a
+
+[STm04_10::command/729 SetBg/param/2]
+0
+
+[STm04_10::command/729 SetBg/param/3]
+OutSine
+
+[STm04_10::command/729 SetBg/param/6]
+default
+
+[STm04_10::command/730 CtrlBg/param/10]
+none
+
+[STm04_10::command/730 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/731 SetChar/param/2]
+none
+
+[STm04_10::command/731 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/731 SetChar/param/4]
+a
+
+[STm04_10::command/731 SetChar/param/5]
+012
+
+[STm04_10::command/731 SetChar/param/6]
+none
+
+[STm04_10::command/732 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/732 CtrlChar/param/1]
+a
+
+[STm04_10::command/732 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm04_10::command/732 CtrlChar/param/11]
+none
+
+[STm04_10::command/732 CtrlChar/param/12]
+none
+
+[STm04_10::command/732 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/733 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/733 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/733 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/733 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/733 SetTalk/param/7]
+Oh, girls... Honestly.
+
+[STm04_10::command/733 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/734 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/734 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/734 SetBGM/param/4]
+1500ms
+
+[STm04_10::command/735 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/735 CtrlChar/param/1]
+a
+
+[STm04_10::command/735 CtrlChar/param/2]
+017
+
+[STm04_10::command/735 CtrlChar/param/3]
+avg_emoji_flower
+
+[STm04_10::command/735 CtrlChar/param/11]
+none
+
+[STm04_10::command/735 CtrlChar/param/12]
+none
+
+[STm04_10::command/735 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/736 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/736 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/736 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/736 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/736 SetTalk/param/7]
+This is ... really nice. It's only now that I truly feel like I'm back with Petal Bloom.
+
+[STm04_10::command/736 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/738 CtrlStage/param/9]
+none
+
+[STm04_10::command/738 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/739 SetAudio/param/1]
+se_025
+
+[STm04_10::command/743 SetBg/param/1]
+sky_night_a
+
+[STm04_10::command/743 SetBg/param/2]
+0
+
+[STm04_10::command/743 SetBg/param/3]
+Linear
+
+[STm04_10::command/743 SetBg/param/6]
+default
+
+[STm04_10::command/744 CtrlBg/param/10]
+none
+
+[STm04_10::command/744 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/746 SetTrans/param/2]
+0
+
+[STm04_10::command/746 SetTrans/param/3]
+Linear
+
+[STm04_10::command/746 SetTrans/param/8]
+default
+
+[STm04_10::command/748 SetAudio/param/1]
+se_025_stop
+
+[STm04_10::command/750 CtrlStage/param/9]
+none
+
+[STm04_10::command/750 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/751 SetBg/param/1]
+BG_Black
+
+[STm04_10::command/751 SetBg/param/2]
+0
+
+[STm04_10::command/751 SetBg/param/3]
+Linear
+
+[STm04_10::command/751 SetBg/param/6]
+default
+
+[STm04_10::command/752 SetTrans/param/2]
+0
+
+[STm04_10::command/752 SetTrans/param/3]
+Linear
+
+[STm04_10::command/752 SetTrans/param/8]
+default
+
+[STm04_10::command/754 SetTalk/param/1]
+0
+
+[STm04_10::command/754 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/754 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/754 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/754 SetTalk/param/7]
+One week later.
+
+[STm04_10::command/754 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/758 SetBg/param/1]
+traveller_camp_a_daylight
+
+[STm04_10::command/758 SetBg/param/2]
+0
+
+[STm04_10::command/758 SetBg/param/3]
+OutSine
+
+[STm04_10::command/758 SetBg/param/6]
+default
+
+[STm04_10::command/759 CtrlBg/param/10]
+none
+
+[STm04_10::command/759 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/761 SetSceneHeading/param/0]
+10:00
+
+[STm04_10::command/761 SetSceneHeading/param/1]
+Tonitrua Month
+
+[STm04_10::command/761 SetSceneHeading/param/2]
+13th
+
+[STm04_10::command/761 SetSceneHeading/param/3]
+Outside Philae
+
+[STm04_10::command/761 SetSceneHeading/param/4]
+Trekker Camp
+
+[STm04_10::command/762 SetChar/param/2]
+none
+
+[STm04_10::command/762 SetChar/param/3]
+avg1_156
+
+[STm04_10::command/762 SetChar/param/4]
+a
+
+[STm04_10::command/762 SetChar/param/5]
+002
+
+[STm04_10::command/762 SetChar/param/6]
+none
+
+[STm04_10::command/763 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/763 CtrlChar/param/1]
+a
+
+[STm04_10::command/763 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm04_10::command/763 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/763 CtrlChar/param/12]
+none
+
+[STm04_10::command/763 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/764 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/764 SetBGM/param/3]
+m1
+
+[STm04_10::command/764 SetBGM/param/4]
+none
+
+[STm04_10::command/765 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/765 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/765 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/765 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/765 SetTalk/param/7]
+Ah, what a beautiful day!==W== Maybe I should let my buddies get some sun.
+
+[STm04_10::command/765 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/767 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/767 CtrlChar/param/1]
+a
+
+[STm04_10::command/767 CtrlChar/param/2]
+004
+
+[STm04_10::command/767 CtrlChar/param/3]
+avg_emoji_flower
+
+[STm04_10::command/767 CtrlChar/param/11]
+none
+
+[STm04_10::command/767 CtrlChar/param/12]
+none
+
+[STm04_10::command/767 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/768 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/768 CtrlChar/param/1]
+a
+
+[STm04_10::command/768 CtrlChar/param/3]
+none
+
+[STm04_10::command/768 CtrlChar/param/11]
+none
+
+[STm04_10::command/768 CtrlChar/param/12]
+none
+
+[STm04_10::command/768 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/769 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/769 CtrlChar/param/1]
+a
+
+[STm04_10::command/769 CtrlChar/param/3]
+none
+
+[STm04_10::command/769 CtrlChar/param/11]
+none
+
+[STm04_10::command/769 CtrlChar/param/12]
+none
+
+[STm04_10::command/769 CtrlChar/param/13]
+OutBack
+
+[STm04_10::command/772 CtrlBg/param/10]
+none
+
+[STm04_10::command/772 CtrlBg/param/11]
+OutSine
+
+[STm04_10::command/773 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/773 CtrlChar/param/1]
+a
+
+[STm04_10::command/773 CtrlChar/param/2]
+023
+
+[STm04_10::command/773 CtrlChar/param/3]
+none
+
+[STm04_10::command/773 CtrlChar/param/11]
+none
+
+[STm04_10::command/773 CtrlChar/param/12]
+none
+
+[STm04_10::command/773 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/774 SetChar/param/2]
+none
+
+[STm04_10::command/774 SetChar/param/3]
+avg2_984
+
+[STm04_10::command/774 SetChar/param/4]
+a
+
+[STm04_10::command/774 SetChar/param/5]
+008
+
+[STm04_10::command/774 SetChar/param/6]
+none
+
+[STm04_10::command/775 CtrlChar/param/0]
+avg2_984
+
+[STm04_10::command/775 CtrlChar/param/1]
+a
+
+[STm04_10::command/775 CtrlChar/param/3]
+none
+
+[STm04_10::command/775 CtrlChar/param/11]
+none
+
+[STm04_10::command/775 CtrlChar/param/12]
+none
+
+[STm04_10::command/775 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/777 CtrlChar/param/0]
+avg2_984
+
+[STm04_10::command/777 CtrlChar/param/1]
+a
+
+[STm04_10::command/777 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm04_10::command/777 CtrlChar/param/11]
+none
+
+[STm04_10::command/777 CtrlChar/param/12]
+none
+
+[STm04_10::command/777 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/778 SetTalk/param/1]
+Apologetic Trekker
+
+[STm04_10::command/778 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/778 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/778 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/778 SetTalk/param/7]
+Nazuna, I'm so sorry about what happened. I was too quick to believe those rumors and too quick to accuse.
+
+[STm04_10::command/778 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/780 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/780 CtrlChar/param/1]
+a
+
+[STm04_10::command/780 CtrlChar/param/2]
+002
+
+[STm04_10::command/780 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm04_10::command/780 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/780 CtrlChar/param/12]
+none
+
+[STm04_10::command/780 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/781 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/781 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/781 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/781 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/781 SetTalk/param/7]
+Hey, don't worry about it. It's all in the past. It wasn't your fault—blame the ones who were spreading lies.
+
+[STm04_10::command/781 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/783 CtrlChar/param/0]
+avg2_984
+
+[STm04_10::command/783 CtrlChar/param/1]
+a
+
+[STm04_10::command/783 CtrlChar/param/2]
+007
+
+[STm04_10::command/783 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm04_10::command/783 CtrlChar/param/11]
+none
+
+[STm04_10::command/783 CtrlChar/param/12]
+none
+
+[STm04_10::command/783 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/784 SetTalk/param/1]
+Apologetic Trekker
+
+[STm04_10::command/784 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/784 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/784 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/784 SetTalk/param/7]
+But... I was the one who threw a rock at the Trekkers' House and broke the window. Can you ever forgive me?
+
+[STm04_10::command/784 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/786 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/786 CtrlChar/param/1]
+a
+
+[STm04_10::command/786 CtrlChar/param/2]
+017
+
+[STm04_10::command/786 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STm04_10::command/786 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/786 CtrlChar/param/12]
+none
+
+[STm04_10::command/786 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/787 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/787 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/787 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/787 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/787 SetTalk/param/7]
+Hey! So you're the one who threw that rock!
+
+[STm04_10::command/787 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/789 CtrlChar/param/0]
+avg2_984
+
+[STm04_10::command/789 CtrlChar/param/1]
+a
+
+[STm04_10::command/789 CtrlChar/param/2]
+005
+
+[STm04_10::command/789 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm04_10::command/789 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/789 CtrlChar/param/12]
+none
+
+[STm04_10::command/789 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/790 SetTalk/param/1]
+Apologetic Trekker
+
+[STm04_10::command/790 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/790 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/790 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/790 SetTalk/param/7]
+Aaahhh! I—I'll pay for the damages, I swear! Please, don't hit me!
+
+[STm04_10::command/790 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/792 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/792 CtrlChar/param/1]
+a
+
+[STm04_10::command/792 CtrlChar/param/2]
+015
+
+[STm04_10::command/792 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm04_10::command/792 CtrlChar/param/11]
+none
+
+[STm04_10::command/792 CtrlChar/param/12]
+none
+
+[STm04_10::command/792 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/793 SetTalk/param/1]
+avg1_156
+
+[STm04_10::command/793 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/793 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/793 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/793 SetTalk/param/7]
+You don't have to pay for it.==W== Just come help out with the Trekkers' House repairs. The Trekker Association is coming back to Philae, you know.
+
+[STm04_10::command/793 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/794 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/794 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/794 SetBGM/param/4]
+1000ms
+
+[STm04_10::command/796 CtrlChar/param/0]
+avg2_984
+
+[STm04_10::command/796 CtrlChar/param/1]
+a
+
+[STm04_10::command/796 CtrlChar/param/2]
+007
+
+[STm04_10::command/796 CtrlChar/param/3]
+none
+
+[STm04_10::command/796 CtrlChar/param/11]
+none
+
+[STm04_10::command/796 CtrlChar/param/12]
+none
+
+[STm04_10::command/796 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/797 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/797 CtrlChar/param/1]
+a
+
+[STm04_10::command/797 CtrlChar/param/2]
+018
+
+[STm04_10::command/797 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm04_10::command/797 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/797 CtrlChar/param/12]
+none
+
+[STm04_10::command/797 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/801 CtrlStage/param/9]
+none
+
+[STm04_10::command/801 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/803 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/803 SetBGM/param/3]
+m20
+
+[STm04_10::command/803 SetBGM/param/4]
+none
+
+[STm04_10::command/804 SetBg/param/1]
+sky_sunny
+
+[STm04_10::command/804 SetBg/param/2]
+0
+
+[STm04_10::command/804 SetBg/param/3]
+Linear
+
+[STm04_10::command/804 SetBg/param/6]
+default
+
+[STm04_10::command/805 SetTalk/param/1]
+0
+
+[STm04_10::command/805 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/805 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/805 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/805 SetTalk/param/7]
+Just as expected, once Mistique's reports began to circulate, rumors about the Petal Bloom and Nazuka quickly fell apart.
+
+[STm04_10::command/805 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/807 CtrlBg/param/10]
+none
+
+[STm04_10::command/807 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/809 SetFilm/param/1]
+OutSine
+
+[STm04_10::command/810 SetBg/param/1]
+tower_entrance
+
+[STm04_10::command/810 SetBg/param/2]
+0
+
+[STm04_10::command/810 SetBg/param/3]
+Linear
+
+[STm04_10::command/810 SetBg/param/6]
+default
+
+[STm04_10::command/811 CtrlBg/param/10]
+none
+
+[STm04_10::command/811 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/813 SetTalk/param/1]
+0
+
+[STm04_10::command/813 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/813 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/813 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/813 SetTalk/param/7]
+The path to the Monolith was clear once more.
+
+[STm04_10::command/813 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/815 SetBg/param/1]
+traveller_camp_b_daylight
+
+[STm04_10::command/815 SetBg/param/2]
+0
+
+[STm04_10::command/815 SetBg/param/3]
+OutSine
+
+[STm04_10::command/815 SetBg/param/6]
+default
+
+[STm04_10::command/816 CtrlBg/param/10]
+none
+
+[STm04_10::command/816 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/818 SetFrontObj/param/2]
+qstory_main_03_020
+
+[STm04_10::command/820 SetTalk/param/1]
+0
+
+[STm04_10::command/820 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/820 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/820 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/820 SetTalk/param/7]
+The deceived Trekkers captured Claire, who was the culprit==RT==spreading the rumors and throwing the camp into chaos.
+
+[STm04_10::command/820 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/821 SetFrontObj/param/2]
+qstory_main_03_020
+
+[STm04_10::command/823 SetBg/param/1]
+traveller_camp_a_daylight
+
+[STm04_10::command/823 SetBg/param/2]
+0
+
+[STm04_10::command/823 SetBg/param/3]
+Linear
+
+[STm04_10::command/823 SetBg/param/6]
+default
+
+[STm04_10::command/824 CtrlBg/param/10]
+none
+
+[STm04_10::command/824 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/826 SetTalk/param/1]
+0
+
+[STm04_10::command/826 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/826 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/826 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/826 SetTalk/param/7]
+With that, peace and quiet returned, and the Three Grand Commissions==RT==finally came to a close.
+
+[STm04_10::command/826 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/828 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/828 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/828 SetBGM/param/4]
+1000ms
+
+[STm04_10::command/829 SetTrans/param/2]
+0
+
+[STm04_10::command/829 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/829 SetTrans/param/8]
+default
+
+[STm04_10::command/830 SetFilm/param/1]
+OutSine
+
+[STm04_10::command/831 CtrlStage/param/9]
+none
+
+[STm04_10::command/831 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/832 SetBg/param/1]
+traveller_camp_a_daylight
+
+[STm04_10::command/832 SetBg/param/2]
+0
+
+[STm04_10::command/832 SetBg/param/3]
+OutSine
+
+[STm04_10::command/832 SetBg/param/6]
+default
+
+[STm04_10::command/833 CtrlBg/param/10]
+none
+
+[STm04_10::command/833 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/834 SetTrans/param/2]
+0
+
+[STm04_10::command/834 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/834 SetTrans/param/8]
+default
+
+[STm04_10::command/836 SetMainRoleTalk/param/2]
+021
+
+[STm04_10::command/836 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STm04_10::command/836 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/836 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/836 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/837 SetTalk/param/1]
+avg3_100
+
+[STm04_10::command/837 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/837 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/837 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/837 SetTalk/param/7]
+Except for a certain witch who just won't stop with the interviews.
+
+[STm04_10::command/837 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/838 SetMainRoleTalk/param/3]
+close
+
+[STm04_10::command/838 SetMainRoleTalk/param/4]
+none
+
+[STm04_10::command/838 SetMainRoleTalk/param/5]
+y
+
+[STm04_10::command/838 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm04_10::command/839 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/839 SetBGM/param/3]
+m2
+
+[STm04_10::command/839 SetBGM/param/4]
+none
+
+[STm04_10::command/841 SetChar/param/2]
+none
+
+[STm04_10::command/841 SetChar/param/3]
+avg1_135
+
+[STm04_10::command/841 SetChar/param/4]
+a
+
+[STm04_10::command/841 SetChar/param/5]
+003
+
+[STm04_10::command/841 SetChar/param/6]
+none
+
+[STm04_10::command/842 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/842 CtrlChar/param/1]
+a
+
+[STm04_10::command/842 CtrlChar/param/3]
+none
+
+[STm04_10::command/842 CtrlChar/param/11]
+none
+
+[STm04_10::command/842 CtrlChar/param/12]
+none
+
+[STm04_10::command/842 CtrlChar/param/13]
+OutBack
+
+[STm04_10::command/844 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/844 CtrlChar/param/1]
+a
+
+[STm04_10::command/844 CtrlChar/param/2]
+002
+
+[STm04_10::command/844 CtrlChar/param/3]
+none
+
+[STm04_10::command/844 CtrlChar/param/11]
+none
+
+[STm04_10::command/844 CtrlChar/param/12]
+none
+
+[STm04_10::command/844 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/845 SetTalk/param/1]
+avg1_135
+
+[STm04_10::command/845 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/845 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/845 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/845 SetTalk/param/7]
+Everyone, one more shot!==W== This is the last one, I promise! Just humor me a little longer, okay?==W== These photos are for Nazuka's exclusive feature★
+
+[STm04_10::command/845 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/847 CtrlBg/param/10]
+none
+
+[STm04_10::command/847 CtrlBg/param/11]
+OutBack
+
+[STm04_10::command/848 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/848 CtrlChar/param/1]
+a
+
+[STm04_10::command/848 CtrlChar/param/2]
+005
+
+[STm04_10::command/848 CtrlChar/param/3]
+avg_emoji_music
+
+[STm04_10::command/848 CtrlChar/param/11]
+none
+
+[STm04_10::command/848 CtrlChar/param/12]
+none
+
+[STm04_10::command/848 CtrlChar/param/13]
+OutCubic
+
+[STm04_10::command/851 CtrlBg/param/10]
+none
+
+[STm04_10::command/851 CtrlBg/param/11]
+OutBack
+
+[STm04_10::command/852 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/852 CtrlChar/param/1]
+a
+
+[STm04_10::command/852 CtrlChar/param/2]
+010
+
+[STm04_10::command/852 CtrlChar/param/3]
+avg_emoji_star
+
+[STm04_10::command/852 CtrlChar/param/11]
+none
+
+[STm04_10::command/852 CtrlChar/param/12]
+none
+
+[STm04_10::command/852 CtrlChar/param/13]
+OutBack
+
+[STm04_10::command/855 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/855 SetCharHead/param/6]
+a
+
+[STm04_10::command/855 SetCharHead/param/7]
+005
+
+[STm04_10::command/855 SetCharHead/param/8]
+avg_emoji_flurry
+
+[STm04_10::command/857 SetTalk/param/1]
+avg1_134
+
+[STm04_10::command/857 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/857 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/857 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/857 SetTalk/param/7]
+U-Um... Am I okay...? My soul hasn't been stolen, has it...? I heard in Loong and Tanikaze's legends that ... witch's photo capturer can capture your soul and take it away.
+
+[STm04_10::command/857 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/859 SetCharHead/param/5]
+avg3_132
+
+[STm04_10::command/859 SetCharHead/param/6]
+a
+
+[STm04_10::command/859 SetCharHead/param/7]
+007
+
+[STm04_10::command/859 SetCharHead/param/8]
+avg_emoji_sweaty
+
+[STm04_10::command/861 SetTalk/param/1]
+avg3_132
+
+[STm04_10::command/861 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/861 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/861 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/861 SetTalk/param/7]
+Fuyuka, are you alright? You're as pale as a ghost ... like your soul really was just sucked out of you.
+
+[STm04_10::command/861 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/862 SetCharHead/param/5]
+avg3_132
+
+[STm04_10::command/862 SetCharHead/param/6]
+a
+
+[STm04_10::command/862 SetCharHead/param/7]
+002
+
+[STm04_10::command/862 SetCharHead/param/8]
+none
+
+[STm04_10::command/863 SetCharHead/param/5]
+avg1_134
+
+[STm04_10::command/863 SetCharHead/param/6]
+a
+
+[STm04_10::command/863 SetCharHead/param/7]
+002
+
+[STm04_10::command/863 SetCharHead/param/8]
+none
+
+[STm04_10::command/865 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/865 CtrlChar/param/1]
+a
+
+[STm04_10::command/865 CtrlChar/param/2]
+004
+
+[STm04_10::command/865 CtrlChar/param/3]
+avg_emoji_question
+
+[STm04_10::command/865 CtrlChar/param/11]
+none
+
+[STm04_10::command/865 CtrlChar/param/12]
+none
+
+[STm04_10::command/865 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/866 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/866 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/866 SetBGM/param/4]
+1000ms
+
+[STm04_10::command/867 SetTalk/param/1]
+avg1_135
+
+[STm04_10::command/867 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/867 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/867 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/867 SetTalk/param/7]
+But Fuyuka's soul is safe with the Boss, isn't it?==W== So there's nothing to worry about★ C'mon everyone, squeeze in a little closer to Boss!
+
+[STm04_10::command/867 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/869 CtrlChar/param/0]
+avg1_135
+
+[STm04_10::command/869 CtrlChar/param/1]
+a
+
+[STm04_10::command/869 CtrlChar/param/2]
+005
+
+[STm04_10::command/869 CtrlChar/param/3]
+avg_emoji_star
+
+[STm04_10::command/869 CtrlChar/param/11]
+jushou
+
+[STm04_10::command/869 CtrlChar/param/12]
+none
+
+[STm04_10::command/869 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/872 SetAudio/param/1]
+se_148
+
+[STm04_10::command/873 CtrlStage/param/9]
+none
+
+[STm04_10::command/873 CtrlStage/param/10]
+OutQuad
+
+[STm04_10::command/874 SetTrans/param/2]
+4
+
+[STm04_10::command/874 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/874 SetTrans/param/8]
+fade
+
+[STm04_10::command/875 CtrlStage/param/9]
+none
+
+[STm04_10::command/875 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/876 SetTrans/param/2]
+3
+
+[STm04_10::command/876 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/876 SetTrans/param/8]
+fade
+
+[STm04_10::command/877 SetChar/param/2]
+none
+
+[STm04_10::command/877 SetChar/param/3]
+avg1_134
+
+[STm04_10::command/877 SetChar/param/4]
+a
+
+[STm04_10::command/877 SetChar/param/5]
+005
+
+[STm04_10::command/877 SetChar/param/6]
+none
+
+[STm04_10::command/878 SetChar/param/2]
+none
+
+[STm04_10::command/878 SetChar/param/3]
+avg3_100
+
+[STm04_10::command/878 SetChar/param/4]
+a
+
+[STm04_10::command/878 SetChar/param/5]
+002
+
+[STm04_10::command/878 SetChar/param/6]
+none
+
+[STm04_10::command/879 CtrlChar/param/0]
+avg3_100
+
+[STm04_10::command/879 CtrlChar/param/1]
+a
+
+[STm04_10::command/879 CtrlChar/param/3]
+none
+
+[STm04_10::command/879 CtrlChar/param/11]
+none
+
+[STm04_10::command/879 CtrlChar/param/12]
+none
+
+[STm04_10::command/879 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/881 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/881 CtrlChar/param/1]
+a
+
+[STm04_10::command/881 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm04_10::command/881 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/881 CtrlChar/param/12]
+none
+
+[STm04_10::command/881 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/882 SetTalk/param/1]
+avg1_134
+
+[STm04_10::command/882 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/882 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/882 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/882 SetTalk/param/7]
+Aaaahhhh!==W== Master, protect me! Waaah!
+
+[STm04_10::command/882 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/883 CtrlStage/param/9]
+none
+
+[STm04_10::command/883 CtrlStage/param/10]
+OutQuad
+
+[STm04_10::command/884 SetAudio/param/1]
+se_019
+
+[STm04_10::command/885 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/885 CtrlChar/param/1]
+a
+
+[STm04_10::command/885 CtrlChar/param/2]
+011
+
+[STm04_10::command/885 CtrlChar/param/3]
+none
+
+[STm04_10::command/885 CtrlChar/param/11]
+none
+
+[STm04_10::command/885 CtrlChar/param/12]
+none
+
+[STm04_10::command/885 CtrlChar/param/13]
+OutBack
+
+[STm04_10::command/888 CtrlChar/param/0]
+avg3_100
+
+[STm04_10::command/888 CtrlChar/param/1]
+c
+
+[STm04_10::command/888 CtrlChar/param/2]
+021
+
+[STm04_10::command/888 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm04_10::command/888 CtrlChar/param/11]
+none
+
+[STm04_10::command/888 CtrlChar/param/12]
+none
+
+[STm04_10::command/888 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/889 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/889 SetBGM/param/3]
+m77
+
+[STm04_10::command/889 SetBGM/param/4]
+none
+
+[STm04_10::command/890 SetTalk/param/1]
+1
+
+[STm04_10::command/890 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/890 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/890 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/890 SetTalk/param/7]
+Wait, if this interview is for Nazuka, why am I stuck in the middle of the photo?
+
+[STm04_10::command/890 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/891 CtrlChar/param/0]
+avg3_100
+
+[STm04_10::command/891 CtrlChar/param/1]
+c
+
+[STm04_10::command/891 CtrlChar/param/3]
+close
+
+[STm04_10::command/891 CtrlChar/param/11]
+none
+
+[STm04_10::command/891 CtrlChar/param/12]
+none
+
+[STm04_10::command/891 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/893 SetCharHead/param/5]
+avg1_135
+
+[STm04_10::command/893 SetCharHead/param/6]
+a
+
+[STm04_10::command/893 SetCharHead/param/7]
+015
+
+[STm04_10::command/893 SetCharHead/param/8]
+avg_emoji_attention
+
+[STm04_10::command/895 SetTalk/param/1]
+avg1_135
+
+[STm04_10::command/895 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/895 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/895 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/895 SetTalk/param/7]
+Ah... Well, that was the interviewee's condition. Said she wouldn't do the shoot otherwise. Nazuka picked out everyone's poses, too.
+
+[STm04_10::command/895 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/896 SetCharHead/param/5]
+avg1_135
+
+[STm04_10::command/896 SetCharHead/param/6]
+a
+
+[STm04_10::command/896 SetCharHead/param/7]
+002
+
+[STm04_10::command/896 SetCharHead/param/8]
+none
+
+[STm04_10::command/898 CtrlChar/param/0]
+avg1_134
+
+[STm04_10::command/898 CtrlChar/param/1]
+a
+
+[STm04_10::command/898 CtrlChar/param/2]
+002
+
+[STm04_10::command/898 CtrlChar/param/3]
+none
+
+[STm04_10::command/898 CtrlChar/param/11]
+none
+
+[STm04_10::command/898 CtrlChar/param/12]
+none
+
+[STm04_10::command/898 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/899 CtrlChar/param/0]
+avg3_100
+
+[STm04_10::command/899 CtrlChar/param/1]
+c
+
+[STm04_10::command/899 CtrlChar/param/2]
+020
+
+[STm04_10::command/899 CtrlChar/param/3]
+avg_emoji_question
+
+[STm04_10::command/899 CtrlChar/param/11]
+none
+
+[STm04_10::command/899 CtrlChar/param/12]
+none
+
+[STm04_10::command/899 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/900 SetTalk/param/1]
+1
+
+[STm04_10::command/900 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/900 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/900 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/900 SetTalk/param/7]
+Nazuka's condition?
+
+[STm04_10::command/900 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/902 SetChar/param/2]
+none
+
+[STm04_10::command/902 SetChar/param/3]
+avg1_133
+
+[STm04_10::command/902 SetChar/param/4]
+a
+
+[STm04_10::command/902 SetChar/param/5]
+012
+
+[STm04_10::command/902 SetChar/param/6]
+none
+
+[STm04_10::command/903 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/903 CtrlChar/param/1]
+a
+
+[STm04_10::command/903 CtrlChar/param/3]
+avg_emoji_shy
+
+[STm04_10::command/903 CtrlChar/param/11]
+none
+
+[STm04_10::command/903 CtrlChar/param/12]
+none
+
+[STm04_10::command/903 CtrlChar/param/13]
+InOutSine
+
+[STm04_10::command/904 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/904 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/904 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/904 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/904 SetTalk/param/7]
+Mmm-hmm. Because this ... is my picture of perfect happiness.
+
+[STm04_10::command/904 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/906 CtrlStage/param/9]
+none
+
+[STm04_10::command/906 CtrlStage/param/10]
+OutCubic
+
+[STm04_10::command/908 SetChar/param/2]
+none
+
+[STm04_10::command/908 SetChar/param/3]
+avg1_156
+
+[STm04_10::command/908 SetChar/param/4]
+a
+
+[STm04_10::command/908 SetChar/param/5]
+002
+
+[STm04_10::command/908 SetChar/param/6]
+none
+
+[STm04_10::command/909 CtrlChar/param/0]
+avg1_156
+
+[STm04_10::command/909 CtrlChar/param/1]
+a
+
+[STm04_10::command/909 CtrlChar/param/3]
+none
+
+[STm04_10::command/909 CtrlChar/param/11]
+none
+
+[STm04_10::command/909 CtrlChar/param/12]
+none
+
+[STm04_10::command/909 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/910 SetChar/param/2]
+none
+
+[STm04_10::command/910 SetChar/param/3]
+avg3_132
+
+[STm04_10::command/910 SetChar/param/4]
+a
+
+[STm04_10::command/910 SetChar/param/5]
+004
+
+[STm04_10::command/910 SetChar/param/6]
+none
+
+[STm04_10::command/911 CtrlChar/param/0]
+avg3_132
+
+[STm04_10::command/911 CtrlChar/param/1]
+a
+
+[STm04_10::command/911 CtrlChar/param/3]
+none
+
+[STm04_10::command/911 CtrlChar/param/11]
+none
+
+[STm04_10::command/911 CtrlChar/param/12]
+none
+
+[STm04_10::command/911 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/912 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/912 CtrlChar/param/1]
+a
+
+[STm04_10::command/912 CtrlChar/param/2]
+017
+
+[STm04_10::command/912 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm04_10::command/912 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/912 CtrlChar/param/12]
+none
+
+[STm04_10::command/912 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/913 CtrlChar/param/0]
+avg3_100
+
+[STm04_10::command/913 CtrlChar/param/1]
+c
+
+[STm04_10::command/913 CtrlChar/param/2]
+024
+
+[STm04_10::command/913 CtrlChar/param/3]
+none
+
+[STm04_10::command/913 CtrlChar/param/11]
+none
+
+[STm04_10::command/913 CtrlChar/param/12]
+none
+
+[STm04_10::command/913 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/914 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/914 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/914 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/914 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/914 SetTalk/param/7]
+A group photo just wouldn't be complete without you.
+
+[STm04_10::command/914 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/915 CtrlChar/param/0]
+avg1_133
+
+[STm04_10::command/915 CtrlChar/param/1]
+a
+
+[STm04_10::command/915 CtrlChar/param/2]
+008
+
+[STm04_10::command/915 CtrlChar/param/3]
+none
+
+[STm04_10::command/915 CtrlChar/param/11]
+none
+
+[STm04_10::command/915 CtrlChar/param/12]
+none
+
+[STm04_10::command/915 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/916 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/916 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/916 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/916 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/916 SetTalk/param/7]
+You promised me before that I could lean on your shoulder. I am claiming that opportunity now.
+
+[STm04_10::command/916 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/918 CtrlChar/param/0]
+avg3_100
+
+[STm04_10::command/918 CtrlChar/param/1]
+c
+
+[STm04_10::command/918 CtrlChar/param/2]
+007
+
+[STm04_10::command/918 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm04_10::command/918 CtrlChar/param/11]
+daintou
+
+[STm04_10::command/918 CtrlChar/param/12]
+none
+
+[STm04_10::command/918 CtrlChar/param/13]
+OutSine
+
+[STm04_10::command/919 SetTalk/param/1]
+1
+
+[STm04_10::command/919 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/919 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/919 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/919 SetTalk/param/7]
+Huh? But why?
+
+[STm04_10::command/919 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/921 SetTrans/param/2]
+0
+
+[STm04_10::command/921 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/921 SetTrans/param/8]
+default
+
+[STm04_10::command/922 CtrlStage/param/9]
+none
+
+[STm04_10::command/922 CtrlStage/param/10]
+Linear
+
+[STm04_10::command/923 SetBg/param/1]
+story_main_04_003_FP
+
+[STm04_10::command/923 SetBg/param/2]
+0
+
+[STm04_10::command/923 SetBg/param/3]
+Linear
+
+[STm04_10::command/923 SetBg/param/6]
+default
+
+[STm04_10::command/924 CtrlBg/param/10]
+none
+
+[STm04_10::command/924 CtrlBg/param/11]
+Linear
+
+[STm04_10::command/925 SetTrans/param/2]
+0
+
+[STm04_10::command/925 SetTrans/param/3]
+OutSine
+
+[STm04_10::command/925 SetTrans/param/8]
+default
+
+[STm04_10::command/926 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/926 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/926 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/926 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/926 SetTalk/param/7]
+Well...
+
+[STm04_10::command/926 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/930 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm04_10::command/930 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm04_10::command/930 SetBGM/param/4]
+1500ms
+
+[STm04_10::command/931 SetTalk/param/1]
+avg1_133
+
+[STm04_10::command/931 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/931 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/931 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/931 SetTalk/param/7]
+That's a secret~
+
+[STm04_10::command/931 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm04_10::command/935 PlayVideo/param/1]
+0
+
+[STm04_10::command/935 PlayVideo/param/2]
+OutSine
+
+[STm04_10::command/935 PlayVideo/param/3]
+default
+
+[STm04_10::command/935 PlayVideo/param/7]
+CH04ED/CH04ED
+
+[STm04_10::command/936 SetBg/param/1]
+BG_Black
+
+[STm04_10::command/936 SetBg/param/2]
+0
+
+[STm04_10::command/936 SetBg/param/3]
+OutSine
+
+[STm04_10::command/936 SetBg/param/6]
+default
+
+[STm04_10::command/937 SetTalk/param/1]
+0
+
+[STm04_10::command/937 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm04_10::command/937 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm04_10::command/937 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm04_10::command/937 SetTalk/param/7]
+                                                                                                  <size=60>♫</size> <size=50>FARAWAY</size>==RT==                                      Sung by: Isekaijoucho    Lyrics / Composition / Arrangement: Kashii Moimi
+
+[STm04_10::command/937 SetTalk/param/8]
+[EMPTY_SOURCE]
+

@@ -1,0 +1,5950 @@
+CG_npc133_02 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1982
+
+[CG_npc133_02::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_npc133_02::command/0 SetIntro/param/1]
+第2話
+
+[CG_npc133_02::command/0 SetIntro/param/2]
+コンビニの裏側
+
+[CG_npc133_02::command/0 SetIntro/param/3]
+星ノ塔のコンビニを訪れた魔王は、仕事をせずゲームばかりしているポーシアを注意することにする。するとようやく重い腰を上げた彼女は、商品の仕入れに向かうと言うが…なぜか魔王まで同行させられてしまうのだった。
+
+[CG_npc133_02::command/1 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/1 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/1 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/2 SetBg/param/1]
+tower_supermarket
+
+[CG_npc133_02::command/2 SetBg/param/2]
+0
+
+[CG_npc133_02::command/2 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/2 SetBg/param/6]
+default
+
+[CG_npc133_02::command/3 SetAudio/param/1]
+se_277
+
+[CG_npc133_02::command/4 SetChar/param/2]
+none
+
+[CG_npc133_02::command/4 SetChar/param/3]
+avg1_112
+
+[CG_npc133_02::command/4 SetChar/param/4]
+a
+
+[CG_npc133_02::command/4 SetChar/param/5]
+002
+
+[CG_npc133_02::command/4 SetChar/param/6]
+none
+
+[CG_npc133_02::command/5 SetChar/param/2]
+none
+
+[CG_npc133_02::command/5 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/5 SetChar/param/4]
+a
+
+[CG_npc133_02::command/5 SetChar/param/5]
+002
+
+[CG_npc133_02::command/5 SetChar/param/6]
+none
+
+[CG_npc133_02::command/6 SetChar/param/2]
+none
+
+[CG_npc133_02::command/6 SetChar/param/3]
+avg1_103
+
+[CG_npc133_02::command/6 SetChar/param/4]
+a
+
+[CG_npc133_02::command/6 SetChar/param/5]
+002
+
+[CG_npc133_02::command/6 SetChar/param/6]
+none
+
+[CG_npc133_02::command/7 SetChar/param/2]
+none
+
+[CG_npc133_02::command/7 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/7 SetChar/param/4]
+a
+
+[CG_npc133_02::command/7 SetChar/param/5]
+004
+
+[CG_npc133_02::command/7 SetChar/param/6]
+none
+
+[CG_npc133_02::command/8 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/8 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/8 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/9 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/9 SetBGM/param/3]
+m44
+
+[CG_npc133_02::command/9 SetBGM/param/4]
+1000ms
+
+[CG_npc133_02::command/11 SetAudio/param/1]
+se_079
+
+[CG_npc133_02::command/12 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/12 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/12 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/12 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/12 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/12 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/13 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/13 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/13 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/13 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/13 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/13 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/14 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/14 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/14 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/14 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/14 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/14 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/15 SetAudio/param/1]
+se_079_stop
+
+[CG_npc133_02::command/17 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/17 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/17 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/17 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/17 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/17 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/18 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/18 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/18 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/18 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/18 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/18 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/19 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/19 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/19 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/19 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/19 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/19 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/20 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/20 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/21 SetAudio/param/1]
+se_245
+
+[CG_npc133_02::command/22 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/22 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/22 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/22 CtrlChar/param/11]
+niunie
+
+[CG_npc133_02::command/22 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/22 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/23 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/23 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/23 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/23 CtrlChar/param/11]
+niunie
+
+[CG_npc133_02::command/23 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/23 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/24 SetAudio/param/1]
+se_030
+
+[CG_npc133_02::command/26 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/26 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/26 CtrlChar/param/2]
+006
+
+[CG_npc133_02::command/26 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc133_02::command/26 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/26 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/26 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/27 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/27 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/27 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/27 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/27 SetTalk/param/7]
+らっしゃーせー。好きに見てって……==W==って――
+
+[CG_npc133_02::command/27 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/29 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/29 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/29 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/29 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/29 CtrlChar/param/11]
+jushou1
+
+[CG_npc133_02::command/29 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/29 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/32 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/32 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/32 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/32 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/32 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/32 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/32 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/33 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/33 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/33 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/33 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/33 SetTalk/param/7]
+いつぞやのバイトちゃんじゃん。久しぶり。
+
+[CG_npc133_02::command/33 SetTalk/param/8]
+いつぞやのバイトくんじゃん。久しぶり。
+
+[CG_npc133_02::command/35 SetMainRoleTalk/param/2]
+007
+
+[CG_npc133_02::command/35 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc133_02::command/35 SetMainRoleTalk/param/4]
+jinzhang
+
+[CG_npc133_02::command/35 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/35 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/36 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/36 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/36 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/36 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/36 SetTalk/param/7]
+あ、ああ。いつぞやは世話になったな……
+
+[CG_npc133_02::command/36 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/37 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/37 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/37 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/37 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/39 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/39 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/39 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/39 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_npc133_02::command/39 CtrlChar/param/11]
+jushou0
+
+[CG_npc133_02::command/39 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/39 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/40 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/40 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/40 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/40 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/40 SetTalk/param/7]
+なに？とんかつ弁当の味が忘れられなくて、また働きに来たの？
+
+[CG_npc133_02::command/40 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/42 SetAudio/param/1]
+se_169
+
+[CG_npc133_02::command/43 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/43 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/43 SetBGM/param/4]
+1000ms
+
+[CG_npc133_02::command/44 SetTrans/param/2]
+17
+
+[CG_npc133_02::command/44 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/44 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/45 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/45 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/46 SetBg/param/1]
+tower_inside
+
+[CG_npc133_02::command/46 SetBg/param/2]
+0
+
+[CG_npc133_02::command/46 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/46 SetBg/param/6]
+default
+
+[CG_npc133_02::command/47 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc133_02::command/49 SetAudio/param/1]
+se_221
+
+[CG_npc133_02::command/50 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/50 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/50 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/52 SetTalk/param/1]
+0
+
+[CG_npc133_02::command/52 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/52 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/52 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/52 SetTalk/param/7]
+空白旅団と出会ったばかりの頃、星ノ塔で迷子になった私は、==W====RT==うっかりコンビニのとんかつ弁当を口にしてしまった。==W====RT==その結果、店員として働くことになったのだ。
+
+[CG_npc133_02::command/52 SetTalk/param/8]
+空白旅団と出会ったばかりの頃、星ノ塔で迷子になった僕は、==W====RT==うっかりコンビニのとんかつ弁当を口にしてしまった。==W====RT==その結果、店員として働くことになったのだ。
+
+[CG_npc133_02::command/54 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/54 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/54 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/55 SetBg/param/1]
+tower_supermarket
+
+[CG_npc133_02::command/55 SetBg/param/2]
+0
+
+[CG_npc133_02::command/55 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/55 SetBg/param/6]
+default
+
+[CG_npc133_02::command/56 SetChar/param/2]
+none
+
+[CG_npc133_02::command/56 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/56 SetChar/param/4]
+a
+
+[CG_npc133_02::command/56 SetChar/param/5]
+002
+
+[CG_npc133_02::command/56 SetChar/param/6]
+none
+
+[CG_npc133_02::command/57 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[CG_npc133_02::command/58 SetAudio/param/1]
+se_221
+
+[CG_npc133_02::command/59 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/59 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/59 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/63 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/63 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/63 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/64 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[CG_npc133_02::command/65 SetBg/param/1]
+tower_supermarket
+
+[CG_npc133_02::command/65 SetBg/param/2]
+0
+
+[CG_npc133_02::command/65 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/65 SetBg/param/6]
+default
+
+[CG_npc133_02::command/66 SetChar/param/2]
+none
+
+[CG_npc133_02::command/66 SetChar/param/3]
+avg3_100
+
+[CG_npc133_02::command/66 SetChar/param/4]
+j
+
+[CG_npc133_02::command/66 SetChar/param/5]
+002
+
+[CG_npc133_02::command/66 SetChar/param/6]
+none
+
+[CG_npc133_02::command/67 SetChar/param/2]
+none
+
+[CG_npc133_02::command/67 SetChar/param/3]
+avg3_138
+
+[CG_npc133_02::command/67 SetChar/param/4]
+a
+
+[CG_npc133_02::command/67 SetChar/param/5]
+002
+
+[CG_npc133_02::command/67 SetChar/param/6]
+none
+
+[CG_npc133_02::command/69 SetAudio/param/1]
+se_221
+
+[CG_npc133_02::command/70 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/70 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/70 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/74 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/74 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/74 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/75 SetFrontObj/param/2]
+qstory_tales_02_003
+
+[CG_npc133_02::command/76 SetChar/param/2]
+EV_DOUBLE_L_in
+
+[CG_npc133_02::command/76 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/76 SetChar/param/4]
+a
+
+[CG_npc133_02::command/76 SetChar/param/5]
+017
+
+[CG_npc133_02::command/76 SetChar/param/6]
+none
+
+[CG_npc133_02::command/78 SetAudio/param/1]
+se_221
+
+[CG_npc133_02::command/79 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/79 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/79 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/81 SetTalk/param/1]
+0
+
+[CG_npc133_02::command/81 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/81 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/81 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/81 SetTalk/param/7]
+幸い、完全に自分のことを忘れる前に空白旅団のみんなが==RT==『買い戻して』くれたおかげで、助かったわけなのだが……==RT==思えばあれは、ポーシアの気まぐれな温情だったのかもしれない。
+
+[CG_npc133_02::command/81 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/83 SetAudio/param/1]
+se_169
+
+[CG_npc133_02::command/84 SetTrans/param/2]
+17
+
+[CG_npc133_02::command/84 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/84 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/85 SetFrontObj/param/2]
+qstory_tales_02_003
+
+[CG_npc133_02::command/86 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc133_02::command/87 SetChar/param/2]
+none
+
+[CG_npc133_02::command/87 SetChar/param/3]
+avg1_112
+
+[CG_npc133_02::command/87 SetChar/param/4]
+a
+
+[CG_npc133_02::command/87 SetChar/param/5]
+014
+
+[CG_npc133_02::command/87 SetChar/param/6]
+none
+
+[CG_npc133_02::command/88 SetChar/param/2]
+none
+
+[CG_npc133_02::command/88 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/88 SetChar/param/4]
+a
+
+[CG_npc133_02::command/88 SetChar/param/5]
+020
+
+[CG_npc133_02::command/88 SetChar/param/6]
+none
+
+[CG_npc133_02::command/89 SetChar/param/2]
+none
+
+[CG_npc133_02::command/89 SetChar/param/3]
+avg1_103
+
+[CG_npc133_02::command/89 SetChar/param/4]
+a
+
+[CG_npc133_02::command/89 SetChar/param/5]
+010
+
+[CG_npc133_02::command/89 SetChar/param/6]
+none
+
+[CG_npc133_02::command/91 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/91 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/91 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/93 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/93 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/93 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_npc133_02::command/93 CtrlChar/param/11]
+jushou1
+
+[CG_npc133_02::command/93 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/93 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/94 SetTalk/param/1]
+avg1_112
+
+[CG_npc133_02::command/94 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/94 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/94 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/94 SetTalk/param/7]
+魔王さんは私たちの仲間だよ！==RT==もうコンビニでバイトなんてさせないんだから！
+
+[CG_npc133_02::command/94 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/96 SetAudio/param/1]
+se_078
+
+[CG_npc133_02::command/97 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/97 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/97 CtrlChar/param/2]
+013
+
+[CG_npc133_02::command/97 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/97 CtrlChar/param/11]
+diantou
+
+[CG_npc133_02::command/97 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/97 CtrlChar/param/13]
+OutQuad
+
+[CG_npc133_02::command/98 SetTalk/param/1]
+avg1_103
+
+[CG_npc133_02::command/98 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/98 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/98 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/98 SetTalk/param/7]
+ボスは渡さない。
+
+[CG_npc133_02::command/98 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/101 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/101 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/102 SetChar/param/2]
+none
+
+[CG_npc133_02::command/102 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/102 SetChar/param/4]
+a
+
+[CG_npc133_02::command/102 SetChar/param/5]
+005
+
+[CG_npc133_02::command/102 SetChar/param/6]
+none
+
+[CG_npc133_02::command/103 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/103 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/103 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/103 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/103 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/103 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/104 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/104 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/104 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/104 CtrlChar/param/11]
+niunie
+
+[CG_npc133_02::command/104 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/104 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/105 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/105 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/105 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/105 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/105 SetTalk/param/7]
+そんな怖い顔しないでよ。いまのはちょっとした冗談だし。
+
+[CG_npc133_02::command/105 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/107 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/107 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/107 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/107 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/107 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/107 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/108 SetCharHead/param/5]
+avg1_111
+
+[CG_npc133_02::command/108 SetCharHead/param/6]
+a
+
+[CG_npc133_02::command/108 SetCharHead/param/7]
+018
+
+[CG_npc133_02::command/108 SetCharHead/param/8]
+avg_emoji_angry
+
+[CG_npc133_02::command/109 SetTalk/param/1]
+avg1_111
+
+[CG_npc133_02::command/109 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/109 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/109 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/109 SetTalk/param/7]
+あなたの場合、なにが本気でなにが冗談かわかりづらいんですが……
+
+[CG_npc133_02::command/109 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/111 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/111 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/111 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc133_02::command/111 CtrlChar/param/11]
+daintou
+
+[CG_npc133_02::command/111 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/111 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/112 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/112 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/112 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/112 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/112 SetTalk/param/7]
+あはは。やたらと警戒するじゃん。まあたしかに人手はほしいけど、==RT==無理矢理働かせるほどブラックじゃないからさ～、ココ。
+
+[CG_npc133_02::command/112 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/113 SetCharHead/param/5]
+avg1_111
+
+[CG_npc133_02::command/113 SetCharHead/param/6]
+a
+
+[CG_npc133_02::command/113 SetCharHead/param/7]
+002
+
+[CG_npc133_02::command/113 SetCharHead/param/8]
+none
+
+[CG_npc133_02::command/115 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/115 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/115 SetBGM/param/4]
+1000ms
+
+[CG_npc133_02::command/116 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/116 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/116 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/116 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/116 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/116 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/117 SetAudio/param/1]
+se_245
+
+[CG_npc133_02::command/118 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/118 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/118 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/118 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/118 CtrlChar/param/11]
+niunie1
+
+[CG_npc133_02::command/118 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/118 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/119 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/119 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/119 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/119 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/119 SetTalk/param/7]
+それに、いまはこのステージをクリアすることのほうが大事だし。==RT==新人面接する時間も、研修する時間も惜しいってわけ。
+
+[CG_npc133_02::command/119 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/121 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/121 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/121 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/121 CtrlChar/param/11]
+zuochupeng
+
+[CG_npc133_02::command/121 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/121 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/122 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/122 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/122 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/122 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/122 SetTalk/param/7]
+てことで、買い物ならご自由にどうぞー。==RT==元バイトちゃんもね？
+
+[CG_npc133_02::command/122 SetTalk/param/8]
+てことで、買い物ならご自由にどうぞー。==RT==元バイトくんもね？
+
+[CG_npc133_02::command/124 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/124 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc133_02::command/124 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/124 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/124 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/125 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/125 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/125 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/125 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/125 SetTalk/param/7]
+（相変わらずだな、ポーシア……）
+
+[CG_npc133_02::command/125 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/126 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/126 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/126 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/126 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/129 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/129 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/130 SetChar/param/2]
+none
+
+[CG_npc133_02::command/130 SetChar/param/3]
+avg1_112
+
+[CG_npc133_02::command/130 SetChar/param/4]
+a
+
+[CG_npc133_02::command/130 SetChar/param/5]
+007
+
+[CG_npc133_02::command/130 SetChar/param/6]
+none
+
+[CG_npc133_02::command/131 SetChar/param/2]
+none
+
+[CG_npc133_02::command/131 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/131 SetChar/param/4]
+a
+
+[CG_npc133_02::command/131 SetChar/param/5]
+015
+
+[CG_npc133_02::command/131 SetChar/param/6]
+none
+
+[CG_npc133_02::command/132 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/132 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/132 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/132 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/132 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/132 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/133 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/133 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/133 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/133 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/133 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/133 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/134 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/134 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/134 CtrlChar/param/2]
+006
+
+[CG_npc133_02::command/134 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/134 CtrlChar/param/11]
+youchupeng
+
+[CG_npc133_02::command/134 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/134 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/135 SetTalk/param/1]
+avg1_112
+
+[CG_npc133_02::command/135 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/135 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/135 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/135 SetTalk/param/7]
+うーん……敵意はなさそうだし……==W====RT==アヤメ、あっちのドリンクの棚見に行こう！
+
+[CG_npc133_02::command/135 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/137 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/137 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/138 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/138 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/138 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/138 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/138 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/138 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/139 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/139 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/139 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/139 CtrlChar/param/11]
+diantou
+
+[CG_npc133_02::command/139 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/139 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/140 SetAudio/param/1]
+se_019
+
+[CG_npc133_02::command/142 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/142 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/142 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/142 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/142 CtrlChar/param/11]
+huanxin
+
+[CG_npc133_02::command/142 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/142 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/145 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/145 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/145 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/145 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/145 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/145 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/146 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/146 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/146 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/146 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/146 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/146 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/146 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/147 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/147 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/147 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_npc133_02::command/147 CtrlChar/param/11]
+jushou2
+
+[CG_npc133_02::command/147 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/147 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/148 SetTalk/param/1]
+avg1_111
+
+[CG_npc133_02::command/148 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/148 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/148 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/148 SetTalk/param/7]
+あ、ちょっとセイナ！==W====RT==そうやってすぐ気を抜かないの！
+
+[CG_npc133_02::command/148 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/150 SetAudio/param/1]
+se_104
+
+[CG_npc133_02::command/151 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/151 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/151 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/151 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/151 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/151 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/152 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/152 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/152 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/152 CtrlChar/param/11]
+jingxia2
+
+[CG_npc133_02::command/152 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/152 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/155 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/155 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/156 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/156 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc133_02::command/156 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/156 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/156 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/157 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/157 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/157 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/157 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/157 SetTalk/param/7]
+（ドリンクの棚……）
+
+[CG_npc133_02::command/157 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/158 SetMainRoleTalk/param/2]
+025
+
+[CG_npc133_02::command/158 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/158 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/158 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/158 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/159 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/159 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/159 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/159 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/159 SetTalk/param/7]
+（待てよ、あの棚の横は……）
+
+[CG_npc133_02::command/159 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/160 SetMainRoleTalk/param/3]
+none
+
+[CG_npc133_02::command/160 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/160 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/160 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/162 SetAudio/param/1]
+se_359
+
+[CG_npc133_02::command/163 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[CG_npc133_02::command/165 SetMainRoleTalk/param/2]
+025
+
+[CG_npc133_02::command/165 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc133_02::command/165 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/165 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/165 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/166 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/166 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/166 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/166 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/166 SetTalk/param/7]
+例のとんかつ弁当の棚ではないか！
+
+[CG_npc133_02::command/166 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/168 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[CG_npc133_02::command/169 SetMainRoleTalk/param/2]
+016
+
+[CG_npc133_02::command/169 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_npc133_02::command/169 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/169 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/169 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/170 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/170 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/170 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/170 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/170 SetTalk/param/7]
+（ダメだ。あれを見ていると==RT==背筋がゾワゾワしてくる……）
+
+[CG_npc133_02::command/170 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/171 SetMainRoleTalk/param/2]
+007
+
+[CG_npc133_02::command/171 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc133_02::command/171 SetMainRoleTalk/param/4]
+lengzhan
+
+[CG_npc133_02::command/171 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/171 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/172 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/172 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/172 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/172 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/172 SetTalk/param/7]
+あ、あ～……私はレジで待っているよ。
+
+[CG_npc133_02::command/172 SetTalk/param/8]
+あ、あ～……僕はレジで待っているよ。
+
+[CG_npc133_02::command/173 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/173 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/173 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/173 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/175 SetAudio/param/1]
+se_061
+
+[CG_npc133_02::command/176 SetChar/param/2]
+none
+
+[CG_npc133_02::command/176 SetChar/param/3]
+avg1_103
+
+[CG_npc133_02::command/176 SetChar/param/4]
+a
+
+[CG_npc133_02::command/176 SetChar/param/5]
+007
+
+[CG_npc133_02::command/176 SetChar/param/6]
+none
+
+[CG_npc133_02::command/177 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/177 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/177 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/177 CtrlChar/param/11]
+JuGong2
+
+[CG_npc133_02::command/177 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/177 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/178 SetTalk/param/1]
+avg1_103
+
+[CG_npc133_02::command/178 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/178 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/178 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/178 SetTalk/param/7]
+え？ボスはいいの？
+
+[CG_npc133_02::command/178 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/180 SetMainRoleTalk/param/2]
+011
+
+[CG_npc133_02::command/180 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_npc133_02::command/180 SetMainRoleTalk/param/4]
+niunie
+
+[CG_npc133_02::command/180 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/180 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/181 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/181 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/181 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/181 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/181 SetTalk/param/7]
+ああ。少し疲れたから、==RT==いまのうちに休んでおきたいんだ。
+
+[CG_npc133_02::command/181 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/182 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/182 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/182 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/182 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/184 SetChar/param/2]
+none
+
+[CG_npc133_02::command/184 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/184 SetChar/param/4]
+a
+
+[CG_npc133_02::command/184 SetChar/param/5]
+002
+
+[CG_npc133_02::command/184 SetChar/param/6]
+none
+
+[CG_npc133_02::command/185 SetAudio/param/1]
+se_062
+
+[CG_npc133_02::command/186 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/186 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/186 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/186 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/186 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/186 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/187 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/187 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/187 CtrlChar/param/2]
+007
+
+[CG_npc133_02::command/187 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/187 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/187 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/187 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/188 SetTalk/param/1]
+avg1_111
+
+[CG_npc133_02::command/188 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/188 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/188 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/188 SetTalk/param/7]
+わかりました。ですが絶対にコンビニの外には出ないでくださいね？
+
+[CG_npc133_02::command/188 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/190 SetMainRoleTalk/param/2]
+013
+
+[CG_npc133_02::command/190 SetMainRoleTalk/param/3]
+avg_emoji_star
+
+[CG_npc133_02::command/190 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/190 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/190 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/191 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/191 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/191 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/191 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/191 SetTalk/param/7]
+わかっているよ。
+
+[CG_npc133_02::command/191 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/193 SetAudio/param/1]
+se_060
+
+[CG_npc133_02::command/196 SetMainRoleTalk/param/2]
+010
+
+[CG_npc133_02::command/196 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_npc133_02::command/196 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/196 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/196 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/197 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/197 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/197 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/197 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/197 SetTalk/param/7]
+ふう、思ったよりもトラウマになっていたんだな。==W====RT==……ぬ？この音は――
+
+[CG_npc133_02::command/197 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/199 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/199 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc133_02::command/199 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/199 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/199 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/201 SetMainRoleTalk/param/3]
+none
+
+[CG_npc133_02::command/201 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/201 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/201 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/203 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/203 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/204 SetChar/param/2]
+none
+
+[CG_npc133_02::command/204 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/204 SetChar/param/4]
+a
+
+[CG_npc133_02::command/204 SetChar/param/5]
+002
+
+[CG_npc133_02::command/204 SetChar/param/6]
+none
+
+[CG_npc133_02::command/205 SetAudio/param/1]
+se_245
+
+[CG_npc133_02::command/206 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/206 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/206 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/206 CtrlChar/param/11]
+niunie
+
+[CG_npc133_02::command/206 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/206 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/207 SetAudio/param/1]
+se_245
+
+[CG_npc133_02::command/208 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/208 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/208 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/208 CtrlChar/param/11]
+niunie
+
+[CG_npc133_02::command/208 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/208 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/210 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/210 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc133_02::command/210 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/210 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/210 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/211 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/211 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/211 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/211 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/211 SetTalk/param/7]
+（やはり、ポーシアが遊んでいるゲームの音か。==RT==ずいぶんと大きな音だが……店番になっているのか？）
+
+[CG_npc133_02::command/211 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/212 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/212 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/212 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/212 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/214 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/214 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/214 CtrlChar/param/2]
+004
+
+[CG_npc133_02::command/214 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_npc133_02::command/214 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/214 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/214 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/215 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/215 SetTalk/param/7]
+あー……ダル。==RT==このステージ、なんで中間セーブないの？
+
+[CG_npc133_02::command/215 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/217 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/217 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc133_02::command/217 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/217 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/217 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/218 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/218 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/218 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/218 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/218 SetTalk/param/7]
+（そういえば、あのときも棚の整理は私任せで、==RT==ポーシアはずっと遊んでいたな……）
+
+[CG_npc133_02::command/218 SetTalk/param/8]
+（そういえば、あのときも棚の整理は僕任せで、==RT==ポーシアはずっと遊んでいたな……）
+
+[CG_npc133_02::command/220 SetMainRoleTalk/param/2]
+021
+
+[CG_npc133_02::command/220 SetMainRoleTalk/param/3]
+none
+
+[CG_npc133_02::command/220 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/220 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/220 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/221 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/221 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/221 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/221 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/221 SetTalk/param/7]
+（これも優しさということで、軽く注意をしておくか）
+
+[CG_npc133_02::command/221 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/222 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/222 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/222 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/222 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/224 SetAudio/param/1]
+se_030
+
+[CG_npc133_02::command/225 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/225 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/225 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/225 CtrlChar/param/11]
+lengzhan
+
+[CG_npc133_02::command/225 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/225 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/227 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/227 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/227 CtrlChar/param/2]
+006
+
+[CG_npc133_02::command/227 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_npc133_02::command/227 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/227 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/227 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/228 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/228 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/228 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/228 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/228 SetTalk/param/7]
+あー……またミスった……
+
+[CG_npc133_02::command/228 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/230 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/230 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/231 SetAudio/param/1]
+se_139
+
+[CG_npc133_02::command/233 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/233 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/233 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/233 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/233 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/233 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/233 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/234 SetMainRoleTalk/param/2]
+002
+
+[CG_npc133_02::command/234 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/234 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/234 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/234 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/235 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/235 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/235 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/235 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/235 SetTalk/param/7]
+棚に商品が並んでいないのだが、==RT==補充はしなくていいのか？==RT==サボって店長に怒られても知らないぞ。
+
+[CG_npc133_02::command/235 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/236 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/236 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/236 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/236 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/238 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/238 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/238 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/238 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_npc133_02::command/238 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/238 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/238 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/239 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/239 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/239 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/239 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/239 SetTalk/param/7]
+んー？==RT==売り切れって、つまり繁盛してるってことでしょ？
+
+[CG_npc133_02::command/239 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/241 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/241 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/241 CtrlChar/param/2]
+003
+
+[CG_npc133_02::command/241 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/241 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/241 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/241 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/242 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/242 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/242 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/242 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/242 SetTalk/param/7]
+いまは優秀なバイトもいないし？==RT==在庫が残らないならそのままのがいいよ。
+
+[CG_npc133_02::command/242 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/244 SetMainRoleTalk/param/2]
+007
+
+[CG_npc133_02::command/244 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[CG_npc133_02::command/244 SetMainRoleTalk/param/4]
+buman
+
+[CG_npc133_02::command/244 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/244 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/245 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/245 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/245 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/245 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/245 SetTalk/param/7]
+その態度はよくないぞ。==RT==店員ならしっかり責任を持って在庫管理を==RT==するべきではないのか？
+
+[CG_npc133_02::command/245 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/246 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/246 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/246 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/246 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/248 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/248 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/248 CtrlChar/param/2]
+006
+
+[CG_npc133_02::command/248 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_npc133_02::command/248 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/248 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/248 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/249 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/249 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/249 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/249 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/249 SetTalk/param/7]
+責任ねえ……でも誰かがやらなきゃいけないとしても、==RT==それってあたしである必要なくない？
+
+[CG_npc133_02::command/249 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/251 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/251 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/251 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/251 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/251 CtrlChar/param/11]
+niunie1
+
+[CG_npc133_02::command/251 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/251 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/252 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/252 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/252 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/252 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/252 SetTalk/param/7]
+つかそんなに気になるならさ、また働いてくれてもいいんだよ？==RT==実はバイトしたくてウズウズしてるんでしょ。
+
+[CG_npc133_02::command/252 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/254 SetMainRoleTalk/param/2]
+025
+
+[CG_npc133_02::command/254 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc133_02::command/254 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/254 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/254 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/255 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/255 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/255 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/255 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/255 SetTalk/param/7]
+（まずい、この流れは良くない……！）
+
+[CG_npc133_02::command/255 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/257 SetMainRoleTalk/param/2]
+003
+
+[CG_npc133_02::command/257 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/257 SetMainRoleTalk/param/4]
+JuGong1
+
+[CG_npc133_02::command/257 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/257 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/258 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/258 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/258 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/258 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/258 SetTalk/param/7]
+あー……コホン。==RT==私はもう正式にこの店を辞めている。いまはただの客だ。
+
+[CG_npc133_02::command/258 SetTalk/param/8]
+あー……コホン。==RT==僕はもう正式にこの店を辞めている。いまはただの客だ。
+
+[CG_npc133_02::command/260 SetMainRoleTalk/param/2]
+014
+
+[CG_npc133_02::command/260 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/260 SetMainRoleTalk/param/4]
+jushou1
+
+[CG_npc133_02::command/260 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/260 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/261 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/261 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/261 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/261 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/261 SetTalk/param/7]
+だからこれは元店員ではなく客としての意見だ。==RT==せっかく買い物に来たのに、商品が並んでいなかったら、==RT==クレームを入れられても仕方ないだろう？
+
+[CG_npc133_02::command/261 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/262 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/262 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/262 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/262 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/264 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/264 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/264 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/264 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_npc133_02::command/264 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/264 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/264 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/265 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/265 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/265 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/265 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/265 SetTalk/param/7]
+……それ、本当に『客側』の意見？==RT==クレームを入れられて困るのは店のほうだよ。==RT==文句があるなら、客は黙って出ていけばいいんだから。
+
+[CG_npc133_02::command/265 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/267 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/267 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/267 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/267 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/267 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/267 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/267 CtrlChar/param/13]
+OutQuad
+
+[CG_npc133_02::command/268 SetAudio/param/1]
+se_019
+
+[CG_npc133_02::command/269 CtrlStage/param/9]
+chijing
+
+[CG_npc133_02::command/269 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/270 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/270 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/270 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/270 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/270 SetTalk/param/7]
+まあいいや。==RT==それならさ、ちょうどいいから一緒に仕入れに行こっか。
+
+[CG_npc133_02::command/270 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/272 SetMainRoleTalk/param/2]
+012
+
+[CG_npc133_02::command/272 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc133_02::command/272 SetMainRoleTalk/param/4]
+ChanDou
+
+[CG_npc133_02::command/272 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/272 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/273 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/273 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/273 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/273 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/273 SetTalk/param/7]
+え？仕入れ？==W====RT==ちょ、ちょっと待て！
+
+[CG_npc133_02::command/273 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/275 SetMainRoleTalk/param/2]
+025
+
+[CG_npc133_02::command/275 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc133_02::command/275 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/275 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/275 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/277 SetMainRoleTalk/param/2]
+007
+
+[CG_npc133_02::command/277 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc133_02::command/277 SetMainRoleTalk/param/4]
+chijing
+
+[CG_npc133_02::command/277 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/277 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/278 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/278 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/278 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/278 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/278 SetTalk/param/7]
+おーい！みんな助け――==W==
+
+[CG_npc133_02::command/278 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/281 SetAudio/param/1]
+se_251
+
+[CG_npc133_02::command/282 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/282 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/282 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/282 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/282 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/282 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/283 SetMainRoleTalk/param/3]
+none
+
+[CG_npc133_02::command/283 SetMainRoleTalk/param/4]
+zuochupeng
+
+[CG_npc133_02::command/283 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/283 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/285 SetAudio/param/1]
+se_093
+
+[CG_npc133_02::command/287 SetTalk/param/1]
+0
+
+[CG_npc133_02::command/287 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/287 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/287 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/287 SetTalk/param/7]
+ポーシアの腕力は想像以上だった。==RT==セイナたちがこちらに気づく前に、==RT==私は壁の中へと引きずり込まれてしまった。
+
+[CG_npc133_02::command/287 SetTalk/param/8]
+ポーシアの腕力は想像以上だった。==RT==セイナたちがこちらに気づく前に、==RT==僕は壁の中へと引きずり込まれてしまった。
+
+[CG_npc133_02::command/289 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/289 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/289 SetBGM/param/4]
+1000ms
+
+[CG_npc133_02::command/290 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/290 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/290 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/291 SetBg/param/1]
+tower_inside
+
+[CG_npc133_02::command/291 SetBg/param/2]
+0
+
+[CG_npc133_02::command/291 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/291 SetBg/param/6]
+default
+
+[CG_npc133_02::command/292 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/292 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/293 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/293 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/293 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/295 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/295 SetBGM/param/3]
+m49
+
+[CG_npc133_02::command/295 SetBGM/param/4]
+500ms
+
+[CG_npc133_02::command/296 SetMainRoleTalk/param/2]
+021
+
+[CG_npc133_02::command/296 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_npc133_02::command/296 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/296 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/296 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/297 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/297 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/297 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/297 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/297 SetTalk/param/7]
+終わった……また星ノ塔で迷子か……
+
+[CG_npc133_02::command/297 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/298 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/298 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/298 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/298 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/300 SetChar/param/2]
+none
+
+[CG_npc133_02::command/300 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/300 SetChar/param/4]
+a
+
+[CG_npc133_02::command/300 SetChar/param/5]
+005
+
+[CG_npc133_02::command/300 SetChar/param/6]
+none
+
+[CG_npc133_02::command/301 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/301 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/301 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/301 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/301 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/301 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/302 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/302 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/302 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/302 CtrlChar/param/11]
+daintou
+
+[CG_npc133_02::command/302 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/302 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/303 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/303 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/303 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/303 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/303 SetTalk/param/7]
+テンション下がりすぎじゃない？==RT==心配しなくても今回はただの単発バイト。==RT==終わったらちゃんと解放するし。
+
+[CG_npc133_02::command/303 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/305 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/305 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/305 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/305 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/305 SetTalk/param/7]
+それにあの3人が買い物するのをボーッと眺めて待つだけなら、==RT==時間も人手も有効活用しないと。
+
+[CG_npc133_02::command/305 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/307 SetMainRoleTalk/param/2]
+021
+
+[CG_npc133_02::command/307 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_npc133_02::command/307 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/307 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/307 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/308 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/308 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/308 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/308 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/308 SetTalk/param/7]
+有効活用って……私は同意したわけではないが？
+
+[CG_npc133_02::command/308 SetTalk/param/8]
+有効活用って……僕は同意したわけではないが？
+
+[CG_npc133_02::command/309 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/309 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/309 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/309 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/311 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/311 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/311 CtrlChar/param/2]
+003
+
+[CG_npc133_02::command/311 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/311 CtrlChar/param/11]
+niunie1
+
+[CG_npc133_02::command/311 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/311 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/312 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/312 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/312 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/312 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/312 SetTalk/param/7]
+口を出したなら、当然手も出してもらわないとじゃん？==RT==そもそも仕入れがなかったら、在庫はずっと空っぽのままなんだし。
+
+[CG_npc133_02::command/312 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/313 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/313 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/313 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/313 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/313 SetTalk/param/7]
+棚に商品並べて接客するのだけが、コンビニ店員の仕事じゃないってわけ。
+
+[CG_npc133_02::command/313 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/315 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/315 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc133_02::command/315 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/315 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/315 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/316 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/316 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/316 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/316 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/316 SetTalk/param/7]
+（それはたしかにそうなのだが……==RT==いったい仕入れとはなにをするんだ？）
+
+[CG_npc133_02::command/316 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/317 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/317 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/317 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/317 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/319 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/319 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/319 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/319 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/319 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/319 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/319 CtrlChar/param/13]
+OutQuad
+
+[CG_npc133_02::command/320 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/320 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/320 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/320 CtrlChar/param/11]
+daintou
+
+[CG_npc133_02::command/320 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/320 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/321 SetAudio/param/1]
+se_019
+
+[CG_npc133_02::command/322 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/322 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/322 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/322 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/322 SetTalk/param/7]
+おっ、巡遊者はっけーん。
+
+[CG_npc133_02::command/322 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/324 SetAudio/param/1]
+se_100
+
+[CG_npc133_02::command/325 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/325 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/326 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/326 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/326 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/326 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/326 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/326 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/327 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/327 SetTrans/param/3]
+OutSine
+
+[CG_npc133_02::command/327 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/329 SetAudio/param/1]
+se_090
+
+[CG_npc133_02::command/330 SetBg/param/1]
+circle_light
+
+[CG_npc133_02::command/330 SetBg/param/2]
+0
+
+[CG_npc133_02::command/330 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/330 SetBg/param/6]
+default
+
+[CG_npc133_02::command/331 CtrlBg/param/10]
+none
+
+[CG_npc133_02::command/331 CtrlBg/param/11]
+Linear
+
+[CG_npc133_02::command/332 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/332 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/333 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/333 SetTrans/param/3]
+OutSine
+
+[CG_npc133_02::command/333 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/335 SetAudio/param/1]
+se_011
+
+[CG_npc133_02::command/336 SetChar/param/2]
+none
+
+[CG_npc133_02::command/336 SetChar/param/3]
+avg3_139
+
+[CG_npc133_02::command/336 SetChar/param/4]
+a
+
+[CG_npc133_02::command/336 SetChar/param/5]
+002
+
+[CG_npc133_02::command/336 SetChar/param/6]
+none
+
+[CG_npc133_02::command/337 SetChar/param/2]
+none
+
+[CG_npc133_02::command/337 SetChar/param/3]
+avg2_982
+
+[CG_npc133_02::command/337 SetChar/param/4]
+a
+
+[CG_npc133_02::command/337 SetChar/param/5]
+002
+
+[CG_npc133_02::command/337 SetChar/param/6]
+none
+
+[CG_npc133_02::command/338 CtrlChar/param/0]
+avg3_139
+
+[CG_npc133_02::command/338 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/338 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/338 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/338 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/338 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/339 CtrlChar/param/0]
+avg2_982
+
+[CG_npc133_02::command/339 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/339 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/339 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/339 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/339 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/340 SetAudio/param/1]
+se_011_stop
+
+[CG_npc133_02::command/342 CtrlChar/param/0]
+avg2_982
+
+[CG_npc133_02::command/342 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/342 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc133_02::command/342 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/342 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/342 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/343 SetTalk/param/1]
+疲れた巡遊者
+
+[CG_npc133_02::command/343 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/343 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/343 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/343 SetTalk/param/7]
+はぁ……やっと片づいた。==RT==でもこの階、ぜんぜん音符が落ちてなかったな……
+
+[CG_npc133_02::command/343 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/345 CtrlChar/param/0]
+avg3_139
+
+[CG_npc133_02::command/345 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/345 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_npc133_02::command/345 CtrlChar/param/11]
+lengzhan
+
+[CG_npc133_02::command/345 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/345 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/346 SetTalk/param/1]
+まじめな巡遊者
+
+[CG_npc133_02::command/346 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/346 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/346 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/346 SetTalk/param/7]
+あれだけ苦労して、たったこれだけなんて……==RT==あっちのほうも、もう少し探してみないか？
+
+[CG_npc133_02::command/346 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/348 CtrlChar/param/0]
+avg2_982
+
+[CG_npc133_02::command/348 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/348 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/348 CtrlChar/param/11]
+zuochupeng
+
+[CG_npc133_02::command/348 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/348 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/349 SetTalk/param/1]
+疲れた巡遊者
+
+[CG_npc133_02::command/349 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/349 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/349 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/349 SetTalk/param/7]
+いや……先に進んだほうが効率的じゃないか？==RT==音符のために時間かけるのはもったいないし。==RT==ならさっさと次の階に行って、祈願箱探したほうが金になる。
+
+[CG_npc133_02::command/349 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/351 CtrlChar/param/0]
+avg3_139
+
+[CG_npc133_02::command/351 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/351 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc133_02::command/351 CtrlChar/param/11]
+diantou
+
+[CG_npc133_02::command/351 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/351 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/352 SetTalk/param/1]
+まじめな巡遊者
+
+[CG_npc133_02::command/352 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/352 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/352 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/352 SetTalk/param/7]
+う～ん……それもそっか。==RT==そんじゃあエレベーターまで急ごうぜ。
+
+[CG_npc133_02::command/352 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/354 SetAudio/param/1]
+se_012
+
+[CG_npc133_02::command/355 CtrlChar/param/0]
+avg3_139
+
+[CG_npc133_02::command/355 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/355 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/355 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/355 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/355 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/356 CtrlChar/param/0]
+avg2_982
+
+[CG_npc133_02::command/356 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/356 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/356 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/356 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/356 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/358 SetAudio/param/1]
+se_100
+
+[CG_npc133_02::command/359 CtrlStage/param/9]
+jushou
+
+[CG_npc133_02::command/359 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/360 CtrlBg/param/10]
+none
+
+[CG_npc133_02::command/360 CtrlBg/param/11]
+OutSine
+
+[CG_npc133_02::command/362 SetChar/param/2]
+none
+
+[CG_npc133_02::command/362 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/362 SetChar/param/4]
+a
+
+[CG_npc133_02::command/362 SetChar/param/5]
+002
+
+[CG_npc133_02::command/362 SetChar/param/6]
+none
+
+[CG_npc133_02::command/363 SetAudio/param/1]
+se_204
+
+[CG_npc133_02::command/364 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/364 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/364 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/364 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/364 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/364 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/364 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/365 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/365 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/365 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/365 CtrlChar/param/11]
+jushou0
+
+[CG_npc133_02::command/365 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/365 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/366 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/366 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/366 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/366 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/366 SetTalk/param/7]
+はーい、つーわけでお仕事スタート。
+
+[CG_npc133_02::command/366 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/368 SetMainRoleTalk/param/2]
+015
+
+[CG_npc133_02::command/368 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc133_02::command/368 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/368 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/368 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/369 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/369 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/369 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/369 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/369 SetTalk/param/7]
+お仕事って……==RT==この状況でなにをするんだ？
+
+[CG_npc133_02::command/369 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/370 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/370 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/370 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/370 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/372 SetAudio/param/1]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/373 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/373 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/373 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/373 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/373 CtrlChar/param/11]
+jushou0
+
+[CG_npc133_02::command/373 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/373 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/374 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/374 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/374 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/374 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/374 SetTalk/param/7]
+仕入れ作業だよ。だいたいの巡遊者ってさ、荷物がいっぱいだったり、==RT==急いでたりで、星骸が落とした物資を全部は回収しないんだよね。
+
+[CG_npc133_02::command/374 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/375 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/375 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/375 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/375 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/375 SetTalk/param/7]
+だから巡遊者のあとを追いかけていけば、==RT==残されたおこぼれを回収できるってこと。==RT==最低限の労力で仕入れができるんだから==W==効率的でしょ？
+
+[CG_npc133_02::command/375 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/377 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/377 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/377 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/377 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc133_02::command/377 CtrlChar/param/11]
+JuGong1
+
+[CG_npc133_02::command/377 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/377 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/380 SetMainRoleTalk/param/2]
+025
+
+[CG_npc133_02::command/380 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc133_02::command/380 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/380 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/380 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/381 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/381 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/381 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/381 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/381 SetTalk/param/7]
+な、なるほど……
+
+[CG_npc133_02::command/381 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/383 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/383 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc133_02::command/383 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/383 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/383 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/384 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/384 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/384 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/384 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/384 SetTalk/param/7]
+（空白旅団はものを残さないからな。==RT==てっきりそれが普通なのかと思っていたが）
+
+[CG_npc133_02::command/384 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/385 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/385 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/385 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/385 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/387 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/387 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/387 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/387 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/387 CtrlChar/param/11]
+jushou0
+
+[CG_npc133_02::command/387 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/387 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/388 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/388 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/388 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/388 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/388 SetTalk/param/7]
+ほら。ボーッとしてないで、さっさと手を動かして。
+
+[CG_npc133_02::command/388 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/390 SetMainRoleTalk/param/2]
+007
+
+[CG_npc133_02::command/390 SetMainRoleTalk/param/3]
+none
+
+[CG_npc133_02::command/390 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/390 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/390 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/391 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/391 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/391 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/391 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/391 SetTalk/param/7]
+いや、だから私は単発バイトに同意してはいない！
+
+[CG_npc133_02::command/391 SetTalk/param/8]
+いや、だから僕は単発バイトに同意してはいない！
+
+[CG_npc133_02::command/392 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/392 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/392 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/392 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/394 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/394 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/394 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/394 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/394 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/394 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/394 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/395 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/395 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/395 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/395 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/395 SetTalk/param/7]
+ふーん？まあ、働かないならそれはそれでいいけどさ。==RT==ひとりで店まで戻れるの？迷子になっても知らないよ？
+
+[CG_npc133_02::command/395 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/397 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/397 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/397 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/397 CtrlChar/param/11]
+niunie1
+
+[CG_npc133_02::command/397 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/397 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/398 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/398 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/398 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/398 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/398 SetTalk/param/7]
+意地張ってないでさ、素直に仕入れを手伝ったほうが==RT==仲間のところに早く戻れると思うけどねー。==RT==それで、迷子と単発バイトならどっちがいい？
+
+[CG_npc133_02::command/398 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/400 SetAudio/param/1]
+se_010
+
+[CG_npc133_02::command/401 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/401 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/401 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/401 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/401 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/401 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/403 SetMainRoleTalk/param/2]
+007
+
+[CG_npc133_02::command/403 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[CG_npc133_02::command/403 SetMainRoleTalk/param/4]
+huanxin
+
+[CG_npc133_02::command/403 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/403 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/404 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/404 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/404 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/404 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/404 SetTalk/param/7]
+そ、そんなのは脅しではないか！==W====RT==パワハラ反対！
+
+[CG_npc133_02::command/404 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/406 SetMainRoleTalk/param/2]
+007
+
+[CG_npc133_02::command/406 SetMainRoleTalk/param/3]
+avg_emoji_resentful
+
+[CG_npc133_02::command/406 SetMainRoleTalk/param/4]
+buman
+
+[CG_npc133_02::command/406 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/406 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/408 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/408 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/408 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/408 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/410 SetTalk/param/1]
+0
+
+[CG_npc133_02::command/410 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/410 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/410 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/410 SetTalk/param/7]
+ポーシアは返事もせず、==RT==巡遊者が置き去りにした戦利品を黙々と集め始めた。
+
+[CG_npc133_02::command/410 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/411 SetTalk/param/1]
+0
+
+[CG_npc133_02::command/411 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/411 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/411 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/411 SetTalk/param/7]
+納得はできないし、文句も言い足りなかったが……==RT==その背中を見ているうちに、私の体は勝手に動き始めてしまうのだった。
+
+[CG_npc133_02::command/411 SetTalk/param/8]
+納得はできないし、文句も言い足りなかったが……==RT==その背中を見ているうちに、僕の体は勝手に動き始めてしまうのだった。
+
+[CG_npc133_02::command/413 SetAudio/param/1]
+se_076
+
+[CG_npc133_02::command/414 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/414 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/414 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/415 SetBg/param/1]
+tower_supermarket
+
+[CG_npc133_02::command/415 SetBg/param/2]
+0
+
+[CG_npc133_02::command/415 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/415 SetBg/param/6]
+default
+
+[CG_npc133_02::command/416 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/416 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/418 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/418 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/418 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/420 SetChar/param/2]
+none
+
+[CG_npc133_02::command/420 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/420 SetChar/param/4]
+a
+
+[CG_npc133_02::command/420 SetChar/param/5]
+005
+
+[CG_npc133_02::command/420 SetChar/param/6]
+none
+
+[CG_npc133_02::command/421 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/421 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/421 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/421 CtrlChar/param/11]
+huanxin
+
+[CG_npc133_02::command/421 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/421 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/422 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/422 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/422 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/422 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/422 SetTalk/param/7]
+サンキュッキュー。集めた戦利品はそこに置いといて。
+
+[CG_npc133_02::command/422 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/424 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/424 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/424 CtrlChar/param/2]
+002
+
+[CG_npc133_02::command/424 CtrlChar/param/3]
+avg_emoji_idea
+
+[CG_npc133_02::command/424 CtrlChar/param/11]
+jushou0
+
+[CG_npc133_02::command/424 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/424 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/425 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/425 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/425 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/425 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/425 SetTalk/param/7]
+そういやさっき、仲間から『魔王』とか『ボス』って呼ばれてたけど、==RT==それがあんたの名前？
+
+[CG_npc133_02::command/425 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/427 SetMainRoleTalk/param/2]
+020
+
+[CG_npc133_02::command/427 SetMainRoleTalk/param/3]
+none
+
+[CG_npc133_02::command/427 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/427 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/427 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/428 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/428 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/428 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/428 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/428 SetTalk/param/7]
+名前というか肩書き……のようなものになるのか。==RT==使い勝手がいいし、普段からそれを使っているんだ。
+
+[CG_npc133_02::command/428 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/429 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/429 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/429 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/429 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/431 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/431 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/431 CtrlChar/param/2]
+003
+
+[CG_npc133_02::command/431 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_npc133_02::command/431 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/431 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/431 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/432 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/432 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/432 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/432 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/432 SetTalk/param/7]
+ふーん？『ボス』はともかく、==RT==『魔王』ってのはずいぶんアレな感じだけど……==W==まあいいや。
+
+[CG_npc133_02::command/432 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/434 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/434 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/434 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc133_02::command/434 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/434 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/434 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/437 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/437 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/437 CtrlChar/param/2]
+005
+
+[CG_npc133_02::command/437 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/437 CtrlChar/param/11]
+jushou0
+
+[CG_npc133_02::command/437 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/437 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/438 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/438 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/438 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/438 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/438 SetTalk/param/7]
+それじゃ、あとで店長に『名誉店員』枠を作ってもらうからさ、==RT==記念すべき最初の『名誉店員』はあんたにあげるよ。
+
+[CG_npc133_02::command/438 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/440 SetMainRoleTalk/param/2]
+026
+
+[CG_npc133_02::command/440 SetMainRoleTalk/param/3]
+avg_emoji_resentful
+
+[CG_npc133_02::command/440 SetMainRoleTalk/param/4]
+ChanDou
+
+[CG_npc133_02::command/440 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/440 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/441 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/441 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/441 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/441 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/441 SetTalk/param/7]
+<size=50>だーかーらー！==W====RT==もうバイトはしないと言っているだろう！
+
+[CG_npc133_02::command/441 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/443 SetAudio/param/1]
+se_070
+
+[CG_npc133_02::command/444 SetMainRoleTalk/param/2]
+026
+
+[CG_npc133_02::command/444 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[CG_npc133_02::command/444 SetMainRoleTalk/param/4]
+buman
+
+[CG_npc133_02::command/444 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/444 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/446 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/446 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/446 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/446 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/448 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/448 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/448 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/448 CtrlChar/param/11]
+huanxin
+
+[CG_npc133_02::command/448 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/448 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/449 SetAudio/param/1]
+se_019
+
+[CG_npc133_02::command/450 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/450 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/450 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/450 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/450 SetTalk/param/7]
+単発バイトでも『受け取り資格あり』ってことにしとくから、==RT==心配しなくてもだいじょーぶだって。
+
+[CG_npc133_02::command/450 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/452 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/452 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/452 CtrlChar/param/2]
+003
+
+[CG_npc133_02::command/452 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_npc133_02::command/452 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/452 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/452 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/453 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/453 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/453 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/453 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/453 SetTalk/param/7]
+副賞は……まあ、そのうちってことで。
+
+[CG_npc133_02::command/453 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/454 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/454 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/454 CtrlChar/param/3]
+close
+
+[CG_npc133_02::command/454 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/454 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/454 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/456 SetMainRoleTalk/param/2]
+005
+
+[CG_npc133_02::command/456 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/456 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/456 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/456 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/457 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/457 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/457 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/457 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/457 SetTalk/param/7]
+だいたい、そんな資格をもらったところで==RT==いったいなんになるというんだ……？
+
+[CG_npc133_02::command/457 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/458 SetMainRoleTalk/param/2]
+021
+
+[CG_npc133_02::command/458 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc133_02::command/458 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/458 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/458 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/459 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/459 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/459 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/459 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/459 SetTalk/param/7]
+（また都合よく使われる未来しか見えないぞ）
+
+[CG_npc133_02::command/459 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/460 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/460 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/460 SetMainRoleTalk/param/5]
+y
+
+[CG_npc133_02::command/460 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/462 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/462 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/462 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/462 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/462 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/462 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/463 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/463 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/465 SetAudio/param/1]
+se_079
+
+[CG_npc133_02::command/466 SetChar/param/2]
+none
+
+[CG_npc133_02::command/466 SetChar/param/3]
+avg1_112
+
+[CG_npc133_02::command/466 SetChar/param/4]
+a
+
+[CG_npc133_02::command/466 SetChar/param/5]
+002
+
+[CG_npc133_02::command/466 SetChar/param/6]
+none
+
+[CG_npc133_02::command/467 SetChar/param/2]
+none
+
+[CG_npc133_02::command/467 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/467 SetChar/param/4]
+a
+
+[CG_npc133_02::command/467 SetChar/param/5]
+011
+
+[CG_npc133_02::command/467 SetChar/param/6]
+none
+
+[CG_npc133_02::command/468 SetChar/param/2]
+none
+
+[CG_npc133_02::command/468 SetChar/param/3]
+avg1_103
+
+[CG_npc133_02::command/468 SetChar/param/4]
+a
+
+[CG_npc133_02::command/468 SetChar/param/5]
+014
+
+[CG_npc133_02::command/468 SetChar/param/6]
+none
+
+[CG_npc133_02::command/469 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/469 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/469 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/469 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/469 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/469 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/470 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/470 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/470 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/470 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/470 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/470 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/471 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/471 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/471 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/471 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/471 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/471 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/472 SetAudio/param/1]
+se_079_stop
+
+[CG_npc133_02::command/474 SetAudio/param/1]
+se_077
+
+[CG_npc133_02::command/475 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/475 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/475 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_npc133_02::command/475 CtrlChar/param/11]
+JuGong1
+
+[CG_npc133_02::command/475 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/475 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/476 SetTalk/param/1]
+avg1_103
+
+[CG_npc133_02::command/476 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/476 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/476 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/476 SetTalk/param/7]
+ボス、買い物終わったよ。
+
+[CG_npc133_02::command/476 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/478 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/478 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/478 CtrlChar/param/2]
+007
+
+[CG_npc133_02::command/478 CtrlChar/param/3]
+avg_emoji_shock
+
+[CG_npc133_02::command/478 CtrlChar/param/11]
+jushou1
+
+[CG_npc133_02::command/478 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/478 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/479 SetTalk/param/1]
+avg1_111
+
+[CG_npc133_02::command/479 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/479 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/479 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/479 SetTalk/param/7]
+待って。音符の補充がまだでしょ？
+
+[CG_npc133_02::command/479 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/480 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/480 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/480 CtrlChar/param/3]
+close
+
+[CG_npc133_02::command/480 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/480 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/480 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/482 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/482 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/482 CtrlChar/param/2]
+007
+
+[CG_npc133_02::command/482 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_npc133_02::command/482 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/482 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/482 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/483 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/483 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/483 CtrlChar/param/2]
+008
+
+[CG_npc133_02::command/483 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/483 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/483 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/483 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/484 SetTalk/param/1]
+avg1_103
+
+[CG_npc133_02::command/484 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/484 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/484 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/484 SetTalk/param/7]
+でも音符の棚、空っぽじゃなかった？
+
+[CG_npc133_02::command/484 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/486 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/486 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/488 SetChar/param/2]
+none
+
+[CG_npc133_02::command/488 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/488 SetChar/param/4]
+a
+
+[CG_npc133_02::command/488 SetChar/param/5]
+005
+
+[CG_npc133_02::command/488 SetChar/param/6]
+none
+
+[CG_npc133_02::command/489 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/489 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/489 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/489 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/489 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/489 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/490 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/490 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/490 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/490 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/490 SetTalk/param/7]
+音符なら、いま新しいのを入荷したところだよ。==W====RT==見てみる？
+
+[CG_npc133_02::command/490 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/492 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/492 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/492 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/492 CtrlChar/param/11]
+niunie
+
+[CG_npc133_02::command/492 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/492 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/495 SetAudio/param/1]
+se_113
+
+[CG_npc133_02::command/496 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/496 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/496 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/496 CtrlChar/param/11]
+JuGong2
+
+[CG_npc133_02::command/496 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/496 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/498 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/498 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/498 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/498 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/498 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/498 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/499 SetAudio/param/1]
+se_062
+
+[CG_npc133_02::command/500 SetChar/param/2]
+none
+
+[CG_npc133_02::command/500 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/500 SetChar/param/4]
+a
+
+[CG_npc133_02::command/500 SetChar/param/5]
+002
+
+[CG_npc133_02::command/500 SetChar/param/6]
+none
+
+[CG_npc133_02::command/501 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/501 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/501 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/501 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/501 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/501 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/502 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/502 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/502 CtrlChar/param/2]
+010
+
+[CG_npc133_02::command/502 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc133_02::command/502 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/502 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/502 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/503 SetTalk/param/1]
+avg1_111
+
+[CG_npc133_02::command/503 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/503 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/503 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/503 SetTalk/param/7]
+器用の音符が10個、風の音符が10個……==RT==いま欲しいものがぴったり揃っているわね。
+
+[CG_npc133_02::command/503 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/505 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/505 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/505 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/505 CtrlChar/param/11]
+diantou
+
+[CG_npc133_02::command/505 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/505 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/506 SetTalk/param/1]
+avg3_133
+
+[CG_npc133_02::command/506 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/506 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/506 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/506 SetTalk/param/7]
+棚に並べるのも面倒だし、いま買うならそのまま半額で売ってあげるよ。
+
+[CG_npc133_02::command/506 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/508 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/508 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/508 SetBGM/param/4]
+1500ms
+
+[CG_npc133_02::command/509 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/509 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/509 CtrlChar/param/2]
+006
+
+[CG_npc133_02::command/509 CtrlChar/param/3]
+avg_emoji_symbol
+
+[CG_npc133_02::command/509 CtrlChar/param/11]
+lengzhan
+
+[CG_npc133_02::command/509 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/509 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/510 SetTalk/param/1]
+avg1_111
+
+[CG_npc133_02::command/510 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/510 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/510 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/510 SetTalk/param/7]
+は、半額……！？==W==本当ですか！？
+
+[CG_npc133_02::command/510 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/512 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/512 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/512 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/512 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/512 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/512 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/513 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/513 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/513 CtrlChar/param/2]
+022
+
+[CG_npc133_02::command/513 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/513 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/513 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/513 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/514 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/514 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/514 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc133_02::command/514 CtrlChar/param/11]
+huanxin
+
+[CG_npc133_02::command/514 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/514 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/517 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/517 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/517 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/517 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/517 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/517 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/518 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/518 CtrlStage/param/10]
+OutSine
+
+[CG_npc133_02::command/520 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/520 SetBGM/param/3]
+m74
+
+[CG_npc133_02::command/520 SetBGM/param/4]
+none
+
+[CG_npc133_02::command/521 SetChar/param/2]
+none
+
+[CG_npc133_02::command/521 SetChar/param/3]
+avg1_112
+
+[CG_npc133_02::command/521 SetChar/param/4]
+a
+
+[CG_npc133_02::command/521 SetChar/param/5]
+002
+
+[CG_npc133_02::command/521 SetChar/param/6]
+none
+
+[CG_npc133_02::command/522 SetChar/param/2]
+none
+
+[CG_npc133_02::command/522 SetChar/param/3]
+avg1_103
+
+[CG_npc133_02::command/522 SetChar/param/4]
+a
+
+[CG_npc133_02::command/522 SetChar/param/5]
+002
+
+[CG_npc133_02::command/522 SetChar/param/6]
+none
+
+[CG_npc133_02::command/523 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/523 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/523 CtrlChar/param/2]
+013
+
+[CG_npc133_02::command/523 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_npc133_02::command/523 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/523 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/523 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/524 SetTalk/param/1]
+avg1_112
+
+[CG_npc133_02::command/524 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/524 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/524 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/524 SetTalk/param/7]
+ならさ、浮いた分のステラコインでこっちも買っちゃおうよ！
+
+[CG_npc133_02::command/524 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/526 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/526 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/526 CtrlChar/param/2]
+008
+
+[CG_npc133_02::command/526 CtrlChar/param/3]
+avg_emoji_shy
+
+[CG_npc133_02::command/526 CtrlChar/param/11]
+daintou
+
+[CG_npc133_02::command/526 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/526 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/527 SetTalk/param/1]
+avg1_103
+
+[CG_npc133_02::command/527 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/527 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/527 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/527 SetTalk/param/7]
+あたし、これがほしい。
+
+[CG_npc133_02::command/527 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/529 SetMainRoleTalk/param/2]
+025
+
+[CG_npc133_02::command/529 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_npc133_02::command/529 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/529 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/529 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/530 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/530 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/530 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/530 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/530 SetTalk/param/7]
+いきなり半額と言われて……怪しいとは思わないのか？
+
+[CG_npc133_02::command/530 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/531 SetMainRoleTalk/param/3]
+close
+
+[CG_npc133_02::command/531 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/531 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/531 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/533 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/533 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/534 SetChar/param/2]
+none
+
+[CG_npc133_02::command/534 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/534 SetChar/param/4]
+a
+
+[CG_npc133_02::command/534 SetChar/param/5]
+012
+
+[CG_npc133_02::command/534 SetChar/param/6]
+none
+
+[CG_npc133_02::command/535 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/535 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/535 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/535 CtrlChar/param/11]
+diantou
+
+[CG_npc133_02::command/535 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/535 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/536 SetTalk/param/1]
+avg1_111
+
+[CG_npc133_02::command/536 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/536 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/536 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/536 SetTalk/param/7]
+半・額……==W==ああ、素敵な響き……♪==W====RT==それにちょうどほしかった音符ですからね。==W====RT==こんなチャンス、逃す手はありませんよ！
+
+[CG_npc133_02::command/536 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/538 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/538 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/538 CtrlChar/param/2]
+022
+
+[CG_npc133_02::command/538 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc133_02::command/538 CtrlChar/param/11]
+jushou
+
+[CG_npc133_02::command/538 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/538 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/541 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/541 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/541 CtrlChar/param/2]
+024
+
+[CG_npc133_02::command/541 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_npc133_02::command/541 CtrlChar/param/11]
+jushou0
+
+[CG_npc133_02::command/541 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/541 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/544 SetAudio/param/1]
+se_070
+
+[CG_npc133_02::command/545 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/545 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/545 CtrlChar/param/2]
+017
+
+[CG_npc133_02::command/545 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/545 CtrlChar/param/11]
+chijing
+
+[CG_npc133_02::command/545 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/545 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/548 SetAudio/param/1]
+se_148
+
+[CG_npc133_02::command/549 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/549 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/549 CtrlChar/param/2]
+017
+
+[CG_npc133_02::command/549 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/549 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/549 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/549 CtrlChar/param/13]
+InBack
+
+[CG_npc133_02::command/551 SetTrans/param/2]
+avg_char_effect_right
+
+[CG_npc133_02::command/551 SetTrans/param/3]
+OutSine
+
+[CG_npc133_02::command/551 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/552 SetAudio/param/1]
+se_447
+
+[CG_npc133_02::command/553 CtrlStage/param/9]
+none
+
+[CG_npc133_02::command/553 CtrlStage/param/10]
+Linear
+
+[CG_npc133_02::command/555 SetTrans/param/2]
+0
+
+[CG_npc133_02::command/555 SetTrans/param/3]
+OutSine
+
+[CG_npc133_02::command/555 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/557 SetChar/param/2]
+none
+
+[CG_npc133_02::command/557 SetChar/param/3]
+avg1_112
+
+[CG_npc133_02::command/557 SetChar/param/4]
+a
+
+[CG_npc133_02::command/557 SetChar/param/5]
+019
+
+[CG_npc133_02::command/557 SetChar/param/6]
+none
+
+[CG_npc133_02::command/558 SetChar/param/2]
+none
+
+[CG_npc133_02::command/558 SetChar/param/3]
+avg1_111
+
+[CG_npc133_02::command/558 SetChar/param/4]
+a
+
+[CG_npc133_02::command/558 SetChar/param/5]
+022
+
+[CG_npc133_02::command/558 SetChar/param/6]
+none
+
+[CG_npc133_02::command/559 SetChar/param/2]
+none
+
+[CG_npc133_02::command/559 SetChar/param/3]
+avg1_103
+
+[CG_npc133_02::command/559 SetChar/param/4]
+a
+
+[CG_npc133_02::command/559 SetChar/param/5]
+014
+
+[CG_npc133_02::command/559 SetChar/param/6]
+none
+
+[CG_npc133_02::command/560 SetAudio/param/1]
+se_062
+
+[CG_npc133_02::command/561 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/561 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/561 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/561 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/561 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/561 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/562 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/562 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/562 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/562 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/562 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/562 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/563 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/563 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/563 CtrlChar/param/2]
+008
+
+[CG_npc133_02::command/563 CtrlChar/param/3]
+none
+
+[CG_npc133_02::command/563 CtrlChar/param/11]
+none
+
+[CG_npc133_02::command/563 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/563 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/565 CtrlChar/param/0]
+avg1_111
+
+[CG_npc133_02::command/565 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/565 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc133_02::command/565 CtrlChar/param/11]
+JuGong1
+
+[CG_npc133_02::command/565 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/565 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/566 CtrlChar/param/0]
+avg1_103
+
+[CG_npc133_02::command/566 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/566 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc133_02::command/566 CtrlChar/param/11]
+JuGong1
+
+[CG_npc133_02::command/566 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/566 CtrlChar/param/13]
+Linear
+
+[CG_npc133_02::command/568 CtrlChar/param/0]
+avg1_112
+
+[CG_npc133_02::command/568 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/568 CtrlChar/param/2]
+004
+
+[CG_npc133_02::command/568 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/568 CtrlChar/param/11]
+huanxin
+
+[CG_npc133_02::command/568 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/568 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/569 SetTalk/param/1]
+avg1_112
+
+[CG_npc133_02::command/569 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/569 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/569 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/569 SetTalk/param/7]
+よーし！準備万端だし、次の階へレッツゴー！
+
+[CG_npc133_02::command/569 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/570 SetAudio/param/1]
+se_079
+
+[CG_npc133_02::command/573 SetAudio/param/1]
+se_079_stop
+
+[CG_npc133_02::command/574 SetMainRoleTalk/param/2]
+025
+
+[CG_npc133_02::command/574 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_npc133_02::command/574 SetMainRoleTalk/param/4]
+chijing2
+
+[CG_npc133_02::command/574 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/574 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/575 SetTalk/param/1]
+avg3_100
+
+[CG_npc133_02::command/575 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/575 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/575 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/575 SetTalk/param/7]
+ま、待ってくれ！==RT==騙されているとしか考えられないのだが！
+
+[CG_npc133_02::command/575 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/576 SetMainRoleTalk/param/3]
+none
+
+[CG_npc133_02::command/576 SetMainRoleTalk/param/4]
+none
+
+[CG_npc133_02::command/576 SetMainRoleTalk/param/5]
+z
+
+[CG_npc133_02::command/576 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc133_02::command/578 SetBg/param/1]
+tower_elevator_supermarket
+
+[CG_npc133_02::command/578 SetBg/param/2]
+0
+
+[CG_npc133_02::command/578 SetBg/param/3]
+Linear
+
+[CG_npc133_02::command/578 SetBg/param/6]
+default
+
+[CG_npc133_02::command/580 SetTalk/param/1]
+0
+
+[CG_npc133_02::command/580 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/580 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/580 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/580 SetTalk/param/7]
+突然のセールに上機嫌のみんなは、==RT==動揺する私を連れてエレベーターに乗り込んだ。
+
+[CG_npc133_02::command/580 SetTalk/param/8]
+突然のセールに上機嫌のみんなは、==RT==動揺する僕を連れてエレベーターに乗り込んだ。
+
+[CG_npc133_02::command/582 CtrlBg/param/10]
+none
+
+[CG_npc133_02::command/582 CtrlBg/param/11]
+Linear
+
+[CG_npc133_02::command/583 SetChar/param/2]
+none
+
+[CG_npc133_02::command/583 SetChar/param/3]
+avg3_133
+
+[CG_npc133_02::command/583 SetChar/param/4]
+a
+
+[CG_npc133_02::command/583 SetChar/param/5]
+005
+
+[CG_npc133_02::command/583 SetChar/param/6]
+none
+
+[CG_npc133_02::command/584 CtrlChar/param/0]
+avg3_133
+
+[CG_npc133_02::command/584 CtrlChar/param/1]
+a
+
+[CG_npc133_02::command/584 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc133_02::command/584 CtrlChar/param/11]
+daintou
+
+[CG_npc133_02::command/584 CtrlChar/param/12]
+none
+
+[CG_npc133_02::command/584 CtrlChar/param/13]
+OutSine
+
+[CG_npc133_02::command/586 SetTalk/param/1]
+0
+
+[CG_npc133_02::command/586 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/586 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/586 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/586 SetTalk/param/7]
+扉がゆっくり閉まっていく。==RT==その隙間から、ポーシアが意味深な笑みを浮かべながら==RT==手を振っているのが見えた。
+
+[CG_npc133_02::command/586 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/588 SetTrans/param/2]
+rule_39
+
+[CG_npc133_02::command/588 SetTrans/param/3]
+Linear
+
+[CG_npc133_02::command/588 SetTrans/param/8]
+default
+
+[CG_npc133_02::command/589 SetAudio/param/1]
+se_493
+
+[CG_npc133_02::command/591 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc133_02::command/591 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc133_02::command/591 SetBGM/param/4]
+2000ms
+

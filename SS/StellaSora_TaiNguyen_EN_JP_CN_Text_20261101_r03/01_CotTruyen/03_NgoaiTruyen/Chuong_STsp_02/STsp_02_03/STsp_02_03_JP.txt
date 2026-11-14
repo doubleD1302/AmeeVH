@@ -1,0 +1,5077 @@
+STsp_02_03 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1691
+
+[STsp_02_03::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STsp_02_03::command/0 SetIntro/param/1]
+第3話
+
+[STsp_02_03::command/0 SetIntro/param/2]
+ようこそ空白旅団へ
+
+[STsp_02_03::command/0 SetIntro/param/3]
+星骸に追われ、逃げ込んだ先は星ノ塔の中にあるコンビニだった。そこでポーシアと名乗る女性から『とんかつ弁当』をすすめられ、思わず口にしてしまったところ…
+
+[STsp_02_03::command/1 SetAudio/param/1]
+se_009
+
+[STsp_02_03::command/2 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STsp_02_03::command/2 SetBGM/param/3]
+m46
+
+[STsp_02_03::command/2 SetBGM/param/4]
+1500ms
+
+[STsp_02_03::command/3 SetBg/param/1]
+tower_fire_earth
+
+[STsp_02_03::command/3 SetBg/param/2]
+0
+
+[STsp_02_03::command/3 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/3 SetBg/param/6]
+default
+
+[STsp_02_03::command/4 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/4 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/5 SetMainRoleTalk/param/2]
+025
+
+[STsp_02_03::command/5 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/5 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/5 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/5 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/6 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/6 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/6 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/6 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/6 SetTalk/param/7]
+（また同じところに戻ってきてしまった……）
+
+[STsp_02_03::command/6 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/7 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/7 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/7 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/7 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/7 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/8 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/8 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/8 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/8 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/8 SetTalk/param/7]
+（いくら名前を呼んでも、セイナたちの返事はないし……==RT==みんなどこに行ってしまったんだ？）
+
+[STsp_02_03::command/8 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/9 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STsp_02_03::command/9 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/9 SetBGM/param/4]
+none
+
+[STsp_02_03::command/10 SetAudio/param/1]
+se_055
+
+[STsp_02_03::command/11 SetTrans/param/2]
+34
+
+[STsp_02_03::command/11 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/11 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/12 SetBg/param/1]
+tower_entrance
+
+[STsp_02_03::command/12 SetBg/param/2]
+0
+
+[STsp_02_03::command/12 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/12 SetBg/param/6]
+default
+
+[STsp_02_03::command/13 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/13 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/14 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_02_03::command/15 SetChar/param/2]
+none
+
+[STsp_02_03::command/15 SetChar/param/3]
+avg1_111
+
+[STsp_02_03::command/15 SetChar/param/4]
+a
+
+[STsp_02_03::command/15 SetChar/param/5]
+002
+
+[STsp_02_03::command/15 SetChar/param/6]
+none
+
+[STsp_02_03::command/16 SetTrans/param/2]
+34
+
+[STsp_02_03::command/16 SetTrans/param/3]
+InSine
+
+[STsp_02_03::command/16 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/17 CtrlChar/param/0]
+avg1_111
+
+[STsp_02_03::command/17 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/17 CtrlChar/param/2]
+010
+
+[STsp_02_03::command/17 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/17 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/17 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/17 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/18 SetTalk/param/1]
+avg1_111
+
+[STsp_02_03::command/18 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/18 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/18 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/18 SetTalk/param/7]
+いいですか？塔に入ったら、私たちから離れないようにしてくださいね？
+
+[STsp_02_03::command/18 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/19 CtrlChar/param/0]
+avg1_111
+
+[STsp_02_03::command/19 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/19 CtrlChar/param/2]
+003
+
+[STsp_02_03::command/19 CtrlChar/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/19 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/19 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/19 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/20 SetTalk/param/1]
+avg1_111
+
+[STsp_02_03::command/20 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/20 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/20 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/20 SetTalk/param/7]
+入口の話と同じく、塔の中では外の常識が通用しません。==RT==それに昇降機でしか階層の移動が出来ませんから、==W====RT==慣れていないと、すぐに迷子になってしまいますよ。
+
+[STsp_02_03::command/20 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/21 CtrlChar/param/0]
+avg1_111
+
+[STsp_02_03::command/21 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/21 CtrlChar/param/2]
+007
+
+[STsp_02_03::command/21 CtrlChar/param/3]
+close
+
+[STsp_02_03::command/21 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/21 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/21 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/24 SetAudio/param/1]
+se_169
+
+[STsp_02_03::command/25 SetTrans/param/2]
+33
+
+[STsp_02_03::command/25 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/25 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/26 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_02_03::command/27 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/27 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/28 SetBg/param/1]
+tower_fire_earth
+
+[STsp_02_03::command/28 SetBg/param/2]
+0
+
+[STsp_02_03::command/28 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/28 SetBg/param/6]
+default
+
+[STsp_02_03::command/29 SetTrans/param/2]
+0
+
+[STsp_02_03::command/29 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/29 SetTrans/param/8]
+default
+
+[STsp_02_03::command/30 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STsp_02_03::command/30 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/30 SetBGM/param/4]
+none
+
+[STsp_02_03::command/32 SetMainRoleTalk/param/2]
+009
+
+[STsp_02_03::command/32 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/32 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/32 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/32 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/33 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/33 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/33 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/33 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/33 SetTalk/param/7]
+（まさか本当に迷子になってしまうとはな……）
+
+[STsp_02_03::command/33 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/34 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/34 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/34 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/34 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/34 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/35 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/35 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/35 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/35 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/35 SetTalk/param/7]
+（いや落ち着け、焦りは判断力の低下を招く。==RT==落ち着くんだ……）
+
+[STsp_02_03::command/35 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/36 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/36 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/36 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/36 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/36 SetTalk/param/7]
+（空間転移の制限を考えると、もといた場所に==RT==近いどこかへ飛ばされたと考えるのが自然か。==RT==ならば少なくとも、ここはまだ星ノ塔の中）
+
+[STsp_02_03::command/36 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/37 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/37 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/37 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/37 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/37 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/38 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/38 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/38 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/38 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/38 SetTalk/param/7]
+（つまりみんなと合流するチャンスはある。==W====RT==……はずなのだが）
+
+[STsp_02_03::command/38 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/39 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/39 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/39 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/39 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/39 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/41 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/41 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/42 SetTrans/param/2]
+0
+
+[STsp_02_03::command/42 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/42 SetTrans/param/8]
+default
+
+[STsp_02_03::command/43 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/43 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/44 SetAudio/param/1]
+se_445
+
+[STsp_02_03::command/45 SetTalk/param/1]
+0
+
+[STsp_02_03::command/45 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/45 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/45 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/45 SetTalk/param/7]
+道中で見つけたナイフを取り出し、==RT==目立つ場所にメッセージを刻みつけた。
+
+[STsp_02_03::command/45 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/46 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/46 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/47 SetBg/param/1]
+tower_common
+
+[STsp_02_03::command/47 SetBg/param/2]
+0
+
+[STsp_02_03::command/47 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/47 SetBg/param/6]
+default
+
+[STsp_02_03::command/48 SetAudio/param/1]
+se_060
+
+[STsp_02_03::command/49 SetTrans/param/2]
+0
+
+[STsp_02_03::command/49 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/49 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/50 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/50 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/51 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/51 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/51 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/51 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/51 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/52 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/52 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/52 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/52 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/52 SetTalk/param/7]
+（これまで目にした施設は、どこも新しく見えた。==RT==巡遊者が訪れていれば、なにかしらの痕跡が残って==RT==いてもおかしくないのだが……）
+
+[STsp_02_03::command/52 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/53 SetAudio/param/1]
+se_060
+
+[STsp_02_03::command/54 SetBg/param/1]
+tower_wind_light
+
+[STsp_02_03::command/54 SetBg/param/2]
+AvgStageEffect_fade_right
+
+[STsp_02_03::command/54 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/54 SetBg/param/6]
+fade
+
+[STsp_02_03::command/55 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/55 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/55 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/55 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/55 SetTalk/param/7]
+（それがないということは、==RT==なんらかの存在が星ノ塔を補修しているのか、==RT==あるいは塔自体に自己修復機能が備わっているのか……）
+
+[STsp_02_03::command/55 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/57 SetBg/param/1]
+tower_inside_arcade
+
+[STsp_02_03::command/57 SetBg/param/2]
+AvgStageEffect_fade_right
+
+[STsp_02_03::command/57 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/57 SetBg/param/6]
+fade
+
+[STsp_02_03::command/58 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/58 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/58 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/58 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/58 SetTalk/param/7]
+（もしそうなら、目印を残しても無駄かもしれないな。==RT==しかし、ここは星骸が多すぎる。==RT==見つかる前に、安全な場所に移動しなければ――）
+
+[STsp_02_03::command/58 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/59 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/59 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/60 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/60 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/60 SetBGM/param/4]
+2000ms
+
+[STsp_02_03::command/61 SetBg/param/1]
+tower_inside
+
+[STsp_02_03::command/61 SetBg/param/2]
+AvgStageEffect_fade_right
+
+[STsp_02_03::command/61 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/61 SetBg/param/6]
+fade
+
+[STsp_02_03::command/62 SetAudio/param/1]
+se_060
+
+[STsp_02_03::command/64 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/64 SetBGM/param/3]
+m42
+
+[STsp_02_03::command/64 SetBGM/param/4]
+none
+
+[STsp_02_03::command/65 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/65 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STsp_02_03::command/65 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/65 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/65 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/66 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/66 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/66 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/66 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/66 SetTalk/param/7]
+……それにしても、そろそろお腹が減ってきたな。
+
+[STsp_02_03::command/66 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/68 SetAudio/param/1]
+se_411
+
+[STsp_02_03::command/69 SetTalk/param/1]
+avg3_999
+
+[STsp_02_03::command/69 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/69 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/69 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/69 SetTalk/param/7]
+オ前、==W==ハラ、==W==減ッタ？
+
+[STsp_02_03::command/69 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/75 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/75 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/75 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/75 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/75 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/76 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/76 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/76 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/76 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/76 SetTalk/param/7]
+ああ、塔に入るまえからなにも食べていな――
+
+[STsp_02_03::command/76 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/77 SetMainRoleTalk/param/2]
+002
+
+[STsp_02_03::command/77 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STsp_02_03::command/77 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/77 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/77 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/78 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/78 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/78 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/78 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/78 SetTalk/param/7]
+…………ぬ？
+
+[STsp_02_03::command/78 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/80 SetAudio/param/1]
+se_074
+
+[STsp_02_03::command/81 SetTrans/param/2]
+4
+
+[STsp_02_03::command/81 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/81 SetTrans/param/8]
+default
+
+[STsp_02_03::command/82 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/82 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/83 SetChar/param/2]
+none
+
+[STsp_02_03::command/83 SetChar/param/3]
+avg2_956
+
+[STsp_02_03::command/83 SetChar/param/4]
+a
+
+[STsp_02_03::command/83 SetChar/param/5]
+002
+
+[STsp_02_03::command/83 SetChar/param/6]
+none
+
+[STsp_02_03::command/84 SetAudio/param/1]
+se_178
+
+[STsp_02_03::command/85 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/85 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/85 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/85 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/85 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/85 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/86 SetTrans/param/2]
+3
+
+[STsp_02_03::command/86 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/86 SetTrans/param/8]
+default
+
+[STsp_02_03::command/88 SetTalk/param/1]
+0
+
+[STsp_02_03::command/88 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/88 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/88 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/88 SetTalk/param/7]
+慌てて振り返ると、いつの間にか背後に巨大な星骸が現れていた。
+
+[STsp_02_03::command/88 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/89 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/89 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/89 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_02_03::command/89 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/89 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/89 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/90 SetAudio/param/1]
+se_178_stop
+
+[STsp_02_03::command/91 SetTalk/param/1]
+狂気ノ料理人
+
+[STsp_02_03::command/91 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/91 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/91 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/91 SetTalk/param/7]
+オ前、==W==ハラ、減ッタ。
+
+[STsp_02_03::command/91 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/95 SetTalk/param/1]
+狂気ノ料理人
+
+[STsp_02_03::command/95 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/95 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/95 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/95 SetTalk/param/7]
+オレ、==W==ゴ飯、==W==アル。
+
+[STsp_02_03::command/95 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/100 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/100 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/100 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/100 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/100 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/100 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/101 SetAudio/param/1]
+se_059
+
+[STsp_02_03::command/102 SetFrontObj/param/2]
+qstory_tales_02_001
+
+[STsp_02_03::command/103 SetMainRoleTalk/param/2]
+007
+
+[STsp_02_03::command/103 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STsp_02_03::command/103 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/103 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/103 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/104 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/104 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/104 SetTalk/param/7]
+いやいやいや、星ノ塔の中のものは==RT==食べないように言われているから……
+
+[STsp_02_03::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/105 SetFrontObj/param/2]
+qstory_tales_02_001
+
+[STsp_02_03::command/106 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/106 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/106 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/106 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/106 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/106 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/107 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/107 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/107 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_02_03::command/107 CtrlChar/param/11]
+buman
+
+[STsp_02_03::command/107 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/107 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/108 SetAudio/param/1]
+se_278
+
+[STsp_02_03::command/109 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/109 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/109 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/109 CtrlChar/param/11]
+Tiao
+
+[STsp_02_03::command/109 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/109 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/111 SetFx/param/1]
+fx_avg_dust_light
+
+[STsp_02_03::command/112 CtrlStage/param/9]
+Xiao
+
+[STsp_02_03::command/112 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/113 SetTalk/param/1]
+狂気ノ料理人
+
+[STsp_02_03::command/113 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/113 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/113 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/113 SetTalk/param/7]
+食ベロ。
+
+[STsp_02_03::command/113 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/114 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/114 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/114 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STsp_02_03::command/114 CtrlChar/param/11]
+tiao2
+
+[STsp_02_03::command/114 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/114 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/115 SetTalk/param/1]
+狂気ノ料理人
+
+[STsp_02_03::command/115 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/115 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/115 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/115 SetTalk/param/7]
+ホラ。==W==オレ、==W==作ッタ、ゴ飯、==W==食ベロ。
+
+[STsp_02_03::command/115 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/122 SetAudio/param/1]
+se_070
+
+[STsp_02_03::command/123 CtrlStage/param/9]
+xiaozhen
+
+[STsp_02_03::command/123 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/124 SetMainRoleTalk/param/2]
+007
+
+[STsp_02_03::command/124 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STsp_02_03::command/124 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/124 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/124 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/125 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/125 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/125 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/125 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/125 SetTalk/param/7]
+えっと……実はそこまでお腹は減っていなくて……
+
+[STsp_02_03::command/125 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/126 CtrlChar/param/0]
+avg2_956
+
+[STsp_02_03::command/126 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/126 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STsp_02_03::command/126 CtrlChar/param/11]
+buman
+
+[STsp_02_03::command/126 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/126 CtrlChar/param/13]
+InSine
+
+[STsp_02_03::command/127 SetTalk/param/1]
+狂気ノ料理人
+
+[STsp_02_03::command/127 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/127 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/127 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/127 SetTalk/param/7]
+減ッテナイ？==W==ジャア、==W==客ジャナイ！==W==材料ダ！ザザザザザザ！
+
+[STsp_02_03::command/127 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/134 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/134 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/134 SetBGM/param/4]
+1500ms
+
+[STsp_02_03::command/135 CtrlStage/param/9]
+jushou
+
+[STsp_02_03::command/135 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/136 SetMainRoleTalk/param/2]
+007
+
+[STsp_02_03::command/136 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STsp_02_03::command/136 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/136 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/136 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/137 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/137 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/137 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/137 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/137 SetTalk/param/7]
+（……マズいマズいマズい！逃げなければ！）
+
+[STsp_02_03::command/137 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/138 SetAudio/param/1]
+se_276
+
+[STsp_02_03::command/139 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STsp_02_03::command/139 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/139 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/140 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/140 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/141 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[STsp_02_03::command/141 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/141 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/142 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STsp_02_03::command/142 SetBGM/param/3]
+m59
+
+[STsp_02_03::command/142 SetBGM/param/4]
+2000ms
+
+[STsp_02_03::command/143 SetAudio/param/1]
+se_411
+
+[STsp_02_03::command/144 SetAudio/param/1]
+se_052
+
+[STsp_02_03::command/145 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/145 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/146 SetTalk/param/1]
+狂気ノ料理人
+
+[STsp_02_03::command/146 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/146 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/146 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/146 SetTalk/param/7]
+ナンデ！！==W==ナンデ食ベナイ！！
+
+[STsp_02_03::command/146 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/149 SetAudio/param/1]
+se_070
+
+[STsp_02_03::command/150 CtrlStage/param/9]
+Zhong
+
+[STsp_02_03::command/150 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/151 SetMainRoleTalk/param/2]
+007
+
+[STsp_02_03::command/151 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/151 SetMainRoleTalk/param/4]
+diantou2
+
+[STsp_02_03::command/151 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/151 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/152 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/152 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/152 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/152 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/152 SetTalk/param/7]
+はっ、はっ、はっ……！==W==まだ追ってくるか！！
+
+[STsp_02_03::command/152 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/154 SetMainRoleTalk/param/2]
+007
+
+[STsp_02_03::command/154 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STsp_02_03::command/154 SetMainRoleTalk/param/4]
+buman
+
+[STsp_02_03::command/154 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/154 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/156 SetTalkShake/param/1]
+Zhong
+
+[STsp_02_03::command/157 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/157 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/157 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/157 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/157 SetTalk/param/7]
+<size=60>嘘じゃない！==RT==本当にお腹は減っていないんだ！
+
+[STsp_02_03::command/157 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/158 SetAudio/param/1]
+se_289
+
+[STsp_02_03::command/159 CtrlStage/param/9]
+jushou
+
+[STsp_02_03::command/159 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/160 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/160 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/160 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/160 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/160 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/161 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/161 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/161 SetTalk/param/7]
+（というほうが嘘で、いまにも空腹で倒れそうなんだが。==RT==まずい、力が抜けて意識が朦朧と……）
+
+[STsp_02_03::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/162 SetMainRoleTalk/param/2]
+016
+
+[STsp_02_03::command/162 SetMainRoleTalk/param/3]
+close
+
+[STsp_02_03::command/162 SetMainRoleTalk/param/4]
+guodongtiao1
+
+[STsp_02_03::command/162 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/162 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/163 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/163 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/164 SetChar/param/2]
+none
+
+[STsp_02_03::command/164 SetChar/param/3]
+avg3_133
+
+[STsp_02_03::command/164 SetChar/param/4]
+a
+
+[STsp_02_03::command/164 SetChar/param/5]
+002
+
+[STsp_02_03::command/164 SetChar/param/6]
+none
+
+[STsp_02_03::command/165 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/165 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/165 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/165 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/165 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/165 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/166 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/166 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/167 SetTalk/param/1]
+avg3_999
+
+[STsp_02_03::command/167 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/167 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/167 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/167 SetTalk/param/7]
+お～い、そこの人〜。==W==こっちこっち～。
+
+[STsp_02_03::command/167 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/168 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/168 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/168 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_02_03::command/168 CtrlChar/param/11]
+youchupeng
+
+[STsp_02_03::command/168 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/168 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/171 SetAudio/param/1]
+se_055
+
+[STsp_02_03::command/172 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/172 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/172 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/172 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/172 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/172 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/173 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/173 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/174 SetAudio/param/1]
+se_411
+
+[STsp_02_03::command/175 SetTalk/param/1]
+狂気ノ料理人
+
+[STsp_02_03::command/175 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/175 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/175 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/175 SetTalk/param/7]
+ナンデ、==W==オレノ==W==ゴ飯、==W==食ベナイ！！
+
+[STsp_02_03::command/175 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/180 SetAudio/param/1]
+se_278
+
+[STsp_02_03::command/181 CtrlStage/param/9]
+Xiao
+
+[STsp_02_03::command/181 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/184 SetAudio/param/1]
+se_048
+
+[STsp_02_03::command/185 CtrlStage/param/9]
+Zhong
+
+[STsp_02_03::command/185 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/186 SetMainRoleTalk/param/2]
+007
+
+[STsp_02_03::command/186 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/186 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/186 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/186 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/187 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/187 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/187 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/187 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/187 SetTalk/param/7]
+うわあああっ――
+
+[STsp_02_03::command/187 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/188 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/188 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/188 SetBGM/param/4]
+1500ms
+
+[STsp_02_03::command/189 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/189 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/190 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/190 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/190 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/190 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/190 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/190 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/191 SetAudio/param/1]
+se_072
+
+[STsp_02_03::command/192 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/192 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/192 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/192 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/192 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/192 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/193 SetTrans/param/2]
+AvgStageEffect_fade_left
+
+[STsp_02_03::command/193 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/193 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/194 SetBg/param/1]
+tower_supermarket
+
+[STsp_02_03::command/194 SetBg/param/2]
+0
+
+[STsp_02_03::command/194 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/194 SetBg/param/6]
+default
+
+[STsp_02_03::command/195 SetTrans/param/2]
+AvgStageEffect_fade_right
+
+[STsp_02_03::command/195 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/195 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/196 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STsp_02_03::command/196 SetBGM/param/3]
+m49
+
+[STsp_02_03::command/196 SetBGM/param/4]
+4000ms
+
+[STsp_02_03::command/198 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/198 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/198 SetMainRoleTalk/param/4]
+JuGong
+
+[STsp_02_03::command/198 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/198 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/199 SetAudio/param/1]
+se_009
+
+[STsp_02_03::command/200 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/200 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/200 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/200 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/200 SetTalk/param/7]
+……た、助かった、のか？
+
+[STsp_02_03::command/200 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/202 SetAudio/param/1]
+se_065
+
+[STsp_02_03::command/203 SetChar/param/2]
+none
+
+[STsp_02_03::command/203 SetChar/param/3]
+avg3_133
+
+[STsp_02_03::command/203 SetChar/param/4]
+a
+
+[STsp_02_03::command/203 SetChar/param/5]
+002
+
+[STsp_02_03::command/203 SetChar/param/6]
+none
+
+[STsp_02_03::command/204 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/204 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/204 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/204 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/204 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/204 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/205 SetTalk/param/1]
+avg3_999
+
+[STsp_02_03::command/205 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/205 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/205 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/205 SetTalk/param/7]
+ん〜？まあダイジョブっしょ。あいつ、ここには入れないし。
+
+[STsp_02_03::command/205 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/207 SetMainRoleTalk/param/2]
+003
+
+[STsp_02_03::command/207 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/207 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/207 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/207 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/208 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/208 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/208 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/208 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/208 SetTalk/param/7]
+そうか、助けてくれてありがとう。==RT==ところで……==W==君は誰だ？
+
+[STsp_02_03::command/208 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/209 SetMainRoleTalk/param/2]
+002
+
+[STsp_02_03::command/209 SetMainRoleTalk/param/3]
+close
+
+[STsp_02_03::command/209 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/209 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/209 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/211 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/211 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/211 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/211 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/211 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/211 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/212 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/212 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/212 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/212 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/212 SetTalk/param/7]
+あたし？あたしは星ノ塔のコンビニで店員やってるポーシア。==RT==ヨロ～。そういうあんたは？
+
+[STsp_02_03::command/212 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/214 SetMainRoleTalk/param/2]
+005
+
+[STsp_02_03::command/214 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STsp_02_03::command/214 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/214 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/214 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/215 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/215 SetTalk/param/7]
+私は……すまない、記憶喪失で==RT==自分の名前すら思い出せないんだ。
+
+[STsp_02_03::command/215 SetTalk/param/8]
+僕は……すまない、記憶喪失で==RT==自分の名前すら思い出せないんだ。
+
+[STsp_02_03::command/216 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/216 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/216 CtrlChar/param/3]
+avg_emoji_question
+
+[STsp_02_03::command/216 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/216 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/216 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/217 SetAudio/param/1]
+se_017
+
+[STsp_02_03::command/218 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/218 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/218 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/218 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/218 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/218 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/219 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/220 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/220 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/220 CtrlChar/param/2]
+003
+
+[STsp_02_03::command/220 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/220 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/220 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/220 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/221 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/221 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/221 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/221 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/221 SetTalk/param/7]
+ふーん？ま、いいや。それよりお腹減ってるんでしょ？==RT==ならとりまこれでも食べなよ。
+
+[STsp_02_03::command/221 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/222 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/222 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/222 CtrlChar/param/2]
+002
+
+[STsp_02_03::command/222 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/222 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/222 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/222 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/223 SetMainRoleTalk/param/2]
+002
+
+[STsp_02_03::command/223 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STsp_02_03::command/223 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/223 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/223 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/224 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/224 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/224 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/224 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/224 SetTalk/param/7]
+こ、これは……食べ物なのか？
+
+[STsp_02_03::command/224 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/225 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/225 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/225 CtrlChar/param/2]
+005
+
+[STsp_02_03::command/225 CtrlChar/param/3]
+avg_emoji_star
+
+[STsp_02_03::command/225 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/225 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/225 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/226 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/226 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/226 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/226 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/226 SetTalk/param/7]
+うちの大人気商品――==RT==『とんかつ弁当』だよ。外はサクサク、中はジューシー。==RT==あの料理研究星骸が作るもんより、ゼッタイおいしいんだから。
+
+[STsp_02_03::command/226 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/227 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/227 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/227 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/227 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/227 SetTalk/param/7]
+てなわけで、温めてあげよっか？
+
+[STsp_02_03::command/227 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/229 SetMainRoleTalk/param/2]
+002
+
+[STsp_02_03::command/229 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/229 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/229 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/229 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/230 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/230 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/230 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/230 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/230 SetTalk/param/7]
+ぬ？あ……ではよろしく頼む。
+
+[STsp_02_03::command/230 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/231 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/232 SetAudio/param/1]
+se_077
+
+[STsp_02_03::command/233 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/233 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/233 CtrlChar/param/2]
+002
+
+[STsp_02_03::command/233 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/233 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/233 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/233 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/234 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/234 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/234 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/234 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/234 SetTalk/param/7]
+かしこま〜。ちょい待ってね〜。
+
+[STsp_02_03::command/234 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/235 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/235 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/235 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/235 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/235 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/235 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/236 SetTrans/param/2]
+34
+
+[STsp_02_03::command/236 SetTrans/param/3]
+InSine
+
+[STsp_02_03::command/236 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/237 SetAudio/param/1]
+se_446
+
+[STsp_02_03::command/238 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/238 CtrlBg/param/11]
+Linear
+
+[STsp_02_03::command/239 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/239 CtrlBg/param/11]
+OutSine
+
+[STsp_02_03::command/240 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/240 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/241 SetTrans/param/2]
+0
+
+[STsp_02_03::command/241 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/241 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/242 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/242 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/242 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/242 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/242 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/243 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/243 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/243 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/243 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/243 SetTalk/param/7]
+（なんだこれは……！？とんでもなくいい匂いで……==W====RT==余計お腹が減ってきたぞ！）
+
+[STsp_02_03::command/243 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/245 SetMainRoleTalk/param/2]
+021
+
+[STsp_02_03::command/245 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STsp_02_03::command/245 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/245 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/245 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/247 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/247 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/248 SetBg/param/1]
+tower_supermarket
+
+[STsp_02_03::command/248 SetBg/param/2]
+0
+
+[STsp_02_03::command/248 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/248 SetBg/param/6]
+default
+
+[STsp_02_03::command/249 SetAudio/param/1]
+se_062
+
+[STsp_02_03::command/250 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/250 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/250 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/250 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/250 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/250 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/251 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/251 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/251 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/251 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/251 SetTalk/param/7]
+はい、とんかつ弁当お待ち〜。熱いから気をつけてね。
+
+[STsp_02_03::command/251 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/252 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/252 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/252 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/252 CtrlChar/param/11]
+JuGong
+
+[STsp_02_03::command/252 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/252 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/254 SetAudio/param/1]
+se_350
+
+[STsp_02_03::command/255 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/256 SetMainRoleTalk/param/2]
+002
+
+[STsp_02_03::command/256 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STsp_02_03::command/256 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/256 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/256 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/257 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/257 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/257 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/257 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/257 SetTalk/param/7]
+ああ。ありがとう……い、いただきます！
+
+[STsp_02_03::command/257 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/258 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/259 SetAudio/param/1]
+se_341
+
+[STsp_02_03::command/260 SetFx/param/1]
+fx_avg_bubble
+
+[STsp_02_03::command/261 SetBg/param/1]
+mood_2
+
+[STsp_02_03::command/261 SetBg/param/2]
+0
+
+[STsp_02_03::command/261 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/261 SetBg/param/6]
+default
+
+[STsp_02_03::command/262 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STsp_02_03::command/262 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/262 SetBGM/param/4]
+none
+
+[STsp_02_03::command/263 SetMainRoleTalk/param/2]
+013
+
+[STsp_02_03::command/263 SetMainRoleTalk/param/3]
+avg_emoji_flower
+
+[STsp_02_03::command/263 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/263 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/263 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/264 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/264 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/264 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/264 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/264 SetTalk/param/7]
+こ、これが『とんかつ』……！？==RT==ウマい……ウマすぎる！なんというウマさだ！！
+
+[STsp_02_03::command/264 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/265 SetBg/param/1]
+tower_supermarket
+
+[STsp_02_03::command/265 SetBg/param/2]
+31
+
+[STsp_02_03::command/265 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/265 SetBg/param/6]
+fade
+
+[STsp_02_03::command/266 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/266 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/266 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/266 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/266 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/266 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/267 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/267 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/267 CtrlChar/param/2]
+005
+
+[STsp_02_03::command/267 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_02_03::command/267 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/267 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/267 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/268 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/268 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/268 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/268 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/268 SetTalk/param/7]
+めっちゃ豪快でウケるんですけど。てか事情は知らないけど、==RT==そんなに気に入ったなら、ずっとここにいれば？==RT==そうすりゃそのとんかつ弁当だって食べ放題だよ？
+
+[STsp_02_03::command/268 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/270 SetMainRoleTalk/param/2]
+002
+
+[STsp_02_03::command/270 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STsp_02_03::command/270 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/270 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/270 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/271 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/271 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/271 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/271 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/271 SetTalk/param/7]
+ずっと……ここに？
+
+[STsp_02_03::command/271 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/272 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/272 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/272 CtrlChar/param/2]
+002
+
+[STsp_02_03::command/272 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_02_03::command/272 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/272 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/272 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/273 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/273 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/273 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/273 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/273 SetTalk/param/7]
+そそ。もち食べた分は働いてもらうけど……==RT==三食とんかつ弁当昼寝つき、どう？
+
+[STsp_02_03::command/273 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/274 SetAudio/param/1]
+se_077
+
+[STsp_02_03::command/275 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/275 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/275 CtrlChar/param/2]
+002
+
+[STsp_02_03::command/275 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STsp_02_03::command/275 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/275 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/275 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/276 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/276 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/276 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/276 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/276 SetTalk/param/7]
+だいたい塔から抜け出すとかさ、無駄に希望を持つほうが残酷じゃん？
+
+[STsp_02_03::command/276 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/278 SetMainRoleTalk/param/2]
+025
+
+[STsp_02_03::command/278 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STsp_02_03::command/278 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/278 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/278 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/279 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/279 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/279 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/279 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/279 SetTalk/param/7]
+……え？
+
+[STsp_02_03::command/279 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/280 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STsp_02_03::command/280 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/280 SetBGM/param/4]
+none
+
+[STsp_02_03::command/282 SetAudio/param/1]
+se_169
+
+[STsp_02_03::command/283 SetTrans/param/2]
+31
+
+[STsp_02_03::command/283 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/283 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/284 SetBg/param/1]
+tower_entrance
+
+[STsp_02_03::command/284 SetBg/param/2]
+0
+
+[STsp_02_03::command/284 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/284 SetBg/param/6]
+default
+
+[STsp_02_03::command/285 SetChar/param/2]
+L_in
+
+[STsp_02_03::command/285 SetChar/param/3]
+avg1_111
+
+[STsp_02_03::command/285 SetChar/param/4]
+a
+
+[STsp_02_03::command/285 SetChar/param/5]
+006
+
+[STsp_02_03::command/285 SetChar/param/6]
+none
+
+[STsp_02_03::command/286 SetChar/param/2]
+R_in
+
+[STsp_02_03::command/286 SetChar/param/3]
+avg1_112
+
+[STsp_02_03::command/286 SetChar/param/4]
+a
+
+[STsp_02_03::command/286 SetChar/param/5]
+006
+
+[STsp_02_03::command/286 SetChar/param/6]
+none
+
+[STsp_02_03::command/287 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_02_03::command/288 SetTrans/param/2]
+0
+
+[STsp_02_03::command/288 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/288 SetTrans/param/8]
+default
+
+[STsp_02_03::command/289 SetTalk/param/1]
+avg1_111
+
+[STsp_02_03::command/289 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/289 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/289 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/289 SetTalk/param/7]
+……いえ、持ち出そうとして、回収されるだけならまだマシです。
+
+[STsp_02_03::command/289 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/290 CtrlChar/param/0]
+avg1_111
+
+[STsp_02_03::command/290 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/290 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/290 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/290 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/290 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/291 SetTalk/param/1]
+avg1_111
+
+[STsp_02_03::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/291 SetTalk/param/7]
+塔の中のものを摂取し続けると、自分が何者かすら忘れてしまい……
+
+[STsp_02_03::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/292 SetTalk/param/1]
+avg1_111
+
+[STsp_02_03::command/292 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/292 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/292 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/292 SetTalk/param/7]
+最後には、星ノ塔と一体化してしまうと言われていますから。
+
+[STsp_02_03::command/292 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/294 SetTrans/param/2]
+30
+
+[STsp_02_03::command/294 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/294 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/295 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_02_03::command/296 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/296 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/296 SetBGM/param/4]
+4000ms
+
+[STsp_02_03::command/297 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/297 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/297 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/297 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/297 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/298 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/298 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/298 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/298 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/298 SetTalk/param/7]
+（そうだ、アヤメがそんなことを言っていた……）
+
+[STsp_02_03::command/298 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/299 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/299 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/299 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/299 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/299 SetTalk/param/7]
+（星ノ塔の中のものを食べてはいけない……）
+
+[STsp_02_03::command/299 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/300 SetMainRoleTalk/param/2]
+009
+
+[STsp_02_03::command/300 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/300 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/300 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/300 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/301 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/301 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/301 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/301 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/301 SetTalk/param/7]
+たべたら……なんだっけ……？
+
+[STsp_02_03::command/301 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/302 SetBg/param/1]
+sky_dusk_b
+
+[STsp_02_03::command/302 SetBg/param/2]
+0
+
+[STsp_02_03::command/302 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/302 SetBg/param/6]
+default
+
+[STsp_02_03::command/303 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/303 CtrlBg/param/11]
+Linear
+
+[STsp_02_03::command/304 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/304 CtrlBg/param/11]
+Linear
+
+[STsp_02_03::command/305 SetTrans/param/2]
+0
+
+[STsp_02_03::command/305 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/305 SetTrans/param/8]
+default
+
+[STsp_02_03::command/307 SetAudio/param/1]
+se_055
+
+[STsp_02_03::command/308 SetBg/param/1]
+sky_night_b
+
+[STsp_02_03::command/308 SetBg/param/2]
+0
+
+[STsp_02_03::command/308 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/308 SetBg/param/6]
+default
+
+[STsp_02_03::command/309 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/309 CtrlBg/param/11]
+Linear
+
+[STsp_02_03::command/310 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/310 CtrlBg/param/11]
+Linear
+
+[STsp_02_03::command/312 SetBg/param/1]
+sky_sunny
+
+[STsp_02_03::command/312 SetBg/param/2]
+0
+
+[STsp_02_03::command/312 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/312 SetBg/param/6]
+default
+
+[STsp_02_03::command/313 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/313 CtrlBg/param/11]
+Linear
+
+[STsp_02_03::command/314 CtrlBg/param/10]
+none
+
+[STsp_02_03::command/314 CtrlBg/param/11]
+Linear
+
+[STsp_02_03::command/316 SetAudio/param/1]
+se_076
+
+[STsp_02_03::command/317 SetTrans/param/2]
+0
+
+[STsp_02_03::command/317 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/317 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/318 SetFx/param/1]
+fx_avg_eye_ev
+
+[STsp_02_03::command/319 SetAudio/param/1]
+se_009
+
+[STsp_02_03::command/320 SetBg/param/1]
+tower_fire_earth
+
+[STsp_02_03::command/320 SetBg/param/2]
+0
+
+[STsp_02_03::command/320 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/320 SetBg/param/6]
+default
+
+[STsp_02_03::command/321 SetTrans/param/2]
+0
+
+[STsp_02_03::command/321 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/321 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/323 SetAudio/param/1]
+se_095
+
+[STsp_02_03::command/324 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/324 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/325 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/325 SetBGM/param/3]
+m44
+
+[STsp_02_03::command/325 SetBGM/param/4]
+none
+
+[STsp_02_03::command/326 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/326 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/326 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/326 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/326 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/327 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/327 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/327 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/327 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/327 SetTalk/param/7]
+（今日はお客さん少ないな……）
+
+[STsp_02_03::command/327 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/328 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/328 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/328 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/328 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/328 SetTalk/param/7]
+（もっと呼び込みをして、お客さんを集めないと）
+
+[STsp_02_03::command/328 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/330 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/330 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/332 SetAudio/param/1]
+se_061
+
+[STsp_02_03::command/333 SetChar/param/2]
+none
+
+[STsp_02_03::command/333 SetChar/param/3]
+avg3_100
+
+[STsp_02_03::command/333 SetChar/param/4]
+j
+
+[STsp_02_03::command/333 SetChar/param/5]
+002
+
+[STsp_02_03::command/333 SetChar/param/6]
+none
+
+[STsp_02_03::command/334 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/334 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/334 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/334 CtrlChar/param/11]
+tiao2
+
+[STsp_02_03::command/334 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/334 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/335 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/335 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/335 CtrlChar/param/2]
+013
+
+[STsp_02_03::command/335 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_02_03::command/335 CtrlChar/param/11]
+huanxin
+
+[STsp_02_03::command/335 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/335 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/336 SetTalk/param/1]
+1
+
+[STsp_02_03::command/336 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/336 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/336 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/336 SetTalk/param/7]
+キュ〜、キュキュ〜イ♪
+
+[STsp_02_03::command/336 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/337 SetAudio/param/1]
+se_077
+
+[STsp_02_03::command/338 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/338 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/338 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/338 CtrlChar/param/11]
+lengzhan
+
+[STsp_02_03::command/338 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/338 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/339 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/339 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/341 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/341 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/341 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/341 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/341 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/342 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/342 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/342 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/342 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/342 SetTalk/param/7]
+（今日もしっかり働いて、売上を出さなくては……）
+
+[STsp_02_03::command/342 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/343 SetMainRoleTalk/param/2]
+011
+
+[STsp_02_03::command/343 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/343 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/343 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/343 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/344 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/344 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/344 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/344 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/344 SetTalk/param/7]
+（売り上げが増えたら、==RT==店長がボーナスをくれるかもしれないし）
+
+[STsp_02_03::command/344 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/345 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/345 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/347 SetChar/param/2]
+none
+
+[STsp_02_03::command/347 SetChar/param/3]
+avg3_138
+
+[STsp_02_03::command/347 SetChar/param/4]
+a
+
+[STsp_02_03::command/347 SetChar/param/5]
+002
+
+[STsp_02_03::command/347 SetChar/param/6]
+none
+
+[STsp_02_03::command/348 SetAudio/param/1]
+se_060
+
+[STsp_02_03::command/349 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/349 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/349 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/349 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/349 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/349 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/351 SetAudio/param/1]
+se_069
+
+[STsp_02_03::command/352 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/352 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/352 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/352 CtrlChar/param/11]
+lengzhan
+
+[STsp_02_03::command/352 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/352 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/353 SetAudio/param/1]
+se_047
+
+[STsp_02_03::command/354 SetChar/param/2]
+none
+
+[STsp_02_03::command/354 SetChar/param/3]
+avg3_100
+
+[STsp_02_03::command/354 SetChar/param/4]
+j
+
+[STsp_02_03::command/354 SetChar/param/5]
+013
+
+[STsp_02_03::command/354 SetChar/param/6]
+none
+
+[STsp_02_03::command/355 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/355 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/355 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/355 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/355 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/355 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/356 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/356 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/357 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/357 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/357 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_02_03::command/357 CtrlChar/param/11]
+huanxin
+
+[STsp_02_03::command/357 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/357 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/358 SetTalk/param/1]
+1
+
+[STsp_02_03::command/358 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/358 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/358 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/358 SetTalk/param/7]
+キュ〜、キュキュ〜イ♪
+
+[STsp_02_03::command/358 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/359 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/359 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/359 CtrlChar/param/3]
+avg_emoji_idea
+
+[STsp_02_03::command/359 CtrlChar/param/11]
+jushou
+
+[STsp_02_03::command/359 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/359 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/360 SetAudio/param/1]
+se_010
+
+[STsp_02_03::command/361 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/361 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/361 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/361 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/361 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/361 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/362 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/362 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/362 CtrlChar/param/2]
+005
+
+[STsp_02_03::command/362 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/362 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/362 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/362 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/363 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/363 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/364 SetBg/param/1]
+tower_supermarket
+
+[STsp_02_03::command/364 SetBg/param/2]
+AvgStageEffect_fade_right
+
+[STsp_02_03::command/364 SetBg/param/3]
+OutSine
+
+[STsp_02_03::command/364 SetBg/param/6]
+default
+
+[STsp_02_03::command/365 SetAudio/param/1]
+se_060
+
+[STsp_02_03::command/366 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/366 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/366 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/366 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/366 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/366 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/367 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/367 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/367 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/367 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/367 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/367 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/368 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/368 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/368 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/368 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/368 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/368 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/369 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/369 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/369 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/369 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/369 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/369 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/371 SetAudio/param/1]
+se_100
+
+[STsp_02_03::command/372 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/372 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/372 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/372 CtrlChar/param/11]
+JuGong
+
+[STsp_02_03::command/372 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/372 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/373 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/375 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/375 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/375 CtrlChar/param/3]
+avg_emoji_star
+
+[STsp_02_03::command/375 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/375 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/375 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/376 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/377 SetAudio/param/1]
+se_074
+
+[STsp_02_03::command/378 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/378 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/379 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/379 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/379 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/379 CtrlChar/param/11]
+JuGong
+
+[STsp_02_03::command/379 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/379 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/380 SetAudio/param/1]
+se_238
+
+[STsp_02_03::command/381 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/381 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/381 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/381 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/381 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/381 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/382 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/382 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/382 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/382 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/382 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/382 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/384 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/384 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/384 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/384 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/384 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/384 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/385 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/385 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/385 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/385 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/385 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/385 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/386 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/386 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/388 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/388 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STsp_02_03::command/388 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/388 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/388 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/389 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/389 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/389 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/389 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/389 SetTalk/param/7]
+（休憩時間はまだかな？==RT==早くとんかつ弁当が食べたい……）
+
+[STsp_02_03::command/389 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/390 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/390 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/390 SetBGM/param/4]
+1000ms
+
+[STsp_02_03::command/391 SetMainRoleTalk/param/2]
+025
+
+[STsp_02_03::command/391 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[STsp_02_03::command/391 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/391 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/391 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/392 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/392 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/392 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/392 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/392 SetTalk/param/7]
+（……ぬ？とんかつ弁当？そうだ、とんかつ弁当だ！！）
+
+[STsp_02_03::command/392 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/394 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/394 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/396 SetChar/param/2]
+C_in
+
+[STsp_02_03::command/396 SetChar/param/3]
+avg3_100
+
+[STsp_02_03::command/396 SetChar/param/4]
+j
+
+[STsp_02_03::command/396 SetChar/param/5]
+010
+
+[STsp_02_03::command/396 SetChar/param/6]
+none
+
+[STsp_02_03::command/397 SetAudio/param/1]
+se_112
+
+[STsp_02_03::command/398 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/398 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/398 CtrlChar/param/2]
+016
+
+[STsp_02_03::command/398 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/398 CtrlChar/param/11]
+lengzhan
+
+[STsp_02_03::command/398 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/398 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/399 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/399 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/400 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STsp_02_03::command/400 SetBGM/param/3]
+m46
+
+[STsp_02_03::command/400 SetBGM/param/4]
+2000ms
+
+[STsp_02_03::command/401 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/401 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/401 CtrlChar/param/2]
+025
+
+[STsp_02_03::command/401 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STsp_02_03::command/401 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/401 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/401 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/402 SetTalk/param/1]
+1
+
+[STsp_02_03::command/402 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/402 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/402 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/402 SetTalk/param/7]
+キュイ〜〜〜〜ッ！！！！
+
+[STsp_02_03::command/402 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/403 SetAudio/param/1]
+se_077
+
+[STsp_02_03::command/404 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/404 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/404 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/404 CtrlChar/param/11]
+JuGong
+
+[STsp_02_03::command/404 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/404 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/405 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/405 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/405 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/405 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/405 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/405 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/406 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/406 CtrlStage/param/10]
+InOutSine
+
+[STsp_02_03::command/408 SetMainRoleTalk/param/2]
+025
+
+[STsp_02_03::command/408 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[STsp_02_03::command/408 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/408 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/408 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/409 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/409 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/409 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/409 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/409 SetTalk/param/7]
+（どうして私はこんな姿に……！？）
+
+[STsp_02_03::command/409 SetTalk/param/8]
+（どうして僕はこんな姿に……！？）
+
+[STsp_02_03::command/410 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/410 SetMainRoleTalk/param/3]
+close
+
+[STsp_02_03::command/410 SetMainRoleTalk/param/4]
+chijing
+
+[STsp_02_03::command/410 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/410 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/411 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/411 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/411 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/411 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/411 SetTalk/param/7]
+ギュイ゛〜゛〜゛〜゛〜゛ッ゛！！！！
+
+[STsp_02_03::command/411 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/412 SetAudio/param/1]
+se_096
+
+[STsp_02_03::command/413 CtrlStage/param/9]
+hengbo
+
+[STsp_02_03::command/413 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/415 SetAudio/param/1]
+se_077
+
+[STsp_02_03::command/416 SetMainRoleTalk/param/2]
+016
+
+[STsp_02_03::command/416 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STsp_02_03::command/416 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/416 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/416 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/417 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/417 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/417 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/417 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/417 SetTalk/param/7]
+（ダメだ……！言葉を話せないうえに、==RT==自由に動くことすらままならない）
+
+[STsp_02_03::command/417 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/418 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STsp_02_03::command/418 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/418 SetBGM/param/4]
+none
+
+[STsp_02_03::command/420 SetAudio/param/1]
+se_169
+
+[STsp_02_03::command/421 SetTrans/param/2]
+30
+
+[STsp_02_03::command/421 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/421 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/422 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/422 CtrlStage/param/10]
+Linear
+
+[STsp_02_03::command/423 SetBg/param/1]
+tower_supermarket
+
+[STsp_02_03::command/423 SetBg/param/2]
+0
+
+[STsp_02_03::command/423 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/423 SetBg/param/6]
+default
+
+[STsp_02_03::command/424 SetChar/param/2]
+none
+
+[STsp_02_03::command/424 SetChar/param/3]
+avg3_133
+
+[STsp_02_03::command/424 SetChar/param/4]
+a
+
+[STsp_02_03::command/424 SetChar/param/5]
+002
+
+[STsp_02_03::command/424 SetChar/param/6]
+none
+
+[STsp_02_03::command/425 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_02_03::command/426 SetTrans/param/2]
+0
+
+[STsp_02_03::command/426 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/426 SetTrans/param/8]
+default
+
+[STsp_02_03::command/427 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/427 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/427 CtrlChar/param/2]
+005
+
+[STsp_02_03::command/427 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_02_03::command/427 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/427 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/427 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/428 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/428 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/428 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/428 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/428 SetTalk/param/7]
+めっちゃ豪快でウケるんですけど。てか事情は知らないけど、==RT==そんなに気に入ったなら、ずっとここにいれば？==RT==そうすりゃそのとんかつ弁当だって食べ放題だよ？
+
+[STsp_02_03::command/428 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/430 SetMainRoleTalk/param/2]
+002
+
+[STsp_02_03::command/430 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[STsp_02_03::command/430 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/430 SetMainRoleTalk/param/5]
+z
+
+[STsp_02_03::command/430 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/431 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/431 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/431 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/431 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/431 SetTalk/param/7]
+ずっと……ここに？
+
+[STsp_02_03::command/431 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/432 CtrlChar/param/0]
+avg3_133
+
+[STsp_02_03::command/432 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/432 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_02_03::command/432 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/432 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/432 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/433 SetTalk/param/1]
+avg3_133
+
+[STsp_02_03::command/433 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/433 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/433 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/433 SetTalk/param/7]
+そそ。もち食べた分は働いてもらうけど……==RT==三食とんかつ弁当昼寝つき、どう？
+
+[STsp_02_03::command/433 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/434 SetTrans/param/2]
+0
+
+[STsp_02_03::command/434 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/434 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/435 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STsp_02_03::command/436 SetBg/param/1]
+tower_supermarket
+
+[STsp_02_03::command/436 SetBg/param/2]
+0
+
+[STsp_02_03::command/436 SetBg/param/3]
+Linear
+
+[STsp_02_03::command/436 SetBg/param/6]
+default
+
+[STsp_02_03::command/437 SetMainRoleTalk/param/2]
+009
+
+[STsp_02_03::command/437 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[STsp_02_03::command/437 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/437 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/437 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/438 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/438 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/438 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/438 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/438 SetTalk/param/7]
+（あのとき私は、コンビニのとんかつ弁当を食べて、==RT==それから意識が遠くなって……）
+
+[STsp_02_03::command/438 SetTalk/param/8]
+（あのとき僕は、コンビニのとんかつ弁当を食べて、==RT==それから意識が遠くなって……）
+
+[STsp_02_03::command/439 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/439 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/439 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/439 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/439 SetTalk/param/7]
+（こんな姿になったのは、おそらくそれが原因か……==RT==あれからどれだけ時間が経ったのかもわからないし）
+
+[STsp_02_03::command/439 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/440 SetMainRoleTalk/param/2]
+020
+
+[STsp_02_03::command/440 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/440 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/440 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/440 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/441 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/441 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/441 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/441 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/441 SetTalk/param/7]
+（空白旅団のみんなは、もう神器を手に入れて、==RT==塔を出てしまったのだろうか……？）
+
+[STsp_02_03::command/441 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/442 SetMainRoleTalk/param/2]
+015
+
+[STsp_02_03::command/442 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/442 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/442 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/442 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/443 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/443 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/443 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/443 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/443 SetTalk/param/7]
+（……いや、仮にまだ中にいたとしても、==RT==こんな姿では私だと気づいてもらえないだろうな）
+
+[STsp_02_03::command/443 SetTalk/param/8]
+（……いや、仮にまだ中にいたとしても、==RT==こんな姿では僕だと気づいてもらえないだろうな）
+
+[STsp_02_03::command/444 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/444 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/446 SetAudio/param/1]
+se_169
+
+[STsp_02_03::command/447 SetChar/param/2]
+none
+
+[STsp_02_03::command/447 SetChar/param/3]
+avg2_983
+
+[STsp_02_03::command/447 SetChar/param/4]
+a
+
+[STsp_02_03::command/447 SetChar/param/5]
+002
+
+[STsp_02_03::command/447 SetChar/param/6]
+none
+
+[STsp_02_03::command/448 SetChar/param/2]
+none
+
+[STsp_02_03::command/448 SetChar/param/3]
+avg3_100
+
+[STsp_02_03::command/448 SetChar/param/4]
+j
+
+[STsp_02_03::command/448 SetChar/param/5]
+005
+
+[STsp_02_03::command/448 SetChar/param/6]
+none
+
+[STsp_02_03::command/449 SetTrans/param/2]
+0
+
+[STsp_02_03::command/449 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/449 SetTrans/param/8]
+default
+
+[STsp_02_03::command/450 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STsp_02_03::command/450 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/450 SetBGM/param/4]
+none
+
+[STsp_02_03::command/451 CtrlChar/param/0]
+avg2_983
+
+[STsp_02_03::command/451 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/451 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STsp_02_03::command/451 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/451 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/451 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/452 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/452 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/452 CtrlChar/param/2]
+013
+
+[STsp_02_03::command/452 CtrlChar/param/3]
+avg_emoji_idea
+
+[STsp_02_03::command/452 CtrlChar/param/11]
+diantou2
+
+[STsp_02_03::command/452 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/452 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/453 SetAudio/param/1]
+se_100
+
+[STsp_02_03::command/454 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/454 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/454 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/454 CtrlChar/param/11]
+JuGong
+
+[STsp_02_03::command/454 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/454 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/455 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/456 CtrlChar/param/0]
+avg2_983
+
+[STsp_02_03::command/456 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/456 CtrlChar/param/3]
+avg_emoji_happy
+
+[STsp_02_03::command/456 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/456 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/456 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/457 SetFrontObj/param/2]
+qstory_tales_02_002
+
+[STsp_02_03::command/458 CtrlChar/param/0]
+avg2_983
+
+[STsp_02_03::command/458 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/458 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/458 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/458 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/458 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/459 SetAudio/param/1]
+se_060
+
+[STsp_02_03::command/460 CtrlChar/param/0]
+avg2_983
+
+[STsp_02_03::command/460 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/460 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/460 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/460 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/460 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/461 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/461 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/461 CtrlChar/param/2]
+010
+
+[STsp_02_03::command/461 CtrlChar/param/3]
+close
+
+[STsp_02_03::command/461 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/461 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/461 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/462 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/462 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/462 CtrlChar/param/2]
+005
+
+[STsp_02_03::command/462 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/462 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/462 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/462 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/463 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/463 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/463 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STsp_02_03::command/463 CtrlChar/param/11]
+diantou
+
+[STsp_02_03::command/463 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/463 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/464 SetTalk/param/1]
+1
+
+[STsp_02_03::command/464 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/464 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/464 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/464 SetTalk/param/7]
+キュウ……
+
+[STsp_02_03::command/464 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/465 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/465 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/466 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/466 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/466 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/466 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/466 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/466 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/467 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/467 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/469 SetMainRoleTalk/param/2]
+015
+
+[STsp_02_03::command/469 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STsp_02_03::command/469 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/469 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/469 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/470 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/470 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/470 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/470 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/470 SetTalk/param/7]
+（私はこのまま、一生働かされ続けるのか……？）
+
+[STsp_02_03::command/470 SetTalk/param/8]
+（僕はこのまま、一生働かされ続けるのか……？）
+
+[STsp_02_03::command/471 SetMainRoleTalk/param/2]
+016
+
+[STsp_02_03::command/471 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STsp_02_03::command/471 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/471 SetMainRoleTalk/param/5]
+y
+
+[STsp_02_03::command/471 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/472 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/472 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/472 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/472 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/472 SetTalk/param/7]
+（マ、マズい……==W==意識がまた……）
+
+[STsp_02_03::command/472 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/473 SetFx/param/1]
+fx_avg_noise
+
+[STsp_02_03::command/474 SetMainRoleTalk/param/2]
+010
+
+[STsp_02_03::command/474 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/474 SetMainRoleTalk/param/4]
+lengzhan
+
+[STsp_02_03::command/474 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/474 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/476 SetFx/param/1]
+fx_avg_noise
+
+[STsp_02_03::command/477 SetAudio/param/1]
+se_076
+
+[STsp_02_03::command/478 SetTrans/param/2]
+16
+
+[STsp_02_03::command/478 SetTrans/param/3]
+OutSine
+
+[STsp_02_03::command/478 SetTrans/param/8]
+fade
+
+[STsp_02_03::command/480 SetAudio/param/1]
+se_055
+
+[STsp_02_03::command/481 SetMainRoleTalk/param/2]
+011
+
+[STsp_02_03::command/481 SetMainRoleTalk/param/3]
+none
+
+[STsp_02_03::command/481 SetMainRoleTalk/param/4]
+JuGong
+
+[STsp_02_03::command/481 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/481 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/482 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/482 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/482 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/482 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/482 SetTalk/param/7]
+（今日はお客さん少ないな……）
+
+[STsp_02_03::command/482 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/483 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/483 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/483 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/483 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/483 SetTalk/param/7]
+（まだタイムセールの時間じゃないからかな？）
+
+[STsp_02_03::command/483 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/484 SetMainRoleTalk/param/2]
+017
+
+[STsp_02_03::command/484 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[STsp_02_03::command/484 SetMainRoleTalk/param/4]
+none
+
+[STsp_02_03::command/484 SetMainRoleTalk/param/5]
+r
+
+[STsp_02_03::command/484 SetMainRoleTalk/param/8]
+avg3_100
+
+[STsp_02_03::command/485 SetTalk/param/1]
+avg3_100
+
+[STsp_02_03::command/485 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/485 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/485 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/485 SetTalk/param/7]
+（いやいや！だからこそ、もっと頑張って==RT==お客さんを集めないと！）
+
+[STsp_02_03::command/485 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/486 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/486 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/488 SetChar/param/2]
+none
+
+[STsp_02_03::command/488 SetChar/param/3]
+avg3_138
+
+[STsp_02_03::command/488 SetChar/param/4]
+a
+
+[STsp_02_03::command/488 SetChar/param/5]
+002
+
+[STsp_02_03::command/488 SetChar/param/6]
+none
+
+[STsp_02_03::command/489 SetChar/param/2]
+none
+
+[STsp_02_03::command/489 SetChar/param/3]
+avg3_139
+
+[STsp_02_03::command/489 SetChar/param/4]
+a
+
+[STsp_02_03::command/489 SetChar/param/5]
+002
+
+[STsp_02_03::command/489 SetChar/param/6]
+none
+
+[STsp_02_03::command/490 SetTrans/param/2]
+0
+
+[STsp_02_03::command/490 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/490 SetTrans/param/8]
+default
+
+[STsp_02_03::command/491 SetAudio/param/1]
+se_060
+
+[STsp_02_03::command/492 CtrlChar/param/0]
+avg3_138
+
+[STsp_02_03::command/492 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/492 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/492 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/492 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/492 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/493 CtrlChar/param/0]
+avg3_139
+
+[STsp_02_03::command/493 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/493 CtrlChar/param/3]
+none
+
+[STsp_02_03::command/493 CtrlChar/param/11]
+none
+
+[STsp_02_03::command/493 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/493 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/494 CtrlChar/param/0]
+avg3_139
+
+[STsp_02_03::command/494 CtrlChar/param/1]
+a
+
+[STsp_02_03::command/494 CtrlChar/param/3]
+avg_emoji_attention
+
+[STsp_02_03::command/494 CtrlChar/param/11]
+jushou
+
+[STsp_02_03::command/494 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/494 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/495 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/495 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/496 SetAudio/param/1]
+se_061
+
+[STsp_02_03::command/497 SetChar/param/2]
+R_0.05_in
+
+[STsp_02_03::command/497 SetChar/param/3]
+avg3_100
+
+[STsp_02_03::command/497 SetChar/param/4]
+j
+
+[STsp_02_03::command/497 SetChar/param/5]
+002
+
+[STsp_02_03::command/497 SetChar/param/6]
+none
+
+[STsp_02_03::command/498 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/498 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/498 CtrlChar/param/2]
+013
+
+[STsp_02_03::command/498 CtrlChar/param/3]
+avg_emoji_music
+
+[STsp_02_03::command/498 CtrlChar/param/11]
+jushou
+
+[STsp_02_03::command/498 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/498 CtrlChar/param/13]
+OutSine
+
+[STsp_02_03::command/499 CtrlStage/param/9]
+none
+
+[STsp_02_03::command/499 CtrlStage/param/10]
+OutSine
+
+[STsp_02_03::command/500 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STsp_02_03::command/500 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/500 SetBGM/param/4]
+4000ms
+
+[STsp_02_03::command/501 CtrlChar/param/0]
+avg3_100
+
+[STsp_02_03::command/501 CtrlChar/param/1]
+j
+
+[STsp_02_03::command/501 CtrlChar/param/3]
+avg_emoji_flower
+
+[STsp_02_03::command/501 CtrlChar/param/11]
+youzai
+
+[STsp_02_03::command/501 CtrlChar/param/12]
+none
+
+[STsp_02_03::command/501 CtrlChar/param/13]
+Linear
+
+[STsp_02_03::command/502 SetTalk/param/1]
+1
+
+[STsp_02_03::command/502 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/502 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/502 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/502 SetTalk/param/7]
+キュ〜、キュキュ〜イ♪
+
+[STsp_02_03::command/502 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STsp_02_03::command/503 SetTrans/param/2]
+0
+
+[STsp_02_03::command/503 SetTrans/param/3]
+Linear
+
+[STsp_02_03::command/503 SetTrans/param/8]
+default
+

@@ -1,0 +1,6370 @@
+STm07_00 | CN | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 2122
+
+[STm07_00::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STm07_00::command/0 SetIntro/param/1]
+幕间
+
+[STm07_00::command/0 SetIntro/param/2]
+天穹保险
+
+[STm07_00::command/0 SetIntro/param/3]
+先前晚宴的暗杀骚动，是由沙蝎假扮的保险员工所引发。==RT==天穹保险新上任的经理——梅尔库莉娅在得知此事后==RT==将丑闻也视作机会，向元老院提出了她的大胆计划……
+
+[STm07_00::command/1 SetBg/param/1]
+BG_Black
+
+[STm07_00::command/1 SetBg/param/2]
+0
+
+[STm07_00::command/1 SetBg/param/3]
+Linear
+
+[STm07_00::command/1 SetBg/param/6]
+default
+
+[STm07_00::command/2 SetAudio/param/1]
+se_142
+
+[STm07_00::command/4 CtrlStage/param/9]
+none
+
+[STm07_00::command/4 CtrlStage/param/10]
+Linear
+
+[STm07_00::command/5 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/5 SetBg/param/2]
+0
+
+[STm07_00::command/5 SetBg/param/3]
+Linear
+
+[STm07_00::command/5 SetBg/param/6]
+default
+
+[STm07_00::command/6 CtrlBg/param/10]
+none
+
+[STm07_00::command/6 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/7 SetAudio/param/1]
+se_408
+
+[STm07_00::command/8 SetSceneHeading/param/0]
+09:30
+
+[STm07_00::command/8 SetSceneHeading/param/1]
+猎月
+
+[STm07_00::command/8 SetSceneHeading/param/2]
+8日
+
+[STm07_00::command/8 SetSceneHeading/param/3]
+菲莱金城区
+
+[STm07_00::command/8 SetSceneHeading/param/4]
+天穹保险办公室
+
+[STm07_00::command/9 CtrlStage/param/9]
+none
+
+[STm07_00::command/9 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/11 SetAudio/param/1]
+se_342
+
+[STm07_00::command/12 SetChar/param/2]
+none
+
+[STm07_00::command/12 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/12 SetChar/param/4]
+a
+
+[STm07_00::command/12 SetChar/param/5]
+002
+
+[STm07_00::command/12 SetChar/param/6]
+none
+
+[STm07_00::command/13 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/13 CtrlChar/param/1]
+a
+
+[STm07_00::command/13 CtrlChar/param/3]
+none
+
+[STm07_00::command/13 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/13 CtrlChar/param/12]
+none
+
+[STm07_00::command/13 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/15 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/15 SetBGM/param/3]
+m46
+
+[STm07_00::command/15 SetBGM/param/4]
+none
+
+[STm07_00::command/16 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/16 CtrlChar/param/1]
+a
+
+[STm07_00::command/16 CtrlChar/param/2]
+010
+
+[STm07_00::command/16 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm07_00::command/16 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/16 CtrlChar/param/12]
+none
+
+[STm07_00::command/16 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/17 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/17 SetTalk/param/2]
+感谢您本次选择我们公司。我是天穹保险菲莱业务部经理梅尔库莉娅。
+
+[STm07_00::command/17 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/17 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/17 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/17 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/19 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/19 CtrlChar/param/1]
+a
+
+[STm07_00::command/19 CtrlChar/param/2]
+003
+
+[STm07_00::command/19 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_00::command/19 CtrlChar/param/11]
+none
+
+[STm07_00::command/19 CtrlChar/param/12]
+none
+
+[STm07_00::command/19 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/20 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/20 SetTalk/param/2]
+从您之前填写的问卷来看，您好像正在考虑购买一份划算的人寿保险。
+
+[STm07_00::command/20 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/20 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/20 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/20 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/21 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/21 CtrlChar/param/1]
+a
+
+[STm07_00::command/21 CtrlChar/param/3]
+close
+
+[STm07_00::command/21 CtrlChar/param/11]
+none
+
+[STm07_00::command/21 CtrlChar/param/12]
+none
+
+[STm07_00::command/21 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/22 SetBg/param/1]
+mood_4
+
+[STm07_00::command/22 SetBg/param/2]
+0
+
+[STm07_00::command/22 SetBg/param/3]
+Linear
+
+[STm07_00::command/22 SetBg/param/6]
+default
+
+[STm07_00::command/23 SetChar/param/2]
+none
+
+[STm07_00::command/23 SetChar/param/3]
+avg3_146
+
+[STm07_00::command/23 SetChar/param/4]
+a
+
+[STm07_00::command/23 SetChar/param/5]
+007
+
+[STm07_00::command/23 SetChar/param/6]
+none
+
+[STm07_00::command/25 SetStage/param/2]
+OutBack
+
+[STm07_00::command/26 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/26 CtrlChar/param/1]
+a
+
+[STm07_00::command/26 CtrlChar/param/3]
+none
+
+[STm07_00::command/26 CtrlChar/param/11]
+none
+
+[STm07_00::command/26 CtrlChar/param/12]
+none
+
+[STm07_00::command/26 CtrlChar/param/13]
+OutBack
+
+[STm07_00::command/27 SetBg/param/1]
+mood_1
+
+[STm07_00::command/27 SetBg/param/2]
+0
+
+[STm07_00::command/27 SetBg/param/3]
+OutQuad
+
+[STm07_00::command/27 SetBg/param/6]
+cut off
+
+[STm07_00::command/28 SetAudio/param/1]
+se_077
+
+[STm07_00::command/29 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/29 CtrlChar/param/1]
+a
+
+[STm07_00::command/29 CtrlChar/param/3]
+none
+
+[STm07_00::command/29 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/29 CtrlChar/param/12]
+none
+
+[STm07_00::command/29 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/31 CtrlChar/param/0]
+avg3_146
+
+[STm07_00::command/31 CtrlChar/param/1]
+a
+
+[STm07_00::command/31 CtrlChar/param/2]
+004
+
+[STm07_00::command/31 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/31 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/31 CtrlChar/param/12]
+none
+
+[STm07_00::command/31 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/33 SetAudio/param/1]
+se_077
+
+[STm07_00::command/34 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/34 CtrlChar/param/1]
+a
+
+[STm07_00::command/34 CtrlChar/param/3]
+none
+
+[STm07_00::command/34 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/34 CtrlChar/param/12]
+none
+
+[STm07_00::command/34 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/36 SetStage/param/2]
+OutCubic
+
+[STm07_00::command/37 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/37 SetBg/param/2]
+0
+
+[STm07_00::command/37 SetBg/param/3]
+OutSine
+
+[STm07_00::command/37 SetBg/param/6]
+default
+
+[STm07_00::command/38 CtrlBg/param/10]
+none
+
+[STm07_00::command/38 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/39 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/39 CtrlChar/param/1]
+a
+
+[STm07_00::command/39 CtrlChar/param/2]
+004
+
+[STm07_00::command/39 CtrlChar/param/3]
+avg_emoji_question
+
+[STm07_00::command/39 CtrlChar/param/11]
+none
+
+[STm07_00::command/39 CtrlChar/param/12]
+none
+
+[STm07_00::command/39 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/41 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/41 SetTalk/param/2]
+哦，您不记得了？没关系，天穹保险刚刚推出一款新产品，非常适合您这样的女士。
+
+[STm07_00::command/41 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/41 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/41 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/41 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/43 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/43 CtrlChar/param/1]
+a
+
+[STm07_00::command/43 CtrlChar/param/2]
+010
+
+[STm07_00::command/43 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm07_00::command/43 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/43 CtrlChar/param/12]
+none
+
+[STm07_00::command/43 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/44 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/44 SetTalk/param/2]
+它不仅可以让您没有后顾之忧，还能让您避免一些难以预知的突发情况。
+
+[STm07_00::command/44 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/44 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/44 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/44 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/46 CtrlStage/param/9]
+none
+
+[STm07_00::command/46 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/48 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/48 CtrlChar/param/1]
+a
+
+[STm07_00::command/48 CtrlChar/param/2]
+004
+
+[STm07_00::command/48 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_00::command/48 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/48 CtrlChar/param/12]
+none
+
+[STm07_00::command/48 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/49 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/49 SetTalk/param/2]
+这是我们公司非常自信、诚意推荐的保障产品，正适合您这样的公司高层。
+
+[STm07_00::command/49 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/49 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/49 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/49 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/50 SetBg/param/1]
+mood_5
+
+[STm07_00::command/50 SetBg/param/2]
+0
+
+[STm07_00::command/50 SetBg/param/3]
+Linear
+
+[STm07_00::command/50 SetBg/param/6]
+default
+
+[STm07_00::command/51 CtrlChar/param/0]
+avg3_146
+
+[STm07_00::command/51 CtrlChar/param/1]
+a
+
+[STm07_00::command/51 CtrlChar/param/3]
+none
+
+[STm07_00::command/51 CtrlChar/param/11]
+none
+
+[STm07_00::command/51 CtrlChar/param/12]
+none
+
+[STm07_00::command/51 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/53 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/53 CtrlChar/param/1]
+a
+
+[STm07_00::command/53 CtrlChar/param/3]
+none
+
+[STm07_00::command/53 CtrlChar/param/11]
+none
+
+[STm07_00::command/53 CtrlChar/param/12]
+none
+
+[STm07_00::command/53 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/54 SetBg/param/1]
+mood_4
+
+[STm07_00::command/54 SetBg/param/2]
+0
+
+[STm07_00::command/54 SetBg/param/3]
+OutSine
+
+[STm07_00::command/54 SetBg/param/6]
+default
+
+[STm07_00::command/55 SetStage/param/2]
+OutBack
+
+[STm07_00::command/57 SetAudio/param/1]
+se_077
+
+[STm07_00::command/58 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/58 CtrlChar/param/1]
+a
+
+[STm07_00::command/58 CtrlChar/param/2]
+003
+
+[STm07_00::command/58 CtrlChar/param/3]
+none
+
+[STm07_00::command/58 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/58 CtrlChar/param/12]
+none
+
+[STm07_00::command/58 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/60 CtrlChar/param/0]
+avg3_146
+
+[STm07_00::command/60 CtrlChar/param/1]
+a
+
+[STm07_00::command/60 CtrlChar/param/2]
+004
+
+[STm07_00::command/60 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STm07_00::command/60 CtrlChar/param/11]
+tiao2
+
+[STm07_00::command/60 CtrlChar/param/12]
+none
+
+[STm07_00::command/60 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/62 SetAudio/param/1]
+se_077
+
+[STm07_00::command/63 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/63 CtrlChar/param/1]
+a
+
+[STm07_00::command/63 CtrlChar/param/2]
+003
+
+[STm07_00::command/63 CtrlChar/param/3]
+none
+
+[STm07_00::command/63 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/63 CtrlChar/param/12]
+none
+
+[STm07_00::command/63 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/65 SetStage/param/2]
+OutCubic
+
+[STm07_00::command/66 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/66 SetBg/param/2]
+0
+
+[STm07_00::command/66 SetBg/param/3]
+OutQuad
+
+[STm07_00::command/66 SetBg/param/6]
+default
+
+[STm07_00::command/67 CtrlBg/param/10]
+none
+
+[STm07_00::command/67 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/68 CtrlStage/param/9]
+none
+
+[STm07_00::command/68 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/69 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/69 CtrlChar/param/1]
+a
+
+[STm07_00::command/69 CtrlChar/param/2]
+012
+
+[STm07_00::command/69 CtrlChar/param/3]
+avg_emoji_question
+
+[STm07_00::command/69 CtrlChar/param/11]
+none
+
+[STm07_00::command/69 CtrlChar/param/12]
+none
+
+[STm07_00::command/69 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/71 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/71 SetTalk/param/2]
+您对我们公司的经营方针有些担忧？不不，您肯定是误会了什么。
+
+[STm07_00::command/71 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/71 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/71 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/71 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/73 CtrlStage/param/9]
+none
+
+[STm07_00::command/73 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/74 CtrlBg/param/10]
+none
+
+[STm07_00::command/74 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/75 SetAudio/param/1]
+se_021
+
+[STm07_00::command/76 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/76 CtrlChar/param/1]
+a
+
+[STm07_00::command/76 CtrlChar/param/2]
+003
+
+[STm07_00::command/76 CtrlChar/param/3]
+none
+
+[STm07_00::command/76 CtrlChar/param/11]
+none
+
+[STm07_00::command/76 CtrlChar/param/12]
+none
+
+[STm07_00::command/76 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/78 CtrlBg/param/10]
+none
+
+[STm07_00::command/78 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/79 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/80 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/80 SetTalk/param/2]
+我手边当然有今天的绯瞳新闻，头版头条......嗯，我看到了，是三天前的晚宴报道。
+
+[STm07_00::command/80 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/80 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/80 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/80 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/82 SetAudio/param/1]
+se_077
+
+[STm07_00::command/83 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/83 CtrlChar/param/1]
+a
+
+[STm07_00::command/83 CtrlChar/param/2]
+002
+
+[STm07_00::command/83 CtrlChar/param/3]
+none
+
+[STm07_00::command/83 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/83 CtrlChar/param/12]
+none
+
+[STm07_00::command/83 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/84 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/84 SetTalk/param/2]
+我理解太太您的担心，不过请您相信我们……
+
+[STm07_00::command/84 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/84 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/84 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/84 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/85 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/86 CtrlBg/param/10]
+none
+
+[STm07_00::command/86 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/88 SetAudio/param/1]
+se_070
+
+[STm07_00::command/89 CtrlBg/param/10]
+none
+
+[STm07_00::command/89 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/90 CtrlStage/param/9]
+Zhong
+
+[STm07_00::command/90 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/91 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/91 CtrlChar/param/1]
+a
+
+[STm07_00::command/91 CtrlChar/param/2]
+005
+
+[STm07_00::command/91 CtrlChar/param/3]
+none
+
+[STm07_00::command/91 CtrlChar/param/11]
+none
+
+[STm07_00::command/91 CtrlChar/param/12]
+none
+
+[STm07_00::command/91 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/92 SetTalkShake/param/1]
+Xiao
+
+[STm07_00::command/93 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/93 SetTalk/param/2]
+天穹保险是一家持有恩赐印章的正规公司，我们不可能把名号借给沙蝎那样的沙漠强盗，我们也是被冒名的受害者。
+
+[STm07_00::command/93 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/93 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/93 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/93 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/95 CtrlStage/param/9]
+none
+
+[STm07_00::command/95 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/96 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/96 CtrlChar/param/1]
+a
+
+[STm07_00::command/96 CtrlChar/param/2]
+003
+
+[STm07_00::command/96 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_00::command/96 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/96 CtrlChar/param/12]
+none
+
+[STm07_00::command/96 CtrlChar/param/13]
+Linear
+
+[STm07_00::command/97 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/97 SetTalk/param/2]
+说来也巧，这件事反而说明：我们的保障确实能“在意外突发状况时守护客户”——这一点现在可是得到了充分验证呢。
+
+[STm07_00::command/97 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/97 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/97 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/97 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/99 CtrlStage/param/9]
+none
+
+[STm07_00::command/99 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/100 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/100 CtrlChar/param/1]
+a
+
+[STm07_00::command/100 CtrlChar/param/3]
+none
+
+[STm07_00::command/100 CtrlChar/param/11]
+none
+
+[STm07_00::command/100 CtrlChar/param/12]
+none
+
+[STm07_00::command/100 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/102 SetAudio/param/1]
+se_252
+
+[STm07_00::command/103 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/103 CtrlChar/param/1]
+a
+
+[STm07_00::command/103 CtrlChar/param/2]
+002
+
+[STm07_00::command/103 CtrlChar/param/3]
+none
+
+[STm07_00::command/103 CtrlChar/param/11]
+none
+
+[STm07_00::command/103 CtrlChar/param/12]
+none
+
+[STm07_00::command/103 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/104 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/105 CtrlBg/param/10]
+none
+
+[STm07_00::command/105 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/106 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/106 SetTalk/param/2]
+请看报道，在场的所有购买天穹保险的人士，都没有受到任何伤害。
+
+[STm07_00::command/106 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/106 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/106 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/106 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/108 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/108 CtrlChar/param/1]
+a
+
+[STm07_00::command/108 CtrlChar/param/2]
+005
+
+[STm07_00::command/108 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/108 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/108 CtrlChar/param/12]
+none
+
+[STm07_00::command/108 CtrlChar/param/13]
+Linear
+
+[STm07_00::command/109 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/109 SetTalk/param/2]
+关于这一点，我们推测是因为那些强盗当时伪装成我们公司的员工，所以特意避免向客户下手，以免暴露身份。
+
+[STm07_00::command/109 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/109 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/109 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/109 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/110 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/111 CtrlBg/param/10]
+none
+
+[STm07_00::command/111 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/112 CtrlChar/param/0]
+avg3_146
+
+[STm07_00::command/112 CtrlChar/param/1]
+a
+
+[STm07_00::command/112 CtrlChar/param/2]
+007
+
+[STm07_00::command/112 CtrlChar/param/3]
+none
+
+[STm07_00::command/112 CtrlChar/param/11]
+none
+
+[STm07_00::command/112 CtrlChar/param/12]
+none
+
+[STm07_00::command/112 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/113 SetBg/param/1]
+mood_2
+
+[STm07_00::command/113 SetBg/param/2]
+0
+
+[STm07_00::command/113 SetBg/param/3]
+Linear
+
+[STm07_00::command/113 SetBg/param/6]
+default
+
+[STm07_00::command/115 SetStage/param/2]
+OutBack
+
+[STm07_00::command/116 SetBg/param/1]
+mood_2
+
+[STm07_00::command/116 SetBg/param/2]
+0
+
+[STm07_00::command/116 SetBg/param/3]
+OutSine
+
+[STm07_00::command/116 SetBg/param/6]
+default
+
+[STm07_00::command/117 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/117 CtrlChar/param/1]
+a
+
+[STm07_00::command/117 CtrlChar/param/2]
+003
+
+[STm07_00::command/117 CtrlChar/param/3]
+none
+
+[STm07_00::command/117 CtrlChar/param/11]
+none
+
+[STm07_00::command/117 CtrlChar/param/12]
+none
+
+[STm07_00::command/117 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/118 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/118 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/118 SetBGM/param/4]
+2000ms
+
+[STm07_00::command/120 SetAudio/param/1]
+se_077
+
+[STm07_00::command/121 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/121 CtrlChar/param/1]
+a
+
+[STm07_00::command/121 CtrlChar/param/3]
+none
+
+[STm07_00::command/121 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/121 CtrlChar/param/12]
+none
+
+[STm07_00::command/121 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/123 CtrlChar/param/0]
+avg3_146
+
+[STm07_00::command/123 CtrlChar/param/1]
+a
+
+[STm07_00::command/123 CtrlChar/param/2]
+002
+
+[STm07_00::command/123 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm07_00::command/123 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/123 CtrlChar/param/12]
+none
+
+[STm07_00::command/123 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/125 SetAudio/param/1]
+se_077
+
+[STm07_00::command/126 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/126 CtrlChar/param/1]
+a
+
+[STm07_00::command/126 CtrlChar/param/2]
+002
+
+[STm07_00::command/126 CtrlChar/param/3]
+none
+
+[STm07_00::command/126 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/126 CtrlChar/param/12]
+none
+
+[STm07_00::command/126 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/127 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/127 SetTalk/param/2]
+是的，在帝国卫队还没有确认沙蝎是否全部逃离菲莱前，天穹保险的客户身份，甚至是一份额外的保障。
+
+[STm07_00::command/127 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/127 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/127 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/127 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/129 SetBg/param/1]
+mood_1
+
+[STm07_00::command/129 SetBg/param/2]
+0
+
+[STm07_00::command/129 SetBg/param/3]
+OutSine
+
+[STm07_00::command/129 SetBg/param/6]
+default
+
+[STm07_00::command/130 CtrlChar/param/0]
+avg3_146
+
+[STm07_00::command/130 CtrlChar/param/1]
+a
+
+[STm07_00::command/130 CtrlChar/param/3]
+avg_emoji_flower
+
+[STm07_00::command/130 CtrlChar/param/11]
+tiao2
+
+[STm07_00::command/130 CtrlChar/param/12]
+none
+
+[STm07_00::command/130 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/132 SetBg/param/1]
+mood_1
+
+[STm07_00::command/132 SetBg/param/2]
+0
+
+[STm07_00::command/132 SetBg/param/3]
+OutSine
+
+[STm07_00::command/132 SetBg/param/6]
+default
+
+[STm07_00::command/133 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/133 SetBGM/param/3]
+m62
+
+[STm07_00::command/133 SetBGM/param/4]
+none
+
+[STm07_00::command/134 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/134 CtrlChar/param/1]
+a
+
+[STm07_00::command/134 CtrlChar/param/2]
+010
+
+[STm07_00::command/134 CtrlChar/param/3]
+avg_emoji_love
+
+[STm07_00::command/134 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/134 CtrlChar/param/12]
+none
+
+[STm07_00::command/134 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/135 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/135 SetTalk/param/2]
+谢谢您这么信任我，那下午，我让助理前去拜访您——好的……好的……后续事宜就请多关照了。
+
+[STm07_00::command/135 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/135 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/135 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/135 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/137 SetAudio/param/1]
+se_091
+
+[STm07_00::command/138 SetStage/param/2]
+OutCubic
+
+[STm07_00::command/139 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/139 SetBg/param/2]
+0
+
+[STm07_00::command/139 SetBg/param/3]
+OutCubic
+
+[STm07_00::command/139 SetBg/param/6]
+default
+
+[STm07_00::command/140 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/140 CtrlChar/param/1]
+a
+
+[STm07_00::command/140 CtrlChar/param/2]
+004
+
+[STm07_00::command/140 CtrlChar/param/3]
+none
+
+[STm07_00::command/140 CtrlChar/param/11]
+none
+
+[STm07_00::command/140 CtrlChar/param/12]
+none
+
+[STm07_00::command/140 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/142 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/142 SetTalk/param/2]
+十七号，下午去恩赐意志和玛丽女士签契约，她购买了十年的健康保险和五十年的人寿保险。
+
+[STm07_00::command/142 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/142 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/142 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/142 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/146 SetTrans/param/2]
+0
+
+[STm07_00::command/146 SetTrans/param/3]
+OutQuad
+
+[STm07_00::command/146 SetTrans/param/8]
+default
+
+[STm07_00::command/147 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/147 SetBg/param/2]
+0
+
+[STm07_00::command/147 SetBg/param/3]
+Linear
+
+[STm07_00::command/147 SetBg/param/6]
+default
+
+[STm07_00::command/148 CtrlStage/param/9]
+none
+
+[STm07_00::command/148 CtrlStage/param/10]
+Linear
+
+[STm07_00::command/149 SetTrans/param/2]
+0
+
+[STm07_00::command/149 SetTrans/param/3]
+OutQuad
+
+[STm07_00::command/149 SetTrans/param/8]
+default
+
+[STm07_00::command/150 CtrlStage/param/9]
+none
+
+[STm07_00::command/150 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/152 SetChar/param/2]
+none
+
+[STm07_00::command/152 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/152 SetChar/param/4]
+a
+
+[STm07_00::command/152 SetChar/param/5]
+002
+
+[STm07_00::command/152 SetChar/param/6]
+none
+
+[STm07_00::command/153 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/153 CtrlChar/param/1]
+a
+
+[STm07_00::command/153 CtrlChar/param/3]
+none
+
+[STm07_00::command/153 CtrlChar/param/11]
+none
+
+[STm07_00::command/153 CtrlChar/param/12]
+none
+
+[STm07_00::command/153 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/154 SetChar/param/2]
+none
+
+[STm07_00::command/154 SetChar/param/3]
+avg3_198
+
+[STm07_00::command/154 SetChar/param/4]
+a
+
+[STm07_00::command/154 SetChar/param/5]
+003
+
+[STm07_00::command/154 SetChar/param/6]
+none
+
+[STm07_00::command/155 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/155 CtrlChar/param/1]
+a
+
+[STm07_00::command/155 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/155 CtrlChar/param/11]
+none
+
+[STm07_00::command/155 CtrlChar/param/12]
+none
+
+[STm07_00::command/155 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/156 SetTalk/param/1]
+十七号业务员
+
+[STm07_00::command/156 SetTalk/param/2]
+是，我这就去准备契约。
+
+[STm07_00::command/156 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/156 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/156 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/156 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/158 SetChar/param/2]
+none
+
+[STm07_00::command/158 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/158 SetChar/param/4]
+a
+
+[STm07_00::command/158 SetChar/param/5]
+005
+
+[STm07_00::command/158 SetChar/param/6]
+none
+
+[STm07_00::command/159 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/159 CtrlChar/param/1]
+a
+
+[STm07_00::command/159 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_00::command/159 CtrlChar/param/11]
+none
+
+[STm07_00::command/159 CtrlChar/param/12]
+none
+
+[STm07_00::command/159 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/160 SetTalk/param/1]
+十八号业务员
+
+[STm07_00::command/160 SetTalk/param/2]
+我们几小时前联络这位客户，对方刚听到“天穹保险”就挂断了，现在居然这么顺利就被拿下了……==W==经理，您的推销技术真是出神入化。
+
+[STm07_00::command/160 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/160 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/160 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/160 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/162 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/162 CtrlChar/param/1]
+a
+
+[STm07_00::command/162 CtrlChar/param/3]
+close
+
+[STm07_00::command/162 CtrlChar/param/11]
+none
+
+[STm07_00::command/162 CtrlChar/param/12]
+none
+
+[STm07_00::command/162 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/164 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/164 CtrlChar/param/1]
+a
+
+[STm07_00::command/164 CtrlChar/param/2]
+007
+
+[STm07_00::command/164 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_00::command/164 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/164 CtrlChar/param/12]
+none
+
+[STm07_00::command/164 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/167 CtrlStage/param/9]
+none
+
+[STm07_00::command/167 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/169 SetChar/param/2]
+none
+
+[STm07_00::command/169 SetChar/param/3]
+avg3_1238
+
+[STm07_00::command/169 SetChar/param/4]
+a
+
+[STm07_00::command/169 SetChar/param/5]
+003
+
+[STm07_00::command/169 SetChar/param/6]
+none
+
+[STm07_00::command/170 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/170 CtrlChar/param/1]
+a
+
+[STm07_00::command/170 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm07_00::command/170 CtrlChar/param/11]
+none
+
+[STm07_00::command/170 CtrlChar/param/12]
+none
+
+[STm07_00::command/170 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/171 SetTalk/param/1]
+十九号业务员
+
+[STm07_00::command/171 SetTalk/param/2]
+您刚来了两天，就扭转了局面。您来之前，我还以为天穹保险要裁撤菲莱业务部呢。原来这就是有真本事的人啊……
+
+[STm07_00::command/171 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/171 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/171 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/171 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/172 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/172 CtrlChar/param/1]
+a
+
+[STm07_00::command/172 CtrlChar/param/3]
+close
+
+[STm07_00::command/172 CtrlChar/param/11]
+none
+
+[STm07_00::command/172 CtrlChar/param/12]
+none
+
+[STm07_00::command/172 CtrlChar/param/13]
+Linear
+
+[STm07_00::command/174 SetChar/param/2]
+none
+
+[STm07_00::command/174 SetChar/param/3]
+avg3_1237
+
+[STm07_00::command/174 SetChar/param/4]
+a
+
+[STm07_00::command/174 SetChar/param/5]
+006
+
+[STm07_00::command/174 SetChar/param/6]
+none
+
+[STm07_00::command/175 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/175 CtrlChar/param/1]
+a
+
+[STm07_00::command/175 CtrlChar/param/3]
+avg_emoji_flower
+
+[STm07_00::command/175 CtrlChar/param/11]
+none
+
+[STm07_00::command/175 CtrlChar/param/12]
+none
+
+[STm07_00::command/175 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/176 SetTalk/param/1]
+二十号业务员
+
+[STm07_00::command/176 SetTalk/param/2]
+请教给我们卖保险的诀窍吧，说实话，一直被粗暴拒绝，精神上实在有点撑不住……
+
+[STm07_00::command/176 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/176 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/176 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/176 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/177 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/177 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/177 SetBGM/param/4]
+2000ms
+
+[STm07_00::command/179 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/179 CtrlChar/param/1]
+a
+
+[STm07_00::command/179 CtrlChar/param/2]
+003
+
+[STm07_00::command/179 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_00::command/179 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/179 CtrlChar/param/12]
+none
+
+[STm07_00::command/179 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/180 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/180 SetTalk/param/2]
+行啊。那我就问问……各位，你们觉得我们在卖什么？
+
+[STm07_00::command/180 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/180 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/180 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/180 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/182 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/182 CtrlChar/param/1]
+a
+
+[STm07_00::command/182 CtrlChar/param/3]
+none
+
+[STm07_00::command/182 CtrlChar/param/11]
+none
+
+[STm07_00::command/182 CtrlChar/param/12]
+none
+
+[STm07_00::command/182 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/183 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/183 CtrlChar/param/1]
+a
+
+[STm07_00::command/183 CtrlChar/param/3]
+none
+
+[STm07_00::command/183 CtrlChar/param/11]
+none
+
+[STm07_00::command/183 CtrlChar/param/12]
+none
+
+[STm07_00::command/183 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/184 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/184 CtrlChar/param/1]
+a
+
+[STm07_00::command/184 CtrlChar/param/3]
+none
+
+[STm07_00::command/184 CtrlChar/param/11]
+none
+
+[STm07_00::command/184 CtrlChar/param/12]
+none
+
+[STm07_00::command/184 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/185 CtrlStage/param/9]
+none
+
+[STm07_00::command/185 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/186 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/186 CtrlChar/param/1]
+a
+
+[STm07_00::command/186 CtrlChar/param/2]
+008
+
+[STm07_00::command/186 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm07_00::command/186 CtrlChar/param/11]
+none
+
+[STm07_00::command/186 CtrlChar/param/12]
+none
+
+[STm07_00::command/186 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/187 SetTalk/param/1]
+二十号业务员
+
+[STm07_00::command/187 SetTalk/param/2]
+卖什么……当然是卖保险……您刚刚推荐给那位客户的健康保险，可以在客户生病和受伤的时候帮客户承担大部分的医药费。
+
+[STm07_00::command/187 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/187 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/187 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/187 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/189 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/189 CtrlChar/param/1]
+a
+
+[STm07_00::command/189 CtrlChar/param/2]
+002
+
+[STm07_00::command/189 CtrlChar/param/3]
+none
+
+[STm07_00::command/189 CtrlChar/param/11]
+none
+
+[STm07_00::command/189 CtrlChar/param/12]
+none
+
+[STm07_00::command/189 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/190 CtrlStage/param/9]
+none
+
+[STm07_00::command/190 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/191 SetChar/param/2]
+none
+
+[STm07_00::command/191 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/191 SetChar/param/4]
+a
+
+[STm07_00::command/191 SetChar/param/5]
+007
+
+[STm07_00::command/191 SetChar/param/6]
+none
+
+[STm07_00::command/192 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/192 CtrlChar/param/1]
+a
+
+[STm07_00::command/192 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm07_00::command/192 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/192 CtrlChar/param/12]
+none
+
+[STm07_00::command/192 CtrlChar/param/13]
+OutQuad
+
+[STm07_00::command/193 SetTalk/param/1]
+二十一号业务员
+
+[STm07_00::command/193 SetTalk/param/2]
+人寿保险，会在客户未达到约定年龄死亡时，赔付给客户指定的受益人一大笔朵拉。
+
+[STm07_00::command/193 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/193 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/193 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/193 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/195 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/195 CtrlChar/param/1]
+a
+
+[STm07_00::command/195 CtrlChar/param/2]
+003
+
+[STm07_00::command/195 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_00::command/195 CtrlChar/param/11]
+none
+
+[STm07_00::command/195 CtrlChar/param/12]
+none
+
+[STm07_00::command/195 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/196 SetBGM/param/1]
+music_avg_volume100_3s
+
+[STm07_00::command/196 SetBGM/param/3]
+m11
+
+[STm07_00::command/196 SetBGM/param/4]
+none
+
+[STm07_00::command/197 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/197 SetTalk/param/2]
+……
+
+[STm07_00::command/197 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/197 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/197 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/197 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/200 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/200 CtrlChar/param/1]
+a
+
+[STm07_00::command/200 CtrlChar/param/3]
+close
+
+[STm07_00::command/200 CtrlChar/param/11]
+none
+
+[STm07_00::command/200 CtrlChar/param/12]
+none
+
+[STm07_00::command/200 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/202 SetAudio/param/1]
+se_070
+
+[STm07_00::command/203 CtrlStage/param/9]
+Zhong
+
+[STm07_00::command/203 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/204 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/204 CtrlChar/param/1]
+a
+
+[STm07_00::command/204 CtrlChar/param/2]
+011
+
+[STm07_00::command/204 CtrlChar/param/3]
+none
+
+[STm07_00::command/204 CtrlChar/param/11]
+none
+
+[STm07_00::command/204 CtrlChar/param/12]
+none
+
+[STm07_00::command/204 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/205 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/205 CtrlChar/param/1]
+a
+
+[STm07_00::command/205 CtrlChar/param/3]
+none
+
+[STm07_00::command/205 CtrlChar/param/11]
+none
+
+[STm07_00::command/205 CtrlChar/param/12]
+none
+
+[STm07_00::command/205 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/206 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/206 CtrlChar/param/1]
+a
+
+[STm07_00::command/206 CtrlChar/param/3]
+none
+
+[STm07_00::command/206 CtrlChar/param/11]
+none
+
+[STm07_00::command/206 CtrlChar/param/12]
+none
+
+[STm07_00::command/206 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/207 CtrlBg/param/10]
+none
+
+[STm07_00::command/207 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/208 SetTalkShake/param/1]
+Xiao
+
+[STm07_00::command/209 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/209 SetTalk/param/2]
+你们这不是推销，这是在背诵产品手册，你们的入职培训是怎么做的……
+
+[STm07_00::command/209 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/209 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/209 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/209 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/211 CtrlStage/param/9]
+none
+
+[STm07_00::command/211 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/212 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/212 CtrlChar/param/1]
+a
+
+[STm07_00::command/212 CtrlChar/param/3]
+none
+
+[STm07_00::command/212 CtrlChar/param/11]
+none
+
+[STm07_00::command/212 CtrlChar/param/12]
+none
+
+[STm07_00::command/212 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/213 CtrlBg/param/10]
+none
+
+[STm07_00::command/213 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/214 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/214 CtrlChar/param/1]
+a
+
+[STm07_00::command/214 CtrlChar/param/3]
+none
+
+[STm07_00::command/214 CtrlChar/param/11]
+none
+
+[STm07_00::command/214 CtrlChar/param/12]
+none
+
+[STm07_00::command/214 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/215 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/215 CtrlChar/param/1]
+a
+
+[STm07_00::command/215 CtrlChar/param/2]
+003
+
+[STm07_00::command/215 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm07_00::command/215 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/215 CtrlChar/param/12]
+none
+
+[STm07_00::command/215 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/217 SetTalk/param/1]
+二十一号业务员
+
+[STm07_00::command/217 SetTalk/param/2]
+啊哈哈，没有入职培训啊，前任经理刚刚招到我们，就因为晚宴上的骚动被公司开除了。
+
+[STm07_00::command/217 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/217 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/217 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/217 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/219 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/219 CtrlChar/param/1]
+a
+
+[STm07_00::command/219 CtrlChar/param/2]
+006
+
+[STm07_00::command/219 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm07_00::command/219 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/219 CtrlChar/param/12]
+none
+
+[STm07_00::command/219 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/220 SetTalk/param/1]
+二十号业务员
+
+[STm07_00::command/220 SetTalk/param/2]
+请教教我们吧，老大......不，经理。
+
+[STm07_00::command/220 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/220 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/220 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/220 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/221 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/221 CtrlChar/param/1]
+a
+
+[STm07_00::command/221 CtrlChar/param/3]
+close
+
+[STm07_00::command/221 CtrlChar/param/11]
+none
+
+[STm07_00::command/221 CtrlChar/param/12]
+none
+
+[STm07_00::command/221 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/223 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/223 CtrlChar/param/1]
+a
+
+[STm07_00::command/223 CtrlChar/param/2]
+003
+
+[STm07_00::command/223 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm07_00::command/223 CtrlChar/param/11]
+lengzhan
+
+[STm07_00::command/223 CtrlChar/param/12]
+none
+
+[STm07_00::command/223 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/224 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/224 SetTalk/param/2]
+好吧……
+
+[STm07_00::command/224 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/224 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/224 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/224 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/226 SetAudio/param/1]
+se_434
+
+[STm07_00::command/229 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/230 CtrlBg/param/10]
+none
+
+[STm07_00::command/230 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/231 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/231 CtrlChar/param/1]
+a
+
+[STm07_00::command/231 CtrlChar/param/3]
+none
+
+[STm07_00::command/231 CtrlChar/param/11]
+none
+
+[STm07_00::command/231 CtrlChar/param/12]
+none
+
+[STm07_00::command/231 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/232 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/232 CtrlChar/param/1]
+a
+
+[STm07_00::command/232 CtrlChar/param/3]
+none
+
+[STm07_00::command/232 CtrlChar/param/11]
+none
+
+[STm07_00::command/232 CtrlChar/param/12]
+none
+
+[STm07_00::command/232 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/233 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/233 CtrlChar/param/1]
+a
+
+[STm07_00::command/233 CtrlChar/param/2]
+005
+
+[STm07_00::command/233 CtrlChar/param/3]
+none
+
+[STm07_00::command/233 CtrlChar/param/11]
+none
+
+[STm07_00::command/233 CtrlChar/param/12]
+none
+
+[STm07_00::command/233 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/234 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/234 SetTalk/param/2]
+你们拿着这把剑，试着把它推销给我。
+
+[STm07_00::command/234 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/234 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/234 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/234 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/235 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/236 CtrlBg/param/10]
+none
+
+[STm07_00::command/236 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/238 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/238 CtrlChar/param/1]
+a
+
+[STm07_00::command/238 CtrlChar/param/3]
+none
+
+[STm07_00::command/238 CtrlChar/param/11]
+none
+
+[STm07_00::command/238 CtrlChar/param/12]
+none
+
+[STm07_00::command/238 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/239 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/239 CtrlChar/param/1]
+a
+
+[STm07_00::command/239 CtrlChar/param/3]
+none
+
+[STm07_00::command/239 CtrlChar/param/11]
+none
+
+[STm07_00::command/239 CtrlChar/param/12]
+none
+
+[STm07_00::command/239 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/240 SetAudio/param/1]
+se_147
+
+[STm07_00::command/241 CtrlStage/param/9]
+none
+
+[STm07_00::command/241 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/242 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/242 CtrlChar/param/1]
+a
+
+[STm07_00::command/242 CtrlChar/param/3]
+none
+
+[STm07_00::command/242 CtrlChar/param/11]
+none
+
+[STm07_00::command/242 CtrlChar/param/12]
+none
+
+[STm07_00::command/242 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/244 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/245 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/245 CtrlChar/param/1]
+a
+
+[STm07_00::command/245 CtrlChar/param/2]
+007
+
+[STm07_00::command/245 CtrlChar/param/3]
+none
+
+[STm07_00::command/245 CtrlChar/param/11]
+none
+
+[STm07_00::command/245 CtrlChar/param/12]
+none
+
+[STm07_00::command/245 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/246 SetTalk/param/1]
+二十一号业务员
+
+[STm07_00::command/246 SetTalk/param/2]
+推销这把剑么……==W==那个，这是一把锋利的好剑，锋利到可以……==W==可以砍穿任何铠甲！
+
+[STm07_00::command/246 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/246 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/246 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/246 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/248 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/248 CtrlChar/param/1]
+a
+
+[STm07_00::command/248 CtrlChar/param/2]
+005
+
+[STm07_00::command/248 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm07_00::command/248 CtrlChar/param/11]
+lengzhan
+
+[STm07_00::command/248 CtrlChar/param/12]
+none
+
+[STm07_00::command/248 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/251 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/251 CtrlChar/param/1]
+a
+
+[STm07_00::command/251 CtrlChar/param/2]
+006
+
+[STm07_00::command/251 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_00::command/251 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/251 CtrlChar/param/12]
+none
+
+[STm07_00::command/251 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/253 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/255 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/255 CtrlChar/param/1]
+a
+
+[STm07_00::command/255 CtrlChar/param/3]
+none
+
+[STm07_00::command/255 CtrlChar/param/11]
+none
+
+[STm07_00::command/255 CtrlChar/param/12]
+none
+
+[STm07_00::command/255 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/257 CtrlStage/param/9]
+Zhong
+
+[STm07_00::command/257 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/258 SetAudio/param/1]
+se_070
+
+[STm07_00::command/259 SetChar/param/2]
+none
+
+[STm07_00::command/259 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/259 SetChar/param/4]
+a
+
+[STm07_00::command/259 SetChar/param/5]
+005
+
+[STm07_00::command/259 SetChar/param/6]
+none
+
+[STm07_00::command/260 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/260 CtrlChar/param/1]
+a
+
+[STm07_00::command/260 CtrlChar/param/3]
+none
+
+[STm07_00::command/260 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/260 CtrlChar/param/12]
+none
+
+[STm07_00::command/260 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/261 SetTalkShake/param/1]
+Xiao
+
+[STm07_00::command/262 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/262 SetTalk/param/2]
+不合格！
+
+[STm07_00::command/262 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/262 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/262 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/262 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/264 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/264 CtrlChar/param/1]
+a
+
+[STm07_00::command/264 CtrlChar/param/2]
+003
+
+[STm07_00::command/264 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm07_00::command/264 CtrlChar/param/11]
+lengzhan
+
+[STm07_00::command/264 CtrlChar/param/12]
+none
+
+[STm07_00::command/264 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/265 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/265 SetTalk/param/2]
+我是个文职人员，并不需要去砍穿着铠甲的骑士。另外，你还涉及虚假宣传，难道我让你推销铠甲，你就说这铠甲可以防御住任何刀枪剑戟吗？
+
+[STm07_00::command/265 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/265 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/265 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/265 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/267 SetCharHead/param/5]
+avg3_199
+
+[STm07_00::command/267 SetCharHead/param/6]
+a
+
+[STm07_00::command/267 SetCharHead/param/7]
+010
+
+[STm07_00::command/267 SetCharHead/param/8]
+avg_emoji_vexation
+
+[STm07_00::command/269 SetTalk/param/1]
+二十一号业务员
+
+[STm07_00::command/269 SetTalk/param/2]
+呃……当，当然不是。
+
+[STm07_00::command/269 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/269 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/269 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/269 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/270 SetCharHead/param/5]
+avg3_199
+
+[STm07_00::command/270 SetCharHead/param/6]
+a
+
+[STm07_00::command/270 SetCharHead/param/7]
+002
+
+[STm07_00::command/270 SetCharHead/param/8]
+none
+
+[STm07_00::command/272 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/272 CtrlChar/param/1]
+a
+
+[STm07_00::command/272 CtrlChar/param/2]
+004
+
+[STm07_00::command/272 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm07_00::command/272 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/272 CtrlChar/param/12]
+none
+
+[STm07_00::command/272 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/273 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/273 SetTalk/param/2]
+算了……你们各自去忙吧，出外勤的时候记得带好防身武器。
+
+[STm07_00::command/273 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/273 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/273 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/273 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/275 CtrlStage/param/9]
+none
+
+[STm07_00::command/275 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/277 SetChar/param/2]
+none
+
+[STm07_00::command/277 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/277 SetChar/param/4]
+a
+
+[STm07_00::command/277 SetChar/param/5]
+008
+
+[STm07_00::command/277 SetChar/param/6]
+none
+
+[STm07_00::command/278 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/278 CtrlChar/param/1]
+a
+
+[STm07_00::command/278 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm07_00::command/278 CtrlChar/param/11]
+none
+
+[STm07_00::command/278 CtrlChar/param/12]
+none
+
+[STm07_00::command/278 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/279 SetTalk/param/1]
+十八号业务员
+
+[STm07_00::command/279 SetTalk/param/2]
+防身武器？
+
+[STm07_00::command/279 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/279 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/279 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/279 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/281 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/281 CtrlChar/param/1]
+a
+
+[STm07_00::command/281 CtrlChar/param/3]
+none
+
+[STm07_00::command/281 CtrlChar/param/11]
+none
+
+[STm07_00::command/281 CtrlChar/param/12]
+none
+
+[STm07_00::command/281 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/282 CtrlStage/param/9]
+none
+
+[STm07_00::command/282 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/284 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/284 CtrlChar/param/1]
+a
+
+[STm07_00::command/284 CtrlChar/param/2]
+003
+
+[STm07_00::command/284 CtrlChar/param/3]
+none
+
+[STm07_00::command/284 CtrlChar/param/11]
+none
+
+[STm07_00::command/284 CtrlChar/param/12]
+none
+
+[STm07_00::command/284 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/285 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/285 SetTalk/param/2]
+你们没看绯瞳新闻吗？就头版头条这篇报道，明确写了帝国卫队不确定是否有沙蝎还藏在城里。
+
+[STm07_00::command/285 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/285 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/285 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/285 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/287 CtrlStage/param/9]
+Xiao
+
+[STm07_00::command/287 CtrlStage/param/10]
+Linear
+
+[STm07_00::command/288 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/288 CtrlChar/param/1]
+a
+
+[STm07_00::command/288 CtrlChar/param/2]
+004
+
+[STm07_00::command/288 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/288 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/288 CtrlChar/param/12]
+none
+
+[STm07_00::command/288 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/289 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/289 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/289 SetBGM/param/4]
+2000ms
+
+[STm07_00::command/290 SetTalkShake/param/1]
+Xiao
+
+[STm07_00::command/291 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/291 SetTalk/param/2]
+如果她们还想伪装成天穹保险的员工，那她们要去哪里获得我们的工作服呢？
+
+[STm07_00::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/291 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/294 CtrlStage/param/9]
+none
+
+[STm07_00::command/294 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/296 SetChar/param/2]
+none
+
+[STm07_00::command/296 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/296 SetChar/param/4]
+a
+
+[STm07_00::command/296 SetChar/param/5]
+010
+
+[STm07_00::command/296 SetChar/param/6]
+none
+
+[STm07_00::command/297 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/297 CtrlChar/param/1]
+a
+
+[STm07_00::command/297 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm07_00::command/297 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/297 CtrlChar/param/12]
+none
+
+[STm07_00::command/297 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/298 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/298 SetBGM/param/3]
+m28
+
+[STm07_00::command/298 SetBGM/param/4]
+none
+
+[STm07_00::command/299 SetTalk/param/1]
+十九号业务员
+
+[STm07_00::command/299 SetTalk/param/2]
+您是说沙蝎会袭击我们，抢我们的衣服？！
+
+[STm07_00::command/299 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/299 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/299 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/299 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/301 SetAudio/param/1]
+se_148
+
+[STm07_00::command/302 SetTrans/param/2]
+4
+
+[STm07_00::command/302 SetTrans/param/3]
+OutCubic
+
+[STm07_00::command/302 SetTrans/param/8]
+fade
+
+[STm07_00::command/303 CtrlStage/param/9]
+none
+
+[STm07_00::command/303 CtrlStage/param/10]
+Linear
+
+[STm07_00::command/304 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/304 SetBg/param/2]
+0
+
+[STm07_00::command/304 SetBg/param/3]
+Linear
+
+[STm07_00::command/304 SetBg/param/6]
+default
+
+[STm07_00::command/305 CtrlBg/param/10]
+none
+
+[STm07_00::command/305 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/306 SetTrans/param/2]
+3
+
+[STm07_00::command/306 SetTrans/param/3]
+OutCubic
+
+[STm07_00::command/306 SetTrans/param/8]
+fade
+
+[STm07_00::command/307 CtrlStage/param/9]
+none
+
+[STm07_00::command/307 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/308 SetAudio/param/1]
+se_020
+
+[STm07_00::command/309 SetChar/param/2]
+none
+
+[STm07_00::command/309 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/309 SetChar/param/4]
+a
+
+[STm07_00::command/309 SetChar/param/5]
+005
+
+[STm07_00::command/309 SetChar/param/6]
+none
+
+[STm07_00::command/310 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/310 CtrlChar/param/1]
+a
+
+[STm07_00::command/310 CtrlChar/param/3]
+none
+
+[STm07_00::command/310 CtrlChar/param/11]
+manbu_loop
+
+[STm07_00::command/310 CtrlChar/param/12]
+none
+
+[STm07_00::command/310 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/312 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/313 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/313 CtrlChar/param/1]
+a
+
+[STm07_00::command/313 CtrlChar/param/3]
+none
+
+[STm07_00::command/313 CtrlChar/param/11]
+stop
+
+[STm07_00::command/313 CtrlChar/param/12]
+none
+
+[STm07_00::command/313 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/314 CtrlStage/param/9]
+none
+
+[STm07_00::command/314 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/315 SetAudio/param/1]
+se_020_stop
+
+[STm07_00::command/316 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/317 SetChar/param/2]
+none
+
+[STm07_00::command/317 SetChar/param/3]
+avg3_198
+
+[STm07_00::command/317 SetChar/param/4]
+a
+
+[STm07_00::command/317 SetChar/param/5]
+004
+
+[STm07_00::command/317 SetChar/param/6]
+none
+
+[STm07_00::command/318 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/318 CtrlChar/param/1]
+a
+
+[STm07_00::command/318 CtrlChar/param/3]
+avg_emoji_resentful
+
+[STm07_00::command/318 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/318 CtrlChar/param/12]
+none
+
+[STm07_00::command/318 CtrlChar/param/13]
+OutQuad
+
+[STm07_00::command/319 SetTalk/param/1]
+二十号业务员
+
+[STm07_00::command/319 SetTalk/param/2]
+喂，要推销剑的人可是我，你别擅自拿走啊！
+
+[STm07_00::command/319 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/319 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/319 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/319 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/321 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/321 CtrlChar/param/1]
+a
+
+[STm07_00::command/321 CtrlChar/param/2]
+007
+
+[STm07_00::command/321 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/321 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/321 CtrlChar/param/12]
+none
+
+[STm07_00::command/321 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/322 SetTalk/param/1]
+二十一号业务员
+
+[STm07_00::command/322 SetTalk/param/2]
+喂，刚才经理是在问我问题，应该归我用。
+
+[STm07_00::command/322 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/322 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/322 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/322 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/323 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/325 SetAudio/param/1]
+se_070
+
+[STm07_00::command/326 CtrlStage/param/9]
+Zhong
+
+[STm07_00::command/326 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/327 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/327 CtrlChar/param/1]
+a
+
+[STm07_00::command/327 CtrlChar/param/3]
+none
+
+[STm07_00::command/327 CtrlChar/param/11]
+none
+
+[STm07_00::command/327 CtrlChar/param/12]
+none
+
+[STm07_00::command/327 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/328 SetTalkShake/param/1]
+Xiao
+
+[STm07_00::command/329 SetTalk/param/1]
+二十号业务员
+
+[STm07_00::command/329 SetTalk/param/2]
+你不是扛着大锤吗？
+
+[STm07_00::command/329 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/329 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/329 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/329 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/333 CtrlStage/param/9]
+none
+
+[STm07_00::command/333 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/335 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/335 CtrlChar/param/1]
+a
+
+[STm07_00::command/335 CtrlChar/param/2]
+009
+
+[STm07_00::command/335 CtrlChar/param/3]
+avg_emoji_angry
+
+[STm07_00::command/335 CtrlChar/param/11]
+none
+
+[STm07_00::command/335 CtrlChar/param/12]
+none
+
+[STm07_00::command/335 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/336 SetTalkShake/param/1]
+Xiao
+
+[STm07_00::command/337 SetTalk/param/1]
+二十一号业务员
+
+[STm07_00::command/337 SetTalk/param/2]
+武器又不嫌多！
+
+[STm07_00::command/337 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/337 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/337 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/337 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/338 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/338 CtrlChar/param/1]
+a
+
+[STm07_00::command/338 CtrlChar/param/3]
+close
+
+[STm07_00::command/338 CtrlChar/param/11]
+none
+
+[STm07_00::command/338 CtrlChar/param/12]
+none
+
+[STm07_00::command/338 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/340 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/340 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/340 SetBGM/param/4]
+2000ms
+
+[STm07_00::command/342 CtrlStage/param/9]
+none
+
+[STm07_00::command/342 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/343 SetChar/param/2]
+none
+
+[STm07_00::command/343 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/343 SetChar/param/4]
+a
+
+[STm07_00::command/343 SetChar/param/5]
+004
+
+[STm07_00::command/343 SetChar/param/6]
+none
+
+[STm07_00::command/344 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/344 CtrlChar/param/1]
+a
+
+[STm07_00::command/344 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm07_00::command/344 CtrlChar/param/11]
+none
+
+[STm07_00::command/344 CtrlChar/param/12]
+none
+
+[STm07_00::command/344 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/345 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/345 SetTalk/param/2]
+……
+
+[STm07_00::command/345 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/345 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/345 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/345 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/346 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/346 CtrlChar/param/1]
+a
+
+[STm07_00::command/346 CtrlChar/param/3]
+close
+
+[STm07_00::command/346 CtrlChar/param/11]
+none
+
+[STm07_00::command/346 CtrlChar/param/12]
+none
+
+[STm07_00::command/346 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/348 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/348 CtrlChar/param/1]
+a
+
+[STm07_00::command/348 CtrlChar/param/3]
+none
+
+[STm07_00::command/348 CtrlChar/param/11]
+none
+
+[STm07_00::command/348 CtrlChar/param/12]
+none
+
+[STm07_00::command/348 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/349 CtrlBg/param/10]
+none
+
+[STm07_00::command/349 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/350 SetChar/param/2]
+none
+
+[STm07_00::command/350 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/350 SetChar/param/4]
+a
+
+[STm07_00::command/350 SetChar/param/5]
+007
+
+[STm07_00::command/350 SetChar/param/6]
+none
+
+[STm07_00::command/351 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/351 CtrlChar/param/1]
+a
+
+[STm07_00::command/351 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/351 CtrlChar/param/11]
+none
+
+[STm07_00::command/351 CtrlChar/param/12]
+none
+
+[STm07_00::command/351 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/352 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/352 SetBGM/param/3]
+m14
+
+[STm07_00::command/352 SetBGM/param/4]
+none
+
+[STm07_00::command/353 SetTalk/param/1]
+十八号业务员
+
+[STm07_00::command/353 SetTalk/param/2]
+不对，经理只是想把剑推销给你们，其实……刚才推测的情况，是你故意夸张的吧，经理。
+
+[STm07_00::command/353 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/353 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/353 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/353 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/355 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/355 CtrlChar/param/1]
+a
+
+[STm07_00::command/355 CtrlChar/param/2]
+003
+
+[STm07_00::command/355 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_00::command/355 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/355 CtrlChar/param/12]
+none
+
+[STm07_00::command/355 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/356 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/356 SetTalk/param/2]
+十八号，你反应速度还行，还有救一救的价值。
+
+[STm07_00::command/356 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/356 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/356 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/356 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/360 CtrlStage/param/9]
+none
+
+[STm07_00::command/360 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/362 SetChar/param/2]
+none
+
+[STm07_00::command/362 SetChar/param/3]
+avg3_198
+
+[STm07_00::command/362 SetChar/param/4]
+a
+
+[STm07_00::command/362 SetChar/param/5]
+008
+
+[STm07_00::command/362 SetChar/param/6]
+none
+
+[STm07_00::command/363 SetChar/param/2]
+none
+
+[STm07_00::command/363 SetChar/param/3]
+avg3_1237
+
+[STm07_00::command/363 SetChar/param/4]
+a
+
+[STm07_00::command/363 SetChar/param/5]
+008
+
+[STm07_00::command/363 SetChar/param/6]
+none
+
+[STm07_00::command/364 SetChar/param/2]
+none
+
+[STm07_00::command/364 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/364 SetChar/param/4]
+a
+
+[STm07_00::command/364 SetChar/param/5]
+008
+
+[STm07_00::command/364 SetChar/param/6]
+none
+
+[STm07_00::command/365 SetChar/param/2]
+none
+
+[STm07_00::command/365 SetChar/param/3]
+avg3_1238
+
+[STm07_00::command/365 SetChar/param/4]
+a
+
+[STm07_00::command/365 SetChar/param/5]
+008
+
+[STm07_00::command/365 SetChar/param/6]
+none
+
+[STm07_00::command/366 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/366 CtrlChar/param/1]
+a
+
+[STm07_00::command/366 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm07_00::command/366 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/366 CtrlChar/param/12]
+none
+
+[STm07_00::command/366 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/367 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/367 CtrlChar/param/1]
+a
+
+[STm07_00::command/367 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm07_00::command/367 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/367 CtrlChar/param/12]
+none
+
+[STm07_00::command/367 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/368 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/368 CtrlChar/param/1]
+a
+
+[STm07_00::command/368 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm07_00::command/368 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/368 CtrlChar/param/12]
+none
+
+[STm07_00::command/368 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/369 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/369 CtrlChar/param/1]
+a
+
+[STm07_00::command/369 CtrlChar/param/3]
+avg_emoji_symbol
+
+[STm07_00::command/369 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/369 CtrlChar/param/12]
+none
+
+[STm07_00::command/369 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/370 SetTalk/param/1]
+其他业务员
+
+[STm07_00::command/370 SetTalk/param/2]
+哎？
+
+[STm07_00::command/370 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/370 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/370 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/370 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/373 CtrlStage/param/9]
+none
+
+[STm07_00::command/373 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/375 SetChar/param/2]
+none
+
+[STm07_00::command/375 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/375 SetChar/param/4]
+a
+
+[STm07_00::command/375 SetChar/param/5]
+012
+
+[STm07_00::command/375 SetChar/param/6]
+none
+
+[STm07_00::command/376 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/376 CtrlChar/param/1]
+a
+
+[STm07_00::command/376 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm07_00::command/376 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/376 CtrlChar/param/12]
+none
+
+[STm07_00::command/376 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/377 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/377 SetTalk/param/2]
+推销的关键，是找到对方的需求。
+
+[STm07_00::command/377 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/377 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/377 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/377 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/379 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/379 CtrlChar/param/1]
+a
+
+[STm07_00::command/379 CtrlChar/param/2]
+010
+
+[STm07_00::command/379 CtrlChar/param/3]
+none
+
+[STm07_00::command/379 CtrlChar/param/11]
+none
+
+[STm07_00::command/379 CtrlChar/param/12]
+none
+
+[STm07_00::command/379 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/380 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/380 SetTalk/param/2]
+你们没有需求的时候，这把剑再锋利也没有意义，但当你们有需求的时候，哪怕这把剑只是普通的制式武器，也是大家争抢的对象。
+
+[STm07_00::command/380 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/380 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/380 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/380 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/382 CtrlStage/param/9]
+none
+
+[STm07_00::command/382 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/384 SetAudio/param/1]
+se_226
+
+[STm07_00::command/385 CtrlBg/param/10]
+none
+
+[STm07_00::command/385 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/386 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/386 CtrlChar/param/1]
+a
+
+[STm07_00::command/386 CtrlChar/param/2]
+004
+
+[STm07_00::command/386 CtrlChar/param/3]
+none
+
+[STm07_00::command/386 CtrlChar/param/11]
+none
+
+[STm07_00::command/386 CtrlChar/param/12]
+none
+
+[STm07_00::command/386 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/387 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/387 SetTalk/param/2]
+当你们意识到自己“可能被沙蝎袭击”的时候，你们需要的不仅仅是这把剑，还有这把剑带来的安全感。
+
+[STm07_00::command/387 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/387 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/387 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/387 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/389 CtrlStage/param/9]
+none
+
+[STm07_00::command/389 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/390 CtrlBg/param/10]
+none
+
+[STm07_00::command/390 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/392 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/392 CtrlChar/param/1]
+a
+
+[STm07_00::command/392 CtrlChar/param/2]
+010
+
+[STm07_00::command/392 CtrlChar/param/3]
+avg_emoji_love
+
+[STm07_00::command/392 CtrlChar/param/11]
+none
+
+[STm07_00::command/392 CtrlChar/param/12]
+none
+
+[STm07_00::command/392 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/393 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/393 SetTalk/param/2]
+实际上，各位并不想真的用到这把剑吧。
+
+[STm07_00::command/393 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/393 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/393 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/393 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/395 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/395 CtrlChar/param/1]
+a
+
+[STm07_00::command/395 CtrlChar/param/3]
+none
+
+[STm07_00::command/395 CtrlChar/param/11]
+none
+
+[STm07_00::command/395 CtrlChar/param/12]
+none
+
+[STm07_00::command/395 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/396 CtrlBg/param/10]
+none
+
+[STm07_00::command/396 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/397 SetChar/param/2]
+none
+
+[STm07_00::command/397 SetChar/param/3]
+avg3_198
+
+[STm07_00::command/397 SetChar/param/4]
+a
+
+[STm07_00::command/397 SetChar/param/5]
+010
+
+[STm07_00::command/397 SetChar/param/6]
+none
+
+[STm07_00::command/398 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/398 CtrlChar/param/1]
+a
+
+[STm07_00::command/398 CtrlChar/param/3]
+avg_emoji_vexation
+
+[STm07_00::command/398 CtrlChar/param/11]
+none
+
+[STm07_00::command/398 CtrlChar/param/12]
+none
+
+[STm07_00::command/398 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/400 SetTalk/param/1]
+二十号业务员
+
+[STm07_00::command/400 SetTalk/param/2]
+那当然……我只是想保护自己，谁想真的遇到那些沙蝎，和她们拼刀子啊。
+
+[STm07_00::command/400 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/400 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/400 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/400 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/402 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/402 CtrlChar/param/1]
+a
+
+[STm07_00::command/402 CtrlChar/param/2]
+002
+
+[STm07_00::command/402 CtrlChar/param/3]
+avg_emoji_star
+
+[STm07_00::command/402 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/402 CtrlChar/param/12]
+none
+
+[STm07_00::command/402 CtrlChar/param/13]
+Linear
+
+[STm07_00::command/403 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/404 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/404 SetTalk/param/2]
+所以，你们明白了吧，我们的保险业务就像是在卖这把剑——
+
+[STm07_00::command/404 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/404 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/404 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/404 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/405 SetFrontObj/param/2]
+qstory_main_07_002
+
+[STm07_00::command/407 CtrlBg/param/10]
+none
+
+[STm07_00::command/407 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/408 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/408 CtrlChar/param/1]
+a
+
+[STm07_00::command/408 CtrlChar/param/3]
+none
+
+[STm07_00::command/408 CtrlChar/param/11]
+none
+
+[STm07_00::command/408 CtrlChar/param/12]
+none
+
+[STm07_00::command/408 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/409 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/409 CtrlChar/param/1]
+a
+
+[STm07_00::command/409 CtrlChar/param/2]
+003
+
+[STm07_00::command/409 CtrlChar/param/3]
+none
+
+[STm07_00::command/409 CtrlChar/param/11]
+none
+
+[STm07_00::command/409 CtrlChar/param/12]
+none
+
+[STm07_00::command/409 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/411 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/411 SetTalk/param/2]
+一把可以提供安全感，但顾客绝对不想真的用到的剑。
+
+[STm07_00::command/411 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/411 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/411 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/411 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/412 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STm07_00::command/412 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/412 SetBGM/param/4]
+none
+
+[STm07_00::command/414 CtrlStage/param/9]
+none
+
+[STm07_00::command/414 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/415 SetAudio/param/1]
+se_226
+
+[STm07_00::command/416 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/416 CtrlChar/param/1]
+a
+
+[STm07_00::command/416 CtrlChar/param/2]
+004
+
+[STm07_00::command/416 CtrlChar/param/3]
+none
+
+[STm07_00::command/416 CtrlChar/param/11]
+none
+
+[STm07_00::command/416 CtrlChar/param/12]
+none
+
+[STm07_00::command/416 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/418 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/418 SetTalk/param/2]
+某种意义上，甚至可以说我们卖的是安全感。
+
+[STm07_00::command/418 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/418 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/418 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/418 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/420 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm07_00::command/420 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/420 SetBGM/param/4]
+none
+
+[STm07_00::command/421 CtrlBg/param/10]
+none
+
+[STm07_00::command/421 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/422 CtrlStage/param/9]
+none
+
+[STm07_00::command/422 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/423 SetChar/param/2]
+none
+
+[STm07_00::command/423 SetChar/param/3]
+avg3_210
+
+[STm07_00::command/423 SetChar/param/4]
+b
+
+[STm07_00::command/423 SetChar/param/5]
+002
+
+[STm07_00::command/423 SetChar/param/6]
+none
+
+[STm07_00::command/424 CtrlChar/param/0]
+avg3_210
+
+[STm07_00::command/424 CtrlChar/param/1]
+b
+
+[STm07_00::command/424 CtrlChar/param/3]
+none
+
+[STm07_00::command/424 CtrlChar/param/11]
+none
+
+[STm07_00::command/424 CtrlChar/param/12]
+none
+
+[STm07_00::command/424 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/425 CtrlChar/param/0]
+avg3_210
+
+[STm07_00::command/425 CtrlChar/param/1]
+b
+
+[STm07_00::command/425 CtrlChar/param/3]
+none
+
+[STm07_00::command/425 CtrlChar/param/11]
+none
+
+[STm07_00::command/425 CtrlChar/param/12]
+none
+
+[STm07_00::command/425 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/426 SetChar/param/2]
+none
+
+[STm07_00::command/426 SetChar/param/3]
+avg3_207
+
+[STm07_00::command/426 SetChar/param/4]
+a
+
+[STm07_00::command/426 SetChar/param/5]
+005
+
+[STm07_00::command/426 SetChar/param/6]
+none
+
+[STm07_00::command/427 CtrlChar/param/0]
+avg3_207
+
+[STm07_00::command/427 CtrlChar/param/1]
+a
+
+[STm07_00::command/427 CtrlChar/param/3]
+none
+
+[STm07_00::command/427 CtrlChar/param/11]
+none
+
+[STm07_00::command/427 CtrlChar/param/12]
+none
+
+[STm07_00::command/427 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/428 CtrlChar/param/0]
+avg3_207
+
+[STm07_00::command/428 CtrlChar/param/1]
+a
+
+[STm07_00::command/428 CtrlChar/param/3]
+none
+
+[STm07_00::command/428 CtrlChar/param/11]
+none
+
+[STm07_00::command/428 CtrlChar/param/12]
+none
+
+[STm07_00::command/428 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/429 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/429 CtrlChar/param/1]
+a
+
+[STm07_00::command/429 CtrlChar/param/2]
+003
+
+[STm07_00::command/429 CtrlChar/param/3]
+none
+
+[STm07_00::command/429 CtrlChar/param/11]
+none
+
+[STm07_00::command/429 CtrlChar/param/12]
+none
+
+[STm07_00::command/429 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/430 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/430 SetTalk/param/2]
+沙蝎伪装成我司员工，混进三天前的晚宴搞暗杀，对我司来说的确是巨大的负面新闻。
+
+[STm07_00::command/430 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/430 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/430 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/430 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/432 CtrlStage/param/9]
+none
+
+[STm07_00::command/432 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/433 CtrlBg/param/10]
+none
+
+[STm07_00::command/433 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/434 CtrlChar/param/0]
+avg3_207
+
+[STm07_00::command/434 CtrlChar/param/1]
+a
+
+[STm07_00::command/434 CtrlChar/param/3]
+none
+
+[STm07_00::command/434 CtrlChar/param/11]
+none
+
+[STm07_00::command/434 CtrlChar/param/12]
+none
+
+[STm07_00::command/434 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/435 CtrlChar/param/0]
+avg3_210
+
+[STm07_00::command/435 CtrlChar/param/1]
+b
+
+[STm07_00::command/435 CtrlChar/param/3]
+none
+
+[STm07_00::command/435 CtrlChar/param/11]
+none
+
+[STm07_00::command/435 CtrlChar/param/12]
+none
+
+[STm07_00::command/435 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/436 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/436 CtrlChar/param/1]
+a
+
+[STm07_00::command/436 CtrlChar/param/2]
+004
+
+[STm07_00::command/436 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_00::command/436 CtrlChar/param/11]
+none
+
+[STm07_00::command/436 CtrlChar/param/12]
+none
+
+[STm07_00::command/436 CtrlChar/param/13]
+Linear
+
+[STm07_00::command/437 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/437 SetTalk/param/2]
+但通过不同角度的解读，我们也能在推销时把负面新闻变成一种安全感的来源。
+
+[STm07_00::command/437 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/437 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/437 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/437 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/439 SetAudio/param/1]
+se_412
+
+[STm07_00::command/440 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/440 CtrlChar/param/1]
+a
+
+[STm07_00::command/440 CtrlChar/param/2]
+010
+
+[STm07_00::command/440 CtrlChar/param/3]
+none
+
+[STm07_00::command/440 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/440 CtrlChar/param/12]
+none
+
+[STm07_00::command/440 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/441 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/441 SetTalk/param/2]
+各位明白了吗？
+
+[STm07_00::command/441 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/441 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/441 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/441 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/443 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/443 CtrlChar/param/1]
+a
+
+[STm07_00::command/443 CtrlChar/param/3]
+none
+
+[STm07_00::command/443 CtrlChar/param/11]
+none
+
+[STm07_00::command/443 CtrlChar/param/12]
+none
+
+[STm07_00::command/443 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/444 CtrlStage/param/9]
+none
+
+[STm07_00::command/444 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/446 SetChar/param/2]
+none
+
+[STm07_00::command/446 SetChar/param/3]
+avg3_198
+
+[STm07_00::command/446 SetChar/param/4]
+a
+
+[STm07_00::command/446 SetChar/param/5]
+007
+
+[STm07_00::command/446 SetChar/param/6]
+none
+
+[STm07_00::command/447 SetChar/param/2]
+none
+
+[STm07_00::command/447 SetChar/param/3]
+avg3_1237
+
+[STm07_00::command/447 SetChar/param/4]
+a
+
+[STm07_00::command/447 SetChar/param/5]
+003
+
+[STm07_00::command/447 SetChar/param/6]
+none
+
+[STm07_00::command/448 SetChar/param/2]
+none
+
+[STm07_00::command/448 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/448 SetChar/param/4]
+a
+
+[STm07_00::command/448 SetChar/param/5]
+007
+
+[STm07_00::command/448 SetChar/param/6]
+none
+
+[STm07_00::command/449 SetChar/param/2]
+none
+
+[STm07_00::command/449 SetChar/param/3]
+avg3_1238
+
+[STm07_00::command/449 SetChar/param/4]
+a
+
+[STm07_00::command/449 SetChar/param/5]
+003
+
+[STm07_00::command/449 SetChar/param/6]
+none
+
+[STm07_00::command/450 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/450 CtrlChar/param/1]
+a
+
+[STm07_00::command/450 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/450 CtrlChar/param/11]
+none
+
+[STm07_00::command/450 CtrlChar/param/12]
+none
+
+[STm07_00::command/450 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/451 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/451 CtrlChar/param/1]
+a
+
+[STm07_00::command/451 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/451 CtrlChar/param/11]
+none
+
+[STm07_00::command/451 CtrlChar/param/12]
+none
+
+[STm07_00::command/451 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/452 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/452 CtrlChar/param/1]
+a
+
+[STm07_00::command/452 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/452 CtrlChar/param/11]
+none
+
+[STm07_00::command/452 CtrlChar/param/12]
+none
+
+[STm07_00::command/452 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/453 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/453 CtrlChar/param/1]
+a
+
+[STm07_00::command/453 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/453 CtrlChar/param/11]
+none
+
+[STm07_00::command/453 CtrlChar/param/12]
+none
+
+[STm07_00::command/453 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/454 SetTalk/param/1]
+业务员们
+
+[STm07_00::command/454 SetTalk/param/2]
+明白了！
+
+[STm07_00::command/454 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/454 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/454 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/454 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/455 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/455 CtrlChar/param/1]
+a
+
+[STm07_00::command/455 CtrlChar/param/2]
+002
+
+[STm07_00::command/455 CtrlChar/param/3]
+none
+
+[STm07_00::command/455 CtrlChar/param/11]
+none
+
+[STm07_00::command/455 CtrlChar/param/12]
+none
+
+[STm07_00::command/455 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/457 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/457 CtrlChar/param/1]
+a
+
+[STm07_00::command/457 CtrlChar/param/3]
+none
+
+[STm07_00::command/457 CtrlChar/param/11]
+none
+
+[STm07_00::command/457 CtrlChar/param/12]
+none
+
+[STm07_00::command/457 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/458 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/458 CtrlChar/param/1]
+a
+
+[STm07_00::command/458 CtrlChar/param/3]
+none
+
+[STm07_00::command/458 CtrlChar/param/11]
+none
+
+[STm07_00::command/458 CtrlChar/param/12]
+none
+
+[STm07_00::command/458 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/459 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/459 CtrlChar/param/1]
+a
+
+[STm07_00::command/459 CtrlChar/param/3]
+none
+
+[STm07_00::command/459 CtrlChar/param/11]
+none
+
+[STm07_00::command/459 CtrlChar/param/12]
+none
+
+[STm07_00::command/459 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/460 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/460 CtrlChar/param/1]
+a
+
+[STm07_00::command/460 CtrlChar/param/3]
+none
+
+[STm07_00::command/460 CtrlChar/param/11]
+none
+
+[STm07_00::command/460 CtrlChar/param/12]
+none
+
+[STm07_00::command/460 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/461 CtrlStage/param/9]
+none
+
+[STm07_00::command/461 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/462 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/462 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/462 SetBGM/param/4]
+4000ms
+
+[STm07_00::command/463 SetAudio/param/1]
+se_412
+
+[STm07_00::command/464 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/464 CtrlChar/param/1]
+a
+
+[STm07_00::command/464 CtrlChar/param/3]
+none
+
+[STm07_00::command/464 CtrlChar/param/11]
+none
+
+[STm07_00::command/464 CtrlChar/param/12]
+none
+
+[STm07_00::command/464 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/466 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/466 SetTalk/param/2]
+解散。
+
+[STm07_00::command/466 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/466 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/466 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/466 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/468 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/468 CtrlChar/param/1]
+a
+
+[STm07_00::command/468 CtrlChar/param/3]
+none
+
+[STm07_00::command/468 CtrlChar/param/11]
+none
+
+[STm07_00::command/468 CtrlChar/param/12]
+none
+
+[STm07_00::command/468 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/469 CtrlStage/param/9]
+none
+
+[STm07_00::command/469 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/471 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/471 CtrlChar/param/1]
+a
+
+[STm07_00::command/471 CtrlChar/param/3]
+none
+
+[STm07_00::command/471 CtrlChar/param/11]
+none
+
+[STm07_00::command/471 CtrlChar/param/12]
+none
+
+[STm07_00::command/471 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/472 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/472 CtrlChar/param/1]
+a
+
+[STm07_00::command/472 CtrlChar/param/3]
+none
+
+[STm07_00::command/472 CtrlChar/param/11]
+none
+
+[STm07_00::command/472 CtrlChar/param/12]
+none
+
+[STm07_00::command/472 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/473 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/473 CtrlChar/param/1]
+a
+
+[STm07_00::command/473 CtrlChar/param/3]
+none
+
+[STm07_00::command/473 CtrlChar/param/11]
+none
+
+[STm07_00::command/473 CtrlChar/param/12]
+none
+
+[STm07_00::command/473 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/474 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/474 CtrlChar/param/1]
+a
+
+[STm07_00::command/474 CtrlChar/param/3]
+none
+
+[STm07_00::command/474 CtrlChar/param/11]
+none
+
+[STm07_00::command/474 CtrlChar/param/12]
+none
+
+[STm07_00::command/474 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/476 SetAudio/param/1]
+se_121
+
+[STm07_00::command/477 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/477 CtrlChar/param/1]
+a
+
+[STm07_00::command/477 CtrlChar/param/3]
+none
+
+[STm07_00::command/477 CtrlChar/param/11]
+none
+
+[STm07_00::command/477 CtrlChar/param/12]
+none
+
+[STm07_00::command/477 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/478 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/478 CtrlChar/param/1]
+a
+
+[STm07_00::command/478 CtrlChar/param/3]
+none
+
+[STm07_00::command/478 CtrlChar/param/11]
+none
+
+[STm07_00::command/478 CtrlChar/param/12]
+none
+
+[STm07_00::command/478 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/479 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/479 CtrlChar/param/1]
+a
+
+[STm07_00::command/479 CtrlChar/param/3]
+none
+
+[STm07_00::command/479 CtrlChar/param/11]
+none
+
+[STm07_00::command/479 CtrlChar/param/12]
+none
+
+[STm07_00::command/479 CtrlChar/param/13]
+OutQuad
+
+[STm07_00::command/480 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/480 CtrlChar/param/1]
+a
+
+[STm07_00::command/480 CtrlChar/param/3]
+none
+
+[STm07_00::command/480 CtrlChar/param/11]
+none
+
+[STm07_00::command/480 CtrlChar/param/12]
+none
+
+[STm07_00::command/480 CtrlChar/param/13]
+OutQuad
+
+[STm07_00::command/482 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/482 CtrlChar/param/1]
+a
+
+[STm07_00::command/482 CtrlChar/param/3]
+none
+
+[STm07_00::command/482 CtrlChar/param/11]
+none
+
+[STm07_00::command/482 CtrlChar/param/12]
+none
+
+[STm07_00::command/482 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/483 CtrlChar/param/0]
+avg3_1237
+
+[STm07_00::command/483 CtrlChar/param/1]
+a
+
+[STm07_00::command/483 CtrlChar/param/3]
+none
+
+[STm07_00::command/483 CtrlChar/param/11]
+none
+
+[STm07_00::command/483 CtrlChar/param/12]
+none
+
+[STm07_00::command/483 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/484 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/484 CtrlChar/param/1]
+a
+
+[STm07_00::command/484 CtrlChar/param/3]
+none
+
+[STm07_00::command/484 CtrlChar/param/11]
+none
+
+[STm07_00::command/484 CtrlChar/param/12]
+none
+
+[STm07_00::command/484 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/485 CtrlChar/param/0]
+avg3_1238
+
+[STm07_00::command/485 CtrlChar/param/1]
+a
+
+[STm07_00::command/485 CtrlChar/param/3]
+none
+
+[STm07_00::command/485 CtrlChar/param/11]
+none
+
+[STm07_00::command/485 CtrlChar/param/12]
+none
+
+[STm07_00::command/485 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/487 SetAudio/param/1]
+se_121_stop
+
+[STm07_00::command/489 SetAudio/param/1]
+se_055
+
+[STm07_00::command/490 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/490 CtrlChar/param/1]
+a
+
+[STm07_00::command/490 CtrlChar/param/2]
+003
+
+[STm07_00::command/490 CtrlChar/param/3]
+none
+
+[STm07_00::command/490 CtrlChar/param/11]
+none
+
+[STm07_00::command/490 CtrlChar/param/12]
+none
+
+[STm07_00::command/490 CtrlChar/param/13]
+Linear
+
+[STm07_00::command/492 CtrlStage/param/9]
+none
+
+[STm07_00::command/492 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/494 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/494 CtrlChar/param/1]
+a
+
+[STm07_00::command/494 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm07_00::command/494 CtrlChar/param/11]
+lengzhan
+
+[STm07_00::command/494 CtrlChar/param/12]
+none
+
+[STm07_00::command/494 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/496 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/496 SetTalk/param/2]
+呼，总算安静下来了。==W==前任经理到底是从哪里招到的这些人，头脑简单的像是石头。
+
+[STm07_00::command/496 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/496 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/496 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/496 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/498 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/498 CtrlChar/param/1]
+a
+
+[STm07_00::command/498 CtrlChar/param/2]
+006
+
+[STm07_00::command/498 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STm07_00::command/498 CtrlChar/param/11]
+lengzhan
+
+[STm07_00::command/498 CtrlChar/param/12]
+none
+
+[STm07_00::command/498 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/501 CtrlStage/param/9]
+none
+
+[STm07_00::command/501 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/502 CtrlBg/param/10]
+none
+
+[STm07_00::command/502 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/503 SetChar/param/2]
+none
+
+[STm07_00::command/503 SetChar/param/3]
+avg3_199
+
+[STm07_00::command/503 SetChar/param/4]
+a
+
+[STm07_00::command/503 SetChar/param/5]
+003
+
+[STm07_00::command/503 SetChar/param/6]
+none
+
+[STm07_00::command/504 SetChar/param/2]
+none
+
+[STm07_00::command/504 SetChar/param/3]
+avg3_198
+
+[STm07_00::command/504 SetChar/param/4]
+a
+
+[STm07_00::command/504 SetChar/param/5]
+003
+
+[STm07_00::command/504 SetChar/param/6]
+none
+
+[STm07_00::command/505 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/505 CtrlChar/param/1]
+a
+
+[STm07_00::command/505 CtrlChar/param/3]
+none
+
+[STm07_00::command/505 CtrlChar/param/11]
+none
+
+[STm07_00::command/505 CtrlChar/param/12]
+none
+
+[STm07_00::command/505 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/506 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/506 CtrlChar/param/1]
+a
+
+[STm07_00::command/506 CtrlChar/param/3]
+none
+
+[STm07_00::command/506 CtrlChar/param/11]
+none
+
+[STm07_00::command/506 CtrlChar/param/12]
+none
+
+[STm07_00::command/506 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/508 SetAudio/param/1]
+se_412
+
+[STm07_00::command/509 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/509 CtrlChar/param/1]
+a
+
+[STm07_00::command/509 CtrlChar/param/2]
+003
+
+[STm07_00::command/509 CtrlChar/param/3]
+none
+
+[STm07_00::command/509 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/509 CtrlChar/param/12]
+none
+
+[STm07_00::command/509 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/510 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/510 SetTalk/param/2]
+不过她们要的工资很低，又很有精神，找个机会送去总部锻炼一下吧，说不定有几个可用之才。
+
+[STm07_00::command/510 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/510 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/510 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/510 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/512 CtrlChar/param/0]
+avg3_199
+
+[STm07_00::command/512 CtrlChar/param/1]
+a
+
+[STm07_00::command/512 CtrlChar/param/3]
+none
+
+[STm07_00::command/512 CtrlChar/param/11]
+none
+
+[STm07_00::command/512 CtrlChar/param/12]
+none
+
+[STm07_00::command/512 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/513 CtrlChar/param/0]
+avg3_198
+
+[STm07_00::command/513 CtrlChar/param/1]
+a
+
+[STm07_00::command/513 CtrlChar/param/3]
+none
+
+[STm07_00::command/513 CtrlChar/param/11]
+none
+
+[STm07_00::command/513 CtrlChar/param/12]
+none
+
+[STm07_00::command/513 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/514 CtrlStage/param/9]
+none
+
+[STm07_00::command/514 CtrlStage/param/10]
+OutCubic
+
+[STm07_00::command/515 CtrlBg/param/10]
+none
+
+[STm07_00::command/515 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/517 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/517 CtrlChar/param/1]
+a
+
+[STm07_00::command/517 CtrlChar/param/2]
+002
+
+[STm07_00::command/517 CtrlChar/param/3]
+avg_emoji_shock
+
+[STm07_00::command/517 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/517 CtrlChar/param/12]
+none
+
+[STm07_00::command/517 CtrlChar/param/13]
+Linear
+
+[STm07_00::command/518 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/518 SetTalk/param/2]
+说到总部……也该联络一下了。跨城邦接线员，帮我接双子城。
+
+[STm07_00::command/518 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/518 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/518 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/518 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/519 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/519 CtrlChar/param/1]
+a
+
+[STm07_00::command/519 CtrlChar/param/3]
+close
+
+[STm07_00::command/519 CtrlChar/param/11]
+none
+
+[STm07_00::command/519 CtrlChar/param/12]
+none
+
+[STm07_00::command/519 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/521 SetTrans/param/2]
+0
+
+[STm07_00::command/521 SetTrans/param/3]
+OutSine
+
+[STm07_00::command/521 SetTrans/param/8]
+default
+
+[STm07_00::command/523 SetAudio/param/1]
+se_142
+
+[STm07_00::command/525 CtrlStage/param/9]
+none
+
+[STm07_00::command/525 CtrlStage/param/10]
+Linear
+
+[STm07_00::command/526 SetStage/param/2]
+Linear
+
+[STm07_00::command/527 SetBg/param/1]
+story_main_02_022
+
+[STm07_00::command/527 SetBg/param/2]
+0
+
+[STm07_00::command/527 SetBg/param/3]
+Linear
+
+[STm07_00::command/527 SetBg/param/6]
+default
+
+[STm07_00::command/528 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/528 SetBg/param/2]
+0
+
+[STm07_00::command/528 SetBg/param/3]
+Linear
+
+[STm07_00::command/528 SetBg/param/6]
+default
+
+[STm07_00::command/529 CtrlBg/param/10]
+none
+
+[STm07_00::command/529 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/530 SetChar/param/2]
+none
+
+[STm07_00::command/530 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/530 SetChar/param/4]
+a
+
+[STm07_00::command/530 SetChar/param/5]
+002
+
+[STm07_00::command/530 SetChar/param/6]
+none
+
+[STm07_00::command/531 SetAudio/param/1]
+se_408
+
+[STm07_00::command/533 SetAudio/param/1]
+se_408_stop
+
+[STm07_00::command/535 CtrlStage/param/9]
+none
+
+[STm07_00::command/535 CtrlStage/param/10]
+OutSine
+
+[STm07_00::command/536 SetTrans/param/2]
+0
+
+[STm07_00::command/536 SetTrans/param/3]
+OutQuad
+
+[STm07_00::command/536 SetTrans/param/8]
+default
+
+[STm07_00::command/538 SetAudio/param/1]
+se_342
+
+[STm07_00::command/540 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/540 SetBGM/param/3]
+m46
+
+[STm07_00::command/540 SetBGM/param/4]
+none
+
+[STm07_00::command/541 SetTalk/param/1]
+有点撒娇的声音
+
+[STm07_00::command/541 SetTalk/param/2]
+梅尔库莉娅，你的联络终于来了，菲莱的残局收拾得如何了？
+
+[STm07_00::command/541 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/541 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/541 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/541 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/543 CtrlStage/param/9]
+none
+
+[STm07_00::command/543 CtrlStage/param/10]
+OutQuad
+
+[STm07_00::command/544 CtrlStage/param/9]
+none
+
+[STm07_00::command/544 CtrlStage/param/10]
+OutQuad
+
+[STm07_00::command/545 SetAudio/param/1]
+se_077
+
+[STm07_00::command/546 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/546 CtrlChar/param/1]
+a
+
+[STm07_00::command/546 CtrlChar/param/2]
+010
+
+[STm07_00::command/546 CtrlChar/param/3]
+none
+
+[STm07_00::command/546 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/546 CtrlChar/param/12]
+none
+
+[STm07_00::command/546 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/547 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/547 SetTalk/param/2]
+尊敬的首席执行官大人，在业务部的努力下，菲莱的已有客群已经稳定，在这两天里，我们还发展了三位新的公司高管客户，她们在未来会为我们带来更多的人脉和新客户。
+
+[STm07_00::command/547 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/547 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/547 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/547 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/549 CtrlStage/param/9]
+none
+
+[STm07_00::command/549 CtrlStage/param/10]
+OutQuad
+
+[STm07_00::command/550 CtrlStage/param/9]
+none
+
+[STm07_00::command/550 CtrlStage/param/10]
+OutQuad
+
+[STm07_00::command/551 SetAudio/param/1]
+se_029
+
+[STm07_00::command/553 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/553 SetTalk/param/2]
+不错嘛，在别的业务部都因为菲莱的负面新闻而业务受影响的时候，你临危受命还能让菲莱的业务逆势上扬……我已经能想象出元老院那些人的扭曲表情了。
+
+[STm07_00::command/553 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/553 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/553 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/553 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/555 CtrlStage/param/9]
+none
+
+[STm07_00::command/555 CtrlStage/param/10]
+OutQuad
+
+[STm07_00::command/556 CtrlStage/param/9]
+none
+
+[STm07_00::command/556 CtrlStage/param/10]
+OutQuad
+
+[STm07_00::command/557 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/557 CtrlChar/param/1]
+a
+
+[STm07_00::command/557 CtrlChar/param/2]
+005
+
+[STm07_00::command/557 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[STm07_00::command/557 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/557 CtrlChar/param/12]
+none
+
+[STm07_00::command/557 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/558 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/558 SetTalk/param/2]
+请容我指出，十天前，我就向元老院提出“参与翡冷翠组织的晚宴”的议案。毕竟她现在才是菲莱城的真正主人。
+
+[STm07_00::command/558 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/558 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/558 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/558 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/560 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/560 CtrlChar/param/1]
+a
+
+[STm07_00::command/560 CtrlChar/param/2]
+009
+
+[STm07_00::command/560 CtrlChar/param/3]
+avg_emoji_awkward
+
+[STm07_00::command/560 CtrlChar/param/11]
+lengzhan
+
+[STm07_00::command/560 CtrlChar/param/12]
+none
+
+[STm07_00::command/560 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/561 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/561 SetTalk/param/2]
+但被元老院以“这样可能会破坏和联合种业总公司的关系”为由拒绝了，这才让沙蝎趁虚而入，伪装成我司员工的身份。
+
+[STm07_00::command/561 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/561 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/561 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/561 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/563 SetStage/param/2]
+InBack
+
+[STm07_00::command/565 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/565 CtrlChar/param/1]
+a
+
+[STm07_00::command/565 CtrlChar/param/2]
+005
+
+[STm07_00::command/565 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm07_00::command/565 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/565 CtrlChar/param/12]
+none
+
+[STm07_00::command/565 CtrlChar/param/13]
+OutQuad
+
+[STm07_00::command/567 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/567 SetTalk/param/2]
+并且，据我所知。让沙蝎伪装成我司员工的阴谋，就是某位觊觎翡冷翠位置的总公司高管的手笔，对方可从未担心“破坏和天穹保险的关系”。
+
+[STm07_00::command/567 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/567 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/567 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/567 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/569 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/569 CtrlChar/param/1]
+a
+
+[STm07_00::command/569 CtrlChar/param/2]
+003
+
+[STm07_00::command/569 CtrlChar/param/3]
+avg_emoji_music
+
+[STm07_00::command/569 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/569 CtrlChar/param/12]
+none
+
+[STm07_00::command/569 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/570 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/570 SetTalk/param/2]
+这些情况我已经整理成新的报告，由旅人携带送往双子城了。
+
+[STm07_00::command/570 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/570 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/570 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/570 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/572 SetTrans/param/2]
+0
+
+[STm07_00::command/572 SetTrans/param/3]
+OutQuad
+
+[STm07_00::command/572 SetTrans/param/8]
+default
+
+[STm07_00::command/573 CtrlStage/param/9]
+none
+
+[STm07_00::command/573 CtrlStage/param/10]
+Linear
+
+[STm07_00::command/574 SetBg/param/1]
+story_main_02_022
+
+[STm07_00::command/574 SetBg/param/2]
+0
+
+[STm07_00::command/574 SetBg/param/3]
+OutSine
+
+[STm07_00::command/574 SetBg/param/6]
+default
+
+[STm07_00::command/575 CtrlBg/param/10]
+none
+
+[STm07_00::command/575 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/576 SetTrans/param/2]
+0
+
+[STm07_00::command/576 SetTrans/param/3]
+OutQuad
+
+[STm07_00::command/576 SetTrans/param/8]
+default
+
+[STm07_00::command/578 SetAudio/param/1]
+se_055
+
+[STm07_00::command/579 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/579 SetTalk/param/2]
+……
+
+[STm07_00::command/579 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/579 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/579 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/579 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/581 SetAudio/param/1]
+se_030
+
+[STm07_00::command/583 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/583 SetTalk/param/2]
+唉，我愚蠢的妹妹，你知不知道就是因为你这种又冷又硬的性格，才一直升不上去，只在业务部经理这个层面打转。
+
+[STm07_00::command/583 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/583 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/583 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/583 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/585 SetTrans/param/2]
+0
+
+[STm07_00::command/585 SetTrans/param/3]
+OutCubic
+
+[STm07_00::command/585 SetTrans/param/8]
+default
+
+[STm07_00::command/586 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/586 SetBg/param/2]
+0
+
+[STm07_00::command/586 SetBg/param/3]
+Linear
+
+[STm07_00::command/586 SetBg/param/6]
+default
+
+[STm07_00::command/587 CtrlBg/param/10]
+none
+
+[STm07_00::command/587 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/588 SetChar/param/2]
+none
+
+[STm07_00::command/588 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/588 SetChar/param/4]
+a
+
+[STm07_00::command/588 SetChar/param/5]
+003
+
+[STm07_00::command/588 SetChar/param/6]
+none
+
+[STm07_00::command/589 SetTrans/param/2]
+0
+
+[STm07_00::command/589 SetTrans/param/3]
+OutCubic
+
+[STm07_00::command/589 SetTrans/param/8]
+default
+
+[STm07_00::command/591 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/591 CtrlChar/param/1]
+a
+
+[STm07_00::command/591 CtrlChar/param/3]
+avg_emoji_question
+
+[STm07_00::command/591 CtrlChar/param/11]
+none
+
+[STm07_00::command/591 CtrlChar/param/12]
+none
+
+[STm07_00::command/591 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/593 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/593 SetTalk/param/2]
+那么你呢？我天真的姐姐，你难道不是因为太好说话，才被元老院那些家伙摆在这个位置上做个橡皮图章吗？
+
+[STm07_00::command/593 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/593 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/593 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/593 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/595 SetStage/param/2]
+OutBack
+
+[STm07_00::command/596 SetAudio/param/1]
+se_087
+
+[STm07_00::command/597 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/597 CtrlChar/param/1]
+a
+
+[STm07_00::command/597 CtrlChar/param/3]
+none
+
+[STm07_00::command/597 CtrlChar/param/11]
+none
+
+[STm07_00::command/597 CtrlChar/param/12]
+none
+
+[STm07_00::command/597 CtrlChar/param/13]
+OutBack
+
+[STm07_00::command/599 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/599 SetTalk/param/2]
+呵呵……我确实是个“橡皮图章”呢——但为无价值之物赋予价值，不就是你的工作吗？
+
+[STm07_00::command/599 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/599 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/599 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/599 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/600 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/600 SetTalk/param/2]
+说起来，眼下这种局面还能提升业绩，你到底是怎么做到的。明明现在舆论在疯狂质疑……我们和沙蝎勾结。
+
+[STm07_00::command/600 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/600 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/600 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/600 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/602 CtrlStage/param/9]
+none
+
+[STm07_00::command/602 CtrlStage/param/10]
+OutQuad
+
+[STm07_00::command/603 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/603 CtrlChar/param/1]
+a
+
+[STm07_00::command/603 CtrlChar/param/2]
+004
+
+[STm07_00::command/603 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm07_00::command/603 CtrlChar/param/11]
+daintou
+
+[STm07_00::command/603 CtrlChar/param/12]
+none
+
+[STm07_00::command/603 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/604 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/604 SetTalk/param/2]
+沙蝎是整个帝国西北最大的沙漠强盗集团。一家保险公司，被人认为和这样的组织勾结真的是一件坏事吗？
+
+[STm07_00::command/604 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/604 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/604 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/604 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/606 SetStage/param/2]
+OutCubic
+
+[STm07_00::command/608 SetAudio/param/1]
+se_021
+
+[STm07_00::command/609 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/609 CtrlChar/param/1]
+a
+
+[STm07_00::command/609 CtrlChar/param/2]
+010
+
+[STm07_00::command/609 CtrlChar/param/3]
+none
+
+[STm07_00::command/609 CtrlChar/param/11]
+none
+
+[STm07_00::command/609 CtrlChar/param/12]
+none
+
+[STm07_00::command/609 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/610 CtrlBg/param/10]
+none
+
+[STm07_00::command/610 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/611 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/612 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/612 SetTalk/param/2]
+你以为，绯瞳上的那些新闻是谁支持她们发的，这几天我可是接受了好几个魔女的采访。
+
+[STm07_00::command/612 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/612 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/612 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/612 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/614 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/614 CtrlChar/param/1]
+a
+
+[STm07_00::command/614 CtrlChar/param/2]
+012
+
+[STm07_00::command/614 CtrlChar/param/3]
+avg_emoji_love
+
+[STm07_00::command/614 CtrlChar/param/11]
+jushou
+
+[STm07_00::command/614 CtrlChar/param/12]
+none
+
+[STm07_00::command/614 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/615 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/615 SetTalk/param/2]
+我建议我们的西部大区应该趁机推出一些安全和财产方面的保险产品，在这一两个月肯定很受欢迎。
+
+[STm07_00::command/615 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/615 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/615 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/615 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/617 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/618 SetTrans/param/2]
+0
+
+[STm07_00::command/618 SetTrans/param/3]
+OutCubic
+
+[STm07_00::command/618 SetTrans/param/8]
+default
+
+[STm07_00::command/620 SetBg/param/1]
+story_main_02_022
+
+[STm07_00::command/620 SetBg/param/2]
+0
+
+[STm07_00::command/620 SetBg/param/3]
+Linear
+
+[STm07_00::command/620 SetBg/param/6]
+default
+
+[STm07_00::command/621 CtrlBg/param/10]
+none
+
+[STm07_00::command/621 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/622 SetTrans/param/2]
+0
+
+[STm07_00::command/622 SetTrans/param/3]
+OutCubic
+
+[STm07_00::command/622 SetTrans/param/8]
+default
+
+[STm07_00::command/624 SetAudio/param/1]
+se_030
+
+[STm07_00::command/625 SetTalkShake/param/1]
+Xiao
+
+[STm07_00::command/626 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/626 SetTalk/param/2]
+你，你发的？这不是会让天穹保险的声誉变得更糟吗？
+
+[STm07_00::command/626 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/626 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/626 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/626 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/627 SetCharHead/param/5]
+avg3_220
+
+[STm07_00::command/627 SetCharHead/param/6]
+a
+
+[STm07_00::command/627 SetCharHead/param/7]
+004
+
+[STm07_00::command/627 SetCharHead/param/8]
+avg_emoji_music
+
+[STm07_00::command/629 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/629 SetTalk/param/2]
+出了这么大的事情，我们即使不接受采访，绯瞳传讯也会报道。不如多接受采访，至少让报道中被强调的信息有利于我们。
+
+[STm07_00::command/629 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/629 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/629 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/629 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/630 SetCharHead/param/5]
+avg3_220
+
+[STm07_00::command/630 SetCharHead/param/6]
+a
+
+[STm07_00::command/630 SetCharHead/param/7]
+002
+
+[STm07_00::command/630 SetCharHead/param/8]
+none
+
+[STm07_00::command/632 SetAudio/param/1]
+se_055
+
+[STm07_00::command/633 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/633 SetTalk/param/2]
+就算是为了公司，但你这种连自家丑闻都要利用的性格……呵呵，真是个可怕的孩子。
+
+[STm07_00::command/633 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/633 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/633 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/633 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/635 SetAudio/param/1]
+se_087
+
+[STm07_00::command/636 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/636 SetTalk/param/2]
+告诉你一个好消息，因为元老院在菲莱晚宴上的判断失误。那些老古董们终于肯放开手中的权力了。
+
+[STm07_00::command/636 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/636 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/636 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/636 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/638 SetTalk/param/1]
+天穹保险首席执行官
+
+[STm07_00::command/638 SetTalk/param/2]
+你现在可以调动公司的全部资源，只要你能解决这次沙蝎假扮我们的负面新闻。
+
+[STm07_00::command/638 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/638 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/638 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/638 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/640 SetAudio/param/1]
+se_169
+
+[STm07_00::command/641 SetTrans/param/2]
+0
+
+[STm07_00::command/641 SetTrans/param/3]
+OutQuad
+
+[STm07_00::command/641 SetTrans/param/8]
+default
+
+[STm07_00::command/642 SetStage/param/2]
+Linear
+
+[STm07_00::command/643 SetBg/param/1]
+hotel_senior_office
+
+[STm07_00::command/643 SetBg/param/2]
+0
+
+[STm07_00::command/643 SetBg/param/3]
+Linear
+
+[STm07_00::command/643 SetBg/param/6]
+default
+
+[STm07_00::command/644 CtrlBg/param/10]
+none
+
+[STm07_00::command/644 CtrlBg/param/11]
+Linear
+
+[STm07_00::command/645 SetChar/param/2]
+none
+
+[STm07_00::command/645 SetChar/param/3]
+avg3_220
+
+[STm07_00::command/645 SetChar/param/4]
+a
+
+[STm07_00::command/645 SetChar/param/5]
+002
+
+[STm07_00::command/645 SetChar/param/6]
+none
+
+[STm07_00::command/647 SetTrans/param/2]
+0
+
+[STm07_00::command/647 SetTrans/param/3]
+OutSine
+
+[STm07_00::command/647 SetTrans/param/8]
+default
+
+[STm07_00::command/649 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/649 CtrlChar/param/1]
+a
+
+[STm07_00::command/649 CtrlChar/param/3]
+avg_emoji_star
+
+[STm07_00::command/649 CtrlChar/param/11]
+none
+
+[STm07_00::command/649 CtrlChar/param/12]
+none
+
+[STm07_00::command/649 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/650 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm07_00::command/650 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm07_00::command/650 SetBGM/param/4]
+2000ms
+
+[STm07_00::command/651 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/651 SetTalk/param/2]
+放心吧，姐姐，我已经有办法了。
+
+[STm07_00::command/651 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/651 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/651 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/651 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/653 SetAudio/param/1]
+se_342
+
+[STm07_00::command/654 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/654 CtrlChar/param/1]
+a
+
+[STm07_00::command/654 CtrlChar/param/2]
+003
+
+[STm07_00::command/654 CtrlChar/param/3]
+none
+
+[STm07_00::command/654 CtrlChar/param/11]
+diantou
+
+[STm07_00::command/654 CtrlChar/param/12]
+none
+
+[STm07_00::command/654 CtrlChar/param/13]
+OutSine
+
+[STm07_00::command/655 SetStage/param/2]
+OutCubic
+
+[STm07_00::command/657 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/658 CtrlBg/param/10]
+none
+
+[STm07_00::command/658 CtrlBg/param/11]
+OutSine
+
+[STm07_00::command/659 SetAudio/param/1]
+se_021
+
+[STm07_00::command/660 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/660 CtrlChar/param/1]
+a
+
+[STm07_00::command/660 CtrlChar/param/2]
+002
+
+[STm07_00::command/660 CtrlChar/param/3]
+none
+
+[STm07_00::command/660 CtrlChar/param/11]
+none
+
+[STm07_00::command/660 CtrlChar/param/12]
+none
+
+[STm07_00::command/660 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/662 SetTalk/param/1]
+0
+
+[STm07_00::command/662 SetTalk/param/2]
+梅尔库莉娅的手指，滑动到绯瞳新闻的一篇报道上。
+
+[STm07_00::command/662 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/662 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/662 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/662 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm07_00::command/663 SetFrontObj/param/2]
+qstory_main_07_001
+
+[STm07_00::command/665 CtrlBg/param/10]
+none
+
+[STm07_00::command/665 CtrlBg/param/11]
+OutCubic
+
+[STm07_00::command/666 CtrlChar/param/0]
+avg3_220
+
+[STm07_00::command/666 CtrlChar/param/1]
+a
+
+[STm07_00::command/666 CtrlChar/param/2]
+004
+
+[STm07_00::command/666 CtrlChar/param/3]
+avg_emoji_star
+
+[STm07_00::command/666 CtrlChar/param/11]
+none
+
+[STm07_00::command/666 CtrlChar/param/12]
+none
+
+[STm07_00::command/666 CtrlChar/param/13]
+OutCubic
+
+[STm07_00::command/667 SetTalk/param/1]
+avg3_220
+
+[STm07_00::command/667 SetTalk/param/2]
+淡化一个负面新闻的最佳方案，就是制造一个更大的新闻。
+
+[STm07_00::command/667 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm07_00::command/667 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm07_00::command/667 SetTalk/param/7]
+[EMPTY_SOURCE]
+
+[STm07_00::command/667 SetTalk/param/8]
+[EMPTY_SOURCE]
+

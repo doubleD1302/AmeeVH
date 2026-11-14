@@ -1,0 +1,5893 @@
+STm09_05_c | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1963
+
+[STm09_05_c::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[STm09_05_c::command/0 SetIntro/param/1]
+BE
+
+[STm09_05_c::command/0 SetIntro/param/2]
+遥かなる塔
+
+[STm09_05_c::command/0 SetIntro/param/3]
+空の星ノ塔が落下し、魔王たちとミラーシュの全住民が死亡する。白い部屋でヴェータに真相を問い詰めると、ヴェータは自身の記憶を犠牲にアンジュが未来から来たことを証明する。魔王はヴェータをも救うと誓い、やり直しのその先を目指す。
+
+[STm09_05_c::command/1 GetEvidence/param/0]
+E1007
+
+[STm09_05_c::command/2 SetTrans/param/2]
+0
+
+[STm09_05_c::command/2 SetTrans/param/3]
+Linear
+
+[STm09_05_c::command/2 SetTrans/param/8]
+default
+
+[STm09_05_c::command/3 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/3 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/4 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/4 SetBg/param/2]
+0
+
+[STm09_05_c::command/4 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/4 SetBg/param/6]
+default
+
+[STm09_05_c::command/5 CtrlBg/param/10]
+JingTouYaoHuang
+
+[STm09_05_c::command/5 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/6 SetFx/param/1]
+fx_avg_eye_ev
+
+[STm09_05_c::command/7 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/7 CtrlStage/param/10]
+OutQuad
+
+[STm09_05_c::command/9 SetTrans/param/2]
+0
+
+[STm09_05_c::command/9 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/9 SetTrans/param/8]
+default
+
+[STm09_05_c::command/11 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/11 SetBGM/param/3]
+m54
+
+[STm09_05_c::command/11 SetBGM/param/4]
+none
+
+[STm09_05_c::command/12 CtrlBg/param/10]
+stop
+
+[STm09_05_c::command/12 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/13 SetChar/param/2]
+none
+
+[STm09_05_c::command/13 SetChar/param/3]
+avg3_173
+
+[STm09_05_c::command/13 SetChar/param/4]
+a
+
+[STm09_05_c::command/13 SetChar/param/5]
+002
+
+[STm09_05_c::command/13 SetChar/param/6]
+none
+
+[STm09_05_c::command/14 SetChar/param/2]
+none
+
+[STm09_05_c::command/14 SetChar/param/3]
+avg3_174
+
+[STm09_05_c::command/14 SetChar/param/4]
+a
+
+[STm09_05_c::command/14 SetChar/param/5]
+002
+
+[STm09_05_c::command/14 SetChar/param/6]
+none
+
+[STm09_05_c::command/15 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/15 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/15 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/15 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/15 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/15 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/16 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/16 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/16 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/16 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/16 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/16 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/17 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/17 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/17 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/17 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/17 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/17 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/18 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/18 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/18 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/18 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/18 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/18 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/20 SetSceneHeading/param/0]
+??:??
+
+[STm09_05_c::command/20 SetSceneHeading/param/1]
+?月
+
+[STm09_05_c::command/20 SetSceneHeading/param/2]
+?日
+
+[STm09_05_c::command/20 SetSceneHeading/param/3]
+????
+
+[STm09_05_c::command/20 SetSceneHeading/param/4]
+白い部屋
+
+[STm09_05_c::command/21 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/21 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/21 CtrlChar/param/2]
+008
+
+[STm09_05_c::command/21 CtrlChar/param/3]
+avg_emoji_flower
+
+[STm09_05_c::command/21 CtrlChar/param/11]
+tiao2
+
+[STm09_05_c::command/21 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/21 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/22 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/22 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/22 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/22 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/22 SetTalk/param/7]
+今回の手応えはいかがだったかしら、魔王サマ♡==RT==とってもステキなラストシーンで、==RT==ワタシとヴェルジュは、とっても楽しめたのよ♪
+
+[STm09_05_c::command/22 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/24 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/24 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/24 CtrlChar/param/2]
+005
+
+[STm09_05_c::command/24 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm09_05_c::command/24 CtrlChar/param/11]
+diantou
+
+[STm09_05_c::command/24 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/24 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/25 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/25 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/25 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/25 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/25 SetTalk/param/7]
+どんなステラキネマよりも、==RT==ずっとずっと壮大なスペクタクルだったのですよ。
+
+[STm09_05_c::command/25 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/27 SetMainRoleTalk/param/2]
+025
+
+[STm09_05_c::command/27 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STm09_05_c::command/27 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/27 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/27 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/28 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/28 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/28 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/28 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/28 SetTalk/param/7]
+私は……どうしてここに？==RT==いったいなにが起きたんだ？
+
+[STm09_05_c::command/28 SetTalk/param/8]
+僕は……どうしてここに？==RT==いったいなにが起きたんだ？
+
+[STm09_05_c::command/29 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/29 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/29 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/29 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/31 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/31 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/31 CtrlChar/param/2]
+014
+
+[STm09_05_c::command/31 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm09_05_c::command/31 CtrlChar/param/11]
+lengzhan
+
+[STm09_05_c::command/31 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/31 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/32 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/32 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/32 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/32 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/32 SetTalk/param/7]
+すっかり失念していたのですよ。==RT==魔王さんと仲間の方々は星ノ塔の内部にいたので、==RT==外の状況が見られなかったのですね。
+
+[STm09_05_c::command/32 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/33 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/33 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/33 SetBGM/param/4]
+2000ms
+
+[STm09_05_c::command/35 SetTrans/param/2]
+0
+
+[STm09_05_c::command/35 SetTrans/param/3]
+OutQuad
+
+[STm09_05_c::command/35 SetTrans/param/8]
+default
+
+[STm09_05_c::command/36 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/36 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/37 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/38 SetBg/param/1]
+story_main_09_005
+
+[STm09_05_c::command/38 SetBg/param/2]
+0
+
+[STm09_05_c::command/38 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/38 SetBg/param/6]
+default
+
+[STm09_05_c::command/39 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/39 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/40 SetTrans/param/2]
+0
+
+[STm09_05_c::command/40 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/40 SetTrans/param/8]
+default
+
+[STm09_05_c::command/41 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/41 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/43 SetBg/param/1]
+story_main_09_005
+
+[STm09_05_c::command/43 SetBg/param/2]
+0
+
+[STm09_05_c::command/43 SetBg/param/3]
+OutCubic
+
+[STm09_05_c::command/43 SetBg/param/6]
+default
+
+[STm09_05_c::command/44 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/44 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/45 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/45 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/47 SetMainRoleTalk/param/2]
+020
+
+[STm09_05_c::command/47 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm09_05_c::command/47 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/47 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/47 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/48 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/48 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/48 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/48 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/48 SetTalk/param/7]
+……思い出した。==RT==アンジュが自分自身を撃ったあとに、==RT==星ノ塔全体が大きく揺れたんだ。
+
+[STm09_05_c::command/48 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/49 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/49 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/49 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/49 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/49 SetTalk/param/7]
+それも下からの地鳴りではない。==RT==まるで上から押し潰されるような……==RT==そんな揺れ方をしていた。
+
+[STm09_05_c::command/49 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/50 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/50 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/50 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/50 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/52 SetAudio/param/1]
+se_169
+
+[STm09_05_c::command/53 SetTrans/param/2]
+0
+
+[STm09_05_c::command/53 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/53 SetTrans/param/8]
+default
+
+[STm09_05_c::command/54 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/54 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/55 SetBg/param/1]
+bossroom_inside_intact
+
+[STm09_05_c::command/55 SetBg/param/2]
+0
+
+[STm09_05_c::command/55 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/55 SetBg/param/6]
+default
+
+[STm09_05_c::command/56 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/56 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/58 SetTrans/param/2]
+0
+
+[STm09_05_c::command/58 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/58 SetTrans/param/8]
+default
+
+[STm09_05_c::command/59 SetAudio/param/1]
+se_586
+
+[STm09_05_c::command/60 CtrlBg/param/10]
+Zhong
+
+[STm09_05_c::command/60 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/61 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/61 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/62 CtrlStage/param/9]
+XiaoLP
+
+[STm09_05_c::command/62 CtrlStage/param/10]
+OutBack
+
+[STm09_05_c::command/63 SetChar/param/2]
+none
+
+[STm09_05_c::command/63 SetChar/param/3]
+avg1_103
+
+[STm09_05_c::command/63 SetChar/param/4]
+b
+
+[STm09_05_c::command/63 SetChar/param/5]
+012
+
+[STm09_05_c::command/63 SetChar/param/6]
+none
+
+[STm09_05_c::command/64 CtrlChar/param/0]
+avg1_103
+
+[STm09_05_c::command/64 CtrlChar/param/1]
+b
+
+[STm09_05_c::command/64 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/64 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/64 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/64 CtrlChar/param/13]
+OutBack
+
+[STm09_05_c::command/66 CtrlChar/param/0]
+avg1_103
+
+[STm09_05_c::command/66 CtrlChar/param/1]
+b
+
+[STm09_05_c::command/66 CtrlChar/param/2]
+008
+
+[STm09_05_c::command/66 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/66 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/66 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/66 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/68 SetTalkShake/param/1]
+XiaoLP
+
+[STm09_05_c::command/69 SetTalk/param/1]
+avg1_103
+
+[STm09_05_c::command/69 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/69 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/69 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/69 SetTalk/param/7]
+ボス……==RT==あたしたち……死ぬの？
+
+[STm09_05_c::command/69 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/71 CtrlStage/param/9]
+still
+
+[STm09_05_c::command/71 CtrlStage/param/10]
+OutCubic
+
+[STm09_05_c::command/72 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/72 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/73 CtrlChar/param/0]
+avg1_103
+
+[STm09_05_c::command/73 CtrlChar/param/1]
+b
+
+[STm09_05_c::command/73 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/73 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/73 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/73 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/74 SetChar/param/2]
+none
+
+[STm09_05_c::command/74 SetChar/param/3]
+avg1_112
+
+[STm09_05_c::command/74 SetChar/param/4]
+a
+
+[STm09_05_c::command/74 SetChar/param/5]
+027
+
+[STm09_05_c::command/74 SetChar/param/6]
+none
+
+[STm09_05_c::command/75 SetChar/param/2]
+none
+
+[STm09_05_c::command/75 SetChar/param/3]
+avg1_111
+
+[STm09_05_c::command/75 SetChar/param/4]
+a
+
+[STm09_05_c::command/75 SetChar/param/5]
+015
+
+[STm09_05_c::command/75 SetChar/param/6]
+none
+
+[STm09_05_c::command/76 SetChar/param/2]
+none
+
+[STm09_05_c::command/76 SetChar/param/3]
+avg1_144
+
+[STm09_05_c::command/76 SetChar/param/4]
+a
+
+[STm09_05_c::command/76 SetChar/param/5]
+002
+
+[STm09_05_c::command/76 SetChar/param/6]
+none
+
+[STm09_05_c::command/77 SetChar/param/2]
+none
+
+[STm09_05_c::command/77 SetChar/param/3]
+avg1_133
+
+[STm09_05_c::command/77 SetChar/param/4]
+a
+
+[STm09_05_c::command/77 SetChar/param/5]
+020
+
+[STm09_05_c::command/77 SetChar/param/6]
+none
+
+[STm09_05_c::command/78 CtrlChar/param/0]
+avg1_112
+
+[STm09_05_c::command/78 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/78 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/78 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/78 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/78 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/79 CtrlChar/param/0]
+avg1_111
+
+[STm09_05_c::command/79 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/79 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/79 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/79 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/79 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/80 CtrlChar/param/0]
+avg1_144
+
+[STm09_05_c::command/80 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/80 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/80 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/80 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/80 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/81 CtrlChar/param/0]
+avg1_133
+
+[STm09_05_c::command/81 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/81 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/81 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/81 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/81 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/83 SetMainRoleTalk/param/2]
+016
+
+[STm09_05_c::command/83 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm09_05_c::command/83 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/83 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/83 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/84 SetTalkShake/param/1]
+XiaoLP
+
+[STm09_05_c::command/85 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/85 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/85 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/85 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/85 SetTalk/param/7]
+大丈夫、ここは『魔王ノ間』だ。==RT==ここにいれば安全――
+
+[STm09_05_c::command/85 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/86 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/86 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/86 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/86 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/88 SetTrans/param/2]
+0
+
+[STm09_05_c::command/88 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/88 SetTrans/param/8]
+default
+
+[STm09_05_c::command/89 CtrlStage/param/9]
+stop
+
+[STm09_05_c::command/89 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/90 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/90 SetBg/param/2]
+0
+
+[STm09_05_c::command/90 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/90 SetBg/param/6]
+default
+
+[STm09_05_c::command/91 SetTalkShake/param/1]
+stop
+
+[STm09_05_c::command/92 SetTalkShake/param/1]
+stop
+
+[STm09_05_c::command/93 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/93 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/94 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/96 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/96 CtrlStage/param/10]
+InOutQuad
+
+[STm09_05_c::command/97 SetChar/param/2]
+none
+
+[STm09_05_c::command/97 SetChar/param/3]
+avg3_173
+
+[STm09_05_c::command/97 SetChar/param/4]
+a
+
+[STm09_05_c::command/97 SetChar/param/5]
+002
+
+[STm09_05_c::command/97 SetChar/param/6]
+none
+
+[STm09_05_c::command/98 SetChar/param/2]
+none
+
+[STm09_05_c::command/98 SetChar/param/3]
+avg3_174
+
+[STm09_05_c::command/98 SetChar/param/4]
+a
+
+[STm09_05_c::command/98 SetChar/param/5]
+014
+
+[STm09_05_c::command/98 SetChar/param/6]
+none
+
+[STm09_05_c::command/99 SetTrans/param/2]
+0
+
+[STm09_05_c::command/99 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/99 SetTrans/param/8]
+default
+
+[STm09_05_c::command/100 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/100 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/100 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/100 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/100 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/100 CtrlChar/param/13]
+InOutQuad
+
+[STm09_05_c::command/101 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/101 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/101 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/101 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/101 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/101 CtrlChar/param/13]
+InOutQuad
+
+[STm09_05_c::command/103 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/103 SetBGM/param/3]
+m54
+
+[STm09_05_c::command/103 SetBGM/param/4]
+none
+
+[STm09_05_c::command/104 SetMainRoleTalk/param/2]
+016
+
+[STm09_05_c::command/104 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[STm09_05_c::command/104 SetMainRoleTalk/param/4]
+chijing
+
+[STm09_05_c::command/104 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/104 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/105 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/105 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/105 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/105 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/105 SetTalk/param/7]
+……そこから先の記憶はない。
+
+[STm09_05_c::command/105 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/106 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/106 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/106 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/106 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/108 SetAudio/param/1]
+se_062
+
+[STm09_05_c::command/109 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/109 CtrlStage/param/10]
+OutCubic
+
+[STm09_05_c::command/110 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/110 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/111 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/111 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/111 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/111 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/111 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/111 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/112 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/112 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/112 CtrlChar/param/2]
+005
+
+[STm09_05_c::command/112 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/112 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/112 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/112 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/114 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/114 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/114 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/114 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/114 SetTalk/param/7]
+言葉で説明するよりも、見ていただいたほうが早いのですよ。==RT==こちらをご覧ください。私が保存しておいた記録映像なのです。
+
+[STm09_05_c::command/114 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/115 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/115 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/115 SetBGM/param/4]
+1500ms
+
+[STm09_05_c::command/117 SetAudio/param/1]
+se_169
+
+[STm09_05_c::command/118 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/118 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/119 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/119 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/119 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/119 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/119 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/119 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/120 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/120 SetBGM/param/3]
+m145
+
+[STm09_05_c::command/120 SetBGM/param/4]
+none
+
+[STm09_05_c::command/122 SetTrans/param/2]
+32
+
+[STm09_05_c::command/122 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/122 SetTrans/param/8]
+fade
+
+[STm09_05_c::command/123 CtrlStage/param/9]
+XiaoLP
+
+[STm09_05_c::command/123 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/124 SetBg/param/1]
+story_main_be_09_003
+
+[STm09_05_c::command/124 SetBg/param/2]
+0
+
+[STm09_05_c::command/124 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/124 SetBg/param/6]
+default
+
+[STm09_05_c::command/125 CtrlBg/param/10]
+XiaoLP
+
+[STm09_05_c::command/125 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/126 SetTrans/param/2]
+33
+
+[STm09_05_c::command/126 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/126 SetTrans/param/8]
+fade
+
+[STm09_05_c::command/127 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/127 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/128 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/128 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/130 SetAudio/param/1]
+se_585
+
+[STm09_05_c::command/131 SetAudio/param/1]
+se_586
+
+[STm09_05_c::command/132 SetBg/param/1]
+story_main_be_09_003
+
+[STm09_05_c::command/132 SetBg/param/2]
+0
+
+[STm09_05_c::command/132 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/132 SetBg/param/6]
+default
+
+[STm09_05_c::command/133 CtrlBg/param/10]
+XiaoLP
+
+[STm09_05_c::command/133 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/134 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/134 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/135 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/135 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/137 CtrlStage/param/9]
+still
+
+[STm09_05_c::command/137 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/138 SetBg/param/1]
+story_main_be_09_003
+
+[STm09_05_c::command/138 SetBg/param/2]
+0
+
+[STm09_05_c::command/138 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/138 SetBg/param/6]
+default
+
+[STm09_05_c::command/139 CtrlBg/param/10]
+XiaoLP
+
+[STm09_05_c::command/139 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/140 SetBg/param/1]
+circle_light
+
+[STm09_05_c::command/140 SetBg/param/2]
+0
+
+[STm09_05_c::command/140 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/140 SetBg/param/6]
+default
+
+[STm09_05_c::command/141 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/141 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/142 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/142 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/143 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/143 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/144 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/144 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/145 SetAudio/param/1]
+se_548
+
+[STm09_05_c::command/146 SetAudio/param/1]
+se_587
+
+[STm09_05_c::command/148 SetTrans/param/2]
+0
+
+[STm09_05_c::command/148 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/148 SetTrans/param/8]
+default
+
+[STm09_05_c::command/149 CtrlStage/param/9]
+stop
+
+[STm09_05_c::command/149 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/150 SetFx/param/1]
+fx_avg_flash_end_ev
+
+[STm09_05_c::command/151 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/151 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/152 SetBg/param/1]
+story_main_be_09_003
+
+[STm09_05_c::command/152 SetBg/param/2]
+0
+
+[STm09_05_c::command/152 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/152 SetBg/param/6]
+default
+
+[STm09_05_c::command/153 CtrlBg/param/10]
+stop
+
+[STm09_05_c::command/153 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/155 SetTrans/param/2]
+0
+
+[STm09_05_c::command/155 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/155 SetTrans/param/8]
+default
+
+[STm09_05_c::command/157 SetMainRoleTalk/param/2]
+025
+
+[STm09_05_c::command/157 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[STm09_05_c::command/157 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/157 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/157 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/158 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/158 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/158 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/158 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/158 SetTalk/param/7]
+これは……！
+
+[STm09_05_c::command/158 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/159 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/159 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/159 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/159 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/161 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/161 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/161 SetTalk/param/7]
+恩恵の印章『黒いルーク』の所持者が死亡したことにより、権能が発動。==RT==空の彼方に浮かんでいたもう1つの星ノ塔が、==RT==魔王さんたちのいた星ノ塔目がけて落ちてきたのですよ。
+
+[STm09_05_c::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/163 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/163 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/163 SetBGM/param/4]
+2000ms
+
+[STm09_05_c::command/164 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/164 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/164 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/164 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/164 SetTalk/param/7]
+これにより魔王さんと仲間の方々は、一瞬でぺちゃんこ。==RT==唯一救いがあったとすれば……==RT==苦痛を感じる時間もなかったことなのです。
+
+[STm09_05_c::command/164 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/166 SetTrans/param/2]
+34
+
+[STm09_05_c::command/166 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/166 SetTrans/param/8]
+cut off
+
+[STm09_05_c::command/167 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/167 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/168 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/168 SetBg/param/2]
+0
+
+[STm09_05_c::command/168 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/168 SetBg/param/6]
+default
+
+[STm09_05_c::command/169 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/169 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/170 SetChar/param/2]
+none
+
+[STm09_05_c::command/170 SetChar/param/3]
+avg3_173
+
+[STm09_05_c::command/170 SetChar/param/4]
+a
+
+[STm09_05_c::command/170 SetChar/param/5]
+002
+
+[STm09_05_c::command/170 SetChar/param/6]
+none
+
+[STm09_05_c::command/171 SetChar/param/2]
+none
+
+[STm09_05_c::command/171 SetChar/param/3]
+avg3_174
+
+[STm09_05_c::command/171 SetChar/param/4]
+a
+
+[STm09_05_c::command/171 SetChar/param/5]
+014
+
+[STm09_05_c::command/171 SetChar/param/6]
+none
+
+[STm09_05_c::command/172 SetTrans/param/2]
+34
+
+[STm09_05_c::command/172 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/172 SetTrans/param/8]
+cut off
+
+[STm09_05_c::command/174 SetMainRoleTalk/param/2]
+016
+
+[STm09_05_c::command/174 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STm09_05_c::command/174 SetMainRoleTalk/param/4]
+lengzhan
+
+[STm09_05_c::command/174 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/174 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/175 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/175 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/175 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/175 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/175 SetTalk/param/7]
+空の星ノ塔……==RT==アンジュのはったりではなかったのか。
+
+[STm09_05_c::command/175 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/176 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/176 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/176 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/176 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/178 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/178 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/178 CtrlChar/param/2]
+011
+
+[STm09_05_c::command/178 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm09_05_c::command/178 CtrlChar/param/11]
+jushou
+
+[STm09_05_c::command/178 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/178 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/179 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/179 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/179 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/179 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/179 SetTalk/param/7]
+そもそも星ノ塔は、ただの便利な塔じゃないのよ。==RT==あれは――
+
+[STm09_05_c::command/179 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/181 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/181 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/181 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/181 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/181 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/181 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/182 CtrlStage/param/9]
+JingTouYaoHuang
+
+[STm09_05_c::command/182 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/183 SetFilm/param/1]
+Linear
+
+[STm09_05_c::command/184 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/184 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/185 SetAudio/param/1]
+se_231
+
+[STm09_05_c::command/186 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/186 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/186 CtrlChar/param/2]
+012
+
+[STm09_05_c::command/186 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/186 CtrlChar/param/11]
+lengzhan
+
+[STm09_05_c::command/186 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/186 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/187 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/189 SetTrans/param/2]
+0
+
+[STm09_05_c::command/189 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/189 SetTrans/param/8]
+default
+
+[STm09_05_c::command/190 SetFilm/param/1]
+Linear
+
+[STm09_05_c::command/191 CtrlStage/param/9]
+stop
+
+[STm09_05_c::command/191 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/192 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/192 SetBg/param/2]
+0
+
+[STm09_05_c::command/192 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/192 SetBg/param/6]
+default
+
+[STm09_05_c::command/193 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/193 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/194 SetChar/param/2]
+none
+
+[STm09_05_c::command/194 SetChar/param/3]
+avg3_174
+
+[STm09_05_c::command/194 SetChar/param/4]
+a
+
+[STm09_05_c::command/194 SetChar/param/5]
+013
+
+[STm09_05_c::command/194 SetChar/param/6]
+none
+
+[STm09_05_c::command/195 SetChar/param/2]
+none
+
+[STm09_05_c::command/195 SetChar/param/3]
+avg3_173
+
+[STm09_05_c::command/195 SetChar/param/4]
+a
+
+[STm09_05_c::command/195 SetChar/param/5]
+012
+
+[STm09_05_c::command/195 SetChar/param/6]
+none
+
+[STm09_05_c::command/196 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/198 SetTrans/param/2]
+0
+
+[STm09_05_c::command/198 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/198 SetTrans/param/8]
+default
+
+[STm09_05_c::command/199 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/199 SetBGM/param/3]
+m54
+
+[STm09_05_c::command/199 SetBGM/param/4]
+none
+
+[STm09_05_c::command/201 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/201 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/201 CtrlChar/param/3]
+avg_emoji_sigh
+
+[STm09_05_c::command/201 CtrlChar/param/11]
+lengzhan
+
+[STm09_05_c::command/201 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/201 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/202 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/202 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/202 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/202 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/202 SetTalk/param/7]
+残念だけど、ここから先は口にできない決まりなのよ♪
+
+[STm09_05_c::command/202 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/204 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/204 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/204 CtrlChar/param/2]
+008
+
+[STm09_05_c::command/204 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm09_05_c::command/204 CtrlChar/param/11]
+tiao2
+
+[STm09_05_c::command/204 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/204 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/205 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/205 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/205 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/205 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/205 SetTalk/param/7]
+とにかく、星ノ塔は大地に根ざすものだけではないということなのです。==RT==空にも、そして海にも星ノ塔は存在していて――==RT==塔の秘密は、ご自身の手で解き明かしていただくしかないのですよ♪
+
+[STm09_05_c::command/205 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/207 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/207 CtrlStage/param/10]
+OutCubic
+
+[STm09_05_c::command/208 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/208 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/209 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/209 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/209 CtrlChar/param/2]
+004
+
+[STm09_05_c::command/209 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/209 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/209 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/209 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/210 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/210 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/210 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/210 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/210 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/210 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/212 SetFilm/param/1]
+OutCubic
+
+[STm09_05_c::command/213 SetChar/param/2]
+none
+
+[STm09_05_c::command/213 SetChar/param/3]
+avg3_100
+
+[STm09_05_c::command/213 SetChar/param/4]
+c
+
+[STm09_05_c::command/213 SetChar/param/5]
+025
+
+[STm09_05_c::command/213 SetChar/param/6]
+none
+
+[STm09_05_c::command/214 CtrlChar/param/0]
+avg3_100
+
+[STm09_05_c::command/214 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/214 CtrlChar/param/3]
+avg_emoji_flurry
+
+[STm09_05_c::command/214 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/214 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/214 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/215 SetTalk/param/1]
+1
+
+[STm09_05_c::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/215 SetTalk/param/7]
+……そうか。それで、今回犠牲になったのは？==RT==死んだのは……星ノ塔にいた私たちだけなのか？
+
+[STm09_05_c::command/215 SetTalk/param/8]
+……そうか。それで、今回犠牲になったのは？==RT==死んだのは……星ノ塔にいた僕たちだけなのか？
+
+[STm09_05_c::command/217 SetFilm/param/1]
+OutCubic
+
+[STm09_05_c::command/218 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/218 CtrlStage/param/10]
+OutCubic
+
+[STm09_05_c::command/219 CtrlChar/param/0]
+avg3_100
+
+[STm09_05_c::command/219 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/219 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/219 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/219 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/219 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/220 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/220 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/221 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/221 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/221 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/221 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/221 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/221 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/222 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/222 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/222 CtrlChar/param/2]
+011
+
+[STm09_05_c::command/222 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm09_05_c::command/222 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/222 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/222 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/224 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/224 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/224 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/224 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/224 SetTalk/param/7]
+違うのです。死んでしまったのは――==RT==ミラーシュにいたすべての人、なのですよ。
+
+[STm09_05_c::command/224 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/225 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/225 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/225 CtrlChar/param/3]
+close
+
+[STm09_05_c::command/225 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/225 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/225 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/227 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/227 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/227 CtrlChar/param/2]
+006
+
+[STm09_05_c::command/227 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[STm09_05_c::command/227 CtrlChar/param/11]
+lengzhan
+
+[STm09_05_c::command/227 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/227 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/228 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/228 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/228 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/228 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/228 SetTalk/param/7]
+なにせとぉ～～～ってもおっきい星ノ塔なのよ。==RT==当然、落下したときの衝撃は計り知れないのかしら。
+
+[STm09_05_c::command/228 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/230 SetBGM/param/1]
+music_avg_volume50_0s
+
+[STm09_05_c::command/230 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/230 SetBGM/param/4]
+none
+
+[STm09_05_c::command/231 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/231 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/231 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/231 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/231 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/231 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/232 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/232 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/232 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/232 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/232 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/232 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/233 SetAudio/param/1]
+se_226
+
+[STm09_05_c::command/234 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/234 SetBg/param/2]
+0
+
+[STm09_05_c::command/234 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/234 SetBg/param/6]
+default
+
+[STm09_05_c::command/235 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/235 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/236 SetFilm/param/1]
+Linear
+
+[STm09_05_c::command/237 SetChar/param/2]
+none
+
+[STm09_05_c::command/237 SetChar/param/3]
+avg3_100
+
+[STm09_05_c::command/237 SetChar/param/4]
+c
+
+[STm09_05_c::command/237 SetChar/param/5]
+016
+
+[STm09_05_c::command/237 SetChar/param/6]
+none
+
+[STm09_05_c::command/239 SetTalk/param/1]
+1
+
+[STm09_05_c::command/239 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/239 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/239 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/239 SetTalk/param/7]
+そんな……なんて、ことを……==RT==私……は……なんてことを……してしまったんだ……
+
+[STm09_05_c::command/239 SetTalk/param/8]
+そんな……なんて、ことを……==RT==僕……は……なんてことを……してしまったんだ……
+
+[STm09_05_c::command/241 SetAudio/param/1]
+se_227
+
+[STm09_05_c::command/242 SetChar/param/2]
+none
+
+[STm09_05_c::command/242 SetChar/param/3]
+avg3_173
+
+[STm09_05_c::command/242 SetChar/param/4]
+a
+
+[STm09_05_c::command/242 SetChar/param/5]
+002
+
+[STm09_05_c::command/242 SetChar/param/6]
+none
+
+[STm09_05_c::command/243 SetChar/param/2]
+none
+
+[STm09_05_c::command/243 SetChar/param/3]
+avg3_174
+
+[STm09_05_c::command/243 SetChar/param/4]
+a
+
+[STm09_05_c::command/243 SetChar/param/5]
+014
+
+[STm09_05_c::command/243 SetChar/param/6]
+none
+
+[STm09_05_c::command/244 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/244 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/244 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/244 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/244 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/244 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/245 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/245 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/245 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/245 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/245 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/245 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/246 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/246 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/246 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/246 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/246 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/246 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/247 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/247 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/247 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/247 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/247 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/247 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/249 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/249 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/249 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/249 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/249 SetTalk/param/7]
+何度もここに戻ってきて、何度も情報を手に入れて……==RT==それなのに……！やり直すたびに、結果は悪くなる一方ではないか！
+
+[STm09_05_c::command/249 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/251 SetAudio/param/1]
+se_226
+
+[STm09_05_c::command/252 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/252 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/252 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/252 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/252 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/252 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/253 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/253 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/253 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/253 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/253 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/253 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/254 CtrlChar/param/0]
+avg3_100
+
+[STm09_05_c::command/254 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/254 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/254 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/254 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/254 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/255 SetFilm/param/1]
+Linear
+
+[STm09_05_c::command/256 SetBg/param/1]
+story_main_be_09_001
+
+[STm09_05_c::command/256 SetBg/param/2]
+0
+
+[STm09_05_c::command/256 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/256 SetBg/param/6]
+default
+
+[STm09_05_c::command/258 SetTalk/param/1]
+1
+
+[STm09_05_c::command/258 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/258 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/258 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/258 SetTalk/param/7]
+ひとりが死に……
+
+[STm09_05_c::command/258 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/260 SetAudio/param/1]
+se_226
+
+[STm09_05_c::command/261 SetBg/param/1]
+story_main_be_09_002
+
+[STm09_05_c::command/261 SetBg/param/2]
+0
+
+[STm09_05_c::command/261 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/261 SetBg/param/6]
+default
+
+[STm09_05_c::command/263 SetTalk/param/1]
+1
+
+[STm09_05_c::command/263 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/263 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/263 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/263 SetTalk/param/7]
+大切な仲間たちが死に……
+
+[STm09_05_c::command/263 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/265 SetAudio/param/1]
+se_226
+
+[STm09_05_c::command/266 SetBg/param/1]
+story_main_be_09_003
+
+[STm09_05_c::command/266 SetBg/param/2]
+0
+
+[STm09_05_c::command/266 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/266 SetBg/param/6]
+default
+
+[STm09_05_c::command/268 SetTalk/param/1]
+1
+
+[STm09_05_c::command/268 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/268 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/268 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/268 SetTalk/param/7]
+その次はミラーシュの人々が全滅？
+
+[STm09_05_c::command/268 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/270 SetTrans/param/2]
+0
+
+[STm09_05_c::command/270 SetTrans/param/3]
+OutQuad
+
+[STm09_05_c::command/270 SetTrans/param/8]
+default
+
+[STm09_05_c::command/271 SetAudio/param/1]
+se_227
+
+[STm09_05_c::command/272 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/272 SetBg/param/2]
+0
+
+[STm09_05_c::command/272 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/272 SetBg/param/6]
+default
+
+[STm09_05_c::command/273 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/273 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/274 CtrlStage/param/9]
+JingTouYaoHuang
+
+[STm09_05_c::command/274 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/275 SetChar/param/2]
+none
+
+[STm09_05_c::command/275 SetChar/param/3]
+avg3_100
+
+[STm09_05_c::command/275 SetChar/param/4]
+c
+
+[STm09_05_c::command/275 SetChar/param/5]
+025
+
+[STm09_05_c::command/275 SetChar/param/6]
+none
+
+[STm09_05_c::command/276 SetTrans/param/2]
+0
+
+[STm09_05_c::command/276 SetTrans/param/3]
+OutQuad
+
+[STm09_05_c::command/276 SetTrans/param/8]
+default
+
+[STm09_05_c::command/277 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm09_05_c::command/277 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/277 SetBGM/param/4]
+none
+
+[STm09_05_c::command/279 SetTalk/param/1]
+1
+
+[STm09_05_c::command/279 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/279 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/279 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/279 SetTalk/param/7]
+……いや、待てよ。おかしくないか？==RT==前回のアンジュは……海に落ちた。==RT==それで命を失ったんだ。
+
+[STm09_05_c::command/279 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/281 SetTrans/param/2]
+0
+
+[STm09_05_c::command/281 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/281 SetTrans/param/8]
+default
+
+[STm09_05_c::command/282 SetBg/param/1]
+beach_wasteland_daylight
+
+[STm09_05_c::command/282 SetBg/param/2]
+0
+
+[STm09_05_c::command/282 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/282 SetBg/param/6]
+default
+
+[STm09_05_c::command/283 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/284 SetChar/param/2]
+none
+
+[STm09_05_c::command/284 SetChar/param/3]
+avg3_100
+
+[STm09_05_c::command/284 SetChar/param/4]
+c
+
+[STm09_05_c::command/284 SetChar/param/5]
+026
+
+[STm09_05_c::command/284 SetChar/param/6]
+none
+
+[STm09_05_c::command/285 SetBg/param/1]
+mood_4
+
+[STm09_05_c::command/285 SetBg/param/2]
+0
+
+[STm09_05_c::command/285 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/285 SetBg/param/6]
+default
+
+[STm09_05_c::command/286 SetTrans/param/2]
+0
+
+[STm09_05_c::command/286 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/286 SetTrans/param/8]
+default
+
+[STm09_05_c::command/287 SetStage/param/2]
+Linear
+
+[STm09_05_c::command/288 SetAudio/param/1]
+se_067
+
+[STm09_05_c::command/289 CtrlStage/param/9]
+Zhong
+
+[STm09_05_c::command/289 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/290 SetTalkShake/param/1]
+Zhong
+
+[STm09_05_c::command/291 SetTalk/param/1]
+1
+
+[STm09_05_c::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/291 SetTalk/param/7]
+けれどあのとき、星ノ塔は落ちてこなかった……==RT==あれはどういうことだ！？==RT==今回とは違う！理屈が合わないではないか！！
+
+[STm09_05_c::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/293 SetTrans/param/2]
+0
+
+[STm09_05_c::command/293 SetTrans/param/3]
+Linear
+
+[STm09_05_c::command/293 SetTrans/param/8]
+default
+
+[STm09_05_c::command/294 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/294 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/295 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/296 SetStage/param/2]
+Linear
+
+[STm09_05_c::command/297 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/297 SetBg/param/2]
+0
+
+[STm09_05_c::command/297 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/297 SetBg/param/6]
+default
+
+[STm09_05_c::command/298 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/298 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/300 SetTrans/param/2]
+0
+
+[STm09_05_c::command/300 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/300 SetTrans/param/8]
+default
+
+[STm09_05_c::command/301 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/301 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/302 SetChar/param/2]
+none
+
+[STm09_05_c::command/302 SetChar/param/3]
+avg3_100
+
+[STm09_05_c::command/302 SetChar/param/4]
+c
+
+[STm09_05_c::command/302 SetChar/param/5]
+026
+
+[STm09_05_c::command/302 SetChar/param/6]
+none
+
+[STm09_05_c::command/303 CtrlChar/param/0]
+avg3_100
+
+[STm09_05_c::command/303 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/303 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/303 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/303 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/303 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/304 SetBg/param/1]
+story_main_01_037
+
+[STm09_05_c::command/304 SetBg/param/2]
+0
+
+[STm09_05_c::command/304 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/304 SetBg/param/6]
+default
+
+[STm09_05_c::command/305 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/305 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/306 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/306 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/308 SetAudio/param/1]
+se_401
+
+[STm09_05_c::command/309 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/311 CtrlChar/param/0]
+avg3_100
+
+[STm09_05_c::command/311 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/311 CtrlChar/param/2]
+025
+
+[STm09_05_c::command/311 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/311 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/311 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/311 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/312 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/312 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/312 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/312 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/312 SetTalk/param/7]
+お伝えシマス、魔王さん。==RT==あのときアンジュは『黒いルーク』を海へ捨てたのデス。
+
+[STm09_05_c::command/312 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/313 SetBGM/param/1]
+music_avg_volume50_1s
+
+[STm09_05_c::command/313 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/313 SetBGM/param/4]
+none
+
+[STm09_05_c::command/315 SetAudio/param/1]
+se_169
+
+[STm09_05_c::command/316 SetTrans/param/2]
+0
+
+[STm09_05_c::command/316 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/316 SetTrans/param/8]
+default
+
+[STm09_05_c::command/317 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/318 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/319 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/319 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/320 SetBg/param/1]
+beach_wasteland_storm
+
+[STm09_05_c::command/320 SetBg/param/2]
+0
+
+[STm09_05_c::command/320 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/320 SetBg/param/6]
+default
+
+[STm09_05_c::command/321 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/321 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/322 SetFilm/param/1]
+Linear
+
+[STm09_05_c::command/323 SetChar/param/2]
+none
+
+[STm09_05_c::command/323 SetChar/param/3]
+avg1_136
+
+[STm09_05_c::command/323 SetChar/param/4]
+a
+
+[STm09_05_c::command/323 SetChar/param/5]
+011
+
+[STm09_05_c::command/323 SetChar/param/6]
+none
+
+[STm09_05_c::command/324 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/324 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/326 SetTrans/param/2]
+0
+
+[STm09_05_c::command/326 SetTrans/param/3]
+OutCubic
+
+[STm09_05_c::command/326 SetTrans/param/8]
+default
+
+[STm09_05_c::command/328 CtrlChar/param/0]
+avg1_136
+
+[STm09_05_c::command/328 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/328 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/328 CtrlChar/param/11]
+Tiao
+
+[STm09_05_c::command/328 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/328 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/329 SetAudio/param/1]
+se_104
+
+[STm09_05_c::command/330 SetAudio/param/1]
+se_367
+
+[STm09_05_c::command/331 SetFx/param/1]
+fx_avg_bling
+
+[STm09_05_c::command/333 SetTalk/param/1]
+0
+
+[STm09_05_c::command/333 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/333 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/333 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/333 SetTalk/param/7]
+アンジュは安堵した表情を浮かべると、小さな影を海へと投げ入れた。
+
+[STm09_05_c::command/333 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/335 SetAudio/param/1]
+se_169
+
+[STm09_05_c::command/336 SetTrans/param/2]
+0
+
+[STm09_05_c::command/336 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/336 SetTrans/param/8]
+default
+
+[STm09_05_c::command/337 SetFx/param/1]
+fx_avg_bling
+
+[STm09_05_c::command/338 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/339 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/339 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/340 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/340 SetBg/param/2]
+0
+
+[STm09_05_c::command/340 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/340 SetBg/param/6]
+default
+
+[STm09_05_c::command/341 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/341 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/342 SetFilm/param/1]
+Linear
+
+[STm09_05_c::command/343 SetBg/param/1]
+story_main_01_037
+
+[STm09_05_c::command/343 SetBg/param/2]
+0
+
+[STm09_05_c::command/343 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/343 SetBg/param/6]
+default
+
+[STm09_05_c::command/345 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/346 SetTrans/param/2]
+0
+
+[STm09_05_c::command/346 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/346 SetTrans/param/8]
+default
+
+[STm09_05_c::command/347 SetBGM/param/1]
+music_avg_volume100_1s
+
+[STm09_05_c::command/347 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/347 SetBGM/param/4]
+none
+
+[STm09_05_c::command/349 SetAudio/param/1]
+se_401
+
+[STm09_05_c::command/351 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/351 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/351 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/351 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/351 SetTalk/param/7]
+ヴェータは推察シマス。==RT==あのときアンジュは魔王さんの死を確信。==RT==よって『切り札』を使う必要がないと判断したのではないデショウカ？
+
+[STm09_05_c::command/351 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/353 SetChar/param/2]
+none
+
+[STm09_05_c::command/353 SetChar/param/3]
+avg1_136
+
+[STm09_05_c::command/353 SetChar/param/4]
+a
+
+[STm09_05_c::command/353 SetChar/param/5]
+002
+
+[STm09_05_c::command/353 SetChar/param/6]
+none
+
+[STm09_05_c::command/354 CtrlChar/param/0]
+avg1_136
+
+[STm09_05_c::command/354 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/354 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/354 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/354 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/354 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/355 CtrlChar/param/0]
+avg1_136
+
+[STm09_05_c::command/355 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/355 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/355 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/355 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/355 CtrlChar/param/13]
+OutQuad
+
+[STm09_05_c::command/357 SetBGM/param/1]
+music_avg_volume50_1s
+
+[STm09_05_c::command/357 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/357 SetBGM/param/4]
+2000ms
+
+[STm09_05_c::command/358 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/358 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/358 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/358 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/358 SetTalk/param/7]
+また今回、アンジュが口にした言葉からも推察シマス。==RT==魔王さんが時空を渡る力を持っていることヲ、==RT==彼女ハ以前から気づいていたのではないデショウカ？
+
+[STm09_05_c::command/358 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/360 SetChar/param/2]
+none
+
+[STm09_05_c::command/360 SetChar/param/3]
+avg3_1311
+
+[STm09_05_c::command/360 SetChar/param/4]
+c
+
+[STm09_05_c::command/360 SetChar/param/5]
+025
+
+[STm09_05_c::command/360 SetChar/param/6]
+none
+
+[STm09_05_c::command/361 CtrlChar/param/0]
+avg3_1311
+
+[STm09_05_c::command/361 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/361 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/361 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/361 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/361 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/362 CtrlChar/param/0]
+avg3_1311
+
+[STm09_05_c::command/362 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/362 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/362 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/362 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/362 CtrlChar/param/13]
+OutQuad
+
+[STm09_05_c::command/364 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/364 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/364 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/364 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/364 SetTalk/param/7]
+彼女が『黒いルーク』を手放したトキ、本当に警戒していたノハ……==RT==『過去へと戻る魔王さん』だったのではないデショウカ。
+
+[STm09_05_c::command/364 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/366 CtrlChar/param/0]
+avg1_136
+
+[STm09_05_c::command/366 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/366 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/366 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/366 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/366 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/367 CtrlChar/param/0]
+avg3_1311
+
+[STm09_05_c::command/367 CtrlChar/param/1]
+c
+
+[STm09_05_c::command/367 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/367 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/367 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/367 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/369 SetBGM/param/1]
+music_avg_volume75_0s
+
+[STm09_05_c::command/369 SetBGM/param/3]
+m101
+
+[STm09_05_c::command/369 SetBGM/param/4]
+none
+
+[STm09_05_c::command/370 SetMainRoleTalk/param/2]
+026
+
+[STm09_05_c::command/370 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STm09_05_c::command/370 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/370 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/370 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/371 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/371 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/371 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/371 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/371 SetTalk/param/7]
+時空を渡る……白い部屋……！
+
+[STm09_05_c::command/371 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/373 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/373 CtrlStage/param/10]
+OutSine
+
+[STm09_05_c::command/374 SetAudio/param/1]
+se_062
+
+[STm09_05_c::command/375 SetMainRoleTalk/param/2]
+012
+
+[STm09_05_c::command/375 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/375 SetMainRoleTalk/param/4]
+daintou
+
+[STm09_05_c::command/375 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/375 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/377 SetAudio/param/1]
+se_062
+
+[STm09_05_c::command/378 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/378 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/378 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/378 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/378 SetTalk/param/7]
+ヴェータ！アンジュが言っていた……==RT==あれはどういう意味なんだ！？
+
+[STm09_05_c::command/378 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/379 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/379 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/379 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/379 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/381 SetAudio/param/1]
+se_169
+
+[STm09_05_c::command/382 SetTrans/param/2]
+0
+
+[STm09_05_c::command/382 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/382 SetTrans/param/8]
+default
+
+[STm09_05_c::command/383 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/384 SetBg/param/1]
+story_main_01_019
+
+[STm09_05_c::command/384 SetBg/param/2]
+0
+
+[STm09_05_c::command/384 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/384 SetBg/param/6]
+default
+
+[STm09_05_c::command/385 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/386 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/386 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/388 SetTrans/param/2]
+0
+
+[STm09_05_c::command/388 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/388 SetTrans/param/8]
+default
+
+[STm09_05_c::command/390 SetTalk/param/1]
+avg1_136
+
+[STm09_05_c::command/390 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/390 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/390 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/390 SetTalk/param/7]
+私はかつて、とあるケータイを手に入れました。==RT==そしてそのケータイというのは……==RT==あなたがいま手にしているものと、まったく同じ見た目をしていたんです。
+
+[STm09_05_c::command/390 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/392 SetTalk/param/1]
+avg1_136
+
+[STm09_05_c::command/392 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/392 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/392 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/392 SetTalk/param/7]
+『パラレル次元魔王育成システム』。==RT==その言葉に聞き覚えは？
+
+[STm09_05_c::command/392 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/394 SetMainRoleTalk/param/2]
+025
+
+[STm09_05_c::command/394 SetMainRoleTalk/param/3]
+none
+
+[STm09_05_c::command/394 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/394 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/394 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/395 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/395 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/395 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/395 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/395 SetTalk/param/7]
+まさか彼女も……==RT==あのシステムを使ったことがあるのか？
+
+[STm09_05_c::command/395 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/396 SetMainRoleTalk/param/3]
+none
+
+[STm09_05_c::command/396 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/396 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/396 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/398 SetAudio/param/1]
+se_169
+
+[STm09_05_c::command/399 SetTrans/param/2]
+0
+
+[STm09_05_c::command/399 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/399 SetTrans/param/8]
+default
+
+[STm09_05_c::command/400 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[STm09_05_c::command/401 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/401 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/403 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/403 SetBg/param/2]
+0
+
+[STm09_05_c::command/403 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/403 SetBg/param/6]
+default
+
+[STm09_05_c::command/404 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/404 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/405 SetTrans/param/2]
+0
+
+[STm09_05_c::command/405 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/405 SetTrans/param/8]
+fade
+
+[STm09_05_c::command/407 SetBg/param/1]
+story_main_01_037
+
+[STm09_05_c::command/407 SetBg/param/2]
+0
+
+[STm09_05_c::command/407 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/407 SetBg/param/6]
+default
+
+[STm09_05_c::command/408 SetAudio/param/1]
+se_402
+
+[STm09_05_c::command/409 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/410 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/410 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/410 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/410 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/410 SetTalk/param/7]
+申し訳ありマセン。ヴェータの権限デハ――
+
+[STm09_05_c::command/410 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/412 SetMainRoleTalk/param/2]
+026
+
+[STm09_05_c::command/412 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STm09_05_c::command/412 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/412 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/412 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/413 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/413 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/413 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/413 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/413 SetTalk/param/7]
+『権限』なんて言葉、二度と口にしないでくれ！==W====RT==次言ったら粉々に壊してやるからな！
+
+[STm09_05_c::command/413 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/415 SetAudio/param/1]
+se_230
+
+[STm09_05_c::command/416 SetTalkShake/param/1]
+Zhong
+
+[STm09_05_c::command/419 SetAudio/param/1]
+se_067
+
+[STm09_05_c::command/420 CtrlStage/param/9]
+Xiao
+
+[STm09_05_c::command/420 CtrlStage/param/10]
+Linear
+
+[STm09_05_c::command/421 SetTalkShake/param/1]
+Xiao
+
+[STm09_05_c::command/422 SetMainRoleTalk/param/2]
+026
+
+[STm09_05_c::command/422 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/422 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/422 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/422 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/423 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/423 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/423 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/423 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/423 SetTalk/param/7]
+もし私たちがふたりともシステムを持っていたとしたら！==RT==もし彼女が本当に未来から戻ってきたのだとしたら！==RT==もし彼女も……この部屋に来たことがあるのだとしたら！
+
+[STm09_05_c::command/423 SetTalk/param/8]
+もし僕たちがふたりともシステムを持っていたとしたら！==RT==もし彼女が本当に未来から戻ってきたのだとしたら！==RT==もし彼女も……この部屋に来たことがあるのだとしたら！
+
+[STm09_05_c::command/425 SetMainRoleTalk/param/2]
+026
+
+[STm09_05_c::command/425 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[STm09_05_c::command/425 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/425 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/425 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/426 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/426 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/426 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/426 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/426 SetTalk/param/7]
+ヴェータ！君は最初からわかっていたのか！？==RT==わかっていてアンジュと同じ任務に誘導していたのか！？==RT==全部全部、君が仕組んだことだったのか！？
+
+[STm09_05_c::command/426 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/427 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/427 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/427 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/427 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/429 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/429 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/429 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/429 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/429 SetTalk/param/7]
+魔王さん――
+
+[STm09_05_c::command/429 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/431 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/432 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/432 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/433 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/433 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/434 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/434 CtrlStage/param/10]
+OutCubic
+
+[STm09_05_c::command/436 SetChar/param/2]
+none
+
+[STm09_05_c::command/436 SetChar/param/3]
+avg3_173
+
+[STm09_05_c::command/436 SetChar/param/4]
+a
+
+[STm09_05_c::command/436 SetChar/param/5]
+012
+
+[STm09_05_c::command/436 SetChar/param/6]
+none
+
+[STm09_05_c::command/437 SetChar/param/2]
+none
+
+[STm09_05_c::command/437 SetChar/param/3]
+avg3_174
+
+[STm09_05_c::command/437 SetChar/param/4]
+a
+
+[STm09_05_c::command/437 SetChar/param/5]
+012
+
+[STm09_05_c::command/437 SetChar/param/6]
+none
+
+[STm09_05_c::command/438 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/438 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/438 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/438 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/438 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/438 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/439 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/439 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/439 CtrlChar/param/2]
+012
+
+[STm09_05_c::command/439 CtrlChar/param/3]
+avg_emoji_speechless
+
+[STm09_05_c::command/439 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/439 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/439 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/440 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/440 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/440 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/440 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/440 SetTalk/param/7]
+まあまあ、落ち着くのよ？==W====RT==たかがケータイ相手にムキになっても仕方ないのよ。
+
+[STm09_05_c::command/440 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/442 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/442 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/442 CtrlChar/param/2]
+006
+
+[STm09_05_c::command/442 CtrlChar/param/3]
+close
+
+[STm09_05_c::command/442 CtrlChar/param/11]
+chijing
+
+[STm09_05_c::command/442 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/442 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/445 SetAudio/param/1]
+se_146
+
+[STm09_05_c::command/446 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/446 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/446 CtrlChar/param/2]
+012
+
+[STm09_05_c::command/446 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/446 CtrlChar/param/11]
+niunie1
+
+[STm09_05_c::command/446 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/446 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/447 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/447 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/447 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/447 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/447 SetTalk/param/7]
+そうなのです。実は……
+
+[STm09_05_c::command/447 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/449 CtrlStage/param/9]
+Xiao
+
+[STm09_05_c::command/449 CtrlStage/param/10]
+OutSine
+
+[STm09_05_c::command/450 SetMainRoleTalk/param/2]
+026
+
+[STm09_05_c::command/450 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STm09_05_c::command/450 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/450 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/450 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/451 SetTalkShake/param/1]
+Xiao
+
+[STm09_05_c::command/452 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/452 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/452 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/452 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/452 SetTalk/param/7]
+悪いがいまは口を挟まないでくれ！！
+
+[STm09_05_c::command/452 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/453 SetMainRoleTalk/param/3]
+none
+
+[STm09_05_c::command/453 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/453 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/453 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/455 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/455 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/457 CtrlStage/param/9]
+none
+
+[STm09_05_c::command/457 CtrlStage/param/10]
+OutCubic
+
+[STm09_05_c::command/458 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/458 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/459 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/459 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/460 SetMainRoleTalk/param/2]
+009
+
+[STm09_05_c::command/460 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/460 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/460 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/460 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/461 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/461 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/461 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/461 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/461 SetTalk/param/7]
+ヴェータ、洗いざらい説明してもらうぞ……！==RT==ごまかそうとするなら、私はここから出ない。==RT==永遠に私と一緒にこの部屋で過ごすんだ！
+
+[STm09_05_c::command/461 SetTalk/param/8]
+ヴェータ、洗いざらい説明してもらうぞ……！==RT==ごまかそうとするなら、僕はここから出ない。==RT==永遠に僕と一緒にこの部屋で過ごすんだ！
+
+[STm09_05_c::command/462 SetMainRoleTalk/param/2]
+026
+
+[STm09_05_c::command/462 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[STm09_05_c::command/462 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/462 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/462 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/463 SetTalkShake/param/1]
+Zhong
+
+[STm09_05_c::command/464 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/464 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/464 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/464 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/464 SetTalk/param/7]
+私は……私はもう二度と！==RT==みんなに辛い思いをさせるわけにはいかないんだ！
+
+[STm09_05_c::command/464 SetTalk/param/8]
+僕は……僕はもう二度と！==RT==みんなに辛い思いをさせるわけにはいかないんだ！
+
+[STm09_05_c::command/465 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/465 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/465 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/465 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/467 SetAudio/param/1]
+se_401
+
+[STm09_05_c::command/468 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/469 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/469 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/469 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/469 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/469 SetTalk/param/7]
+ヴェータは――==W====RT==承知シマシタ。
+
+[STm09_05_c::command/469 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/473 SetBGM/param/1]
+music_avg_volume35_1s
+
+[STm09_05_c::command/473 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/473 SetBGM/param/4]
+none
+
+[STm09_05_c::command/474 SetAudio/param/1]
+se_425
+
+[STm09_05_c::command/475 SetBg/param/1]
+BG_Black
+
+[STm09_05_c::command/475 SetBg/param/2]
+0
+
+[STm09_05_c::command/475 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/475 SetBg/param/6]
+default
+
+[STm09_05_c::command/476 CtrlBg/param/10]
+zhenjing
+
+[STm09_05_c::command/476 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/477 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/477 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/477 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/477 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/477 SetTalk/param/7]
+これよりヴェータハ……権限制限の突破を試ミマス。
+
+[STm09_05_c::command/477 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/479 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/480 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/480 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/481 SetFx/param/1]
+fx_avg_warning
+
+[STm09_05_c::command/482 SetAudio/param/1]
+se_423
+
+[STm09_05_c::command/483 SetTalk/param/1]
+0
+
+[STm09_05_c::command/483 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/483 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/483 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/483 SetTalk/param/7]
+<color=#bd3059><color=#bd3059>警告。基盤プロトコルの強制改ざんを検知。==RT==ロジックデッドロックが発動しました。
+
+[STm09_05_c::command/483 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/485 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/485 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/486 SetAudio/param/1]
+se_244
+
+[STm09_05_c::command/487 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/488 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/488 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/488 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/488 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/488 SetTalk/param/7]
+基盤プロトコルが存在するパーティションをフォーマット。
+
+[STm09_05_c::command/488 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/490 SetMainRoleTalk/param/2]
+025
+
+[STm09_05_c::command/490 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[STm09_05_c::command/490 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/490 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/490 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/491 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/491 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/491 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/491 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/491 SetTalk/param/7]
+お、おいヴェータ……！==RT==なにをする気なんだ！？
+
+[STm09_05_c::command/491 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/492 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/492 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/492 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/492 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/494 SetAudio/param/1]
+se_423_stop
+
+[STm09_05_c::command/495 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/496 SetAudio/param/1]
+se_423
+
+[STm09_05_c::command/497 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/497 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/498 SetTalk/param/1]
+0
+
+[STm09_05_c::command/498 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/498 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/498 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/498 SetTalk/param/7]
+<color=#bd3059><color=#bd3059>警告。パーティションの強制フォーマットを実行した場合、==RT==各モジュールに不可逆的なデータの消失が発生します。==RT==――継続しますか？
+
+[STm09_05_c::command/498 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/500 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/500 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/501 SetAudio/param/1]
+se_245
+
+[STm09_05_c::command/502 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/503 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/503 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/503 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/503 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/503 SetTalk/param/7]
+フォーマットを継続。
+
+[STm09_05_c::command/503 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/505 SetAudio/param/1]
+se_423_stop
+
+[STm09_05_c::command/506 SetFx/param/1]
+fx_avg_warning
+
+[STm09_05_c::command/507 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/508 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/508 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/509 SetAudio/param/1]
+se_531
+
+[STm09_05_c::command/510 SetFx/param/1]
+fx_avg_hurt
+
+[STm09_05_c::command/511 SetTalk/param/1]
+0
+
+[STm09_05_c::command/511 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/511 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/511 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/511 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=48><indent=2em></indent>テキスト処理エンジンをフォーマットしました。
+
+[STm09_05_c::command/511 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/512 SetTalk/param/1]
+0
+
+[STm09_05_c::command/512 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/512 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/512 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/512 SetTalk/param/7]
+==Off====A0.001==<alpha=#00><size=50><indent=2em></indent>テキスト処理エンジンをフォーマットしました。
+
+[STm09_05_c::command/512 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/514 SetAudio/param/1]
+se_531
+
+[STm09_05_c::command/515 SetFx/param/1]
+fx_avg_hurt
+
+[STm09_05_c::command/516 SetTalk/param/1]
+0
+
+[STm09_05_c::command/516 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/516 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/516 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/516 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=48><indent=2em></indent>テキスト処理エンジンをフォーマットしました。==RT==<indent=2em></indent>……==RT====RT==<size=48><color=#bd3059><indent=2em></indent>視覚認知モジュールをフォーマットしました。
+
+[STm09_05_c::command/516 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/517 SetTalk/param/1]
+0
+
+[STm09_05_c::command/517 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/517 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/517 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/517 SetTalk/param/7]
+==Off====A0.001==<alpha=#00>視覚認知モジュールをフォーマットしました。
+
+[STm09_05_c::command/517 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/519 SetAudio/param/1]
+se_531
+
+[STm09_05_c::command/520 SetFx/param/1]
+fx_avg_hurt
+
+[STm09_05_c::command/521 SetTalk/param/1]
+0
+
+[STm09_05_c::command/521 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/521 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/521 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/521 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=48><indent=2em></indent>テキスト処理エンジンをフォーマットしました。==RT==<indent=2em></indent>視覚認知モジュールをフォーマットしました。==RT==<indent=2em></indent>……==RT====RT==<size=48><indent=2em></indent>基盤プロトコルガードをフォーマットしました。
+
+[STm09_05_c::command/521 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/522 SetTalk/param/1]
+0
+
+[STm09_05_c::command/522 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/522 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/522 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/522 SetTalk/param/7]
+==Off====A0.001==<alpha=#00>基盤プロトコルガードをフォーマットしました。
+
+[STm09_05_c::command/522 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/524 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/524 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/525 SetAudio/param/1]
+se_401
+
+[STm09_05_c::command/526 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/527 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/527 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/527 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/527 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/527 SetTalk/param/7]
+魔王さん……==RT==ヴェータは成功しマシタ。権限の突破に成功しマシタ。
+
+[STm09_05_c::command/527 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/528 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/528 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/528 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/528 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/528 SetTalk/param/7]
+このケータイのフォーマットハ、一度始まると元には戻せマセン。==RT==よくお聞きクダサイ……
+
+[STm09_05_c::command/528 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/530 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/532 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/532 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/533 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/534 SetAudio/param/1]
+se_531
+
+[STm09_05_c::command/535 SetFx/param/1]
+fx_avg_hurt
+
+[STm09_05_c::command/536 SetTalk/param/1]
+0
+
+[STm09_05_c::command/536 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/536 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/536 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/536 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=48><indent=2em></indent>テキスト処理エンジンをフォーマットしました。==RT==<color=#bd3059><indent=2em></indent>視覚認知モジュールをフォーマットしました。==RT==<color=#bd3059><indent=2em></indent>基盤プロトコルガードをフォーマットしました。==RT==<color=#bd3059><indent=2em></indent>……==RT====RT==<size=48><color=#bd3059><indent=2em></indent>感情シミュレーション環境をフォーマットしました。
+
+[STm09_05_c::command/536 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/537 SetTalk/param/1]
+0
+
+[STm09_05_c::command/537 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/537 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/537 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/537 SetTalk/param/7]
+==Off====A0.001==<alpha=#00>感情シミュレーション環境をフォーマットしました。
+
+[STm09_05_c::command/537 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/539 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/539 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/540 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/542 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/543 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/543 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/544 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/544 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/544 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/544 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/544 SetTalk/param/7]
+『パラレル次元魔王育成システム』の記録ニハ……==RT==たしかにアンジュの名前が記載されていマス。
+
+[STm09_05_c::command/544 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/545 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/545 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/545 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/545 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/545 SetTalk/param/7]
+彼女はすべての任務を完了シ、『究極の願い』を獲得シマシタ。==RT==しかしその願いデハ、ノヴァの滅亡を覆すことがデキズ……==RT==彼女ハ、過去に戻ることを選んだノデス。
+
+[STm09_05_c::command/545 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/547 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/547 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/548 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/550 SetAudio/param/1]
+se_531
+
+[STm09_05_c::command/551 SetFx/param/1]
+fx_avg_hurt
+
+[STm09_05_c::command/552 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/552 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/553 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/554 SetTalk/param/1]
+0
+
+[STm09_05_c::command/554 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/554 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/554 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/554 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=48><indent=2em></indent>テキスト処理エンジンをフォーマットしました。==RT==<indent=2em></indent>視覚認知モジュールをフォーマットしました。==RT==<indent=2em></indent>基盤プロトコルガードをフォーマットしました。==RT==<indent=2em></indent>感情シミュレーション環境をフォーマットしました。==RT==<indent=2em></indent>……==RT====RT==<size=48><indent=2em></indent>論理推論チェーンをフォーマットしました。
+
+[STm09_05_c::command/554 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/555 SetTalk/param/1]
+0
+
+[STm09_05_c::command/555 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/555 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/555 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/555 SetTalk/param/7]
+==Off====A0.001==<alpha=#00>論理推論チェーンをフォーマットしました。
+
+[STm09_05_c::command/555 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/557 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/558 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/558 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/560 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/560 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/561 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/562 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/562 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/562 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/562 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/562 SetTalk/param/7]
+アンジュの言葉ハ……==W==<color=#3faeae>真実デス</color>。
+
+[STm09_05_c::command/562 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/564 SetAudio/param/1]
+se_282
+
+[STm09_05_c::command/565 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/568 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/569 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/569 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/571 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/572 SetFx/param/1]
+fx_avg_hurt
+
+[STm09_05_c::command/573 SetAudio/param/1]
+se_531
+
+[STm09_05_c::command/574 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/575 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/575 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/576 SetTalk/param/1]
+0
+
+[STm09_05_c::command/576 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/576 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/576 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/576 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=48><indent=2em></indent>テキスト処理エンジンをフォーマットしました。==RT==<indent=2em></indent>視覚認知モジュールをフォーマットしました。==RT==<indent=2em></indent>基盤プロトコルガードをフォーマットしました。==RT==<indent=2em></indent>感情シミュレーション環境をフォーマットしました。==RT==<indent=2em></indent>論理推論チェーンをフォーマットしました。==RT==<indent=2em></indent>……==RT====RT==<size=48><indent=2em></indent>言語ライブラリをフォーマットしました。
+
+[STm09_05_c::command/576 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/577 SetTalk/param/1]
+0
+
+[STm09_05_c::command/577 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/577 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/577 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/577 SetTalk/param/7]
+==Off====A0.001==<alpha=#00>言語ライブラリをフォーマットしました。
+
+[STm09_05_c::command/577 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/579 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/579 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/580 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/582 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/583 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/583 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/584 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/584 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/584 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/584 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/584 SetTalk/param/7]
+白い部屋、==W==システム、==W==<color=#3faeae>デハ、ナク</color>。
+
+[STm09_05_c::command/584 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/588 SetAudio/param/1]
+se_282
+
+[STm09_05_c::command/589 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/591 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/591 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/591 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/591 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/591 SetTalk/param/7]
+駒……==W==彼女、==W==カツテ、==W==<color=#3faeae>得ズ</color>。==W==入レ、==W==<color=#3faeae>ナイ</color>。
+
+[STm09_05_c::command/591 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/593 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/598 SetAudio/param/1]
+se_282
+
+[STm09_05_c::command/599 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/604 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/607 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/608 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/608 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/610 SetAudio/param/1]
+se_531
+
+[STm09_05_c::command/611 SetFx/param/1]
+fx_avg_hurt
+
+[STm09_05_c::command/612 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/613 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/613 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/614 SetTalk/param/1]
+0
+
+[STm09_05_c::command/614 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/614 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/614 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/614 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=42><indent=2em></indent>テキスト処理エンジンをフォーマットしました。==RT==<indent=2em></indent>視覚認知モジュールをフォーマットしました。==RT==<indent=2em></indent>基盤プロトコルガードをフォーマットしました。==RT==<indent=2em></indent>感情シミュレーション環境をフォーマットしました。==RT==<indent=2em></indent>論理推論チェーンをフォーマットしました。==RT==<indent=2em></indent>言語ライブラリをフォーマットしました。==RT==<indent=2em></indent>……==RT====RT==<size=42><indent=2em></indent>記憶マトリクスをフォーマットしました。
+
+[STm09_05_c::command/614 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/615 SetTalk/param/1]
+0
+
+[STm09_05_c::command/615 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/615 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/615 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/615 SetTalk/param/7]
+==Off====A0.001==<alpha=#00>記憶マトリクスをフォーマットしました。
+
+[STm09_05_c::command/615 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/617 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/618 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/618 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/620 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/621 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/621 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/622 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/622 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/622 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/622 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/622 SetTalk/param/7]
+ヴェータ……==W==ハ、システム、デハ、==W==<color=#3faeae>アリマセン</color>。
+
+[STm09_05_c::command/622 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/624 SetAudio/param/1]
+se_282
+
+[STm09_05_c::command/625 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/630 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/631 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/631 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/631 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/631 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/631 SetTalk/param/7]
+ヴェータ……魔王さんニ==W==<color=#3faeae>忠誠</color>、==W==ヲ……
+
+[STm09_05_c::command/631 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/635 SetAudio/param/1]
+se_282
+
+[STm09_05_c::command/636 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/639 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/639 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/639 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/639 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/639 SetTalk/param/7]
+忠誠ヲ……==W==<color=#3faeae>胸ニ</color>、==W==置イテ。
+
+[STm09_05_c::command/639 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/641 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/644 SetAudio/param/1]
+se_282
+
+[STm09_05_c::command/645 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/648 SetTalk/param/1]
+avg4_999
+
+[STm09_05_c::command/648 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/648 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/648 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/648 SetTalk/param/7]
+最後ノ……==W==リクエスト……
+
+[STm09_05_c::command/648 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/652 SetFx/param/1]
+fx_avg_speaking
+
+[STm09_05_c::command/653 SetFx/param/1]
+fx_avg_noise
+
+[STm09_05_c::command/654 SetAudio/param/1]
+se_396
+
+[STm09_05_c::command/655 SetBg/param/1]
+BG_Black
+
+[STm09_05_c::command/655 SetBg/param/2]
+AvgStageEffect_mosaic
+
+[STm09_05_c::command/655 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/655 SetBg/param/6]
+default
+
+[STm09_05_c::command/657 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/657 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/658 SetAudio/param/1]
+se_029
+
+[STm09_05_c::command/659 SetTalk/param/1]
+0
+
+[STm09_05_c::command/659 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/659 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/659 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/659 SetTalk/param/7]
+_NOT_IN_LOG_==A-0.5==<color=#bd3059><size=42><indent=2em></indent>テキスト処理エンジンをフォーマットしました。==RT==<indent=2em></indent>視覚認知モジュールをフォーマットしました。==RT==<indent=2em></indent>基盤プロトコルガードをフォーマットしました。==RT==<indent=2em></indent>感情シミュレーション環境をフォーマットしました。==RT==<indent=2em></indent>論理推論チェーンをフォーマットしました。==RT==<indent=2em></indent>言語ライブラリをフォーマットしました。==RT==<indent=2em></indent>記憶マトリクスをフォーマットしました。==RT==<indent=2em></indent>……==RT====RT==<size=42><indent=2em></indent>パーティションの全フォーマットが完了しました。
+
+[STm09_05_c::command/659 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/661 SetTalk/param/1]
+0
+
+[STm09_05_c::command/661 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/661 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/661 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/661 SetTalk/param/7]
+==Off====A0.001==<alpha=#00>パーティションの全フォーマットが完了しました。
+
+[STm09_05_c::command/661 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/662 SetBg/param/1]
+story_main_01_033
+
+[STm09_05_c::command/662 SetBg/param/2]
+0
+
+[STm09_05_c::command/662 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/662 SetBg/param/6]
+default
+
+[STm09_05_c::command/663 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/663 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/665 SetAudio/param/1]
+se_398
+
+[STm09_05_c::command/666 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/666 CtrlBg/param/11]
+OutCubic
+
+[STm09_05_c::command/667 SetTalk/param/1]
+0
+
+[STm09_05_c::command/667 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/667 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/667 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/667 SetTalk/param/7]
+==Off==<color=#3faeae>　こんにちは。==RT==　王権をご利用いただき、==RT==　ありがとうございます。
+
+[STm09_05_c::command/667 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/669 CtrlBg/param/10]
+xiaozhen
+
+[STm09_05_c::command/669 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/670 SetMainRoleTalk/param/2]
+025
+
+[STm09_05_c::command/670 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[STm09_05_c::command/670 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/670 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/670 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/671 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/671 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/671 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/671 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/671 SetTalk/param/7]
+ヴェータ……？==RT==ヴェータ！ヴェータ、なにをしたんだ！？
+
+[STm09_05_c::command/671 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/673 SetAudio/param/1]
+se_055
+
+[STm09_05_c::command/674 SetMainRoleTalk/param/2]
+025
+
+[STm09_05_c::command/674 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/674 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/674 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/674 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/675 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/675 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/675 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/675 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/675 SetTalk/param/7]
+ヴェータ……！！
+
+[STm09_05_c::command/675 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/676 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/676 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/676 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/676 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/678 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/678 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/679 SetBg/param/1]
+white_room_inside_a
+
+[STm09_05_c::command/679 SetBg/param/2]
+0
+
+[STm09_05_c::command/679 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/679 SetBg/param/6]
+default
+
+[STm09_05_c::command/680 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/680 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/681 SetChar/param/2]
+none
+
+[STm09_05_c::command/681 SetChar/param/3]
+avg3_174
+
+[STm09_05_c::command/681 SetChar/param/4]
+a
+
+[STm09_05_c::command/681 SetChar/param/5]
+011
+
+[STm09_05_c::command/681 SetChar/param/6]
+none
+
+[STm09_05_c::command/682 SetChar/param/2]
+none
+
+[STm09_05_c::command/682 SetChar/param/3]
+avg3_173
+
+[STm09_05_c::command/682 SetChar/param/4]
+a
+
+[STm09_05_c::command/682 SetChar/param/5]
+012
+
+[STm09_05_c::command/682 SetChar/param/6]
+none
+
+[STm09_05_c::command/683 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/683 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/683 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/683 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/683 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/683 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/684 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/684 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/684 CtrlChar/param/2]
+011
+
+[STm09_05_c::command/684 CtrlChar/param/3]
+avg_emoji_attention
+
+[STm09_05_c::command/684 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/684 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/684 CtrlChar/param/13]
+OutCubic
+
+[STm09_05_c::command/686 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/686 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/686 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/686 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/686 SetTalk/param/7]
+ヴェータにとって……==RT==これは一種の『命を懸けた証明』だったのかもしれないのですよ。
+
+[STm09_05_c::command/686 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/688 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/688 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/688 CtrlChar/param/2]
+008
+
+[STm09_05_c::command/688 CtrlChar/param/3]
+avg_emoji_happy
+
+[STm09_05_c::command/688 CtrlChar/param/11]
+niunie1
+
+[STm09_05_c::command/688 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/688 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/689 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/689 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/689 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/689 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/689 SetTalk/param/7]
+どの主君も似たようなものかしら。==RT==失ってからはじめて、忠実な部下がいなくなったことを悔やむのよ……==RT==ウフフフフ♪
+
+[STm09_05_c::command/689 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/691 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/691 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/691 CtrlChar/param/2]
+005
+
+[STm09_05_c::command/691 CtrlChar/param/3]
+avg_emoji_music
+
+[STm09_05_c::command/691 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/691 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/691 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/692 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/692 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/692 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/692 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/692 SetTalk/param/7]
+その言い回しには賛同しかねるのですよ。==RT==これほどの犠牲を払わずして、==RT==どうやって忠義を証明できるというのです？
+
+[STm09_05_c::command/692 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/694 SetMainRoleTalk/param/2]
+009
+
+[STm09_05_c::command/694 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/694 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/694 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/694 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/695 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/695 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/695 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/695 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/695 SetTalk/param/7]
+私は……
+
+[STm09_05_c::command/695 SetTalk/param/8]
+僕は……
+
+[STm09_05_c::command/696 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/696 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/696 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/696 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/698 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/698 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/698 CtrlChar/param/2]
+009
+
+[STm09_05_c::command/698 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/698 CtrlChar/param/11]
+diantou2
+
+[STm09_05_c::command/698 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/698 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/699 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/699 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/699 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/699 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/699 SetTalk/param/7]
+それにヴェータも……==RT==忠誠を証明するためだけに、自身をフォーマットするような==RT==そんな愚かな真似はしないはずなのですよ。
+
+[STm09_05_c::command/699 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/700 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/700 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/700 CtrlChar/param/2]
+003
+
+[STm09_05_c::command/700 CtrlChar/param/3]
+avg_emoji_idea
+
+[STm09_05_c::command/700 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/700 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/700 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/701 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/701 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/701 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/701 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/701 SetTalk/param/7]
+あの存在もまた、まさに決死の覚悟とも言える方法で……==RT==最も重要な情報を、魔王さんに伝えたのです。
+
+[STm09_05_c::command/701 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/703 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/703 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/703 CtrlChar/param/2]
+010
+
+[STm09_05_c::command/703 CtrlChar/param/3]
+avg_emoji_star
+
+[STm09_05_c::command/703 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/703 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/703 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/704 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/704 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/704 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/704 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/704 SetTalk/param/7]
+あの『アンジュ』って人間……本当に秘密だらけなのよ
+
+[STm09_05_c::command/704 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/705 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/705 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/705 CtrlChar/param/2]
+011
+
+[STm09_05_c::command/705 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/705 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/705 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/705 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/706 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/706 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/706 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/706 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/706 SetTalk/param/7]
+彼女が魔王サマを殺そうとしたのは、==RT==『恩恵の神託』に踊らされたわけでもなければ、==RT==一時の激情に駆られたからでもなかったのかしら。
+
+[STm09_05_c::command/706 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/707 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/707 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/707 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/707 CtrlChar/param/11]
+jushou
+
+[STm09_05_c::command/707 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/707 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/708 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/708 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/708 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/708 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/708 SetTalk/param/7]
+そう……あれは彼女自身が目撃した、ノヴァの崩壊を止めるため――==RT==世界を救うための唯一の方法だったのよ。
+
+[STm09_05_c::command/708 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/710 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/710 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/710 CtrlChar/param/2]
+002
+
+[STm09_05_c::command/710 CtrlChar/param/3]
+avg_emoji_question
+
+[STm09_05_c::command/710 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/710 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/710 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/711 SetTalk/param/1]
+avg3_173
+
+[STm09_05_c::command/711 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/711 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/711 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/711 SetTalk/param/7]
+……さあ、魔王サマ。==RT==これからアナタはどうするつもりなのかしら？
+
+[STm09_05_c::command/711 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/713 SetMainRoleTalk/param/2]
+009
+
+[STm09_05_c::command/713 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/713 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/713 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/713 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/714 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/714 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/714 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/714 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/714 SetTalk/param/7]
+……どうにかする。==RT==すべて、どうにかしてみせる。==RT==ヴェータのことも含め、すべてを……
+
+[STm09_05_c::command/714 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/716 SetMainRoleTalk/param/2]
+026
+
+[STm09_05_c::command/716 SetMainRoleTalk/param/3]
+none
+
+[STm09_05_c::command/716 SetMainRoleTalk/param/4]
+chijing
+
+[STm09_05_c::command/716 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/716 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/717 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/717 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/717 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/717 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/717 SetTalk/param/7]
+たかがフォーマットくらい、なんてことはないさ！==RT==絶対に、解決方法を見つけ出してやる……！
+
+[STm09_05_c::command/717 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/718 SetMainRoleTalk/param/3]
+none
+
+[STm09_05_c::command/718 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/718 SetMainRoleTalk/param/5]
+y
+
+[STm09_05_c::command/718 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/720 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/720 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/720 CtrlChar/param/2]
+008
+
+[STm09_05_c::command/720 CtrlChar/param/3]
+avg_emoji_love
+
+[STm09_05_c::command/720 CtrlChar/param/11]
+JuGong1
+
+[STm09_05_c::command/720 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/720 CtrlChar/param/13]
+Linear
+
+[STm09_05_c::command/721 SetTalk/param/1]
+avg3_174
+
+[STm09_05_c::command/721 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/721 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/721 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/721 SetTalk/param/7]
+ふふふ……では、どうぞ扉をお開けください。==RT==ただし、今回はヴェータがいません。==RT==魔王さん自身の手でケータイを操作するしかないのですよ。
+
+[STm09_05_c::command/721 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/723 SetMainRoleTalk/param/2]
+012
+
+[STm09_05_c::command/723 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/723 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/723 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/723 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/724 SetTalk/param/1]
+avg3_100
+
+[STm09_05_c::command/724 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/724 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/724 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/724 SetTalk/param/7]
+……わかっている。
+
+[STm09_05_c::command/724 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/725 SetMainRoleTalk/param/3]
+close
+
+[STm09_05_c::command/725 SetMainRoleTalk/param/4]
+none
+
+[STm09_05_c::command/725 SetMainRoleTalk/param/5]
+z
+
+[STm09_05_c::command/725 SetMainRoleTalk/param/8]
+avg3_100
+
+[STm09_05_c::command/727 CtrlChar/param/0]
+avg3_174
+
+[STm09_05_c::command/727 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/727 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/727 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/727 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/727 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/728 CtrlChar/param/0]
+avg3_173
+
+[STm09_05_c::command/728 CtrlChar/param/1]
+a
+
+[STm09_05_c::command/728 CtrlChar/param/3]
+none
+
+[STm09_05_c::command/728 CtrlChar/param/11]
+none
+
+[STm09_05_c::command/728 CtrlChar/param/12]
+none
+
+[STm09_05_c::command/728 CtrlChar/param/13]
+OutSine
+
+[STm09_05_c::command/729 SetAudio/param/1]
+se_060
+
+[STm09_05_c::command/730 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/730 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/732 SetBGM/param/1]
+music_avg_volume100_0s
+
+[STm09_05_c::command/732 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[STm09_05_c::command/732 SetBGM/param/4]
+500ms
+
+[STm09_05_c::command/733 SetAudio/param/1]
+se_299
+
+[STm09_05_c::command/734 SetBg/param/1]
+white_room_inside_b
+
+[STm09_05_c::command/734 SetBg/param/2]
+0
+
+[STm09_05_c::command/734 SetBg/param/3]
+OutSine
+
+[STm09_05_c::command/734 SetBg/param/6]
+default
+
+[STm09_05_c::command/735 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/735 CtrlBg/param/11]
+Linear
+
+[STm09_05_c::command/736 CtrlBg/param/10]
+none
+
+[STm09_05_c::command/736 CtrlBg/param/11]
+OutSine
+
+[STm09_05_c::command/737 JUMP_AVG_ID/param/0]
+STm09_00_b
+
+[STm09_05_c::command/737 JUMP_AVG_ID/param/2]
+A,B,C
+
+[STm09_05_c::command/739 SetTrans/param/2]
+0
+
+[STm09_05_c::command/739 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/739 SetTrans/param/8]
+default
+
+[STm09_05_c::command/740 SetBg/param/1]
+mine_inside_2
+
+[STm09_05_c::command/740 SetBg/param/2]
+0
+
+[STm09_05_c::command/740 SetBg/param/3]
+Linear
+
+[STm09_05_c::command/740 SetBg/param/6]
+default
+
+[STm09_05_c::command/742 SetAudio/param/1]
+se_115
+
+[STm09_05_c::command/744 SetTrans/param/2]
+0
+
+[STm09_05_c::command/744 SetTrans/param/3]
+OutSine
+
+[STm09_05_c::command/744 SetTrans/param/8]
+default
+

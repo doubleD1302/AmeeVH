@@ -11,7 +11,7 @@
     config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0},
     update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false},support:{methods:[]},app:{versionName:'0.1.1',versionCode:2,variant:'localadb'}
   };
-  let state = initial, currentPage = 'overview', selectedMethod = 'bank';
+  let state = initial, currentPage = 'overview';
   let previousBusyPhase = '', lastOutcome = ''; 
   let firstConfig = true;
   function text(id, value) { const e = $(id); if (e) e.textContent = value == null ? '' : String(value); }
@@ -31,6 +31,10 @@
     catch (_) { message('Chưa gửi được thao tác', 'Hãy trở lại ứng dụng và thử lại.', true); }
   }
   function showPage(page) {
+    if (page === 'support') {
+      message('Tính năng đang bảo trì', 'Bản Việt hoá luôn luôn miễn phí.');
+      return;
+    }
     if (!$('page-' + page)) return;
     currentPage = page;
     document.querySelectorAll('.page').forEach(e => e.classList.toggle('active', e.id === 'page-' + page));
@@ -134,7 +138,6 @@
     if (adb.pairingPort) fillInput('pair-port', adb.pairingPort);
     firstConfig = false;
     renderNotices();
-    renderPayment();
   }
   function notices() { return Array.isArray(state.notifications) ? state.notifications : []; }
   function noticeRow(n) {
@@ -159,25 +162,6 @@
     text('notice-title', n.title || 'Thông báo'); text('notice-date', n.date || ''); text('notice-body', n.content || '');
   }
   function openNoticeList() { $('notices-overlay').hidden = false; $('notice-detail').hidden = true; $('notice-all-list').hidden = false; $('notice-search').hidden = false; renderNotices(); }
-  function paymentMethods() { const dynamic = (state.support || {}).methods; return Array.isArray(dynamic) && dynamic.length ? dynamic : content.paymentMethods; }
-  function renderPayment() {
-    const methods = paymentMethods() || [], row = $('payment-methods'); empty(row);
-    if (!methods.length) { text('payment-account','Chưa có thông tin nhận ủng hộ.'); $('payment-qr').hidden = true; $('copy-account').disabled = true; return; }
-    const chosen = methods.find(m => m.id === selectedMethod) || methods[0]; selectedMethod = chosen.id;
-    methods.forEach(method => {
-      const b = document.createElement('button'); b.type = 'button'; b.className = 'button secondary' + (method.id === selectedMethod ? ' selected' : ''); b.setAttribute('aria-pressed', String(method.id === selectedMethod));
-      const img = document.createElement('img'); img.src = 'icons/' + (method.id === 'bank' ? 'bank' : 'wallet') + '.svg'; img.alt = '';
-      const span = document.createElement('span'); span.textContent = method.label; b.append(img,span); b.addEventListener('click', () => { selectedMethod = method.id; renderPayment(); }); row.append(b);
-    });
-    // Names are never accepted as URLs or HTML; bundled images only.
-    const file = String(chosen.qr_file || '');
-    $('payment-qr').hidden = !/^[A-Za-z0-9_-]+\.png$/.test(file);
-    if (!$('payment-qr').hidden) $('payment-qr').src = 'support/' + file;
-    text('payment-provider', chosen.provider || ''); text('payment-recipient', chosen.recipient_name || '');
-    text('payment-account', chosen.account_number || chosen.account_masked || 'Quét mã để xem người nhận');
-    $('copy-account').disabled = !chosen.account_number;
-    text('copy-account-caption', chosen.account_number ? 'Sao chép số tài khoản' : 'Số ví đang được ẩn');
-  }
   function renderGuide() {
     const target = $('guide-content'); empty(target);
     content.sections.forEach(section => {
@@ -222,7 +206,6 @@
   });
   $('manual-connect').addEventListener('click', () => { const connectionPort = port('connect-port'); if (connectionPort != null) request('connect',{host:$('adb-host').value.trim(),connectionPort}); });
   $('save-settings').addEventListener('click', () => { const raw=$('connect-port').value.trim(); const connectionPort=raw?port('connect-port'):0; if(connectionPort==null)return; request('saveSettings',{repo:$('repo').value.trim(),branch:$('branch').value.trim(),host:$('adb-host').value.trim(),connectionPort}); });
-  $('copy-account').addEventListener('click', () => request('copyAccount',{method:selectedMethod}));
   $('all-notifications').addEventListener('click',openNoticeList); $('notice-search').addEventListener('input',renderNotices); $('notice-back').addEventListener('click',openNoticeList);
   $('notices-close').addEventListener('click', () => { $('notices-overlay').hidden=true; });
   ['message-close','message-ok'].forEach(id => $(id).addEventListener('click', () => { $('message-overlay').hidden=true; }));

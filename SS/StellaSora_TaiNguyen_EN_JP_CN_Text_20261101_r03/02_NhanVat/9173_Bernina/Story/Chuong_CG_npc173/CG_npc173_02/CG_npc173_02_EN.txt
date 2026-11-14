@@ -1,0 +1,5611 @@
+CG_npc173_02 | EN | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1869
+
+[CG_npc173_02::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_npc173_02::command/0 SetIntro/param/1]
+Act Two
+
+[CG_npc173_02::command/0 SetIntro/param/2]
+Written by Fate
+
+[CG_npc173_02::command/0 SetIntro/param/3]
+To find your beloved in a sea of strangers... Does it take destiny's design, or simply the patience to wait?
+
+[CG_npc173_02::command/1 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/1 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/2 SetBg/param/1]
+tower_elevator_close
+
+[CG_npc173_02::command/2 SetBg/param/2]
+0
+
+[CG_npc173_02::command/2 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/2 SetBg/param/6]
+default
+
+[CG_npc173_02::command/3 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/3 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/4 SetAudio/param/1]
+se_188
+
+[CG_npc173_02::command/5 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/5 CtrlStage/param/10]
+InOutBack
+
+[CG_npc173_02::command/6 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/6 SetTrans/param/3]
+Linear
+
+[CG_npc173_02::command/6 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/7 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/7 SetBGM/param/3]
+m12
+
+[CG_npc173_02::command/7 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/9 SetTalk/param/1]
+0
+
+[CG_npc173_02::command/9 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/9 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/9 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/9 SetTalk/param/7]
+Business as usual today. I headed into the Monolith for a run with the New Star Guild.
+
+[CG_npc173_02::command/9 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/10 SetTalk/param/1]
+0
+
+[CG_npc173_02::command/10 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/10 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/10 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/10 SetTalk/param/7]
+We cleared the first floor, then split up to sweep for loot to save some time.
+
+[CG_npc173_02::command/10 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/11 SetAudio/param/1]
+se_188_stop
+
+[CG_npc173_02::command/12 SetAudio/param/1]
+se_288
+
+[CG_npc173_02::command/13 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/13 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/14 SetBg/param/1]
+tower_elevator_unknow
+
+[CG_npc173_02::command/14 SetBg/param/2]
+0
+
+[CG_npc173_02::command/14 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/14 SetBg/param/6]
+default
+
+[CG_npc173_02::command/16 SetAudio/param/1]
+se_060
+
+[CG_npc173_02::command/17 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/17 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/17 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/18 SetBg/param/1]
+tower_fire_earth
+
+[CG_npc173_02::command/18 SetBg/param/2]
+0
+
+[CG_npc173_02::command/18 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/18 SetBg/param/6]
+default
+
+[CG_npc173_02::command/19 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/19 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/20 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/20 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/20 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/22 CtrlBg/param/10]
+none
+
+[CG_npc173_02::command/22 CtrlBg/param/11]
+OutQuad
+
+[CG_npc173_02::command/23 SetMainRoleTalk/param/2]
+002
+
+[CG_npc173_02::command/23 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_npc173_02::command/23 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/23 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/23 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/24 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/24 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/24 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/24 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/24 SetTalk/param/7]
+Star Bells... Stella Coins...
+
+[CG_npc173_02::command/24 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/25 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/25 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/25 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/25 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/27 CtrlBg/param/10]
+none
+
+[CG_npc173_02::command/27 CtrlBg/param/11]
+OutSine
+
+[CG_npc173_02::command/28 CtrlBg/param/10]
+none
+
+[CG_npc173_02::command/28 CtrlBg/param/11]
+OutQuad
+
+[CG_npc173_02::command/30 SetMainRoleTalk/param/2]
+015
+
+[CG_npc173_02::command/30 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc173_02::command/30 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/30 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/30 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/31 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/31 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/31 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/31 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/31 SetTalk/param/7]
+Huh? I swear Noya smashed a few massive Stellaroids right here. Where are the drops? Did they get blasted halfway across the map?
+
+[CG_npc173_02::command/31 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/32 SetMainRoleTalk/param/2]
+010
+
+[CG_npc173_02::command/32 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_npc173_02::command/32 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/32 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/32 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/33 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/33 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/33 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/33 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/33 SetTalk/param/7]
+Ugh... At this rate, I'll be here all day.==W== If only I had a spell or Artifact to just vacuum everything up in one go.
+
+[CG_npc173_02::command/33 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/35 SetBg/param/1]
+mood_1
+
+[CG_npc173_02::command/35 SetBg/param/2]
+0
+
+[CG_npc173_02::command/35 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/35 SetBg/param/6]
+default
+
+[CG_npc173_02::command/36 SetMainRoleTalk/param/2]
+011
+
+[CG_npc173_02::command/36 SetMainRoleTalk/param/3]
+avg_emoji_love
+
+[CG_npc173_02::command/36 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/36 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/36 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/38 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/38 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/38 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/38 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/40 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/40 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/40 SetBGM/param/4]
+500ms
+
+[CG_npc173_02::command/41 SetChar/param/2]
+none
+
+[CG_npc173_02::command/41 SetChar/param/3]
+avg3_173
+
+[CG_npc173_02::command/41 SetChar/param/4]
+a
+
+[CG_npc173_02::command/41 SetChar/param/5]
+002
+
+[CG_npc173_02::command/41 SetChar/param/6]
+none
+
+[CG_npc173_02::command/42 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/42 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/42 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc173_02::command/42 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/42 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/42 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/43 SetTalk/param/1]
+avg3_999
+
+[CG_npc173_02::command/43 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/43 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/43 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/43 SetTalk/param/7]
+If that is what dear Tyrant desires, then naturally, consider it granted.
+
+[CG_npc173_02::command/43 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/45 CtrlStage/param/9]
+Zhong
+
+[CG_npc173_02::command/45 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/46 SetBg/param/1]
+tower_fire_earth
+
+[CG_npc173_02::command/46 SetBg/param/2]
+0
+
+[CG_npc173_02::command/46 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/46 SetBg/param/6]
+default
+
+[CG_npc173_02::command/47 SetMainRoleTalk/param/2]
+007
+
+[CG_npc173_02::command/47 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc173_02::command/47 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/47 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/47 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/48 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/48 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/48 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/48 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/48 SetTalk/param/7]
+<size=50>Whoa?! Who's there?!
+
+[CG_npc173_02::command/48 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/49 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/49 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/49 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/49 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/51 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/51 SetBGM/param/3]
+m49
+
+[CG_npc173_02::command/51 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/52 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/52 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/52 CtrlChar/param/2]
+004
+
+[CG_npc173_02::command/52 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/52 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/52 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/52 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/53 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/53 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/53 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/53 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/53 SetTalk/param/7]
+It is I, Bernina, your most devoted servant.==W== Did Tyrant really not recognize my voice? I clearly need to spend more time by your side to make a lasting impression.
+
+[CG_npc173_02::command/53 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/55 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/55 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/55 CtrlChar/param/2]
+012
+
+[CG_npc173_02::command/55 CtrlChar/param/3]
+avg_emoji_sweaty
+
+[CG_npc173_02::command/55 CtrlChar/param/11]
+lengzhan2
+
+[CG_npc173_02::command/55 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/55 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/58 SetMainRoleTalk/param/2]
+010
+
+[CG_npc173_02::command/58 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/58 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/58 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/58 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/59 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/59 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/59 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/59 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/59 SetTalk/param/7]
+Oh, Bernina... You scared me—I thought it was an ambush.
+
+[CG_npc173_02::command/59 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/60 SetMainRoleTalk/param/2]
+026
+
+[CG_npc173_02::command/60 SetMainRoleTalk/param/3]
+avg_emoji_resentful
+
+[CG_npc173_02::command/60 SetMainRoleTalk/param/4]
+jushou2
+
+[CG_npc173_02::command/60 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/60 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/61 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/61 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/61 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/61 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/61 SetTalk/param/7]
+You're not fooling me this time! This definitely isn't the White Room. Virigia isn't here!
+
+[CG_npc173_02::command/61 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/62 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/62 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/62 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/62 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/64 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/64 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/64 CtrlChar/param/2]
+011
+
+[CG_npc173_02::command/64 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/64 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/64 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/64 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/65 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/65 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/65 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/65 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/65 SetTalk/param/7]
+As if I would ever deceive you, my dear Tyrant! I am your most faithful and loyal servant!
+
+[CG_npc173_02::command/65 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/67 SetMainRoleTalk/param/2]
+007
+
+[CG_npc173_02::command/67 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc173_02::command/67 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/67 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/67 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/68 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/68 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/68 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/68 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/68 SetTalk/param/7]
+You literally just tricked me into thinking I might drop dead from "acute balloon sickness"!
+
+[CG_npc173_02::command/68 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/69 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/69 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/69 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/69 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/71 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/71 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/71 CtrlChar/param/2]
+002
+
+[CG_npc173_02::command/71 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/71 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/71 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/71 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/72 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/72 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/72 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/72 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/72 SetTalk/param/7]
+That was merely a harmless little fib to set the mood for a date with my Tyrant.
+
+[CG_npc173_02::command/72 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/74 SetMainRoleTalk/param/2]
+021
+
+[CG_npc173_02::command/74 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_npc173_02::command/74 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/74 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/74 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/75 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/75 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/75 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/75 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/75 SetTalk/param/7]
+So she admits she was lying...
+
+[CG_npc173_02::command/75 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/76 SetMainRoleTalk/param/2]
+002
+
+[CG_npc173_02::command/76 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/76 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/76 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/76 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/77 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/77 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/77 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/77 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/77 SetTalk/param/7]
+So ... do you need anything, Bernina?
+
+[CG_npc173_02::command/77 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/78 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/78 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/78 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/78 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/80 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/80 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/80 CtrlChar/param/2]
+003
+
+[CG_npc173_02::command/80 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/80 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/80 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/80 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/81 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/81 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/81 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/81 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/81 SetTalk/param/7]
+Nothing in particular. Running into Tyrant like this is purely a happy accident.
+
+[CG_npc173_02::command/81 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/83 SetMainRoleTalk/param/2]
+002
+
+[CG_npc173_02::command/83 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/83 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/83 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/83 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/84 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/84 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/84 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/84 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/84 SetTalk/param/7]
+An accident?
+
+[CG_npc173_02::command/84 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/85 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/85 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/85 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/85 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/87 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/87 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/87 CtrlChar/param/2]
+005
+
+[CG_npc173_02::command/87 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_npc173_02::command/87 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/87 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/87 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/88 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/88 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/88 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/88 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/88 SetTalk/param/7]
+Dear Tyrant, are you familiar with a certain Stella Drama?
+
+[CG_npc173_02::command/88 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/90 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/90 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/90 CtrlChar/param/3]
+close
+
+[CG_npc173_02::command/90 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/90 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/90 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/91 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/91 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/91 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/92 SetBg/param/1]
+city_alley_daylight_winter
+
+[CG_npc173_02::command/92 SetBg/param/2]
+0
+
+[CG_npc173_02::command/92 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/92 SetBg/param/6]
+default
+
+[CG_npc173_02::command/93 CtrlBg/param/10]
+none
+
+[CG_npc173_02::command/93 CtrlBg/param/11]
+Linear
+
+[CG_npc173_02::command/94 SetAudio/param/1]
+se_489
+
+[CG_npc173_02::command/95 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc173_02::command/96 SetFx/param/1]
+fx_avg_snowstorm_lp
+
+[CG_npc173_02::command/97 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/97 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/98 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/98 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/99 SetFilm/param/1]
+Linear
+
+[CG_npc173_02::command/100 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/100 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/100 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/100 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/100 SetTalk/param/7]
+The lonely heroine waits in an alley amidst the swirling snow, until finally, she meets her beloved...
+
+[CG_npc173_02::command/100 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/102 SetChar/param/2]
+none
+
+[CG_npc173_02::command/102 SetChar/param/3]
+avg3_173
+
+[CG_npc173_02::command/102 SetChar/param/4]
+a
+
+[CG_npc173_02::command/102 SetChar/param/5]
+003
+
+[CG_npc173_02::command/102 SetChar/param/6]
+none
+
+[CG_npc173_02::command/103 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/103 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/103 CtrlChar/param/3]
+avg_emoji_love
+
+[CG_npc173_02::command/103 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/103 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/103 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/104 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/104 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/104 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/104 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/104 SetTalk/param/7]
+Two souls deeply intertwined will always find each other through fate.
+
+[CG_npc173_02::command/104 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/106 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc173_02::command/107 SetAudio/param/1]
+se_489_stop
+
+[CG_npc173_02::command/108 SetFx/param/1]
+fx_avg_snowstorm_lp
+
+[CG_npc173_02::command/109 SetFilm/param/1]
+Linear
+
+[CG_npc173_02::command/110 SetBg/param/1]
+tower_fire_earth
+
+[CG_npc173_02::command/110 SetBg/param/2]
+0
+
+[CG_npc173_02::command/110 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/110 SetBg/param/6]
+default
+
+[CG_npc173_02::command/111 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/111 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/111 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/111 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/111 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/111 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/112 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/112 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/112 CtrlChar/param/2]
+010
+
+[CG_npc173_02::command/112 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_npc173_02::command/112 CtrlChar/param/11]
+JuGong1
+
+[CG_npc173_02::command/112 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/112 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/113 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/113 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/113 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/113 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/113 SetTalk/param/7]
+Our encounter today is just like that scene, wouldn't you agree, my Tyrant?
+
+[CG_npc173_02::command/113 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/115 SetMainRoleTalk/param/2]
+015
+
+[CG_npc173_02::command/115 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_npc173_02::command/115 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/115 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/115 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/116 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/116 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/116 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/116 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/116 SetTalk/param/7]
+Right. Honestly though...==W== It sounds more like you were just camping out here waiting for me.
+
+[CG_npc173_02::command/116 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/118 SetMainRoleTalk/param/2]
+009
+
+[CG_npc173_02::command/118 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_npc173_02::command/118 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/118 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/118 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/120 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/120 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/120 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/120 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/122 SetAudio/param/1]
+se_074
+
+[CG_npc173_02::command/123 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/123 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/123 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/123 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/123 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/123 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/123 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/124 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/124 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/124 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/124 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/124 SetTalk/param/7]
+Oh, hush. The how doesn't matter. It's the fated result that counts.
+
+[CG_npc173_02::command/124 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/126 SetMainRoleTalk/param/2]
+021
+
+[CG_npc173_02::command/126 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/126 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/126 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/126 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/127 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/127 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/127 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/127 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/127 SetTalk/param/7]
+So we're calling lying in ambush "fate" now?
+
+[CG_npc173_02::command/127 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/128 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/128 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/128 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/128 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/130 SetAudio/param/1]
+se_146
+
+[CG_npc173_02::command/131 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/131 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/131 CtrlChar/param/2]
+005
+
+[CG_npc173_02::command/131 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/131 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/131 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/131 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/132 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/132 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/132 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/132 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/132 SetTalk/param/7]
+Ahem. Let's not get bogged down in semantics. Did you know a new boutique just opened nearby?
+
+[CG_npc173_02::command/132 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/134 SetMainRoleTalk/param/2]
+015
+
+[CG_npc173_02::command/134 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/134 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/134 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/134 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/135 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/135 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/135 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/135 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/135 SetTalk/param/7]
+No idea...==W== New shops actually open inside the Monolith?
+
+[CG_npc173_02::command/135 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/137 SetMainRoleTalk/param/2]
+002
+
+[CG_npc173_02::command/137 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/137 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/137 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/137 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/139 SetMainRoleTalk/param/3]
+none
+
+[CG_npc173_02::command/139 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/139 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/139 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/141 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/141 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/141 CtrlChar/param/2]
+010
+
+[CG_npc173_02::command/141 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/141 CtrlChar/param/11]
+JuGong1
+
+[CG_npc173_02::command/141 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/141 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/142 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/142 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/142 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/142 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/142 SetTalk/param/7]
+Of course. And since fate brought us together, would you be a dear and help me pick something out?
+
+[CG_npc173_02::command/142 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/144 SetMainRoleTalk/param/2]
+020
+
+[CG_npc173_02::command/144 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_npc173_02::command/144 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/144 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/144 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/145 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/145 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/145 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/145 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/145 SetTalk/param/7]
+Clothes shopping...?==W== Pass. I need to sweep this floor for supplies and regroup with the team.
+
+[CG_npc173_02::command/145 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/147 SetAudio/param/1]
+se_030
+
+[CG_npc173_02::command/148 SetMainRoleTalk/param/2]
+003
+
+[CG_npc173_02::command/148 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/148 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/148 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/148 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/150 SetMainRoleTalk/param/3]
+none
+
+[CG_npc173_02::command/150 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/150 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/150 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/152 SetAudio/param/1]
+se_257
+
+[CG_npc173_02::command/153 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/153 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/153 CtrlChar/param/2]
+015
+
+[CG_npc173_02::command/153 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/153 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/153 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/153 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/154 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/154 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/154 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/154 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/154 SetTalk/param/7]
+You know, if you agree to my little request, I can handle the manual labor for you.
+
+[CG_npc173_02::command/154 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/155 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/155 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/155 CtrlChar/param/2]
+011
+
+[CG_npc173_02::command/155 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/155 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/155 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/155 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/156 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/156 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/156 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/156 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/156 SetTalk/param/7]
+After all, isn't doing all that exhausting? Not to mention what a waste of time it is.
+
+[CG_npc173_02::command/156 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/157 SetAudio/param/1]
+se_029
+
+[CG_npc173_02::command/158 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/158 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/158 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/158 CtrlChar/param/3]
+close
+
+[CG_npc173_02::command/158 CtrlChar/param/11]
+JuGong1
+
+[CG_npc173_02::command/158 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/158 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/159 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/159 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/159 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/159 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/159 SetTalk/param/7]
+Lucky for you, as a Monolith employee... I can collect everything in the blink of an eye.
+
+[CG_npc173_02::command/159 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/161 CtrlStage/param/9]
+Zhong
+
+[CG_npc173_02::command/161 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/162 SetMainRoleTalk/param/2]
+025
+
+[CG_npc173_02::command/162 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_npc173_02::command/162 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/162 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/162 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/163 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/163 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/163 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/163 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/163 SetTalk/param/7]
+<size=50>In the blink of an eye?!
+
+[CG_npc173_02::command/163 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/164 SetMainRoleTalk/param/2]
+020
+
+[CG_npc173_02::command/164 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc173_02::command/164 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/164 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/164 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/165 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/165 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/165 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/165 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/165 SetTalk/param/7]
+That would save me a lot of trouble...==W== But a deal from Bernina always smells like a trap.
+
+[CG_npc173_02::command/165 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/167 SetMainRoleTalk/param/2]
+009
+
+[CG_npc173_02::command/167 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/167 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/167 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/167 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/169 SetMainRoleTalk/param/3]
+none
+
+[CG_npc173_02::command/169 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/169 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/169 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/171 SetAudio/param/1]
+se_074
+
+[CG_npc173_02::command/172 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/172 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/172 CtrlChar/param/2]
+005
+
+[CG_npc173_02::command/172 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/172 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/172 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/172 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/173 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/173 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/173 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/173 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/173 SetTalk/param/7]
+Well, my Tyrant? It's a high-reward deal with zero risk. Literally no consequences for indulging your desires.
+
+[CG_npc173_02::command/173 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/175 SetMainRoleTalk/param/2]
+014
+
+[CG_npc173_02::command/175 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/175 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/175 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/175 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/176 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/176 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/176 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/176 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/176 SetTalk/param/7]
+Hmm... I don't want the team to worry. If it's quick... Then I accept.
+
+[CG_npc173_02::command/176 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/177 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/177 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/177 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/177 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/179 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/179 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/179 CtrlChar/param/2]
+002
+
+[CG_npc173_02::command/179 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/179 CtrlChar/param/11]
+jushou2
+
+[CG_npc173_02::command/179 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/179 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/180 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/180 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/180 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/180 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/180 SetTalk/param/7]
+Hee hee... Naturally. Right this way, Tyrant.
+
+[CG_npc173_02::command/180 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/182 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/182 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/182 SetBGM/param/4]
+1000ms
+
+[CG_npc173_02::command/183 SetAudio/param/1]
+se_065
+
+[CG_npc173_02::command/184 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/184 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/184 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/184 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/184 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/184 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/185 SetTrans/param/2]
+16
+
+[CG_npc173_02::command/185 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/185 SetTrans/param/8]
+AvgStageEffect_fade_left
+
+[CG_npc173_02::command/186 SetBg/param/1]
+tower_inside
+
+[CG_npc173_02::command/186 SetBg/param/2]
+0
+
+[CG_npc173_02::command/186 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/186 SetBg/param/6]
+default
+
+[CG_npc173_02::command/187 SetTrans/param/2]
+16
+
+[CG_npc173_02::command/187 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/187 SetTrans/param/8]
+AvgStageEffect_fade_right
+
+[CG_npc173_02::command/188 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/188 SetBGM/param/3]
+m28
+
+[CG_npc173_02::command/188 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/189 SetChar/param/2]
+none
+
+[CG_npc173_02::command/189 SetChar/param/3]
+avg3_173
+
+[CG_npc173_02::command/189 SetChar/param/4]
+a
+
+[CG_npc173_02::command/189 SetChar/param/5]
+011
+
+[CG_npc173_02::command/189 SetChar/param/6]
+none
+
+[CG_npc173_02::command/190 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/190 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/190 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/190 CtrlChar/param/11]
+JuGong1
+
+[CG_npc173_02::command/190 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/190 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/191 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/191 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/191 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/191 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/191 SetTalk/param/7]
+So, which style do you prefer?==W== This intellectual look?==W== Or the cute one?
+
+[CG_npc173_02::command/191 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/193 SetAudio/param/1]
+se_074
+
+[CG_npc173_02::command/194 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/194 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/194 CtrlChar/param/2]
+007
+
+[CG_npc173_02::command/194 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/194 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/194 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/194 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/197 SetAudio/param/1]
+se_099
+
+[CG_npc173_02::command/198 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/198 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/198 CtrlChar/param/2]
+004
+
+[CG_npc173_02::command/198 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/198 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/198 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/198 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/201 SetMainRoleTalk/param/2]
+013
+
+[CG_npc173_02::command/201 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/201 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/201 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/201 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/202 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/202 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/202 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/202 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/202 SetTalk/param/7]
+They're ... both fine, I guess. Just pick whichever you like, Bernina.
+
+[CG_npc173_02::command/202 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/203 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/203 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/203 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/203 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/205 SetBg/param/1]
+mood_4
+
+[CG_npc173_02::command/205 SetBg/param/2]
+16
+
+[CG_npc173_02::command/205 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/205 SetBg/param/6]
+AvgStageEffect_wipe_down
+
+[CG_npc173_02::command/206 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/206 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/206 CtrlChar/param/2]
+013
+
+[CG_npc173_02::command/206 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_npc173_02::command/206 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/206 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/206 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/207 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/207 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/207 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/207 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/207 SetTalk/param/7]
+Zero points for that answer, my Tyrant.
+
+[CG_npc173_02::command/207 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/209 SetMainRoleTalk/param/2]
+007
+
+[CG_npc173_02::command/209 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_npc173_02::command/209 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/209 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/209 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/210 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/210 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/210 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/210 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/210 SetTalk/param/7]
+Zero?! I thought hard about that!
+
+[CG_npc173_02::command/210 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/211 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/211 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/211 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/211 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/213 SetBg/param/1]
+tower_inside
+
+[CG_npc173_02::command/213 SetBg/param/2]
+0
+
+[CG_npc173_02::command/213 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/213 SetBg/param/6]
+default
+
+[CG_npc173_02::command/214 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/214 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/214 CtrlChar/param/2]
+003
+
+[CG_npc173_02::command/214 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/214 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/214 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/214 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/215 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/215 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/215 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/215 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/215 SetTalk/param/7]
+But I want you to pick for me. Personally.
+
+[CG_npc173_02::command/215 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/217 SetMainRoleTalk/param/2]
+002
+
+[CG_npc173_02::command/217 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc173_02::command/217 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/217 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/217 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/218 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/218 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/218 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/218 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/218 SetTalk/param/7]
+Why does my opinion matter? You might not even like what I pick.
+
+[CG_npc173_02::command/218 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/219 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/219 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/219 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/219 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/221 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/221 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/221 CtrlChar/param/2]
+005
+
+[CG_npc173_02::command/221 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_npc173_02::command/221 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/221 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/221 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/222 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/222 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/222 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/222 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/222 SetTalk/param/7]
+Precisely...
+
+[CG_npc173_02::command/222 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/223 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/223 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/223 CtrlChar/param/2]
+011
+
+[CG_npc173_02::command/223 CtrlChar/param/3]
+close
+
+[CG_npc173_02::command/223 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/223 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/223 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/224 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/224 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/224 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/224 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/224 SetTalk/param/7]
+Since you don't know my taste, you should think even harder about what suits me.
+
+[CG_npc173_02::command/224 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/225 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/225 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/225 CtrlChar/param/2]
+003
+
+[CG_npc173_02::command/225 CtrlChar/param/3]
+avg_emoji_shy
+
+[CG_npc173_02::command/225 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/225 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/225 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/226 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/226 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/226 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/226 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/226 SetTalk/param/7]
+That way, your mind will be filled with nothing but me. Sounds blissful, doesn't it?
+
+[CG_npc173_02::command/226 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/228 SetMainRoleTalk/param/2]
+015
+
+[CG_npc173_02::command/228 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/228 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/228 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/228 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/229 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/229 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/229 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/229 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/229 SetTalk/param/7]
+Is... Is that how it works?
+
+[CG_npc173_02::command/229 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/230 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/230 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/230 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/230 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/232 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/232 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/232 CtrlChar/param/2]
+012
+
+[CG_npc173_02::command/232 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc173_02::command/232 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/232 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/232 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/233 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/233 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/233 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/233 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/233 SetTalk/param/7]
+Besides, if you don't choose, I'll have to try on everything here. That would take quite a while.
+
+[CG_npc173_02::command/233 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/235 SetMainRoleTalk/param/2]
+025
+
+[CG_npc173_02::command/235 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc173_02::command/235 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/235 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/235 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/236 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/236 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/236 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/236 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/236 SetTalk/param/7]
+No... We can't have that.
+
+[CG_npc173_02::command/236 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/237 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/237 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/237 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/237 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/239 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/239 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/239 CtrlChar/param/2]
+015
+
+[CG_npc173_02::command/239 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/239 CtrlChar/param/11]
+JuGong1
+
+[CG_npc173_02::command/239 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/239 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/240 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/240 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/240 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/240 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/240 SetTalk/param/7]
+Then please, give it some serious thought.
+
+[CG_npc173_02::command/240 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/242 SetMainRoleTalk/param/2]
+009
+
+[CG_npc173_02::command/242 SetMainRoleTalk/param/3]
+avg_emoji_vexation
+
+[CG_npc173_02::command/242 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/242 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/242 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/243 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/243 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/243 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/243 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/243 SetTalk/param/7]
+Easy to say, but I'm clueless when it comes to fashion...
+
+[CG_npc173_02::command/243 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/244 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/244 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/244 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/244 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/246 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/246 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/246 CtrlChar/param/2]
+011
+
+[CG_npc173_02::command/246 CtrlChar/param/3]
+avg_emoji_idea
+
+[CG_npc173_02::command/246 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/246 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/246 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/247 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/247 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/247 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/247 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/247 SetTalk/param/7]
+Ah...==W== Allow me to demonstrate, then!
+
+[CG_npc173_02::command/247 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/249 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/249 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/249 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/249 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/249 CtrlChar/param/11]
+jushou2
+
+[CG_npc173_02::command/249 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/249 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/252 SetMainRoleTalk/param/2]
+013
+
+[CG_npc173_02::command/252 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/252 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/252 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/252 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/253 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/253 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/253 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/253 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/253 SetTalk/param/7]
+Great! I could use the inspiration.
+
+[CG_npc173_02::command/253 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/254 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/254 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/254 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/254 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/256 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/256 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/256 CtrlChar/param/2]
+003
+
+[CG_npc173_02::command/256 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_npc173_02::command/256 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/256 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/256 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/257 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/257 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/257 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/257 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/257 SetTalk/param/7]
+Hmm... Let's see what suits the Tyrant...
+
+[CG_npc173_02::command/257 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/259 SetAudio/param/1]
+se_087
+
+[CG_npc173_02::command/260 SetFrontObj/param/2]
+qstory_main_06_002
+
+[CG_npc173_02::command/261 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/261 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/261 CtrlChar/param/2]
+010
+
+[CG_npc173_02::command/261 CtrlChar/param/3]
+close
+
+[CG_npc173_02::command/261 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/261 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/261 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/262 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/262 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/262 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/262 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/262 SetTalk/param/7]
+How about this mascot suit?
+
+[CG_npc173_02::command/262 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/264 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/264 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/264 SetBGM/param/4]
+500ms
+
+[CG_npc173_02::command/265 SetMainRoleTalk/param/2]
+025
+
+[CG_npc173_02::command/265 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc173_02::command/265 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/265 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/265 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/266 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/266 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/266 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/266 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/266 SetTalk/param/7]
+Mascot suit? Wait... Isn't that—?!
+
+[CG_npc173_02::command/266 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/267 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/267 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/267 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/267 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/269 SetFrontObj/param/2]
+qstory_main_06_002
+
+[CG_npc173_02::command/270 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/270 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/270 CtrlChar/param/2]
+003
+
+[CG_npc173_02::command/270 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/270 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/270 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/270 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/271 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/271 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/271 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/271 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/271 SetTalk/param/7]
+Portia told me. You wore this exact one when you worked for her.
+
+[CG_npc173_02::command/271 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/273 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/273 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/273 CtrlChar/param/2]
+012
+
+[CG_npc173_02::command/273 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc173_02::command/273 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/273 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/273 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/274 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/274 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/274 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/274 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/274 SetTalk/param/7]
+Such a pity I never saw it myself... Would you be a dear and put it on, Tyrant? Just once?
+
+[CG_npc173_02::command/274 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/276 SetAudio/param/1]
+se_169
+
+[CG_npc173_02::command/277 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/277 SetTrans/param/3]
+Linear
+
+[CG_npc173_02::command/277 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/278 SetFrontObj/param/2]
+qstory_main_06_002
+
+[CG_npc173_02::command/279 SetBg/param/1]
+tower_supermarket
+
+[CG_npc173_02::command/279 SetBg/param/2]
+0
+
+[CG_npc173_02::command/279 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/279 SetBg/param/6]
+default
+
+[CG_npc173_02::command/280 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc173_02::command/281 SetChar/param/2]
+none
+
+[CG_npc173_02::command/281 SetChar/param/3]
+avg3_100
+
+[CG_npc173_02::command/281 SetChar/param/4]
+j
+
+[CG_npc173_02::command/281 SetChar/param/5]
+002
+
+[CG_npc173_02::command/281 SetChar/param/6]
+none
+
+[CG_npc173_02::command/282 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/282 SetTrans/param/3]
+Linear
+
+[CG_npc173_02::command/282 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/283 CtrlChar/param/0]
+avg3_100
+
+[CG_npc173_02::command/283 CtrlChar/param/1]
+j
+
+[CG_npc173_02::command/283 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_npc173_02::command/283 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/283 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/283 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/285 SetAudio/param/1]
+se_063
+
+[CG_npc173_02::command/286 SetTrans/param/2]
+32
+
+[CG_npc173_02::command/286 SetTrans/param/3]
+Linear
+
+[CG_npc173_02::command/286 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/287 SetBg/param/1]
+tower_inside
+
+[CG_npc173_02::command/287 SetBg/param/2]
+0
+
+[CG_npc173_02::command/287 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/287 SetBg/param/6]
+default
+
+[CG_npc173_02::command/288 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc173_02::command/289 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/289 SetTrans/param/3]
+Linear
+
+[CG_npc173_02::command/289 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/290 SetFx/param/1]
+fx_speedline_center_loop
+
+[CG_npc173_02::command/291 CtrlStage/param/9]
+Zhong
+
+[CG_npc173_02::command/291 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/292 SetMainRoleTalk/param/2]
+007
+
+[CG_npc173_02::command/292 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[CG_npc173_02::command/292 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/292 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/292 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/293 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/293 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/293 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/293 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/293 SetTalk/param/7]
+No way! If I get stuck in that thing again, I'm in big trouble! I nearly got trapped in the Monolith forever last time!
+
+[CG_npc173_02::command/293 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/294 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/294 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/294 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/294 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/296 SetFx/param/1]
+fx_speedline_center_loop
+
+[CG_npc173_02::command/297 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/297 SetBGM/param/3]
+m44
+
+[CG_npc173_02::command/297 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/298 SetChar/param/2]
+none
+
+[CG_npc173_02::command/298 SetChar/param/3]
+avg3_173
+
+[CG_npc173_02::command/298 SetChar/param/4]
+a
+
+[CG_npc173_02::command/298 SetChar/param/5]
+015
+
+[CG_npc173_02::command/298 SetChar/param/6]
+none
+
+[CG_npc173_02::command/299 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/299 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/299 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/299 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/299 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/299 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/300 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/300 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/300 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/300 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/300 SetTalk/param/7]
+And would that be so bad? I'd keep you company forever. You'd never be lonely again.
+
+[CG_npc173_02::command/300 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/302 SetMainRoleTalk/param/2]
+009
+
+[CG_npc173_02::command/302 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/302 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/302 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/302 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/303 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/303 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/303 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/303 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/303 SetTalk/param/7]
+That's not the point...==W== The Guild would panic if I just vanished!
+
+[CG_npc173_02::command/303 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/305 SetMainRoleTalk/param/2]
+012
+
+[CG_npc173_02::command/305 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc173_02::command/305 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/305 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/305 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/307 SetMainRoleTalk/param/2]
+014
+
+[CG_npc173_02::command/307 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/307 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/307 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/307 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/308 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/308 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/308 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/308 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/308 SetTalk/param/7]
+... Now that reminds me... Did something happen to you all? Is that why you're stuck here as Monolith employees?
+
+[CG_npc173_02::command/308 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/309 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/309 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/309 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/309 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/311 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/311 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/311 CtrlChar/param/2]
+003
+
+[CG_npc173_02::command/311 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/311 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/311 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/311 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/312 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/312 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/312 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/312 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/312 SetTalk/param/7]
+Hmm... That is a question even I can't answer, Tyrant.
+
+[CG_npc173_02::command/312 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/313 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/313 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/313 CtrlChar/param/2]
+011
+
+[CG_npc173_02::command/313 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/313 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/313 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/313 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/314 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/314 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/314 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/314 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/314 SetTalk/param/7]
+Come to think of it, I've lost track of how long I've been in the Monolith. Must be ages by now.
+
+[CG_npc173_02::command/314 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/316 SetChar/param/2]
+none
+
+[CG_npc173_02::command/316 SetChar/param/3]
+avg3_174
+
+[CG_npc173_02::command/316 SetChar/param/4]
+a
+
+[CG_npc173_02::command/316 SetChar/param/5]
+002
+
+[CG_npc173_02::command/316 SetChar/param/6]
+none
+
+[CG_npc173_02::command/317 CtrlChar/param/0]
+avg3_174
+
+[CG_npc173_02::command/317 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/317 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/317 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/317 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/317 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/318 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/318 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/318 CtrlChar/param/2]
+009
+
+[CG_npc173_02::command/318 CtrlChar/param/3]
+avg_emoji_idea
+
+[CG_npc173_02::command/318 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/318 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/318 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/319 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/319 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/319 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/319 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/319 SetTalk/param/7]
+Virigia and I go way back, though. That much I can remember clearly.
+
+[CG_npc173_02::command/319 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/321 SetBg/param/1]
+BG_Black
+
+[CG_npc173_02::command/321 SetBg/param/2]
+0
+
+[CG_npc173_02::command/321 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/321 SetBg/param/6]
+default
+
+[CG_npc173_02::command/322 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/322 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/322 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/322 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/322 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/322 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/323 CtrlChar/param/0]
+avg3_174
+
+[CG_npc173_02::command/323 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/323 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/323 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/323 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/323 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/324 SetMainRoleTalk/param/2]
+020
+
+[CG_npc173_02::command/324 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_npc173_02::command/324 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/324 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/324 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/325 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/325 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/325 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/325 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/325 SetTalk/param/7]
+So Bernina and the others used to live on the Nova Continent, too...
+
+[CG_npc173_02::command/325 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/326 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/326 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/326 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/326 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/328 SetBg/param/1]
+tower_inside
+
+[CG_npc173_02::command/328 SetBg/param/2]
+0
+
+[CG_npc173_02::command/328 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/328 SetBg/param/6]
+default
+
+[CG_npc173_02::command/329 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/329 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/330 SetChar/param/2]
+none
+
+[CG_npc173_02::command/330 SetChar/param/3]
+avg3_173
+
+[CG_npc173_02::command/330 SetChar/param/4]
+a
+
+[CG_npc173_02::command/330 SetChar/param/5]
+002
+
+[CG_npc173_02::command/330 SetChar/param/6]
+none
+
+[CG_npc173_02::command/331 SetStage/param/2]
+Linear
+
+[CG_npc173_02::command/332 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/332 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/332 CtrlChar/param/2]
+005
+
+[CG_npc173_02::command/332 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/332 CtrlChar/param/11]
+jushou2
+
+[CG_npc173_02::command/332 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/332 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/333 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/333 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/333 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/333 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/333 SetTalk/param/7]
+But enough about me. Are you sure you won't try on the suit, dear Tyrant?
+
+[CG_npc173_02::command/333 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/335 SetMainRoleTalk/param/2]
+007
+
+[CG_npc173_02::command/335 SetMainRoleTalk/param/3]
+avg_emoji_resentful
+
+[CG_npc173_02::command/335 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/335 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/335 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/336 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/336 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/336 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/336 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/336 SetTalk/param/7]
+<size=50>Absolutely not!
+
+[CG_npc173_02::command/336 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/337 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/337 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/337 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/337 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/339 SetStage/param/2]
+Linear
+
+[CG_npc173_02::command/340 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/340 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/340 CtrlChar/param/2]
+006
+
+[CG_npc173_02::command/340 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_npc173_02::command/340 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/340 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/340 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/341 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/341 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/341 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/341 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/341 SetTalk/param/7]
+What a shame...==W== Well, to make up for it, you'll have to help me pick out lots and lots of outfits.
+
+[CG_npc173_02::command/341 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/343 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/343 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/343 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/343 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/343 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/343 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/346 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/346 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/346 CtrlChar/param/2]
+002
+
+[CG_npc173_02::command/346 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc173_02::command/346 CtrlChar/param/11]
+JuGong1
+
+[CG_npc173_02::command/346 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/346 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/347 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/347 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/347 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/347 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/347 SetTalk/param/7]
+I hope you'll think it over while I try these on.
+
+[CG_npc173_02::command/347 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/349 SetAudio/param/1]
+se_099
+
+[CG_npc173_02::command/350 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/350 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/350 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/350 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/350 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/350 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/352 SetBg/param/1]
+tower_inside
+
+[CG_npc173_02::command/352 SetBg/param/2]
+0
+
+[CG_npc173_02::command/352 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/352 SetBg/param/6]
+default
+
+[CG_npc173_02::command/354 SetStage/param/2]
+Linear
+
+[CG_npc173_02::command/355 CtrlBg/param/10]
+none
+
+[CG_npc173_02::command/355 CtrlBg/param/11]
+OutSine
+
+[CG_npc173_02::command/356 SetMainRoleTalk/param/2]
+025
+
+[CG_npc173_02::command/356 SetMainRoleTalk/param/3]
+avg_emoji_flurry
+
+[CG_npc173_02::command/356 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/356 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/356 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/357 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/357 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/357 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/357 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/357 SetTalk/param/7]
+Hey! Wait up! Bernina! We're already wasting too much time!
+
+[CG_npc173_02::command/357 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/358 SetAudio/param/1]
+se_251
+
+[CG_npc173_02::command/359 SetMainRoleTalk/param/2]
+016
+
+[CG_npc173_02::command/359 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/359 SetMainRoleTalk/param/4]
+chijing
+
+[CG_npc173_02::command/359 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/359 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/360 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/360 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/360 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/360 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/360 SetTalk/param/7]
+She's already in the fitting room... I need to find her the outfits she's pleased with, fast!
+
+[CG_npc173_02::command/360 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/361 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/361 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/361 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/361 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/363 SetBGM/param/1]
+music_avg_volume35_1s
+
+[CG_npc173_02::command/363 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/363 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/364 SetAudio/param/1]
+se_055
+
+[CG_npc173_02::command/365 SetBg/param/1]
+BG_Black
+
+[CG_npc173_02::command/365 SetBg/param/2]
+0
+
+[CG_npc173_02::command/365 SetBg/param/3]
+OutSine
+
+[CG_npc173_02::command/365 SetBg/param/6]
+default
+
+[CG_npc173_02::command/366 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/366 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/367 SetTalk/param/1]
+0
+
+[CG_npc173_02::command/367 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/367 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/367 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/367 SetTalk/param/7]
+Despite the rush, Bernina can't find anything she likes, and the clock keeps ticking...
+
+[CG_npc173_02::command/367 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/369 SetAudio/param/1]
+se_076
+
+[CG_npc173_02::command/370 SetBg/param/1]
+tower_inside
+
+[CG_npc173_02::command/370 SetBg/param/2]
+16
+
+[CG_npc173_02::command/370 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/370 SetBg/param/6]
+AvgStageEffect_clockwise
+
+[CG_npc173_02::command/371 SetBGM/param/1]
+music_avg_volume100_3s
+
+[CG_npc173_02::command/371 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/371 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/372 SetChar/param/2]
+none
+
+[CG_npc173_02::command/372 SetChar/param/3]
+avg3_173
+
+[CG_npc173_02::command/372 SetChar/param/4]
+a
+
+[CG_npc173_02::command/372 SetChar/param/5]
+012
+
+[CG_npc173_02::command/372 SetChar/param/6]
+none
+
+[CG_npc173_02::command/373 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/373 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/373 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc173_02::command/373 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/373 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/373 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/374 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/374 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/374 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/374 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/374 SetTalk/param/7]
+The selection here is dreadful. Nothing caught my eye...==W== But having my Tyrant's company is enough for me.
+
+[CG_npc173_02::command/374 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/376 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/376 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/376 CtrlChar/param/2]
+003
+
+[CG_npc173_02::command/376 CtrlChar/param/3]
+avg_emoji_love
+
+[CG_npc173_02::command/376 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/376 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/376 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/379 SetMainRoleTalk/param/2]
+021
+
+[CG_npc173_02::command/379 SetMainRoleTalk/param/3]
+avg_emoji_awkward
+
+[CG_npc173_02::command/379 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/379 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/379 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/380 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/380 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/380 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/380 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/380 SetTalk/param/7]
+After all that fuss, she didn't buy a single thing...
+
+[CG_npc173_02::command/380 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/381 SetMainRoleTalk/param/2]
+009
+
+[CG_npc173_02::command/381 SetMainRoleTalk/param/3]
+avg_emoji_shy
+
+[CG_npc173_02::command/381 SetMainRoleTalk/param/4]
+chijing
+
+[CG_npc173_02::command/381 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/381 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/382 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/382 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/382 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/382 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/382 SetTalk/param/7]
+Wait a minute... I spent the whole time thinking which outfit would fit her best...==W== Was that her plan all along?
+
+[CG_npc173_02::command/382 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/384 SetMainRoleTalk/param/2]
+025
+
+[CG_npc173_02::command/384 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc173_02::command/384 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/384 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/384 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/386 SetMainRoleTalk/param/3]
+none
+
+[CG_npc173_02::command/386 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/386 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/386 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/388 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/388 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/388 CtrlChar/param/2]
+002
+
+[CG_npc173_02::command/388 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/388 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/388 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/388 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/389 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/389 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/390 SetMainRoleTalk/param/2]
+014
+
+[CG_npc173_02::command/390 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/390 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/390 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/390 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/391 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/391 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/391 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/391 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/391 SetTalk/param/7]
+Bernina, isn't it about time you held up your end of the bargain?
+
+[CG_npc173_02::command/391 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/392 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/392 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/392 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/392 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/394 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/394 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/394 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/394 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc173_02::command/394 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/394 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/394 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/395 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/395 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/395 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/395 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/395 SetTalk/param/7]
+Of course. Leave it to me.==W== Ready ... and, activate!
+
+[CG_npc173_02::command/395 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/397 SetAudio/param/1]
+se_100
+
+[CG_npc173_02::command/398 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/398 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/398 CtrlChar/param/2]
+015
+
+[CG_npc173_02::command/398 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/398 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/398 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/398 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/400 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/400 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/400 CtrlChar/param/2]
+005
+
+[CG_npc173_02::command/400 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_npc173_02::command/400 CtrlChar/param/11]
+JuGong2
+
+[CG_npc173_02::command/400 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/400 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/403 SetAudio/param/1]
+se_422
+
+[CG_npc173_02::command/404 SetMainRoleTalk/param/2]
+002
+
+[CG_npc173_02::command/404 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc173_02::command/404 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/404 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/404 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/405 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/405 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/405 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/405 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/405 SetTalk/param/7]
+Huh? What is that noise?
+
+[CG_npc173_02::command/405 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/406 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/406 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/406 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/406 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/408 SetAudio/param/1]
+se_422_stop
+
+[CG_npc173_02::command/409 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/409 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/409 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/409 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/409 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/409 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/409 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/410 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/410 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/410 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/410 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/410 SetTalk/param/7]
+That's the Auto-Vac Artifact from your White Room. I tweaked it to help you scoop up Stellaroid drops.
+
+[CG_npc173_02::command/410 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/412 SetMainRoleTalk/param/2]
+015
+
+[CG_npc173_02::command/412 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/412 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/412 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/412 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/413 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/413 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/413 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/413 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/413 SetTalk/param/7]
+That room actually needs cleaning? And since when can a vacuum Artifact do this?
+
+[CG_npc173_02::command/413 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/414 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/414 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/414 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/414 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/416 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/416 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/416 CtrlChar/param/2]
+007
+
+[CG_npc173_02::command/416 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc173_02::command/416 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/416 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/416 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/417 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/417 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/417 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/417 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/417 SetTalk/param/7]
+Like I said, results are what count. And it certainly got the job done, didn't it?
+
+[CG_npc173_02::command/417 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/419 SetAudio/param/1]
+se_077
+
+[CG_npc173_02::command/420 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/420 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/420 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/420 CtrlChar/param/11]
+JuGong1
+
+[CG_npc173_02::command/420 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/420 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/421 SetAudio/param/1]
+se_447
+
+[CG_npc173_02::command/422 CtrlStage/param/9]
+Xiao
+
+[CG_npc173_02::command/422 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/423 SetMainRoleTalk/param/2]
+025
+
+[CG_npc173_02::command/423 SetMainRoleTalk/param/3]
+avg_emoji_exclamation
+
+[CG_npc173_02::command/423 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/423 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/423 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/424 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/424 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/424 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/424 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/424 SetTalk/param/7]
+Whoa, heavy! Isn't this a little excessive?
+
+[CG_npc173_02::command/424 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/425 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/425 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/425 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/425 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/427 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/427 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/427 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/427 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc173_02::command/427 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/427 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/427 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/428 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/428 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/428 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/428 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/428 SetTalk/param/7]
+Well, one of its best features is its exceptionally wide range, after all.
+
+[CG_npc173_02::command/428 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/430 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/430 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/430 CtrlChar/param/2]
+004
+
+[CG_npc173_02::command/430 CtrlChar/param/3]
+avg_emoji_love
+
+[CG_npc173_02::command/430 CtrlChar/param/11]
+jushou2
+
+[CG_npc173_02::command/430 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/430 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/431 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/431 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/431 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/431 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/431 SetTalk/param/7]
+Oh my, today was wonderful! I look forward to our next meeting, dear Tyrant~
+
+[CG_npc173_02::command/431 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/433 SetAudio/param/1]
+se_148
+
+[CG_npc173_02::command/434 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/434 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/435 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/435 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/435 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/435 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/435 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/435 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/437 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/437 CtrlStage/param/10]
+InBack
+
+[CG_npc173_02::command/438 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/438 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/438 CtrlChar/param/2]
+005
+
+[CG_npc173_02::command/438 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/438 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/438 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/438 CtrlChar/param/13]
+OutBack
+
+[CG_npc173_02::command/439 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/439 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/439 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/439 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/439 SetTalk/param/7]
+Oh, and let's keep today our little secret. Especially from Virigia.
+
+[CG_npc173_02::command/439 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/441 SetMainRoleTalk/param/2]
+020
+
+[CG_npc173_02::command/441 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc173_02::command/441 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/441 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/441 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/442 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/442 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/442 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/442 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/442 SetTalk/param/7]
+Huh? Especially from Virigia?
+
+[CG_npc173_02::command/442 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/443 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/443 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/443 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/443 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/445 SetAudio/param/1]
+se_313
+
+[CG_npc173_02::command/446 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/446 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/446 CtrlChar/param/2]
+007
+
+[CG_npc173_02::command/446 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/446 CtrlChar/param/11]
+niunie1
+
+[CG_npc173_02::command/446 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/446 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/447 SetMainRoleTalk/param/2]
+015
+
+[CG_npc173_02::command/447 SetMainRoleTalk/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/447 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/447 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/447 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/448 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/448 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/448 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/448 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/448 SetTalk/param/7]
+And ... she's gone.==W== Whatever. I need to regroup with the team. I've wasted enough time already.
+
+[CG_npc173_02::command/448 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/450 SetMainRoleTalk/param/2]
+010
+
+[CG_npc173_02::command/450 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_npc173_02::command/450 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/450 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/450 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/452 SetMainRoleTalk/param/3]
+none
+
+[CG_npc173_02::command/452 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/452 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/452 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/454 SetBGM/param/1]
+music_avg_volume35_0s
+
+[CG_npc173_02::command/454 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/454 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/455 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/455 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/456 SetBg/param/1]
+tower_fire_earth
+
+[CG_npc173_02::command/456 SetBg/param/2]
+0
+
+[CG_npc173_02::command/456 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/456 SetBg/param/6]
+default
+
+[CG_npc173_02::command/457 SetTrans/param/2]
+16
+
+[CG_npc173_02::command/457 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/457 SetTrans/param/8]
+AvgStageEffect_fade_right
+
+[CG_npc173_02::command/458 SetAudio/param/1]
+se_060
+
+[CG_npc173_02::command/459 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/459 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/461 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_npc173_02::command/461 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/461 SetBGM/param/4]
+none
+
+[CG_npc173_02::command/462 SetChar/param/2]
+none
+
+[CG_npc173_02::command/462 SetChar/param/3]
+avg1_103
+
+[CG_npc173_02::command/462 SetChar/param/4]
+a
+
+[CG_npc173_02::command/462 SetChar/param/5]
+002
+
+[CG_npc173_02::command/462 SetChar/param/6]
+none
+
+[CG_npc173_02::command/463 CtrlChar/param/0]
+avg1_103
+
+[CG_npc173_02::command/463 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/463 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_npc173_02::command/463 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/463 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/463 CtrlChar/param/13]
+OutCubic
+
+[CG_npc173_02::command/464 SetTalk/param/1]
+avg1_103
+
+[CG_npc173_02::command/464 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/464 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/464 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/464 SetTalk/param/7]
+Boss is back.
+
+[CG_npc173_02::command/464 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/466 SetChar/param/2]
+none
+
+[CG_npc173_02::command/466 SetChar/param/3]
+avg1_111
+
+[CG_npc173_02::command/466 SetChar/param/4]
+a
+
+[CG_npc173_02::command/466 SetChar/param/5]
+010
+
+[CG_npc173_02::command/466 SetChar/param/6]
+none
+
+[CG_npc173_02::command/467 CtrlChar/param/0]
+avg1_111
+
+[CG_npc173_02::command/467 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/467 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_npc173_02::command/467 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/467 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/467 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/468 SetTalk/param/1]
+avg1_111
+
+[CG_npc173_02::command/468 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/468 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/468 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/468 SetTalk/param/7]
+You made it back without getting lost, good...==W== Wait, where did you get that massive sack?
+
+[CG_npc173_02::command/468 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/470 CtrlStage/param/9]
+Zhong
+
+[CG_npc173_02::command/470 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/471 CtrlChar/param/0]
+avg1_103
+
+[CG_npc173_02::command/471 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/471 CtrlChar/param/2]
+007
+
+[CG_npc173_02::command/471 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/471 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/471 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/471 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/472 CtrlChar/param/0]
+avg1_111
+
+[CG_npc173_02::command/472 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/472 CtrlChar/param/2]
+006
+
+[CG_npc173_02::command/472 CtrlChar/param/3]
+avg_emoji_shock
+
+[CG_npc173_02::command/472 CtrlChar/param/11]
+jushou2
+
+[CG_npc173_02::command/472 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/472 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/475 SetMainRoleTalk/param/2]
+013
+
+[CG_npc173_02::command/475 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/475 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/475 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/475 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/476 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/476 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/476 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/476 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/476 SetTalk/param/7]
+Uh, this? I guess I was just ... thorough.
+
+[CG_npc173_02::command/476 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/477 SetMainRoleTalk/param/3]
+none
+
+[CG_npc173_02::command/477 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/477 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/477 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/479 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/479 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/480 CtrlChar/param/0]
+avg1_111
+
+[CG_npc173_02::command/480 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/480 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/480 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/480 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/480 CtrlChar/param/13]
+OutCubic
+
+[CG_npc173_02::command/481 CtrlChar/param/0]
+avg1_103
+
+[CG_npc173_02::command/481 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/481 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/481 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/481 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/481 CtrlChar/param/13]
+OutCubic
+
+[CG_npc173_02::command/482 SetChar/param/2]
+none
+
+[CG_npc173_02::command/482 SetChar/param/3]
+avg1_112
+
+[CG_npc173_02::command/482 SetChar/param/4]
+a
+
+[CG_npc173_02::command/482 SetChar/param/5]
+013
+
+[CG_npc173_02::command/482 SetChar/param/6]
+none
+
+[CG_npc173_02::command/483 CtrlChar/param/0]
+avg1_112
+
+[CG_npc173_02::command/483 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/483 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_npc173_02::command/483 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/483 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/483 CtrlChar/param/13]
+OutCubic
+
+[CG_npc173_02::command/484 SetTalk/param/1]
+avg1_112
+
+[CG_npc173_02::command/484 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/484 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/484 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/484 SetTalk/param/7]
+You're amazing, Tyrant!==W== We came up empty-handed...
+
+[CG_npc173_02::command/484 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/486 CtrlChar/param/0]
+avg1_112
+
+[CG_npc173_02::command/486 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/486 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/486 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/486 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/486 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/486 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/489 SetMainRoleTalk/param/2]
+002
+
+[CG_npc173_02::command/489 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_npc173_02::command/489 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/489 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/489 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/490 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/490 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/490 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/490 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/490 SetTalk/param/7]
+Empty-handed?
+
+[CG_npc173_02::command/490 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/491 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/491 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/491 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/491 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/493 CtrlStage/param/9]
+none
+
+[CG_npc173_02::command/493 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/494 SetAudio/param/1]
+se_112
+
+[CG_npc173_02::command/495 CtrlChar/param/0]
+avg1_103
+
+[CG_npc173_02::command/495 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/495 CtrlChar/param/2]
+012
+
+[CG_npc173_02::command/495 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/495 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/495 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/495 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/496 SetTalk/param/1]
+avg1_103
+
+[CG_npc173_02::command/496 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/496 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/496 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/496 SetTalk/param/7]
+We found loot. It got snatched.
+
+[CG_npc173_02::command/496 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/498 CtrlChar/param/0]
+avg1_111
+
+[CG_npc173_02::command/498 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/498 CtrlChar/param/2]
+016
+
+[CG_npc173_02::command/498 CtrlChar/param/3]
+avg_emoji_vexation
+
+[CG_npc173_02::command/498 CtrlChar/param/11]
+lengzhan2
+
+[CG_npc173_02::command/498 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/498 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/499 SetTalk/param/1]
+avg1_111
+
+[CG_npc173_02::command/499 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/499 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/499 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/499 SetTalk/param/7]
+I was reaching for a drop when something zoomed in and swiped it!==W== Must be a new Stellaroid breed that mugs Trekkers!
+
+[CG_npc173_02::command/499 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/501 CtrlChar/param/0]
+avg1_111
+
+[CG_npc173_02::command/501 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/501 CtrlChar/param/2]
+017
+
+[CG_npc173_02::command/501 CtrlChar/param/3]
+avg_emoji_resentful
+
+[CG_npc173_02::command/501 CtrlChar/param/11]
+jushou2
+
+[CG_npc173_02::command/501 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/501 CtrlChar/param/13]
+OutSine
+
+[CG_npc173_02::command/504 SetAudio/param/1]
+se_169
+
+[CG_npc173_02::command/505 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/505 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/505 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/506 SetBg/param/1]
+tower_inside
+
+[CG_npc173_02::command/506 SetBg/param/2]
+0
+
+[CG_npc173_02::command/506 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/506 SetBg/param/6]
+default
+
+[CG_npc173_02::command/507 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc173_02::command/508 SetChar/param/2]
+none
+
+[CG_npc173_02::command/508 SetChar/param/3]
+avg3_173
+
+[CG_npc173_02::command/508 SetChar/param/4]
+a
+
+[CG_npc173_02::command/508 SetChar/param/5]
+002
+
+[CG_npc173_02::command/508 SetChar/param/6]
+none
+
+[CG_npc173_02::command/509 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/509 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/509 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/510 CtrlChar/param/0]
+avg3_173
+
+[CG_npc173_02::command/510 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/510 CtrlChar/param/2]
+008
+
+[CG_npc173_02::command/510 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_npc173_02::command/510 CtrlChar/param/11]
+none
+
+[CG_npc173_02::command/510 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/510 CtrlChar/param/13]
+Linear
+
+[CG_npc173_02::command/511 SetTalk/param/1]
+avg3_173
+
+[CG_npc173_02::command/511 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/511 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/511 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/511 SetTalk/param/7]
+Well, one of its best features is its exceptionally wide range, after all.
+
+[CG_npc173_02::command/511 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/513 SetAudio/param/1]
+se_169
+
+[CG_npc173_02::command/514 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/514 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/514 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/515 SetBg/param/1]
+tower_fire_earth
+
+[CG_npc173_02::command/515 SetBg/param/2]
+0
+
+[CG_npc173_02::command/515 SetBg/param/3]
+Linear
+
+[CG_npc173_02::command/515 SetBg/param/6]
+default
+
+[CG_npc173_02::command/516 SetFx/param/1]
+fx_avg_reminiscence_loop
+
+[CG_npc173_02::command/517 SetTrans/param/2]
+0
+
+[CG_npc173_02::command/517 SetTrans/param/3]
+OutSine
+
+[CG_npc173_02::command/517 SetTrans/param/8]
+default
+
+[CG_npc173_02::command/518 CtrlStage/param/9]
+Zhong
+
+[CG_npc173_02::command/518 CtrlStage/param/10]
+Linear
+
+[CG_npc173_02::command/519 SetMainRoleTalk/param/2]
+025
+
+[CG_npc173_02::command/519 SetMainRoleTalk/param/3]
+avg_emoji_shock
+
+[CG_npc173_02::command/519 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/519 SetMainRoleTalk/param/5]
+y
+
+[CG_npc173_02::command/519 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/520 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/520 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/520 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/520 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/520 SetTalk/param/7]
+Wait. Don't tell me this bag is the loot from the entire floor?
+
+[CG_npc173_02::command/520 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/521 SetMainRoleTalk/param/3]
+none
+
+[CG_npc173_02::command/521 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/521 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/521 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/523 SetChar/param/2]
+none
+
+[CG_npc173_02::command/523 SetChar/param/3]
+avg1_112
+
+[CG_npc173_02::command/523 SetChar/param/4]
+a
+
+[CG_npc173_02::command/523 SetChar/param/5]
+022
+
+[CG_npc173_02::command/523 SetChar/param/6]
+none
+
+[CG_npc173_02::command/524 SetChar/param/2]
+none
+
+[CG_npc173_02::command/524 SetChar/param/3]
+avg1_111
+
+[CG_npc173_02::command/524 SetChar/param/4]
+a
+
+[CG_npc173_02::command/524 SetChar/param/5]
+016
+
+[CG_npc173_02::command/524 SetChar/param/6]
+none
+
+[CG_npc173_02::command/525 SetChar/param/2]
+none
+
+[CG_npc173_02::command/525 SetChar/param/3]
+avg1_103
+
+[CG_npc173_02::command/525 SetChar/param/4]
+a
+
+[CG_npc173_02::command/525 SetChar/param/5]
+011
+
+[CG_npc173_02::command/525 SetChar/param/6]
+none
+
+[CG_npc173_02::command/526 SetAudio/param/1]
+se_059
+
+[CG_npc173_02::command/527 CtrlChar/param/0]
+avg1_111
+
+[CG_npc173_02::command/527 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/527 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/527 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/527 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/527 CtrlChar/param/13]
+OutCubic
+
+[CG_npc173_02::command/528 CtrlChar/param/0]
+avg1_103
+
+[CG_npc173_02::command/528 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/528 CtrlChar/param/3]
+none
+
+[CG_npc173_02::command/528 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/528 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/528 CtrlChar/param/13]
+OutCubic
+
+[CG_npc173_02::command/529 CtrlChar/param/0]
+avg1_112
+
+[CG_npc173_02::command/529 CtrlChar/param/1]
+a
+
+[CG_npc173_02::command/529 CtrlChar/param/3]
+close
+
+[CG_npc173_02::command/529 CtrlChar/param/11]
+chijing
+
+[CG_npc173_02::command/529 CtrlChar/param/12]
+none
+
+[CG_npc173_02::command/529 CtrlChar/param/13]
+OutCubic
+
+[CG_npc173_02::command/531 SetMainRoleTalk/param/2]
+007
+
+[CG_npc173_02::command/531 SetMainRoleTalk/param/3]
+avg_emoji_shy
+
+[CG_npc173_02::command/531 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/531 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/531 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/532 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/532 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/532 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/532 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/532 SetTalk/param/7]
+Ah-haha... Maybe... Maybe I just got lucky? Like, really lucky?
+
+[CG_npc173_02::command/532 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/533 SetMainRoleTalk/param/2]
+013
+
+[CG_npc173_02::command/533 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_npc173_02::command/533 SetMainRoleTalk/param/4]
+jushou2
+
+[CG_npc173_02::command/533 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/533 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/534 SetTalk/param/1]
+avg3_100
+
+[CG_npc173_02::command/534 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/534 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/534 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/534 SetTalk/param/7]
+Anyhow! We've got the loot, so let's hit the next floor!
+
+[CG_npc173_02::command/534 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/535 SetMainRoleTalk/param/3]
+close
+
+[CG_npc173_02::command/535 SetMainRoleTalk/param/4]
+none
+
+[CG_npc173_02::command/535 SetMainRoleTalk/param/5]
+z
+
+[CG_npc173_02::command/535 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_npc173_02::command/536 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_npc173_02::command/536 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_npc173_02::command/536 SetBGM/param/4]
+1000ms
+

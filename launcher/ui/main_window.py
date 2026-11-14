@@ -19,7 +19,6 @@ from .components.title_bar import TitleBar
 from .views.overview_view import OverviewView
 from .views.notifications_modal import NotificationsModal
 from .views.guide_modal import GuideModal
-from .views.support_modal import SupportModal
 from .views.settings_modal import SettingsModal
 from .views.advanced_tools_modal import AdvancedToolsModal
 from .views.confirmation_dialog import ConfirmationDialog
@@ -260,14 +259,14 @@ class MainWindow(QMainWindow):
         self.config_manager.save()
         network=self.network_service;manifest_url=self._channel['manifest_url']
         def work(cb,op):
-            payload=Path(local) if local else network.prepare_payload(self.path_manager.payload_root,manifest_url,cb,op)
-            if is_update:
-                # The release can change while the user reads the confirmation.
-                # Re-check the actual freshly downloaded manifest before writing.
-                manifest=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
-                state=translation_state({'release_status':'online','manifest_status':'online','translation_version':manifest.get('version'),'translation_game':manifest.get('client_game_version'),'translation_resource':manifest.get('resource_version')},info)
-                if not state['available']:raise RuntimeError('Không còn bản Việt hoá mới hơn: '+state['message'])
-            r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"✓ Hoàn tất cài đặt! Đã nạp thành công {r['files_count']} tệp bản dịch (v{r['version']})."}
+            with network.payload_for_install(self.path_manager.payload_root,local,manifest_url,cb,op) as payload:
+                if is_update:
+                    # The release can change while the user reads the confirmation.
+                    # Re-check the actual freshly downloaded manifest before writing.
+                    manifest=json.loads((payload/'patch_manifest.json').read_text(encoding='utf8'))
+                    state=translation_state({'release_status':'online','manifest_status':'online','translation_version':manifest.get('version'),'translation_game':manifest.get('client_game_version'),'translation_resource':manifest.get('resource_version')},info)
+                    if not state['available']:raise RuntimeError('Không còn bản Việt hoá mới hơn: '+state['message'])
+                r=self._engine().install(root,payload,operation_id=op,event_cb=cb);return {'game':self._detected(),'message':f"✓ Hoàn tất cài đặt! Đã nạp thành công {r['files_count']} tệp bản dịch (v{r['version']})."}
         self._start('install',work)
     def _action_target(self,action,require_receipt=True):
         if self.active_worker is not None:
@@ -420,7 +419,7 @@ class MainWindow(QMainWindow):
         if dest=='check_update':self._check_update();return
         if dest=='notifications':self._show(NotificationsModal(self.notifications,self))
         elif dest=='guide':self._show(GuideModal(self))
-        elif dest=='support':self._show(SupportModal(self.network_service.get_supporter_data(),self))
+        elif dest=='support':self._show(MessageDialog('Tính năng đang bảo trì','Tính năng đang bảo trì. Bản Việt hoá luôn luôn miễn phí.',parent=self))
         elif dest=='settings':
             if self.active_worker:return
             d=SettingsModal(self.config_manager,self.network_service,self);d.game_path_changed.connect(lambda _:QTimer.singleShot(0,self._scan));d.github_sync_requested.connect(self._sync_github);d.channel_changed.connect(self._sync_github);self._show(d)

@@ -1,0 +1,83 @@
+GameCore/Network/HttpNetHandler.lua | JP
+19 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/94:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 26962
+week succeed
+
+[0/95:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 27139
+week failed
+
+[0/97:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 27580
+week settle failed
+
+[0/98:K1] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 27733
+week settle reset
+
+[0/143:K0] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 37223
+音符掉落查询：
+
+
+[0/191:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 96114
+发送消息：
+
+[0/192:K10] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 97850
+处理消息，发送：
+
+[0/192:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 97876
+，接收：
+
+[0/192:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 97890
+，是否为嵌套消息�?
+
+[0/192:K15] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 97941
+没有绑定消息处理函数，发送：
+
+[0/192:K20] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 98016
+处理消息，收到服务器返回失败或错误，但其id并非对应Req的失败id，收到的：
+
+[0/192:K21] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 98121
+应该对应的：
+
+[0/192:K45] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 98382
+服务器返回错误：
+
+[0/192:K67] TRUY VẾT TĨNH TỚI UI — network_condition
+Archive: 0x55bee1a0d4b0d78b | offset: 98639
+Chứng cứ: sContent tới EventId.OpenMessageBox; điều kiện kênh và mạng, giữ nguyên U+FFFD
+提示：服务器错误，请稍后再试�?
+
+[0/192:K81] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 98842
+执行 network 回调，发送：
+
+[0/193:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 101685
+发送心跳消息
+
+[0/196:K8] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 102813
+Lua HttpNetHandler OnCS2LuaEvent_AppFocus, bFocus:%s, timerPingPong is nil:%s
+
+[0/196:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 102910
+Lua HttpNetHandler OnCS2LuaEvent_AppFocus, timerPingPong: RUN.
+
+[0/196:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0x55bee1a0d4b0d78b | offset: 102974
+Lua HttpNetHandler OnCS2LuaEvent_AppFocus, timerPingPong: PAUSE.
+

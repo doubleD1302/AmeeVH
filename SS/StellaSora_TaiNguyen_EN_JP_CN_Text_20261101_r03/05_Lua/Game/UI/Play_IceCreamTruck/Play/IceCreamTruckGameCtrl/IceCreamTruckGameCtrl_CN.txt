@@ -1,0 +1,119 @@
+Game/UI/Play_IceCreamTruck/Play/IceCreamTruckGameCtrl.lua | CN
+28 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/9:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 16325
+没有冰淇淋活动数据
+
+[0/9:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 16422
+关卡ID：
+
+[0/9:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 16435
+对应信息不存在
+
+[0/10:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 16745
+[IceCream] GameCtrl 单例为空：可能尚未 OnEnable 或已 OnDisable
+
+[0/32:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 26041
+没有拿到节点下存放的枚举数字
+
+[0/40:K4] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 32073
+BuffRuntime 未初始化
+
+[0/42:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 33568
+BeginMakeNewIceCream: 没有当前订单
+
+[0/42:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 33675
+订单是空的
+
+[0/42:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 33713
+生成蛋筒
+
+[0/43:K7] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 34497
+[IceCream] obj_Icon 节点缺失 display=
+
+[0/43:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 34570
+资源路径是空的 step=
+
+[0/44:K10] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 36198
+] 缺少 IconBall / IconSauce 子节点
+
+[0/44:K23] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 36395
+[IceCream] 加载淋酱预制体失败 path=
+
+[0/44:K25] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 36454
+[IceCream] instantiate 淋酱预制体失败 path=
+
+[0/49:K13] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 39285
+道具资源路径为空,ID: 
+
+[0/56/0:K19] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 45566
+[SafeHitNextFrame] Hit %s 失败:%s
+
+[0/59:K2] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 46726
+没有顾客就绪
+
+[0/62:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 48838
+[IceCream] Event_FinishCurrentOrder IN state=%s argId=%s serveId=%s
+
+[0/62:K7] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 48935
+[IceCream] Event_FinishCurrentOrder 拦截：ServeCustomerId 为空
+
+[0/65:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 52188
+BuffRuntime 未初始化
+
+[0/90:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 65019
+活动数据丢失：
+
+[0/97:K2] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 67465
+[IceCream] IceCream_NextLevel 缺少 levelId
+
+[0/97:K6] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 67556
+[IceCream] 下一关配置不存在 levelId=
+
+[0/102:K3] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 70830
+活动数据丢失：
+
+[0/114:K11] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 77219
+章鱼 失败，中断后续
+
+[0/115:K14] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcf63b8b1e69e90cf | offset: 78696
+没有拿到节点下存放的枚举数字
+
+[0/127:K4] TRUY VẾT TĨNH TỚI UI — ui
+Archive: 0xcf63b8b1e69e90cf | offset: 84157
+Chứng cứ: Qua string.format rồi truyền tới OpenMessageBox khi ServeCustomer không tồn tại.
+当前没有正在服务的顾客
+
+[0/129:K4] TRUY VẾT TĨNH TỚI UI — ui
+Archive: 0xcf63b8b1e69e90cf | offset: 84714
+Chứng cứ: Qua string.format rồi truyền tới OpenMessageBox ở nhánh không trong Fever.
+热力模式未开启
+

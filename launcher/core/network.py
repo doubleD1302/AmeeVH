@@ -2,6 +2,7 @@
 from __future__ import annotations
 import http.client,json,logging,os,re,shutil,time,urllib.request,urllib.parse,uuid,zipfile,hashlib
 from datetime import datetime,timezone
+from contextlib import contextmanager
 from pathlib import Path
 from .types import NotificationItem,SupporterData,OperationPhase,OperationEvent
 from .safety import InstallerError,sha256_file,safe_path,relative_name,normalize_manifest,atomic_json
@@ -252,63 +253,97 @@ class NetworkService:
             release=None
         raw,binding=self._manifest_for_release(release,manifest_url)
         manifest=self._windows_manifest(raw);stage=Path(cache_root)/('payload_'+uuid.uuid4().hex);stage.mkdir(parents=True)
-        downloads_dir=Path(cache_root)/'shared_downloads';downloads_dir.mkdir(parents=True,exist_ok=True)
-        release_assets={a['name']:a for a in release['assets']} if release else {}
-        assets=release_assets if binding['source']=='release_asset' else {}
-        package=raw.get('package_zip',{}) if isinstance(raw.get('package_zip'),dict) else {}
-        if binding['source']=='explicit_custom_manifest' and package.get('filename'):
-            candidate=release_assets.get(package['filename']);digest=package.get('sha256');size=package.get('size_bytes')
-            if candidate and isinstance(digest,str) and re.fullmatch('[0-9a-fA-F]{64}',digest) and isinstance(size,int) and not isinstance(size,bool) and size>0 and candidate['size']==size and self._asset_digest(candidate)==digest.lower():
-                assets={package['filename']:candidate};binding={**binding,'explicit_package_asset':package['filename'],'explicit_package_sha256':digest.lower()}
-        # Bind direct files before downloading anything. A stale manifest must
-        # not turn a complete, smaller release asset into an endless retry.
-        file_urls={}
-        raw_files = raw.get('files') or {}  # legacy manifests may use bundles/data_arcx instead
-        for rel,meta in manifest['files'].items():
-            original=raw_files.get(rel,{})
-            url=original.get('url') or original.get('download_url')
-            asset=assets.get(Path(meta['source']).name)
-            if not url and asset:url=asset['browser_download_url']
-            source_asset=next((a for a in release_assets.values() if a['browser_download_url']==url),None) if url else None
-            if source_asset:
-                digest=self._asset_digest(source_asset)
-                if source_asset['size']!=meta['size'] or (digest and digest!=meta['sha256'].lower()):
-                    raise InstallerError(f"Bản phát hành không đồng bộ: {source_asset['name']} có kích thước hoặc SHA256 khác bảng kê ({source_asset['size']}/{meta['size']} bytes). Vui lòng báo người phát hành cập nhật gói tải.",'RELEASE_ASSET_MISMATCH')
-            file_urls[rel]=url
-        zasset=assets.get(package.get('filename')) if package.get('filename') else next((a for a in assets.values() if 'AssetBundles' in a['name'] and a['name'].endswith('.zip')),None)
-        bundle_entries={r:v for r,v in manifest['files'].items() if r.startswith('Persistent_Store/AssetBundles/')}
-        if bundle_entries and zasset:
-            zip_digest=self._asset_digest(zasset);declared_digest=package.get('sha256') or raw.get('asset_bundles_package_sha256');declared_size=package.get('size_bytes') or raw.get('asset_bundles_package_size')
-            if declared_digest is not None and (not isinstance(declared_digest,str) or not re.fullmatch('[0-9a-fA-F]{64}',declared_digest)):raise InstallerError('Mã xác minh gói ảnh không hợp lệ.','MANIFEST_INVALID')
-            if declared_size is not None and (not isinstance(declared_size,int) or isinstance(declared_size,bool) or declared_size<=0):raise InstallerError('Kích thước gói ảnh không hợp lệ.','MANIFEST_INVALID')
-            if declared_digest and zip_digest and declared_digest.lower()!=zip_digest:raise InstallerError('Gói ảnh không khớp bảng kê của bản phát hành.','HASH_MISMATCH')
-            if declared_size is not None and declared_size!=zasset['size']:raise InstallerError('Kích thước gói ảnh không khớp bản phát hành.','SIZE_MISMATCH')
-            archive_cached=downloads_dir/f"{zasset['name']}_{declared_digest or zip_digest}.zip"
-            archive=self.download(zasset['browser_download_url'],archive_cached,zasset['size'],declared_digest or zip_digest,event_cb,operation_id)
-            with zipfile.ZipFile(archive) as z:
-                members={};seen=set()
-                for info in z.infolist():
-                    if info.is_dir():continue
-                    name=relative_name(info.filename)
-                    if name.casefold() in seen:raise InstallerError('Archive trùng tên tệp.','ARCHIVE_INVALID')
-                    seen.add(name.casefold())
-                    if (info.external_attr>>16)&0o170000==0o120000:raise InstallerError('Archive có symlink.','PATH_ESCAPE')
-                    members[name]=info
-                for rel,meta in bundle_entries.items():
-                    options=[meta['source'],Path(meta['source']).name,'AssetBundles/'+Path(meta['source']).name]
-                    info=next((members[x] for x in options if x in members),None)
-                    if info is None or info.file_size!=meta['size']:raise InstallerError('Bundle thiếu/sai kích thước trong archive.','CORRUPT_PAYLOAD')
-                    target=safe_path(stage,meta['source']);target.parent.mkdir(parents=True,exist_ok=True)
-                    with z.open(info) as src,target.open('xb') as out:shutil.copyfileobj(src,out,256*1024)
-                    if sha256_file(target)!=meta['sha256']:raise InstallerError('Bundle sai SHA256: '+rel,'HASH_MISMATCH')
-        for rel,meta in manifest['files'].items():
-            target=safe_path(stage,meta['source'])
-            if target.is_file():continue
-            url=file_urls[rel]
-            if not url:raise InstallerError('Gói chưa cung cấp đường dẫn tải cho '+rel+'. Nguồn tùy chỉnh cần đường dẫn tệp trực tiếp hoặc một gói ZIP được khai báo đúng tên, kích thước và mã xác minh.','PAYLOAD_UNAVAILABLE')
-            cached_item=downloads_dir/f"{Path(meta['source']).name}_{meta['sha256']}"
-            self.download(url,cached_item,meta['size'],meta['sha256'],event_cb,operation_id)
-            target.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copy2(cached_item,target)
-        manifest['source_metadata']=binding;atomic_json(stage/'patch_manifest.json',manifest);return stage
+        try:
+            downloads_dir=Path(cache_root)/'shared_downloads';downloads_dir.mkdir(parents=True,exist_ok=True)
+            release_assets={a['name']:a for a in release['assets']} if release else {}
+            assets=release_assets if binding['source']=='release_asset' else {}
+            package=raw.get('package_zip',{}) if isinstance(raw.get('package_zip'),dict) else {}
+            if binding['source']=='explicit_custom_manifest' and package.get('filename'):
+                candidate=release_assets.get(package['filename']);digest=package.get('sha256');size=package.get('size_bytes')
+                if candidate and isinstance(digest,str) and re.fullmatch('[0-9a-fA-F]{64}',digest) and isinstance(size,int) and not isinstance(size,bool) and size>0 and candidate['size']==size and self._asset_digest(candidate)==digest.lower():
+                    assets={package['filename']:candidate};binding={**binding,'explicit_package_asset':package['filename'],'explicit_package_sha256':digest.lower()}
+            # Bind direct files before downloading anything. A stale manifest must
+            # not turn a complete, smaller release asset into an endless retry.
+            file_urls={}
+            raw_files = raw.get('files') or {}  # legacy manifests may use bundles/data_arcx instead
+            for rel,meta in manifest['files'].items():
+                original=raw_files.get(rel,{})
+                url=original.get('url') or original.get('download_url')
+                asset=assets.get(Path(meta['source']).name)
+                if not url and asset:url=asset['browser_download_url']
+                source_asset=next((a for a in release_assets.values() if a['browser_download_url']==url),None) if url else None
+                if source_asset:
+                    digest=self._asset_digest(source_asset)
+                    if source_asset['size']!=meta['size'] or (digest and digest!=meta['sha256'].lower()):
+                        raise InstallerError(f"Bản phát hành không đồng bộ: {source_asset['name']} có kích thước hoặc SHA256 khác bảng kê ({source_asset['size']}/{meta['size']} bytes). Vui lòng báo người phát hành cập nhật gói tải.",'RELEASE_ASSET_MISMATCH')
+                file_urls[rel]=url
+            zasset=assets.get(package.get('filename')) if package.get('filename') else next((a for a in assets.values() if 'AssetBundles' in a['name'] and a['name'].endswith('.zip')),None)
+            bundle_entries={r:v for r,v in manifest['files'].items() if r.startswith('Persistent_Store/AssetBundles/')}
+            if bundle_entries and zasset:
+                zip_digest=self._asset_digest(zasset);declared_digest=package.get('sha256') or raw.get('asset_bundles_package_sha256');declared_size=package.get('size_bytes') or raw.get('asset_bundles_package_size')
+                if declared_digest is not None and (not isinstance(declared_digest,str) or not re.fullmatch('[0-9a-fA-F]{64}',declared_digest)):raise InstallerError('Mã xác minh gói ảnh không hợp lệ.','MANIFEST_INVALID')
+                if declared_size is not None and (not isinstance(declared_size,int) or isinstance(declared_size,bool) or declared_size<=0):raise InstallerError('Kích thước gói ảnh không hợp lệ.','MANIFEST_INVALID')
+                if declared_digest and zip_digest and declared_digest.lower()!=zip_digest:raise InstallerError('Gói ảnh không khớp bảng kê của bản phát hành.','HASH_MISMATCH')
+                if declared_size is not None and declared_size!=zasset['size']:raise InstallerError('Kích thước gói ảnh không khớp bản phát hành.','SIZE_MISMATCH')
+                archive_cached=downloads_dir/f"{zasset['name']}_{declared_digest or zip_digest}.zip"
+                archive=self.download(zasset['browser_download_url'],archive_cached,zasset['size'],declared_digest or zip_digest,event_cb,operation_id)
+                with zipfile.ZipFile(archive) as z:
+                    members={};seen=set()
+                    for info in z.infolist():
+                        if info.is_dir():continue
+                        name=relative_name(info.filename)
+                        if name.casefold() in seen:raise InstallerError('Archive trùng tên tệp.','ARCHIVE_INVALID')
+                        seen.add(name.casefold())
+                        if (info.external_attr>>16)&0o170000==0o120000:raise InstallerError('Archive có symlink.','PATH_ESCAPE')
+                        members[name]=info
+                    for rel,meta in bundle_entries.items():
+                        options=[meta['source'],Path(meta['source']).name,'AssetBundles/'+Path(meta['source']).name]
+                        info=next((members[x] for x in options if x in members),None)
+                        if info is None or info.file_size!=meta['size']:raise InstallerError('Bundle thiếu/sai kích thước trong archive.','CORRUPT_PAYLOAD')
+                        target=safe_path(stage,meta['source']);target.parent.mkdir(parents=True,exist_ok=True)
+                        with z.open(info) as src,target.open('xb') as out:shutil.copyfileobj(src,out,256*1024)
+                        if sha256_file(target)!=meta['sha256']:raise InstallerError('Bundle sai SHA256: '+rel,'HASH_MISMATCH')
+            for rel,meta in manifest['files'].items():
+                target=safe_path(stage,meta['source'])
+                if target.is_file():continue
+                url=file_urls[rel]
+                if not url:raise InstallerError('Gói chưa cung cấp đường dẫn tải cho '+rel+'. Nguồn tùy chỉnh cần đường dẫn tệp trực tiếp hoặc một gói ZIP được khai báo đúng tên, kích thước và mã xác minh.','PAYLOAD_UNAVAILABLE')
+                cached_item=downloads_dir/f"{Path(meta['source']).name}_{meta['sha256']}"
+                self.download(url,cached_item,meta['size'],meta['sha256'],event_cb,operation_id)
+                target.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copy2(cached_item,target)
+            manifest['source_metadata']=binding;atomic_json(stage/'patch_manifest.json',manifest);return stage
+        except BaseException:
+            self._cleanup_owned_stage(cache_root,stage)
+            raise
+
+    @staticmethod
+    def _cleanup_owned_stage(cache_root,stage):
+        # Never delete custom payloads, the cache root, sibling jobs, or a link
+        # that resolves outside the cache root. Only our UUID-named stage is owned.
+        path=Path(stage)
+        try:
+            root=Path(cache_root).resolve()
+            if path.is_symlink() or not re.fullmatch(r"payload_[0-9a-f]{32}",path.name):
+                raise ValueError("Not an owned payload stage")
+            resolved=path.resolve()
+            if resolved.parent != root or resolved.name != path.name:
+                raise ValueError("Payload stage is outside the cache root")
+            if path.exists():shutil.rmtree(path)
+        except (OSError,ValueError) as exc:
+            log.warning("Could not clean payload stage %s: %s",path.name,type(exc).__name__)
+
+    @contextmanager
+    def payload_for_install(self,cache_root,local=None,manifest_url=None,event_cb=None,operation_id="download"):
+        # Custom payloads are user-owned and must never be removed. Each online
+        # operation cleans only the exact stage it created, even after failure.
+        if local:
+            yield Path(local)
+            return
+        stage=self.prepare_payload(cache_root,manifest_url,event_cb,operation_id)
+        try:
+            yield stage
+        finally:
+            self._cleanup_owned_stage(cache_root,stage)
+
     def get_supporter_data(self):return SupporterData(status='unavailable',supporters=[],qr_placeholder_text='Thông tin thanh toán do người dùng cung cấp. Danh sách người đồng hành hiện chưa có nguồn dữ liệu.')

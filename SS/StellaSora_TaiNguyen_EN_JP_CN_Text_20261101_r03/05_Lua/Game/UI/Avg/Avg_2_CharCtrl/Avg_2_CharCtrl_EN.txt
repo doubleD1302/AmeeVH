@@ -1,0 +1,45 @@
+Game/UI/Avg/Avg_2_CharCtrl.lua | EN
+10 hằng chuỗi được lọc để rà soát; có thể là log, mã nội bộ hoặc text UI.
+[TRUY VẾT TĨNH TỚI UI] không chứng minh nhánh hoạt động trong game.
+Bản EN/JP/CN là chuỗi gốc; không phải bản dịch.
+
+[0/6:K10] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 9109
+AVG角色立绘实例数量超过预实例化数量上限，更多实例(RenderTexture)将占用更多内存，可根据实际情况，调整预实例化数量。
+
+[0/42:K26] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 34210
+Avg SetChar 入场指令配置中，含逻辑错误，不应该让一个 '已入场的角色' 入场。
+
+[0/42:K68] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 34739
+Avg SetChar 离场指令配置中，含逻辑错误，不应该让一个 '未入场的角色' 离场。
+
+[0/43:K25] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 37871
+Avg CtrlChar 指令配置中，含逻辑错误，不应该直接控制一个 '未入场的角色' 。
+
+[0/44:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 39605
+Avg PlayCharAnim 指令配置中，含逻辑错误，不应该直接控制一个 '未入场的角色' 。
+
+[0/45:K9] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 40385
+Avg PlayGradient2Anim 指令配置中，含逻辑错误，不应该直接控制一个 '未入场的角色' 。
+
+[0/50:K30] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 44730
+Avg SetCharHead 入场指令配置中，含逻辑错误，不应该让一个 '已入场的角色' 入场。
+
+[0/50:K52] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 45104
+Avg SetCharHead 离场指令配置中，含逻辑错误，不应该让一个 '未入场的角色' 离场。
+
+[0/51:K12] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 46781
+Avg CtrlChar 指令配置中，含逻辑错误，不应该直接控制一个 '未入场的角色'的头像框 。
+
+[0/52:K60] ỨNG VIÊN — CHƯA XÁC NHẬN
+Archive: 0xcbc53c206a91252b | offset: 48747
+Base Layer.
+

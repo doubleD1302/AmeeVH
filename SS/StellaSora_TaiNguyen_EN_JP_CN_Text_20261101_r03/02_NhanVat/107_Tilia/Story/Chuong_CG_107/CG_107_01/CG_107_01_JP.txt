@@ -1,0 +1,4597 @@
+CG_107_01 | JP | client 2.0.1
+Giữ nguyên giá trị nguồn; ID và token là dữ liệu, không tự ghép nghĩa giữa các ngôn ngữ.
+Số mục: 1531
+
+[CG_107_01::command/0 SetIntro/param/0]
+ep_mainline_001
+
+[CG_107_01::command/0 SetIntro/param/1]
+第1話
+
+[CG_107_01::command/0 SetIntro/param/2]
+正義の心
+
+[CG_107_01::command/0 SetIntro/param/3]
+あなたは帝国護衛隊員として交通整理をするティリアと出会う。彼女は試験に落ちながらも、正義の味方を目指し自主的に活動していた。そこへ、農場に巨人が現れたとの一報が入る。
+
+[CG_107_01::command/1 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_107_01::command/1 SetBGM/param/3]
+m1
+
+[CG_107_01::command/1 SetBGM/param/4]
+none
+
+[CG_107_01::command/2 SetTrans/param/2]
+0
+
+[CG_107_01::command/2 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/2 SetTrans/param/8]
+fade
+
+[CG_107_01::command/3 SetBg/param/1]
+grocery_store
+
+[CG_107_01::command/3 SetBg/param/2]
+0
+
+[CG_107_01::command/3 SetBg/param/3]
+Linear
+
+[CG_107_01::command/3 SetBg/param/6]
+default
+
+[CG_107_01::command/4 SetFilm/param/1]
+Linear
+
+[CG_107_01::command/5 CtrlStage/param/9]
+none
+
+[CG_107_01::command/5 CtrlStage/param/10]
+Linear
+
+[CG_107_01::command/6 CtrlStage/param/9]
+none
+
+[CG_107_01::command/6 CtrlStage/param/10]
+OutSine
+
+[CG_107_01::command/7 SetFx/param/1]
+fx_avg_sunlight
+
+[CG_107_01::command/8 SetAudio/param/1]
+se_024
+
+[CG_107_01::command/9 SetTrans/param/2]
+0
+
+[CG_107_01::command/9 SetTrans/param/3]
+OutQuad
+
+[CG_107_01::command/9 SetTrans/param/8]
+fade
+
+[CG_107_01::command/10 SetTalk/param/1]
+0
+
+[CG_107_01::command/10 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/10 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/10 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/10 SetTalk/param/7]
+たくさんの人や車でごった返す、朝のアッシュエリア。私は伝説と言われる==RT==ステラキネマのレンタルショップを探して歩き回っていた。
+
+[CG_107_01::command/10 SetTalk/param/8]
+たくさんの人や車でごった返す、朝のアッシュエリア。僕は伝説と言われる==RT==ステラキネマのレンタルショップを探して歩き回っていた。
+
+[CG_107_01::command/12 SetFilm/param/1]
+OutQuint
+
+[CG_107_01::command/13 SetMainRoleTalk/param/2]
+011
+
+[CG_107_01::command/13 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/13 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/13 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/13 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/14 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/14 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/14 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/14 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/14 SetTalk/param/7]
+（めずらしいステラキネマから、フラヴィオの==RT==骨董品レベルのキネマまで取り扱っているらしいし。==RT==なにから見ようか迷ってしまうな！）
+
+[CG_107_01::command/14 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/15 SetMainRoleTalk/param/2]
+002
+
+[CG_107_01::command/15 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_107_01::command/15 SetMainRoleTalk/param/4]
+JuGong
+
+[CG_107_01::command/15 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/15 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/16 SetAudio/param/1]
+se_116
+
+[CG_107_01::command/17 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/17 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/17 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/17 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/17 SetTalk/param/7]
+――ん？==W==あれは……やけに騒がしいな。==RT==道まで塞いで、なにかあったのか？
+
+[CG_107_01::command/17 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/20 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/20 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/20 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/20 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/22 SetCharHead/param/5]
+avg3_141
+
+[CG_107_01::command/22 SetCharHead/param/6]
+a
+
+[CG_107_01::command/22 SetCharHead/param/7]
+002
+
+[CG_107_01::command/22 SetCharHead/param/8]
+avg_emoji_angry
+
+[CG_107_01::command/23 SetAudio/param/1]
+se_024_stop
+
+[CG_107_01::command/24 SetTalkShake/param/1]
+Zhong
+
+[CG_107_01::command/25 CtrlStage/param/9]
+Xiao
+
+[CG_107_01::command/25 CtrlStage/param/10]
+Linear
+
+[CG_107_01::command/26 SetTalk/param/1]
+魔物輸送の運転手
+
+[CG_107_01::command/26 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/26 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/26 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/26 SetTalk/param/7]
+<size=52>おい、なにやってんだ！</size>==W==さっさと進めよ！==RT==こっちは配達の途中なんだぞ！
+
+[CG_107_01::command/26 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/29 SetCharHead/param/5]
+avg3_144
+
+[CG_107_01::command/29 SetCharHead/param/6]
+a
+
+[CG_107_01::command/29 SetCharHead/param/7]
+002
+
+[CG_107_01::command/29 SetCharHead/param/8]
+avg_emoji_vexation
+
+[CG_107_01::command/30 SetTalk/param/1]
+神器輸送の運転手
+
+[CG_107_01::command/30 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/30 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/30 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/30 SetTalk/param/7]
+そうカッカするなって。==W==この時間はただでさえ交通量も多いし、==RT==みんな急いでるからなぁ。道を譲り合わなかったやつらが、==RT==事故でも起こしたんだろうさ。
+
+[CG_107_01::command/30 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/33 SetCharHead/param/5]
+avg3_141
+
+[CG_107_01::command/33 SetCharHead/param/6]
+a
+
+[CG_107_01::command/33 SetCharHead/param/7]
+002
+
+[CG_107_01::command/33 SetCharHead/param/8]
+none
+
+[CG_107_01::command/34 SetCharHead/param/5]
+avg3_144
+
+[CG_107_01::command/34 SetCharHead/param/6]
+a
+
+[CG_107_01::command/34 SetCharHead/param/7]
+002
+
+[CG_107_01::command/34 SetCharHead/param/8]
+none
+
+[CG_107_01::command/36 SetMainRoleTalk/param/2]
+010
+
+[CG_107_01::command/36 SetMainRoleTalk/param/3]
+avg_emoji_sigh
+
+[CG_107_01::command/36 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/36 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/36 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/37 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/37 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/37 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/37 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/37 SetTalk/param/7]
+（なるほどな。騒ぎの原因は事故か）
+
+[CG_107_01::command/37 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/38 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/38 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/38 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/38 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/40 SetTrans/param/2]
+AvgStageEffect_wipe_left
+
+[CG_107_01::command/40 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/40 SetTrans/param/8]
+default
+
+[CG_107_01::command/41 SetBg/param/1]
+city_street_daylight
+
+[CG_107_01::command/41 SetBg/param/2]
+0
+
+[CG_107_01::command/41 SetBg/param/3]
+Linear
+
+[CG_107_01::command/41 SetBg/param/6]
+default
+
+[CG_107_01::command/43 SetTrans/param/2]
+AvgStageEffect_wipe_right
+
+[CG_107_01::command/43 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/43 SetTrans/param/8]
+default
+
+[CG_107_01::command/45 CtrlStage/param/9]
+none
+
+[CG_107_01::command/45 CtrlStage/param/10]
+OutQuint
+
+[CG_107_01::command/46 CtrlBg/param/10]
+none
+
+[CG_107_01::command/46 CtrlBg/param/11]
+OutQuint
+
+[CG_107_01::command/47 SetFilm/param/1]
+OutQuint
+
+[CG_107_01::command/49 SetAudio/param/1]
+se_392
+
+[CG_107_01::command/50 SetTalk/param/1]
+0
+
+[CG_107_01::command/50 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/50 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/50 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/50 SetTalk/param/7]
+大渋滞の先には青いスクーターが停まっており、さらには道路を塞ぐように規制線まで張られている。
+
+[CG_107_01::command/50 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/52 SetAudio/param/1]
+se_116_stop
+
+[CG_107_01::command/53 SetFilm/param/1]
+OutQuint
+
+[CG_107_01::command/54 CtrlStage/param/9]
+none
+
+[CG_107_01::command/54 CtrlStage/param/10]
+OutQuint
+
+[CG_107_01::command/55 CtrlBg/param/10]
+none
+
+[CG_107_01::command/55 CtrlBg/param/11]
+OutQuint
+
+[CG_107_01::command/57 SetMainRoleTalk/param/2]
+002
+
+[CG_107_01::command/57 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/57 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/57 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/57 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/58 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_107_01::command/58 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/58 SetBGM/param/4]
+2000ms
+
+[CG_107_01::command/59 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/59 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/59 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/59 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/59 SetTalk/param/7]
+（って、あのスクーターは――==RT==ちょっと様子を見に行ってみるか）
+
+[CG_107_01::command/59 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/60 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/60 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/60 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/60 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/61 SetChar/param/2]
+none
+
+[CG_107_01::command/61 SetChar/param/3]
+avg1_107
+
+[CG_107_01::command/61 SetChar/param/4]
+b
+
+[CG_107_01::command/61 SetChar/param/5]
+002
+
+[CG_107_01::command/61 SetChar/param/6]
+none
+
+[CG_107_01::command/63 SetBg/param/1]
+BG_Black
+
+[CG_107_01::command/63 SetBg/param/2]
+0
+
+[CG_107_01::command/63 SetBg/param/3]
+Linear
+
+[CG_107_01::command/63 SetBg/param/6]
+default
+
+[CG_107_01::command/64 SetStage/param/2]
+OutQuint
+
+[CG_107_01::command/65 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/65 CtrlChar/param/1]
+b
+
+[CG_107_01::command/65 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_107_01::command/65 CtrlChar/param/11]
+none
+
+[CG_107_01::command/65 CtrlChar/param/12]
+none
+
+[CG_107_01::command/65 CtrlChar/param/13]
+OutQuad
+
+[CG_107_01::command/67 SetTalk/param/1]
+avg3_999
+
+[CG_107_01::command/67 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/67 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/67 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/67 SetTalk/param/7]
+車を運転しているみなさんにはご迷惑をおかけしますが、==W====RT==もう少々お待ちください！==RT==さあ、歩行者の方はいまのうちに渡るであります！
+
+[CG_107_01::command/67 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/69 SetBg/param/1]
+city_street_daylight
+
+[CG_107_01::command/69 SetBg/param/2]
+0
+
+[CG_107_01::command/69 SetBg/param/3]
+OutQuint
+
+[CG_107_01::command/69 SetBg/param/6]
+default
+
+[CG_107_01::command/70 SetBg/param/1]
+BG_Black
+
+[CG_107_01::command/70 SetBg/param/2]
+0
+
+[CG_107_01::command/70 SetBg/param/3]
+OutQuint
+
+[CG_107_01::command/70 SetBg/param/6]
+default
+
+[CG_107_01::command/71 SetStage/param/2]
+OutQuint
+
+[CG_107_01::command/72 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_107_01::command/72 SetBGM/param/3]
+m44
+
+[CG_107_01::command/72 SetBGM/param/4]
+none
+
+[CG_107_01::command/73 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/73 CtrlChar/param/1]
+b
+
+[CG_107_01::command/73 CtrlChar/param/3]
+none
+
+[CG_107_01::command/73 CtrlChar/param/11]
+none
+
+[CG_107_01::command/73 CtrlChar/param/12]
+none
+
+[CG_107_01::command/73 CtrlChar/param/13]
+OutQuart
+
+[CG_107_01::command/75 SetChar/param/2]
+none
+
+[CG_107_01::command/75 SetChar/param/3]
+avg3_166
+
+[CG_107_01::command/75 SetChar/param/4]
+a
+
+[CG_107_01::command/75 SetChar/param/5]
+002
+
+[CG_107_01::command/75 SetChar/param/6]
+none
+
+[CG_107_01::command/76 SetChar/param/2]
+none
+
+[CG_107_01::command/76 SetChar/param/3]
+avg3_143
+
+[CG_107_01::command/76 SetChar/param/4]
+a
+
+[CG_107_01::command/76 SetChar/param/5]
+002
+
+[CG_107_01::command/76 SetChar/param/6]
+none
+
+[CG_107_01::command/77 CtrlChar/param/0]
+avg3_166
+
+[CG_107_01::command/77 CtrlChar/param/1]
+a
+
+[CG_107_01::command/77 CtrlChar/param/2]
+004
+
+[CG_107_01::command/77 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_107_01::command/77 CtrlChar/param/11]
+none
+
+[CG_107_01::command/77 CtrlChar/param/12]
+none
+
+[CG_107_01::command/77 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/78 SetAudio/param/1]
+se_121
+
+[CG_107_01::command/79 SetTalk/param/1]
+安心している歩行者
+
+[CG_107_01::command/79 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/79 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/79 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/79 SetTalk/param/7]
+ここは車が多くてね、いつもなかなか渡れなくて困ってたんだ。==RT==今日はあんたのおかげで助かったよ。
+
+[CG_107_01::command/79 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/80 CtrlChar/param/0]
+avg3_166
+
+[CG_107_01::command/80 CtrlChar/param/1]
+a
+
+[CG_107_01::command/80 CtrlChar/param/3]
+none
+
+[CG_107_01::command/80 CtrlChar/param/11]
+none
+
+[CG_107_01::command/80 CtrlChar/param/12]
+none
+
+[CG_107_01::command/80 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/82 CtrlChar/param/0]
+avg3_143
+
+[CG_107_01::command/82 CtrlChar/param/1]
+a
+
+[CG_107_01::command/82 CtrlChar/param/2]
+003
+
+[CG_107_01::command/82 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/82 CtrlChar/param/11]
+none
+
+[CG_107_01::command/82 CtrlChar/param/12]
+none
+
+[CG_107_01::command/82 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/83 SetTalk/param/1]
+朗らかな歩行者
+
+[CG_107_01::command/83 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/83 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/83 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/83 SetTalk/param/7]
+帝国護衛隊の人ってサボってばかりのイメージだったけど、==RT==気の利く人もいるのね。見直したわ。
+
+[CG_107_01::command/83 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/84 CtrlChar/param/0]
+avg3_143
+
+[CG_107_01::command/84 CtrlChar/param/1]
+a
+
+[CG_107_01::command/84 CtrlChar/param/3]
+none
+
+[CG_107_01::command/84 CtrlChar/param/11]
+none
+
+[CG_107_01::command/84 CtrlChar/param/12]
+none
+
+[CG_107_01::command/84 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/86 SetTrans/param/2]
+AvgStageEffect_wipe_left
+
+[CG_107_01::command/86 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/86 SetTrans/param/8]
+default
+
+[CG_107_01::command/87 SetStage/param/2]
+Linear
+
+[CG_107_01::command/89 SetBg/param/1]
+grocery_store
+
+[CG_107_01::command/89 SetBg/param/2]
+0
+
+[CG_107_01::command/89 SetBg/param/3]
+Linear
+
+[CG_107_01::command/89 SetBg/param/6]
+default
+
+[CG_107_01::command/90 CtrlStage/param/9]
+none
+
+[CG_107_01::command/90 CtrlStage/param/10]
+Linear
+
+[CG_107_01::command/92 SetTrans/param/2]
+AvgStageEffect_wipe_right
+
+[CG_107_01::command/92 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/92 SetTrans/param/8]
+default
+
+[CG_107_01::command/93 SetCharHead/param/5]
+avg3_139
+
+[CG_107_01::command/93 SetCharHead/param/6]
+a
+
+[CG_107_01::command/93 SetCharHead/param/7]
+002
+
+[CG_107_01::command/93 SetCharHead/param/8]
+avg_emoji_angry
+
+[CG_107_01::command/94 SetTalk/param/1]
+苛立つ運転手
+
+[CG_107_01::command/94 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/94 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/94 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/94 SetTalk/param/7]
+チッ……なんなんだよ、あの騎士は。普段はこんなことやってねぇだろ。
+
+[CG_107_01::command/94 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/95 SetCharHead/param/5]
+avg3_138
+
+[CG_107_01::command/95 SetCharHead/param/6]
+a
+
+[CG_107_01::command/95 SetCharHead/param/7]
+002
+
+[CG_107_01::command/95 SetCharHead/param/8]
+avg_emoji_resentful
+
+[CG_107_01::command/96 SetTalk/param/1]
+怒る運転手
+
+[CG_107_01::command/96 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/96 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/96 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/96 SetTalk/param/7]
+私たちの貴重な時間を奪って……。余計なことしないでほしいわ。
+
+[CG_107_01::command/96 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/97 SetCharHead/param/5]
+avg3_139
+
+[CG_107_01::command/97 SetCharHead/param/6]
+a
+
+[CG_107_01::command/97 SetCharHead/param/7]
+002
+
+[CG_107_01::command/97 SetCharHead/param/8]
+none
+
+[CG_107_01::command/98 SetCharHead/param/5]
+avg3_138
+
+[CG_107_01::command/98 SetCharHead/param/6]
+a
+
+[CG_107_01::command/98 SetCharHead/param/7]
+002
+
+[CG_107_01::command/98 SetCharHead/param/8]
+none
+
+[CG_107_01::command/100 SetMainRoleTalk/param/2]
+012
+
+[CG_107_01::command/100 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/100 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/100 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/100 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/101 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/101 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/101 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/101 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/101 SetTalk/param/7]
+（ふむ……事故ではなく、==RT==帝国護衛隊の交通整理による渋滞だったようだな）
+
+[CG_107_01::command/101 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/103 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_107_01::command/103 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/103 SetTrans/param/8]
+default
+
+[CG_107_01::command/104 SetBg/param/1]
+city_street_daylight
+
+[CG_107_01::command/104 SetBg/param/2]
+0
+
+[CG_107_01::command/104 SetBg/param/3]
+Linear
+
+[CG_107_01::command/104 SetBg/param/6]
+default
+
+[CG_107_01::command/106 SetChar/param/2]
+none
+
+[CG_107_01::command/106 SetChar/param/3]
+avg1_107
+
+[CG_107_01::command/106 SetChar/param/4]
+b
+
+[CG_107_01::command/106 SetChar/param/5]
+002
+
+[CG_107_01::command/106 SetChar/param/6]
+none
+
+[CG_107_01::command/107 SetTrans/param/2]
+AvgStageEffect_clockwise
+
+[CG_107_01::command/107 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/107 SetTrans/param/8]
+fade
+
+[CG_107_01::command/109 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/109 CtrlChar/param/1]
+b
+
+[CG_107_01::command/109 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/109 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/109 CtrlChar/param/12]
+none
+
+[CG_107_01::command/109 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/110 SetTalk/param/1]
+avg3_999
+
+[CG_107_01::command/110 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/110 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/110 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/110 SetTalk/param/7]
+ドライバーのみなさん、ご協力ありがとうございましたー！==W====RT==これより規制を解除するであります！
+
+[CG_107_01::command/110 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/112 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/112 CtrlChar/param/1]
+b
+
+[CG_107_01::command/112 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_107_01::command/112 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/112 CtrlChar/param/12]
+none
+
+[CG_107_01::command/112 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/114 SetFilm/param/1]
+OutQuint
+
+[CG_107_01::command/116 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/116 CtrlChar/param/1]
+b
+
+[CG_107_01::command/116 CtrlChar/param/3]
+none
+
+[CG_107_01::command/116 CtrlChar/param/11]
+none
+
+[CG_107_01::command/116 CtrlChar/param/12]
+none
+
+[CG_107_01::command/116 CtrlChar/param/13]
+OutCubic
+
+[CG_107_01::command/117 SetAudio/param/1]
+se_010
+
+[CG_107_01::command/118 SetTalk/param/1]
+0
+
+[CG_107_01::command/118 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/118 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/118 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/118 SetTalk/param/7]
+規制線を取り払った騎士が深々と頭を下げると、勢いよく車が流れ出す。
+
+[CG_107_01::command/118 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/120 SetAudio/param/1]
+se_320
+
+[CG_107_01::command/121 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_107_01::command/121 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/121 SetBGM/param/4]
+4000ms
+
+[CG_107_01::command/122 SetTalk/param/1]
+0
+
+[CG_107_01::command/122 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/122 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/122 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/122 SetTalk/param/7]
+するとあっという間に、見慣れたアッシュエリアの光景が戻ってきた。
+
+[CG_107_01::command/122 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/124 SetFilm/param/1]
+OutQuint
+
+[CG_107_01::command/125 SetTrans/param/2]
+AvgStageEffect_wipe_left
+
+[CG_107_01::command/125 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/125 SetTrans/param/8]
+default
+
+[CG_107_01::command/126 SetBg/param/1]
+grocery_store
+
+[CG_107_01::command/126 SetBg/param/2]
+0
+
+[CG_107_01::command/126 SetBg/param/3]
+Linear
+
+[CG_107_01::command/126 SetBg/param/6]
+default
+
+[CG_107_01::command/128 SetAudio/param/1]
+se_009
+
+[CG_107_01::command/130 SetChar/param/2]
+none
+
+[CG_107_01::command/130 SetChar/param/3]
+avg1_107
+
+[CG_107_01::command/130 SetChar/param/4]
+b
+
+[CG_107_01::command/130 SetChar/param/5]
+002
+
+[CG_107_01::command/130 SetChar/param/6]
+none
+
+[CG_107_01::command/131 SetTrans/param/2]
+AvgStageEffect_wipe_right
+
+[CG_107_01::command/131 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/131 SetTrans/param/8]
+default
+
+[CG_107_01::command/132 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_107_01::command/132 SetBGM/param/3]
+m30
+
+[CG_107_01::command/132 SetBGM/param/4]
+none
+
+[CG_107_01::command/133 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/133 CtrlChar/param/1]
+b
+
+[CG_107_01::command/133 CtrlChar/param/3]
+none
+
+[CG_107_01::command/133 CtrlChar/param/11]
+none
+
+[CG_107_01::command/133 CtrlChar/param/12]
+none
+
+[CG_107_01::command/133 CtrlChar/param/13]
+OutSine
+
+[CG_107_01::command/135 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/135 CtrlChar/param/1]
+b
+
+[CG_107_01::command/135 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_107_01::command/135 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/135 CtrlChar/param/12]
+none
+
+[CG_107_01::command/135 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/136 SetTalk/param/1]
+avg3_999
+
+[CG_107_01::command/136 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/136 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/136 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/136 SetTalk/param/7]
+ふぅ……って、あれ？魔王さんではありませんか！
+
+[CG_107_01::command/136 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/138 SetMainRoleTalk/param/2]
+013
+
+[CG_107_01::command/138 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/138 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/138 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/138 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/139 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/139 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/139 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/139 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/139 SetTalk/param/7]
+その声……やはりティリアか？
+
+[CG_107_01::command/139 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/140 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/140 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/140 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/140 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/142 CtrlBg/param/10]
+none
+
+[CG_107_01::command/142 CtrlBg/param/11]
+OutSine
+
+[CG_107_01::command/143 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/143 CtrlChar/param/1]
+b
+
+[CG_107_01::command/143 CtrlChar/param/3]
+avg_emoji_music
+
+[CG_107_01::command/143 CtrlChar/param/11]
+manbu
+
+[CG_107_01::command/143 CtrlChar/param/12]
+none
+
+[CG_107_01::command/143 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/144 SetAudio/param/1]
+se_072
+
+[CG_107_01::command/145 SetTalk/param/1]
+avg3_999
+
+[CG_107_01::command/145 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/145 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/145 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/145 SetTalk/param/7]
+はい！おはようございます、魔王さ――==W==ひゃあっ==W==！？
+
+[CG_107_01::command/145 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/147 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/147 CtrlChar/param/1]
+b
+
+[CG_107_01::command/147 CtrlChar/param/3]
+avg_emoji_shock
+
+[CG_107_01::command/147 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/147 CtrlChar/param/12]
+none
+
+[CG_107_01::command/147 CtrlChar/param/13]
+InSine
+
+[CG_107_01::command/150 SetAudio/param/1]
+se_278
+
+[CG_107_01::command/151 CtrlStage/param/9]
+Zhong
+
+[CG_107_01::command/151 CtrlStage/param/10]
+Linear
+
+[CG_107_01::command/154 SetMainRoleTalk/param/2]
+025
+
+[CG_107_01::command/154 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_107_01::command/154 SetMainRoleTalk/param/4]
+Tiao
+
+[CG_107_01::command/154 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/154 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/155 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/155 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/155 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/155 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/155 SetTalk/param/7]
+だ、大丈夫か！？
+
+[CG_107_01::command/155 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/156 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/156 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/156 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/156 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/158 SetChar/param/2]
+none
+
+[CG_107_01::command/158 SetChar/param/3]
+avg1_107
+
+[CG_107_01::command/158 SetChar/param/4]
+b
+
+[CG_107_01::command/158 SetChar/param/5]
+002
+
+[CG_107_01::command/158 SetChar/param/6]
+none
+
+[CG_107_01::command/159 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/159 CtrlChar/param/1]
+b
+
+[CG_107_01::command/159 CtrlChar/param/3]
+none
+
+[CG_107_01::command/159 CtrlChar/param/11]
+niunie1
+
+[CG_107_01::command/159 CtrlChar/param/12]
+none
+
+[CG_107_01::command/159 CtrlChar/param/13]
+OutQuad
+
+[CG_107_01::command/160 SetAudio/param/1]
+se_191
+
+[CG_107_01::command/161 SetTalk/param/1]
+avg3_999
+
+[CG_107_01::command/161 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/161 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/161 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/161 SetTalk/param/7]
+いたたたぁ……こんなところに石が落ちてるなんて……==RT==兜をかぶると、視界が狭くなるのが難点でありますね。
+
+[CG_107_01::command/161 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/163 CtrlBg/param/10]
+none
+
+[CG_107_01::command/163 CtrlBg/param/11]
+OutQuint
+
+[CG_107_01::command/164 CtrlStage/param/9]
+none
+
+[CG_107_01::command/164 CtrlStage/param/10]
+OutQuint
+
+[CG_107_01::command/165 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/165 CtrlChar/param/1]
+a
+
+[CG_107_01::command/165 CtrlChar/param/2]
+004
+
+[CG_107_01::command/165 CtrlChar/param/3]
+none
+
+[CG_107_01::command/165 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/165 CtrlChar/param/12]
+none
+
+[CG_107_01::command/165 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/166 SetAudio/param/1]
+se_100
+
+[CG_107_01::command/167 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/167 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/167 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/167 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/167 SetTalk/param/7]
+それはそうと、==W==あらためましておはようございます、魔王さん！==RT==お散歩中でありますか？
+
+[CG_107_01::command/167 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/169 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/169 CtrlChar/param/1]
+a
+
+[CG_107_01::command/169 CtrlChar/param/2]
+005
+
+[CG_107_01::command/169 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/169 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/169 CtrlChar/param/12]
+none
+
+[CG_107_01::command/169 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/172 SetMainRoleTalk/param/2]
+011
+
+[CG_107_01::command/172 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/172 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/172 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/172 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/173 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/173 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/173 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/173 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/173 SetTalk/param/7]
+いや、店を探していたんだ。ティリアは、仕事中か？
+
+[CG_107_01::command/173 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/174 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/174 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/174 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/174 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/176 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/176 CtrlChar/param/1]
+a
+
+[CG_107_01::command/176 CtrlChar/param/2]
+013
+
+[CG_107_01::command/176 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_107_01::command/176 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/176 CtrlChar/param/12]
+none
+
+[CG_107_01::command/176 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/177 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/177 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/177 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/177 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/177 SetTalk/param/7]
+仕事……のようなものですね。==W==見ての通り、交通整理をしていました。==RT==この道は車が多すぎて、歩行者の方が困っていたので。
+
+[CG_107_01::command/177 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/179 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/179 CtrlChar/param/1]
+a
+
+[CG_107_01::command/179 CtrlChar/param/2]
+002
+
+[CG_107_01::command/179 CtrlChar/param/3]
+close
+
+[CG_107_01::command/179 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/179 CtrlChar/param/12]
+none
+
+[CG_107_01::command/179 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/182 SetMainRoleTalk/param/2]
+022
+
+[CG_107_01::command/182 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/182 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/182 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/182 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/183 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/183 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/183 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/183 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/183 SetTalk/param/7]
+なるほどな。今日もお疲れ様――
+
+[CG_107_01::command/183 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/184 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/184 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/184 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/184 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/186 SetBGM/param/1]
+music_avg_volume35_1s
+
+[CG_107_01::command/186 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/186 SetBGM/param/4]
+none
+
+[CG_107_01::command/187 CtrlStage/param/9]
+none
+
+[CG_107_01::command/187 CtrlStage/param/10]
+OutQuint
+
+[CG_107_01::command/188 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/188 CtrlChar/param/1]
+a
+
+[CG_107_01::command/188 CtrlChar/param/3]
+none
+
+[CG_107_01::command/188 CtrlChar/param/11]
+none
+
+[CG_107_01::command/188 CtrlChar/param/12]
+none
+
+[CG_107_01::command/188 CtrlChar/param/13]
+OutQuint
+
+[CG_107_01::command/189 SetChar/param/2]
+none
+
+[CG_107_01::command/189 SetChar/param/3]
+avg3_141
+
+[CG_107_01::command/189 SetChar/param/4]
+a
+
+[CG_107_01::command/189 SetChar/param/5]
+002
+
+[CG_107_01::command/189 SetChar/param/6]
+none
+
+[CG_107_01::command/190 SetChar/param/2]
+none
+
+[CG_107_01::command/190 SetChar/param/3]
+avg3_144
+
+[CG_107_01::command/190 SetChar/param/4]
+a
+
+[CG_107_01::command/190 SetChar/param/5]
+002
+
+[CG_107_01::command/190 SetChar/param/6]
+none
+
+[CG_107_01::command/191 SetAudio/param/1]
+se_011
+
+[CG_107_01::command/193 CtrlChar/param/0]
+avg3_141
+
+[CG_107_01::command/193 CtrlChar/param/1]
+a
+
+[CG_107_01::command/193 CtrlChar/param/3]
+none
+
+[CG_107_01::command/193 CtrlChar/param/11]
+none
+
+[CG_107_01::command/193 CtrlChar/param/12]
+none
+
+[CG_107_01::command/193 CtrlChar/param/13]
+OutSine
+
+[CG_107_01::command/194 CtrlChar/param/0]
+avg3_144
+
+[CG_107_01::command/194 CtrlChar/param/1]
+a
+
+[CG_107_01::command/194 CtrlChar/param/3]
+none
+
+[CG_107_01::command/194 CtrlChar/param/11]
+none
+
+[CG_107_01::command/194 CtrlChar/param/12]
+none
+
+[CG_107_01::command/194 CtrlChar/param/13]
+OutSine
+
+[CG_107_01::command/196 CtrlChar/param/0]
+avg3_144
+
+[CG_107_01::command/196 CtrlChar/param/1]
+a
+
+[CG_107_01::command/196 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_107_01::command/196 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/196 CtrlChar/param/12]
+none
+
+[CG_107_01::command/196 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/197 SetTalk/param/1]
+皮肉屋な通行人
+
+[CG_107_01::command/197 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/197 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/197 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/197 SetTalk/param/7]
+聞いたか？さっき帝国護衛隊のやつが交通を妨害してたんだとさ。
+
+[CG_107_01::command/197 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/198 CtrlChar/param/0]
+avg3_141
+
+[CG_107_01::command/198 CtrlChar/param/1]
+a
+
+[CG_107_01::command/198 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_107_01::command/198 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/198 CtrlChar/param/12]
+none
+
+[CG_107_01::command/198 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/199 SetTalk/param/1]
+噂好きの通行人
+
+[CG_107_01::command/199 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/199 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/199 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/199 SetTalk/param/7]
+えっ？オレはめずらしく帝国護衛隊が役に立ってたって聞いたぞ？
+
+[CG_107_01::command/199 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/200 CtrlChar/param/0]
+avg3_144
+
+[CG_107_01::command/200 CtrlChar/param/1]
+a
+
+[CG_107_01::command/200 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_107_01::command/200 CtrlChar/param/11]
+niunie1
+
+[CG_107_01::command/200 CtrlChar/param/12]
+none
+
+[CG_107_01::command/200 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/201 SetTalk/param/1]
+皮肉屋な通行人
+
+[CG_107_01::command/201 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/201 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/201 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/201 SetTalk/param/7]
+そんなわけねぇだろ。あいつら自分のことしか考えてねぇんだし。
+
+[CG_107_01::command/201 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/202 CtrlChar/param/0]
+avg3_144
+
+[CG_107_01::command/202 CtrlChar/param/1]
+a
+
+[CG_107_01::command/202 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/202 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/202 CtrlChar/param/12]
+none
+
+[CG_107_01::command/202 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/203 SetTalk/param/1]
+皮肉屋な通行人
+
+[CG_107_01::command/203 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/203 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/203 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/203 SetTalk/param/7]
+どうせ通行人の中にいた、どこぞのカンパニーの==RT==お偉いさんに媚売ろうしてたのさ。==W====RT==あいつらにとって、重要なのは金だけなんだし。
+
+[CG_107_01::command/203 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/204 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/204 CtrlChar/param/1]
+a
+
+[CG_107_01::command/204 CtrlChar/param/2]
+004
+
+[CG_107_01::command/204 CtrlChar/param/3]
+none
+
+[CG_107_01::command/204 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/204 CtrlChar/param/12]
+none
+
+[CG_107_01::command/204 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/207 CtrlChar/param/0]
+avg3_144
+
+[CG_107_01::command/207 CtrlChar/param/1]
+a
+
+[CG_107_01::command/207 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/207 CtrlChar/param/11]
+none
+
+[CG_107_01::command/207 CtrlChar/param/12]
+none
+
+[CG_107_01::command/207 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/208 CtrlChar/param/0]
+avg3_141
+
+[CG_107_01::command/208 CtrlChar/param/1]
+a
+
+[CG_107_01::command/208 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/208 CtrlChar/param/11]
+none
+
+[CG_107_01::command/208 CtrlChar/param/12]
+none
+
+[CG_107_01::command/208 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/209 SetAudio/param/1]
+se_012
+
+[CG_107_01::command/211 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_107_01::command/211 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/211 SetBGM/param/4]
+none
+
+[CG_107_01::command/212 CtrlStage/param/9]
+none
+
+[CG_107_01::command/212 CtrlStage/param/10]
+OutQuint
+
+[CG_107_01::command/213 CtrlBg/param/10]
+none
+
+[CG_107_01::command/213 CtrlBg/param/11]
+Linear
+
+[CG_107_01::command/214 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/214 CtrlChar/param/1]
+a
+
+[CG_107_01::command/214 CtrlChar/param/3]
+none
+
+[CG_107_01::command/214 CtrlChar/param/11]
+none
+
+[CG_107_01::command/214 CtrlChar/param/12]
+none
+
+[CG_107_01::command/214 CtrlChar/param/13]
+OutQuint
+
+[CG_107_01::command/216 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/216 CtrlChar/param/1]
+a
+
+[CG_107_01::command/216 CtrlChar/param/2]
+012
+
+[CG_107_01::command/216 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_107_01::command/216 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/216 CtrlChar/param/12]
+none
+
+[CG_107_01::command/216 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/217 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/217 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/217 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/217 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/217 SetTalk/param/7]
+……
+
+[CG_107_01::command/217 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/218 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/218 CtrlChar/param/1]
+a
+
+[CG_107_01::command/218 CtrlChar/param/3]
+close
+
+[CG_107_01::command/218 CtrlChar/param/11]
+none
+
+[CG_107_01::command/218 CtrlChar/param/12]
+none
+
+[CG_107_01::command/218 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/220 SetMainRoleTalk/param/2]
+026
+
+[CG_107_01::command/220 SetMainRoleTalk/param/3]
+avg_emoji_angry
+
+[CG_107_01::command/220 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/220 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/220 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/221 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/221 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/221 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/221 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/221 SetTalk/param/7]
+いまのはただの憶測だ、真に受けなくていい。==W====RT==傍で見ていたが、歩行者の中にはティリアに==RT==感謝している人もたくさんいたし――==W==
+
+[CG_107_01::command/221 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/223 SetMainRoleTalk/param/2]
+013
+
+[CG_107_01::command/223 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/223 SetMainRoleTalk/param/4]
+JuGong
+
+[CG_107_01::command/223 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/223 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/225 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/225 CtrlChar/param/1]
+a
+
+[CG_107_01::command/225 CtrlChar/param/2]
+004
+
+[CG_107_01::command/225 CtrlChar/param/3]
+none
+
+[CG_107_01::command/225 CtrlChar/param/11]
+none
+
+[CG_107_01::command/225 CtrlChar/param/12]
+none
+
+[CG_107_01::command/225 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/227 SetMainRoleTalk/param/2]
+011
+
+[CG_107_01::command/227 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/227 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/227 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/227 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/228 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/228 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/228 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/228 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/228 SetTalk/param/7]
+そ、そうだ！==RT==この前、騎士資格試験があると言っていただろう？==RT==結果はどうだったんだ？
+
+[CG_107_01::command/228 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/229 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/229 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/229 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/229 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/231 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/231 CtrlChar/param/1]
+a
+
+[CG_107_01::command/231 CtrlChar/param/2]
+013
+
+[CG_107_01::command/231 CtrlChar/param/3]
+avg_emoji_awkward
+
+[CG_107_01::command/231 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/231 CtrlChar/param/12]
+none
+
+[CG_107_01::command/231 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/232 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/232 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/232 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/232 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/232 SetTalk/param/7]
+ええと……それが……試験には、落ちてしまいまして……
+
+[CG_107_01::command/232 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/234 SetMainRoleTalk/param/2]
+021
+
+[CG_107_01::command/234 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_107_01::command/234 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/234 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/234 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/235 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/235 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/235 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/235 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/235 SetTalk/param/7]
+（話を逸らすつもりが、地雷を踏んでしまった……！）
+
+[CG_107_01::command/235 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/236 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/236 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/236 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/236 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/238 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/238 CtrlChar/param/1]
+a
+
+[CG_107_01::command/238 CtrlChar/param/2]
+012
+
+[CG_107_01::command/238 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_107_01::command/238 CtrlChar/param/11]
+none
+
+[CG_107_01::command/238 CtrlChar/param/12]
+none
+
+[CG_107_01::command/238 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/239 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/239 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/239 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/239 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/239 SetTalk/param/7]
+ま、まあ思い当たる原因もないわけではなく……
+
+[CG_107_01::command/239 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/240 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/240 CtrlChar/param/1]
+a
+
+[CG_107_01::command/240 CtrlChar/param/2]
+006
+
+[CG_107_01::command/240 CtrlChar/param/3]
+close
+
+[CG_107_01::command/240 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/240 CtrlChar/param/12]
+none
+
+[CG_107_01::command/240 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/241 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/241 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/241 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/241 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/241 SetTalk/param/7]
+きっと私が、騎士道精神を十分に理解できていないからかと。==RT==なのでこれからは、さらに精進していくつもりであります！
+
+[CG_107_01::command/241 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/243 SetMainRoleTalk/param/2]
+003
+
+[CG_107_01::command/243 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/243 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/243 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/243 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/244 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/244 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/244 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/244 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/244 SetTalk/param/7]
+私から見れば、もう十分頑張っていると思うが。
+
+[CG_107_01::command/244 SetTalk/param/8]
+僕から見れば、もう十分頑張っていると思うが。
+
+[CG_107_01::command/245 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/245 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/245 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/245 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/247 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/247 CtrlChar/param/1]
+a
+
+[CG_107_01::command/247 CtrlChar/param/2]
+012
+
+[CG_107_01::command/247 CtrlChar/param/3]
+none
+
+[CG_107_01::command/247 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/247 CtrlChar/param/12]
+none
+
+[CG_107_01::command/247 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/248 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/248 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/248 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/248 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/248 SetTalk/param/7]
+そんなことはありません。==W==実際、毎日失敗ばかりですから。
+
+[CG_107_01::command/248 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/250 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/250 CtrlChar/param/1]
+a
+
+[CG_107_01::command/250 CtrlChar/param/2]
+004
+
+[CG_107_01::command/250 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_107_01::command/250 CtrlChar/param/11]
+none
+
+[CG_107_01::command/250 CtrlChar/param/12]
+none
+
+[CG_107_01::command/250 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/252 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/252 CtrlChar/param/1]
+a
+
+[CG_107_01::command/252 CtrlChar/param/2]
+014
+
+[CG_107_01::command/252 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_107_01::command/252 CtrlChar/param/11]
+niunie1
+
+[CG_107_01::command/252 CtrlChar/param/12]
+none
+
+[CG_107_01::command/252 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/253 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/253 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/253 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/253 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/253 SetTalk/param/7]
+さっきの交通整理だって、迷惑に思っていた人もいたみたいですし……==RT==もっとうまくやれたらなと思うことは、たくさんあるので。
+
+[CG_107_01::command/253 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/255 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/255 CtrlChar/param/1]
+a
+
+[CG_107_01::command/255 CtrlChar/param/3]
+close
+
+[CG_107_01::command/255 CtrlChar/param/11]
+none
+
+[CG_107_01::command/255 CtrlChar/param/12]
+none
+
+[CG_107_01::command/255 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/256 SetMainRoleTalk/param/2]
+009
+
+[CG_107_01::command/256 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/256 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/256 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/256 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/257 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/257 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/257 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/257 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/257 SetTalk/param/7]
+（街の人の声を、かなり気にしているようだな……）
+
+[CG_107_01::command/257 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/258 SetMainRoleTalk/param/2]
+002
+
+[CG_107_01::command/258 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/258 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/258 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/258 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/259 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/259 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/259 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/259 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/259 SetTalk/param/7]
+しかし、ティリアはどうしてそこまでして==RT==帝国護衛隊で正義を成し遂げたいんだ？
+
+[CG_107_01::command/259 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/260 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/260 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/260 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/260 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/262 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/262 CtrlChar/param/1]
+a
+
+[CG_107_01::command/262 CtrlChar/param/2]
+011
+
+[CG_107_01::command/262 CtrlChar/param/3]
+none
+
+[CG_107_01::command/262 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/262 CtrlChar/param/12]
+none
+
+[CG_107_01::command/262 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/263 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/263 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/263 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/263 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/263 SetTalk/param/7]
+それはもちろん、==W==『ヘルムライダー』を見習うためであります！
+
+[CG_107_01::command/263 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/265 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/265 CtrlChar/param/1]
+a
+
+[CG_107_01::command/265 CtrlChar/param/2]
+005
+
+[CG_107_01::command/265 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/265 CtrlChar/param/11]
+none
+
+[CG_107_01::command/265 CtrlChar/param/12]
+none
+
+[CG_107_01::command/265 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/267 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/267 CtrlChar/param/1]
+a
+
+[CG_107_01::command/267 CtrlChar/param/2]
+005
+
+[CG_107_01::command/267 CtrlChar/param/3]
+none
+
+[CG_107_01::command/267 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/267 CtrlChar/param/12]
+none
+
+[CG_107_01::command/267 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/268 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/268 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/268 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/268 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/268 SetTalk/param/7]
+ヘルムライダーは、困っている人のもとへとすぐに駆けつけ、==RT==悪を倒して颯爽と去っていくのであります！==RT==どうです！？とてもカッコいいと思いませんか？
+
+[CG_107_01::command/268 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/269 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/269 CtrlChar/param/1]
+a
+
+[CG_107_01::command/269 CtrlChar/param/2]
+008
+
+[CG_107_01::command/269 CtrlChar/param/3]
+avg_emoji_star
+
+[CG_107_01::command/269 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/269 CtrlChar/param/12]
+none
+
+[CG_107_01::command/269 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/270 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/270 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/270 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/270 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/270 SetTalk/param/7]
+特に決め台詞なんて、もう最高であります！！
+
+[CG_107_01::command/270 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/272 SetMainRoleTalk/param/2]
+020
+
+[CG_107_01::command/272 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/272 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/272 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/272 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/273 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/273 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/273 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/273 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/273 SetTalk/param/7]
+決め台詞か。例えば――
+
+[CG_107_01::command/273 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/274 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/274 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/274 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/274 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/276 SetChoiceBegin/param/0]
+cg107_01
+
+[CG_107_01::command/276 SetChoiceBegin/param/3/0]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/3/1]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/3/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/3/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/6]
+a
+
+[CG_107_01::command/276 SetChoiceBegin/param/7]
+002
+
+[CG_107_01::command/276 SetChoiceBegin/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/9]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/10/0]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/10/1]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/10/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/10/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/11]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/12/0]
+勝利への道筋は定まった。
+
+[CG_107_01::command/276 SetChoiceBegin/param/12/1]
+お前の罪はいくつだ？
+
+[CG_107_01::command/276 SetChoiceBegin/param/12/2]
+今夜はバーベキューだ。
+
+[CG_107_01::command/276 SetChoiceBegin/param/12/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/13/0]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/13/1]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/13/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/276 SetChoiceBegin/param/13/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/277 SetChoiceJumpTo/param/0]
+cg107_01
+
+[CG_107_01::command/277 SetChoiceJumpTo/param/1]
+1
+
+[CG_107_01::command/278 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/278 CtrlChar/param/1]
+a
+
+[CG_107_01::command/278 CtrlChar/param/2]
+005
+
+[CG_107_01::command/278 CtrlChar/param/3]
+none
+
+[CG_107_01::command/278 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/278 CtrlChar/param/12]
+none
+
+[CG_107_01::command/278 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/279 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/279 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/279 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/279 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/279 SetTalk/param/7]
+ヘルムライダーの決め台詞……っぽいですが、==W====RT==聞いたことがありませんね？どのライダーのでしょう？
+
+[CG_107_01::command/279 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/281 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/281 CtrlChar/param/1]
+a
+
+[CG_107_01::command/281 CtrlChar/param/2]
+011
+
+[CG_107_01::command/281 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_107_01::command/281 CtrlChar/param/11]
+none
+
+[CG_107_01::command/281 CtrlChar/param/12]
+none
+
+[CG_107_01::command/281 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/284 SetMainRoleTalk/param/2]
+013
+
+[CG_107_01::command/284 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/284 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/284 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/284 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/285 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/285 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/285 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/285 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/285 SetTalk/param/7]
+どうだろうな？星ノ塔で見かけたのを、==RT==適当に口にしてみただけだから。
+
+[CG_107_01::command/285 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/286 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/286 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/286 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/286 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/288 SetChoiceRollover/param/0]
+cg107_01
+
+[CG_107_01::command/289 SetChoiceJumpTo/param/0]
+cg107_01
+
+[CG_107_01::command/289 SetChoiceJumpTo/param/1]
+2
+
+[CG_107_01::command/290 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/290 CtrlChar/param/1]
+a
+
+[CG_107_01::command/290 CtrlChar/param/2]
+005
+
+[CG_107_01::command/290 CtrlChar/param/3]
+none
+
+[CG_107_01::command/290 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/290 CtrlChar/param/12]
+none
+
+[CG_107_01::command/290 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/291 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/291 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/291 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/291 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/291 SetTalk/param/7]
+ヘルムライダーの決め台詞……っぽいですが、==W====RT==聞いたことがありませんね？どのライダーのでしょう？
+
+[CG_107_01::command/291 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/293 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/293 CtrlChar/param/1]
+a
+
+[CG_107_01::command/293 CtrlChar/param/2]
+004
+
+[CG_107_01::command/293 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_107_01::command/293 CtrlChar/param/11]
+none
+
+[CG_107_01::command/293 CtrlChar/param/12]
+none
+
+[CG_107_01::command/293 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/296 SetMainRoleTalk/param/2]
+013
+
+[CG_107_01::command/296 SetMainRoleTalk/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/296 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/296 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/296 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/297 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/297 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/297 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/297 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/297 SetTalk/param/7]
+どうだろうな？==RT==星ノ塔で見かけたのを、==RT==適当に口にしてみただけだから。
+
+[CG_107_01::command/297 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/298 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/298 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/298 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/298 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/300 SetChoiceRollover/param/0]
+cg107_01
+
+[CG_107_01::command/301 SetChoiceJumpTo/param/0]
+cg107_01
+
+[CG_107_01::command/301 SetChoiceJumpTo/param/1]
+3
+
+[CG_107_01::command/302 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/302 CtrlChar/param/1]
+a
+
+[CG_107_01::command/302 CtrlChar/param/2]
+005
+
+[CG_107_01::command/302 CtrlChar/param/3]
+none
+
+[CG_107_01::command/302 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/302 CtrlChar/param/12]
+none
+
+[CG_107_01::command/302 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/303 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/303 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/303 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/303 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/303 SetTalk/param/7]
+お肉は食べたいですが……==W====RT==それって『ヘルムライダー』に関係あるのですか？
+
+[CG_107_01::command/303 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/305 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/305 CtrlChar/param/1]
+a
+
+[CG_107_01::command/305 CtrlChar/param/2]
+004
+
+[CG_107_01::command/305 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_107_01::command/305 CtrlChar/param/11]
+none
+
+[CG_107_01::command/305 CtrlChar/param/12]
+none
+
+[CG_107_01::command/305 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/308 SetMainRoleTalk/param/2]
+011
+
+[CG_107_01::command/308 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/308 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/308 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/308 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/309 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/309 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/309 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/309 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/309 SetTalk/param/7]
+いや、なんでもない。ただ急に食べたくなっただけだ。
+
+[CG_107_01::command/309 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/310 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/310 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/310 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/310 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/312 SetChoiceRollover/param/0]
+cg107_01
+
+[CG_107_01::command/313 SetChoiceEnd/param/0]
+cg107_01
+
+[CG_107_01::command/314 SetTrans/param/2]
+0
+
+[CG_107_01::command/314 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/314 SetTrans/param/8]
+fade
+
+[CG_107_01::command/316 SetTrans/param/2]
+0
+
+[CG_107_01::command/316 SetTrans/param/3]
+Linear
+
+[CG_107_01::command/316 SetTrans/param/8]
+fade
+
+[CG_107_01::command/318 SetMainRoleTalk/param/2]
+020
+
+[CG_107_01::command/318 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_107_01::command/318 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/318 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/318 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/319 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/319 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/319 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/319 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/319 SetTalk/param/7]
+（ファンとしては気持ちがいいものではないだろうし、==RT==作品を使った悪ふざけはやめておこう）
+
+[CG_107_01::command/319 SetTalk/param/8]
+（ファンとしては気持ちがいいものではないだろうし、==RT==作品を使った悪ふざけはやめておこう）
+
+[CG_107_01::command/320 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/320 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/320 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/320 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/322 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/322 CtrlChar/param/1]
+a
+
+[CG_107_01::command/322 CtrlChar/param/2]
+005
+
+[CG_107_01::command/322 CtrlChar/param/3]
+none
+
+[CG_107_01::command/322 CtrlChar/param/11]
+none
+
+[CG_107_01::command/322 CtrlChar/param/12]
+none
+
+[CG_107_01::command/322 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/323 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/323 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/323 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/323 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/323 SetTalk/param/7]
+ちなみに私が一番好きなのは、騎士ユストゥスの決め台詞です。==RT==子供の頃に観て以来、いまも心に残っていまして。
+
+[CG_107_01::command/323 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/324 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/324 CtrlChar/param/1]
+a
+
+[CG_107_01::command/324 CtrlChar/param/2]
+003
+
+[CG_107_01::command/324 CtrlChar/param/3]
+none
+
+[CG_107_01::command/324 CtrlChar/param/11]
+none
+
+[CG_107_01::command/324 CtrlChar/param/12]
+none
+
+[CG_107_01::command/324 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/325 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/325 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/325 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/325 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/325 SetTalk/param/7]
+そもそも彼には特別な武器も、すごい魔法もありません。==RT==でも決して諦めない強い心を持っているんです。==RT==そして敵に笑われたとき、彼がいつも言う言葉が――
+
+[CG_107_01::command/325 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/327 SetBGM/param/1]
+music_avg_volume35_1s
+
+[CG_107_01::command/327 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/327 SetBGM/param/4]
+none
+
+[CG_107_01::command/328 SetAudio/param/1]
+se_062
+
+[CG_107_01::command/329 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/329 CtrlChar/param/1]
+a
+
+[CG_107_01::command/329 CtrlChar/param/2]
+012
+
+[CG_107_01::command/329 CtrlChar/param/3]
+none
+
+[CG_107_01::command/329 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/329 CtrlChar/param/12]
+none
+
+[CG_107_01::command/329 CtrlChar/param/13]
+OutQuad
+
+[CG_107_01::command/330 CtrlBg/param/10]
+none
+
+[CG_107_01::command/330 CtrlBg/param/11]
+OutQuint
+
+[CG_107_01::command/332 SetFx/param/1]
+fx_avg_line_cen_lp_w
+
+[CG_107_01::command/333 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/333 CtrlChar/param/1]
+a
+
+[CG_107_01::command/333 CtrlChar/param/2]
+009
+
+[CG_107_01::command/333 CtrlChar/param/3]
+none
+
+[CG_107_01::command/333 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/333 CtrlChar/param/12]
+none
+
+[CG_107_01::command/333 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/334 CtrlStage/param/9]
+Xiao
+
+[CG_107_01::command/334 CtrlStage/param/10]
+Linear
+
+[CG_107_01::command/335 SetAudio/param/1]
+se_128
+
+[CG_107_01::command/336 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/336 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/336 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/336 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/336 SetTalk/param/7]
+『それでも俺は、正義の味方になりたいんだ』
+
+[CG_107_01::command/336 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/337 SetBGM/param/1]
+music_avg_volume100_1s
+
+[CG_107_01::command/337 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/337 SetBGM/param/4]
+none
+
+[CG_107_01::command/338 SetFx/param/1]
+fx_avg_line_cen_lp_w
+
+[CG_107_01::command/339 CtrlBg/param/10]
+none
+
+[CG_107_01::command/339 CtrlBg/param/11]
+OutQuint
+
+[CG_107_01::command/340 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/340 CtrlChar/param/1]
+a
+
+[CG_107_01::command/340 CtrlChar/param/2]
+005
+
+[CG_107_01::command/340 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/340 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/340 CtrlChar/param/12]
+none
+
+[CG_107_01::command/340 CtrlChar/param/13]
+OutQuint
+
+[CG_107_01::command/341 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/341 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/341 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/341 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/341 SetTalk/param/7]
+というもので……！==RT==私、この台詞にすっっっっごく共感して、いまでも――
+
+[CG_107_01::command/341 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/343 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/343 CtrlChar/param/1]
+a
+
+[CG_107_01::command/343 CtrlChar/param/2]
+011
+
+[CG_107_01::command/343 CtrlChar/param/3]
+avg_emoji_speechless
+
+[CG_107_01::command/343 CtrlChar/param/11]
+none
+
+[CG_107_01::command/343 CtrlChar/param/12]
+none
+
+[CG_107_01::command/343 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/345 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/345 CtrlChar/param/1]
+a
+
+[CG_107_01::command/345 CtrlChar/param/2]
+007
+
+[CG_107_01::command/345 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_107_01::command/345 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/345 CtrlChar/param/12]
+none
+
+[CG_107_01::command/345 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/347 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/347 CtrlChar/param/1]
+a
+
+[CG_107_01::command/347 CtrlChar/param/2]
+015
+
+[CG_107_01::command/347 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_107_01::command/347 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/347 CtrlChar/param/12]
+none
+
+[CG_107_01::command/347 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/348 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/348 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/348 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/348 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/348 SetTalk/param/7]
+って、す、すみません……！興奮して、つい喋りすぎてしまいました！
+
+[CG_107_01::command/348 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/349 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/349 CtrlChar/param/1]
+a
+
+[CG_107_01::command/349 CtrlChar/param/2]
+012
+
+[CG_107_01::command/349 CtrlChar/param/3]
+avg_emoji_sigh
+
+[CG_107_01::command/349 CtrlChar/param/11]
+none
+
+[CG_107_01::command/349 CtrlChar/param/12]
+none
+
+[CG_107_01::command/349 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/350 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/350 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/350 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/350 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/350 SetTalk/param/7]
+いったん落ち着くであります、私。ふぅ〜……
+
+[CG_107_01::command/350 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/351 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/351 CtrlChar/param/1]
+a
+
+[CG_107_01::command/351 CtrlChar/param/2]
+006
+
+[CG_107_01::command/351 CtrlChar/param/3]
+none
+
+[CG_107_01::command/351 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/351 CtrlChar/param/12]
+none
+
+[CG_107_01::command/351 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/352 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/352 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/352 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/352 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/352 SetTalk/param/7]
+とにかく、私はどんなことがあってもくじけない、==RT==正義の味方になりたいのであります。
+
+[CG_107_01::command/352 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/353 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/353 CtrlChar/param/1]
+a
+
+[CG_107_01::command/353 CtrlChar/param/2]
+002
+
+[CG_107_01::command/353 CtrlChar/param/3]
+none
+
+[CG_107_01::command/353 CtrlChar/param/11]
+none
+
+[CG_107_01::command/353 CtrlChar/param/12]
+none
+
+[CG_107_01::command/353 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/354 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/354 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/354 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/354 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/354 SetTalk/param/7]
+ですから、試験に落ちたくらいでヘコんでなどいられません！
+
+[CG_107_01::command/354 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/356 SetMainRoleTalk/param/2]
+023
+
+[CG_107_01::command/356 SetMainRoleTalk/param/3]
+avg_emoji_think
+
+[CG_107_01::command/356 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/356 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/356 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/357 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/357 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/357 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/357 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/357 SetTalk/param/7]
+（よかった。元気を取り戻したようだな）
+
+[CG_107_01::command/357 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/358 SetMainRoleTalk/param/2]
+013
+
+[CG_107_01::command/358 SetMainRoleTalk/param/3]
+close
+
+[CG_107_01::command/358 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/358 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/358 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/359 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/359 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/359 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/359 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/359 SetTalk/param/7]
+では、そろそろ私は行こう。==RT==店を探して用事を済ませないと。
+
+[CG_107_01::command/359 SetTalk/param/8]
+では、そろそろ僕は行こう。==RT==店を探して用事を済ませないと。
+
+[CG_107_01::command/360 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/360 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/360 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/360 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/362 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/362 CtrlChar/param/1]
+a
+
+[CG_107_01::command/362 CtrlChar/param/2]
+011
+
+[CG_107_01::command/362 CtrlChar/param/3]
+avg_emoji_attention
+
+[CG_107_01::command/362 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/362 CtrlChar/param/12]
+none
+
+[CG_107_01::command/362 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/363 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/363 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/363 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/363 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/363 SetTalk/param/7]
+あの、魔王さん！
+
+[CG_107_01::command/363 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/365 SetMainRoleTalk/param/2]
+012
+
+[CG_107_01::command/365 SetMainRoleTalk/param/3]
+avg_emoji_question
+
+[CG_107_01::command/365 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/365 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/365 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/366 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/366 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/366 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/366 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/366 SetTalk/param/7]
+まだなにかあったか？
+
+[CG_107_01::command/366 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/367 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/367 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/367 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/367 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/369 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/369 CtrlChar/param/1]
+a
+
+[CG_107_01::command/369 CtrlChar/param/2]
+005
+
+[CG_107_01::command/369 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/369 CtrlChar/param/11]
+none
+
+[CG_107_01::command/369 CtrlChar/param/12]
+none
+
+[CG_107_01::command/369 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/370 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/370 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/370 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/370 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/370 SetTalk/param/7]
+どんなお店を探しているでありますか？==RT==この辺りは詳しいので、よければご案内しますよ？
+
+[CG_107_01::command/370 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/372 SetMainRoleTalk/param/2]
+014
+
+[CG_107_01::command/372 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/372 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/372 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/372 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/373 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/373 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/373 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/373 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/373 SetTalk/param/7]
+その提案はうれしいが……君はまだ勤務中だろう？==RT==遠慮しておくよ。
+
+[CG_107_01::command/373 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/374 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/374 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/374 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/374 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/376 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/376 CtrlChar/param/1]
+a
+
+[CG_107_01::command/376 CtrlChar/param/2]
+002
+
+[CG_107_01::command/376 CtrlChar/param/3]
+none
+
+[CG_107_01::command/376 CtrlChar/param/11]
+none
+
+[CG_107_01::command/376 CtrlChar/param/12]
+none
+
+[CG_107_01::command/376 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/377 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/377 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/377 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/377 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/377 SetTalk/param/7]
+いえいえいえ、ぜんぜん大丈夫です！==RT==今日は休みで、交通整理は自主的にやっていただけでありますから！
+
+[CG_107_01::command/377 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/379 SetMainRoleTalk/param/2]
+025
+
+[CG_107_01::command/379 SetMainRoleTalk/param/3]
+avg_emoji_symbol
+
+[CG_107_01::command/379 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/379 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/379 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/380 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/380 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/380 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/380 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/380 SetTalk/param/7]
+自主的？それはさすがに頑張りすぎでは……
+
+[CG_107_01::command/380 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/381 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/381 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/381 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/381 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/383 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/383 CtrlChar/param/1]
+a
+
+[CG_107_01::command/383 CtrlChar/param/2]
+013
+
+[CG_107_01::command/383 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_107_01::command/383 CtrlChar/param/11]
+none
+
+[CG_107_01::command/383 CtrlChar/param/12]
+none
+
+[CG_107_01::command/383 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/384 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/384 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/384 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/384 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/384 SetTalk/param/7]
+そんなことはありません！==W==不器用な私が騎士資格試験に合格して、==RT==正義の味方になるためには、人より数倍努力しないとですから！
+
+[CG_107_01::command/384 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/386 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/386 CtrlChar/param/1]
+a
+
+[CG_107_01::command/386 CtrlChar/param/2]
+003
+
+[CG_107_01::command/386 CtrlChar/param/3]
+none
+
+[CG_107_01::command/386 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/386 CtrlChar/param/12]
+none
+
+[CG_107_01::command/386 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/388 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/388 CtrlChar/param/1]
+a
+
+[CG_107_01::command/388 CtrlChar/param/2]
+005
+
+[CG_107_01::command/388 CtrlChar/param/3]
+avg_emoji_happy
+
+[CG_107_01::command/388 CtrlChar/param/11]
+none
+
+[CG_107_01::command/388 CtrlChar/param/12]
+none
+
+[CG_107_01::command/388 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/389 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/389 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/389 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/389 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/389 SetTalk/param/7]
+なので正義のため、人のためになることを、たくさんしようと思って。==RT==器用さが足りなければ、数で勝負であります！
+
+[CG_107_01::command/389 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/391 SetMainRoleTalk/param/2]
+007
+
+[CG_107_01::command/391 SetMainRoleTalk/param/3]
+avg_emoji_speechless
+
+[CG_107_01::command/391 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/391 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/391 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/392 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/392 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/392 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/392 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/392 SetTalk/param/7]
+（なんてまっすぐでポジティブな考えだ。==RT==眩しすぎる……！）
+
+[CG_107_01::command/392 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/393 SetMainRoleTalk/param/3]
+close
+
+[CG_107_01::command/393 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/393 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/393 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/395 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/395 CtrlChar/param/1]
+a
+
+[CG_107_01::command/395 CtrlChar/param/2]
+006
+
+[CG_107_01::command/395 CtrlChar/param/3]
+none
+
+[CG_107_01::command/395 CtrlChar/param/11]
+none
+
+[CG_107_01::command/395 CtrlChar/param/12]
+none
+
+[CG_107_01::command/395 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/396 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/396 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/396 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/396 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/396 SetTalk/param/7]
+とあるヘルムライダーだって、==RT==「どんなに小さな善行も、決して疎かにしてはならない」==RT==と言ってましたし――
+
+[CG_107_01::command/396 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/397 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/397 CtrlChar/param/1]
+a
+
+[CG_107_01::command/397 CtrlChar/param/2]
+009
+
+[CG_107_01::command/397 CtrlChar/param/3]
+none
+
+[CG_107_01::command/397 CtrlChar/param/11]
+JuGong
+
+[CG_107_01::command/397 CtrlChar/param/12]
+none
+
+[CG_107_01::command/397 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/398 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/398 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/398 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/398 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/398 SetTalk/param/7]
+ぜひ魔王さんのお手伝いをさせてください！
+
+[CG_107_01::command/398 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/400 SetMainRoleTalk/param/2]
+021
+
+[CG_107_01::command/400 SetMainRoleTalk/param/3]
+avg_emoji_sweaty
+
+[CG_107_01::command/400 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/400 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/400 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/401 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/401 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/401 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/401 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/401 SetTalk/param/7]
+（それはヘルムライダーではなく、==RT==双剣使いの英雄の言葉==W==だったような……？）
+
+[CG_107_01::command/401 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/404 SetMainRoleTalk/param/2]
+020
+
+[CG_107_01::command/404 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/404 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/404 SetMainRoleTalk/param/5]
+y
+
+[CG_107_01::command/404 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/405 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/405 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/405 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/405 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/405 SetTalk/param/7]
+（しかし、彼女のやる気を無下にするのも悪いし）
+
+[CG_107_01::command/405 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/406 SetMainRoleTalk/param/2]
+013
+
+[CG_107_01::command/406 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/406 SetMainRoleTalk/param/4]
+diantou
+
+[CG_107_01::command/406 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/406 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/407 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/407 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/407 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/407 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/407 SetTalk/param/7]
+わかった。ならよろしく頼むよ。
+
+[CG_107_01::command/407 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/408 SetMainRoleTalk/param/2]
+002
+
+[CG_107_01::command/408 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/408 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/408 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/408 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/409 SetTalk/param/1]
+avg3_100
+
+[CG_107_01::command/409 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/409 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/409 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/409 SetTalk/param/7]
+探している店は、たくさん……
+
+[CG_107_01::command/409 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/410 SetMainRoleTalk/param/3]
+none
+
+[CG_107_01::command/410 SetMainRoleTalk/param/4]
+none
+
+[CG_107_01::command/410 SetMainRoleTalk/param/5]
+z
+
+[CG_107_01::command/410 SetMainRoleTalk/param/8]
+avg3_100
+
+[CG_107_01::command/412 SetChar/param/2]
+none
+
+[CG_107_01::command/412 SetChar/param/3]
+avg3_168
+
+[CG_107_01::command/412 SetChar/param/4]
+a
+
+[CG_107_01::command/412 SetChar/param/5]
+005
+
+[CG_107_01::command/412 SetChar/param/6]
+none
+
+[CG_107_01::command/413 SetAudio/param/1]
+se_072
+
+[CG_107_01::command/414 CtrlChar/param/0]
+avg3_168
+
+[CG_107_01::command/414 CtrlChar/param/1]
+a
+
+[CG_107_01::command/414 CtrlChar/param/3]
+none
+
+[CG_107_01::command/414 CtrlChar/param/11]
+none
+
+[CG_107_01::command/414 CtrlChar/param/12]
+none
+
+[CG_107_01::command/414 CtrlChar/param/13]
+OutQuad
+
+[CG_107_01::command/416 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/416 CtrlChar/param/1]
+a
+
+[CG_107_01::command/416 CtrlChar/param/2]
+007
+
+[CG_107_01::command/416 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_107_01::command/416 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/416 CtrlChar/param/12]
+none
+
+[CG_107_01::command/416 CtrlChar/param/13]
+OutQuad
+
+[CG_107_01::command/418 CtrlChar/param/0]
+avg3_168
+
+[CG_107_01::command/418 CtrlChar/param/1]
+a
+
+[CG_107_01::command/418 CtrlChar/param/2]
+008
+
+[CG_107_01::command/418 CtrlChar/param/3]
+avg_emoji_exclamation
+
+[CG_107_01::command/418 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/418 CtrlChar/param/12]
+none
+
+[CG_107_01::command/418 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/419 SetTalk/param/1]
+avg3_999
+
+[CG_107_01::command/419 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/419 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/419 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/419 SetTalk/param/7]
+き、騎士様？帝国護衛隊の騎士様ですよね！？
+
+[CG_107_01::command/419 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/420 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/420 CtrlChar/param/1]
+a
+
+[CG_107_01::command/420 CtrlChar/param/2]
+004
+
+[CG_107_01::command/420 CtrlChar/param/3]
+none
+
+[CG_107_01::command/420 CtrlChar/param/11]
+lengzhan
+
+[CG_107_01::command/420 CtrlChar/param/12]
+none
+
+[CG_107_01::command/420 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/421 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/421 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/421 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/421 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/421 SetTalk/param/7]
+い、いえ。私はまだ正式な騎士ではなく従騎士で――
+
+[CG_107_01::command/421 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/422 CtrlChar/param/0]
+avg3_168
+
+[CG_107_01::command/422 CtrlChar/param/1]
+a
+
+[CG_107_01::command/422 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_107_01::command/422 CtrlChar/param/11]
+none
+
+[CG_107_01::command/422 CtrlChar/param/12]
+none
+
+[CG_107_01::command/422 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/423 SetBGM/param/1]
+music_avg_volume100_0s
+
+[CG_107_01::command/423 SetBGM/param/3]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/423 SetBGM/param/4]
+4000ms
+
+[CG_107_01::command/424 SetTalk/param/1]
+息を切らした少女
+
+[CG_107_01::command/424 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/424 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/424 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/424 SetTalk/param/7]
+騎士でも従騎士でも構いません……！==RT==どうか……どうか私たちを助けてください！
+
+[CG_107_01::command/424 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/425 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/425 CtrlChar/param/1]
+a
+
+[CG_107_01::command/425 CtrlChar/param/2]
+006
+
+[CG_107_01::command/425 CtrlChar/param/3]
+avg_emoji_question
+
+[CG_107_01::command/425 CtrlChar/param/11]
+none
+
+[CG_107_01::command/425 CtrlChar/param/12]
+none
+
+[CG_107_01::command/425 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/426 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/426 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/426 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/426 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/426 SetTalk/param/7]
+とにかく落ち着くであります。いったいなにがあったのですか？
+
+[CG_107_01::command/426 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/427 CtrlChar/param/0]
+avg3_168
+
+[CG_107_01::command/427 CtrlChar/param/1]
+a
+
+[CG_107_01::command/427 CtrlChar/param/3]
+avg_emoji_flurry
+
+[CG_107_01::command/427 CtrlChar/param/11]
+tiao2
+
+[CG_107_01::command/427 CtrlChar/param/12]
+none
+
+[CG_107_01::command/427 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/428 SetTalk/param/1]
+息を切らした少女
+
+[CG_107_01::command/428 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/428 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/428 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/428 SetTalk/param/7]
+それが……私たちの農場で、巨人が暴れてるんです！
+
+[CG_107_01::command/428 SetTalk/param/8]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/429 CtrlChar/param/0]
+avg1_107
+
+[CG_107_01::command/429 CtrlChar/param/1]
+a
+
+[CG_107_01::command/429 CtrlChar/param/2]
+007
+
+[CG_107_01::command/429 CtrlChar/param/3]
+avg_emoji_symbol
+
+[CG_107_01::command/429 CtrlChar/param/11]
+Tiao
+
+[CG_107_01::command/429 CtrlChar/param/12]
+none
+
+[CG_107_01::command/429 CtrlChar/param/13]
+Linear
+
+[CG_107_01::command/430 SetTalkShake/param/1]
+Zhong
+
+[CG_107_01::command/431 SetTalk/param/1]
+avg1_107
+
+[CG_107_01::command/431 SetTalk/param/2]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/431 SetTalk/param/4]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/431 SetTalk/param/6]
+[EMPTY_SOURCE]
+
+[CG_107_01::command/431 SetTalk/param/7]
+<size=48>きょ、巨人でありますかぁ……！？</size>
+
+[CG_107_01::command/431 SetTalk/param/8]
+[EMPTY_SOURCE]
+
