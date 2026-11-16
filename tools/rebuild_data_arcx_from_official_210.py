@@ -103,8 +103,8 @@ def _walk(root, segs):
     return cur
 
 
-def apply_overlay(merged, official, rows, stats):
-    """Fill strings that are still official English from the overlay; never overwrite existing Vietnamese."""
+def apply_overlay(merged, official, rows, stats, force=False):
+    """Fill strings from the overlay; overwrite existing Vietnamese only when force=True."""
     for loc, vi in rows.items():
         segs = loc.split("/")
         parent_m, parent_o = _walk(merged, segs[:-1]), _walk(official, segs[:-1])
@@ -122,9 +122,10 @@ def apply_overlay(merged, official, rows, stats):
             ok = False
         if not ok:
             stats["overlay_missing"] = stats.get("overlay_missing", 0) + 1
-        elif parent_m[idx] == parent_o[idx]:
-            parent_m[idx] = vi
-            stats["overlay_applied"] = stats.get("overlay_applied", 0) + 1
+        elif force or parent_m[idx] == parent_o[idx]:
+            if parent_m[idx] != vi:
+                parent_m[idx] = vi
+                stats["overlay_applied"] = stats.get("overlay_applied", 0) + 1
 
 
 def main() -> int:
@@ -137,6 +138,8 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=ROOT / "dist" / "data_patched_vi.arcx")
     ap.add_argument("--overlay", type=Path, action="append", default=[],
                     help="jsonl of extra Vietnamese rows (id 2.1.0:data:<hash>:/<key path>, text_vi, status)")
+    ap.add_argument("--force-overlay", type=Path, action="append", default=[],
+                    help="jsonl of Vietnamese rows that also overwrite stale non-English values")
     args = ap.parse_args()
     if not args.en_base:
         args.en_base = [ROOT / "work" / "subagents" / "update_210_inventory_20261113_r01" / "catalog_crosscheck"
@@ -150,6 +153,7 @@ def main() -> int:
         return 2
 
     overlay = load_overlay(args.overlay)
+    force_overlay = load_overlay(args.force_overlay)
     work = Path(tempfile.mkdtemp(prefix="data210_"))
     entries_dir = work / "entries"
     entries_dir.mkdir()
@@ -174,6 +178,8 @@ def main() -> int:
                                         [bj.get(k) for bj in base_jsons if bj], stats)
             if e["hash_hex"].lower() in overlay:
                 apply_overlay(merged, data, overlay[e["hash_hex"].lower()], stats)
+            if e["hash_hex"].lower() in force_overlay:
+                apply_overlay(merged, data, force_overlay[e["hash_hex"].lower()], stats, force=True)
             payload = xxtea_encrypt(json.dumps(merged, ensure_ascii=False, indent=2).encode("utf-8"), XXTEA_KEY)
         (entries_dir / fname).write_bytes(payload)
         manifest["entries"].append({"index": e["index"], "hash": h, "hash_hex": e["hash_hex"],

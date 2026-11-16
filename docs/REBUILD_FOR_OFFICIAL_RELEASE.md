@@ -22,7 +22,8 @@ python tools/verify_deployed_game_data.py
 
 Ghi chú:
 - `dist/vanilla/data_original_en.arcx` đã chứa chữ Việt, không dùng làm gốc tiếng Anh.
-- Bản nháp 2.1.0 (`translations/2.1.0/Van_ban_EN_VI.jsonl`) chưa được QA ngữ nghĩa độc lập.
+- Bản dịch 2.1.0 (`translations/2.1.0/Van_ban_EN_VI.jsonl` và `translations/hotfix_2611141949/*.jsonl`): các dòng khớp release v1.3.0 trên GitHub đã được chủ dự án duyệt ngày 2026-11-16 (trạng thái `Đã duyệt`, gồm chương 6.5 và 9.5). Đây là duyệt của chủ dự án, **không phải QA ngữ nghĩa độc lập**. Căn cứ và danh sách ID chưa duyệt: `translations/2.1.0/APPROVAL_v1.3.0.json`.
+- 53 dòng bảng dữ liệu (Item, Skill, MallPackage, Potential...) từng khác cách dịch với release v1.3.0 đã được đồng bộ `text_vi` theo release rồi duyệt (2026-11-16). 23 dòng `Chờ dịch` còn lại (21 `Item.*.1` + 2 mã màn `ActivityStory.*.4` `BT01`/`BT02`) đã được hoàn tất và qua `LOCALIZATION_QA_REVIEWER` độc lập (`work/subagents/pending_23_20261116_r01/qa_23/REVIEW_23.json`), đồng thời dựng lại `dist/data_patched_vi.arcx` với `--force-overlay translations/hotfix_2611141949/data_extra.jsonl` để đồng bộ `Item.115018.1..115030.1` (`Quán Quân Sinh Tồn Mùa 18..30`). `Van_ban_EN_VI.jsonl`: 5.799 `Đã duyệt`, 33 `Giữ EN`, 0 `Chờ dịch`, 0 `Bản nháp`.
 - Các dòng thoại dịch tay (chương 16–19) nằm trong `translations/hotfix_2611141949/` (`story_*.py`, `assemble_pending.py`).
 - Một vài script Lua mà bản cũ từng sửa mã tay (dorm/guide) không được mang sang; chỉ chữ được áp lại lên script chính thức.
 
