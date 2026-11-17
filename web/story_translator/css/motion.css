@@ -1,0 +1,90 @@
+/*
+ * TramVH motion layer. Loaded last; adds polish only and never changes layout.
+ * Rules: animate transform/opacity only, keep every effect under ~0.5s, and switch everything off
+ * for people who ask for reduced motion (all rules live inside the no-preference query).
+ */
+@media (prefers-reduced-motion: no-preference) {
+  :root { --tram-ease: cubic-bezier(.22, .8, .3, 1); --tram-fast: .16s; --tram-med: .28s; }
+
+  @keyframes tram-rise  { from { opacity: 0; transform: translateY(10px); } }
+  @keyframes tram-fade  { from { opacity: 0; } }
+  @keyframes tram-pop   { from { opacity: 0; transform: translateY(10px) scale(.985); } }
+  @keyframes tram-drop  { from { opacity: 0; transform: translateY(-6px) scale(.97); } }
+  @keyframes tram-slide { from { opacity: 0; transform: translate(var(--tram-dx, 0px), var(--tram-dy, 6px)); } }
+  @keyframes tram-bump  { 40% { transform: scale(1.2); } }
+  @keyframes tram-sheen { 55%, 100% { transform: translateX(100%); } }
+
+  /* ---- First paint: header, filters and workspace settle in one after another ---- */
+  header            { animation: tram-rise .5s var(--tram-ease) backwards; }
+  .sub-bar          { animation: tram-rise .5s .06s var(--tram-ease) backwards; }
+  .progress-ribbon  { animation: tram-rise .5s .11s var(--tram-ease) backwards; }
+  main              { animation: tram-rise .55s .16s var(--tram-ease) backwards; }
+
+  /* ---- Switching between Visual Novel and list mode (display none -> shown restarts the animation) ---- */
+  .vn-stage-container, .list-mode-container { animation: tram-fade .28s ease; }
+
+  /* ---- Moving to another line: the three blocks slide in, from the side you navigated towards ---- */
+  .tram-enter { animation: tram-slide var(--tram-med) var(--tram-ease) backwards; }
+  #currentLineCollaboration.tram-enter { animation-delay: .04s; }
+  .translation-input-box.tram-enter    { animation-delay: .08s; }
+
+  /* ---- List mode: cards rise in once per chapter/filter (motion.js sets data-motion) ---- */
+  .list-mode-container[data-motion="on"] .table-row-card { animation: tram-rise .32s var(--tram-ease) backwards; }
+  .list-mode-container[data-motion="on"] .table-row-card:nth-child(2) { animation-delay: .03s; }
+  .list-mode-container[data-motion="on"] .table-row-card:nth-child(3) { animation-delay: .06s; }
+  .list-mode-container[data-motion="on"] .table-row-card:nth-child(4) { animation-delay: .09s; }
+  .list-mode-container[data-motion="on"] .table-row-card:nth-child(5) { animation-delay: .12s; }
+  .list-mode-container[data-motion="on"] .table-row-card:nth-child(n+6) { animation-delay: .15s; }
+  .table-row-card { transition: transform var(--tram-med) var(--tram-ease), border-color .2s ease, background-color .2s ease, box-shadow .25s ease; }
+  .table-row-card:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(20, 60, 80, .12); }
+
+  /* ---- Dialogs (collaboration, guide, admin) ---- */
+  dialog[open]            { animation: tram-pop .26s var(--tram-ease); }
+  dialog[open]::backdrop  { animation: tram-fade .26s ease; }
+  .collab-dialog-body > * { animation: tram-fade .22s ease; }
+  .collab-event           { animation: tram-rise .3s var(--tram-ease) backwards; }
+
+  /* ---- Tools menu ---- */
+  .hud-more[open] .hud-more-panel { animation: tram-drop .2s var(--tram-ease); transform-origin: top right; }
+  .hud-more-chevron               { transition: transform .22s var(--tram-ease), translate .22s var(--tram-ease); }
+  .hud-more[open] .hud-more-chevron { transform: rotate(225deg); translate: 0 4px; }
+  .hud-more-panel .btn-circle     { transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+
+  /* ---- Buttons: gentle lift on hover, small press on click ---- */
+  .btn-direction, .btn-save-glow, .btn-circle, .collab-link, .collab-copy, .scene-card-btn {
+    transition: transform var(--tram-fast) var(--tram-ease), box-shadow .22s ease, background-color .2s ease, border-color .2s ease, color .2s ease, opacity .2s ease;
+  }
+  .btn-direction:hover, .btn-save-glow:hover { transform: translateY(-1px); }
+  .btn-direction:active, .btn-save-glow:active, .btn-circle:active, .collab-copy:active, .scene-card-btn:active {
+    transform: scale(.96); transition-duration: .06s;
+  }
+  .collab-copy.is-copied { animation: tram-bump .35s var(--tram-ease); }
+
+  /* ---- Progress bar: smoother growth and a slow sheen ---- */
+  .progress-fill { position: relative; transition: width .7s var(--tram-ease); }
+  .progress-fill::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .5), transparent);
+    transform: translateX(-100%); animation: tram-sheen 3.2s ease-in-out infinite;
+  }
+
+  /* ---- Disclosures (Thông tin bản dịch, nguồn EN/JP/CN, so sánh) ---- */
+  details[open] > :not(summary) { animation: tram-fade .24s ease; }
+
+  /* ---- Status badges and the copy confirmation pulse in with the line ---- */
+  .collab-badge { animation: tram-fade .3s ease; }
+
+  /* ---- Admin Portal ---- */
+  .btn { transition: transform var(--tram-fast) var(--tram-ease), box-shadow .22s ease, background-color .2s ease, border-color .2s ease, color .2s ease; }
+  .btn:hover:not(:disabled) { transform: translateY(-1px); }
+  .btn:active:not(:disabled) { transform: scale(.97); transition-duration: .06s; }
+  .history-card, .queue-row, .panel { transition: transform var(--tram-med) var(--tram-ease), box-shadow .25s ease, border-color .2s ease, background-color .2s ease; }
+  .history-card:hover { transform: translateY(-1px); box-shadow: var(--admin-shadow, 0 10px 26px rgba(20, 60, 80, .12)); }
+}
+
+/* Phones: shorter travel so nothing feels floaty on small screens. */
+@media (prefers-reduced-motion: no-preference) and (max-width: 700px) {
+  @keyframes tram-rise { from { opacity: 0; transform: translateY(6px); } }
+  @keyframes tram-pop  { from { opacity: 0; transform: translateY(14px); } }
+  .table-row-card:hover { transform: none; box-shadow: none; }
+}

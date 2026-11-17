@@ -1,5 +1,5 @@
 (() => {
-    const groups = [['Chuong_STm00','Chương 0'],['Chuong_STm01','Chương 1'],['Chuong_STm02','Chương 2'],['03_BangText_UI_KyNang','Bảng Achievement']];
+    const groups = [['Chuong_STm00','Chương 0'],['Chuong_STm01','Chương 1'],['Chuong_STm02','Chương 2'],['03_BangText_UI_KyNang','Văn bản UI / Kỹ năng']];
     const group = document.getElementById('group'), file = document.getElementById('file'), blocks = document.getElementById('blocks'), status = document.getElementById('status'), more = document.getElementById('more');
     let data, shown = 0, serial = 0;
     const node = (tag,text,cls) => { const e=document.createElement(tag); if(text!==undefined)e.textContent=text; if(cls)e.className=cls; return e; };
@@ -15,7 +15,7 @@
             }
             card.append(grid);blocks.append(card);
         }
-        shown=end;more.hidden=shown>=selected.blocks.length;status.textContent=`${selected.file_id}: ${selected.blocks.length} khối · đang hiển thị ${shown}`;
+        shown=end;more.hidden=shown>=selected.blocks.length;status.textContent=`${selected.file_id}: ${selected.blocks.length} khối · đang hiển thị ${shown}${data.sheet_sync?.status==='snapshot'?' · Bản nguồn 2.1 đã nhập (Sheet tạm thời chưa sẵn sàng)':''}`;
     }
     function selectFile(){shown=0;blocks.replaceChildren();render();}
     async function selectGroup(){

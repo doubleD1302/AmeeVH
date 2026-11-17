@@ -105782,6 +105782,5626 @@
         }
       ],
       "code": "PM16001"
+    },
+    {
+      "title": "PM16101",
+      "scene_id": "PM16101",
+      "badge": "PM16101",
+      "lines": [
+        {
+          "row_index": 8839,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/1/param/7",
+          "speaker": "Leafia",
+          "en": "Hello. Glad to be working with you.",
+          "old_vi": "",
+          "new_vi": "Chào Boss. Rất vui được làm việc cùng.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/1/param/7",
+          "source_locator": "command/1/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/1/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/1/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/1/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.1",
+          "cn": "你好，请多指教",
+          "jp": "こんにちは==RT==よろしくお願いします"
+        },
+        {
+          "row_index": 8840,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/2/param/1",
+          "speaker": "Dẫn chuyện",
+          "en": "Hi, Leafia!",
+          "old_vi": "",
+          "new_vi": "Chào Leafia!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/2/param/1",
+          "source_locator": "command/2/param/1",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/2/param/1",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/2/param/1",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/2/param/1",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.2",
+          "cn": "优叶，你好！",
+          "jp": "スグハ、こんにちは！"
+        },
+        {
+          "row_index": 8841,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/2/param/2",
+          "speaker": "Dẫn chuyện",
+          "en": "No need to be so polite!",
+          "old_vi": "",
+          "new_vi": "Không cần khách sáo thế đâu!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/2/param/2",
+          "source_locator": "command/2/param/2",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/2/param/2",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/2/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/2/param/2",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.3",
+          "cn": "用不着这么客气啦~",
+          "jp": "もっと気楽な感じでいいよ"
+        },
+        {
+          "row_index": 8842,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/4/param/7",
+          "speaker": "Sylar",
+          "en": "Hi, Leafia!",
+          "old_vi": "",
+          "new_vi": "Chào Leafia!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/4/param/7",
+          "source_locator": "command/4/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/4/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/4/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/4/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.4",
+          "cn": "优叶，你好！",
+          "jp": "スグハ、こんにちは！"
+        },
+        {
+          "row_index": 8843,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/5/param/7",
+          "speaker": "Sylar",
+          "en": "Expect a lot of texts from me going forward!",
+          "old_vi": "",
+          "new_vi": "Từ giờ tôi sẽ nhắn cô thường xuyên đấy!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/5/param/7",
+          "source_locator": "command/5/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/5/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/5/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/5/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.5",
+          "cn": "以后我会多多和你发消息的喔！",
+          "jp": "これからは、私からもチャットを送らせてもらうよ"
+        },
+        {
+          "row_index": 8844,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/6/param/7",
+          "speaker": "Sylar",
+          "en": "No more disappearing on us!",
+          "old_vi": "",
+          "new_vi": "Đừng lại biến mất nữa nhé!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/6/param/7",
+          "source_locator": "command/6/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/6/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/6/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/6/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.6",
+          "cn": "别老是失联啦！",
+          "jp": "なるべく返信してもらえると助かる"
+        },
+        {
+          "row_index": 8845,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/7/param/7",
+          "speaker": "Leafia",
+          "en": "Did President Horizon ask you to do this?",
+          "old_vi": "",
+          "new_vi": "Chủ tịch Horizon nhờ Boss làm thế à?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/7/param/7",
+          "source_locator": "command/7/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/7/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/7/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/7/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.7",
+          "cn": "是会长这样拜托你的吗？",
+          "jp": "カイチョーに頼まれたんですか？"
+        },
+        {
+          "row_index": 8846,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/8/param/7",
+          "speaker": "Sylar",
+          "en": "Not just President Horizon. Mikan did, too",
+          "old_vi": "",
+          "new_vi": "Chủ tịch Horizon nhờ, Mikan cũng nhờ",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/8/param/7",
+          "source_locator": "command/8/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/8/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/8/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/8/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.8",
+          "cn": "不仅仅是会长，还有蜜柑",
+          "jp": "カナタだけではなく、ミカンにも"
+        },
+        {
+          "row_index": 8847,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/9/param/7",
+          "speaker": "Sylar",
+          "en": "And Nuz",
+          "old_vi": "",
+          "new_vi": "Cả Nuz nữa",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/9/param/7",
+          "source_locator": "command/9/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/9/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/9/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/9/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.9",
+          "cn": "纳茨",
+          "jp": "ビスケにも"
+        },
+        {
+          "row_index": 8848,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/10/param/7",
+          "speaker": "Sylar",
+          "en": "And Willow",
+          "old_vi": "",
+          "new_vi": "Rồi Willow",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/10/param/7",
+          "source_locator": "command/10/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/10/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/10/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/10/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.10",
+          "cn": "薇洛",
+          "jp": "ウィローにも"
+        },
+        {
+          "row_index": 8849,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/11/param/7",
+          "speaker": "Sylar",
+          "en": "And Iori",
+          "old_vi": "",
+          "new_vi": "Rồi Iori",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/11/param/7",
+          "source_locator": "command/11/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/11/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/11/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/11/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.11",
+          "cn": "伊织",
+          "jp": "イオリにも"
+        },
+        {
+          "row_index": 8850,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/12/param/7",
+          "speaker": "Leafia",
+          "en": "Hold on.",
+          "old_vi": "",
+          "new_vi": "Khoan đã.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/12/param/7",
+          "source_locator": "command/12/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/12/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/12/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/12/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.12",
+          "cn": "等下",
+          "jp": "ちょっと待ってください"
+        },
+        {
+          "row_index": 8851,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/13/param/7",
+          "speaker": "Leafia",
+          "en": "You don't have to name everyone in the Trekker Association.",
+          "old_vi": "",
+          "new_vi": "Boss đâu cần kể tên cả Hiệp hội Tuần du giả.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/13/param/7",
+          "source_locator": "command/13/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/13/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/13/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/13/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.13",
+          "cn": "不用再报地理协会现役成员的名字了",
+          "jp": "協会の皆さんの名前はもういいです"
+        },
+        {
+          "row_index": 8852,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/15/param/7",
+          "speaker": "Leafia",
+          "en": "Anyway, I appreciate everyone looking out for me.",
+          "old_vi": "",
+          "new_vi": "Dù sao tôi cũng cảm ơn mọi người đã để tâm.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/15/param/7",
+          "source_locator": "command/15/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/15/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/15/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/15/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.14",
+          "cn": "总之，谢谢大家的关心",
+          "jp": "皆さんのお気遣いは、よくわかりました"
+        },
+        {
+          "row_index": 8853,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/17/param/7",
+          "speaker": "Sylar",
+          "en": "No need to be so polite!",
+          "old_vi": "",
+          "new_vi": "Không cần khách sáo thế đâu!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/17/param/7",
+          "source_locator": "command/17/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/17/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/17/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/17/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.15",
+          "cn": "用不着这么客气啦~",
+          "jp": "もっと気楽な感じでいいよ"
+        },
+        {
+          "row_index": 8854,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/18/param/7",
+          "speaker": "Leafia",
+          "en": "Okay.",
+          "old_vi": "",
+          "new_vi": "Ừ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/18/param/7",
+          "source_locator": "command/18/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/18/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/18/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/18/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.16",
+          "cn": "好的",
+          "jp": "わかりました"
+        },
+        {
+          "row_index": null,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/19/param/7",
+          "speaker": "Sylar",
+          "en": "?",
+          "old_vi": "",
+          "new_vi": "?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/19/param/7",
+          "source_locator": "command/19/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/19/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/19/param/2",
+              "method": "identical_command_skeleton"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/19/param/7",
+              "method": "identical_command_skeleton"
+            }
+          },
+          "cn": "？",
+          "jp": "？"
+        },
+        {
+          "row_index": 8855,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/20/param/7",
+          "speaker": "Sylar",
+          "en": "Leafia?",
+          "old_vi": "",
+          "new_vi": "Leafia?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/20/param/7",
+          "source_locator": "command/20/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/20/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/20/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/20/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.17",
+          "cn": "优叶？",
+          "jp": "スグハ？"
+        },
+        {
+          "row_index": 8856,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/22/param/7",
+          "speaker": "Sylar",
+          "en": "Did I lose you already?!",
+          "old_vi": "",
+          "new_vi": "Mới đó mà cô lại biến mất rồi sao?!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/22/param/7",
+          "source_locator": "command/22/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/22/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/22/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/22/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.18",
+          "cn": "难道又失联了？",
+          "jp": "まさか、また連絡がつかなくなった？"
+        },
+        {
+          "row_index": 8857,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/23/param/7",
+          "speaker": "Leafia",
+          "en": "No.",
+          "old_vi": "",
+          "new_vi": "Không.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/23/param/7",
+          "source_locator": "command/23/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/23/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/23/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/23/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.19",
+          "cn": "没有",
+          "jp": "いいえ"
+        },
+        {
+          "row_index": 8858,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/24/param/7",
+          "speaker": "Leafia",
+          "en": "I'm back.",
+          "old_vi": "",
+          "new_vi": "Tôi đây.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/24/param/7",
+          "source_locator": "command/24/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/24/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/24/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/24/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.20",
+          "cn": "我回来了",
+          "jp": "ちゃんと見ていますよ"
+        },
+        {
+          "row_index": 8859,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/25/param/7",
+          "speaker": "Leafia",
+          "en": "I just spotted a plant Mikan wanted",
+          "old_vi": "",
+          "new_vi": "Tôi vừa thấy một cây Mikan đang tìm",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/25/param/7",
+          "source_locator": "command/25/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/25/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/25/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/25/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.21",
+          "cn": "刚找到一株蜜柑要的植物",
+          "jp": "ミカンさんに頼まれていた植物の写真を撮っていて"
+        },
+        {
+          "row_index": 8860,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/26/param/7",
+          "speaker": "Leafia",
+          "en": "so my hands were full.",
+          "old_vi": "",
+          "new_vi": "nên hai tay bận mất.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/26/param/7",
+          "source_locator": "command/26/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/26/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/26/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/26/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.22",
+          "cn": "没来得及回复",
+          "jp": "返信が遅れました"
+        },
+        {
+          "row_index": 8861,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/27/param/7",
+          "speaker": "Sylar",
+          "en": "Oh, good. You had me worried",
+          "old_vi": "",
+          "new_vi": "May quá. Làm tôi lo hết hồn",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/27/param/7",
+          "source_locator": "command/27/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/27/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/27/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/27/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.23",
+          "cn": "那就好那就好",
+          "jp": "それならよかった"
+        },
+        {
+          "row_index": 8862,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/29/param/7",
+          "speaker": "Leafia",
+          "en": "I'll do better at keeping in touch from now on.",
+          "old_vi": "",
+          "new_vi": "Từ giờ tôi sẽ cố giữ liên lạc thường xuyên hơn.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/29/param/7",
+          "source_locator": "command/29/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/29/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/29/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/29/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.24",
+          "cn": "以后，我会多多和你联系的",
+          "jp": "これからは、もっとまめに連絡するようにします"
+        },
+        {
+          "row_index": 8863,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/30/param/7",
+          "speaker": "Sylar",
+          "en": "It's a deal!",
+          "old_vi": "",
+          "new_vi": "Hứa nhé!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/30/param/7",
+          "source_locator": "command/30/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/30/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/30/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/30/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.25",
+          "cn": "约好咯！",
+          "jp": "私との約束だ！"
+        },
+        {
+          "row_index": 8864,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/31/param/7",
+          "speaker": "Leafia",
+          "en": "Yeah.",
+          "old_vi": "",
+          "new_vi": "Ừ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/31/param/7",
+          "source_locator": "command/31/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/31/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/31/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/31/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.26",
+          "cn": "嗯",
+          "jp": "善処します"
+        },
+        {
+          "row_index": 8865,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/33/param/7",
+          "speaker": "Leafia",
+          "en": "It's been three days.",
+          "old_vi": "",
+          "new_vi": "Ba ngày rồi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/33/param/7",
+          "source_locator": "command/33/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/33/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/33/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/33/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.27",
+          "cn": "三天了",
+          "jp": "3日経ちました==RT==魔王さんの進捗はいかがですか？"
+        },
+        {
+          "row_index": 8866,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/34/param/1",
+          "speaker": "Dẫn chuyện",
+          "en": "Three days?!",
+          "old_vi": "",
+          "new_vi": "Ba ngày á?!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/34/param/1",
+          "source_locator": "command/34/param/1",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/34/param/1",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/34/param/1",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/34/param/1",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.28",
+          "cn": "竟然已经三天了？！",
+          "jp": "もう3日！？"
+        },
+        {
+          "row_index": 8867,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/34/param/2",
+          "speaker": "Dẫn chuyện",
+          "en": "Didn't we say four days?",
+          "old_vi": "",
+          "new_vi": "Chẳng phải mình hẹn bốn ngày sao?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/34/param/2",
+          "source_locator": "command/34/param/2",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/34/param/2",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/34/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/34/param/2",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.29",
+          "cn": "之前约好的是四天吧",
+          "jp": "4日後の約束だったような…"
+        },
+        {
+          "row_index": 8868,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/36/param/7",
+          "speaker": "Sylar",
+          "en": "Three days?!",
+          "old_vi": "",
+          "new_vi": "Ba ngày á?!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/36/param/7",
+          "source_locator": "command/36/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/36/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/36/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/36/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.30",
+          "cn": "竟然已经三天了？！",
+          "jp": "もう3日！？"
+        },
+        {
+          "row_index": 8869,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/37/param/7",
+          "speaker": "Leafia",
+          "en": "Yeah.",
+          "old_vi": "",
+          "new_vi": "Ừ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/37/param/7",
+          "source_locator": "command/37/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/37/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/37/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/37/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.31",
+          "cn": "嗯",
+          "jp": "はい"
+        },
+        {
+          "row_index": 8870,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/38/param/7",
+          "speaker": "Leafia",
+          "en": "I'm all set to piece together the terrain map for the Filanis military camp.",
+          "old_vi": "",
+          "new_vi": "Tôi sẵn sàng ghép lại bản đồ địa hình doanh trại Filanis rồi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/38/param/7",
+          "source_locator": "command/38/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/38/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/38/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/38/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.32",
+          "cn": "我已经准备好复原菲兰尼斯军营区域的地形图了",
+          "jp": "フィラニスのゴールドエリアの地形図を復元する準備は、もうできています"
+        },
+        {
+          "row_index": 8871,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/40/param/7",
+          "speaker": "Sylar",
+          "en": "Didn't we say four days?",
+          "old_vi": "",
+          "new_vi": "Chẳng phải mình hẹn bốn ngày sao?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/40/param/7",
+          "source_locator": "command/40/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/40/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/40/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/40/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.33",
+          "cn": "之前约好的是四天吧",
+          "jp": "4日後の約束だったような…"
+        },
+        {
+          "row_index": 8872,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/41/param/7",
+          "speaker": "Leafia",
+          "en": "Yeah.",
+          "old_vi": "",
+          "new_vi": "Ừ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/41/param/7",
+          "source_locator": "command/41/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/41/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/41/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/41/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.34",
+          "cn": "嗯",
+          "jp": "はい"
+        },
+        {
+          "row_index": 8873,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/42/param/7",
+          "speaker": "Leafia",
+          "en": "But I just couldn't wait!",
+          "old_vi": "",
+          "new_vi": "Nhưng tôi chờ không nổi!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/42/param/7",
+          "source_locator": "command/42/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/42/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/42/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/42/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.35",
+          "cn": "但我有点迫不及待了！",
+          "jp": "でも、フィラニスのゴールドエリアの地形図を復元できると思ったら"
+        },
+        {
+          "row_index": 8874,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/43/param/7",
+          "speaker": "Leafia",
+          "en": "I got so excited about restoring the Filanis camp map",
+          "old_vi": "",
+          "new_vi": "Tôi háo hức muốn phục dựng bản đồ doanh trại Filanis quá",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/43/param/7",
+          "source_locator": "command/43/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/43/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/43/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/43/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.36",
+          "cn": "一想到能复原菲兰尼斯军营区域的地形图",
+          "jp": "少し待ちきれなくなってしまって"
+        },
+        {
+          "row_index": 8875,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/44/param/7",
+          "speaker": "Leafia",
+          "en": "that I came to find you a day early.",
+          "old_vi": "",
+          "new_vi": "nên đến tìm Boss sớm một ngày.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/44/param/7",
+          "source_locator": "command/44/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/44/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/44/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/44/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.37",
+          "cn": "就提前来找你了",
+          "jp": "それで、進捗はいかがですか？"
+        },
+        {
+          "row_index": 8876,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/46/param/7",
+          "speaker": "Leafia",
+          "en": "You promised to track down the reference files within four days.",
+          "old_vi": "",
+          "new_vi": "Boss hứa sẽ tìm được tài liệu tham khảo trong bốn ngày.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/46/param/7",
+          "source_locator": "command/46/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/46/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/46/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/46/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.38",
+          "cn": "你说过这四天里会找到相关的资料的",
+          "jp": "この4日間で、関連資料を見つけると言っていましたよね"
+        },
+        {
+          "row_index": 8877,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/47/param/7",
+          "speaker": "Leafia",
+          "en": "You didn't just make that up, did you?",
+          "old_vi": "",
+          "new_vi": "Boss không nói cho có đấy chứ?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/47/param/7",
+          "source_locator": "command/47/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/47/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/47/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/47/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.39",
+          "cn": "不会是在骗我吧？",
+          "jp": "まさか、嘘だったんでしょうか？"
+        },
+        {
+          "row_index": 8878,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/48/param/7",
+          "speaker": "Sylar",
+          "en": "Of course not!",
+          "old_vi": "",
+          "new_vi": "Dĩ nhiên là không!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/48/param/7",
+          "source_locator": "command/48/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/48/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/48/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/48/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.40",
+          "cn": "当然没有！",
+          "jp": "いやいや！"
+        },
+        {
+          "row_index": 8879,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/49/param/7",
+          "speaker": "Sylar",
+          "en": "I always keep my word!",
+          "old_vi": "",
+          "new_vi": "Tôi đã hứa là làm!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/49/param/7",
+          "source_locator": "command/49/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/49/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/49/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/49/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.41",
+          "cn": "我，一言九鼎！",
+          "jp": "一度言ったことは必ず守るさ！"
+        },
+        {
+          "row_index": 8880,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/50/param/7",
+          "speaker": "Sylar",
+          "en": "Just, just hang on, I'll have them for you tomorrow",
+          "old_vi": "",
+          "new_vi": "C-Cứ chờ thêm chút, mai tôi đưa cô",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/50/param/7",
+          "source_locator": "command/50/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/50/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/50/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/50/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.42",
+          "cn": "等、等着，我明天就把资料带来",
+          "jp": "ま、待っていてくれ==RT==明日！明日必ず資料を持っていくから！"
+        },
+        {
+          "row_index": 8881,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/52/param/7",
+          "speaker": "Leafia",
+          "en": "Checking in with today's plans.",
+          "old_vi": "",
+          "new_vi": "Tôi báo lịch hôm nay nhé.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/52/param/7",
+          "source_locator": "command/52/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/52/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/52/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/52/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.43",
+          "cn": "今天的行程报备来了",
+          "jp": "私の予定を共有します"
+        },
+        {
+          "row_index": 8882,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/53/param/7",
+          "speaker": "Leafia",
+          "en": "I'm updating the mountain maps around Port Goldfinch.",
+          "old_vi": "",
+          "new_vi": "Tôi sẽ cập nhật bản đồ vùng núi quanh cảng Goldfinch.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/53/param/7",
+          "source_locator": "command/53/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/53/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/53/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/53/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.44",
+          "cn": "更新金翎港周边的山脉区域图",
+          "jp": "本日はゴルティス周辺の山岳地帯のチョーサがメイン業務です"
+        },
+        {
+          "row_index": 8883,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/54/param/7",
+          "speaker": "Sylar",
+          "en": "Plain text is a little dry, don't you think?",
+          "old_vi": "",
+          "new_vi": "Toàn chữ thế này hơi khô khan nhỉ?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/54/param/7",
+          "source_locator": "command/54/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/54/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/54/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/54/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.45",
+          "cn": "光是文字叙述有点干巴巴呢！",
+          "jp": "わかった==RT==だが、文字だけだと少し味気ないな…"
+        },
+        {
+          "row_index": 8884,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/55/param/7",
+          "speaker": "Sylar",
+          "en": "How about this:",
+          "old_vi": "",
+          "new_vi": "Hay là thế này:",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/55/param/7",
+          "source_locator": "command/55/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/55/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/55/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/55/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.46",
+          "cn": "不如这样",
+          "jp": "そうだ、こういうのはどうだろう"
+        },
+        {
+          "row_index": 8885,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/56/param/7",
+          "speaker": "Sylar",
+          "en": "Once you get there",
+          "old_vi": "",
+          "new_vi": "Khi nào đến nơi",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/56/param/7",
+          "source_locator": "command/56/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/56/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/56/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/56/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.47",
+          "cn": "优叶，抵达目的地后",
+          "jp": "目的地に着いたら写真を撮って"
+        },
+        {
+          "row_index": 8886,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/57/param/7",
+          "speaker": "Sylar",
+          "en": "snap a few pictures for me!",
+          "old_vi": "",
+          "new_vi": "chụp cho tôi vài tấm ảnh nhé!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/57/param/7",
+          "source_locator": "command/57/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/57/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/57/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/57/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.48",
+          "cn": "也拍几张照片给我看看吧！",
+          "jp": "メッセージと一緒に送るんだ"
+        },
+        {
+          "row_index": 8887,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/58/param/7",
+          "speaker": "Leafia",
+          "en": "Pictures?",
+          "old_vi": "",
+          "new_vi": "Ảnh á?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/58/param/7",
+          "source_locator": "command/58/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/58/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/58/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/58/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.49",
+          "cn": "拍照？",
+          "jp": "写真ですか？"
+        },
+        {
+          "row_index": 8888,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/59/param/7",
+          "speaker": "Sylar",
+          "en": "Yeah!",
+          "old_vi": "",
+          "new_vi": "Ừ!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/59/param/7",
+          "source_locator": "command/59/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/59/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/59/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/59/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.50",
+          "cn": "嗯！",
+          "jp": "ああ！"
+        },
+        {
+          "row_index": 8889,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/60/param/7",
+          "speaker": "Sylar",
+          "en": "Wildflowers by the road",
+          "old_vi": "",
+          "new_vi": "Hoa dại ven đường",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/60/param/7",
+          "source_locator": "command/60/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/60/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/60/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/60/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.51",
+          "cn": "路边盛开的花朵",
+          "jp": "道端に咲いている花とか"
+        },
+        {
+          "row_index": 8890,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/61/param/7",
+          "speaker": "Sylar",
+          "en": "birds building a nest",
+          "old_vi": "",
+          "new_vi": "chim đang làm tổ",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/61/param/7",
+          "source_locator": "command/61/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/61/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/61/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/61/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.52",
+          "cn": "筑巢的小鸟",
+          "jp": "巣作りをしている小鳥とか"
+        },
+        {
+          "row_index": 8891,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/62/param/7",
+          "speaker": "Sylar",
+          "en": "or a sea of trees in the distance",
+          "old_vi": "",
+          "new_vi": "hay rừng cây ngút tầm mắt",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/62/param/7",
+          "source_locator": "command/62/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/62/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/62/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/62/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.53",
+          "cn": "又或者是远处的树海",
+          "jp": "遠くに見える樹海とか"
+        },
+        {
+          "row_index": 8892,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/63/param/7",
+          "speaker": "Sylar",
+          "en": "Anything at all",
+          "old_vi": "",
+          "new_vi": "Gì cũng được",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/63/param/7",
+          "source_locator": "command/63/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/63/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/63/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/63/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.54",
+          "cn": "无论拍什么都可以",
+          "jp": "なにを撮ってもかまわない"
+        },
+        {
+          "row_index": 8893,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/64/param/7",
+          "speaker": "Sylar",
+          "en": "I'd love to see the world through your eyes on your trips",
+          "old_vi": "",
+          "new_vi": "Tôi muốn ngắm thế giới qua mắt cô trong những chuyến đi",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/64/param/7",
+          "source_locator": "command/64/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/64/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/64/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/64/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.55",
+          "cn": "我也很想知道你这一路看到的风景",
+          "jp": "スグハが旅先でどんな景色を見ているのか、知りたいんだ"
+        },
+        {
+          "row_index": 8894,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/65/param/7",
+          "speaker": "Leafia",
+          "en": "Got it.",
+          "old_vi": "",
+          "new_vi": "Hiểu rồi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/65/param/7",
+          "source_locator": "command/65/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/65/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/65/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/65/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.56",
+          "cn": "我明白了",
+          "jp": "わかりました"
+        },
+        {
+          "row_index": 8895,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/66/param/7",
+          "speaker": "Leafia",
+          "en": "I'll take plenty of photos and send them over.",
+          "old_vi": "",
+          "new_vi": "Tôi sẽ chụp nhiều ảnh gửi Boss.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/66/param/7",
+          "source_locator": "command/66/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/66/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/66/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/66/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.57",
+          "cn": "我会多多拍照，发给你看的",
+          "jp": "たくさん写真を撮って、送りますね"
+        },
+        {
+          "row_index": 8896,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/69/param/7",
+          "speaker": "Leafia",
+          "en": "I think I figured out the trick to riding hermit crabs.",
+          "old_vi": "",
+          "new_vi": "Hình như tôi biết bí quyết cưỡi cua ẩn sĩ rồi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/69/param/7",
+          "source_locator": "command/69/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/69/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/69/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/69/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.58",
+          "cn": "我好像，掌握到了一些骑寄居蟹的技巧",
+          "jp": "ヤドカリに乗るコツが、少しつかめた気がします"
+        },
+        {
+          "row_index": 8897,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/70/param/7",
+          "speaker": "Sylar",
+          "en": "There's a trick to it?",
+          "old_vi": "",
+          "new_vi": "Cưỡi cua cũng có bí quyết à?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/70/param/7",
+          "source_locator": "command/70/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/70/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/70/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/70/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.59",
+          "cn": "技巧？",
+          "jp": "コツ？"
+        },
+        {
+          "row_index": 8898,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/71/param/7",
+          "speaker": "Leafia",
+          "en": "Yeah. It's from Karin's notes.",
+          "old_vi": "",
+          "new_vi": "Ừ. Tôi đọc trong ghi chép của Karin.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/71/param/7",
+          "source_locator": "command/71/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/71/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/71/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/71/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.60",
+          "cn": "嗯，就是花铃写的",
+          "jp": "はい、カリンさんが書いていた"
+        },
+        {
+          "row_index": 8899,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/72/param/7",
+          "speaker": "Leafia",
+          "en": "Becoming one with the crab.",
+          "old_vi": "",
+          "new_vi": "Hòa làm một với con cua.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/72/param/7",
+          "source_locator": "command/72/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/72/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/72/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/72/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.61",
+          "cn": "人蟹合一",
+          "jp": "人蟹一体"
+        },
+        {
+          "row_index": 8900,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/73/param/7",
+          "speaker": "Leafia",
+          "en": "That sort of thing.",
+          "old_vi": "",
+          "new_vi": "Đại loại thế.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/73/param/7",
+          "source_locator": "command/73/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/73/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/73/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/73/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.62",
+          "cn": "这种境界",
+          "jp": "という境地です"
+        },
+        {
+          "row_index": null,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/74/param/7",
+          "speaker": "Sylar",
+          "en": "...",
+          "old_vi": "",
+          "new_vi": "...",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/74/param/7",
+          "source_locator": "command/74/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/74/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/74/param/2",
+              "method": "identical_command_skeleton"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/74/param/7",
+              "method": "identical_command_skeleton"
+            }
+          },
+          "cn": "……",
+          "jp": "…"
+        },
+        {
+          "row_index": 8901,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/76/param/7",
+          "speaker": "Sylar",
+          "en": "I'm gonna need you to explain that.",
+          "old_vi": "",
+          "new_vi": "Cô phải giải thích rõ hơn rồi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/76/param/7",
+          "source_locator": "command/76/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/76/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/76/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/76/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.63",
+          "cn": "展开说说",
+          "jp": "つまり、どういうことだ？"
+        },
+        {
+          "row_index": 8902,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/77/param/7",
+          "speaker": "Leafia",
+          "en": "You picture yourself as the shell",
+          "old_vi": "",
+          "new_vi": "Hãy tưởng tượng mình là chiếc vỏ",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/77/param/7",
+          "source_locator": "command/77/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/77/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/77/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/77/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.64",
+          "cn": "把自己想象成寄居蟹的壳",
+          "jp": "自分をヤドカリの殻だと思って"
+        },
+        {
+          "row_index": 8903,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/78/param/7",
+          "speaker": "Leafia",
+          "en": "and move with the crab.",
+          "old_vi": "",
+          "new_vi": "rồi chuyển động theo con cua.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/78/param/7",
+          "source_locator": "command/78/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/78/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/78/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/78/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.65",
+          "cn": "和寄居蟹一起移动",
+          "jp": "ヤドカリと一緒に動くんです"
+        },
+        {
+          "row_index": 8904,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/79/param/7",
+          "speaker": "Leafia",
+          "en": "It makes for a fast, safe ride.",
+          "old_vi": "",
+          "new_vi": "Vừa đi nhanh vừa an toàn.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/79/param/7",
+          "source_locator": "command/79/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/79/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/79/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/79/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.66",
+          "cn": "这样就能够骑得又安全又快了",
+          "jp": "そうすると、安全に、速く乗れるようになります"
+        },
+        {
+          "row_index": 8905,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/80/param/7",
+          "speaker": "Sylar",
+          "en": "That went right over my head",
+          "old_vi": "",
+          "new_vi": "Tôi chẳng hiểu gì hết",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/80/param/7",
+          "source_locator": "command/80/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/80/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/80/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/80/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.67",
+          "cn": "虽然没听明白",
+          "jp": "よくわからないけど"
+        },
+        {
+          "row_index": 8906,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/81/param/7",
+          "speaker": "Sylar",
+          "en": "but it sounds impressive. Congrats!",
+          "old_vi": "",
+          "new_vi": "nhưng nghe giỏi thật. Chúc mừng nhé!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/81/param/7",
+          "source_locator": "command/81/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/81/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/81/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/81/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.68",
+          "cn": "但总之很厉害，恭喜！",
+          "jp": "コツがつかめたならよかった！"
+        },
+        {
+          "row_index": 8907,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/82/param/7",
+          "speaker": "Leafia",
+          "en": "I still have a ways to go, though.",
+          "old_vi": "",
+          "new_vi": "Tôi còn phải học nhiều.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/82/param/7",
+          "source_locator": "command/82/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/82/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/82/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/82/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.69",
+          "cn": "不过我还有进步的空间",
+          "jp": "でも、まだまだ改善の余地はあります"
+        },
+        {
+          "row_index": 8908,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/83/param/7",
+          "speaker": "Leafia",
+          "en": "I need a lot more practice.",
+          "old_vi": "",
+          "new_vi": "Phải luyện thêm kha khá.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/83/param/7",
+          "source_locator": "command/83/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/83/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/83/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/83/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.70",
+          "cn": "还需要更加多的练习",
+          "jp": "もっとたくさんレンシューしないと"
+        },
+        {
+          "row_index": 8909,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/84/param/7",
+          "speaker": "Sylar",
+          "en": "Guess I should start getting things ready on my end",
+          "old_vi": "",
+          "new_vi": "Chắc tôi cũng nên chuẩn bị dần thôi",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/84/param/7",
+          "source_locator": "command/84/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/84/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/84/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/84/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.71",
+          "cn": "那我也该准备起来了",
+          "jp": "ならば、こちらも準備を進めておこう"
+        },
+        {
+          "row_index": 8910,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/85/param/7",
+          "speaker": "Leafia",
+          "en": "Ready for what?",
+          "old_vi": "",
+          "new_vi": "Chuẩn bị gì?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/85/param/7",
+          "source_locator": "command/85/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/85/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/85/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/85/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.72",
+          "cn": "准备什么？",
+          "jp": "なんの準備ですか？"
+        },
+        {
+          "row_index": 8911,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/86/param/7",
+          "speaker": "Sylar",
+          "en": "The First Annual Hermit Crab Derby",
+          "old_vi": "",
+          "new_vi": "Giải đua cua ẩn sĩ thường niên lần thứ nhất",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/86/param/7",
+          "source_locator": "command/86/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/86/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/86/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/86/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.73",
+          "cn": "第一届骑寄居蟹竞速大赛",
+          "jp": "第1回ヤドカリレース大会"
+        },
+        {
+          "row_index": 8912,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/87/param/7",
+          "speaker": "Sylar",
+          "en": "That actually sounds pretty fun!",
+          "old_vi": "",
+          "new_vi": "Nghe cũng vui đấy chứ!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/87/param/7",
+          "source_locator": "command/87/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/87/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/87/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/87/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.74",
+          "cn": "应该会很有趣！",
+          "jp": "きっとおもしろくなると思うよ"
+        },
+        {
+          "row_index": 8913,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/90/param/7",
+          "speaker": "Leafia",
+          "en": "I heard more news about that seamount today... Well, the giant sea turtle, I mean.",
+          "old_vi": "",
+          "new_vi": "Hôm nay tôi nghe thêm tin về ngọn núi dưới biển ấy... À, ý tôi là con rùa biển khổng lồ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/90/param/7",
+          "source_locator": "command/90/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/90/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/90/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/90/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.75",
+          "cn": "今天又收到了那座海山……不，应该说是大海龟的消息",
+          "jp": "今日、あの島…いえ、あの巨大ウミガメの位置情報が届きました"
+        },
+        {
+          "row_index": 8914,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/91/param/7",
+          "speaker": "Leafia",
+          "en": "Karin spotted it.",
+          "old_vi": "",
+          "new_vi": "Karin trông thấy nó.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/91/param/7",
+          "source_locator": "command/91/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/91/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/91/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/91/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.76",
+          "cn": "是花铃发现的",
+          "jp": "見つけたのはカリンさんです"
+        },
+        {
+          "row_index": 8915,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/92/param/7",
+          "speaker": "Leafia",
+          "en": "It's in waters even further south than last time.",
+          "old_vi": "",
+          "new_vi": "Nó đang ở vùng biển còn xa hơn về phía nam so với lần trước.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/92/param/7",
+          "source_locator": "command/92/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/92/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/92/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/92/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.77",
+          "cn": "比上次还要更南边的一片海域",
+          "jp": "今回は、前回よりもさらに南の海域にいたみたいですね"
+        },
+        {
+          "row_index": 8916,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/93/param/7",
+          "speaker": "Leafia",
+          "en": "I'd love to get back on its shell if we get the chance.",
+          "old_vi": "",
+          "new_vi": "Có dịp tôi muốn lại leo lên mai nó.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/93/param/7",
+          "source_locator": "command/93/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/93/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/93/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/93/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.78",
+          "cn": "如果可以的话，我还想上海龟背看看",
+          "jp": "できればまた、巨大ウミガメの背中に乗りたいところです"
+        },
+        {
+          "row_index": 8917,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/94/param/7",
+          "speaker": "Leafia",
+          "en": "We still left so much of it unexplored.",
+          "old_vi": "",
+          "new_vi": "Vẫn còn bao nhiêu chỗ mình chưa khám phá.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/94/param/7",
+          "source_locator": "command/94/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/94/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/94/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/94/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.79",
+          "cn": "还有好多没有考察到的地方",
+          "jp": "まだチョーサできていない場所が、たくさんありますし"
+        },
+        {
+          "row_index": 8918,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/95/param/7",
+          "speaker": "Sylar",
+          "en": "First, we'll have to train to not get seasick",
+          "old_vi": "",
+          "new_vi": "Trước tiên phải luyện cho khỏi say sóng đã",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/95/param/7",
+          "source_locator": "command/95/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/95/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/95/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/95/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.80",
+          "cn": "在此之前，我们得做好晕船特训",
+          "jp": "そのつもりなら、船酔いを克服する特訓を積まないとな"
+        },
+        {
+          "row_index": 8919,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/96/param/7",
+          "speaker": "Leafia",
+          "en": "True.",
+          "old_vi": "",
+          "new_vi": "Đúng vậy.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/96/param/7",
+          "source_locator": "command/96/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/96/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/96/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/96/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.81",
+          "cn": "没错",
+          "jp": "そうですね"
+        },
+        {
+          "row_index": null,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/97/param/7",
+          "speaker": "Leafia",
+          "en": "...",
+          "old_vi": "",
+          "new_vi": "...",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/97/param/7",
+          "source_locator": "command/97/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/97/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/97/param/2",
+              "method": "identical_command_skeleton"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/97/param/7",
+              "method": "identical_command_skeleton"
+            }
+          },
+          "cn": "……",
+          "jp": "…"
+        },
+        {
+          "row_index": 8920,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/98/param/7",
+          "speaker": "Leafia",
+          "en": "On that note, could you pack a few extra crates of Miss Coronis's seasickness potion?",
+          "old_vi": "",
+          "new_vi": "Nhân tiện, Boss mang thêm vài thùng thuốc chống say sóng của cô Coronis được không?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/98/param/7",
+          "source_locator": "command/98/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/98/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/98/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/98/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.82",
+          "cn": "所以，能帮我多带几箱科洛妮丝小姐的晕船药剂吗",
+          "jp": "魔王さん、クルニスさんの酔い止め薬を多めに持ってきてもらえませんか"
+        },
+        {
+          "row_index": 8921,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/99/param/7",
+          "speaker": "Leafia",
+          "en": "Just to be safe.",
+          "old_vi": "",
+          "new_vi": "Đề phòng thôi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/99/param/7",
+          "source_locator": "command/99/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/99/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/99/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/99/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.83",
+          "cn": "以备不时之需",
+          "jp": "もしものときのために==RT==一応、念には念を入れて…"
+        },
+        {
+          "row_index": 8922,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/100/param/7",
+          "speaker": "Sylar",
+          "en": "You bet! Leave it to me!",
+          "old_vi": "",
+          "new_vi": "Được chứ! Cứ để tôi lo!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/100/param/7",
+          "source_locator": "command/100/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/100/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/100/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/100/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.84",
+          "cn": "当然可以，包在我身上！",
+          "jp": "もちろんだよ==RT==任せてくれ！"
+        },
+        {
+          "row_index": 8923,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/103/param/7",
+          "speaker": "Leafia",
+          "en": "Thanks for saving me today.",
+          "old_vi": "",
+          "new_vi": "Cảm ơn Boss đã cứu tôi hôm nay.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/103/param/7",
+          "source_locator": "command/103/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/103/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/103/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/103/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.85",
+          "cn": "今天谢谢你",
+          "jp": "今日はありがとうございました"
+        },
+        {
+          "row_index": 8924,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/104/param/7",
+          "speaker": "Leafia",
+          "en": "I almost got swarmed at the Trekker Association again.",
+          "old_vi": "",
+          "new_vi": "Suýt nữa tôi lại bị vây ở Hiệp hội Tuần du giả.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/104/param/7",
+          "source_locator": "command/104/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/104/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/104/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/104/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.86",
+          "cn": "差点又在地理协会被大家围住",
+          "jp": "また巡遊者の皆さんに囲まれるところでした"
+        },
+        {
+          "row_index": 8925,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/105/param/7",
+          "speaker": "Sylar",
+          "en": "Haha, well, the \"Beauty of the Sunken Sea\" is a rare sight around here!",
+          "old_vi": "",
+          "new_vi": "Ha ha, “Mỹ nhân của Biển Chìm” hiếm khi xuất hiện ở đây mà!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/105/param/7",
+          "source_locator": "command/105/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/105/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/105/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/105/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.87",
+          "cn": "哈哈，毕竟“沉眠之海的美人”难得一见~",
+          "jp": "『シードリームの美少女』には滅多にお目にかかれないみたいだからな"
+        },
+        {
+          "row_index": 8926,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/106/param/7",
+          "speaker": "Leafia",
+          "en": "That nickname...",
+          "old_vi": "",
+          "new_vi": "Cái biệt danh đó...",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/106/param/7",
+          "source_locator": "command/106/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/106/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/106/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/106/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.88",
+          "cn": "这个称号",
+          "jp": "その呼び方…"
+        },
+        {
+          "row_index": 8927,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/107/param/7",
+          "speaker": "Leafia",
+          "en": "I don't even know how it caught on.",
+          "old_vi": "",
+          "new_vi": "Tôi cũng chẳng biết sao mọi người lại gọi thế.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/107/param/7",
+          "source_locator": "command/107/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/107/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/107/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/107/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.89",
+          "cn": "不知道哪一天被传开了",
+          "jp": "いつの間にか広まっていたんですよね"
+        },
+        {
+          "row_index": 8928,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/108/param/7",
+          "speaker": "Leafia",
+          "en": "Even Mikan and the girls tease me with it sometimes.",
+          "old_vi": "",
+          "new_vi": "Đôi lúc Mikan và mấy cô bạn cũng lấy nó trêu tôi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/108/param/7",
+          "source_locator": "command/108/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/108/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/108/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/108/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.90",
+          "cn": "有时候，蜜柑她们也会跟着起哄",
+          "jp": "ミカンさんたちも、時々そう呼んできますし"
+        },
+        {
+          "row_index": 8929,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/109/param/7",
+          "speaker": "Leafia",
+          "en": "I blush every time I hear it.",
+          "old_vi": "",
+          "new_vi": "Lần nào nghe tôi cũng đỏ mặt.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/109/param/7",
+          "source_locator": "command/109/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/109/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/109/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/109/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.91",
+          "cn": "每次听到，脸上的温度都会升高",
+          "jp": "呼ばれるほうの身にもなってほしいです"
+        },
+        {
+          "row_index": 8930,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/110/param/7",
+          "speaker": "Leafia",
+          "en": "So please, just stick to Leafia!",
+          "old_vi": "",
+          "new_vi": "Vậy nên Boss cứ gọi tôi là Leafia thôi nhé!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/110/param/7",
+          "source_locator": "command/110/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/110/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/110/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/110/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.92",
+          "cn": "所以，还是叫我优叶吧！",
+          "jp": "なので、魔王さんはスグハと呼んでください"
+        },
+        {
+          "row_index": 8931,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/111/param/7",
+          "speaker": "Sylar",
+          "en": "Alright, alright, you got it!",
+          "old_vi": "",
+          "new_vi": "Được rồi, được rồi, nhớ rồi!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/111/param/7",
+          "source_locator": "command/111/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/111/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/111/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/111/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.93",
+          "cn": "好好好，我听你的！",
+          "jp": "はいはい、わかったよ"
+        },
+        {
+          "row_index": 8932,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/112/param/7",
+          "speaker": "Sylar",
+          "en": "Leafia!",
+          "old_vi": "",
+          "new_vi": "Leafia!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/112/param/7",
+          "source_locator": "command/112/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/112/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/112/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/112/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.94",
+          "cn": "优叶！",
+          "jp": "スグハ！"
+        },
+        {
+          "row_index": 8933,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/113/param/7",
+          "speaker": "Leafia",
+          "en": "Yeah.",
+          "old_vi": "",
+          "new_vi": "Ừ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/113/param/7",
+          "source_locator": "command/113/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/113/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/113/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/113/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.95",
+          "cn": "嗯",
+          "jp": "はい"
+        },
+        {
+          "row_index": 8934,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/114/param/7",
+          "speaker": "Leafia",
+          "en": "Much better.",
+          "old_vi": "",
+          "new_vi": "Thế có phải hơn không.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/114/param/7",
+          "source_locator": "command/114/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/114/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/114/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/114/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.96",
+          "cn": "这样就很好",
+          "jp": "そっちのほうがうれしいです"
+        },
+        {
+          "row_index": 8935,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/117/param/7",
+          "speaker": "Leafia",
+          "en": "Pretty amazing sea of flowers, huh?",
+          "old_vi": "",
+          "new_vi": "Biển hoa đẹp thật, nhỉ?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/117/param/7",
+          "source_locator": "command/117/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/117/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/117/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/117/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.97",
+          "cn": "花海……很漂亮吧？",
+          "jp": "前に訪れた花畑…きれいでしたね"
+        },
+        {
+          "row_index": 8936,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/118/param/7",
+          "speaker": "Sylar",
+          "en": "Yeah!",
+          "old_vi": "",
+          "new_vi": "Ừ!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/118/param/7",
+          "source_locator": "command/118/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/118/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/118/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/118/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.98",
+          "cn": "嗯！",
+          "jp": "そうだな"
+        },
+        {
+          "row_index": 8937,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/119/param/7",
+          "speaker": "Sylar",
+          "en": "Who knew Lake Island was hiding a view like this?",
+          "old_vi": "",
+          "new_vi": "Ai mà ngờ đảo giữa hồ lại giấu một cảnh đẹp thế này?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/119/param/7",
+          "source_locator": "command/119/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/119/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/119/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/119/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.99",
+          "cn": "没想到湖心岛上还有这样一处风景",
+          "jp": "湖の中の島に、あんな場所があるなんて思わなかったよ"
+        },
+        {
+          "row_index": 8938,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/120/param/7",
+          "speaker": "Leafia",
+          "en": "I know, right?",
+          "old_vi": "",
+          "new_vi": "Đúng không?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/120/param/7",
+          "source_locator": "command/120/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/120/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/120/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/120/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.100",
+          "cn": "对吧",
+          "jp": "私もです"
+        },
+        {
+          "row_index": 8939,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/121/param/7",
+          "speaker": "Leafia",
+          "en": "I love seeing how time reshapes the land.",
+          "old_vi": "",
+          "new_vi": "Tôi thích xem thời gian làm địa hình đổi khác thế nào.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/121/param/7",
+          "source_locator": "command/121/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/121/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/121/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/121/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.101",
+          "cn": "我也很喜欢这种时间带给大陆的变化",
+          "jp": "時間の経過による大陸の変化って、おもしろいですよね"
+        },
+        {
+          "row_index": 8940,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/122/param/7",
+          "speaker": "Leafia",
+          "en": "There's always a new surprise waiting.",
+          "old_vi": "",
+          "new_vi": "Lúc nào cũng có điều bất ngờ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/122/param/7",
+          "source_locator": "command/122/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/122/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/122/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/122/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.102",
+          "cn": "总会有意想不到的惊喜",
+          "jp": "いつも思いがけない発見があります"
+        },
+        {
+          "row_index": 8941,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/123/param/7",
+          "speaker": "Leafia",
+          "en": "Like that cavern I surveyed recently.",
+          "old_vi": "",
+          "new_vi": "Như hang động tôi mới khảo sát ấy.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/123/param/7",
+          "source_locator": "command/123/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/123/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/123/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/123/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.103",
+          "cn": "比如上次考察的一个溶洞",
+          "jp": "先日チョーサした鍾乳洞も"
+        },
+        {
+          "row_index": 8942,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/124/param/7",
+          "speaker": "Leafia",
+          "en": "Between the shifting stone pillars and how much the space has grown",
+          "old_vi": "",
+          "new_vi": "Cột đá đã dịch chuyển, lòng hang cũng rộng ra nhiều",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/124/param/7",
+          "source_locator": "command/124/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/124/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/124/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/124/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.104",
+          "cn": "它里面的石柱变化，还有面积",
+          "jp": "内部構造をはじめ、洞窟内の岩石や石柱の形なども"
+        },
+        {
+          "row_index": 8943,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/125/param/7",
+          "speaker": "Leafia",
+          "en": "it looks nothing like the Trekker Association's old records.",
+          "old_vi": "",
+          "new_vi": "nên trông chẳng giống chút nào với ghi chép cũ của Hiệp hội Tuần du giả.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/125/param/7",
+          "source_locator": "command/125/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/125/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/125/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/125/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.105",
+          "cn": "和地理协会记录里的完全不一样了",
+          "jp": "地理協会に保存されていた記録とは、すっかり変わっていました"
+        },
+        {
+          "row_index": 8944,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/126/param/7",
+          "speaker": "Leafia",
+          "en": "Any commissions keeping you busy the next few days?",
+          "old_vi": "",
+          "new_vi": "Mấy ngày tới Boss có bận ủy thác gì không?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/126/param/7",
+          "source_locator": "command/126/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/126/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/126/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/126/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.106",
+          "cn": "你这几天有委托吗？",
+          "jp": "そうだ==RT==魔王さん、直近でなにか予定はありますか？"
+        },
+        {
+          "row_index": 8945,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/127/param/7",
+          "speaker": "Sylar",
+          "en": "Let me think",
+          "old_vi": "",
+          "new_vi": "Để tôi nghĩ xem",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/127/param/7",
+          "source_locator": "command/127/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/127/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/127/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/127/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.107",
+          "cn": "让我想想",
+          "jp": "えーと"
+        },
+        {
+          "row_index": 8946,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/128/param/7",
+          "speaker": "Sylar",
+          "en": "Doesn't look like it",
+          "old_vi": "",
+          "new_vi": "Hình như không",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/128/param/7",
+          "source_locator": "command/128/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/128/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/128/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/128/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.108",
+          "cn": "好像没有",
+          "jp": "なかったと思うけど、どうしたんだ？"
+        },
+        {
+          "row_index": 8947,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/129/param/7",
+          "speaker": "Leafia",
+          "en": "Good. I'm coming over right now.",
+          "old_vi": "",
+          "new_vi": "Tốt. Tôi qua chỗ Boss ngay.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/129/param/7",
+          "source_locator": "command/129/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/129/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/129/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/129/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.109",
+          "cn": "那好，我现在就来找你",
+          "jp": "それなら、いまからそちらへ向かいますね"
+        },
+        {
+          "row_index": 8948,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/130/param/7",
+          "speaker": "Sylar",
+          "en": "Eh?",
+          "old_vi": "",
+          "new_vi": "Hả?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/130/param/7",
+          "source_locator": "command/130/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/130/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/130/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/130/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.110",
+          "cn": "欸？",
+          "jp": "ぬ？"
+        },
+        {
+          "row_index": 8949,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/131/param/7",
+          "speaker": "Leafia",
+          "en": "We're heading out tomorrow.",
+          "old_vi": "",
+          "new_vi": "Mai mình lên đường.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/131/param/7",
+          "source_locator": "command/131/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/131/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/131/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/131/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.111",
+          "cn": "明天就出发",
+          "jp": "明日、その鍾乳洞に行きましょう"
+        },
+        {
+          "row_index": 8950,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/132/param/7",
+          "speaker": "Leafia",
+          "en": "I'll show you that cavern.",
+          "old_vi": "",
+          "new_vi": "Tôi sẽ dẫn Boss đi xem hang đó.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/132/param/7",
+          "source_locator": "command/132/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/132/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/132/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/132/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.112",
+          "cn": "带你去看那个溶洞",
+          "jp": "魔王さんにも見てほしいんです"
+        },
+        {
+          "row_index": 8951,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/133/param/7",
+          "speaker": "Sylar",
+          "en": "Talk about last-minute",
+          "old_vi": "",
+          "new_vi": "Báo sát giờ thật đấy",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/133/param/7",
+          "source_locator": "command/133/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/133/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/133/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/133/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.113",
+          "cn": "说走就走啊",
+          "jp": "相変わらず、すごい行動力だな"
+        },
+        {
+          "row_index": 8952,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/134/param/7",
+          "speaker": "Leafia",
+          "en": "Yeah.",
+          "old_vi": "",
+          "new_vi": "Ừ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/134/param/7",
+          "source_locator": "command/134/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/134/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/134/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/134/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.114",
+          "cn": "嗯",
+          "jp": "思い立ったが吉日だとカイチョーに教わりまして"
+        },
+        {
+          "row_index": 8953,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/135/param/7",
+          "speaker": "Sylar",
+          "en": "Sounds like a plan though",
+          "old_vi": "",
+          "new_vi": "Nhưng nghe cũng được đấy",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/135/param/7",
+          "source_locator": "command/135/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/135/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/135/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/135/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.115",
+          "cn": "也可以",
+          "jp": "なるほど==RT==一理あるな"
+        },
+        {
+          "row_index": 8954,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/136/param/7",
+          "speaker": "Sylar",
+          "en": "Can't wait!",
+          "old_vi": "",
+          "new_vi": "Mong đến mai quá!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/136/param/7",
+          "source_locator": "command/136/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/136/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/136/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/136/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.116",
+          "cn": "我很期待！",
+          "jp": "楽しみにしているよ"
+        },
+        {
+          "row_index": 8955,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/139/param/7",
+          "speaker": "Sylar",
+          "en": "You texting me first? That takes some getting used to",
+          "old_vi": "",
+          "new_vi": "Cô nhắn trước cho tôi cơ à? Chưa quen lắm",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/139/param/7",
+          "source_locator": "command/139/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/139/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/139/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/139/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.117",
+          "cn": "积极联络的优叶，还真有点不习惯！",
+          "jp": "スグハから連絡なんて、珍しいな"
+        },
+        {
+          "row_index": 8956,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/140/param/7",
+          "speaker": "Sylar",
+          "en": "Bet I know what the occasion is",
+          "old_vi": "",
+          "new_vi": "Tôi đoán được nhân dịp gì rồi",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/140/param/7",
+          "source_locator": "command/140/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/140/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/140/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/140/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.118",
+          "cn": "但是我已经猜到原因了！",
+          "jp": "だが、理由はわかっているよ"
+        },
+        {
+          "row_index": 8957,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/141/param/7",
+          "speaker": "Leafia",
+          "en": "What is it?",
+          "old_vi": "",
+          "new_vi": "Dịp gì?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/141/param/7",
+          "source_locator": "command/141/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/141/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/141/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/141/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.119",
+          "cn": "是什么",
+          "jp": "そうなんですか？"
+        },
+        {
+          "row_index": 8958,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/142/param/7",
+          "speaker": "Sylar",
+          "en": "Your birthday!",
+          "old_vi": "",
+          "new_vi": "Sinh nhật cô!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/142/param/7",
+          "source_locator": "command/142/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/142/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/142/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/142/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.120",
+          "cn": "是生日！",
+          "jp": "もちろん！"
+        },
+        {
+          "row_index": 8959,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/143/param/7",
+          "speaker": "Sylar",
+          "en": "Happy birthday, Leafia!",
+          "old_vi": "",
+          "new_vi": "Chúc mừng sinh nhật, Leafia!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/143/param/7",
+          "source_locator": "command/143/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/143/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/143/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/143/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.121",
+          "cn": "生日快乐，优叶！",
+          "jp": "誕生日おめでとう、スグハ！"
+        },
+        {
+          "row_index": 8960,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/145/param/7",
+          "speaker": "Leafia",
+          "en": "That's today?",
+          "old_vi": "",
+          "new_vi": "Hôm nay à?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/145/param/7",
+          "source_locator": "command/145/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/145/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/145/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/145/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.122",
+          "cn": "欸，原来今天是我的生日？",
+          "jp": "…ところで、今日が私の誕生日だったんですか？"
+        },
+        {
+          "row_index": 8961,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/146/param/7",
+          "speaker": "Sylar",
+          "en": "Wait, that's not why you messaged me?",
+          "old_vi": "",
+          "new_vi": "Khoan, cô nhắn tôi vì chuyện khác à?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/146/param/7",
+          "source_locator": "command/146/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/146/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/146/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/146/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.123",
+          "cn": "欸，不是这个原因？",
+          "jp": "ぬ？それで連絡してきたのではないか？"
+        },
+        {
+          "row_index": 8962,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/147/param/7",
+          "speaker": "Leafia",
+          "en": "I don't really celebrate it, so I never keep track of the date.",
+          "old_vi": "",
+          "new_vi": "Tôi ít khi mừng sinh nhật nên chẳng để ý ngày.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/147/param/7",
+          "source_locator": "command/147/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/147/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/147/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/147/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.124",
+          "cn": "我不怎么过生日，所以也不会特意记这个日子",
+          "jp": "誕生日はあまり祝わないので、いつも忘れちゃうんです"
+        },
+        {
+          "row_index": 8963,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/148/param/7",
+          "speaker": "Leafia",
+          "en": "Still, thank you so much",
+          "old_vi": "",
+          "new_vi": "Dù sao tôi cũng cảm ơn Boss nhiều",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/148/param/7",
+          "source_locator": "command/148/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/148/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/148/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/148/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.125",
+          "cn": "不过还是非常谢谢你",
+          "jp": "でも、ありがとうございます"
+        },
+        {
+          "row_index": 8964,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/149/param/7",
+          "speaker": "Leafia",
+          "en": "for remembering and wishing me a happy birthday.",
+          "old_vi": "",
+          "new_vi": "vì đã nhớ và chúc mừng sinh nhật tôi.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/149/param/7",
+          "source_locator": "command/149/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/149/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/149/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/149/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.126",
+          "cn": "特意祝我生日快乐",
+          "jp": "お祝いしてもらえたのはうれしいです"
+        },
+        {
+          "row_index": 8965,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/151/param/7",
+          "speaker": "Sylar",
+          "en": "So what did you actually text me about?",
+          "old_vi": "",
+          "new_vi": "Vậy rốt cuộc cô nhắn có chuyện gì?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/151/param/7",
+          "source_locator": "command/151/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/151/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/151/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/151/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.127",
+          "cn": "那找我的原因是？",
+          "jp": "誕生日ではないとしたら、スグハの用件はなんだったんだ？"
+        },
+        {
+          "row_index": 8966,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/152/param/7",
+          "speaker": "Leafia",
+          "en": "I found an uncharted cave.",
+          "old_vi": "",
+          "new_vi": "Tôi tìm được một hang chưa có trên bản đồ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/152/param/7",
+          "source_locator": "command/152/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/152/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/152/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/152/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.128",
+          "cn": "发现了一处没被记录过的洞窟",
+          "jp": "地図にない洞窟を見つけたんです"
+        },
+        {
+          "row_index": 8967,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/153/param/7",
+          "speaker": "Leafia",
+          "en": "Want to go check it out?",
+          "old_vi": "",
+          "new_vi": "Boss muốn đi xem không?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/153/param/7",
+          "source_locator": "command/153/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/153/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/153/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/153/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.129",
+          "cn": "要不要一起去？",
+          "jp": "魔王さんとチョーサしたくて==RT==一緒に行ってくれませんか？"
+        },
+        {
+          "row_index": 8968,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/154/param/7",
+          "speaker": "Sylar",
+          "en": "Count me in!",
+          "old_vi": "",
+          "new_vi": "Cho tôi đi với!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/154/param/7",
+          "source_locator": "command/154/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/154/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/154/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/154/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.130",
+          "cn": "要！",
+          "jp": "おもしろそうだな==RT==喜んで付き合おう"
+        },
+        {
+          "row_index": 8969,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/156/param/7",
+          "speaker": "Leafia",
+          "en": "Has something been on your mind lately?",
+          "old_vi": "",
+          "new_vi": "Dạo này Boss có chuyện gì lo nghĩ à?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/156/param/7",
+          "source_locator": "command/156/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/156/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/156/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/156/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.131",
+          "cn": "最近是有什么烦心事吗？",
+          "jp": "最近、悩みごとはありませんか？"
+        },
+        {
+          "row_index": 8970,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/157/param/7",
+          "speaker": "Sylar",
+          "en": "What makes you ask?",
+          "old_vi": "",
+          "new_vi": "Sao cô lại hỏi thế?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/157/param/7",
+          "source_locator": "command/157/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/157/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/157/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/157/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.132",
+          "cn": "为什么这么问？",
+          "jp": "どうして？"
+        },
+        {
+          "row_index": 8971,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/158/param/7",
+          "speaker": "Leafia",
+          "en": "When those wild boars chased us today... I scooped you right up with one hand.",
+          "old_vi": "",
+          "new_vi": "Hôm nay lúc mấy con lợn rừng đuổi mình... tôi xốc Boss lên bằng một tay.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/158/param/7",
+          "source_locator": "command/158/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/158/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/158/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/158/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.133",
+          "cn": "今天野猪群追着我们跑的时候……我单手就能把你拎起来了",
+          "jp": "今日、マスクボアに追いかけられたとき、魔王さんの手を引いたじゃないですか"
+        },
+        {
+          "row_index": 8972,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/159/param/7",
+          "speaker": "Leafia",
+          "en": "You used to be a bit heavier than that.",
+          "old_vi": "",
+          "new_vi": "Hồi trước Boss nặng hơn một chút.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/159/param/7",
+          "source_locator": "command/159/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/159/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/159/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/159/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.134",
+          "cn": "以前还得再多花点力气才行",
+          "jp": "そのときの魔王さんが、とても軽く感じられたので"
+        },
+        {
+          "row_index": 8973,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/160/param/7",
+          "speaker": "Leafia",
+          "en": "So it got me thinking",
+          "old_vi": "",
+          "new_vi": "Nên tôi nghĩ",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/160/param/7",
+          "source_locator": "command/160/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/160/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/160/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/160/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.135",
+          "cn": "所以我在想",
+          "jp": "それで、思ったんです"
+        },
+        {
+          "row_index": 8974,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/161/param/7",
+          "speaker": "Leafia",
+          "en": "maybe stress was making you lose weight.",
+          "old_vi": "",
+          "new_vi": "có khi Boss lo nghĩ nhiều đến sụt cân.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/161/param/7",
+          "source_locator": "command/161/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/161/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/161/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/161/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.136",
+          "cn": "是不是你最近有烦恼，才会变瘦了",
+          "jp": "魔王さんはなにかに悩んでいて、そのせいで痩せてしまったのではないか…と"
+        },
+        {
+          "row_index": 8975,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/162/param/7",
+          "speaker": "Sylar",
+          "en": "Nope! I've been eating well, sleeping early, and doing great",
+          "old_vi": "",
+          "new_vi": "Đâu có! Tôi ăn ngon, ngủ sớm, khỏe re mà",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/162/param/7",
+          "source_locator": "command/162/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/162/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/162/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/162/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.137",
+          "cn": "没有！我最近吃得好睡得早，没烦恼",
+          "jp": "そんなことはない==RT==食事もしているし、睡眠も問題ないし、悩みも特にない！"
+        },
+        {
+          "row_index": 8976,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/164/param/7",
+          "speaker": "Sylar",
+          "en": "I bet you just got stronger",
+          "old_vi": "",
+          "new_vi": "Chắc là cô khỏe hơn thôi",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/164/param/7",
+          "source_locator": "command/164/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/164/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/164/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/164/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.138",
+          "cn": "我认为，是优叶变强了！",
+          "jp": "私のことを軽く感じたのは、スグハが強くなったからではないか？"
+        },
+        {
+          "row_index": 8977,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/165/param/7",
+          "speaker": "Leafia",
+          "en": "Oh.",
+          "old_vi": "",
+          "new_vi": "Ồ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/165/param/7",
+          "source_locator": "command/165/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/165/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/165/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/165/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.139",
+          "cn": "哦",
+          "jp": "なるほど"
+        },
+        {
+          "row_index": 8978,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/166/param/7",
+          "speaker": "Leafia",
+          "en": "So I got stronger.",
+          "old_vi": "",
+          "new_vi": "Ra là tôi khỏe hơn.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/166/param/7",
+          "source_locator": "command/166/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/166/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/166/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/166/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.140",
+          "cn": "原来是我变强了",
+          "jp": "私が強くなった…新しい観点です"
+        },
+        {
+          "row_index": 8979,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/167/param/7",
+          "speaker": "Leafia",
+          "en": "Hmm.",
+          "old_vi": "",
+          "new_vi": "Ừm.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/167/param/7",
+          "source_locator": "command/167/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/167/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/167/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/167/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.141",
+          "cn": "唔",
+          "jp": "ふむ…"
+        },
+        {
+          "row_index": 8980,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/168/param/7",
+          "speaker": "Leafia",
+          "en": "I like that.",
+          "old_vi": "",
+          "new_vi": "Tôi thích thế.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/168/param/7",
+          "source_locator": "command/168/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/168/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/168/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/168/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.142",
+          "cn": "不错",
+          "jp": "いい気分ですね"
+        },
+        {
+          "row_index": 8981,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/170/param/7",
+          "speaker": "Leafia",
+          "en": "Does every Disc play a different tune?",
+          "old_vi": "",
+          "new_vi": "Mỗi đĩa lại phát một giai điệu khác nhau à?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/170/param/7",
+          "source_locator": "command/170/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/170/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/170/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/170/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.143",
+          "cn": "每个圆盘里的旋律都是不同的吗？",
+          "jp": "ロスレコのメロディは1枚ごとに違うんですか？"
+        },
+        {
+          "row_index": 8982,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/171/param/7",
+          "speaker": "Sylar",
+          "en": "Yep, because each one holds its own unique memory or dream~",
+          "old_vi": "",
+          "new_vi": "Ừ, vì mỗi đĩa lưu giữ một ký ức hay một giấc mơ riêng~",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/171/param/7",
+          "source_locator": "command/171/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/171/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/171/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/171/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.144",
+          "cn": "没错，因为它承载的每一段回忆或者梦都是不同的~",
+          "jp": "どうやらそのようだな==RT==なぜそうなるかまでは、わからないけど"
+        },
+        {
+          "row_index": 8983,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/172/param/7",
+          "speaker": "Leafia",
+          "en": "I see.",
+          "old_vi": "",
+          "new_vi": "Ra vậy.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/172/param/7",
+          "source_locator": "command/172/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/172/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/172/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/172/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.145",
+          "cn": "原来如此",
+          "jp": "なるほど…"
+        },
+        {
+          "row_index": 8984,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/173/param/7",
+          "speaker": "Leafia",
+          "en": "The melody seemed to lead me to an unfamiliar island.",
+          "old_vi": "",
+          "new_vi": "Giai điệu ấy như dẫn tôi đến một hòn đảo xa lạ.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/173/param/7",
+          "source_locator": "command/173/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/173/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/173/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/173/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.146",
+          "cn": "我好像顺着旋律来到了一片陌生的岛屿",
+          "jp": "メロディに導かれて、知らない島を訪れた光景が浮かんできたんです"
+        },
+        {
+          "row_index": 8985,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/174/param/7",
+          "speaker": "Leafia",
+          "en": "The terrain was unlike anything I've ever seen",
+          "old_vi": "",
+          "new_vi": "Địa hình chẳng giống bất cứ nơi nào tôi từng thấy",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/174/param/7",
+          "source_locator": "command/174/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/174/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/174/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/174/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.147",
+          "cn": "那里有从未见过的地貌",
+          "jp": "そこには見たこともない地形があって"
+        },
+        {
+          "row_index": 8986,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/175/param/7",
+          "speaker": "Leafia",
+          "en": "and it was full of amazing creatures.",
+          "old_vi": "",
+          "new_vi": "và đầy những sinh vật kỳ thú.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/175/param/7",
+          "source_locator": "command/175/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/175/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/175/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/175/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.148",
+          "cn": "也有很多神奇的生物",
+          "jp": "不思議な生き物もたくさんいました"
+        },
+        {
+          "row_index": 8987,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/176/param/7",
+          "speaker": "Leafia",
+          "en": "Dangerous, yet captivating.",
+          "old_vi": "",
+          "new_vi": "Nguy hiểm mà cuốn hút.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/176/param/7",
+          "source_locator": "command/176/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/176/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/176/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/176/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.149",
+          "cn": "很危险，但又很迷人",
+          "jp": "とても刺激的で、魅力的な景色でしたね"
+        },
+        {
+          "row_index": 8988,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/177/param/7",
+          "speaker": "Sylar",
+          "en": "Could it be Snowcap Isle?",
+          "old_vi": "",
+          "new_vi": "Có khi nào là Snowcap Isle không?",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/177/param/7",
+          "source_locator": "command/177/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/177/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/177/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/177/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.150",
+          "cn": "难道是白岛？",
+          "jp": "その島が白島だったりして"
+        },
+        {
+          "row_index": 8989,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/178/param/7",
+          "speaker": "Leafia",
+          "en": "Who knows.",
+          "old_vi": "",
+          "new_vi": "Ai mà biết.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/178/param/7",
+          "source_locator": "command/178/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/178/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/178/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/178/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.151",
+          "cn": "不知道",
+          "jp": "だったらステキですね"
+        },
+        {
+          "row_index": 8990,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/179/param/7",
+          "speaker": "Leafia",
+          "en": "But I'll figure it out someday.",
+          "old_vi": "",
+          "new_vi": "Nhưng rồi có ngày tôi sẽ tìm ra.",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/179/param/7",
+          "source_locator": "command/179/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/179/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/179/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/179/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.152",
+          "cn": "但总有一天会找到这个答案的",
+          "jp": "いつかきっと、本当にたどり着いてみせます"
+        },
+        {
+          "row_index": 8991,
+          "scene_id": "PM16101",
+          "line_id": "PM16101::command/181/param/7",
+          "speaker": "Sylar",
+          "en": "Rooting for you!!",
+          "old_vi": "",
+          "new_vi": "Tôi cổ vũ cô!!",
+          "translator": "",
+          "status": "pending",
+          "translation_origin": "unknown",
+          "notes": "",
+          "provenance": "distribution_2.1.0",
+          "source_id": "2.1.0:lua:0x9189ae879771c551:command/181/param/7",
+          "source_locator": "command/181/param/7",
+          "source_refs": {
+            "EN": {
+              "scene": "PM16101",
+              "locator": "command/181/param/7",
+              "entry_hash": "0x9189ae879771c551"
+            },
+            "CN": {
+              "scene": "PM16101",
+              "locator": "command/181/param/2",
+              "method": "verified_sheet_reference"
+            },
+            "JP": {
+              "scene": "PM16101",
+              "locator": "command/181/param/7",
+              "method": "verified_sheet_reference"
+            }
+          },
+          "sheet_line_id": "PM16101.153",
+          "cn": "加油！！",
+          "jp": "応援しているよ"
+        }
+      ]
     }
   ]
 }

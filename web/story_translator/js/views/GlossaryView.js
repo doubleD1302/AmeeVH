@@ -103,6 +103,7 @@ function openGlossaryModal() {
 function closeGlossaryModal() {
     const modal = document.getElementById("glossaryModal");
     if (modal) modal.classList.remove("open");
+    closeGlossaryFilterMenu(false);
     toggleAddTermDrawer(false);
 }
 
@@ -160,6 +161,8 @@ function resetGlossaryTermForm() {
     if (en) en.value = "";
     if (vi) vi.value = "";
     if (notes) notes.value = "";
+    const category = document.getElementById("selectTermCategory");
+    if (category) category.value = getGlossaryGroupById(GLOSSARY_DEFAULT_GROUP).label;
 }
 
 function openGlossaryEdit(term) {
@@ -179,7 +182,10 @@ function openGlossaryEdit(term) {
     if (submit) submit.querySelector(".btn-submit-text").textContent = "Lưu chỉnh sửa";
     if (en) en.value = term.en || "";
     if (vi) vi.value = term.vi || "";
-    if (category) category.value = term.category || "Chung";
+    if (category) {
+        const group = getGlossaryGroupById(glossaryGroupOf(term, allGlossaryTerms));
+        category.value = group ? group.label : getGlossaryGroupById(GLOSSARY_DEFAULT_GROUP).label;
+    }
     if (notes) notes.value = term.notes || "";
     const btn = document.getElementById("btnOpenAddTerm");
     if (btn) btn.classList.add("active");
@@ -203,7 +209,7 @@ async function submitAddTermForm() {
 
     const en = inputEn ? inputEn.value.trim() : "";
     const vi = inputVi ? inputVi.value.trim() : "";
-    const category = selectCat ? selectCat.value.trim() : "Chung";
+    const category = selectCat ? selectCat.value.trim() : getGlossaryGroupById(GLOSSARY_DEFAULT_GROUP).label;
     const notes = inputNotes ? inputNotes.value.trim() : "";
 
     if (!en || !vi) {
@@ -246,52 +252,132 @@ async function submitAddTermForm() {
 }
 
 /**
- * Render thanh lọc danh mục
+ * Render menu "Bộ lọc" (Tất cả + 7 nhóm, kèm số lượng) và cập nhật nút lọc
  */
 function renderGlossaryCategories() {
-    const tray = document.getElementById("glossaryCatPills");
-    if (!tray) return;
+    const menu = document.getElementById("glossaryFilterMenu");
+    const btn = document.getElementById("glossaryFilterBtn");
+    if (!menu || !btn) return;
 
     const counts = {};
     allGlossaryTerms.forEach(t => {
-        const cat = t.category || "Chung";
-        counts[cat] = (counts[cat] || 0) + 1;
+        const id = glossaryGroupOf(t, allGlossaryTerms);
+        counts[id] = (counts[id] || 0) + 1;
     });
 
-    const catList = [
-        { id: "ALL", label: `Tất cả (${allGlossaryTerms.length})` }
-    ];
+    const items = [
+        { id: "ALL", label: "Tất cả", labelEn: "All", count: allGlossaryTerms.length }
+    ].concat(getGlossaryGroups().map(g => ({ id: g.id, label: g.label, labelEn: g.labelEn, count: counts[g.id] || 0 })));
 
-    const presetCats = [
-        "Cốt Truyện & Thế Giới",
-        "Chiến Đấu & Kỹ Năng",
-        "Nhân Vật & Đại Từ",
-        "Quái Vật & Boss",
-        "Giao Diện & Hệ Thống",
-        "Địa Danh & Bản Đồ",
-        "Vật Phẩm & Trang Bị",
-        "Chung"
-    ];
+    menu.innerHTML = items.map(c => {
+        const active = activeGlossaryCategory === c.id;
+        return `
+        <button type="button" role="menuitemradio" aria-checked="${active}"
+                class="glossary-filter-item pill-g-${c.id} ${active ? 'active' : ''} ${c.count === 0 ? 'is-empty' : ''}"
+                data-group="${c.id}" title="${escapeHtml(c.labelEn)}"
+                onclick="chooseGlossaryFilter('${c.id}')">
+            <span class="item-dot" aria-hidden="true"></span>
+            <span class="item-label">${escapeHtml(c.label)}</span>
+            <span class="item-count">${c.count}</span>
+            <span class="item-check" aria-hidden="true"></span>
+        </button>`;
+    }).join('');
 
-    presetCats.forEach(cat => {
-        if (counts[cat]) {
-            catList.push({ id: cat, label: `${cat} (${counts[cat]})` });
-        }
-    });
-
-    // Thêm các danh mục khác nếu có trong sheet
-    Object.keys(counts).forEach(c => {
-        if (!presetCats.includes(c) && c !== "ALL") {
-            catList.push({ id: c, label: `${c} (${counts[c]})` });
-        }
-    });
-
-    tray.innerHTML = catList.map(c => `
-        <button class="glossary-cat-pill ${activeGlossaryCategory === c.id ? 'active' : ''}" onclick="setGlossaryCategory('${c.id}')">
-            ${c.label}
-        </button>
-    `).join('');
+    const current = items.find(c => c.id === activeGlossaryCategory && c.id !== "ALL") || null;
+    const value = document.getElementById("glossaryFilterValue");
+    const clear = document.getElementById("glossaryFilterClear");
+    btn.classList.toggle("has-filter", !!current);
+    btn.setAttribute("aria-label", current ? `Bộ lọc: ${current.label}` : "Bộ lọc");
+    if (value) {
+        value.className = "filter-btn-value" + (current ? ` pill-g-${current.id}` : "");
+        value.hidden = !current;
+        value.innerHTML = current
+            ? `<span class="item-dot" aria-hidden="true"></span><span class="value-text">${escapeHtml(current.label)}</span>`
+            : "";
+    }
+    if (clear) clear.hidden = !current;
 }
+
+function isGlossaryFilterMenuOpen() {
+    const menu = document.getElementById("glossaryFilterMenu");
+    return !!menu && !menu.hidden;
+}
+
+function openGlossaryFilterMenu() {
+    const menu = document.getElementById("glossaryFilterMenu");
+    const btn = document.getElementById("glossaryFilterBtn");
+    const box = document.getElementById("glossaryFilter");
+    if (!menu || !btn) return;
+    menu.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+    if (box) box.classList.add("open");
+    fitGlossaryFilterMenu(menu);
+    const target = menu.querySelector(".glossary-filter-item.active") || menu.querySelector(".glossary-filter-item");
+    if (target) target.focus({ preventScroll: true });
+}
+
+/** Giới hạn chiều cao menu theo khoảng trống còn lại trong khung từ điển (menu cuộn được). */
+function fitGlossaryFilterMenu(menu) {
+    const host = menu.closest(".glossary-modal-panel") || document.documentElement;
+    const space = host.getBoundingClientRect().bottom - menu.getBoundingClientRect().top - 14;
+    menu.style.maxHeight = `${Math.max(160, Math.floor(space))}px`;
+}
+
+function closeGlossaryFilterMenu(returnFocus) {
+    const menu = document.getElementById("glossaryFilterMenu");
+    const btn = document.getElementById("glossaryFilterBtn");
+    const box = document.getElementById("glossaryFilter");
+    if (!menu || menu.hidden) return;
+    menu.hidden = true;
+    if (btn) {
+        btn.setAttribute("aria-expanded", "false");
+        if (returnFocus) btn.focus({ preventScroll: true });
+    }
+    if (box) box.classList.remove("open");
+}
+
+function toggleGlossaryFilterMenu() {
+    if (isGlossaryFilterMenuOpen()) closeGlossaryFilterMenu(false);
+    else openGlossaryFilterMenu();
+}
+
+function chooseGlossaryFilter(id) {
+    setGlossaryCategory(id);
+    closeGlossaryFilterMenu(true);
+}
+
+// Đóng menu khi bấm ra ngoài; phím mũi tên / Esc trong menu.
+document.addEventListener("click", event => {
+    if (!isGlossaryFilterMenuOpen()) return;
+    const box = document.getElementById("glossaryFilter");
+    if (box && !box.contains(event.target)) closeGlossaryFilterMenu(false);
+});
+
+document.addEventListener("keydown", event => {
+    if (!isGlossaryFilterMenuOpen()) return;
+    const menu = document.getElementById("glossaryFilterMenu");
+    const items = Array.from(menu.querySelectorAll(".glossary-filter-item"));
+    const index = items.indexOf(document.activeElement);
+    if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopPropagation();
+        closeGlossaryFilterMenu(true);
+    } else if (event.key === "ArrowDown") {
+        event.preventDefault();
+        items[(index + 1) % items.length].focus({ preventScroll: true });
+    } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        items[(index - 1 + items.length) % items.length].focus({ preventScroll: true });
+    } else if (event.key === "Home") {
+        event.preventDefault();
+        items[0].focus({ preventScroll: true });
+    } else if (event.key === "End") {
+        event.preventDefault();
+        items[items.length - 1].focus({ preventScroll: true });
+    } else if (event.key === "Tab") {
+        closeGlossaryFilterMenu(false);
+    }
+}, true);
 
 function setGlossaryCategory(catId) {
     activeGlossaryCategory = catId;
@@ -339,7 +425,7 @@ function renderGlossaryList() {
     if (filtered.length === 0) {
         container.innerHTML = `<div class="glossary-empty-state">
             <div class="empty-icon">${tramIcon("search")}</div>
-            <p class="empty-title">Không tìm thấy thuật ngữ phù hợp!</p>
+            <p class="empty-title">${activeGlossaryCategory !== "ALL" ? "Không có thuật ngữ nào trong nhóm này khớp với tìm kiếm!" : "Không tìm thấy thuật ngữ phù hợp!"}</p>
             <p class="empty-desc">
                 Bạn có thể thử tìm bằng từ tiếng Anh, tiếng Việt (có dấu hoặc không dấu), hoặc bấm <b>"+ Thêm Thuật Ngữ"</b> để lưu một mục mới trên máy.
             </p>
@@ -355,7 +441,7 @@ function renderGlossaryList() {
     container.innerHTML = filtered.map(item => `
         <div class="glossary-card">
             <div class="glossary-card-topbar">
-                <span class="glossary-term-badge cat-${getCategoryCssClass(item.category)}">${escapeHtml(item.category || 'Chung')}</span>
+                ${renderGlossaryGroupBadge(item)}
                 <div class="glossary-card-actions">
                     <button class="glossary-action-btn btn-copy" onclick="handleCopyTermClick(this, '${escapeHtml(item.vi)}')" title="Sao chép bản dịch vào bộ nhớ tạm">
                         <span class="btn-act-icon">${tramIcon("copy")}</span>
@@ -390,17 +476,12 @@ function renderGlossaryList() {
     `).join('');
 }
 
-function getCategoryCssClass(category) {
-    if (!category) return "default";
-    const c = category.toLowerCase();
-    if (c.includes("cốt truyện") || c.includes("thế giới")) return "story";
-    if (c.includes("chiến đấu") || c.includes("kỹ năng")) return "combat";
-    if (c.includes("nhân vật") || c.includes("đại từ")) return "character";
-    if (c.includes("quái vật") || c.includes("boss")) return "monster";
-    if (c.includes("hệ thống") || c.includes("giao diện")) return "system";
-    if (c.includes("địa danh") || c.includes("bản đồ")) return "location";
-    if (c.includes("vật phẩm") || c.includes("trang bị")) return "item";
-    return "default";
+function renderGlossaryGroupBadge(item) {
+    const group = getGlossaryGroupById(glossaryGroupOf(item, allGlossaryTerms));
+    const raw = item.category || "";
+    const label = group ? group.label : (raw || "Chung");
+    const title = group ? `${group.labelEn}${raw ? " · Sheet: " + raw : ""}` : raw;
+    return `<span class="glossary-term-badge cat-group-${group ? group.id : "default"}" title="${escapeHtml(title)}">${escapeHtml(label)}</span>`;
 }
 
 /**

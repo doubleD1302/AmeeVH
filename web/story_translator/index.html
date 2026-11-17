@@ -41,6 +41,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=1.5.0">
+    <link rel="stylesheet" href="css/glossary-groups.css?v=groups-r04">
     <script>try { if (localStorage.getItem("stella_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (_) {}</script>
     <link rel="stylesheet" href="assets/soft-sky/theme.css?v=1.4.0">
     <link rel="stylesheet" href="assets/soft-sky/theme-dark.css?v=1.4.0">
@@ -48,9 +49,10 @@
     <link rel="stylesheet" href="css/icon-controls.css?v=1.4.0">
     <link rel="stylesheet" href="css/wordmark.css?v=1.4.0">
     <link rel="stylesheet" href="css/translation-guide.css?v=guide-r04">
-    <link rel="stylesheet" href="css/collaboration.css?v=collab-r04">
+    <link rel="stylesheet" href="css/collaboration.css?v=collab-r05">
     <link rel="stylesheet" href="css/workspace-ux.css?v=ux-r12">
     <link rel="stylesheet" href="css/mobile-workspace.css?v=mobile-r01">
+    <link rel="stylesheet" href="css/motion.css?v=motion-r01">
 </head>
 <body>
     <!-- Scenic Wallpaper Background -->
@@ -120,6 +122,7 @@
             <button class="btn-circle" title="Từ Điển Thuật Ngữ" aria-label="Từ Điển Thuật Ngữ" onclick="openGlossaryModal()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary.svg" alt=""></span><span>Thuật ngữ</span></button>
             <details class="hud-more"><summary><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/settings.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/settings.svg" alt=""></span><span>Công cụ</span><span class="hud-more-chevron" aria-hidden="true"></span></summary><div class="hud-more-panel">
             <button id="reviewerAccessBtn" data-menu-label="Admin Portal" class="btn-circle" type="button" title="Nhập mã quản trị để mở Admin Portal" aria-label="Admin Portal" aria-pressed="false" onclick="openReviewerAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/approved.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/approved.svg" alt=""></span></button>
+            <button id="moderatorAccessBtn" data-menu-label="Moderator" class="btn-circle" type="button" title="Nhập mã Moderator để tự động duyệt bản dịch của bạn" aria-label="Moderator" aria-haspopup="dialog" aria-pressed="false" onclick="openModeratorAccess()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/medal.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/medal.svg" alt=""></span></button>
             <button id="installAppBtn" class="btn-circle install-app-btn" type="button" title="Cài đặt Trạm Dịch Thuật trên thiết bị" aria-label="Cài đặt ứng dụng"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/download.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/download.svg" alt=""></span><span class="install-app-label">Cài đặt</span></button>
             <button id="bgmToggleBtn" data-menu-label="Phát / tạm dừng nhạc" class="btn-circle" title="Bật/Tắt Nhạc Nền Game (Alt+M)" aria-label="Bật/Tắt Nhạc Nền Game" onclick="toggleBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/music.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/music.svg" alt=""></span></button>
             <button id="bgmNextBtn" data-menu-label="Bài nhạc tiếp theo" class="btn-circle" title="Chuyển bài nhạc kế tiếp (danh sách 2 bài vòng lặp)" aria-label="Bài nhạc kế tiếp" onclick="nextBgm()"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
@@ -363,17 +366,16 @@
                             </div>
 
                             <div class="add-term-field">
-                                <label for="selectTermCategory">Phân loại danh mục</label>
+                                <label for="selectTermCategory">Nhóm thuật ngữ</label>
                                 <div class="add-term-select-wrapper">
                                     <select id="selectTermCategory" class="add-term-select">
-                                        <option value="Cốt Truyện & Thế Giới">Cốt Truyện & Thế Giới</option>
-                                        <option value="Chiến Đấu & Kỹ Năng">Chiến Đấu & Kỹ Năng</option>
-                                        <option value="Nhân Vật & Đại Từ">Nhân Vật & Đại Từ</option>
-                                        <option value="Quái Vật & Boss">Quái Vật & Boss</option>
-                                        <option value="Giao Diện & Hệ Thống">Giao Diện & Hệ Thống</option>
-                                        <option value="Địa Danh & Bản Đồ">Địa Danh & Bản Đồ</option>
-                                        <option value="Vật Phẩm & Trang Bị">Vật Phẩm & Trang Bị</option>
-                                        <option value="Chung" selected>Chung</option>
+                                        <option value="Nhân vật & Danh xưng">Nhân vật & Danh xưng</option>
+                                        <option value="Tổ chức & Phe phái">Tổ chức & Phe phái</option>
+                                        <option value="Thế giới & Địa lý">Thế giới & Địa lý</option>
+                                        <option value="Lore & Thuật ngữ cốt truyện" selected>Lore & Thuật ngữ cốt truyện</option>
+                                        <option value="Vật phẩm & Trang bị">Vật phẩm & Trang bị</option>
+                                        <option value="Gameplay & Giao diện">Gameplay & Giao diện</option>
+                                        <option value="Sự kiện & Thời gian">Sự kiện & Thời gian</option>
                                     </select>
                                 </div>
                             </div>
@@ -397,12 +399,23 @@
 
             <!-- Search and Filter Bar -->
             <div class="glossary-toolbar">
-                <div class="glossary-search-wrapper">
+                <div class="glossary-toolbar-row">
+                    <div class="glossary-search-wrapper">
                     <span class="search-icon"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/search.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/search.svg" alt=""></span></span>
                     <input type="text" class="glossary-search-input" id="glossarySearchInput" placeholder="Tìm kiếm nhanh tiếng Anh, tiếng Việt (có dấu hoặc không dấu)..." oninput="onGlossarySearch(this.value)">
                     <button class="search-clear-btn" id="glossarySearchClear" onclick="clearGlossarySearch()" style="display:none;" aria-label="Xóa tìm kiếm"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/close.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/close.svg" alt=""></span></button>
                 </div>
-                <div class="glossary-cat-pills" id="glossaryCatPills"></div>
+                    <div class="glossary-filter" id="glossaryFilter">
+                        <button type="button" class="glossary-filter-btn" id="glossaryFilterBtn" aria-haspopup="true" aria-expanded="false" aria-controls="glossaryFilterMenu" onclick="toggleGlossaryFilterMenu()">
+                            <span class="filter-btn-icon"><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/glossary-filter.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/glossary-filter.svg" alt=""></span></span>
+                            <span class="filter-btn-label">Bộ lọc</span>
+                            <span class="filter-btn-value" id="glossaryFilterValue" hidden></span>
+                            <span class="filter-btn-caret" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="glossary-filter-clear" id="glossaryFilterClear" aria-label="Bỏ bộ lọc" title="Bỏ bộ lọc" onclick="setGlossaryCategory('ALL')" hidden>✕</button>
+                        <div class="glossary-filter-menu" id="glossaryFilterMenu" role="menu" aria-label="Lọc thuật ngữ theo nhóm" hidden></div>
+                    </div>
+                </div>
             </div>
 
             <!-- Terms List Container -->
@@ -437,17 +450,18 @@
     <script src="js/models/UserModel.js?v=1.4.0"></script>
     <script src="js/models/CharacterModel.js?v=1.4.0"></script>
     <script src="js/models/TokenModel.js?v=1.4.0"></script>
-    <script src="js/models/GlossaryModel.js?v=1.4.0"></script>
-    <script src="js/models/CollaborationModel.js?v=ux-r02"></script>
+    <script src="js/models/GlossaryGroups.js?v=groups-r01"></script>
+    <script src="js/models/GlossaryModel.js?v=groups-r01"></script>
+    <script src="js/models/CollaborationModel.js?v=ux-r04"></script>
     <script src="js/models/StoryModel.js?v=ux-r09"></script>
 
     <!-- Views -->
     <script src="js/views/ToastView.js?v=1.4.0"></script>
     <script src="js/views/HudView.js?v=ux-r09"></script>
     <script src="js/views/CardView.js?v=ux-r06"></script>
-    <script src="js/views/CollaborationView.js?v=ux-r14"></script>
-    <script src="js/views/TableView.js?v=ux-r10"></script>
-    <script src="js/views/GlossaryView.js?v=1.4.0"></script>
+    <script src="js/views/CollaborationView.js?v=ux-r16"></script>
+    <script src="js/views/TableView.js?v=ux-r11"></script>
+    <script src="js/views/GlossaryView.js?v=groups-r04"></script>
     <script src="js/views/ProfileView.js?v=1.4.0"></script>
     <script src="js/views/LeaderboardView.js?v=1.4.0"></script>
 
@@ -463,6 +477,7 @@
     <script src="js/mobile-workspace.js?v=mobile-r02"></script>
 
     <!-- Main Bootstrapper -->
+    <script src="js/motion.js?v=motion-r01"></script>
     <script src="js/app.js?v=1.4.0"></script>
 </body>
 </html>

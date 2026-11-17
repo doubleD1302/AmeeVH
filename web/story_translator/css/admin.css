@@ -500,3 +500,9 @@ a { color: inherit; text-decoration: none; }
     .header-avatar { display: none; }
     .header-guide { padding-inline: 10px; }
 }
+.mod-code-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
+.mod-code { padding: 5px 10px; border: 1px solid var(--admin-line); border-radius: 9px; background: var(--admin-soft); color: var(--admin-ink); font: 700 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .06em; overflow-wrap: anywhere; user-select: all; }
+.mod-code-missing { max-width: 46ch; color: var(--admin-muted); font-size: 11px; line-height: 1.5; }
+.mod-meta { display: flex; flex-direction: column; gap: 2px; }
+.mod-meta span { display: block; line-height: 1.5; }
+.mod-meta span:empty { display: none; }

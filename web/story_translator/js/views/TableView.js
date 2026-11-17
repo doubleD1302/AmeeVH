@@ -52,7 +52,7 @@ function renderListMode() {
             if (item.provenance === 'legacy_import') panel.append(el('p', 'compact-detail-note', 'Dữ liệu nhập cũ: lịch sử trước khi bật cộng tác chưa được xác minh.'));
             details.append(summary, panel);
             const buttons = el('div', 'collab-actions');
-            for (const [text, handler] of [[Collaboration.hasText(item) ? 'Đề xuất sửa' : 'Dịch câu này', () => CollaborationView.openEdit(item)], ['Xem lịch sử', () => CollaborationView.openHistory(item)], ['Báo vấn đề', () => CollaborationView.openEdit(item, undefined, { mode: 'report' })]]) {
+            for (const [text, handler] of [[Collaboration.hasText(item) ? (Collaboration.canModerate ? 'Sửa bản dịch' : 'Đề xuất sửa') : 'Dịch câu này', () => CollaborationView.openEdit(item)], ['Xem lịch sử', () => CollaborationView.openHistory(item)], ['Báo vấn đề', () => CollaborationView.openEdit(item, undefined, { mode: 'report' })]]) {
                 const button = el('button', 'btn-direction', text); button.type = 'button'; button.addEventListener('click', handler); buttons.append(button);
             }
             const hint = el('span', 'compact-row-hint', Collaboration.hasText(item) ? 'Nhấn để đề xuất sửa' : 'Nhấn để dịch câu này');

@@ -142,7 +142,7 @@ function searchGlossaryTerms(searchTerm, category = "ALL") {
     
     let list = allGlossaryTerms;
     if (category && category !== "ALL") {
-        list = list.filter(t => t.category === category);
+        list = list.filter(t => glossaryGroupOf(t, allGlossaryTerms) === category);
     }
 
     if (!searchTerm || !searchTerm.trim()) {
@@ -158,7 +158,8 @@ function searchGlossaryTerms(searchTerm, category = "ALL") {
         const viClean = removeVietnameseTones(vi);
         const notes = (item.notes || "").toLowerCase();
         const notesClean = removeVietnameseTones(notes);
-        const cat = (item.category || "").toLowerCase();
+        const groupInfo = getGlossaryGroupById(glossaryGroupOf(item, allGlossaryTerms));
+        const cat = `${item.category || ""} ${groupInfo ? groupInfo.label + " " + groupInfo.labelEn : ""}`.toLowerCase();
 
         return en.includes(rawTerm) ||
                vi.includes(rawTerm) ||
@@ -202,7 +203,7 @@ function detectGlossaryMatches(text) {
 async function addGlossaryTerm(termData) {
     const en = (termData.en || "").trim();
     const vi = (termData.vi || "").trim();
-    const category = (termData.category || "").trim() || "Chung";
+    const category = (termData.category || "").trim() || getGlossaryGroupById(GLOSSARY_DEFAULT_GROUP).label;
     const notes = (termData.notes || "").trim();
     const translator = (typeof currentTranslator !== "undefined" && currentTranslator) ? currentTranslator : "Nhà Thám Hiểm";
 
@@ -316,8 +317,8 @@ async function updateGlossaryTerm(termData) {
         id: termData.id || allGlossaryTerms[index].id || "",
         en,
         vi,
-        category: (termData.category || "Chung").trim() || "Chung",
-        raw_category: (termData.category || "Chung").trim() || "Chung",
+        category: (termData.category || "").trim() || allGlossaryTerms[index].category || "Chung",
+        raw_category: (termData.category || "").trim() || allGlossaryTerms[index].category || "Chung",
         notes: (termData.notes || "").trim(),
         status: allGlossaryTerms[index].status || "approved"
     };

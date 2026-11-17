@@ -1,7 +1,7 @@
 import { HANDOFF_RESOURCES } from './handoff-resources.mjs';
 // D1 collaboration adapter.
 import {sessionUser,attachSession} from './identity.mjs';
-const CHAPTERS = new Set(['Chuong_0_MainStory','Chuong_1_MainStory','Chuong_2_MainStory','Chuong_3_MainStory','Chuong_4_MainStory','Chuong_5_MainStory','Chuong_6_MainStory','Chuong_7_MainStory','Chuong_8_MainStory','Chuong_9_MainStory','Ngoai_Truyen_STsp','Uy_Thac_Hoi_Quan_BBm','Hen_Ho_Dating_DP','Tin_Nhan_Dien_Thoai_PM','Cot_Truyen_Su_Kien_STev','Kich_Ban_CG_Memory']);
+const CHAPTERS = new Set(['Chuong_0_MainStory','Chuong_1_MainStory','Chuong_2_MainStory','Chuong_3_MainStory','Chuong_4_MainStory','Chuong_5_MainStory','Chuong_6_MainStory','Chuong_7_MainStory','Chuong_8_MainStory','Chuong_9_MainStory','Chuong_10_MainStory','Ngoai_Truyen_STsp','Uy_Thac_Hoi_Quan_BBm','Hen_Ho_Dating_DP','Tin_Nhan_Dien_Thoai_PM','Cot_Truyen_Su_Kien_STev','Kich_Ban_CG_Memory']);
 const STATES = new Set(['untranslated','pending','approved','needs_review','machine_pending']);
 const ORIGINS = new Set(['human','machine','unknown']);
 const TOKEN = /==[A-Za-z0-9_]+==|<[^<>\n]+>|\$\{[^{}\n]+\}|\{[A-Za-z0-9_]+\}|\$[A-Za-z_][\w.]*\$|%(?:\d+\$)?[-+#0]*\d*(?:\.\d+)?[diuoxXfFeEgGcs]|\[\/?(?:color|size|b|i|url|sprite)[^\]\n]*\]|\\n/g;
@@ -118,6 +118,208 @@ async function scopedReviewerAllowed(request,env,scope='review'){
  const b=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(configured)));
  let difference=0;for(let i=0;i<a.length;i++)difference|=a[i]^b[i];return difference===0;
 }
+// ---------------------------------------------------------------------------------------------
+// Moderators: per-person codes stored in D1 (table moderator_codes).
+// A code is bound to the first translator name that activates it. A session user counts as a
+// Moderator only while the activated code is valid, not revoked, and the display name still
+// matches the bound name. Moderator submissions are approved immediately (and still logged).
+// ---------------------------------------------------------------------------------------------
+const MODERATOR_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // 32 symbols: 256 % 32 === 0, so no modulo bias
+const DEFAULT_DISPLAY_NAME = 'Dịch giả';
+const MODERATOR_FAIL_LIMIT = 10;
+const MODERATOR_LOCK_MS = 300000;
+const normalizeName = value => String(value || '').normalize('NFKC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('vi');
+const normalizeCode = value => String(value || '').normalize('NFKC').toUpperCase().replace(/[^A-Z0-9]/g, '');
+
+// The canonical hash comes first (used for new codes). The other candidates make activation tolerant of
+// codes that were stored with a plain SHA-256 of the typed text.
+async function moderatorHashCandidates(code) {
+ const raw = String(code || '').normalize('NFKC').trim();
+ return [...new Set([await sourceHash(normalizeCode(raw)), await sourceHash(raw), await sourceHash(raw.toUpperCase())])];
+}
+function generateModeratorCode() {
+ const chars = [...crypto.getRandomValues(new Uint8Array(20))].map(byte => MODERATOR_ALPHABET[byte % MODERATOR_ALPHABET.length]);
+ return [0, 5, 10, 15].map(start => chars.slice(start, start + 5).join('')).join('-');
+}
+const toBase64 = bytes => btoa(String.fromCharCode(...bytes));
+const fromBase64 = text => Uint8Array.from(atob(text), char => char.charCodeAt(0));
+async function moderatorCipherKey(env) {
+ const secret = reviewerKeys(env)[0];
+ if (!secret) return null;
+ const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('tramvh-moderator-cipher:' + secret));
+ return crypto.subtle.importKey('raw', digest, 'AES-GCM', false, ['encrypt', 'decrypt']);
+}
+async function encryptModeratorCode(env, code) {
+ const key = await moderatorCipherKey(env);
+ if (!key) return null;
+ const iv = crypto.getRandomValues(new Uint8Array(12));
+ const sealed = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(code)));
+ return `v1.${toBase64(iv)}.${toBase64(sealed)}`;
+}
+async function decryptModeratorCode(env, cipher) {
+ try {
+  const match = /^v1\.([A-Za-z0-9+/=]+)\.([A-Za-z0-9+/=]+)$/.exec(String(cipher || ''));
+  const key = match && await moderatorCipherKey(env);
+  if (!key) return null;
+  const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: fromBase64(match[1]) }, key, fromBase64(match[2]));
+  return new TextDecoder().decode(plain);
+ } catch (_) { return null; }
+}
+async function isModerator(env, user) {
+ if (!user?.moderator_code_hash) return false;
+ try {
+  const row = await stmt(env, 'SELECT 1 AS ok FROM moderator_codes WHERE code_hash=? AND revoked_at IS NULL AND bound_name_norm=?', [user.moderator_code_hash, normalizeName(user.display_name)]).first();
+  return !!row;
+ } catch (_) { return false; } // table missing on an old database: nobody is a Moderator
+}
+// Never expose internal columns (such as moderator_code_hash) to the browser.
+async function publicUser(env, user, displayName = user.display_name) {
+ return { id: user.id, display_name: displayName, is_moderator: await isModerator(env, { ...user, display_name: displayName }) };
+}
+async function moderatorLocked(env, fingerprint) {
+ try {
+  const row = await stmt(env, 'SELECT failures,window_started,locked_until FROM admin_auth_attempts WHERE key_hash=?', [fingerprint]).first();
+  return !!(row?.locked_until && Date.parse(row.locked_until) > Date.now());
+ } catch (_) { return false; }
+}
+async function moderatorFailed(env, fingerprint) {
+ try {
+  const nowMs = Date.now();
+  const previous = await stmt(env, 'SELECT failures,window_started FROM admin_auth_attempts WHERE key_hash=?', [fingerprint]).first();
+  const window = previous && nowMs - Date.parse(previous.window_started) <= MODERATOR_LOCK_MS ? previous : { failures: 0, window_started: new Date(nowMs).toISOString() };
+  const failures = Number(window.failures || 0) + 1;
+  const locked = failures >= MODERATOR_FAIL_LIMIT ? new Date(nowMs + MODERATOR_LOCK_MS).toISOString() : null;
+  await stmt(env, 'INSERT INTO admin_auth_attempts(key_hash,failures,window_started,locked_until) VALUES(?,?,?,?) ON CONFLICT(key_hash) DO UPDATE SET failures=excluded.failures,window_started=excluded.window_started,locked_until=excluded.locked_until', [fingerprint, failures, window.window_started, locked]).run();
+ } catch (_) { /* throttling is best effort; the code space is far too large to guess anyway */ }
+}
+async function moderatorCleared(env, fingerprint) {
+ try { await stmt(env, 'DELETE FROM admin_auth_attempts WHERE key_hash=?', [fingerprint]).run(); } catch (_) { /* ignore */ }
+}
+// POST /api/collab/moderator  { action: 'activate', code } | { action: 'deactivate' }
+async function moderatorSession(request, env, body, user) {
+ const action = bounded(body.action, 'Thao tác', 32, true);
+ if (action === 'deactivate') {
+  await stmt(env, 'UPDATE users SET moderator_code_hash=NULL,updated_at=? WHERE id=?', [now(), user.id]).run();
+  return json({ success: true, user: { id: user.id, display_name: user.display_name, is_moderator: false } });
+ }
+ if (action !== 'activate') fail(400, 'invalid_action', 'Thao tác Moderator không hợp lệ.');
+ if (normalizeName(user.display_name) === normalizeName(DEFAULT_DISPLAY_NAME)) fail(400, 'name_required', 'Hãy đặt tên dịch giả riêng trong Hồ sơ trước khi bật Moderator.');
+ const code = bounded(body.code, 'Mã Moderator', 200, true);
+ const fingerprint = await sourceHash('moderator:' + (request.headers.get('CF-Connecting-IP') || 'unknown'));
+ if (await moderatorLocked(env, fingerprint)) fail(429, 'too_many_attempts', 'Nhập sai quá nhiều lần. Hãy thử lại sau ít phút.');
+ const candidates = await moderatorHashCandidates(code);
+ const row = await stmt(env, `SELECT * FROM moderator_codes WHERE code_hash IN (${candidates.map(() => '?').join(',')}) AND revoked_at IS NULL`, candidates).first();
+ if (!row) { await moderatorFailed(env, fingerprint); fail(403, 'moderator_invalid', 'Mã Moderator không đúng hoặc đã bị thu hồi.'); }
+ const name = normalizeName(user.display_name);
+ const mismatch = () => fail(403, 'moderator_name_mismatch', 'Mã này đã gắn với một tên dịch giả khác. Hãy đặt đúng tên đó trong Hồ sơ rồi nhập lại.');
+ if (row.bound_name_norm && row.bound_name_norm !== name) mismatch();
+ if (!row.bound_name_norm) {
+  // First use: bind the code to this translator name. Only one concurrent claim can win.
+  await stmt(env, 'UPDATE moderator_codes SET bound_name=?,bound_name_norm=?,claimed_at=? WHERE id=? AND bound_name_norm IS NULL AND revoked_at IS NULL', [user.display_name, name, now(), row.id]).run();
+ }
+ const bound = await stmt(env, 'SELECT bound_name_norm FROM moderator_codes WHERE id=? AND revoked_at IS NULL', [row.id]).first();
+ if (!bound) fail(403, 'moderator_invalid', 'Mã Moderator không đúng hoặc đã bị thu hồi.');
+ if (bound.bound_name_norm !== name) mismatch();
+ await stmt(env, 'UPDATE users SET moderator_code_hash=?,updated_at=? WHERE id=?', [row.code_hash, now(), user.id]).run();
+ await moderatorCleared(env, fingerprint);
+ return json({ success: true, user: { id: user.id, display_name: user.display_name, is_moderator: true } });
+}
+
+// GET /api/admin/moderators
+async function adminModeratorList(request, env) {
+ await requireAdmin(request, env, 'review');
+ const rows = (await stmt(env, 'SELECT m.id,m.label,m.bound_name,m.created_by,m.created_at,m.claimed_at,m.revoked_at,m.code_cipher,(SELECT count(*) FROM users u WHERE u.moderator_code_hash=m.code_hash) AS devices FROM moderator_codes m ORDER BY m.created_at DESC,m.id DESC').all()).results || [];
+ const items = [];
+ for (const row of rows) {
+  const { code_cipher, ...item } = row;
+  const code = row.revoked_at ? null : await decryptModeratorCode(env, code_cipher);
+  items.push({ ...item, devices: Number(item.devices || 0), ...(code ? { code } : {}) });
+ }
+ return json({ success: true, data: { items } });
+}
+// POST /api/admin/moderators  { action: 'create', label } | { action: 'revoke'|'unlink', id }
+async function adminModeratorAction(request, env, body, user) {
+ await requireAdmin(request, env, 'review');
+ const action = bounded(body.action, 'Thao tác', 32, true);
+ if (action === 'create') {
+  const label = bounded(body.label, 'Tên gợi nhớ', 80, true);
+  const code = generateModeratorCode(), id = uuid(), hash = (await moderatorHashCandidates(code))[0], time = now();
+  await stmt(env, 'INSERT INTO moderator_codes(id,code_hash,label,created_by,created_at,code_cipher) VALUES(?,?,?,?,?,?)', [id, hash, label, user.display_name, time, await encryptModeratorCode(env, code)]).run();
+  return json({ success: true, data: { id, label, code, created_at: time } }, 201);
+ }
+ if (action !== 'revoke' && action !== 'unlink') fail(400, 'invalid_action', 'Thao tác Moderator không hợp lệ.');
+ const id = bounded(body.id, 'ID mã', 128, true);
+ const row = await stmt(env, 'SELECT * FROM moderator_codes WHERE id=?', [id]).first();
+ if (!row) fail(404, 'not_found', 'Không tìm thấy mã Moderator.');
+ const time = now();
+ if (action === 'revoke') {
+  await env.DB.batch([
+   stmt(env, 'UPDATE moderator_codes SET revoked_at=COALESCE(revoked_at,?) WHERE id=?', [time, id]),
+   stmt(env, 'UPDATE users SET moderator_code_hash=NULL WHERE moderator_code_hash=?', [row.code_hash]),
+  ]);
+  return json({ success: true, data: { id, revoked_at: row.revoked_at || time } });
+ }
+ if (row.revoked_at) fail(409, 'code_revoked', 'Mã đã bị thu hồi, không thể gỡ liên kết.');
+ await env.DB.batch([
+  stmt(env, 'UPDATE moderator_codes SET bound_name=NULL,bound_name_norm=NULL,claimed_at=NULL WHERE id=?', [id]),
+  stmt(env, 'UPDATE users SET moderator_code_hash=NULL WHERE moderator_code_hash=?', [row.code_hash]),
+ ]);
+ return json({ success: true, data: { id, bound_name: null } });
+}
+
+// ---------------------------------------------------------------------------------------------
+// Bulk approve: POST /api/admin/bulk_approve { chapter_id, scene_id, reason, dry_run }
+// Approves only 'pending' lines that have a real translation, no pending proposal and valid tokens.
+// A dry run reports the plan; a real run approves at most BULK_APPROVE_LIMIT lines per request and
+// writes one history entry per line, so every change can be inspected and restored line by line.
+// ---------------------------------------------------------------------------------------------
+const BULK_APPROVE_LIMIT = 200;
+async function adminBulkApprove(request, env, body, user) {
+ await requireAdmin(request, env, 'review');
+ const chapter = bounded(body.chapter_id, 'Chương', 120, true);
+ const sceneId = bounded(body.scene_id ?? '', 'Cảnh', 240);
+ const reason = bounded(body.reason, 'Lý do', 2000, true);
+ const dryRun = body.dry_run !== false; // anything but an explicit false is a dry run
+ const release = await dataset(env);
+ if (release.phase === 'publishing') fail(423, 'dataset_locked', 'Phiên dữ liệu đang xuất bản; chưa thể duyệt.');
+ const source = await adminChapterAsset(request, env, chapter);
+ const scoped = adminFlatten(source).filter(line => !sceneId || String(line.scene_id) === sceneId);
+ if (sceneId && !scoped.length) fail(400, 'invalid_scene', 'Không tìm thấy cảnh trong chương.');
+ const rows = (await stmt(env, "SELECT l.*,(SELECT count(*) FROM proposals p WHERE p.chapter_id=l.chapter_id AND p.line_id=l.line_id AND p.state='pending') AS pending_proposals FROM lines l WHERE l.chapter_id=?", [chapter]).all()).results || [];
+ const byId = new Map(rows.map(row => [row.line_id, row]));
+ const skipped = { co_de_xuat_cho: 0, chua_co_ban_dich: 0, con_nguyen_tieng_anh: 0, loi_ma_dinh_dang: 0 };
+ let notInDatabase = 0;
+ const candidates = [];
+ for (const raw of scoped) {
+  const row = byId.get(String(raw.line_id));
+  if (!row) { notInDatabase += 1; continue; }
+  if (row.status !== 'pending' || row.en !== String(raw.en || '')) continue; // only current, human, waiting lines
+  if (!hasTranslation(row)) { skipped.chua_co_ban_dich += 1; continue; }
+  if (row.new_vi.trim() === String(row.en || '').trim()) { skipped.con_nguyen_tieng_anh += 1; continue; }
+  if (Number(row.pending_proposals) > 0) { skipped.co_de_xuat_cho += 1; continue; }
+  try { validateTranslation(row.en, row.new_vi); }
+  catch (error) { if (error instanceof DomainError) { skipped.loi_ma_dinh_dang += 1; continue; } throw error; }
+  candidates.push(row);
+ }
+ const plan = { dry_run: dryRun, chapter_id: chapter, scene_id: sceneId, candidates: candidates.length, skipped, not_in_database: notInDatabase };
+ if (dryRun) return json({ success: true, data: plan });
+ const actor = user.display_name, time = now(), historyReason = 'Duyệt hàng loạt: ' + reason;
+ const batch = candidates.slice(0, BULK_APPROVE_LIMIT);
+ const phase = "EXISTS(SELECT 1 FROM dataset_state WHERE id=1 AND version=? AND phase IN ('open','locked'))";
+ const statements = [];
+ for (const row of batch) {
+  const { pending_proposals, ...line } = row;
+  const after = { ...line, status: 'approved', revision: line.revision + 1, approved_by: actor, approved_at: time };
+  const eligible = "EXISTS(SELECT 1 FROM lines WHERE chapter_id=? AND line_id=? AND revision=? AND source_hash=? AND status='pending') AND NOT EXISTS(SELECT 1 FROM proposals WHERE chapter_id=? AND line_id=? AND state='pending') AND " + phase;
+  const values = [line.chapter_id, line.line_id, line.revision, line.source_hash, line.chapter_id, line.line_id, release.version];
+  statements.push(eventStatement(env, line, after, 'approved', actor, historyReason, uuid(), time, 'WHERE ' + eligible, values));
+  statements.push(stmt(env, "UPDATE lines SET status='approved',revision=?,approved_by=?,approved_at=? WHERE chapter_id=? AND line_id=? AND revision=? AND source_hash=? AND status='pending' AND NOT EXISTS(SELECT 1 FROM proposals p WHERE p.chapter_id=lines.chapter_id AND p.line_id=lines.line_id AND p.state='pending') AND " + phase, [after.revision, actor, time, line.chapter_id, line.line_id, line.revision, line.source_hash, release.version]));
+ }
+ const results = statements.length ? await env.DB.batch(statements) : [];
+ const approved = results.filter((result, index) => index % 2 === 1 && result.meta?.changes === 1).length;
+ return json({ success: true, data: { ...plan, dry_run: false, approved, remaining: candidates.length - approved } });
+}
+
 async function publishedManifest(env,verifyFiles=false){
  const response=await env.ASSETS.fetch(new Request('https://assets.invalid/data/dataset-manifest.json'));
  if(!response.ok)fail(409,'manifest_missing','Chưa có manifest dữ liệu trên bản web đang phát hành.');
@@ -232,15 +434,28 @@ async function submit(request,env,body,user){
  const actor=user.display_name;
  if(!['human','machine'].includes(body.origin))fail(400,'invalid_origin','Hãy chọn nguồn bản dịch.');
  const notes=bounded(body.notes??'','Ghi chú',4000),detail=bounded(body.reason_detail??'','Lý do chi tiết',2000);
+ // Moderator status is decided by the server from the session; a client that expects it but no longer has it must fail loudly.
+ const moderator=await isModerator(env,user);
+ if(body.expect_moderator===true&&!moderator)fail(403,'moderator_invalid','Mã Moderator không hợp lệ hoặc đã bị đổi. Hãy tắt chế độ Moderator rồi nhập lại mã.');
+ const modActor=actor+' (Moderator)';
  const ctx=await mutationContext(request,env,body,'submit');if(ctx.replay)return ctx.replay;
  const current=ctx.current,text=validateTranslation(current.en,body.text_vi),time=now();
  if(!hasTranslation(current)){
-  const after={...current,new_vi:text,translator:actor,status:body.origin==='machine'?'machine_pending':'pending',translation_origin:body.origin,notes,revision:current.revision+1,updated_at:time,approved_by:null,approved_at:null,provenance:'contributor'};
-  return commitMutation(env,body,ctx.payload_hash,current,after,'translation_saved',actor,'Bản dịch đầu tiên.','saved');
+  const after={...current,new_vi:text,translator:actor,status:moderator?'approved':body.origin==='machine'?'machine_pending':'pending',translation_origin:body.origin,notes,revision:current.revision+1,updated_at:time,approved_by:moderator?modActor:null,approved_at:moderator?time:null,provenance:moderator?'moderator':'contributor'};
+  return commitMutation(env,body,ctx.payload_hash,current,after,'translation_saved',actor,moderator?'Bản dịch đầu tiên (Moderator, tự động duyệt).':'Bản dịch đầu tiên.',moderator?'moderator_saved':'saved');
  }
  if(!['meaning','pronouns','naturalness','other'].includes(body.reason))fail(400,'reason_required','Chọn lý do đề xuất sửa.');
  if(text===current.new_vi&&notes===current.notes)fail(400,'no_change','Đề xuất chưa có thay đổi.');
  const existing=await stmt(env,'SELECT * FROM proposals WHERE chapter_id=? AND line_id=? AND dataset_version=? AND user_id=?',[current.chapter_id,current.line_id,ctx.release.version,user.id]).first();
+ if(moderator){
+  // Moderator edit: applied and approved immediately. The proposal row is kept as 'accepted' (so admins still get the record
+  // and the one-proposal-per-user unique index is respected) but it never appears in the pending review queue.
+  const id=existing?.id||uuid(),after={...current,new_vi:text,translator:actor,translation_origin:body.origin,notes,status:'approved',revision:current.revision+1,updated_at:time,approved_by:modActor,approved_at:time,provenance:'moderator'};
+  const extra=existing
+   ?(guard,bind)=>stmt(env,`UPDATE proposals SET text_vi=?,translator=?,origin=?,notes=?,reason=?,reason_detail=?,updated_at=?,base_revision=?,base_source_hash=?,base_text=?,state='accepted',reviewed_by=?,reviewed_at=? WHERE id=? AND user_id=? ${guard.replace(/^WHERE/,'AND')}`,[text,actor,body.origin,notes,body.reason,detail,time,current.revision,current.source_hash,current.new_vi,modActor,time,id,user.id,...bind])
+   :(guard,bind)=>stmt(env,`INSERT INTO proposals(id,chapter_id,line_id,text_vi,translator,origin,notes,reason,reason_detail,created_at,state,base_revision,base_source_hash,base_text,user_id,dataset_version,updated_at,reviewed_by,reviewed_at) SELECT ?,?,?,?,?,?,?,?,?,?,'accepted',?,?,?,?,?,?,?,? ${guard}`,[id,current.chapter_id,current.line_id,text,actor,body.origin,notes,body.reason,detail,time,current.revision,current.source_hash,current.new_vi,user.id,ctx.release.version,time,modActor,time,...bind]);
+  return commitMutation(env,body,ctx.payload_hash,current,after,'moderator_approved',actor,body.reason+(detail?': '+detail:''),'moderator_saved',[extra],id);
+ }
  if(existing?.state!=='pending'&&existing)fail(409,'proposal_closed','Đề xuất của bạn trong phiên này đã được xử lý.');
  if(existing&&text===existing.text_vi&&notes===existing.notes&&body.reason===existing.reason&&detail===existing.reason_detail)fail(400,'no_change','Đề xuất của bạn chưa có thay đổi.');
  const id=existing?.id||uuid(),after={...current,revision:current.revision+1};
@@ -417,6 +632,9 @@ async function handleAdmin(request,env,url,body,session){
  if(path==='/exports'&&request.method==='GET')return adminExports(request,env,url);
  if(path==='/exports'&&request.method==='POST')return adminCreateExport(request,env,body,session.user);
  if(path==='/audit'&&request.method==='GET')return adminAudit(request,env,url);
+ if(path==='/moderators'&&request.method==='GET')return adminModeratorList(request,env);
+ if(path==='/moderators'&&request.method==='POST')return adminModeratorAction(request,env,body,session.user);
+ if(path==='/bulk_approve'&&request.method==='POST')return adminBulkApprove(request,env,body,session.user);
  const match=path.match(/^\/exports\/([^/]+)\/download$/);if(match&&request.method==='GET')return adminDownload(request,env,url,match[1]);
  return json({success:false,code:'not_found',message:'Không tìm thấy Admin API.'},404);
 }
@@ -435,7 +653,7 @@ export async function handleCollaboration(request,env){
   }
   if(path==='/api/collab/me'&&request.method==='GET'){
    const session=await sessionUser(request,env,true);
-   return attachSession(json({success:true,user:session.user,new_user:session.created}),session);
+   return attachSession(json({success:true,user:await publicUser(env,session.user),new_user:session.created}),session);
   }
   if(path==='/api/collab/release'&&request.method==='GET'){
    if(!reviewerKeys(env).length||!await reviewerAllowed(request,env))fail(403,'forbidden','Cần quyền duyệt để xem quản lý phiên.');
@@ -467,9 +685,10 @@ export async function handleCollaboration(request,env){
   if(path==='/api/collab/profile'){
    const name=bounded(body.display_name,'Tên hiển thị',80,true);
    await stmt(env,'UPDATE users SET display_name=?,updated_at=? WHERE id=?',[name,now(),session.user.id]).run();
-   return json({success:true,user:{...session.user,display_name:name}});
+   return json({success:true,user:await publicUser(env,session.user,name)});
   }
   if(path==='/api/collab/release')return await releaseAction(request,env,body,session.user);
+  if(path==='/api/collab/moderator')return await moderatorSession(request,env,body,session.user);
   if(path==='/api/collab/submit')return await submit(request,env,body,session.user);
   if(path==='/api/collab/report')return await report(request,env,body,session.user);
   if(path==='/api/collab/review')return await review(request,env,body,session.user);

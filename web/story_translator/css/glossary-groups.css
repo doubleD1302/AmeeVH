@@ -1,0 +1,337 @@
+/* ==========================================================
+   Bộ lọc nhóm của từ điển thuật ngữ (GlossaryGroups.js)
+   Một nút "Bộ lọc" mở menu 7 nhóm + "Tất cả".
+   --g  : màu nhóm dạng "r, g, b" (dùng cho viền/nền/chấm)
+   --gt : màu chữ trên nền tối   --gtl : màu chữ trên nền sáng
+   ========================================================== */
+
+.pill-g-characters,    .cat-group-characters    { --g: 168, 85, 247;  --gt: #d8b4fe; --gtl: #7e22ce; }
+.pill-g-organizations, .cat-group-organizations { --g: 236, 72, 153;  --gt: #f9a8d4; --gtl: #be185d; }
+.pill-g-world,         .cat-group-world         { --g: 16, 185, 129;  --gt: #6ee7b7; --gtl: #047857; }
+.pill-g-lore,          .cat-group-lore          { --g: 56, 189, 248;  --gt: #7dd3fc; --gtl: #0369a1; }
+.pill-g-items,         .cat-group-items         { --g: 245, 158, 11;  --gt: #fde047; --gtl: #a16207; }
+.pill-g-gameplay,      .cat-group-gameplay      { --g: 99, 102, 241;  --gt: #a5b4fc; --gtl: #4338ca; }
+.pill-g-events,        .cat-group-events        { --g: 249, 115, 22;  --gt: #fdba74; --gtl: #c2410c; }
+.pill-g-ALL                                     { --g: 56, 189, 248; }
+
+/* ---------- Hàng công cụ: ô tìm kiếm + nút Bộ lọc ---------- */
+.glossary-toolbar-row {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.glossary-toolbar-row .glossary-search-wrapper {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+}
+
+.glossary-filter {
+    flex: none;
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+
+    /* Giao diện sáng (mặc định): cùng bảng màu với ô tìm kiếm */
+    --gf-btn-bg: #ffffff;
+    --gf-btn-border: #d2e3e8;
+    --gf-btn-text: #29495a;
+    --gf-btn-sub: #527584;
+    --gf-menu-bg: #ffffff;
+    --gf-menu-border: #cfe3e8;
+    --gf-menu-text: #25505f;
+    --gf-hover: #eaf5f7;
+    --gf-count-bg: rgba(40, 92, 110, 0.1);
+    --gf-shadow: 0 16px 40px rgba(8, 20, 40, 0.35);
+}
+
+html[data-theme="dark"] .glossary-filter {
+    --gf-btn-bg: rgba(5, 9, 18, 0.85);
+    --gf-btn-border: rgba(255, 255, 255, 0.16);
+    --gf-btn-text: #e2f0f7;
+    --gf-btn-sub: #9ab8c6;
+    --gf-menu-bg: #0f1a31;
+    --gf-menu-border: rgba(56, 189, 248, 0.32);
+    --gf-menu-text: #dbeaf3;
+    --gf-hover: rgba(56, 189, 248, 0.14);
+    --gf-count-bg: rgba(255, 255, 255, 0.1);
+    --gf-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.glossary-filter [hidden],
+.glossary-filter-menu[hidden] {
+    display: none !important;
+}
+
+/* ---------- Nút Bộ lọc ---------- */
+.glossary-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 320px;
+    padding: 0 14px 0 12px;
+    background: var(--gf-btn-bg);
+    border: 1px solid var(--gf-btn-border);
+    border-radius: 12px;
+    color: var(--gf-btn-text);
+    font-family: var(--font-main);
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.glossary-filter-btn:hover,
+.glossary-filter.open .glossary-filter-btn {
+    border-color: var(--cyan-primary, #38bdf8);
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.28);
+}
+
+.glossary-filter-btn:focus-visible,
+.glossary-filter-item:focus-visible,
+.glossary-filter-clear:focus-visible {
+    outline: 2px solid var(--cyan-primary, #38bdf8);
+    outline-offset: 2px;
+}
+
+.glossary-filter-btn.has-filter {
+    border-color: rgba(var(--g, 56, 189, 248), 0.8);
+}
+
+.glossary-filter-btn .filter-btn-icon .tram-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.filter-btn-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 3px 10px 3px 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(var(--g, 56, 189, 248), 0.16);
+    border: 1px solid rgba(var(--g, 56, 189, 248), 0.5);
+    color: var(--gtl, var(--gf-btn-text));
+}
+
+html[data-theme="dark"] .filter-btn-value {
+    color: var(--gt, var(--gf-btn-text));
+}
+
+.filter-btn-value .value-text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 190px;
+}
+
+.filter-btn-caret {
+    width: 7px;
+    height: 7px;
+    margin-left: 2px;
+    border-right: 2px solid var(--gf-btn-sub);
+    border-bottom: 2px solid var(--gf-btn-sub);
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.glossary-filter.open .filter-btn-caret {
+    transform: translateY(1px) rotate(225deg);
+}
+
+.glossary-filter-clear {
+    width: 40px;
+    flex: none;
+    border-radius: 12px;
+    border: 1px solid var(--gf-btn-border);
+    background: var(--gf-btn-bg);
+    color: var(--gf-btn-sub);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.glossary-filter-clear:hover {
+    color: #f43f5e;
+    border-color: #f43f5e;
+}
+
+/* ---------- Menu thả xuống ---------- */
+.glossary-filter-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 30;
+    width: 340px;
+    max-width: 100%;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--gf-menu-bg);
+    border: 1px solid var(--gf-menu-border);
+    border-radius: 14px;
+    box-shadow: var(--gf-shadow);
+    animation: glossary-filter-pop 0.14s ease-out;
+}
+
+@keyframes glossary-filter-pop {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glossary-filter-menu { animation: none; }
+    .filter-btn-caret { transition: none; }
+}
+
+.glossary-filter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--gf-menu-text);
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.glossary-filter-item:hover,
+.glossary-filter-item:focus-visible {
+    background: var(--gf-hover);
+}
+
+.glossary-filter-item.active {
+    background: rgba(var(--g, 56, 189, 248), 0.16);
+    border-color: rgba(var(--g, 56, 189, 248), 0.5);
+    font-weight: 700;
+}
+
+.glossary-filter-item.pill-g-ALL {
+    margin-bottom: 4px;
+}
+
+.glossary-filter-item.is-empty:not(.active) {
+    opacity: 0.55;
+}
+
+.item-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: none;
+    background: rgb(var(--g, 56, 189, 248));
+    box-shadow: 0 0 0 3px rgba(var(--g, 56, 189, 248), 0.2);
+}
+
+.pill-g-ALL .item-dot {
+    background: transparent;
+    box-shadow: none;
+    border: 2px solid var(--gf-btn-sub);
+}
+
+.glossary-filter-item .item-label {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.glossary-filter-item .item-count {
+    flex: none;
+    min-width: 28px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.6;
+    background: var(--gf-count-bg);
+    font-variant-numeric: tabular-nums;
+}
+
+.glossary-filter-item .item-check {
+    flex: none;
+    width: 14px;
+    height: 14px;
+}
+
+.glossary-filter-item.active .item-check::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    margin: 0 auto;
+    border-right: 2px solid rgb(var(--g, 56, 189, 248));
+    border-bottom: 2px solid rgb(var(--g, 56, 189, 248));
+    transform: rotate(45deg);
+}
+
+/* ---------- Nhãn trên thẻ ---------- */
+.glossary-term-badge[class*="cat-group-"]:not(.cat-group-default) {
+    background: rgba(var(--g), 0.15);
+    border-color: rgba(var(--g), 0.4);
+    color: var(--gt);
+    text-transform: none;
+}
+
+html:not([data-theme="dark"]) .glossary-term-badge[class*="cat-group-"]:not(.cat-group-default) {
+    background: rgba(var(--g), 0.12);
+    border-color: rgba(var(--g), 0.45);
+    color: var(--gtl);
+}
+
+/* ---------- Di động ---------- */
+@media (max-width: 720px) {
+    .glossary-toolbar-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .glossary-toolbar-row .glossary-search-wrapper {
+        flex: none;
+        width: 100%;
+    }
+
+    .glossary-filter {
+        width: 100%;
+    }
+
+    .glossary-filter-btn {
+        flex: 1 1 auto;
+        max-width: none;
+        min-height: 44px;
+    }
+
+    .filter-btn-label {
+        flex: 1 1 auto;
+        text-align: left;
+    }
+
+    .glossary-filter-clear {
+        width: 44px;
+    }
+
+    .glossary-filter-menu {
+        left: 0;
+        right: 0;
+        width: auto;
+    }
+
+    .glossary-filter-item {
+        padding: 13px 12px;
+        font-size: 0.95rem;
+    }
+}

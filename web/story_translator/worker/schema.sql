@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS dataset_events (
 );
 CREATE TABLE IF NOT EXISTS users (
  id TEXT PRIMARY KEY, session_hash TEXT NOT NULL UNIQUE, display_name TEXT NOT NULL,
- created_at TEXT NOT NULL, updated_at TEXT NOT NULL
+ created_at TEXT NOT NULL, updated_at TEXT NOT NULL, moderator_code_hash TEXT
 );
 CREATE TABLE IF NOT EXISTS admin_exports (
  id TEXT PRIMARY KEY, kind TEXT NOT NULL CHECK(kind IN ('snapshot','delta','handoff')),
@@ -56,4 +56,9 @@ CREATE INDEX IF NOT EXISTS admin_exports_scope ON admin_exports(chapter_id,creat
 CREATE TABLE IF NOT EXISTS admin_auth_attempts (
  key_hash TEXT PRIMARY KEY, failures INTEGER NOT NULL DEFAULT 0,
  window_started TEXT NOT NULL, locked_until TEXT
+);
+CREATE TABLE IF NOT EXISTS moderator_codes (
+ id TEXT PRIMARY KEY, code_hash TEXT NOT NULL UNIQUE, label TEXT NOT NULL,
+ bound_name TEXT, bound_name_norm TEXT, created_by TEXT NOT NULL, created_at TEXT NOT NULL,
+ claimed_at TEXT, revoked_at TEXT, code_cipher TEXT
 );

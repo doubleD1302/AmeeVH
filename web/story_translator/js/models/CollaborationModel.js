@@ -2,7 +2,7 @@
 (() => {
     let reviewerKey = '';
     const labels = { untranslated:'Chưa dịch', pending:'Đã Việt hoá · Chờ duyệt', approved:'Đã duyệt', needs_review:'Cần xem lại', machine_pending:'Bản dịch máy · Chưa duyệt' };
-    const M = window.Collaboration = { ready:false, available:false, canReview:false, datasetVersion:null, phase:'unavailable', user:null, labels };
+    const M = window.Collaboration = { ready:false, available:false, canReview:false, canModerate:false, datasetVersion:null, phase:'unavailable', user:null, labels };
     M.status = line => {
         if (labels[line.status]) return line.status;
         if (line.status === 'Đã duyệt') return 'approved';
@@ -45,6 +45,7 @@
             if (M.available) {
                 const identity = await M.request('me');
                 M.user = identity.user;
+                M.canModerate = !!identity.user?.is_moderator;
                 // Only migrate a name the visitor actually saved; the starter profile is shared by everyone.
                 if (identity.new_user && localStorage.getItem('stella_user_profile') && currentUser.name) await M.setDisplayName(currentUser.name);
                 else if (M.user?.display_name) {
@@ -56,7 +57,30 @@
         } catch (_) { M.ready = false; }
         M.updateNotice();
     };
-    M.setDisplayName = async name => { const result = await M.request('profile',{display_name:name}); M.user = result.user; return result.user; };
+    M.setDisplayName = async name => {
+        const result = await M.request('profile',{display_name:name}), wasModerator = M.canModerate;
+        M.user = result.user; M.canModerate = !!result.user?.is_moderator;
+        if (wasModerator !== M.canModerate) {
+            M.updateNotice();
+            if (wasModerator && typeof showToastAlert === 'function') showToastAlert('Tên mới khác tên đã liên kết với mã Moderator nên chế độ Moderator đã tắt. Đặt lại đúng tên cũ để dùng tiếp.');
+            window.CollaborationView?.refresh?.();
+        }
+        return result.user;
+    };
+    // Moderator status lives on the server (session user + bound translator name); nothing secret is kept in the browser.
+    M.activateModerator = async code => {
+        const result = await M.request('moderator',{action:'activate',code});
+        M.user = result.user; M.canModerate = !!result.user?.is_moderator; M.updateNotice();
+        return M.canModerate;
+    };
+    M.deactivateModerator = async () => {
+        const result = await M.request('moderator',{action:'deactivate'});
+        M.user = result.user; M.canModerate = !!result.user?.is_moderator; M.updateNotice();
+    };
+    M.syncModerator = async () => {
+        try { const identity = await M.request('me'); M.user = identity.user; M.canModerate = !!identity.user?.is_moderator; } catch (_) { M.canModerate = false; }
+        M.updateNotice(); window.CollaborationView?.refresh?.();
+    };
     M.updateNotice = () => {
         const element = document.getElementById('collabServiceNotice');
         if (!element) return;
@@ -72,6 +96,8 @@
         }
         const button = document.getElementById('reviewerAccessBtn');
         if (button) { button.title = M.canReview ? 'Quyền duyệt đang bật' : 'Nhập mã quản trị để duyệt'; button.setAttribute('aria-pressed', String(M.canReview)); }
+        const mod = document.getElementById('moderatorAccessBtn');
+        if (mod) { mod.title = M.canModerate ? 'Moderator đang bật: bản dịch của bạn được duyệt tự động' : 'Nhập mã Moderator để tự động duyệt bản dịch của bạn'; mod.setAttribute('aria-pressed', String(M.canModerate)); }
     };
     M.login = async key => {
         reviewerKey = key;
@@ -93,6 +119,8 @@
         updateProgressBar();
     };
     M.draftKey = line => { const ref = M.ref(line); return 'tramvh_draft_v2:' + ref.chapter_id + ':' + ref.line_id; };
+    M.readLastReason = () => { try { return localStorage.getItem('tramvh_last_reason') || ''; } catch (_) { return ''; } };
+    M.saveLastReason = value => { try { value ? localStorage.setItem('tramvh_last_reason', value) : localStorage.removeItem('tramvh_last_reason'); } catch (_) {} };
     M.saveDraft = (line, draft) => { try { localStorage.setItem(M.draftKey(line), JSON.stringify({...draft,base_dataset_version:draft.base_dataset_version || line.dataset_version || M.datasetVersion})); } catch (_) {} };
     M.readDraft = line => {
         try { const stored = localStorage.getItem(M.draftKey(line)); if (stored) return JSON.parse(stored); } catch (_) {}

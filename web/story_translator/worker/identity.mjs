@@ -8,7 +8,7 @@ export async function sessionUser(request, env, create=false) {
     const cookie = request.headers.get('Cookie') || '';
     const token = cookie.split(';').map(part=>part.trim()).find(part=>part.startsWith(COOKIE_NAME+'='))?.slice(COOKIE_NAME.length+1);
     if (token && /^[a-f0-9]{64}$/.test(token)) {
-        const user = await stmt(env,'SELECT id,display_name FROM users WHERE session_hash=?',[await sha256(token)]).first();
+        const user = await stmt(env,'SELECT id,display_name,moderator_code_hash FROM users WHERE session_hash=?',[await sha256(token)]).first();
         if (user) {
             const migrate = new URL(request.url).pathname === '/api/collab/me';
             return {user,cookie:migrate ? sharedCookie(request,token) : null,legacyCookie:migrate ? legacyCookie(request) : null,created:false};

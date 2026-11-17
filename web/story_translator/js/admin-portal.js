@@ -13,7 +13,7 @@ const NAV = [
         { id: 'sessions', label: 'Phiên dữ liệu', icon: '▣' },
         { id: 'prompt', label: 'Prompt cho agent', icon: '✎' },
     ] },
-    { group: 'Governance', items: [{ id: 'governance', label: 'Phân quyền & nhật ký', icon: '♙' }] },
+    { group: 'Governance', items: [{ id: 'governance', label: 'Phân quyền & nhật ký', icon: '♙' }, { id: 'moderators', label: 'Moderator', icon: '★' }] },
 ];
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -45,6 +45,9 @@ const state = {
     lastDownload: null,
     feedback: '',
     mobileOpen: false,
+    moderators: null,
+    moderatorsError: '',
+    modReveal: new Set(),
 };
 const previewMode = new URLSearchParams(window.location.search).get('preview') === '1' && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
 const HANDOFF_KEY = 'tramvh_reviewer_key';
@@ -264,7 +267,7 @@ function renderQueue() {
     if (selected && selected.line_id !== state.selectedLineId) state.selectedLineId = selected.line_id;
     const filters = ['all', 'pending', 'needs_review', 'untranslated'];
     const rows = list.length ? list.map(line => `<button type="button" class="queue-row ${line.line_id === state.selectedLineId ? 'selected' : ''}" data-line="${esc(line.line_id)}" data-chapter="${esc(line.chapter_id || state.chapterId)}"><div class="queue-row-top"><b>${esc(line.line_id)}</b><time>${esc(line.updated_at ? new Date(line.updated_at).toLocaleDateString('vi-VN') : 'Chưa ghi thời gian')}</time></div><p>${esc(line.scene_title || line.speaker || line.chapter_id || 'Không có cảnh')} · ${esc(line.speaker || 'Hệ thống')}</p><div class="queue-row-bottom"><span>${esc(line.en || 'Chưa có EN')}</span>${pill(labelStatus(statusOf(line)), toneFor(statusOf(line)))}</div></button>`).join('') : emptyState('Hàng chờ đang trống', 'Không có câu phù hợp với bộ lọc hiện tại. Tải lại dữ liệu hoặc đổi bộ lọc.', 'reload', 'Tải lại dữ liệu');
-    return `<div class="view-head"><div><p class="eyebrow">Review gate · 01</p><h1>Hàng chờ duyệt</h1><p>Duyệt câu dịch với đúng nguồn, bản đang dùng và đề xuất. Quyết định thật được gửi qua API cộng tác với revision guard.</p></div><div class="button-row"><button type="button" class="btn" data-action="reload">↻ Tải lại</button><button type="button" class="btn" data-nav="export">Đối chiếu trước khi xuất →</button></div></div><div class="toolbar"><label class="search-box"><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.75"/><path d="m16 16 4 4"/></svg><input id="queueSearch" aria-label="Tìm trong hàng chờ duyệt" value="${esc(state.queueSearch)}" placeholder="Tìm mã câu hoặc nội dung..." autocomplete="off"></label>${filters.map(filter => `<button type="button" class="filter-btn ${filter === state.queueFilter ? 'active' : ''}" data-filter="${filter}">${filter === 'all' ? `Tất cả · ${all.length}` : labelStatus(filter)}</button>`).join('')}</div><section class="panel queue-shell"><div class="queue-list" id="queueList"><div class="queue-list-head"><strong>${list.length} dòng trong phạm vi</strong>${pill('Reviewer gate', 'gold')}</div><div id="queueRows">${rows}</div></div><div class="detail-pane" id="queueDetail" tabindex="-1"><button type="button" class="btn mobile-queue-back" data-action="queue-back">← Quay lại danh sách</button>${selected ? detailMarkup(selected) : emptyState('Chưa chọn câu', 'Chọn một dòng ở hàng chờ để xem nguồn và bằng chứng.')}</div></section>`;
+    return `<div class="view-head"><div><p class="eyebrow">Review gate · 01</p><h1>Hàng chờ duyệt</h1><p>Duyệt câu dịch với đúng nguồn, bản đang dùng và đề xuất. Quyết định thật được gửi qua API cộng tác với revision guard.</p></div><div class="button-row"><button type="button" class="btn" data-action="reload">↻ Tải lại</button><button type="button" class="btn primary" data-action="approve-all" title="Duyệt hàng loạt các câu Chờ duyệt đã có bản dịch hợp lệ">✓ Duyệt tất cả…</button><button type="button" class="btn" data-nav="export">Đối chiếu trước khi xuất →</button></div></div><div class="toolbar"><label class="search-box"><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.75"/><path d="m16 16 4 4"/></svg><input id="queueSearch" aria-label="Tìm trong hàng chờ duyệt" value="${esc(state.queueSearch)}" placeholder="Tìm mã câu hoặc nội dung..." autocomplete="off"></label>${filters.map(filter => `<button type="button" class="filter-btn ${filter === state.queueFilter ? 'active' : ''}" data-filter="${filter}">${filter === 'all' ? `Tất cả · ${all.length}` : labelStatus(filter)}</button>`).join('')}</div><section class="panel queue-shell"><div class="queue-list" id="queueList"><div class="queue-list-head"><strong>${list.length} dòng trong phạm vi</strong>${pill('Reviewer gate', 'gold')}</div><div id="queueRows">${rows}</div></div><div class="detail-pane" id="queueDetail" tabindex="-1"><button type="button" class="btn mobile-queue-back" data-action="queue-back">← Quay lại danh sách</button>${selected ? detailMarkup(selected) : emptyState('Chưa chọn câu', 'Chọn một dòng ở hàng chờ để xem nguồn và bằng chứng.')}</div></section>`;
 }
 
 function detailMarkup(line) {
@@ -316,12 +319,61 @@ function renderGovernance() {
     return `<div class="view-head"><div><p class="eyebrow">Governance · 07</p><h1>Phân quyền & nhật ký</h1><p>Quyền duyệt, xuất, khôi phục và đọc gói được tách riêng. Backend hiện tại dùng reviewer key; tài khoản ổn định là bước tiếp theo.</p></div><span class="pill gold">Key mode · đang dùng</span></div><div class="grid-two"><section class="panel panel-pad"><div class="scope-line"><div><h2 class="panel-title">Vai trò trong workspace</h2><p>Policy UI để chuẩn bị cho account-based access.</p></div><button type="button" class="text-link" data-action="policy">+ Thêm role</button></div><div class="role-grid" style="margin-top:16px">${roles.map(([id, title, detail, enabled]) => `<div class="role-row"><div class="role-copy"><span class="role-icon">♙</span><span><strong>${title}</strong><span>${detail}</span></span></div><button type="button" class="switch ${enabled ? 'on' : ''}" data-role="${id}" aria-label="Bật tắt ${title}"></button></div>`).join('')}</div></section><section class="panel panel-pad"><div class="scope-line"><div><h2 class="panel-title">Audit log</h2><p>Sự kiện của portal trong tab hiện tại</p></div><span class="pill blue">Live</span></div><div class="audit-list" style="margin-top:16px"><div class="audit-row"><time>NOW</time><div><p><b>Reviewer session</b> đã bật quyền đọc</p><code>X-Reviewer-Key · memory only</code></div><span class="audit-dot green"></span></div><div class="audit-row"><time>DATA</time><div><p><b>${esc(state.release?.dataset?.version || 'Dataset')}</b> đã được tải</p><code>${esc(state.chapterId)} · ${state.lines.length} lines</code></div><span class="audit-dot"></span></div><div class="audit-row"><time>GATE</time><div><p><b>${stats().issues} issue</b> đang nằm ngoài nhóm export</p><code>issues.jsonl preview</code></div><span class="audit-dot gold"></span></div></div><div class="policy-note">♢ Mọi handoff cần lưu actor, timestamp, dataset_version và hash tệp. Portal không tự sinh receipt “đã tích hợp”.</div></section></div>`;
 }
 
+function renderModerators() {
+    const items = state.moderators;
+    const fmt = value => value ? new Date(value).toLocaleString('vi-VN') : '—';
+    let body;
+    if (state.moderatorsError) body = `<div class="error" role="alert">${esc(state.moderatorsError)} <button type="button" class="btn small" data-action="mod-reload">Tải lại</button></div>`;
+    else if (!items) body = '<div class="loading"><span class="spinner"></span> Đang tải danh sách Moderator…</div>';
+    else if (!items.length) body = emptyState('Chưa có mã Moderator', 'Tạo mã cho từng người. Mỗi mã chỉ dùng được cho một dịch giả.', 'mod-create', '+ Tạo mã Moderator');
+    else body = `<div class="export-history">${items.map(item => {
+        const revoked = Boolean(item.revoked_at);
+        const status = revoked ? pill('Đã thu hồi', 'red') : item.bound_name ? pill('Đã liên kết', 'green') : pill('Chưa dùng', 'gold');
+        const shown = state.modReveal.has(item.id);
+        const codeLine = item.code ? `<div class="mod-code-row"><code class="mod-code" aria-label="Mã Moderator">${shown ? esc(item.code) : '•••••-•••••-•••••-•••••'}</code><button type="button" class="btn small" data-action="mod-reveal" aria-pressed="${shown}">${shown ? 'Ẩn' : 'Hiện'}</button><button type="button" class="btn small" data-action="mod-copy">Sao chép</button></div>` : `<div class="mod-code-row"><span class="mod-code-missing">Mã này tạo trước khi có tính năng xem lại hoặc khóa mã hóa đã đổi nên không hiện được. Mã vẫn dùng bình thường; cần xem lại thì tạo mã mới.</span></div>`;
+        return `<article class="history-card" data-id="${esc(item.id)}"><div class="history-main"><span class="history-icon">★</span><div><b>${esc(item.label)}</b><span>${item.bound_name ? 'Dịch giả: ' + esc(item.bound_name) : 'Chưa liên kết tên dịch giả'} · ${Number(item.devices || 0)} thiết bị</span>${codeLine}</div></div><div class="history-meta mod-meta"><span>Tạo ${esc(fmt(item.created_at))} · ${esc(item.created_by)}</span><span>${item.claimed_at ? 'Liên kết ' + esc(fmt(item.claimed_at)) : ''}${revoked ? ' · Thu hồi ' + esc(fmt(item.revoked_at)) : ''}</span></div><div class="history-actions">${status}${!revoked && item.bound_name ? '<button type="button" class="btn small" data-action="mod-unlink">Gỡ liên kết tên</button>' : ''}${!revoked ? '<button type="button" class="btn small danger" data-action="mod-revoke">Thu hồi</button>' : ''}</div></article>`;
+    }).join('')}</div>`;
+    return `<div class="view-head"><div><p class="eyebrow">Governance · 08</p><h1>Moderator</h1><p>Mỗi mã thuộc về đúng một dịch giả: lần đầu nhập mã sẽ gắn với biệt danh của họ, các thiết bị khác chỉ dùng được khi đặt đúng biệt danh đó. Bản dịch của Moderator được duyệt tự động và vẫn nằm trong bản xuất gửi admin; chúng không xuất hiện trong hàng chờ duyệt.</p></div><button type="button" class="btn primary" data-action="mod-create">+ Tạo mã Moderator</button></div>${body}`;
+}
+
+async function loadModerators() {
+    state.moderatorsError = '';
+    state.modReveal = new Set();
+    try { state.moderators = (await request('/api/admin/moderators')).data?.items || []; }
+    catch (error) { state.moderators = null; state.moderatorsError = error.message || 'Không tải được danh sách Moderator.'; }
+    if (state.view === 'moderators') render();
+}
+
+async function moderatorCall(payload) {
+    return request('/api/admin/moderators', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+}
+
+async function createModerator() {
+    const values = await openModal({ title: 'Tạo mã Moderator', message: 'Ghi tên người sẽ nhận mã để dễ quản lý. Mã được lưu mã hóa và bạn xem lại được trong danh sách; hãy gửi riêng cho đúng người đó.', fields: [{ name: 'label', label: 'Tên gợi nhớ (người nhận mã)', required: true, placeholder: 'Ví dụ: Minh Trần' }], confirmLabel: 'Tạo mã' });
+    if (!values?.label?.trim()) return;
+    try {
+        const result = await moderatorCall({ action: 'create', label: values.label.trim() });
+        await openModal({ title: 'Mã Moderator mới', message: `Mã cho "${result.data.label}". Hãy gửi riêng cho đúng người đó. Bạn có thể xem lại và sao chép mã này bất cứ lúc nào trong danh sách Moderator.`, fields: [{ name: 'code', label: 'Mã Moderator', value: result.data.code }], confirmLabel: 'Đã lưu mã' });
+    } catch (error) { state.moderatorsError = error.message || 'Không tạo được mã.'; }
+    await loadModerators();
+}
+
+async function changeModerator(action, id) {
+    const item = (state.moderators || []).find(row => row.id === id);
+    if (!item) return;
+    const revoke = action === 'revoke';
+    const ok = await openModal({ title: revoke ? 'Thu hồi mã Moderator' : 'Gỡ liên kết tên', message: revoke ? `Mã của "${item.label}" sẽ ngừng hoạt động ngay trên mọi thiết bị và không thể dùng lại.` : `Mã của "${item.label}" sẽ được gỡ khỏi tên "${item.bound_name}" và các thiết bị đang dùng sẽ mất quyền. Người nào nhập mã tiếp theo sẽ trở thành chủ mã.`, confirmLabel: revoke ? 'Thu hồi' : 'Gỡ liên kết', tone: 'danger' });
+    if (!ok) return;
+    try { await moderatorCall({ action, id }); } catch (error) { state.moderatorsError = error.message || 'Không thực hiện được.'; }
+    await loadModerators();
+}
+
 function renderContent() {
     const content = $('#adminContent');
     if (!state.key) { content.innerHTML = renderLogin(); return; }
     if (state.loading) { content.innerHTML = '<div class="loading"><span class="spinner"></span> Đang tải dữ liệu TrạmVH…</div>'; return; }
     if (state.error && !state.lines.length) { content.innerHTML = `<div class="error">${esc(state.error)}<div style="margin-top:10px"><button type="button" class="btn" data-action="logout">Nhập lại mã reviewer</button></div></div>`; return; }
-    const views = { overview: renderOverview, queue: renderQueue, issues: renderIssues, export: renderExport, history: renderHistory, recovery: renderRecovery, sessions: renderSessions, prompt: renderPrompt, governance: renderGovernance };
+    const views = { overview: renderOverview, queue: renderQueue, issues: renderIssues, export: renderExport, history: renderHistory, recovery: renderRecovery, sessions: renderSessions, prompt: renderPrompt, governance: renderGovernance, moderators: renderModerators };
     content.innerHTML = `${state.feedback ? `<div class="feedback" role="status" style="margin-bottom:14px">${esc(state.feedback)}</div>` : ''}${state.error ? `<div class="error" role="alert" style="margin-bottom:14px">${esc(state.error)} <button type="button" class="btn small" data-action="reload">Tải lại</button></div>` : ''}${(views[state.view] || renderOverview)()}`;
 }
 
@@ -338,6 +390,70 @@ async function approveLine(line, action = 'approve', proposalId = null, historyI
     try { const result = await request('/api/collab/review', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); if (result.line) { const index = state.lines.findIndex(item => item.line_id === result.line.line_id); if (index >= 0) state.lines[index] = { ...state.lines[index], ...result.line }; } state.history = null; state.error = ''; state.feedback = ({ approve: 'Đã duyệt bản hiện tại.', accept: 'Đã chấp nhận đề xuất.', reject: 'Đã từ chối đề xuất.', restore: 'Đã khôi phục phiên bản.' })[action]; await loadWorkspace(); }
     catch (error) { state.error = error.status === 409 ? 'Câu hoặc đề xuất đã thay đổi. Bấm Tải lại, xem bản mới rồi duyệt lại.' : (error.message || 'Không thể ghi quyết định duyệt.'); }
     finally { state.loading = false; render(); }
+}
+
+const SKIP_LABELS = { co_de_xuat_cho: 'có đề xuất đang chờ', chua_co_ban_dich: 'chưa có bản dịch', con_nguyen_tieng_anh: 'còn nguyên tiếng Anh', loi_ma_dinh_dang: 'lỗi mã/định dạng' };
+
+function skippedText(skipped = {}) {
+    const parts = Object.entries(skipped).filter(([, count]) => Number(count) > 0).map(([key, count]) => `${count} câu ${SKIP_LABELS[key] || key}`);
+    return parts.length ? parts.join(', ') : 'không có';
+}
+
+async function bulkApproveCall(payload) {
+    const result = await request('/api/admin/bulk_approve', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    return result.data;
+}
+
+async function approveAll() {
+    if (previewMode) { state.error = 'Bản xem thử không gửi quyết định duyệt. Hãy mở web chính thức để duyệt câu.'; render(); return; }
+    const chapter = state.chapters.find(item => item.id === state.chapterId);
+    const scenes = state.chapter?.scenes || [];
+    const options = [{ value: '', label: `Cả chương: ${chapter?.title || state.chapterId}` }, ...scenes.map(scene => ({ value: scene.scene_id, label: `Chỉ cảnh ${scene.scene_id}${scene.title ? ' · ' + scene.title : ''}` }))];
+    const form = await openModal({
+        title: 'Duyệt tất cả câu chờ duyệt',
+        message: 'Chỉ duyệt câu đang ở trạng thái "Chờ duyệt" đã có bản dịch hợp lệ và không có đề xuất đang chờ. Câu "Cần xem lại", chưa dịch, còn nguyên tiếng Anh hoặc lỗi mã/định dạng được giữ nguyên. Bước tiếp theo cho biết số câu trước khi ghi.',
+        fields: [
+            { name: 'scene_id', label: 'Phạm vi', type: 'select', options, value: '' },
+            { name: 'reason', label: 'Lý do duyệt', type: 'textarea', rows: 2, required: true, placeholder: 'Ví dụ: Chủ dự án đã duyệt bản dịch theo release v1.3.0' },
+        ],
+        confirmLabel: 'Kiểm tra số câu',
+    });
+    if (!form) return;
+    const base = { chapter_id: state.chapterId, scene_id: form.scene_id || '', reason: String(form.reason || '').trim() };
+    if (!base.reason) { state.error = 'Nhập lý do duyệt.'; render(); return; }
+    state.loading = true; state.error = ''; state.feedback = ''; render();
+    let plan;
+    try { plan = await bulkApproveCall({ ...base, dry_run: true }); }
+    catch (error) { state.loading = false; state.error = error.message || 'Không thể kiểm tra số câu cần duyệt.'; render(); return; }
+    state.loading = false; render();
+    const scope = plan.scene_id ? `cảnh ${plan.scene_id}` : `chương ${state.chapterId}`;
+    if (!plan.candidates) {
+        state.feedback = `Không có câu nào đủ điều kiện duyệt trong ${scope}. Bỏ qua: ${skippedText(plan.skipped)}.${plan.not_in_database ? ` ${plan.not_in_database} câu chưa có trong cơ sở dữ liệu (mở chương trên web một lần để tạo).` : ''}`;
+        render(); return;
+    }
+    const confirmed = await openModal({
+        title: `Duyệt ${plan.candidates} câu?`,
+        message: `Sẽ chuyển ${plan.candidates} câu "Chờ duyệt" trong ${scope} sang "Đã duyệt", mỗi câu ghi một mục lịch sử. Bỏ qua: ${skippedText(plan.skipped)}.${plan.not_in_database ? ` ${plan.not_in_database} câu chưa có trong cơ sở dữ liệu.` : ''} Có thể xem và khôi phục từng câu trong "Lịch sử & khôi phục".`,
+        confirmLabel: `Duyệt ${plan.candidates} câu`,
+        tone: 'danger',
+    });
+    if (!confirmed) return;
+    state.loading = true; render();
+    let approved = 0, rounds = 0, last = plan;
+    try {
+        while (rounds < 100) {
+            rounds += 1;
+            last = await bulkApproveCall({ ...base, dry_run: false });
+            approved += Number(last.approved || 0);
+            state.feedback = `Đang duyệt hàng loạt: ${approved}/${plan.candidates} câu…`; render();
+            if (!last.approved || !last.remaining) break;
+        }
+        state.feedback = `Đã duyệt ${approved}/${plan.candidates} câu trong ${scope}.${last.remaining ? ` Còn ${last.remaining} câu chưa duyệt được (đã đổi trong lúc duyệt); bấm Duyệt tất cả… lần nữa.` : ''}`;
+        state.history = null;
+        await loadWorkspace();
+    } catch (error) {
+        state.error = `${error.message || 'Không thể duyệt hàng loạt.'} Đã duyệt ${approved} câu trước khi dừng; bấm Tải lại để xem trạng thái.`;
+    } finally { state.loading = false; render(); }
 }
 
 async function loadHistory(lineId) {
@@ -470,7 +586,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape' && st
 
 document.body.addEventListener('click', async event => {
     const nav = event.target.closest('[data-nav]');
-    if (nav) { state.view = nav.dataset.nav; if (nav.dataset.line) state.selectedLineId = nav.dataset.line; state.mobileOpen = false; state.error = ''; render(); return; }
+    if (nav) { state.view = nav.dataset.nav; if (nav.dataset.line) state.selectedLineId = nav.dataset.line; state.mobileOpen = false; state.error = ''; render(); if (state.view === 'moderators') loadModerators(); return; }
     const lineButton = event.target.closest('[data-line]');
     if (lineButton) { state.selectedLineId = lineButton.dataset.line; state.history = null; const chapter = lineButton.dataset.chapter; if (chapter && chapter !== state.chapterId && !previewMode) { try { await loadChapter(chapter); } catch (error) { state.error = error.message || 'Không tải được câu từ server.'; render(); return; } } render(); if (matchMedia('(max-width: 700px)').matches) { const detail = $('#queueDetail'); detail?.scrollIntoView({ behavior: 'smooth', block: 'start' }); detail?.focus({ preventScroll: true }); } return; }
     const filter = event.target.closest('[data-filter]');
@@ -489,6 +605,7 @@ document.body.addEventListener('click', async event => {
     if (action === 'logout') { state.key = ''; state.release = null; state.lines = []; state.history = null; state.error = ''; sessionStorage.removeItem(HANDOFF_KEY); render(); return; }
     if (action === 'help') { openAdminGuide(); return; }
     if (action === 'reload') { await loadWorkspace(); return; }
+    if (action === 'approve-all') { await approveAll(); return; }
     if (action === 'history') { await loadHistory(event.target.closest('[data-id]')?.dataset.id || state.selectedLineId); return; }
     if (action === 'approve') { const id = event.target.closest('[data-id]')?.dataset.id; await approveLine(state.lines.find(line => line.line_id === id) || state.queueItems.find(line => line.line_id === id)); return; }
     if (action === 'accept' || action === 'reject') { const line = state.lines.find(item => item.line_id === state.selectedLineId); await approveLine(line, action, event.target.closest('[data-proposal]')?.dataset.proposal); return; }
@@ -502,6 +619,20 @@ document.body.addEventListener('click', async event => {
     if (action === 'policy') { await openModal({ title: 'Quyền server-side', message: `Scopes hiện tại: ${(state.permissions?.scopes || []).join(', ') || 'chưa tải'}. Thay đổi quyền cần cập nhật secret hoặc account policy ở Worker.`, confirmLabel: 'Đóng' }); }
     if (action === 'copy-handoff-prompt') { const text = state.completedHandoff?.prompt; if (!text) return; try { await navigator.clipboard.writeText(text); await openModal({ title: 'Đã sao chép prompt', message: 'Gửi prompt này cùng các tệp của gói cho agent.', confirmLabel: 'Đóng' }); } catch (_) { await openModal({ title: 'Sao chép thủ công', fields: [{ name: 'prompt', label: 'Chọn và sao chép prompt', type: 'textarea', rows: 12, value: text }], confirmLabel: 'Đóng' }); } return; }
     if (action === 'toggle-key') { const input = $('#reviewerKeyInput'); const button = event.target.closest('[data-action="toggle-key"]'); if (input && button) { const visible = input.type === 'text'; input.type = visible ? 'password' : 'text'; button.textContent = visible ? 'Hiện' : 'Ẩn'; button.setAttribute('aria-pressed', String(!visible)); } }
+    if (action === 'mod-create') { await createModerator(); return; }
+    if (action === 'mod-reload') { await loadModerators(); return; }
+    if (action === 'mod-reveal') { const id = event.target.closest('[data-id]')?.dataset.id; if (id) { state.modReveal.has(id) ? state.modReveal.delete(id) : state.modReveal.add(id); render(); } return; }
+    if (action === 'mod-copy') {
+        const id = event.target.closest('[data-id]')?.dataset.id, item = (state.moderators || []).find(row => row.id === id), button = event.target.closest('button');
+        if (!item?.code) return;
+        let ok = false;
+        try { await navigator.clipboard.writeText(item.code); ok = true; } catch (_) {
+            try { const holder = document.createElement('textarea'); holder.value = item.code; holder.readOnly = true; holder.style.cssText = 'position:fixed;opacity:0'; document.body.append(holder); holder.select(); ok = document.execCommand('copy'); holder.remove(); } catch (__) { /* fall through */ }
+        }
+        if (button) { const old = button.textContent; button.textContent = ok ? 'Đã chép ✓' : 'Chép thất bại'; setTimeout(() => { if (button.isConnected) button.textContent = old; }, 1400); }
+        return;
+    }
+    if (action === 'mod-revoke' || action === 'mod-unlink') { await changeModerator(action === 'mod-revoke' ? 'revoke' : 'unlink', event.target.closest('[data-id]')?.dataset.id); return; }
     if (action === 'preview-login') { state.key = 'preview'; await loadWorkspace(); }
 });
 
