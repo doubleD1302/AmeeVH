@@ -1,139 +1,1017 @@
 package com.stellasora.viethoa.localadb;
-import android.content.*;import android.os.*;import org.json.*;import java.io.*;import java.util.*;import java.util.zip.*;import java.util.regex.*;
+import android.content.*;
+import android.os.*;
+import org.json.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.regex.*;
+import java.util.zip.*;
+
 /** Android-only transaction client. Commands are generated here, never supplied by JS. */
 final class GamePatcher {
- private final Context context;private final AdbClient adb;private final ChannelClient.Progress progress;private JSONObject target;private long deadline;
- GamePatcher(Context c,AdbClient a,ChannelClient.Progress p){context=c;adb=a;progress=p;}
- static String relative(String path)throws IOException {
-  if(path.isEmpty()||!path.equals(path.trim())||path.startsWith("/")||path.contains("\\")||path.contains(":"))throw new IOException("Đường dẫn tệp Android không hợp lệ.");for(String piece:path.split("/",-1))if(piece.isEmpty()||piece.equals(".")||piece.equals(".."))throw new IOException("Đường dẫn vượt phạm vi.");for(char ch:path.toCharArray())if(ch<32)throw new IOException("Đường dẫn chứa ký tự điều khiển.");
-  boolean allowed=path.equals("Persistent_Store/Tables/data.arcx")||path.equals("Persistent_Store/Scripts/lua.arcx")||path.matches("Persistent_Store/Videos/[^/<>:\"|?*]+\\.srt")||path.matches("Persistent_Store/AssetBundles/[A-Za-z0-9_.-]+\\.unity3d");if(!allowed)throw new IOException("Tệp không thuộc phạm vi Android được phép: "+path);return path;
- }
- JSONObject detect()throws Exception {
-  if(!adb.verified)throw new IOException("Chưa kết nối Local ADB.");String user=adb.exec("am get-current-user",10000).trim();if(!user.matches("[0-9]+"))throw new IOException("Chưa xác định được người dùng Android.");
-  String installed=adb.exec("pm path --user "+user+" "+Store.GAME,12000);if(!installed.startsWith("package:")){target=Store.obj("installed",false,"package",Store.GAME,"versionsKnown",false,"reason","Chưa tìm thấy gói Stella Sora Android.");return target;}
-  String expected="/storage/emulated/"+user+"/Android/data/"+Store.GAME+"/files";String root=adb.exec("readlink -f "+Store.q(expected),10000).trim();if(!root.equals(expected))throw new IOException("Thư mục dữ liệu game không khớp vùng Android đã chọn.");adb.exec("[ -d "+Store.q(root)+" ] && [ ! -L "+Store.q(root)+" ]",10000);
-  String androidId=adb.exec("settings --user "+user+" get secure android_id",10000).trim(),device=adb.exec("getprop ro.product.device",10000).trim();if(!androidId.matches("[0-9a-fA-F]{16}")||device.trim().isEmpty())throw new IOException("Chưa xác định được danh tính thiết bị.");String deviceId=Store.digest(androidId+"|"+device+"|"+user);
-  target=Store.obj("installed",true,"package",Store.GAME,"root",root,"user",user,"deviceId",deviceId,"versionsKnown",false,"gameVersion","","resourceVersion","");
-  String listing=adb.exec("find "+Store.q(root+"/Persistent_Store")+" -maxdepth 1 -type f -name '*.mani' -print",10000);String chosen=null,game=null,resource=null;
-  List<String> files=new ArrayList<>();
-  for(String file:listing.split("\\r?\\n")){
-   file=file.trim();
-   if(!file.startsWith(root+"/Persistent_Store/")||!file.substring(file.lastIndexOf('/')+1).matches("[A-Za-z0-9_.-]+\\.mani"))continue;
-   files.add(file);
-  }
-  Collections.sort(files,(a,b)->{boolean aW=a.toLowerCase(Locale.ROOT).contains("ss_win"),bW=b.toLowerCase(Locale.ROOT).contains("ss_win");if(aW!=bW)return aW?1:-1;return a.compareTo(b);});
-  for(String file:files){
-   if(!adb.exec("readlink -f "+Store.q(file),10000).trim().equals(file))continue;String data=adb.exec("head -n 24 "+Store.q(file),10000);String g=header(data,"GAME_VER");if(g==null)g=header(data,"CLIENT_VER");String r=header(data,"RES_VER");if(g==null||r==null)continue;if(game!=null&&(!game.equals(g)||!resource.equals(r)))throw new IOException("Các tiêu đề tài nguyên không thống nhất phiên bản. Không chọn đoán một bản.");game=g;resource=r;chosen=file;
-  }
-  if(chosen!=null){target.put("gameVersion",game);target.put("resourceVersion",resource);target.put("versionFile",chosen);target.put("versionsKnown",true);target.put("binding",Store.digest(deviceId+"|"+Store.GAME+"|"+root));}
-  else target.put("reason","Chưa đọc được GAME_VER/RES_VER thực tế từ tài nguyên Android. Hãy mở game tải đủ dữ liệu trước khi cài.");return target;
- }
- private static String header(String data,String key){Matcher m=Pattern.compile("(?m)(?:^|[\\r\\n\\s$|])"+key+"[:=\\s]+([0-9A-Za-z_.-]+)").matcher(data);return m.find()?m.group(1):null;}
- private JSONObject requireTarget()throws Exception {JSONObject t=detect();if(!t.optBoolean("installed")||!t.optBoolean("versionsKnown"))throw new IOException(t.optString("reason","Chưa đọc được bản game."));return t;}
- private void closedAndVersion()throws Exception {
-  String root=target.getString("root");if(!adb.exec("readlink -f "+Store.q(root),10000).trim().equals(root))throw new IOException("Thư mục game đã đổi.");String stopped=adb.exec("pidof "+Store.GAME+" >/dev/null; s=$?; if [ \"$s\" -eq 0 ]; then printf RUNNING; elif [ \"$s\" -eq 1 ]; then printf STOPPED; else exit \"$s\"; fi",10000);if(!stopped.equals("STOPPED"))throw new IOException("Hãy thoát Stella Sora trước khi thay đổi tài nguyên.");
-  String versionFile=target.getString("versionFile");if(!adb.exec("[ ! -L "+Store.q(versionFile)+" ] && readlink -f "+Store.q(versionFile),10000).trim().equals(versionFile))throw new IOException("Tệp phiên bản đã thành liên kết hoặc đổi đường dẫn.");String data=adb.exec("head -n 24 "+Store.q(versionFile),10000);String g=header(data,"GAME_VER");if(g==null)g=header(data,"CLIENT_VER");String r=header(data,"RES_VER");if(!target.getString("gameVersion").equals(g)||!target.getString("resourceVersion").equals(r))throw new IOException("Game đã cập nhật hoặc chưa đọc được phiên bản. Không ghi đè tài nguyên.");
- }
- private String checked(String relative)throws Exception {String path=relative(relative),root=target.getString("root"),current=root;String[] pieces=path.split("/");for(int i=0;i<pieces.length-1;i++){current+="/"+pieces[i];String result=adb.exec("[ ! -L "+Store.q(current)+" ] && [ -d "+Store.q(current)+" ] && readlink -f "+Store.q(current),10000);if(!result.equals(current))throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");}return root+"/"+path;}
- private JSONObject state(String path)throws Exception {
-  String q=Store.q(path);String result=adb.exec("if [ -L "+q+" ]; then exit 73; elif [ -f "+q+" ]; then stat -c %s "+q+" && sha256sum "+q+"; elif [ -e "+q+" ]; then exit 74; else printf ABSENT; fi",120000);if(result.equals("ABSENT"))return Store.obj("exists",false);String[] lines=result.split("\\r?\\n");if(lines.length<2||!lines[0].matches("[0-9]+")||!lines[1].matches("[0-9a-fA-F]{64}.*"))throw new IOException("Chưa đối chiếu được kích thước/SHA256.");return Store.obj("exists",true,"size",Long.parseLong(lines[0]),"sha256",lines[1].substring(0,64).toLowerCase(Locale.ROOT));
- }
- private static boolean same(JSONObject a,JSONObject b){return a.optBoolean("exists")==b.optBoolean("exists")&&(!a.optBoolean("exists")||(a.optLong("size",-1)==b.optLong("size",-2)&&a.optString("sha256").equals(b.optString("sha256"))));}
- private String guard(String path,JSONObject expected)throws Exception {String q=Store.q(path);if(!expected.getBoolean("exists"))return "[ ! -e "+q+" ] && [ ! -L "+q+" ]";return "[ ! -L "+q+" ] && [ -f "+q+" ] && [ \"$(stat -c %s "+q+")\" = "+Store.q(String.valueOf(expected.getLong("size")))+" ] && [ \"$(sha256sum "+q+" | cut -d ' ' -f 1)\" = "+Store.q(expected.getString("sha256"))+" ]";}
- private void temporary(JSONObject journal,String path,String source,JSONObject expected)throws Exception {
-  JSONObject tracked=journal.optJSONObject("temporaries");if(tracked==null){tracked=new JSONObject();journal.put("temporaries",tracked);}JSONObject current=state(path);
-  if(current.optBoolean("exists")&&!tracked.optBoolean(path))throw new IOException("Tệp tạm đã tồn tại ngoài nhật ký; giữ nguyên.");
-  if(same(current,expected))return;tracked.put(path,true);saveJournal(journal);
-  if(current.optBoolean("exists"))adb.exec("[ ! -L "+Store.q(path)+" ] && rm -f "+Store.q(path),120000);
-  adb.exec("[ ! -e "+Store.q(path)+" ] && cp "+Store.q(source)+" "+Store.q(path),120000);if(!same(state(path),expected))throw new IOException("Tệp tạm không khớp nội dung cần cài/phục hồi.");
- }
- private void cleanupTemps(JSONObject journal)throws Exception {JSONObject tracked=journal.optJSONObject("temporaries");if(tracked==null)return;JSONArray files=journal.getJSONArray("files");String id=journal.getString("id");for(int i=0;i<files.length();i++){String path=checked(files.getJSONObject(i).getString("path"));for(String temp:new String[]{path+".stella-"+id+".tmp",path+".stella-restore-"+id+".tmp"})if(tracked.optBoolean(temp)&&state(temp).optBoolean("exists"))adb.exec("[ ! -L "+Store.q(temp)+" ] && rm -f "+Store.q(temp),120000);}}
- private File active(){return Store.internal(context,"state/active_journal.json");}
- private File receipt(String binding){return Store.internal(context,"receipts/"+binding+".json");}
- private File journalFile(String id)throws IOException{if(!id.matches("[a-f0-9-]{36}"))throw new IOException("Mã nhật ký không hợp lệ.");return Store.internal(context,"journals/"+id+".json");}
- private void saveJournal(JSONObject j)throws Exception{Store.write(journalFile(j.getString("id")),j);Store.write(active(),j);}
- boolean pending(){return hasPending(context);}
- static boolean hasPending(Context context){try{File active=Store.internal(context,"state/active_journal.json");return active.isFile()&&!Arrays.asList("DONE","RESTORED","ROLLED_BACK","ABORTED").contains(Store.read(active).getString("state"));}catch(Exception e){return true;}}
- JSONObject receiptState(){try{if(target==null||!target.has("binding"))return Store.obj("present",false);File f=receipt(target.getString("binding"));if(!f.isFile())return Store.obj("present",false);JSONObject r=Store.read(f);return Store.obj("present",true,"version",r.getString("version"),"files",r.getJSONArray("files").length());}catch(Exception e){return Store.obj("present",false,"message","Chưa đọc được biên bản cài đặt.");}}
- private void step(String text,int percent)throws Exception{if(deadline>0&&SystemClock.elapsedRealtime()>deadline)throw new IOException("Thao tác vượt thời hạn; giữ nhật ký để phục hồi.");if(progress!=null)progress.update(text,percent);}
- private void bound(JSONObject journal)throws Exception {if(!journal.getString("binding").equals(target.getString("binding"))||!journal.getString("deviceId").equals(target.getString("deviceId"))||!journal.getString("package").equals(Store.GAME)||!journal.getString("root").equals(target.getString("root")))throw new IOException("Nhật ký/backup không thuộc thiết bị và thư mục game này.");if(!journal.getString("gameVersion").equals(target.getString("gameVersion"))||!journal.getString("resourceVersion").equals(target.getString("resourceVersion")))throw new IOException("Phiên bản game đã khác lần cài; không tự phục hồi gói cũ.");}
- private void ownExternalPath(File file)throws Exception {String base=context.getExternalFilesDir(null).getCanonicalPath(),path=file.getCanonicalPath();if(!path.startsWith(base+"/"))throw new IOException("Tệp tạm/backup vượt vùng ứng dụng.");String actual=adb.exec("readlink -f "+Store.q(path),10000);if(!actual.equals(path))throw new IOException("Vùng lưu tạm hoặc backup có liên kết.");}
- JSONObject install(ChannelClient channel)throws Exception {
-  deadline=SystemClock.elapsedRealtime()+5400000;requireTarget();closedAndVersion();if(pending())throw new IOException("Có nhật ký chưa hoàn tất. Hãy chọn Phục hồi thao tác trước.");JSONObject manifest=channel.androidManifest(channel.freshRelease());if(!VersionCompatibility.matchesBoth(manifest.optString("client_game_version"),manifest.optString("resource_version"),target.optString("gameVersion"),target.optString("resourceVersion")))throw new IOException("Gói Android không khớp phiên bản game hoặc tài nguyên đã đọc. Không cài đặt.");step("Đang chuẩn bị cài đặt cho Stella Sora Android...", 5);
-  String id=UUID.randomUUID().toString(),binding=target.getString("binding");File stage=Store.external(context,"staging/"+id),backup=Store.external(context,"backups/"+binding+"/"+id);JSONArray files=manifest.getJSONArray("files"),plan=new JSONArray();long total=manifest.getLong("total_size"),beforeTotal=0,maxFile=0;File rp=receipt(binding);Object previous=rp.isFile()?Store.read(rp):JSONObject.NULL;
-  JSONObject j=Store.obj("schema",1,"id",id,"state","PREPARING","binding",binding,"deviceId",target.getString("deviceId"),"package",Store.GAME,"root",target.getString("root"),"gameVersion",target.getString("gameVersion"),"resourceVersion",target.getString("resourceVersion"),"version",manifest.getString("version"),"files",plan,"previous_receipt",previous);saveJournal(j);
-  try{
-   if(new StatFs(stage.getAbsolutePath()).getAvailableBytes()<total+16777216)throw new IOException("Không đủ bộ nhớ để tải và kiểm tra gói Android.");
-   JSONObject packageZip=manifest.optJSONObject("package_zip");
-   Map<String,File> extractedBundles=new HashMap<>();
-   if(packageZip!=null){
-    File zipFile=new File(stage,"bundles.zip");
-    step("Tải gói AssetBundles nén ("+(packageZip.getLong("size")/1048576)+" MB)...",5);
-    ChannelClient.download(packageZip.getString("url"),zipFile,packageZip.getLong("size"),packageZip.getString("sha256"),(label,pct)->{
-     if(SystemClock.elapsedRealtime()>deadline)throw new IllegalStateException("Tải quá thời hạn.");
-     if(progress!=null)progress.update("Đang tải AssetBundles ("+pct+"%)",pct/8);
-    });
-    step("Đang giải nén AssetBundles...",15);
-    extractZip(zipFile,stage,extractedBundles);
-    zipFile.delete();
-   }
-   for(int i=0;i<files.length();i++){
-    final int index=i;
-    JSONObject f=files.getJSONObject(i);
-    String fPath=f.getString("path");
-    File source;
-    String bundleName=new File(fPath).getName();
-    if(fPath.startsWith("Persistent_Store/AssetBundles/")&&extractedBundles.containsKey(bundleName)){
-     source=extractedBundles.get(bundleName);
-    }else{
-     source=new File(stage,i+".payload");
-     step("Tải tệp "+(i+1)+" / "+files.length(),15+index*10/files.length());
-     ChannelClient.download(f.getString("url"),source,f.getLong("size"),f.getString("sha256"),(label,pct)->{
-      if(SystemClock.elapsedRealtime()>deadline)throw new IllegalStateException("Tải quá thời hạn.");
-      if(progress!=null)progress.update(label,15+index*10/files.length());
-     });
-    }
-    ownExternalPath(source);
-    JSONObject expected=Store.obj("exists",true,"size",f.getLong("size"),"sha256",f.getString("sha256"));
-    if(!same(state(source.getCanonicalPath()),expected))throw new IOException("Shell chưa đọc đúng tệp tải đã xác minh: "+fPath);
-    String destination=checked(f.getString("path"));
-    JSONObject before=state(destination);
-    beforeTotal+=before.optLong("size",0);
-    maxFile=Math.max(maxFile,f.getLong("size"));
-    plan.put(Store.obj("path",f.getString("path"),"before",before,"after",expected,"source",source.getCanonicalPath(),"backup",new File(backup,i+".original").getCanonicalPath()));
-    saveJournal(j);
-   }
-   closedAndVersion();long required=beforeTotal+maxFile+16777216;if(new StatFs(backup.getAbsolutePath()).getAvailableBytes()<required)throw new IOException("Không đủ dung lượng để sao lưu và thay tệp an toàn.");String df=adb.exec("df -Pk "+Store.q(target.getString("root"))+" | tail -n 1",10000);String[] columns=df.trim().split("\\s+");if(columns.length<4||Long.parseLong(columns[3])*1024<required)throw new IOException("Bộ nhớ vùng game không đủ hoặc chưa xác định được.");
-   for(int i=0;i<plan.length();i++){JSONObject f=plan.getJSONObject(i),before=f.getJSONObject("before");String destination=checked(f.getString("path"));if(!same(state(destination),before))throw new IOException("Tệp game đổi trước khi sao lưu: "+f.getString("path"));if(before.getBoolean("exists")){String saved=f.getString("backup");adb.exec("[ ! -e "+Store.q(saved)+" ] && "+guard(destination,before)+" && cp "+Store.q(destination)+" "+Store.q(saved),120000);ownExternalPath(new File(saved));if(!same(state(saved),before))throw new IOException("Backup không khớp tệp gốc.");}step("Đã sao lưu "+(i+1)+" / "+plan.length(),25+(i+1)*20/plan.length());}
-   j.put("state","APPLYING");saveJournal(j);
-   for(int i=0;i<plan.length();i++){closedAndVersion();JSONObject f=plan.getJSONObject(i);String destination=checked(f.getString("path")),temp=destination+".stella-"+id+".tmp";j.put("pending",f.getString("path"));saveJournal(j);if(!same(state(destination),f.getJSONObject("before")))throw new IOException("Tệp đã thay đổi trước khi ghi.");temporary(j,temp,f.getString("source"),f.getJSONObject("after"));adb.exec(guard(destination,f.getJSONObject("before"))+" && mv -f "+Store.q(temp)+" "+Store.q(destination),120000);if(!same(state(destination),f.getJSONObject("after")))throw new IOException("Đọc lại sau cài không khớp.");step("Đã cài và đọc lại "+(i+1)+" / "+plan.length(),45+(i+1)*50/plan.length());}
-   for(int i=0;i<plan.length();i++){JSONObject f=plan.getJSONObject(i);if(!same(state(checked(f.getString("path"))),f.getJSONObject("after")))throw new IOException("Tệp đã đổi trước khi ghi biên bản.");}
-   JSONObject r=Store.obj("schema",1,"journal_id",id,"binding",binding,"version",manifest.getString("version"),"files",plan,"package",Store.GAME,"root",target.getString("root"),"deviceId",target.getString("deviceId"));Store.write(rp,r);j.put("state","DONE");saveJournal(j);step("Đã hoàn tất gói Android và đối chiếu tệp.",100);return r;
-  }catch(Exception failure){if(j.getString("state").equals("PREPARING")){j.put("state","ABORTED");saveJournal(j);}else{try{restoreJournal(j,false);}catch(Exception recovery){j.put("state","RECOVERY_REQUIRED");saveJournal(j);throw new IOException("Thao tác chưa hoàn tất; cần Phục hồi từ nhật ký. "+Store.cleanError(recovery));}}throw new IOException("Chưa cài hoàn tất. Các thay đổi đã được đưa về trạng thái trước cài: "+Store.cleanError(failure));}
- }
- JSONObject verify()throws Exception {deadline=SystemClock.elapsedRealtime()+5400000;requireTarget();File f=receipt(target.getString("binding"));if(!f.isFile())throw new IOException("Chưa có biên bản của lần cài bằng ứng dụng này.");JSONObject r=Store.read(f),j=Store.read(journalFile(r.getString("journal_id")));bound(j);JSONArray list=j.getJSONArray("files");for(int i=0;i<list.length();i++){JSONObject item=list.getJSONObject(i);if(!same(state(checked(item.getString("path"))),item.getJSONObject("after")))throw new IOException("Tệp bản dịch không khớp: "+item.getString("path"));step("Đối chiếu "+(i+1)+" / "+list.length(),100*(i+1)/list.length());}return Store.obj("files",list.length(),"version",r.getString("version"));}
- void restore()throws Exception {deadline=SystemClock.elapsedRealtime()+5400000;requireTarget();if(pending())throw new IOException("Hãy phục hồi nhật ký chưa hoàn tất trước.");File f=receipt(target.getString("binding"));if(!f.isFile())throw new IOException("Chưa có biên bản/backup để khôi phục lần cài này.");JSONObject r=Store.read(f);restoreJournal(Store.read(journalFile(r.getString("journal_id"))),true);}
- void recover()throws Exception {deadline=SystemClock.elapsedRealtime()+5400000;requireTarget();if(!pending())throw new IOException("Không có thao tác bị ngắt cần phục hồi.");JSONObject j=Store.read(active());bound(j);if(j.getString("state").equals("PREPARING")){j.put("state","ABORTED");saveJournal(j);return;}restoreJournal(j,false);}
- private void restoreJournal(JSONObject j,boolean requireAfter)throws Exception {
-  bound(j);closedAndVersion();JSONArray files=j.getJSONArray("files");for(int i=0;i<files.length();i++){JSONObject f=files.getJSONObject(i),current=state(checked(f.getString("path"))),before=f.getJSONObject("before"),after=f.getJSONObject("after");if(requireAfter?!same(current,after):(!same(current,before)&&!same(current,after)))throw new IOException("Tệp đã đổi ngoài thao tác; giữ nguyên: "+f.getString("path"));if(before.getBoolean("exists")){ownExternalPath(new File(f.getString("backup")));if(!same(state(f.getString("backup")),before))throw new IOException("Backup bị thiếu hoặc sai SHA256.");}}
-  j.put("state","RESTORING");saveJournal(j);for(int i=0;i<files.length();i++){closedAndVersion();JSONObject f=files.getJSONObject(i),before=f.getJSONObject("before"),after=f.getJSONObject("after");String path=checked(f.getString("path"));JSONObject now=state(path);if(same(now,before))continue;if(!same(now,after))throw new IOException("Tệp đổi trong lúc phục hồi.");if(before.getBoolean("exists")){String temp=path+".stella-restore-"+j.getString("id")+".tmp";temporary(j,temp,f.getString("backup"),before);adb.exec(guard(path,after)+" && mv -f "+Store.q(temp)+" "+Store.q(path),120000);}else adb.exec(guard(path,after)+" && rm -f "+Store.q(path),120000);if(!same(state(path),before))throw new IOException("Đọc lại phục hồi không khớp.");step("Đã phục hồi "+(i+1)+" / "+files.length(),100*(i+1)/files.length());}
-  cleanupTemps(j);File rp=receipt(target.getString("binding"));Object previous=j.opt("previous_receipt");if(previous instanceof JSONObject)Store.write(rp,(JSONObject)previous);else if(rp.exists()&&!rp.delete())throw new IOException("Chưa cập nhật được biên bản phục hồi.");j.put("state",requireAfter?"RESTORED":"ROLLED_BACK");saveJournal(j);
+ private static final Set<String> TERMINAL_STATES = Collections.unmodifiableSet(
+   new HashSet<>(Arrays.asList("DONE", "RESTORED", "ROLLED_BACK", "ABORTED", "SUPERSEDED"))
+ );
+ private static final int STATE_BATCH_SIZE = 25;
+ private static final int BACKUP_BATCH_SIZE = 10;
+
+ private final Context context;
+ private final AdbClient adb;
+ private final ChannelClient.Progress progress;
+ private JSONObject target;
+ private long deadline;
+ private String verifiedExternalBase;
+
+ GamePatcher(Context c, AdbClient a, ChannelClient.Progress p) {
+  context = c;
+  adb = a;
+  progress = p;
  }
 
- private static void extractZip(File zipFile,File targetDir,Map<String,File> outMap)throws Exception {
-  byte[] buffer=new byte[65536];String base=targetDir.getCanonicalPath();
-  try(ZipInputStream zis=new ZipInputStream(new BufferedInputStream(new FileInputStream(zipFile)))){
+ static String relative(String path) throws IOException {
+  if (path.isEmpty() || !path.equals(path.trim()) || path.startsWith("/") || path.contains("\\") || path.contains(":")) {
+   throw new IOException("Đường dẫn tệp Android không hợp lệ.");
+  }
+  for (String piece : path.split("/", -1)) {
+   if (piece.isEmpty() || piece.equals(".") || piece.equals("..")) throw new IOException("Đường dẫn vượt phạm vi.");
+  }
+  for (char ch : path.toCharArray()) {
+   if (ch < 32) throw new IOException("Đường dẫn chứa ký tự điều khiển.");
+  }
+  boolean allowed = path.equals("Persistent_Store/Tables/data.arcx")
+    || path.equals("Persistent_Store/Scripts/lua.arcx")
+    || path.matches("Persistent_Store/Videos/[^/<>:\"|?*]+\\.srt")
+    || path.matches("Persistent_Store/AssetBundles/[A-Za-z0-9_.-]+\\.unity3d");
+  if (!allowed) throw new IOException("Tệp không thuộc phạm vi Android được phép: " + path);
+  return path;
+ }
+
+ JSONObject detect() throws Exception {
+  if (!adb.verified) throw new IOException("Chưa kết nối Local ADB.");
+  String user = adb.exec("am get-current-user", 10000).trim();
+  if (!user.matches("[0-9]+")) throw new IOException("Chưa xác định được người dùng Android.");
+  String installed = adb.exec("pm path --user " + user + " " + Store.GAME, 12000);
+  if (!installed.startsWith("package:")) {
+   target = Store.obj("installed", false, "package", Store.GAME, "versionsKnown", false, "reason", "Chưa tìm thấy gói Stella Sora Android.");
+   return target;
+  }
+  String expected = "/storage/emulated/" + user + "/Android/data/" + Store.GAME + "/files";
+  String root = adb.exec("readlink -f " + Store.q(expected), 10000).trim();
+  if (!root.equals(expected)) throw new IOException("Thư mục dữ liệu game không khớp vùng Android đã chọn.");
+  adb.exec("[ -d " + Store.q(root) + " ] && [ ! -L " + Store.q(root) + " ]", 10000);
+  String androidId = adb.exec("settings --user " + user + " get secure android_id", 10000).trim();
+  String device = adb.exec("getprop ro.product.device", 10000).trim();
+  if (!androidId.matches("[0-9a-fA-F]{16}") || device.trim().isEmpty()) {
+   throw new IOException("Chưa xác định được danh tính thiết bị.");
+  }
+  String deviceId = Store.digest(androidId + "|" + device + "|" + user);
+  target = Store.obj("installed", true, "package", Store.GAME, "root", root, "user", user, "deviceId", deviceId, "versionsKnown", false, "gameVersion", "", "resourceVersion", "");
+  String listing = adb.exec("find " + Store.q(root + "/Persistent_Store") + " -maxdepth 1 -type f -name '*.mani' -print", 10000);
+  String chosen = null, game = null, resource = null;
+  List<String> files = new ArrayList<>();
+  for (String file : listing.split("\\r?\\n")) {
+   file = file.trim();
+   if (!file.startsWith(root + "/Persistent_Store/") || !file.substring(file.lastIndexOf('/') + 1).matches("[A-Za-z0-9_.-]+\\.mani")) continue;
+   files.add(file);
+  }
+  Collections.sort(files, (a, b) -> {
+   boolean aW = a.toLowerCase(Locale.ROOT).contains("ss_win"), bW = b.toLowerCase(Locale.ROOT).contains("ss_win");
+   if (aW != bW) return aW ? 1 : -1;
+   return a.compareTo(b);
+  });
+  for (String file : files) {
+   if (!adb.exec("readlink -f " + Store.q(file), 10000).trim().equals(file)) continue;
+   String data = adb.exec("head -n 24 " + Store.q(file), 10000);
+   String g = header(data, "GAME_VER");
+   if (g == null) g = header(data, "CLIENT_VER");
+   String r = header(data, "RES_VER");
+   if (g == null || r == null) continue;
+   if (game != null && (!game.equals(g) || !resource.equals(r))) {
+    throw new IOException("Các tiêu đề tài nguyên không thống nhất phiên bản. Không chọn đoán một bản.");
+   }
+   game = g;
+   resource = r;
+   chosen = file;
+  }
+  if (chosen != null) {
+   target.put("gameVersion", game);
+   target.put("resourceVersion", resource);
+   target.put("versionFile", chosen);
+   target.put("versionsKnown", true);
+   target.put("binding", Store.digest(deviceId + "|" + Store.GAME + "|" + root));
+  } else {
+   target.put("reason", "Chưa đọc được GAME_VER/RES_VER thực tế từ tài nguyên Android. Hãy mở game tải đủ dữ liệu trước khi cài.");
+  }
+  return target;
+ }
+
+ private static String header(String data, String key) {
+  Matcher m = Pattern.compile("(?m)(?:^|[\\r\\n\\s$|])" + key + "[:=\\s]+([0-9A-Za-z_.-]+)").matcher(data);
+  return m.find() ? m.group(1) : null;
+ }
+
+ private JSONObject requireTarget() throws Exception {
+  JSONObject t = detect();
+  if (!t.optBoolean("installed") || !t.optBoolean("versionsKnown")) {
+   throw new IOException(t.optString("reason", "Chưa đọc được bản game."));
+  }
+  return t;
+ }
+
+ private void closedAndVersion() throws Exception {
+  String root = target.getString("root");
+  String versionFile = target.getString("versionFile");
+  String qRoot = Store.q(root), qVer = Store.q(versionFile);
+  String cmd = "r=$(readlink -f " + qRoot + ") || exit $?; "
+    + "if [ \"$r\" != " + qRoot + " ]; then printf 'ERR:ROOT'; exit 0; fi; "
+    + "pidof " + Store.GAME + " >/dev/null; s=$?; "
+    + "if [ \"$s\" -eq 0 ]; then printf 'ERR:RUNNING'; exit 0; elif [ \"$s\" -ne 1 ]; then exit \"$s\"; fi; "
+    + "if [ -L " + qVer + " ] || [ \"$(readlink -f " + qVer + ")\" != " + qVer + " ]; then printf 'ERR:VERFILE'; exit 0; fi; "
+    + "printf 'OK\\n'; head -n 24 " + qVer;
+  String out = adb.exec(cmd, 12000);
+  if ("ERR:ROOT".equals(out)) throw new IOException("Thư mục game đã đổi.");
+  if ("ERR:RUNNING".equals(out)) throw new IOException("Hãy thoát Stella Sora trước khi thay đổi tài nguyên.");
+  if ("ERR:VERFILE".equals(out)) throw new IOException("Tệp phiên bản đã thành liên kết hoặc đổi đường dẫn.");
+  if (!out.startsWith("OK")) throw new IOException("Không kiểm tra được trạng thái game.");
+  String data = out.length() > 2 ? out.substring(2).trim() : "";
+  String g = header(data, "GAME_VER");
+  if (g == null) g = header(data, "CLIENT_VER");
+  String r = header(data, "RES_VER");
+  if (!target.getString("gameVersion").equals(g) || !target.getString("resourceVersion").equals(r)) {
+   throw new IOException("Game đã cập nhật hoặc chưa đọc được phiên bản. Không ghi đè tài nguyên.");
+  }
+ }
+
+ private String fullPath(String rel) throws Exception {
+  return target.getString("root") + "/" + relative(rel);
+ }
+
+ private void verifySafeDirectories(Collection<String> relativePaths) throws Exception {
+  String root = target.getString("root");
+  LinkedHashSet<String> dirs = new LinkedHashSet<>();
+  dirs.add(root);
+  for (String rel : relativePaths) {
+   String clean = relative(rel);
+   String[] pieces = clean.split("/");
+   String current = root;
+   for (int i = 0; i < pieces.length - 1; i++) {
+    current += "/" + pieces[i];
+    dirs.add(current);
+   }
+  }
+  StringBuilder cmd = new StringBuilder("for d in");
+  for (String d : dirs) cmd.append(' ').append(Store.q(d));
+  cmd.append("; do if [ -L \"$d\" ] || [ ! -d \"$d\" ] || [ \"$(readlink -f \"$d\")\" != \"$d\" ]; then printf 'ERR'; exit 0; fi; done; printf 'OK'");
+  if (!"OK".equals(adb.exec(cmd.toString(), 15000))) {
+   throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");
+  }
+ }
+
+ private List<JSONObject> batchStates(List<String> fullPaths) throws Exception {
+  List<JSONObject> all = new ArrayList<>(fullPaths.size());
+  for (int start = 0; start < fullPaths.size(); start += STATE_BATCH_SIZE) {
+   int end = Math.min(fullPaths.size(), start + STATE_BATCH_SIZE);
+   List<String> chunk = fullPaths.subList(start, end);
+   StringBuilder cmd = new StringBuilder("i=0; for p in");
+   for (String p : chunk) cmd.append(' ').append(Store.q(p));
+   cmd.append("; do if [ -L \"$p\" ]; then exit 73; ")
+      .append("elif [ -f \"$p\" ]; then s=$(stat -c %s \"$p\") || exit $?; h=$(sha256sum \"$p\") || exit $?; printf '%s F %s %s\\n' \"$i\" \"$s\" \"${h%% *}\"; ")
+      .append("elif [ -e \"$p\" ]; then exit 74; ")
+      .append("else printf '%s A\\n' \"$i\"; fi; i=$((i+1)); done");
+   String raw = adb.exec(cmd.toString(), 120000);
+   String[] lines = raw.isEmpty() ? new String[0] : raw.split("\\r?\\n");
+   if (lines.length != chunk.size()) throw new IOException("Chưa đối chiếu được kích thước/SHA256.");
+   for (int k = 0; k < chunk.size(); k++) {
+    String[] tok = lines[k].trim().split("\\s+");
+    if (tok.length < 2 || !tok[0].equals(String.valueOf(k))) {
+     throw new IOException("Chưa đối chiếu được kích thước/SHA256.");
+    }
+    if ("A".equals(tok[1]) && tok.length == 2) {
+     all.add(Store.obj("exists", false));
+    } else if ("F".equals(tok[1]) && tok.length >= 4 && tok[2].matches("[0-9]+") && tok[3].matches("[0-9a-fA-F]{64}")) {
+     all.add(Store.obj("exists", true, "size", Long.parseLong(tok[2]), "sha256", tok[3].toLowerCase(Locale.ROOT)));
+    } else {
+     throw new IOException("Chưa đối chiếu được kích thước/SHA256.");
+    }
+   }
+  }
+  return all;
+ }
+
+ private static boolean same(JSONObject a, JSONObject b) {
+  return a.optBoolean("exists") == b.optBoolean("exists")
+    && (!a.optBoolean("exists") || (a.optLong("size", -1) == b.optLong("size", -2) && a.optString("sha256").equals(b.optString("sha256"))));
+ }
+
+ private String guard(String path, JSONObject expected) throws Exception {
+  String q = Store.q(path);
+  if (!expected.getBoolean("exists")) return "[ ! -e " + q + " ] && [ ! -L " + q + " ]";
+  return "[ ! -L " + q + " ] && [ -f " + q + " ] && [ \"$(stat -c %s " + q + ")\" = " + Store.q(String.valueOf(expected.getLong("size"))) + " ] && h=$(sha256sum " + q + ") && [ \"${h%% *}\" = " + Store.q(expected.getString("sha256")) + " ]";
+ }
+
+ private void applyFileAtomic(JSONObject journal, String id, JSONObject f) throws Exception {
+  String relPath = f.getString("path");
+  String destination = fullPath(relPath);
+  String source = f.getString("source");
+  JSONObject before = f.getJSONObject("before");
+  JSONObject after = f.getJSONObject("after");
+  String temp = destination + ".stella-" + id + ".tmp";
+  JSONObject tracked = journal.optJSONObject("temporaries");
+  if (tracked == null) {
+   tracked = new JSONObject();
+   journal.put("temporaries", tracked);
+  }
+  boolean wasTracked = tracked.optBoolean(temp, false);
+  tracked.put(temp, true);
+  journal.put("pending", relPath);
+  saveJournal(journal);
+
+  String qTemp = Store.q(temp), qSrc = Store.q(source), qDest = Store.q(destination);
+  String gBefore = guard(destination, before);
+  String gTempAfter = guard(temp, after);
+  String gDestAfter = guard(destination, after);
+  StringBuilder cmd = new StringBuilder();
+  cmd.append("if ! (").append(gBefore).append("); then printf 'ERR:BEFORE'; exit 0; fi; ");
+  cmd.append("if [ -L ").append(qTemp).append(" ]; then printf 'ERR:TEMPLINK'; exit 0; fi; ");
+  if (!wasTracked) {
+   cmd.append("if [ -e ").append(qTemp).append(" ]; then printf 'ERR:UNTRACKED'; exit 0; fi; ");
+  } else {
+   cmd.append("if [ -e ").append(qTemp).append(" ] && ! (").append(gTempAfter).append("); then rm -f ").append(qTemp).append(" || exit $?; fi; ");
+  }
+  cmd.append("if [ ! -e ").append(qTemp).append(" ]; then cp ").append(qSrc).append(" ").append(qTemp).append(" || exit $?; ");
+  cmd.append("if ! (").append(gTempAfter).append("); then rm -f ").append(qTemp).append("; printf 'ERR:TEMPVERIFY'; exit 0; fi; fi; ");
+  cmd.append("if ! (").append(gBefore).append("); then printf 'ERR:BEFORE'; exit 0; fi; ");
+  cmd.append("mv -f ").append(qTemp).append(" ").append(qDest).append(" || exit $?; ");
+  cmd.append("if ! (").append(gDestAfter).append("); then printf 'ERR:AFTER'; exit 0; fi; ");
+  cmd.append("printf 'OK'");
+
+  String res = adb.exec(cmd.toString(), 120000);
+  if ("OK".equals(res)) return;
+  if ("ERR:BEFORE".equals(res)) throw new IOException("Tệp đã thay đổi trước khi ghi: " + relPath);
+  if ("ERR:TEMPLINK".equals(res) || "ERR:UNTRACKED".equals(res)) throw new IOException("Tệp tạm đã tồn tại ngoài nhật ký; giữ nguyên: " + relPath);
+  if ("ERR:TEMPVERIFY".equals(res)) throw new IOException("Tệp tạm không khớp nội dung cần cài/phục hồi: " + relPath);
+  if ("ERR:AFTER".equals(res)) throw new IOException("Đọc lại sau cài không khớp: " + relPath);
+  throw new IOException("Không thể ghi tệp an toàn (" + relPath + "): " + res);
+ }
+
+ private void restoreFileAtomic(JSONObject journal, String id, JSONObject f) throws Exception {
+  String relPath = f.getString("path");
+  String path = fullPath(relPath);
+  JSONObject before = f.getJSONObject("before");
+  JSONObject after = f.getJSONObject("after");
+  String qPath = Store.q(path);
+  String gBefore = guard(path, before);
+  String gAfter = guard(path, after);
+
+  if (before.getBoolean("exists")) {
+   String backupPath = f.getString("backup");
+   String temp = path + ".stella-restore-" + id + ".tmp";
+   JSONObject tracked = journal.optJSONObject("temporaries");
+   if (tracked == null) {
+    tracked = new JSONObject();
+    journal.put("temporaries", tracked);
+   }
+   boolean wasTracked = tracked.optBoolean(temp, false);
+   tracked.put(temp, true);
+   journal.put("pending", relPath);
+   saveJournal(journal);
+
+   String qTemp = Store.q(temp), qBackup = Store.q(backupPath);
+   String gTempBefore = guard(temp, before);
+   StringBuilder cmd = new StringBuilder();
+   cmd.append("if (").append(gBefore).append("); then printf 'OK'; exit 0; fi; ");
+   cmd.append("if ! (").append(gAfter).append("); then printf 'ERR:CHANGED'; exit 0; fi; ");
+   cmd.append("if [ -L ").append(qTemp).append(" ]; then printf 'ERR:TEMPLINK'; exit 0; fi; ");
+   if (!wasTracked) {
+    cmd.append("if [ -e ").append(qTemp).append(" ]; then printf 'ERR:UNTRACKED'; exit 0; fi; ");
+   } else {
+    cmd.append("if [ -e ").append(qTemp).append(" ] && ! (").append(gTempBefore).append("); then rm -f ").append(qTemp).append(" || exit $?; fi; ");
+   }
+   cmd.append("if [ ! -e ").append(qTemp).append(" ]; then cp ").append(qBackup).append(" ").append(qTemp).append(" || exit $?; ");
+   cmd.append("if ! (").append(gTempBefore).append("); then rm -f ").append(qTemp).append("; printf 'ERR:TEMPVERIFY'; exit 0; fi; fi; ");
+   cmd.append("if ! (").append(gAfter).append("); then printf 'ERR:CHANGED'; exit 0; fi; ");
+   cmd.append("mv -f ").append(qTemp).append(" ").append(qPath).append(" || exit $?; ");
+   cmd.append("if ! (").append(gBefore).append("); then printf 'ERR:READBACK'; exit 0; fi; ");
+   cmd.append("printf 'OK'");
+
+   String res = adb.exec(cmd.toString(), 120000);
+   if ("OK".equals(res)) return;
+   if ("ERR:CHANGED".equals(res)) throw new IOException("Tệp đổi trong lúc phục hồi: " + relPath);
+   if ("ERR:TEMPLINK".equals(res) || "ERR:UNTRACKED".equals(res)) throw new IOException("Tệp tạm đã tồn tại ngoài nhật ký; giữ nguyên: " + relPath);
+   if ("ERR:TEMPVERIFY".equals(res)) throw new IOException("Tệp tạm không khớp nội dung cần cài/phục hồi: " + relPath);
+   if ("ERR:READBACK".equals(res)) throw new IOException("Đọc lại phục hồi không khớp: " + relPath);
+   throw new IOException("Không thể phục hồi tệp (" + relPath + "): " + res);
+  } else {
+   journal.put("pending", relPath);
+   saveJournal(journal);
+   String cmd = "if (" + gBefore + "); then printf 'OK'; exit 0; fi; "
+     + "if ! (" + gAfter + "); then printf 'ERR:CHANGED'; exit 0; fi; "
+     + "rm -f " + qPath + " || exit $?; "
+     + "if ! (" + gBefore + "); then printf 'ERR:READBACK'; exit 0; fi; "
+     + "printf 'OK'";
+   String res = adb.exec(cmd, 120000);
+   if ("OK".equals(res)) return;
+   if ("ERR:CHANGED".equals(res)) throw new IOException("Tệp đổi trong lúc phục hồi: " + relPath);
+   if ("ERR:READBACK".equals(res)) throw new IOException("Đọc lại phục hồi không khớp: " + relPath);
+   throw new IOException("Không thể xoá tệp mới khi phục hồi (" + relPath + "): " + res);
+  }
+ }
+
+ private void cleanupTemps(JSONObject journal, boolean strictDirs) throws Exception {
+  JSONObject tracked = journal.optJSONObject("temporaries");
+  if (tracked == null || tracked.length() == 0) return;
+  JSONArray files = journal.optJSONArray("files");
+  if (files == null || files.length() == 0) return;
+  String id = journal.getString("id");
+  Set<String> relPaths = new LinkedHashSet<>();
+  List<String> candidates = new ArrayList<>();
+  for (int i = 0; i < files.length(); i++) {
+   String rel = relative(files.getJSONObject(i).getString("path"));
+   relPaths.add(rel);
+   String full = target.getString("root") + "/" + rel;
+   for (String temp : new String[]{full + ".stella-" + id + ".tmp", full + ".stella-restore-" + id + ".tmp"}) {
+    if (tracked.optBoolean(temp)) candidates.add(temp);
+   }
+  }
+  if (candidates.isEmpty()) return;
+  if (strictDirs) {
+   verifySafeDirectories(relPaths);
+  } else {
+   String root = target.getString("root");
+   if (!adb.exec("readlink -f " + Store.q(root), 10000).trim().equals(root)) return;
+  }
+  for (int start = 0; start < candidates.size(); start += STATE_BATCH_SIZE) {
+   List<String> sub = candidates.subList(start, Math.min(candidates.size(), start + STATE_BATCH_SIZE));
+   StringBuilder cmd = new StringBuilder("for t in");
+   for (String t : sub) cmd.append(' ').append(Store.q(t));
+   cmd.append("; do p=$(dirname \"$t\"); if [ ! -L \"$p\" ] && [ -d \"$p\" ] && [ ! -L \"$t\" ] && [ -e \"$t\" ]; then rm -f \"$t\"; fi; done; printf 'OK'");
+   adb.exec(cmd.toString(), 60000);
+  }
+ }
+
+ static void deleteTree(File f) {
+  if (f == null) return;
+  try {
+   Path p = f.toPath();
+   if (!Files.exists(p, LinkOption.NOFOLLOW_LINKS)) return;
+   if (Files.isSymbolicLink(p)) {
+    Files.deleteIfExists(p);
+    return;
+   }
+   if (f.isDirectory()) {
+    File[] children = f.listFiles();
+    if (children != null) {
+     for (File child : children) deleteTree(child);
+    }
+   }
+   Files.deleteIfExists(p);
+  } catch (Exception ignored) {}
+ }
+
+ private void cleanStaleStaging() {
+  try {
+   File ext = context.getExternalFilesDir(null);
+   if (ext == null || Files.isSymbolicLink(ext.toPath())) return;
+   File stagingRoot = new File(ext, "staging");
+   if (!stagingRoot.exists() || Files.isSymbolicLink(stagingRoot.toPath())) return;
+   File[] children = stagingRoot.listFiles();
+   if (children != null) {
+    for (File child : children) deleteTree(child);
+   }
+  } catch (Exception ignored) {}
+ }
+
+ private void pruneHistory(String binding, String keepId) {
+  try {
+   Set<String> keep = new HashSet<>();
+   if (keepId != null && !keepId.isEmpty()) keep.add(keepId);
+   File act = active();
+   if (act.isFile()) {
+    try {
+     JSONObject actObj = Store.read(act);
+     String aid = actObj.optString("id", "");
+     if (!aid.isEmpty() && !TERMINAL_STATES.contains(actObj.optString("state", ""))) {
+      keep.add(aid);
+     }
+    } catch (Exception e) {
+     return;
+    }
+   }
+   File receiptsDir = Store.internal(context, "receipts");
+   if (receiptsDir.isDirectory()) {
+    File[] rFiles = receiptsDir.listFiles();
+    if (rFiles != null) {
+     for (File rf : rFiles) {
+      if (!rf.isFile() || !rf.getName().endsWith(".json")) continue;
+      try {
+       String jid = Store.read(rf).optString("journal_id", "");
+       if (!jid.isEmpty()) keep.add(jid);
+      } catch (Exception e) {
+       return;
+      }
+     }
+    }
+   }
+   ArrayDeque<String> chainQueue = new ArrayDeque<>(keep);
+   while (!chainQueue.isEmpty()) {
+    String curJid = chainQueue.pollFirst();
+    try {
+     File jf = journalFile(curJid);
+     if (!jf.isFile()) continue;
+     JSONObject jo = Store.read(jf);
+     JSONObject prevReceipt = jo.optJSONObject("previous_receipt");
+     if (prevReceipt != null) {
+      String prevJid = prevReceipt.optString("journal_id", "");
+      if (!prevJid.isEmpty() && keep.add(prevJid)) {
+       chainQueue.addLast(prevJid);
+      }
+     }
+    } catch (Exception e) {
+     return;
+    }
+   }
+   File ext = context.getExternalFilesDir(null);
+   if (ext != null && !Files.isSymbolicLink(ext.toPath()) && binding != null && !binding.isEmpty()) {
+    File backupsForBinding = new File(ext, "backups/" + binding);
+    if (backupsForBinding.isDirectory() && !Files.isSymbolicLink(backupsForBinding.toPath())) {
+     File[] bDirs = backupsForBinding.listFiles();
+     if (bDirs != null) {
+      for (File bd : bDirs) {
+       if (!keep.contains(bd.getName())) deleteTree(bd);
+      }
+     }
+    }
+   }
+   File journalsDir = Store.internal(context, "journals");
+   if (journalsDir.isDirectory() && !Files.isSymbolicLink(journalsDir.toPath())) {
+    File[] jFiles = journalsDir.listFiles();
+    if (jFiles != null) {
+     for (File jf : jFiles) {
+      if (!jf.isFile() || !jf.getName().endsWith(".json")) continue;
+      String name = jf.getName();
+      String jid = name.substring(0, name.length() - 5);
+      if (keep.contains(jid)) continue;
+      try {
+       JSONObject jo = Store.read(jf);
+       if (TERMINAL_STATES.contains(jo.optString("state", ""))) {
+        jf.delete();
+       }
+      } catch (Exception ignored) {}
+     }
+    }
+   }
+  } catch (Exception ignored) {}
+ }
+
+ private File active() { return Store.internal(context, "state/active_journal.json"); }
+ private File receipt(String binding) { return Store.internal(context, "receipts/" + binding + ".json"); }
+ private File journalFile(String id) throws IOException {
+  if (!id.matches("[a-f0-9-]{36}")) throw new IOException("Mã nhật ký không hợp lệ.");
+  return Store.internal(context, "journals/" + id + ".json");
+ }
+ private void saveJournal(JSONObject j) throws Exception {
+  Store.write(journalFile(j.getString("id")), j);
+  Store.write(active(), j);
+ }
+ boolean pending() { return hasPending(context); }
+ static boolean hasPending(Context context) {
+  try {
+   File active = Store.internal(context, "state/active_journal.json");
+   return active.isFile() && !TERMINAL_STATES.contains(Store.read(active).getString("state"));
+  } catch (Exception e) {
+   return true;
+  }
+ }
+
+ JSONObject receiptState() {
+  try {
+   if (target == null || !target.has("binding")) return Store.obj("present", false);
+   File f = receipt(target.getString("binding"));
+   if (!f.isFile()) return Store.obj("present", false);
+   JSONObject r = Store.read(f);
+   JSONObject out = Store.obj(
+     "present", true,
+     "version", r.getString("version"),
+     "manifestSha256", r.optString("manifest_sha256", ""),
+     "files", r.getJSONArray("files").length()
+   );
+   try {
+    JSONObject j = Store.read(journalFile(r.getString("journal_id")));
+    String g = j.optString("gameVersion"), res = j.optString("resourceVersion");
+    out.put("installedGameVersion", g);
+    out.put("installedResourceVersion", res);
+    out.put("stale", !g.equals(target.optString("gameVersion")) || !res.equals(target.optString("resourceVersion")));
+   } catch (Exception ignored) {}
+   return out;
+  } catch (Exception e) {
+   return Store.obj("present", false, "message", "Chưa đọc được biên bản cài đặt.");
+  }
+ }
+
+ private void step(String text, int percent) throws Exception {
+  if (deadline > 0 && SystemClock.elapsedRealtime() > deadline) {
+   throw new IOException("Thao tác vượt thời hạn; giữ nhật ký để phục hồi.");
+  }
+  if (progress != null) progress.update(text, percent);
+ }
+
+ private void checkIdentity(JSONObject journal) throws Exception {
+  if (!journal.getString("binding").equals(target.getString("binding"))
+    || !journal.getString("deviceId").equals(target.getString("deviceId"))
+    || !journal.getString("package").equals(Store.GAME)
+    || !journal.getString("root").equals(target.getString("root"))) {
+   throw new StellaException("E-BIND-MISMATCH", "Nhật ký/backup không thuộc thiết bị và thư mục game này.", null);
+  }
+ }
+
+ private void bound(JSONObject journal) throws Exception {
+  checkIdentity(journal);
+  if (!journal.getString("gameVersion").equals(target.getString("gameVersion"))
+    || !journal.getString("resourceVersion").equals(target.getString("resourceVersion"))) {
+   throw new StellaException("E-VER-CHANGED",
+     "Game đã cập nhật kể từ lần cài trước (lần cài: game " + journal.getString("gameVersion") + " · tài nguyên " + journal.getString("resourceVersion")
+       + "; hiện tại: game " + target.getString("gameVersion") + " · tài nguyên " + target.getString("resourceVersion")
+       + "). Bản sao lưu cũ thuộc phiên bản trước nên không được dùng để khôi phục, tránh ghi đè tệp của bản game mới. Hãy bấm Cập nhật Việt hoá để cài lại cho phiên bản hiện tại.",
+     null,
+     "installedGameVersion", journal.getString("gameVersion"),
+     "installedResourceVersion", journal.getString("resourceVersion"),
+     "currentGameVersion", target.getString("gameVersion"),
+     "currentResourceVersion", target.getString("resourceVersion"));
+  }
+ }
+
+ private String ensureExternalBase() throws Exception {
+  File ext = context.getExternalFilesDir(null);
+  if (ext == null) throw new IOException("Chưa truy cập được bộ nhớ ngoài của ứng dụng.");
+  if (Files.isSymbolicLink(ext.toPath())) throw new IOException("Vùng lưu tạm hoặc backup có liên kết.");
+  String base = ext.getCanonicalPath();
+  if (verifiedExternalBase == null || !verifiedExternalBase.equals(base)) {
+   String actual = adb.exec("[ ! -L " + Store.q(base) + " ] && [ -d " + Store.q(base) + " ] && readlink -f " + Store.q(base), 10000).trim();
+   if (!actual.equals(base)) throw new IOException("Vùng lưu tạm hoặc backup có liên kết.");
+   verifiedExternalBase = base;
+  }
+  return verifiedExternalBase;
+ }
+
+ private String ownExternalPath(File file) throws Exception {
+  String base = ensureExternalBase();
+  Path basePath = new File(base).toPath();
+  for (Path cur = file.toPath(); cur != null && !cur.equals(basePath); cur = cur.getParent()) {
+   if (Files.exists(cur, LinkOption.NOFOLLOW_LINKS) && Files.isSymbolicLink(cur)) {
+    throw new IOException("Vùng lưu tạm hoặc backup có liên kết.");
+   }
+  }
+  String path = file.getCanonicalPath();
+  if (!path.startsWith(base + "/") && !path.startsWith(base + File.separator)) {
+   throw new IOException("Tệp tạm/backup vượt vùng ứng dụng.");
+  }
+  return path;
+ }
+
+ JSONObject install(ChannelClient channel) throws Exception {
+  return install(channel, null);
+ }
+
+ JSONObject install(ChannelClient channel, JSONObject prefetchedManifest) throws Exception {
+  verifiedExternalBase = null;
+  deadline = SystemClock.elapsedRealtime() + 5400000;
+  requireTarget();
+  closedAndVersion();
+  if (pending()) throw new IOException("Có nhật ký chưa hoàn tất. Hãy chọn Phục hồi thao tác trước.");
+  cleanStaleStaging();
+  JSONObject manifest = prefetchedManifest != null ? prefetchedManifest : channel.androidManifest(channel.freshRelease());
+  if (!VersionCompatibility.matchesBoth(manifest.optString("client_game_version"), manifest.optString("resource_version"), target.optString("gameVersion"), target.optString("resourceVersion"))) {
+   throw new IOException("Gói Android không khớp phiên bản game hoặc tài nguyên đã đọc. Không cài đặt.");
+  }
+  step("Đang chuẩn bị cài đặt cho Stella Sora Android...", 5);
+  ensureExternalBase();
+  String id = UUID.randomUUID().toString(), binding = target.getString("binding");
+  File stage = Store.external(context, "staging/" + id);
+  File backup = Store.external(context, "backups/" + binding + "/" + id);
+  ownExternalPath(stage);
+  ownExternalPath(backup);
+  JSONArray files = manifest.getJSONArray("files"), plan = new JSONArray();
+  long total = manifest.getLong("total_size"), beforeTotal = 0, maxFile = 0;
+  File rp = receipt(binding);
+  Object previous = JSONObject.NULL;
+  if (rp.isFile()) {
+   JSONObject existingReceipt = Store.read(rp);
+   String prevJid = existingReceipt.optString("journal_id", "");
+   if (!prevJid.isEmpty()) {
+    File prevJf = journalFile(prevJid);
+    if (prevJf.isFile()) {
+     JSONObject prevJournal = Store.read(prevJf);
+     if (prevJournal.optString("gameVersion").equals(target.optString("gameVersion"))
+       && prevJournal.optString("resourceVersion").equals(target.optString("resourceVersion"))) {
+      previous = existingReceipt;
+     }
+    }
+   }
+  }
+  JSONObject j = Store.obj(
+    "schema", 1,
+    "id", id,
+    "state", "PREPARING",
+    "binding", binding,
+    "deviceId", target.getString("deviceId"),
+    "package", Store.GAME,
+    "root", target.getString("root"),
+    "gameVersion", target.getString("gameVersion"),
+    "resourceVersion", target.getString("resourceVersion"),
+    "version", manifest.getString("version"),
+    "manifest_sha256", manifest.optString("manifest_sha256", ""),
+    "files", plan,
+    "previous_receipt", previous
+  );
+  saveJournal(j);
+  try {
+   if (new StatFs(stage.getAbsolutePath()).getAvailableBytes() < total + 16777216) {
+    throw new IOException("Không đủ bộ nhớ để tải và kiểm tra gói Android.");
+   }
+   JSONObject packageZip = manifest.optJSONObject("package_zip");
+   Map<String, File> extractedBundles = new HashMap<>();
+   if (packageZip != null) {
+    File zipFile = new File(stage, "bundles.zip");
+    step("Tải gói AssetBundles nén (" + (packageZip.getLong("size") / 1048576) + " MB)...", 5);
+    ChannelClient.download(packageZip.getString("url"), zipFile, packageZip.getLong("size"), packageZip.getString("sha256"), (label, pct) -> {
+     if (SystemClock.elapsedRealtime() > deadline) throw new IllegalStateException("Tải quá thời hạn.");
+     if (progress != null) progress.update("Đang tải AssetBundles (" + pct + "%)", 5 + pct * 9 / 100);
+    });
+    step("Đang giải nén AssetBundles...", 15);
+    extractZip(zipFile, stage, extractedBundles);
+    zipFile.delete();
+   }
+
+   List<String> relPaths = new ArrayList<>(files.length());
+   List<String> destPaths = new ArrayList<>(files.length());
+   List<String> sourcePaths = new ArrayList<>(files.length());
+   List<JSONObject> afterStates = new ArrayList<>(files.length());
+
+   for (int i = 0; i < files.length(); i++) {
+    final int index = i;
+    JSONObject f = files.getJSONObject(i);
+    String fPath = relative(f.getString("path"));
+    long expectedSize = f.getLong("size");
+    String expectedSha = f.getString("sha256").toLowerCase(Locale.ROOT);
+    File source;
+    String bundleName = new File(fPath).getName();
+    if (fPath.startsWith("Persistent_Store/AssetBundles/") && extractedBundles.containsKey(bundleName)) {
+     source = extractedBundles.get(bundleName);
+    } else {
+     source = new File(stage, i + ".payload");
+     step("Tải tệp " + (i + 1) + " / " + files.length(), 15 + index * 10 / files.length());
+     ChannelClient.download(f.getString("url"), source, expectedSize, expectedSha, (label, pct) -> {
+      if (SystemClock.elapsedRealtime() > deadline) throw new IllegalStateException("Tải quá thời hạn.");
+      if (progress != null) progress.update(label, 15 + index * 10 / files.length());
+     });
+    }
+    String canonicalSource = ownExternalPath(source);
+    if (!source.isFile() || source.length() != expectedSize || !Store.hash(source).equalsIgnoreCase(expectedSha)) {
+     throw new IOException("Tệp tải về không khớp kích thước hoặc SHA256: " + fPath);
+    }
+    relPaths.add(fPath);
+    destPaths.add(fullPath(fPath));
+    sourcePaths.add(canonicalSource);
+    afterStates.add(Store.obj("exists", true, "size", expectedSize, "sha256", expectedSha));
+    maxFile = Math.max(maxFile, expectedSize);
+   }
+
+   step("Đang kiểm tra thư mục và tệp hiện tại...", 26);
+   verifySafeDirectories(relPaths);
+   List<JSONObject> beforeStates = batchStates(destPaths);
+   for (int i = 0; i < files.length(); i++) {
+    JSONObject before = beforeStates.get(i);
+    beforeTotal += before.optLong("size", 0);
+    File backupFile = new File(backup, i + ".original");
+    String canonicalBackup = ownExternalPath(backupFile);
+    plan.put(Store.obj(
+      "path", relPaths.get(i),
+      "before", before,
+      "after", afterStates.get(i),
+      "source", sourcePaths.get(i),
+      "backup", canonicalBackup
+    ));
+   }
+   saveJournal(j);
+
+   closedAndVersion();
+   long required = beforeTotal + maxFile + 16777216;
+   if (new StatFs(backup.getAbsolutePath()).getAvailableBytes() < required) {
+    throw new IOException("Không đủ dung lượng để sao lưu và thay tệp an toàn.");
+   }
+   String df = adb.exec("df -Pk " + Store.q(target.getString("root")) + " | tail -n 1", 10000);
+   String[] columns = df.trim().split("\\s+");
+   if (columns.length < 4 || Long.parseLong(columns[3]) * 1024 < required) {
+    throw new IOException("Bộ nhớ vùng game không đủ hoặc chưa xác định được.");
+   }
+
+   verifySafeDirectories(relPaths);
+   for (int start = 0; start < plan.length(); start += BACKUP_BATCH_SIZE) {
+    int end = Math.min(plan.length(), start + BACKUP_BATCH_SIZE);
+    StringBuilder cmd = new StringBuilder();
+    for (int i = start; i < end; i++) {
+     JSONObject item = plan.getJSONObject(i);
+     String rel = item.getString("path");
+     String dest = destPaths.get(i);
+     JSONObject before = item.getJSONObject("before");
+     if (!before.getBoolean("exists")) {
+      cmd.append("if ! (").append(guard(dest, before)).append("); then printf 'ERR:81:%s' ").append(Store.q(rel)).append("; exit 0; fi; ");
+     } else {
+      String saved = item.getString("backup");
+      String qSaved = Store.q(saved), qDest = Store.q(dest);
+      cmd.append("if [ -e ").append(qSaved).append(" ] || [ -L ").append(qSaved).append(" ]; then printf 'ERR:82:%s' ").append(Store.q(rel)).append("; exit 0; fi; ");
+      cmd.append("if ! (").append(guard(dest, before)).append("); then printf 'ERR:81:%s' ").append(Store.q(rel)).append("; exit 0; fi; ");
+      cmd.append("cp ").append(qDest).append(" ").append(qSaved).append(" || exit $?; ");
+      cmd.append("if ! (").append(guard(saved, before)).append("); then printf 'ERR:83:%s' ").append(Store.q(rel)).append("; exit 0; fi; ");
+     }
+    }
+    cmd.append("printf 'OK'");
+    String bRes = adb.exec(cmd.toString(), 120000);
+    if (!"OK".equals(bRes)) {
+     if (bRes.startsWith("ERR:81:")) throw new IOException("Tệp game đổi trước khi sao lưu: " + bRes.substring(7));
+     if (bRes.startsWith("ERR:82:") || bRes.startsWith("ERR:83:")) throw new IOException("Backup không khớp tệp gốc: " + bRes.substring(7));
+     throw new IOException("Không sao lưu được tệp gốc: " + bRes);
+    }
+    for (int i = start; i < end; i++) {
+     JSONObject item = plan.getJSONObject(i);
+     if (item.getJSONObject("before").getBoolean("exists")) {
+      ownExternalPath(new File(item.getString("backup")));
+     }
+    }
+    step("Đã sao lưu " + end + " / " + plan.length(), 30 + end * 18 / plan.length());
+   }
+
+   j.put("state", "APPLYING");
+   saveJournal(j);
+   verifySafeDirectories(relPaths);
+   closedAndVersion();
+   long lastVerCheck = SystemClock.elapsedRealtime();
+
+   for (int i = 0; i < plan.length(); i++) {
+    if (i > 0 && (i % 15 == 0 || SystemClock.elapsedRealtime() - lastVerCheck >= 2500L)) {
+     closedAndVersion();
+     lastVerCheck = SystemClock.elapsedRealtime();
+    }
+    JSONObject f = plan.getJSONObject(i);
+    applyFileAtomic(j, id, f);
+    step("Đã cài và đọc lại " + (i + 1) + " / " + plan.length(), 48 + (i + 1) * 47 / plan.length());
+   }
+
+   closedAndVersion();
+   step("Đang đối chiếu toàn bộ tệp sau cài...", 96);
+   verifySafeDirectories(relPaths);
+   List<JSONObject> finalStates = batchStates(destPaths);
+   for (int i = 0; i < plan.length(); i++) {
+    JSONObject f = plan.getJSONObject(i);
+    if (!same(finalStates.get(i), f.getJSONObject("after"))) {
+     throw new IOException("Tệp đã đổi trước khi ghi biên bản: " + f.getString("path"));
+    }
+   }
+
+   JSONObject r = Store.obj(
+     "schema", 1,
+     "journal_id", id,
+     "binding", binding,
+     "version", manifest.getString("version"),
+     "manifest_sha256", manifest.optString("manifest_sha256", ""),
+     "files", plan,
+     "package", Store.GAME,
+     "root", target.getString("root"),
+     "deviceId", target.getString("deviceId")
+   );
+   Store.write(rp, r);
+   j.remove("pending");
+   j.put("state", "DONE");
+   saveJournal(j);
+   pruneHistory(binding, id);
+   step("Đã hoàn tất gói Android và đối chiếu tệp.", 100);
+   return r;
+  } catch (Exception failure) {
+   if ("PREPARING".equals(j.optString("state"))) {
+    j.remove("pending");
+    j.put("state", "ABORTED");
+    saveJournal(j);
+    deleteTree(backup);
+   } else {
+    try {
+     restoreJournal(j, false);
+     deleteTree(backup);
+    } catch (Exception recovery) {
+     j.put("state", "RECOVERY_REQUIRED");
+     saveJournal(j);
+     throw new StellaException("E-RECOVERY-REQUIRED",
+       "Thao tác chưa hoàn tất; cần Phục hồi từ nhật ký. " + Store.cleanError(recovery),
+       recovery,
+       "originalError", Store.cleanError(failure),
+       "journalState", "RECOVERY_REQUIRED");
+    }
+   }
+   throw new StellaException(ErrorReport.classify(failure),
+     "Chưa cài hoàn tất. Các thay đổi đã được đưa về trạng thái trước cài: " + Store.cleanError(failure),
+     failure,
+     "journalState", j.optString("state"),
+     "rolledBack", true);
+  } finally {
+   deleteTree(stage);
+   cleanStaleStaging();
+  }
+ }
+
+ JSONObject verify() throws Exception {
+  verifiedExternalBase = null;
+  deadline = SystemClock.elapsedRealtime() + 5400000;
+  requireTarget();
+  File f = receipt(target.getString("binding"));
+  if (!f.isFile()) throw new IOException("Chưa có biên bản của lần cài bằng ứng dụng này.");
+  JSONObject r = Store.read(f), j = Store.read(journalFile(r.getString("journal_id")));
+  bound(j);
+  JSONArray list = j.getJSONArray("files");
+  List<String> relPaths = new ArrayList<>(list.length());
+  List<String> destPaths = new ArrayList<>(list.length());
+  for (int i = 0; i < list.length(); i++) {
+   String rel = relative(list.getJSONObject(i).getString("path"));
+   relPaths.add(rel);
+   destPaths.add(fullPath(rel));
+  }
+  verifySafeDirectories(relPaths);
+  for (int start = 0; start < destPaths.size(); start += STATE_BATCH_SIZE) {
+   int end = Math.min(destPaths.size(), start + STATE_BATCH_SIZE);
+   List<JSONObject> states = batchStates(destPaths.subList(start, end));
+   for (int k = 0; k < states.size(); k++) {
+    int idx = start + k;
+    JSONObject item = list.getJSONObject(idx);
+    if (!same(states.get(k), item.getJSONObject("after"))) {
+     throw new IOException("Tệp bản dịch không khớp: " + item.getString("path"));
+    }
+   }
+   step("Đối chiếu " + end + " / " + list.length(), 100 * end / list.length());
+  }
+  return Store.obj("files", list.length(), "version", r.getString("version"));
+ }
+
+ void restore() throws Exception {
+  verifiedExternalBase = null;
+  deadline = SystemClock.elapsedRealtime() + 5400000;
+  requireTarget();
+  if (pending()) throw new IOException("Hãy phục hồi nhật ký chưa hoàn tất trước.");
+  String binding = target.getString("binding");
+  File f = receipt(binding);
+  if (!f.isFile()) throw new IOException("Chưa có biên bản/backup để khôi phục lần cài này.");
+  Set<String> visited = new HashSet<>();
+  while (f.isFile()) {
+   JSONObject r = Store.read(f);
+   String jid = r.getString("journal_id");
+   if (!visited.add(jid)) {
+    throw new IOException("Phát hiện vòng lặp biên bản phục hồi: " + jid);
+   }
+   JSONObject j = Store.read(journalFile(jid));
+   if (visited.size() > 1
+     && (!j.optString("gameVersion").equals(target.optString("gameVersion"))
+       || !j.optString("resourceVersion").equals(target.optString("resourceVersion")))) {
+    if (!f.delete()) throw new IOException("Chưa xoá được biên bản cũ sau khôi phục.");
+    break;
+   }
+   restoreJournal(j, true);
+  }
+  cleanStaleStaging();
+  pruneHistory(binding, null);
+ }
+
+ JSONObject recover() throws Exception {
+  verifiedExternalBase = null;
+  deadline = SystemClock.elapsedRealtime() + 5400000;
+  requireTarget();
+  if (!pending()) throw new IOException("Không có thao tác bị ngắt cần phục hồi.");
+  JSONObject j = Store.read(active());
+  checkIdentity(j);
+  String id = j.getString("id");
+  String binding = j.getString("binding");
+  if (!j.optString("gameVersion").equals(target.optString("gameVersion"))
+    || !j.optString("resourceVersion").equals(target.optString("resourceVersion"))) {
+   try { cleanupTemps(j, false); } catch (Exception ignored) {}
+   j.remove("pending");
+   j.put("state", "SUPERSEDED");
+   saveJournal(j);
+   cleanStaleStaging();
+   pruneHistory(binding, null);
+   return Store.obj(
+     "state", "SUPERSEDED",
+     "message", "Game đã cập nhật sang phiên bản mới; nhật ký cũ đã được đóng an toàn (không ghi đè tệp mới). Bạn có thể cài bản Việt hoá mới ngay."
+   );
+  }
+  bound(j);
+  if ("PREPARING".equals(j.optString("state"))) {
+   try { cleanupTemps(j, false); } catch (Exception ignored) {}
+   j.remove("pending");
+   j.put("state", "ABORTED");
+   saveJournal(j);
+   cleanStaleStaging();
+   pruneHistory(binding, null);
+   return Store.obj("state", "ABORTED", "message", "Đã đóng nhật ký chuẩn bị chưa hoàn tất.");
+  }
+  restoreJournal(j, false);
+  cleanStaleStaging();
+  pruneHistory(binding, null);
+  return Store.obj("state", j.optString("state", "ROLLED_BACK"), "message", "Đã phục hồi nhật ký chưa hoàn tất.");
+ }
+
+ private void restoreJournal(JSONObject j, boolean requireAfter) throws Exception {
+  bound(j);
+  closedAndVersion();
+  ensureExternalBase();
+  JSONArray files = j.getJSONArray("files");
+  String id = j.getString("id");
+  List<String> relPaths = new ArrayList<>(files.length());
+  List<String> destPaths = new ArrayList<>(files.length());
+  for (int i = 0; i < files.length(); i++) {
+   String rel = relative(files.getJSONObject(i).getString("path"));
+   relPaths.add(rel);
+   destPaths.add(fullPath(rel));
+  }
+  if (!relPaths.isEmpty()) verifySafeDirectories(relPaths);
+  List<JSONObject> currentStates = batchStates(destPaths);
+  for (int i = 0; i < files.length(); i++) {
+   JSONObject f = files.getJSONObject(i);
+   JSONObject current = currentStates.get(i);
+   JSONObject before = f.getJSONObject("before");
+   JSONObject after = f.getJSONObject("after");
+   if (requireAfter ? !same(current, after) : (!same(current, before) && !same(current, after))) {
+    throw new IOException("Tệp đã đổi ngoài thao tác; giữ nguyên: " + f.getString("path"));
+   }
+   if (before.getBoolean("exists") && (!same(current, before) || requireAfter)) {
+    File bFile = new File(f.getString("backup"));
+    ownExternalPath(bFile);
+    if (!bFile.isFile() || bFile.length() != before.getLong("size") || !Store.hash(bFile).equalsIgnoreCase(before.getString("sha256"))) {
+     throw new IOException("Backup bị thiếu hoặc sai SHA256: " + f.getString("path"));
+    }
+   }
+  }
+
+  j.put("state", "RESTORING");
+  saveJournal(j);
+  long lastVerCheck = SystemClock.elapsedRealtime();
+  int mutatedCount = 0;
+  for (int i = 0; i < files.length(); i++) {
+   JSONObject f = files.getJSONObject(i);
+   JSONObject before = f.getJSONObject("before");
+   if (!requireAfter && same(currentStates.get(i), before)) {
+    continue;
+   }
+   if (mutatedCount > 0 && (mutatedCount % 15 == 0 || SystemClock.elapsedRealtime() - lastVerCheck >= 2500L)) {
+    closedAndVersion();
+    lastVerCheck = SystemClock.elapsedRealtime();
+   }
+   restoreFileAtomic(j, id, f);
+   mutatedCount++;
+   step("Đã phục hồi " + (i + 1) + " / " + files.length(), 92 * (i + 1) / Math.max(1, files.length()));
+  }
+
+  closedAndVersion();
+  if (!relPaths.isEmpty()) {
+   verifySafeDirectories(relPaths);
+   List<JSONObject> restoredStates = batchStates(destPaths);
+   for (int i = 0; i < files.length(); i++) {
+    JSONObject f = files.getJSONObject(i);
+    if (!same(restoredStates.get(i), f.getJSONObject("before"))) {
+     throw new IOException("Đọc lại phục hồi không khớp: " + f.getString("path"));
+    }
+   }
+  }
+  cleanupTemps(j, true);
+  File rp = receipt(target.getString("binding"));
+  Object previous = j.opt("previous_receipt");
+  if (previous instanceof JSONObject) {
+   Store.write(rp, (JSONObject) previous);
+  } else if (rp.exists() && !rp.delete()) {
+   throw new IOException("Chưa cập nhật được biên bản phục hồi.");
+  }
+  j.remove("pending");
+  j.put("state", requireAfter ? "RESTORED" : "ROLLED_BACK");
+  saveJournal(j);
+  step("Đã hoàn tất khôi phục tệp gốc.", 100);
+ }
+
+ private static void extractZip(File zipFile, File targetDir, Map<String, File> outMap) throws Exception {
+  byte[] buffer = new byte[65536];
+  String base = targetDir.getCanonicalPath();
+  try (ZipInputStream zis = new ZipInputStream(new BufferedInputStream(new FileInputStream(zipFile)))) {
    ZipEntry ze;
-   while((ze=zis.getNextEntry())!=null){
-    if(ze.isDirectory())continue;
-    String name=new File(ze.getName()).getName();
-    File target=new File(targetDir,name);
-    if(!target.getCanonicalPath().startsWith(base+File.separator))throw new SecurityException("Phát hiện tệp zip vượt giới hạn: "+ze.getName());
-    try(FileOutputStream fos=new FileOutputStream(target);BufferedOutputStream bos=new BufferedOutputStream(fos,buffer.length)){
-     int len;while((len=zis.read(buffer))>0)bos.write(buffer,0,len);
+   while ((ze = zis.getNextEntry()) != null) {
+    if (ze.isDirectory()) continue;
+    String name = new File(ze.getName()).getName();
+    File target = new File(targetDir, name);
+    if (!target.getCanonicalPath().startsWith(base + File.separator) || Files.isSymbolicLink(target.toPath())) {
+     throw new SecurityException("Phát hiện tệp zip vượt giới hạn: " + ze.getName());
+    }
+    try (FileOutputStream fos = new FileOutputStream(target); BufferedOutputStream bos = new BufferedOutputStream(fos, buffer.length)) {
+     int len;
+     while ((len = zis.read(buffer)) > 0) bos.write(buffer, 0, len);
     }
     zis.closeEntry();
-    outMap.put(name,target);
+    outMap.put(name, target);
    }
   }
  }

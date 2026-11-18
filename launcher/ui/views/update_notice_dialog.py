@@ -8,7 +8,7 @@ from ..components.starlit_button import StarlitButton
 
 
 class UpdateNoticeDialog(ArtDialog):
-    def __init__(self, version, notes, parent=None, has_launcher_update=False):
+    def __init__(self, version, notes, parent=None, has_launcher_update=False, has_translation_update=False):
         super().__init__(
             'Thông báo cập nhật', 'Thông tin bản phát hành mới', 'info',
             parent, width=860, height=620, panel='panels/update',
@@ -16,12 +16,16 @@ class UpdateNoticeDialog(ArtDialog):
         self.root.setSpacing(7)
         self.body.setSpacing(9)
         self._version_text = str(version)
+        self._primary_full_caption = (
+            'Cập nhật ngay' if has_launcher_update else ('Cập nhật Việt hoá' if has_translation_update else None)
+        )
         self._notice_icon = self.header.itemAt(0).widget()
-        self._dividers = [self.root.itemAt(i).widget() for i in range(self.root.count())
-                          if isinstance(self.root.itemAt(i).widget(), ArtDivider)]
+        self._dividers = [
+            self.root.itemAt(i).widget()
+            for i in range(self.root.count())
+            if isinstance(self.root.itemAt(i).widget(), ArtDivider)
+        ]
 
-        # Keep the version separate from the notes so it remains easy to find
-        # even when the release description is long or empty.
         version_row = QFrame()
         version_row.setObjectName('releaseVersion')
         self.version_row = version_row
@@ -50,7 +54,6 @@ class UpdateNoticeDialog(ArtDialog):
         self.notes_view.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.notes_view.setMinimumHeight(90)
         self.notes_view.setMaximumHeight(155)
-        # GitHub release notes are untrusted; render as text, never HTML.
         self.notes_view.setPlainText(notes.strip() or 'Bản phát hành chưa cung cấp mô tả thay đổi.')
         self._compact_notes = False
         self.notes_view.setStyleSheet(self._notes_style(10))
@@ -63,10 +66,18 @@ class UpdateNoticeDialog(ArtDialog):
             later = StarlitButton('Để sau', variant='secondary')
             later.clicked.connect(self.accept)
             self.footer.addWidget(later, 1)
+        elif has_translation_update:
+            trans_btn = StarlitButton('Cập nhật Việt hoá', variant='primary')
+            trans_btn.clicked.connect(lambda: self.done(4))
+            self.footer.addWidget(trans_btn, 1)
+            later = StarlitButton('Để sau', variant='secondary')
+            later.clicked.connect(self.accept)
+            self.footer.addWidget(later, 1)
         else:
             close = StarlitButton('Đóng', variant='primary')
             close.clicked.connect(self.accept)
             self.footer.addWidget(close, 1)
+
         snooze = StarlitButton('Tắt trong 24 giờ', variant='secondary')
         snooze.clicked.connect(lambda: self.done(2))
         self.footer.addWidget(snooze, 1)
@@ -90,8 +101,6 @@ class UpdateNoticeDialog(ArtDialog):
         )
 
     def _adapt_notice(self, width):
-        # On smaller screens move the version into the existing subtitle so
-        # that the scrollable notes retain usable space.
         compact = width < 550
         self.version_row.setVisible(not compact)
         self.notes_title.setVisible(not compact)
@@ -115,8 +124,6 @@ class UpdateNoticeDialog(ArtDialog):
         self.notes_view.setMinimumHeight(35 if very_compact else (55 if tiny else 90))
         self.notes_view.setMaximumHeight(115 if compact else (100 if width < 650 else 155))
         if tiny:
-            # Three stacked 52px buttons would crowd out all text on a phone-
-            # sized window. Keep short captions in one reachable action row.
             self.footer.setDirection(QBoxLayout.Direction.LeftToRight)
             for index in range(self.footer.count()):
                 button = self.footer.itemAt(index).widget()
@@ -126,7 +133,7 @@ class UpdateNoticeDialog(ArtDialog):
                     action_font = button.font()
                     action_font.setPixelSize(12 if narrowest else (13 if width < 350 else 16))
                     button.setFont(action_font)
-                    if button.text() in ('Cập nhật ngay', 'Cập nhật', 'Cập\nnhật'):
+                    if button.text() in ('Cập nhật ngay', 'Cập nhật Việt hoá', 'Cập nhật', 'Cập\nnhật'):
                         button.setText('Cập\nnhật' if narrowest else 'Cập nhật')
                     elif button.text() in ('Tắt trong 24 giờ', 'Ẩn 24h', 'Ẩn\n24h'):
                         button.setText('Ẩn\n24h' if narrowest else 'Ẩn 24h')
@@ -139,7 +146,7 @@ class UpdateNoticeDialog(ArtDialog):
                     action_font = button.font()
                     action_font.setPixelSize(16)
                     button.setFont(action_font)
-                    if button.text() in ('Cập nhật', 'Cập\nnhật'):
-                        button.setText('Cập nhật ngay')
+                    if button.text() in ('Cập nhật', 'Cập\nnhật') and self._primary_full_caption:
+                        button.setText(self._primary_full_caption)
                     elif button.text() in ('Ẩn 24h', 'Ẩn\n24h'):
                         button.setText('Tắt trong 24 giờ')

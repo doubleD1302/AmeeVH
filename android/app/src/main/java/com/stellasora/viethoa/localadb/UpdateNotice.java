@@ -19,8 +19,8 @@ final class UpdateNotice {
   JobInfo job=new JobInfo.Builder(JOB,new ComponentName(c,UpdateCheckJob.class)).setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY).setPeriodic(6L*60*60*1000).setPersisted(true).build();
   s.schedule(job);
  }
- private static int compareVersions(String a,String b){
-  if(!a.matches("[vV]?[0-9]+(\\.[0-9]+)*")||!b.matches("[vV]?[0-9]+(\\.[0-9]+)*"))return 0;
+ static int compareVersions(String a,String b){
+  if(a==null||b==null||!a.matches("[vV]?[0-9]+(\\.[0-9]+)*")||!b.matches("[vV]?[0-9]+(\\.[0-9]+)*"))return 0;
   String[] x=a.replaceFirst("^[vV]","").split("\\."),y=b.replaceFirst("^[vV]","").split("\\.");
   try{for(int i=0;i<Math.max(x.length,y.length);i++){long p=i<x.length?Long.parseLong(x[i]):0,q=i<y.length?Long.parseLong(y[i]):0;if(p!=q)return Long.compare(p,q);}}catch(NumberFormatException e){return 0;}return 0;
  }

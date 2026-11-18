@@ -1,7 +1,84 @@
 {
-  "version": "1.0.7",
-  "updated_at": "2026-10-28",
+  "version": "1.3.1",
+  "updated_at": "2026-11-18",
   "announcements": [
+    {
+      "id": "NOTIF-032",
+      "date": "2026-11-18",
+      "title": "Bản cập nhật v1.3.1: Khắc Phục Lỗi Cập Nhật, Phục Hồi & Tối Ưu Bộ Đôi Launcher",
+      "type": "release",
+      "content": "Sửa lỗi tự cập nhật Windows khi khóa tệp, lỗi tạo lối tắt tiếng Việt, kẹt biên bản cũ sau cập nhật game và đồng bộ mã băm gói dữ liệu Chương 9.5. Tối ưu tốc độ cài đặt/kiểm tra tệp Local ADB trên Android, hỗ trợ tự nối tiếp khi rớt mạng và kết nối nhanh thiết bị đã ghép đôi."
+    },
+    {
+      "id": "NOTIF-031",
+      "date": "2026-11-16",
+      "title": "Bản vá dữ liệu v1.3.0 (16/11): Đồng Bộ Danh Hiệu Quán Quân Sinh Tồn",
+      "type": "release",
+      "content": "Đồng bộ tên vật phẩm danh hiệu Quán Quân Sinh Tồn Mùa 18–30 khớp với mô tả trong game và hoàn tất thẩm định QA cho toàn bộ bảng dữ liệu 2.1.0. Mở launcher và bấm cập nhật bản dịch để nhận bản mới."
+    },
+    {
+      "id": "NOTIF-030",
+      "date": "2026-11-15",
+      "title": "Bản vá ảnh v1.3.0: Sửa Lỗi Banner Và Tab Bị Trắng Sau Hotfix (PC & Android)",
+      "type": "release",
+      "content": "Dựng lại các gói ảnh Việt hóa trên bản chính thức của hotfix, khôi phục banner sự kiện, banner gacha và tab bị hiện trắng, áp dụng cho cả PC và Android. Ảnh mới chưa dịch tạm hiển thị tiếng Anh. Mở launcher và bấm cập nhật bản dịch để nhận gói ảnh mới."
+    },
+    {
+      "id": "NOTIF-029",
+      "date": "2026-11-15",
+      "title": "Bản vá dữ liệu v1.3.0: Sửa Kẹt Màn Hình Chiêu Mộ & Hỗ Trợ Hotfix Game 2611141949",
+      "type": "release",
+      "content": "Dựng lại bảng dữ liệu và kịch bản trên bản chính thức của hotfix 2611141949, sửa lỗi kẹt ở màn hình Chiêu Mộ. Việt hóa bổ sung các dòng thoại còn thiếu của chương 16–19 cùng một số chuỗi giao diện. Mở launcher và bấm cập nhật bản dịch để nhận bản mới."
+    },
+    {
+      "id": "NOTIF-028",
+      "date": "2026-11-14",
+      "title": "Bản cập nhật v1.3.0: Tương Thích Game 2.1.0 & Củng Cố Tự Động Cập Nhật",
+      "type": "release",
+      "content": "Cập nhật dữ liệu bản dịch cho game 2.1.0. Cải thiện cơ chế tự cập nhật launcher khi tệp đang bị khóa, đồng bộ phiên bản Android và trang web tải xuống."
+    },
+    {
+      "id": "NOTIF-027",
+      "date": "2026-11-08",
+      "title": "Bản cập nhật v1.2.2: Cập Nhật Thông Tin Đội Ngũ & Trang Tải Xuống",
+      "type": "release",
+      "content": "Cập nhật phần ghi công của đội ngũ Việt hóa trong launcher, tạm dừng mục ủng hộ và đồng bộ liên kết tải xuống lên phiên bản 1.2.2."
+    },
+    {
+      "id": "NOTIF-026",
+      "date": "2026-11-07",
+      "title": "Bản cập nhật v1.2.1: Sửa Lỗi Tải & Thay Thế Tệp, Dọn Tệp Tạm",
+      "type": "release",
+      "content": "Sửa lỗi tải và thay thế tệp khi cài bản dịch, tự dọn các tệp tạm sau khi cài đặt xong và cải thiện bố cục của khung thông báo cập nhật."
+    },
+    {
+      "id": "NOTIF-025",
+      "date": "2026-10-30",
+      "title": "Bản cập nhật v1.2.0: Tương Thích Bản Vá Game 2.0.1 & Bổ Sung Nội Dung Mới",
+      "type": "release",
+      "content": "Cập nhật tương thích bản vá 2.0.1 của game. Việt hóa bổ sung trang phục Chitose, Quỹ Khởi Nghiệp Mùa 13, cơ chế Boss tính điểm và giao diện mới. Giữ nguyên toàn bộ 88 bản vá hệ thống và sửa lỗi mạng của nhà phát hành."
+    },
+    {
+      "id": "NOTIF-024",
+      "date": "2026-10-29",
+      "title": "Bản cập nhật v1.1.0: Đại Tu Toàn Diện 3 Giai Đoạn, Chuẩn Hóa Thuật Ngữ & Cốt Truyện",
+      "type": "release",
+      "content": "Sửa triệt để các lỗi kỹ thuật (thẻ màu, cờ tạm PENDING, chuỗi tiếng Anh sót). Chuẩn hóa đồng bộ Master Glossary: Cự Tháp, Du Hành Giả Toàn Năng, Tháng Messis, Hồn Thạch, Di Vật, Ân Tứ; tách biệt danh xưng Sếp với Thủ Lĩnh/Trùm; trau chuốt văn phong Light Novel và loại bỏ thể bị động lạm dụng."
+    },
+    {
+      "id": "NOTIF-023",
+      "date": "2026-10-29",
+      "title": "Bản cập nhật v1.0.9: Khắc Phục Triệt Để Xưng Hô Cốt Truyện & Dữ Liệu Nhân Vật Nữ",
+      "type": "release",
+      "content": "Loại bỏ hoàn toàn các câu thoại xưng hô 'anh' áp đặt lên nhân vật chính trong cốt truyện chính tuyến, sự kiện hẹn hò, trang phục và thoại tương tác. Đảm bảo trải nghiệm nhập vai trung tính hoàn hảo cho người chơi chọn nhân vật nữ."
+    },
+    {
+      "id": "NOTIF-022",
+      "date": "2026-10-29",
+      "title": "Bản cập nhật v1.0.8: Chuẩn Hóa Thuật Ngữ & Khắc Phục Xưng Hô Nhân Vật Nữ",
+      "type": "release",
+      "content": "Sửa triệt để lỗi bất nhất trong xưng hô anh/chị hướng tới người chơi, đảm bảo trải nghiệm nhập vai trọn vẹn cho cả nhân vật nam và nữ trên Android và PC. Đồng bộ hóa toàn bộ thuật ngữ hệ nguyên tố, tên nhân vật, vật phẩm và di vật trong game."
+    },
     {
       "id": "NOTIF-021",
       "date": "2026-10-28",

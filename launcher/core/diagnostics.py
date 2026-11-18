@@ -6,6 +6,7 @@ import json
 import logging
 import os
 import platform
+import re
 import shutil
 import subprocess
 import sys
@@ -13,9 +14,26 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from .config import LAUNCHER_VERSION
+from .game_detection import read_game_versions
 from .types import GameInfo
 
 logger = logging.getLogger("launcher.diagnostics")
+
+
+def _redact_user_home(text: str) -> str:
+    """Replaces local OS user profile paths with %USERPROFILE% so shared logs do not leak account names."""
+    candidates = []
+    for raw in (os.environ.get("USERPROFILE"), str(Path.home())):
+        if raw:
+            norm = str(raw).rstrip("\\/")
+            if len(norm) >= 4:
+                candidates.append(norm)
+    out = text
+    for home in sorted(set(candidates), key=len, reverse=True):
+        for variant in (home, home.replace("\\", "/")):
+            out = re.sub(re.escape(variant), "%USERPROFILE%", out, flags=re.IGNORECASE)
+    return out
 
 
 @dataclass
@@ -37,6 +55,10 @@ class SystemReport:
     game_running: bool
     disk_free_gb: float
     receipt_summary: Optional[Dict[str, Any]] = None
+    launcher_version: str = LAUNCHER_VERSION
+    game_version: str = "unknown"
+    resource_version: str = "unknown"
+    game_disk_free_gb: float = 0.0
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -45,17 +67,20 @@ class SystemReport:
         lines = [
             "=== BÁO CÁO CHẨN ĐOÁN HỆ THỐNG STELLA SORA LAUNCHER ===",
             f"Thời gian tạo: {self.timestamp}",
+            f"Phiên bản Launcher: v{self.launcher_version} (Đóng gói EXE: {self.is_frozen})",
             f"Hệ điều hành: {self.os_name} {self.os_release} ({self.os_arch})",
-            f"Môi trường Python: {self.python_version} (Đóng gói EXE: {self.is_frozen})",
+            f"Môi trường Python: {self.python_version}",
             f"Độ phân giải / DPI: {self.screen_dpi_info}",
             f"Thư mục ứng dụng: {self.launcher_dir}",
             f"Thư mục cấu hình (AppData): {self.app_data_dir}",
             f"Thư mục sao lưu: {self.backup_dir}",
-            f"Dung lượng ổ đĩa trống: {self.disk_free_gb:.2f} GB",
+            f"Dung lượng trống ổ AppData: {self.disk_free_gb:.2f} GB",
+            f"Dung lượng trống ổ cài game: {self.game_disk_free_gb:.2f} GB",
             "",
             "--- Trạng thái Game ---",
             f"Phát hiện game: {'Có' if self.game_detected else 'Không'}",
             f"Nguồn phát hiện: {self.game_source}",
+            f"Phiên bản Game / Tài nguyên: {self.game_version} / {self.resource_version}",
             f"Đường dẫn cài đặt: {self.game_path or 'Chưa xác định'}",
             f"Tệp thực thi game: {'Tồn tại' if self.game_executable_found else 'Không tìm thấy'}",
             f"Tiến trình đang chạy: {'CẢNH BÁO: ĐANG CHẠY' if self.game_running else 'Không chạy'}",
@@ -71,7 +96,7 @@ class SystemReport:
         else:
             lines.append("--- Biên bản cài đặt hiện tại: Chưa cài đặt bản vá ---")
 
-        return "\n".join(lines)
+        return _redact_user_home("\n".join(lines))
 
 
 class DiagnosticsCollector:
@@ -91,7 +116,16 @@ class DiagnosticsCollector:
                 free_bytes = shutil.disk_usage("C:\\").free
             except Exception:
                 pass
-        free_gb = free_bytes / (1024**3)
+        free_gb = free_bytes / (1024 ** 3)
+
+        game_free_gb = free_gb
+        if game_info.game_path:
+            try:
+                target_check = game_info.game_path if game_info.game_path.exists() else game_info.game_path.anchor
+                if target_check:
+                    game_free_gb = shutil.disk_usage(target_check).free / (1024 ** 3)
+            except Exception:
+                pass
 
         receipt_summary = None
         receipt_file = game_info.game_path / ".vietnamese_patch_receipt.json" if game_info.game_path else path_manager.receipt_file
@@ -103,9 +137,17 @@ class DiagnosticsCollector:
                 logger.warning(f"Failed to read patch receipt: {e}")
 
         exe_found = False
+        game_ver = getattr(game_info, "version", "unknown") or "unknown"
+        res_ver = getattr(game_info, "resource_version", "unknown") or "unknown"
         if game_info.game_path:
             exe_path = game_info.game_path / "StellaSora.exe"
             exe_found = exe_path.is_file()
+            if (game_ver == "unknown" or res_ver == "unknown") and game_info.game_path.is_dir():
+                v = read_game_versions(game_info.game_path)
+                if game_ver == "unknown":
+                    game_ver = v.get("game", "unknown")
+                if res_ver == "unknown":
+                    res_ver = v.get("resource", "unknown")
 
         return SystemReport(
             timestamp=now,
@@ -125,12 +167,16 @@ class DiagnosticsCollector:
             game_running=game_info.is_running,
             disk_free_gb=free_gb,
             receipt_summary=receipt_summary,
+            launcher_version=LAUNCHER_VERSION,
+            game_version=game_ver,
+            resource_version=res_ver,
+            game_disk_free_gb=game_free_gb,
         )
 
 
 class AdbBridge:
     """Safe ADB bridge for emulator discovery and status check.
-    
+
     Adheres strictly to read-only discovery. Never modifies or pushes files
     automatically without user instruction.
     """

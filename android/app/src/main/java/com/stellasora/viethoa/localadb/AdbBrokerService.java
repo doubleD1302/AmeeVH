@@ -13,8 +13,8 @@ public final class AdbBrokerService extends Service {
   worker.execute(()->{boolean ok=false;String value;try{
    if(session==null){Security.insertProviderAt(Conscrypt.newProvider(),1);session=new Session(KeyMaterial.load(this));}JSONObject args=new JSONObject(b.getString("args","{}"));
    switch(action){
-    case "pair":{String host=AdbClient.ownHost(args.getString("host"));int port=AdbClient.port(args.getInt("port"));String code=args.getString("code");if(!code.matches("[0-9]{6}"))throw new IOException("Mã cần 6 số.");if(!session.pair(host,port,code))throw new IOException("Ghép nối chưa thành công.");value="Đã ghép nối; chưa kết nối.";break;}
-    case "connect":{String host=AdbClient.ownHost(args.getString("host"));int port=AdbClient.port(args.getInt("port"));if(session.isConnected())session.disconnect();if(!session.connect(host,port))throw new IOException("Chưa kết nối được ADB.");value="transport_connected";break;}
+    case "pair":{String host=AdbClient.ownHost(args.getString("host"));int port=AdbClient.port(args.getInt("port"));String code=args.getString("code");if(!code.matches("[0-9]{6}"))throw new IOException("Mã cần 6 số.");if(!session.pair(host,port,code))throw new IOException("Ghép nối chưa thành công.");KeyMaterial.markPaired(this);value="Đã ghép nối; chưa kết nối.";break;}
+    case "connect":{String host=AdbClient.ownHost(args.getString("host"));int port=AdbClient.port(args.getInt("port"));if(session.isConnected())session.disconnect();if(!session.connect(host,port))throw new IOException("Chưa kết nối được ADB.");KeyMaterial.markPaired(this);value="transport_connected";break;}
     case "exec":{if(!session.isConnected())throw new IOException("Chưa kết nối ADB.");String command=args.getString("command");if(command.length()>64000||command.indexOf(0)>=0)throw new IOException("Lệnh nội bộ vượt giới hạn.");value=readCommand(command,duration-800,args.getString("marker"));break;}
     case "disconnect":session.disconnect();value="Đã ngắt ADB.";break;
     default:throw new IOException("Thao tác ADB không hợp lệ.");

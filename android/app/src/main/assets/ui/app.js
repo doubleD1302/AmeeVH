@@ -4,21 +4,31 @@
   const content = window.STELLA_CONTENT || {sections: [], faq: [], paymentMethods: []};
   const initial = {
     busy:false,mutating:false,devOptionsEnabled:true,phase:'',message:'',progress:{percent:0,indeterminate:false,label:''},
-    adb:{connected:false,paired:false,host:'127.0.0.1',pairingPort:0,connectionPort:0,status:'Chưa kết nối',notificationPairing:{active:false,stage:'',message:''}},
+    adb:{connected:false,paired:false,hasIdentity:false,host:'127.0.0.1',pairingPort:0,connectionPort:0,status:'Chưa kết nối',notificationPairing:{active:false,stage:'',message:''}},
     game:{installed:false,package:'com.YoStarEN.StellaSora',root:'',gameVersion:'',resourceVersion:'',versionsKnown:false},
-    github:{repo:'doubleD1302/AmeeVH',branch:'main',announcementStatus:'Chưa đọc',releaseVersion:'',manifestStatus:'Chưa đọc',translationVersion:'',message:'Chưa đồng bộ GitHub.'},
-    notifications:[],payload:{available:false,compatible:false,reason:'Đồng bộ GitHub để xem gói Android tương thích.'},
+    github:{repo:'doubleD1302/AmeeVH',branch:'main',announcementStatus:'Chưa đọc',releaseVersion:'',manifestStatus:'Chưa đọc',translationVersion:'',manifestSha256:'',message:'Chưa đồng bộ GitHub.'},
+    notifications:[],payload:{available:false,compatible:false,updateAvailable:false,reason:'Đồng bộ GitHub để xem gói Android tương thích.'},
     config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0},
-    update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false},support:{methods:[]},app:{versionName:'0.1.1',versionCode:2,variant:'localadb'}
+    update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},support:{methods:[]},app:{versionName:'1.3.1',versionCode:17,variant:'localadb'}
   };
   let state = initial, currentPage = 'overview';
-  let previousBusyPhase = '', lastOutcome = ''; 
+  let previousBusyPhase = '', lastOutcome = '';
   let firstConfig = true;
   function text(id, value) { const e = $(id); if (e) e.textContent = value == null ? '' : String(value); }
   function empty(node) { while (node.firstChild) node.removeChild(node.firstChild); }
-  function message(title, body, error=false) {
+  let copyResetTimer = 0, currentReportId = '';
+  function setCopyLabel(label) { const s = $('message-copy').querySelector('span'); if (s) s.textContent = label; }
+  function message(title, body, error=false, meta={}) {
     text('message-title', title || (error ? 'Chưa thể hoàn tất' : 'Thông tin'));
-    text('message-body', body || ''); $('message-overlay').hidden = false;
+    text('message-body', body || '');
+    // Error dialogs carry a copyable report: show its code and a button that copies the full details.
+    currentReportId = meta && meta.reportId ? String(meta.reportId) : '';
+    const hasReport = !!currentReportId;
+    text('message-code', hasReport ? 'Mã lỗi: ' + (meta.code || 'E-UNKNOWN') + ' · #' + currentReportId : '');
+    $('message-code').hidden = !hasReport;
+    $('message-copy').hidden = !hasReport;
+    clearTimeout(copyResetTimer); setCopyLabel('Sao chép mã lỗi');
+    $('message-overlay').hidden = false;
     $('message-ok').focus();
   }
   function request(action, payload={}) {
@@ -50,11 +60,16 @@
   }
   function primaryAction() {
     if (state.devOptionsEnabled === false) return {page:'adb',caption:'Bật Tuỳ chọn nhà phát triển',icon:'settings',note:'Kích hoạt chế độ nhà phát triển trước khi kết nối.'};
-    if (!state.adb.connected) return {page:'adb',caption:'Kết nối Local ADB',icon:'shield',note:'Kết nối trên điện thoại trước khi cài bản dịch.'};
+    if (!state.adb.connected) {
+      if (state.adb.hasIdentity) return {action:'autoConnect',caption:'Kết nối nhanh Local ADB',icon:'wifi',note:'Máy đã ghép đôi trước đó. Chạm để tự kết nối lại không cần nhập mã.'};
+      return {page:'adb',caption:'Kết nối Local ADB',icon:'shield',note:'Kết nối trên điện thoại trước khi cài bản dịch.'};
+    }
     if (!state.game.installed || !state.game.root || !state.game.versionsKnown) return {action:'detect',caption:'Tìm và kiểm tra game',icon:'search',note:state.game.installed ? 'Cần đọc đủ phiên bản game trước khi cài.' : 'Tìm Stella Sora và đọc phiên bản trên điện thoại.'};
     if (!state.payload.available) return {action:'sync',caption:'Đồng bộ gói Android',icon:'refresh',note:'Chưa có gói Android tương thích để cài.'};
     if (!state.payload.compatible) return {action:'sync',caption:'Kiểm tra gói Android mới',icon:'refresh',note:'Gói hiện có chưa tương thích. Xem lý do trong chi tiết.'};
-    return {action:'install',caption:state.receipt.present ? 'Cập nhật Việt hoá' : 'Cài Việt hoá',icon:'download',note:'Đã có thông tin gói tương thích. Thoát game trước khi cài.'};
+    if (!state.receipt.present) return {action:'install',caption:'Cài Việt hoá',icon:'download',note:'Đã có thông tin gói tương thích. Thoát game trước khi cài.'};
+    if (state.payload.updateAvailable || state.receipt.stale) return {action:'install',caption:'Cập nhật Việt hoá',icon:'download',note:'Có bản cập nhật Việt hoá mới cho game. Thoát game trước khi cập nhật.'};
+    return {action:'install',caption:'Cài lại Việt hoá',icon:'refresh',note:'Bản Việt hoá đang là mới nhất. Có thể mở game chơi ngay hoặc bấm để cài lại.'};
   }
   function renderState(data) {
     const nested = ['progress','adb','game','github','config','payload','update','recovery','receipt','support','app'];
@@ -75,14 +90,38 @@
     if (devCard) devCard.hidden = devEnabled;
     document.querySelectorAll('.needs-idle').forEach(e => { e.disabled = !!state.busy; });
     const adb = state.adb, game = state.game, p = state.payload, gh = state.github;
-    text('adb-status', adb.connected ? 'Đã kết nối' : 'Chưa kết nối');
+    text('adb-status', adb.connected ? 'Đã kết nối' : (adb.hasIdentity ? 'Đã ghép đôi' : 'Chưa kết nối'));
     $('adb-status').prepend(Object.assign(document.createElement('i'), {}));
     $('adb-status').classList.toggle('connected', !!adb.connected);
     text('adb-page-status', adb.connected ? 'Đã kết nối' : 'Chưa kết nối');
     $('adb-page-status').classList.toggle('connected', !!adb.connected);
+
+    const quickCard = $('quick-reconnect-card');
+    if (quickCard) {
+      quickCard.hidden = !adb.hasIdentity;
+      if (adb.hasIdentity) {
+        const badge = $('paired-identity-badge');
+        if (badge) {
+          text('paired-identity-badge', adb.connected ? 'Đã kết nối' : 'Đã ghép đôi');
+          badge.prepend(Object.assign(document.createElement('i'), {}));
+        }
+        text('quick-reconnect-caption', adb.connected ? 'Kiểm tra kết nối lại' : 'Kết nối nhanh (Đã ghép đôi)');
+        text('quick-reconnect-note', adb.connected
+          ? 'Thiết bị đã kết nối sẵn sàng. Nếu bạn tắt mở lại Gỡ lỗi không dây ở lần sau, chỉ cần bấm nút dưới đây để kết nối lại ngay.'
+          : 'Ghép đôi bằng mã 6 số chỉ cần thực hiện một lần duy nhất. Ở các lần mở sau, chỉ cần bật Gỡ lỗi không dây rồi bấm Kết nối nhanh.');
+      }
+    }
+    const pairBtn = $('pair-notification-btn');
+    if (pairBtn) {
+      pairBtn.classList.toggle('primary', !adb.hasIdentity);
+      pairBtn.classList.toggle('secondary', !!adb.hasIdentity);
+    }
+    text('pairing-card-heading', adb.hasIdentity ? 'Ghép đôi lại từ đầu' : 'Ghép đôi nhanh');
+
     text('adb-summary', adb.status || (adb.connected ? 'Thiết bị đã phản hồi. Bạn có thể tìm game và kiểm tra gói bản dịch.' : 'Ghép đôi trực tiếp trên điện thoại, không cần máy tính.'));
     text('connection-details', adb.connected ? ('Đã xác nhận kết nối · ' + (adb.host || '') + ':' + (adb.connectionPort || '')) : (adb.status || 'Chưa xác nhận kết nối với thiết bị.'));
     text('pairing-note', adb.notificationPairing.message || 'Cần Android 11 trở lên. Cho phép thông báo để nhập mã mà không cần chuyển ứng dụng.');
+    text('cancel-pairing', adb.notificationPairing.stage === 'discovering_connect' ? 'Huỷ tìm cổng' : 'Huỷ ghép đôi');
     $('cancel-pairing').hidden = !adb.notificationPairing.active;
     $('cancel-pairing').disabled = !!state.mutating;
     text('game-name', game.installed ? 'Stella Sora · đã tìm thấy' : 'Stella Sora');
@@ -93,7 +132,10 @@
     $('main-action-icon').src = 'icons/' + main.icon + '.svg';
     text('payload-note', main.note);
     let payloadText = p.reason || 'Chưa có thông tin gói Android tương thích.';
-    if (p.available && p.compatible) payloadText = 'Bản dịch ' + (p.version || gh.translationVersion || '') + (p.fileCount ? ' · ' + p.fileCount + ' tệp' : '') + '. Đã có thông tin gói Android.';
+    if (p.available && p.compatible) {
+      const stateSuffix = !state.receipt.present ? 'Chưa cài đặt.' : (p.updateAvailable || state.receipt.stale ? 'Có bản cập nhật mới.' : 'Đang ở bản mới nhất.');
+      payloadText = 'Bản dịch ' + (p.version || gh.translationVersion || '') + (p.fileCount ? ' · ' + p.fileCount + ' tệp' : '') + '. ' + stateSuffix;
+    }
     text('payload-details', payloadText);
     text('operation-details', state.message || 'Chưa có thao tác');
     text('native-status', state.message || 'Chưa có thao tác');
@@ -106,6 +148,9 @@
     $('progress-fill').classList.toggle('indeterminate', !!state.progress.indeterminate);
     $('recover-alert').hidden = !state.recovery.pending;
     if (state.recovery.message) $('recover-alert').title = state.recovery.message;
+    const rc = state.receipt;
+    $('receipt-stale').hidden = !(rc.present && rc.stale);
+    if (rc.present && rc.stale) text('receipt-stale', 'Lần cài trước dành cho game ' + (rc.installedGameVersion || '?') + ' · tài nguyên ' + (rc.installedResourceVersion || '?') + '. Game đã cập nhật nên Kiểm tra tệp và Khôi phục không dùng được với lần cài cũ. Hãy bấm Cập nhật Việt hoá để cài lại.');
     const lines = [gh.message || 'Chưa đồng bộ GitHub.'];
     lines.push('Thông báo: ' + statusLabel(gh.announcementStatus));
     if (gh.releaseVersion) lines.push('Bản phát hành: ' + gh.releaseVersion);
@@ -127,7 +172,7 @@
       summary = gh.message || 'Chưa có gói Android tương thích. Xem trạng thái chi tiết bên dưới.';
     }
     text('github-summary', summary);
-    text('app-version', 'Launcher Android ' + (state.app.versionName || '1.0.0') + ' · Local ADB');
+    text('app-version', 'Launcher Android ' + (state.app.versionName || '1.3.1') + ' · Local ADB');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Mở trình cài đặt Android' : 'Tải bản cập nhật';
@@ -188,7 +233,12 @@
     });
   }
   function port(id) {
-    const v = $(id).value.trim(); if (!/^\d{1,5}$/.test(v) || Number(v)<1 || Number(v)>65535) { message('Cổng chưa hợp lệ','Nhập số cổng từ 1 đến 65535 đang hiển thị trong Gỡ lỗi không dây.'); return null; } return Number(v);
+    const v = $(id).value.trim();
+    if (!/^\d{4,5}$/.test(v) || Number(v) < 1024 || Number(v) > 65535) {
+      message('Cổng chưa hợp lệ', 'Nhập số cổng từ 1024 đến 65535 đang hiển thị trong Gỡ lỗi không dây.');
+      return null;
+    }
+    return Number(v);
   }
   document.querySelectorAll('[data-page]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
   document.querySelectorAll('[data-action]').forEach(b => b.addEventListener('click', () => request(b.dataset.action)));
@@ -209,12 +259,21 @@
   $('all-notifications').addEventListener('click',openNoticeList); $('notice-search').addEventListener('input',renderNotices); $('notice-back').addEventListener('click',openNoticeList);
   $('notices-close').addEventListener('click', () => { $('notices-overlay').hidden=true; });
   ['message-close','message-ok'].forEach(id => $(id).addEventListener('click', () => { $('message-overlay').hidden=true; }));
+  $('message-copy').addEventListener('click', () => request('copyError', {id: currentReportId}));
   window.Stella = {
     onEvent(event) {
       try { if (typeof event === 'string') event=JSON.parse(event); if(!event || typeof event!=='object')return;
         if(event.type==='state')renderState(event.data||{});
-        else if(event.type==='message')message((event.data||{}).title,(event.data||{}).message,!!(event.data||{}).error);
+        else if(event.type==='navigate'&&(event.data||{}).page)showPage(event.data.page);
+        else if(event.type==='message')message((event.data||{}).title,(event.data||{}).message,!!(event.data||{}).error,event.data||{});
+        else if(event.type==='copied') {
+          if (!$('message-overlay').hidden && !$('message-copy').hidden) { setCopyLabel('Đã sao chép ✓'); clearTimeout(copyResetTimer); copyResetTimer = setTimeout(() => setCopyLabel('Sao chép mã lỗi'), 2500); }
+          else message('Đã sao chép mã lỗi', 'Dán nội dung vào tin nhắn hoặc trang báo lỗi để gửi cho nhóm phát triển. Báo cáo không chứa mã ghép đôi, địa chỉ kết nối hay định danh thiết bị.', false);
+        }
       } catch (_) { message('Chưa đọc được trạng thái','Hãy mở lại trang Tổng quan hoặc kết nối lại Local ADB.',true); }
+    },
+    navigate(page) {
+      showPage(page);
     },
     goBack() {
       if(!$('message-overlay').hidden){$('message-overlay').hidden=true;return true;}

@@ -1,8 +1,11 @@
 plugins { id 'com.android.application' }
+def stellaBuildOut = providers.gradleProperty('stellaBuildOut').getOrElse("${rootDir}/../work/build_android_launcher_r04/gradle-output")
+rootProject.layout.buildDirectory = file("${stellaBuildOut}/root")
+layout.buildDirectory = file("${stellaBuildOut}/${project.name}")
 android {
     namespace 'com.stellasora.viethoa.localadb'
     compileSdk 36
-    defaultConfig { applicationId 'com.stellasora.viethoa.localadb'; minSdk 30; targetSdk 35; versionCode 16; versionName '1.3.0' }
+    defaultConfig { applicationId 'com.stellasora.viethoa.localadb'; minSdk 30; targetSdk 35; versionCode 17; versionName '1.3.1' }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     signingConfigs { candidate { storeFile file('../signing/candidate-debug.keystore'); storePassword 'android'; keyAlias 'stella-candidate'; keyPassword 'android'; v1SigningEnabled true; v2SigningEnabled true } }
     buildTypes { debug { signingConfig signingConfigs.candidate; debuggable false }; release { minifyEnabled false; signingConfig signingConfigs.candidate } }

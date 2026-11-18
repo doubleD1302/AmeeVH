@@ -50,6 +50,9 @@ def verify_release_payloads(dist, manifest_names=('patch_manifest.json', 'androi
             package_path = local_file(package['filename'])
             verify_bytes(package['filename'], package.get('size_bytes', package.get('size')),
                          package['sha256'], package_path.stat().st_size, sha256_file(package_path))
+            tag, url = manifest.get('release_tag'), package.get('url', '')
+            if tag and '/releases/download/' in url and f'/releases/download/{tag}/' not in url:
+                raise ValueError(f'package_zip.url of {manifest_name} points at another release than {tag}: {url}')
             archive = zipfile.ZipFile(package_path)
         try:
             for entry in files:

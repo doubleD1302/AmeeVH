@@ -63,6 +63,9 @@ def main():
             zout.write(DIST / arc, arcname=arc)  # arc = AssetBundles/<name>, read fresh from dist
     tmp.replace(zip_path)
     m["package_zip"]["size"], m["package_zip"]["sha256"] = zip_path.stat().st_size, sha256(zip_path)
+    # The zip is re-uploaded to the CURRENT release; a URL left on an older tag serves different bytes.
+    if m.get("release_tag"):
+        m["package_zip"]["url"] = f"https://github.com/doubleD1302/AmeeVH/releases/download/{m['release_tag']}/{m['package_zip'].get('filename', zip_path.name)}"
     man_path.write_text(json.dumps(m, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     sums = DIST / "SHA256SUMS.txt"
     out = []

@@ -31,9 +31,10 @@ final class AdbClient {
   catch(TimeoutException e){cancelBroker();throw new IOException("ADB quá thời hạn, kết nối đã đóng.");}
   finally{pending.remove(id);}
  }
- void pair(String host,int p,String code)throws Exception{verified=false;request("pair",Store.obj("host",ownHost(host),"port",port(p),"code",code),25000);}
- void connect(String host,int p)throws Exception {
-  verified=false;request("connect",Store.obj("host",ownHost(host),"port",port(p)),25000);String id=execUnchecked("id",12000);if(!id.matches("(?s).*uid=(2000|0)\\b.*")){cancelBroker();throw new IOException("ADB chưa xác minh được danh tính shell.");}verified=true;
+ void pair(String host,int p,String code)throws Exception{verified=false;request("pair",Store.obj("host",ownHost(host),"port",port(p),"code",code),25000);KeyMaterial.markPaired(context);}
+ void connect(String host,int p)throws Exception{connect(host,p,25000);}
+ void connect(String host,int p,long connectTimeoutMs)throws Exception {
+  verified=false;request("connect",Store.obj("host",ownHost(host),"port",port(p)),connectTimeoutMs);String id=execUnchecked("id",12000);if(!id.matches("(?s).*uid=(2000|0)\\b.*")){cancelBroker();throw new IOException("ADB chưa xác minh được danh tính shell.");}verified=true;KeyMaterial.markPaired(context);
  }
  String exec(String cmd,long timeout)throws Exception{if(!verified)throw new IOException("Hãy kết nối và xác minh Local ADB trước.");return execUnchecked(cmd,timeout);}
  private String execUnchecked(String cmd,long timeout)throws Exception {

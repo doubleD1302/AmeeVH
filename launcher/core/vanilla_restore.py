@@ -2,13 +2,11 @@
 """
 Vanilla Restore Engine for Stella Sora.
 Restores the game installation to 100% clean, original publisher data (vanilla, unmodded):
-1. Restores Tables/data.arcx from clean publisher original (orig_en, earliest backup, golden store, or payload).
-2. Restores Scripts/lua.arcx from clean publisher original (orig_en, earliest backup, golden store, or payload).
-3. Restores / cleans modded AssetBundles in Persistent_Store/AssetBundles/:
-   - For bundles present in StreamingAssets/InstallResource/, restores clean original.
-   - For other modded bundles, removes modded files so game client verifies/updates cleanly.
-4. Removes all Vietnamese subtitle files (*.srt) from Persistent_Store/Videos/.
-5. Removes .vietnamese_patch_receipt.json and clears any pending journal.
+1. Restores Tables/data.arcx from clean publisher original (orig_en, unmodded backup, or explicit vanilla_dir).
+2. Restores Scripts/lua.arcx from clean publisher original (orig_en, unmodded backup, or explicit vanilla_dir).
+3. Restores / cleans modded AssetBundles in Persistent_Store/AssetBundles/ (scoped to receipt files when available so official publisher hotfix bundles remain untouched).
+4. Removes Vietnamese subtitle files (*.srt) installed by patch.
+5. Removes .vietnamese_patch_receipt.json and marks pending journals restored.
 """
 
 from __future__ import annotations
@@ -22,8 +20,8 @@ import uuid
 from pathlib import Path
 from typing import Callable, Optional
 
-from .game_detection import canonicalize_path, is_game_process_running
-from .safety import InstallerError
+from .game_detection import canonicalize_path, is_game_process_running, read_game_versions
+from .safety import InstallerError, atomic_json, safe_path, sha256_file
 from .types import OperationEvent, OperationPhase
 
 RECEIPT = ".vietnamese_patch_receipt.json"
@@ -72,25 +70,109 @@ class VanillaRestoreEngine:
         if cb:
             cb(OperationEvent(op, phase, msg, n, total))
 
+    def _known_patched_shas(self, root: Path, rel_key: str) -> set[str]:
+        """Collects known modded/Vietnamese SHA256s for rel_key from receipts and journals."""
+        shas: set[str] = set()
+        croot = canonicalize_path(root)
+        rp = root / RECEIPT
+        if rp.is_file():
+            try:
+                r = json.loads(rp.read_text(encoding="utf8"))
+                entry = (r.get("files") or {}).get(rel_key)
+                if isinstance(entry, dict) and isinstance(entry.get("sha256"), str):
+                    shas.add(entry["sha256"].lower())
+            except (OSError, ValueError):
+                pass
+        if self.journals_dir.is_dir():
+            for jf in self.journals_dir.glob("*.json"):
+                try:
+                    jd = json.loads(jf.read_text(encoding="utf8"))
+                    if jd.get("game_root") != croot:
+                        continue
+                    fentry = (jd.get("files") or {}).get(rel_key)
+                    if isinstance(fentry, dict):
+                        after = fentry.get("after")
+                        if isinstance(after, dict) and isinstance(after.get("sha256"), str):
+                            shas.add(after["sha256"].lower())
+                    prev_rec = jd.get("previous_receipt")
+                    if isinstance(prev_rec, dict):
+                        pentry = (prev_rec.get("files") or {}).get(rel_key)
+                        if isinstance(pentry, dict) and isinstance(pentry.get("sha256"), str):
+                            shas.add(pentry["sha256"].lower())
+                except (OSError, ValueError):
+                    pass
+        return shas
+
+    def _find_unmodded_backup_file(self, root: Path, rel_key: str) -> Optional[Path]:
+        """Finds the oldest unmodded backup copy of rel_key, preferring current game_version when available."""
+        patched_shas = self._known_patched_shas(root, rel_key)
+        current_game_ver = read_game_versions(root).get("game", "unknown")
+        root_hash = hashlib.sha256(canonicalize_path(root).encode("utf8")).hexdigest()[:12]
+        game_backup_dir = self.backup_root / f"game_{root_hash}"
+        if not game_backup_dir.is_dir():
+            return None
+
+        def _backup_sort_key(d: Path):
+            bm_f = d / "backup_manifest.json"
+            if bm_f.is_file():
+                try:
+                    bm_d = json.loads(bm_f.read_text(encoding="utf8"))
+                    return (str(bm_d.get("created_at") or ""), d.name)
+                except (OSError, ValueError):
+                    pass
+            return ("", d.name)
+
+        backups = sorted([d for d in game_backup_dir.glob("backup_*") if d.is_dir()], key=_backup_sort_key)
+        matched_ver_cand: Optional[Path] = None
+        fallback_cand: Optional[Path] = None
+
+        for b in backups:
+            cand = b / rel_key
+            if not cand.is_file() or cand.stat().st_size <= 0:
+                continue
+            try:
+                c_sha = sha256_file(cand).lower()
+            except OSError:
+                continue
+            if c_sha in patched_shas:
+                continue
+
+            if fallback_cand is None:
+                fallback_cand = cand
+
+            if current_game_ver != "unknown":
+                bm_file = b / "backup_manifest.json"
+                if bm_file.is_file():
+                    try:
+                        bm = json.loads(bm_file.read_text(encoding="utf8"))
+                        if bm.get("game_version") == current_game_ver:
+                            matched_ver_cand = cand
+                            break
+                    except (OSError, ValueError):
+                        pass
+
+        return matched_ver_cand or fallback_cand
+
     def _find_vanilla_archive(self, root: Path, subpath: str, orig_name: str) -> Optional[Path]:
-        """Searches for clean vanilla archive in local game directory, earliest backup, dist/vanilla, or bundled resources."""
+        """Searches for clean vanilla archive in local game directory, unmodded backups, or explicit vanilla_dir."""
+        rel_key = f"Persistent_Store/{subpath}/{orig_name}"
+        patched_shas = self._known_patched_shas(root, rel_key)
+
         # 1. Check local game orig_en (e.g. Tables/data.arcx.orig_en)
         local_orig = root / "Persistent_Store" / subpath / f"{orig_name}.orig_en"
         if local_orig.is_file() and local_orig.stat().st_size > 0:
-            return local_orig
+            try:
+                if sha256_file(local_orig).lower() not in patched_shas:
+                    return local_orig
+            except OSError:
+                pass
 
-        # 2. Check earliest backup in backup_root for this game
-        root_hash = hashlib.sha256(canonicalize_path(root).encode("utf8")).hexdigest()[:12]
-        game_backup_dir = self.backup_root / f"game_{root_hash}"
-        if game_backup_dir.is_dir():
-            backups = sorted(game_backup_dir.glob("backup_*"))
-            # Oldest backup first
-            for b in backups:
-                cand = b / "Persistent_Store" / subpath / orig_name
-                if cand.is_file() and cand.stat().st_size > 0:
-                    return cand
+        # 2. Check unmodded backups in backup_root for this game
+        backup_cand = self._find_unmodded_backup_file(root, rel_key)
+        if backup_cand is not None:
+            return backup_cand
 
-        # 3. Check explicit vanilla_dir
+        # 3. Check explicit vanilla_dir only (never repo dist/vanilla which holds 2.0.0 modded dev snapshots)
         if self.vanilla_dir and self.vanilla_dir.is_dir():
             cand = self.vanilla_dir / f"{orig_name.replace('.arcx', '')}_original_en.arcx"
             if cand.is_file():
@@ -99,27 +181,13 @@ class VanillaRestoreEngine:
             if cand2.is_file():
                 return cand2
 
-        # 4. Check project dist/vanilla relative to root
-        proj_vanilla = root / "StellaSora_VietHoa" / "dist" / "vanilla"
-        if proj_vanilla.is_dir():
-            cand = proj_vanilla / f"{orig_name.replace('.arcx', '')}_original_en.arcx"
-            if cand.is_file():
-                return cand
-
-        # 5. Check repo dist/vanilla from file location
-        repo_vanilla = Path(__file__).resolve().parents[2] / "dist" / "vanilla"
-        if repo_vanilla.is_dir():
-            cand = repo_vanilla / f"{orig_name.replace('.arcx', '')}_original_en.arcx"
-            if cand.is_file():
-                return cand
-
         return None
 
     def restore_vanilla(
         self,
         game_root: str | Path,
         event_cb: Optional[Callable[[OperationEvent], None]] = None,
-        operation_id: str = "vanilla_restore"
+        operation_id: str = "vanilla_restore",
     ) -> dict:
         """Executes full vanilla recovery to original publisher data."""
         root = Path(game_root).resolve()
@@ -130,6 +198,19 @@ class VanillaRestoreEngine:
 
             persistent = root / "Persistent_Store"
             streaming_ir = root / "StellaSora_Data" / "StreamingAssets" / "InstallResource"
+
+            receipt_data = None
+            rp = root / RECEIPT
+            if rp.is_file():
+                try:
+                    receipt_data = json.loads(rp.read_text(encoding="utf8"))
+                except (OSError, ValueError):
+                    receipt_data = None
+            receipt_files = (
+                receipt_data.get("files")
+                if isinstance(receipt_data, dict) and isinstance(receipt_data.get("files"), dict) and receipt_data.get("files")
+                else None
+            )
 
             # 1. Restore Tables/data.arcx
             self._emit(event_cb, operation_id, OperationPhase.VERIFY, "Đang kiểm tra bảng dữ liệu gốc (data.arcx)...", 1, 5)
@@ -144,13 +225,19 @@ class VanillaRestoreEngine:
                     os.replace(tmp, data_target)
                 finally:
                     tmp.unlink(missing_ok=True)
-                # Keep local orig_en preserved as golden backup
                 local_orig_data = data_target.with_name("data.arcx.orig_en")
                 if not local_orig_data.exists():
                     try:
                         shutil.copy2(vanilla_data, local_orig_data)
                     except Exception:
                         pass
+            elif data_target.is_file():
+                data_patched_shas = self._known_patched_shas(root, "Persistent_Store/Tables/data.arcx")
+                if data_patched_shas and sha256_file(data_target).lower() in data_patched_shas:
+                    raise InstallerError(
+                        "Không tìm thấy bản sao lưu dữ liệu gốc (data.arcx) để khôi phục. Hãy dùng tính năng Sửa tệp / Kiểm tra tệp trong Yostar Launcher hoặc Steam.",
+                        "BACKUP_MISSING",
+                    )
 
             # 2. Restore Scripts/lua.arcx
             self._emit(event_cb, operation_id, OperationPhase.VERIFY, "Đang kiểm tra kịch bản gốc (lua.arcx)...", 2, 5)
@@ -165,28 +252,54 @@ class VanillaRestoreEngine:
                     os.replace(tmp, lua_target)
                 finally:
                     tmp.unlink(missing_ok=True)
-                # Keep local orig_en preserved as golden backup
                 local_orig_lua = lua_target.with_name("lua.arcx.orig_en")
                 if not local_orig_lua.exists():
                     try:
                         shutil.copy2(vanilla_lua, local_orig_lua)
                     except Exception:
                         pass
+            elif lua_target.is_file():
+                lua_patched_shas = self._known_patched_shas(root, "Persistent_Store/Scripts/lua.arcx")
+                if lua_patched_shas and sha256_file(lua_target).lower() in lua_patched_shas:
+                    raise InstallerError(
+                        "Không tìm thấy bản sao lưu kịch bản gốc (lua.arcx) để khôi phục. Hãy dùng tính năng Sửa tệp / Kiểm tra tệp trong Yostar Launcher hoặc Steam.",
+                        "BACKUP_MISSING",
+                    )
 
             # 3. Restore / Revert AssetBundles in Persistent_Store/AssetBundles/
             self._emit(event_cb, operation_id, OperationPhase.APPLY, "Đang phục hồi AssetBundles về bản gốc nhà phát hành...", 3, 5)
             ps_bundles = persistent / "AssetBundles"
             cleaned_bundles = 0
-            if ps_bundles.is_dir():
+            if receipt_files is not None:
+                for rel in receipt_files:
+                    if not rel.startswith("Persistent_Store/AssetBundles/"):
+                        continue
+                    try:
+                        bpath = safe_path(root, rel, True)
+                    except InstallerError:
+                        continue
+                    bname = bpath.name
+                    backup_bundle = self._find_unmodded_backup_file(root, rel)
+                    ir_source = streaming_ir / bname
+                    if backup_bundle and backup_bundle.is_file():
+                        bpath.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(backup_bundle, bpath)
+                        cleaned_bundles += 1
+                    elif ir_source.is_file():
+                        bpath.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(ir_source, bpath)
+                        cleaned_bundles += 1
+                    elif bpath.exists():
+                        bpath.unlink(missing_ok=True)
+                        cleaned_bundles += 1
+            elif ps_bundles.is_dir():
                 for bpath in list(ps_bundles.glob("*.en.unity3d")):
                     bname = bpath.name
                     ir_source = streaming_ir / bname
                     if ir_source.is_file():
-                        # Restore clean pristine version from InstallResource
                         shutil.copy2(ir_source, bpath)
                         cleaned_bundles += 1
                     else:
-                        # Remove modded bundle so game client fetches or falls back cleanly
                         bpath.unlink(missing_ok=True)
                         cleaned_bundles += 1
 
@@ -194,23 +307,39 @@ class VanillaRestoreEngine:
             self._emit(event_cb, operation_id, OperationPhase.APPLY, "Đang dọn dẹp phụ đề tiếng Việt...", 4, 5)
             ps_videos = persistent / "Videos"
             cleaned_srts = 0
-            if ps_videos.is_dir():
+            if receipt_files is not None:
+                for rel in receipt_files:
+                    if not (rel.startswith("Persistent_Store/Videos/") and rel.endswith(".srt")):
+                        continue
+                    try:
+                        srt_path = safe_path(root, rel, True)
+                    except InstallerError:
+                        continue
+                    backup_srt = self._find_unmodded_backup_file(root, rel)
+                    if backup_srt and backup_srt.is_file():
+                        srt_path.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(backup_srt, srt_path)
+                        cleaned_srts += 1
+                    elif srt_path.exists():
+                        srt_path.unlink(missing_ok=True)
+                        cleaned_srts += 1
+            elif ps_videos.is_dir():
                 for srt in list(ps_videos.glob("*.srt")):
                     srt.unlink(missing_ok=True)
                     cleaned_srts += 1
 
             # 5. Remove receipt and cleanup temporary journals/files
             self._emit(event_cb, operation_id, OperationPhase.READBACK, "Đang dọn dẹp biên bản cài đặt...", 5, 5)
-            (root / RECEIPT).unlink(missing_ok=True)
+            rp.unlink(missing_ok=True)
             (root / "viethoa_installed.json").unlink(missing_ok=True)
 
-            # Clean any pending journals for this root
+            croot = canonicalize_path(root)
             for jf in self.journals_dir.glob("*.json"):
                 try:
                     d = json.loads(jf.read_text(encoding="utf8"))
-                    if d.get("game_root") == canonicalize_path(root):
+                    if d.get("game_root") == croot:
                         d["state"] = "restored"
-                        jf.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf8")
+                        atomic_json(jf, d)
                 except Exception:
                     pass
 
@@ -220,7 +349,7 @@ class VanillaRestoreEngine:
                 OperationPhase.DONE,
                 "✓ Đã khôi phục hoàn toàn dữ liệu gốc nguyên bản của nhà phát hành.",
                 5,
-                5
+                5,
             )
 
             return {
@@ -229,5 +358,5 @@ class VanillaRestoreEngine:
                 "restored_scripts": bool(vanilla_lua and vanilla_lua.is_file()),
                 "cleaned_bundles_count": cleaned_bundles,
                 "cleaned_subtitles_count": cleaned_srts,
-                "message": "✓ Hoàn tất khôi phục! Đã đưa toàn bộ dữ liệu game về trạng thái gốc nguyên bản từ nhà phát hành (bản hoàn chỉnh, chưa Việt hoá)."
+                "message": "✓ Hoàn tất khôi phục! Đã đưa toàn bộ dữ liệu game về trạng thái gốc nguyên bản từ nhà phát hành (bản hoàn chỉnh, chưa Việt hoá).",
             }

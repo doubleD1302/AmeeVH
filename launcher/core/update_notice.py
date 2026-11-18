@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 """Version and compatibility decisions for the visible update controls."""
+from __future__ import annotations
 import os
 import re
-import urllib.request
+import time
+from datetime import datetime
+from pathlib import Path
 from typing import Optional
+
 
 def version_parts(value):
     match = re.fullmatch(r'v?(\d+(?:\.\d+){0,3})', str(value or '').strip(), re.I)
@@ -12,9 +16,11 @@ def version_parts(value):
     parts = tuple(int(p) for p in match.group(1).split('.'))
     return parts + (0,) * (4 - len(parts))
 
+
 def newer(latest, installed):
     latest, installed = version_parts(latest), version_parts(installed)
     return latest is not None and installed is not None and latest > installed
+
 
 def matches(observed, expected):
     observed, expected = str(observed or '').strip(), str(expected or '').strip()
@@ -23,34 +29,38 @@ def matches(observed, expected):
     expected_list = [e.strip() for e in re.split(r'[,;|]', expected) if e.strip()]
     return observed in expected_list or '*' in expected_list
 
-def check_remote_publisher_headers() -> dict:
-    """Queries official publisher CDN manifest header with a small byte-range request."""
-    url = "https://nova-static.stellasora.global/res/win/145/73d0a5ed73c7b5507c8ffb0fd25af693/ss_win.mani"
-    req = urllib.request.Request(
-        url,
-        headers={"User-Agent": "UnityPlayer/2022.3.48f1", "Range": "bytes=0-2048"}
-    )
-    out = {}
-    try:
-        with urllib.request.urlopen(req, timeout=3) as resp:
-            text = resp.read().decode("utf-8", errors="ignore")
-            for line in text.splitlines():
-                line = line.strip().lstrip("$")
-                m = re.match(r"^(GAME_VER|CLIENT_VER|RES_VER|RESOURCE_VER)[:=\s]+([0-9A-Za-z_.-]+)", line)
-                if m:
-                    out[m.group(1)] = m.group(2)
-    except Exception:
-        pass
-    return out
 
-def has_game_patch_conflict_in_log() -> bool:
+def has_game_patch_conflict_in_log(game_info=None) -> bool:
     """Checks if game recently failed to patch publisher update due to modified files."""
-    log_path = os.path.expandvars(r"%USERPROFILE%\AppData\LocalLow\YOSTAR (HONG KONG) LIMITED\StellaSora\Player.log")
-    if not os.path.exists(log_path):
+    log_path = Path(os.path.expandvars(r"%USERPROFILE%\AppData\LocalLow\YOSTAR (HONG KONG) LIMITED\StellaSora\Player.log"))
+    if not log_path.is_file():
         return False
     try:
-        with open(log_path, "r", encoding="utf-8", errors="ignore") as f:
-            # Check last 200 lines
+        log_mtime = log_path.stat().st_mtime
+        if (time.time() - log_mtime) > 86400:
+            return False
+
+        # Ignore stale Player.log if ss_win.mani or patch receipt is newer than Player.log
+        gpath = getattr(game_info, "game_path", None) if game_info is not None else None
+        if isinstance(gpath, (str, os.PathLike)):
+            gp = Path(gpath)
+            mani = gp / "Persistent_Store" / "ss_win.mani"
+            if mani.is_file() and mani.stat().st_mtime > log_mtime:
+                return False
+            rp = gp / ".vietnamese_patch_receipt.json"
+            if rp.is_file() and rp.stat().st_mtime > log_mtime:
+                return False
+
+        receipt = getattr(game_info, "installed_receipt", None) if game_info is not None else None
+        if isinstance(receipt, dict) and isinstance(receipt.get("installed_at"), str):
+            try:
+                inst_ts = datetime.fromisoformat(receipt["installed_at"].replace("Z", "+00:00")).timestamp()
+                if inst_ts > log_mtime:
+                    return False
+            except ValueError:
+                pass
+
+        with log_path.open("r", encoding="utf-8", errors="ignore") as f:
             lines = f.readlines()[-200:]
             for l in lines:
                 if any(err in l for err in ("BinDiffPatchError", "Patch file verification failed", "no found patch target bundle")):
@@ -58,6 +68,7 @@ def has_game_patch_conflict_in_log() -> bool:
     except Exception:
         pass
     return False
+
 
 def detect_new_publisher_version(game_info, manifest_meta: Optional[dict] = None) -> tuple[bool, str]:
     """
@@ -69,42 +80,34 @@ def detect_new_publisher_version(game_info, manifest_meta: Optional[dict] = None
         return False, ""
 
     manifest = manifest_meta or {}
-    supported_game_ver = manifest.get("client_game_version", "2.0.1")
-    supported_res_str = manifest.get("resource_version", "2610291554")
+    supported_game_ver = str(manifest.get("client_game_version", "2.1.0") or "2.1.0")
+    supported_res_str = str(manifest.get("resource_version", "*") or "*")
 
-    # 1. Check local game version vs supported game version
-    local_game_ver = getattr(game_info, "version", "")
+    # 1. Check local game version vs supported game version(s) (supports comma-separated list and '*')
+    local_game_ver = str(getattr(game_info, "version", "") or "").strip()
     if local_game_ver and local_game_ver != "unknown":
-        if newer(local_game_ver, supported_game_ver):
-            return True, f"Phiên bản game hiện tại ({local_game_ver}) mới hơn bản dịch hỗ trợ ({supported_game_ver})"
+        game_candidates = [g.strip() for g in re.split(r"[,;|]", supported_game_ver) if g.strip()]
+        if "*" not in game_candidates and not matches(local_game_ver, supported_game_ver):
+            local_parts = version_parts(local_game_ver)
+            supported_parts = [version_parts(g) for g in game_candidates if version_parts(g) is not None]
+            if local_parts is not None and supported_parts and local_parts > max(supported_parts):
+                return True, f"Phiên bản game hiện tại ({local_game_ver}) mới hơn bản dịch hỗ trợ ({supported_game_ver})"
 
-    # 2. Check local resource version
-    local_res_ver = getattr(game_info, "resource_version", "")
+    # 2. Check local resource version (supports comma-separated list and '*')
+    local_res_ver = str(getattr(game_info, "resource_version", "") or "").strip()
     if local_res_ver and local_res_ver != "unknown":
         if not matches(local_res_ver, supported_res_str):
-            # Parse supported numbers
             known_nums = [int(p) for p in re.findall(r"\b\d{8,}\b", supported_res_str)]
             if known_nums and local_res_ver.isdigit():
                 if int(local_res_ver) > max(known_nums):
                     return True, f"Tài nguyên game ({local_res_ver}) mới hơn phiên bản bản dịch hỗ trợ"
 
-    # 3. Check for patch failure in Player.log (means game tried to update from Yostar and aborted)
-    if has_game_patch_conflict_in_log():
+    # 3. Check for recent patch failure in Player.log
+    if has_game_patch_conflict_in_log(game_info):
         return True, "Phát hiện game vừa gặp xung đột khi tải bản vá mới từ nhà phát hành"
 
-    # 4. Check remote publisher headers on CDN
-    remote_headers = check_remote_publisher_headers()
-    if remote_headers:
-        remote_game = remote_headers.get("GAME_VER")
-        if remote_game and newer(remote_game, supported_game_ver):
-            return True, f"Nhà phát hành vừa ra mắt bản game mới ({remote_game})"
-        remote_res = remote_headers.get("RES_VER")
-        if remote_res and remote_res.isdigit():
-            known_nums = [int(p) for p in re.findall(r"\b\d{8,}\b", supported_res_str)]
-            if known_nums and int(remote_res) > max(known_nums):
-                return True, f"Nhà phát hành vừa phát hành gói tài nguyên mới ({remote_res})"
-
     return False, ""
+
 
 def translation_state(sync, game):
     if sync.get('release_status') != 'online' or sync.get('manifest_status') != 'online':
@@ -119,13 +122,55 @@ def translation_state(sync, game):
         version_note = 'Phiên bản game hoặc tài nguyên khác bảng kê hoặc chưa đọc được; chưa xác minh tương thích.'
     if version_parts(version) is None:
         return {'available': False, 'can_install': False, 'message': 'Phiên bản bản Việt hoá trong bảng kê không hợp lệ.'}
+    if getattr(game, 'receipt_stale', False):
+        return {
+            'available': True,
+            'can_install': True,
+            'message': f'Game vừa cập nhật tệp gốc — cần bấm Cập nhật Việt hoá ({version}) để áp dụng lại. {version_note}',
+            'version': version,
+            'version_note': version_note,
+        }
     if not receipt:
-        return {'available': False, 'can_install': True, 'message': f'Bản Việt hoá: {version}. Chưa có biên bản cài để đối chiếu phiên bản. {version_note}', 'version_note': version_note}
+        return {
+            'available': False,
+            'can_install': True,
+            'message': f'Bản Việt hoá: {version}. Chưa có biên bản cài để đối chiếu phiên bản. {version_note}',
+            'version_note': version_note,
+        }
     current = receipt.get('version')
     if version_parts(version) is None or version_parts(current) is None:
         return {'available': False, 'can_install': False, 'message': f'Không thể so sánh phiên bản đã cài ({current}) với bản trong bảng kê ({version}).'}
     if newer(version, current):
-        return {'available': True, 'can_install': True, 'message': f'Có bản Việt hoá {version} mới hơn bản đã cài {current}. {version_note}', 'version': version, 'version_note': version_note}
+        return {
+            'available': True,
+            'can_install': True,
+            'message': f'Có bản Việt hoá {version} mới hơn bản đã cài {current}. {version_note}',
+            'version': version,
+            'version_note': version_note,
+        }
     if version_parts(version) == version_parts(current):
-        return {'available': False, 'can_install': True, 'message': f'Bản đã cài: {current} (mới nhất). Bạn có thể bấm Cài lại để làm mới dữ liệu. {version_note}', 'version': version, 'version_note': version_note}
-    return {'available': False, 'can_install': False, 'message': f'Bản đã cài ({current}) mới hơn bảng kê ({version}). Hạ cấp bị từ chối. {version_note}', 'version': version, 'version_note': version_note}
+        sync_sha = sync.get('manifest_sha256')
+        rec_sha = receipt.get('manifest_sha256')
+        legacy_sha = sync.get('legacy_manifest_sha256')
+        if sync_sha and rec_sha and rec_sha != sync_sha and (not legacy_sha or rec_sha != legacy_sha):
+            return {
+                'available': True,
+                'can_install': True,
+                'message': f'Có bản vá dữ liệu/hình ảnh mới trong gói {version}! Bấm Cập nhật Việt hoá để đồng bộ. {version_note}',
+                'version': version,
+                'version_note': version_note,
+            }
+        return {
+            'available': False,
+            'can_install': True,
+            'message': f'Bản đã cài: {current} (mới nhất). Bạn có thể bấm Cài lại để làm mới dữ liệu. {version_note}',
+            'version': version,
+            'version_note': version_note,
+        }
+    return {
+        'available': False,
+        'can_install': False,
+        'message': f'Bản đã cài ({current}) mới hơn bảng kê ({version}). Hạ cấp bị từ chối. {version_note}',
+        'version': version,
+        'version_note': version_note,
+    }

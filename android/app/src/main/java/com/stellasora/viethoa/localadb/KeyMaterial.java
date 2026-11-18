@@ -14,6 +14,27 @@ import org.bouncycastle.x509.X509V3CertificateGenerator;
 final class KeyMaterial {
  final PrivateKey privateKey;final X509Certificate certificate;
  private KeyMaterial(PrivateKey p,X509Certificate c){privateKey=p;certificate=c;}
+ static void markPaired(Context context){
+  try{
+   File dir=Store.internal(context,"local_adb_identity");
+   if(dir.isDirectory()||dir.mkdirs()){
+    Store.write(new File(dir,"paired.json"),Store.obj("paired",true,"ts",System.currentTimeMillis()));
+   }
+  }catch(Exception ignored){}
+ }
+ static boolean hasIdentity(Context context){
+  try{
+   File dir=Store.internal(context,"local_adb_identity");
+   File key=new File(dir,"private.pk8"),cert=new File(dir,"certificate.der");
+   if(!(key.isFile()&&key.length()>0&&cert.isFile()&&cert.length()>0))return false;
+   if(new File(dir,"paired.json").isFile())return true;
+   try{if(Store.config(context).optInt("connection_port",0)>0)return true;}catch(Exception ignored){}
+   File receipts=Store.internal(context,"receipts");
+   File[] rf=receipts.listFiles();
+   if(rf!=null){for(File f:rf)if(f.isFile()&&f.getName().endsWith(".json"))return true;}
+   return false;
+  }catch(Exception e){return false;}
+ }
  static KeyMaterial load(Context context)throws Exception{
   File dir=Store.internal(context,"local_adb_identity");if(!dir.isDirectory()&&!dir.mkdirs())throw new IOException("Không tạo được vùng khóa ADB riêng.");
   try(RandomAccessFile lock=new RandomAccessFile(new File(dir,"identity.lock"),"rw");FileLock ignored=lock.getChannel().lock()){

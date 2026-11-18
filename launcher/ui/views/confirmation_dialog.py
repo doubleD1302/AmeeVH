@@ -1,9 +1,10 @@
-"""Affecting-action confirmation in the supplied dialog art shell."""
+"""Affecting-action confirmation in the taller update panel art shell so all cards fit cleanly."""
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QFrame
+from PySide6.QtWidgets import QVBoxLayout, QHBoxLayout, QFrame
 from ..components.modal_shell import ArtDialog
 from ..components.starlit_button import StarlitButton
 from ..components.art_controls import AssetImage, AlertStrip, text_label, ArtCheckBox
+
 
 class InfoGlassCard(QFrame):
     """High-contrast translucent card for structured information."""
@@ -17,8 +18,19 @@ class InfoGlassCard(QFrame):
             }
         """)
 
+
 class ConfirmationDialog(ArtDialog):
-    def __init__(self, title, message, confirm_label='Xác nhận', cancel_label='Hủy bỏ', is_danger=False, show_shortcut_option=False, shortcut_default=True, parent=None):
+    def __init__(
+        self,
+        title,
+        message,
+        confirm_label='Xác nhận',
+        cancel_label='Hủy bỏ',
+        is_danger=False,
+        show_shortcut_option=False,
+        shortcut_default=True,
+        parent=None,
+    ):
         subtitle = 'Vui lòng kiểm tra lại thông tin và vị trí trước khi thực hiện.'
         has_shortcut = show_shortcut_option or ('CÀI' in title)
         super().__init__(
@@ -26,13 +38,14 @@ class ConfirmationDialog(ArtDialog):
             subtitle,
             'warning' if is_danger else ('download' if 'CÀI' in title else ('restore' if 'KHÔI PHỤC' in title else 'info')),
             parent,
-            width=780,
-            height=550 if has_shortcut else 510,
-            panel='panels/dialog'
+            width=880,
+            height=620,
+            panel='panels/update',
         )
         self.heading.setStyleSheet('color:#a13d52;' if is_danger else 'color:#304679;')
-        self.body.setContentsMargins(10, 4, 10, 4)
-        self.body.setSpacing(10)
+        self.root.setSpacing(8)
+        self.body.setContentsMargins(6, 2, 6, 2)
+        self.body.setSpacing(8)
 
         # Parse message content
         lines = [l.strip() for l in message.splitlines() if l.strip()]
@@ -51,8 +64,8 @@ class ConfirmationDialog(ArtDialog):
         if folder_path:
             folder_box = InfoGlassCard(self)
             fl = QVBoxLayout(folder_box)
-            fl.setContentsMargins(16, 12, 16, 12)
-            fl.setSpacing(6)
+            fl.setContentsMargins(14, 10, 14, 10)
+            fl.setSpacing(5)
 
             top_row = QHBoxLayout()
             top_row.setSpacing(8)
@@ -60,12 +73,14 @@ class ConfirmationDialog(ArtDialog):
             top_row.addWidget(text_label('VỊ TRÍ CÀI ĐẶT GAME', 11, '#7cd4fd', bold=True))
             top_row.addStretch()
 
-            badge = text_label('Đã nhận diện', 11, '#a6d9fa')
-            badge.setStyleSheet('background: rgba(217, 239, 239, 0.9); border: 1px solid #c5b69a; border-radius: 4px; padding: 2px 8px;')
+            badge = text_label('Đã nhận diện', 11, '#2b5468')
+            badge.setStyleSheet(
+                'background: rgba(217, 239, 239, 0.92); border: 1px solid #c5b69a; color: #2b5468; border-radius: 4px; padding: 2px 8px;'
+            )
             top_row.addWidget(badge)
             fl.addLayout(top_row)
 
-            path_lbl = text_label(folder_path, 13, '#eef8ff', bold=True)
+            path_lbl = text_label(folder_path, 13, '#304679', bold=True)
             path_lbl.setWordWrap(True)
             path_lbl.setStyleSheet('color:#304679; font-family: "Consolas", "Courier New", monospace;')
             fl.addWidget(path_lbl)
@@ -75,7 +90,7 @@ class ConfirmationDialog(ArtDialog):
         if backup_path:
             b_box = InfoGlassCard(self)
             bl = QVBoxLayout(b_box)
-            bl.setContentsMargins(16, 10, 16, 10)
+            bl.setContentsMargins(14, 8, 14, 8)
             bl.setSpacing(4)
             b_top = QHBoxLayout()
             b_top.setSpacing(8)
@@ -83,20 +98,20 @@ class ConfirmationDialog(ArtDialog):
             b_top.addWidget(text_label('BẢN SAO LƯU DỰ PHÒNG', 11, '#92d5f7', bold=True))
             b_top.addStretch()
             bl.addLayout(b_top)
-            bl.addWidget(text_label(backup_path, 13, '#e0f2fe'))
+            bl.addWidget(text_label(backup_path, 13, '#304679'))
             self.body.addWidget(b_box)
 
         # 3. Khối mô tả / tính năng
         scope_box = InfoGlassCard(self)
         sl = QVBoxLayout(scope_box)
-        sl.setContentsMargins(16, 12, 16, 12)
-        sl.setSpacing(8)
+        sl.setContentsMargins(14, 10, 14, 10)
+        sl.setSpacing(6)
 
         if 'CÀI' in title:
             features = [
                 ('icons/shield_cyan', 'Sao lưu an toàn', 'Tự động tạo bản lưu toàn vẹn trước khi nạp dữ liệu mới.'),
                 ('icons/file_check_cyan', 'Nạp dữ liệu chuẩn', 'Cài đặt thoại, bảng text, kỹ năng và texture banner Việt hóa.'),
-                ('icons/restore_cyan', 'Hỗ trợ khôi phục', 'Dễ dàng quay lại bản gốc bất kỳ lúc nào với 1 cú click.')
+                ('icons/restore_cyan', 'Hỗ trợ khôi phục', 'Dễ dàng quay lại bản gốc bất kỳ lúc nào với 1 cú click.'),
             ]
             for icon_name, heading, detail in features:
                 row = QHBoxLayout()
@@ -124,7 +139,7 @@ class ConfirmationDialog(ArtDialog):
         if has_shortcut:
             sc_box = InfoGlassCard(self)
             scl = QHBoxLayout(sc_box)
-            scl.setContentsMargins(16, 8, 16, 8)
+            scl.setContentsMargins(14, 6, 14, 6)
             scl.setSpacing(10)
             self.cb_shortcut = ArtCheckBox('Thêm lối tắt vào màn hình chính', self)
             self.cb_shortcut.setChecked(shortcut_default)
@@ -146,7 +161,7 @@ class ConfirmationDialog(ArtDialog):
         self.footer.addWidget(cancel)
 
         confirm = StarlitButton(confirm_label, variant='danger' if is_danger else 'primary', icon='check')
-        confirm.setMinimumWidth(160)
+        confirm.setMinimumWidth(170)
         confirm.setMinimumHeight(44)
         confirm.clicked.connect(self.accept)
         self.footer.addWidget(confirm)

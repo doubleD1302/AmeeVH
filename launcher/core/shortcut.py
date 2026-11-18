@@ -1,9 +1,12 @@
+from __future__ import annotations
+import base64
 import os
-import sys
-import tempfile
 import subprocess
+import tempfile
 import winreg
 from pathlib import Path
+from typing import Optional
+
 
 def get_desktop_path() -> Path:
     """Returns the true Windows Desktop directory, resolving OneDrive/localized folders."""
@@ -23,19 +26,53 @@ def get_desktop_path() -> Path:
                 return p
     return Path.home() / 'Desktop'
 
+
+def _vbs_escape(value: str | Path) -> str:
+    return str(value).replace('"', '""')
+
+
+def _ps_quote(value: str | Path) -> str:
+    return "'" + str(value).replace("'", "''") + "'"
+
+
+def _create_via_powershell(lnk_path: Path, target_path: Path, work_dir: Path, icon: str, description: str) -> tuple[bool, str]:
+    ps_script = (
+        "$ws = New-Object -ComObject WScript.Shell; "
+        f"$s = $ws.CreateShortcut({_ps_quote(lnk_path)}); "
+        f"$s.TargetPath = {_ps_quote(target_path)}; "
+        f"$s.WorkingDirectory = {_ps_quote(work_dir)}; "
+        f"$s.IconLocation = {_ps_quote(icon)}; "
+        f"$s.Description = {_ps_quote(description)}; "
+        "$s.Save()"
+    )
+    encoded = base64.b64encode(ps_script.encode('utf-16-le')).decode('ascii')
+    res = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-NonInteractive", "-EncodedCommand", encoded],
+        capture_output=True,
+        text=True,
+        creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0,
+        timeout=15,
+    )
+    if res.returncode == 0 and lnk_path.is_file():
+        return True, f"Đã tạo lối tắt thành công tại {lnk_path}"
+    err = res.stderr.strip() or res.stdout.strip() or f"Mã thoát {res.returncode}"
+    return False, f"Lỗi tạo lối tắt: {err}"
+
+
 def create_desktop_shortcut(
     target_path: Path,
     shortcut_name: str,
-    working_dir: Path = None,
-    icon_location: str = None,
-    description: str = "Stella Sora Việt Hóa"
+    working_dir: Optional[Path] = None,
+    icon_location: Optional[str] = None,
+    description: str = "Stella Sora Việt Hóa",
+    desktop_dir: Optional[Path] = None,
 ) -> tuple[bool, str]:
-    """Creates a Windows .lnk desktop shortcut using native WScript.Shell without external dependencies."""
+    """Creates a Windows .lnk desktop shortcut with full Vietnamese Unicode support (UTF-16LE VBScript + PowerShell fallback)."""
     target_path = Path(target_path).resolve()
     if not target_path.exists():
         return False, f"Không tìm thấy tệp đích: {target_path}"
 
-    desktop = get_desktop_path()
+    desktop = Path(desktop_dir) if desktop_dir is not None else get_desktop_path()
     if not desktop.is_dir():
         try:
             desktop.mkdir(parents=True, exist_ok=True)
@@ -51,52 +88,63 @@ def create_desktop_shortcut(
     icon = str(icon_location) if icon_location else f"{target_path},0"
 
     vbs_content = (
-        'Set ws = CreateObject("WScript.Shell")\n'
-        f'Set s = ws.CreateShortcut("{str(lnk_path)}")\n'
-        f's.TargetPath = "{str(target_path)}"\n'
-        f's.WorkingDirectory = "{str(work_dir)}"\n'
-        f's.IconLocation = "{icon}"\n'
-        f's.Description = "{description}"\n'
-        's.Save\n'
+        'Set ws = CreateObject("WScript.Shell")\r\n'
+        f'Set s = ws.CreateShortcut("{_vbs_escape(lnk_path)}")\r\n'
+        f's.TargetPath = "{_vbs_escape(target_path)}"\r\n'
+        f's.WorkingDirectory = "{_vbs_escape(work_dir)}"\r\n'
+        f's.IconLocation = "{_vbs_escape(icon)}"\r\n'
+        f's.Description = "{_vbs_escape(description)}"\r\n'
+        's.Save\r\n'
     )
 
     vbs_path = None
+    cscript_err = ""
     try:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.vbs', delete=False, encoding='utf-8') as f:
+        # cscript.exe requires UTF-16LE with BOM ('utf-16') to preserve Vietnamese Unicode paths!
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.vbs', delete=False, encoding='utf-16') as f:
             f.write(vbs_content)
             vbs_path = f.name
-
-        startupinfo = None
-        if os.name == 'nt':
-            startupinfo = subprocess.STARTUPINFO()
-            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 
         res = subprocess.run(
             ["cscript.exe", "//nologo", vbs_path],
             capture_output=True,
             text=True,
-            startupinfo=startupinfo,
-            timeout=10
+            creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0,
+            timeout=10,
         )
         if res.returncode == 0 and lnk_path.is_file():
             return True, f"Đã tạo lối tắt thành công tại {lnk_path}"
-        else:
-            err = res.stderr.strip() or res.stdout.strip() or f"Mã thoát {res.returncode}"
-            return False, f"Lỗi tạo lối tắt: {err}"
+        cscript_err = res.stderr.strip() or res.stdout.strip() or f"Mã thoát {res.returncode}"
     except Exception as e:
-        return False, f"Lỗi tạo lối tắt: {e}"
+        cscript_err = str(e)
     finally:
         if vbs_path and os.path.exists(vbs_path):
             try:
                 os.unlink(vbs_path)
-            except Exception:
+            except OSError:
                 pass
 
-def create_game_shortcut(game_root: Path, shortcut_name: str = "Stella Sora Việt Hóa") -> tuple[bool, str]:
-    game_root = Path(game_root).resolve()
+    # Fallback for Windows 11 24H2+ systems where VBScript optional feature is disabled/removed
+    try:
+        ok, ps_msg = _create_via_powershell(lnk_path, target_path, work_dir, icon, description)
+        if ok:
+            return True, ps_msg
+        return False, ps_msg
+    except Exception:
+        return False, f"Lỗi tạo lối tắt: {cscript_err}"
+
+
+def create_game_shortcut(
+    game_root: Path,
+    shortcut_name: str = "Stella Sora Việt Hóa",
+    desktop_dir: Optional[Path] = None,
+) -> tuple[bool, str]:
+    raw_str = str(game_root or "").strip()
+    if not raw_str:
+        return False, "Chưa xác định được thư mục cài đặt game."
+    game_root = Path(raw_str).resolve()
     target_exe = game_root / "StellaSora.exe"
     if not target_exe.is_file():
-        # Check subdirectories if any
         candidates = list(game_root.glob("**/StellaSora.exe"))
         if candidates:
             target_exe = candidates[0]
@@ -108,16 +156,6 @@ def create_game_shortcut(game_root: Path, shortcut_name: str = "Stella Sora Vi�
         shortcut_name=shortcut_name,
         working_dir=target_exe.parent,
         icon_location=f"{target_exe},0",
-        description="Khởi động game Stella Sora Việt Hóa"
+        description="Khởi động game Stella Sora Việt Hóa",
+        desktop_dir=desktop_dir,
     )
-
-if __name__ == "__main__":
-    steam_root = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Stella Sora")
-    ok, msg = create_game_shortcut(steam_root, "Stella Sora Test LNK")
-    print("Result:", ok, msg)
-    desktop = get_desktop_path()
-    test_file = desktop / "Stella Sora Test LNK.lnk"
-    print("File exists:", test_file.exists())
-    if test_file.exists():
-        test_file.unlink()
-        print("Test file deleted successfully.")

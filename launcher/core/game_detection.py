@@ -5,6 +5,8 @@ Game detection, status resolution, process monitoring, and execution.
 
 from __future__ import annotations
 
+import hashlib
+import json
 import os
 import re
 import subprocess
@@ -33,40 +35,55 @@ def canonicalize_path(p: str | Path) -> str:
 
 
 def is_game_process_running() -> bool:
-    """Checks whether StellaSora.exe is running on Windows."""
+    """Checks whether StellaSora.exe is running on Windows with 64-bit safe HANDLE types."""
     if os.name == "nt":
         try:
             import ctypes
             from ctypes import wintypes
+
             TH32CS_SNAPPROCESS = 0x00000002
+            INVALID_HANDLE_VALUE = wintypes.HANDLE(-1).value
+
             class PROCESSENTRY32(ctypes.Structure):
                 _fields_ = [
-                    ('dwSize', wintypes.DWORD),
-                    ('cntUsage', wintypes.DWORD),
-                    ('th32ProcessID', wintypes.DWORD),
-                    ('th32DefaultHeapID', ctypes.c_size_t),
-                    ('th32ModuleID', wintypes.DWORD),
-                    ('cntThreads', wintypes.DWORD),
-                    ('th32ParentProcessID', wintypes.DWORD),
-                    ('pcPriClassBase', wintypes.LONG),
-                    ('dwFlags', wintypes.DWORD),
-                    ('szExeFile', ctypes.c_char * 260)
+                    ("dwSize", wintypes.DWORD),
+                    ("cntUsage", wintypes.DWORD),
+                    ("th32ProcessID", wintypes.DWORD),
+                    ("th32DefaultHeapID", ctypes.c_size_t),
+                    ("th32ModuleID", wintypes.DWORD),
+                    ("cntThreads", wintypes.DWORD),
+                    ("th32ParentProcessID", wintypes.DWORD),
+                    ("pcPriClassBase", wintypes.LONG),
+                    ("dwFlags", wintypes.DWORD),
+                    ("szExeFile", ctypes.c_char * 260),
                 ]
-            h_snap = ctypes.windll.kernel32.CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)
-            if h_snap != -1:
+
+            kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+            kernel32.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
+            kernel32.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
+            kernel32.Process32First.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32)]
+            kernel32.Process32First.restype = wintypes.BOOL
+            kernel32.Process32Next.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32)]
+            kernel32.Process32Next.restype = wintypes.BOOL
+            kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+            kernel32.CloseHandle.restype = wintypes.BOOL
+
+            h_snap = kernel32.CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)
+            if h_snap and h_snap != INVALID_HANDLE_VALUE:
                 pe = PROCESSENTRY32()
                 pe.dwSize = ctypes.sizeof(PROCESSENTRY32)
                 found = False
+                target_lower = GAME_EXE_NAME.lower()
                 try:
-                    if ctypes.windll.kernel32.Process32First(h_snap, ctypes.byref(pe)):
+                    if kernel32.Process32First(h_snap, ctypes.byref(pe)):
                         while True:
-                            if pe.szExeFile.decode(errors='ignore').lower() == GAME_EXE_NAME.lower():
+                            if pe.szExeFile.decode(errors="ignore").lower() == target_lower:
                                 found = True
                                 break
-                            if not ctypes.windll.kernel32.Process32Next(h_snap, ctypes.byref(pe)):
+                            if not kernel32.Process32Next(h_snap, ctypes.byref(pe)):
                                 break
                 finally:
-                    ctypes.windll.kernel32.CloseHandle(h_snap)
+                    kernel32.CloseHandle(h_snap)
                 return found
         except Exception:
             pass
@@ -75,23 +92,63 @@ def is_game_process_running() -> bool:
             ["tasklist", "/FI", f"IMAGENAME eq {GAME_EXE_NAME}", "/NH"],
             text=True,
             creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
-            timeout=10
+            timeout=10,
         )
         return GAME_EXE_NAME.lower() in output.lower()
     except Exception:
         return False
 
 
+def _available_drive_letters() -> list[str]:
+    """Returns mounted local fixed/removable drive letters (C..Z) without probing slow network shares."""
+    if os.name == "nt":
+        try:
+            import ctypes
+            from ctypes import wintypes
+
+            kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+            kernel32.GetLogicalDrives.argtypes = []
+            kernel32.GetLogicalDrives.restype = wintypes.DWORD
+            kernel32.GetDriveTypeW.argtypes = [wintypes.LPCWSTR]
+            kernel32.GetDriveTypeW.restype = wintypes.UINT
+
+            bitmask = kernel32.GetLogicalDrives()
+            drives = []
+            # DRIVE_FIXED = 3, DRIVE_REMOVABLE = 2
+            for idx in range(2, 26):
+                if bitmask & (1 << idx):
+                    letter = chr(ord("A") + idx)
+                    dtype = kernel32.GetDriveTypeW(f"{letter}:\\")
+                    if dtype in (2, 3):
+                        drives.append(letter)
+            if drives:
+                return drives
+        except Exception:
+            pass
+    return ["C", "D", "E", "F", "G"]
+
+
 def get_steam_libraries() -> list[Path]:
     """Finds all configured Steam library folders on the system."""
     libraries: list[Path] = []
+    seen = set()
+
+    def _add_lib(p: Path):
+        try:
+            if p.exists():
+                cp = canonicalize_path(p)
+                if cp not in seen:
+                    seen.add(cp)
+                    libraries.append(p)
+        except OSError:
+            pass
 
     # 1. Check Windows Registry for Steam install path
     steam_path: Optional[Path] = None
     reg_keys = [
         (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\WOW6432Node\Valve\Steam"),
         (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Valve\Steam"),
-        (winreg.HKEY_CURRENT_USER, r"Software\Valve\Steam")
+        (winreg.HKEY_CURRENT_USER, r"Software\Valve\Steam"),
     ]
     for hkey, subkey in reg_keys:
         try:
@@ -103,35 +160,73 @@ def get_steam_libraries() -> list[Path]:
         except Exception:
             pass
 
-    # Default common paths
+    drives = _available_drive_letters()
     common_steam = [
         Path(r"C:\Program Files (x86)\Steam"),
         Path(r"C:\Program Files\Steam"),
-        Path(r"D:\Steam"),
-        Path(r"E:\Steam"),
-        Path(r"D:\SteamLibrary"),
-        Path(r"E:\SteamLibrary")
     ]
+    for d in drives:
+        common_steam.append(Path(f"{d}:\\Steam"))
+        common_steam.append(Path(f"{d}:\\SteamLibrary"))
+
     for cs in common_steam:
         if cs.exists() and steam_path is None:
             steam_path = cs
 
     if steam_path and steam_path.exists():
-        libraries.append(steam_path)
-        # Parse libraryfolders.vdf
+        _add_lib(steam_path)
         vdf = steam_path / "steamapps" / "libraryfolders.vdf"
         if vdf.exists():
             try:
                 content = vdf.read_text(encoding="utf-8", errors="ignore")
                 matches = re.findall(r'"path"\s+"([^"]+)"', content)
                 for m in matches:
-                    lp = Path(m.replace(r"\\", "\\"))
-                    if lp.exists() and lp not in libraries:
-                        libraries.append(lp)
+                    _add_lib(Path(m.replace(r"\\", "\\")))
             except Exception:
                 pass
 
+    for cs in common_steam:
+        _add_lib(cs)
+
     return libraries
+
+
+def _discover_from_uninstall_registry() -> list[Path]:
+    """Checks Windows Uninstall registry keys for Stella Sora InstallLocation."""
+    results: list[Path] = []
+    if os.name != "nt":
+        return results
+    uninstall_roots = [
+        (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"),
+        (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"),
+        (winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Uninstall"),
+    ]
+    for hkey, root_subkey in uninstall_roots:
+        try:
+            with winreg.OpenKey(hkey, root_subkey) as root_key:
+                subkey_count, _, _ = winreg.QueryInfoKey(root_key)
+                for i in range(subkey_count):
+                    try:
+                        sub_name = winreg.EnumKey(root_key, i)
+                        with winreg.OpenKey(root_key, sub_name) as sk:
+                            try:
+                                loc, _ = winreg.QueryValueEx(sk, "InstallLocation")
+                            except OSError:
+                                loc = ""
+                            if loc and isinstance(loc, str):
+                                p = Path(loc.strip().strip('"'))
+                                if (p / GAME_EXE_NAME).is_file():
+                                    results.append(p)
+                                    continue
+                                # Yostar launcher sometimes registers parent folder containing StellaSora_EN
+                                sub_p = p / "StellaSora_EN"
+                                if (sub_p / GAME_EXE_NAME).is_file():
+                                    results.append(sub_p)
+                    except OSError:
+                        continue
+        except OSError:
+            continue
+    return results
 
 
 def find_all_potential_game_installations() -> list[dict]:
@@ -139,39 +234,60 @@ def find_all_potential_game_installations() -> list[dict]:
     discovered: list[dict] = []
     seen_canonical = set()
 
+    def _register(candidate: Path, default_platform: str = "standalone"):
+        try:
+            if not candidate.exists() or not (candidate / GAME_EXE_NAME).is_file():
+                return
+            cpath = canonicalize_path(candidate)
+            if cpath in seen_canonical:
+                return
+            seen_canonical.add(cpath)
+            is_steam = (
+                default_platform == "steam"
+                or "steamapps" in str(candidate).lower()
+                or (candidate / "steam_appid.txt").exists()
+            )
+            plat = "steam" if is_steam else "standalone"
+            label = f"Steam ({candidate})" if plat == "steam" else f"Yostar Standalone ({candidate})"
+            discovered.append({
+                "path": candidate,
+                "canonical": cpath,
+                "platform": plat,
+                "label": label,
+            })
+        except OSError:
+            pass
+
+    # 0. Launcher's own directory and parent directories (when placed inside game folder)
+    local_dirs = []
+    if getattr(sys, "frozen", False):
+        exe_dir = Path(sys.executable).resolve().parent
+        local_dirs.extend([exe_dir, exe_dir.parent])
+    else:
+        src_root = Path(__file__).resolve().parents[2]
+        local_dirs.extend([src_root, src_root.parent])
+    for ld in local_dirs:
+        _register(ld)
+
     # 1. Search Steam libraries
     for lib in get_steam_libraries():
-        candidate = lib / "steamapps" / "common" / "Stella Sora"
-        if candidate.exists() and (candidate / GAME_EXE_NAME).exists():
-            cpath = canonicalize_path(candidate)
-            if cpath not in seen_canonical:
-                seen_canonical.add(cpath)
-                discovered.append({
-                    "path": candidate,
-                    "canonical": cpath,
-                    "platform": "steam",
-                    "label": f"Steam ({candidate})"
-                })
+        _register(lib / "steamapps" / "common" / "Stella Sora", "steam")
 
-    # 2. Search Yostar / Standalone paths
-    standalone_candidates = [
-        Path(r"c:\YostarGames\StellaSora_EN"),
-        Path(r"D:\YostarGames\StellaSora_EN"),
-        Path(r"E:\YostarGames\StellaSora_EN"),
-        Path(r"C:\Program Files\YostarGames\StellaSora_EN"),
-        Path(r"C:\Program Files (x86)\YostarGames\StellaSora_EN")
-    ]
-    for sc in standalone_candidates:
-        if sc.exists() and (sc / GAME_EXE_NAME).exists():
-            cpath = canonicalize_path(sc)
-            if cpath not in seen_canonical:
-                seen_canonical.add(cpath)
-                discovered.append({
-                    "path": sc,
-                    "canonical": cpath,
-                    "platform": "standalone",
-                    "label": f"Yostar Standalone ({sc})"
-                })
+    # 2. Search Yostar / Standalone paths across all mounted drives C..Z
+    drives = _available_drive_letters()
+    for d in drives:
+        for rel in (
+            f"{d}:\\YostarGames\\StellaSora_EN",
+            f"{d}:\\Games\\StellaSora_EN",
+            f"{d}:\\StellaSora_EN",
+            f"{d}:\\Program Files\\YostarGames\\StellaSora_EN",
+            f"{d}:\\Program Files (x86)\\YostarGames\\StellaSora_EN",
+        ):
+            _register(Path(rel), "standalone")
+
+    # 3. Search Windows Uninstall Registry
+    for reg_cand in _discover_from_uninstall_registry():
+        _register(reg_cand)
 
     return discovered
 
@@ -185,7 +301,6 @@ class GameDetector:
     def detect_info(self, raw_path: str | Path | None) -> GameInfo:
         """Inspects game directory and returns structured GameInfo."""
         if not raw_path:
-            # Auto-detect
             found = find_all_potential_game_installations()
             if found:
                 raw_path = found[0]["path"]
@@ -212,21 +327,40 @@ class GameDetector:
         installed_receipt = None
         has_vietnamese = False
         vi_version = None
+        receipt_stale = False
         if receipt_file.is_file():
             try:
-                import json
-                candidate=json.loads(receipt_file.read_text(encoding="utf8"))
-                if candidate.get("schema")==2 and candidate.get("game_root")==cpath and candidate.get("files"):
-                    installed_receipt=candidate
-                    vi_version=candidate.get("version")
-                    has_vietnamese=True
-                    # Receipt is evidence of an operation; integrity is checked on request.
-            except (ValueError,OSError):pass
-        versions=read_game_versions(path)
+                candidate = json.loads(receipt_file.read_text(encoding="utf8"))
+                if (
+                    isinstance(candidate, dict)
+                    and candidate.get("schema") == 2
+                    and candidate.get("game_root") == cpath
+                    and isinstance(candidate.get("files"), dict)
+                    and candidate.get("files")
+                ):
+                    installed_receipt = candidate
+                    vi_version = candidate.get("version")
+                    files_map = candidate["files"]
+                    for key_rel in ("Persistent_Store/Tables/data.arcx", "Persistent_Store/Scripts/lua.arcx"):
+                        if key_rel in files_map and isinstance(files_map[key_rel], dict):
+                            expected_size = files_map[key_rel].get("size")
+                            disk_file = path / key_rel
+                            try:
+                                if not disk_file.is_file() or (
+                                    isinstance(expected_size, int) and disk_file.stat().st_size != expected_size
+                                ):
+                                    receipt_stale = True
+                                    break
+                            except OSError:
+                                receipt_stale = True
+                                break
+                    has_vietnamese = not receipt_stale
+            except (ValueError, OSError):
+                pass
+        versions = read_game_versions(path)
 
         # Count backups for this canonical game root
         backup_count = 0
-        import hashlib
         root_hash = hashlib.sha256(cpath.encode("utf-8")).hexdigest()[:12]
         root_backup_dir = self.backup_root / f"game_{root_hash}"
         if root_backup_dir.exists():
@@ -243,8 +377,9 @@ class GameDetector:
             has_vietnamese=has_vietnamese,
             vietnamese_version=vi_version,
             installed_receipt=installed_receipt,
+            receipt_stale=receipt_stale,
             backup_count=backup_count,
-            detection_source="filesystem_scan"
+            detection_source="filesystem_scan",
         )
 
     def launch(self, game_info: GameInfo) -> tuple[bool, str]:
@@ -260,20 +395,17 @@ class GameDetector:
             if not exe.exists():
                 return False, f"Không tìm thấy file {GAME_EXE_NAME} trong thư mục game."
 
-            # Launch process detached
             if game_info.platform == "steam":
-                # Launch via Steam URL protocol if available, or direct exe
                 try:
                     os.startfile(f"steam://rungameid/{STELLA_SORA_STEAM_APP_ID}")
                     return True, "Đã gửi lệnh khởi động qua Steam client."
                 except Exception:
                     pass
 
-            # Direct execution fallback
             subprocess.Popen(
                 [str(exe)],
                 cwd=str(game_info.game_path),
-                creationflags=subprocess.DETACHED_PROCESS if os.name == "nt" else 0
+                creationflags=subprocess.DETACHED_PROCESS if os.name == "nt" else 0,
             )
             return True, "Khởi động game thành công!"
         except Exception as e:

@@ -54,6 +54,7 @@ class GameInfo:
     has_vietnamese: bool = False
     vietnamese_version: Optional[str] = None
     installed_receipt: Optional[dict[str, Any]] = None
+    receipt_stale: bool = False
     backup_count: int = 0
     detection_source: str = "none"
 
