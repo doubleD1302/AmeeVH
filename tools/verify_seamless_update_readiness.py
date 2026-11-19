@@ -35,6 +35,8 @@ def main():
     gradle_file = ROOT / "android" / "app" / "build.gradle"
     gradle_txt = gradle_file.read_text(encoding="utf-8")
     vc_match = re.search(r"versionCode\s+(\d+)", gradle_txt)
+    android_name_match = re.search(r"versionName\s+['\"]([^'\"]+)['\"]", gradle_txt)
+    android_version = android_name_match.group(1) if android_name_match else None
     if not vc_match or int(vc_match.group(1)) <= 9:
         errors.append(f"Gate 1 thất bại: versionCode phải > 9, tìm thấy {vc_match.group(1) if vc_match else 'None'}")
     else:
@@ -55,15 +57,20 @@ def main():
         print("✓ Gate 3: PC updater có đầy đủ cơ chế ngắt tiến trình cha và rename an toàn")
 
     # Gate 4: android_localadb_launcher.json có SHA256 và size khớp 100% với APK phát hành
-    apk_file = DIST / f"StellaSora-Android_v{current_ver}.apk"
+    apk_file = DIST / f"StellaSora-Android_v{android_version}.apk"
     localadb_file = DIST / "android_localadb_launcher.json"
-    if not apk_file.exists() or not localadb_file.exists():
+    if not android_version:
+        errors.append("Gate 4 thất bại: Không tìm thấy versionName của Android trong build.gradle")
+    elif not apk_file.exists() or not localadb_file.exists():
         errors.append(f"Gate 4 thất bại: Không tìm thấy APK ({apk_file.name}) hoặc android_localadb_launcher.json")
     else:
         apk_sha = sha256_file(apk_file)
         apk_size = apk_file.stat().st_size
         meta = json.loads(localadb_file.read_text(encoding="utf-8"))
-        if meta.get("sha256") != apk_sha or meta.get("size") != apk_size:
+        if (meta.get("version_name") != android_version or not vc_match
+                or meta.get("version_code") != int(vc_match.group(1)) or meta.get("apk_name") != apk_file.name):
+            errors.append("Gate 4 thất bại: Phiên bản hoặc tên APK trong metadata không khớp build.gradle")
+        elif meta.get("sha256") != apk_sha or meta.get("size") != apk_size:
             errors.append(f"Gate 4 thất bại: Metadata không khớp (meta sha={meta.get('sha256')}, apk sha={apk_sha})")
         else:
             print(f"✓ Gate 4: android_localadb_launcher.json khớp 100% (size={apk_size:,}, sha={apk_sha[:16]}...)")
@@ -103,6 +110,10 @@ def main():
         items = notif.get("announcements", [])
         ids = [a.get("id") for a in items]
         has_release = any(a.get("type") == "release" and f"v{current_ver}" in str(a.get("title", "")) for a in items)
+        has_android_release = any(
+            a.get("type") == "release" and f"v{android_version}" in str(a.get("title", ""))
+            for a in items
+        )
         bad = [a.get("id") for a in items if not all(isinstance(a.get(k), str) and a.get(k) for k in ("id", "title", "content"))]
         if len(ids) != len(set(ids)):
             errors.append("Gate 7 thất bại: notifications.json có ID trùng")
@@ -112,6 +123,8 @@ def main():
             errors.append(f"Gate 7 thất bại: notifications.json version={notif.get('version')} khác LAUNCHER_VERSION={current_ver}")
         elif not has_release:
             errors.append(f"Gate 7 thất bại: chưa có thông báo type=release có tiêu đề chứa v{current_ver} (xem SKILL mục 5)")
+        elif android_version and not has_android_release:
+            errors.append(f"Gate 7 thất bại: chưa có thông báo cho Android v{android_version}")
         else:
             print(f"✓ Gate 7: notifications.json có thông báo cho v{current_ver} ({len(items)} mục)")
     except Exception as exc:

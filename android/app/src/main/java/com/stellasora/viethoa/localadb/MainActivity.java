@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.net.*;
 import android.os.*;
 import android.provider.Settings;
+import android.service.quicksettings.TileService;
 import android.view.*;
 import android.webkit.*;
 import org.json.*;
@@ -264,31 +265,51 @@ public final class MainActivity extends Activity implements LauncherService.List
  }
 
  private void openWireless() {
-  try {
-   Intent tileIntent = new Intent("android.service.quicksettings.action.QS_TILE_PREFERENCES");
-   tileIntent.putExtra(Intent.EXTRA_COMPONENT_NAME, new ComponentName("com.android.settings", "com.android.settings.development.qstile.DevelopmentTiles$WirelessDebugging"));
-   tileIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-   startActivity(tileIntent);
-   return;
-  } catch (Exception ignored) {}
-  try {
-   Intent subSettings = new Intent();
-   subSettings.setClassName("com.android.settings", "com.android.settings.SubSettings");
-   subSettings.putExtra(":android:show_fragment", "com.android.settings.development.WirelessDebuggingFragment");
-   subSettings.putExtra(":android:no_headers", true);
-   subSettings.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-   startActivity(subSettings);
-   return;
-  } catch (Exception ignored) {}
-  for (String action : new String[]{"android.settings.WIRELESS_DEBUGGING_SETTINGS", Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS, Settings.ACTION_SETTINGS}) {
-   Intent i = new Intent(action);
-   i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-   if (i.resolveActivity(getPackageManager()) != null) {
-    startActivity(i);
-    return;
-   }
+  String settingsPackage = "com.android.settings";
+  Intent direct = new Intent("android.settings.WIRELESS_DEBUGGING_SETTINGS").setPackage(settingsPackage);
+  if (tryOpenSettings(direct)) return;
+
+  // Some Xiaomi ROMs crash in Settings when handling the Wireless debugging tile shortcut.
+  String brand = Build.BRAND.toLowerCase(Locale.ROOT);
+  if (!"xiaomi".equals(brand) && !"redmi".equals(brand) && !"poco".equals(brand)) {
+   // Other system apps can handle the generic tile action, so target Settings.
+   Intent tile = new Intent(TileService.ACTION_QS_TILE_PREFERENCES)
+     .setPackage(settingsPackage)
+     .putExtra(Intent.EXTRA_COMPONENT_NAME, new ComponentName(settingsPackage,
+       "com.android.settings.development.qstile.DevelopmentTiles$WirelessDebugging"));
+   if (tryOpenSettings(tile)) return;
   }
-  showMessage("Mở Gỡ lỗi không dây", "Hãy tự mở Cài đặt → Tuỳ chọn nhà phát triển → Gỡ lỗi không dây.", false);
+
+  String highlightKey = ":settings:fragment_args_key";
+  String wirelessPreference = "toggle_adb_wireless";
+  Bundle fragmentArgs = new Bundle();
+  fragmentArgs.putString(highlightKey, wirelessPreference);
+  Intent developerOptions = new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS)
+    .putExtra(highlightKey, wirelessPreference)
+    .putExtra(":settings:show_fragment_args", fragmentArgs);
+  if (tryOpenSettings(developerOptions)) return;
+
+  String guide = "Vào Cài đặt → Tuỳ chọn nhà phát triển → Gỡ lỗi không dây.";
+  new AlertDialog.Builder(this)
+    .setTitle("Mở Gỡ lỗi không dây")
+    .setMessage(guide)
+    .setPositiveButton("Mở Cài đặt", (dialog, which) -> {
+     if (!tryOpenSettings(new Intent(Settings.ACTION_SETTINGS))) {
+      showMessage("Mở Gỡ lỗi không dây", guide, false);
+     }
+    })
+    .setNegativeButton("Đóng", null)
+    .show();
+ }
+
+ private boolean tryOpenSettings(Intent intent) {
+  try {
+   // Package visibility can hide a handler from resolveActivity even when it can be launched.
+   startActivity(intent);
+   return true;
+  } catch (ActivityNotFoundException | SecurityException ignored) {
+   return false;
+  }
  }
 
  private void showWirelessReconnectPrompt() {

@@ -9,7 +9,7 @@
     github:{repo:'doubleD1302/AmeeVH',branch:'main',announcementStatus:'Chưa đọc',releaseVersion:'',manifestStatus:'Chưa đọc',translationVersion:'',manifestSha256:'',message:'Chưa đồng bộ GitHub.'},
     notifications:[],payload:{available:false,compatible:false,updateAvailable:false,reason:'Đồng bộ GitHub để xem gói Android tương thích.'},
     config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0},
-    update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},support:{methods:[]},app:{versionName:'1.3.1',versionCode:17,variant:'localadb'}
+    update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},support:{methods:[]},app:{versionName:'1.3.2',versionCode:18,variant:'localadb'}
   };
   let state = initial, currentPage = 'overview';
   let previousBusyPhase = '', lastOutcome = '';
