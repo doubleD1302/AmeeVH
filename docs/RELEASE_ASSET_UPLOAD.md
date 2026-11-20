@@ -21,3 +21,14 @@ Launcher PC đọc bản dịch từ **asset của release mới nhất** (`rele
 - Trước mỗi `git add`/commit, chạy `git status` để chắc chắn không có gì trong `.secrets/`.
 - Token có quyền ghi vào repo: chỉ dùng cho việc upload release được giao.
 - Theo `docs/GITHUB_RELEASE_RULES.md`: tiêu đề release chỉ ghi số phiên bản; mô tả tối đa 100 từ.
+
+## Phát hành tag mới (ví dụ v1.3.2, 2026-11-20)
+
+Thứ tự đã dùng, tránh cửa sổ launcher thấy release nửa vời (`RELEASE_ASSET_MISMATCH`):
+
+1. Bump `LAUNCHER_VERSION`, `version_info.txt`, dựng EXE (`tools/build_pc_launcher_v132.py`), cập nhật `patch_manifest.json` / `android_patch_manifest.json` (`version`, `release_tag`, URL zip/data/lua trỏ tag mới, sha/size data+lua cho cả Android `data_arcx`/`lua_arcx`/`files`), `android_localadb_launcher.json` (`apk_url` tag mới), rồi lập lại `SHA256SUMS.txt`. Chạy `tools/verify_seamless_update_readiness.py`.
+2. Commit code (chưa kèm `launcher/notifications.json`, `web/index.html`) và push `main`.
+3. Tạo release **nháp** (tiêu đề chỉ số phiên bản, mô tả ≤100 từ), tải đủ asset: EXE, APK, 2 zip, data, lua, 3 JSON, `SHA256SUMS.txt`. Chỉ một `.exe` trong release (launcher chọn `.exe` đầu tiên).
+4. So digest SHA256 của từng asset với `SHA256SUMS.txt`, rồi mới công khai (`draft:false`, `make_latest`).
+5. Mô phỏng người dùng cũ: `NetworkService.check_for_updates('1.3.1')` phải trả `has_update` + URL tải + sha; `sync_channel` phải báo bản Việt hóa mới.
+6. Cuối cùng mới commit/push `launcher/notifications.json` và `web/index.html` (link tải).
