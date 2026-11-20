@@ -57,6 +57,7 @@ class GameInfo:
     receipt_stale: bool = False
     backup_count: int = 0
     detection_source: str = "none"
+    official_restore: Optional[dict[str, Any]] = None  # record of the last official-data restore (no receipt)
 
 
 @dataclass

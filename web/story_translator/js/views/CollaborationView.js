@@ -6,18 +6,46 @@
     const action = (text, handler, cls = 'btn-direction') => { const b = make('button', cls, text); b.type = 'button'; b.addEventListener('click', handler); return b; };
     const reasonLabels = { meaning:'Sai nghĩa', pronouns:'Sai xưng hô', naturalness:'Câu chưa tự nhiên', other:'Khác' };
     let session = null, requestSerial = 0, previousFocus = null;
+    // Moderators skip the admin queue, so the primary button says what really happens.
+    const saveText = line => M().canModerate ? 'Lưu & duyệt ngay' : M().hasText(line) ? 'Gửi đề xuất sửa' : 'Lưu bản dịch · Chờ duyệt';
+    const copyText = async text => {
+        try { if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(text); return true; } } catch (_) {}
+        // Fallback for older browsers / insecure contexts. Inside an open modal dialog the helper must live in the dialog, or it is inert.
+        try {
+            const holder = make('textarea'); holder.value = text; holder.readOnly = true; holder.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+            (dialog()?.open ? dialog() : document.body).append(holder); holder.select(); holder.setSelectionRange(0, text.length);
+            const ok = document.execCommand('copy'); holder.remove(); return ok;
+        } catch (_) { return false; }
+    };
+    V.copyButton = text => {
+        const button = make('button', 'collab-copy'); button.type = 'button';
+        button.title = 'Sao chép bản Việt hóa'; button.setAttribute('aria-label', 'Sao chép bản Việt hóa');
+        button.innerHTML = tramIcon('copy'); // static, whitelisted icon markup only
+        let timer = 0;
+        button.addEventListener('click', async event => {
+            event.preventDefault(); event.stopPropagation();
+            const ok = await copyText(text);
+            button.focus({ preventScroll: true });
+            if (ok) { button.innerHTML = tramIcon('check'); button.classList.add('is-copied'); clearTimeout(timer); timer = setTimeout(() => { button.innerHTML = tramIcon('copy'); button.classList.remove('is-copied'); }, 1400); }
+            showToastAlert(ok ? 'Đã sao chép bản Việt hóa. Dán vào ô soạn để sửa tiếp.' : 'Trình duyệt chặn việc sao chép. Hãy bôi đen văn bản rồi nhấn Ctrl+C.');
+        });
+        return button;
+    };
     V.badge = line => make('span', 'collab-badge collab-' + M().status(line), M().labels[M().status(line)]);
     V.metadata = line => {
         const wrap = make('div','collab-meta');
         wrap.append(make('span','', 'Người dịch: ' + (line.translator || 'Chưa có')));
         const time = make('time','', 'Cập nhật: ' + M().time(line.updated_at)); if (line.updated_at) { time.dateTime = line.updated_at; time.title = new Date(line.updated_at).toLocaleString('vi-VN'); } wrap.append(time);
         if (M().hasText(line)) wrap.append(make('span','collab-origin',M().origin(line)));
+        if (line.provenance === 'moderator' && line.status === 'approved') wrap.append(make('span','collab-mod-tag','Moderator đã duyệt'));
         if (line.pending_proposals) wrap.append(make('span','collab-pending-count',line.pending_proposals + ' đề xuất chờ duyệt'));
         return wrap;
     };
     V.summary = line => {
         const e = make('div','collab-summary'); e.append(V.badge(line));
-        e.append(make('p','collab-current-text',line.new_vi || 'Chưa có bản dịch tiếng Việt.'));
+        const row = make('div','collab-current-row'); row.append(make('p','collab-current-text',line.new_vi || 'Chưa có bản dịch tiếng Việt.'));
+        if (M().hasText(line)) row.append(V.copyButton(line.new_vi));
+        e.append(row);
         e.append(V.metadata(line));
         if (line.notes) e.append(make('p','collab-context','Ngữ cảnh: ' + line.notes));
         if (line.provenance === 'legacy_import') e.append(make('small','collab-muted','Dữ liệu nhập từ bản cũ; chưa có nhật ký hoặc thời gian của các lần sửa trước.'));
@@ -76,6 +104,25 @@
         const error=make('p','collab-error');error.hidden=true;error.role='alert';const submit=make('button','btn-save-glow','Bật quyền duyệt');submit.type='submit';form.append(label,error,submit);body.append(form);
         form.addEventListener('submit',async e=>{e.preventDefault();submit.disabled=true;try{await M().login(input.value);input.value='';if(serial===requestSerial&&dialog().open){dialog().close();rerender();}showToastAlert('Đã bật quyền duyệt.');}catch(err){input.value='';showError(error,err);}finally{submit.disabled=false;}});
     };
+    V.moderator = () => {
+        const body = clear('Moderator'), serial = requestSerial;
+        if (M().canModerate) {
+            body.append(make('p','collab-info','Chế độ Moderator đang bật trong tab này. Bản dịch và đề xuất sửa bạn gửi sẽ được duyệt tự động, không cần admin duyệt lại. Dữ liệu vẫn được gửi về cho admin để tổng hợp.'),
+                action('Tắt chế độ Moderator',()=>{M().logoutModerator();dialog().close();rerender();showToastAlert('Đã tắt chế độ Moderator.');}));
+            return;
+        }
+        body.append(make('p','','Nhập mã Moderator được cấp để xác nhận quyền. Sau khi xác nhận, các phần Việt hóa của bạn được duyệt tự động; admin vẫn nhận đủ dữ liệu để tổng hợp nhưng không cần duyệt lại. Mã chỉ giữ trong tab này và mất khi đóng tab.'));
+        const form = make('form','collab-form'), label = make('label','','Mã Moderator'), input = make('input'); input.type = 'password'; input.autocomplete = 'off'; input.required = true; input.maxLength = 200; label.append(input);
+        const error = make('p','collab-error'); error.hidden = true; error.role = 'alert';
+        const submit = make('button','btn-save-glow','Xác nhận Moderator'); submit.type = 'submit'; form.append(label,error,submit); body.append(form);
+        input.focus({preventScroll:true});
+        form.addEventListener('submit', async e => {
+            e.preventDefault(); submit.disabled = true; error.hidden = true;
+            try { await M().loginModerator(input.value); input.value = ''; if (serial === requestSerial && dialog().open) { dialog().close(); rerender(); } showToastAlert('Đã bật chế độ Moderator. Bản dịch của bạn sẽ được duyệt tự động.'); }
+            catch (err) { input.value = ''; showError(error,err); input.focus({preventScroll:true}); }
+            finally { submit.disabled = false; }
+        });
+    };
     V.release = async () => {
         const body=clear('Quản lý phiên dữ liệu'),serial=requestSerial;
         body.append(make('p','','Đang tải trạng thái phiên…'));
@@ -112,7 +159,7 @@
         }catch(err){if(serial===requestSerial)body.replaceChildren(make('p','collab-error',err.message));}
     };
     V.openEdit = async (item, suppliedDraft, options={}) => {
-        const body=clear(options.mode==='report'?'Báo câu cần xem lại':options.mode==='restore'?'Khôi phục phiên bản':M().hasText(item)?'Đề xuất sửa bản dịch':'Dịch câu mới');
+        const body=clear(options.mode==='report'?'Báo câu cần xem lại':options.mode==='restore'?'Khôi phục phiên bản':M().canModerate?'Sửa bản dịch (Moderator)':M().hasText(item)?'Đề xuất sửa bản dịch':'Dịch câu mới');
         const serial=requestSerial;body.append(make('p','','Đang lấy bản hiện tại…'));
         let base;
         try { base={...item,...await M().getLine(item)}; } catch(error) { body.replaceChildren(make('p','collab-error',error.message));return; }
@@ -131,8 +178,8 @@
         const notesLabel=make('label','','Ghi chú ngữ cảnh'),notes=make('textarea');notes.rows=2;notes.value=stored?.notes ?? base.notes ?? '';notesLabel.append(notes);
         const reasonLabel=make('label','','Lý do'),reason=make('select');const empty=make('option','','Chọn lý do');empty.value='';reason.append(empty);for(const [value,text]of Object.entries(reasonLabels)){const o=make('option','',text);o.value=value;reason.append(o);}reason.value=stored?.reason || '';reason.required=mode!=='edit' || M().hasText(base);reasonLabel.append(reason);
         const detailLabel=make('label','','Giải thích thêm (bắt buộc nếu chọn Khác)'),detail=make('textarea');detail.rows=2;detail.value=stored?.reason_detail || '';detailLabel.append(detail);
-        const error=make('p','collab-error');error.hidden=true;error.role='alert';const reload=action('Tải bản mới để đối chiếu',async()=>{const active=session,activeSerial=requestSerial;if(!active)return;try{const latest={...active.base,...await M().getLine(active.base)};if(requestSerial!==activeSerial||session!==active||!dialog().open)return;active.base=latest;M().patch(latest);canonical.replaceChildren(V.summary(latest));const refreshed=V.sources(latest);sourceNode.replaceWith(refreshed);sourceNode=refreshed;reason.required=mode!=='edit'||M().hasText(latest);if(reason.required&&!reasonLabel.isConnected){form.insertBefore(reasonLabel,error);form.insertBefore(detailLabel,error);}if(mode==='edit')submit.textContent=M().hasText(latest)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt';error.textContent='Đã tải bản mới. Bản nháp của bạn được giữ nguyên; kiểm tra phần khác biệt rồi gửi lại.';reload.hidden=true;active.payloadKey='';updateDiff();}catch(err){if(requestSerial===activeSerial&&session===active)showError(error,err);}},'collab-link');reload.hidden=true;
-        const submit=make('button','btn-save-glow',mode==='report'?'Báo cần xem lại':mode==='restore'?'Khôi phục phiên bản':M().hasText(base)?'Gửi đề xuất sửa':'Lưu bản dịch · Chờ duyệt');submit.type='submit';submit.disabled=!M().ready;
+        const error=make('p','collab-error');error.hidden=true;error.role='alert';const reload=action('Tải bản mới để đối chiếu',async()=>{const active=session,activeSerial=requestSerial;if(!active)return;try{const latest={...active.base,...await M().getLine(active.base)};if(requestSerial!==activeSerial||session!==active||!dialog().open)return;active.base=latest;M().patch(latest);canonical.replaceChildren(V.summary(latest));const refreshed=V.sources(latest);sourceNode.replaceWith(refreshed);sourceNode=refreshed;reason.required=mode!=='edit'||M().hasText(latest);if(reason.required&&!reasonLabel.isConnected){form.insertBefore(reasonLabel,error);form.insertBefore(detailLabel,error);}if(mode==='edit')submit.textContent=saveText(latest);error.textContent='Đã tải bản mới. Bản nháp của bạn được giữ nguyên; kiểm tra phần khác biệt rồi gửi lại.';reload.hidden=true;active.payloadKey='';updateDiff();}catch(err){if(requestSerial===activeSerial&&session===active)showError(error,err);}},'collab-link');reload.hidden=true;
+        const submit=make('button','btn-save-glow',mode==='report'?'Báo cần xem lại':mode==='restore'?'Khôi phục phiên bản':saveText(base));submit.type='submit';submit.disabled=!M().ready;
         let sourceNode=body.querySelector('.collab-source-grid');
         const canonical=make('div');canonical.append(V.summary(base));body.lastChild.replaceWith(canonical);
         if(mode!=='report')form.append(label,diff);
@@ -166,8 +213,10 @@
                 if(mode==='edit'){M().clearDraft(base,payload.text_vi);M().award(payload.request_id,result.replayed);}
                 if(requestSerial===serial && session===state){dialog().close();rerender();}
                 else if(viewMode==='list')renderListMode();
-                showToastAlert(mode==='edit'?(hadCurrent?'Đã gửi đề xuất sửa. Bản đang dùng vẫn được giữ nguyên.':'Đã lưu bản dịch · Chờ duyệt.'):mode==='report'?'Đã báo câu cần xem lại.':'Đã khôi phục thành một phiên bản mới.');
-            }catch(err){if(requestSerial!==serial || session!==state){showToastAlert(err.message);return;}showError(error,err);if(err.code==='dataset_stale'||err.code==='dataset_locked'){await M().init();reload.hidden=false;}else if(err.status===409){error.textContent='Câu này đã được cập nhật hoặc câu gốc thay đổi. Bản nháp của bạn vẫn được giữ. Tải bản mới để đối chiếu trước khi gửi lại.';reload.hidden=false;}}
+                showToastAlert(mode==='edit'?(result.result==='moderator_saved'?'Đã lưu và duyệt tự động (Moderator).':hadCurrent?'Đã gửi đề xuất sửa. Bản đang dùng vẫn được giữ nguyên.':'Đã lưu bản dịch · Chờ duyệt.'):mode==='report'?'Đã báo câu cần xem lại.':'Đã khôi phục thành một phiên bản mới.');
+            }catch(err){
+                if(err.code==='moderator_invalid'){M().dropModerator();err.message='Mã Moderator không còn hợp lệ nên chế độ Moderator đã tắt. Bản nháp vẫn được giữ: nhập lại mã Moderator, hoặc bấm gửi lại để gửi như dịch giả thường (chờ duyệt).';if(mode==='edit')submit.textContent=saveText(state.base);}
+                if(requestSerial!==serial || session!==state){showToastAlert(err.message);return;}showError(error,err);if(err.code==='dataset_stale'||err.code==='dataset_locked'){await M().init();reload.hidden=false;}else if(err.status===409){error.textContent='Câu này đã được cập nhật hoặc câu gốc thay đổi. Bản nháp của bạn vẫn được giữ. Tải bản mới để đối chiếu trước khi gửi lại.';reload.hidden=false;}}
             finally{submit.disabled=!M().ready;}
         });
     };
@@ -194,7 +243,7 @@
             if(data.proposals_next_cursor){const more=action('Xem thêm đề xuất',async()=>{more.disabled=true;try{const page=await M().history(line,undefined,more.dataset.cursor);if(serial!==requestSerial||!dialog().open)return;renderProposals(page.proposals || []);more.dataset.cursor=page.proposals_next_cursor || '';more.hidden=!page.proposals_next_cursor;}catch(err){showError(error,err);}finally{more.disabled=false;}});more.dataset.cursor=data.proposals_next_cursor;body.append(more);}
             body.append(make('h3','','Các lần thay đổi'));
             const historyList=make('div');body.append(historyList);
-            const renderEvents=events=>{for(const event of events){const card=make('section','collab-event');const types={import:'Nhập dữ liệu cũ',legacy_import:'Nhập dữ liệu cũ',translation_created:'Tạo bản dịch',translation_saved:'Lưu bản dịch',proposal_created:'Gửi đề xuất',proposal_updated:'Sửa đề xuất',proposal_accepted:'Chấp nhận đề xuất',proposal_rejected:'Từ chối đề xuất',approved:'Duyệt bản dịch',restored:'Khôi phục phiên bản',reported:'Báo cần xem lại',source_changed:'Câu gốc thay đổi'};card.append(make('strong','',types[event.event_type] || event.event_type),make('p','collab-muted',(event.actor || 'Chưa ghi nhận người sửa')+' · '+M().time(event.created_at)));if(event.reason)card.append(make('p','',event.reason));if(typeof event.new_text==='string')card.append(V.diff(event.old_text || '',event.new_text));if(M().canReview&&event.new_text)card.append(action('Khôi phục bản này',()=>V.openEdit(line,undefined,{mode:'restore',history:event})));historyList.append(card);}};
+            const renderEvents=events=>{for(const event of events){const card=make('section','collab-event');const types={import:'Nhập dữ liệu cũ',legacy_import:'Nhập dữ liệu cũ',translation_created:'Tạo bản dịch',translation_saved:'Lưu bản dịch',proposal_created:'Gửi đề xuất',proposal_updated:'Sửa đề xuất',proposal_accepted:'Chấp nhận đề xuất',proposal_rejected:'Từ chối đề xuất',approved:'Duyệt bản dịch',moderator_approved:'Moderator sửa & duyệt',restored:'Khôi phục phiên bản',reported:'Báo cần xem lại',source_changed:'Câu gốc thay đổi'};card.append(make('strong','',types[event.event_type] || event.event_type),make('p','collab-muted',(event.actor || 'Chưa ghi nhận người sửa')+' · '+M().time(event.created_at)));if(event.reason)card.append(make('p','',event.reason));if(typeof event.new_text==='string')card.append(V.diff(event.old_text || '',event.new_text));if(M().canReview&&event.new_text)card.append(action('Khôi phục bản này',()=>V.openEdit(line,undefined,{mode:'restore',history:event})));historyList.append(card);}};
             renderEvents(data.history || []);if(!(data.history || []).length)historyList.append(make('p','collab-muted','Chưa có lịch sử trước khi bật tính năng cộng tác.'));
             if(data.next_cursor){const more=action('Xem các lần trước',async()=>{more.disabled=true;try{const page=await M().history(line,more.dataset.cursor);renderEvents(page.history || []);more.dataset.cursor=page.next_cursor || '';more.hidden=!page.next_cursor;}catch(err){showError(error,err);}finally{more.disabled=false;}});more.dataset.cursor=data.next_cursor;body.append(more);}
         }catch(err){if(serial===requestSerial)body.replaceChildren(make('p','collab-error',err.message));}
@@ -202,8 +251,9 @@
     V.renderCurrent = item => {
         const target=document.getElementById('currentLineCollaboration');if(!target)return;target.replaceChildren(V.summary(item));
         const buttons=make('div','collab-actions');buttons.append(action('Xem lịch sử',()=>V.openHistory(item)),action('Báo vấn đề',()=>V.openEdit(item,undefined,{mode:'report'})));target.append(buttons);
-        const save=document.querySelector('.btn-save-glow[onclick="saveCurrentLine()"] span');if(save)save.textContent=M().hasText(item)?'Đề xuất sửa':'Lưu bản dịch · Chờ duyệt';
-        const title=document.querySelector('.translation-input-box .input-title');if(title)title.textContent=M().hasText(item)?'SOẠN ĐỀ XUẤT SỬA':'BẢN DỊCH TIẾNG VIỆT MỚI';
+        const save=document.querySelector('.btn-save-glow[onclick="saveCurrentLine()"] span');if(save)save.textContent=M().canModerate?'Lưu & duyệt ngay':M().hasText(item)?'Đề xuất sửa':'Lưu bản dịch · Chờ duyệt';
+        const title=document.querySelector('.translation-input-box .input-title');if(title)title.textContent=M().canModerate?'SỬA BẢN DỊCH (MODERATOR · DUYỆT NGAY)':M().hasText(item)?'SOẠN ĐỀ XUẤT SỬA':'BẢN DỊCH TIẾNG VIỆT MỚI';
     };
     window.openReviewerAccess=()=>V.login();
+    window.openModeratorAccess=()=>V.moderator();
 })();

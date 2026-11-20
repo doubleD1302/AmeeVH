@@ -83,13 +83,15 @@ export async function overlayChapter(chapter,env){
  for(const scene of chapter.scenes||[]){const lines=[];for(const raw of scene.lines||[]){let state=byId.get(String(raw.line_id));if(!state||state.en!==String(raw.en||''))state=await ensureLine(env,chapterId,String(raw.line_id),raw);lines.push({...raw,...withDataset(state,release),pending_proposals:pending.get(String(raw.line_id))||0});}scenes.push({...scene,lines});}
  return {...chapter,dataset_version:release.version,dataset_phase:release.phase,scenes};
 }
-async function reviewerAllowed(request,env){
- const supplied=request.headers.get('X-Reviewer-Key')||'';
- if(!env.REVIEWER_KEY||!supplied)return false;
+async function keyMatches(supplied,secret){
+ if(!secret||!supplied)return false;
  const a=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(supplied)));
- const b=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(env.REVIEWER_KEY)));
+ const b=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(secret)));
  let difference=0;for(let i=0;i<a.length;i++)difference|=a[i]^b[i];return difference===0;
 }
+async function reviewerAllowed(request,env){return keyMatches(request.headers.get('X-Reviewer-Key')||'',env.REVIEWER_KEY);}
+// Moderators are trusted translators: their own submissions skip the admin queue but are still stored and logged.
+async function moderatorAllowed(request,env){return keyMatches(request.headers.get('X-Moderator-Key')||'',env.MODERATOR_KEY);}
 async function publishedManifest(env,verifyFiles=false){
  const response=await env.ASSETS.fetch(new Request('https://assets.invalid/data/dataset-manifest.json'));
  if(!response.ok)fail(409,'manifest_missing','Chưa có manifest dữ liệu trên bản web đang phát hành.');
@@ -204,16 +206,30 @@ async function submit(request,env,body,user){
  const actor=user.display_name;
  if(!['human','machine'].includes(body.origin))fail(400,'invalid_origin','Hãy chọn nguồn bản dịch.');
  const notes=bounded(body.notes??'','Ghi chú',4000),detail=bounded(body.reason_detail??'','Lý do chi tiết',2000);
+ // A supplied-but-wrong Moderator code must fail loudly, never silently fall back to the pending queue.
+ const supplied=request.headers.get('X-Moderator-Key')||'';
+ const moderator=!!supplied&&await moderatorAllowed(request,env);
+ if(supplied&&!moderator)fail(403,'moderator_invalid','Mã Moderator không hợp lệ hoặc đã bị đổi. Hãy tắt chế độ Moderator rồi nhập lại mã.');
+ const modActor=actor+' (Moderator)';
  const ctx=await mutationContext(request,env,body,'submit');if(ctx.replay)return ctx.replay;
  const current=ctx.current,text=validateTranslation(current.en,body.text_vi),time=now();
  if(!hasTranslation(current)){
-  const after={...current,new_vi:text,translator:actor,status:body.origin==='machine'?'machine_pending':'pending',translation_origin:body.origin,notes,revision:current.revision+1,updated_at:time,approved_by:null,approved_at:null,provenance:'contributor'};
-  return commitMutation(env,body,ctx.payload_hash,current,after,'translation_saved',actor,'Bản dịch đầu tiên.','saved');
+  const after={...current,new_vi:text,translator:actor,status:moderator?'approved':body.origin==='machine'?'machine_pending':'pending',translation_origin:body.origin,notes,revision:current.revision+1,updated_at:time,approved_by:moderator?modActor:null,approved_at:moderator?time:null,provenance:moderator?'moderator':'contributor'};
+  return commitMutation(env,body,ctx.payload_hash,current,after,'translation_saved',actor,moderator?'Bản dịch đầu tiên (Moderator, tự động duyệt).':'Bản dịch đầu tiên.',moderator?'moderator_saved':'saved');
  }
  if(!['meaning','pronouns','naturalness','other'].includes(body.reason))fail(400,'reason_required','Chọn lý do đề xuất sửa.');
  if(body.reason==='other'&&!detail)fail(400,'reason_required','Nhập lý do đề xuất sửa.');
  if(text===current.new_vi&&notes===current.notes)fail(400,'no_change','Đề xuất chưa có thay đổi.');
  const existing=await stmt(env,'SELECT * FROM proposals WHERE chapter_id=? AND line_id=? AND dataset_version=? AND user_id=?',[current.chapter_id,current.line_id,ctx.release.version,user.id]).first();
+ if(moderator){
+  // Moderator edit: applied and approved immediately. The proposal row is kept as 'accepted' (so admins still get the record
+  // and the one-proposal-per-user unique index is respected) but it never appears in the pending review queue.
+  const id=existing?.id||uuid(),after={...current,new_vi:text,translator:actor,translation_origin:body.origin,notes,status:'approved',revision:current.revision+1,updated_at:time,approved_by:modActor,approved_at:time,provenance:'moderator'};
+  const extra=existing
+   ?(guard,bind)=>stmt(env,`UPDATE proposals SET text_vi=?,translator=?,origin=?,notes=?,reason=?,reason_detail=?,updated_at=?,base_revision=?,base_source_hash=?,base_text=?,state='accepted',reviewed_by=?,reviewed_at=? WHERE id=? AND user_id=? ${guard.replace(/^WHERE/,'AND')}`,[text,actor,body.origin,notes,body.reason,detail,time,current.revision,current.source_hash,current.new_vi,modActor,time,id,user.id,...bind])
+   :(guard,bind)=>stmt(env,`INSERT INTO proposals(id,chapter_id,line_id,text_vi,translator,origin,notes,reason,reason_detail,created_at,state,base_revision,base_source_hash,base_text,user_id,dataset_version,updated_at,reviewed_by,reviewed_at) SELECT ?,?,?,?,?,?,?,?,?,?,'accepted',?,?,?,?,?,?,?,? ${guard}`,[id,current.chapter_id,current.line_id,text,actor,body.origin,notes,body.reason,detail,time,current.revision,current.source_hash,current.new_vi,user.id,ctx.release.version,time,modActor,time,...bind]);
+  return commitMutation(env,body,ctx.payload_hash,current,after,'moderator_approved',actor,body.reason+(detail?': '+detail:''),'moderator_saved',[extra],id);
+ }
  if(existing?.state!=='pending'&&existing)fail(409,'proposal_closed','Đề xuất của bạn trong phiên này đã được xử lý.');
  if(existing&&text===existing.text_vi&&notes===existing.notes&&body.reason===existing.reason&&detail===existing.reason_detail)fail(400,'no_change','Đề xuất của bạn chưa có thay đổi.');
  const id=existing?.id||uuid(),after={...current,revision:current.revision+1};
@@ -280,7 +296,7 @@ async function historyResponse(env,chapter,line,cursor,proposalCursor){
 export async function handleCollaboration(request,env){
  try{
   const url=new URL(request.url),path=url.pathname;
-  if(path==='/api/collab/role'&&request.method==='GET')return json({success:true,can_review:await reviewerAllowed(request,env)});
+  if(path==='/api/collab/role'&&request.method==='GET')return json({success:true,can_review:await reviewerAllowed(request,env),can_moderate:await moderatorAllowed(request,env)});
   if(path==='/api/collab/status'&&request.method==='GET'){
    try{const release=await dataset(env);return json({success:true,version:2,dataset_version:release.version,dataset_phase:release.phase,can_write:release.phase==='open'});}
    catch{return json({success:true,version:2,can_write:false,dataset_phase:'unavailable'});}

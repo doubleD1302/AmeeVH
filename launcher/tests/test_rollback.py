@@ -65,7 +65,8 @@ class TestRollbackEngine(unittest.TestCase):
         events = []
         result = self.rollback_engine.rollback(
             self.game_root,
-            event_cb=lambda e: events.append(e)
+            event_cb=lambda e: events.append(e),
+            source="local_backup",
         )
 
         self.assertIsNotNone(result)

@@ -295,10 +295,21 @@ class OverviewView(QWidget):
         elif getattr(info, 'receipt_stale', False):
             self.patch_status_badge.setText('Game vừa cập nhật — Cần cài lại')
             self.patch_status_badge.setToolTip('Nhà phát hành vừa cập nhật tệp game. Bấm Cập nhật Việt hoá để áp dụng lại.')
+        elif receipt and getattr(self, '_official_notice', None):
+            notice = self._official_notice
+            self.patch_status_badge.setText('⚠ Game có bản cập nhật — Khôi phục gốc')
+            self.patch_status_badge.setToolTip(
+                f"Game đang ở tài nguyên {notice.get('local_resource_version')}, nhà phát hành đã có {notice.get('latest_resource_version')}. "
+                'Bản Việt hoá sẽ làm game cập nhật lỗi: bấm Khôi phục để tải lại dữ liệu gốc rồi mở game để cập nhật.'
+            )
         elif receipt:
             ver_tag = receipt.get('version', '')
             self.patch_status_badge.setText(f'Đã cài Việt hoá ({ver_tag})' if ver_tag else 'Đã cài Việt hoá')
             self.patch_status_badge.setToolTip(f"Bản Việt hoá {ver_tag} ({receipt.get('files_count', '')} tệp)")
+        elif getattr(info, 'official_restore', None):
+            res = info.official_restore.get('official_resource_version') or ''
+            self.patch_status_badge.setText('Đang ở dữ liệu gốc nhà phát hành' + (f' ({res})' if res else ''))
+            self.patch_status_badge.setToolTip('Đã khôi phục dữ liệu gốc (chưa Việt hoá) vào ' + str(info.official_restore.get('restored_at', '')))
         else:
             self.patch_status_badge.setText('Chưa cài đặt')
             self.patch_status_badge.setToolTip('Chưa có bản cài đặt của launcher này')
@@ -308,6 +319,13 @@ class OverviewView(QWidget):
             (self.path_display.text() + '\n' + self.game_status_label.text()).strip()
         )
         self.set_busy(self._busy)
+
+    def set_official_update_notice(self, notice):
+        """notice: dict from check_official_update when a restore is needed before a game update, else None."""
+        changed = (getattr(self, '_official_notice', None) is None) != (notice is None)
+        self._official_notice = notice
+        if self._game is not None and (changed or notice):
+            self.update_game_status(self._game, has_pending_recovery=self._has_pending_recovery)
 
     def set_busy(self, busy, reduced_motion=None):
         if reduced_motion is not None:
@@ -333,7 +351,7 @@ class OverviewView(QWidget):
             )
         )
         verify_reason = reason or ('Chưa cài bản Việt hoá bằng launcher này.' if not (g and g.installed_receipt) else 'Đối chiếu SHA256 với biên bản đã cài.')
-        rollback_reason = reason or 'Khôi phục dữ liệu gốc nguyên bản của nhà phát hành.'
+        rollback_reason = reason or 'Tự tải dữ liệu gốc mới nhất từ máy chủ nhà phát hành (cần mạng) và cài lại vào game.'
         self.btn_verify.setEnabled(not busy)
         self.btn_verify.setToolTip(verify_reason)
         self.btn_rollback.setEnabled(not busy)

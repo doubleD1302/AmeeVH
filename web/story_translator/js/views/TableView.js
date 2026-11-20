@@ -10,7 +10,7 @@ function renderListMode() {
             const item=filteredLines[idx],card=document.createElement('div');card.className='table-row-card';card.dataset.lineId=item.line_id;
             const top=label('div','table-row-top',''),speaker=label('div','table-row-speaker',item.speaker || 'Dẫn chuyện');speaker.append(label('span','collab-line-id','#'+item.line_id));top.append(speaker);card.append(top,label('p','table-row-en',item.en || ''),CollaborationView.summary(item));
             const buttons=label('div','collab-actions','');
-            for(const [text,handler]of [[Collaboration.hasText(item)?'Đề xuất sửa':'Dịch câu này',()=>CollaborationView.openEdit(item)],['Xem lịch sử',()=>CollaborationView.openHistory(item)],['Báo vấn đề',()=>CollaborationView.openEdit(item,undefined,{mode:'report'})]]){const button=label('button','btn-direction',text);button.type='button';button.addEventListener('click',handler);buttons.append(button);}card.append(buttons);container.append(card);
+            for(const [text,handler]of [[Collaboration.hasText(item)?(Collaboration.canModerate?'Sửa bản dịch':'Đề xuất sửa'):'Dịch câu này',()=>CollaborationView.openEdit(item)],['Xem lịch sử',()=>CollaborationView.openHistory(item)],['Báo vấn đề',()=>CollaborationView.openEdit(item,undefined,{mode:'report'})]]){const button=label('button','btn-direction',text);button.type='button';button.addEventListener('click',handler);buttons.append(button);}card.append(buttons);container.append(card);
         }
         rendered=end;if(rendered<filteredLines.length){more.textContent=`Xem thêm câu (${rendered}/${filteredLines.length})`;container.append(more);}
     };

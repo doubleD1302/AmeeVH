@@ -77,6 +77,13 @@ class SettingsModal(ArtDialog):
         self.chk_update = ArtCheckBox('Kiểm tra cập nhật launcher lúc mở')
         self.chk_update.setChecked(config_manager.get('check_updates_on_start', True))
         body.addWidget(self.chk_update)
+        self.chk_official = ArtCheckBox('Kiểm tra bản cập nhật game của nhà phát hành lúc mở')
+        self.chk_official.setChecked(config_manager.get('check_official_on_start', True))
+        body.addWidget(self.chk_official)
+        self.chk_auto_restore = ArtCheckBox('Tự khôi phục dữ liệu gốc khi game có bản cập nhật (tải lại vài trăm MB, mặc định tắt)')
+        self.chk_auto_restore.setChecked(config_manager.get('auto_restore_before_game_update', False))
+        body.addWidget(self.chk_auto_restore)
+        body.addWidget(text_label('Bản Việt hoá làm tính năng tự cập nhật của game báo lỗi. Khi bật, launcher tự tải dữ liệu gốc về trước khi bạn mở game; khi tắt, launcher chỉ nhắc và hỏi bạn.', 13, '#a6c9e8', wrap=True))
         self.chk_reduced_motion = ArtCheckBox('Giảm hiệu ứng chuyển động và làm mờ', toggle=True)
         self.chk_reduced_motion.setChecked(config_manager.get('reduced_motion', False))
         body.addWidget(self.chk_reduced_motion)
@@ -98,6 +105,8 @@ class SettingsModal(ArtDialog):
             self.branch_input,
             self.chk_auto_detect,
             self.chk_update,
+            self.chk_official,
+            self.chk_auto_restore,
             self.chk_reduced_motion,
             self.chk_shortcut,
         )
@@ -266,6 +275,8 @@ class SettingsModal(ArtDialog):
             'payload_path': self.payload_input.text().strip(),
             'auto_detect_game': self.chk_auto_detect.isChecked(),
             'check_updates_on_start': self.chk_update.isChecked(),
+            'check_official_on_start': self.chk_official.isChecked(),
+            'auto_restore_before_game_update': self.chk_auto_restore.isChecked(),
             'reduced_motion': self.chk_reduced_motion.isChecked(),
             'create_desktop_shortcut': self.chk_shortcut.isChecked(),
         })

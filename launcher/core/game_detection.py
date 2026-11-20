@@ -358,6 +358,7 @@ class GameDetector:
             except (ValueError, OSError):
                 pass
         versions = read_game_versions(path)
+        official_restore = None if installed_receipt else read_official_state(path)
 
         # Count backups for this canonical game root
         backup_count = 0
@@ -380,6 +381,7 @@ class GameDetector:
             receipt_stale=receipt_stale,
             backup_count=backup_count,
             detection_source="filesystem_scan",
+            official_restore=official_restore,
         )
 
     def launch(self, game_info: GameInfo) -> tuple[bool, str]:
@@ -410,6 +412,16 @@ class GameDetector:
             return True, "Khởi động game thành công!"
         except Exception as e:
             return False, f"Lỗi khởi động game: {e}"
+
+
+def read_official_state(root) -> Optional[dict]:
+    """Record written by a successful official-data restore (Persistent_Store/viethoa_installed.json)."""
+    f = Path(root) / "Persistent_Store" / "viethoa_installed.json"
+    try:
+        d = json.loads(f.read_text(encoding="utf8"))
+    except (OSError, ValueError):
+        return None
+    return d if isinstance(d, dict) and d.get("status") == "official_restored" else None
 
 
 def read_game_versions(root):

@@ -12,7 +12,8 @@ from ..core.rollback import RollbackEngine
 from ..core.network import NetworkService
 from ..core.safety import manifest_sha256
 from ..core.update_notice import translation_state, newer, version_parts, detect_new_publisher_version
-from ..core.vanilla_restore import VanillaRestoreEngine
+from ..core.official_resources import OfficialClient
+from ..core.official_restore import check_official_update
 from ..core.types import GameInfo
 from ..core.self_update import schedule_update
 from .assets import AssetManager
@@ -70,6 +71,11 @@ class MainWindow(QMainWindow):
         self._manual_translation_check = False
         self._manual_translation_next = False
         self._notice_seen = set()
+        self._official_update = None       # last check_official_update() result
+        self._official_worker = None
+        self._official_checked_at = 0.0
+        self._official_prompted = set()    # latest_resource_version values already asked about this session
+        self._launch_guard_declined = None
 
         self._configure_network()
         self.setWindowTitle(f'Stella Sora Việt Hóa v{LAUNCHER_VERSION}')
@@ -116,6 +122,7 @@ class MainWindow(QMainWindow):
         self._release_timer = QTimer(self)
         self._release_timer.setInterval(30 * 60 * 1000)
         self._release_timer.timeout.connect(lambda: self._sync_github(automatic=True))
+        self._release_timer.timeout.connect(self._start_official_check)
         self._release_timer.start()
 
         self._proc_timer = QTimer(self)
@@ -139,6 +146,7 @@ class MainWindow(QMainWindow):
             except Exception:
                 has_pending = False
         self.overview_view.update_game_status(info, has_pending_recovery=has_pending)
+        self.overview_view.set_official_update_notice(self._official_notice())
         self.title_bar.update_game_state(info, busy=(self.active_worker is not None))
 
     def _poll_game_running(self):
@@ -393,6 +401,7 @@ class MainWindow(QMainWindow):
             self._refresh_translation_state()
         if self.operation_kind in ('scan', 'select_root'):
             self.overview_view.show_progress(False)
+            QTimer.singleShot(800, self._start_official_check)
         elif self.operation_kind == 'verify':
             self.overview_view.show_completed(
                 '✓ Hoàn tất kiểm tra! Đã đối chiếu ' + str(result.get('files', 0)) + ' tệp của bản dịch ' + str(result.get('version', '')) + ' toàn vẹn.'
@@ -403,7 +412,10 @@ class MainWindow(QMainWindow):
         elif self.operation_kind == 'publisher_vanilla_restore':
             self.overview_view.show_completed(result.get('message', '✓ Đã khôi phục dữ liệu gốc.'))
             pub_reason = result.get('pub_reason', '')
-            QTimer.singleShot(50, lambda r=pub_reason: self._prompt_launch_after_pub_restore(r))
+            if result.get('launch_after'):
+                QTimer.singleShot(50, self._on_launch_clicked)
+            else:
+                QTimer.singleShot(50, lambda r=pub_reason: self._prompt_launch_after_pub_restore(r))
         elif self.operation_kind == 'self_update':
             if result.get('status') != 'online':
                 self._show(MessageDialog('Không kiểm tra được cập nhật', result.get('message', 'Không thể kết nối GitHub.'), parent=self, is_error=True))
@@ -439,6 +451,10 @@ class MainWindow(QMainWindow):
             if not msg.startswith('✓') and not msg.startswith('Hoàn tất'):
                 msg = f'✓ Hoàn tất khôi phục! {msg}'
             self.overview_view.show_completed(msg)
+            upd = self._official_update or {}
+            if upd.get('update_available'):
+                reason = f"tài nguyên game {upd.get('local_resource_version')} → {upd.get('latest_resource_version')}"
+                QTimer.singleShot(50, lambda r=reason: self._prompt_launch_after_pub_restore(r))
         else:
             self.overview_view.show_completed(result.get('message', '✓ Hoàn tất thao tác.'))
 
@@ -446,8 +462,8 @@ class MainWindow(QMainWindow):
         dialog = ConfirmationDialog(
             'Game mới cập nhật tài nguyên mới',
             f'Phát hiện game có bản cập nhật mới từ nhà phát hành ({pub_reason}).\n\n'
-            f'Launcher đã khôi phục dữ liệu gốc nguyên bản (chưa Việt hoá) để bảo toàn tệp game.\n\n'
-            f'Vui lòng mở game để cập nhật tài nguyên mới trước khi cài Việt hoá!',
+            f'Launcher đã tải và cài lại dữ liệu gốc của nhà phát hành (chưa Việt hoá) để game cập nhật được an toàn.\n\n'
+            f'Vui lòng mở game để cập nhật tài nguyên mới trước khi cài lại Việt hoá!',
             'Mở Game ngay',
             parent=self,
         )
@@ -542,20 +558,11 @@ class MainWindow(QMainWindow):
         if has_new_pub:
             if not self._confirm(
                 'PHÁT HIỆN BẢN CẬP NHẬT GAME MỚI',
-                f'{pub_reason}.\n\nBạn có muốn khôi phục dữ liệu gốc của nhà phát hành để game cập nhật an toàn trước khi cài Việt hoá không?',
+                f'{pub_reason}.\n\nLauncher sẽ tự tải dữ liệu gốc của nhà phát hành về (cần mạng) để game cập nhật an toàn trước khi cài Việt hoá. Tiếp tục?',
                 'Khôi phục gốc',
             ):
                 return
-
-            def restore_work(cb, op):
-                v_engine = VanillaRestoreEngine(self.path_manager.backup_root, self.path_manager.journals_dir)
-                v_engine.restore_vanilla(root, event_cb=cb, operation_id=op)
-                return {
-                    'game': self._detected(),
-                    'pub_reason': pub_reason,
-                    'message': '✓ Đã khôi phục dữ liệu gốc để game cập nhật an toàn.',
-                }
-            self._start('publisher_vanilla_restore', restore_work)
+            self._start_official_restore(root, pub_reason)
             return
 
         is_update = state['available']
@@ -632,16 +639,106 @@ class MainWindow(QMainWindow):
             'KHÔI PHỤC DỮ LIỆU GỐC NGUYÊN BẢN',
             'Thư mục: '
             + str(root)
-            + '\n\nThao tác này sẽ gỡ bỏ hoàn toàn bản Việt hóa và phục hồi toàn bộ dữ liệu game về trạng thái gốc nguyên bản từ nhà phát hành (bản hoàn chỉnh, chưa Việt hóa).\n\nBạn có chắc chắn muốn khôi phục dữ liệu gốc?',
-            'Khôi phục dữ liệu gốc',
+            + '\n\nLauncher sẽ tự tải dữ liệu ngôn ngữ (data.arcx, lua.arcx và các gói ảnh đã Việt hoá) mới nhất từ máy chủ chính thức của nhà phát hành, kiểm tra mã băm rồi cài vào game. Không dùng lại bản sao lưu cũ vì có thể là bản Việt hoá hoặc phiên bản cũ.\n\nCần kết nối mạng, có thể tải vài trăm MB. Nếu lỗi giữa chừng, game được giữ nguyên.\n\nBạn có muốn tiếp tục?',
+            'Tải và khôi phục gốc',
         ):
             def work(cb, op):
                 r = RollbackEngine(self.path_manager.backup_root, self.path_manager.journals_dir).rollback(root, operation_id=op, event_cb=cb)
                 return {
                     'game': self._detected(),
-                    'message': r.get('message', '✓ Hoàn tất khôi phục! Đã đưa game về dữ liệu gốc nguyên bản của nhà phát hành.'),
+                    'message': r.get('message', '✓ Hoàn tất khôi phục! Đã cài dữ liệu gốc mới nhất của nhà phát hành.'),
                 }
             self._start('rollback', work)
+
+    def _start_official_restore(self, root, pub_reason='', launch_after=False):
+        """Download + install fresh official data (used by the update guard and the install flow)."""
+        def restore_work(cb, op):
+            r = RollbackEngine(self.path_manager.backup_root, self.path_manager.journals_dir).rollback(root, operation_id=op, event_cb=cb)
+            return {
+                'game': self._detected(),
+                'pub_reason': pub_reason,
+                'launch_after': launch_after,
+                'message': r.get('message', '✓ Đã khôi phục dữ liệu gốc để game cập nhật an toàn.'),
+            }
+        return self._start('publisher_vanilla_restore', restore_work)
+
+    # ---- game (publisher) update awareness -------------------------------------------------
+    def _official_notice(self):
+        upd = self._official_update
+        info = self.current_game_info
+        if not upd or not info or not info.installed or not upd.get('update_available'):
+            return None
+        if str(upd.get('local_resource_version')) != str(info.resource_version):
+            return None  # stale result: the game changed since the check
+        if not (info.installed_receipt or info.has_vietnamese):
+            return None
+        return upd
+
+    def _start_official_check(self, force=False):
+        info = self.current_game_info
+        if self._official_worker is not None or not info.installed or not info.game_path:
+            return
+        if not force and not self.config_manager.get('check_official_on_start', True):
+            return
+        if not force and time.time() - self._official_checked_at < 600:
+            return
+        self._official_checked_at = time.time()
+        cache_file = self.path_manager.app_data_dir / 'official_check.json'
+        snapshot = GameInfo(**{k: getattr(info, k) for k in info.__dataclass_fields__})
+
+        def work(cb, op):
+            return check_official_update(OfficialClient('EN', timeout=15, retries=2), snapshot, cache_file)
+
+        worker = AsyncOperationWorker('official_check', work, self)
+        self._official_worker = worker
+        worker.result_ready.connect(self._official_check_finished)
+        worker.finished.connect(lambda: self._release_official_worker(worker))
+        worker.start()
+
+    def _release_official_worker(self, worker):
+        if self._official_worker is worker:
+            self._official_worker = None
+        worker.deleteLater()
+        if getattr(self, '_close_after_official', False):
+            self._close_after_official = False
+            QTimer.singleShot(0, self.close)
+
+    def _official_check_finished(self, _op, success, result):
+        if not success:
+            logger.info('Official version check skipped: %s', result.get('message'))
+            return  # offline is normal; never bother the player
+        self._official_update = result
+        self._apply_game_info(self.current_game_info)
+        notice = self._official_notice()
+        if not notice or self.active_worker is not None or not self.isVisible():
+            return
+        info = self.current_game_info
+        if info.is_running:
+            return
+        reason = f"tài nguyên game {notice['local_resource_version']} → {notice['latest_resource_version']}"
+        if self.config_manager.get('auto_restore_before_game_update', False):
+            self.overview_view.show_completed('Game có bản cập nhật mới — đang tự khôi phục dữ liệu gốc…')
+            self._start_official_restore(info.game_path, reason)
+            return
+        latest = str(notice.get('latest_resource_version'))
+        if latest in self._official_prompted:
+            return
+        self._official_prompted.add(latest)
+        QTimer.singleShot(0, lambda n=notice: self._prompt_restore_before_update(n))
+
+    def _prompt_restore_before_update(self, notice):
+        if self.active_worker is not None or not self.current_game_info.installed:
+            return
+        if self._confirm(
+            'GAME CÓ BẢN CẬP NHẬT — NÊN KHÔI PHỤC GỐC TRƯỚC',
+            f"Game đang ở tài nguyên {notice.get('local_resource_version')}, nhà phát hành đã có {notice.get('latest_resource_version')}.\n\n"
+            'Bản Việt hoá đã sửa tệp của game nên cập nhật của game sẽ báo lỗi. Launcher sẽ tải dữ liệu gốc về (cần mạng, có thể vài trăm MB) để game cập nhật bình thường. Sau khi game cập nhật xong, bấm Cập nhật Việt hoá để cài lại.\n\nKhôi phục dữ liệu gốc ngay?',
+            'Khôi phục gốc',
+        ):
+            self._start_official_restore(
+                self.current_game_info.game_path,
+                f"tài nguyên game {notice.get('local_resource_version')} → {notice.get('latest_resource_version')}",
+            )
 
     def _on_verify_clicked(self):
         root = self._action_target('Kiểm tra tệp')
@@ -652,6 +749,22 @@ class MainWindow(QMainWindow):
         if not self._check_ready_or_explain('Mở game'):
             return
         info = self.current_game_info
+        notice = self._official_notice()
+        if notice and self._launch_guard_declined != str(notice.get('latest_resource_version')):
+            reason = f"tài nguyên game {notice['local_resource_version']} → {notice['latest_resource_version']}"
+            if self.config_manager.get('auto_restore_before_game_update', False):
+                self._start_official_restore(info.game_path, reason, launch_after=True)
+                return
+            if self._confirm(
+                'GAME CÓ BẢN CẬP NHẬT — KHÔI PHỤC GỐC TRƯỚC KHI MỞ',
+                f"Game đang ở tài nguyên {notice.get('local_resource_version')}, nhà phát hành đã có {notice.get('latest_resource_version')}. Mở game lúc này với bản Việt hoá sẽ làm cập nhật của game báo lỗi.\n\nLauncher sẽ tải dữ liệu gốc về rồi mở game để bạn cập nhật. Tiếp tục?",
+                'Khôi phục rồi mở game',
+            ):
+                self._start_official_restore(info.game_path, reason, launch_after=True)
+            else:
+                self._launch_guard_declined = str(notice.get('latest_resource_version'))
+                self.overview_view.show_completed('Chưa mở game vì game có bản cập nhật. Bấm Mở game lần nữa nếu vẫn muốn mở không khôi phục.')
+            return
 
         def work(cb, op):
             ok, msg = GameDetector(self.path_manager.backup_root).launch(info)
@@ -912,6 +1025,11 @@ class MainWindow(QMainWindow):
             return
         if self.background_worker is not None:
             self._close_after_background = True
+            self.hide()
+            e.ignore()
+            return
+        if self._official_worker is not None:
+            self._close_after_official = True
             self.hide()
             e.ignore()
             return

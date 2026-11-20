@@ -1,8 +1,9 @@
 /** Canonical line state is server-owned. Drafts and proposals never overwrite it locally. */
 (() => {
-    let reviewerKey = '';
+    let reviewerKey = '', moderatorKey = '';
+    const MOD_STORAGE = 'tramvh_moderator_key';
     const labels = { untranslated:'Chưa dịch', pending:'Đã Việt hoá · Chờ duyệt', approved:'Đã duyệt', needs_review:'Cần xem lại', machine_pending:'Bản dịch máy · Chưa duyệt' };
-    const M = window.Collaboration = { ready:false, available:false, canReview:false, datasetVersion:null, phase:'unavailable', user:null, labels };
+    const M = window.Collaboration = { ready:false, available:false, canReview:false, canModerate:false, datasetVersion:null, phase:'unavailable', user:null, labels };
     M.status = line => {
         if (labels[line.status]) return line.status;
         if (line.status === 'Đã duyệt') return 'approved';
@@ -21,10 +22,13 @@
         if (elapsed < 86400000 * 7) return Math.floor(elapsed / 86400000) + ' ngày trước';
         return date.toLocaleString('vi-VN');
     };
-    M.request = async (path, body, privileged = false) => {
+    M.request = async (path, body, privileged = false, extraHeaders = null) => {
         const headers = { 'Accept':'application/json' };
         if (body) headers['Content-Type'] = 'application/json';
         if (privileged && reviewerKey) headers['X-Reviewer-Key'] = reviewerKey;
+        // The Moderator code only travels with translation submissions; the server decides whether to auto-approve.
+        if (moderatorKey && path === 'submit') headers['X-Moderator-Key'] = moderatorKey;
+        if (extraHeaders) Object.assign(headers, extraHeaders);
         let response;
         try { response = await fetch('/api/collab/' + path, { method:body ? 'POST' : 'GET', headers, body:body ? JSON.stringify(body) : undefined, cache:'no-store', signal:AbortSignal.timeout(body ? 30000 : 15000) }); }
         catch (_) { throw Object.assign(new Error('Không kết nối được máy chủ. Bản nháp vẫn được giữ trên máy; hãy thử lại khi có mạng.'), { code:'network' }); }
@@ -38,6 +42,7 @@
     M.init = async () => {
         try {
             const data = await M.request('status');
+            await M.restoreModerator();
             M.available = !!data.dataset_version;
             M.datasetVersion = data.dataset_version || null;
             M.phase = data.dataset_phase || 'unavailable';
@@ -72,7 +77,30 @@
         }
         const button = document.getElementById('reviewerAccessBtn');
         if (button) { button.title = M.canReview ? 'Quyền duyệt đang bật' : 'Nhập mã quản trị để duyệt'; button.setAttribute('aria-pressed', String(M.canReview)); }
+        const mod = document.getElementById('moderatorAccessBtn');
+        if (mod) { mod.title = M.canModerate ? 'Chế độ Moderator đang bật: bản dịch của bạn được duyệt tự động' : 'Nhập mã Moderator để tự động duyệt bản dịch của bạn'; mod.setAttribute('aria-pressed', String(M.canModerate)); mod.classList.toggle('active', M.canModerate); }
     };
+    // Moderator code: kept for this browser tab only (sessionStorage), so a page reload does not log the moderator out.
+    const storedModKey = () => { try { return sessionStorage.getItem(MOD_STORAGE) || ''; } catch (_) { return ''; } };
+    const saveModKey = value => { try { value ? sessionStorage.setItem(MOD_STORAGE, value) : sessionStorage.removeItem(MOD_STORAGE); } catch (_) {} };
+    M.restoreModerator = async () => {
+        const key = moderatorKey || storedModKey();
+        if (!key) return;
+        try { await M.loginModerator(key, true); } catch (error) { if (error.code === 'network') { moderatorKey = key; M.canModerate = false; } }
+    };
+    M.loginModerator = async (key, silent = false) => {
+        key = String(key || '').trim();
+        if (!key) throw new Error('Nhập mã Moderator.');
+        let result;
+        try { result = await M.request('role', null, false, { 'X-Moderator-Key': key }); }
+        catch (error) { if (error.code === 'network') throw error; moderatorKey = ''; M.canModerate = false; saveModKey(''); throw error; }
+        if (!result.can_moderate) { moderatorKey = ''; M.canModerate = false; saveModKey(''); M.updateNotice(); throw new Error('Mã Moderator không hợp lệ.'); }
+        moderatorKey = key; M.canModerate = true; saveModKey(key);
+        M.updateNotice();
+    };
+    M.logoutModerator = () => { moderatorKey = ''; M.canModerate = false; saveModKey(''); M.updateNotice(); };
+    // The server rejected the stored code (rotated or removed): drop it so nothing is silently queued as pending.
+    M.dropModerator = () => M.logoutModerator();
     M.login = async key => {
         reviewerKey = key;
         try { const result = await M.request('role', null, true); if (!result.can_review) throw new Error('Mã quản trị không hợp lệ.'); M.canReview = true; }

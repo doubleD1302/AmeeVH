@@ -4,7 +4,7 @@ import argparse, logging, logging.handlers, os, sys, traceback
 from pathlib import Path
 
 def main():
-    parser = argparse.ArgumentParser(description='Stella Sora Việt Hóa launcher v1.3.1')
+    parser = argparse.ArgumentParser(description='Stella Sora Việt Hóa launcher v1.3.2')
     parser.add_argument('--app-data-dir', type=Path, help='Explicit writable config/log/backup/cache directory')
     parser.add_argument('--resource-dir', type=Path, help='Explicit development resource override')
     parser.add_argument('--apply-update', type=Path, help=argparse.SUPPRESS)

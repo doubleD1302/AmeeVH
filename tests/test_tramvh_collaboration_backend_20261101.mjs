@@ -199,3 +199,86 @@ test('Pages glossary proxy ignores caller actions in query and body',async()=>{
   assert.equal(response.status,200);assert.equal(target.searchParams.get('action'),'add_glossary_term');assert.equal(payload.action,'add_glossary_term');
  }finally{globalThis.fetch=originalFetch;}
 });
+
+// ---- Moderator: submissions are auto-approved but still recorded for the admins ----
+async function callMod(env,path,body,modKey){const headers={'Content-Type':'application/json','Cookie':await testCookie(env)};if(modKey!==undefined)headers['X-Moderator-Key']=modKey;const response=await handleCollaboration(new Request('https://tramvh.test'+path,{method:body?'POST':'GET',headers,...(body?{body:JSON.stringify(body)}:{})}),env);return {status:response.status,body:await response.json()};}
+const MOD='private-mod-code';
+test('moderator key is server enforced and fails closed when not configured',async()=>{
+ const f=fixture();
+ try{
+  assert.equal((await callMod(f.env,'/api/collab/role')).body.can_moderate,false);
+  f.env.MODERATOR_KEY=MOD;
+  assert.equal((await callMod(f.env,'/api/collab/role')).body.can_moderate,false);
+  assert.equal((await callMod(f.env,'/api/collab/role',undefined,'wrong')).body.can_moderate,false);
+  const ok=await callMod(f.env,'/api/collab/role',undefined,MOD);
+  assert.equal(ok.body.can_moderate,true);assert.equal(ok.body.can_review,false);
+  delete f.env.MODERATOR_KEY;
+  assert.equal((await callMod(f.env,'/api/collab/role',undefined,MOD)).body.can_moderate,false);
+  const line=await current(f.env);
+  const denied=await callMod(f.env,'/api/collab/submit',translate(line),MOD);
+  assert.equal(denied.status,403);assert.equal(denied.body.code,'moderator_invalid');
+  assert.equal((await current(f.env)).revision,0);
+ }finally{f.close();}
+});
+test('moderator first translation is approved at once and a wrong code never falls back to pending',async()=>{
+ const f=fixture();f.env.MODERATOR_KEY=MOD;
+ try{
+  const line=await current(f.env);
+  const wrong=await callMod(f.env,'/api/collab/submit',translate(line),'wrong');
+  assert.equal(wrong.status,403);assert.equal((await current(f.env)).revision,0);
+  const saved=await callMod(f.env,'/api/collab/submit',translate(line),MOD);
+  assert.equal(saved.status,200,JSON.stringify(saved.body));
+  assert.equal(saved.body.result,'moderator_saved');
+  assert.equal(saved.body.line.status,'approved');
+  assert.equal(saved.body.line.translator,'Minh');
+  assert.equal(saved.body.line.approved_by,'Minh (Moderator)');
+  assert.equal(saved.body.line.provenance,'moderator');
+  assert.equal(saved.body.line.pending_proposals,0);
+  const history=await call(f.env,historyPath);
+  assert.equal(history.body.history[0].event_type,'translation_saved');assert.equal(history.body.history[0].new_text,'Xin chào {0}');
+  const plain=fixture();
+  try{const normal=await call(plain.env,'/api/collab/submit',translate(await current(plain.env)));assert.equal(normal.body.line.status,'pending');}finally{plain.close();}
+ }finally{f.close();}
+});
+test('moderator edit replaces the approved text immediately, stays out of the admin queue and can repeat',async()=>{
+ const f=fixture({new_vi:'Xin chào {0}',translator:'Original',status:'Đã duyệt'});f.env.MODERATOR_KEY=MOD;
+ try{
+  const old=await current(f.env);
+  const first=await callMod(f.env,'/api/collab/submit',translate(old,'Chào bạn {0}',{reason:'naturalness'}),MOD);
+  assert.equal(first.status,200,JSON.stringify(first.body));
+  assert.equal(first.body.result,'moderator_saved');
+  assert.equal(first.body.line.new_vi,'Chào bạn {0}');assert.equal(first.body.line.status,'approved');
+  assert.equal(first.body.line.approved_by,'Minh (Moderator)');assert.equal(first.body.line.pending_proposals,0);
+  assert.equal(first.body.proposal.state,'accepted');assert.equal(first.body.proposal.reviewed_by,'Minh (Moderator)');
+  assert.equal((await f.env.DB.prepare("SELECT count(*) n FROM proposals WHERE state='pending'").first()).n,0);
+  // Same moderator edits the same line again in the same dataset version: unique index must not block it.
+  const second=await callMod(f.env,'/api/collab/submit',translate(first.body.line,'Chào cậu {0}',{reason:'meaning'}),MOD);
+  assert.equal(second.status,200,JSON.stringify(second.body));
+  assert.equal(second.body.line.new_vi,'Chào cậu {0}');assert.equal(second.body.proposal.id,first.body.proposal.id);
+  assert.equal((await f.env.DB.prepare('SELECT count(*) n FROM proposals').first()).n,1);
+  const history=(await call(f.env,historyPath)).body.history;
+  assert.deepEqual(history.map(h=>h.event_type),['moderator_approved','moderator_approved']);
+  assert.equal(history[1].old_text,'Xin chào {0}');assert.equal(history[1].new_text,'Chào bạn {0}');
+  // Token rules still apply to moderators.
+  assert.equal((await callMod(f.env,'/api/collab/submit',translate(second.body.line,'Chào cậu',{reason:'meaning'}),MOD)).status,400);
+  // Edit reason is still required, and a no-op edit is still rejected.
+  assert.equal((await callMod(f.env,'/api/collab/submit',translate(second.body.line,'Chào hai bạn {0}'),MOD)).status,400);
+  assert.equal((await callMod(f.env,'/api/collab/submit',translate(second.body.line,'Chào cậu {0}',{reason:'meaning'}),MOD)).status,400);
+ }finally{f.close();}
+});
+test('moderator auto-approval makes an older pending proposal stale; moderator cannot write while locked',async()=>{
+ const f=fixture({new_vi:'Xin chào {0}',status:'Đã duyệt'});f.env.MODERATOR_KEY=MOD;
+ try{
+  const old=await current(f.env);
+  const otherCookie=(await handleCollaboration(new Request('https://tramvh.test/api/collab/me'),f.env)).headers.get('Set-Cookie').split(';')[0];
+  const proposal=await call(f.env,'/api/collab/submit',translate(old,'Chào bạn {0}',{reason:'naturalness'}),undefined,otherCookie);
+  assert.equal(proposal.body.line.pending_proposals,1);
+  const mod=await callMod(f.env,'/api/collab/submit',translate(proposal.body.line,'Chào em {0}',{reason:'meaning'}),MOD);
+  assert.equal(mod.status,200,JSON.stringify(mod.body));assert.equal(mod.body.line.new_vi,'Chào em {0}');
+  const stale=await call(f.env,'/api/collab/review',reviewBody(mod.body.line,'accept',{proposal_id:proposal.body.proposal.id}),'private-review-code');
+  assert.equal(stale.status,409);assert.equal(stale.body.code,'proposal_stale');
+  const state=(await call(f.env,'/api/collab/release',undefined,'private-review-code')).body.dataset;
+  assert.equal((await call(f.env,'/api/collab/release',{action:'lock',reason:'Khóa kiểm thử',expected_version:state.version,expected_phase:state.phase},'private-review-code')).status,200);
+  assert.equal((await callMod(f.env,'/api/collab/submit',translate(mod.body.line,'Chào anh {0}',{reason:'meaning'}),MOD)).status,423);
+ }finally{f.close();}
+});

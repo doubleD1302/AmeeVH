@@ -3,9 +3,9 @@ from __future__ import annotations
 import json,os,sys,uuid,re,urllib.parse
 from pathlib import Path
 from .safety import atomic_json
-LAUNCHER_VERSION="1.3.1"
+LAUNCHER_VERSION="1.3.2"
 DEFAULT_GITHUB_REPO="doubleD1302/AmeeVH"
-DEFAULT_CONFIG={"version":LAUNCHER_VERSION,"game_path":"","auto_detect_game":True,"check_updates_on_start":True,"reduced_motion":False,"github_repo":DEFAULT_GITHUB_REPO,"github_branch":"main","github_api_url":"https://api.github.com/repos/doubleD1302/AmeeVH/releases/latest","remote_notifications_url":"https://raw.githubusercontent.com/doubleD1302/AmeeVH/main/launcher/notifications.json","custom_manifest_url":"","custom_announcements_url":"","payload_path":"","language":"vi"}
+DEFAULT_CONFIG={"version":LAUNCHER_VERSION,"game_path":"","auto_detect_game":True,"check_updates_on_start":True,"check_official_on_start":True,"auto_restore_before_game_update":False,"reduced_motion":False,"github_repo":DEFAULT_GITHUB_REPO,"github_branch":"main","github_api_url":"https://api.github.com/repos/doubleD1302/AmeeVH/releases/latest","remote_notifications_url":"https://raw.githubusercontent.com/doubleD1302/AmeeVH/main/launcher/notifications.json","custom_manifest_url":"","custom_announcements_url":"","payload_path":"","language":"vi"}
 def derived_github_endpoints(repo,branch='main'):
     repo=str(repo).strip();branch=str(branch).strip()
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',repo):raise ValueError('Kho GitHub cần có dạng tên-tài-khoản/tên-kho.')
