@@ -230,9 +230,17 @@ class SettingsModal(ArtDialog):
         lines.append('Launcher trên máy: ' + LAUNCHER_VERSION)
         if isinstance(state.get('update'), dict) and state['update'].get('message'):
             lines.append(state['update']['message'])
-        for key in ('release_error', 'manifest_error'):
+        from ...core.error_catalog import lookup
+        for key, code_key in (('release_error', 'release_error_code'), ('manifest_error', 'manifest_error_code')):
             if state.get(key):
-                lines.append(state[key])
+                code = state.get(code_key) or ''
+                head = (lookup(code).title + ' [' + code + ']') if code else 'Lỗi'
+                lines.append(head + ': ' + str(state[key]))
+        if state.get('error_code'):
+            lines.append(lookup(state['error_code']).title + ' [' + str(state['error_code']) + ']')
+        probe = state.get('probe')
+        if isinstance(probe, dict) and probe.get('verdict_text'):
+            lines.append('Đo mạng: ' + probe['verdict_text'])
         self.sync_status_label.setText('\n'.join(lines))
         try:
             channel = self.config_manager.channel()
@@ -297,16 +305,20 @@ class SettingsModal(ArtDialog):
             if detected:
                 raw = str(detected).strip()
         from .message_dialog import MessageDialog
+
+        def fail(code, message=''):
+            parent = self.parentWidget()
+            builder = getattr(parent, 'build_error_report', None)
+            if builder is None:
+                MessageDialog('Chưa thể tạo lối tắt', message or code, parent=self, is_error=True).exec()
+                return
+            MessageDialog('Tạo lối tắt', '', parent=self, report=builder('Tạo lối tắt', code=code, message=message)).exec()
+
         if not raw:
-            MessageDialog(
-                'Chưa thể tạo lối tắt',
-                'Hãy chọn thư mục cài đặt game có StellaSora.exe trước khi tạo lối tắt.',
-                parent=self,
-                is_error=True,
-            ).exec()
+            fail('E-NO-GAME-FOLDER')
             return
         ok, msg = create_game_shortcut(Path(raw))
         if ok:
             MessageDialog('Lối tắt màn hình chính', msg, parent=self).exec()
         else:
-            MessageDialog('Chưa thể tạo lối tắt', msg, parent=self, is_error=True).exec()
+            fail('E-SHORTCUT', msg)

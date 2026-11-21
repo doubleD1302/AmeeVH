@@ -7,6 +7,7 @@ from ..components.starlit_button import StarlitButton
 from ..components.branding_mark import BrandingMark
 from ..components.path_display import PathDisplay
 from ..typography import font as ui_font
+from ...core.error_catalog import lookup
 from PySide6.QtGui import QFont
 from ..components.art_controls import AssetImage, ArtDivider, ArtProgress, Spinner, StatusPill, text_label
 
@@ -22,6 +23,7 @@ class OverviewView(QWidget):
     navigate_requested = Signal(str)
     notification_selected = Signal(str)
     check_translation_requested = Signal()
+    blocker_requested = Signal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -29,6 +31,7 @@ class OverviewView(QWidget):
         self._busy = False
         self._game = None
         self._install_allowed = False
+        self._install_block_code = ''
         self._has_pending_recovery = False
         self.notifications = []
         self.flag_mark = BrandingMark(self)
@@ -170,6 +173,13 @@ class OverviewView(QWidget):
         row.addWidget(self.btn_rollback, 1)
         al.addLayout(row)
         al.addWidget(self.patch_status_badge)
+
+        self.btn_blocker = StarlitButton('', variant='ghost')
+        self.btn_blocker.setFont(ui_font(13, QFont.Weight.DemiBold))
+        self.btn_blocker.setFixedHeight(32)
+        self.btn_blocker.clicked.connect(self.blocker_requested.emit)
+        self.btn_blocker.hide()
+        al.addWidget(self.btn_blocker)
 
         self.game_status_label = text_label('', 10, '#9ec4df', wrap=True)
         self.game_status_label.setMaximumHeight(26)
@@ -341,10 +351,10 @@ class OverviewView(QWidget):
             'Đang có thao tác, hãy chờ hoàn tất.'
             if busy
             else (
-                'Hãy chọn đúng thư mục game.'
+                'Hãy chọn đúng thư mục game. [E-NO-GAME-FOLDER]'
                 if not g or not g.installed
                 else (
-                    'Hãy đóng game trước.'
+                    'Hãy đóng game trước. [E-GAME-RUNNING]'
                     if g.is_running
                     else ''
                 )
@@ -357,6 +367,31 @@ class OverviewView(QWidget):
         self.btn_rollback.setEnabled(not busy)
         self.btn_rollback.setToolTip(rollback_reason)
         self.spinner.start(getattr(self, '_reduced_motion', False)) if busy else self.spinner.stop()
+        self._update_blocker()
+
+    def install_blocker_code(self):
+        """Catalog code explaining why the install button is disabled, or '' when it is usable/busy."""
+        g = self._game
+        if self._busy:
+            return ''
+        if not g or not g.installed:
+            return 'E-NO-GAME-FOLDER'
+        if g.is_running:
+            return 'E-GAME-RUNNING'
+        if not self._install_allowed:
+            return self._install_block_code or 'E-SYNC-PENDING'
+        return ''
+
+    def _update_blocker(self):
+        code = self.install_blocker_code()
+        if not code:
+            self.btn_blocker.hide()
+            return
+        info = lookup(code)
+        self.btn_blocker.setText('Vì sao chưa cài được? [' + code + ']')
+        self.btn_blocker.setToolTip(info.title + '\n' + info.summary)
+        self.btn_blocker.setAccessibleName('Vì sao chưa cài được: ' + info.title)
+        self.btn_blocker.show()
 
     def set_translation_update(self, available):
         if available:
@@ -367,8 +402,9 @@ class OverviewView(QWidget):
             self.btn_install.setText('Cài Việt hoá')
         self.btn_install.setAccessibleName(self.btn_install.text())
 
-    def set_install_allowed(self, allowed, reason=''):
+    def set_install_allowed(self, allowed, reason='', code=''):
         self._install_allowed = bool(allowed)
+        self._install_block_code = '' if allowed else str(code or '')
         self.btn_install.setToolTip(reason)
         self.set_busy(self._busy)
 

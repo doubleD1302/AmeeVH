@@ -59,6 +59,9 @@ hiddenimports = [
     "launcher.core.official_resources",
     "launcher.core.official_restore",
     "launcher.core.bsdiff40",
+    "launcher.core.error_catalog",
+    "launcher.core.error_report",
+    "launcher.core.net_probe",
     "launcher.ui",
 ]
 

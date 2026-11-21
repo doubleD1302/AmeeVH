@@ -216,6 +216,14 @@ public final class LauncherService extends Service {
        JSONObject receipt = snapshot(this).optJSONObject("receipt");
        UpdateNotice.observe(this, result.optString("repo") + "/" + result.optString("branch"), manifest.optString("version"), result.optString("releaseNotes"), receipt != null && receipt.optBoolean("present") ? receipt.optString("version") : UpdateNotice.installed(this), false);
       }
+      String syncCode = result.optString("errorCode");
+      if (!syncCode.isEmpty()) {
+       JSONObject snap = snapshot(this);
+       snap.put("github", result);
+       JSONObject rep = ErrorReport.record(this, ErrorReport.build(this, "sync", "Đồng bộ GitHub", result.optString("errorRaw"), null, syncCode, snap));
+       result.put("errorReportId", rep.optString("reportId"));
+       result.put("errorTitle", rep.optString("errorTitle"));
+      }
       set("github", result);
       set("notifications", result.optJSONArray("notifications") == null ? new JSONArray() : result.getJSONArray("notifications"));
       setMessage(result.optString("message", "Đã đọc trạng thái GitHub."));
@@ -374,15 +382,18 @@ public final class LauncherService extends Service {
    } catch (Throwable e) {
     if (!(("pair".equals(action) || "connect".equals(action) || "autoConnect".equals(action)) && startedGeneration != generation)) {
      String error = Store.cleanError(e);
+     String forcedCode = null;
      if ("pair".equals(action)) {
+      forcedCode = "E-ADB-PAIR";
       awaitingCode = true;
       setPairing("waiting_code", "Ghép chưa thành công. Lấy mã mới rồi nhập lại, hoặc dùng cổng thủ công.");
       error = "Ghép đôi chưa thành công. Hãy lấy mã mới trong Gỡ lỗi không dây; mã ghép khác cổng kết nối.";
      } else if ("connect".equals(action) && (error.toLowerCase(Locale.ROOT).contains("unauthor") || error.contains("xác minh được danh tính"))) {
+      forcedCode = "E-ADB-AUTH";
       error = "Thiết bị chưa chấp nhận khóa Local ADB (hoặc đã xoá thiết bị ghép đôi). Hãy ghép đôi lại một lần bằng mã 6 số.";
      }
-     JSONObject report = ErrorReport.record(this, ErrorReport.build(this, action, "Chưa hoàn tất", error, e, null, snapshot(this)));
-     setMessage(error);
+     JSONObject report = ErrorReport.record(this, ErrorReport.build(this, action, "Chưa hoàn tất", error, e, forcedCode, snapshot(this)));
+     setMessage(report.optString("errorTitle") + " [" + report.optString("code") + "]");
      if ("checkUpdate".equals(action) || "prepareUpdate".equals(action)) {
       set("update", Store.obj("available", false, "downloaded", false, "message", error));
      }
@@ -470,11 +481,18 @@ public final class LauncherService extends Service {
     || (!manifestSha.isEmpty() && !manifestSha.equalsIgnoreCase(receiptSha))
   );
 
+  String reasonCode = compatible ? ""
+    : !available ? (state.getJSONObject("github").optString("errorCode").isEmpty() ? (state.getJSONObject("github").has("releaseStatus") ? "E-NO-PACKAGE" : "E-SYNC-PENDING") : state.getJSONObject("github").optString("errorCode"))
+    : !adb.verified ? "E-ADB-NOT-CONNECTED"
+    : !game.optBoolean("installed") ? "E-NO-GAME"
+    : !versionsKnown ? "E-GAME-VERSION"
+    : "E-PKG-MISMATCH";
   state.put("payload", Store.obj(
     "available", available,
     "compatible", compatible,
     "updateAvailable", updateAvailable,
     "reason", reason,
+    "reasonCode", reasonCode,
     "version", manifestVer,
     "manifestSha256", manifestSha,
     "fileCount", available ? manifest.getJSONArray("files").length() : 0

@@ -8,6 +8,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
+from .error_catalog import classify_text, lookup
+
 
 def version_parts(value):
     match = re.fullmatch(r'v?(\d+(?:\.\d+){0,3})', str(value or '').strip(), re.I)
@@ -109,19 +111,45 @@ def detect_new_publisher_version(game_info, manifest_meta: Optional[dict] = None
     return False, ""
 
 
+def _blocked(code, detail='', **extra):
+    """State dict for "install not allowed" carrying the catalog code that explains why."""
+    info = lookup(code)
+    message = info.title + (f' — {detail}' if detail else '') + f' [{code}]'
+    return {'available': False, 'can_install': False, 'message': message, 'blocker_code': code, 'blocker_detail': detail, **extra}
+
+
+def sync_blocker(sync):
+    """(code, detail) when the GitHub sync state does not allow installing, else ``None``."""
+    sync = sync or {}
+    if sync.get('release_status') == 'online' and sync.get('manifest_status') == 'online':
+        return None
+    if sync.get('configuration_error'):
+        return 'E-CONFIG-CHANNEL', str(sync['configuration_error'])
+    if sync.get('error_code'):                      # the whole sync worker failed
+        return str(sync['error_code']), str(sync.get('message', ''))
+    if 'release_status' not in sync:                # nothing finished yet
+        return 'E-SYNC-PENDING', str(sync.get('message', ''))
+    if sync.get('release_status') != 'online':
+        err = str(sync.get('release_error') or '')
+        return (sync.get('release_error_code') or classify_text(err) or 'E-NET'), err
+    err = str(sync.get('manifest_error') or '')
+    return (sync.get('manifest_error_code') or classify_text(err) or 'E-MANIFEST-MISSING'), err
+
+
 def translation_state(sync, game):
-    if sync.get('release_status') != 'online' or sync.get('manifest_status') != 'online':
-        return {'available': False, 'can_install': False, 'message': 'Chưa có bảng kê bản Việt hoá đáng tin cậy.'}
+    blocker = sync_blocker(sync)
+    if blocker:
+        return _blocked(*blocker)
     version = sync.get('translation_version')
     receipt = getattr(game, 'installed_receipt', None)
     if not getattr(game, 'installed', False):
-        return {'available': False, 'can_install': False, 'message': f'Bản Việt hoá: {version}. Hãy chọn thư mục game.'}
+        return _blocked('E-NO-GAME-FOLDER', f'Bản Việt hoá: {version}')
     if matches(getattr(game, 'version', ''), sync.get('translation_game')) and matches(getattr(game, 'resource_version', ''), sync.get('translation_resource')):
         version_note = 'Phiên bản game và tài nguyên khớp bảng kê; chưa xác minh hiển thị trong game.'
     else:
         version_note = 'Phiên bản game hoặc tài nguyên khác bảng kê hoặc chưa đọc được; chưa xác minh tương thích.'
     if version_parts(version) is None:
-        return {'available': False, 'can_install': False, 'message': 'Phiên bản bản Việt hoá trong bảng kê không hợp lệ.'}
+        return _blocked('E-MANIFEST-VERSION', f'Phiên bản trong bảng kê: {version!r}')
     if getattr(game, 'receipt_stale', False):
         return {
             'available': True,
@@ -139,7 +167,7 @@ def translation_state(sync, game):
         }
     current = receipt.get('version')
     if version_parts(version) is None or version_parts(current) is None:
-        return {'available': False, 'can_install': False, 'message': f'Không thể so sánh phiên bản đã cài ({current}) với bản trong bảng kê ({version}).'}
+        return _blocked('E-MANIFEST-VERSION', f'Đã cài {current!r}, bảng kê {version!r}')
     if newer(version, current):
         return {
             'available': True,
@@ -167,10 +195,4 @@ def translation_state(sync, game):
             'version': version,
             'version_note': version_note,
         }
-    return {
-        'available': False,
-        'can_install': False,
-        'message': f'Bản đã cài ({current}) mới hơn bảng kê ({version}). Hạ cấp bị từ chối. {version_note}',
-        'version': version,
-        'version_note': version_note,
-    }
+    return _blocked('E-DOWNGRADE', f'Đã cài {current}, bảng kê {version}', version=version, version_note=version_note)

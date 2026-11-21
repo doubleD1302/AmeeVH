@@ -295,6 +295,7 @@ final class ChannelClient {
    try { Store.write(cached, news); } catch (IOException ignored) {}
   } catch (Exception e) {
    out.put("announcementError", Store.cleanError(e));
+   out.put("announcementErrorCode", ErrorReport.classify(e));
    boolean loaded = false;
    if (cached.isFile()) {
     try {
@@ -327,7 +328,10 @@ final class ChannelClient {
    try {
     if (!hasAndroidManifest(r)) {
      out.put("manifestStatus", "none");
-     out.put("message", "Bản phát hành hiện tại không có gói Android.");
+     out.put("errorCode", "E-NO-PACKAGE");
+     out.put("errorStage", "manifest");
+     out.put("errorRaw", "Bản phát hành hiện tại không có gói Android.");
+     out.put("message", "Bản phát hành hiện tại không có gói Android. [E-NO-PACKAGE]");
     } else {
      JSONObject manifest = androidManifest(r);
      out.put("manifest", manifest);
@@ -337,12 +341,20 @@ final class ChannelClient {
      out.put("message", "Đã đọc gói Android được kê khai.");
     }
    } catch (Exception e) {
+    String code = ErrorReport.classify(e);
     out.put("manifestStatus", "unavailable");
-    out.put("message", Store.cleanError(e));
+    out.put("errorCode", code);
+    out.put("errorStage", "manifest");
+    out.put("errorRaw", Store.cleanError(e));
+    out.put("message", ErrorCatalog.lookup(code).title + " [" + code + "]");
    }
   } catch (Exception e) {
+   String code = ErrorReport.classify(e);
    out.put("releaseStatus", "error");
-   out.put("message", "Chưa đọc được bản phát hành: " + Store.cleanError(e));
+   out.put("errorCode", code);
+   out.put("errorStage", "release");
+   out.put("errorRaw", Store.cleanError(e));
+   out.put("message", "Chưa đọc được bản phát hành — " + ErrorCatalog.lookup(code).title + " [" + code + "]");
   }
   return out;
  }

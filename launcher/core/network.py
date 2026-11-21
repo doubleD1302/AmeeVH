@@ -7,6 +7,7 @@ from pathlib import Path
 from .types import NotificationItem, SupporterData, OperationPhase, OperationEvent
 from .safety import InstallerError, sha256_file, safe_path, relative_name, normalize_manifest, atomic_json, manifest_sha256
 from .config import LAUNCHER_VERSION
+from .error_catalog import diagnose
 
 log = logging.getLogger(__name__)
 
@@ -264,15 +265,17 @@ class NetworkService:
                 'changelog': d.get('body', ''),
             }
         except Exception as exc:
-            return {**base, 'status': 'error', 'message': 'Không kiểm tra được cập nhật: ' + str(exc)}
+            return {**base, 'status': 'error', 'message': 'Không kiểm tra được cập nhật: ' + str(exc), 'error_code': diagnose(exc).code}
 
     def sync_channel(self, fallback_path, current_version='0.9.8', manifest_url=None, check_launcher=True):
         items = self.fetch_notifications(fallback_path)
         release = None
         release_status = 'error'
         release_error = ''
+        release_error_code = ''
         manifest_status = 'unavailable'
         manifest_error = ''
+        manifest_error_code = ''
         translation_version = None
         file_count = None
         translation_scope = None
@@ -292,6 +295,7 @@ class NetworkService:
                     cache_warning = 'Đã đọc trực tuyến nhưng chưa lưu được bản dự phòng: ' + str(exc)
         except Exception as exc:
             release_error = str(exc)
+            release_error_code = diagnose(exc).code
             cached = self.cache_dir / 'release.json' if self.cache_dir else None
             if cached and cached.is_file():
                 try:
@@ -321,6 +325,7 @@ class NetworkService:
             except Exception as exc:
                 manifest_status = 'error'
                 manifest_error = str(exc)
+                manifest_error_code = diagnose(exc).code
 
         if manifest_url and release_status != 'online':
             try:
@@ -337,6 +342,7 @@ class NetworkService:
             except Exception as exc:
                 manifest_status = 'error'
                 manifest_error = str(exc)
+                manifest_error_code = diagnose(exc).code
 
         fresh = self.notification_status in ('online', 'empty') and release_status == 'online' and manifest_status == 'online'
         return {
@@ -348,11 +354,13 @@ class NetworkService:
             'release_version': release.get('tag_name') if release else None,
             'release_notes': str(release.get('body') or '')[:8000] if release_status == 'online' else '',
             'release_error': release_error,
+            'release_error_code': release_error_code,
             'translation_version': translation_version,
             'translation_game': translation_game,
             'translation_resource': translation_resource,
             'manifest_status': manifest_status,
             'manifest_error': manifest_error,
+            'manifest_error_code': manifest_error_code,
             'manifest_sha256': m_sha,
             'legacy_manifest_sha256': legacy_m_sha,
             'translation_file_count': file_count,
@@ -381,6 +389,7 @@ class NetworkService:
         chunk_size = 256 * 1024
         attempt = 0
         last_error = None
+        last_exc = None
         while attempt < max_retries:
             if time.monotonic() > total_deadline:
                 break
@@ -449,8 +458,14 @@ class NetworkService:
                 os.replace(part, dest)
                 return dest
             except (TimeoutError, urllib.error.URLError, http.client.IncompleteRead, ConnectionError, OSError) as exc:
-                detail = f'HTTP {exc.code}' if isinstance(exc, urllib.error.HTTPError) else type(exc).__name__
+                if isinstance(exc, urllib.error.HTTPError):
+                    detail = f'HTTP {exc.code}'
+                elif isinstance(exc, urllib.error.URLError):
+                    detail = f'URLError: {exc.reason}'
+                else:
+                    detail = type(exc).__name__
                 last_error = f'Lỗi kết nối: {detail}.'
+                last_exc = exc
                 if isinstance(exc, urllib.error.HTTPError) and exc.code == 416:
                     part.unlink(missing_ok=True)
                 log.warning('Download interrupted attempt=%s/%s file=%s reason=%s', attempt, max_retries, dest.name, detail)
@@ -459,17 +474,19 @@ class NetworkService:
                     part.unlink(missing_ok=True)
                     raise
                 last_error = str(exc)
+                last_exc = exc
                 log.warning('Download retry attempt=%s/%s file=%s code=%s detail=%s', attempt, max_retries, dest.name, exc.code, str(exc))
                 if exc.code == 'DOWNLOAD_RANGE_INVALID':
                     part.unlink(missing_ok=True)
             except Exception as exc:
                 last_error = type(exc).__name__
+                last_exc = exc
                 break
             if attempt >= max_retries or time.monotonic() > total_deadline:
                 break
             time.sleep(min(5, 1.5 * attempt))
         err_msg = str(last_error) if last_error else 'Lỗi kết nối mạng.'
-        raise InstallerError(f'Tải tệp không thành công sau {attempt} lần thử ({err_msg}).', 'DOWNLOAD_FAILED')
+        raise InstallerError(f'Tải tệp không thành công sau {attempt} lần thử ({err_msg}).', 'DOWNLOAD_FAILED') from last_exc
 
     @staticmethod
     def _prune_shared_downloads(downloads_dir: Path, keep_names: set[str]):

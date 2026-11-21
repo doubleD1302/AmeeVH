@@ -27,7 +27,7 @@ public final class MainActivity extends Activity implements LauncherService.List
    "state", "sync", "saveSettings", "pair", "connect", "autoConnect", "disconnect",
    "startPairingNotification", "cancelPairing", "detect", "install", "verify", "restore", "recover",
    "checkUpdate", "installUpdate", "openWirelessSettings", "launchGame",
-   "copyDiagnostics", "copyError", "copyAccount", "openIssues", "openDeviceInfo", "openDevSettings"
+   "copyDiagnostics", "copyError", "explain", "copyAccount", "openIssues", "openDeviceInfo", "openDevSettings"
  ));
 
  @Override public void onCreate(Bundle saved) {
@@ -170,6 +170,18 @@ public final class MainActivity extends Activity implements LauncherService.List
      JSONObject report = Store.obj("app", s.opt("app"), "adb_connected", s.getJSONObject("adb").optBoolean("connected"), "adb_has_identity", s.getJSONObject("adb").optBoolean("hasIdentity"), "adb_status", s.getJSONObject("adb").optString("status"), "game", s.opt("game"), "github", s.opt("github"), "message", s.optString("message"), "recovery", s.opt("recovery"), "lastError", ErrorReport.lastSummary(this));
      clipboard("Chẩn đoán Stella Sora", report.toString(2));
      showMessage("Đã sao chép báo cáo", "Báo cáo chỉ được sao chép trên máy. Hãy xem lại trước khi tự gửi lên trang báo lỗi.", false);
+     break;
+    }
+    case "explain": {
+     // "Why can't I install?": re-open the stored report when we have one, otherwise build one from the code.
+     String id = args.optString("id");
+     JSONObject report = id.isEmpty() ? null : ErrorReport.findReport(this, id);
+     if (report == null || !report.optString("code").equals(args.optString("code", report.optString("code")))) {
+      report = ErrorReport.explain(this, args.optString("code", "E-UNKNOWN"), "explain", LauncherService.snapshot(this));
+     }
+     ErrorReport.record(this, report);
+     JSONObject data = Store.obj("title", "Vì sao chưa cài được?", "message", report.optString("message"), "error", !"info".equals(report.optString("level")) && !"warning".equals(report.optString("level")));
+     event(Store.obj("type", "message", "data", ErrorReport.attach(data, report)));
      break;
     }
     case "copyError": {

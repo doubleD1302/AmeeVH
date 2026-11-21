@@ -4,7 +4,7 @@ import argparse, logging, logging.handlers, os, sys, traceback
 from pathlib import Path
 
 def main():
-    parser = argparse.ArgumentParser(description='Stella Sora Việt Hóa launcher v1.3.2')
+    parser = argparse.ArgumentParser(description='Stella Sora Việt Hóa launcher v1.3.3')
     parser.add_argument('--app-data-dir', type=Path, help='Explicit writable config/log/backup/cache directory')
     parser.add_argument('--resource-dir', type=Path, help='Explicit development resource override')
     parser.add_argument('--apply-update', type=Path, help=argparse.SUPPRESS)
@@ -66,6 +66,15 @@ def main():
     app.setWindowIcon(AssetManager.get().get_app_icon())
     win = MainWindow(pm, ConfigManager(pm))
     win.show()
+
+    def _excepthook(exc_type, exc, tb):
+        """Exceptions that escape a Qt slot: log them and show the same copyable error dialog."""
+        logging.getLogger('launcher').critical('Unhandled exception', exc_info=(exc_type, exc, tb))
+        if exc is not None and not isinstance(exc, (KeyboardInterrupt, SystemExit)):
+            from PySide6.QtCore import QTimer
+            QTimer.singleShot(0, lambda e=exc: win.show_unhandled(e))
+
+    sys.excepthook = _excepthook
     return app.exec()
 
 def entry():
@@ -79,16 +88,41 @@ def entry():
             (fallback / 'startup_error.log').write_text(error, encoding='utf8')
         except OSError:
             pass
+        shown = False
         try:
+            from launcher.core.error_report import ErrorContext, build_report, copy_text_native
+            exc = sys.exc_info()[1]
+            report = build_report('E-INTERNAL', exc=exc, action='Khởi động launcher', ctx=ErrorContext(action='Khởi động launcher', operation='startup'), message=str(exc or ''))
+            try:
+                (fallback / 'startup_error.log').write_text(report.text + '\n\n--- Traceback đầy đủ ---\n' + error, encoding='utf8')
+            except OSError:
+                pass
             import ctypes
-            ctypes.windll.user32.MessageBoxW(
+            steps = '\n'.join(f'{i}. {step}' for i, step in enumerate(report.steps, 1))
+            answer = ctypes.windll.user32.MessageBoxW(
                 None,
-                'Launcher không mở được. Chi tiết tại:\n' + str(fallback / 'startup_error.log'),
+                f'{report.title}\n\n{report.summary}\n\nCách xử lý:\n{steps}\n\n{report.code_line}\n\n'
+                'Bấm "Có" để sao chép toàn bộ thông tin lỗi (gửi cho người hỗ trợ), "Không" để đóng.\n'
+                'Chi tiết cũng được lưu tại: ' + str(fallback / 'startup_error.log'),
                 'Stella Sora Việt Hóa',
-                0x10,
+                0x10 | 0x4,   # MB_ICONERROR | MB_YESNO
             )
+            shown = True
+            if answer == 6:   # IDYES
+                copy_text_native(report.text)
         except Exception:
             pass
+        if not shown:
+            try:
+                import ctypes
+                ctypes.windll.user32.MessageBoxW(
+                    None,
+                    'Launcher không mở được. Chi tiết tại:\n' + str(fallback / 'startup_error.log'),
+                    'Stella Sora Việt Hóa',
+                    0x10,
+                )
+            except Exception:
+                pass
         return 1
 
 if __name__ == '__main__':

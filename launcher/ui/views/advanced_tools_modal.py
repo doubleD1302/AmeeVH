@@ -25,7 +25,7 @@ class ToolWorker(QThread):
         try:
             self.result_ready.emit(True, self.target())
         except Exception as e:
-            self.result_ready.emit(False, str(e))
+            self.result_ready.emit(False, e)
 
 
 class TableDelegate(QStyledItemDelegate):
@@ -192,8 +192,17 @@ class AdvancedToolsModal(ArtDialog):
 
     def _result(self, ok, data):
         if not ok:
-            self.error_strip.setText(str(data))
+            from .message_dialog import MessageDialog
+            parent = self.parentWidget()
+            builder = getattr(parent, 'build_error_report', None)
+            if builder is None:
+                self.error_strip.setText(str(data))
+                self.error_strip.show()
+                return
+            report = builder('Công cụ nâng cao', exc=data if isinstance(data, BaseException) else None, message=str(data))
+            self.error_strip.setText(report.title + ' [' + report.code + ']')
             self.error_strip.show()
+            MessageDialog('Công cụ nâng cao', '', parent=self, report=report).exec()
             return
         if self.kind == 'diagnostics':
             self.diag_text.setPlainText(data)

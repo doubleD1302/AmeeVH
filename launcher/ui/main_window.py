@@ -10,7 +10,10 @@ from ..core.game_detection import GameDetector, find_all_potential_game_installa
 from ..core.installer import PatchInstaller
 from ..core.rollback import RollbackEngine
 from ..core.network import NetworkService
-from ..core.safety import manifest_sha256
+from ..core.safety import manifest_sha256, InstallerError
+from ..core.error_catalog import diagnose, lookup, INTERNAL_MAP, classify_text
+from ..core.error_report import ErrorContext, build_report
+from ..core.net_probe import run_probe
 from ..core.update_notice import translation_state, newer, version_parts, detect_new_publisher_version
 from ..core.official_resources import OfficialClient
 from ..core.official_restore import check_official_update
@@ -38,17 +41,25 @@ class AsyncOperationWorker(QThread):
     event_emitted = Signal(object)
     result_ready = Signal(str, bool, object)
 
-    def __init__(self, op, target, parent=None):
+    def __init__(self, op, target, parent=None, probe_on_error=True):
         super().__init__(parent)
         self.op = op
         self.target = target
+        self.probe_on_error = probe_on_error
 
     def run(self):
         try:
             self.result_ready.emit(self.op, True, self.target(self.event_emitted.emit, self.op))
         except Exception as e:
             logger.exception('Operation failed')
-            self.result_ready.emit(self.op, False, {'message': str(e), 'error_code': getattr(e, 'code', 'OPERATION_ERROR')})
+            payload = {'message': str(e), 'error_code': getattr(e, 'code', 'OPERATION_ERROR'), 'exc': e}
+            if self.probe_on_error:
+                try:
+                    if diagnose(e).info.network:
+                        payload['probe'] = run_probe()   # bounded (~8 s) DNS/TCP check, runs off the UI thread
+                except Exception:
+                    logger.exception('Connectivity probe failed')
+            self.result_ready.emit(self.op, False, payload)
 
 
 class MainWindow(QMainWindow):
@@ -117,6 +128,7 @@ class MainWindow(QMainWindow):
         v.view_notifications_requested.connect(lambda: self._handle_navigation('notifications'))
         v.notification_selected.connect(self._open_notifications)
         v.check_translation_requested.connect(self._check_translation_version)
+        v.blocker_requested.connect(self._explain_install_blocker)
         self._apply_game_info(self.current_game_info)
 
         self._release_timer = QTimer(self)
@@ -250,11 +262,16 @@ class MainWindow(QMainWindow):
         def work(cb, op):
             result = network.sync_channel(fallback, LAUNCHER_VERSION, manifest_url, check_launcher)
             result['source_identity'] = identity
+            if result.get('release_status') != 'online':
+                try:
+                    result['probe'] = run_probe()
+                except Exception:
+                    logger.exception('Connectivity probe failed')
             return result
 
         self._github_sync_state = {'message': 'Đang đọc thông báo và bản phát hành từ GitHub…', 'fresh': False}
         self.github_sync_changed.emit(self._github_sync_state)
-        worker = AsyncOperationWorker(identity, work, self)
+        worker = AsyncOperationWorker(identity, work, self, probe_on_error=False)
         self.background_worker = worker
         worker.result_ready.connect(self._background_finish)
         worker.finished.connect(lambda: self._release_background(worker))
@@ -264,7 +281,14 @@ class MainWindow(QMainWindow):
         if identity != self._github_identity:
             return
         if not success:
-            self._github_sync_state = {'message': 'Không đồng bộ được GitHub: ' + result.get('message', 'Lỗi kết nối.'), 'fresh': False}
+            exc = result.get('exc')
+            d = diagnose(exc) if exc is not None else None
+            self._github_sync_state = {
+                'message': 'Không đồng bộ được GitHub: ' + result.get('message', 'Lỗi kết nối.'),
+                'fresh': False,
+                'error_code': d.code if d else (classify_text(result.get('message', '')) or 'E-NET'),
+                'error_detail': result.get('message', ''),
+            }
         else:
             self._github_sync_state = result
             self.notifications = result.get('notifications', [])
@@ -282,11 +306,13 @@ class MainWindow(QMainWindow):
             message = state['message']
             if self.config_manager.get('payload_path', ''):
                 message += '\nLauncher đang dùng gói cục bộ đã chọn để cài đặt.'
-            if not success:
-                message = self._github_sync_state['message']
-            elif result.get('manifest_status') != 'online':
-                message += '\n' + str(result.get('manifest_error') or result.get('release_error') or '')
-            QTimer.singleShot(0, lambda m=message: self._show(MessageDialog('Kiểm tra phiên bản Việt hoá', m, parent=self)))
+            blocker = state.get('blocker_code')
+            if not success or (blocker and blocker != 'E-NO-GAME-FOLDER'):
+                code = blocker or self._github_sync_state.get('error_code') or 'E-NET'
+                detail = state.get('blocker_detail') or self._github_sync_state.get('error_detail') or ''
+                QTimer.singleShot(0, lambda c=code, d=detail: self._show_error('Kiểm tra phiên bản Việt hoá', code=c, message=d))
+            else:
+                QTimer.singleShot(0, lambda m=message: self._show(MessageDialog('Kiểm tra phiên bản Việt hoá', m, parent=self)))
         else:
             QTimer.singleShot(1200, self._maybe_show_release_notice)
 
@@ -352,17 +378,17 @@ class MainWindow(QMainWindow):
         if not success:
             msg = result.get('message', 'Lỗi chưa xác định')
             err_code = result.get('error_code', '')
-            self.overview_view.show_completed('⚠ Lỗi: ' + msg)
-            self._show(
-                MessageDialog(
-                    'Không thể hoàn tất thao tác',
-                    msg,
-                    'Mã lỗi: ' + err_code + '\nNhật ký: ' + str(self.path_manager.logs_dir / 'launcher.log'),
-                    parent=self,
-                    is_error=True,
-                    error_code=err_code,
-                )
+            report = self._show_error(
+                self._action_title(self.operation_kind),
+                exc=result.get('exc'),
+                code=INTERNAL_MAP.get(err_code),
+                message=msg,
+                probe=result.get('probe'),
+                show=False,
+                operation=self.operation_kind or '',
             )
+            self.overview_view.show_completed('⚠ ' + report.title + ' [' + report.code + ']')
+            self._show(MessageDialog(self._action_title(self.operation_kind), '', parent=self, report=report))
             return
         if not isinstance(result, dict):
             return
@@ -374,27 +400,18 @@ class MainWindow(QMainWindow):
             info = result['game']
             if not info.installed:
                 self.overview_view.show_progress(False)
-                self._show(
-                    MessageDialog(
-                        'Chưa chọn được thư mục',
-                        'Không tìm thấy StellaSora.exe tại thư mục này. Đường dẫn đang dùng được giữ nguyên.',
-                        parent=self,
-                    )
+                self._show_error(
+                    'Chọn thư mục game',
+                    code='E-NO-EXE',
+                    message='Không tìm thấy StellaSora.exe tại: ' + str(info.game_path or '(không rõ)'),
+                    extra={'thư mục vừa chọn': str(info.game_path or '')},
                 )
                 return
             previous = self.config_manager.get('game_path', '')
             self.config_manager.set('game_path', str(info.game_path))
             if not self.config_manager.save():
                 self.config_manager.set('game_path', previous)
-                self._show(
-                    MessageDialog(
-                        'Chưa lưu được thư mục',
-                        'Đường dẫn đang dùng được giữ nguyên.',
-                        '\n'.join(self.config_manager.warnings),
-                        parent=self,
-                        is_error=True,
-                    )
-                )
+                self._show_error('Lưu thư mục game', code='E-CONFIG-SAVE', message='\n'.join(self.config_manager.warnings))
                 return
         if 'game' in result:
             self._apply_game_info(result['game'])
@@ -418,7 +435,11 @@ class MainWindow(QMainWindow):
                 QTimer.singleShot(50, lambda r=pub_reason: self._prompt_launch_after_pub_restore(r))
         elif self.operation_kind == 'self_update':
             if result.get('status') != 'online':
-                self._show(MessageDialog('Không kiểm tra được cập nhật', result.get('message', 'Không thể kết nối GitHub.'), parent=self, is_error=True))
+                self._show_error(
+                    'Kiểm tra cập nhật launcher',
+                    code=result.get('error_code') or ('E-CONFIG-CHANNEL' if result.get('status') == 'unavailable' else 'E-NET'),
+                    message=result.get('message', 'Không thể kết nối GitHub.'),
+                )
             elif not result.get('has_update'):
                 self._show(
                     MessageDialog(
@@ -479,13 +500,7 @@ class MainWindow(QMainWindow):
         if self.active_worker is not None:
             return
         if not found:
-            self._show(
-                MessageDialog(
-                    'Chưa tìm thấy game',
-                    'Không tìm thấy Stella Sora trong thư viện Steam hoặc vị trí Yostar thông dụng. Bấm biểu tượng thư mục để chọn thủ công nơi có StellaSora.exe. Thư mục hiện tại được giữ nguyên.',
-                    parent=self,
-                )
-            )
+            self._show_error('Tìm game tự động', code='E-GAME-NOT-FOUND')
             return
         if len(found) == 1:
             self._select_game_root(found[0]['path'])
@@ -520,11 +535,11 @@ class MainWindow(QMainWindow):
 
     def _check_ready_or_explain(self, action_title: str) -> bool:
         if self.active_worker is not None:
-            self._show(MessageDialog(action_title, 'Đang có thao tác chạy. Hãy chờ hoàn tất rồi thử lại.', parent=self))
+            self._show_error(action_title, code='E-BUSY', message='Thao tác đang chạy: ' + (self.operation_kind or '?'))
             return False
         info = self.current_game_info
         if not info.installed or not info.game_path:
-            self._show(MessageDialog(action_title, 'Hãy chọn đúng thư mục cài đặt game có StellaSora.exe bằng nút thư mục trước khi thực hiện.', parent=self))
+            self._show_error(action_title, code='E-NO-GAME-FOLDER')
             return False
         running_now = is_game_process_running()
         if running_now != info.is_running:
@@ -532,7 +547,7 @@ class MainWindow(QMainWindow):
             self._apply_game_info(info)
             self._refresh_translation_state()
         if info.is_running:
-            self._show(MessageDialog(action_title, f'Game Stella Sora hiện đang chạy. Hãy đóng game trước khi {action_title.lower()}.', parent=self))
+            self._show_error(action_title, code='E-GAME-RUNNING')
             return False
         return True
 
@@ -547,7 +562,11 @@ class MainWindow(QMainWindow):
         info = self.current_game_info
         state = self._refresh_translation_state()
         if not state['can_install']:
-            self._show(MessageDialog('Chưa thể cài Việt hoá', state['message'], parent=self, is_error=True))
+            self._show_error(
+                'Cài đặt Việt hoá',
+                code=state.get('blocker_code') or 'E-UNKNOWN',
+                message=state.get('blocker_detail') or state['message'],
+            )
             return
 
         manifest_meta = {
@@ -569,7 +588,7 @@ class MainWindow(QMainWindow):
         local = self.config_manager.get('payload_path', '')
         channel_valid = self._configure_network()
         if not local and not channel_valid:
-            self._show(MessageDialog('Chưa thể tải bản dịch', self._github_sync_state['message'], parent=self))
+            self._show_error('Cài đặt Việt hoá', code='E-CONFIG-CHANNEL', message=self._channel_error or self._github_sync_state.get('message', ''))
             return
         pref_shortcut = self.config_manager.get('create_desktop_shortcut', True)
         cd = ConfirmationDialog(
@@ -618,15 +637,13 @@ class MainWindow(QMainWindow):
             return None
         info = self.current_game_info
         if require_receipt and not info.installed_receipt:
-            self._show(
-                MessageDialog(
-                    action,
-                    'Thư mục này chưa có biên bản cài đặt hợp lệ của launcher.',
-                    'Kiểm tra tệp cần danh sách SHA256 đã cài. Khôi phục cần bản sao lưu gắn với đúng thư mục game.\n'
-                    'Nếu bạn cài bản dịch bằng công cụ khác, launcher chưa thể xác minh hoặc khôi phục bản đó.\n'
-                    'Sau khi cài bằng launcher này, hai thao tác sẽ dùng biên bản và bản sao lưu được tạo trong lần cài.',
-                    parent=self,
-                )
+            receipt_file = Path(info.game_path) / '.vietnamese_patch_receipt.json'
+            present = receipt_file.is_file()
+            self._show_error(
+                action,
+                code='E-RECEIPT-MISMATCH' if present else 'E-NO-RECEIPT',
+                message='Tệp biên bản có trong thư mục game nhưng không dùng được.' if present else 'Không có tệp .vietnamese_patch_receipt.json trong thư mục game.',
+                extra={'tệp biên bản tồn tại': 'có' if present else 'không'},
             )
             return None
         return info.game_path
@@ -689,7 +706,7 @@ class MainWindow(QMainWindow):
         def work(cb, op):
             return check_official_update(OfficialClient('EN', timeout=15, retries=2), snapshot, cache_file)
 
-        worker = AsyncOperationWorker('official_check', work, self)
+        worker = AsyncOperationWorker('official_check', work, self, probe_on_error=False)
         self._official_worker = worker
         worker.result_ready.connect(self._official_check_finished)
         worker.finished.connect(lambda: self._release_official_worker(worker))
@@ -769,14 +786,22 @@ class MainWindow(QMainWindow):
         def work(cb, op):
             ok, msg = GameDetector(self.path_manager.backup_root).launch(info)
             if not ok:
-                raise RuntimeError(msg)
+                if 'chưa được chọn' in msg:
+                    kind = 'NO_GAME_FOLDER'
+                elif 'đang chạy' in msg:
+                    kind = 'GAME_RUNNING'
+                elif 'Không tìm thấy file' in msg:
+                    kind = 'INVALID_ROOT'
+                else:
+                    kind = 'LAUNCH_FAILED'
+                raise InstallerError(msg, kind)
             return {'message': msg}
 
         self._start('launch', work)
 
     def _check_update(self):
         if not self._configure_network():
-            self._show(MessageDialog('Chưa thể kiểm tra cập nhật', self._github_sync_state['message'], parent=self))
+            self._show_error('Kiểm tra cập nhật launcher', code='E-CONFIG-CHANNEL', message=self._channel_error)
             return
         network = self.network_service
         self._start('self_update', lambda cb, op: network.check_for_updates(LAUNCHER_VERSION))
@@ -785,7 +810,7 @@ class MainWindow(QMainWindow):
         if self.active_worker is not None:
             return
         if not self._configure_network():
-            self._show(MessageDialog('Chưa thể kiểm tra', self._github_sync_state['message'], parent=self, is_error=True))
+            self._show_error('Kiểm tra phiên bản Việt hoá', code='E-CONFIG-CHANNEL', message=self._channel_error)
             return
         if self.background_worker is not None:
             self._manual_translation_next = True
@@ -815,13 +840,20 @@ class MainWindow(QMainWindow):
                 state['translation_resource'] = local_state['translation_resource']
                 state['message'] = 'Gói cục bộ: ' + state['message']
             except Exception as exc:
-                state = {'available': False, 'can_install': False, 'message': 'Không đọc được bảng kê của gói cục bộ: ' + str(exc)}
+                d = diagnose(exc, fallback='E-MANIFEST-INVALID')
+                state = {
+                    'available': False,
+                    'can_install': False,
+                    'message': 'Không đọc được bảng kê của gói cục bộ: ' + str(exc) + ' [' + d.code + ']',
+                    'blocker_code': d.code,
+                    'blocker_detail': 'Gói cục bộ: ' + str(exc),
+                }
         else:
             state = translation_state(self._github_sync_state, self.current_game_info)
         if hasattr(self, 'overview_view'):
             self.overview_view.set_translation_update(state['available'])
             self.overview_view.btn_check_translation.setToolTip(state['message'])
-            self.overview_view.set_install_allowed(state['can_install'], state['message'])
+            self.overview_view.set_install_allowed(state['can_install'], state['message'], state.get('blocker_code', ''))
         return state
 
     def _record_release_observation(self, sync):
@@ -897,14 +929,7 @@ class MainWindow(QMainWindow):
         elif result == 2:
             self.config_manager.set('release_notice_snooze_until', time.time() + 24 * 60 * 60)
             if not self.config_manager.save():
-                self._show(
-                    MessageDialog(
-                        'Chưa lưu được lựa chọn',
-                        'Không thể lưu thời gian tắt thông báo. Thông báo có thể xuất hiện lại khi mở launcher.',
-                        parent=self,
-                        is_error=True,
-                    )
-                )
+                self._show_error('Lưu lựa chọn thông báo', code='E-CONFIG-SAVE', message='\n'.join(self.config_manager.warnings))
             self._snooze_timer.start(24 * 60 * 60 * 1000)
         else:
             self._notice_seen.add(key)
@@ -968,6 +993,101 @@ class MainWindow(QMainWindow):
         d.setMinimumSize(0, 0)
         d.resize(width, height)
         d.move(area.center() - d.rect().center())
+
+    _ACTION_TITLES = {
+        'install': 'Cài Việt hoá',
+        'rollback': 'Khôi phục dữ liệu gốc',
+        'verify': 'Kiểm tra tệp',
+        'launch': 'Mở game',
+        'scan': 'Quét thư mục game',
+        'select_root': 'Chọn thư mục game',
+        'discover': 'Tìm game tự động',
+        'self_update': 'Kiểm tra cập nhật launcher',
+        'apply_self_update': 'Cập nhật launcher',
+        'publisher_vanilla_restore': 'Khôi phục dữ liệu gốc của nhà phát hành',
+        'recover': 'Phục hồi thao tác bị ngắt',
+        'startup': 'Khởi động launcher',
+    }
+
+    def _action_title(self, kind):
+        return self._ACTION_TITLES.get(kind, kind or 'Thao tác')
+
+    def _error_context(self, action='', probe=None, extra=None, operation=''):
+        sync = dict(self._github_sync_state) if isinstance(self._github_sync_state, dict) else {}
+        info = {
+            'tuỳ chọn': 'tự kiểm tra cập nhật={}, tự kiểm tra bản gốc={}, tự khôi phục trước khi game cập nhật={}'.format(
+                self.config_manager.get('check_updates_on_start', True),
+                self.config_manager.get('check_official_on_start', True),
+                self.config_manager.get('auto_restore_before_game_update', False),
+            ),
+            'gói cục bộ': 'có' if self.config_manager.get('payload_path', '') else 'không',
+            'bảng kê tuỳ chỉnh': 'có' if self.config_manager.get('custom_manifest_url', '') else 'không',
+        }
+        try:
+            game = self.current_game_info
+            if game and game.installed and game.game_path:
+                info['nhật ký chưa hoàn tất'] = 'CÓ' if self._engine().pending(game.game_path) else 'không'
+        except Exception:
+            info['nhật ký chưa hoàn tất'] = 'không đọc được'
+        if extra:
+            info.update(extra)
+        return ErrorContext(
+            action=action,
+            operation=operation,
+            progress=getattr(self.overview_view, '_progress_message', ''),
+            path_manager=self.path_manager,
+            game=self.current_game_info,
+            sync=sync,
+            channel=getattr(self, '_channel', None),
+            probe=probe or sync.get('probe'),
+            extra=info,
+        )
+
+    def build_error_report(self, action, code=None, exc=None, message='', probe=None, extra=None, extra_summary='', operation=''):
+        report = build_report(
+            code,
+            exc=exc,
+            message=message,
+            action=action,
+            ctx=self._error_context(action, probe=probe, extra=extra, operation=operation),
+            extra_summary=extra_summary,
+        )
+        self._last_report = report
+        return report
+
+    def _show_error(self, action, code=None, exc=None, message='', probe=None, extra=None, extra_summary='', show=True, operation=''):
+        """Build the plain-language report for a failure and (by default) show it. Returns the report."""
+        report = self.build_error_report(action, code=code, exc=exc, message=message, probe=probe, extra=extra, extra_summary=extra_summary, operation=operation)
+        if show:
+            self._show(MessageDialog(action, '', parent=self, report=report))
+        return report
+
+    def show_unhandled(self, exc):
+        """Called from sys.excepthook for exceptions that escaped a Qt slot."""
+        if getattr(self, '_showing_unhandled', False):
+            return
+        self._showing_unhandled = True
+        try:
+            self._show_error('Lỗi không mong đợi', exc=exc)
+        except Exception:
+            logger.exception('Could not display unhandled error')
+        finally:
+            self._showing_unhandled = False
+
+    def _explain_install_blocker(self):
+        """Explain why the install button is greyed out (clicked from the "why?" link under the button)."""
+        info = self.current_game_info
+        if not info.installed or not info.game_path:
+            self._show_error('Cài đặt Việt hoá', code='E-NO-GAME-FOLDER')
+        elif info.is_running:
+            self._show_error('Cài đặt Việt hoá', code='E-GAME-RUNNING')
+        else:
+            state = self._refresh_translation_state()
+            self._show_error(
+                'Cài đặt Việt hoá',
+                code=state.get('blocker_code') or 'E-SYNC-PENDING',
+                message=state.get('blocker_detail') or state.get('message', ''),
+            )
 
     def _show(self, d):
         self._fit(d)

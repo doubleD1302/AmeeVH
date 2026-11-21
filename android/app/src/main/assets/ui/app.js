@@ -19,8 +19,17 @@
   let copyResetTimer = 0, currentReportId = '';
   function setCopyLabel(label) { const s = $('message-copy').querySelector('span'); if (s) s.textContent = label; }
   function message(title, body, error=false, meta={}) {
-    text('message-title', title || (error ? 'Chưa thể hoàn tất' : 'Thông tin'));
-    text('message-body', body || '');
+    meta = meta || {};
+    // Plain-language explanation + steps come from the native error catalog; the raw message is kept as technical detail.
+    const explain = meta.explain ? String(meta.explain) : '';
+    const steps = Array.isArray(meta.steps) ? meta.steps : [];
+    text('message-title', meta.errorTitle || title || (error ? 'Chưa thể hoàn tất' : 'Thông tin'));
+    text('message-body', explain || body || '');
+    const list = $('message-steps'); empty(list);
+    steps.forEach(step => { const li = document.createElement('li'); li.textContent = String(step); list.appendChild(li); });
+    list.hidden = !steps.length; $('message-steps-title').hidden = !steps.length;
+    const technical = explain && body && String(body).trim() !== explain.trim() ? String(body) : '';
+    text('message-tech-body', technical); $('message-tech').hidden = !technical; $('message-tech').open = false;
     // Error dialogs carry a copyable report: show its code and a button that copies the full details.
     currentReportId = meta && meta.reportId ? String(meta.reportId) : '';
     const hasReport = !!currentReportId;
@@ -29,6 +38,7 @@
     $('message-copy').hidden = !hasReport;
     clearTimeout(copyResetTimer); setCopyLabel('Sao chép mã lỗi');
     $('message-overlay').hidden = false;
+    const card = $('message-overlay').querySelector('.dialog-card'); if (card) card.scrollTop = 0;
     $('message-ok').focus();
   }
   function request(action, payload={}) {
@@ -131,6 +141,13 @@
     text('install-caption', main.caption);
     $('main-action-icon').src = 'icons/' + main.icon + '.svg';
     text('payload-note', main.note);
+    // Why can't the translation be installed yet? Name the exact reason (and let the user copy the full report).
+    let whyCode = '', whyId = '';
+    if (!p.available && gh.errorCode) { whyCode = gh.errorCode; whyId = gh.errorReportId || ''; }
+    else if (!(p.available && p.compatible) && p.reasonCode) { whyCode = p.reasonCode; }
+    const why = $('why-blocked');
+    why.hidden = !whyCode || !!state.busy;
+    if (whyCode) { why.dataset.code = whyCode; why.dataset.id = whyId; why.querySelector('span').textContent = 'Vì sao chưa cài được? [' + whyCode + ']'; }
     let payloadText = p.reason || 'Chưa có thông tin gói Android tương thích.';
     if (p.available && p.compatible) {
       const stateSuffix = !state.receipt.present ? 'Chưa cài đặt.' : (p.updateAvailable || state.receipt.stale ? 'Có bản cập nhật mới.' : 'Đang ở bản mới nhất.');
@@ -260,6 +277,7 @@
   $('notices-close').addEventListener('click', () => { $('notices-overlay').hidden=true; });
   ['message-close','message-ok'].forEach(id => $(id).addEventListener('click', () => { $('message-overlay').hidden=true; }));
   $('message-copy').addEventListener('click', () => request('copyError', {id: currentReportId}));
+  $('why-blocked').addEventListener('click', () => { const w = $('why-blocked'); request('explain', {code: w.dataset.code || 'E-UNKNOWN', id: w.dataset.id || ''}); });
   window.Stella = {
     onEvent(event) {
       try { if (typeof event === 'string') event=JSON.parse(event); if(!event || typeof event!=='object')return;
