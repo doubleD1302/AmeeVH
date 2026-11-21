@@ -1,7 +1,14 @@
 {
-  "version": "1.3.3",
+  "version": "1.3.4",
   "updated_at": "2026-11-21",
   "announcements": [
+    {
+      "id": "NOTIF-036",
+      "date": "2026-11-21",
+      "title": "Bản cập nhật v1.3.4: Launcher PC Có Bộ Chứng Chỉ Dự Phòng Để Đọc Được GitHub, Gợi Ý Khi Chọn Nhầm Thư Mục Game",
+      "type": "release",
+      "content": "Launcher PC thêm bộ chứng chỉ bảo mật dự phòng để đọc được GitHub trên máy Windows thiếu chứng chỉ gốc (lỗi E-NET-TLS-CERT khiến nút Cài bị xám). Báo lỗi \"Gói cục bộ\" nay chỉ đúng cách sửa, và khi chọn nhầm thư mục game, launcher gợi ý thư mục có StellaSora.exe. Launcher Android giữ nguyên bản 1.3.3; bản dịch giữ nguyên."
+    },
     {
       "id": "NOTIF-035",
       "date": "2026-11-21",
