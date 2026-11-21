@@ -2,6 +2,11 @@
 import ast
 import errno
 import http.client
+import http.server
+import shutil
+import subprocess
+import threading
+import urllib.request
 import json
 import os
 import socket
@@ -19,6 +24,8 @@ sys.path.insert(0, str(ROOT))
 
 from launcher.core import error_catalog as ec
 from launcher.core import net_probe
+from launcher.core import tls
+from launcher.core.game_detection import find_game_exe_hint
 from launcher.core.error_report import ErrorContext, build_report, redact, safe_url
 from launcher.core.network import NetworkService
 from launcher.core.safety import InstallerError
@@ -98,6 +105,9 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(self.code(urllib.error.URLError(ssl.SSLCertVerificationError('CERTIFICATE_VERIFY_FAILED'))), 'E-NET-TLS-CERT')
         self.assertEqual(self.code(ssl.SSLError('handshake failure')), 'E-NET-TLS')
         self.assertEqual(self.code(urllib.error.URLError(OSError('Tunnel connection failed: 407 Proxy Authentication Required'))), 'E-NET-PROXY')
+
+    def test_proxy_authentication_is_a_proxy_problem(self):
+        self.assertEqual(self.code(urllib.error.HTTPError('https://x', 407, 'Proxy Authentication Required', http.client.HTTPMessage(), None)), 'E-NET-PROXY')
 
     def test_windows_socket_errors(self):
         blocked = OSError(10013, 'forbidden by its access permissions')
@@ -237,6 +247,93 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(build_report('E-NO-RECEIPT').level, 'info')
         self.assertEqual(build_report('E-GAME-RUNNING').level, 'warning')
         self.assertEqual(build_report('E-NET-DNS').level, 'error')
+
+
+
+@unittest.skipUnless(shutil.which('openssl'), 'openssl CLI needed to create a throw-away certificate')
+class TlsFallbackTests(unittest.TestCase):
+    """The merged trust store accepts a root that the default (Windows-only) context rejects."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        d = Path(cls.tmp.name)
+        cls.cert, cls.key = d / 'ca.pem', d / 'key.pem'
+        subprocess.run(
+            ['openssl', 'req', '-x509', '-newkey', 'rsa:2048', '-nodes', '-keyout', str(cls.key), '-out', str(cls.cert), '-days', '2',
+             '-subj', '/CN=localhost', '-addext', 'subjectAltName=DNS:localhost,IP:127.0.0.1', '-addext', 'basicConstraints=critical,CA:TRUE'],
+            check=True, capture_output=True,
+        )
+        server_ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+        server_ctx.load_cert_chain(str(cls.cert), str(cls.key))
+
+        class Handler(http.server.BaseHTTPRequestHandler):
+            def do_GET(self):
+                body = b'{"ok": true}'
+                self.send_response(200)
+                self.send_header('Content-Length', str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+            def log_message(self, *a):
+                pass
+
+        cls.httpd = http.server.HTTPServer(('127.0.0.1', 0), Handler)
+        cls.httpd.socket = server_ctx.wrap_socket(cls.httpd.socket, server_side=True)
+        cls.url = f'https://127.0.0.1:{cls.httpd.server_address[1]}/'
+        threading.Thread(target=cls.httpd.serve_forever, daemon=True).start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+        cls.tmp.cleanup()
+
+    def test_default_trust_rejects_an_unknown_root_as_a_certificate_error(self):
+        with self.assertRaises(urllib.error.URLError) as ctx:
+            urllib.request.build_opener(urllib.request.HTTPSHandler(context=ssl.create_default_context())).open(self.url, timeout=5)
+        self.assertEqual(ec.diagnose(ctx.exception).code, 'E-NET-TLS-CERT')
+
+    def test_merged_trust_accepts_it_and_stays_strict(self):
+        merged = tls.build_context(extra_cafile=self.cert)
+        self.assertEqual(merged.verify_mode, ssl.CERT_REQUIRED)
+        self.assertTrue(merged.check_hostname)
+        with urllib.request.build_opener(urllib.request.HTTPSHandler(context=merged)).open(self.url, timeout=5) as resp:
+            self.assertEqual(resp.status, 200)
+
+    def test_info_counts_the_extra_roots(self):
+        info = tls.info(extra_cafile=self.cert)
+        self.assertEqual(info['extra_roots'], 1)
+        self.assertGreaterEqual(info['trusted_roots'], info['system_roots'] + 1)
+
+    def test_install_sets_the_process_wide_opener(self):
+        previous = urllib.request._opener
+        try:
+            tls.install(extra_cafile=self.cert)
+            with urllib.request.urlopen(self.url, timeout=5) as resp:   # plain urlopen, as every launcher call does
+                self.assertEqual(resp.status, 200)
+        finally:
+            urllib.request._opener = previous
+
+
+class TlsWithoutCertifiTests(unittest.TestCase):
+    def test_missing_certifi_never_breaks_the_launcher(self):
+        with mock.patch.dict(sys.modules, {'certifi': None}):
+            ctx = tls.build_context()
+        self.assertEqual(ctx.verify_mode, ssl.CERT_REQUIRED)
+        self.assertTrue(ctx.check_hostname)
+
+
+class GameFolderHintTests(unittest.TestCase):
+    def test_parent_and_child_folders_point_to_the_real_game_folder(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            game = root / 'StellaSora_EN'
+            (game / 'StellaSora_Data').mkdir(parents=True)
+            (game / 'StellaSora.exe').write_bytes(b'MZ')
+            self.assertEqual(find_game_exe_hint(root), game)                       # picked the parent
+            self.assertEqual(find_game_exe_hint(game / 'StellaSora_Data'), game)   # picked a sub-folder
+            self.assertIsNone(find_game_exe_hint(root / 'nowhere'))
 
 
 class ProbeTests(unittest.TestCase):
@@ -505,6 +602,35 @@ class MainWindowFlowTests(unittest.TestCase):
         self.win.show_unhandled(KeyError('boom'))
         self.assertEqual(self.last_code(), 'E-INTERNAL')
         self.assertIn('KeyError', self.shown[-1].report.text)
+
+
+    def test_local_payload_problem_has_its_own_code_and_the_right_fix(self):
+        empty = self.tmp / 'payload'
+        empty.mkdir()
+        self.win.config_manager.set('payload_path', str(empty))
+        state = self.win._refresh_translation_state()
+        self.assertEqual(state['blocker_code'], 'E-LOCAL-PAYLOAD')
+        self.assertFalse(state['can_install'])
+        self.assertEqual(self.win.overview_view.install_blocker_code(), 'E-LOCAL-PAYLOAD')
+        self.win._explain_install_blocker()
+        report = self.shown[-1].report
+        self.assertEqual(report.code, 'E-LOCAL-PAYLOAD')
+        self.assertIn('Gói cục bộ', ' '.join(report.steps))
+        self.assertIn(str(empty), report.message)
+
+    def test_picking_the_parent_folder_says_where_the_game_really_is(self):
+        self.win.active_operation_id = 'op3'
+        self.win.operation_kind = 'select_root'
+        self.win._finish('op3', True, {'game': GameInfo(installed=False, game_path=self.tmp)})
+        self.assertEqual(self.last_code(), 'E-NO-EXE')
+        self.assertIn(str(self.game), self.shown[-1].report.summary)
+        self.assertIn('Hãy chọn thư mục đó', self.shown[-1].report.summary)
+
+    def test_no_receipt_after_restoring_original_data_is_explained(self):
+        self.win._apply_game_info(GameInfo(installed=True, game_path=self.game, official_restore={'restored_at': '2026-11-21T05:03:49+00:00'}))
+        self.win._on_verify_clicked()
+        self.assertEqual(self.last_code(), 'E-NO-RECEIPT')
+        self.assertIn('khôi phục dữ liệu gốc', self.shown[-1].report.summary)
 
 
 if __name__ == '__main__':

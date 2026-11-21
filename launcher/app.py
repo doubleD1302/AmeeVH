@@ -4,14 +4,19 @@ import argparse, logging, logging.handlers, os, sys, traceback
 from pathlib import Path
 
 def main():
-    parser = argparse.ArgumentParser(description='Stella Sora Việt Hóa launcher v1.3.3')
+    parser = argparse.ArgumentParser(description='Stella Sora Việt Hóa launcher v1.3.4')
     parser.add_argument('--app-data-dir', type=Path, help='Explicit writable config/log/backup/cache directory')
     parser.add_argument('--resource-dir', type=Path, help='Explicit development resource override')
     parser.add_argument('--apply-update', type=Path, help=argparse.SUPPRESS)
     parser.add_argument('--smoke', action='store_true', help='Validate bootstrap and exit 0')
+    parser.add_argument('--tls-check', action='store_true', help=argparse.SUPPRESS)
     args, _ = parser.parse_known_args()
     if args.smoke:
         print('OK: SMOKE TEST PASSED')
+        return 0
+    if args.tls_check:
+        from launcher.core import tls
+        print(tls.info())
         return 0
     if args.apply_update:
         from launcher.core.self_update import apply_job
@@ -59,6 +64,11 @@ def main():
         format='%(asctime)s [%(levelname)s] %(name)s %(message)s',
         handlers=[log_handler],
     )
+    try:
+        from launcher.core import tls
+        tls.install()   # Windows store + certifi roots, so api.github.com works on PCs missing a root
+    except Exception:
+        logging.getLogger('launcher').exception('Could not install the fallback CA bundle')
     register_fonts(pm.resource_dir)
     app.setFont(font(15))
     AssetManager.initialize(pm.resource_dir)

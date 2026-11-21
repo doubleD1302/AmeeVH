@@ -116,6 +116,10 @@ _add('E-CONFIG-SAVE', 'Không lưu được cấu hình launcher',
      ['Kiểm tra ổ C: còn dung lượng trống.',
       'Tắt tạm phần mềm diệt virus/"Controlled folder access" của Windows Defender rồi thử lại.',
       'Chạy launcher bằng quyền Quản trị một lần.', _SEND])
+_add('E-LOCAL-PAYLOAD', 'Gói bản dịch cục bộ không dùng được',
+     'Trong Cài đặt đang có đường dẫn "Gói cục bộ", nên launcher bỏ qua GitHub và chỉ đọc bản dịch từ thư mục đó. Thư mục này không có tệp patch_manifest.json hợp lệ (hoặc tệp quá lớn/hỏng) nên không cài được.',
+     ['Nếu bạn không chủ ý dùng gói cục bộ: mở Cài đặt, xoá trống ô "Gói cục bộ" rồi bấm Lưu. Launcher sẽ tự tải bản dịch từ GitHub.',
+      'Nếu bạn đang dùng gói cục bộ: chọn đúng thư mục chứa patch_manifest.json cùng các tệp bản dịch đi kèm.', _SEND])
 _add('E-RELEASE', 'Chưa có bản phát hành dùng được',
      'Kênh GitHub đang trỏ tới bản nháp/thử nghiệm hoặc chưa có bản phát hành chính thức nào.',
      ['Chờ người làm bản dịch công bố bản phát hành.', 'Kiểm tra Kho/Nhánh trong Cài đặt có đúng không.'], network=True)
@@ -454,7 +458,7 @@ def classify_one(exc):
     if isinstance(exc, OSError) and win in (32, 33):     # unambiguous on Windows; errno 32 would otherwise look like EPIPE
         return 'E-FILE-IN-USE'
     if isinstance(exc, urllib.error.HTTPError):
-        return http_code(exc.code)
+        return 'E-NET-PROXY' if exc.code == 407 else http_code(exc.code)
     if isinstance(exc, urllib.error.URLError):
         inner = _reason_exception(exc.reason)
         if inner is not None:

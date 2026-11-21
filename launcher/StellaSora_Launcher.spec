@@ -62,6 +62,8 @@ hiddenimports = [
     "launcher.core.error_catalog",
     "launcher.core.error_report",
     "launcher.core.net_probe",
+    "launcher.core.tls",
+    "certifi",
     "launcher.ui",
 ]
 

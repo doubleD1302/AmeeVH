@@ -6,7 +6,7 @@ from PySide6.QtCore import Qt, QThread, Signal, QTimer, QRectF, QEvent
 from PySide6.QtGui import QPainter, QColor, QGuiApplication, QLinearGradient
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QDialog, QFileDialog
 from ..core.config import LAUNCHER_VERSION, DEFAULT_GITHUB_REPO, derived_github_endpoints
-from ..core.game_detection import GameDetector, find_all_potential_game_installations, is_game_process_running
+from ..core.game_detection import GameDetector, find_all_potential_game_installations, is_game_process_running, find_game_exe_hint
 from ..core.installer import PatchInstaller
 from ..core.rollback import RollbackEngine
 from ..core.network import NetworkService
@@ -400,11 +400,13 @@ class MainWindow(QMainWindow):
             info = result['game']
             if not info.installed:
                 self.overview_view.show_progress(False)
+                hint = find_game_exe_hint(info.game_path) if info.game_path else None
                 self._show_error(
                     'Chọn thư mục game',
                     code='E-NO-EXE',
                     message='Không tìm thấy StellaSora.exe tại: ' + str(info.game_path or '(không rõ)'),
-                    extra={'thư mục vừa chọn': str(info.game_path or '')},
+                    extra={'thư mục vừa chọn': str(info.game_path or ''), 'gợi ý thư mục có StellaSora.exe': str(hint) if hint else 'không thấy'},
+                    extra_summary=('Gợi ý: tệp StellaSora.exe nằm trong thư mục ' + str(hint) + '. Hãy chọn thư mục đó.') if hint else '',
                 )
                 return
             previous = self.config_manager.get('game_path', '')
@@ -639,11 +641,13 @@ class MainWindow(QMainWindow):
         if require_receipt and not info.installed_receipt:
             receipt_file = Path(info.game_path) / '.vietnamese_patch_receipt.json'
             present = receipt_file.is_file()
+            restored = bool(getattr(info, 'official_restore', None))
             self._show_error(
                 action,
                 code='E-RECEIPT-MISMATCH' if present else 'E-NO-RECEIPT',
                 message='Tệp biên bản có trong thư mục game nhưng không dùng được.' if present else 'Không có tệp .vietnamese_patch_receipt.json trong thư mục game.',
                 extra={'tệp biên bản tồn tại': 'có' if present else 'không'},
+                extra_summary=('Bạn vừa khôi phục dữ liệu gốc của nhà phát hành nên game đang ở bản gốc, chưa có bản dịch để kiểm tra. Bấm "Cài Việt hoá" khi muốn dùng lại bản dịch.') if (restored and not present) else '',
             )
             return None
         return info.game_path
@@ -840,13 +844,13 @@ class MainWindow(QMainWindow):
                 state['translation_resource'] = local_state['translation_resource']
                 state['message'] = 'Gói cục bộ: ' + state['message']
             except Exception as exc:
-                d = diagnose(exc, fallback='E-MANIFEST-INVALID')
+                code = 'E-LOCAL-PAYLOAD'
                 state = {
                     'available': False,
                     'can_install': False,
-                    'message': 'Không đọc được bảng kê của gói cục bộ: ' + str(exc) + ' [' + d.code + ']',
-                    'blocker_code': d.code,
-                    'blocker_detail': 'Gói cục bộ: ' + str(exc),
+                    'message': lookup(code).title + ' — ' + str(exc) + ' [' + code + ']',
+                    'blocker_code': code,
+                    'blocker_detail': 'Gói cục bộ (' + str(local) + '): ' + str(exc),
                 }
         else:
             state = translation_state(self._github_sync_state, self.current_game_info)

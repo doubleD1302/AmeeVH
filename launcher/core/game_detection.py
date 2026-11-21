@@ -34,6 +34,25 @@ def canonicalize_path(p: str | Path) -> str:
         return str(p).replace("/", "\\").rstrip("\\")
 
 
+def find_game_exe_hint(chosen) -> Optional[Path]:
+    """A folder next to/inside ``chosen`` that really contains StellaSora.exe (parent or a direct child), else None.
+
+    Used to say "the game is actually in X" when the user picked the parent or a sub-folder of the game folder.
+    Bounded: looks at the parent and at most 80 direct children, never recurses.
+    """
+    try:
+        base = Path(chosen)
+        candidates = [base.parent] if base.parent != base else []
+        if base.is_dir():
+            candidates += [c for _, c in zip(range(80), (e for e in base.iterdir() if e.is_dir()))]
+        for c in candidates:
+            if (c / GAME_EXE_NAME).is_file():
+                return c
+    except OSError:
+        pass
+    return None
+
+
 def is_game_process_running() -> bool:
     """Checks whether StellaSora.exe is running on Windows with 64-bit safe HANDLE types."""
     if os.name == "nt":

@@ -155,6 +155,7 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 |---|---|---|:-:|:-:|
 | `E-CANCELLED` | Thao tác đã được huỷ | thông tin | ✓ | ✓ |
 | `E-INTERNAL` | Launcher gặp lỗi nội bộ | lỗi | ✓ | ✓ |
+| `E-LOCAL-PAYLOAD` | Gói bản dịch cục bộ không dùng được | lỗi | ✓ |  |
 | `E-MEMORY` | Máy không đủ bộ nhớ RAM | lỗi | ✓ |  |
 | `E-SHORTCUT` | Không tạo được lối tắt | cảnh báo | ✓ |  |
 | `E-UI-BLOCKED` | Yêu cầu bị chặn | lỗi |  | ✓ |
