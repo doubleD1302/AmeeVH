@@ -32,3 +32,7 @@ Thứ tự đã dùng, tránh cửa sổ launcher thấy release nửa vời (`R
 4. So digest SHA256 của từng asset với `SHA256SUMS.txt`, rồi mới công khai (`draft:false`, `make_latest`).
 5. Mô phỏng người dùng cũ: `NetworkService.check_for_updates('1.3.1')` phải trả `has_update` + URL tải + sha; `sync_channel` phải báo bản Việt hóa mới.
 6. Cuối cùng mới commit/push `launcher/notifications.json` và `web/index.html` (link tải).
+
+## Bản chỉ đổi launcher (ví dụ v1.3.3, 2026-11-21)
+
+Khi bản dịch không đổi, giữ nguyên `patch_manifest.json` và `android_patch_manifest.json` (không đổi `version`, `release_tag`, URL). Đổi `release_tag` làm đổi `manifest_sha256` và launcher sẽ hỏi mọi người cài lại cùng một bản dịch. Release mới vẫn phải mang đủ 10 asset vì launcher gắn gói ảnh `.zip` theo release mới nhất. Dùng `tools/release_v133.py draft | verify | publish` (token từ `.secrets/`, bản nháp trước, so digest rồi mới công khai).
