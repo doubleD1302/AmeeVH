@@ -51,6 +51,10 @@ Ví dụ khung lệnh (điền đúng hash/path/ID của snapshot, không copy g
 - Các định dạng/mipmap có trong catalog không đồng nghĩa đã được thử thành công bằng asset native tương ứng. Phạm vi native pilot xác minh là BC7 mip1; không gọi toàn bộ Alpha8/DXT/mip-chain đã đạt.
 - Đây là texture PC; không áp bundle PC/BC7 lên Android rồi kết luận tương thích.
 
+## Định tuyến `InstallResource` vs `Persistent_Store` trên Yostar PC
+
+Khi bundle Việt hóa đã nằm trong `Persistent_Store/AssetBundles/` nhưng game vẫn hiển thị bản EN gốc (xảy ra khi MD5 trong `ss_win.mani` trùng với `install_resource_manifest.mani` hoặc lệch `file_versions.dat`), xem hướng dẫn và quy trình 2 mức an toàn không đụng `InstallResource` tại [INSTALLRESOURCE_PRECEDENCE_AND_ROUTING.md](INSTALLRESOURCE_PRECEDENCE_AND_ROUTING.md) và dùng `tools/sync_persistent_texture_routing.py`.
+
 ## Dữ liệu tiếp tục
 
 Trong `work/textures/texture_vi_20261020_r01/` có `bundle_inventory.json`, `texture_catalog.json`, `texture_queue_r01.json`, ảnh trích, contact sheets, proposal r01/r02, ảnh imagegen raw/native, prompt trong `image_candidates_r01.json`, ảnh readback và bảng đối chiếu trước/sau.

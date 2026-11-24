@@ -60,3 +60,7 @@ Tiêu chí nghiệm thu của Gate:
    - `14740000.1`: *Giai Điệu Seraphim*
 3. Xác nhận chuỗi giao diện (`Bỏ qua đoạn cốt truyện này?`, `Nhận tất cả`...).
 4. Kiểm tra mã băm SHA256 giữa file nguồn trong `dist/` và file đích trong tất cả thư mục game thực tế phải trùng khớp 100%. Nếu có sai lệch, tiến trình build phải bị hủy ngay lập tức.
+
+### Invariant 5: Bảo vệ vùng cấm `InstallResource` & Kiểm tra Định tuyến Texture `Persistent_Store`
+* **TUYỆT ĐỐI KHÔNG** sửa, ghi đè hay xóa bất kỳ tệp nào trong `StellaSora_Data/` hoặc `StellaSora_Data/StreamingAssets/InstallResource/`.
+* Nếu một bundle texture `.en.unity3d` đã triển khai vào `Persistent_Store/AssetBundles/` nhưng bị che do MD5 trong `Persistent_Store/ss_win.mani` trùng `install_resource_manifest.mani` hoặc lệch `file_versions.dat`, chỉ xử lý qua `tools/sync_persistent_texture_routing.py` (`--status`, `--mode file-versions-only`, hoặc `--mode persistent-override` kèm `--restore` trước khi cập nhật game). Xem chi tiết tại [INSTALLRESOURCE_PRECEDENCE_AND_ROUTING.md](INSTALLRESOURCE_PRECEDENCE_AND_ROUTING.md).
