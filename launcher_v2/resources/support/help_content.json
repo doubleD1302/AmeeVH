@@ -1,0 +1,312 @@
+{
+  "schema": 1,
+  "version": "2.0.0",
+  "sections": [
+    {
+      "id": "start",
+      "topic": "start",
+      "title": "Bắt đầu",
+      "subtitle": "Chuẩn bị trước khi cài bản dịch.",
+      "current": 1,
+      "keywords": [
+        "bắt đầu",
+        "dò tìm",
+        "chọn thư mục",
+        "cài việt hóa",
+        "kiểm tra tệp"
+      ],
+      "steps": [
+        {
+          "title": "Đóng game và chọn thư mục",
+          "detail": "Thoát Stella Sora. Trên Tổng quan, bấm Dò tìm trong ô đường dẫn để tự tìm game. Nếu có nhiều bản cài, chọn đúng bản Steam hoặc Yostar bạn đang chơi."
+        },
+        {
+          "title": "Cài bản dịch từ GitHub",
+          "detail": "Bấm Cài Việt hoá và kiểm tra lại đường dẫn. Launcher tải gói từ GitHub, xác thực mã SHA256 và tự tạo bản sao lưu trước khi ghi tệp. Chờ thông báo hoàn tất, không đóng launcher giữa chừng."
+        },
+        {
+          "title": "Kiểm tra và mở game",
+          "detail": "Sau khi cài xong, bấm Kiểm tra tệp để đối chiếu các tệp đã cài, rồi bấm Chơi game. Nếu chữ chưa đổi hoặc gặp lỗi, bấm Kiểm tra lỗi ở thanh trên hoặc xem mục Câu hỏi thường gặp."
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "topic": "install",
+      "title": "Cài Việt hoá",
+      "subtitle": "Chọn đúng thư mục game trước khi xác nhận.",
+      "current": 2,
+      "keywords": [
+        "cài đặt",
+        "đường dẫn",
+        "StellaSora.exe",
+        "sao lưu",
+        "sha256",
+        "gói ngoại tuyến"
+      ],
+      "steps": [
+        {
+          "title": "Kiểm tra đường dẫn gốc",
+          "detail": "Thư mục đúng là nơi chứa StellaSora.exe, không phải thư mục con StellaSora_Data hay thư mục tải bản dịch. Dùng nút Dò tìm hoặc Chọn... để chọn thủ công."
+        },
+        {
+          "title": "Tải và xác thực gói tương thích",
+          "detail": "Launcher lấy bản dịch từ kho GitHub đang cấu hình (hoặc gói cục bộ trong Cài đặt). Nếu gói không khớp phiên bản game, thao tác sẽ dừng và báo rõ lý do."
+        },
+        {
+          "title": "Giữ nguyên bản sao lưu",
+          "detail": "Bản sao lưu và nhật ký cài đặt được lưu trong thư mục dữ liệu của launcher. Hãy giữ chúng để có thể Khôi phục gốc hoặc Phục hồi cài đặt dang dở khi cần."
+        }
+      ]
+    },
+    {
+      "id": "update",
+      "topic": "update",
+      "title": "Cập nhật bản dịch",
+      "subtitle": "Bản dịch và launcher có lịch cập nhật riêng.",
+      "current": 2,
+      "keywords": [
+        "cập nhật",
+        "lưu & đồng bộ",
+        "tìm bản mới",
+        "cài đặt",
+        "yostar"
+      ],
+      "steps": [
+        {
+          "title": "Đồng bộ dữ liệu mới nhất",
+          "detail": "Mở Cài đặt và bấm Lưu & Đồng bộ để tải lại thông báo và kiểm tra bản phát hành trên GitHub. Cần kết nối Internet để nhận dữ liệu mới."
+        },
+        {
+          "title": "Cập nhật bản dịch trong game",
+          "detail": "Đóng game rồi bấm Cập nhật Việt hoá trên Tổng quan. Launcher đọc gói mới nhất từ GitHub và chỉ cập nhật các tệp được công bố."
+        },
+        {
+          "title": "Cập nhật chính launcher",
+          "detail": "Bấm Tìm bản mới trên Tổng quan. Launcher tự kiểm tra chữ ký SHA256, tải bản mới và khởi chạy lại trực tiếp, không làm mất cấu hình hay bản sao lưu cũ."
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "topic": "restore",
+      "title": "Khôi phục bản gốc",
+      "subtitle": "Đưa các tệp game về nguyên bản tiếng Anh.",
+      "current": 3,
+      "keywords": [
+        "khôi phục gốc",
+        "yostar",
+        "công cụ",
+        "quét nhật ký",
+        "phục hồi"
+      ],
+      "steps": [
+        {
+          "title": "Đóng game và chọn đúng bản cài",
+          "detail": "Chọn đúng thư mục Steam hoặc Yostar cần khôi phục. Launcher không dùng nhầm bản sao lưu của thư mục game khác."
+        },
+        {
+          "title": "Khôi phục từ sao lưu hoặc máy chủ Yostar",
+          "detail": "Bấm Khôi phục gốc trên Tổng quan để trả tệp về bản sao lưu cục bộ. Nếu bản sao lưu không còn khớp do game vừa cập nhật, vào Công cụ → Tải lại bản gốc từ Yostar để tải dữ liệu sạch từ nhà phát hành."
+        },
+        {
+          "title": "Xử lý khi lần cài bị ngắt giữa chừng",
+          "detail": "Mở Công cụ → Phục hồi cài đặt dang dở → Quét nhật ký để hoàn tác an toàn các tệp đã ghi dở trước khi cài lại."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-detect",
+      "topic": "install",
+      "keywords": [
+        "dò tìm",
+        "không thấy game",
+        "chọn",
+        "steam",
+        "yostar",
+        "StellaSora_Data"
+      ],
+      "question": "Bấm Dò tìm nhưng không thấy game thì làm sao?",
+      "answer": "Bấm Chọn... để chọn thủ công thư mục chứa StellaSora.exe. Nếu lỡ chọn thư mục con như StellaSora_Data, hãy quay lên một cấp (hoặc bấm gợi ý đổi thư mục gốc của launcher)."
+    },
+    {
+      "id": "faq-multi-install",
+      "topic": "install",
+      "keywords": [
+        "steam",
+        "yostar",
+        "hai bản",
+        "chọn bản nào",
+        "4813850"
+      ],
+      "question": "Máy có cả bản Steam và Yostar thì chọn bản nào?",
+      "answer": "Chọn đúng bản bạn mở để chơi. Mỗi bản cài có đường dẫn và bản sao lưu riêng; launcher hỗ trợ chuyển qua lại giữa hai bản mà không chép chéo tệp."
+    },
+    {
+      "id": "faq-missing-receipt",
+      "topic": "restore",
+      "keywords": [
+        "kiểm tra tệp",
+        "khôi phục gốc",
+        "thiếu biên bản",
+        "tải lại bản gốc từ yostar"
+      ],
+      "question": "Vì sao Kiểm tra tệp hoặc Khôi phục gốc báo thiếu biên bản?",
+      "answer": "Hai nút này cần biên bản từ lần cài bằng launcher. Nếu trước đó bạn cài thủ công hoặc bằng công cụ khác, hãy chọn đúng thư mục game hoặc dùng mục Công cụ → Tải lại bản gốc từ Yostar."
+    },
+    {
+      "id": "faq-game-running",
+      "topic": "install",
+      "keywords": [
+        "đang chạy",
+        "thoát game",
+        "StellaSora.exe",
+        "đóng game"
+      ],
+      "question": "Game đang chạy thì có cài bản dịch được không?",
+      "answer": "Không, hãy thoát Stella Sora trước để tránh khóa tệp. Nếu đã thoát mà launcher vẫn báo đang chạy, chờ vài giây rồi bấm Dò tìm lại hoặc dùng nút Đóng game đang chạy trong hộp thoại Kiểm tra lỗi."
+    },
+    {
+      "id": "faq-manifest-rejected",
+      "topic": "install",
+      "keywords": [
+        "từ chối",
+        "sha256",
+        "không khớp phiên bản",
+        "kiểm tra lỗi"
+      ],
+      "question": "Vì sao gói bản dịch bị từ chối hoặc báo lỗi mạng?",
+      "answer": "Có thể game vừa cập nhật phiên bản mới, tệp tải về chưa khớp SHA256, hoặc mạng chặn GitHub / lỗi DNS. Hãy mở Kiểm tra lỗi để chạy kiểm tra kết nối & DNS, hoặc vào Cài đặt bấm Lưu & Đồng bộ rồi thử lại."
+    },
+    {
+      "id": "faq-offline",
+      "topic": "install",
+      "keywords": [
+        "không có internet",
+        "ngoại tuyến",
+        "gói cục bộ",
+        "zip",
+        "manifest"
+      ],
+      "question": "Không có Internet thì launcher có dùng được không?",
+      "answer": "Bạn vẫn xem được thông báo đã lưu, chọn thư mục game và dùng hình nền dự phòng có sẵn. Nếu đã tải sẵn gói ngoại tuyến, hãy chọn gói trong Cài đặt → Gói cài đặt từ máy (ngoại tuyến); gói vẫn được kiểm tra SHA256 trước khi cài."
+    },
+    {
+      "id": "faq-launcher-vs-patch",
+      "topic": "update",
+      "keywords": [
+        "cập nhật launcher",
+        "cập nhật bản dịch",
+        "tìm bản mới",
+        "phiên bản"
+      ],
+      "question": "Cập nhật launcher có giống cập nhật bản dịch không?",
+      "answer": "Không. Tìm bản mới chỉ cập nhật ứng dụng launcher; Cài/Cập nhật Việt hoá thay đổi tệp ngôn ngữ trong game. Số phiên bản của hai phần độc lập nhau."
+    },
+    {
+      "id": "faq-game-update",
+      "topic": "update",
+      "keywords": [
+        "game cập nhật",
+        "tự hoàn nguyên",
+        "yostar",
+        "steam",
+        "bản vá"
+      ],
+      "question": "Khi game có bản cập nhật chính thức từ Yostar / Steam thì làm gì?",
+      "answer": "Nên khôi phục bản gốc trước khi trình cập nhật của Yostar/Steam chạy để tránh lỗi kiểm tra tệp. Bạn có thể bật sẵn mục Tự hoàn nguyên bản gốc trước khi game cập nhật trong Cài đặt, hoặc dùng Công cụ → Tải lại bản gốc từ Yostar."
+    },
+    {
+      "id": "faq-verify-scope",
+      "topic": "restore",
+      "keywords": [
+        "kiểm tra tệp",
+        "toàn bộ game",
+        "steam",
+        "yostar"
+      ],
+      "question": "Kiểm tra tệp có kiểm tra toàn bộ game không?",
+      "answer": "Nút Kiểm tra tệp chỉ đối chiếu SHA256 của các tệp Việt hoá đã cài. Để kiểm tra toàn bộ tệp game gốc, hãy dùng tính năng Verify integrity của Steam hoặc Repair của Yostar Launcher."
+    },
+    {
+      "id": "faq-not-vietnamese",
+      "topic": "install",
+      "keywords": [
+        "chưa hiện tiếng việt",
+        "kiểm tra tệp",
+        "sai thư mục"
+      ],
+      "question": "Cài xong nhưng vào game chưa thấy tiếng Việt?",
+      "answer": "Kiểm tra lại xem bạn có mở đúng bản Steam hoặc Yostar vừa cài không, sau đó bấm Kiểm tra tệp để xác nhận các tệp .arcx đã được nạp đúng."
+    },
+    {
+      "id": "faq-anticheat",
+      "topic": "start",
+      "keywords": [
+        "anti-cheat",
+        "anticheatexpert",
+        "khóa tài khoản",
+        "ban",
+        "an toàn"
+      ],
+      "question": "Cài Việt hoá có bị Anti-cheat phát hiện hoặc khóa tài khoản không?",
+      "answer": "Không. Hệ thống chống gian lận (AntiCheatExpert) bảo vệ game khỏi phần mềm can thiệp bộ nhớ RAM hoặc sửa tệp thực thi (.exe/.dll). Bản Việt hoá chỉ thay thế dữ liệu hiển thị văn bản và hình ảnh trong thư mục tài nguyên, nên không ảnh hưởng tới tài khoản."
+    },
+    {
+      "id": "faq-graphics-compat",
+      "topic": "start",
+      "keywords": [
+        "lỗi hiển thị",
+        "trắng màn hình",
+        "máy yếu",
+        "đồ họa",
+        "tương thích",
+        "cpu",
+        "giảm hiệu ứng"
+      ],
+      "question": "Launcher bị lỗi hiển thị, giật lag hoặc không mở được trên máy cấu hình yếu?",
+      "answer": "Vào Cài đặt → Hiển thị & Hình nền để chuyển Chế độ đồ họa sang Tương thích (CPU) và bật Giảm hiệu ứng chuyển động. Nếu launcher từng tự thoát do lỗi đồ họa, lần mở tiếp theo sẽ tự chuyển sang chế độ tương thích an toàn."
+    },
+    {
+      "id": "faq-migration-r02",
+      "topic": "update",
+      "keywords": [
+        "v1.3.4",
+        "di trú",
+        "sao lưu cũ",
+        "StellaSora_Launcher_Candidate_r02",
+        "StellaSora_VietHoa_Launcher"
+      ],
+      "question": "Nâng cấp từ v1.3.4 lên v2.0 có bị mất cấu hình hay bản sao lưu cũ không?",
+      "answer": "Không. Khi mở v2.0 lần đầu, launcher tự động chuyển cấu hình, bản sao lưu và nhật ký cài đặt từ thư mục cũ (StellaSora_Launcher_Candidate_r02) sang thư mục mới (StellaSora_VietHoa_Launcher) mà không xóa dữ liệu cũ."
+    },
+    {
+      "id": "faq-report-bug",
+      "topic": "restore",
+      "keywords": [
+        "báo lỗi",
+        "sao chép báo cáo",
+        "chẩn đoán",
+        "công cụ",
+        "github"
+      ],
+      "question": "Gửi thông tin lỗi ở đâu?",
+      "answer": "Vào Công cụ → Kiểm tra hệ thống & Mạng → Sao chép báo cáo (hoặc bấm nút Sao chép báo lỗi ngay trong hộp thoại Kiểm tra lỗi). Launcher tự ẩn thông tin cá nhân nhạy cảm trước khi sao chép; hãy gửi kèm ảnh chụp qua kênh hỗ trợ của dự án."
+    },
+    {
+      "id": "faq-free-support",
+      "topic": "start",
+      "keywords": [
+        "miễn phí",
+        "ủng hộ",
+        "tạm đóng",
+        "lừa đảo",
+        "mua bán"
+      ],
+      "question": "Có phải ủng hộ mới được tải bản Việt hoá không?",
+      "answer": "Không. Bản Việt hóa Stella Sora luôn hoàn toàn miễn phí (cho đến khi hết kinh phí duy trì). Hiện chức năng Ủng hộ cũng đang tạm đóng và không liên quan đến quyền tải, cài đặt hay cập nhật bản dịch."
+    }
+  ]
+}

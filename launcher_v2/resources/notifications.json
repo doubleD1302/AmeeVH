@@ -1,0 +1,216 @@
+{
+  "version": "2.0.0",
+  "updated_at": "2026-11-25",
+  "announcements": [
+    {
+      "id": "NOTIF-037",
+      "date": "2026-11-25",
+      "title": "Bản cập nhật v2.0.0: PC Launcher v2.0 Mới, Dịch Lại Toàn Bộ Cốt Truyện Light Novel, 105 Gói Ảnh & Sửa Lỗi Chiêu Mộ",
+      "type": "release",
+      "content": "Bản cập nhật lớn so với v1.3.4 gồm 4 nâng cấp chính:\n• PC Launcher v2.0.0 mới (~45 MB): giao diện mới sắc nét ở mọi mức phóng to màn hình (100%–200%), tự động đồng bộ hình nền Official Launcher (có dự phòng khi mất mạng), tải gói song song hiển thị tốc độ/thời gian còn lại và trợ lý chẩn đoán & sửa lỗi 1 chạm. Người dùng v1.3.4 bấm cập nhật trực tiếp trong app, tự động giữ nguyên cấu hình, bản sao lưu và nhật ký cũ.\n• Dịch lại toàn bộ cốt truyện theo giọng Light Novel chuẩn thuật ngữ: làm mới Cốt truyện chính (Chương 3–9), toàn bộ 12 Cốt truyện Sự kiện (kèm bản hiệu đính mới trên TramVH của Antithesis & Crim), Thời Báo Nova, 42/42 tuyến truyện riêng Tuần du giả, tin nhắn điện thoại, kịch bản ký ức (CG), NPC Cự Tháp và Đĩa nhạc.\n• Dựng lại 105 gói ảnh Việt hóa (747 ảnh) trên cả PC và Android theo nền 2.1.0, làm sạch nền và giữ nguyên bản gốc Danh hiệu để hiển thị rõ nét.\n• Sửa lỗi dư chữ \"Mảnh\" trước tên 42 Tuần du giả ở mục Chiêu mộ.\nLauncher Android giữ nguyên bản v1.3.3 — chỉ cần mở app bấm cập nhật bản dịch để tải gói dữ liệu 2.0.0 mới nhất."
+    },
+    {
+      "id": "NOTIF-036",
+      "date": "2026-11-21",
+      "title": "Bản cập nhật v1.3.4: Launcher PC Có Bộ Chứng Chỉ Dự Phòng Để Đọc Được GitHub, Gợi Ý Khi Chọn Nhầm Thư Mục Game",
+      "type": "release",
+      "content": "Launcher PC thêm bộ chứng chỉ bảo mật dự phòng để đọc được GitHub trên máy Windows thiếu chứng chỉ gốc (lỗi E-NET-TLS-CERT khiến nút Cài bị xám). Báo lỗi \"Gói cục bộ\" nay chỉ đúng cách sửa, và khi chọn nhầm thư mục game, launcher gợi ý thư mục có StellaSora.exe. Launcher Android giữ nguyên bản 1.3.3; bản dịch giữ nguyên."
+    },
+    {
+      "id": "NOTIF-035",
+      "date": "2026-11-21",
+      "title": "Bản cập nhật v1.3.3: Thông Báo Lỗi Dễ Hiểu, Mã Lỗi Và Nút Sao Chép Cho Launcher PC & Android",
+      "type": "release",
+      "content": "Launcher PC và Android viết lại toàn bộ thông báo lỗi bằng tiếng Việt dễ hiểu, kèm mã lỗi và các bước xử lý cụ thể. Có thêm nút Sao chép mã lỗi để gửi báo cáo chẩn đoán cho người hỗ trợ; khi nút Cài bị xám, launcher hiện rõ lý do (mất mạng, lỗi DNS, GitHub bị chặn, chưa chọn game…). Bản dịch giữ nguyên, không cần cài lại."
+    },
+    {
+      "id": "NOTIF-034",
+      "date": "2026-11-20",
+      "title": "Bản cập nhật v1.3.2: Sửa Lỗi Giọng Nhân Vật & Cốt Truyện Sự Kiện, Việt Hóa Lại Toàn Bộ Event Mới, Khôi Phục Gốc Tự Tải",
+      "type": "release",
+      "content": "Sửa lỗi nhân vật mất giọng ở màn hình chính và màn hình cốt truyện sự kiện hiện vòng tròn trắng kèm chữ Trung; dựng lại 8 gói ảnh và sửa các mã Story trong dữ liệu. Toàn bộ Event mới được dịch lại, Chương 10 và Chương 0 được bổ sung. Nút Khôi phục trên launcher PC nay tự tải dữ liệu gốc mới nhất từ nhà phát hành và nhắc khôi phục khi game có bản cập nhật. Cảm ơn NoOne đã báo lỗi và Antithesis đã dịch lại toàn bộ Event mới! Mở launcher và bấm cập nhật để nhận bản mới."
+    },
+    {
+      "id": "NOTIF-033",
+      "date": "2026-11-19",
+      "title": "Bản cập nhật Android v1.3.2: Sửa lối tắt Gỡ lỗi không dây",
+      "type": "release",
+      "content": "Nút Mở Gỡ lỗi không dây trong Kết nối nhanh Local ADB ưu tiên vào thẳng trang gỡ lỗi qua Wi-Fi. Khi hệ thống không hỗ trợ mở thẳng, launcher mở Tùy chọn nhà phát triển và đưa bạn đến mục Gỡ lỗi không dây nếu máy hỗ trợ."
+    },
+    {
+      "id": "NOTIF-032",
+      "date": "2026-11-18",
+      "title": "Bản cập nhật v1.3.1: Việt Hóa Chương 0–2 Light Novel & Tối Ưu Bộ Đôi Launcher",
+      "type": "release",
+      "content": "Bản địa hóa lại toàn bộ Chương Mở đầu, Chương 1 và Chương 2 từ nguồn tiếng Anh theo văn phong Light Novel chuẩn bảng thuật ngữ; đồng bộ gói dữ liệu Chương 9.5. Nâng cấp Launcher PC & Android v1.3.1: tự cập nhật an toàn khi khóa tệp, sửa lối tắt tiếng Việt, dò tìm Steam/Yostar, tăng tốc Local ADB trên Android, hỗ trợ tải tiếp HTTP và kết nối nhanh 1 chạm."
+    },
+    {
+      "id": "NOTIF-031",
+      "date": "2026-11-16",
+      "title": "Bản vá dữ liệu v1.3.0 (16/11): Đồng Bộ Danh Hiệu Quán Quân Sinh Tồn",
+      "type": "release",
+      "content": "Đồng bộ tên vật phẩm danh hiệu Quán Quân Sinh Tồn Mùa 18–30 khớp với mô tả trong game và hoàn tất thẩm định QA cho toàn bộ bảng dữ liệu 2.1.0. Mở launcher và bấm cập nhật bản dịch để nhận bản mới."
+    },
+    {
+      "id": "NOTIF-030",
+      "date": "2026-11-15",
+      "title": "Bản vá ảnh v1.3.0: Sửa Lỗi Banner Và Tab Bị Trắng Sau Hotfix (PC & Android)",
+      "type": "release",
+      "content": "Dựng lại các gói ảnh Việt hóa trên bản chính thức của hotfix, khôi phục banner sự kiện, banner gacha và tab bị hiện trắng, áp dụng cho cả PC và Android. Ảnh mới chưa dịch tạm hiển thị tiếng Anh. Mở launcher và bấm cập nhật bản dịch để nhận gói ảnh mới."
+    },
+    {
+      "id": "NOTIF-029",
+      "date": "2026-11-15",
+      "title": "Bản vá dữ liệu v1.3.0: Sửa Kẹt Màn Hình Chiêu Mộ & Hỗ Trợ Hotfix Game 2611141949",
+      "type": "release",
+      "content": "Dựng lại bảng dữ liệu và kịch bản trên bản chính thức của hotfix 2611141949, sửa lỗi kẹt ở màn hình Chiêu Mộ. Việt hóa bổ sung các dòng thoại còn thiếu của chương 16–19 cùng một số chuỗi giao diện. Mở launcher và bấm cập nhật bản dịch để nhận bản mới."
+    },
+    {
+      "id": "NOTIF-028",
+      "date": "2026-11-14",
+      "title": "Bản cập nhật v1.3.0: Tương Thích Game 2.1.0 & Củng Cố Tự Động Cập Nhật",
+      "type": "release",
+      "content": "Cập nhật dữ liệu bản dịch cho game 2.1.0. Cải thiện cơ chế tự cập nhật launcher khi tệp đang bị khóa, đồng bộ phiên bản Android và trang web tải xuống."
+    },
+    {
+      "id": "NOTIF-027",
+      "date": "2026-11-08",
+      "title": "Bản cập nhật v1.2.2: Cập Nhật Thông Tin Đội Ngũ & Trang Tải Xuống",
+      "type": "release",
+      "content": "Cập nhật phần ghi công của đội ngũ Việt hóa trong launcher, tạm dừng mục ủng hộ và đồng bộ liên kết tải xuống lên phiên bản 1.2.2."
+    },
+    {
+      "id": "NOTIF-026",
+      "date": "2026-11-07",
+      "title": "Bản cập nhật v1.2.1: Sửa Lỗi Tải & Thay Thế Tệp, Dọn Tệp Tạm",
+      "type": "release",
+      "content": "Sửa lỗi tải và thay thế tệp khi cài bản dịch, tự dọn các tệp tạm sau khi cài đặt xong và cải thiện bố cục của khung thông báo cập nhật."
+    },
+    {
+      "id": "NOTIF-025",
+      "date": "2026-10-30",
+      "title": "Bản cập nhật v1.2.0: Tương Thích Bản Vá Game 2.0.1 & Bổ Sung Nội Dung Mới",
+      "type": "release",
+      "content": "Cập nhật tương thích bản vá 2.0.1 của game. Việt hóa bổ sung trang phục Chitose, Quỹ Khởi Nghiệp Mùa 13, cơ chế Boss tính điểm và giao diện mới. Giữ nguyên toàn bộ 88 bản vá hệ thống và sửa lỗi mạng của nhà phát hành."
+    },
+    {
+      "id": "NOTIF-024",
+      "date": "2026-10-29",
+      "title": "Bản cập nhật v1.1.0: Đại Tu Toàn Diện 3 Giai Đoạn, Chuẩn Hóa Thuật Ngữ & Cốt Truyện",
+      "type": "release",
+      "content": "Sửa triệt để các lỗi kỹ thuật (thẻ màu, cờ tạm PENDING, chuỗi tiếng Anh sót). Chuẩn hóa đồng bộ Master Glossary: Cự Tháp, Du Hành Giả Toàn Năng, Tháng Messis, Hồn Thạch, Di Vật, Ân Tứ; tách biệt danh xưng Sếp với Thủ Lĩnh/Trùm; trau chuốt văn phong Light Novel và loại bỏ thể bị động lạm dụng."
+    },
+    {
+      "id": "NOTIF-023",
+      "date": "2026-10-29",
+      "title": "Bản cập nhật v1.0.9: Khắc Phục Triệt Để Xưng Hô Cốt Truyện & Dữ Liệu Nhân Vật Nữ",
+      "type": "release",
+      "content": "Loại bỏ hoàn toàn các câu thoại xưng hô 'anh' áp đặt lên nhân vật chính trong cốt truyện chính tuyến, sự kiện hẹn hò, trang phục và thoại tương tác. Đảm bảo trải nghiệm nhập vai trung tính hoàn hảo cho người chơi chọn nhân vật nữ."
+    },
+    {
+      "id": "NOTIF-022",
+      "date": "2026-10-29",
+      "title": "Bản cập nhật v1.0.8: Chuẩn Hóa Thuật Ngữ & Khắc Phục Xưng Hô Nhân Vật Nữ",
+      "type": "release",
+      "content": "Sửa triệt để lỗi bất nhất trong xưng hô anh/chị hướng tới người chơi, đảm bảo trải nghiệm nhập vai trọn vẹn cho cả nhân vật nam và nữ trên Android và PC. Đồng bộ hóa toàn bộ thuật ngữ hệ nguyên tố, tên nhân vật, vật phẩm và di vật trong game."
+    },
+    {
+      "id": "NOTIF-021",
+      "date": "2026-10-28",
+      "title": "Bản cập nhật v1.0.7: Khôi Phục Texture Gốc Danh Hiệu, SKIP & Tối Ưu Chiêu Mộ",
+      "type": "release",
+      "content": "Khôi phục nguyên bản 100% texture gốc tiếng Anh cho toàn bộ 360+ Danh hiệu (Honor Titles), nút 'SKIP' và banner chiêu mộ kiếm 20162 / 1 Năm. Khắc phục triệt để lỗi kẹt vào giao diện Chiêu Mộ (Gacha) trên PC và nạp đầy đủ 606 hình ảnh Việt hóa chuẩn ASTC cho Android."
+    },
+    {
+      "id": "NOTIF-020",
+      "date": "2026-10-28",
+      "title": "Bản cập nhật v1.0.6: Sửa Lỗi Cài Đặt APK Android & Hỗ Trợ Tạo Lối Tắt Desktop",
+      "type": "release",
+      "content": "Nâng cấp cơ chế tự động cài đặt cập nhật APK Android trực tiếp trong ứng dụng. Bổ sung tùy chọn tạo lối tắt màn hình chính (Desktop Shortcut) ngay sau khi cài đặt trên Launcher PC Windows (hỗ trợ cả OneDrive Desktop)."
+    },
+    {
+      "id": "NOTIF-019",
+      "date": "2026-10-28",
+      "title": "Bản cập nhật v1.0.5: Tối Ưu Hóa Giao Diện & Đồng Bộ Đa Nền Tảng",
+      "type": "release",
+      "content": "Cải tiến độ phân giải giao diện, khử răng cưa chữ và hình ảnh trên launcher PC. Tối ưu hóa bộ nhớ đệm và cải thiện tốc độ kiểm tra cập nhật tự động."
+    },
+    {
+      "id": "NOTIF-018",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật v1.0.4: Nâng Cấp Tự Động Cập Nhật Trực Tiếp Trong Ứng Dụng",
+      "type": "release",
+      "content": "Trang bị quy trình tự động cập nhật launcher trong ứng dụng theo quy chuẩn an toàn, loại bỏ hoàn toàn việc phải tải lại thủ công."
+    },
+    {
+      "id": "NOTIF-017",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật v1.0.3: Khắc Phục Lỗi Nạp AssetBundles & Hoàn Thiện Âm Thanh",
+      "type": "release",
+      "content": "Sửa lỗi nạp gói AssetBundles trên một số thiết bị Android cấu hình đặc thù, đồng bộ hóa 100% bảng phụ đề âm thanh chiến đấu."
+    },
+    {
+      "id": "NOTIF-016",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật 1.0.2: Đầy Đủ 95 AssetBundles Android ASTC & Tích Hợp Toàn Bộ Banner Gacha, Trang Phục",
+      "type": "release",
+      "content": "Nâng cấp gói AssetBundles cho Android lên 95 gói chuẩn ASTC nguyên bản. Tích hợp đầy đủ toàn bộ banner Gacha Cover kỷ niệm 1 năm và chiêu mộ nhân vật/đĩa, toàn bộ chữ thư pháp và hình ảnh trang phục Mall Shop, truyện tranh 4 ô cùng giao diện sự kiện."
+    },
+    {
+      "id": "NOTIF-015",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật 1.0.1: Cập Nhật 52 Banner Mới & Tối Ưu Tải Trọn Gói ZIP",
+      "type": "release",
+      "content": "Bổ sung toàn bộ 52 banner Việt hóa mới nhất (Logo, Gacha Cover, Tiêu đề sự kiện). Đồng thời tinh giản và tối ưu hóa hệ thống tải trọn gói ZIP cho cả Android và PC, sửa lỗi đối chiếu kiểm tra toàn vẹn tệp đồ họa."
+    },
+    {
+      "id": "NOTIF-014",
+      "date": "2026-10-27",
+      "title": "Bản phát hành chính thức 1.0.0: Hoàn Tất Toàn Diện Bộ Đôi Launcher & Bản Dịch",
+      "type": "release",
+      "content": "Chính thức phát hành phiên bản 1.0.0 hoàn chỉnh nhất. Ra mắt bộ đôi launcher Windows và Android Local ADB với tính năng tự cập nhật qua GitHub, bảo vệ an toàn dữ liệu game và chuẩn hóa toàn bộ thuật ngữ đĩa nhạc, kỹ năng và cốt truyện."
+    },
+    {
+      "id": "NOTIF-013",
+      "date": "2026-10-27",
+      "title": "Bản cập nhật v0.9.9: Phát Hành Launcher Chính Thức (PC & Android ADB) & Chuẩn Hóa Thuật Ngữ Toàn Diện",
+      "type": "release",
+      "content": "Chính thức phát hành bộ đôi Launcher thế hệ mới: Windows Launcher (StellaSora-Windows_v0.9.9.exe) và Android Local ADB Launcher (StellaSora-Android_v0.1.1.apk) với khả năng tự cập nhật qua GitHub và nạp bản dịch 100% an toàn. Đồng thời rà soát và chuẩn hóa 104 kỹ năng Đĩa Nhạc (Du Hành Giả Đa Năng, Tinh Vọng, Độ Khó...), khắc phục triệt để mọi lỗi dịch máy."
+    },
+    {
+      "id": "NOTIF-012",
+      "date": "2026-10-23",
+      "title": "Bản cập nhật v0.9.6: Chuẩn hóa Quy trình Texture An toàn & Xác thực Manifest",
+      "type": "release",
+      "content": "Nâng cấp tính năng đồng bộ GitHub Releases với cơ chế xác thực Manifest (patch_manifest.json), kiểm tra mã băm SHA256 từng tệp, thay thế nguyên tử (atomic replace), bảo vệ chống tràn đường dẫn (path traversal) và sao lưu preimage an toàn. Tích hợp 53 truyện tranh 4 ô màn hình chờ trong 16 AssetBundles (.en.unity3d) đã kiểm chứng 100% không cắt chữ. Các danh hiệu và banner đang chờ adapter mesh/atlas."
+    },
+    {
+      "id": "NOTIF-011",
+      "date": "2026-10-21",
+      "title": "Bản cập nhật v0.9.5: Đột phá Việt Hóa Hình Ảnh & 60 AssetBundles Đồ Họa",
+      "type": "release",
+      "content": "Chính thức kích hoạt Việt hóa hình ảnh vẽ chữ trong game (drawn-text textures / typography)! Nạp trực tiếp 493 hình ảnh tiếng Việt (100% Truyện tranh 4 ô màn hình chờ, 100% Danh hiệu nhân vật & người chơi, 79 Logo tiêu đề chương & sự kiện) vào 60 tệp AssetBundles (.en.unity3d) của cả Yostar Client và Steam PC. Phát hành kèm gói nén AssetBundles và gói thư viện ảnh tương tác HTML Gallery tra cứu trực quan."
+    },
+    {
+      "id": "NOTIF-010",
+      "date": "2026-10-21",
+      "title": "Bản cập nhật v0.9.0: Việt Hóa 100% Lời Thoại Nhân Vật & Khử Sạch Calque Chat",
+      "type": "release",
+      "content": "Việt hóa trọn bộ 4.400 mục lồng tiếng (6.658 câu thoại phụ đề VoiceTable) bao gồm bong bóng thoại màn hình chính (Alina, Noya, Amber...) và thoại chiến đấu. Khử sạch toàn bộ từ ngữ máy dịch thô cứng trong tin nhắn điện thoại (PM*.lua), đồng nhất xưng hô và chuẩn hóa tên Firstlight Noya thành Noya - Khải Minh."
+    },
+    {
+      "id": "NOTIF-009",
+      "date": "2026-10-21",
+      "title": "Bản cập nhật v0.8.0: Hoàn tất 100% Cơ sở dữ liệu & Hỗ trợ Steam PC",
+      "type": "release",
+      "content": "Đột phá lịch sử: 100% toàn bộ cơ sở dữ liệu game Stella Sora đã được Việt hóa hoàn tất (71.249 chuỗi / 229 bảng dữ liệu, 0 câu tiếng Anh sót lại). Launcher nâng cấp v0.8.0 chính thức hỗ trợ toàn diện Steam PC (AppID 4813850), tự động nhận diện thư viện Steam, chọn thư mục tự do, khởi động mượt mà với Steam Overlay & tay cầm."
+    },
+    {
+      "id": "NOTIF-001",
+      "date": "2026-10-19",
+      "title": "Ra mắt bộ công cụ Việt hóa Stella Sora (PC & Android ADB)",
+      "type": "release",
+      "content": "Chào mừng bạn đến với dự án Việt hóa Stella Sora! Phiên bản hỗ trợ cài đặt 1-chạm cho PC, hỗ trợ Android qua local ADB với thông báo nổi, tự động cập nhật qua GitHub và báo lỗi 1-chạm."
+    }
+  ]
+}
