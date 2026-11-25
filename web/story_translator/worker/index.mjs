@@ -1,6 +1,8 @@
 import { handleCollaboration, overlayChapter } from './collaboration.mjs';
 import { getGlossary, getMerge, getChapterReferences } from './sheets-source.mjs';
 const GAS = 'https://script.google.com/macros/s/AKfycbwhB90dQ5YL27wBkeXeQIoI18TZO3KXXhgwdb0iG96rqwBQUfk7ztZwGjdG_tEwElDhFw/exec';
+const GLOSSARY_NOISE_RE=/^[\s*?.!\-_,;:'"\/\\0-9()[\]{}~`@#$%^&+=<>|]+$/;
+const isGlossaryNoise=en=>{const s=String(en||'').trim();return !s||s==='!NONEED!'||s.startsWith('---')||GLOSSARY_NOISE_RE.test(s);};
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 const json=(body,status=200)=>new Response(JSON.stringify(body),{status,headers});
 async function assetJSON(env, request, path){const response=await env.ASSETS.fetch(new Request(new URL(path,request.url)));if(!response.ok)throw Error('Không tìm thấy dữ liệu.');return response.json();}
@@ -27,7 +29,32 @@ export default {
         if(request.method!=='GET'&&origin&&origin!==url.origin)return json({success:false,error:'Yêu cầu khác nguồn bị từ chối.'},403);
         if(path.startsWith('/api/collab/')||path.startsWith('/api/admin/'))return await handleCollaboration(request,env);
         if(path==='/api/save_line')return json({success:false,code:'upgrade_required',error:'Luồng lưu cũ đã đóng. Tải lại TramVH để gửi bản dịch có kiểm tra phiên bản.'},426);
-        if((path==='/api/glossary'||path==='/api/sync_glossary')&&request.method==='GET')return json({success:true,terms:await getGlossary(),source:'google_sheet'});
+        if((path==='/api/glossary'||path==='/api/sync_glossary')&&request.method==='GET'){
+            const local=await assetJSON(env,request,'/data/glossary.json');
+            const terms=Array.isArray(local)?[...local]:[...(local?.terms||[])];
+            const seenEn=new Set(terms.map(t=>String(t?.en||'').trim().toLowerCase()).filter(Boolean));
+            const seenId=new Set(terms.map(t=>String(t?.id||'').trim()).filter(Boolean));
+            const seenPair=new Set(terms.map(t=>`${String(t?.en||'').trim().toLowerCase()}\u0000${String(t?.vi||'').trim().toLowerCase()}`));
+            let source='tramvh_canonical';
+            try{
+                const sheetTerms=await getGlossary();
+                for(const t of sheetTerms){
+                    if(isGlossaryNoise(t?.en))continue;
+                    const enKey=String(t?.en||'').trim().toLowerCase();
+                    const viKey=String(t?.vi||'').trim().toLowerCase();
+                    const idKey=String(t?.id||'').trim();
+                    if(!enKey||!viKey)continue;
+                    const pairKey=`${enKey}\u0000${viKey}`;
+                    if((idKey&&seenId.has(idKey))||seenEn.has(enKey)||seenPair.has(pairKey))continue;
+                    seenEn.add(enKey);
+                    seenPair.add(pairKey);
+                    if(idKey)seenId.add(idKey);
+                    terms.push(t);
+                }
+                source='tramvh_canonical+google_sheet';
+            }catch(_){}
+            return json({success:true,terms,source});
+        }
         if(path==='/api/sheet_reference'&&request.method==='GET')return json(await getMerge(url.searchParams.get('group')));
         if(path==='/api/add_glossary_term')return json({success:false,code:'read_only',error:'Glossary trên web chỉ đọc từ Google Sheet; chưa bật ghi hai chiều.'},501);
         if(path==='/api/chapter_data'&&request.method==='GET')return json({...await chapter(env,request,url.searchParams.get('id')),collaboration_available:true});

@@ -18,6 +18,7 @@ const chapterGroups = {
     messages: 'Tin nhắn điện thoại',
     events: 'Cốt truyện sự kiện',
     memory: 'Ký ức CG',
+    game_data: 'Dữ liệu Game (UI / Kỹ năng / Vật phẩm / Hồ sơ)',
     other: 'Nội dung khác'
 };
 function groupForChapter(id) {
@@ -28,6 +29,7 @@ function groupForChapter(id) {
     if (id.startsWith('Tin_Nhan')) return 'messages';
     if (id.startsWith('Cot_Truyen_Su_Kien')) return 'events';
     if (id.startsWith('Kich_Ban_CG')) return 'memory';
+    if (id.startsWith('Du_Lieu_')) return 'game_data';
     return 'other';
 }
 

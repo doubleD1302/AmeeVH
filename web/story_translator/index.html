@@ -41,7 +41,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=1.5.0">
-    <link rel="stylesheet" href="css/glossary-groups.css?v=groups-r05">
+    <link rel="stylesheet" href="css/glossary-groups.css?v=groups-r06">
     <script>try { if (localStorage.getItem("stella_theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (_) {}</script>
     <link rel="stylesheet" href="assets/soft-sky/theme.css?v=1.4.0">
     <link rel="stylesheet" href="assets/soft-sky/theme-dark.css?v=1.4.0">
@@ -256,7 +256,7 @@
                         <button class="btn-direction" onclick="navigateLine(1)">Câu kế <span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/next.svg" alt=""></span></button>
                         <span id="counterIndicator" style="font-size:0.85rem; color:var(--text-sub); font-weight:600;">0 / 0</span>
                     </div>
-                    <button class="btn-save-glow" onclick="saveCurrentLine()">
+                    <button type="button" class="btn-save-glow" id="saveCurrentTranslation" onclick="saveCurrentLine()">
                         <span><span class="tram-icon" aria-hidden="true"><img class="tram-icon-light" src="assets/tramvh-icons-r01/svg/light/save-next.svg" alt=""><img class="tram-icon-dark" src="assets/tramvh-icons-r01/svg/dark/save-next.svg" alt=""></span> LƯU & TIẾP TỤC (Ctrl+Enter)</span>
                     </button>
                 </div>
@@ -321,8 +321,8 @@
                     <div class="glossary-brand-titles">
                         <h2 class="glossary-main-title">TỪ ĐIỂN THUẬT NGỮ</h2>
                         <div class="glossary-sub-meta">
-                            <span class="glossary-counter-badge" id="glossaryTotalBadge">322 Mục</span>
-                            <span class="glossary-sync-status-indicator" id="glossarySyncIndicator" title="Trực tiếp từ Google Sheets">● Trực tiếp</span>
+                            <span class="glossary-counter-badge" id="glossaryTotalBadge">Đang tải...</span>
+                            <span class="glossary-sync-status-indicator" id="glossarySyncIndicator" title="Dữ liệu chuẩn TramVH kết hợp Google Sheets">● Trực tiếp</span>
                         </div>
                     </div>
                 </div>
@@ -369,13 +369,15 @@
                                 <label for="selectTermCategory">Nhóm thuật ngữ</label>
                                 <div class="add-term-select-wrapper">
                                     <select id="selectTermCategory" class="add-term-select">
-                                        <option value="Nhân vật & Danh xưng">Nhân vật & Danh xưng</option>
-                                        <option value="Tổ chức & Phe phái">Tổ chức & Phe phái</option>
-                                        <option value="Thế giới & Địa lý">Thế giới & Địa lý</option>
-                                        <option value="Lore & Thuật ngữ cốt truyện" selected>Lore & Thuật ngữ cốt truyện</option>
-                                        <option value="Vật phẩm & Trang bị">Vật phẩm & Trang bị</option>
-                                        <option value="Gameplay & Giao diện">Gameplay & Giao diện</option>
-                                        <option value="Sự kiện & Thời gian">Sự kiện & Thời gian</option>
+                                        <option value="Nhân vật, NPC &amp; Xưng hô">Nhân vật, NPC &amp; Xưng hô</option>
+                                        <option value="Tổ chức &amp; Phe phái">Tổ chức &amp; Phe phái</option>
+                                        <option value="Thế giới &amp; Địa danh">Thế giới &amp; Địa danh</option>
+                                        <option value="Cốt truyện &amp; Lore" selected>Cốt truyện &amp; Lore</option>
+                                        <option value="Vật phẩm, Đĩa nhạc &amp; Trang phục">Vật phẩm, Đĩa nhạc &amp; Trang phục</option>
+                                        <option value="Kỹ năng, Tiềm năng &amp; Chiến đấu">Kỹ năng, Tiềm năng &amp; Chiến đấu</option>
+                                        <option value="Quái vật &amp; Thủ lĩnh">Quái vật &amp; Thủ lĩnh</option>
+                                        <option value="Giao diện, Chế độ &amp; Hệ thống">Giao diện, Chế độ &amp; Hệ thống</option>
+                                        <option value="Sự kiện, Chương &amp; Thời gian">Sự kiện, Chương &amp; Thời gian</option>
                                     </select>
                                 </div>
                             </div>
@@ -416,6 +418,8 @@
                         <div class="glossary-filter-menu" id="glossaryFilterMenu" role="menu" aria-label="Lọc thuật ngữ theo nhóm" hidden></div>
                     </div>
                 </div>
+                <div class="glossary-filter-bar" id="glossaryFilterBar" role="tablist" aria-label="Lọc nhanh theo nhóm thuật ngữ"></div>
+                <div class="glossary-filter-status" id="glossaryFilterStatus" hidden></div>
             </div>
 
             <!-- Terms List Container -->
@@ -450,24 +454,24 @@
     <script src="js/models/UserModel.js?v=1.4.0"></script>
     <script src="js/models/CharacterModel.js?v=1.4.0"></script>
     <script src="js/models/TokenModel.js?v=1.4.0"></script>
-    <script src="js/models/GlossaryGroups.js?v=groups-r01"></script>
-    <script src="js/models/GlossaryModel.js?v=groups-r01"></script>
+    <script src="js/models/GlossaryGroups.js?v=groups-r06"></script>
+    <script src="js/models/GlossaryModel.js?v=groups-r06"></script>
     <script src="js/models/CollaborationModel.js?v=ux-r04"></script>
-    <script src="js/models/StoryModel.js?v=ux-r09"></script>
+    <script src="js/models/StoryModel.js?v=ux-r10"></script>
 
     <!-- Views -->
     <script src="js/views/ToastView.js?v=1.4.0"></script>
     <script src="js/views/HudView.js?v=ux-r09"></script>
     <script src="js/views/CardView.js?v=ux-r06"></script>
-    <script src="js/views/CollaborationView.js?v=ux-r16"></script>
-    <script src="js/views/TableView.js?v=ux-r11"></script>
-    <script src="js/views/GlossaryView.js?v=groups-r04"></script>
+    <script src="js/views/CollaborationView.js?v=ux-r18"></script>
+    <script src="js/views/TableView.js?v=ux-r13"></script>
+    <script src="js/views/GlossaryView.js?v=groups-r06"></script>
     <script src="js/views/ProfileView.js?v=1.4.0"></script>
     <script src="js/views/LeaderboardView.js?v=1.4.0"></script>
 
     <!-- Controllers -->
     <script src="js/controllers/AudioController.js?v=1.4.1"></script>
-    <script src="js/controllers/EditorController.js?v=collab-r01"></script>
+    <script src="js/controllers/EditorController.js?v=collab-r03"></script>
     <script src="js/controllers/NavigationController.js?v=collab-r02"></script>
     <script src="js/controllers/AppController.js?v=collab-r01"></script>
 

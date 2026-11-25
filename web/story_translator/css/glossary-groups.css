@@ -1,6 +1,6 @@
 /* ==========================================================
-   Bộ lọc nhóm của từ điển thuật ngữ (GlossaryGroups.js)
-   Một nút "Bộ lọc" mở menu 7 nhóm + "Tất cả".
+   Bộ lọc 9 nhóm của từ điển thuật ngữ (GlossaryGroups.js)
+   Menu thả xuống kèm mô tả + thanh chip lọc nhanh + nhãn nhóm.
    --g  : màu nhóm dạng "r, g, b" (dùng cho viền/nền/chấm)
    --gt : màu chữ trên nền tối   --gtl : màu chữ trên nền sáng
    ========================================================== */
@@ -10,9 +10,11 @@
 .pill-g-world,         .cat-group-world         { --g: 16, 185, 129;  --gt: #6ee7b7; --gtl: #047857; }
 .pill-g-lore,          .cat-group-lore          { --g: 56, 189, 248;  --gt: #7dd3fc; --gtl: #0369a1; }
 .pill-g-items,         .cat-group-items         { --g: 245, 158, 11;  --gt: #fde047; --gtl: #a16207; }
+.pill-g-skills,        .cat-group-skills        { --g: 20, 184, 166;  --gt: #5eead4; --gtl: #0f766e; }
+.pill-g-monsters,      .cat-group-monsters      { --g: 239, 68, 68;   --gt: #fca5a5; --gtl: #b91c1c; }
 .pill-g-gameplay,      .cat-group-gameplay      { --g: 99, 102, 241;  --gt: #a5b4fc; --gtl: #4338ca; }
 .pill-g-events,        .cat-group-events        { --g: 249, 115, 22;  --gt: #fdba74; --gtl: #c2410c; }
-.pill-g-ALL                                     { --g: 56, 189, 248; }
+.pill-g-ALL                                     { --g: 56, 189, 248;  --gt: #7dd3fc; --gtl: #0369a1; }
 
 /* ---------- Hàng công cụ: ô tìm kiếm + nút Bộ lọc ---------- */
 .glossary-toolbar-row {
@@ -168,7 +170,7 @@ html[data-theme="dark"] .filter-btn-value {
     top: calc(100% + 8px);
     right: 0;
     z-index: 30;
-    width: 340px;
+    width: 390px;
     max-width: 100%;
     padding: 6px;
     display: flex;
@@ -244,9 +246,25 @@ html[data-theme="dark"] .filter-btn-value {
     border: 2px solid var(--gf-btn-sub);
 }
 
-.glossary-filter-item .item-label {
+.glossary-filter-item .item-text {
     flex: 1 1 auto;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.glossary-filter-item .item-label {
+    min-width: 0;
+    line-height: 1.25;
+}
+
+.glossary-filter-item .item-desc {
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--gf-btn-sub);
+    white-space: normal;
 }
 
 .glossary-filter-item .item-count {
@@ -279,7 +297,175 @@ html[data-theme="dark"] .filter-btn-value {
     transform: rotate(45deg);
 }
 
-/* ---------- Nhãn trên thẻ ---------- */
+/* ---------- Thanh chip lọc nhanh & Trạng thái bộ lọc ---------- */
+.glossary-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 2px 2px 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(56, 189, 248, 0.3) transparent;
+}
+
+.glossary-filter-bar::-webkit-scrollbar {
+    height: 4px;
+}
+
+.glossary-filter-bar::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.3);
+    border-radius: 2px;
+}
+
+.glossary-filter-chip {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid #cfe3e8;
+    background: rgba(255, 255, 255, 0.85);
+    color: #29495a;
+    font-family: var(--font-main);
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 0.16s ease, background 0.16s ease, color 0.16s ease, opacity 0.16s ease;
+}
+
+html[data-theme="dark"] .glossary-filter-chip {
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(11, 20, 36, 0.75);
+    color: #cbe2ef;
+}
+
+.glossary-filter-chip:hover {
+    border-color: rgba(var(--g, 56, 189, 248), 0.75);
+    background: rgba(var(--g, 56, 189, 248), 0.12);
+}
+
+.glossary-filter-chip.active {
+    background: rgba(var(--g, 56, 189, 248), 0.18);
+    border-color: rgba(var(--g, 56, 189, 248), 0.8);
+    color: var(--gtl, #0369a1);
+    font-weight: 700;
+}
+
+html[data-theme="dark"] .glossary-filter-chip.active {
+    color: var(--gt, #7dd3fc);
+}
+
+.glossary-filter-chip.is-empty:not(.active) {
+    opacity: 0.45;
+}
+
+.glossary-filter-chip .item-dot {
+    width: 7px;
+    height: 7px;
+    box-shadow: none;
+}
+
+.glossary-filter-chip .chip-count {
+    padding: 0 6px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.5;
+    background: rgba(40, 92, 110, 0.1);
+    font-variant-numeric: tabular-nums;
+}
+
+html[data-theme="dark"] .glossary-filter-chip .chip-count {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.glossary-filter-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    background: rgba(var(--g, 56, 189, 248), 0.1);
+    border: 1px solid rgba(var(--g, 56, 189, 248), 0.28);
+    color: #25505f;
+}
+
+html[data-theme="dark"] .glossary-filter-status {
+    color: #dbeaf3;
+}
+
+.glossary-filter-status[hidden] {
+    display: none !important;
+}
+
+.glossary-filter-status .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: none;
+    background: rgb(var(--g, 56, 189, 248));
+}
+
+.glossary-filter-status .status-info {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.glossary-filter-status .status-count {
+    opacity: 0.8;
+    font-variant-numeric: tabular-nums;
+}
+
+.glossary-filter-status .status-reset-btn {
+    flex: none;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(var(--g, 56, 189, 248), 0.45);
+    background: transparent;
+    color: var(--gtl, #0369a1);
+    font-family: var(--font-main);
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+html[data-theme="dark"] .glossary-filter-status .status-reset-btn {
+    color: var(--gt, #7dd3fc);
+}
+
+.glossary-filter-status .status-reset-btn:hover {
+    background: rgba(var(--g, 56, 189, 248), 0.16);
+}
+
+/* ---------- Nhãn trên thẻ & Phân trang ---------- */
+.glossary-badge-group {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+}
+
+.glossary-subtype-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 8px;
+    background: rgba(148, 163, 184, 0.14);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    color: #475569;
+}
+
+html[data-theme="dark"] .glossary-subtype-tag {
+    color: #94a3b8;
+    background: rgba(148, 163, 184, 0.12);
+    border-color: rgba(148, 163, 184, 0.22);
+}
+
 .glossary-term-badge[class*="cat-group-"]:not(.cat-group-default) {
     background: rgba(var(--g), 0.15);
     border-color: rgba(var(--g), 0.4);
@@ -291,6 +477,35 @@ html:not([data-theme="dark"]) .glossary-term-badge[class*="cat-group-"]:not(.cat
     background: rgba(var(--g), 0.12);
     border-color: rgba(var(--g), 0.45);
     color: var(--gtl);
+}
+
+.glossary-load-more-wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0 4px;
+}
+
+.glossary-load-more-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    background: rgba(56, 189, 248, 0.14);
+    color: #0369a1;
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+html[data-theme="dark"] .glossary-load-more-btn {
+    color: #7dd3fc;
+}
+
+.glossary-load-more-btn:hover {
+    background: rgba(56, 189, 248, 0.24);
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.22);
 }
 
 /* ---------- Di động ---------- */

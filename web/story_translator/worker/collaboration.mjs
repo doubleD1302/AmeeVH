@@ -1,7 +1,7 @@
 import { HANDOFF_RESOURCES } from './handoff-resources.mjs';
 // D1 collaboration adapter.
 import {sessionUser,attachSession} from './identity.mjs';
-const CHAPTERS = new Set(['Chuong_0_MainStory','Chuong_1_MainStory','Chuong_2_MainStory','Chuong_3_MainStory','Chuong_4_MainStory','Chuong_5_MainStory','Chuong_6_MainStory','Chuong_7_MainStory','Chuong_8_MainStory','Chuong_9_MainStory','Chuong_10_MainStory','Ngoai_Truyen_STsp','Uy_Thac_Hoi_Quan_BBm','Hen_Ho_Dating_DP','Tin_Nhan_Dien_Thoai_PM','Cot_Truyen_Su_Kien_STev','Kich_Ban_CG_Memory']);
+const CHAPTERS = new Set(['Chuong_0_MainStory','Chuong_1_MainStory','Chuong_2_MainStory','Chuong_3_MainStory','Chuong_4_MainStory','Chuong_5_MainStory','Chuong_6_MainStory','Chuong_7_MainStory','Chuong_8_MainStory','Chuong_9_MainStory','Chuong_10_MainStory','Ngoai_Truyen_STsp','Uy_Thac_Hoi_Quan_BBm','Hen_Ho_Dating_DP','Tin_Nhan_Dien_Thoai_PM','Cot_Truyen_Su_Kien_STev','Kich_Ban_CG_Memory','Du_Lieu_UI_He_Thong','Du_Lieu_Ky_Nang_Tiem_Nang','Du_Lieu_Vat_Pham_Dia_Nhac','Du_Lieu_Nhan_Vat_Ho_So','Du_Lieu_Loi_Thoai_Voice']);
 const STATES = new Set(['untranslated','pending','approved','needs_review','machine_pending']);
 const ORIGINS = new Set(['human','machine','unknown']);
 const TOKEN = /==[A-Za-z0-9_]+==|<[^<>\n]+>|\$\{[^{}\n]+\}|\{[A-Za-z0-9_]+\}|\$[A-Za-z_][\w.]*\$|%(?:\d+\$)?[-+#0]*\d*(?:\.\d+)?[diuoxXfFeEgGcs]|\[\/?(?:color|size|b|i|url|sprite)[^\]\n]*\]|\\n/g;
@@ -568,12 +568,13 @@ async function adminIssues(request,env,url){
  const items=[...reported,...reviewed].slice(0,limit);
  return json({success:true,data:{items,total:items.length,limit,offset,next_offset:null}});
 }
-async function adminFiles(request,env,kind,chapterId,baseExportId,agentInstructions=''){
+async function adminFiles(request,env,kind,chapterId,baseExportId,agentInstructions='',scope='all'){
  const release=await dataset(env),source=await adminChapterAsset(request,env,chapterId),overlay=await overlayChapter(source,env),lines=adminFlatten(overlay);
  const currentRelease=await dataset(env);if(currentRelease.version!==release.version||currentRelease.phase!==release.phase)fail(409,'dataset_changed','Phiên dữ liệu đã đổi trong lúc chụp snapshot. Hãy thử lại.');
  const issues=(await stmt(env,`SELECT h.id AS issue_id,h.chapter_id,h.line_id,h.reason,h.created_at,l.en,l.source_hash FROM history h JOIN lines l ON l.chapter_id=h.chapter_id AND l.line_id=h.line_id WHERE h.event_type='reported' AND h.chapter_id=? ORDER BY h.created_at DESC,h.id DESC`,[chapterId]).all()).results||[];
  const approved=lines.filter(line=>line.status==='approved'&&String(line.new_vi||'').trim());
  let selected=kind==='handoff'?approved:lines;
+ if(scope==='moderator')selected=selected.filter(line=>line.provenance==='moderator'&&line.status==='approved'&&String(line.new_vi||'').trim());
  let base=null;
  if(kind==='delta'){
   if(!baseExportId)fail(400,'base_export_required','Delta cần export_id làm mốc so sánh.');
@@ -584,7 +585,6 @@ async function adminFiles(request,env,kind,chapterId,baseExportId,agentInstructi
   selected=selected.filter(line=>JSON.stringify(oldById.get(`${chapterId}:${line.line_id}`)||null)!==JSON.stringify({chapter_id:chapterId,line_id:line.line_id,en:line.en||'',vi:line.new_vi||'',source_hash:line.source_hash||null,revision:line.revision??null,status:line.status}));
  }
  const changes=selected.map(line=>({chapter_id:chapterId,line_id:line.line_id,en:line.en||'',vi:line.new_vi||'',source_hash:line.source_hash||null,revision:line.revision??null,status:line.status,scene_id:line.scene_id||null}));
- if(changes.length>2000)fail(413,'export_too_large','Phạm vi vượt giới hạn D1 của Admin Portal. Hãy chia nhỏ theo chapter hoặc cấu hình storage file trước khi xuất.');
  const mapping=selected.map(line=>({chapter_id:chapterId,line_id:line.line_id,file_id:null,block_order:null,mapping_status:'needs_catalog_verification',evidence:'TramVH source hash only; Merge/game locator chưa được xác minh'}));
  const scopedIssues=issues.map(issue=>({issue_id:issue.issue_id,chapter_id:issue.chapter_id,line_id:issue.line_id,reason:issue.reason,created_at:issue.created_at,en:issue.en||'',source_hash:issue.source_hash||null}));
  const defaultPrompt=[
@@ -601,14 +601,15 @@ async function adminFiles(request,env,kind,chapterId,baseExportId,agentInstructi
  const task={support_files:Object.keys(HANDOFF_RESOURCES),task:kind==='handoff'?'Đối chiếu Merge / chuẩn bị proposal tích hợp':kind==='delta'?'Đối chiếu delta với bản xuất mốc':'Snapshot đối chiếu dữ liệu TrạmVH',read_first:['docs/HACHIMINH_WORKFLOW_INTEGRATION.md','SS/.agents/skills/workflow/SKILL.md'],scope:{chapter_id:chapterId,dataset_version:release.version},allowed_paths:['SS/','proposals/'],stop_when:['source hash thay đổi','locator trùng','thiếu bằng chứng'],agent_prompt:prompt};
  const files={...HANDOFF_RESOURCES,'changes.jsonl':changes.map(item=>JSON.stringify(item)).join('\n'),'mapping.jsonl':mapping.map(item=>JSON.stringify(item)).join('\n'),'issues.jsonl':scopedIssues.map(item=>JSON.stringify(item)).join('\n'),'TASK.json':JSON.stringify(task,null,2),'AGENT_PROMPT.md':`# Prompt cho coding agent\n\n${prompt}\n`,'README.md':`# TrạmVH handoff\n\nExport type: ${kind}\nDataset: ${release.version}\nChapter: ${chapterId}\n\nGiải nén gói và đọc AGENT_PROMPT.md trước khi bắt đầu. Tài liệu workflow nằm ở docs/HACHIMINH_WORKFLOW_INTEGRATION.md. Skill GitHub kèm đủ SKILL.md và references/ trong skills/stella-github-translation-sync/. Chỉ dùng skill GitHub khi được yêu cầu commit/push. Gói này là input cho workflow; agent vẫn phải xác minh catalog và tạo receipt trong repo.`};
  if(kind==='snapshot')files['chapter.json']=JSON.stringify(overlay,null,2);
+ if(new TextEncoder().encode(JSON.stringify(files)).byteLength>1800000)fail(413,'export_too_large','Phạm vi vượt giới hạn D1 của Admin Portal. Hãy bật "Chỉ câu do moderator dịch", chọn Delta hoặc chia nhỏ theo chapter trước khi xuất.');
  const hashes={};for(const [name,content] of Object.entries(files)){hashes[name]={sha256:await byteHash(new TextEncoder().encode(content)),bytes:new TextEncoder().encode(content).byteLength};}
- const manifest={schema:1,export_id:crypto.randomUUID(),created_at:now(),kind,chapter_id:chapterId,dataset_version:release.version,dataset_phase:release.phase,base_export_id:base?.id||null,scope:{lines:changes.length,issues:scopedIssues.length},files:hashes};
+ const manifest={schema:1,export_id:crypto.randomUUID(),created_at:now(),kind,chapter_id:chapterId,dataset_version:release.version,dataset_phase:release.phase,base_export_id:base?.id||null,scope:{lines:changes.length,issues:scopedIssues.length,only:scope==='moderator'?'moderator':'all'},files:hashes};
  return {manifest,files};
 }
 async function adminCreateExport(request,env,body,user){
  await requireAdmin(request,env,'export');
  if(!body||!['snapshot','delta','handoff'].includes(body.kind))fail(400,'invalid_export_kind','Loại bản xuất không hợp lệ.');
- const chapter=bounded(body.chapter_id,'Chapter',120,true),agentInstructions=bounded(body.agent_instructions||'','Chỉ dẫn thêm',4000),bundle=await adminFiles(request,env,body.kind,chapter,body.base_export_id||null,agentInstructions),created=now();
+ const chapter=bounded(body.chapter_id,'Chapter',120,true),agentInstructions=bounded(body.agent_instructions||'','Chỉ dẫn thêm',4000),bundle=await adminFiles(request,env,body.kind,chapter,body.base_export_id||null,agentInstructions,body.scope==='moderator'?'moderator':'all'),created=now();
  await stmt(env,'INSERT INTO admin_exports(id,kind,chapter_id,dataset_version,base_export_id,created_by,created_at,status,manifest_json,files_json) VALUES(?,?,?,?,?,?,?,?,?,?)',[bundle.manifest.export_id,body.kind,chapter,bundle.manifest.dataset_version,bundle.manifest.base_export_id,user.display_name,created,'ready',JSON.stringify(bundle.manifest),JSON.stringify(bundle.files)]).run();
  return json({success:true,data:{export_id:bundle.manifest.export_id,manifest:bundle.manifest}},201);
 }

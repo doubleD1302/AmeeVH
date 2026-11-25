@@ -7,6 +7,16 @@ let allGlossaryTerms = [];
 let activeGlossaryCategory = "ALL";
 let glossarySearchTerm = "";
 
+const GLOSSARY_NOISE_EN_RE = /^[\s*?.!\-_,;:'"\/\\0-9()[\]{}~`@#$%^&+=<>|]+$/;
+
+function isNoiseGlossaryTerm(en) {
+    const s = String(en || "").trim();
+    if (!s || s === "!NONEED!" || s.startsWith("---") || s.startsWith("BẢNG THỐNG NHẤT") || s.startsWith("Danh từ")) {
+        return true;
+    }
+    return GLOSSARY_NOISE_EN_RE.test(s);
+}
+
 /**
  * Xóa dấu tiếng Việt phục vụ tra cứu linh hoạt (không dấu vẫn tìm ra có dấu)
  */
@@ -26,12 +36,14 @@ function normalizeLoadedGlossaryTerms(rawList) {
 
     const cleaned = [];
     const seenEn = new Set();
+    const seenPairs = new Set();
 
     for (const item of rawList) {
         if (!item) continue;
         let en = (item.en || item.term_en || item.source || "").trim();
         let vi = (item.vi || item.term_vi || item.target || "").trim();
         let cat = (item.category || item.group || "Chung").trim();
+        let rawCat = (item.raw_category || cat || "Chung").trim();
         let notes = (item.notes || "").trim();
         let status = (item.status || "approved").trim();
 
@@ -39,25 +51,32 @@ function normalizeLoadedGlossaryTerms(rawList) {
         if (!en && cat && vi && cat.length > 0 && !cat.startsWith("---")) {
             en = cat;
             cat = "Chung";
+            rawCat = "Chung";
         }
 
-        // Bỏ qua các dòng tiêu đề bảng tính
-        if (!en || en.startsWith("---") || en.startsWith("BẢNG THỐNG NHẤT") || en.startsWith("Danh từ")) {
+        // Bỏ qua dòng tiêu đề bảng tính và nhiễu ký tự (***, ???, ...)
+        if (isNoiseGlossaryTerm(en)) {
             continue;
         }
 
         const enKey = item.id ? `id:${item.id}` : `en:${en.toLowerCase()}`;
-        if (seenEn.has(enKey)) continue;
+        const pairKey = `${en.toLowerCase()}\u0000${vi.toLowerCase()}`;
+        if (seenEn.has(enKey) || seenPairs.has(pairKey)) continue;
         seenEn.add(enKey);
+        seenPairs.add(pairKey);
 
         cleaned.push({
             id: item.id || "",
             en: en,
             vi: vi,
             category: cat || "Chung",
-            raw_category: cat || "Chung",
+            raw_category: rawCat || "Chung",
+            group: item.group || "",
+            sub_type: (item.sub_type || "").trim(),
             notes: notes,
-            status: status
+            status: status,
+            cn: (item.cn || "").trim(),
+            jp: (item.jp || "").trim()
         });
     }
 
@@ -135,39 +154,63 @@ async function loadGlossaryTerms(refresh = false) {
 }
 
 /**
- * Tra cứu thuật ngữ theo từ khóa (hỗ trợ cả tiếng Anh, tiếng Việt có dấu/không dấu, ghi chú)
+ * Tra cứu thuật ngữ theo từ khóa (hỗ trợ cả tiếng Anh, tiếng Việt có dấu/không dấu, ghi chú, CN/JP)
+ * Sắp xếp A–Z khi không tìm kiếm; xếp theo độ khớp khi tìm kiếm.
  */
 function searchGlossaryTerms(searchTerm, category = "ALL") {
     if (!allGlossaryTerms || allGlossaryTerms.length === 0) return [];
-    
+
     let list = allGlossaryTerms;
     if (category && category !== "ALL") {
         list = list.filter(t => glossaryGroupOf(t, allGlossaryTerms) === category);
     }
 
     if (!searchTerm || !searchTerm.trim()) {
-        return list;
+        return [...list].sort((a, b) => (a.en || "").localeCompare(b.en || "", "en", { sensitivity: "base" }));
     }
 
     const rawTerm = searchTerm.trim().toLowerCase();
     const cleanTerm = removeVietnameseTones(rawTerm);
+    const wordRe = new RegExp(`(?:^|[^a-z0-9])${rawTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:$|[^a-z0-9])`, "i");
+    const scored = [];
 
-    return list.filter(item => {
+    for (const item of list) {
         const en = (item.en || "").toLowerCase();
         const vi = (item.vi || "").toLowerCase();
         const viClean = removeVietnameseTones(vi);
         const notes = (item.notes || "").toLowerCase();
         const notesClean = removeVietnameseTones(notes);
-        const groupInfo = getGlossaryGroupById(glossaryGroupOf(item, allGlossaryTerms));
-        const cat = `${item.category || ""} ${groupInfo ? groupInfo.label + " " + groupInfo.labelEn : ""}`.toLowerCase();
+        const cn = (item.cn || "").toLowerCase();
+        const jp = (item.jp || "").toLowerCase();
 
-        return en.includes(rawTerm) ||
-               vi.includes(rawTerm) ||
-               viClean.includes(cleanTerm) ||
-               notes.includes(rawTerm) ||
-               notesClean.includes(cleanTerm) ||
-               cat.includes(rawTerm);
+        let score = -1;
+        if (en === rawTerm || vi === rawTerm || (cleanTerm && viClean === cleanTerm)) {
+            score = 0;
+        } else if (en.startsWith(rawTerm) || vi.startsWith(rawTerm) || (cleanTerm && viClean.startsWith(cleanTerm))) {
+            score = 1;
+        } else if (wordRe.test(en) || wordRe.test(vi) || (cleanTerm && wordRe.test(viClean))) {
+            score = 2;
+        } else if (en.includes(rawTerm) || vi.includes(rawTerm) || (cleanTerm && viClean.includes(cleanTerm))) {
+            score = 3;
+        } else if (cn.includes(rawTerm) || jp.includes(rawTerm)) {
+            score = 4;
+        } else if (notes.includes(rawTerm) || (cleanTerm && notesClean.includes(cleanTerm))) {
+            score = 5;
+        }
+
+        if (score >= 0) {
+            scored.push({ item, score });
+        }
+    }
+
+    scored.sort((a, b) => {
+        if (a.score !== b.score) return a.score - b.score;
+        const lenDiff = (a.item.en || "").length - (b.item.en || "").length;
+        if (lenDiff !== 0) return lenDiff;
+        return (a.item.en || "").localeCompare(b.item.en || "", "en", { sensitivity: "base" });
     });
+
+    return scored.map(entry => entry.item);
 }
 
 /**
@@ -312,13 +355,16 @@ async function updateGlossaryTerm(termData) {
         (!termData.id && item.en.toLowerCase() === (termData.previous_en || en).toLowerCase())
     );
     if (index < 0) throw new Error("Không tìm thấy thuật ngữ cần chỉnh sửa.");
+    const nextCat = (termData.category || "").trim() || allGlossaryTerms[index].category || "Chung";
     const updated = {
         ...allGlossaryTerms[index],
         id: termData.id || allGlossaryTerms[index].id || "",
         en,
         vi,
-        category: (termData.category || "").trim() || allGlossaryTerms[index].category || "Chung",
-        raw_category: (termData.category || "").trim() || allGlossaryTerms[index].category || "Chung",
+        category: nextCat,
+        raw_category: nextCat,
+        group: typeof glossaryGroupFromCategory === "function" ? (glossaryGroupFromCategory(nextCat) || "") : "",
+        _groupSig: "",
         notes: (termData.notes || "").trim(),
         status: allGlossaryTerms[index].status || "approved"
     };
