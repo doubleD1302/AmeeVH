@@ -1,13 +1,34 @@
 {
-  "version": "1.3.3",
-  "updated_at": "2026-11-21",
+  "version": "2.0.0",
+  "updated_at": "2026-11-25",
   "announcements": [
+    {
+      "id": "NOTIF-037",
+      "date": "2026-11-25",
+      "title": "Bản cập nhật v2.0.0: PC Launcher v2.0 Mới, Dịch Lại Toàn Bộ Cốt Truyện Light Novel, 105 Gói Ảnh & Sửa Lỗi Chiêu Mộ",
+      "type": "release",
+      "content": "Bản cập nhật lớn so với v1.3.4 gồm 4 nâng cấp chính:\n• PC Launcher v2.0.0 mới (~45 MB): giao diện mới sắc nét ở mọi mức phóng to màn hình (100%–200%), tự động đồng bộ hình nền Official Launcher (có dự phòng khi mất mạng), tải gói song song hiển thị tốc độ/thời gian còn lại và trợ lý chẩn đoán & sửa lỗi 1 chạm. Người dùng v1.3.4 bấm cập nhật trực tiếp trong app, tự động giữ nguyên cấu hình, bản sao lưu và nhật ký cũ.\n• Dịch lại toàn bộ cốt truyện theo giọng Light Novel chuẩn thuật ngữ: làm mới Cốt truyện chính (Chương 3–9), toàn bộ 12 Cốt truyện Sự kiện (kèm bản hiệu đính mới trên TramVH của Antithesis & Crim), Thời Báo Nova, 42/42 tuyến truyện riêng Tuần du giả, tin nhắn điện thoại, kịch bản ký ức (CG), NPC Cự Tháp và Đĩa nhạc.\n• Dựng lại 105 gói ảnh Việt hóa (747 ảnh) trên cả PC và Android theo nền 2.1.0, làm sạch nền và giữ nguyên bản gốc Danh hiệu để hiển thị rõ nét.\n• Sửa lỗi dư chữ \"Mảnh\" trước tên 42 Tuần du giả ở mục Chiêu mộ.\n• Launcher Android v2.0.0 đồng bộ phiên bản v2.0.0 cùng thông báo mới — người dùng v1.3.3 mở app để tự động cập nhật trực tiếp lên v2.0.0 và tải trọn gói bản dịch mới nhất."
+    },
+    {
+      "id": "NOTIF-036",
+      "date": "2026-11-21",
+      "title": "Bản cập nhật v1.3.4: Launcher PC Có Bộ Chứng Chỉ Dự Phòng Để Đọc Được GitHub, Gợi Ý Khi Chọn Nhầm Thư Mục Game",
+      "type": "release",
+      "content": "Launcher PC thêm bộ chứng chỉ bảo mật dự phòng để đọc được GitHub trên máy Windows thiếu chứng chỉ gốc (lỗi E-NET-TLS-CERT khiến nút Cài bị xám). Báo lỗi \"Gói cục bộ\" nay chỉ đúng cách sửa, và khi chọn nhầm thư mục game, launcher gợi ý thư mục có StellaSora.exe. Launcher Android giữ nguyên bản 1.3.3; bản dịch giữ nguyên."
+    },
     {
       "id": "NOTIF-035",
       "date": "2026-11-21",
       "title": "Bản cập nhật v1.3.3: Thông Báo Lỗi Dễ Hiểu, Mã Lỗi Và Nút Sao Chép Cho Launcher PC & Android",
       "type": "release",
       "content": "Launcher PC và Android viết lại toàn bộ thông báo lỗi bằng tiếng Việt dễ hiểu, kèm mã lỗi và các bước xử lý cụ thể. Có thêm nút Sao chép mã lỗi để gửi báo cáo chẩn đoán cho người hỗ trợ; khi nút Cài bị xám, launcher hiện rõ lý do (mất mạng, lỗi DNS, GitHub bị chặn, chưa chọn game…). Bản dịch giữ nguyên, không cần cài lại."
+    },
+    {
+      "id": "NOTIF-034",
+      "date": "2026-11-20",
+      "title": "Bản cập nhật v1.3.2: Sửa Lỗi Giọng Nhân Vật & Cốt Truyện Sự Kiện, Việt Hóa Lại Toàn Bộ Event Mới, Khôi Phục Gốc Tự Tải",
+      "type": "release",
+      "content": "Sửa lỗi nhân vật mất giọng ở màn hình chính và màn hình cốt truyện sự kiện hiện vòng tròn trắng kèm chữ Trung; dựng lại 8 gói ảnh và sửa các mã Story trong dữ liệu. Toàn bộ Event mới được dịch lại, Chương 10 và Chương 0 được bổ sung. Nút Khôi phục trên launcher PC nay tự tải dữ liệu gốc mới nhất từ nhà phát hành và nhắc khôi phục khi game có bản cập nhật. Cảm ơn NoOne đã báo lỗi và Antithesis đã dịch lại toàn bộ Event mới! Mở launcher và bấm cập nhật để nhận bản mới."
     },
     {
       "id": "NOTIF-033",
@@ -19,9 +40,9 @@
     {
       "id": "NOTIF-032",
       "date": "2026-11-18",
-      "title": "Bản cập nhật v1.3.1: Khắc Phục Lỗi Cập Nhật, Phục Hồi & Tối Ưu Bộ Đôi Launcher",
+      "title": "Bản cập nhật v1.3.1: Việt Hóa Chương 0–2 Light Novel & Tối Ưu Bộ Đôi Launcher",
       "type": "release",
-      "content": "Sửa lỗi tự cập nhật Windows khi khóa tệp, lỗi tạo lối tắt tiếng Việt, kẹt biên bản cũ sau cập nhật game và đồng bộ mã băm gói dữ liệu Chương 9.5. Tối ưu tốc độ cài đặt/kiểm tra tệp Local ADB trên Android, hỗ trợ tự nối tiếp khi rớt mạng và kết nối nhanh thiết bị đã ghép đôi."
+      "content": "Bản địa hóa lại toàn bộ Chương Mở đầu, Chương 1 và Chương 2 từ nguồn tiếng Anh theo văn phong Light Novel chuẩn bảng thuật ngữ; đồng bộ gói dữ liệu Chương 9.5. Nâng cấp Launcher PC & Android v1.3.1: tự cập nhật an toàn khi khóa tệp, sửa lối tắt tiếng Việt, dò tìm Steam/Yostar, tăng tốc Local ADB trên Android, hỗ trợ tải tiếp HTTP và kết nối nhanh 1 chạm."
     },
     {
       "id": "NOTIF-031",

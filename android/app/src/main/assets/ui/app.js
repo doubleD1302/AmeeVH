@@ -189,7 +189,7 @@
       summary = gh.message || 'Chưa có gói Android tương thích. Xem trạng thái chi tiết bên dưới.';
     }
     text('github-summary', summary);
-    text('app-version', 'Launcher Android ' + (state.app.versionName || '1.3.1') + ' · Local ADB');
+    text('app-version', 'Launcher Android ' + (state.app.versionName || '2.0.0') + ' · Local ADB');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Mở trình cài đặt Android' : 'Tải bản cập nhật';

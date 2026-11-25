@@ -68,8 +68,8 @@ public final class LauncherService extends Service {
   } catch (Exception e) {
    support = Store.obj("methods", new JSONArray());
   }
-  String appVer = "1.3.1";
-  long appCode = 17;
+  String appVer = "2.0.0";
+  long appCode = 20;
   try {
    PackageInfo pi = c.getPackageManager().getPackageInfo(Store.APP, 0);
    appVer = pi.versionName;

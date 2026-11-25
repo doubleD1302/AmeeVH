@@ -33,7 +33,7 @@ TITLE = "2.0.0"
 NOTES = (ROOT / "work" / "release_v2.0.0" / "RELEASE_NOTES.md").read_text(encoding="utf-8").strip()
 ASSETS = [
     "StellaSora-Windows_v2.0.0.exe",
-    "StellaSora-Android_v1.3.3.apk",   # Android launcher APK stays at v1.3.3
+    "StellaSora-Android_v2.0.0.apk",
     "StellaSora_AssetBundles_VI.zip",
     "StellaSora_Android_AssetBundles_VI.zip",
     "data_patched_vi.arcx",
