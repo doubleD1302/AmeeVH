@@ -43,6 +43,7 @@ from .official_resources import (
     OfficialDownloader,
     OfficialResourceError,
     md5_file,
+    official_relative_path,
     parse_manifest,
 )
 from .safety import InstallerError, atomic_json, safe_path
@@ -52,6 +53,7 @@ RECEIPT = ".vietnamese_patch_receipt.json"
 STATE_FILE = "viethoa_installed.json"
 SAFETY_MARGIN = 256 * 1024 * 1024
 _BUNDLE_RE = re.compile(r"Persistent_Store/AssetBundles/[A-Za-z0-9_.-]+[.]en[.]unity3d")
+_SRT_RE = re.compile(r'Persistent_Store/Videos/[^/<>:"|?*]+[.]srt')
 
 
 def _is_reparse_or_symlink(path: Path) -> bool:
@@ -167,14 +169,28 @@ class OfficialRestoreEngine:
                 except InstallerError:
                     continue  # never touch anything outside the allow-list
                 rels[rel] = True
-        else:
-            # No receipt (e.g. installed by another tool): fix any Vietnamese-named bundle that differs from official.
-            ab = root / "Persistent_Store" / "AssetBundles"
-            if ab.is_dir():
-                for p in ab.glob("*.en.unity3d"):
-                    rel = "Persistent_Store/AssetBundles/" + p.name
-                    if _BUNDLE_RE.fullmatch(rel):
-                        rels.setdefault(rel, False)
+        # Always scan allow-listed AssetBundles (*.en.unity3d) and Videos (*.srt), even when a
+        # receipt exists: an outdated or partial receipt (e.g. from an older translation version or
+        # a script/manual deployment) can omit patched bundles or subtitles, leaving modified files
+        # behind that break the game's delta updater ("Patch file verification failed").
+        scan_specs = (
+            (root / "Persistent_Store" / "AssetBundles", "Persistent_Store/AssetBundles/", "*.en.unity3d", _BUNDLE_RE),
+            (root / "Persistent_Store" / "Videos", "Persistent_Store/Videos/", "*.srt", _SRT_RE),
+        )
+        for directory, prefix, pattern, regex in scan_specs:
+            if not directory.is_dir() or _is_reparse_or_symlink(directory):
+                continue
+            for p in sorted(directory.glob(pattern), key=lambda x: x.name):
+                if not p.is_file() or _is_reparse_or_symlink(p):
+                    continue
+                rel = prefix + p.name
+                if not regex.fullmatch(rel):
+                    continue
+                try:
+                    safe_path(root, rel, True)
+                except InstallerError:
+                    continue
+                rels.setdefault(rel, False)
         return list(rels.items()), receipt
 
     def _plan(self, root: Path, catalog: OfficialCatalog, prefer: str, cb, op) -> tuple[list[Target], dict]:
@@ -184,6 +200,34 @@ class OfficialRestoreEngine:
         local_res = local[0].get("RES_VER") if local else None
         cands, receipt = self._candidates(root)
         streaming = root / "StellaSora_Data" / "StreamingAssets" / "InstallResource"
+        if mode == "game":
+            seen = {rel for rel, _ in cands}
+            for name, rec in sorted(local_files.items()):
+                rel = "Persistent_Store/" + official_relative_path(name)
+                if rel in seen:
+                    continue
+                if not (_BUNDLE_RE.fullmatch(rel) or _SRT_RE.fullmatch(rel)):
+                    continue
+                try:
+                    path = safe_path(root, rel, True)
+                except InstallerError:
+                    continue
+                if path.exists():
+                    continue
+                rec_checksum = rec["checksum"]
+                rec_size = int(rec["size"])
+                # Missing from Persistent_Store: if StreamingAssets/InstallResource already provides
+                # the exact official file, the game loads it from there without needing a copy.
+                cand = streaming / name
+                try:
+                    if cand.is_file() and cand.stat().st_size == rec_size and md5_file(cand) == rec_checksum:
+                        continue
+                except OSError:
+                    pass
+                if not catalog.knows(name, rec_checksum):
+                    continue
+                seen.add(rel)
+                cands.append((rel, False))
         targets: list[Target] = []
         total = len(cands)
         for index, (rel, from_receipt) in enumerate(cands, 1):
@@ -199,12 +243,6 @@ class OfficialRestoreEngine:
                     raise OfficialResourceError(f"Manifest chính thức không có {name}.", "NOT_FOUND")
                 continue
             checksum = record["checksum"]
-            if not catalog.knows(name, checksum):
-                raise OfficialResourceError(
-                    f"Máy chủ chính thức không có phiên bản {name} mà game đang ghi nhận ({checksum[:8]}…). "
-                    "Hãy dùng chức năng Kiểm tra/Sửa tệp của Yostar Launcher hoặc Steam cho bản cài này.",
-                    "NOT_FOUND",
-                )
             size = int(record["size"])
             current = None
             if path.is_file():
@@ -222,6 +260,12 @@ class OfficialRestoreEngine:
                 except OSError:
                     pass
                 if not t.source:
+                    if not catalog.knows(name, checksum):
+                        raise OfficialResourceError(
+                            f"Máy chủ chính thức không có phiên bản {name} mà game đang ghi nhận ({checksum[:8]}…). "
+                            "Hãy dùng chức năng Kiểm tra/Sửa tệp của Yostar Launcher hoặc Steam cho bản cài này.",
+                            "NOT_FOUND",
+                        )
                     t.source, t.item = "download", catalog.resolve(name, checksum)
             targets.append(t)
         info = {

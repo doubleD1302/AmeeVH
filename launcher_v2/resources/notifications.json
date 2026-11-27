@@ -1,7 +1,14 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-039",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.0.2: Khôi Phục Gốc Quét Đủ Gói Ảnh & Phụ Đề Trên PC",
+      "type": "release",
+      "content": "Sửa lỗi Khôi phục gốc trên PC Launcher bỏ sót các gói ảnh (.en.unity3d) và phụ đề (.srt) khi thư mục game còn biên bản cài từ bản cũ, tránh lỗi Patch file verification failed khi Stella Sora cập nhật. Khôi phục gốc cũng tự tải lại các gói bị thiếu sau lần cập nhật lỗi. Launcher Android giữ nguyên bản 2.0.1; bản dịch giữ nguyên, không cần cài lại — mở PC Launcher để tự động cập nhật trực tiếp."
+    },
     {
       "id": "NOTIF-038",
       "date": "2026-11-27",

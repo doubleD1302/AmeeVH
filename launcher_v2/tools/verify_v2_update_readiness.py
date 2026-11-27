@@ -26,6 +26,7 @@ import subprocess
 import sys
 import tempfile
 from typing import Any, Optional
+from unittest import mock
 import uuid
 
 DEFAULT_LAUNCHER_DIR = Path(__file__).resolve().parents[1]
@@ -764,9 +765,10 @@ def gate_pc5(*, launcher_dir: Path) -> GateResult:
                     if migrated_j.get("_migrated_from_backup_dir") != str(r02_backup_leaf):
                         errors.append("Journal missing _migrated_from_backup_dir provenance")
 
-                    # Now exercise PatchInstaller.recover() on the migrated v2 AppData
+                    # Now exercise PatchInstaller.recover() on the migrated v2 AppData (isolated temp GameDir)
                     installer = PatchInstaller(pm_v2.backup_root, pm_v2.journals_dir)
-                    rec_res = installer.recover(game_root)
+                    with mock.patch("launcher_v2.core.installer.is_game_process_running", return_value=False):
+                        rec_res = installer.recover(game_root)
                     if rec_res.get("status") != "recovered" or (game_root / rel_file).read_bytes() != orig_bytes:
                         errors.append(f"PatchInstaller.recover() failed after migration: {rec_res}")
                     elif not (r02_dir / "journals" / "j_pending.json").is_file():
