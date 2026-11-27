@@ -100,16 +100,20 @@ def _snapshot_pycache(base: Path) -> dict[Path, float]:
 
 def build_candidate(
     revision: str = "r01",
-    exe_name: str = "StellaSora-Windows_v2.0.0",
+    exe_name: str | None = None,
     clean_work: bool = False,
 ) -> dict[str, object]:
     if not re.fullmatch(r"r\d{2,3}[A-Za-z0-9_-]*", revision):
         raise SystemExit(f"Invalid revision tag: {revision!r}")
-    if not re.fullmatch(r"[A-Za-z0-9._-]+", exe_name):
-        raise SystemExit(f"Invalid exe_name (spaces/special chars forbidden): {exe_name!r}")
 
     src = Path(__file__).resolve().parent
     root = src.parent
+    launcher_version = _read_config_version(src / "core" / "config.py")
+    if not exe_name:
+        exe_name = f"StellaSora-Windows_v{launcher_version}"
+    if not re.fullmatch(r"[A-Za-z0-9._-]+", exe_name):
+        raise SystemExit(f"Invalid exe_name (spaces/special chars forbidden): {exe_name!r}")
+
     venv_py = root / ".venv" / "Scripts" / "python.exe"
 
     if (
@@ -137,9 +141,8 @@ def build_candidate(
         raise SystemExit(f"PySide6/Shiboken versions are not coherent: { {n: versions[n] for n in COHERENT_QT_PACKAGES} }")
 
     # Version & resource coherence checks before touching disk
-    launcher_version = _read_config_version(src / "core" / "config.py")
-    if launcher_version != "2.0.0":
-        raise SystemExit(f"Expected LAUNCHER_VERSION == '2.0.0', got {launcher_version!r}")
+    if not re.fullmatch(r"2\.\d+\.\d+", launcher_version):
+        raise SystemExit(f"Expected v2 semver LAUNCHER_VERSION (2.x.y), got {launcher_version!r}")
     version_info_meta = _verify_version_info(src / "version_info.txt", launcher_version)
 
     notif_root = src / "notifications.json"
@@ -290,7 +293,7 @@ def build_candidate(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build Stella Sora Viet Hoa Launcher v2.0 candidate EXE")
     parser.add_argument("--revision", default="r01", help="Candidate revision tag (default: r01)")
-    parser.add_argument("--exe-name", default="StellaSora-Windows_v2.0.0", help="Output EXE base name")
+    parser.add_argument("--exe-name", default=None, help="Output EXE base name (default: StellaSora-Windows_v<LAUNCHER_VERSION>)")
     parser.add_argument("--clean-work", action="store_true", help="Remove temporary PyInstaller work dir after build")
     args = parser.parse_args()
     build_candidate(revision=args.revision, exe_name=args.exe_name, clean_work=args.clean_work)

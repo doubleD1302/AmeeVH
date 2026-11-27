@@ -143,9 +143,9 @@ def gate_pc1(
 
     config_py = launcher_dir / "core" / "config.py"
     version = _read_launcher_version(config_py)
-    if version != "2.0.0":
+    if not version or not re.fullmatch(r"2\.\d+\.\d+", version):
         errors.append(
-            f"core/config.py LAUNCHER_VERSION must be '2.0.0', got {version!r}"
+            f"core/config.py LAUNCHER_VERSION must match '2.x.y', got {version!r}"
         )
     else:
         details.append(f"LAUNCHER_VERSION == {version!r}")

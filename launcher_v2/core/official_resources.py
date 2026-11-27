@@ -75,6 +75,11 @@ def _header_value(headers, name: str) -> str:
     return ""
 
 
+def _url_has_html_suffix(url: str) -> bool:
+    path = urllib.parse.urlparse(url).path.lower()
+    return path.endswith((".html", ".htm"))
+
+
 def _is_html_content_type(headers) -> bool:
     ct = _header_value(headers, "Content-Type").split(";", 1)[0].strip().lower()
     return ct in ("text/html", "application/xhtml+xml")
@@ -84,7 +89,37 @@ def _is_html_body(data: bytes) -> bool:
     if not data:
         return False
     head = data[:512].lstrip(b" \t\r\n\xef\xbb\xbf").lower()
-    return head.startswith((b"<!doctype html", b"<html"))
+    if head.startswith((b"<!doctype html", b"<html", b"<head", b"<body", b"<title", b"<meta", b"<script")):
+        return True
+    if head.startswith((b"<!--", b"<?xml")) and (b"<html" in head or b"<!doctype html" in head):
+        return True
+    return False
+
+
+def _looks_like_html_markup(data: bytes) -> bool:
+    if _is_html_body(data):
+        return True
+    if not data:
+        return False
+    sample = data[:512]
+    stripped = sample.lstrip(b" \t\r\n\xef\xbb\xbf")
+    if not stripped.startswith(b"<") or b">" not in stripped:
+        return False
+    if b"</" not in stripped and b"/>" not in stripped:
+        return False
+    decoded: Optional[str] = None
+    for trim in range(4):
+        chunk = sample[: len(sample) - trim] if trim else sample
+        if not chunk:
+            break
+        try:
+            decoded = chunk.decode("utf-8")
+            break
+        except UnicodeDecodeError:
+            continue
+    if decoded is None:
+        return False
+    return all(ch in ("\t", "\n", "\r") or ord(ch) >= 32 for ch in decoded)
 
 
 class OfficialResourceError(InstallerError):
@@ -367,18 +402,23 @@ class OfficialClient:
         return self.opener(urllib.request.Request(url, headers=h), timeout=self.timeout)
 
     def read(self, url: str, cap: int = MAX_META_BYTES) -> bytes:
+        # Publisher metadata endpoints (/meta/win.html, /meta/serverlist.html) end with .html
+        # so the CDN legitimately sends Content-Type: text/html for AES-CBC binary payloads.
+        # For those URLs, detect captive portals by inspecting the actual response body.
+        allow_html_ct = _url_has_html_suffix(url)
         last: Optional[Exception] = None
         for attempt in range(self.retries):
             try:
                 with self.request(url) as response:
                     resp_headers = getattr(response, "headers", None)
-                    if _is_html_content_type(resp_headers):
+                    is_html_ct = _is_html_content_type(resp_headers)
+                    if is_html_ct and not allow_html_ct:
                         raise OfficialResourceError(
                             "Phát hiện trang đăng nhập mạng (Captive Portal) thay vì dữ liệu từ máy chủ chính thức.",
                             "NET_CAPTIVE",
                         )
                     data = response.read(cap + 1)
-                if _is_html_body(data):
+                if _is_html_body(data) or (is_html_ct and _looks_like_html_markup(data)):
                     raise OfficialResourceError(
                         "Phát hiện trang đăng nhập mạng (Captive Portal) thay vì dữ liệu từ máy chủ chính thức.",
                         "NET_CAPTIVE",
