@@ -1723,6 +1723,28 @@ def build_report(
         except Exception:  # noqa: BLE001
             probe_text = ''
         summary = info.summary
+        final_title = safe_title or info.title
+        final_steps = info.steps
+        final_level = info.level
+        if final_code == 'E-PKG-MISMATCH':
+            try:
+                from .update_notice import diagnose_version_mismatch
+                g_obj = _sget(ctx, 'game', None)
+                s_obj = _sget(ctx, 'sync', None) or {}
+                diag_ver = diagnose_version_mismatch(
+                    _sget(g_obj, 'version', ''),
+                    _sget(g_obj, 'resource_version', ''),
+                    s_obj.get('translation_game', ''),
+                    s_obj.get('translation_resource', ''),
+                )
+                if diag_ver.get('kind') in ('game_older', 'game_newer', 'resource_mismatch'):
+                    final_title = diag_ver['title']
+                    summary = diag_ver['summary']
+                    if diag_ver.get('steps'):
+                        final_steps = tuple(diag_ver['steps'])
+                    final_level = 'warning'
+            except Exception:  # noqa: BLE001
+                pass
         if safe_extra_summary:
             summary += '\n\n' + safe_extra_summary
         if probe_text:
@@ -1730,13 +1752,28 @@ def build_report(
         summary = _sanitize_surrogates(summary)
 
         context_rows = _build_context_rows(ctx, win32_err, http_status, target_file, target_url)
+        if final_code == 'E-PKG-MISMATCH':
+            try:
+                from .update_notice import summarize_declared_versions
+                g_obj = _sget(ctx, 'game', None)
+                s_obj = _sget(ctx, 'sync', None) or {}
+                gv = _sstr(_sget(g_obj, 'version', ''), '?') or '?'
+                gr = _sstr(_sget(g_obj, 'resource_version', ''), '?') or '?'
+                sg = summarize_declared_versions(s_obj.get('translation_game', ''), for_resource=False)
+                sr = summarize_declared_versions(s_obj.get('translation_resource', ''), for_resource=True)
+                context_rows = context_rows + (
+                    {'label': 'Game trên máy', 'value': f'v{gv} · res {gr}', 'tone': 'warn'},
+                    {'label': 'Gói Việt hoá hỗ trợ', 'value': f'v{sg} · {sr}', 'tone': 'warn'},
+                )
+            except Exception:  # noqa: BLE001
+                pass
         report = ErrorReport(
             code=final_code,
             report_id=new_report_id(),
-            title=_sanitize_surrogates(safe_title or info.title),
+            title=_sanitize_surrogates(final_title),
             summary=summary,
-            steps=info.steps,
-            level=info.level,
+            steps=final_steps,
+            level=final_level,
             message=raw,
             text='',
             wrapper=_sanitize_surrogates(diag.wrapper if diag else ''),

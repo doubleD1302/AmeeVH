@@ -429,10 +429,12 @@ _add('E-NO-PACKAGE', 'Bản phát hành chưa có gói Android',
      'Bản phát hành trên GitHub chưa kèm gói bản dịch dành cho Android.',
      ['Chờ người làm bản dịch bổ sung gói Android.', _REPORT],
      level='error', platform='android')
-_add('E-PKG-MISMATCH', 'Gói bản dịch không khớp phiên bản game trên máy',
-     'Phiên bản game Stella Sora trên thiết bị Android không khớp với gói bản dịch hiện tại.',
-     ['Cập nhật game lên phiên bản phù hợp rồi thử lại.', _SEND],
-     level='error', platform='android')
+_add('E-PKG-MISMATCH', 'Phiên bản game chưa khớp gói Việt hoá',
+     'Phiên bản game Stella Sora trên máy khác với phiên bản mà gói Việt hoá trên GitHub hỗ trợ nên launcher tạm dừng cài để tránh lỗi xác minh tệp (BinDiff / Data check fail) khi mở game.',
+     ['Nếu game trên máy CŨ hơn gói Việt hoá: mở Stella Sora (hoặc Steam/Yostar Launcher) để game tự cập nhật lên bản mới nhất, thoát hẳn game rồi quay lại cài.',
+      'Nếu game trên máy MỚI hơn gói Việt hoá: bạn vẫn chơi bản gốc bình thường và bấm "Kiểm tra phiên bản Việt hoá" khi nhóm dịch cập nhật bản tương thích.',
+      'Đối chiếu rõ "Phiên bản Game" và "Gói Việt hoá hỗ trợ" ở bảng Thông tin kiểm tra bên dưới.'],
+     level='warning', platform='shared')
 _add('E-TIMEOUT', 'Thao tác quá thời hạn',
      'Thao tác trên thiết bị mất quá nhiều thời gian và bị huỷ.',
      ['Thử lại khi thiết bị rảnh hoặc kết nối ổn định hơn.', _SEND],

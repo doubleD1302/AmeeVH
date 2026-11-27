@@ -455,29 +455,44 @@ def read_official_state(root) -> Optional[dict]:
     return d if isinstance(d, dict) and d.get("status") == "official_restored" else None
 
 
+def _parse_mani_headers(path: Path) -> dict[str, str]:
+    headers: dict[str, str] = {}
+    if not path.is_file():
+        return headers
+    try:
+        with path.open(encoding="utf8", errors="replace") as f:
+            header = "".join(next(f, "") for _ in range(48))
+        for line in header.splitlines():
+            line = line.strip().lstrip("$")
+            m = re.match(r"^(GAME_VER|CLIENT_VER|RES_VER|RESOURCE_VER|BIN_DIFF_PATCH_VER)[:=\s]+([0-9A-Za-z_.-]+)", line)
+            if m:
+                k, v = m.group(1), m.group(2)
+                if k == "RESOURCE_VER":
+                    k = "RES_VER"
+                headers.setdefault(k, v)
+    except OSError:
+        pass
+    return headers
+
+
 def read_game_versions(root) -> dict[str, str]:
-    """Read actual version headers; never infer from a directory or bundle size."""
+    """Read actual version headers; resolves BIN_DIFF_PATCH_VER final manifest when present."""
     out = {"game": "unknown", "resource": "unknown"}
-    game_version = None
-    client_version = None
     root = Path(root)
-    mf = root / "Persistent_Store" / "ss_win.mani"
-    if mf.is_file():
-        try:
-            with mf.open(encoding="utf8", errors="replace") as f:
-                header = "".join(next(f, "") for _ in range(32))
-            for line in header.splitlines():
-                line = line.strip().lstrip("$")
-                m = re.match(r"^(GAME_VER|CLIENT_VER|RES_VER|RESOURCE_VER)[:=\s]+([0-9A-Za-z_.-]+)", line)
-                if m:
-                    k, v = m.group(1), m.group(2)
-                    if k == "GAME_VER" and game_version is None:
-                        game_version = v
-                    elif k == "CLIENT_VER" and client_version is None:
-                        client_version = v
-                    elif k in ("RES_VER", "RESOURCE_VER") and out["resource"] == "unknown":
-                        out["resource"] = v
-            out["game"] = game_version or client_version or "unknown"
-        except OSError:
-            pass
+    ps = root / "Persistent_Store"
+    base_mani = ps / "ss_win.mani"
+    base_h = _parse_mani_headers(base_mani)
+    if not base_h:
+        return out
+    final_h = dict(base_h)
+    patch_raw = base_h.get("BIN_DIFF_PATCH_VER", "")
+    if patch_raw.isdigit() and int(patch_raw) > 0:
+        patched_mani = ps / f"p_{int(patch_raw)}_m.ss_win.mani"
+        patched_h = _parse_mani_headers(patched_mani)
+        if patched_h.get("GAME_VER"):
+            final_h["GAME_VER"] = patched_h["GAME_VER"]
+        if patched_h.get("RES_VER"):
+            final_h["RES_VER"] = patched_h["RES_VER"]
+    out["game"] = final_h.get("GAME_VER") or final_h.get("CLIENT_VER") or "unknown"
+    out["resource"] = final_h.get("RES_VER") or "unknown"
     return out

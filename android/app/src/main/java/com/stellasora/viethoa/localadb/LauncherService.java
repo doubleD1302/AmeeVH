@@ -101,8 +101,8 @@ public final class LauncherService extends Service {
   } catch (Exception e) {
    support = Store.obj("methods", new JSONArray());
   }
-  String appVer = "2.1.3";
-  long appCode = 26;
+  String appVer = "2.1.4";
+  long appCode = 27;
   try {
    PackageInfo pi = c.getPackageManager().getPackageInfo(Store.APP, 0);
    appVer = pi.versionName;
@@ -539,9 +539,33 @@ public final class LauncherService extends Service {
       progress("Đang khôi phục dữ liệu gốc trước bản cập nhật…", 25);
       patcher.restore();
       detectGame();
-      set("officialUpdate", OfficialAndroidClient.readCachedGuardState(this));
+      JSONObject offAfter = OfficialAndroidClient.readCachedGuardState(this);
+      set("officialUpdate", offAfter);
       DiagnosticLog.log(this, "guardRestore", "Đã đóng Stella Sora và khôi phục dữ liệu gốc hoàn tất.");
-      setMessage("Đã đóng Stella Sora và khôi phục dữ liệu gốc! Bạn có thể mở game cập nhật ngay.");
+      String curG = state.getJSONObject("game").optString("gameVersion", "");
+      String latestG = offAfter.optString("latestGameVersion", "");
+      if (latestG.isEmpty() && manifest != null) latestG = manifest.optString("client_game_version", "");
+      String targetLabel = !latestG.isEmpty() ? ("v" + latestG) : "bản mới nhất";
+      String curLabel = !curG.isEmpty() ? (" (v" + curG + ")") : "";
+      setMessage("Đã khôi phục dữ liệu gốc! Hãy mở Stella Sora để cập nhật lên " + targetLabel + ", thoát hẳn game rồi cài lại Việt hoá.");
+      JSONObject guideData = Store.obj(
+        "title", "Đã khôi phục dữ liệu gốc thành công!",
+        "errorTitle", "Đã khôi phục dữ liệu gốc thành công!",
+        "message", "Stella Sora trên máy đã về bản gốc sạch sẽ" + curLabel + ". Hãy mở game để tự tải bản cập nhật " + targetLabel + " rồi mới cài lại Việt hoá.",
+        "explain", "Stella Sora trên máy đã về bản gốc sạch sẽ" + curLabel + ". Đây là bước cần thiết để game tải bản cập nhật " + targetLabel + " mà không gặp lỗi xác minh tệp.",
+        "error", false,
+        "level", "info",
+        "steps", new JSONArray(Arrays.asList(
+          "Bấm \"Mở Stella Sora\" bên dưới để game tự tải dữ liệu cập nhật " + targetLabel + " (nếu game yêu cầu cập nhật app, bấm \"Mở Google Play\").",
+          "Chờ game tải xong vào tới màn hình đăng nhập/chính, sau đó vuốt thoát hẳn Stella Sora khỏi đa nhiệm.",
+          "Quay lại launcher — ứng dụng sẽ tự nhận phiên bản mới để bạn bấm \"Cài Việt hoá ngay\"."
+        )),
+        "quickActions", new JSONArray(Arrays.asList("launch_game", "open_play_store"))
+      );
+      main.post(() -> {
+       Listener l = listener.get();
+       if (l != null) l.event(Store.obj("type", "message", "data", guideData));
+      });
       break;
      }
      case "recover": {
@@ -674,10 +698,26 @@ public final class LauncherService extends Service {
   String gVer = game.optString("gameVersion"), rVer = game.optString("resourceVersion");
   String mGame = available ? manifest.optString("client_game_version") : "", mRes = available ? manifest.optString("resource_version") : "";
   boolean versionsKnown = game.optBoolean("versionsKnown") && !gVer.trim().isEmpty() && !rVer.trim().isEmpty();
-  boolean strictMatch = versionsKnown && VersionCompatibility.matchesBoth(mGame, mRes, gVer, rVer);
+  VersionCompatibility.Diagnosis diag = (available && versionsKnown)
+    ? VersionCompatibility.diagnose(mGame, mRes, gVer, rVer)
+    : null;
+  boolean strictMatch = diag != null && diag.isMatch();
   boolean compatible = available && adb.verified && game.optBoolean("installed") && strictMatch;
+  String mismatchKind = (diag != null && !diag.isMatch()) ? diag.kind : "";
+  String supportedGame = diag != null ? diag.declaredGameSummary : VersionCompatibility.summarizeDeclared(mGame, false);
+  String supportedRes = diag != null ? diag.declaredResourceSummary : VersionCompatibility.summarizeDeclared(mRes, true);
   String wrongEdition = game.optString("wrongEdition", "");
   boolean noData = game.optBoolean("noData", false);
+  String mismatchReason;
+  if ("game_older".equals(mismatchKind)) {
+   mismatchReason = "Game trên máy (v" + gVer + ") đang cũ hơn gói Việt hoá mới nhất (v" + supportedGame + "). Mở Stella Sora cập nhật lên v" + supportedGame + ", thoát hẳn game rồi quay lại cài.";
+  } else if ("game_newer".equals(mismatchKind)) {
+   mismatchReason = "Game trên máy (v" + gVer + ") mới hơn gói Việt hoá hiện tại (v" + supportedGame + "). Vui lòng chờ nhóm dịch phát hành bản tương thích.";
+  } else if ("resource_mismatch".equals(mismatchKind)) {
+   mismatchReason = "Tài nguyên game (RES " + rVer + ") chưa khớp gói hỗ trợ (" + supportedRes + "). Hãy mở game tải bản vá mới nhất hoặc đồng bộ lại GitHub.";
+  } else {
+   mismatchReason = "Gói (v" + supportedGame + " · " + supportedRes + ") chưa khớp máy (v" + gVer + " · RES " + rVer + ").";
+  }
   String reason = !available ? state.getJSONObject("github").optString("message", "Chưa có gói Android tương thích.")
     : !adb.verified ? "Kết nối Local ADB trước khi cài."
     : !wrongEdition.isEmpty() ? game.optString("reason", "Phát hiện Stella Sora bản khu vực khác (" + wrongEdition + ").")
@@ -685,7 +725,7 @@ public final class LauncherService extends Service {
     : noData ? game.optString("reason", "Chưa thấy thư mục dữ liệu game. Hãy mở Stella Sora 1 lần tải dữ liệu rồi kiểm tra lại.")
     : !versionsKnown ? "Chưa đọc được phiên bản game và tài nguyên. Hãy mở game tải đủ dữ liệu rồi kiểm tra lại."
     : strictMatch ? "Gói Android khớp phiên bản đã đọc."
-    : ("Gói (" + mGame + " · " + mRes + ") không khớp máy (" + gVer + " · " + rVer + "). Không thể cài.");
+    : mismatchReason;
 
   JSONObject receipt = state.optJSONObject("receipt");
   boolean receiptPresent = receipt != null && receipt.optBoolean("present");
@@ -714,6 +754,9 @@ public final class LauncherService extends Service {
     "updateAvailable", updateAvailable,
     "reason", reason,
     "reasonCode", reasonCode,
+    "mismatchKind", mismatchKind,
+    "supportedGameVersion", available ? supportedGame : "",
+    "supportedResourceVersion", available ? supportedRes : "",
     "version", manifestVer,
     "manifestSha256", manifestSha,
     "fileCount", available ? manifest.getJSONArray("files").length() : 0

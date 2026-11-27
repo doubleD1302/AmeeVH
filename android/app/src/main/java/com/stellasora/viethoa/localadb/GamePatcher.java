@@ -143,32 +143,92 @@ final class GamePatcher {
   }
   String listing = adb.exec("find " + Store.q(root + "/Persistent_Store") + " -maxdepth 1 -type f -name '*.mani' -print", 10000);
   String chosen = null, game = null, resource = null;
-  List<String> files = new ArrayList<>();
+  Map<String, String> maniByName = new LinkedHashMap<>();
   for (String file : listing.split("\\r?\\n")) {
    file = file.trim();
-   if (!file.startsWith(root + "/Persistent_Store/") || !file.substring(file.lastIndexOf('/') + 1).matches("[A-Za-z0-9_.-]+\\.mani")) continue;
-   files.add(file);
-  }
-  Collections.sort(files, (a, b) -> {
-   boolean aW = a.toLowerCase(Locale.ROOT).contains("ss_win"), bW = b.toLowerCase(Locale.ROOT).contains("ss_win");
-   if (aW != bW) return aW ? 1 : -1;
-   return a.compareTo(b);
-  });
-  for (String file : files) {
+   if (!file.startsWith(root + "/Persistent_Store/")) continue;
+   String baseName = file.substring(file.lastIndexOf('/') + 1);
+   if (!baseName.matches("[A-Za-z0-9_.-]+\\.mani")) continue;
    String relMani = file.substring(root.length());
    String resolvedMani = adb.exec("if [ -L " + Store.q(file) + " ]; then printf 'ERR'; else readlink -f " + Store.q(file) + "; fi", 10000).trim();
    if (!isSafeFuseAlias(resolvedMani, file, suffix + relMani)) continue;
-   String data = adb.exec("head -n 24 " + Store.q(file), 10000);
-   String g = header(data, "GAME_VER");
-   if (g == null) g = header(data, "CLIENT_VER");
-   String r = header(data, "RES_VER");
-   if (g == null || r == null) continue;
-   if (game != null && (!game.equals(g) || !resource.equals(r))) {
-    throw new IOException("Các tiêu đề tài nguyên không thống nhất phiên bản. Không chọn đoán một bản.");
+   maniByName.put(baseName, file);
+  }
+  // Authoritative resolution matching Yostar's Android engine:
+  // 1) Read ss_and.mani first; if BIN_DIFF_PATCH_VER=N and p_N_m.ss_and.mani exists, prefer its final GAME_VER/RES_VER.
+  // 2) Never fail when stale patch manifests (p_*_m.ss_and.mani) or ss_win.mani coexist in Persistent_Store.
+  String primaryBase = maniByName.get("ss_and.mani");
+  if (primaryBase != null) {
+   String baseData = adb.exec("head -n 48 " + Store.q(primaryBase), 10000);
+   String baseG = header(baseData, "GAME_VER");
+   String baseC = header(baseData, "CLIENT_VER");
+   String baseR = header(baseData, "RES_VER");
+   if (baseR == null) baseR = header(baseData, "RESOURCE_VER");
+   String patchNumRaw = header(baseData, "BIN_DIFF_PATCH_VER");
+   String finalFile = primaryBase;
+   String finalG = baseG;
+   String finalR = baseR;
+   if (patchNumRaw != null && patchNumRaw.matches("[0-9]+")) {
+    try {
+     int patchNum = Integer.parseInt(patchNumRaw);
+     if (patchNum > 0) {
+      String patchedMani = maniByName.get("p_" + patchNum + "_m.ss_and.mani");
+      if (patchedMani != null) {
+       String pData = adb.exec("head -n 48 " + Store.q(patchedMani), 10000);
+       String pG = header(pData, "GAME_VER");
+       String pR = header(pData, "RES_VER");
+       if (pR == null) pR = header(pData, "RESOURCE_VER");
+       if (pG != null) finalG = pG;
+       if (pR != null) {
+        finalR = pR;
+        finalFile = patchedMani;
+       }
+      }
+     }
+    } catch (NumberFormatException ignored) {}
    }
-   game = g;
-   resource = r;
-   chosen = file;
+   if (finalG == null) finalG = baseC;
+   if (finalG != null && finalR != null) {
+    game = finalG;
+    resource = finalR;
+    chosen = finalFile;
+   }
+  }
+  if (chosen == null) {
+   List<String> fallbackFiles = new ArrayList<>(maniByName.values());
+   Collections.sort(fallbackFiles, (a, b) -> {
+    String al = a.toLowerCase(Locale.ROOT), bl = b.toLowerCase(Locale.ROOT);
+    boolean aAnd = al.contains("ss_and"), bAnd = bl.contains("ss_and");
+    if (aAnd != bAnd) return aAnd ? -1 : 1;
+    boolean aWin = al.contains("ss_win"), bWin = bl.contains("ss_win");
+    if (aWin != bWin) return aWin ? 1 : -1;
+    return a.compareTo(b);
+   });
+   String bestFallbackFile = null, bestFallbackG = null, bestFallbackR = null;
+   for (String file : fallbackFiles) {
+    String data = adb.exec("head -n 48 " + Store.q(file), 10000);
+    String g = header(data, "GAME_VER");
+    String c = header(data, "CLIENT_VER");
+    String r = header(data, "RES_VER");
+    if (r == null) r = header(data, "RESOURCE_VER");
+    if (r == null) continue;
+    if (g != null) {
+     game = g;
+     resource = r;
+     chosen = file;
+     break;
+    }
+    if (c != null && bestFallbackFile == null) {
+     bestFallbackFile = file;
+     bestFallbackG = c;
+     bestFallbackR = r;
+    }
+   }
+   if (chosen == null && bestFallbackFile != null) {
+    game = bestFallbackG;
+    resource = bestFallbackR;
+    chosen = bestFallbackFile;
+   }
   }
   if (chosen != null) {
    target.put("gameVersion", game);
@@ -209,7 +269,7 @@ final class GamePatcher {
     + "else ps -A 2>/dev/null | grep -F " + Store.q(Store.GAME) + " >/dev/null 2>&1 && { printf 'ERR:RUNNING'; exit 0; }; fi; "
     + "if [ -L " + qVer + " ] || [ ! -f " + qVer + " ]; then printf 'ERR:VERFILE'; exit 0; fi; "
     + "rv=$(readlink -f " + qVer + ") || exit $?; "
-    + "printf 'OK\\n%s\\n%s\\n' \"$r\" \"$rv\"; head -n 24 " + qVer;
+    + "printf 'OK\\n%s\\n%s\\n' \"$r\" \"$rv\"; head -n 48 " + qVer;
   String out = adb.exec(cmd, 12000);
   if ("ERR:ROOT".equals(out)) throw new IOException("Thư mục game đã đổi.");
   if ("ERR:RUNNING".equals(out)) throw new IOException("Hãy thoát Stella Sora trước khi thay đổi tài nguyên.");
@@ -223,6 +283,7 @@ final class GamePatcher {
   String g = header(data, "GAME_VER");
   if (g == null) g = header(data, "CLIENT_VER");
   String r = header(data, "RES_VER");
+  if (r == null) r = header(data, "RESOURCE_VER");
   if (!target.getString("gameVersion").equals(g) || !target.getString("resourceVersion").equals(r)) {
    throw new IOException("Game đã cập nhật hoặc chưa đọc được phiên bản. Không ghi đè tài nguyên.");
   }
@@ -680,8 +741,23 @@ final class GamePatcher {
   if (pending()) throw new IOException("Có nhật ký chưa hoàn tất. Hãy chọn Phục hồi thao tác trước.");
   cleanStaleStaging();
   JSONObject manifest = prefetchedManifest != null ? prefetchedManifest : channel.androidManifest(channel.freshRelease());
-  if (!VersionCompatibility.matchesBoth(manifest.optString("client_game_version"), manifest.optString("resource_version"), target.optString("gameVersion"), target.optString("resourceVersion"))) {
-   throw new IOException("Gói Android không khớp phiên bản game hoặc tài nguyên đã đọc. Không cài đặt.");
+  VersionCompatibility.Diagnosis diag = VersionCompatibility.diagnose(
+    manifest.optString("client_game_version"), manifest.optString("resource_version"),
+    target.optString("gameVersion"), target.optString("resourceVersion"));
+  if (!diag.isMatch()) {
+   String msg;
+   if ("game_older".equals(diag.kind)) {
+    msg = "Game trên máy (v" + diag.observedGame + ") đang cũ hơn gói Việt hoá mới nhất (v" + diag.declaredGameSummary + "). Hãy mở Stella Sora cho game cập nhật lên v" + diag.declaredGameSummary + ", thoát hẳn game rồi cài lại.";
+   } else if ("game_newer".equals(diag.kind)) {
+    msg = "Game trên máy (v" + diag.observedGame + ") mới hơn gói Việt hoá hiện tại (v" + diag.declaredGameSummary + "). Vui lòng chờ nhóm dịch phát hành bản tương thích.";
+   } else {
+    msg = "Gói Android (v" + diag.declaredGameSummary + " · " + diag.declaredResourceSummary + ") chưa khớp game trên máy (v" + diag.observedGame + " · RES " + diag.observedResource + ").";
+   }
+   throw new StellaException("E-PKG-MISMATCH", msg, null,
+     "mismatchKind", diag.kind,
+     "gameVersion", diag.observedGame,
+     "resourceVersion", diag.observedResource,
+     "supportedGameVersion", diag.declaredGameSummary);
   }
   step("Đang chuẩn bị cài đặt cho Stella Sora Android...", 5);
   ensureExternalBase();

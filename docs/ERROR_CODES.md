@@ -69,7 +69,7 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 | `E-MANIFEST-PLATFORM` | Gói bản dịch không dành cho Windows | lỗi | ✓ |  |
 | `E-MANIFEST-VERSION` | Không so sánh được phiên bản bản dịch | lỗi | ✓ |  |
 | `E-NO-PACKAGE` | Bản phát hành chưa có gói Android | lỗi |  | ✓ |
-| `E-PKG-MISMATCH` | Gói bản dịch không khớp phiên bản game trên máy | lỗi |  | ✓ |
+| `E-PKG-MISMATCH` | Phiên bản game chưa khớp gói Việt hoá | cảnh báo | ✓ | ✓ |
 | `E-SECURITY` | Launcher từ chối vì không an toàn | lỗi | ✓ | ✓ |
 | `E-TIMEOUT` | Thao tác quá thời hạn | lỗi |  | ✓ |
 

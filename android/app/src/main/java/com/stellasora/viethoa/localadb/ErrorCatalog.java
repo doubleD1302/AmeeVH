@@ -184,12 +184,12 @@ final class ErrorCatalog {
     "error", false, qa("sync_github"),
     "Chờ bản phát hành được cập nhật lại rồi bấm Đồng bộ GitHub.", SEND);
 
-  add("E-PKG-MISMATCH", "Gói bản dịch chưa khớp phiên bản game trên máy",
-    "Phiên bản game hoặc tài nguyên Stella Sora trên điện thoại khác với phiên bản mà gói Android trên GitHub hỗ trợ nên ứng dụng dừng để tránh lỗi crash game.",
-    "error", false, qa("launch_game", "detect_game", "sync_github"),
-    "Mở Stella Sora cho game tự cập nhật dữ liệu mới nhất, sau đó thoát hẳn game rồi bấm \"Tìm và kiểm tra game\".",
-    "Bấm \"Đồng bộ lại GitHub\" để kiểm tra đã có bản dịch mới khớp bản game chưa.",
-    "Nếu game đã mới nhất mà vẫn lệch phiên bản, chờ nhóm dịch phát hành bản tương thích (xem phiên bản ở bảng Thông tin kiểm tra).");
+  add("E-PKG-MISMATCH", "Phiên bản game chưa khớp gói Việt hoá",
+    "Phiên bản Stella Sora trên điện thoại khác với phiên bản mà gói Việt hoá hiện tại hỗ trợ nên launcher tạm dừng cài để tránh lỗi xác minh tệp (BinDiff / Data check fail) khi mở game.",
+    "warning", false, qa("launch_game", "open_play_store", "detect_game", "sync_github"),
+    "Nếu game trên máy CŨ hơn gói Việt hoá: bấm \"Mở Stella Sora\" để game tự tải cập nhật mới nhất (hoặc cập nhật trên Google Play), vào tới màn hình chính rồi vuốt thoát hẳn game và quay lại cài.",
+    "Nếu game trên máy MỚI hơn gói Việt hoá: bạn vẫn chơi bản gốc bình thường và bấm \"Đồng bộ GitHub\" sau khi nhóm dịch phát hành bản tương thích.",
+    "Xem rõ phiên bản \"Game trên máy\" và \"Gói Việt hoá hỗ trợ\" ở bảng Thông tin kiểm tra bên dưới.");
 
   // ------------------------------------------------------------------ download
   add("E-DL-VERIFY", "Tệp tải về bị sai kích thước hoặc hỏng (SHA256)",

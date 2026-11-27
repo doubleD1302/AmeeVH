@@ -11,13 +11,13 @@
     adb:{connected:false,paired:false,hasIdentity:false,host:'127.0.0.1',pairingPort:0,connectionPort:0,status:'Chưa nối',notificationPairing:{active:false,stage:'',message:''}},
     game:{installed:false,package:'com.YoStarEN.StellaSora',root:'',gameVersion:'',resourceVersion:'',versionsKnown:false,noData:false,wrongEdition:''},
     github:{repo:'doubleD1302/AmeeVH',branch:'main',announcementStatus:'Chưa đọc',releaseVersion:'',manifestStatus:'Chưa đọc',translationVersion:'',manifestSha256:'',message:'Chưa đồng bộ.'},
-    notifications:[],payload:{available:false,compatible:false,updateAvailable:false,reason:'Đồng bộ GitHub để xem gói Android.'},
+    notifications:[],payload:{available:false,compatible:false,updateAvailable:false,mismatchKind:'',supportedGameVersion:'',supportedResourceVersion:'',reason:'Đồng bộ GitHub để xem gói Android.'},
     config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0,theme:'system'},
     update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},
     officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
     guard:{accessibilityEnabled:false,overlayEnabled:false,canPinShortcut:true,pendingRestore:false},
     support:{methods:[]},
-    app:{versionName:'2.1.3',versionCode:26,variant:'localadb',theme:'system',resolvedTheme:'light'}
+    app:{versionName:'2.1.4',versionCode:27,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
 
   let state = initial, currentPage = 'overview';
@@ -118,6 +118,7 @@
     sync_github:          {label:'Đồng bộ GitHub', icon:'refresh', action:'sync', close:true},
     detect_game:          {label:'Quét tìm game', icon:'search', action:'detect', close:true},
     launch_game:          {label:'Mở Stella Sora', icon:'play', action:'launchGame', close:true},
+    open_play_store:      {label:'Mở Google Play', icon:'download', action:'openPlayStore', close:false},
     recover:              {label:'Phục hồi ngay', icon:'restore', action:'recover', close:true},
     install_patch:        {label:'Cài Việt hoá', icon:'download', action:'install', close:true},
     reset_channel:        {label:'Kênh mặc định', icon:'refresh', action:'resetChannel', close:true}
@@ -388,7 +389,29 @@
       return {action:'detect',caption:'Tìm và kiểm tra game',icon:'search',note:'Quét tìm Stella Sora trên điện thoại.'};
     }
     if (!state.payload.available) return {action:'sync',caption:'Đồng bộ gói Android',icon:'refresh',note:'Tải danh sách gói Việt hoá từ GitHub.'};
-    if (!state.payload.compatible) return {action:'sync',caption:'Kiểm tra gói mới',icon:'refresh',note:'Gói chưa khớp phiên bản game trên máy.'};
+    if (!state.payload.compatible) {
+      if (state.payload.mismatchKind === 'game_older') {
+        const tgt = state.payload.supportedGameVersion ? ('v' + state.payload.supportedGameVersion) : 'bản mới';
+        const cur = state.game.gameVersion ? ('v' + state.game.gameVersion) : 'bản cũ';
+        return {
+          action:'launchGame',
+          caption:'Mở game cập nhật (' + cur + ' → ' + tgt + ')',
+          icon:'play',
+          note:'Mở Stella Sora cập nhật lên ' + tgt + ', thoát hẳn game rồi quay lại cài.'
+        };
+      }
+      if (state.payload.mismatchKind === 'game_newer') {
+        const tgt = state.payload.supportedGameVersion ? ('v' + state.payload.supportedGameVersion) : '?';
+        const cur = state.game.gameVersion ? ('v' + state.game.gameVersion) : '?';
+        return {
+          action:'sync',
+          caption:'Kiểm tra bản dịch mới',
+          icon:'refresh',
+          note:'Game (' + cur + ') mới hơn gói dịch (' + tgt + ') — chờ nhóm dịch cập nhật.'
+        };
+      }
+      return {action:'sync',caption:'Kiểm tra gói mới',icon:'refresh',note:state.payload.reason || 'Gói chưa khớp phiên bản game trên máy.'};
+    }
     if (!state.receipt.present) return {action:'install',caption:'Cài Việt hoá ngay',icon:'download',note:'Thoát hẳn game rồi bấm cài đặt.'};
     if (state.payload.updateAvailable || state.receipt.stale) return {action:'install',caption:'Cập nhật Việt hoá',icon:'download',note:'Đã có bản dịch mới. Thoát game rồi bấm.'};
     return {action:'install',caption:'Cài lại Việt hoá',icon:'check',note:'Bản dịch đã mới nhất — có thể Mở game ngay!'};
@@ -570,7 +593,7 @@
     text('github-state', lines.join('\n'));
 
     text('github-summary', p.available ? ('Gói Android ' + (p.version || gh.translationVersion || '') + ' sẵn sàng.') : (gh.message || 'Chưa đồng bộ GitHub.'));
-    text('app-version', 'v' + (state.app.versionName || '2.1.3') + ' (' + (state.app.versionCode || 26) + ')');
+    text('app-version', 'v' + (state.app.versionName || '2.1.4') + ' (' + (state.app.versionCode || 27) + ')');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Cài APK mới' : 'Tải bản cập nhật';

@@ -39,6 +39,7 @@ _FALLBACK_TITLES: dict[str, str] = {
     "E-MANIFEST-PLATFORM": "Gói bản dịch không dành cho Windows",
     "E-SECURITY": "Launcher từ chối vì không an toàn",
     "E-DOWNGRADE": "Gói bản dịch cũ hơn bản đang cài",
+    "E-PKG-MISMATCH": "Phiên bản game chưa khớp gói Việt hoá",
     "E-NO-GAME-FOLDER": "Chưa chọn thư mục game",
     "E-UNKNOWN": "Lỗi chưa xác định",
 }
@@ -272,6 +273,115 @@ def sync_blocker(sync) -> Optional[tuple[str, str]]:
     return (sync.get("manifest_error_code") or _classify_text(err) or "E-MANIFEST-MISSING"), err
 
 
+def summarize_declared_versions(declared: Any, *, for_resource: bool = False) -> str:
+    """Formats comma/semicolon-separated manifest version specs cleanly for end users."""
+    raw = str(declared or "").strip()
+    if not raw:
+        return "?"
+    items: list[str] = []
+    has_wildcard = False
+    for tok in re.split(r"[,;|]", raw):
+        s = tok.strip()
+        if not s:
+            continue
+        if s == "*":
+            has_wildcard = True
+        elif re.fullmatch(r"[0-9][0-9A-Za-z_.-]*", s):
+            items.append(s)
+    if for_resource and has_wildcard:
+        return f"{items[-1]} · mọi hotfix" if items else "mọi phiên bản tài nguyên"
+    if not items:
+        return "mọi phiên bản" if has_wildcard else raw
+    if len(items) <= 2:
+        return ", ".join(items)
+    return f"{items[0]} … {items[-1]}"
+
+
+def diagnose_version_mismatch(
+    local_game: Any,
+    local_res: Any,
+    declared_game: Any,
+    declared_res: Any,
+) -> dict[str, Any]:
+    """Direction-aware compatibility diagnosis between installed game and translation manifest.
+
+    Returns a dict with ``kind`` in:
+    ``'match' | 'game_older' | 'game_newer' | 'resource_mismatch' | 'unknown'``
+    along with plain-Vietnamese ``title``, ``summary``, and ``steps``.
+    """
+    lg = str(local_game or "").strip()
+    lr = str(local_res or "").strip()
+    dg = str(declared_game or "").strip()
+    dr = str(declared_res or "").strip()
+    sup_g = summarize_declared_versions(dg, for_resource=False)
+    sup_r = summarize_declared_versions(dr, for_resource=True)
+
+    base = {
+        "kind": "unknown",
+        "local_game": lg,
+        "local_res": lr,
+        "supported_game": sup_g,
+        "supported_res": sup_r,
+        "title": "Phiên bản game chưa khớp gói Việt hoá",
+        "summary": "",
+        "steps": (),
+    }
+    if not lg or lg.lower() in ("unknown", "*", "all") or not dg:
+        return base
+
+    game_ok = matches(lg, dg)
+    res_known = bool(lr and lr.lower() not in ("unknown", "*", "all"))
+    res_ok = (not dr) or (not res_known) or matches(lr, dr)
+    if game_ok and res_ok:
+        base["kind"] = "match"
+        return base
+
+    if not game_ok:
+        lp = version_parts(lg)
+        cands = [version_parts(tok.strip()) for tok in re.split(r"[,;|]", dg) if tok.strip() and tok.strip() != "*"]
+        valid_cands = [c for c in cands if c is not None]
+        if lp is not None and valid_cands and lp > max(valid_cands):
+            kind = "game_newer"
+        else:
+            kind = "game_older"
+        base["kind"] = kind
+        res_note = f" (tài nguyên {lr})" if res_known else ""
+        if kind == "game_older":
+            base["title"] = f"Game trên máy đang ở bản cũ (v{lg} → cần v{sup_g})"
+            base["summary"] = (
+                f"Stella Sora trên máy tính đang ở phiên bản v{lg}{res_note}, cũ hơn gói Việt hoá mới nhất trên GitHub (v{sup_g}).\n\n"
+                "Đây KHÔNG phải lỗi hỏng game — launcher tạm dừng cài để tránh game báo lỗi xác minh tệp (BinDiff / Data check fail) ngay khi mở."
+            )
+            base["steps"] = (
+                f"Mở Stella Sora (hoặc mở qua Yostar Launcher / Steam) để game tự tải bản cập nhật mới nhất lên v{sup_g} vào tới màn hình đăng nhập/chính.",
+                "Thoát hẳn Stella Sora (đảm bảo không còn tiến trình StellaSora.exe chạy ngầm).",
+                "Quay lại launcher, bấm \"Kiểm tra phiên bản Việt hoá\" (hoặc chọn lại thư mục game) rồi bấm \"Cài Việt hoá\".",
+            )
+        else:
+            base["title"] = f"Game trên máy (v{lg}) mới hơn gói Việt hoá (v{sup_g})"
+            base["summary"] = (
+                f"Stella Sora trên máy tính đã cập nhật lên v{lg}{res_note}, trong khi gói Việt hoá hiện tại trên GitHub mới hỗ trợ đến v{sup_g}.\n\n"
+                "Launcher tạm dừng cài để không ghi đè dữ liệu cũ làm văng hoặc lỗi game."
+            )
+            base["steps"] = (
+                "Dữ liệu game của bạn hoàn toàn an toàn — bạn vẫn có thể chơi bản tiếng Anh bình thường trong lúc chờ.",
+                f"Chờ nhóm dịch phát hành gói Việt hoá tương thích v{lg} (theo dõi mục Thông báo trong launcher).",
+                "Khi có bản mới, bấm \"Kiểm tra phiên bản Việt hoá\" rồi cài lại như bình thường.",
+            )
+        return base
+
+    base["kind"] = "resource_mismatch"
+    base["title"] = f"Tài nguyên game (RES {lr}) chưa khớp gói Việt hoá"
+    base["summary"] = (
+        f"Phiên bản game đã khớp (v{lg}) nhưng mã tài nguyên trên máy (RES {lr}) khác với danh sách gói Việt hoá hỗ trợ ({sup_r})."
+    )
+    base["steps"] = (
+        "Mở Stella Sora cho game tự tải đủ bản vá tài nguyên mới nhất, sau đó thoát hẳn game.",
+        "Quay lại launcher bấm \"Kiểm tra phiên bản Việt hoá\" rồi thử cài lại.",
+    )
+    return base
+
+
 def translation_state(sync, game) -> dict[str, Any]:
     blocker = sync_blocker(sync)
     if blocker:
@@ -280,12 +390,28 @@ def translation_state(sync, game) -> dict[str, Any]:
     receipt = getattr(game, "installed_receipt", None)
     if not getattr(game, "installed", False):
         return _blocked("E-NO-GAME-FOLDER", f"Bản Việt hoá: {version}")
-    if matches(getattr(game, "version", ""), sync.get("translation_game")) and matches(
-        getattr(game, "resource_version", ""), sync.get("translation_resource")
-    ):
+    local_game = str(getattr(game, "version", "") or "").strip()
+    local_res = str(getattr(game, "resource_version", "") or "").strip()
+    decl_game = str(sync.get("translation_game") or "").strip()
+    decl_res = str(sync.get("translation_resource") or "").strip()
+    diag = diagnose_version_mismatch(local_game, local_res, decl_game, decl_res)
+    if diag["kind"] in ("game_older", "game_newer", "resource_mismatch"):
+        detail = diag["title"]
+        return _blocked(
+            "E-PKG-MISMATCH",
+            detail,
+            version=version,
+            mismatch_kind=diag["kind"],
+            local_game=diag["local_game"],
+            local_resource=diag["local_res"],
+            supported_game=diag["supported_game"],
+            supported_resource=diag["supported_res"],
+            version_note=diag["summary"],
+        )
+    if diag["kind"] == "match":
         version_note = "Phiên bản game và tài nguyên khớp bảng kê; chưa xác minh hiển thị trong game."
     else:
-        version_note = "Phiên bản game hoặc tài nguyên khác bảng kê hoặc chưa đọc được; chưa xác minh tương thích."
+        version_note = "Phiên bản game hoặc tài nguyên chưa đọc được đầy đủ; chưa xác minh tương thích."
     if version_parts(version) is None:
         return _blocked("E-MANIFEST-VERSION", f"Phiên bản trong bảng kê: {version!r}")
     if getattr(game, "receipt_stale", False):

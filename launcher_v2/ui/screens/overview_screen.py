@@ -925,7 +925,19 @@ class OverviewScreen(QWidget):
         if blocker_code:
             self._why_mode = "blocker"
             self._why_code = blocker_code
-            self.why_disabled_btn.setText(nfc(f"Không thể cài [{blocker_code}] — Xem cách sửa"))
+            if blocker_code == "E-PKG-MISMATCH":
+                mk = str(ts.get("mismatch_kind") or "")
+                lg = str(ts.get("local_game") or "")
+                sg = str(ts.get("supported_game") or "")
+                if mk == "game_older" and lg and sg:
+                    why_txt = f"Game đang ở v{lg} (cần v{sg}) — Mở game cập nhật trước rồi cài"
+                elif mk == "game_newer" and lg and sg:
+                    why_txt = f"Game v{lg} mới hơn bản dịch v{sg} — Xem hướng dẫn"
+                else:
+                    why_txt = f"Phiên bản game chưa khớp gói dịch [{blocker_code}] — Xem cách sửa"
+            else:
+                why_txt = f"Không thể cài [{blocker_code}] — Xem cách sửa"
+            self.why_disabled_btn.setText(nfc(why_txt))
             self.why_disabled_btn.setVisible(True)
         elif self._official_notice and (
             self._official_notice.get("needs_restore") or self._official_notice.get("update_available")

@@ -1,7 +1,14 @@
 {
-  "version": "2.1.3",
+  "version": "2.1.4",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-044",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.4: Xử Lý Lỗi Lệch Phiên Bản E-PKG-MISMATCH & Hướng Dẫn Trực Quan (PC & Android)",
+      "type": "release",
+      "content": "Cập nhật đồng bộ Launcher Android v2.1.4 (versionCode 27) và PC Launcher v2.1.4:\n• Đọc chuẩn chuỗi tệp .mani (ss_and.mani / ss_win.mani + BIN_DIFF_PATCH_VER) trên mọi dòng máy Android và PC, tránh lỗi xung đột khi tồn tại nhiều tệp .mani sau khi cập nhật game.\n• Tự động phân biệt rõ nguyên nhân E-PKG-MISMATCH (game trên máy đang cũ hơn bản dịch hay mới hơn bản dịch), bổ sung bảng đối chiếu Game trên máy ↔ Gói Việt hoá hỗ trợ và hướng dẫn 3 bước cực dễ hiểu.\n• Sau khi bấm Khôi phục gốc trên Android, launcher hiện hộp thoại hướng dẫn mở Stella Sora cập nhật lên bản mới, tự đổi nút chính sang \"Mở game cập nhật\" (có nút mở Google Play) và tự quét lại phiên bản ngay khi bạn quay về launcher.\n• PC Launcher tự động bảo vệ chống cài nhầm bản dịch mới lên game cũ để tránh lỗi BinDiff / Data check fail.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.4. Bản dịch game giữ nguyên từ v2.1.0."
+    },
     {
       "id": "NOTIF-043",
       "date": "2026-11-27",

@@ -320,7 +320,7 @@ def _collect_candidates(code: str, ctx: Optional[ErrorContext]) -> list[QuickFix
         _add('probe_network', 20)
 
     # 5. Open game/target directory
-    if _is_file_or_folder_code(code) or code in ('E-STARTUP-DLL', 'E-CONFIG-SAVE', 'E-MIGRATION'):
+    if _is_file_or_folder_code(code) or code in ('E-STARTUP-DLL', 'E-CONFIG-SAVE', 'E-MIGRATION', 'E-PKG-MISMATCH'):
         _add('open_game_dir', 25)
 
     # 6. Config / Migration / Custom channel reset
@@ -341,7 +341,7 @@ def _collect_candidates(code: str, ctx: Optional[ErrorContext]) -> list[QuickFix
         'E-RECOVERY-REQUIRED',
         'E-JOURNAL',
         'E-INSTALL-ROLLED-BACK',
-    ):
+    ) or (code == 'E-PKG-MISMATCH' and _sbool(_sget(game, 'has_vietnamese', False))):
         _add('restore_official', 35)
 
     order_index = {aid: idx for idx, aid in enumerate(CANONICAL_ACTION_IDS)}

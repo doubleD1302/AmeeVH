@@ -35,6 +35,7 @@ public final class MainActivity extends Activity implements LauncherService.List
  private String afterPermission;
  private boolean updateDialogShowing;
  private AlertDialog reconnectDialog;
+ private long lastResumeDetectAt;
 
  private final Set<String> allowed = new HashSet<>(Arrays.asList(
    "state", "sync", "saveSettings", "setTheme", "resetChannel", "probeNetwork",
@@ -43,7 +44,7 @@ public final class MainActivity extends Activity implements LauncherService.List
    "checkUpdate", "installUpdate", "checkOfficialUpdate", "guardRestore",
    "pinGuardShortcut", "openAccessibilitySettings", "openOverlaySettings", "openAppInfoSettings", "openGuardAlert",
    "openWirelessSettings", "openWifiSettings",
-   "openAppNotifications", "openBatterySettings", "openUnknownSources", "launchGame",
+   "openAppNotifications", "openBatterySettings", "openUnknownSources", "launchGame", "openPlayStore",
    "copyDiagnostics", "copyError", "copyAiPrompt", "openSourceCode", "explain", "openLastError", "copyAccount", "openIssues",
    "openDeviceInfo", "openDevSettings"
  ));
@@ -370,6 +371,14 @@ public final class MainActivity extends Activity implements LauncherService.List
      Intent launch = getPackageManager().getLaunchIntentForPackage(Store.GAME);
      if (launch == null) throw new IOException("Chưa tìm thấy ứng dụng Stella Sora Android.");
      startActivity(new Intent(this, LaunchGuardActivity.class));
+     break;
+    }
+    case "openPlayStore": {
+     try {
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Store.GAME)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+     } catch (Exception ignored) {
+      external("https://play.google.com/store/apps/details?id=" + Store.GAME);
+     }
      break;
     }
     case "install":
@@ -748,12 +757,30 @@ public final class MainActivity extends Activity implements LauncherService.List
   if (loaded) {
    emitState();
    maybeAutoSync();
+   maybeAutoRedetectGame();
    showUpdateNotice();
    consumeGuardRestoreIntent();
   }
   new Handler(Looper.getMainLooper()).postDelayed(() -> {
    if (resumed && !updateDialogShowing) offerUpdateNotifications();
   }, 1200);
+ }
+
+ private void maybeAutoRedetectGame() {
+  long now = SystemClock.elapsedRealtime();
+  if (now - lastResumeDetectAt < 3500L) return;
+  try {
+   JSONObject s = LauncherService.snapshot(this);
+   if (s.optBoolean("busy")) return;
+   JSONObject adb = s.optJSONObject("adb");
+   if (adb == null || !adb.optBoolean("connected")) return;
+   JSONObject pl = s.optJSONObject("payload");
+   String rc = pl == null ? "" : pl.optString("reasonCode", "");
+   if ("E-PKG-MISMATCH".equals(rc) || "E-GAME-NO-DATA".equals(rc) || "E-GAME-VERSION".equals(rc)) {
+    lastResumeDetectAt = now;
+    LauncherService.dispatch(this, "detect", new JSONObject());
+   }
+  } catch (Exception ignored) {}
  }
 
  @Override protected void onPause() {

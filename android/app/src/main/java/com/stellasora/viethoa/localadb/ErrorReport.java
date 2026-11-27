@@ -507,13 +507,24 @@ final class ErrorReport {
    if (game != null && game.optBoolean("installed")) {
     if (game.optBoolean("versionsKnown")) {
      gameVal = "v" + game.optString("gameVersion") + " · res " + game.optString("resourceVersion");
-     gameTone = "ok";
+     gameTone = "E-PKG-MISMATCH".equals(r.optString("code")) ? "warn" : "ok";
     } else {
      gameVal = "Đã cài (chưa đọc phiên bản)";
      gameTone = "warn";
     }
    }
-   rows.put(row("Game", gameVal, gameTone));
+   rows.put(row("Game trên máy", gameVal, gameTone));
+
+   // Supported package version comparison row when E-PKG-MISMATCH occurs
+   JSONObject pl = r.optJSONObject("payload");
+   if ("E-PKG-MISMATCH".equals(r.optString("code")) && pl != null) {
+    String supG = pl.optString("supportedGameVersion", "");
+    String supR = pl.optString("supportedResourceVersion", "");
+    if (!supG.isEmpty()) {
+     String supVal = "v" + supG + (supR.isEmpty() ? "" : " · " + supR);
+     rows.put(row("Gói Việt hoá hỗ trợ", supVal, "warn"));
+    }
+   }
 
    // Device
    if (dev != null) {
@@ -608,9 +619,12 @@ final class ErrorReport {
    r.put("android", deviceHealth(c));
    r.put("game", pick(s.optJSONObject("game"), "installed", "package", "versionsKnown", "gameVersion", "resourceVersion", "root", "reason"));
    r.put("github", pick(s.optJSONObject("github"), "repo", "branch", "releaseStatus", "releaseVersion", "manifestStatus", "translationVersion", "manifestSha256", "announcementStatus", "announcementError", "errorCode", "errorStage", "errorRaw", "message"));
-   r.put("payload", pick(s.optJSONObject("payload"), "available", "compatible", "updateAvailable", "version", "fileCount", "reason", "reasonCode"));
+   r.put("payload", pick(s.optJSONObject("payload"), "available", "compatible", "updateAvailable", "version", "fileCount", "reason", "reasonCode", "mismatchKind", "supportedGameVersion", "supportedResourceVersion"));
    r.put("receipt", pick(s.optJSONObject("receipt"), "present", "version", "manifestSha256", "files", "stale", "installedGameVersion", "installedResourceVersion"));
    r.put("recovery", pick(s.optJSONObject("recovery"), "pending", "message"));
+   if ("E-PKG-MISMATCH".equals(code)) {
+    customizeVersionMismatch(r);
+   }
    JSONObject adb = s.optJSONObject("adb");
    r.put("adb", Store.obj(
      "connected", adb != null && adb.optBoolean("connected"),
@@ -645,6 +659,62 @@ final class ErrorReport {
    DiagnosticLog.log(c, "error", code + " (#" + reportId + ") [" + (action == null ? "app" : action) + "] " + cleanMsg);
   } catch (Exception ignored) {}
   return r;
+ }
+
+ /** Tailors E-PKG-MISMATCH title, plain-Vietnamese cause, steps, and quick actions by direction (older vs newer). */
+ private static void customizeVersionMismatch(JSONObject r) {
+  try {
+   JSONObject game = r.optJSONObject("game");
+   JSONObject pl = r.optJSONObject("payload");
+   String gVer = game == null ? "" : game.optString("gameVersion", "").trim();
+   String rVer = game == null ? "" : game.optString("resourceVersion", "").trim();
+   String supG = pl == null ? "" : pl.optString("supportedGameVersion", "").trim();
+   String supR = pl == null ? "" : pl.optString("supportedResourceVersion", "").trim();
+   String kind = pl == null ? "" : pl.optString("mismatchKind", "").trim();
+   if (kind.isEmpty() && !gVer.isEmpty() && !supG.isEmpty()) {
+    kind = VersionCompatibility.diagnose(supG, supR.isEmpty() ? "*" : supR, gVer, rVer.isEmpty() ? "0" : rVer).kind;
+   }
+   if ("game_older".equals(kind)) {
+    String cur = gVer.isEmpty() ? "bản cũ" : ("v" + gVer);
+    String tgt = supG.isEmpty() ? "bản mới nhất" : ("v" + supG);
+    r.put("level", "warning");
+    r.put("errorTitle", "Game trên máy đang ở bản cũ (" + cur + " → cần " + tgt + ")");
+    r.put("explain", "Stella Sora trên điện thoại đang ở phiên bản " + cur + (rVer.isEmpty() ? "" : " (tài nguyên " + rVer + ")")
+      + ", cũ hơn gói Việt hoá mới nhất trên GitHub (" + tgt + ").\n\n"
+      + "Đây KHÔNG phải lỗi hỏng game — launcher tạm dừng cài để tránh game báo lỗi xác minh tệp (BinDiff / Data check fail) khi bạn mở game.");
+    r.put("steps", new JSONArray(Arrays.asList(
+      "Bấm \"Mở Stella Sora\" bên dưới để game tự tải bản cập nhật lên " + tgt + " (nếu game yêu cầu cập nhật app, bấm \"Mở Google Play\").",
+      "Chờ game tải xong vào tới màn hình đăng nhập/chính, sau đó vuốt thoát hẳn Stella Sora khỏi đa nhiệm.",
+      "Quay lại launcher — ứng dụng sẽ tự nhận phiên bản mới (hoặc bấm \"Quét tìm game\") rồi bấm \"Cài Việt hoá ngay\"."
+    )));
+    r.put("quickActions", new JSONArray(Arrays.asList("launch_game", "open_play_store", "detect_game", "sync_github")));
+   } else if ("game_newer".equals(kind)) {
+    String cur = gVer.isEmpty() ? "bản mới" : ("v" + gVer);
+    String tgt = supG.isEmpty() ? "bản trước" : ("v" + supG);
+    r.put("level", "warning");
+    r.put("errorTitle", "Game trên máy (" + cur + ") mới hơn gói Việt hoá (" + tgt + ")");
+    r.put("explain", "Stella Sora trên điện thoại đã cập nhật lên " + cur + (rVer.isEmpty() ? "" : " (tài nguyên " + rVer + ")")
+      + ", mới hơn gói Việt hoá hiện có trên GitHub (" + tgt + ").\n\n"
+      + "Launcher dừng cài để không ghi đè dữ liệu cũ làm lỗi game của bạn.");
+    r.put("steps", new JSONArray(Arrays.asList(
+      "Dữ liệu game của bạn hoàn toàn an toàn — bạn vẫn có thể chơi Stella Sora bản tiếng Anh trong lúc chờ.",
+      "Chờ nhóm dịch phát hành gói Việt hoá tương thích " + cur + " (xem tin mới tại mục Thông báo).",
+      "Khi có bản mới, bấm \"Đồng bộ GitHub\" bên dưới rồi cài lại như bình thường."
+    )));
+    r.put("quickActions", new JSONArray(Arrays.asList("sync_github", "launch_game")));
+   } else if ("resource_mismatch".equals(kind)) {
+    r.put("level", "warning");
+    r.put("errorTitle", "Tài nguyên game (RES " + (rVer.isEmpty() ? "?" : rVer) + ") chưa khớp gói Việt hoá");
+    r.put("explain", "Phiên bản game đã khớp (" + (gVer.isEmpty() ? "?" : "v" + gVer)
+      + ") nhưng mã tài nguyên trên máy (RES " + (rVer.isEmpty() ? "?" : rVer)
+      + ") khác với danh sách gói Việt hoá hỗ trợ (" + (supR.isEmpty() ? "?" : supR) + ").");
+    r.put("steps", new JSONArray(Arrays.asList(
+      "Bấm \"Mở Stella Sora\" để game tải đủ bản vá tài nguyên mới nhất, sau đó thoát hẳn game rồi bấm \"Quét tìm game\".",
+      "Bấm \"Đồng bộ GitHub\" để kiểm tra bản dịch mới nhất."
+    )));
+    r.put("quickActions", new JSONArray(Arrays.asList("launch_game", "detect_game", "sync_github")));
+   }
+  } catch (Exception ignored) {}
  }
 
  /** Report for a known situation (no exception), e.g. "why is the install button blocked?". */
