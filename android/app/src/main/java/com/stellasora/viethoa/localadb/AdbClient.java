@@ -15,6 +15,7 @@ final class AdbClient {
  private volatile Messenger broker;
  private volatile ServiceConnection connection;
  volatile boolean verified;
+ volatile String lastLossReason = "";
  volatile Runnable onLoss;
  private final Handler main = new Handler(Looper.getMainLooper());
  private final AtomicLong sequence = new AtomicLong(), epoch = new AtomicLong();
@@ -132,11 +133,22 @@ final class AdbClient {
    broker.send(m);
    Bundle result = future.get(timeout + 2500, TimeUnit.MILLISECONDS);
    if (!result.getBoolean("ok")) {
-    transportFailure();
     String val = result.getString("value", "ADB thất bại.");
     String errCode = result.getString("error_code", "");
     String errClass = result.getString("error_class", "");
     String errDetail = result.getString("error_detail", "");
+    boolean brokerConnected = result.getBoolean("connected", false);
+    boolean keepSession = "exec".equals(action)
+      && brokerConnected
+      && !"E-ADB-DISCONNECTED".equals(errCode)
+      && !"E-ADB-NOT-CONNECTED".equals(errCode)
+      && !"E-ADB-TIMEOUT".equals(errCode)
+      && !"E-ADB-AUTH".equals(errCode)
+      && !"E-ADB-CONN-REFUSED".equals(errCode)
+      && !"E-ADB-NO-WIFI".equals(errCode);
+    if (!keepSession) {
+     transportFailure(errCode.isEmpty() ? val : (errCode + ": " + val));
+    }
     if (!errCode.isEmpty()) {
      throw new StellaException(errCode, val, null, "adbAction", action, "brokerErrorClass", errClass, "brokerErrorDetail", errDetail);
     }
@@ -144,7 +156,7 @@ final class AdbClient {
    }
    return result.getString("value", "");
   } catch (RemoteException | ExecutionException e) {
-   transportFailure();
+   transportFailure("Kênh ADB đã đóng hoặc không trả phản hồi hợp lệ.");
    throw new StellaException("E-ADB-DISCONNECTED", "Kênh ADB đã đóng hoặc không trả phản hồi hợp lệ.", e, "adbAction", action);
   } catch (TimeoutException e) {
    cancelBroker();
@@ -170,6 +182,7 @@ final class AdbClient {
    cancelBroker();
    throw new StellaException("E-ADB-AUTH", "ADB chưa xác minh được danh tính shell.", null, "adbAction", "id");
   }
+  lastLossReason = "";
   verified = true;
   KeyMaterial.markPaired(context);
  }
@@ -187,7 +200,7 @@ final class AdbClient {
   String output = request("exec", Store.obj("command", wrapped, "marker", marker), Math.max(4000, timeout));
   int index = output.lastIndexOf(marker);
   if (index < 0) {
-   transportFailure();
+   transportFailure("ADB không trả mã kết thúc.");
    throw new StellaException("E-ADB-DISCONNECTED", "ADB không trả mã kết thúc.", null);
   }
   String codeStr = output.substring(index + marker.length()).trim();
@@ -244,13 +257,15 @@ final class AdbClient {
   }
  }
 
- private void transportFailure() {
+ private void transportFailure(String reason) {
+  lastLossReason = reason == null ? "" : reason;
   verified = false;
   Runnable callback = onLoss;
   if (callback != null) main.post(callback);
  }
 
  private void lost(String reason) {
+  lastLossReason = reason == null ? "" : reason;
   verified = false;
   broker = null;
   for (CompletableFuture<Bundle> f : pending.values()) f.completeExceptionally(new IOException(reason));

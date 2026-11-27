@@ -101,8 +101,8 @@ public final class LauncherService extends Service {
   } catch (Exception e) {
    support = Store.obj("methods", new JSONArray());
   }
-  String appVer = "2.1.6";
-  long appCode = 28;
+  String appVer = "2.1.7";
+  long appCode = 30;
   try {
    PackageInfo pi = c.getPackageManager().getPackageInfo(Store.APP, 0);
    appVer = pi.versionName;
@@ -239,7 +239,10 @@ public final class LauncherService extends Service {
   patcher = new GamePatcher(this, adb, (message, percent) -> progress(message, percent));
   adb.onLoss = () -> {
    if (!adb.verified) {
-    DiagnosticLog.log(this, "adb", "Kết nối Local ADB đã đóng hoặc mất xác nhận.");
+    String reason = adb.lastLossReason;
+    DiagnosticLog.log(this, "adb", (reason == null || reason.isEmpty())
+      ? "Kết nối Local ADB đã đóng hoặc mất xác nhận."
+      : ("Kết nối Local ADB đã đóng hoặc mất xác nhận (" + ErrorReport.redact(reason) + ")."));
     setAdb("status", "Kết nối chưa được xác nhận hoặc đã đóng. Hãy kết nối lại.");
     try { refreshPayload(); } catch (Exception ignored) {}
     publish(true);

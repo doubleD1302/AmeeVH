@@ -45,14 +45,16 @@ public final class AdbBrokerService extends Service {
   String action = b.getString("action", "");
   Messenger reply = message.replyTo;
   if (!busy.compareAndSet(false, true)) {
-   respond(reply, id, false, "ADB đang có thao tác.", "E-BUSY", "Busy", "");
+   boolean alive = false;
+   try { alive = session != null && session.isConnected(); } catch (Throwable ignored) {}
+   respond(reply, id, false, "ADB đang có thao tác.", "E-BUSY", "Busy", "", alive);
    return;
   }
   active = id;
   long duration = Math.max(1000, Math.min(125000, b.getLong("timeout_ms", 25000)));
   Runnable deadline = () -> {
    if (busy.get() && active == id) {
-    respond(reply, id, false, "ADB quá thời hạn. Hãy kết nối lại.", "E-ADB-TIMEOUT", "DeadlineExceeded", "broker deadline " + duration + "ms");
+    respond(reply, id, false, "ADB quá thời hạn. Hãy kết nối lại.", "E-ADB-TIMEOUT", "DeadlineExceeded", "broker deadline " + duration + "ms", false);
     killOwnBroker();
    }
   };
@@ -148,11 +150,14 @@ public final class AdbBrokerService extends Service {
    boolean result = ok;
    String output = value;
    String fCode = errCode, fClass = errClass, fDetail = errDetail;
+   boolean sessionAlive = false;
+   try { sessionAlive = session != null && session.isConnected(); } catch (Throwable ignored) {}
+   final boolean fAlive = sessionAlive;
    main.post(() -> {
     if (active != id) return;
     main.removeCallbacks(deadline);
     busy.set(false);
-    respond(reply, id, result, output, fCode, fClass, fDetail);
+    respond(reply, id, result, output, fCode, fClass, fDetail, fAlive);
    });
   });
  }
@@ -168,7 +173,7 @@ public final class AdbBrokerService extends Service {
     int n = stream.read(buffer, 0, buffer.length);
     if (n < 0) throw new StellaException("E-ADB-DISCONNECTED", "ADB đóng trước phản hồi kết thúc.", null);
     if (n > 0) out.write(buffer, 0, n);
-    if (out.size() > 131072) throw new IOException("Đầu ra ADB vượt giới hạn 128 KiB của kênh nội bộ.");
+    if (out.size() > 131072) throw new StellaException("E-ADB", "Đầu ra ADB vượt giới hạn 128 KiB của kênh nội bộ.", null);
     String data = out.toString("UTF-8");
     if (complete.matcher(data).find()) return data;
     if (SystemClock.elapsedRealtime() > end) throw new StellaException("E-ADB-TIMEOUT", "Lệnh ADB quá thời hạn.", null);
@@ -176,13 +181,14 @@ public final class AdbBrokerService extends Service {
   }
  }
 
- private static void respond(Messenger to, long id, boolean ok, String value, String errCode, String errClass, String errDetail) {
+ private static void respond(Messenger to, long id, boolean ok, String value, String errCode, String errClass, String errDetail, boolean connected) {
   if (to == null) return;
   try {
    Message m = Message.obtain();
    Bundle b = new Bundle();
    b.putLong("request_id", id);
    b.putBoolean("ok", ok);
+   b.putBoolean("connected", connected);
    b.putString("value", value);
    if (errCode != null && !errCode.isEmpty()) b.putString("error_code", errCode);
    if (errClass != null && !errClass.isEmpty()) b.putString("error_class", errClass);

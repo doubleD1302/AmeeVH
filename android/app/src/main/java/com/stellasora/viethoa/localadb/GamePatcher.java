@@ -17,6 +17,7 @@ final class GamePatcher {
    new HashSet<>(Arrays.asList("DONE", "RESTORED", "ROLLED_BACK", "ABORTED", "SUPERSEDED"))
  );
  private static final int STATE_BATCH_SIZE = 25;
+ private static final int MD5_BATCH_SIZE = 20;
  private static final int BACKUP_BATCH_SIZE = 10;
 
  private final Context context;
@@ -1149,28 +1150,35 @@ final class GamePatcher {
   }
  }
 
+ private void rethrowIfAdbLost(Exception e) throws Exception {
+  if (!adb.verified) throw e;
+  if (e instanceof StellaException) {
+   String c = ((StellaException) e).code;
+   if ("E-ADB-NOT-CONNECTED".equals(c) || "E-ADB-DISCONNECTED".equals(c)
+     || "E-ADB-TIMEOUT".equals(c) || "E-ADB-AUTH".equals(c) || "E-ADB-PERM".equals(c)) {
+    throw e;
+   }
+  }
+ }
+
  private List<DeviceMd5State> batchMd5States(List<String> fullPaths, List<Long> expectedSizes) throws Exception {
   List<DeviceMd5State> all = new ArrayList<>(fullPaths.size());
-  for (int start = 0; start < fullPaths.size(); start += STATE_BATCH_SIZE) {
-   int end = Math.min(fullPaths.size(), start + STATE_BATCH_SIZE);
-   StringBuilder cmd = new StringBuilder();
+  for (int start = 0; start < fullPaths.size(); start += MD5_BATCH_SIZE) {
+   int end = Math.min(fullPaths.size(), start + MD5_BATCH_SIZE);
+   StringBuilder cmd = new StringBuilder("set --");
    for (int k = 0; k < end - start; k++) {
     int idx = start + k;
-    String qP = Store.q(fullPaths.get(idx));
-    long expSz = expectedSizes.get(idx);
-    cmd.append("p=").append(qP).append("; ")
-      .append("if [ -L \"$p\" ]; then exit 73; ")
-      .append("elif [ -f \"$p\" ]; then s=$(stat -c %s \"$p\") || exit $?; ");
-    if (expSz >= 0) {
-     cmd.append("if [ \"$s\" = ").append(Store.q(String.valueOf(expSz))).append(" ]; then ")
-       .append("h=$(md5sum \"$p\") || exit $?; printf '").append(k).append(" F %s %s\\n' \"$s\" \"${h%% *}\"; ")
-       .append("else printf '").append(k).append(" S %s\\n' \"$s\"; fi; ");
-    } else {
-     cmd.append("printf '").append(k).append(" S %s\\n' \"$s\"; ");
-    }
-    cmd.append("elif [ -e \"$p\" ]; then exit 74; ")
-      .append("else printf '").append(k).append(" A\\n'; fi; ");
+    cmd.append(' ').append(Store.q(String.valueOf(expectedSizes.get(idx))))
+      .append(' ').append(Store.q(fullPaths.get(idx)));
    }
+   cmd.append("; i=0; while [ \"$#\" -ge 2 ]; do e=$1; p=$2; shift 2; ")
+     .append("if [ -L \"$p\" ]; then exit 73; ")
+     .append("elif [ -f \"$p\" ]; then s=$(stat -c %s \"$p\") || exit $?; ")
+     .append("if [ \"$e\" != '-1' ] && [ \"$s\" = \"$e\" ]; then ")
+     .append("h=$(md5sum \"$p\") || exit $?; printf '%s F %s %s\\n' \"$i\" \"$s\" \"${h%% *}\"; ")
+     .append("else printf '%s S %s\\n' \"$i\" \"$s\"; fi; ")
+     .append("elif [ -e \"$p\" ]; then exit 74; ")
+     .append("else printf '%s A\\n' \"$i\"; fi; i=$((i+1)); done");
    String raw = adb.exec(cmd.toString(), 120000);
    String[] lines = raw.isEmpty() ? new String[0] : raw.split("\\r?\\n");
    if (lines.length != (end - start)) {
@@ -1240,7 +1248,9 @@ final class GamePatcher {
     OfficialAndroidClient.ParsedManifest addM = OfficialAndroidClient.parseManifestFull(addBytes);
     mergedFiles.putAll(addM.files);
    }
-  } catch (Exception ignored) {}
+  } catch (Exception e) {
+   rethrowIfAdbLost(e);
+  }
 
   String patchNumRaw = base.headers.getOrDefault("BIN_DIFF_PATCH_VER", "");
   if (patchNumRaw.matches("[0-9]+")) {
@@ -1256,7 +1266,9 @@ final class GamePatcher {
       }
      }
     }
-   } catch (Exception ignored) {}
+   } catch (Exception e) {
+    rethrowIfAdbLost(e);
+   }
   }
   return new OfficialAndroidClient.ParsedManifest(mergedHeaders, mergedFiles, mergedPatches);
  }
@@ -1333,27 +1345,43 @@ final class GamePatcher {
   return out;
  }
 
- private List<String> scanDeviceLanguageFiles() {
+ private List<String> scanDeviceLanguageFiles(File stageDir) throws Exception {
   List<String> out = new ArrayList<>();
+  File outFile = new File(stageDir, "lang_scan.txt");
   try {
    String root = target.getString("root");
    String ps = root + "/Persistent_Store";
-   String cmd = ""
+   String qOut = Store.q(ownExternalPath(outFile));
+   String cmd = "if [ -L " + qOut + " ]; then printf 'ERR:LINK'; exit 0; fi; "
+     + "rm -f " + qOut + " || exit $?; "
+     + ": > " + qOut + " || exit $?; "
      + "if [ -d " + Store.q(ps + "/AssetBundles") + " ] && [ ! -L " + Store.q(ps + "/AssetBundles") + " ]; then "
-     + "find " + Store.q(ps + "/AssetBundles") + " -maxdepth 1 -type f -name '*.en.unity3d' -print 2>/dev/null || true; fi; "
+     + "find " + Store.q(ps + "/AssetBundles") + " -maxdepth 1 -type f -name '*.en.unity3d' -print >> " + qOut + " 2>/dev/null || true; fi; "
      + "if [ -d " + Store.q(ps + "/Videos") + " ] && [ ! -L " + Store.q(ps + "/Videos") + " ]; then "
-     + "find " + Store.q(ps + "/Videos") + " -maxdepth 1 -type f -name '*.srt' -print 2>/dev/null || true; fi";
-   String listing = adb.exec(cmd, 20000);
-   String prefix = root + "/";
-   for (String line : listing.split("\\r?\\n")) {
-    String trimmed = line.trim();
-    if (!trimmed.startsWith(prefix)) continue;
-    String rel = trimmed.substring(prefix.length());
-    try {
-     out.add(relativeOfficial(rel));
-    } catch (Exception ignored) {}
+     + "find " + Store.q(ps + "/Videos") + " -maxdepth 1 -type f -name '*.srt' -print >> " + qOut + " 2>/dev/null || true; fi; "
+     + "printf 'OK'";
+   String res = adb.exec(cmd, 30000).trim();
+   if ("OK".equals(res) && outFile.isFile()) {
+    ownExternalPath(outFile);
+    String prefix = root + "/";
+    try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(outFile), StandardCharsets.UTF_8), 16384)) {
+     String line;
+     while ((line = br.readLine()) != null) {
+      String trimmed = line.trim();
+      if (!trimmed.startsWith(prefix)) continue;
+      String rel = trimmed.substring(prefix.length());
+      try {
+       out.add(relativeOfficial(rel));
+      } catch (Exception ignored) {}
+     }
+    }
    }
-  } catch (Exception ignored) {}
+  } catch (Exception e) {
+   DiagnosticLog.log(context, "restore", "Cảnh báo quét gói ngôn ngữ: " + Store.cleanError(e));
+   rethrowIfAdbLost(e);
+  } finally {
+   if (outFile.isFile()) outFile.delete();
+  }
   return out;
  }
 
@@ -1405,11 +1433,13 @@ final class GamePatcher {
        + "find " + qSb + " -maxdepth 2 -type f -name '*.stella-*.tmp' -delete 2>/dev/null || true; fi",
      15000
    );
-  } catch (Exception ignored) {}
+  } catch (Exception e) {
+   DiagnosticLog.log(context, "restore", "Cảnh báo dọn bộ nhớ tạm cập nhật: " + Store.cleanError(e));
+  }
   return removed;
  }
 
- private String pullOptionalRootFile(String fileName, File localTemp, long maxBytes) {
+ private String pullOptionalRootFile(String fileName, File localTemp, long maxBytes) throws Exception {
   if (!"file_versions.dat".equals(fileName) && !"prefs.dat".equals(fileName)) return null;
   try {
    String root = target.getString("root");
@@ -1432,7 +1462,8 @@ final class GamePatcher {
    if (!isSafeFuseAlias(resolved, remotePath, suffix + "/" + fileName)) return null;
    ownExternalPath(localTemp);
    return new String(Files.readAllBytes(localTemp.toPath()), StandardCharsets.UTF_8);
-  } catch (Exception ignored) {
+  } catch (Exception e) {
+   rethrowIfAdbLost(e);
    return null;
   }
  }
@@ -1474,58 +1505,53 @@ final class GamePatcher {
  private static final class DeviceTreeScan {
   final Set<String> existingRels; // null if scan was incomplete/unsupported
   final List<String> sizeMismatchRels;
+  final List<String> languageRels;
 
-  DeviceTreeScan(Set<String> existingRels, List<String> sizeMismatchRels) {
+  DeviceTreeScan(Set<String> existingRels, List<String> sizeMismatchRels, List<String> languageRels) {
    this.existingRels = existingRels;
    this.sizeMismatchRels = sizeMismatchRels;
+   this.languageRels = languageRels;
   }
  }
 
- private DeviceTreeScan scanDevicePersistentTree(Map<String, OfficialAndroidClient.FileEntry> localFiles) {
+ private DeviceTreeScan scanDevicePersistentTree(File stageDir, Map<String, OfficialAndroidClient.FileEntry> localFiles) throws Exception {
   Set<String> existing = new HashSet<>();
   List<String> mismatches = new ArrayList<>();
-  try {
-   String root = target.getString("root");
-   String ps = root + "/Persistent_Store";
-   StringBuilder cmd = new StringBuilder();
-   for (String sub : new String[]{"Tables", "Scripts", "Videos", "AssetBundles", "SoundBanks"}) {
+  List<String> languageRels = new ArrayList<>();
+  String root = target.getString("root");
+  String ps = root + "/Persistent_Store";
+  String prefix = root + "/";
+  String[] subdirs = new String[]{"Tables", "Scripts", "Videos", "AssetBundles", "SoundBanks"};
+  for (int i = 0; i < subdirs.length; i++) {
+   String sub = subdirs[i];
+   step("Đang quét nhanh kích thước tài nguyên (" + sub + ")...", 16 + i);
+   File outFile = new File(stageDir, "tree_scan_" + sub.toLowerCase(Locale.ROOT) + ".txt");
+   try {
     String dir = ps + "/" + sub;
     String qDir = Store.q(dir);
-    cmd.append("if [ -d ").append(qDir).append(" ] && [ ! -L ").append(qDir).append(" ]; then ")
-      .append("find ").append(qDir).append(" -type f -exec stat -c '%s %n' {} + 2>/dev/null || true; fi; ");
-   }
-   String raw = adb.exec(cmd.toString(), 45000);
-   String prefix = root + "/";
-   for (String line : raw.split("\\r?\\n")) {
-    int sp = line.indexOf(' ');
-    if (sp <= 0 || sp + 1 >= line.length()) continue;
-    String szStr = line.substring(0, sp).trim();
-    if (!szStr.matches("[0-9]+")) continue;
-    String full = line.substring(sp + 1).trim();
-    if (!full.startsWith(prefix)) continue;
-    String rel = full.substring(prefix.length());
-    try {
-     rel = relativeOfficial(rel);
-    } catch (Exception ignored) {
-     continue;
+    String qOut = Store.q(ownExternalPath(outFile));
+    String cmd = "if [ -L " + qOut + " ]; then printf 'ERR:LINK'; exit 0; fi; "
+      + "rm -f " + qOut + " || exit $?; "
+      + "if [ -d " + qDir + " ] && [ ! -L " + qDir + " ]; then "
+      + "find " + qDir + " -type f -exec stat -c '%s %n' {} + > " + qOut + " 2>/dev/null || true; "
+      + "fi; printf 'OK'";
+    long timeoutMs = ("SoundBanks".equals(sub) || "AssetBundles".equals(sub)) ? 90000L : 30000L;
+    String res = adb.exec(cmd, timeoutMs).trim();
+    if ("OK".equals(res) && outFile.isFile()) {
+     ownExternalPath(outFile);
+     OfficialAndroidClient.parseDeviceTreeScanFile(outFile, prefix, localFiles, existing, mismatches, languageRels);
     }
-    existing.add(rel);
-    String mname = OfficialAndroidClient.manifestNameFromRelativePath(rel);
-    if (mname == null) continue;
-    OfficialAndroidClient.FileEntry rec = localFiles.get(mname);
-    if (rec == null) continue;
-    try {
-     long actualSize = Long.parseLong(szStr);
-     if (actualSize != rec.size) {
-      mismatches.add(rel);
-     }
-    } catch (NumberFormatException ignored) {}
+   } catch (Exception e) {
+    DiagnosticLog.log(context, "restore", "Cảnh báo quét " + sub + ": " + Store.cleanError(e));
+    rethrowIfAdbLost(e);
+   } finally {
+    if (outFile.isFile()) outFile.delete();
    }
-  } catch (Exception ignored) {}
+  }
   boolean scanComplete = existing.contains("Persistent_Store/Tables/data.arcx")
     || existing.contains("Persistent_Store/Scripts/lua.arcx")
     || existing.size() >= 10;
-  return new DeviceTreeScan(scanComplete ? existing : null, mismatches);
+  return new DeviceTreeScan(scanComplete ? existing : null, mismatches, languageRels);
  }
 
  private boolean syncHotfixDllFromArchive(String id, File stageDir, File localVerifiedHotfixArch) {
@@ -1619,7 +1645,9 @@ final class GamePatcher {
     String res = adb.exec("if [ ! -L " + Store.q(trimmed) + " ] && [ -f " + Store.q(trimmed) + " ]; then rm -f " + Store.q(trimmed) + " && printf 'OK'; fi", 10000).trim();
     if ("OK".equals(res)) removed++;
    }
-  } catch (Exception ignored) {}
+  } catch (Exception e) {
+   DiagnosticLog.log(context, "restore", "Cảnh báo dọn bảng kê thừa: " + Store.cleanError(e));
+  }
   return removed;
  }
 
@@ -1762,8 +1790,8 @@ final class GamePatcher {
 
    Set<String> pendingNames = catalog != null ? catalog.pendingPatchNames(localResVer) : Collections.emptySet();
    OfficialAndroidClient.FileVersionsAudit fvAudit = OfficialAndroidClient.auditFileVersionsText(fvText, localManifest.files, pendingNames);
-   step("Đang quét nhanh kích thước toàn bộ tài nguyên trong Persistent_Store...", 17);
-   DeviceTreeScan treeScan = scanDevicePersistentTree(localManifest.files);
+   step("Đang quét nhanh kích thước toàn bộ tài nguyên trong Persistent_Store...", 16);
+   DeviceTreeScan treeScan = scanDevicePersistentTree(stage, localManifest.files);
 
    Map<String, Boolean> candidateMap = new LinkedHashMap<>();
    Set<String> strayNewRels = new HashSet<>();
@@ -1772,7 +1800,10 @@ final class GamePatcher {
    for (String rPath : collectReceiptRelativePaths(binding)) {
     candidateMap.put(rPath, true);
    }
-   for (String dPath : scanDeviceLanguageFiles()) {
+   List<String> deviceLangFiles = treeScan.existingRels != null
+     ? treeScan.languageRels
+     : scanDeviceLanguageFiles(stage);
+   for (String dPath : deviceLangFiles) {
     candidateMap.putIfAbsent(dPath, false);
    }
    // Include updated/added .en.unity3d & .srt from local ss_and.mani (catches deleted bundles -> "no found patch target bundle")

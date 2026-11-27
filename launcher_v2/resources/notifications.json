@@ -1,7 +1,14 @@
 {
-  "version": "2.1.6",
-  "updated_at": "2026-11-27",
+  "version": "2.1.7",
+  "updated_at": "2026-11-28",
   "announcements": [
+    {
+      "id": "NOTIF-047",
+      "date": "2026-11-28",
+      "title": "Bản vá nóng v2.1.7: Sửa Lỗi Đứt Kết Nối Local ADB (E-ADB-NOT-CONNECTED) Khi Khôi Phục Gốc Trên Android",
+      "type": "release",
+      "content": "Bản vá nóng Launcher Android v2.1.7 (versionCode 30) và đồng bộ PC Launcher v2.1.7:\n• Sửa triệt để lỗi báo chưa kết nối Local ADB (E-ADB-NOT-CONNECTED) khi bấm Khôi phục gốc trên Android: tách quét kích thước Persistent_Store (21.948+ tệp) sang tệp tạm trong vùng staging thay vì đổ trực tiếp qua kênh IPC 128 KiB.\n• Thu gọn lệnh đối chiếu MD5 theo lô (< 3 KiB), giữ ổn định phiên Local ADB đang kết nối và không che giấu nguyên nhân lỗi thực nếu đường truyền bị ngắt.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.7."
+    },
     {
       "id": "NOTIF-046",
       "date": "2026-11-27",

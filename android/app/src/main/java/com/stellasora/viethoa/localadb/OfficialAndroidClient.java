@@ -4,12 +4,14 @@ import android.content.Context;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -1264,6 +1266,67 @@ final class OfficialAndroidClient {
     serverVer, baseRes, latestGame, latestRes,
     diff, baseFiles, finalFiles, versions, patchIndex, patchSteps
   );
+ }
+
+ /**
+  * Streams a device-side {@code find ... -exec stat -c '%s %n' {} +} output file written directly to
+  * staging storage (avoiding the 128 KiB ADB Binder stdout limit), recording every valid official
+  * relative path, any size mismatches against {@code localFiles}, and top-level language bundles/subtitles.
+  */
+ static int parseDeviceTreeScanFile(
+   File file,
+   String prefix,
+   Map<String, FileEntry> localFiles,
+   Set<String> existing,
+   List<String> mismatches,
+   List<String> languageRels
+ ) throws IOException {
+  if (file == null || !file.isFile()) return 0;
+  int parsed = 0;
+  try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8), 32768)) {
+   String line;
+   while ((line = br.readLine()) != null) {
+    int sp = line.indexOf(' ');
+    if (sp <= 0 || sp + 1 >= line.length()) continue;
+    String szStr = line.substring(0, sp).trim();
+    if (!szStr.matches("[0-9]+")) continue;
+    String full = line.substring(sp + 1);
+    while (full.endsWith("\r")) full = full.substring(0, full.length() - 1);
+    if (!full.startsWith(prefix)) continue;
+    String rel = full.substring(prefix.length());
+    String mname;
+    if ("Persistent_Store/Scripts/Hotfix.dll".equals(rel)) {
+     mname = null;
+    } else {
+     mname = manifestNameFromRelativePath(rel);
+     if (mname == null) continue;
+     String canonical = officialRelativePath(mname);
+     if (canonical == null || !canonical.equals(rel)) continue;
+    }
+    parsed++;
+    if (existing != null) existing.add(rel);
+    if (languageRels != null) {
+     if ((rel.startsWith("Persistent_Store/AssetBundles/") && rel.endsWith(".en.unity3d")
+        && rel.indexOf('/', "Persistent_Store/AssetBundles/".length()) < 0)
+       || (rel.startsWith("Persistent_Store/Videos/") && rel.endsWith(".srt")
+        && rel.indexOf('/', "Persistent_Store/Videos/".length()) < 0)) {
+      languageRels.add(rel);
+     }
+    }
+    if (mname != null && localFiles != null && mismatches != null) {
+     FileEntry rec = localFiles.get(mname);
+     if (rec != null) {
+      try {
+       long actualSize = Long.parseLong(szStr);
+       if (actualSize != rec.size) {
+        mismatches.add(rel);
+       }
+      } catch (NumberFormatException ignored) {}
+     }
+    }
+   }
+  }
+  return parsed;
  }
 
  /** Clears pending restore guard state & Heads-Up alert after successful restore to vanilla. */
