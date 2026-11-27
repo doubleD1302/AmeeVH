@@ -16,7 +16,7 @@ import javax.net.ssl.SSLHandshakeException;
 /** HTTPS-only metadata, explicit Android contracts, and size/hash-bound resumable downloads. */
 final class ChannelClient {
  interface Progress { void update(String text, int percent); }
- static final String USER_AGENT = "StellaSora-Android-LocalADB/2.1.5";
+ static final String USER_AGENT = "StellaSora-Android-LocalADB/2.1.6";
  private static final long RELEASE_CACHE_TTL_MS = 15L * 60L * 1000L;
  private static final int DOWNLOAD_MAX_ATTEMPTS = 4;
  private final Context context;

@@ -3,6 +3,7 @@ import android.content.*;
 import android.os.*;
 import org.json.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
@@ -64,8 +65,11 @@ final class GamePatcher {
   boolean allowed = path.equals("Persistent_Store/Tables/data.arcx")
     || path.equals("Persistent_Store/Scripts/lua.arcx")
     || path.equals("Persistent_Store/Scripts/hotfix.arch")
-    || path.matches("Persistent_Store/Videos/[^/<>:\"|?*]+\\.(srt|mp4)")
-    || path.matches("Persistent_Store/AssetBundles/[A-Za-z0-9_.-]+\\.unity3d");
+    || path.equals("Persistent_Store/Scripts/Hotfix.dll")
+    || path.matches("Persistent_Store/Videos/[^/<>:\"|?*]+\\.(srt|mp4|config)")
+    || path.matches("Persistent_Store/AssetBundles/[A-Za-z0-9_. -]+\\.unity3d")
+    || path.matches("Persistent_Store/SoundBanks/[A-Za-z0-9_. -]+\\.(bnk|wem)")
+    || path.matches("Persistent_Store/SoundBanks/(Media|Chinese|English|Japanese)/[A-Za-z0-9_. -]+\\.(bnk|wem)");
   if (!allowed) throw new IOException("Tệp không thuộc phạm vi khôi phục gốc được phép: " + path);
   return path;
  }
@@ -1394,6 +1398,227 @@ final class GamePatcher {
       15000
     );
    }
+   String sbDir = ps + "/SoundBanks";
+   String qSb = Store.q(sbDir);
+   adb.exec(
+     "if [ -d " + qSb + " ] && [ ! -L " + qSb + " ]; then "
+       + "find " + qSb + " -maxdepth 2 -type f -name '*.stella-*.tmp' -delete 2>/dev/null || true; fi",
+     15000
+   );
+  } catch (Exception ignored) {}
+  return removed;
+ }
+
+ private String pullOptionalRootFile(String fileName, File localTemp, long maxBytes) {
+  if (!"file_versions.dat".equals(fileName) && !"prefs.dat".equals(fileName)) return null;
+  try {
+   String root = target.getString("root");
+   String suffix = "/Android/data/" + Store.GAME + "/files";
+   String remotePath = root + "/" + fileName;
+   String qRemote = Store.q(remotePath);
+   String qLocal = Store.q(ownExternalPath(localTemp));
+   String check = adb.exec(
+     "if [ ! -e " + qRemote + " ]; then printf 'MISSING'; exit 0; fi; "
+       + "if [ -L " + qRemote + " ] || [ ! -f " + qRemote + " ]; then printf 'ERR:BAD'; exit 0; fi; "
+       + "s=$(stat -c %s " + qRemote + ") || exit $?; "
+       + "if [ \"$s\" -gt " + maxBytes + " ]; then printf 'ERR:SIZE'; exit 0; fi; "
+       + "r=$(readlink -f " + qRemote + ") || exit $?; "
+       + "cp " + qRemote + " " + qLocal + " || exit $?; "
+       + "printf 'OK\\n%s' \"$r\"",
+     30000
+   ).trim();
+   if (!check.startsWith("OK\n")) return null;
+   String resolved = check.substring(3).trim();
+   if (!isSafeFuseAlias(resolved, remotePath, suffix + "/" + fileName)) return null;
+   ownExternalPath(localTemp);
+   return new String(Files.readAllBytes(localTemp.toPath()), StandardCharsets.UTF_8);
+  } catch (Exception ignored) {
+   return null;
+  }
+ }
+
+ private void pushRootFileAtomic(String id, String fileName, File localFile) throws Exception {
+  if (!"file_versions.dat".equals(fileName) && !"prefs.dat".equals(fileName)) {
+   throw new IOException("Tệp cấu hình gốc không được phép: " + fileName);
+  }
+  String root = target.getString("root");
+  String suffix = "/Android/data/" + Store.GAME + "/files";
+  String destPath = root + "/" + fileName;
+  String resolvedRoot = adb.exec("if [ -L " + Store.q(root) + " ] || [ ! -d " + Store.q(root) + " ]; then printf 'ERR'; else readlink -f " + Store.q(root) + "; fi", 10000).trim();
+  if (!isSafeFuseAlias(resolvedRoot, root, suffix)) {
+   throw new IOException("Thư mục dữ liệu game không an toàn khi cập nhật " + fileName);
+  }
+  String qSrc = Store.q(ownExternalPath(localFile));
+  String qDest = Store.q(destPath);
+  String tmp = destPath + ".stella-sync-" + id + ".tmp";
+  String qTmp = Store.q(tmp);
+  long sz = localFile.length();
+  String md5 = OfficialAndroidClient.md5File(localFile);
+  String qSz = Store.q(String.valueOf(sz));
+  String qMd5 = Store.q(md5);
+  String guardTmp = "[ ! -L " + qTmp + " ] && [ -f " + qTmp + " ] && [ \"$(stat -c %s " + qTmp + ")\" = " + qSz + " ] && h=$(md5sum " + qTmp + ") && [ \"${h%% *}\" = " + qMd5 + " ]";
+  String guardDest = "[ ! -L " + qDest + " ] && [ -f " + qDest + " ] && [ \"$(stat -c %s " + qDest + ")\" = " + qSz + " ] && h=$(md5sum " + qDest + ") && [ \"${h%% *}\" = " + qMd5 + " ]";
+  String cmd = "if [ -L " + qDest + " ] || [ -L " + qTmp + " ]; then printf 'ERR:LINK'; exit 0; fi; "
+    + "rm -f " + qTmp + " || exit $?; "
+    + "cp " + qSrc + " " + qTmp + " || exit $?; "
+    + "if ! (" + guardTmp + "); then rm -f " + qTmp + "; printf 'ERR:TMP'; exit 0; fi; "
+    + "mv -f " + qTmp + " " + qDest + " || exit $?; "
+    + "if ! (" + guardDest + "); then printf 'ERR:DEST'; exit 0; fi; "
+    + "printf 'OK'";
+  String res = adb.exec(cmd, 60000).trim();
+  if (!"OK".equals(res)) {
+   throw new IOException("Không đồng bộ được " + fileName + ": " + res);
+  }
+ }
+
+ private static final class DeviceTreeScan {
+  final Set<String> existingRels; // null if scan was incomplete/unsupported
+  final List<String> sizeMismatchRels;
+
+  DeviceTreeScan(Set<String> existingRels, List<String> sizeMismatchRels) {
+   this.existingRels = existingRels;
+   this.sizeMismatchRels = sizeMismatchRels;
+  }
+ }
+
+ private DeviceTreeScan scanDevicePersistentTree(Map<String, OfficialAndroidClient.FileEntry> localFiles) {
+  Set<String> existing = new HashSet<>();
+  List<String> mismatches = new ArrayList<>();
+  try {
+   String root = target.getString("root");
+   String ps = root + "/Persistent_Store";
+   StringBuilder cmd = new StringBuilder();
+   for (String sub : new String[]{"Tables", "Scripts", "Videos", "AssetBundles", "SoundBanks"}) {
+    String dir = ps + "/" + sub;
+    String qDir = Store.q(dir);
+    cmd.append("if [ -d ").append(qDir).append(" ] && [ ! -L ").append(qDir).append(" ]; then ")
+      .append("find ").append(qDir).append(" -type f -exec stat -c '%s %n' {} + 2>/dev/null || true; fi; ");
+   }
+   String raw = adb.exec(cmd.toString(), 45000);
+   String prefix = root + "/";
+   for (String line : raw.split("\\r?\\n")) {
+    int sp = line.indexOf(' ');
+    if (sp <= 0 || sp + 1 >= line.length()) continue;
+    String szStr = line.substring(0, sp).trim();
+    if (!szStr.matches("[0-9]+")) continue;
+    String full = line.substring(sp + 1).trim();
+    if (!full.startsWith(prefix)) continue;
+    String rel = full.substring(prefix.length());
+    try {
+     rel = relativeOfficial(rel);
+    } catch (Exception ignored) {
+     continue;
+    }
+    existing.add(rel);
+    String mname = OfficialAndroidClient.manifestNameFromRelativePath(rel);
+    if (mname == null) continue;
+    OfficialAndroidClient.FileEntry rec = localFiles.get(mname);
+    if (rec == null) continue;
+    try {
+     long actualSize = Long.parseLong(szStr);
+     if (actualSize != rec.size) {
+      mismatches.add(rel);
+     }
+    } catch (NumberFormatException ignored) {}
+   }
+  } catch (Exception ignored) {}
+  boolean scanComplete = existing.contains("Persistent_Store/Tables/data.arcx")
+    || existing.contains("Persistent_Store/Scripts/lua.arcx")
+    || existing.size() >= 10;
+  return new DeviceTreeScan(scanComplete ? existing : null, mismatches);
+ }
+
+ private boolean syncHotfixDllFromArchive(String id, File stageDir, File localVerifiedHotfixArch) {
+  try {
+   File archFile = localVerifiedHotfixArch;
+   if (archFile == null || !archFile.isFile()) {
+    String root = target.getString("root");
+    String suffix = "/Android/data/" + Store.GAME + "/files";
+    String remoteArch = root + "/Persistent_Store/Scripts/hotfix.arch";
+    File pulled = new File(stageDir, "device_hotfix.arch");
+    String qRemote = Store.q(remoteArch);
+    String qLocal = Store.q(ownExternalPath(pulled));
+    String check = adb.exec(
+      "if [ ! -e " + qRemote + " ]; then printf 'MISSING'; exit 0; fi; "
+        + "if [ -L " + qRemote + " ] || [ ! -f " + qRemote + " ]; then printf 'ERR:BAD'; exit 0; fi; "
+        + "s=$(stat -c %s " + qRemote + ") || exit $?; "
+        + "if [ \"$s\" -gt 134217728 ]; then printf 'ERR:SIZE'; exit 0; fi; "
+        + "r=$(readlink -f " + qRemote + ") || exit $?; "
+        + "cp " + qRemote + " " + qLocal + " || exit $?; "
+        + "printf 'OK\\n%s' \"$r\"",
+      45000
+    ).trim();
+    if (!check.startsWith("OK\n")) return false;
+    String resolved = check.substring(3).trim();
+    if (!isSafeFuseAlias(resolved, remoteArch, suffix + "/Persistent_Store/Scripts/hotfix.arch")) return false;
+    ownExternalPath(pulled);
+    archFile = pulled;
+   }
+   File extractedDll = new File(stageDir, "Hotfix.dll");
+   long expectedSize = -1L;
+   long expectedCrc = -1L;
+   try (ZipFile zf = new ZipFile(archFile)) {
+    ZipEntry ze = zf.getEntry("Hotfix.dll");
+    if (ze == null || ze.isDirectory()) return false;
+    expectedSize = ze.getSize();
+    expectedCrc = ze.getCrc();
+    byte[] buf = new byte[65536];
+    CRC32 crc = new CRC32();
+    long written = 0L;
+    try (InputStream in = zf.getInputStream(ze);
+         FileOutputStream fos = new FileOutputStream(extractedDll);
+         BufferedOutputStream bos = new BufferedOutputStream(fos, buf.length)) {
+     int n;
+     while ((n = in.read(buf)) > 0) {
+      bos.write(buf, 0, n);
+      crc.update(buf, 0, n);
+      written += n;
+     }
+     bos.flush();
+    }
+    if (expectedSize >= 0 && written != expectedSize) return false;
+    if (expectedCrc >= 0 && crc.getValue() != expectedCrc) return false;
+    expectedSize = written;
+   } catch (ZipException notZip) {
+    return false;
+   }
+   ownExternalPath(extractedDll);
+   String dllMd5 = OfficialAndroidClient.md5File(extractedDll);
+   String dllRel = "Persistent_Store/Scripts/Hotfix.dll";
+   String dllDest = fullOfficialPath(dllRel);
+   List<DeviceMd5State> curStates = batchMd5States(Collections.singletonList(dllDest), Collections.singletonList(expectedSize));
+   DeviceMd5State cur = curStates.get(0);
+   if (cur.exists && cur.size == expectedSize && dllMd5.equalsIgnoreCase(cur.md5)) {
+    return false;
+   }
+   ensureAndVerifyOfficialDirs(Collections.singletonList(dllRel));
+   OfficialTarget dllTarget = new OfficialTarget(dllRel, "Hotfix.dll", dllDest, "replace", expectedSize, dllMd5, cur.exists);
+   dllTarget.sourceFile = extractedDll;
+   dllTarget.sourceKind = "hotfix_arch";
+   applyOfficialTargetAtomic(id, dllTarget, null);
+   return true;
+  } catch (Exception e) {
+   DiagnosticLog.log(context, "restore", "Cảnh báo đồng bộ Hotfix.dll: " + Store.cleanError(e));
+   return false;
+  }
+ }
+
+ private int cleanOrphanedManifests(String expectedPatchMani) {
+  int removed = 0;
+  try {
+   String root = target.getString("root");
+   String ps = root + "/Persistent_Store";
+   String listing = adb.exec("find " + Store.q(ps) + " -maxdepth 1 -type f -name 'p_*_m.ss_and.mani' -print 2>/dev/null || true", 15000);
+   String prefix = ps + "/";
+   for (String line : listing.split("\\r?\\n")) {
+    String trimmed = line.trim();
+    if (!trimmed.startsWith(prefix)) continue;
+    String baseName = trimmed.substring(prefix.length());
+    if (!baseName.matches("p_[0-9]+_m\\.ss_and\\.mani")) continue;
+    if (expectedPatchMani != null && expectedPatchMani.equals(baseName)) continue;
+    String res = adb.exec("if [ ! -L " + Store.q(trimmed) + " ] && [ -f " + Store.q(trimmed) + " ]; then rm -f " + Store.q(trimmed) + " && printf 'OK'; fi", 10000).trim();
+    if ("OK".equals(res)) removed++;
+   }
   } catch (Exception ignored) {}
   return removed;
  }
@@ -1513,7 +1738,19 @@ final class GamePatcher {
    }
 
    String localResVer = localManifest.headers.getOrDefault("RES_VER", target.optString("resourceVersion", ""));
-   step("Đang hỏi máy chủ chính thức Yostar (Android CDN)...", 12);
+   String expectedPatchMani = null;
+   String basePatchVerRaw = localManifest.headers.getOrDefault("BIN_DIFF_PATCH_VER", "");
+   if (basePatchVerRaw.matches("[0-9]+")) {
+    try {
+     int pv = Integer.parseInt(basePatchVerRaw);
+     if (pv > 0) expectedPatchMani = "p_" + pv + "_m.ss_and.mani";
+    } catch (NumberFormatException ignored) {}
+   }
+   step("Đang đọc file_versions.dat, prefs.dat và hỏi máy chủ Yostar...", 12);
+   String prefsText = pullOptionalRootFile("prefs.dat", new File(stage, "local_prefs.dat"), 262144L);
+   Set<String> activePackageTags = OfficialAndroidClient.parsePrefsPackageTags(prefsText);
+   String fvText = pullOptionalRootFile("file_versions.dat", new File(stage, "local_file_versions.dat"), 67108864L);
+
    OfficialAndroidClient.AndroidCatalog catalog = null;
    IOException cdnFetchError = null;
    try {
@@ -1524,7 +1761,12 @@ final class GamePatcher {
    }
 
    Set<String> pendingNames = catalog != null ? catalog.pendingPatchNames(localResVer) : Collections.emptySet();
+   OfficialAndroidClient.FileVersionsAudit fvAudit = OfficialAndroidClient.auditFileVersionsText(fvText, localManifest.files, pendingNames);
+   step("Đang quét nhanh kích thước toàn bộ tài nguyên trong Persistent_Store...", 17);
+   DeviceTreeScan treeScan = scanDevicePersistentTree(localManifest.files);
+
    Map<String, Boolean> candidateMap = new LinkedHashMap<>();
+   Set<String> strayNewRels = new HashSet<>();
    candidateMap.put("Persistent_Store/Tables/data.arcx", true);
    candidateMap.put("Persistent_Store/Scripts/lua.arcx", true);
    for (String rPath : collectReceiptRelativePaths(binding)) {
@@ -1536,30 +1778,57 @@ final class GamePatcher {
    // Include updated/added .en.unity3d & .srt from local ss_and.mani (catches deleted bundles -> "no found patch target bundle")
    for (OfficialAndroidClient.FileEntry fe : localManifest.files.values()) {
     if (!fe.name.endsWith(".en.unity3d") && !fe.name.endsWith(".srt")) continue;
+    String rel = OfficialAndroidClient.officialRelativePath(fe.name);
+    if (rel == null) continue;
     boolean inBaseSame = catalog != null
       && catalog.baseFiles.containsKey(fe.name)
       && catalog.baseFiles.get(fe.name).checksum.equalsIgnoreCase(fe.checksum);
-    if (!inBaseSame) {
-     String rel = OfficialAndroidClient.officialRelativePath(fe.name);
-     if (rel != null) candidateMap.putIfAbsent(rel, false);
+    if (!inBaseSame || fvAudit.allRels.contains(rel)) {
+     candidateMap.putIfAbsent(rel, false);
     }
    }
-   // Include EVERY file touched by pending CDN BinDiff patches (p_k > localResVer), including non-.en bundles & hotfix.arch!
+   // Include EVERY file touched by pending CDN BinDiff patches (p_k > localResVer):
+   // ALL SoundBanks (.bnk/.media.wem), non-.en bundles, hotfix.arch, AND stray 'N' new files!
    Set<String> pendingTrackedRels = new HashSet<>();
    for (String pName : pendingNames) {
-    if (!localManifest.files.containsKey(pName)) continue;
     String rel = OfficialAndroidClient.officialRelativePath(pName);
-    if (rel != null) {
+    if (rel == null) continue;
+    if (localManifest.files.containsKey(pName)) {
      candidateMap.putIfAbsent(rel, false);
      pendingTrackedRels.add(rel);
+    } else {
+     // Brand-new ('N') file from a newer patch step: delete if left partial/corrupt on device!
+     candidateMap.putIfAbsent(rel, false);
+     strayNewRels.add(rel);
     }
+   }
+   // Audit EVERY file whose file_versions.dat hash disagrees with ss_and.mani (catches same-size half-patched files!)
+   for (String fvBadRel : fvAudit.mismatchedRels) {
+    try {
+     String clean = relativeOfficial(fvBadRel);
+     candidateMap.putIfAbsent(clean, false);
+    } catch (Exception ignored) {}
+   }
+   for (String fvNewRel : fvAudit.strayNewRels) {
+    try {
+     String clean = relativeOfficial(fvNewRel);
+     candidateMap.putIfAbsent(clean, false);
+     strayNewRels.add(clean);
+    } catch (Exception ignored) {}
+   }
+   // Audit EVERY file in Persistent_Store whose actual disk size disagrees with ss_and.mani!
+   for (String badSzRel : treeScan.sizeMismatchRels) {
+    candidateMap.putIfAbsent(badSzRel, false);
    }
 
    List<String> candRels = new ArrayList<>(candidateMap.keySet());
+   List<String> candNames = new ArrayList<>(candRels.size());
    List<String> candFullPaths = new ArrayList<>(candRels.size());
    List<Long> candExpectedSizes = new ArrayList<>(candRels.size());
    for (String rel : candRels) {
-    String name = rel.substring(rel.lastIndexOf('/') + 1);
+    String mapped = OfficialAndroidClient.manifestNameFromRelativePath(rel);
+    String name = mapped != null ? mapped : rel.substring(rel.lastIndexOf('/') + 1);
+    candNames.add(name);
     OfficialAndroidClient.FileEntry rec = localManifest.files.get(name);
     candFullPaths.add(fullOfficialPath(rel));
     candExpectedSizes.add(rec != null ? rec.size : -1L);
@@ -1575,11 +1844,11 @@ final class GamePatcher {
    for (int i = 0; i < candRels.size(); i++) {
     String rel = candRels.get(i);
     boolean fromReceipt = Boolean.TRUE.equals(candidateMap.get(rel));
-    String name = rel.substring(rel.lastIndexOf('/') + 1);
+    String name = candNames.get(i);
     DeviceMd5State st = devStates.get(i);
     OfficialAndroidClient.FileEntry rec = localManifest.files.get(name);
     if (rec == null) {
-     if (fromReceipt && st.exists && !"data.arcx".equals(name) && !"lua.arcx".equals(name)) {
+     if ((fromReceipt || strayNewRels.contains(rel)) && st.exists && !"data.arcx".equals(name) && !"lua.arcx".equals(name)) {
       OfficialTarget t = new OfficialTarget(rel, name, candFullPaths.get(i), "delete", 0L, "", true);
       targets.add(t);
       todo.add(t);
@@ -1601,12 +1870,14 @@ final class GamePatcher {
        && catalog.baseFiles.get(name).checksum.equalsIgnoreCase(rec.checksum);
      if ("data.arcx".equals(name) || "lua.arcx".equals(name)) {
       mustReplace = true;
-     } else if (pendingNames.contains(name) && (!inBaseSame || name.endsWith(".en.unity3d") || name.endsWith(".srt"))) {
-      mustReplace = true;
-     } else if ((name.endsWith(".en.unity3d") || name.endsWith(".srt")) && !inBaseSame) {
-      mustReplace = true;
+     } else if (pendingNames.contains(name)) {
+      // On Android, ALL game bundles & SoundBanks live in Persistent_Store/ (no desktop InstallResource!).
+      // NEVER skip a missing core pending 'U' target even if inBaseSame == true!
+      mustReplace = rec.packageTag.isEmpty() || activePackageTags.contains(rec.packageTag);
+     } else if (name.endsWith(".en.unity3d") || name.endsWith(".srt")) {
+      mustReplace = !inBaseSame || fvAudit.allRels.contains(rel);
      } else {
-      mustReplace = false; // unmodified base file living inside APK assets
+      mustReplace = false;
      }
     }
     if (mustReplace) {
@@ -1742,8 +2013,57 @@ final class GamePatcher {
     }
    }
 
-   step("Đang dọn bộ nhớ tạm cập nhật (Temporary_Store / Patch_Store)...", 96);
+   step("Đang đồng bộ Hotfix.dll, file_versions.dat và dọn bộ nhớ tạm...", 95);
+   File replacedHotfixArch = null;
+   Map<String, String> verifiedRelToMd5 = new LinkedHashMap<>();
+   Set<String> deletedRels = new HashSet<>();
+   for (OfficialTarget t : targets) {
+    if ("delete".equals(t.action)) {
+     deletedRels.add(t.rel);
+    } else if (("keep".equals(t.action) || "replace".equals(t.action)) && t.expectedMd5 != null && !t.expectedMd5.isEmpty()) {
+     verifiedRelToMd5.put(t.rel, t.expectedMd5);
+     if ("replace".equals(t.action) && "hotfix.arch".equals(t.name) && t.sourceFile != null) {
+      replacedHotfixArch = t.sourceFile;
+     }
+    }
+   }
+   boolean hotfixDllSynced = syncHotfixDllFromArchive(id, stage, replacedHotfixArch);
+
+   int fvSynced = 0;
+   if (fvText != null) {
+    Set<String> postExisting = null;
+    if (treeScan.existingRels != null) {
+     postExisting = new HashSet<>(treeScan.existingRels);
+     postExisting.addAll(verifiedRelToMd5.keySet());
+     postExisting.removeAll(deletedRels);
+    }
+    OfficialAndroidClient.SyncedFileVersions syncedFv = OfficialAndroidClient.buildSyncedFileVersionsText(
+      fvText, localResVer, localManifest.files, verifiedRelToMd5, deletedRels, postExisting, "Persistent_Store/ss_and.mani"
+    );
+    if (syncedFv.text != null && syncedFv.changes > 0) {
+     File fvOut = new File(stage, "synced_file_versions.dat");
+     Files.write(fvOut.toPath(), syncedFv.text.getBytes(StandardCharsets.UTF_8));
+     pushRootFileAtomic(id, "file_versions.dat", fvOut);
+     fvSynced = syncedFv.changes;
+    }
+   }
+
+   boolean prefsSynced = false;
+   if (prefsText != null && catalog != null) {
+    Integer exactStep = catalog.stepForResourceVersion(localResVer);
+    if (exactStep != null) {
+     String updatedPrefs = OfficialAndroidClient.syncPrefsPatchVersionText(prefsText, exactStep);
+     if (updatedPrefs != null) {
+      File prefsOut = new File(stage, "synced_prefs.dat");
+      Files.write(prefsOut.toPath(), updatedPrefs.getBytes(StandardCharsets.UTF_8));
+      pushRootFileAtomic(id, "prefs.dat", prefsOut);
+      prefsSynced = true;
+     }
+    }
+   }
+
    int cleanedTemp = cleanGamePatchCaches();
+   int cleanedOrphans = cleanOrphanedManifests(expectedPatchMani);
    markReceiptChainRestored(binding);
    cleanStaleStaging();
    pruneHistory(binding, null);
@@ -1753,8 +2073,11 @@ final class GamePatcher {
    int deletedCount = todo.size() - replacedCount;
    String summaryMsg = "Đã khôi phục dữ liệu gốc chuẩn MD5 (RES " + localResVer + "): thay " + replacedCount
      + " tệp (" + fromCdn + " tải từ Yostar, " + fromBackup + " từ backup chuẩn), giữ " + alreadyOfficial
-     + " tệp đã gốc" + (deletedCount > 0 ? ", gỡ " + deletedCount + " tệp Việt hoá riêng" : "")
-     + (cleanedTemp > 0 ? ", dọn " + cleanedTemp + " tệp tạm cập nhật" : "") + ".";
+     + " tệp đã gốc" + (deletedCount > 0 ? ", gỡ " + deletedCount + " tệp thừa/Việt hoá" : "")
+     + (fvSynced > 0 ? ", đồng bộ " + fvSynced + " mục file_versions.dat" : "")
+     + (hotfixDllSynced ? ", đồng bộ Hotfix.dll" : "")
+     + (cleanedTemp > 0 ? ", dọn " + cleanedTemp + " tệp tạm cập nhật" : "")
+     + (cleanedOrphans > 0 ? ", dọn " + cleanedOrphans + " bảng kê thừa" : "") + ".";
    DiagnosticLog.log(context, "restore", summaryMsg);
    step("Đã hoàn tất khôi phục dữ liệu gốc chuẩn MD5.", 100);
    restoreSucceeded = true;
@@ -1765,7 +2088,11 @@ final class GamePatcher {
      "fromBackup", fromBackup,
      "fromCdn", fromCdn,
      "repairedPending", repairedPending,
+     "hotfixDllSynced", hotfixDllSynced,
+     "fileVersionsSynced", fvSynced,
+     "prefsSynced", prefsSynced,
      "cleanedTempFiles", cleanedTemp,
+     "cleanedOrphanedManifests", cleanedOrphans,
      "resourceVersion", localResVer,
      "message", summaryMsg
    );

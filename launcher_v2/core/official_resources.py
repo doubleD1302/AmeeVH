@@ -290,21 +290,80 @@ def parse_manifest(data: bytes | str) -> tuple[dict, dict, dict]:
                     raise ValueError("record")
                 if p[0] in files:
                     raise ValueError("duplicate")
-                files[p[0]] = {"name": p[0], "checksum": p[1].zfill(32), "size": int(p[2])}
+                files[p[0]] = {
+                    "name": p[0],
+                    "checksum": p[1].zfill(32),
+                    "size": int(p[2]),
+                    "tag": p[4].strip() if len(p) > 4 else "",
+                }
         except ValueError as exc:
             raise OfficialResourceError(f"Manifest không hợp lệ ({exc}).", "MANIFEST_FORMAT")
     return headers, files, patches
 
 
 def official_relative_path(name: str) -> str:
-    """Path of a resource under Persistent_Store, as the game itself lays it out."""
+    """Path of a resource under Persistent_Store, matching Stella Sora's DownloadStore layout 1:1."""
     if name == "data.arcx":
         return "Tables/" + name
     if name in ("lua.arcx", "hotfix.arch"):
         return "Scripts/" + name
     if name.endswith((".srt", ".mp4", ".config")):
         return "Videos/" + name
+    if name.endswith(".media.wem"):
+        return "SoundBanks/Media/" + name[:-10] + ".wem"
+    if name.endswith(".cn.bnk"):
+        return "SoundBanks/Chinese/" + name[:-7] + ".bnk"
+    if name.endswith(".en.bnk"):
+        return "SoundBanks/English/" + name[:-7] + ".bnk"
+    if name.endswith(".jp.bnk"):
+        return "SoundBanks/Japanese/" + name[:-7] + ".bnk"
+    if name.endswith((".bnk", ".wem")):
+        return "SoundBanks/" + name
     return "AssetBundles/" + name
+
+
+def manifest_name_from_relative(rel: str) -> Optional[str]:
+    """Inverse of official_relative_path(): map Persistent_Store/<subpath> back to its manifest key."""
+    if not isinstance(rel, str) or not rel:
+        return None
+    norm = rel.replace("\\", "/").lstrip("/")
+    if norm.startswith("Persistent_Store/"):
+        sub = norm[len("Persistent_Store/"):]
+    else:
+        sub = norm
+    if not sub or "/" not in sub or ".." in sub.split("/"):
+        return None
+    if sub == "Tables/data.arcx":
+        return "data.arcx"
+    if sub in ("Scripts/lua.arcx", "Scripts/hotfix.arch"):
+        return sub.split("/", 1)[1]
+    if sub.startswith("Videos/"):
+        fname = sub[len("Videos/"):]
+        if "/" not in fname and fname.endswith((".srt", ".mp4", ".config")):
+            return fname
+        return None
+    if sub.startswith("AssetBundles/"):
+        fname = sub[len("AssetBundles/"):]
+        if "/" not in fname and fname.endswith(".unity3d"):
+            return fname
+        return None
+    if sub.startswith("SoundBanks/"):
+        rest = sub[len("SoundBanks/"):]
+        if "/" not in rest:
+            return rest if rest.endswith((".bnk", ".wem")) else None
+        folder, fname = rest.split("/", 1)
+        if "/" in fname:
+            return None
+        if folder == "Media" and fname.endswith(".wem"):
+            return fname[:-4] + ".media.wem"
+        if folder == "Chinese" and fname.endswith(".bnk"):
+            return fname[:-4] + ".cn.bnk"
+        if folder == "English" and fname.endswith(".bnk"):
+            return fname[:-4] + ".en.bnk"
+        if folder == "Japanese" and fname.endswith(".bnk"):
+            return fname[:-4] + ".jp.bnk"
+        return None
+    return None
 
 
 def md5_file(path: str | Path, block: int = 1024 * 1024) -> str:
@@ -337,6 +396,18 @@ class OfficialCatalog:
     def knows(self, name: str, checksum: str) -> bool:
         return (name, checksum) in self.versions
 
+    def step_for_resource_version(self, local_res_version: Optional[str]) -> Optional[int]:
+        """Return exact BinDiff patch step number for `local_res_version` (0 = base), or None if unknown."""
+        local_res = str(local_res_version or "").strip()
+        if not local_res:
+            return None
+        if local_res == self.base_res_version:
+            return 0
+        for st in self.patch_steps:
+            if str(st.get("res_ver") or "").strip() == local_res:
+                return int(st.get("step", 0))
+        return None
+
     def pending_patch_names(self, local_res_version: Optional[str]) -> set[str]:
         """Return every filename touched by CDN BinDiff patches newer than `local_res_version`."""
         if not self.patch_steps:
@@ -344,12 +415,20 @@ class OfficialCatalog:
         local_res = str(local_res_version or "").strip()
         if local_res and local_res == self.resource_version:
             return set()
-        local_step = 0
-        if local_res and local_res != self.base_res_version:
-            for st in self.patch_steps:
-                if str(st.get("res_ver") or "").strip() == local_res:
-                    local_step = int(st.get("step", 0))
-                    break
+        if local_res.isdigit() and str(self.resource_version or "").isdigit():
+            if int(local_res) >= int(self.resource_version):
+                return set()
+        exact = self.step_for_resource_version(local_res)
+        if exact is not None:
+            local_step = exact
+        else:
+            local_step = 0
+            if local_res.isdigit():
+                lr_int = int(local_res)
+                for st in self.patch_steps:
+                    rv = str(st.get("res_ver") or "").strip()
+                    if rv.isdigit() and int(rv) <= lr_int:
+                        local_step = max(local_step, int(st.get("step", 0)))
         out: set[str] = set()
         for st in self.patch_steps:
             if int(st.get("step", 0)) > local_step:

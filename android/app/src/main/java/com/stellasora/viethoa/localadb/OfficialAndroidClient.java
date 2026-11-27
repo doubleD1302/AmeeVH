@@ -69,11 +69,17 @@ final class OfficialAndroidClient {
   final String name;
   final String checksum;
   final long size;
+  final String packageTag;
 
   FileEntry(String name, String checksum, long size) {
+   this(name, checksum, size, "");
+  }
+
+  FileEntry(String name, String checksum, long size, String packageTag) {
    this.name = name;
    this.checksum = checksum;
    this.size = size;
+   this.packageTag = packageTag == null ? "" : packageTag;
   }
  }
 
@@ -165,19 +171,40 @@ final class OfficialAndroidClient {
    return versions.containsKey(vKey(name, checksum));
   }
 
+  Integer stepForResourceVersion(String localResVer) {
+   String lr = localResVer == null ? "" : localResVer.trim();
+   if (lr.isEmpty()) return null;
+   if (lr.equals(baseResVersion)) return 0;
+   for (PatchStep st : patchSteps) {
+    if (lr.equals(st.resVer)) return st.step;
+   }
+   return null;
+  }
+
   Set<String> pendingPatchNames(String localResVer) {
    Set<String> out = new LinkedHashSet<>();
    if (patchSteps.isEmpty()) return out;
    String lr = localResVer == null ? "" : localResVer.trim();
    if (!lr.isEmpty() && lr.equals(latestResourceVersion)) return out;
+   if (lr.matches("[0-9]+") && latestResourceVersion != null && latestResourceVersion.matches("[0-9]+")) {
+    try {
+     if (Long.parseLong(lr) >= Long.parseLong(latestResourceVersion)) return out;
+    } catch (NumberFormatException ignored) {}
+   }
+   Integer exact = stepForResourceVersion(lr);
    int localStep = 0;
-   if (!lr.isEmpty() && !lr.equals(baseResVersion)) {
-    for (PatchStep st : patchSteps) {
-     if (lr.equals(st.resVer)) {
-      localStep = st.step;
-      break;
+   if (exact != null) {
+    localStep = exact;
+   } else if (lr.matches("[0-9]+")) {
+    try {
+     long lrVal = Long.parseLong(lr);
+     for (PatchStep st : patchSteps) {
+      if (st.resVer != null && st.resVer.matches("[0-9]+")) {
+       long sv = Long.parseLong(st.resVer);
+       if (sv <= lrVal && st.step > localStep) localStep = st.step;
+      }
      }
-    }
+    } catch (NumberFormatException ignored) {}
    }
    for (PatchStep st : patchSteps) {
     if (st.step > localStep) out.addAll(st.targets);
@@ -724,15 +751,250 @@ final class OfficialAndroidClient {
  }
 
  private static final Pattern PATCH_NAME_RE = Pattern.compile("^p_\\d+_[un]\\.(.+)$");
+ private static final Pattern SAFE_SIMPLE_NAME_RE = Pattern.compile("^[A-Za-z0-9_. -]+$");
+ private static final Pattern SAFE_VIDEO_NAME_RE = Pattern.compile("^[^/<>:\"|?*]+$");
 
- /** Maps a manifest filename to its Persistent_Store relative path (null if outside official-restore scope). */
+ /** Maps ANY Stella Sora manifest filename 1:1 to its Persistent_Store relative path (null if invalid). */
  static String officialRelativePath(String name) {
-  if (name == null || name.isEmpty() || name.contains("/") || name.contains("\\") || name.contains("..")) return null;
+  if (name == null || name.isEmpty() || !name.equals(name.trim()) || name.contains("/") || name.contains("\\") || name.contains("..") || name.contains(":")) return null;
+  for (int i = 0; i < name.length(); i++) {
+   if (name.charAt(i) < 32) return null;
+  }
   if ("data.arcx".equals(name)) return "Persistent_Store/Tables/data.arcx";
   if ("lua.arcx".equals(name) || "hotfix.arch".equals(name)) return "Persistent_Store/Scripts/" + name;
-  if (name.endsWith(".srt") || name.endsWith(".mp4")) return "Persistent_Store/Videos/" + name;
+  if (name.endsWith(".srt") || name.endsWith(".mp4") || name.endsWith(".config")) {
+   return SAFE_VIDEO_NAME_RE.matcher(name).matches() ? "Persistent_Store/Videos/" + name : null;
+  }
+  if (!SAFE_SIMPLE_NAME_RE.matcher(name).matches()) return null;
+  if (name.endsWith(".media.wem")) {
+   String stem = name.substring(0, name.length() - 10);
+   return stem.isEmpty() ? null : "Persistent_Store/SoundBanks/Media/" + stem + ".wem";
+  }
+  if (name.endsWith(".cn.bnk")) {
+   String stem = name.substring(0, name.length() - 7);
+   return stem.isEmpty() ? null : "Persistent_Store/SoundBanks/Chinese/" + stem + ".bnk";
+  }
+  if (name.endsWith(".en.bnk")) {
+   String stem = name.substring(0, name.length() - 7);
+   return stem.isEmpty() ? null : "Persistent_Store/SoundBanks/English/" + stem + ".bnk";
+  }
+  if (name.endsWith(".jp.bnk")) {
+   String stem = name.substring(0, name.length() - 7);
+   return stem.isEmpty() ? null : "Persistent_Store/SoundBanks/Japanese/" + stem + ".bnk";
+  }
+  if (name.endsWith(".bnk") || name.endsWith(".wem")) {
+   return "Persistent_Store/SoundBanks/" + name;
+  }
   if (name.endsWith(".unity3d")) return "Persistent_Store/AssetBundles/" + name;
   return null;
+ }
+
+ /** Exact inverse of officialRelativePath(): maps Persistent_Store/<subpath> back to its manifest key. */
+ static String manifestNameFromRelativePath(String rel) {
+  if (rel == null || rel.isEmpty()) return null;
+  String norm = rel.replace('\\', '/');
+  while (norm.startsWith("/")) norm = norm.substring(1);
+  String sub = norm.startsWith("Persistent_Store/") ? norm.substring("Persistent_Store/".length()) : norm;
+  if (sub.isEmpty() || sub.contains("..") || sub.indexOf('/') < 0) return null;
+  if ("Tables/data.arcx".equals(sub)) return "data.arcx";
+  if ("Scripts/lua.arcx".equals(sub)) return "lua.arcx";
+  if ("Scripts/hotfix.arch".equals(sub)) return "hotfix.arch";
+  if (sub.startsWith("Videos/")) {
+   String f = sub.substring("Videos/".length());
+   if (!f.contains("/") && (f.endsWith(".srt") || f.endsWith(".mp4") || f.endsWith(".config"))) return f;
+   return null;
+  }
+  if (sub.startsWith("AssetBundles/")) {
+   String f = sub.substring("AssetBundles/".length());
+   if (!f.contains("/") && f.endsWith(".unity3d")) return f;
+   return null;
+  }
+  if (sub.startsWith("SoundBanks/")) {
+   String rest = sub.substring("SoundBanks/".length());
+   int slash = rest.indexOf('/');
+   if (slash < 0) {
+    return (rest.endsWith(".bnk") || rest.endsWith(".wem")) ? rest : null;
+   }
+   String folder = rest.substring(0, slash);
+   String f = rest.substring(slash + 1);
+   if (f.contains("/")) return null;
+   if ("Media".equals(folder) && f.endsWith(".wem") && f.length() > 4) {
+    return f.substring(0, f.length() - 4) + ".media.wem";
+   }
+   if ("Chinese".equals(folder) && f.endsWith(".bnk") && f.length() > 4) {
+    return f.substring(0, f.length() - 4) + ".cn.bnk";
+   }
+   if ("English".equals(folder) && f.endsWith(".bnk") && f.length() > 4) {
+    return f.substring(0, f.length() - 4) + ".en.bnk";
+   }
+   if ("Japanese".equals(folder) && f.endsWith(".bnk") && f.length() > 4) {
+    return f.substring(0, f.length() - 4) + ".jp.bnk";
+   }
+   return null;
+  }
+  return null;
+ }
+
+ static Set<String> parsePrefsPackageTags(String prefsText) {
+  Set<String> tags = new LinkedHashSet<>();
+  if (prefsText == null || prefsText.isEmpty()) return tags;
+  for (String line : prefsText.split("\\r?\\n")) {
+   if (line.startsWith("PACKAGE_TAGS:")) {
+    String raw = line.substring("PACKAGE_TAGS:".length()).trim();
+    for (String t : raw.split("\\|")) {
+     String clean = t.trim();
+     if (!clean.isEmpty()) tags.add(clean);
+    }
+    break;
+   }
+  }
+  return tags;
+ }
+
+ /** Returns updated prefs.dat text if LOCAL_BIN_DIFF_PATCH_RESOURCE_VERSION > expectedStep, else null. */
+ static String syncPrefsPatchVersionText(String prefsText, int expectedStep) {
+  if (prefsText == null || prefsText.isEmpty() || expectedStep < 0) return null;
+  String[] lines = prefsText.split("\\r?\\n");
+  boolean changed = false;
+  StringBuilder out = new StringBuilder();
+  for (String line : lines) {
+   if (line.startsWith("LOCAL_BIN_DIFF_PATCH_RESOURCE_VERSION:")) {
+    String raw = line.substring("LOCAL_BIN_DIFF_PATCH_RESOURCE_VERSION:".length()).trim();
+    if (raw.matches("[0-9]+")) {
+     try {
+      if (Integer.parseInt(raw) > expectedStep) {
+       out.append("LOCAL_BIN_DIFF_PATCH_RESOURCE_VERSION:").append(expectedStep).append('\n');
+       changed = true;
+       continue;
+      }
+     } catch (NumberFormatException ignored) {}
+    }
+   }
+   out.append(line).append('\n');
+  }
+  return changed ? out.toString() : null;
+ }
+
+ static final class FileVersionsAudit {
+  final Set<String> allRels;
+  final Set<String> mismatchedRels;
+  final Set<String> strayNewRels;
+
+  FileVersionsAudit(Set<String> allRels, Set<String> mismatchedRels, Set<String> strayNewRels) {
+   this.allRels = allRels;
+   this.mismatchedRels = mismatchedRels;
+   this.strayNewRels = strayNewRels;
+  }
+ }
+
+ static FileVersionsAudit auditFileVersionsText(String rawText, Map<String, FileEntry> localFiles, Set<String> pendingNames) {
+  Set<String> allRels = new LinkedHashSet<>();
+  Set<String> mismatched = new LinkedHashSet<>();
+  Set<String> strayNew = new LinkedHashSet<>();
+  if (rawText == null || rawText.isEmpty()) return new FileVersionsAudit(allRels, mismatched, strayNew);
+  String text = rawText.charAt(0) == '\uFEFF' ? rawText.substring(1) : rawText;
+  for (String line : text.split("\\r?\\n")) {
+   String s = line.trim();
+   int pipe = s.indexOf('|');
+   if (pipe <= 0) continue;
+   String rawPath = s.substring(0, pipe);
+   String val = s.substring(pipe + 1).trim();
+   String norm = rawPath.replace('\\', '/');
+   while (norm.startsWith("/")) norm = norm.substring(1);
+   if (norm.equals("Persistent_Store/ss_and.mani") || norm.equals("Persistent_Store/ss_win.mani")) continue;
+   allRels.add(norm);
+   String mname = manifestNameFromRelativePath(norm);
+   if (mname == null) continue;
+   FileEntry rec = localFiles.get(mname);
+   if (rec == null) {
+    if (pendingNames != null && pendingNames.contains(mname)) strayNew.add(norm);
+   } else if (!rec.checksum.equalsIgnoreCase(val)) {
+    mismatched.add(norm);
+   }
+  }
+  return new FileVersionsAudit(allRels, mismatched, strayNew);
+ }
+
+ static final class SyncedFileVersions {
+  final String text;
+  final int changes;
+
+  SyncedFileVersions(String text, int changes) {
+   this.text = text;
+   this.changes = changes;
+  }
+ }
+
+ static SyncedFileVersions buildSyncedFileVersionsText(
+   String rawText,
+   String localResVer,
+   Map<String, FileEntry> localFiles,
+   Map<String, String> verifiedRelToMd5,
+   Set<String> deletedRels,
+   Set<String> existingRelsOrNull,
+   String manifestRel
+ ) {
+  if (rawText == null) return new SyncedFileVersions(null, 0);
+  String text = (!rawText.isEmpty() && rawText.charAt(0) == '\uFEFF') ? rawText.substring(1) : rawText;
+  char sep = '/';
+  boolean detectedSep = false;
+  LinkedHashMap<String, String> ordered = new LinkedHashMap<>();
+  for (String line : text.split("\\r?\\n")) {
+   String s = line.trim();
+   int pipe = s.indexOf('|');
+   if (pipe <= 0) continue;
+   String rawPath = s.substring(0, pipe);
+   String val = s.substring(pipe + 1).trim();
+   if (!detectedSep) {
+    if (rawPath.startsWith("\\")) { sep = '\\'; detectedSep = true; }
+    else if (rawPath.startsWith("/")) { sep = '/'; detectedSep = true; }
+   }
+   String norm = rawPath.replace('\\', '/');
+   while (norm.startsWith("/")) norm = norm.substring(1);
+   ordered.put(norm, val);
+  }
+  int changes = 0;
+  List<String> keys = new ArrayList<>(ordered.keySet());
+  for (String rel : keys) {
+   if (rel.equals(manifestRel)) continue;
+   String mname = manifestNameFromRelativePath(rel);
+   if (mname == null) continue;
+   FileEntry rec = localFiles.get(mname);
+   boolean missingOnDisk = existingRelsOrNull != null
+     && !existingRelsOrNull.contains(rel)
+     && (verifiedRelToMd5 == null || !verifiedRelToMd5.containsKey(rel));
+   if (rec == null || missingOnDisk || !rec.checksum.equalsIgnoreCase(ordered.get(rel))) {
+    ordered.remove(rel);
+    changes++;
+   }
+  }
+  if (deletedRels != null) {
+   for (String del : deletedRels) {
+    if (ordered.remove(del) != null) changes++;
+   }
+  }
+  if (verifiedRelToMd5 != null) {
+   for (Map.Entry<String, String> e : verifiedRelToMd5.entrySet()) {
+    String want = e.getValue().toLowerCase(Locale.ROOT);
+    String cur = ordered.get(e.getKey());
+    if (cur == null || !cur.equalsIgnoreCase(want)) {
+     ordered.put(e.getKey(), want);
+     changes++;
+    }
+   }
+  }
+  if (manifestRel != null && !manifestRel.isEmpty() && localResVer != null && !localResVer.isEmpty()) {
+   if (!localResVer.equals(ordered.get(manifestRel))) {
+    ordered.put(manifestRel, localResVer);
+    changes++;
+   }
+  }
+  if (changes == 0) return new SyncedFileVersions(null, 0);
+  StringBuilder out = new StringBuilder(ordered.size() * 64);
+  for (Map.Entry<String, String> e : ordered.entrySet()) {
+   out.append(sep).append(e.getKey().replace('/', sep)).append('|').append(e.getValue()).append('\n');
+  }
+  return new SyncedFileVersions(out.toString(), changes);
  }
 
  static ParsedManifest parseManifestFull(byte[] data) throws IOException {
@@ -772,7 +1034,8 @@ final class OfficialAndroidClient {
     if (p.length >= 4) {
      try {
       long sz = Long.parseLong(p[2]);
-      files.put(p[0], new FileEntry(p[0], padMd5(p[1]), sz));
+      String pkgTag = p.length >= 5 ? p[4].trim() : "";
+      files.put(p[0], new FileEntry(p[0], padMd5(p[1]), sz, pkgTag));
      } catch (NumberFormatException ignored) {}
     }
    }

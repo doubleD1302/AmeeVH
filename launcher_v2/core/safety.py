@@ -98,14 +98,22 @@ def _is_allowed_destination(rel: str) -> bool:
 def _is_allowed_official_restore_destination(rel: str) -> bool:
     """Allow-list for MD5-verified publisher files during OfficialRestoreEngine.
 
-    Strictly narrower than arbitrary Persistent_Store writes, while allowing recovery of
-    non-.en bundles / hotfix.arch / videos corrupted or half-patched by an aborted BinDiffPatch.
+    Strictly narrower than arbitrary Persistent_Store writes, while allowing full recovery of
+    all publisher resource types (AssetBundles, SoundBanks, Tables, Scripts/hotfix.arch/Hotfix.dll,
+    and Videos) that can be half-patched, corrupted, or left behind by an aborted BinDiffPatch.
     """
     return (
         _is_allowed_destination(rel)
-        or rel == "Persistent_Store/Scripts/hotfix.arch"
-        or bool(re.fullmatch(r"Persistent_Store/AssetBundles/[A-Za-z0-9_.-]+[.]unity3d", rel))
-        or bool(re.fullmatch(r'Persistent_Store/Videos/[^/<>:"|?*]+[.]mp4', rel))
+        or rel in ("Persistent_Store/Scripts/hotfix.arch", "Persistent_Store/Scripts/Hotfix.dll")
+        or bool(re.fullmatch(r"Persistent_Store/AssetBundles/[A-Za-z0-9_. -]+[.]unity3d", rel))
+        or bool(re.fullmatch(r'Persistent_Store/Videos/[^/<>:"|?*]+[.](mp4|config)', rel))
+        or bool(re.fullmatch(r"Persistent_Store/SoundBanks/[A-Za-z0-9_. -]+[.](bnk|wem)", rel))
+        or bool(
+            re.fullmatch(
+                r"Persistent_Store/SoundBanks/(Media|Chinese|English|Japanese)/[A-Za-z0-9_. -]+[.](bnk|wem)",
+                rel,
+            )
+        )
     )
 
 

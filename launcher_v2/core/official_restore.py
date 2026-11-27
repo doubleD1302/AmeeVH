@@ -28,6 +28,8 @@ import re
 import shutil
 import time
 import uuid
+import zipfile
+import zlib
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -42,6 +44,7 @@ from .official_resources import (
     OfficialClient,
     OfficialDownloader,
     OfficialResourceError,
+    manifest_name_from_relative,
     md5_file,
     official_relative_path,
     parse_manifest,
@@ -180,6 +183,295 @@ def cleanup_game_patch_caches(root: Path) -> int:
     return removed
 
 
+def _atomic_write_text(path: Path, text: str) -> None:
+    tmp = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
+    try:
+        with tmp.open("w", encoding="utf-8", newline="\n") as f:
+            f.write(text)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
+def _read_prefs_package_tags(root: Path) -> set[str]:
+    """Read active optional package tags (e.g. Voice_JP, Voice_CN) from Stella Sora's prefs.dat."""
+    try:
+        prefs = safe_path(root, "prefs.dat", False)
+        if not prefs.is_file() or _is_reparse_or_symlink(prefs) or prefs.stat().st_size > 256 * 1024:
+            return set()
+        for line in prefs.read_text(encoding="utf-8", errors="replace").splitlines():
+            if line.startswith("PACKAGE_TAGS:"):
+                raw = line.split(":", 1)[1].strip()
+                return {t.strip() for t in raw.split("|") if t.strip()}
+    except (InstallerError, OSError):
+        pass
+    return set()
+
+
+def _sync_prefs_patch_version(root: Path, catalog: OfficialCatalog, local_res: Optional[str]) -> bool:
+    """If prefs.dat claims a higher LOCAL_BIN_DIFF_PATCH_RESOURCE_VERSION than ss_win.mani, sync it back."""
+    expected_step = catalog.step_for_resource_version(local_res)
+    if expected_step is None:
+        return False
+    try:
+        prefs = safe_path(root, "prefs.dat", False)
+        if not prefs.is_file() or _is_reparse_or_symlink(prefs) or prefs.stat().st_size > 256 * 1024:
+            return False
+        lines = prefs.read_text(encoding="utf-8", errors="replace").splitlines()
+    except (InstallerError, OSError):
+        return False
+    changed = False
+    out_lines: list[str] = []
+    for line in lines:
+        if line.startswith("LOCAL_BIN_DIFF_PATCH_RESOURCE_VERSION:"):
+            raw = line.split(":", 1)[1].strip()
+            if raw.isdigit() and int(raw) > expected_step:
+                out_lines.append(f"LOCAL_BIN_DIFF_PATCH_RESOURCE_VERSION:{expected_step}")
+                changed = True
+                continue
+        out_lines.append(line)
+    if not changed:
+        return False
+    _atomic_write_text(prefs, "\n".join(out_lines) + "\n")
+    return True
+
+
+def _read_file_versions(root: Path) -> Optional[tuple[Path, str, list[tuple[str, str]]]]:
+    """Read Stella Sora's file_versions.dat hash cache if present.
+
+    Returns (path, separator_char, [(norm_rel, value), ...]) where norm_rel uses forward slashes
+    without leading slash (e.g. 'Persistent_Store/SoundBanks/AVG.bnk').
+    """
+    try:
+        fv = safe_path(root, "file_versions.dat", False)
+        if not fv.is_file() or _is_reparse_or_symlink(fv) or fv.stat().st_size > 64 * 1024 * 1024:
+            return None
+        raw = fv.read_text(encoding="utf-8-sig", errors="replace")
+    except (InstallerError, OSError):
+        return None
+    sep = "\\"
+    detected_sep = False
+    entries: list[tuple[str, str]] = []
+    for line in raw.splitlines():
+        s = line.strip()
+        if not s or "|" not in s:
+            continue
+        raw_path, val = s.split("|", 1)
+        if not detected_sep:
+            if raw_path.startswith("/"):
+                sep = "/"
+                detected_sep = True
+            elif raw_path.startswith("\\"):
+                sep = "\\"
+                detected_sep = True
+        norm_rel = raw_path.replace("\\", "/").lstrip("/")
+        entries.append((norm_rel, val.strip()))
+    return fv, sep, entries
+
+
+def _sync_file_versions(
+    root: Path,
+    local_res: Optional[str],
+    local_files: dict,
+    targets: list[Target],
+    mode: str,
+) -> int:
+    """Keep Stella Sora's file_versions.dat 100% consistent with Persistent_Store/ & ss_win.mani.
+
+    During an aborted BinDiffPatch, DownloadStore writes new p_N MD5s into file_versions.dat as
+    individual files succeed. If we revert files back to p_(N-1) without updating file_versions.dat,
+    DownloadStore trusts the stale p_N entries on the next boot and skips or corrupts patching.
+    """
+    info = _read_file_versions(root)
+    if info is None:
+        return 0
+    fv_path, sep, entries = info
+    ordered: dict[str, str] = {}
+    for rel, val in entries:
+        ordered[rel] = val
+
+    changes = 0
+    # 1. Remove any stale/ghost entries that disagree with ss_win.mani or do not exist on disk
+    resolved_root = Path(root).resolve()
+    if mode == "game" and local_files:
+        for rel in list(ordered.keys()):
+            if rel == "Persistent_Store/ss_win.mani":
+                continue
+            mname = manifest_name_from_relative(rel)
+            if mname is None:
+                continue
+            rec = local_files.get(mname)
+            try:
+                disk_path = safe_official_path(resolved_root, rel)
+                exists_on_disk = disk_path.is_file() and not _is_reparse_or_symlink(disk_path)
+            except (InstallerError, OSError):
+                exists_on_disk = False
+            if rec is None or not exists_on_disk:
+                ordered.pop(rel, None)
+                changes += 1
+            elif ordered[rel].lower() != str(rec["checksum"]).lower():
+                ordered.pop(rel, None)
+                changes += 1
+
+    # 2. Apply exact verified states for every audited Target
+    for t in targets:
+        if t.action == "delete":
+            if t.rel in ordered:
+                ordered.pop(t.rel, None)
+                changes += 1
+        elif t.action in ("keep", "replace") and t.checksum:
+            if t.path.is_file():
+                want = t.checksum.lower()
+                if ordered.get(t.rel, "").lower() != want:
+                    ordered[t.rel] = want
+                    changes += 1
+            elif t.rel in ordered:
+                ordered.pop(t.rel, None)
+                changes += 1
+
+    # 3. Ensure ss_win.mani version line matches local_res
+    if mode == "game" and local_res:
+        mani_key = "Persistent_Store/ss_win.mani"
+        if ordered.get(mani_key) != str(local_res):
+            ordered[mani_key] = str(local_res)
+            changes += 1
+
+    if changes == 0:
+        return 0
+    out_lines = [f"{sep}{rel.replace('/', sep)}|{val}" for rel, val in ordered.items()]
+    _atomic_write_text(fv_path, "\n".join(out_lines) + ("\n" if out_lines else ""))
+    return changes
+
+
+def _crc32_file(path: Path) -> int:
+    crc = 0
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            crc = zlib.crc32(chunk, crc)
+    return crc & 0xFFFFFFFF
+
+
+def _sync_hotfix_dll(root: Path) -> bool:
+    """Ensure Persistent_Store/Scripts/Hotfix.dll matches the Hotfix.dll inside verified hotfix.arch."""
+    try:
+        arch = safe_official_path(root, "Persistent_Store/Scripts/hotfix.arch")
+        dll = safe_official_path(root, "Persistent_Store/Scripts/Hotfix.dll")
+    except InstallerError:
+        return False
+    if not arch.is_file() or _is_reparse_or_symlink(arch):
+        return False
+    try:
+        with zipfile.ZipFile(arch, "r") as zf:
+            try:
+                zinfo = zf.getinfo("Hotfix.dll")
+            except KeyError:
+                return False
+            if (
+                dll.is_file()
+                and not _is_reparse_or_symlink(dll)
+                and dll.stat().st_size == zinfo.file_size
+                and _crc32_file(dll) == (zinfo.CRC & 0xFFFFFFFF)
+            ):
+                return False
+            data = zf.read(zinfo)
+    except (zipfile.BadZipFile, OSError, zlib.error):
+        return False
+    if len(data) != zinfo.file_size or (zlib.crc32(data) & 0xFFFFFFFF) != (zinfo.CRC & 0xFFFFFFFF):
+        raise InstallerError("Nội dung Hotfix.dll giải nén từ hotfix.arch sai CRC32.", "STAGE_VERIFY_FAILED")
+    dll.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dll.with_name(f".official_hotfix_{uuid.uuid4().hex}.tmp")
+    try:
+        with tmp.open("wb") as f:
+            f.write(data)
+            f.flush()
+            os.fsync(f.fileno())
+        if tmp.stat().st_size != zinfo.file_size or _crc32_file(tmp) != (zinfo.CRC & 0xFFFFFFFF):
+            raise InstallerError("Bản sao tạm Hotfix.dll sai CRC32.", "STAGE_VERIFY_FAILED")
+        os.replace(tmp, dll)
+    finally:
+        tmp.unlink(missing_ok=True)
+    return True
+
+
+def _cleanup_orphaned_manifests(root: Path) -> int:
+    """Remove stray p_<k>_m.ss_win.mani files not referenced by ss_win.mani's BIN_DIFF_PATCH_VER."""
+    resolved_root = Path(root).resolve()
+    try:
+        ps = safe_path(resolved_root, "Persistent_Store", False)
+    except InstallerError:
+        return 0
+    if not ps.is_dir() or _is_reparse_or_symlink(ps):
+        return 0
+    mf = ps / "ss_win.mani"
+    expected_pm: Optional[str] = None
+    if mf.is_file() and not _is_reparse_or_symlink(mf):
+        try:
+            headers, _files, _patches = parse_manifest(mf.read_bytes())
+            pv = str(headers.get("BIN_DIFF_PATCH_VER") or "").strip()
+            if pv.isdigit() and int(pv) > 0:
+                expected_pm = f"p_{int(pv)}_m.ss_win.mani"
+        except (OSError, OfficialResourceError):
+            return 0
+    removed = 0
+    try:
+        for child in ps.iterdir():
+            if not child.is_file() or _is_reparse_or_symlink(child):
+                continue
+            if re.fullmatch(r"p_\d+_m\.ss_win\.mani", child.name) and child.name != expected_pm:
+                try:
+                    safe_cand = safe_path(resolved_root, f"Persistent_Store/{child.name}", False)
+                    safe_cand.unlink(missing_ok=True)
+                    removed += 1
+                except (InstallerError, OSError):
+                    continue
+    except OSError:
+        pass
+    return removed
+
+
+def _scan_corrupted_sizes(root: Path, local_files: dict, seen: set[str]) -> list[tuple[str, str]]:
+    """Fast full-tree size audit across all Persistent_Store resource folders (<0.15s for 22k files)."""
+    resolved_root = Path(root).resolve()
+    corrupted: list[tuple[str, str]] = []
+    for sub in ("Tables", "Scripts", "Videos", "AssetBundles", "SoundBanks"):
+        try:
+            base = safe_path(resolved_root, f"Persistent_Store/{sub}", False)
+        except InstallerError:
+            continue
+        if not base.is_dir() or _is_reparse_or_symlink(base):
+            continue
+        for dirpath, dirnames, filenames in os.walk(base, topdown=True, followlinks=False):
+            cur = Path(dirpath)
+            if _is_reparse_or_symlink(cur):
+                dirnames[:] = []
+                continue
+            dirnames[:] = [d for d in dirnames if not _is_reparse_or_symlink(cur / d)]
+            for fname in filenames:
+                fp = cur / fname
+                if _is_reparse_or_symlink(fp):
+                    continue
+                try:
+                    rel = fp.relative_to(resolved_root).as_posix()
+                except ValueError:
+                    continue
+                if rel in seen:
+                    continue
+                mname = manifest_name_from_relative(rel)
+                if mname is None:
+                    continue
+                rec = local_files.get(mname)
+                if rec is None:
+                    continue
+                try:
+                    if fp.stat().st_size != int(rec["size"]):
+                        corrupted.append((rel, mname))
+                except OSError:
+                    corrupted.append((rel, mname))
+    return corrupted
+
+
 class OfficialRestoreEngine:
     def __init__(
         self,
@@ -291,11 +583,24 @@ class OfficialRestoreEngine:
         mode = "game" if local else "latest"
         local_files = local[1] if local else {}
         local_res = local[0].get("RES_VER") if local else None
-        cands, receipt = self._candidates(root)
+        raw_cands, receipt = self._candidates(root)
+        # Each entry: (rel, manifest_name, from_receipt, is_stray_new)
+        cands: list[tuple[str, str, bool, bool]] = []
+        seen: set[str] = set()
+        for rel, from_receipt in raw_cands:
+            mname = manifest_name_from_relative(rel) or Path(rel).name
+            seen.add(rel)
+            cands.append((rel, mname, from_receipt, False))
         streaming = root / "StellaSora_Data" / "StreamingAssets" / "InstallResource"
         pending_patch_repairs: set[str] = set()
+        stray_new_files: set[str] = set()
+        size_corrupted_repairs: set[str] = set()
+        fv_mismatch_repairs: set[str] = set()
         if mode == "game":
-            seen = {rel for rel, _ in cands}
+            active_tags = _read_prefs_package_tags(root)
+            fv_info = _read_file_versions(root)
+            fv_map = {r: v for r, v in fv_info[2]} if fv_info else {}
+
             # 1) Check missing *.en.unity3d / *.srt files declared in local ss_win.mani
             for name, rec in sorted(local_files.items()):
                 rel = "Persistent_Store/" + official_relative_path(name)
@@ -322,23 +627,26 @@ class OfficialRestoreEngine:
                 if not catalog.knows(name, rec_checksum) and self._find_verified_local_backup(root, rel, rec_size, rec_checksum) is None:
                     continue
                 seen.add(rel)
-                cands.append((rel, False))
+                cands.append((rel, name, False, False))
 
             # 2) Audit EVERY file targeted by pending CDN BinDiff patches (p_k newer than local_res),
-            # including non-.en bundles & hotfix.arch! A prior aborted BinDiffPatch can leave 40+
-            # non-.en bundles half-patched, corrupted, stale-overridden, or deleted while ss_win.mani
-            # remains on the older RES_VER, causing repeat "Patch file verification failed" errors.
+            # including ALL SoundBanks (.bnk/.media.wem), non-.en bundles, hotfix.arch, AND stray 'N' files!
             pending_names = catalog.pending_patch_names(local_res)
             for name in sorted(pending_names):
-                rec = local_files.get(name)
-                if rec is None:
-                    continue  # brand-new file added in a newer patch step (not expected on local_res)
                 rel = "Persistent_Store/" + official_relative_path(name)
                 if rel in seen:
                     continue
                 try:
                     path = safe_official_path(root, rel)
                 except InstallerError:
+                    continue
+                rec = local_files.get(name)
+                if rec is None:
+                    # Brand-new ('N') file from a newer patch step: delete if left half-downloaded on disk!
+                    if path.is_file() and not _is_reparse_or_symlink(path):
+                        seen.add(rel)
+                        cands.append((rel, name, False, True))
+                        stray_new_files.add(name)
                     continue
                 rec_checksum = rec["checksum"]
                 rec_size = int(rec["size"])
@@ -350,6 +658,9 @@ class OfficialRestoreEngine:
                     except OSError:
                         needs_repair = True
                 else:
+                    pkg_tag = str(rec.get("tag") or "").strip()
+                    if pkg_tag and active_tags and pkg_tag not in active_tags:
+                        continue  # optional voice pack not installed on this client
                     cand = streaming / name
                     try:
                         ir_ok = not _is_reparse_or_symlink(cand) and cand.is_file() and cand.stat().st_size == rec_size and md5_file(cand) == rec_checksum
@@ -359,18 +670,53 @@ class OfficialRestoreEngine:
                         needs_repair = True
                 if needs_repair:
                     seen.add(rel)
-                    cands.append((rel, False))
+                    cands.append((rel, name, False, False))
                     pending_patch_repairs.add(name)
+
+            # 3) Audit Stella Sora's file_versions.dat hash cache for ANY mismatch vs ss_win.mani
+            # (catches even same-size half-patched files in <50ms!)
+            for fv_rel, fv_val in sorted(fv_map.items()):
+                if fv_rel in seen or fv_rel == "Persistent_Store/ss_win.mani":
+                    continue
+                mname = manifest_name_from_relative(fv_rel)
+                if mname is None:
+                    continue
+                try:
+                    path = safe_official_path(root, fv_rel)
+                except InstallerError:
+                    continue
+                rec = local_files.get(mname)
+                if rec is None:
+                    if mname in pending_names and path.is_file() and not _is_reparse_or_symlink(path):
+                        seen.add(fv_rel)
+                        cands.append((fv_rel, mname, False, True))
+                        stray_new_files.add(mname)
+                    continue
+                if fv_val.lower() != str(rec["checksum"]).lower():
+                    if path.is_file():
+                        seen.add(fv_rel)
+                        cands.append((fv_rel, mname, False, False))
+                        fv_mismatch_repairs.add(mname)
+
+            # 4) Fast full-tree size audit across all 22k files in Persistent_Store/
+            for bad_rel, bad_name in _scan_corrupted_sizes(root, local_files, seen):
+                try:
+                    safe_official_path(root, bad_rel)
+                except InstallerError:
+                    continue
+                seen.add(bad_rel)
+                cands.append((bad_rel, bad_name, False, False))
+                size_corrupted_repairs.add(bad_name)
+
         targets: list[Target] = []
         total = len(cands)
-        for index, (rel, from_receipt) in enumerate(cands, 1):
-            self._emit(cb, op, OperationPhase.VERIFY, f"Đang đối chiếu với bản gốc: {Path(rel).name}", index, total)
+        for index, (rel, name, from_receipt, is_stray_new) in enumerate(cands, 1):
+            self._emit(cb, op, OperationPhase.VERIFY, f"Đang đối chiếu với bản gốc: {name}", index, total)
             path = safe_official_path(root, rel)
-            name = path.name
             record = (local_files if mode == "game" else catalog.final_files).get(name)
             if record is None:
-                # Not an official file for this version: a Vietnamese-only addition.
-                if from_receipt and name not in TEXT_ARCHIVES and path.is_file():
+                # Not an official file for this version: Vietnamese-only addition or stray 'N' file from aborted patch.
+                if (from_receipt or is_stray_new) and name not in TEXT_ARCHIVES and path.is_file():
                     targets.append(Target(rel, name, path, "delete"))
                 elif name in TEXT_ARCHIVES:
                     raise OfficialResourceError(f"Manifest chính thức không có {name}.", "NOT_FOUND")
@@ -414,6 +760,9 @@ class OfficialRestoreEngine:
             "latest_game_version": catalog.game_version,
             "had_receipt": receipt is not None,
             "repaired_pending_patch_files": sorted(pending_patch_repairs),
+            "repaired_stray_new_files": sorted(stray_new_files),
+            "repaired_size_corrupted_files": sorted(size_corrupted_repairs),
+            "repaired_fv_mismatch_files": sorted(fv_mismatch_repairs),
         }
         return targets, info
 
@@ -492,7 +841,13 @@ class OfficialRestoreEngine:
                 raise CancelledError("Đã huỷ khôi phục tài nguyên.", "CANCELLED")
 
             replaced = self._apply(root, todo, sources, event_cb, operation_id)
+            local_after = read_local_manifest(root) if info["mode"] == "game" else None
+            local_files_after = local_after[1] if local_after else {}
+            hotfix_dll_synced = _sync_hotfix_dll(root)
+            fv_synced = _sync_file_versions(root, info["target_resource_version"], local_files_after, targets, info["mode"])
+            prefs_synced = _sync_prefs_patch_version(root, catalog, info["target_resource_version"]) if info["mode"] == "game" else False
             cleaned_temp_files = cleanup_game_patch_caches(root)
+            cleaned_orphans = _cleanup_orphaned_manifests(root)
             self._cleanup_stale_official_temps(root)
             self._finish_state(root, catalog, info, targets, replaced)
             downloader.cleanup()  # verified bytes are installed; free the cache disk space
@@ -503,11 +858,19 @@ class OfficialRestoreEngine:
                 extra_notes.append(f"dọn {cleaned_temp_files} tệp tạm cập nhật")
             if info.get("repaired_pending_patch_files"):
                 extra_notes.append(f"vá {len(info['repaired_pending_patch_files'])} tệp hệ thống lệch bản vá")
+            if info.get("repaired_stray_new_files"):
+                extra_notes.append(f"gỡ {len(info['repaired_stray_new_files'])} tệp mới dở dang")
+            if fv_synced:
+                extra_notes.append(f"đồng bộ {fv_synced} mục file_versions.dat")
+            if hotfix_dll_synced:
+                extra_notes.append("đồng bộ Hotfix.dll")
+            if cleaned_orphans:
+                extra_notes.append(f"dọn {cleaned_orphans} bảng kê thừa")
             extra_suffix = (" (" + ", ".join(extra_notes) + ")") if extra_notes else ""
             msg = (
                 f"✓ Đã tải và cài tài nguyên gốc của nhà phát hành (tài nguyên {info['target_resource_version']}): "
                 f"{len(names)} tệp được thay, {len(summary['already_official'])} tệp đã đúng bản gốc, "
-                f"{len(summary['to_delete'])} tệp Việt hoá riêng được gỡ{extra_suffix}."
+                f"{len(summary['to_delete'])} tệp thừa/Việt hoá được gỡ{extra_suffix}."
             )
             if info["mode"] == "game" and info["target_resource_version"] != info["latest_resource_version"]:
                 msg += (
@@ -518,6 +881,10 @@ class OfficialRestoreEngine:
                 replaced=names,
                 downloaded_bytes=downloader.downloaded_bytes,
                 cleaned_temp_files=cleaned_temp_files,
+                cleaned_orphaned_manifests=cleaned_orphans,
+                hotfix_dll_synced=hotfix_dll_synced,
+                file_versions_synced=fv_synced,
+                prefs_synced=prefs_synced,
             )
             emit(OperationPhase.DONE, msg, 1, 1)
             return summary

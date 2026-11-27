@@ -1,7 +1,14 @@
 {
-  "version": "2.1.5",
+  "version": "2.1.6",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-046",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.6: Sửa Triệt Để 100% Lỗi \"Patch file verification failed\" (PC & Android)",
+      "type": "release",
+      "content": "Cập nhật đồng bộ Launcher Android v2.1.6 (versionCode 29) và PC Launcher v2.1.6 — giải quyết triệt để mọi nguyên nhân còn sót gây lỗi \"Patch file verification failed\" khi game tải tài nguyên sau khi khôi phục gốc:\n• Bao phủ 100% tài nguyên gốc (21.948 tệp), bổ sung đầy đủ hệ thống SoundBanks (.bnk / .media.wem / giọng lồng tiếng), khắc phục lỗi bỏ sót 8 gói âm thanh và các gói inBaseSame bị thiếu trên Android.\n• Kiểm tra & đồng bộ nguyên tử file_versions.dat (bảng băm của game), tự giải nén đồng bộ Hotfix.dll theo hotfix.arch, đồng bộ prefs.dat và tự gỡ tệp mới ('N') dở dang còn sót sau lần cập nhật lỗi.\n• Bổ sung quét nhanh kích thước toàn bộ cây Persistent_Store + dọn bảng kê thừa (p_*_m.ss_*.mani), kiểm thử thực tế 100% qua chuỗi BinDiffPatch Ver:9 trên cả Windows và Android.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.6."
+    },
     {
       "id": "NOTIF-045",
       "date": "2026-11-27",

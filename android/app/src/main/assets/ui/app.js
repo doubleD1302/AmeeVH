@@ -17,7 +17,7 @@
     officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
     guard:{accessibilityEnabled:false,overlayEnabled:false,canPinShortcut:true,pendingRestore:false},
     support:{methods:[]},
-    app:{versionName:'2.1.5',versionCode:28,variant:'localadb',theme:'system',resolvedTheme:'light'}
+    app:{versionName:'2.1.6',versionCode:29,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
 
   let state = initial, currentPage = 'overview';
@@ -593,7 +593,7 @@
     text('github-state', lines.join('\n'));
 
     text('github-summary', p.available ? ('Gói Android ' + (p.version || gh.translationVersion || '') + ' sẵn sàng.') : (gh.message || 'Chưa đồng bộ GitHub.'));
-    text('app-version', 'v' + (state.app.versionName || '2.1.5') + ' (' + (state.app.versionCode || 28) + ')');
+    text('app-version', 'v' + (state.app.versionName || '2.1.6') + ' (' + (state.app.versionCode || 29) + ')');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Cài APK mới' : 'Tải bản cập nhật';
