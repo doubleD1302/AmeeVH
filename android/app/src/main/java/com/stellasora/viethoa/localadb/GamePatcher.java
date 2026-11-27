@@ -1483,13 +1483,16 @@ final class GamePatcher {
   String binding = target.getString("binding");
   String id = UUID.randomUUID().toString();
   File stage = Store.external(context, "staging/restore_" + id);
-  File cdnCache = Store.external(context, "staging/official_cache_" + id);
+  // Keep official_cache reusable across retries so a dropped Wi-Fi connection resumes immediately;
+  // it is wiped cleanly once restore succeeds.
+  File cdnCache = Store.external(context, "official_cache");
   File rollbackDir = new File(stage, "rollback");
   ownExternalPath(stage);
   ownExternalPath(cdnCache);
   if (!rollbackDir.isDirectory() && !rollbackDir.mkdirs()) {
    throw new IOException("Không tạo được thư mục đệm khôi phục gốc.");
   }
+  boolean restoreSucceeded = false;
 
   try {
    step("Đang đọc bảng kê gốc ss_and.mani trên thiết bị...", 6);
@@ -1754,6 +1757,7 @@ final class GamePatcher {
      + (cleanedTemp > 0 ? ", dọn " + cleanedTemp + " tệp tạm cập nhật" : "") + ".";
    DiagnosticLog.log(context, "restore", summaryMsg);
    step("Đã hoàn tất khôi phục dữ liệu gốc chuẩn MD5.", 100);
+   restoreSucceeded = true;
    return Store.obj(
      "replaced", replacedCount,
      "alreadyOfficial", alreadyOfficial,
@@ -1767,7 +1771,7 @@ final class GamePatcher {
    );
   } finally {
    deleteTree(stage);
-   deleteTree(cdnCache);
+   if (restoreSucceeded) deleteTree(cdnCache);
   }
  }
 

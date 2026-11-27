@@ -12,7 +12,7 @@ from typing import Any
 
 from .safety import atomic_json
 
-LAUNCHER_VERSION = "2.1.4"
+LAUNCHER_VERSION = "2.1.5"
 SUPPORT_DONATION_ENABLED: bool = False
 DEFAULT_GITHUB_REPO = "doubleD1302/AmeeVH"
 DEFAULT_GITHUB_BRANCH = "main"

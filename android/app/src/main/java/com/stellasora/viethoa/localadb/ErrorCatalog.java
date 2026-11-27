@@ -573,7 +573,7 @@ final class ErrorCatalog {
   {"E-DL-TIMEOUT", "Tải quá thời hạn", "Metadata quá lớn hoặc quá thời hạn"},
   {"E-TIMEOUT", "Thao tác vượt thời hạn", "quá thời hạn", "vượt thời hạn"},
   {"E-DL-RESPONSE", "Nguồn tải cần là HTTPS", "Máy chủ không có đích chuyển hướng", "chuyển hướng quá nhiều"},
-  {"E-DL-VERIFY", "Tệp tải về không khớp", "Tệp tải về không đúng", "Kích thước metadata không khớp", "SHA256 metadata không khớp"},
+  {"E-DL-VERIFY", "Tệp tải về không khớp", "Tệp tải về không đúng", "Kích thước metadata không khớp", "SHA256 metadata không khớp", "Tệp tải từ máy chủ Yostar sai MD5", "Bản gốc dựng lại không khớp MD5", "BZip2", "BSDIFF40"},
   {"E-FILE-MISMATCH", "Tệp bản dịch không khớp"},
   {"E-VERIFY-WRITE", "Đọc lại sau cài không khớp", "Đọc lại phục hồi không khớp", "Tệp tạm không khớp", "Không thể ghi tệp an toàn", "Không thể phục hồi tệp", "Không thể xoá tệp mới", "Chưa cập nhật được biên bản"},
   {"E-FILE-CHANGED", "Tệp đã thay đổi", "Tệp đã đổi", "Tệp game đổi", "Tệp đổi", "đổi ngoài thao tác", "Tệp tạm đã tồn tại ngoài nhật ký"},
