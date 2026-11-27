@@ -1,7 +1,14 @@
 {
-  "version": "2.1.7",
+  "version": "2.1.8",
   "updated_at": "2026-11-28",
   "announcements": [
+    {
+      "id": "NOTIF-048",
+      "date": "2026-11-28",
+      "title": "Bản vá nóng v2.1.8: Chế Độ An Toàn Không Cần Trợ Năng, Lối Tắt Chơi Stella VH Mới & Tự Tắt Local ADB",
+      "type": "release",
+      "content": "Bản vá nóng Launcher Android v2.1.8 (versionCode 31) và đồng bộ PC Launcher v2.1.8:\n• Lý do phát hành hotfix: Trợ năng (Accessibility) và Gỡ lỗi không dây (Local ADB) là các tính năng nhạy cảm trên Android — nếu bật thường xuyên không tắt dễ gây lỗi hoặc bị chặn ở ứng dụng khác (app ngân hàng, ví điện tử, VNeID, game chống cheat); nhưng nếu tắt mà không có lối tắt thay thế thì người chơi dễ bấm nhầm icon game gốc làm hỏng bản vá khi game cập nhật.\n• Lối tắt Chơi Stella VH mới & bảng hướng dẫn Chibi 4 bước: Thiết kế lại icon lối tắt tròn nền trong suốt nổi bật kèm logo cờ Việt Hoá để khó bấm nhầm; thêm bảng gợi ý dùng giao diện game và nhân vật Chibi tự kiểm tra lối tắt trên máy, hướng dẫn chi tiết cách cài và cách mở game an toàn mỗi khi mở launcher (không cần bật Trợ năng).\n• Tự động tắt Gỡ lỗi không dây: Ngay sau khi cài đặt hoặc khôi phục gốc xong, launcher tự động tắt Gỡ lỗi không dây & ngắt Local ADB (giữ nguyên khoá ghép đôi cho lần nối lại 1 chạm), kèm tuỳ chọn bật/tắt và nút tắt nhanh.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.8."
+    },
     {
       "id": "NOTIF-047",
       "date": "2026-11-28",

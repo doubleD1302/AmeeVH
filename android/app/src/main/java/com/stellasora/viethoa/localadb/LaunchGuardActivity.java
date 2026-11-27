@@ -30,8 +30,25 @@ public final class LaunchGuardActivity extends Activity {
  private final ExecutorService executor = Executors.newSingleThreadExecutor();
  private volatile boolean finished;
 
+ @SuppressWarnings("deprecation")
  @Override protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
+
+  // Support adding "Chơi Stella VH" via Home Screen Widgets/Shortcuts picker on custom launchers
+  if (getIntent() != null && Intent.ACTION_CREATE_SHORTCUT.equals(getIntent().getAction())) {
+   Intent target = new Intent(this, LaunchGuardActivity.class)
+     .setAction(Intent.ACTION_VIEW)
+     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+   Intent result = new Intent();
+   result.putExtra(Intent.EXTRA_SHORTCUT_INTENT, target);
+   result.putExtra(Intent.EXTRA_SHORTCUT_NAME, "Chơi Stella VH");
+   result.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(this, R.drawable.ic_shortcut_play_vh));
+   setResult(RESULT_OK, result);
+   ShortcutGuardHelper.onPinCallbackReceived(this);
+   LauncherService.notifyShortcutStateChanged(this, true);
+   finish();
+   return;
+  }
 
   Intent gameIntent = getPackageManager().getLaunchIntentForPackage(Store.GAME);
   if (gameIntent == null) {

@@ -27,6 +27,23 @@ public final class LauncherService extends Service {
   if (s != null) s.main.post(s::finishIdle);
  }
 
+ static void notifyShortcutStateChanged(Context c, boolean justPinned) {
+  Context app = c.getApplicationContext();
+  Listener l = listener.get();
+  if (l == null) return;
+  JSONObject snap = snapshot(app);
+  l.event(Store.obj("type", "state", "data", snap));
+  if (justPinned) {
+   l.event(Store.obj("type", "shortcutPinned", "data", ShortcutGuardHelper.statusJson(app)));
+  }
+ }
+
+ static JSONObject guardSnapshot(Context c, boolean pendingRestore) {
+  JSONObject g = ShortcutGuardHelper.statusJson(c);
+  try { g.put("pendingRestore", pendingRestore); } catch (JSONException ignored) {}
+  return g;
+ }
+
  private final Handler main = new Handler(Looper.getMainLooper());
  private final ExecutorService worker = Executors.newSingleThreadExecutor();
  private final AtomicBoolean busy = new AtomicBoolean();
@@ -101,14 +118,15 @@ public final class LauncherService extends Service {
   } catch (Exception e) {
    support = Store.obj("methods", new JSONArray());
   }
-  String appVer = "2.1.7";
-  long appCode = 30;
+  String appVer = "2.1.8";
+  long appCode = 31;
   try {
    PackageInfo pi = c.getPackageManager().getPackageInfo(Store.APP, 0);
    appVer = pi.versionName;
    appCode = pi.getLongVersionCode();
   } catch (Exception ignored) {}
   boolean hasId = KeyMaterial.hasIdentity(c);
+  boolean autoDisableAdb = cfg.optBoolean("auto_disable_wireless_adb", true);
   return Store.obj(
     "busy", false,
     "mutating", false,
@@ -125,6 +143,8 @@ public final class LauncherService extends Service {
       "host", cfg.optString("host", "127.0.0.1"),
       "pairingPort", 0,
       "connectionPort", cfg.optInt("connection_port", 0),
+      "wirelessDebuggingState", ShortcutGuardHelper.readWirelessDebuggingState(c),
+      "autoDisableWirelessAdb", autoDisableAdb,
       "status", hasId ? "Đã có khóa ghép đôi · Chưa kết nối" : "Chưa kết nối",
       "ownHosts", AdbClient.ownAddresses(),
       "notificationPairing", Store.obj("active", false, "stage", "", "message", "Có thể ghép đôi từ thông báo hoặc nhập cổng thủ công.")
@@ -133,17 +153,12 @@ public final class LauncherService extends Service {
     "github", Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "announcementStatus", "unavailable", "manifestStatus", "unavailable", "message", "Chưa đồng bộ GitHub."),
     "notifications", new JSONArray(),
     "payload", Store.obj("available", false, "compatible", false, "updateAvailable", false, "reason", "Chưa có thông tin gói Android tương thích."),
-    "config", Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host", "127.0.0.1"), "connectionPort", cfg.optInt("connection_port", 0), "theme", themePref),
+    "config", Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host", "127.0.0.1"), "connectionPort", cfg.optInt("connection_port", 0), "theme", themePref, "autoDisableWirelessAdb", autoDisableAdb),
     "update", Store.obj("available", false, "downloaded", false, "message", "Chưa kiểm tra bản APK Local ADB mới."),
     "recovery", Store.obj("pending", GamePatcher.hasPending(c), "message", ""),
     "receipt", Store.obj("present", false),
     "officialUpdate", OfficialAndroidClient.readCachedGuardState(c),
-    "guard", Store.obj(
-      "accessibilityEnabled", GameLaunchGuardService.isEnabled(c),
-      "overlayEnabled", GameLaunchGuardService.canDrawOverlay(c),
-      "canPinShortcut", isPinShortcutSupported(c),
-      "pendingRestore", false
-    ),
+    "guard", guardSnapshot(c, false),
     "support", support,
     "app", Store.obj("applicationId", Store.APP, "versionName", appVer, "versionCode", appCode, "variant", "localadb", "theme", themePref, "resolvedTheme", resolvedTheme)
   );
@@ -161,20 +176,19 @@ public final class LauncherService extends Service {
     j.put("device", deviceInfo());
     j.put("lastError", ErrorReport.lastSummary(c));
     String themePref = Store.theme(c);
+    boolean autoDisableAdb = Store.autoDisableWirelessAdb(c);
     j.getJSONObject("config").put("theme", themePref);
+    j.getJSONObject("config").put("autoDisableWirelessAdb", autoDisableAdb);
     JSONObject appObj = j.getJSONObject("app");
     appObj.put("theme", themePref);
     appObj.put("resolvedTheme", resolveTheme(c, themePref));
     JSONObject adbObj = j.getJSONObject("adb");
     adbObj.put("connected", s.adb != null && s.adb.verified);
     adbObj.put("hasIdentity", KeyMaterial.hasIdentity(c));
+    adbObj.put("wirelessDebuggingState", ShortcutGuardHelper.readWirelessDebuggingState(c));
+    adbObj.put("autoDisableWirelessAdb", autoDisableAdb);
     j.put("officialUpdate", OfficialAndroidClient.readCachedGuardState(c));
-    j.put("guard", Store.obj(
-      "accessibilityEnabled", GameLaunchGuardService.isEnabled(c),
-      "overlayEnabled", GameLaunchGuardService.canDrawOverlay(c),
-      "canPinShortcut", isPinShortcutSupported(c),
-      "pendingRestore", s.pendingGuardRestore
-    ));
+    j.put("guard", guardSnapshot(c, s.pendingGuardRestore));
     return j;
    } catch (Exception e) {
     return base(c);
@@ -499,9 +513,26 @@ public final class LauncherService extends Service {
       JSONObject prefetched = (manifest != null && manifestSyncedAt > 0 && SystemClock.elapsedRealtime() - manifestSyncedAt < 60000L) ? manifest : null;
       JSONObject receipt = patcher.install(new ChannelClient(this), prefetched);
       detectGame();
-      String okMsg = "Đã hoàn tất " + receipt.getJSONArray("files").length() + " tệp Android và ghi biên bản.";
+      int installedCount = receipt.getJSONArray("files").length();
+      String installedVer = receipt.optString("version", "");
+      JSONObject adbClose = Store.autoDisableWirelessAdb(this) ? disableWirelessAdbCleanly("install") : null;
+      String suffix = adbClose != null ? (" " + adbClose.optString("summary", "")) : "";
+      String okMsg = "Đã hoàn tất " + installedCount + " tệp Android và ghi biên bản." + suffix;
       DiagnosticLog.log(this, "install", okMsg);
       setMessage(okMsg);
+      JSONObject postInstall = Store.obj(
+        "filesCount", installedCount,
+        "version", installedVer,
+        "autoDisabled", adbClose != null,
+        "wirelessStateAfter", adbClose != null ? adbClose.optInt("wirelessStateAfter", -1) : ShortcutGuardHelper.readWirelessDebuggingState(this),
+        "adbSummary", adbClose != null ? adbClose.optString("summary", "") : "",
+        "devOptionsEnabled", isDevOptions(this),
+        "shortcut", ShortcutGuardHelper.statusJson(this)
+      );
+      main.post(() -> {
+       Listener l = listener.get();
+       if (l != null) l.event(Store.obj("type", "postInstallComplete", "data", postInstall));
+      });
       break;
      }
      case "verify": {
@@ -515,11 +546,35 @@ public final class LauncherService extends Service {
       JSONObject restoreRes = patcher.restore();
       detectGame();
       set("officialUpdate", OfficialAndroidClient.readCachedGuardState(this));
-      String okRestore = restoreRes != null && !restoreRes.optString("message", "").isEmpty()
+      JSONObject adbClose = Store.autoDisableWirelessAdb(this) ? disableWirelessAdbCleanly("restore") : null;
+      String baseRestore = restoreRes != null && !restoreRes.optString("message", "").isEmpty()
         ? restoreRes.optString("message")
         : "Đã khôi phục dữ liệu gốc chuẩn MD5 của nhà phát hành.";
+      String adbNote = adbClose != null ? adbClose.optString("summary", "") : "";
+      String okRestore = adbNote.isEmpty() ? baseRestore : (baseRestore + " " + adbNote);
       DiagnosticLog.log(this, "restore", okRestore);
       setMessage(okRestore);
+      if (adbClose != null) {
+       int wsAfter = adbClose.optInt("wirelessStateAfter", -1);
+       List<String> qa = new ArrayList<>();
+       qa.add("launch_game");
+       if (wsAfter == 1) qa.add("open_wireless");
+       if (isDevOptions(this)) qa.add("open_dev_settings");
+       JSONObject doneData = Store.obj(
+         "title", "Đã khôi phục dữ liệu gốc",
+         "errorTitle", "Đã khôi phục dữ liệu gốc",
+         "message", okRestore,
+         "explain", baseRestore + "\n\n" + adbNote
+           + (isDevOptions(this) ? "\nNếu app ngân hàng / VNeID yêu cầu tắt cả Tuỳ chọn nhà phát triển, chạm nút bên dưới để tắt nhanh." : ""),
+         "error", false,
+         "level", "info",
+         "quickActions", new JSONArray(qa)
+       );
+       main.post(() -> {
+        Listener l = listener.get();
+        if (l != null) l.event(Store.obj("type", "message", "data", doneData));
+       });
+      }
       break;
      }
      case "guardRestore": {
@@ -548,32 +603,61 @@ public final class LauncherService extends Service {
       detectGame();
       JSONObject offAfter = OfficialAndroidClient.readCachedGuardState(this);
       set("officialUpdate", offAfter);
+      JSONObject adbClose = Store.autoDisableWirelessAdb(this) ? disableWirelessAdbCleanly("guardRestore") : null;
       String guardDetail = guardRes != null ? guardRes.optString("message", "") : "";
-      DiagnosticLog.log(this, "guardRestore", "Đã đóng Stella Sora và khôi phục dữ liệu gốc hoàn tất. " + guardDetail);
+      String adbNote = adbClose != null ? adbClose.optString("summary", "") : "";
+      DiagnosticLog.log(this, "guardRestore", "Đã đóng Stella Sora và khôi phục dữ liệu gốc hoàn tất. " + guardDetail + " " + adbNote);
       String curG = state.getJSONObject("game").optString("gameVersion", "");
       String latestG = offAfter.optString("latestGameVersion", "");
       if (latestG.isEmpty() && manifest != null) latestG = manifest.optString("client_game_version", "");
       String targetLabel = !latestG.isEmpty() ? ("v" + latestG) : "bản mới nhất";
       String curLabel = !curG.isEmpty() ? (" (v" + curG + ")") : "";
-      setMessage("Đã khôi phục dữ liệu gốc! Hãy mở Stella Sora để cập nhật lên " + targetLabel + ", thoát hẳn game rồi cài lại Việt hoá.");
+      setMessage("Đã khôi phục dữ liệu gốc!" + (adbNote.isEmpty() ? "" : (" " + adbNote)) + " Hãy mở Stella Sora để cập nhật lên " + targetLabel + ".");
+      List<String> guardQa = new ArrayList<>(Arrays.asList("launch_game", "open_play_store"));
+      if (adbClose != null && adbClose.optInt("wirelessStateAfter", -1) == 1) guardQa.add("open_wireless");
+      if (isDevOptions(this)) guardQa.add("open_dev_settings");
       JSONObject guideData = Store.obj(
         "title", "Đã khôi phục dữ liệu gốc thành công!",
         "errorTitle", "Đã khôi phục dữ liệu gốc thành công!",
         "message", "Stella Sora trên máy đã về bản gốc sạch sẽ" + curLabel + ". Hãy mở game để tự tải bản cập nhật " + targetLabel + " rồi mới cài lại Việt hoá.",
-        "explain", "Stella Sora trên máy đã về bản gốc sạch sẽ" + curLabel + ". Đây là bước cần thiết để game tải bản cập nhật " + targetLabel + " mà không gặp lỗi xác minh tệp.",
+        "explain", "Stella Sora trên máy đã về bản gốc sạch sẽ" + curLabel + "."
+          + (adbNote.isEmpty() ? "" : ("\n" + adbNote))
+          + "\nĐây là bước cần thiết để game tải bản cập nhật " + targetLabel + " mà không gặp lỗi xác minh tệp.",
         "error", false,
         "level", "info",
         "steps", new JSONArray(Arrays.asList(
           "Bấm \"Mở Stella Sora\" bên dưới để game tự tải dữ liệu cập nhật " + targetLabel + " (nếu game yêu cầu cập nhật app, bấm \"Mở Google Play\").",
           "Chờ game tải xong vào tới màn hình đăng nhập/chính, sau đó vuốt thoát hẳn Stella Sora khỏi đa nhiệm.",
-          "Quay lại launcher — ứng dụng sẽ tự nhận phiên bản mới để bạn bấm \"Cài Việt hoá ngay\"."
+          "Quay lại launcher — bật tạm Gỡ lỗi không dây rồi bấm \"Cài Việt hoá ngay\" (cài xong launcher sẽ tự tắt lại)."
         )),
-        "quickActions", new JSONArray(Arrays.asList("launch_game", "open_play_store"))
+        "quickActions", new JSONArray(guardQa)
       );
       main.post(() -> {
        Listener l = listener.get();
        if (l != null) l.event(Store.obj("type", "message", "data", guideData));
       });
+      break;
+     }
+     case "disableWirelessAdb": {
+      JSONObject adbClose = disableWirelessAdbCleanly("manual");
+      String msg = adbClose.optString("summary", "Đã ngắt Local ADB.");
+      setMessage(msg);
+      int wsAfter = adbClose.optInt("wirelessStateAfter", -1);
+      if (wsAfter == 1) {
+       JSONObject warn = Store.obj(
+         "title", "Đã ngắt kết nối Local ADB",
+         "errorTitle", "Đã ngắt kết nối Local ADB",
+         "message", msg,
+         "explain", "ROM điện thoại không cho lệnh tắt công tắc Gỡ lỗi không dây tự động. Bạn hãy bấm nút bên dưới để gạt tắt Gỡ lỗi không dây (hoặc Tuỳ chọn nhà phát triển) ngay nhé.",
+         "error", false,
+         "level", "info",
+         "quickActions", new JSONArray(Arrays.asList("open_wireless", "open_dev_settings"))
+       );
+       main.post(() -> {
+        Listener l = listener.get();
+        if (l != null) l.event(Store.obj("type", "message", "data", warn));
+       });
+      }
       break;
      }
      case "recover": {
@@ -700,6 +784,52 @@ public final class LauncherService extends Service {
   refreshPayload();
  }
 
+ /**
+  * Best-effort auto-off for Wireless Debugging (adb_wifi_enabled = 0) via active uid=2000 ADB shell,
+  * followed by a clean broker disconnect. Preserves pairing keys so next reconnect stays 1-tap.
+  */
+ private JSONObject disableWirelessAdbCleanly(String reasonTag) {
+  boolean sent = false;
+  if (adb != null && adb.verified) {
+   progress("Đang tự động tắt Gỡ lỗi không dây & ngắt Local ADB…", 98);
+   try {
+    // Detached 1s-delayed command with closed fds so adb.exec receives clean exit code 0 before adbd closes socket
+    adb.exec("trap '' HUP; (sleep 1; settings put global adb_wifi_enabled 0) </dev/null >/dev/null 2>&1 &", 6000);
+    sent = true;
+   } catch (Throwable err) {
+    DiagnosticLog.log(this, "adb", "Không gửi được lệnh tự tắt Gỡ lỗi không dây (" + reasonTag + "): " + Store.cleanError(err));
+   }
+   try {
+    Thread.sleep(1300L);
+   } catch (InterruptedException ie) {
+    Thread.currentThread().interrupt();
+   }
+  }
+  closeDiscovery();
+  quickActive = false;
+  awaitingCode = false;
+  nonce = "";
+  if (adb != null) {
+   adb.disconnect();
+  }
+  int wsAfter = ShortcutGuardHelper.readWirelessDebuggingState(this);
+  String summary;
+  if (wsAfter == 0) {
+   summary = "Đã tự động tắt Gỡ lỗi không dây & ngắt Local ADB (giữ nguyên khoá ghép đôi).";
+  } else if (wsAfter == 1) {
+   summary = "Đã ngắt Local ADB; ROM máy giữ công tắc Gỡ lỗi không dây — bạn hãy gạt tắt nhanh để tránh ảnh hưởng app khác.";
+  } else if (sent) {
+   summary = "Đã gửi lệnh tắt Gỡ lỗi không dây & ngắt Local ADB (giữ nguyên khoá ghép đôi).";
+  } else {
+   summary = "Đã ngắt kết nối Local ADB an toàn.";
+  }
+  setAdb("connected", false);
+  setAdb("wirelessDebuggingState", wsAfter);
+  setAdb("status", wsAfter == 0 ? "Đã tự tắt Gỡ lỗi không dây · Sẵn sàng nối lại 1 chạm" : "Đã ngắt Local ADB.");
+  DiagnosticLog.log(this, "adb", "Auto-off Wireless ADB (" + reasonTag + "): sent=" + sent + ", adb_wifi_enabled=" + wsAfter);
+  return Store.obj("sent", sent, "wirelessStateAfter", wsAfter, "summary", summary);
+ }
+
  private synchronized void refreshPayload() throws Exception {
   JSONObject game = state.getJSONObject("game");
   boolean available = manifest != null;
@@ -806,7 +936,7 @@ public final class LauncherService extends Service {
  }
 
  private static JSONObject configState(JSONObject cfg) {
-  return Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host"), "connectionPort", cfg.optInt("connection_port", 0), "theme", Store.normalizeTheme(cfg.optString("theme", "system")));
+  return Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host"), "connectionPort", cfg.optInt("connection_port", 0), "theme", Store.normalizeTheme(cfg.optString("theme", "system")), "autoDisableWirelessAdb", cfg.optBoolean("auto_disable_wireless_adb", true));
  }
 
  private void startQuickPair() {

@@ -739,6 +739,10 @@ final class ErrorCatalog {
    case "probeNetwork": return "Kiểm tra kết nối & DNS";
    case "explain": return "Xem lý do chưa cài được";
    case "startPairingNotification": return "Ghép đôi qua thông báo";
+   case "disableWirelessAdb": return "Tắt Gỡ lỗi không dây & ngắt Local ADB";
+   case "setAutoDisableWirelessAdb": return "Lưu tuỳ chọn tự tắt Gỡ lỗi không dây";
+   case "checkGuardShortcut": return "Kiểm tra lối tắt Chơi Stella VH";
+   case "pinGuardShortcut": return "Ghim lối tắt Chơi Stella VH";
    default: return action;
   }
  }

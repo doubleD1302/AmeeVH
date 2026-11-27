@@ -86,7 +86,7 @@ final class Store {
  }
 
  static JSONObject defaults() {
-  return obj("repo", REPO, "branch", "main", "host", "127.0.0.1", "connection_port", 0, "theme", "system");
+  return obj("repo", REPO, "branch", "main", "host", "127.0.0.1", "connection_port", 0, "theme", "system", "auto_disable_wireless_adb", true);
  }
 
  static JSONObject config(Context c) throws Exception {
@@ -94,7 +94,21 @@ final class Store {
   if (!f.isFile()) return defaults();
   JSONObject cfg = read(f);
   if (!cfg.has("theme")) cfg.put("theme", "system");
+  if (!cfg.has("auto_disable_wireless_adb")) cfg.put("auto_disable_wireless_adb", true);
   return cfg;
+ }
+
+ static boolean autoDisableWirelessAdb(Context c) {
+  try { return config(c).optBoolean("auto_disable_wireless_adb", true); }
+  catch (Exception ignored) { return true; }
+ }
+
+ static void saveAutoDisableWirelessAdb(Context c, boolean enabled) throws Exception {
+  JSONObject cfg;
+  try { cfg = config(c); }
+  catch (Exception ignored) { cfg = defaults(); }
+  cfg.put("auto_disable_wireless_adb", enabled);
+  write(internal(c, "config.json"), cfg);
  }
 
  static String normalizeTheme(String raw) {

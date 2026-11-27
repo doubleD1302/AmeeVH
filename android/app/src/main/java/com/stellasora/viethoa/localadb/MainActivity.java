@@ -32,17 +32,21 @@ public final class MainActivity extends Activity implements LauncherService.List
  private WebView web;
  private boolean loaded, autoSynced, resumed;
  private boolean pendingGuardRestoreIntent;
+ private boolean pendingLaunchShortcutPrompt;
+ private boolean wasStopped;
+ private boolean leavingForExternalHelper;
  private String afterPermission;
  private boolean updateDialogShowing;
  private AlertDialog reconnectDialog;
  private long lastResumeDetectAt;
 
  private final Set<String> allowed = new HashSet<>(Arrays.asList(
-   "state", "sync", "saveSettings", "setTheme", "resetChannel", "probeNetwork",
-   "pair", "connect", "autoConnect", "disconnect",
+   "state", "sync", "saveSettings", "setTheme", "setAutoDisableWirelessAdb", "resetChannel", "probeNetwork",
+   "pair", "connect", "autoConnect", "disconnect", "disableWirelessAdb",
    "startPairingNotification", "cancelPairing", "detect", "install", "verify", "restore", "recover",
    "checkUpdate", "installUpdate", "checkOfficialUpdate", "guardRestore",
-   "pinGuardShortcut", "openAccessibilitySettings", "openOverlaySettings", "openAppInfoSettings", "openGuardAlert",
+   "pinGuardShortcut", "checkGuardShortcut", "confirmShortcutQuirk",
+   "openAccessibilitySettings", "openOverlaySettings", "openAppInfoSettings", "openGuardAlert",
    "openWirelessSettings", "openWifiSettings",
    "openAppNotifications", "openBatterySettings", "openUnknownSources", "launchGame", "openPlayStore",
    "copyDiagnostics", "copyError", "copyAiPrompt", "openSourceCode", "explain", "openLastError", "copyAccount", "openIssues",
@@ -157,6 +161,7 @@ public final class MainActivity extends Activity implements LauncherService.List
      emitState();
      maybeAutoSync();
      consumeGuardRestoreIntent();
+     maybeEmitLaunchShortcutPrompt();
     }
    }
   });
@@ -165,8 +170,11 @@ public final class MainActivity extends Activity implements LauncherService.List
   LauncherService.listen(this);
   try { UpdateNotice.schedule(this); } catch (RuntimeException ignored) {}
   try { OfficialUpdateNotice.schedule(this); } catch (RuntimeException ignored) {}
+  try { ShortcutGuardHelper.upgradeExistingShortcutIfPinned(this); } catch (RuntimeException ignored) {}
   if (getIntent() != null && getIntent().getBooleanExtra(EXTRA_GUARD_RESTORE, false)) {
    pendingGuardRestoreIntent = true;
+  } else {
+   pendingLaunchShortcutPrompt = true;
   }
   web.loadUrl(HOME);
  }
@@ -176,7 +184,11 @@ public final class MainActivity extends Activity implements LauncherService.List
   setIntent(intent);
   if (intent != null && intent.getBooleanExtra(EXTRA_GUARD_RESTORE, false)) {
    pendingGuardRestoreIntent = true;
+   pendingLaunchShortcutPrompt = false;
    if (loaded && resumed) consumeGuardRestoreIntent();
+  } else if (intent != null && Intent.ACTION_MAIN.equals(intent.getAction())) {
+   pendingLaunchShortcutPrompt = true;
+   if (loaded && resumed) maybeEmitLaunchShortcutPrompt();
   }
  }
 
@@ -245,6 +257,12 @@ public final class MainActivity extends Activity implements LauncherService.List
      emitState();
      break;
     }
+    case "setAutoDisableWirelessAdb": {
+     boolean enabled = args.optBoolean("enabled", true);
+     Store.saveAutoDisableWirelessAdb(this, enabled);
+     emitState();
+     break;
+    }
     case "probeNetwork": {
      LauncherService.probeNetwork(this, args.optString("id", ""));
      break;
@@ -260,6 +278,12 @@ public final class MainActivity extends Activity implements LauncherService.List
     case "openOverlaySettings": openOverlaySettings(); break;
     case "openAppInfoSettings": openAppInfoSettings(); break;
     case "pinGuardShortcut": pinGuardShortcut(); break;
+    case "checkGuardShortcut": checkGuardShortcut(); break;
+    case "confirmShortcutQuirk": {
+     ShortcutGuardHelper.markManualQuirkAck(this, true);
+     checkGuardShortcut();
+     break;
+    }
     case "openGuardAlert": {
      Intent guard = new Intent(this, GameUpdateGuardActivity.class)
        .putExtra(GameUpdateGuardActivity.EXTRA_SOURCE, "Cảnh báo cập nhật Yostar");
@@ -370,10 +394,12 @@ public final class MainActivity extends Activity implements LauncherService.List
      if (LauncherService.snapshot(this).optBoolean("busy")) throw new IOException("Hãy chờ thao tác đang chạy hoàn tất trước khi mở game.");
      Intent launch = getPackageManager().getLaunchIntentForPackage(Store.GAME);
      if (launch == null) throw new IOException("Chưa tìm thấy ứng dụng Stella Sora Android.");
+     leavingForExternalHelper = true;
      startActivity(new Intent(this, LaunchGuardActivity.class));
      break;
     }
     case "openPlayStore": {
+     leavingForExternalHelper = true;
      try {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Store.GAME)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
      } catch (Exception ignored) {
@@ -447,6 +473,7 @@ public final class MainActivity extends Activity implements LauncherService.List
     .setPositiveButton("Mở trình cài đặt", (d, w) -> {
      Uri uri = Uri.parse("content://" + Store.APP + ".updates/update.apk");
      Intent install = new Intent(Intent.ACTION_VIEW).setDataAndType(uri, "application/vnd.android.package-archive").addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+     leavingForExternalHelper = true;
      startActivity(install);
     })
     .show();
@@ -540,24 +567,39 @@ public final class MainActivity extends Activity implements LauncherService.List
  }
 
  private void pinGuardShortcut() {
-  try {
-   android.content.pm.ShortcutManager sm = getSystemService(android.content.pm.ShortcutManager.class);
-   if (sm == null || !sm.isRequestPinShortcutSupported()) {
-    showMessage("Ghim lối tắt bảo vệ", "Trình khởi chạy (Launcher) trên điện thoại không hỗ trợ tự ghim lối tắt. Bạn có thể mở Stella Sora trực tiếp qua nút \"Mở game\" trong ứng dụng này.", false);
-    return;
-   }
-   Intent target = new Intent(this, LaunchGuardActivity.class).setAction(Intent.ACTION_VIEW);
-   android.content.pm.ShortcutInfo info = new android.content.pm.ShortcutInfo.Builder(this, "stella_sora_guard_launch")
-     .setShortLabel("Stella Sora Việt Hoá")
-     .setLongLabel("Mở Stella Sora (Bảo vệ cập nhật)")
-     .setIcon(android.graphics.drawable.Icon.createWithResource(this, R.drawable.app_icon))
-     .setIntent(target)
-     .build();
-   sm.requestPinShortcut(info, null);
-   showMessage("Đã gửi yêu cầu ghim lối tắt", "Hãy bấm \"Thêm\" trên hộp thoại của Android để đặt biểu tượng \"Stella Sora Việt Hoá\" ra màn hình chính. Khi mở game bằng biểu tượng này, launcher sẽ tự kiểm tra bản vá Yostar trước khi vào game.", false);
-  } catch (Exception e) {
-   showMessage("Chưa ghim được lối tắt", Store.cleanError(e), false);
+  boolean supported = ShortcutGuardHelper.isPinSupported(this);
+  boolean requested = false;
+  if (supported) {
+   leavingForExternalHelper = true;
+   requested = ShortcutGuardHelper.requestPin(this);
   }
+  JSONObject st = ShortcutGuardHelper.statusJson(this);
+  event(Store.obj("type", "pinRequested", "data", Store.obj("supported", supported, "requested", requested, "shortcut", st)));
+  emitState();
+ }
+
+ private void checkGuardShortcut() {
+  ShortcutGuardHelper.upgradeExistingShortcutIfPinned(this);
+  JSONObject st = ShortcutGuardHelper.statusJson(this);
+  event(Store.obj("type", "shortcutCheck", "data", st));
+  emitState();
+ }
+
+ private void maybeEmitLaunchShortcutPrompt() {
+  if (!loaded || !resumed || pendingGuardRestoreIntent) return;
+  JSONObject snap = LauncherService.snapshot(this);
+  if (snap.optBoolean("busy")) return;
+  JSONObject adbObj = snap.optJSONObject("adb");
+  JSONObject np = adbObj != null ? adbObj.optJSONObject("notificationPairing") : null;
+  if (np != null && np.optBoolean("active")) return;
+  JSONObject off = snap.optJSONObject("officialUpdate");
+  if (off != null && off.optBoolean("needsRestore")) return;
+  pendingLaunchShortcutPrompt = false;
+  ShortcutGuardHelper.upgradeExistingShortcutIfPinned(this);
+  event(Store.obj("type", "showShortcutPrompt", "data", Store.obj(
+    "trigger", "launch",
+    "shortcut", ShortcutGuardHelper.statusJson(this)
+  )));
  }
 
  private void startGuardRestoreFlow() {
@@ -597,9 +639,11 @@ public final class MainActivity extends Activity implements LauncherService.List
 
  private boolean tryOpenSettings(Intent intent) {
   try {
+   leavingForExternalHelper = true;
    startActivity(intent);
    return true;
   } catch (ActivityNotFoundException | SecurityException ignored) {
+   leavingForExternalHelper = false;
    return false;
   }
  }
@@ -625,6 +669,7 @@ public final class MainActivity extends Activity implements LauncherService.List
  private void external(String url) throws Exception {
   Uri uri = Uri.parse(url);
   if (!"https".equals(uri.getScheme()) || uri.getHost() == null) throw new IOException("Liên kết không hợp lệ.");
+  leavingForExternalHelper = true;
   startActivity(new Intent(Intent.ACTION_VIEW, uri));
  }
  private void clipboard(String label, String text) {
@@ -752,6 +797,10 @@ public final class MainActivity extends Activity implements LauncherService.List
  @Override protected void onResume() {
   super.onResume();
   resumed = true;
+  boolean returnedFromBg = wasStopped;
+  boolean fromHelper = leavingForExternalHelper;
+  wasStopped = false;
+  leavingForExternalHelper = false;
   applySystemChromeTheme();
   LauncherService.listen(this);
   if (loaded) {
@@ -760,10 +809,21 @@ public final class MainActivity extends Activity implements LauncherService.List
    maybeAutoRedetectGame();
    showUpdateNotice();
    consumeGuardRestoreIntent();
+   if (fromHelper) {
+    event(Store.obj("type", "resumedFromHelper", "data", ShortcutGuardHelper.statusJson(this)));
+   } else if (pendingLaunchShortcutPrompt || returnedFromBg) {
+    pendingLaunchShortcutPrompt = true;
+    maybeEmitLaunchShortcutPrompt();
+   }
   }
   new Handler(Looper.getMainLooper()).postDelayed(() -> {
    if (resumed && !updateDialogShowing) offerUpdateNotifications();
   }, 1200);
+ }
+
+ @Override protected void onStop() {
+  wasStopped = true;
+  super.onStop();
  }
 
  private void maybeAutoRedetectGame() {

@@ -8,16 +8,16 @@
     busy:false,mutating:false,devOptionsEnabled:true,phase:'',message:'',progress:{percent:0,indeterminate:false,label:''},
     device:{manufacturer:'',brand:'',model:'',release:'',sdk:0,oemFamily:'generic'},
     lastError:{},
-    adb:{connected:false,paired:false,hasIdentity:false,host:'127.0.0.1',pairingPort:0,connectionPort:0,status:'Chưa nối',notificationPairing:{active:false,stage:'',message:''}},
+    adb:{connected:false,paired:false,hasIdentity:false,host:'127.0.0.1',pairingPort:0,connectionPort:0,wirelessDebuggingState:-1,autoDisableWirelessAdb:true,status:'Chưa nối',notificationPairing:{active:false,stage:'',message:''}},
     game:{installed:false,package:'com.YoStarEN.StellaSora',root:'',gameVersion:'',resourceVersion:'',versionsKnown:false,noData:false,wrongEdition:''},
     github:{repo:'doubleD1302/AmeeVH',branch:'main',announcementStatus:'Chưa đọc',releaseVersion:'',manifestStatus:'Chưa đọc',translationVersion:'',manifestSha256:'',message:'Chưa đồng bộ.'},
     notifications:[],payload:{available:false,compatible:false,updateAvailable:false,mismatchKind:'',supportedGameVersion:'',supportedResourceVersion:'',reason:'Đồng bộ GitHub để xem gói Android.'},
-    config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0,theme:'system'},
+    config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0,theme:'system',autoDisableWirelessAdb:true},
     update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},
     officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
-    guard:{accessibilityEnabled:false,overlayEnabled:false,canPinShortcut:true,pendingRestore:false},
+    guard:{shortcutPinned:false,shortcutPinnedByOs:false,shortcutCallbackReceived:false,shortcutPinAttempts:0,canPinShortcut:true,notificationsEnabled:true,accessibilityEnabled:false,overlayEnabled:false,wirelessDebuggingState:-1,pendingRestore:false,oemFamily:'generic'},
     support:{methods:[]},
-    app:{versionName:'2.1.6',versionCode:29,variant:'localadb',theme:'system',resolvedTheme:'light'}
+    app:{versionName:'2.1.8',versionCode:31,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
 
   let state = initial, currentPage = 'overview';
@@ -25,6 +25,8 @@
   let firstConfig = true;
   let copyResetTimer = 0, safetyCopyTimer = 0, toastTimer = 0, currentReportId = '', activeProbeInModal = false;
   let currentSafetyTopic = 'a11y', lastChibiIdx = -1;
+  let swOpen = false, swStep = 1, swMandatory = false, swCheckFailedOnce = false, swWaitingPinReturn = false;
+  let swScanTimer = 0, swPendingCheckFromRetry = false, swLaunchIdx = 0;
 
   const CHIBI_CAST = [
     {id:'103', name:'Amber',   quote:'"Cứ kiểm tra kỹ mọi thứ trước khi bật nhé, tớ đảm bảo sạch sẽ 100%!"'},
@@ -43,17 +45,17 @@
 
   const SAFETY_TOPICS = {
     a11y: {
-      title: 'Vì sao cần quyền Trợ năng?',
+      title: 'Quyền Trợ năng (Tuỳ chọn nâng cao)',
       sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
       why: [
-        'Chỉ nhận biết đúng lúc bạn bấm mở icon Stella Sora khi máy chủ Yostar có bản cập nhật mới.',
-        'Lập tức hiện hộp thoại nhắc bạn khôi phục dữ liệu gốc trước, tránh lỗi hỏng bản vá game.',
+        'KHÔNG bắt buộc! Bạn nên dùng Lối tắt "Chơi Stella VH" + Thông báo nền (0 quyền nhạy cảm) để tránh xung đột với app ngân hàng / VNeID.',
+        'Trợ năng chỉ là lớp phụ để chặn thêm nếu bạn hay bấm nhầm trực tiếp vào icon Stella Sora gốc.',
         'Android 13+ mặc định khoá quyền này cho app cài ngoài Play Store nên mới hiện mục "Cài đặt bị hạn chế".'
       ],
       pledges: [
         'Đã khoá cứng packageNames = com.YoStarEN.StellaSora và canRetrieveWindowContent = false.',
         'Tuyệt đối KHÔNG đọc nội dung màn hình, mật khẩu, tin nhắn, bàn phím hay ứng dụng ngân hàng.',
-        '100% mã nguồn mở trên GitHub — miễn phí, không quảng cáo, không gửi dữ liệu cá nhân ra ngoài.'
+        'Có thể tắt hoàn toàn bất kỳ lúc nào — Lối tắt Chơi Stella VH và Thông báo nền vẫn bảo vệ đầy đủ.'
       ],
       promptFiles: [
         'android/app/src/main/res/xml/game_guard_accessibility.xml',
@@ -87,13 +89,13 @@
       sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GamePatcher.java',
       why: [
         'Từ Android 11+, hệ thống chặn app thông thường đọc/ghi thư mục Android/data/com.YoStarEN.StellaSora/files.',
-        'Local ADB dùng chính tính năng Gỡ lỗi không dây có sẵn của Android (kết nối nội bộ 127.0.0.1 ngay trên máy bạn, không cần PC hay Root).',
-        'Chỉ sao lưu bản gốc, chép tệp ngôn ngữ/ảnh Việt hoá đã kiểm tra SHA256 và khôi phục lại khi game cập nhật.'
+        'Local ADB chỉ cần bật tạm 1–2 phút đúng lúc cài/cập nhật hoặc khôi phục gốc; làm xong launcher TỰ ĐỘNG tắt Gỡ lỗi không dây & ngắt kết nối.',
+        'Khi chơi game hằng ngày và nhận cảnh báo cập nhật, bạn hoàn toàn không cần bật Local ADB.'
       ],
       pledges: [
         'Đường dẫn bị khoá chặt trong đúng thư mục dữ liệu của com.YoStarEN.StellaSora (chặn vượt thư mục & symlink).',
         'Khoá ghép đôi ADB sinh cục bộ trong bộ nhớ riêng của máy, không bao giờ gửi ra internet.',
-        'Không đụng tới tệp hệ thống, ảnh cá nhân, danh bạ hay tài khoản game của bạn.'
+        'Tự động tắt Gỡ lỗi không dây ngay sau khi cài/khôi phục xong (giữ nguyên khoá ghép đôi để lần sau nối lại 1 chạm).'
       ],
       promptFiles: [
         'android/app/src/main/java/com/stellasora/viethoa/localadb/GamePatcher.java',
@@ -555,7 +557,7 @@
     $('receipt-stale').hidden = !(rc.present && rc.stale);
     if (rc.present && rc.stale) text('receipt-stale', 'Game đã đổi phiên bản kể từ lần cài trước. Hãy bấm Cập nhật Việt hoá.');
 
-    // Guard banner & rows
+    // Guard banner & Safe-Mode rows
     const guardAlertCard = $('official-guard-card');
     if (guardAlertCard) {
       guardAlertCard.hidden = !off.needsRestore;
@@ -569,8 +571,42 @@
       const lbl = launchBtn.querySelector('span');
       if (lbl) lbl.textContent = off.needsRestore ? 'Khoá game' : 'Mở game';
     }
-    setBadge($('guard-a11y-status'), grd.accessibilityEnabled ? 'Đang bật' : 'Chưa bật', grd.accessibilityEnabled ? 'ok' : 'warning');
-    setBadge($('guard-overlay-status'), grd.overlayEnabled ? 'Đang bật' : 'Tắt', grd.overlayEnabled ? 'ok' : 'neutral');
+    const shortcutPinned = !!grd.shortcutPinned;
+    const notifOn = grd.notificationsEnabled !== false;
+    setBadge($('guard-shortcut-status'), shortcutPinned ? 'Đã ghim ✓' : 'Cần cài', shortcutPinned ? 'ok' : 'warning');
+    text('guard-shortcut-sub', shortcutPinned
+      ? 'Đã có ngoài màn hình chính · Bấm để xem hướng dẫn'
+      : 'Chưa ghim · Chạm để cài lối tắt Chơi Stella VH');
+    setBadge($('guard-notif-status'), notifOn ? 'Đang bật' : 'Chưa bật', notifOn ? 'ok' : 'warning');
+    setBadge($('guard-a11y-status'), grd.accessibilityEnabled ? 'Đang bật' : 'Tắt (Khuyên dùng)', grd.accessibilityEnabled ? 'warning' : 'ok');
+    setBadge($('guard-overlay-status'), grd.overlayEnabled ? 'Đang bật' : 'Tắt', grd.overlayEnabled ? 'warning' : 'neutral');
+
+    const safePill = $('guard-safe-pill');
+    if (safePill) {
+      if (grd.accessibilityEnabled) {
+        safePill.className = 'safe-mode-pill warn';
+        text('guard-safe-pill-text', 'Đang bật Trợ năng · Có thể tắt để tránh lỗi app ngân hàng (dùng Lối tắt thay thế)');
+      } else if (shortcutPinned) {
+        safePill.className = 'safe-mode-pill ok';
+        text('guard-safe-pill-text', 'Chế độ An toàn · Đã có Lối tắt Chơi Stella VH (0 quyền nhạy cảm)');
+      } else {
+        safePill.className = 'safe-mode-pill warn';
+        text('guard-safe-pill-text', 'Hãy tạo Lối tắt Chơi Stella VH để bảo vệ cập nhật không cần Trợ năng');
+      }
+    }
+
+    // Auto-disable Wireless ADB toggle sync
+    const autoOff = state.config.autoDisableWirelessAdb !== false;
+    ['adb-autooff-toggle', 'settings-autooff-toggle'].forEach(id => {
+      const btn = $(id);
+      if (btn) btn.setAttribute('aria-checked', String(autoOff));
+    });
+    setBadge($('adb-autooff-badge'), autoOff ? 'Đang bật' : 'Đang tắt', autoOff ? 'ok' : 'warning');
+    const disableNowBtn = $('btn-disable-wireless-now');
+    if (disableNowBtn) {
+      const canTurnOffNow = !!(adb.connected || adb.wirelessDebuggingState === 1);
+      disableNowBtn.hidden = !canTurnOffNow;
+    }
 
     const yChip = $('guard-yostar-chip');
     if (yChip) {
@@ -584,8 +620,7 @@
     }
     text('guard-yostar-summary', off.checked && off.latestResourceVersion
       ? ('RES ' + off.latestResourceVersion + (off.needsRestore ? ' · Cần khôi phục gốc ngay!' : (off.vhModified ? ' · Bản Việt hoá an toàn.' : ' · Game đang ở bản gốc.')))
-      : 'Tự kiểm tra Yostar trên cả Wi-Fi & 4G/5G.');
-    if ($('btn-pin-guard')) $('btn-pin-guard').hidden = grd.canPinShortcut === false;
+      : 'Tự kiểm tra Yostar trên cả Wi-Fi & 4G/5G (không cần ADB hay Trợ năng).');
 
     const lines = [gh.message || 'Chưa đồng bộ.'];
     lines.push('Thông báo: ' + statusLabel(gh.announcementStatus) + ' · Gói: ' + statusLabel(gh.manifestStatus));
@@ -593,7 +628,7 @@
     text('github-state', lines.join('\n'));
 
     text('github-summary', p.available ? ('Gói Android ' + (p.version || gh.translationVersion || '') + ' sẵn sàng.') : (gh.message || 'Chưa đồng bộ GitHub.'));
-    text('app-version', 'v' + (state.app.versionName || '2.1.6') + ' (' + (state.app.versionCode || 29) + ')');
+    text('app-version', 'v' + (state.app.versionName || '2.1.8') + ' (' + (state.app.versionCode || 31) + ')');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Cài APK mới' : 'Tải bản cập nhật';
@@ -752,12 +787,282 @@
     refreshMarquees();
   }
 
+  /* ---- AUTHENTIC STELLA SORA GAME-ASSET CHIBI SHORTCUT WIZARD ---- */
+  const SW_LAUNCH_GUIDES = [
+    {id:'111', name:'Iris',   role:'Trợ lý Stella Sora',    quote:'"Chào Bạo Chúa! Máy đã có lối tắt Chơi Stella VH rồi — nhớ mở game bằng biểu tượng tròn này để tự kiểm tra cập nhật an toàn nhé!"'},
+    {id:'112', name:'Noya',   role:'Hướng dẫn viên',        quote:'"Chào mừng trở lại ♪ Nhớ mở game bằng lối tắt Chơi Stella VH nhé — vừa tránh lỗi cập nhật vừa không cần bật Trợ năng!"'},
+    {id:'103', name:'Amber',  role:'Đội cận vệ',            quote:'"Trước khi vào game, nhớ dùng lối tắt Chơi Stella VH nha! Đừng bấm icon gốc để tránh dính lỗi xác minh tệp!"'},
+    {id:'107', name:'Tilia',  role:'Hiệp sĩ Chính Nghĩa',   quote:'"Với danh dự Hiệp sĩ, mở bằng Chơi Stella VH chỉ tốn 0,2 giây kiểm tra Yostar — an toàn tuyệt đối cho cả app ngân hàng!"'},
+    {id:'123', name:'Ann',    role:'Người đồng hành',       quote:'"Lối tắt Chơi Stella VH đang sẵn sàng rồi nè! Chạm nút xanh bên dưới để vào game an toàn ngay nha~"'},
+    {id:'134', name:'Fuyuka', role:'Đội hỗ trợ',            quote:'"Mở game bằng Chơi Stella VH giúp bản Việt Hoá luôn an toàn mỗi khi Yostar ra bản vá mới đó!"'}
+  ];
+
+  function setSwChibi(id, name, role, speech, bounce=true) {
+    const img = $('sw-chibi-img');
+    if (img) img.src = 'chibis/chibi_' + id + '.webp';
+    text('sw-speaker-name', name);
+    text('sw-speaker-role', role);
+    text('sw-speech-text', speech);
+    if (bounce) {
+      const btn = $('sw-chibi-btn');
+      if (btn) { btn.classList.remove('pop'); void btn.offsetWidth; btn.classList.add('pop'); }
+    }
+  }
+
+  function swOemGuide(oemFamily, canPin) {
+    if (!canPin) {
+      return {
+        title: 'Trình khởi chạy của máy không hỗ trợ tự ghim',
+        body: 'Bạn hãy chạm giữ vào khoảng trống ngoài màn hình chính → chọn Tiện ích (Widgets) / Lối tắt → kéo biểu tượng "Chơi Stella VH" ra màn hình chính, hoặc mở game từ nút "Mở game" trong Launcher này.'
+      };
+    }
+    if (oemFamily === 'xiaomi') {
+      return {
+        title: 'Lưu ý máy Xiaomi / Redmi / POCO (HyperOS / MIUI)',
+        body: 'MIUI/HyperOS mặc định chặn tạo lối tắt màn hình chính!\n1. Bấm "Mở Thông tin ứng dụng" bên dưới.\n2. Chọn "Quyền khác" (Other permissions) → chạm "Lối tắt màn hình chính".\n3. Chọn "Luôn cho phép", rồi quay lại bấm "Ghim lối tắt Chơi Stella VH" nhé!'
+      };
+    }
+    if (oemFamily === 'oppo' || oemFamily === 'vivo') {
+      return {
+        title: 'Lưu ý máy OPPO / Realme / OnePlus / Vivo',
+        body: '1. Bấm "Mở Thông tin ứng dụng" bên dưới → kiểm tra quyền "Tạo lối tắt màn hình chính" đã bật chưa.\n2. Nếu máy đang khoá bố cục màn hình chính, hãy tạm tắt Khoá bố cục rồi bấm lại "Ghim lối tắt Chơi Stella VH".'
+      };
+    }
+    return {
+      title: 'Chưa thấy hộp thoại Thêm lối tắt?',
+      body: '1. Kiểm tra màn hình chính có đang bật "Khoá bố cục màn hình chính" không.\n2. Bấm "Mở Thông tin ứng dụng" để kiểm tra quyền tạo lối tắt.\n3. Hoặc chạm giữ màn hình chính → Tiện ích (Widgets) → chọn lối tắt "Chơi Stella VH".'
+    };
+  }
+
+  function setSwButton(btnId, icoId, lblId, visible, label, iconName) {
+    const btn = $(btnId); if (!btn) return;
+    btn.hidden = !visible;
+    if (visible) {
+      text(lblId, label);
+      const ic = $(icoId); if (ic && iconName) ic.src = ICON(iconName);
+    }
+  }
+
+  function renderShortcutWizard() {
+    const grd = state.guard || {};
+    const pinned = !!grd.shortcutPinned;
+    const canPin = grd.canPinShortcut !== false;
+    const attempts = Number(grd.shortcutPinAttempts || 0);
+    const oem = grd.oemFamily || (state.device && state.device.oemFamily) || 'generic';
+    const card = $('sw-card');
+    if (card) card.dataset.step = String(swStep);
+
+    for (let s = 1; s <= 4; s++) {
+      const p = $('sw-step-' + s);
+      if (p) p.hidden = (s !== swStep);
+    }
+
+    // Lock close button when shortcut is NOT yet pinned during Steps 1-3 (buộc người dùng làm theo!)
+    const canClose = !swMandatory || swStep === 4 || pinned;
+    const closeX = $('sw-close-x');
+    if (closeX) closeX.hidden = !canClose;
+    const lockNote = $('sw-lock-note');
+    if (lockNote) lockNote.hidden = canClose;
+
+    const tert = $('sw-btn-tertiary');
+    if (tert) tert.hidden = true;
+
+    if (swStep === 1) {
+      text('sw-step-pill', pinned ? 'GỢI Ý MỞ GAME AN TOÀN' : 'BẢO VỆ CẬP NHẬT · BƯỚC 1/4');
+      text('sw-title', pinned ? 'Mở game bằng Lối tắt Việt Hoá' : 'Hãy dùng Lối tắt Chơi Stella VH');
+      if ($('sw-step1-pinned-banner')) $('sw-step1-pinned-banner').hidden = !pinned;
+
+      if (pinned) {
+        const g = SW_LAUNCH_GUIDES[swLaunchIdx % SW_LAUNCH_GUIDES.length];
+        setSwChibi(g.id, g.name, g.role, g.quote, true);
+        setSwButton('sw-btn-primary', 'sw-btn-primary-ico', 'sw-btn-primary-label', true, 'Mở Stella Sora ngay (An toàn)', 'play');
+        setSwButton('sw-btn-secondary', 'sw-btn-secondary-ico', 'sw-btn-secondary-label', true, 'Xem hướng dẫn mở bằng lối tắt', 'nav_guide');
+        if (tert) { tert.hidden = false; tert.textContent = 'Vào Launcher (Cài / Cập nhật Việt Hoá)'; }
+      } else {
+        setSwChibi('111', 'Iris', 'Hướng dẫn viên Stella Sora',
+          '"Chào Bạo Chúa! Để tránh lỗi xác minh tệp khi game cập nhật — và KHÔNG cần bật Trợ năng gây lỗi app ngân hàng — hãy luôn mở game bằng lối tắt Chơi Stella VH nhé!"', true);
+        setSwButton('sw-btn-primary', 'sw-btn-primary-ico', 'sw-btn-primary-label', true, 'Kiểm tra lối tắt trên máy ngay', 'search');
+        setSwButton('sw-btn-secondary', 'sw-btn-secondary-ico', 'sw-btn-secondary-label', false, '', '');
+      }
+    } else if (swStep === 2) {
+      text('sw-step-pill', 'KIỂM TRA LỐI TẮT · BƯỚC 2/4');
+      text('sw-title', 'Đang kiểm tra màn hình chính…');
+      setSwChibi('103', 'Amber', 'Đội kiểm tra thiết bị',
+        '"Đợi tớ một xíu nhé! Tớ đang kiểm tra xem trên điện thoại bạn đã có lối tắt Chơi Stella VH chưa nè…"', true);
+      setSwButton('sw-btn-primary', 'sw-btn-primary-ico', 'sw-btn-primary-label', false, '', '');
+      setSwButton('sw-btn-secondary', 'sw-btn-secondary-ico', 'sw-btn-secondary-label', false, '', '');
+    } else if (swStep === 3) {
+      text('sw-step-pill', 'CÀI ĐẶT BẮT BUỘC · BƯỚC 3/4');
+      text('sw-title', 'Tạo lối tắt Chơi Stella VH');
+      const alertTxt = $('sw-step3-alert-text');
+      if (swCheckFailedOnce) {
+        setSwChibi('114', 'Chaton', 'Đội nhắc nhở thân thiện',
+          '"Ơ kìa, mình kiểm tra lại vẫn chưa thấy lối tắt Chơi Stella VH ngoài màn hình chính! Bạn nhớ bấm nút xanh bên dưới rồi chọn \\"Thêm\\" trên hộp thoại Android nhé~"', true);
+        if (alertTxt) alertTxt.innerHTML = 'Kiểm tra lại vẫn <strong>chưa thấy lối tắt</strong> trên màn hình chính. Hãy bấm <strong>Ghim lối tắt</strong> → chọn <strong>Thêm</strong> rồi kiểm tra lại!';
+      } else if (swWaitingPinReturn) {
+        setSwChibi('123', 'Ann', 'Người đồng hành',
+          '"Tớ vừa gửi hộp thoại Thêm lối tắt của Android rồi đó! Bạn bấm \\"Thêm\\" xong thì chạm nút \\"Kiểm tra lại lối tắt\\" bên dưới để tớ xác nhận nha!"', true);
+        if (alertTxt) alertTxt.innerHTML = 'Hãy bấm <strong>Thêm</strong> trên hộp thoại hệ thống rồi bấm <strong>Kiểm tra lại lối tắt</strong> để xác nhận.';
+      } else {
+        setSwChibi('107', 'Tilia', 'Hiệp sĩ Chính Nghĩa',
+          '"Tớ kiểm tra rồi — điện thoại bạn CHƯA có lối tắt Chơi Stella VH! Làm theo 3 bước cực nhanh bên dưới nhé, mất 5 giây thôi!"', true);
+        if (alertTxt) alertTxt.innerHTML = 'Chưa tìm thấy lối tắt <strong>Chơi Stella VH</strong> trên màn hình chính. Hãy làm theo 3 bước sau để tiếp tục!';
+      }
+
+      const oemBox = $('sw-oem-box');
+      const showOem = !canPin || swCheckFailedOnce || (oem === 'xiaomi' && attempts >= 1);
+      if (oemBox) {
+        oemBox.hidden = !showOem;
+        if (showOem) {
+          const tip = swOemGuide(oem, canPin);
+          text('sw-oem-title', tip.title);
+          text('sw-oem-body', tip.body);
+        }
+      }
+      setSwButton('sw-btn-primary', 'sw-btn-primary-ico', 'sw-btn-primary-label', true, 'Ghim lối tắt Chơi Stella VH', 'play');
+      setSwButton('sw-btn-secondary', 'sw-btn-secondary-ico', 'sw-btn-secondary-label', true, 'Kiểm tra lại lối tắt', 'refresh');
+      if (tert && (!canPin || attempts >= 2)) {
+        tert.hidden = false;
+        tert.textContent = 'Mình đã thấy icon ngoài màn hình chính (ROM không tự báo)';
+      }
+    } else if (swStep === 4) {
+      text('sw-step-pill', 'HOÀN TẤT · BƯỚC 4/4');
+      text('sw-title', 'Cách mở game bằng Lối tắt VH');
+      setSwChibi('112', 'Noya', 'Hướng dẫn viên Stella Sora',
+        '"Hoan hô! Lối tắt Chơi Stella VH đã sẵn sàng ngoài màn hình chính rồi ♪ Từ giờ bạn cứ chạm đúng biểu tượng tròn này để vào game an toàn nhé!"', true);
+      setSwButton('sw-btn-primary', 'sw-btn-primary-ico', 'sw-btn-primary-label', true, 'Mở Stella Sora ngay bằng lối tắt', 'play');
+      setSwButton('sw-btn-secondary', 'sw-btn-secondary-ico', 'sw-btn-secondary-label', true, 'Hoàn tất · Vào Launcher', 'check');
+    }
+
+    const sc = $('sw-scroll');
+    if (sc) sc.scrollTop = 0;
+  }
+
+  function openShortcutWizard(trigger, shortcutOverride) {
+    if (shortcutOverride && typeof shortcutOverride === 'object') {
+      state.guard = {...state.guard, ...shortcutOverride};
+    }
+    const pinned = !!(state.guard && state.guard.shortcutPinned);
+    swOpen = true;
+    swStep = 1;
+    swMandatory = !pinned;
+    swCheckFailedOnce = false;
+    swWaitingPinReturn = false;
+    if (trigger === 'launch') swLaunchIdx = (swLaunchIdx + 1) % SW_LAUNCH_GUIDES.length;
+    $('shortcut-wizard-overlay').hidden = false;
+    renderShortcutWizard();
+  }
+
+  function closeShortcutWizard(force=false) {
+    if (!force && swMandatory && swStep !== 4 && !(state.guard && state.guard.shortcutPinned)) {
+      showToast('Hãy hoàn tất bước cài lối tắt Chơi Stella VH trước nhé!');
+      return false;
+    }
+    clearTimeout(swScanTimer);
+    swOpen = false;
+    swWaitingPinReturn = false;
+    $('shortcut-wizard-overlay').hidden = true;
+    return true;
+  }
+
+  function startShortcutCheck(fromRetry) {
+    swPendingCheckFromRetry = !!fromRetry;
+    swStep = 2;
+    renderShortcutWizard();
+    clearTimeout(swScanTimer);
+    request('checkGuardShortcut');
+  }
+
+  function handleShortcutCheckResult(data) {
+    if (data && typeof data === 'object') {
+      state.guard = {...state.guard, ...data};
+    }
+    const pinned = !!(state.guard && state.guard.shortcutPinned);
+    if (!swOpen) return;
+    clearTimeout(swScanTimer);
+    swScanTimer = setTimeout(() => {
+      if (!swOpen) return;
+      if (pinned) {
+        swMandatory = false;
+        swWaitingPinReturn = false;
+        swCheckFailedOnce = false;
+        swStep = 4;
+        renderShortcutWizard();
+      } else {
+        swMandatory = true;
+        swCheckFailedOnce = swPendingCheckFromRetry;
+        swStep = 3;
+        renderShortcutWizard();
+      }
+    }, swStep === 2 ? 420 : 0);
+  }
+
   document.querySelectorAll('[data-page]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
   document.querySelectorAll('[data-action]').forEach(b => b.addEventListener('click', () => { haptic(); request(b.dataset.action); }));
   document.querySelectorAll('[data-safety-topic]').forEach(b => b.addEventListener('click', () => openSafetyModal(b.dataset.safetyTopic)));
   document.querySelectorAll('[data-safety-tab]').forEach(b => b.addEventListener('click', () => { haptic(); renderSafetyTopic(b.dataset.safetyTab); }));
   $('safety-chibi-btn').addEventListener('click', () => { haptic(); pickRandomChibi(true); });
   ['safety-close','safety-ok'].forEach(id => $(id).addEventListener('click', () => { $('safety-overlay').hidden = true; }));
+
+  ['btn-open-shortcut-wizard', 'btn-pin-guard'].forEach(id => {
+    const el = $(id);
+    if (el) el.addEventListener('click', () => { haptic(); openShortcutWizard('manual'); });
+  });
+  $('sw-chibi-btn').addEventListener('click', () => {
+    haptic();
+    const btn = $('sw-chibi-btn');
+    if (btn) { btn.classList.remove('pop'); void btn.offsetWidth; btn.classList.add('pop'); }
+  });
+  $('sw-close-x').addEventListener('click', () => { haptic(); closeShortcutWizard(false); });
+  $('sw-btn-primary').addEventListener('click', () => {
+    haptic();
+    const pinned = !!(state.guard && state.guard.shortcutPinned);
+    if (swStep === 1) {
+      if (pinned) {
+        closeShortcutWizard(true);
+        request('launchGame');
+      } else {
+        startShortcutCheck(false);
+      }
+    } else if (swStep === 3) {
+      swWaitingPinReturn = true;
+      request('pinGuardShortcut');
+    } else if (swStep === 4) {
+      closeShortcutWizard(true);
+      request('launchGame');
+    }
+  });
+  $('sw-btn-secondary').addEventListener('click', () => {
+    haptic();
+    if (swStep === 1) {
+      swStep = 4;
+      renderShortcutWizard();
+    } else if (swStep === 3) {
+      startShortcutCheck(true);
+    } else if (swStep === 4) {
+      closeShortcutWizard(true);
+    }
+  });
+  $('sw-btn-tertiary').addEventListener('click', () => {
+    haptic();
+    if (swStep === 1) {
+      closeShortcutWizard(true);
+    } else if (swStep === 3) {
+      swPendingCheckFromRetry = false;
+      request('confirmShortcutQuirk');
+    }
+  });
+
+  ['adb-autooff-toggle', 'settings-autooff-toggle'].forEach(id => {
+    const el = $(id);
+    if (el) el.addEventListener('click', () => {
+      haptic();
+      const next = !(state.config.autoDisableWirelessAdb !== false);
+      state.config.autoDisableWirelessAdb = next;
+      request('setAutoDisableWirelessAdb', {enabled: next});
+      showToast(next ? 'Đã bật: Tự tắt Gỡ lỗi không dây sau cài' : 'Đã tắt tự động tắt Gỡ lỗi không dây');
+    });
+  });
   $('safety-copy-ai').addEventListener('click', () => {
     haptic();
     request('copyAiPrompt', {text: buildAiCheckPrompt(currentSafetyTopic)});
@@ -827,6 +1132,71 @@
         if (typeof event === 'string') event = JSON.parse(event);
         if (!event || typeof event !== 'object') return;
         if (event.type === 'state') renderState(event.data || {});
+        else if (event.type === 'showShortcutPrompt') {
+          const d = event.data || {};
+          if (d.shortcut) state.guard = {...state.guard, ...d.shortcut};
+          if (!swOpen) {
+            openShortcutWizard(d.trigger || 'launch', d.shortcut);
+          }
+        }
+        else if (event.type === 'shortcutCheck') {
+          handleShortcutCheckResult(event.data || {});
+        }
+        else if (event.type === 'shortcutPinned') {
+          const d = event.data || {};
+          state.guard = {...state.guard, ...d, shortcutPinned: true};
+          showToast('Đã ghim lối tắt Chơi Stella VH thành công ✓');
+          if (swOpen) {
+            swMandatory = false;
+            swWaitingPinReturn = false;
+            swCheckFailedOnce = false;
+            swStep = 4;
+            renderShortcutWizard();
+          }
+        }
+        else if (event.type === 'pinRequested') {
+          const d = event.data || {};
+          if (d.shortcut) state.guard = {...state.guard, ...d.shortcut};
+          if (swOpen && swStep === 3) {
+            if (state.guard.shortcutPinned) {
+              swMandatory = false;
+              swStep = 4;
+              renderShortcutWizard();
+            } else {
+              if (!d.supported) swCheckFailedOnce = true;
+              renderShortcutWizard();
+            }
+          }
+        }
+        else if (event.type === 'resumedFromHelper') {
+          const d = event.data || {};
+          state.guard = {...state.guard, ...d};
+          if (swOpen && swStep === 3 && swWaitingPinReturn) {
+            swWaitingPinReturn = false;
+            startShortcutCheck(true);
+          }
+        }
+        else if (event.type === 'postInstallComplete') {
+          const d = event.data || {};
+          const sc = d.shortcut || {};
+          state.guard = {...state.guard, ...sc};
+          if (d.adbSummary) showToast(d.adbSummary);
+          if (!sc.shortcutPinned) {
+            openShortcutWizard('postInstall', sc);
+          } else {
+            const qa = ['launch_game'];
+            if (d.wirelessStateAfter === 1) qa.push('open_wireless');
+            if (d.devOptionsEnabled) qa.push('open_dev_settings');
+            const body = 'Đã cài xong ' + (d.filesCount || 0) + ' tệp bản Việt hoá ' + (d.version || '') + '!'
+              + (d.adbSummary ? ('\n\n' + d.adbSummary) : '')
+              + (d.devOptionsEnabled ? '\nNếu app ngân hàng / VNeID yêu cầu tắt cả Tuỳ chọn nhà phát triển, chạm nút bên dưới để tắt nhanh.' : '');
+            message('Cài Việt hoá thành công!', body, false, {
+              level: 'info',
+              explain: body,
+              quickActions: qa
+            });
+          }
+        }
         else if (event.type === 'navigate' && (event.data || {}).page) showPage(event.data.page);
         else if (event.type === 'message') message((event.data || {}).title, (event.data || {}).message, !!(event.data || {}).error, event.data || {});
         else if (event.type === 'probeResult') {
@@ -880,6 +1250,10 @@
     },
     navigate(page) { showPage(page); },
     goBack() {
+      if (!$('shortcut-wizard-overlay').hidden) {
+        closeShortcutWizard(false);
+        return true;
+      }
       if (!$('safety-overlay').hidden) { $('safety-overlay').hidden = true; return true; }
       if (!$('message-overlay').hidden) { $('message-overlay').hidden = true; return true; }
       if (!$('notices-overlay').hidden) { $('notices-overlay').hidden = true; return true; }
