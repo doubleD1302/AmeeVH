@@ -51,11 +51,14 @@ def _create_via_powershell(
     work_dir: Path,
     icon: str,
     description: str,
+    arguments: str = "",
 ) -> tuple[bool, str]:
+    arg_stmt = f"$s.Arguments = {_ps_quote(arguments)}; " if arguments else ""
     ps_script = (
         "$ws = New-Object -ComObject WScript.Shell; "
         f"$s = $ws.CreateShortcut({_ps_quote(lnk_path)}); "
         f"$s.TargetPath = {_ps_quote(target_path)}; "
+        f"{arg_stmt}"
         f"$s.WorkingDirectory = {_ps_quote(work_dir)}; "
         f"$s.IconLocation = {_ps_quote(icon)}; "
         f"$s.Description = {_ps_quote(description)}; "
@@ -82,6 +85,7 @@ def create_desktop_shortcut(
     icon_location: Optional[str] = None,
     description: str = "Stella Sora Việt Hóa",
     desktop_dir: Optional[Path] = None,
+    arguments: str = "",
 ) -> tuple[bool, str]:
     """Creates a Windows .lnk desktop shortcut with full Vietnamese Unicode support (UTF-16LE VBScript + PowerShell fallback)."""
     target_path = Path(target_path).resolve()
@@ -105,11 +109,14 @@ def create_desktop_shortcut(
 
     work_dir = Path(working_dir).resolve() if working_dir else target_path.parent
     icon = str(icon_location) if icon_location else f"{target_path},0"
+    clean_args = str(arguments or "").strip()
+    vbs_arg_line = f's.Arguments = "{_vbs_escape(clean_args)}"\r\n' if clean_args else ""
 
     vbs_content = (
         'Set ws = CreateObject("WScript.Shell")\r\n'
         f'Set s = ws.CreateShortcut("{_vbs_escape(lnk_path)}")\r\n'
         f's.TargetPath = "{_vbs_escape(target_path)}"\r\n'
+        f"{vbs_arg_line}"
         f's.WorkingDirectory = "{_vbs_escape(work_dir)}"\r\n'
         f's.IconLocation = "{_vbs_escape(icon)}"\r\n'
         f's.Description = "{_vbs_escape(description)}"\r\n'
@@ -145,7 +152,14 @@ def create_desktop_shortcut(
 
     # Fallback for Windows 11 24H2+ systems where VBScript optional feature is disabled/removed
     try:
-        ok, ps_msg = _create_via_powershell(lnk_path, target_path, work_dir, icon, description)
+        ok, ps_msg = _create_via_powershell(
+            lnk_path,
+            target_path,
+            work_dir,
+            icon,
+            description,
+            arguments=clean_args,
+        )
         if ok:
             return True, ps_msg
         return False, ps_msg
@@ -157,6 +171,9 @@ def create_game_shortcut(
     game_root: Path,
     shortcut_name: str = "Stella Sora Việt Hóa",
     desktop_dir: Optional[Path] = None,
+    *,
+    launcher_exe: Optional[Path] = None,
+    app_data_dir: Optional[Path] = None,
 ) -> tuple[bool, str]:
     raw_str = str(game_root or "").strip()
     if not raw_str:
@@ -169,6 +186,22 @@ def create_game_shortcut(
             target_exe = candidates[0]
         else:
             return False, f"Không tìm thấy StellaSora.exe trong thư mục: {game_root}"
+
+    if launcher_exe is not None:
+        lpath = Path(launcher_exe).resolve()
+        if lpath.is_file():
+            arg_str = "--launch-game"
+            if app_data_dir is not None:
+                arg_str += f' --app-data-dir "{Path(app_data_dir).resolve()}"'
+            return create_desktop_shortcut(
+                target_path=lpath,
+                shortcut_name=shortcut_name,
+                working_dir=lpath.parent,
+                icon_location=f"{target_exe},0",
+                description="Khởi động game Stella Sora Việt Hóa (Có bảo vệ cập nhật)",
+                desktop_dir=desktop_dir,
+                arguments=arg_str,
+            )
 
     return create_desktop_shortcut(
         target_path=target_exe,

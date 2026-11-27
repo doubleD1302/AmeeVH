@@ -50,6 +50,13 @@ from ..core.game_detection import (
     find_game_exe_hint,
     is_game_process_running,
 )
+from ..core.game_guard import (
+    GameLogWatcher,
+    GameUpdateSignal,
+    close_game_gracefully_or_force,
+    minimize_game_windows,
+    set_windows_autostart,
+)
 from ..core.installer import PatchInstaller
 from ..core.net_probe import run_probe
 from ..core.network import NetworkService
@@ -72,6 +79,7 @@ from .dialogs import (
     GameSelectionDialog,
     InstallCompletedDialog,
     SmartErrorDialog,
+    UpdateGuardDialog,
     UpdateNoticeDialog,
 )
 from .main_shell import MainShell
@@ -357,126 +365,8 @@ def _detect_game_snapshot(backup_root: Path, raw_path: str, auto_detect: bool) -
 
 
 def _terminate_game_process_by_path(expected_game_root: Optional[Path]) -> tuple[bool, str]:
-    """Terminate verified StellaSora.exe process via Win32 snapshot + QueryFullProcessImageNameW."""
-    if sys.platform != "win32":
-        return False, "Chỉ hỗ trợ đóng tiến trình trên Windows."
-    try:
-        import ctypes
-        from ctypes import wintypes
-
-        TH32CS_SNAPPROCESS = 0x00000002
-        INVALID_HANDLE_VALUE = wintypes.HANDLE(-1).value
-        PROCESS_QUERY_LIMITED_INFORMATION = 0x00001000
-        PROCESS_TERMINATE = 0x0001
-
-        class PROCESSENTRY32W(ctypes.Structure):
-            _fields_ = [
-                ("dwSize", wintypes.DWORD),
-                ("cntUsage", wintypes.DWORD),
-                ("th32ProcessID", wintypes.DWORD),
-                ("th32DefaultHeapID", ctypes.c_size_t),
-                ("th32ModuleID", wintypes.DWORD),
-                ("cntThreads", wintypes.DWORD),
-                ("th32ParentProcessID", wintypes.DWORD),
-                ("pcPriClassBase", wintypes.LONG),
-                ("dwFlags", wintypes.DWORD),
-                ("szExeFile", wintypes.WCHAR * 260),
-            ]
-
-        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
-        kernel32.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
-        kernel32.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
-        kernel32.Process32FirstW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
-        kernel32.Process32FirstW.restype = wintypes.BOOL
-        kernel32.Process32NextW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
-        kernel32.Process32NextW.restype = wintypes.BOOL
-        kernel32.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
-        kernel32.OpenProcess.restype = wintypes.HANDLE
-        kernel32.QueryFullProcessImageNameW.argtypes = [
-            wintypes.HANDLE,
-            wintypes.DWORD,
-            wintypes.LPWSTR,
-            ctypes.POINTER(wintypes.DWORD),
-        ]
-        kernel32.QueryFullProcessImageNameW.restype = wintypes.BOOL
-        kernel32.TerminateProcess.argtypes = [wintypes.HANDLE, wintypes.UINT]
-        kernel32.TerminateProcess.restype = wintypes.BOOL
-        kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
-        kernel32.CloseHandle.restype = wintypes.BOOL
-
-        expected_exe = (
-            (Path(expected_game_root) / GAME_EXE_NAME).resolve()
-            if expected_game_root is not None
-            else None
-        )
-
-        pids: list[int] = []
-        snap = kernel32.CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)
-        if snap and snap != INVALID_HANDLE_VALUE:
-            try:
-                pe = PROCESSENTRY32W()
-                pe.dwSize = ctypes.sizeof(PROCESSENTRY32W)
-                if kernel32.Process32FirstW(snap, ctypes.byref(pe)):
-                    while True:
-                        if str(pe.szExeFile).lower() == GAME_EXE_NAME.lower():
-                            pids.append(int(pe.th32ProcessID))
-                        if not kernel32.Process32NextW(snap, ctypes.byref(pe)):
-                            break
-            finally:
-                kernel32.CloseHandle(snap)
-
-        if not pids:
-            return True, "Không phát hiện tiến trình StellaSora.exe đang chạy."
-
-        terminated_any = False
-        access_denied = False
-        for pid in pids:
-            if pid <= 0 or pid == os.getpid():
-                continue
-            h_query = kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
-            if h_query:
-                try:
-                    buf_len = wintypes.DWORD(32768)
-                    buf = ctypes.create_unicode_buffer(buf_len.value)
-                    if kernel32.QueryFullProcessImageNameW(h_query, 0, buf, ctypes.byref(buf_len)):
-                        img_path = Path(buf.value).resolve()
-                        if expected_exe is not None and img_path != expected_exe:
-                            continue
-                finally:
-                    kernel32.CloseHandle(h_query)
-
-            h_term = kernel32.OpenProcess(PROCESS_TERMINATE, False, pid)
-            if h_term:
-                try:
-                    if kernel32.TerminateProcess(h_term, 1):
-                        terminated_any = True
-                        continue
-                finally:
-                    kernel32.CloseHandle(h_term)
-            else:
-                if ctypes.get_last_error() == 5:
-                    access_denied = True
-
-            # Fallback to taskkill /F /PID
-            res = subprocess.run(
-                ["taskkill", "/F", "/PID", str(pid)],
-                capture_output=True,
-                creationflags=subprocess.CREATE_NO_WINDOW,
-                timeout=10,
-            )
-            if res.returncode == 0:
-                terminated_any = True
-            elif res.returncode == 5:
-                access_denied = True
-
-        if terminated_any:
-            time.sleep(0.35)
-            return not is_game_process_running(), "Đã đóng tiến trình StellaSora.exe."
-        if access_denied:
-            return False, "Không đủ quyền đóng StellaSora.exe (game có thể đang chạy quyền Quản trị). Hãy đóng bằng Task Manager."
-        return False, "Không thể đóng StellaSora.exe. Hãy đóng thủ công hoặc dùng Task Manager."
-    except Exception as exc:  # noqa: BLE001
-        return False, f"Lỗi khi đóng game: {exc}"
+    """Close verified StellaSora.exe process cleanly (WM_CLOSE) with TerminateProcess/taskkill fallback."""
+    return close_game_gracefully_or_force(expected_game_root, wait_seconds=2.5)
 
 
 class AppController(QObject):
@@ -506,6 +396,8 @@ class AppController(QObject):
         *,
         software_rendering: bool = False,
         startup_warnings: Optional[list[Exception]] = None,
+        start_in_tray: bool = False,
+        launch_guard_notice: Optional[dict[str, Any]] = None,
         parent: QObject | None = None,
     ) -> None:
         super().__init__(parent)
@@ -513,6 +405,10 @@ class AppController(QObject):
         self.cm = config_manager
         self.software_rendering = bool(software_rendering)
         self.startup_warnings: list[Exception] = list(startup_warnings or [])
+        self._start_in_tray: bool = bool(start_in_tray)
+        self._pending_launch_guard_notice: Optional[dict[str, Any]] = (
+            dict(launch_guard_notice) if launch_guard_notice else None
+        )
 
         self.shell: Optional[MainShell] = None
         self._alive: bool = True
@@ -544,10 +440,14 @@ class AppController(QObject):
         self._manual_translation_check: bool = False
         self._manual_translation_next: bool = False
         self._notice_seen: set[str] = set()
-        self._official_update: Optional[dict] = None
+        self._official_update: Optional[dict] = (
+            dict(launch_guard_notice) if launch_guard_notice else None
+        )
         self._official_checked_at: float = 0.0
         self._official_prompted: set[str] = set()
-        self._launch_guard_declined: Optional[str] = None
+        self._log_watcher = GameLogWatcher()
+        self._guard_alerted_fingerprints: set[str] = set()
+        self._guard_dialog_open: bool = False
         self._close_after_worker: bool = False
         self._last_progress_message: str = ""
         self._last_report: Optional[ErrorReport] = None
@@ -589,7 +489,7 @@ class AppController(QObject):
         self._release_timer.timeout.connect(_on_release_tick)
 
         self._proc_timer = QTimer(self)
-        self._proc_timer.setInterval(3000)
+        self._proc_timer.setInterval(1500)
         self._proc_timer.timeout.connect(_on_proc_tick)
 
         self._snooze_timer = QTimer(self)
@@ -1156,17 +1056,46 @@ class AppController(QObject):
 
     def _poll_game_running(self) -> None:
         if (
-            self.active_worker is not None
+            not self._alive
+            or self._closing
+            or self.active_worker is not None
             or not self.current_game_info.installed
-            or self.shell is None
-            or not self.shell.isVisible()
         ):
             return
+        info = self.current_game_info
+        was_running = bool(info.is_running)
         running = is_game_process_running()
-        if running != self.current_game_info.is_running:
-            self.current_game_info.is_running = running
-            self._apply_game_info(self.current_game_info)
+        if running != was_running:
+            info.is_running = running
+            self._apply_game_info(info)
             self._refresh_translation_state()
+            if running:
+                # Player just opened Stella Sora (even outside launcher)
+                self._guard_alerted_fingerprints.clear()
+                if self._is_realtime_guard_active(info):
+                    self._log_watcher.arm(game_info=info, from_end=True)
+                    known_notice = self._official_notice()
+                    if known_notice is not None:
+                        self._trigger_realtime_update_guard(notice=known_notice)
+                    self._start_official_check(force=True, manual=False, from_game_launch=True)
+            else:
+                self._log_watcher.disarm()
+
+        if running and self._is_realtime_guard_active(info):
+            if not self._log_watcher.is_armed:
+                self._log_watcher.arm(game_info=info, from_end=True)
+            sig = self._log_watcher.poll()
+            if sig is not None:
+                self._trigger_realtime_update_guard(signal=sig, notice=self._official_notice())
+
+    def _is_realtime_guard_active(self, info: Optional[GameInfo] = None) -> bool:
+        gi = info or self.current_game_info
+        return bool(
+            gi
+            and gi.installed
+            and (gi.installed_receipt or gi.has_vietnamese)
+            and bool(self.cm.get("guard_watch_game_updates", True))
+        )
 
     def _scan_game(self) -> None:
         if getattr(type(self), "_detected", None) is AppController._detected and "_detected" not in self.__dict__:
@@ -1495,14 +1424,29 @@ class AppController(QObject):
 
         ctrl_ref = weakref.ref(self)
         if kind in ("scan", "select_root"):
-            QTimer.singleShot(
-                800,
-                lambda r=ctrl_ref: (
-                    r()._start_official_check()
-                    if r() is not None and r()._alive and not r()._closing and _qt_is_valid(r())
-                    else None
-                ),
-            )
+            if self._pending_launch_guard_notice is not None and self.current_game_info.installed:
+                pending_n = self._pending_launch_guard_notice
+                self._pending_launch_guard_notice = None
+                self._official_update = pending_n
+                self._apply_game_info(self.current_game_info)
+                self._pending_post_op_modal = True
+                QTimer.singleShot(
+                    50,
+                    lambda r=ctrl_ref, n=pending_n: (
+                        r()._show_launch_guard_on_startup(n)
+                        if r() is not None and r()._alive and not r()._closing and _qt_is_valid(r())
+                        else None
+                    ),
+                )
+            else:
+                QTimer.singleShot(
+                    800,
+                    lambda r=ctrl_ref: (
+                        r()._start_official_check()
+                        if r() is not None and r()._alive and not r()._closing and _qt_is_valid(r())
+                        else None
+                    ),
+                )
         elif kind == "verify":
             v_msg = (
                 f"Đã đối chiếu {result.get('files', 0)} tệp của bản dịch "
@@ -1576,7 +1520,11 @@ class AppController(QObject):
         elif kind == "install":
             sc_ok = False
             if self._pending_create_shortcut and self.current_game_info.game_path:
-                ok, _sc_msg = create_game_shortcut(self.current_game_info.game_path)
+                ok, _sc_msg = create_game_shortcut(
+                    self.current_game_info.game_path,
+                    launcher_exe=Path(sys.executable) if self.pm.is_frozen else None,
+                    app_data_dir=self.pm.app_data_dir if self.pm.is_custom_app_data else None,
+                )
                 sc_ok = ok
             self.show_toast(str(result.get("message") or "Hoàn tất cài đặt Việt hoá!"), "success")
             self._pending_post_op_modal = True
@@ -2008,26 +1956,30 @@ class AppController(QObject):
             return
         info = self.current_game_info
         notice = self._official_notice()
-        if notice and self._launch_guard_declined != str(notice.get("latest_resource_version")):
+        if notice:
             reason = (
-                f"tài nguyên game {notice['local_resource_version']} → "
-                f"{notice['latest_resource_version']}"
+                f"tài nguyên game {notice.get('local_resource_version')} → "
+                f"{notice.get('latest_resource_version')}"
             )
             if bool(self.cm.get("auto_restore_before_game_update", False)):
                 self._start_official_restore(Path(info.game_path), reason, launch_after=True)
                 return
-            if self._confirm(
-                "GAME CÓ BẢN CẬP NHẬT — KHÔI PHỤC GỐC TRƯỚC KHI MỞ",
-                f"Game đang ở tài nguyên {notice.get('local_resource_version')}, nhà phát hành đã có "
-                f"{notice.get('latest_resource_version')}. Mở game lúc này với bản Việt hoá sẽ làm cập nhật của game báo lỗi.\n\n"
-                "Launcher sẽ tải dữ liệu gốc về rồi mở game để bạn cập nhật. Tiếp tục?",
-                "Khôi phục rồi mở game",
-            ):
+            assert self.shell is not None
+            self.shell.bring_to_front_urgent()
+            dlg = UpdateGuardDialog(
+                notice=notice,
+                game_running=False,
+                launch_after_restore=True,
+                always_on_top=False,
+                asset_renderer=self.shell._renderer,
+                parent=self.shell,
+            )
+            if self.shell.show_modal(dlg) == QDialog.DialogCode.Accepted:
                 self._start_official_restore(Path(info.game_path), reason, launch_after=True)
             else:
-                self._launch_guard_declined = str(notice.get("latest_resource_version"))
+                # Hard-block: NEVER bypass and open modified game when official update exists
                 self.show_toast(
-                    "Chưa mở game vì game có bản cập nhật. Bấm Chơi game lần nữa nếu vẫn muốn mở.",
+                    "Đã chặn mở game vì Yostar có bản cập nhật mới. Hãy khôi phục dữ liệu gốc trước.",
                     "warn",
                 )
             return
@@ -2051,20 +2003,29 @@ class AppController(QObject):
 
         self._start_operation("launch", work, initial_message="Đang khởi động Stella Sora...")
 
-    # ---------------- Official Update Check ----------------
+    # ---------------- Official Update Check & Real-Time Guard ----------------
 
     def _official_notice(self) -> Optional[dict[str, Any]]:
         upd = self._official_update
         info = self.current_game_info
         if not upd or not info or not info.installed or not upd.get("update_available"):
             return None
-        if str(upd.get("local_resource_version")) != str(info.resource_version):
+        if (
+            upd.get("source") != "player_log"
+            and str(upd.get("local_resource_version")) != str(info.resource_version)
+        ):
             return None
         if not (info.installed_receipt or info.has_vietnamese):
             return None
         return upd
 
-    def _start_official_check(self, force: bool = False, manual: bool = False) -> None:
+    def _start_official_check(
+        self,
+        force: bool = False,
+        manual: bool = False,
+        *,
+        from_game_launch: bool = False,
+    ) -> None:
         info = self.current_game_info
         if self._official_running or not info.installed or not info.game_path:
             if manual and (not info.installed or not info.game_path):
@@ -2085,11 +2046,17 @@ class AppController(QObject):
             try:
                 res = check_official_update(OfficialClient("EN", timeout=15, retries=2), snapshot, cache_file)
                 res["_manual"] = manual
+                res["_from_game_launch"] = from_game_launch
                 ok = True
                 payload: Any = res
             except Exception as exc:  # noqa: BLE001
                 ok = False
-                payload = {"message": str(exc), "exc": exc, "_manual": manual}
+                payload = {
+                    "message": str(exc),
+                    "exc": exc,
+                    "_manual": manual,
+                    "_from_game_launch": from_game_launch,
+                }
 
             ctrl = self_ref()
             if ctrl is not None and ctrl._alive and _qt_is_valid(ctrl):
@@ -2105,6 +2072,7 @@ class AppController(QObject):
         if not self._alive or self._closing:
             return
         manual = bool(result.get("_manual", False))
+        from_game_launch = bool(result.get("_from_game_launch", False))
         if not success:
             logger.info("Official version check skipped: %s", result.get("message"))
             if manual:
@@ -2127,16 +2095,20 @@ class AppController(QObject):
             return
 
         notice = self._official_notice()
+        if not notice or self.active_worker is not None:
+            return
+
+        info = self.current_game_info
+        # Real-time alert if player is ALREADY inside the game when official update is detected!
+        if info.is_running and self._is_realtime_guard_active(info):
+            self._trigger_realtime_update_guard(notice=notice, force=from_game_launch)
+            return
+
         if (
-            not notice
-            or self.active_worker is not None
-            or not self._can_open_modal()
+            not self._can_open_modal()
             or self._pending_post_op_modal
             or self._pending_discoveries is not None
         ):
-            return
-        info = self.current_game_info
-        if info.is_running:
             return
         reason = f"tài nguyên game {notice['local_resource_version']} → {notice['latest_resource_version']}"
         if bool(self.cm.get("auto_restore_before_game_update", False)):
@@ -2157,11 +2129,27 @@ class AppController(QObject):
             ),
         )
 
-    def _prompt_restore_before_update(self, notice: dict[str, Any]) -> None:
+    def _show_launch_guard_on_startup(self, notice: dict[str, Any]) -> None:
+        self._pending_post_op_modal = False
+        if not self._alive or self._closing or not _qt_is_valid(self) or self.shell is None:
+            return
+        self.shell.bring_to_front_urgent()
+        if self._guard_dialog_open or self.active_worker is not None or not self.current_game_info.installed:
+            return
+        self._prompt_restore_before_update(notice, launch_after=True, always_on_top=True)
+
+    def _prompt_restore_before_update(
+        self,
+        notice: dict[str, Any],
+        *,
+        launch_after: bool = False,
+        always_on_top: bool = False,
+    ) -> None:
         if (
             not self._alive
             or self._closing
             or not _qt_is_valid(self)
+            or self._guard_dialog_open
             or self.active_worker is not None
             or self._pending_post_op_modal
             or self._pending_discoveries is not None
@@ -2173,19 +2161,133 @@ class AppController(QObject):
             or bool(getattr(self.shell, "_modal_stack", None))
         ):
             return
-        if self._confirm(
-            "GAME CÓ BẢN CẬP NHẬT — NÊN KHÔI PHỤC GỐC TRƯỚC",
-            f"Game đang ở tài nguyên {notice.get('local_resource_version')}, nhà phát hành đã có "
-            f"{notice.get('latest_resource_version')}.\n\n"
-            "Bản Việt hoá đã sửa tệp của game nên cập nhật của game sẽ báo lỗi. "
-            "Launcher sẽ tải dữ liệu gốc về (cần mạng, có thể vài trăm MB) để game cập nhật bình thường. "
-            "Sau khi game cập nhật xong, bấm Cập nhật Việt hoá để cài lại.\n\nKhôi phục dữ liệu gốc ngay?",
-            "Khôi phục gốc",
-        ):
+        self._guard_dialog_open = True
+        try:
+            dlg = UpdateGuardDialog(
+                notice=notice,
+                game_running=bool(self.current_game_info.is_running),
+                launch_after_restore=launch_after,
+                always_on_top=always_on_top,
+                asset_renderer=self.shell._renderer,
+                parent=self.shell,
+            )
+            accepted = self.shell.show_modal(dlg) == QDialog.DialogCode.Accepted
+        finally:
+            self._guard_dialog_open = False
+
+        if accepted and self._alive and not self._closing and self.current_game_info.game_path:
             self._start_official_restore(
                 Path(self.current_game_info.game_path),
                 f"tài nguyên game {notice.get('local_resource_version')} → {notice.get('latest_resource_version')}",
+                launch_after=launch_after,
             )
+
+    def _trigger_realtime_update_guard(
+        self,
+        *,
+        signal: Optional[GameUpdateSignal] = None,
+        notice: Optional[dict[str, Any]] = None,
+        force: bool = False,
+    ) -> None:
+        """Immediately warn player when Stella Sora shows an update prompt or Yostar has a patch."""
+        if (
+            not self._alive
+            or self._closing
+            or not _qt_is_valid(self)
+            or self._guard_dialog_open
+            or self.active_worker is not None
+            or not self.current_game_info.installed
+            or self.shell is None
+            or not _qt_is_valid(self.shell)
+        ):
+            return
+
+        if signal is not None:
+            fp = signal.fingerprint()
+        elif notice is not None:
+            fp = f"server|{notice.get('latest_resource_version')}|{notice.get('latest_game_version')}"
+        else:
+            return
+
+        if not force and fp in self._guard_alerted_fingerprints:
+            return
+        self._guard_alerted_fingerprints.add(fp)
+
+        info = self.current_game_info
+        game_path = Path(info.game_path) if info.game_path else None
+        auto_close = bool(self.cm.get("guard_auto_close_game_on_update", False))
+
+        if auto_close and is_game_process_running():
+            close_game_gracefully_or_force(game_path, wait_seconds=2.5)
+        elif is_game_process_running():
+            minimize_game_windows(game_path)
+
+        still_running = is_game_process_running()
+        if still_running != info.is_running:
+            info.is_running = still_running
+            self._apply_game_info(info)
+
+        tray_body = (
+            signal.detail
+            if signal is not None
+            else (
+                f"Yostar đã phát hành tài nguyên {notice.get('latest_resource_version')} "
+                "(bản trên máy đã cài Việt hóa). Hãy khôi phục gốc trước khi cập nhật!"
+            )
+        )
+        self.shell.show_tray_notification(
+            "DỪNG LẠI — Stella Sora có bản cập nhật!",
+            tray_body,
+            urgent=True,
+        )
+        self.shell.bring_to_front_urgent()
+
+        if self.shell._active_modal is not None or bool(getattr(self.shell, "_modal_stack", None)):
+            self.show_toast("PHÁT HIỆN CẬP NHẬT GAME — Hãy khôi phục dữ liệu gốc ngay!", "warn")
+            return
+
+        self._guard_dialog_open = True
+        try:
+            dlg = UpdateGuardDialog(
+                notice=notice,
+                signal=signal,
+                game_running=still_running,
+                launch_after_restore=True,
+                always_on_top=True,
+                asset_renderer=self.shell._renderer,
+                parent=self.shell,
+            )
+            accepted = self.shell.show_modal(dlg) == QDialog.DialogCode.Accepted
+        finally:
+            self._guard_dialog_open = False
+
+        if not accepted or not self._alive or self._closing or game_path is None:
+            if self._alive and not self._closing:
+                self.show_toast(
+                    "KHÔNG bấm cập nhật trong game trước khi khôi phục dữ liệu gốc!",
+                    "warn",
+                )
+            return
+
+        # Close StellaSora.exe cleanly before starting OfficialRestoreEngine
+        if is_game_process_running():
+            ok_close, close_msg = close_game_gracefully_or_force(game_path, wait_seconds=3.0)
+            info.is_running = is_game_process_running()
+            self._apply_game_info(info)
+            if not ok_close or info.is_running:
+                self.show_error(
+                    "Đóng game trước khi khôi phục gốc",
+                    code="E-GAME-RUNNING",
+                    message=close_msg,
+                )
+                return
+
+        reason = (
+            signal.detail
+            if signal is not None
+            else f"tài nguyên game {notice.get('local_resource_version')} → {notice.get('latest_resource_version')}"
+        )
+        self._start_official_restore(game_path, reason, launch_after=True)
 
     # ---------------- Translation / Launcher Update & Notice ----------------
 
@@ -2396,9 +2498,28 @@ class AppController(QObject):
         if self.shell is not None:
             self.shell.navigate_to("notifications", notification_id=notif_id)
 
+    def _sync_windows_autostart_from_config(self) -> None:
+        if os.environ.get("QT_QPA_PLATFORM", "").lower() in ("offscreen", "minimal"):
+            return
+        try:
+            if QGuiApplication.platformName().lower() in ("offscreen", "minimal"):
+                return
+        except Exception:  # noqa: BLE001
+            pass
+        enabled = bool(self.cm.get("guard_start_with_windows", False))
+        ok, msg = set_windows_autostart(
+            enabled,
+            exe_path=Path(sys.executable) if self.pm.is_frozen else None,
+            app_data_dir=self.pm.app_data_dir if self.pm.is_custom_app_data else None,
+        )
+        if not ok:
+            logger.warning("Autostart update skipped/failed: %s", msg)
+
     def on_settings_saved(self, vals: dict[str, Any]) -> None:
         if self.shell is not None:
             self.shell.set_reduced_motion(bool(vals.get("reduced_motion", False)))
+        if "guard_start_with_windows" in vals:
+            self._sync_windows_autostart_from_config()
         self._trigger_bg_sync()
         self.sync_github(automatic=True)
         if vals.get("game_path") and str(vals["game_path"]) != str(self.current_game_info.game_path or ""):
@@ -2415,6 +2536,7 @@ class AppController(QObject):
     def on_settings_reset(self) -> None:
         if self.shell is not None:
             self.shell.set_reduced_motion(bool(self.cm.get("reduced_motion", False)))
+        self._sync_windows_autostart_from_config()
         self.sync_github(automatic=True)
 
     def on_corrupt_preserved(self) -> None:
@@ -2437,9 +2559,13 @@ class AppController(QObject):
         if not self.current_game_info.installed or not self.current_game_info.game_path:
             self.show_error("Tạo lối tắt vào game", code="E-NO-GAME-FOLDER")
             return
-        ok, msg = create_game_shortcut(self.current_game_info.game_path)
+        ok, msg = create_game_shortcut(
+            self.current_game_info.game_path,
+            launcher_exe=Path(sys.executable) if self.pm.is_frozen else None,
+            app_data_dir=self.pm.app_data_dir if self.pm.is_custom_app_data else None,
+        )
         if ok:
-            self.show_toast("Đã tạo lối tắt 'Stella Sora Việt Hóa' trên Desktop.", "success")
+            self.show_toast("Đã tạo lối tắt 'Stella Sora Việt Hóa' trên Desktop (có bảo vệ cập nhật).", "success")
         else:
             self.show_error("Tạo lối tắt vào game", code="E-SHORTCUT", message=msg)
 
@@ -2871,7 +2997,7 @@ class AppController(QObject):
                 if dialog is not None:
                     dialog.accept()
                 if self.shell is not None:
-                    self.shell.close()
+                    self.shell.request_real_quit()
                 if QApplication.instance() is not None:
                     QTimer.singleShot(50, QApplication.instance().quit)
             else:
@@ -2889,7 +3015,7 @@ class AppController(QObject):
                 if dialog is not None:
                     dialog.accept()
                 if self.shell is not None:
-                    self.shell.close()
+                    self.shell.request_real_quit()
                 if QApplication.instance() is not None:
                     QTimer.singleShot(50, QApplication.instance().quit)
             else:
@@ -3042,6 +3168,8 @@ def launch_gui(
     config_manager: ConfigManager,
     software_rendering: bool = False,
     startup_warnings: Optional[list[Exception]] = None,
+    start_in_tray: bool = False,
+    launch_guard_notice: Optional[dict[str, Any]] = None,
 ) -> MainShell:
     """Create AppController + MainShell, register fonts/QSS/icon, show window, and return MainShell.
 
@@ -3064,6 +3192,8 @@ def launch_gui(
         config_manager,
         software_rendering=software_rendering,
         startup_warnings=startup_warnings or [],
+        start_in_tray=start_in_tray,
+        launch_guard_notice=launch_guard_notice,
     )
     shell = MainShell(
         path_manager,
@@ -3073,6 +3203,9 @@ def launch_gui(
         asset_renderer=renderer,
     )
     controller.attach_shell(shell)
-    shell.show()
+    if start_in_tray and launch_guard_notice is None and shell.is_tray_active():
+        shell.hide()
+    else:
+        shell.show()
     QTimer.singleShot(0, controller.start_initial_loads)
     return shell

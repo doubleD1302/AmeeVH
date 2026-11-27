@@ -1,7 +1,9 @@
 package com.stellasora.viethoa.localadb;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.net.ConnectException;
+import java.net.NoRouteToHostException;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
@@ -16,6 +18,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import java.util.zip.ZipException;
 import javax.net.ssl.SSLHandshakeException;
 
 /**
@@ -47,42 +50,65 @@ public final class ErrorCatalogCheck {
    ok(!e.title.trim().isEmpty() && !e.summary.trim().isEmpty(), code + " needs a title and a summary");
    if (e.isError()) ok(e.steps.length >= 1, code + " (error) needs at least one step");
    for (String s : e.steps) ok(!s.trim().isEmpty(), code + " has an empty step");
+   ok(e.quickActions != null, code + " quickActions non-null");
   }
   eq("E-UNKNOWN", ErrorCatalog.lookup("E-NOPE").code, "unknown code falls back");
   eq("E-HTTP-429", ErrorCatalog.lookup("E-HTTP-429").code, "http code kept");
   ok(ErrorCatalog.lookup("E-HTTP-429").title.contains("giới hạn"), "429 explains rate limiting");
   ok(ErrorCatalog.lookup("E-HTTP-503").title.contains("sự cố"), "5xx explains GitHub outage");
   ok(ErrorCatalog.lookup("E-HTTP-418").title.contains("từ chối"), "other 4xx");
+  ok(ErrorCatalog.lookup("E-HTTP-511").title.contains("Captive Portal"), "511 maps to captive portal");
 
-  // ---- exceptions
+  // ---- exceptions (network context)
   eq("E-NET-DNS", ErrorCatalog.classify(new UnknownHostException("Unable to resolve host \"api.github.com\": No address associated with hostname")), "dns");
   eq("E-NET-TIMEOUT", ErrorCatalog.classify(new SocketTimeoutException("failed to connect to api.github.com after 12000ms")), "timeout");
   eq("E-NET-REFUSED", ErrorCatalog.classify(new ConnectException("Failed to connect to /1.2.3.4:443: ECONNREFUSED (Connection refused)")), "refused");
   eq("E-NET-OFFLINE", ErrorCatalog.classify(new ConnectException("connect failed: ENETUNREACH (Network is unreachable)")), "unreachable");
   eq("E-NET-RESET", ErrorCatalog.classify(new SocketException("Connection reset")), "reset");
   eq("E-NET-RESET", ErrorCatalog.classify(new SocketException("Software caused connection abort")), "abort");
+  eq("E-NET-RESET", ErrorCatalog.classify(new EOFException("unexpected end of stream")), "eof");
   eq("E-NET-TLS-CERT", ErrorCatalog.classify(new SSLHandshakeException("Trust anchor for certification path not found.")), "cert");
   eq("E-NET-TLS-CERT", ErrorCatalog.classify(new IOException("wrapped", new CertPathValidatorException("path"))), "cert chain");
   eq("E-NET-TLS", ErrorCatalog.classify(new SSLHandshakeException("Handshake failed")), "tls");
   eq("E-STORAGE", ErrorCatalog.classify(new IOException("write failed: ENOSPC (No space left on device)")), "enospc");
-  eq("E-DATA-JSON", ErrorCatalog.classify(new RuntimeException("x", new org.json.JSONException("Value <html> of type java.lang.String cannot be converted to JSONObject"))), "json");
+  eq("E-ZIP-CORRUPT", ErrorCatalog.classify(new ZipException("invalid entry crc-32")), "zip corrupt");
+  eq("E-MEMORY", ErrorCatalog.classify(new OutOfMemoryError("Java heap space")), "oom");
+  eq("E-NET-CAPTIVE", ErrorCatalog.classify(new RuntimeException("x", new org.json.JSONException("Value <html> of type java.lang.String cannot be converted to JSONObject"))), "html captive json");
+  eq("E-DATA-JSON", ErrorCatalog.classify(new RuntimeException("x", new org.json.JSONException("End of input at character 0"))), "plain json error");
   eq("E-DL-VERIFY", ErrorCatalog.classify(new Coded("E-DL-VERIFY")), "explicit code wins");
   eq("E-NET-DNS", ErrorCatalog.classify(new IOException("outer", new UnknownHostException("h"))), "cause chain");
   eq("E-HTTP-404", ErrorCatalog.classify(new IOException("Máy chủ trả HTTP 404 (raw.githubusercontent.com).")), "http status in text");
+  eq("E-NET-CAPTIVE", ErrorCatalog.classify(new IOException("Máy chủ trả HTTP 511 (portal.local).")), "http 511 captive");
   eq("E-INTERNAL", ErrorCatalog.classify(new IllegalStateException("boom")), "non-IO bug is internal");
   eq("E-UNKNOWN", ErrorCatalog.classify(new IOException("???")), "unmatched IO");
 
-  // ---- the exact messages users have been seeing
+  // ---- context-aware ADB vs network classification
+  eq("E-ADB-CONN-REFUSED", ErrorCatalog.classify(new ConnectException("ECONNREFUSED"), "connect"), "adb connect refused");
+  eq("E-ADB-NO-WIFI", ErrorCatalog.classify(new NoRouteToHostException("No route"), "pair"), "adb pair no wifi");
+  eq("E-ADB-TIMEOUT", ErrorCatalog.classify(new SocketTimeoutException("timed out"), "autoConnect"), "adb timeout");
+  eq("E-ADB-DISCONNECTED", ErrorCatalog.classify(new EOFException("closed"), "detect"), "adb eof disconnected");
+  eq("E-ADB-AUTH", ErrorCatalog.classify(new SSLHandshakeException("handshake"), "connect"), "adb ssl auth");
+  eq("E-ADB-PAIR", ErrorCatalog.classify(new SSLHandshakeException("handshake"), "pair"), "adb ssl pair");
+  eq("E-NET-REFUSED", ErrorCatalog.classify(new ConnectException("ECONNREFUSED"), "sync"), "sync connect refused stays net");
+
+  // ---- the exact messages users have been seeing (including new v2.0.3 scenarios)
   TreeMap<String, String> samples = new TreeMap<>();
   samples.put("Hãy bật Tuỳ chọn nhà phát triển trước khi kết nối Local ADB.", "E-DEVOPT");
+  samples.put("Điện thoại chưa kết nối Wi-Fi (Gỡ lỗi không dây cần Wi-Fi).", "E-ADB-NO-WIFI");
   samples.put("Chưa kết nối Local ADB.", "E-ADB-NOT-CONNECTED");
   samples.put("Hãy kết nối và xác minh Local ADB trước.", "E-ADB-NOT-CONNECTED");
+  samples.put("Gỡ lỗi không dây đang tắt hoặc cổng kết nối đã đổi.", "E-ADB-CONN-REFUSED");
+  samples.put("ADB dừng (1): sha256sum: Permission denied", "E-ADB-PERM");
+  samples.put("ADB đóng trước phản hồi kết thúc.", "E-ADB-DISCONNECTED");
   samples.put("ADB quá thời hạn, kết nối đã đóng.", "E-ADB-TIMEOUT");
   samples.put("Chưa tìm thấy ứng dụng Stella Sora Android.", "E-NO-GAME");
+  samples.put("Phát hiện Stella Sora bản khu vực khác (com.YoStarJP.StellaSora), không phải bản Global EN.", "E-GAME-WRONG-EDITION");
+  samples.put("Chưa thấy thư mục dữ liệu game. Hãy mở Stella Sora 1 lần để game tải dữ liệu.", "E-GAME-NO-DATA");
   samples.put("Hãy thoát Stella Sora trước khi thay đổi tài nguyên.", "E-GAME-RUNNING");
   samples.put("Game đã cập nhật hoặc chưa đọc được phiên bản. Không ghi đè tài nguyên.", "E-VER-CHANGED");
   samples.put("Gói Android không khớp phiên bản game hoặc tài nguyên đã đọc. Không cài đặt.", "E-PKG-MISMATCH");
   samples.put("Chưa có gói bản dịch Android tương thích trên GitHub. Gói Windows và APK overlay cũ không được dùng cho ứng dụng này.", "E-NO-PACKAGE");
+  samples.put("Mạng đang trả về trang HTML đăng nhập Wi-Fi (Captive Portal) thay vì dữ liệu JSON.", "E-NET-CAPTIVE");
   samples.put("Không đủ bộ nhớ để tải và kiểm tra gói Android.", "E-STORAGE");
   samples.put("Không đủ dung lượng để sao lưu và thay tệp an toàn.", "E-STORAGE");
   samples.put("Bộ nhớ vùng game không đủ hoặc chưa xác định được.", "E-STORAGE");
@@ -94,15 +120,24 @@ public final class ErrorCatalogCheck {
   samples.put("Chưa có biên bản của lần cài bằng ứng dụng này.", "E-NO-RECEIPT");
   samples.put("Tệp bản dịch không khớp: x", "E-FILE-MISMATCH");
   samples.put("Tệp tải về không khớp kích thước hoặc SHA256: x", "E-DL-VERIFY");
+  samples.put("Lỗi khi giải nén AssetBundles: invalid entry crc", "E-ZIP-CORRUPT");
   samples.put("Thao tác vượt thời hạn", "E-TIMEOUT");
   samples.put("Tải quá thời hạn.", "E-DL-TIMEOUT");
   samples.put("Máy chủ trả HTTP 503 (github.com).", "E-HTTP-503");
   samples.put("Chữ ký APK khác ứng dụng đang dùng.", "E-APK-SIGNATURE");
   samples.put("Chưa có APK Local ADB mới hơn ứng dụng đang dùng.", "E-APK-NONE");
+  samples.put("Chưa được phép hiện thông báo", "E-NOTIF-PERMISSION");
+  samples.put("Hệ thống tiết kiệm pin đang chặn tác vụ nền", "E-OEM-BG-RESTRICT");
+  samples.put("Thiết bị không đủ bộ nhớ RAM khi giải nén", "E-MEMORY");
   samples.put("Kho GitHub cần có dạng tài-khoản/tên-kho.", "E-CONFIG-CHANNEL");
   samples.put("Yêu cầu bị chặn", "E-UI-BLOCKED");
   for (var e : samples.entrySet()) eq(e.getValue(), ErrorCatalog.classifyText(e.getKey()), "message: " + e.getKey());
   for (var e : samples.entrySet()) ok(ErrorCatalog.known(e.getValue()) || e.getValue().startsWith("E-HTTP-"), "sample code exists: " + e.getValue());
+
+  // ---- action labels sanity
+  for (String a : new String[]{"sync", "pair", "connect", "autoConnect", "detect", "install", "verify", "restore", "recover", "probeNetwork"}) {
+   ok(!ErrorCatalog.actionLabel(a).equals(a), "actionLabel translates " + a);
+  }
 
   // ---- every user-visible message in the sources must map to a specific code
   if (args.length > 0) {
@@ -114,8 +149,8 @@ public final class ErrorCatalogCheck {
      Matcher m = p.matcher(new String(Files.readAllBytes(f), StandardCharsets.UTF_8));
      while (m.find()) {
       String msg = m.group(1).replace("\\\"", "\"");
-      if (msg.isEmpty() || msg.indexOf(' ') < 0) continue;   // "x" placeholders / non-user text
-      if (msg.endsWith("HTTP ")) msg += "404";                 // literal is followed by a concatenated status code
+      if (msg.isEmpty() || msg.indexOf(' ') < 0) continue;
+      if (msg.endsWith("HTTP ")) msg += "404";
       total++;
       if (ErrorCatalog.classifyText(msg).equals("E-UNKNOWN")) unknown.add(f.getFileName() + ": " + msg);
      }

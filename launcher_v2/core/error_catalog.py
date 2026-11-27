@@ -368,7 +368,7 @@ _add('E-SHORTCUT', 'Không tạo được lối tắt',
 _add('E-MEMORY', 'Máy không đủ bộ nhớ RAM',
      'Launcher hết bộ nhớ khi xử lý. Game chưa bị thay đổi.',
      ['Đóng bớt chương trình khác rồi thử lại.'],
-     platform='pc')
+     platform='shared')
 _add('E-INTERNAL', 'Launcher gặp lỗi nội bộ',
      'Có lỗi ngoài dự kiến trong launcher. Game chưa bị thay đổi nếu thao tác chưa báo hoàn tất.',
      ['Đóng và mở lại launcher rồi thử lại.', _SEND],
@@ -528,6 +528,50 @@ _add('E-APK-VERIFY', 'APK tải về bị sai hoặc hỏng',
 _add('E-UI-BLOCKED', 'Yêu cầu bị chặn',
      'Giao diện hệ thống đang chặn hộp thoại hoặc thao tác yêu cầu quyền.',
      ['Kiểm tra quyền hiển thị/cài đặt trên thiết bị rồi thử lại.', _SEND],
+     level='error', platform='android')
+_add('E-ADB-CONN-REFUSED', 'Gỡ lỗi không dây đang tắt hoặc cổng đã đổi',
+     'Thiết bị từ chối kết nối Local ADB vì Gỡ lỗi không dây đã tắt hoặc Android vừa cấp cổng mới.',
+     ['Mở lại Gỡ lỗi không dây và bấm Kết nối nhanh Local ADB.', _SEND],
+     level='error', platform='android')
+_add('E-ADB-DISCONNECTED', 'Kết nối Local ADB bị ngắt giữa chừng',
+     'Phiên Local ADB bị đóng đột ngột do đổi Wi-Fi hoặc hệ thống giới hạn chạy nền.',
+     ['Giữ nguyên kết nối Wi-Fi và tắt tối ưu pin cho ứng dụng rồi kết nối lại.', _SEND],
+     level='error', platform='android')
+_add('E-ADB-NO-WIFI', 'Cần bật Wi-Fi để dùng Gỡ lỗi không dây',
+     'Android yêu cầu thiết bị kết nối Wi-Fi để chạy Gỡ lỗi không dây (Local ADB).',
+     ['Bật Wi-Fi và kết nối vào một mạng ổn định rồi thử lại.'],
+     level='warning', platform='android')
+_add('E-ADB-PERM', 'Hệ điều hành đang chặn quyền Local ADB (ColorOS / HyperOS / MIUI)',
+     'ROM của hãng đang chặn lệnh ghi vào thư mục dữ liệu game qua Local ADB.',
+     ['Bật "Tắt giám sát quyền" (OPPO/Realme/OnePlus) hoặc "Gỡ lỗi USB (Cài đặt bảo mật)" (Xiaomi/HyperOS).', _SEND],
+     level='error', platform='android')
+_add('E-APK-INSTALL-PERMISSION', 'Chưa cấp quyền cài đặt APK từ ứng dụng',
+     'Android chưa cho phép launcher mở trình cài đặt gói cập nhật APK.',
+     ['Mở Cài đặt → Cài đặt ứng dụng không xác định → bật cho phép cho launcher rồi thử lại.'],
+     level='warning', platform='android')
+_add('E-GAME-NO-DATA', 'Game chưa có thư mục dữ liệu (chưa tải tài nguyên)',
+     'Đã tìm thấy ứng dụng Stella Sora nhưng chưa thấy thư mục dữ liệu Persistent_Store.',
+     ['Mở game Stella Sora ít nhất một lần để tải xong dữ liệu ban đầu, đóng game rồi thử lại.'],
+     level='warning', platform='android')
+_add('E-GAME-WRONG-EDITION', 'Đang cài bản Stella Sora khu vực khác (không phải Global EN)',
+     'Thiết bị đang cài bản Stella Sora khu vực JP/CN/KR/TW thay vì bản Global EN.',
+     ['Cài đặt bản Stella Sora Global EN (com.YoStarEN.StellaSora) để dùng bản Việt hoá này.'],
+     level='warning', platform='android')
+_add('E-NET-VPN-DNS', 'VPN hoặc DNS riêng tư đang chặn GitHub',
+     'Dịch vụ VPN hoặc Private DNS đang chặn hoặc làm lỗi kết nối tới GitHub.',
+     ['Tạm tắt VPN / DNS riêng tư (AdGuard, NextDNS...) hoặc đổi sang 1.1.1.1 rồi thử lại.', _SEND],
+     level='error', network=True, platform='android')
+_add('E-NOTIF-PERMISSION', 'Chưa cấp quyền hiện Thông báo',
+     'Android chưa cấp quyền hiển thị thông báo nên không hiện được khung nhập mã ghép đôi.',
+     ['Mở Thông tin ứng dụng → Thông báo → bật cho phép rồi thử lại.'],
+     level='warning', platform='android')
+_add('E-OEM-BG-RESTRICT', 'Hệ thống tiết kiệm pin đang hạn chế ứng dụng nền',
+     'Trình quản lý pin của máy đã dừng dịch vụ nền khi chuyển sang màn hình Cài đặt.',
+     ['Đặt pin cho launcher sang "Không hạn chế" (Unrestricted) và khoá ứng dụng trong đa nhiệm.', _SEND],
+     level='error', platform='android')
+_add('E-ZIP-CORRUPT', 'Gói nén AssetBundles bị lỗi khi giải nén',
+     'Tệp gói nén tải về bị hỏng hoặc ghi thiếu trong quá trình lưu trữ.',
+     ['Kiểm tra dung lượng trống trên máy rồi bấm tải và cài đặt lại.', _SEND],
      level='error', platform='android')
 
 

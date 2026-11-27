@@ -16,7 +16,7 @@ import javax.net.ssl.SSLHandshakeException;
 /** HTTPS-only metadata, explicit Android contracts, and size/hash-bound resumable downloads. */
 final class ChannelClient {
  interface Progress { void update(String text, int percent); }
- static final String USER_AGENT = "StellaSora-Android-LocalADB/2.0.1";
+ static final String USER_AGENT = "StellaSora-Android-LocalADB/2.1.0";
  private static final long RELEASE_CACHE_TTL_MS = 15L * 60L * 1000L;
  private static final int DOWNLOAD_MAX_ATTEMPTS = 4;
  private final Context context;
@@ -61,6 +61,12 @@ final class ChannelClient {
     url = new URL(url, next);
     continue;
    }
+   if (code == 511) {
+    connection.disconnect();
+    throw new StellaException("E-NET-CAPTIVE",
+      "Mạng Wi-Fi đang yêu cầu đăng nhập (HTTP 511 Captive Portal).",
+      null, "url", ErrorReport.safeUrl(address), "httpStatus", code);
+   }
    if ((code == 403 || code == 429) && "api.github.com".equalsIgnoreCase(url.getHost())) {
     connection.disconnect();
     throw new StellaException("E-HTTP-" + code,
@@ -70,11 +76,13 @@ final class ChannelClient {
    if (rangeOffset >= 0) {
     if (code == 200 || (rangeOffset > 0 && (code == 206 || code == 416))) return connection;
     connection.disconnect();
-    throw new IOException("Máy chủ trả HTTP " + code + " (" + url.getHost() + ").");
+    throw new StellaException("E-HTTP-" + code, "Máy chủ trả HTTP " + code + " (" + url.getHost() + ").",
+      null, "url", ErrorReport.safeUrl(address), "httpStatus", code);
    }
    if (code != 200) {
     connection.disconnect();
-    throw new IOException("Máy chủ trả HTTP " + code + " (" + url.getHost() + ").");
+    throw new StellaException("E-HTTP-" + code, "Máy chủ trả HTTP " + code + " (" + url.getHost() + ").",
+      null, "url", ErrorReport.safeUrl(address), "httpStatus", code);
    }
    return connection;
   }
@@ -105,7 +113,13 @@ final class ChannelClient {
  }
 
  static JSONObject json(String url) throws Exception {
-  return new JSONObject(new String(bytes(url, -1, null), StandardCharsets.UTF_8));
+  String raw = new String(bytes(url, -1, null), StandardCharsets.UTF_8);
+  String trimmed = raw.trim();
+  String lowHead = trimmed.length() > 64 ? trimmed.substring(0, 64).toLowerCase(Locale.ROOT) : trimmed.toLowerCase(Locale.ROOT);
+  if (lowHead.startsWith("<!doctype html") || lowHead.startsWith("<html")) {
+   throw new StellaException("E-NET-CAPTIVE", "Mạng đang trả về trang HTML đăng nhập Wi-Fi (Captive Portal) thay vì dữ liệu JSON.", null, "url", ErrorReport.safeUrl(url));
+  }
+  return new JSONObject(raw);
  }
 
  private static boolean validReleaseObject(JSONObject r) {

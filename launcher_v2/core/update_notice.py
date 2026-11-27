@@ -145,45 +145,59 @@ def matches(observed, expected) -> bool:
 
 
 def has_game_patch_conflict_in_log(game_info=None) -> bool:
-    """Checks if game recently failed to patch publisher update due to modified files."""
-    log_path = Path(os.path.expandvars(r"%USERPROFILE%\AppData\LocalLow\YOSTAR (HONG KONG) LIMITED\StellaSora\Player.log"))
-    if not log_path.is_file():
-        return False
-    try:
-        log_mtime = log_path.stat().st_mtime
-        if (time.time() - log_mtime) > 86400:
-            return False
+    """Checks if game recently failed to patch publisher update due to modified files (Yostar + Steam)."""
+    log_candidates = (
+        Path(os.path.expandvars(r"%USERPROFILE%\AppData\LocalLow\YOSTAR (HONG KONG) LIMITED\StellaSora\Player.log")),
+        Path(os.path.expandvars(r"%USERPROFILE%\AppData\LocalLow\YOSTAR (HONG KONG) LIMITED\StellaSora_steam\Player.log")),
+    )
+    gpath = getattr(game_info, "game_path", None) if game_info is not None else None
+    receipt = getattr(game_info, "installed_receipt", None) if game_info is not None else None
+    inst_ts: Optional[float] = None
+    if isinstance(receipt, dict) and isinstance(receipt.get("installed_at"), str):
+        try:
+            inst_ts = datetime.fromisoformat(receipt["installed_at"].replace("Z", "+00:00")).timestamp()
+        except ValueError:
+            inst_ts = None
 
-        # Ignore stale Player.log if ss_win.mani or patch receipt is newer than Player.log
-        gpath = getattr(game_info, "game_path", None) if game_info is not None else None
-        if isinstance(gpath, (str, os.PathLike)):
-            gp = Path(gpath)
-            mani = gp / "Persistent_Store" / "ss_win.mani"
-            if mani.is_file() and mani.stat().st_mtime > log_mtime:
-                return False
-            rp = gp / ".vietnamese_patch_receipt.json"
-            if rp.is_file() and rp.stat().st_mtime > log_mtime:
-                return False
+    for log_path in log_candidates:
+        if not log_path.is_file():
+            continue
+        try:
+            log_mtime = log_path.stat().st_mtime
+            if (time.time() - log_mtime) > 86400:
+                continue
 
-        receipt = getattr(game_info, "installed_receipt", None) if game_info is not None else None
-        if isinstance(receipt, dict) and isinstance(receipt.get("installed_at"), str):
-            try:
-                inst_ts = datetime.fromisoformat(receipt["installed_at"].replace("Z", "+00:00")).timestamp()
-                if inst_ts > log_mtime:
-                    return False
-            except ValueError:
-                pass
+            # Ignore stale Player.log if ss_win.mani, official_restored marker or patch receipt is newer
+            if isinstance(gpath, (str, os.PathLike)):
+                gp = Path(gpath)
+                mani = gp / "Persistent_Store" / "ss_win.mani"
+                if mani.is_file() and mani.stat().st_mtime > log_mtime:
+                    continue
+                restored_state = gp / "Persistent_Store" / "viethoa_installed.json"
+                if restored_state.is_file() and restored_state.stat().st_mtime > log_mtime:
+                    continue
+                rp = gp / ".vietnamese_patch_receipt.json"
+                if rp.is_file() and rp.stat().st_mtime > log_mtime:
+                    continue
 
-        with log_path.open("r", encoding="utf-8", errors="ignore") as f:
-            lines = f.readlines()[-200:]
-            for line in lines:
-                if any(
-                    err in line
-                    for err in ("BinDiffPatchError", "Patch file verification failed", "no found patch target bundle")
-                ):
-                    return True
-    except Exception:
-        pass
+            if inst_ts is not None and inst_ts > log_mtime:
+                continue
+
+            with log_path.open("r", encoding="utf-8", errors="ignore") as f:
+                lines = f.readlines()[-200:]
+                for line in lines:
+                    if any(
+                        err in line
+                        for err in (
+                            "BinDiffPatchError",
+                            "Patch file verification failed",
+                            "Data check fail",
+                            "no found patch target bundle",
+                        )
+                    ):
+                        return True
+        except Exception:
+            continue
     return False
 
 

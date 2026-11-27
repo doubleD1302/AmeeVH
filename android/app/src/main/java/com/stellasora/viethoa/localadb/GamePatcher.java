@@ -49,26 +49,96 @@ final class GamePatcher {
   return path;
  }
 
+ private static boolean isSafeFuseAlias(String resolved, String expected, String requiredSuffix) {
+  if (resolved == null || resolved.isEmpty()) return false;
+  if (resolved.equals(expected)) return true;
+  if (!resolved.endsWith(requiredSuffix)) return false;
+  return resolved.startsWith("/data/media/")
+    || resolved.startsWith("/mnt/pass_through/")
+    || resolved.startsWith("/mnt/user/")
+    || resolved.startsWith("/storage/emulated/");
+ }
+
+ private static String parseUserNumber(String raw) {
+  if (raw == null) return "";
+  String[] lines = raw.split("\\r?\\n");
+  for (int i = lines.length - 1; i >= 0; i--) {
+   String t = lines[i].trim();
+   if (t.matches("[0-9]+")) return t;
+  }
+  return "";
+ }
+
  JSONObject detect() throws Exception {
-  if (!adb.verified) throw new IOException("Chưa kết nối Local ADB.");
-  String user = adb.exec("am get-current-user", 10000).trim();
-  if (!user.matches("[0-9]+")) throw new IOException("Chưa xác định được người dùng Android.");
-  String installed = adb.exec("pm path --user " + user + " " + Store.GAME, 12000);
-  if (!installed.startsWith("package:")) {
+  if (!adb.verified) throw new StellaException("E-ADB-NOT-CONNECTED", "Chưa kết nối Local ADB.", null);
+  String user = parseUserNumber(adb.exec("am get-current-user", 10000));
+  if (user.isEmpty()) throw new IOException("Chưa xác định được người dùng Android.");
+  String installed = adb.exec("pm path --user " + user + " " + Store.GAME + " || true", 12000);
+  if (!installed.contains("package:")) {
+   String other = "";
+   try {
+    String allPkgs = adb.exec("pm list packages --user " + user + " 2>/dev/null | grep -i -E 'stellasora|stella_sora' || true", 10000);
+    for (String ln : allPkgs.split("\\r?\\n")) {
+     String t = ln.trim().replaceFirst("^package:", "");
+     if (!t.isEmpty() && !Store.GAME.equals(t)) { other = t; break; }
+    }
+   } catch (Exception ignored) {}
+   if (!other.isEmpty()) {
+    target = Store.obj("installed", false, "package", Store.GAME, "wrongEdition", other, "versionsKnown", false,
+      "reason", "Phát hiện Stella Sora bản khu vực khác (" + other + "), không phải bản Global EN (com.YoStarEN.StellaSora).");
+    return target;
+   }
    target = Store.obj("installed", false, "package", Store.GAME, "versionsKnown", false, "reason", "Chưa tìm thấy gói Stella Sora Android.");
    return target;
   }
-  String expected = "/storage/emulated/" + user + "/Android/data/" + Store.GAME + "/files";
-  String root = adb.exec("readlink -f " + Store.q(expected), 10000).trim();
-  if (!root.equals(expected)) throw new IOException("Thư mục dữ liệu game không khớp vùng Android đã chọn.");
-  adb.exec("[ -d " + Store.q(root) + " ] && [ ! -L " + Store.q(root) + " ]", 10000);
+  String suffix = "/Android/data/" + Store.GAME + "/files";
+  String expected = "/storage/emulated/" + user + suffix;
+  String qExp = Store.q(expected);
+  String qPkgDir = Store.q("/storage/emulated/" + user + "/Android/data/" + Store.GAME);
+  String qDataDir = Store.q("/storage/emulated/" + user + "/Android/data");
+  String qAndDir = Store.q("/storage/emulated/" + user + "/Android");
+  String rootCheck = adb.exec(
+    "if [ -L " + qAndDir + " ] || [ -L " + qDataDir + " ] || [ -L " + qPkgDir + " ] || [ -L " + qExp + " ]; then printf 'ERR:SYMLINK'; exit 0; fi; "
+    + "if [ ! -e " + qExp + " ]; then printf 'ERR:NODATA'; exit 0; fi; "
+    + "if [ ! -d " + qExp + " ]; then printf 'ERR:NOTDIR'; exit 0; fi; "
+    + "readlink -f " + qExp, 10000).trim();
+  if ("ERR:NODATA".equals(rootCheck)) {
+   target = Store.obj("installed", true, "package", Store.GAME, "root", expected, "user", user, "noData", true, "versionsKnown", false,
+     "gameVersion", "", "resourceVersion", "",
+     "reason", "Chưa thấy thư mục dữ liệu game. Hãy mở Stella Sora 1 lần để game tải dữ liệu, thoát hẳn game rồi kiểm tra lại.");
+   return target;
+  }
+  if ("ERR:SYMLINK".equals(rootCheck) || "ERR:NOTDIR".equals(rootCheck) || !isSafeFuseAlias(rootCheck, expected, suffix)) {
+   throw new StellaException("E-GAME-ROOT-CHANGED", "Thư mục dữ liệu game không khớp vùng Android đã chọn.", null);
+  }
+  String root = expected;
   String androidId = adb.exec("settings --user " + user + " get secure android_id", 10000).trim();
   String device = adb.exec("getprop ro.product.device", 10000).trim();
-  if (!androidId.matches("[0-9a-fA-F]{16}") || device.trim().isEmpty()) {
+  if (!androidId.matches("[0-9a-fA-F]{16}")) {
+   String lowAid = androidId.toLowerCase(Locale.ROOT);
+   if (lowAid.contains("securityexception") || lowAid.contains("permission") || lowAid.contains("denied")) {
+    throw new StellaException("E-ADB-PERM", "Hệ điều hành đang chặn quyền đọc thông số Local ADB (SecurityException).", null);
+   }
+   String fp = adb.exec("getprop ro.build.fingerprint", 10000).trim();
+   if (fp.isEmpty() || device.trim().isEmpty()) {
+    throw new IOException("Chưa xác định được danh tính thiết bị.");
+   }
+   androidId = Store.digest("fallback|" + fp + "|" + device + "|" + user).substring(0, 16);
+  }
+  if (device.trim().isEmpty()) {
    throw new IOException("Chưa xác định được danh tính thiết bị.");
   }
   String deviceId = Store.digest(androidId + "|" + device + "|" + user);
   target = Store.obj("installed", true, "package", Store.GAME, "root", root, "user", user, "deviceId", deviceId, "versionsKnown", false, "gameVersion", "", "resourceVersion", "");
+  String psCheck = adb.exec("if [ -L " + Store.q(root + "/Persistent_Store") + " ]; then printf 'ERR:LINK'; elif [ ! -d " + Store.q(root + "/Persistent_Store") + " ]; then printf 'ERR:NODATA'; else printf 'OK'; fi", 10000).trim();
+  if ("ERR:NODATA".equals(psCheck)) {
+   target.put("noData", true);
+   target.put("reason", "Chưa thấy thư mục dữ liệu game (Persistent_Store). Hãy mở Stella Sora tải đủ tài nguyên trước khi cài.");
+   return target;
+  }
+  if (!"OK".equals(psCheck)) {
+   throw new StellaException("E-GAME-ROOT-CHANGED", "Thư mục dữ liệu game không khớp vùng Android đã chọn.", null);
+  }
   String listing = adb.exec("find " + Store.q(root + "/Persistent_Store") + " -maxdepth 1 -type f -name '*.mani' -print", 10000);
   String chosen = null, game = null, resource = null;
   List<String> files = new ArrayList<>();
@@ -83,7 +153,9 @@ final class GamePatcher {
    return a.compareTo(b);
   });
   for (String file : files) {
-   if (!adb.exec("readlink -f " + Store.q(file), 10000).trim().equals(file)) continue;
+   String relMani = file.substring(root.length());
+   String resolvedMani = adb.exec("if [ -L " + Store.q(file) + " ]; then printf 'ERR'; else readlink -f " + Store.q(file) + "; fi", 10000).trim();
+   if (!isSafeFuseAlias(resolvedMani, file, suffix + relMani)) continue;
    String data = adb.exec("head -n 24 " + Store.q(file), 10000);
    String g = header(data, "GAME_VER");
    if (g == null) g = header(data, "CLIENT_VER");
@@ -124,19 +196,28 @@ final class GamePatcher {
  private void closedAndVersion() throws Exception {
   String root = target.getString("root");
   String versionFile = target.getString("versionFile");
+  String suffix = "/Android/data/" + Store.GAME + "/files";
+  String verRel = versionFile.startsWith(root) ? versionFile.substring(root.length()) : "";
   String qRoot = Store.q(root), qVer = Store.q(versionFile);
-  String cmd = "r=$(readlink -f " + qRoot + ") || exit $?; "
-    + "if [ \"$r\" != " + qRoot + " ]; then printf 'ERR:ROOT'; exit 0; fi; "
-    + "pidof " + Store.GAME + " >/dev/null; s=$?; "
-    + "if [ \"$s\" -eq 0 ]; then printf 'ERR:RUNNING'; exit 0; elif [ \"$s\" -ne 1 ]; then exit \"$s\"; fi; "
-    + "if [ -L " + qVer + " ] || [ \"$(readlink -f " + qVer + ")\" != " + qVer + " ]; then printf 'ERR:VERFILE'; exit 0; fi; "
-    + "printf 'OK\\n'; head -n 24 " + qVer;
+  String cmd = "if [ -L " + qRoot + " ] || [ ! -d " + qRoot + " ]; then printf 'ERR:ROOT'; exit 0; fi; "
+    + "r=$(readlink -f " + qRoot + ") || exit $?; "
+    + "if command -v pidof >/dev/null 2>&1; then pidof " + Store.GAME + " >/dev/null 2>&1; s=$?; "
+    + "if [ \"$s\" -eq 0 ]; then printf 'ERR:RUNNING'; exit 0; "
+    + "elif [ \"$s\" -ne 1 ]; then ps -A 2>/dev/null | grep -F " + Store.q(Store.GAME) + " >/dev/null 2>&1 && { printf 'ERR:RUNNING'; exit 0; }; fi; "
+    + "else ps -A 2>/dev/null | grep -F " + Store.q(Store.GAME) + " >/dev/null 2>&1 && { printf 'ERR:RUNNING'; exit 0; }; fi; "
+    + "if [ -L " + qVer + " ] || [ ! -f " + qVer + " ]; then printf 'ERR:VERFILE'; exit 0; fi; "
+    + "rv=$(readlink -f " + qVer + ") || exit $?; "
+    + "printf 'OK\\n%s\\n%s\\n' \"$r\" \"$rv\"; head -n 24 " + qVer;
   String out = adb.exec(cmd, 12000);
   if ("ERR:ROOT".equals(out)) throw new IOException("Thư mục game đã đổi.");
   if ("ERR:RUNNING".equals(out)) throw new IOException("Hãy thoát Stella Sora trước khi thay đổi tài nguyên.");
   if ("ERR:VERFILE".equals(out)) throw new IOException("Tệp phiên bản đã thành liên kết hoặc đổi đường dẫn.");
-  if (!out.startsWith("OK")) throw new IOException("Không kiểm tra được trạng thái game.");
-  String data = out.length() > 2 ? out.substring(2).trim() : "";
+  if (!out.startsWith("OK\n")) throw new IOException("Không kiểm tra được trạng thái game.");
+  String[] parts = out.split("\\r?\\n", 4);
+  if (parts.length < 4) throw new IOException("Không kiểm tra được trạng thái game.");
+  if (!isSafeFuseAlias(parts[1].trim(), root, suffix)) throw new IOException("Thư mục game đã đổi.");
+  if (!isSafeFuseAlias(parts[2].trim(), versionFile, suffix + verRel)) throw new IOException("Tệp phiên bản đã thành liên kết hoặc đổi đường dẫn.");
+  String data = parts[3].trim();
   String g = header(data, "GAME_VER");
   if (g == null) g = header(data, "CLIENT_VER");
   String r = header(data, "RES_VER");
@@ -151,6 +232,7 @@ final class GamePatcher {
 
  private void verifySafeDirectories(Collection<String> relativePaths) throws Exception {
   String root = target.getString("root");
+  String suffix = "/Android/data/" + Store.GAME + "/files";
   LinkedHashSet<String> dirs = new LinkedHashSet<>();
   dirs.add(root);
   for (String rel : relativePaths) {
@@ -164,9 +246,21 @@ final class GamePatcher {
   }
   StringBuilder cmd = new StringBuilder("for d in");
   for (String d : dirs) cmd.append(' ').append(Store.q(d));
-  cmd.append("; do if [ -L \"$d\" ] || [ ! -d \"$d\" ] || [ \"$(readlink -f \"$d\")\" != \"$d\" ]; then printf 'ERR'; exit 0; fi; done; printf 'OK'");
-  if (!"OK".equals(adb.exec(cmd.toString(), 15000))) {
+  cmd.append("; do if [ -L \"$d\" ] || [ ! -d \"$d\" ]; then printf 'ERR\\n'; exit 0; fi; readlink -f \"$d\" || exit $?; done");
+  String res = adb.exec(cmd.toString(), 15000);
+  if (res.startsWith("ERR")) {
    throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");
+  }
+  String[] resolvedLines = res.isEmpty() ? new String[0] : res.split("\\r?\\n");
+  if (resolvedLines.length != dirs.size()) {
+   throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");
+  }
+  int idx = 0;
+  for (String d : dirs) {
+   String relSuffix = suffix + d.substring(root.length());
+   if (!isSafeFuseAlias(resolvedLines[idx++].trim(), d, relSuffix)) {
+    throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");
+   }
   }
  }
 
@@ -548,9 +642,10 @@ final class GamePatcher {
   if (ext == null) throw new IOException("Chưa truy cập được bộ nhớ ngoài của ứng dụng.");
   if (Files.isSymbolicLink(ext.toPath())) throw new IOException("Vùng lưu tạm hoặc backup có liên kết.");
   String base = ext.getCanonicalPath();
+  String extSuffix = "/Android/data/" + Store.APP + "/files";
   if (verifiedExternalBase == null || !verifiedExternalBase.equals(base)) {
    String actual = adb.exec("[ ! -L " + Store.q(base) + " ] && [ -d " + Store.q(base) + " ] && readlink -f " + Store.q(base), 10000).trim();
-   if (!actual.equals(base)) throw new IOException("Vùng lưu tạm hoặc backup có liên kết.");
+   if (!isSafeFuseAlias(actual, base, extSuffix)) throw new IOException("Vùng lưu tạm hoặc backup có liên kết.");
    verifiedExternalBase = base;
   }
   return verifiedExternalBase;
@@ -699,12 +794,25 @@ final class GamePatcher {
 
    closedAndVersion();
    long required = beforeTotal + maxFile + 16777216;
-   if (new StatFs(backup.getAbsolutePath()).getAvailableBytes() < required) {
+   long localAvail = new StatFs(backup.getAbsolutePath()).getAvailableBytes();
+   if (localAvail < required) {
     throw new IOException("Không đủ dung lượng để sao lưu và thay tệp an toàn.");
    }
-   String df = adb.exec("df -Pk " + Store.q(target.getString("root")) + " | tail -n 1", 10000);
-   String[] columns = df.trim().split("\\s+");
-   if (columns.length < 4 || Long.parseLong(columns[3]) * 1024 < required) {
+   long gameAvail = localAvail;
+   try {
+    String df = adb.exec("(df -Pk " + Store.q(target.getString("root")) + " 2>/dev/null || df -k " + Store.q(target.getString("root")) + ") | tail -n 1", 10000);
+    String[] columns = df.trim().split("\\s+");
+    long parsedKb = -1;
+    if (columns.length >= 4 && columns[3].matches("[0-9]+")) {
+     parsedKb = Long.parseLong(columns[3]);
+    } else if (columns.length >= 3 && columns[2].matches("[0-9]+")) {
+     parsedKb = Long.parseLong(columns[2]);
+    }
+    if (parsedKb >= 0) gameAvail = parsedKb * 1024L;
+   } catch (Exception ignored) {
+    // Fallback to StatFs on shared emulated storage when OEM df format differs.
+   }
+   if (gameAvail < required) {
     throw new IOException("Bộ nhớ vùng game không đủ hoặc chưa xác định được.");
    }
 
@@ -852,6 +960,18 @@ final class GamePatcher {
   return Store.obj("files", list.length(), "version", r.getString("version"));
  }
 
+ boolean forceStopGame() throws Exception {
+  if (!adb.verified) throw new StellaException("E-ADB-NOT-CONNECTED", "Chưa kết nối Local ADB.", null);
+  adb.exec("am force-stop " + Store.GAME + " || true", 10000);
+  try { Thread.sleep(350); } catch (InterruptedException ignored) {}
+  String check = adb.exec(
+    "if command -v pidof >/dev/null 2>&1; then pidof " + Store.GAME + " >/dev/null 2>&1 && printf 'RUNNING' || printf 'STOPPED'; "
+      + "else ps -A 2>/dev/null | grep -F " + Store.q(Store.GAME) + " >/dev/null 2>&1 && printf 'RUNNING' || printf 'STOPPED'; fi",
+    10000
+  ).trim();
+  return !"RUNNING".equals(check);
+ }
+
  void restore() throws Exception {
   verifiedExternalBase = null;
   deadline = SystemClock.elapsedRealtime() + 5400000;
@@ -878,6 +998,7 @@ final class GamePatcher {
   }
   cleanStaleStaging();
   pruneHistory(binding, null);
+  OfficialAndroidClient.clearGuardAlertAfterRestore(context);
  }
 
  JSONObject recover() throws Exception {
@@ -1013,6 +1134,10 @@ final class GamePatcher {
     zis.closeEntry();
     outMap.put(name, target);
    }
+  } catch (ZipException ze) {
+   throw new StellaException("E-ZIP-CORRUPT", "Lỗi khi giải nén AssetBundles: " + Store.cleanError(ze), ze, "file", zipFile.getName());
+  } catch (OutOfMemoryError oom) {
+   throw new StellaException("E-MEMORY", "Thiết bị không đủ bộ nhớ RAM khi giải nén AssetBundles.", oom, "file", zipFile.getName());
   }
  }
 }

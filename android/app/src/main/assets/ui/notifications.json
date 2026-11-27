@@ -1,7 +1,21 @@
 {
-  "version": "2.0.1",
+  "version": "2.1.0",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-040",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.0: Việt Hóa Game 2.1.1, Cảnh Báo Cập Nhật Game (PC & Android) & Nâng Cấp Launcher Android",
+      "type": "release",
+      "content": "Cập nhật bản Việt hóa cho game 2.1.1: bổ sung văn bản mới (trang phục Kasimira, Quỹ Khởi Nghiệp Mùa 14, kỹ năng Score Boss, đồng bộ Đĩa & Leafia) và 3 gói ảnh cho PC & Android.\n• Thêm tính năng Cảnh báo cập nhật game trên PC (theo dõi nền ở khay hệ thống) và Android (kiểm tra máy chủ Yostar, lối tắt bảo vệ, Trợ năng tự chặn) giúp nhắc khôi phục gốc kịp thời trước khi game tải bản vá.\n• Nâng cấp Launcher Android v2.1.0 (versionCode 23): ảnh nền 9:16 mới dựng từ hình nền official, Dark Mode, tối ưu đa dòng máy Android 11–16, mở rộng mã lỗi kèm nút sao chép báo cáo chi tiết.\nMở launcher trên PC hoặc Android để tự động cập nhật trực tiếp lên v2.1.0."
+    },
+    {
+      "id": "NOTIF-039",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.0.2: Khôi Phục Gốc Quét Đủ Gói Ảnh & Phụ Đề Trên PC",
+      "type": "release",
+      "content": "Sửa lỗi Khôi phục gốc trên PC Launcher bỏ sót các gói ảnh (.en.unity3d) và phụ đề (.srt) khi thư mục game còn biên bản cài từ bản cũ, tránh lỗi Patch file verification failed khi Stella Sora cập nhật. Khôi phục gốc cũng tự tải lại các gói bị thiếu sau lần cập nhật lỗi. Launcher Android giữ nguyên bản 2.0.1; bản dịch giữ nguyên, không cần cài lại — mở PC Launcher để tự động cập nhật trực tiếp."
+    },
     {
       "id": "NOTIF-038",
       "date": "2026-11-27",

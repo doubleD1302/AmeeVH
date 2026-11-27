@@ -3,6 +3,7 @@ import android.Manifest;
 import android.app.*;
 import android.content.*;
 import android.content.pm.*;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.*;
 import org.json.*;
@@ -17,6 +18,8 @@ public final class LauncherService extends Service {
  interface Listener { void event(JSONObject e); }
  private static volatile LauncherService live;
  private static WeakReference<Listener> listener = new WeakReference<>(null);
+ private static final ExecutorService probeExecutor = Executors.newSingleThreadExecutor();
+
  static void listen(Listener l) { listener = new WeakReference<>(l); }
  static void unlisten(Listener l) {
   if (listener.get() == l) listener.clear();
@@ -40,7 +43,17 @@ public final class LauncherService extends Service {
  private int pairPort;
  private volatile boolean quickActive;
  private volatile boolean awaitingCode;
+ private volatile boolean pendingGuardRestore;
  private long quickDeadline, lastPublish;
+
+ static boolean isPinShortcutSupported(Context c) {
+  try {
+   android.content.pm.ShortcutManager sm = c.getSystemService(android.content.pm.ShortcutManager.class);
+   return sm != null && sm.isRequestPinShortcutSupported();
+  } catch (Exception ignored) {
+   return false;
+  }
+ }
 
  static final int NOTICE = 4101;
  static final String PAIR_CHANNEL = "stella_pairing_v1", WORK_CHANNEL = "stella_work_v1";
@@ -53,23 +66,43 @@ public final class LauncherService extends Service {
   }
  }
 
+ static String resolveTheme(Context c, String pref) {
+  String norm = Store.normalizeTheme(pref);
+  if ("dark".equals(norm) || "light".equals(norm)) return norm;
+  int night = c.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+  return night == Configuration.UI_MODE_NIGHT_YES ? "dark" : "light";
+ }
+
+ static JSONObject deviceInfo() {
+  return Store.obj(
+    "manufacturer", Build.MANUFACTURER,
+    "brand", Build.BRAND,
+    "model", Build.MODEL,
+    "release", Build.VERSION.RELEASE,
+    "sdk", Build.VERSION.SDK_INT,
+    "oemFamily", ErrorReport.oemFamily()
+  );
+ }
+
  static JSONObject base(Context c) {
   JSONObject cfg;
   String warning = "";
   try {
    cfg = Store.config(c);
   } catch (Exception e) {
-   cfg = Store.obj("repo", "", "branch", "", "host", "127.0.0.1", "connection_port", 0);
+   cfg = Store.obj("repo", "", "branch", "", "host", "127.0.0.1", "connection_port", 0, "theme", "system");
    warning = "Cấu hình chưa đọc được. Hãy sửa và lưu trong Cài đặt.";
   }
+  String themePref = Store.normalizeTheme(cfg.optString("theme", "system"));
+  String resolvedTheme = resolveTheme(c, themePref);
   JSONObject support;
   try {
    support = Store.asset(c, "support/payment_methods.json");
   } catch (Exception e) {
    support = Store.obj("methods", new JSONArray());
   }
-  String appVer = "2.0.1";
-  long appCode = 21;
+  String appVer = "2.1.0";
+  long appCode = 23;
   try {
    PackageInfo pi = c.getPackageManager().getPackageInfo(Store.APP, 0);
    appVer = pi.versionName;
@@ -83,6 +116,8 @@ public final class LauncherService extends Service {
     "message", warning.isEmpty() ? (hasId ? "Máy đã ghép đôi trước đó. Bấm Kết nối nhanh Local ADB để dùng ngay." : "Chưa kết nối Local ADB.") : warning,
     "progress", Store.obj("percent", 0, "indeterminate", false, "label", ""),
     "devOptionsEnabled", isDevOptions(c),
+    "device", deviceInfo(),
+    "lastError", ErrorReport.lastSummary(c),
     "adb", Store.obj(
       "connected", false,
       "paired", hasId,
@@ -98,12 +133,14 @@ public final class LauncherService extends Service {
     "github", Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "announcementStatus", "unavailable", "manifestStatus", "unavailable", "message", "Chưa đồng bộ GitHub."),
     "notifications", new JSONArray(),
     "payload", Store.obj("available", false, "compatible", false, "updateAvailable", false, "reason", "Chưa có thông tin gói Android tương thích."),
-    "config", Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host", "127.0.0.1"), "connectionPort", cfg.optInt("connection_port", 0)),
+    "config", Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host", "127.0.0.1"), "connectionPort", cfg.optInt("connection_port", 0), "theme", themePref),
     "update", Store.obj("available", false, "downloaded", false, "message", "Chưa kiểm tra bản APK Local ADB mới."),
     "recovery", Store.obj("pending", GamePatcher.hasPending(c), "message", ""),
     "receipt", Store.obj("present", false),
+    "officialUpdate", OfficialAndroidClient.readCachedGuardState(c),
+    "guard", Store.obj("accessibilityEnabled", GameLaunchGuardService.isEnabled(c), "canPinShortcut", isPinShortcutSupported(c), "pendingRestore", false),
     "support", support,
-    "app", Store.obj("applicationId", Store.APP, "versionName", appVer, "versionCode", appCode, "variant", "localadb")
+    "app", Store.obj("applicationId", Store.APP, "versionName", appVer, "versionCode", appCode, "variant", "localadb", "theme", themePref, "resolvedTheme", resolvedTheme)
   );
  }
 
@@ -116,9 +153,18 @@ public final class LauncherService extends Service {
     j.put("busy", s.busy.get());
     j.put("mutating", s.mutating);
     j.put("devOptionsEnabled", isDevOptions(c));
+    j.put("device", deviceInfo());
+    j.put("lastError", ErrorReport.lastSummary(c));
+    String themePref = Store.theme(c);
+    j.getJSONObject("config").put("theme", themePref);
+    JSONObject appObj = j.getJSONObject("app");
+    appObj.put("theme", themePref);
+    appObj.put("resolvedTheme", resolveTheme(c, themePref));
     JSONObject adbObj = j.getJSONObject("adb");
     adbObj.put("connected", s.adb != null && s.adb.verified);
     adbObj.put("hasIdentity", KeyMaterial.hasIdentity(c));
+    j.put("officialUpdate", OfficialAndroidClient.readCachedGuardState(c));
+    j.put("guard", Store.obj("accessibilityEnabled", GameLaunchGuardService.isEnabled(c), "canPinShortcut", isPinShortcutSupported(c), "pendingRestore", s.pendingGuardRestore));
     return j;
    } catch (Exception e) {
     return base(c);
@@ -128,7 +174,51 @@ public final class LauncherService extends Service {
 
  static void dispatch(Context c, String action, JSONObject args) {
   Intent i = new Intent(c, LauncherService.class).putExtra("action", action).putExtra("args", args.toString());
-  c.startForegroundService(i);
+  try {
+   c.startForegroundService(i);
+  } catch (RuntimeException fgError) {
+   try {
+    c.startService(i);
+   } catch (RuntimeException fallbackError) {
+    DiagnosticLog.log(c, "service", "startService blocked: " + Store.cleanError(fallbackError));
+    JSONObject report = ErrorReport.record(c, ErrorReport.build(c, action, "Tác vụ nền bị chặn",
+      "Hệ thống tiết kiệm pin đang chặn khởi chạy dịch vụ nền (" + Store.cleanError(fallbackError) + ").",
+      fallbackError, "E-OEM-BG-RESTRICT", snapshot(c)));
+    Listener l = listener.get();
+    if (l != null) {
+     l.event(Store.obj("type", "message", "data", ErrorReport.attach(Store.obj("title", "Tác vụ nền bị chặn", "message", report.optString("message"), "error", true), report)));
+    }
+   }
+  }
+ }
+
+ /** Runs non-blocking async network probe (DNS + TCP:443 + Captive Portal) and updates the Smart Error Dialog live. */
+ static void probeNetwork(Context c, String reportId) {
+  final Context appCtx = c.getApplicationContext();
+  probeExecutor.execute(() -> {
+   DiagnosticLog.log(appCtx, "probe", "Bắt đầu đo DNS/TCP:443/Captive Portal");
+   JSONObject probe = ErrorReport.probe(appCtx);
+   JSONObject updatedReport = (reportId != null && !reportId.isEmpty())
+     ? ErrorReport.attachProbe(appCtx, reportId, probe) : null;
+   JSONArray lines = new JSONArray();
+   for (String ln : ErrorReport.formatProbe(probe)) lines.put(ln);
+   JSONObject payload = Store.obj(
+     "reportId", reportId == null ? "" : reportId,
+     "verdict", probe.optString("verdict"),
+     "verdictText", probe.optString("verdictText"),
+     "durationMs", probe.optLong("durationMs", 0),
+     "lines", lines
+   );
+   if (updatedReport != null) {
+    try {
+     payload.put("contextRows", updatedReport.optJSONArray("contextRows"));
+     payload.put("reportPreview", ErrorReport.text(updatedReport));
+    } catch (JSONException ignored) {}
+   }
+   DiagnosticLog.log(appCtx, "probe", "Kết quả đo mạng: " + probe.optString("verdict") + " (" + probe.optLong("durationMs") + "ms)");
+   Listener l = listener.get();
+   if (l != null) l.event(Store.obj("type", "probeResult", "data", payload));
+  });
  }
 
  @Override public void onCreate() {
@@ -139,6 +229,7 @@ public final class LauncherService extends Service {
   patcher = new GamePatcher(this, adb, (message, percent) -> progress(message, percent));
   adb.onLoss = () -> {
    if (!adb.verified) {
+    DiagnosticLog.log(this, "adb", "Kết nối Local ADB đã đóng hoặc mất xác nhận.");
     setAdb("status", "Kết nối chưa được xác nhận hoặc đã đóng. Hãy kết nối lại.");
     try { refreshPayload(); } catch (Exception ignored) {}
     publish(true);
@@ -173,6 +264,7 @@ public final class LauncherService extends Service {
     } else {
      cancelQuick();
      adb.disconnect();
+     DiagnosticLog.log(this, "adb", "Người dùng ngắt kết nối Local ADB.");
      setMessage("Đã ngắt Local ADB.");
      publish(true);
      finishIdle();
@@ -190,7 +282,8 @@ public final class LauncherService extends Service {
    message("Đang có thao tác", "Hãy chờ thao tác đang chạy hoàn tất.", true);
    return;
   }
-  mutating = Arrays.asList("install", "restore", "recover").contains(action);
+  DiagnosticLog.log(this, action, "Bắt đầu thao tác");
+  mutating = Arrays.asList("install", "restore", "guardRestore", "recover").contains(action);
   long startedGeneration = generation;
   set("phase", action);
   set("progress", Store.obj("percent", 0, "indeterminate", true, "label", "Đang thực hiện…"));
@@ -206,6 +299,7 @@ public final class LauncherService extends Service {
    boolean beginAutoConnect = false;
    boolean promptWirelessIfSlow = false;
    boolean emitUpdatePrepared = false;
+   boolean continueGuardRestore = false;
    try {
     switch (action) {
      case "sync": {
@@ -226,15 +320,65 @@ public final class LauncherService extends Service {
       }
       set("github", result);
       set("notifications", result.optJSONArray("notifications") == null ? new JSONArray() : result.getJSONArray("notifications"));
-      setMessage(result.optString("message", "Đã đọc trạng thái GitHub."));
+      try {
+       JSONObject curGame = snapshot(this).optJSONObject("game");
+       String lg = (curGame != null && curGame.optBoolean("versionsKnown")) ? curGame.optString("gameVersion", "") : null;
+       String lr = (curGame != null && curGame.optBoolean("versionsKnown")) ? curGame.optString("resourceVersion", "") : null;
+       JSONObject off = OfficialAndroidClient.checkAndSave(this, 6000, lg, lr);
+       set("officialUpdate", off);
+       OfficialUpdateNotice.notifyIfNeeded(this, off);
+      } catch (Exception ignored) {}
+      String msg = result.optString("message", "Đã đọc trạng thái GitHub.");
+      DiagnosticLog.log(this, "sync", msg);
+      setMessage(msg);
+      break;
+     }
+     case "checkOfficialUpdate": {
+      JSONObject curGame = snapshot(this).optJSONObject("game");
+      String lg = (curGame != null && curGame.optBoolean("versionsKnown")) ? curGame.optString("gameVersion", "") : null;
+      String lr = (curGame != null && curGame.optBoolean("versionsKnown")) ? curGame.optString("resourceVersion", "") : null;
+      JSONObject off = OfficialAndroidClient.checkAndSave(this, 10000, lg, lr);
+      set("officialUpdate", off);
+      OfficialUpdateNotice.notifyIfNeeded(this, off);
+      String msg = off.optBoolean("needsRestore")
+        ? ("Yostar đã phát hành bản cập nhật mới (RES " + off.optString("latestResourceVersion") + "). Hãy khôi phục dữ liệu gốc trước khi vào game!")
+        : ("Máy chủ Yostar hiện tại: v" + off.optString("latestGameVersion", "?") + " · RES " + off.optString("latestResourceVersion", "?") + ".");
+      DiagnosticLog.log(this, "checkOfficialUpdate", msg);
+      setMessage(msg);
       break;
      }
      case "saveSettings": {
       saveSettings(args);
+      DiagnosticLog.log(this, "settings", "Đã lưu cài đặt cục bộ.");
       setMessage("Đã lưu cài đặt trên máy. Không tải cấu hình cá nhân lên mạng.");
       break;
      }
+     case "resetChannel": {
+      JSONObject cfg;
+      try { cfg = Store.config(this); } catch (Exception ignored) { cfg = Store.defaults(); }
+      cfg.put("repo", Store.REPO);
+      cfg.put("branch", "main");
+      Store.validateConfig(cfg);
+      synchronized (UpdateNotice.class) {
+       Store.write(Store.internal(this, "config.json"), cfg);
+       UpdateNotice.channelChanged(this);
+      }
+      set("config", configState(cfg));
+      manifest = null;
+      manifestSyncedAt = 0L;
+      JSONObject result = new ChannelClient(this).sync();
+      manifest = result.optJSONObject("manifest");
+      manifestSyncedAt = manifest != null ? SystemClock.elapsedRealtime() : 0L;
+      set("github", result);
+      set("notifications", result.optJSONArray("notifications") == null ? new JSONArray() : result.getJSONArray("notifications"));
+      DiagnosticLog.log(this, "resetChannel", "Đã khôi phục kênh mặc định và đồng bộ lại.");
+      setMessage("Đã khôi phục kênh GitHub mặc định (doubleD1302/AmeeVH · main) và đồng bộ lại.");
+      break;
+     }
      case "pair": {
+      if (!ErrorReport.isWifiConnected(this)) {
+       throw new StellaException("E-ADB-NO-WIFI", "Điện thoại chưa kết nối Wi-Fi. Hãy bật Wi-Fi để dùng Gỡ lỗi không dây.", null);
+      }
       adb.pair(args.getString("host"), args.getInt("pairingPort"), args.getString("code"));
       if (startedGeneration != generation) break;
       setAdb("paired", true);
@@ -242,11 +386,15 @@ public final class LauncherService extends Service {
       setAdb("host", AdbClient.ownHost(args.getString("host")));
       setAdb("pairingPort", args.getInt("pairingPort"));
       setAdb("status", "Đã ghép nối; chưa kết nối.");
+      DiagnosticLog.log(this, "pair", "Ghép đôi Local ADB thành công; đang dò cổng kết nối.");
       setMessage("Đã ghép nối. Đang tìm cổng kết nối riêng…");
       beginAutoConnect = true;
       break;
      }
      case "connect": {
+      if (!ErrorReport.isWifiConnected(this)) {
+       throw new StellaException("E-ADB-NO-WIFI", "Điện thoại chưa kết nối Wi-Fi. Hãy bật Wi-Fi để dùng Gỡ lỗi không dây.", null);
+      }
       adb.connect(args.getString("host"), args.getInt("connectionPort"));
       if (startedGeneration != generation) {
        adb.cancelBroker();
@@ -260,98 +408,143 @@ public final class LauncherService extends Service {
       setPairing("connected", "Đã kết nối và nhận được phản hồi id hợp lệ.");
       if (startedGeneration != generation) break;
       detectGame();
-      if (startedGeneration == generation) setMessage("Đã kết nối Local ADB. Thông tin gói Android được kiểm tra riêng.");
+      DiagnosticLog.log(this, "connect", "Đã kết nối Local ADB và kiểm tra game.");
+      if (startedGeneration == generation) {
+       setMessage("Đã kết nối Local ADB. Thông tin gói Android được kiểm tra riêng.");
+       if (pendingGuardRestore) continueGuardRestore = true;
+      }
       break;
      }
      case "autoConnect": {
       if (!isDevOptions(this)) {
-       throw new IOException("Hãy bật Tuỳ chọn nhà phát triển trước khi kết nối Local ADB.");
+       throw new StellaException("E-DEVOPT", "Hãy bật Tuỳ chọn nhà phát triển trước khi kết nối Local ADB.", null);
+      }
+      if (!ErrorReport.isWifiConnected(this)) {
+       throw new StellaException("E-ADB-NO-WIFI", "Điện thoại chưa kết nối Wi-Fi. Gỡ lỗi không dây bắt buộc dùng Wi-Fi.", null);
       }
       if (adb.verified) {
        detectGame();
        setMessage("Local ADB đang kết nối sẵn sàng.");
+       if (pendingGuardRestore) continueGuardRestore = true;
        break;
       }
       JSONObject cfg = Store.config(this);
       int savedPort = cfg.optInt("connection_port", 0);
       String rawHost = cfg.optString("host", "127.0.0.1");
-      String probeHost = "127.0.0.1";
-      try { probeHost = AdbClient.ownHost(rawHost); } catch (Exception ignored) {}
+      LinkedHashSet<String> candidateHosts = new LinkedHashSet<>();
+      try { candidateHosts.add(AdbClient.ownHost(rawHost)); } catch (Exception ignored) {}
+      candidateHosts.add("127.0.0.1");
+      JSONArray ownIps = AdbClient.ownAddresses();
+      for (int idx = 0; idx < ownIps.length(); idx++) {
+       String ip = ownIps.optString(idx);
+       if (!ip.isEmpty()) candidateHosts.add(ip);
+      }
       boolean quickConnected = false;
       if (savedPort >= 1024 && savedPort <= 65535) {
-       progress("Đang kết nối nhanh qua cổng đã lưu (" + savedPort + ")…", -1);
-       try {
-        adb.connect(probeHost, savedPort, 6000);
-        if (startedGeneration != generation) {
-         adb.cancelBroker();
+       progress("Đang kết nối nhanh qua cổng đã lưu…", -1);
+       for (String hostCandidate : candidateHosts) {
+        if (startedGeneration != generation) break;
+        try {
+         adb.connect(hostCandidate, savedPort, 5000);
+         if (startedGeneration != generation) {
+          adb.cancelBroker();
+          break;
+         }
+         recordConnectedEndpoint(hostCandidate, savedPort, startedGeneration);
+         closeDiscovery();
+         quickActive = false;
+         nonce = "";
+         setPairing("connected", "Đã kết nối nhanh Local ADB.");
+         detectGame();
+         DiagnosticLog.log(this, "autoConnect", "Kết nối nhanh qua cổng đã lưu thành công.");
+         if (startedGeneration == generation) {
+          setMessage("Đã kết nối nhanh Local ADB thành công.");
+          if (pendingGuardRestore) continueGuardRestore = true;
+         }
+         quickConnected = true;
          break;
-        }
-        recordConnectedEndpoint(probeHost, savedPort, startedGeneration);
-        closeDiscovery();
-        quickActive = false;
-        nonce = "";
-        setPairing("connected", "Đã kết nối nhanh Local ADB.");
-        detectGame();
-        if (startedGeneration == generation) setMessage("Đã kết nối nhanh Local ADB thành công.");
-        quickConnected = true;
-       } catch (Exception ignored) {
-        if (!"127.0.0.1".equals(probeHost)) {
-         try {
-          adb.connect("127.0.0.1", savedPort, 5000);
-          if (startedGeneration != generation) {
-           adb.cancelBroker();
-           break;
-          }
-          recordConnectedEndpoint("127.0.0.1", savedPort, startedGeneration);
-          closeDiscovery();
-          quickActive = false;
-          nonce = "";
-          setPairing("connected", "Đã kết nối nhanh Local ADB.");
-          detectGame();
-          if (startedGeneration == generation) setMessage("Đã kết nối nhanh Local ADB thành công.");
-          quickConnected = true;
-         } catch (Exception ignoredLoopback) {}
-        }
+        } catch (StellaException authErr) {
+         if ("E-ADB-AUTH".equals(authErr.code)) throw authErr;
+        } catch (Exception ignored) {}
        }
       }
       if (!quickConnected && startedGeneration == generation) {
        beginAutoConnect = true;
        promptWirelessIfSlow = true;
        setAdb("status", "Đang tự tìm cổng Gỡ lỗi không dây…");
+       DiagnosticLog.log(this, "autoConnect", "Cổng cũ không phản hồi; chuyển sang dò mDNS tự động.");
        setMessage("Đang tự dò cổng Gỡ lỗi không dây (không cần nhập lại mã 6 số)…");
       }
       break;
      }
      case "detect":
       detectGame();
+      DiagnosticLog.log(this, "detect", "Hoàn tất kiểm tra game trên thiết bị.");
       setMessage("Đã đọc thông tin game thực tế từ thiết bị.");
       break;
      case "install": {
       JSONObject prefetched = (manifest != null && manifestSyncedAt > 0 && SystemClock.elapsedRealtime() - manifestSyncedAt < 60000L) ? manifest : null;
       JSONObject receipt = patcher.install(new ChannelClient(this), prefetched);
       detectGame();
-      setMessage("Đã hoàn tất " + receipt.getJSONArray("files").length() + " tệp Android và ghi biên bản.");
+      String okMsg = "Đã hoàn tất " + receipt.getJSONArray("files").length() + " tệp Android và ghi biên bản.";
+      DiagnosticLog.log(this, "install", okMsg);
+      setMessage(okMsg);
       break;
      }
      case "verify": {
       JSONObject verified = patcher.verify();
-      setMessage("Đã đối chiếu " + verified.getInt("files") + " tệp của bản dịch " + verified.getString("version") + ".");
+      String okMsg = "Đã đối chiếu " + verified.getInt("files") + " tệp của bản dịch " + verified.getString("version") + ".";
+      DiagnosticLog.log(this, "verify", okMsg);
+      setMessage(okMsg);
       break;
      }
      case "restore":
       patcher.restore();
       detectGame();
+      set("officialUpdate", OfficialAndroidClient.readCachedGuardState(this));
+      DiagnosticLog.log(this, "restore", "Khôi phục tệp gốc hoàn tất.");
       setMessage("Đã khôi phục trạng thái trước lần cài được ghi nhận.");
       break;
+     case "guardRestore": {
+      if (!adb.verified) {
+       if (!isDevOptions(this)) {
+        pendingGuardRestore = false;
+        throw new StellaException("E-DEVOPT", "Hãy bật Tuỳ chọn nhà phát triển trước khi kết nối Local ADB.", null);
+       }
+       if (!ErrorReport.isWifiConnected(this)) {
+        pendingGuardRestore = false;
+        throw new StellaException("E-ADB-NO-WIFI", "Điện thoại chưa kết nối Wi-Fi. Gỡ lỗi không dây bắt buộc dùng Wi-Fi.", null);
+       }
+       pendingGuardRestore = true;
+       beginAutoConnect = true;
+       promptWirelessIfSlow = true;
+       setAdb("status", "Đang kết nối Local ADB để khôi phục dữ liệu gốc…");
+       setMessage("Đang tự kết nối Local ADB để đóng Stella Sora và khôi phục dữ liệu gốc…");
+       break;
+      }
+      pendingGuardRestore = false;
+      progress("Đang đóng Stella Sora an toàn trước khi khôi phục…", 10);
+      patcher.forceStopGame();
+      progress("Đang khôi phục dữ liệu gốc trước bản cập nhật…", 25);
+      patcher.restore();
+      detectGame();
+      set("officialUpdate", OfficialAndroidClient.readCachedGuardState(this));
+      DiagnosticLog.log(this, "guardRestore", "Đã đóng Stella Sora và khôi phục dữ liệu gốc hoàn tất.");
+      setMessage("Đã đóng Stella Sora và khôi phục dữ liệu gốc! Bạn có thể mở game cập nhật ngay.");
+      break;
+     }
      case "recover": {
       JSONObject rec = patcher.recover();
       detectGame();
-      setMessage(rec.optString("message", "Đã phục hồi nhật ký chưa hoàn tất."));
+      String okMsg = rec.optString("message", "Đã phục hồi nhật ký chưa hoàn tất.");
+      DiagnosticLog.log(this, "recover", okMsg);
+      setMessage(okMsg);
       break;
      }
      case "checkUpdate": {
       updateMetadata = new ChannelClient(this).updateChannel();
-      set("update", Store.obj("available", true, "downloaded", false, "versionName", updateMetadata.optString("version_name"), "versionCode", updateMetadata.getLong("version_code"), "message", "Có APK Local ADB mới hơn. Bấm tải để kiểm tra chữ ký và nội dung."));
+      set("update", Store.obj("available", true, "downloaded", false, "versionName", updateMetadata.optString("version_name"), "versionCode", updateMetadata.getLong("version_code"), "message", "Có APK Local ADB mới hơn (v" + updateMetadata.optString("version_name") + "). Bấm tải để kiểm tra chữ ký và nội dung."));
+      DiagnosticLog.log(this, "checkUpdate", "Phát hiện APK mới v" + updateMetadata.optString("version_name"));
       setMessage("Đã đọc kênh APK Local ADB riêng.");
       break;
      }
@@ -372,6 +565,7 @@ public final class LauncherService extends Service {
       Store.write(Store.internal(this, "pending_update.json"), info);
       updateMetadata = info;
       set("update", Store.obj("available", true, "downloaded", true, "versionName", info.optString("version_name"), "versionCode", info.getLong("version_code"), "message", "APK đã đúng ứng dụng, phiên bản mới hơn và chữ ký. Bấm mở trình cài đặt Android để tự xác nhận."));
+      DiagnosticLog.log(this, "prepareUpdate", "Đã tải và xác minh APK v" + info.optString("version_name"));
       setMessage("Đã chuẩn bị APK, sẵn sàng cài đặt.");
       emitUpdatePrepared = true;
       break;
@@ -381,13 +575,18 @@ public final class LauncherService extends Service {
     }
    } catch (Throwable e) {
     if (!(("pair".equals(action) || "connect".equals(action) || "autoConnect".equals(action)) && startedGeneration != generation)) {
-     String error = Store.cleanError(e);
+     String error = ErrorReport.redact(Store.cleanError(e));
+     String classified = ErrorReport.classify(e, action);
      String forcedCode = null;
      if ("pair".equals(action)) {
-      forcedCode = "E-ADB-PAIR";
       awaitingCode = true;
       setPairing("waiting_code", "Ghép chưa thành công. Lấy mã mới rồi nhập lại, hoặc dùng cổng thủ công.");
-      error = "Ghép đôi chưa thành công. Hãy lấy mã mới trong Gỡ lỗi không dây; mã ghép khác cổng kết nối.";
+      if ("E-UNKNOWN".equals(classified) || "E-ADB".equals(classified)) {
+       forcedCode = "E-ADB-PAIR";
+       error = "Ghép đôi chưa thành công. Hãy lấy mã mới trong Gỡ lỗi không dây; mã ghép khác cổng kết nối.";
+      } else {
+       forcedCode = classified;
+      }
      } else if ("connect".equals(action) && (error.toLowerCase(Locale.ROOT).contains("unauthor") || error.contains("xác minh được danh tính"))) {
       forcedCode = "E-ADB-AUTH";
       error = "Thiết bị chưa chấp nhận khóa Local ADB (hoặc đã xoá thiết bị ghép đôi). Hãy ghép đôi lại một lần bằng mã 6 số.";
@@ -395,7 +594,7 @@ public final class LauncherService extends Service {
      JSONObject report = ErrorReport.record(this, ErrorReport.build(this, action, "Chưa hoàn tất", error, e, forcedCode, snapshot(this)));
      setMessage(report.optString("errorTitle") + " [" + report.optString("code") + "]");
      if ("checkUpdate".equals(action) || "prepareUpdate".equals(action)) {
-      set("update", Store.obj("available", false, "downloaded", false, "message", error));
+      set("update", Store.obj("available", false, "downloaded", false, "message", report.optString("errorTitle") + " [" + report.optString("code") + "]"));
      }
      message("Chưa hoàn tất", error, true, report);
     }
@@ -403,6 +602,7 @@ public final class LauncherService extends Service {
     boolean connectAfter = beginAutoConnect;
     boolean promptWireless = promptWirelessIfSlow;
     boolean notifyPrepared = emitUpdatePrepared;
+    boolean runGuardRestoreAfter = continueGuardRestore;
     main.post(() -> {
      busy.set(false);
      mutating = false;
@@ -417,6 +617,10 @@ public final class LauncherService extends Service {
      if (notifyPrepared) {
       Listener l = listener.get();
       if (l != null) l.event(Store.obj("type", "updatePrepared", "data", Store.obj("ok", true)));
+     }
+     if (runGuardRestoreAfter && startedGeneration == generation && adb.verified) {
+      runTask("guardRestore", new JSONObject());
+      return;
      }
      if (connectAfter && startedGeneration == generation) startConnectDiscovery(promptWireless);
      finishIdle();
@@ -461,9 +665,13 @@ public final class LauncherService extends Service {
   boolean versionsKnown = game.optBoolean("versionsKnown") && !gVer.trim().isEmpty() && !rVer.trim().isEmpty();
   boolean strictMatch = versionsKnown && VersionCompatibility.matchesBoth(mGame, mRes, gVer, rVer);
   boolean compatible = available && adb.verified && game.optBoolean("installed") && strictMatch;
+  String wrongEdition = game.optString("wrongEdition", "");
+  boolean noData = game.optBoolean("noData", false);
   String reason = !available ? state.getJSONObject("github").optString("message", "Chưa có gói Android tương thích.")
     : !adb.verified ? "Kết nối Local ADB trước khi cài."
-    : !game.optBoolean("installed") ? "Chưa tìm thấy game Stella Sora trên máy."
+    : !wrongEdition.isEmpty() ? game.optString("reason", "Phát hiện Stella Sora bản khu vực khác (" + wrongEdition + ").")
+    : !game.optBoolean("installed") ? "Chưa tìm thấy game Stella Sora (Global EN) trên máy."
+    : noData ? game.optString("reason", "Chưa thấy thư mục dữ liệu game. Hãy mở Stella Sora 1 lần tải dữ liệu rồi kiểm tra lại.")
     : !versionsKnown ? "Chưa đọc được phiên bản game và tài nguyên. Hãy mở game tải đủ dữ liệu rồi kiểm tra lại."
     : strictMatch ? "Gói Android khớp phiên bản đã đọc."
     : ("Gói (" + mGame + " · " + mRes + ") không khớp máy (" + gVer + " · " + rVer + "). Không thể cài.");
@@ -484,7 +692,9 @@ public final class LauncherService extends Service {
   String reasonCode = compatible ? ""
     : !available ? (state.getJSONObject("github").optString("errorCode").isEmpty() ? (state.getJSONObject("github").has("releaseStatus") ? "E-NO-PACKAGE" : "E-SYNC-PENDING") : state.getJSONObject("github").optString("errorCode"))
     : !adb.verified ? "E-ADB-NOT-CONNECTED"
+    : !wrongEdition.isEmpty() ? "E-GAME-WRONG-EDITION"
     : !game.optBoolean("installed") ? "E-NO-GAME"
+    : noData ? "E-GAME-NO-DATA"
     : !versionsKnown ? "E-GAME-VERSION"
     : "E-PKG-MISMATCH";
   state.put("payload", Store.obj(
@@ -518,6 +728,7 @@ public final class LauncherService extends Service {
   int p = input.optInt("connectionPort", 0);
   if (p != 0) AdbClient.port(p);
   cfg.put("connection_port", p);
+  if (input.has("theme")) cfg.put("theme", Store.normalizeTheme(input.optString("theme", "system")));
   Store.validateConfig(cfg);
   synchronized (UpdateNotice.class) {
    Store.write(Store.internal(this, "config.json"), cfg);
@@ -533,7 +744,7 @@ public final class LauncherService extends Service {
  }
 
  private static JSONObject configState(JSONObject cfg) {
-  return Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host"), "connectionPort", cfg.optInt("connection_port", 0));
+  return Store.obj("repo", cfg.optString("repo"), "branch", cfg.optString("branch"), "host", cfg.optString("host"), "connectionPort", cfg.optInt("connection_port", 0), "theme", Store.normalizeTheme(cfg.optString("theme", "system")));
  }
 
  private void startQuickPair() {
@@ -541,8 +752,16 @@ public final class LauncherService extends Service {
    message("Đang có thao tác", "Không bắt đầu ghép đôi khi có thao tác đang chạy.", true);
    return;
   }
+  if (!ErrorReport.isWifiConnected(this)) {
+   JSONObject rep = ErrorReport.record(this, ErrorReport.explain(this, "E-ADB-NO-WIFI", "startPairingNotification", snapshot(this)));
+   message("Cần bật Wi-Fi", rep.optString("message"), true, rep);
+   finishIdle();
+   return;
+  }
   if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+   JSONObject rep = ErrorReport.record(this, ErrorReport.explain(this, "E-NOTIF-PERMISSION", "startPairingNotification", snapshot(this)));
    setMessage("Chưa được phép hiện thông báo. Dùng ô ghép đôi thủ công hoặc cấp quyền thông báo.");
+   message("Chưa được phép hiện thông báo", rep.optString("message"), true, rep);
    publish(true);
    finishIdle();
    return;
@@ -550,6 +769,7 @@ public final class LauncherService extends Service {
   cancelQuick(false);
   quickActive = true;
   awaitingCode = true;
+  DiagnosticLog.log(this, "pair", "Bắt đầu phiên ghép đôi qua thông báo (mDNS).");
   setMessage("Đang dò cổng ghép đôi trên chính điện thoại…");
   nonce = UUID.randomUUID().toString().replace("-", "");
   quickDeadline = SystemClock.elapsedRealtime() + 180000;
@@ -567,13 +787,15 @@ public final class LauncherService extends Service {
      pairPort = port;
      setAdb("host", host);
      setAdb("pairingPort", port);
-     setPairing("waiting_code", "Đã thấy cổng ghép đôi. Mở thông báo và bấm Nhập mã ghép đôi.");
+     DiagnosticLog.log(LauncherService.this, "pair", "Đã tìm thấy cổng ghép đôi qua mDNS.");
+     setPairing("waiting_code", "Đã thấy cổng ghép đôi. Kéo thanh thông báo xuống và bấm Nhập mã ghép đôi.");
      publish(true);
     });
    }
    public void failed(String message) {
     main.post(() -> {
      if (session == generation && quickActive) {
+      DiagnosticLog.log(LauncherService.this, "pair", "mDNS ghép đôi thất bại: " + message);
       setPairing("manual_fallback", message);
       publish(true);
      }
@@ -613,7 +835,8 @@ public final class LauncherService extends Service {
    publish(true);
    return;
   }
-  if (!code.matches("[0-9]{6}")) {
+  String digits = code == null ? "" : code.replaceAll("\\s+", "");
+  if (!digits.matches("[0-9]{6}")) {
    setPairing("waiting_code", "Mã cần đúng 6 chữ số. Hãy nhập lại từ thông báo.");
    publish(true);
    return;
@@ -624,7 +847,7 @@ public final class LauncherService extends Service {
    return;
   }
   setPairing("pairing", "Đang ghép đôi, chưa kết nối…");
-  runTask("pair", Store.obj("host", pairHost, "pairingPort", pairPort, "code", code));
+  runTask("pair", Store.obj("host", pairHost, "pairingPort", pairPort, "code", digits));
  }
 
  private void startConnectDiscovery(boolean promptWirelessIfSlow) {
@@ -647,6 +870,7 @@ public final class LauncherService extends Service {
     main.post(() -> {
      if (session != generation || !quickActive || busy.get()) return;
      closeDiscovery();
+     DiagnosticLog.log(LauncherService.this, "connect", "Đã tìm thấy cổng kết nối qua mDNS.");
      setPairing("connecting", "Đang kết nối và chờ phản hồi id…");
      runTask("connect", Store.obj("host", host, "connectionPort", port));
     });
@@ -654,6 +878,7 @@ public final class LauncherService extends Service {
    public void failed(String message) {
     main.post(() -> {
      if (session == generation) {
+      DiagnosticLog.log(LauncherService.this, "connect", "mDNS tìm cổng kết nối thất bại: " + message);
       setPairing("manual_fallback", message + " Xem cổng kết nối ở trang Gỡ lỗi không dây.");
       publish(true);
      }
@@ -699,6 +924,7 @@ public final class LauncherService extends Service {
   generation++;
   quickActive = false;
   awaitingCode = false;
+  pendingGuardRestore = false;
   nonce = "";
   closeDiscovery();
   adb.cancelBroker();
@@ -796,7 +1022,14 @@ public final class LauncherService extends Service {
   if (busy.get() && Arrays.asList("sync", "checkUpdate", "prepareUpdate", "install").contains(phase)) {
    types |= android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
   }
-  startForeground(NOTICE, notification(text), types);
+  try {
+   startForeground(NOTICE, notification(text), types);
+  } catch (RuntimeException e) {
+   DiagnosticLog.log(this, "service", "startForeground hạn chế: " + Store.cleanError(e));
+   try {
+    startForeground(NOTICE, notification(text));
+   } catch (RuntimeException ignored) {}
+  }
  }
 
  private void finishIdle() {
@@ -812,9 +1045,11 @@ public final class LauncherService extends Service {
   generation++;
   quickActive = false;
   awaitingCode = false;
+  pendingGuardRestore = false;
   nonce = "";
   closeDiscovery();
   adb.cancelBroker();
+  DiagnosticLog.log(this, "service", "Android dừng tác vụ nền theo giới hạn ForegroundService.");
   setAdb("status", "Hệ thống đã dừng tác vụ nền. Hãy kết nối lại.");
   setMessage("Tác vụ đã dừng theo giới hạn Android. Nhật ký được giữ để phục hồi; không báo hoàn tất.");
   stopForeground(STOP_FOREGROUND_REMOVE);

@@ -16,6 +16,7 @@ public final class UpdateCheckJob extends JobService {
     ChannelClient channel=new ChannelClient(this);JSONObject release=channel.freshRelease();String identity=channel.repo+"/"+channel.branch;
     try{JSONObject status=channel.launcherAvailability(release);synchronized(this){if(token==generation){if("available".equals(status.optString("status")))LauncherUpdateNotice.observe(this,identity,status.getJSONObject("metadata"),release.optString("body"),true);else if("none".equals(status.optString("status")))LauncherUpdateNotice.clearIfCurrent(this,identity);}}}catch(Exception ignored){}
     if(!channel.hasAndroidManifest(release)){synchronized(this){if(token==generation)UpdateNotice.clearIfCurrent(this,identity);}}else{JSONObject manifest=channel.androidManifest(release);synchronized(this){if(token==generation)UpdateNotice.observe(this,identity,manifest.getString("version"),release.optString("body"),UpdateNotice.installed(this),true);}}
+    try{JSONObject off=OfficialAndroidClient.checkAndSave(this,10000);synchronized(this){if(token==generation)OfficialUpdateNotice.notifyIfNeeded(this,off);}}catch(Exception ignored){}
    }catch(Exception ignored){}finally{synchronized(this){if(token==generation)jobFinished(params,false);}}
   });return true;
  }

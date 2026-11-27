@@ -4,43 +4,225 @@
   const content = window.STELLA_CONTENT || {sections: [], faq: [], paymentMethods: []};
   const initial = {
     busy:false,mutating:false,devOptionsEnabled:true,phase:'',message:'',progress:{percent:0,indeterminate:false,label:''},
+    device:{manufacturer:'',brand:'',model:'',release:'',sdk:0,oemFamily:'generic'},
+    lastError:{},
     adb:{connected:false,paired:false,hasIdentity:false,host:'127.0.0.1',pairingPort:0,connectionPort:0,status:'Chưa kết nối',notificationPairing:{active:false,stage:'',message:''}},
-    game:{installed:false,package:'com.YoStarEN.StellaSora',root:'',gameVersion:'',resourceVersion:'',versionsKnown:false},
+    game:{installed:false,package:'com.YoStarEN.StellaSora',root:'',gameVersion:'',resourceVersion:'',versionsKnown:false,noData:false,wrongEdition:''},
     github:{repo:'doubleD1302/AmeeVH',branch:'main',announcementStatus:'Chưa đọc',releaseVersion:'',manifestStatus:'Chưa đọc',translationVersion:'',manifestSha256:'',message:'Chưa đồng bộ GitHub.'},
     notifications:[],payload:{available:false,compatible:false,updateAvailable:false,reason:'Đồng bộ GitHub để xem gói Android tương thích.'},
-    config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0},
-    update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},support:{methods:[]},app:{versionName:'1.3.2',versionCode:18,variant:'localadb'}
+    config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0,theme:'system'},
+    update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},
+    officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
+    guard:{accessibilityEnabled:false,canPinShortcut:true,pendingRestore:false},
+    support:{methods:[]},
+    app:{versionName:'2.1.0',versionCode:23,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
+
   let state = initial, currentPage = 'overview';
   let previousBusyPhase = '', lastOutcome = '';
   let firstConfig = true;
+  let copyResetTimer = 0, toastTimer = 0, currentReportId = '', activeProbeInModal = false;
+
+  const QUICK_FIX_MAP = {
+    open_device_info:     {label:'Mở Thông tin điện thoại', icon:'settings', action:'openDeviceInfo', close:false},
+    open_dev_settings:    {label:'Mở Tuỳ chọn nhà phát triển', icon:'sparkle', action:'openDevSettings', close:false},
+    open_wireless:        {label:'Mở Gỡ lỗi không dây', icon:'wifi', action:'openWirelessSettings', close:false},
+    open_wifi:            {label:'Mở cài đặt Wi-Fi', icon:'wifi', action:'openWifiSettings', close:false},
+    open_app_notif:       {label:'Mở cài đặt thông báo', icon:'bell', action:'openAppNotifications', close:false},
+    open_app_battery:     {label:'Bỏ hạn chế pin cho app', icon:'shield', action:'openBatterySettings', close:false},
+    open_unknown_sources: {label:'Cấp quyền cài APK', icon:'download', action:'openUnknownSources', close:false},
+    auto_connect:         {label:'Kết nối nhanh Local ADB', icon:'wifi', action:'autoConnect', close:true},
+    start_pair:           {label:'Ghép đôi qua thông báo', icon:'bell', action:'startPairingNotification', close:true},
+    probe_network:        {label:'Kiểm tra kết nối & DNS', icon:'globe', action:'probeNetwork', close:false},
+    sync_github:          {label:'Đồng bộ lại GitHub', icon:'refresh', action:'sync', close:true},
+    detect_game:          {label:'Tìm và kiểm tra game', icon:'search', action:'detect', close:true},
+    launch_game:          {label:'Mở Stella Sora', icon:'play', action:'launchGame', close:true},
+    recover:              {label:'Phục hồi thao tác ngay', icon:'restore', action:'recover', close:true},
+    install_patch:        {label:'Cài / Cập nhật Việt hoá', icon:'download', action:'install', close:true},
+    reset_channel:        {label:'Khôi phục kênh mặc định', icon:'refresh', action:'resetChannel', close:true}
+  };
+
+  const OEM_TIPS = {
+    xiaomi: {
+      title: 'Lưu ý cho Xiaomi / Redmi / POCO (HyperOS / MIUI)',
+      body: '• Bật Chế độ nhà phát triển: chạm 7 lần vào "Phiên bản OS / HyperOS / MIUI".\n• Trong Tuỳ chọn nhà phát triển, nhớ bật thêm "Gỡ lỗi USB (Cài đặt bảo mật)" để không bị chặn quyền Local ADB.\n• Bật "Thông báo nổi" cho launcher và đặt Pin ở chế độ "Không hạn chế" để giữ kết nối ổn định.'
+    },
+    oppo: {
+      title: 'Lưu ý cho OPPO / Realme / OnePlus (ColorOS / OxygenOS)',
+      body: '• Bật Chế độ nhà phát triển: Thông tin điện thoại → Phiên bản → chạm 7 lần vào Số bản dựng.\n• Rất quan trọng: cuộn xuống cuối Tuỳ chọn nhà phát triển và BẬT "Tắt giám sát quyền" (Disable permission monitoring) để Local ADB truy cập được thư mục game.'
+    },
+    samsung: {
+      title: 'Lưu ý cho Samsung Galaxy (One UI)',
+      body: '• Bật Chế độ nhà phát triển: Thông tin điện thoại → Thông tin phần mềm → chạm 7 lần vào "Số hiệu bản tạo".\n• Bạn có thể mở chế độ Chia đôi màn hình để nhập mã 6 số cực nhanh nếu không thấy khung nhập trên thông báo.'
+    },
+    vivo: {
+      title: 'Lưu ý cho Vivo / iQOO (Funtouch OS / OriginOS)',
+      body: '• Bật Chế độ nhà phát triển: Giới thiệu điện thoại → Thông tin phần mềm → chạm 7 lần vào "Số bản dựng".\n• Khuyến nghị đặt Pin của launcher thành "Không hạn chế" để máy không ngắt Gỡ lỗi không dây giữa chừng.'
+    },
+    huawei: {
+      title: 'Lưu ý cho Huawei / Honor (MagicOS / EMUI)',
+      body: '• Bật Chế độ nhà phát triển: Giới thiệu điện thoại → chạm 7 lần vào "Số hiệu bản dựng".\n• Giữ màn hình sáng và đặt quản lý pin của launcher ở chế độ thủ công để không bị ngắt Local ADB.'
+    },
+    transsion: {
+      title: 'Lưu ý cho Tecno / Infinix / Itel',
+      body: '• Bật Chế độ nhà phát triển: Điện thoại của tôi → chạm 7 lần vào "Số bản dựng".\n• Nên tắt hạn chế pin nền cho launcher trong Cài đặt pin để cài gói dung lượng lớn không bị ngắt.'
+    }
+  };
+
   function text(id, value) { const e = $(id); if (e) e.textContent = value == null ? '' : String(value); }
-  function empty(node) { while (node.firstChild) node.removeChild(node.firstChild); }
-  let copyResetTimer = 0, currentReportId = '';
-  function setCopyLabel(label) { const s = $('message-copy').querySelector('span'); if (s) s.textContent = label; }
+  function empty(node) { while (node && node.firstChild) node.removeChild(node.firstChild); }
+
+  function showToast(msg) {
+    const el = $('toast'); if (!el || !msg) return;
+    el.textContent = String(msg);
+    el.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { el.hidden = true; }, 3200);
+  }
+
+  function applyTheme(pref, resolved) {
+    const mode = (resolved === 'dark' || resolved === 'light') ? resolved
+      : (pref === 'dark' ? 'dark' : pref === 'light' ? 'light'
+      : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    document.documentElement.dataset.theme = mode;
+    const icon = $('theme-toggle-icon');
+    if (icon) icon.src = mode === 'dark' ? 'icons/sun.svg' : 'icons/moon.svg';
+    const toggle = $('theme-toggle');
+    if (toggle) toggle.setAttribute('aria-label', mode === 'dark' ? 'Chuyển sang giao diện Sáng' : 'Chuyển sang giao diện Tối');
+    document.querySelectorAll('[data-theme-choice]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.themeChoice === (pref || 'system'));
+    });
+    const note = pref === 'dark' ? 'Đang bật Chế độ tối (Starry Twilight) — dịu mắt ban đêm.'
+      : pref === 'light' ? 'Đang bật Chế độ sáng (Anime Healing).'
+      : ('Tự động theo hệ thống Android (hiện đang hiển thị: ' + (mode === 'dark' ? 'Tối' : 'Sáng') + ').');
+    text('theme-status-note', note);
+  }
+
+  function setCopyLabel(label, copied=false) {
+    const btn = $('message-copy'); if (!btn) return;
+    const s = btn.querySelector('span'); if (s) s.textContent = label;
+    btn.classList.toggle('copied', !!copied);
+  }
+
+  function renderDiagGrid(rows) {
+    const wrap = $('message-diag-wrap'), grid = $('message-diag-grid');
+    if (!wrap || !grid) return;
+    empty(grid);
+    if (!Array.isArray(rows) || !rows.length) { wrap.hidden = true; return; }
+    rows.forEach((row, idx) => {
+      const cell = document.createElement('div');
+      cell.className = 'diag-cell' + (row.tone === 'mono' || (idx === rows.length - 1 && rows.length % 2 === 1) ? ' span-2' : '');
+      const lbl = document.createElement('span'); lbl.className = 'diag-label'; lbl.textContent = row.label || '';
+      const val = document.createElement('span'); val.className = 'diag-value tone-' + (row.tone || 'neutral'); val.textContent = row.value || '';
+      cell.append(lbl, val);
+      grid.appendChild(cell);
+    });
+    wrap.hidden = false;
+  }
+
+  function renderProbePanel(panelId, verdictId, linesId, probe) {
+    const panel = $(panelId); if (!panel) return;
+    if (!probe || !probe.verdict) { panel.hidden = true; return; }
+    const v = String(probe.verdict);
+    const tone = v === 'ok' ? 'ok' : (v === 'dns_blocked' || v === 'dns_broken' ? 'warn' : 'danger');
+    panel.className = 'probe-panel tone-' + tone;
+    text(verdictId, probe.verdictText || ('Kết quả đo mạng: ' + v));
+    const lines = Array.isArray(probe.lines) ? probe.lines.join('\n') : '';
+    text(linesId, lines);
+    panel.hidden = false;
+  }
+
+  function renderQuickActions(actions) {
+    const wrap = $('message-quickfix-wrap'), grid = $('message-quickfix-grid');
+    if (!wrap || !grid) return;
+    empty(grid);
+    const list = Array.isArray(actions) ? actions.filter(a => QUICK_FIX_MAP[a]) : [];
+    if (!list.length) { wrap.hidden = true; return; }
+    list.forEach((id, idx) => {
+      const spec = QUICK_FIX_MAP[id];
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'qf-btn' + (list.length === 1 || (idx === list.length - 1 && list.length % 2 === 1) ? ' span-2' : '');
+      btn.dataset.qfId = id;
+      const img = document.createElement('img'); img.src = 'icons/' + spec.icon + '.svg'; img.alt = '';
+      const span = document.createElement('span'); span.textContent = spec.label;
+      btn.append(img, span);
+      btn.addEventListener('click', () => {
+        if (id === 'probe_network') {
+          startModalProbe(btn);
+          return;
+        }
+        if (spec.close) $('message-overlay').hidden = true;
+        request(spec.action);
+      });
+      grid.appendChild(btn);
+    });
+    wrap.hidden = false;
+  }
+
+  function startModalProbe(btn) {
+    activeProbeInModal = true;
+    const panel = $('message-probe-panel');
+    if (panel) {
+      panel.className = 'probe-panel';
+      text('message-probe-verdict', 'Đang kiểm tra DNS, cổng 443 GitHub và Captive Portal…');
+      text('message-probe-lines', '');
+      panel.hidden = false;
+    }
+    if (btn) {
+      btn.disabled = true;
+      const s = btn.querySelector('span');
+      if (s) s.textContent = 'Đang đo kết nối…';
+    }
+    request('probeNetwork', {id: currentReportId});
+  }
+
   function message(title, body, error=false, meta={}) {
     meta = meta || {};
-    // Plain-language explanation + steps come from the native error catalog; the raw message is kept as technical detail.
     const explain = meta.explain ? String(meta.explain) : '';
     const steps = Array.isArray(meta.steps) ? meta.steps : [];
-    text('message-title', meta.errorTitle || title || (error ? 'Chưa thể hoàn tất' : 'Thông tin'));
-    text('message-body', explain || body || '');
-    const list = $('message-steps'); empty(list);
-    steps.forEach(step => { const li = document.createElement('li'); li.textContent = String(step); list.appendChild(li); });
-    list.hidden = !steps.length; $('message-steps-title').hidden = !steps.length;
-    const technical = explain && body && String(body).trim() !== explain.trim() ? String(body) : '';
-    text('message-tech-body', technical); $('message-tech').hidden = !technical; $('message-tech').open = false;
-    // Error dialogs carry a copyable report: show its code and a button that copies the full details.
+    const level = meta.level || (error ? 'error' : 'info');
+    const card = $('message-dialog-card');
+    if (card) card.dataset.level = level;
+
     currentReportId = meta && meta.reportId ? String(meta.reportId) : '';
     const hasReport = !!currentReportId;
-    text('message-code', hasReport ? 'Mã lỗi: ' + (meta.code || 'E-UNKNOWN') + ' · #' + currentReportId : '');
-    $('message-code').hidden = !hasReport;
+    const badges = $('message-badges');
+    if (badges) badges.hidden = !hasReport;
+    text('message-code-pill', meta.code || 'E-UNKNOWN');
+    text('message-report-id', hasReport ? '#' + currentReportId : '');
+
+    text('message-title', meta.errorTitle || title || (error ? 'Chưa thể hoàn tất' : 'Thông tin'));
+    text('message-body', explain || body || '');
+
+    const stepsWrap = $('message-steps-wrap'), list = $('message-steps');
+    empty(list);
+    steps.forEach(step => { const li = document.createElement('li'); li.textContent = String(step); list.appendChild(li); });
+    if (stepsWrap) stepsWrap.hidden = !steps.length;
+
+    renderDiagGrid(meta.contextRows);
+    renderProbePanel('message-probe-panel', 'message-probe-verdict', 'message-probe-lines', meta.probe);
+    renderQuickActions(meta.quickActions);
+
+    const technical = explain && body && String(body).trim() !== explain.trim() ? String(body) : '';
+    const preview = meta.reportPreview ? String(meta.reportPreview) : '';
+    text('message-tech-body', technical);
+    $('message-tech-body').hidden = !technical;
+    $('message-raw-label').hidden = !technical;
+    text('message-report-preview', preview);
+    $('message-report-preview').hidden = !preview;
+    $('message-preview-label').hidden = !preview;
+    $('message-tech').hidden = !technical && !preview;
+    $('message-tech').open = false;
+
     $('message-copy').hidden = !hasReport;
-    clearTimeout(copyResetTimer); setCopyLabel('Sao chép mã lỗi');
+    clearTimeout(copyResetTimer);
+    setCopyLabel('Sao chép báo lỗi chi tiết', false);
     $('message-overlay').hidden = false;
-    const card = $('message-overlay').querySelector('.dialog-card'); if (card) card.scrollTop = 0;
-    $('message-ok').focus();
+    const scroll = $('message-scroll'); if (scroll) scroll.scrollTop = 0;
+    (hasReport ? $('message-copy') : $('message-ok')).focus();
   }
+
   function request(action, payload={}) {
     const bridge = window.StellaNative;
     if (!bridge || typeof bridge.request !== 'function') {
@@ -50,6 +232,7 @@
     try { bridge.request(action, JSON.stringify(payload)); }
     catch (_) { message('Chưa gửi được thao tác', 'Hãy trở lại ứng dụng và thử lại.', true); }
   }
+
   function showPage(page) {
     if (page === 'support') {
       message('Tính năng đang bảo trì', 'Bản Việt hoá luôn luôn miễn phí.');
@@ -61,28 +244,46 @@
     document.querySelectorAll('.bottom-nav button').forEach(e => e.classList.toggle('active', e.dataset.page === page));
     window.scrollTo(0, 0);
   }
+
   function statusLabel(v) {
-    return ({online:'đã đọc trực tuyến',empty:'trực tuyến, chưa có mục mới',cached:'đang dùng bản lưu',bundled:'thông tin đi kèm ứng dụng',error:'chưa tải được',available:'đã đọc gói Android',unavailable:'chưa có dữ liệu',missing:'chưa có gói Android'})[v] || String(v || 'chưa đọc');
+    return ({online:'đã đọc trực tuyến',empty:'trực tuyến, chưa có mục mới',cached:'đang dùng bản lưu',bundled:'thông tin đi kèm ứng dụng',error:'chưa tải được',available:'đã đọc gói Android',unavailable:'chưa có dữ liệu',missing:'chưa có gói Android',none:'chưa có gói Android'})[v] || String(v || 'chưa đọc');
   }
+
   function fillInput(id, value, force=false) {
     const e = $(id); if (!e || document.activeElement === e) return;
     if (force || !e.dataset.edited) e.value = value == null || value === 0 ? '' : String(value);
   }
+
+  function renderOemTip(device) {
+    const card = $('oem-adb-tip'); if (!card) return;
+    const fam = (device && device.oemFamily) || 'generic';
+    const tip = OEM_TIPS[fam];
+    if (!tip) { card.hidden = true; return; }
+    text('oem-tip-title', tip.title);
+    text('oem-tip-body', tip.body);
+    card.hidden = false;
+  }
+
   function primaryAction() {
     if (state.devOptionsEnabled === false) return {page:'adb',caption:'Bật Tuỳ chọn nhà phát triển',icon:'settings',note:'Kích hoạt chế độ nhà phát triển trước khi kết nối.'};
     if (!state.adb.connected) {
-      if (state.adb.hasIdentity) return {action:'autoConnect',caption:'Kết nối nhanh Local ADB',icon:'wifi',note:'Máy đã ghép đôi trước đó. Chạm để tự kết nối lại không cần nhập mã.'};
+      if (state.adb.hasIdentity) return {action:'autoConnect',caption:'Kết nối nhanh Local ADB',icon:'wifi',note:'Máy đã ghép đôi trước đó. Bật Wi-Fi + Gỡ lỗi không dây rồi chạm để kết nối lại.'};
       return {page:'adb',caption:'Kết nối Local ADB',icon:'shield',note:'Kết nối trên điện thoại trước khi cài bản dịch.'};
     }
-    if (!state.game.installed || !state.game.root || !state.game.versionsKnown) return {action:'detect',caption:'Tìm và kiểm tra game',icon:'search',note:state.game.installed ? 'Cần đọc đủ phiên bản game trước khi cài.' : 'Tìm Stella Sora và đọc phiên bản trên điện thoại.'};
+    if (!state.game.installed || !state.game.root || !state.game.versionsKnown) {
+      if (state.game.wrongEdition) return {action:'detect',caption:'Tìm lại game (Global EN)',icon:'search',note:'Đang phát hiện bản khu vực khác (' + state.game.wrongEdition + '). Cần bản Global EN.'};
+      if (state.game.noData) return {action:'launchGame',caption:'Mở Stella Sora tải dữ liệu',icon:'play',note:'Đã cài game nhưng chưa có thư mục dữ liệu. Mở game 1 lần rồi quay lại.'};
+      return {action:'detect',caption:'Tìm và kiểm tra game',icon:'search',note:state.game.installed ? 'Cần đọc đủ phiên bản game trước khi cài.' : 'Tìm Stella Sora và đọc phiên bản trên điện thoại.'};
+    }
     if (!state.payload.available) return {action:'sync',caption:'Đồng bộ gói Android',icon:'refresh',note:'Chưa có gói Android tương thích để cài.'};
-    if (!state.payload.compatible) return {action:'sync',caption:'Kiểm tra gói Android mới',icon:'refresh',note:'Gói hiện có chưa tương thích. Xem lý do trong chi tiết.'};
+    if (!state.payload.compatible) return {action:'sync',caption:'Kiểm tra gói Android mới',icon:'refresh',note:'Gói hiện có chưa tương thích. Bấm dòng bên dưới để xem lý do.'};
     if (!state.receipt.present) return {action:'install',caption:'Cài Việt hoá',icon:'download',note:'Đã có thông tin gói tương thích. Thoát game trước khi cài.'};
     if (state.payload.updateAvailable || state.receipt.stale) return {action:'install',caption:'Cập nhật Việt hoá',icon:'download',note:'Có bản cập nhật Việt hoá mới cho game. Thoát game trước khi cập nhật.'};
     return {action:'install',caption:'Cài lại Việt hoá',icon:'refresh',note:'Bản Việt hoá đang là mới nhất. Có thể mở game chơi ngay hoặc bấm để cài lại.'};
   }
+
   function renderState(data) {
-    const nested = ['progress','adb','game','github','config','payload','update','recovery','receipt','support','app'];
+    const nested = ['progress','adb','game','github','config','payload','update','recovery','receipt','officialUpdate','guard','support','app','device','lastError'];
     const merged = {...initial, ...data};
     nested.forEach(key => { merged[key] = {...initial[key], ...(data[key] || {})}; });
     merged.adb.notificationPairing = {...initial.adb.notificationPairing, ...((data.adb || {}).notificationPairing || {})};
@@ -94,11 +295,21 @@
     }
     if (merged.busy) lastOutcome = '';
     state = merged;
+
+    applyTheme(state.app.theme || state.config.theme || 'system', state.app.resolvedTheme);
+    renderOemTip(state.device);
+
+    const devInfo = state.device || {};
+    if (devInfo.model) {
+      text('settings-device-info', 'Thiết bị: ' + (devInfo.manufacturer || '') + ' ' + devInfo.model + ' · Android ' + (devInfo.release || '?') + ' (SDK ' + (devInfo.sdk || '?') + ')');
+    }
+
     const devEnabled = data.devOptionsEnabled !== undefined ? !!data.devOptionsEnabled : (state.devOptionsEnabled !== undefined ? !!state.devOptionsEnabled : true);
     state.devOptionsEnabled = devEnabled;
     const devCard = $('dev-mode-warning');
     if (devCard) devCard.hidden = devEnabled;
     document.querySelectorAll('.needs-idle').forEach(e => { e.disabled = !!state.busy; });
+
     const adb = state.adb, game = state.game, p = state.payload, gh = state.github;
     text('adb-status', adb.connected ? 'Đã kết nối' : (adb.hasIdentity ? 'Đã ghép đôi' : 'Chưa kết nối'));
     $('adb-status').prepend(Object.assign(document.createElement('i'), {}));
@@ -118,7 +329,7 @@
         text('quick-reconnect-caption', adb.connected ? 'Kiểm tra kết nối lại' : 'Kết nối nhanh (Đã ghép đôi)');
         text('quick-reconnect-note', adb.connected
           ? 'Thiết bị đã kết nối sẵn sàng. Nếu bạn tắt mở lại Gỡ lỗi không dây ở lần sau, chỉ cần bấm nút dưới đây để kết nối lại ngay.'
-          : 'Ghép đôi bằng mã 6 số chỉ cần thực hiện một lần duy nhất. Ở các lần mở sau, chỉ cần bật Gỡ lỗi không dây rồi bấm Kết nối nhanh.');
+          : 'Ghép đôi bằng mã 6 số chỉ cần thực hiện một lần duy nhất. Ở các lần mở sau, chỉ cần bật Wi-Fi và Gỡ lỗi không dây rồi bấm Kết nối nhanh.');
       }
     }
     const pairBtn = $('pair-notification-btn');
@@ -130,24 +341,48 @@
 
     text('adb-summary', adb.status || (adb.connected ? 'Thiết bị đã phản hồi. Bạn có thể tìm game và kiểm tra gói bản dịch.' : 'Ghép đôi trực tiếp trên điện thoại, không cần máy tính.'));
     text('connection-details', adb.connected ? ('Đã xác nhận kết nối · ' + (adb.host || '') + ':' + (adb.connectionPort || '')) : (adb.status || 'Chưa xác nhận kết nối với thiết bị.'));
-    text('pairing-note', adb.notificationPairing.message || 'Cần Android 11 trở lên. Cho phép thông báo để nhập mã mà không cần chuyển ứng dụng.');
+    text('pairing-note', adb.notificationPairing.message || 'Cần Android 11 trở lên và Wi-Fi. Cho phép thông báo để nhập mã mà không cần chuyển ứng dụng.');
     text('cancel-pairing', adb.notificationPairing.stage === 'discovering_connect' ? 'Huỷ tìm cổng' : 'Huỷ ghép đôi');
     $('cancel-pairing').hidden = !adb.notificationPairing.active;
     $('cancel-pairing').disabled = !!state.mutating;
+
     text('game-name', game.installed ? 'Stella Sora · đã tìm thấy' : 'Stella Sora');
-    text('game-summary', game.versionsKnown ? ('Game ' + game.gameVersion + ' · tài nguyên ' + game.resourceVersion) : (game.installed ? 'Chưa đọc đủ phiên bản game' : 'Chưa tìm thấy game trên điện thoại'));
+    text('game-summary', game.versionsKnown ? ('Game ' + game.gameVersion + ' · tài nguyên ' + game.resourceVersion) : (game.wrongEdition ? ('Bản khu vực khác: ' + game.wrongEdition) : (game.noData ? 'Chưa tải dữ liệu game' : (game.installed ? 'Chưa đọc đủ phiên bản game' : 'Chưa tìm thấy game trên điện thoại'))));
     text('game-root', game.root || 'Chưa xác định đường dẫn');
+
     const main = primaryAction();
     text('install-caption', main.caption);
     $('main-action-icon').src = 'icons/' + main.icon + '.svg';
     text('payload-note', main.note);
-    // Why can't the translation be installed yet? Name the exact reason (and let the user copy the full report).
+
     let whyCode = '', whyId = '';
     if (!p.available && gh.errorCode) { whyCode = gh.errorCode; whyId = gh.errorReportId || ''; }
     else if (!(p.available && p.compatible) && p.reasonCode) { whyCode = p.reasonCode; }
     const why = $('why-blocked');
     why.hidden = !whyCode || !!state.busy;
-    if (whyCode) { why.dataset.code = whyCode; why.dataset.id = whyId; why.querySelector('span').textContent = 'Vì sao chưa cài được? [' + whyCode + ']'; }
+    if (whyCode) {
+      why.dataset.code = whyCode;
+      why.dataset.id = whyId;
+      why.querySelector('span').textContent = 'Vì sao chưa cài được? [' + whyCode + ']';
+    }
+
+    // Recent error quick-copy strip on Overview & Settings
+    const le = state.lastError || {};
+    const hasLastErr = !!(le && le.code && le.reportId);
+    const outcomeHasCode = /\[E-[A-Z0-9-]+\]/.test(lastOutcome || state.message || '');
+    const strip = $('last-error-strip');
+    if (strip) {
+      strip.hidden = state.busy || !hasLastErr || !outcomeHasCode;
+      if (!strip.hidden) {
+        text('last-error-code', le.code);
+        text('last-error-title', le.errorTitle || le.message || 'Thao tác gần nhất gặp lỗi');
+        strip.dataset.reportId = le.reportId;
+      }
+    }
+    text('settings-last-error-meta', hasLastErr
+      ? ('Lỗi gần nhất: ' + le.code + ' (#' + le.reportId + ') · ' + (le.errorTitle || le.message || '') + (le.time ? '\nThời điểm: ' + le.time : ''))
+      : 'Chưa ghi nhận lỗi nào gần đây.');
+
     let payloadText = p.reason || 'Chưa có thông tin gói Android tương thích.';
     if (p.available && p.compatible) {
       const stateSuffix = !state.receipt.present ? 'Chưa cài đặt.' : (p.updateAvailable || state.receipt.stale ? 'Có bản cập nhật mới.' : 'Đang ở bản mới nhất.');
@@ -156,18 +391,53 @@
     text('payload-details', payloadText);
     text('operation-details', state.message || 'Chưa có thao tác');
     text('native-status', state.message || 'Chưa có thao tác');
+
     $('operation').hidden = !state.busy;
     text('operation-label', state.progress.label || state.message || 'Đang xử lý…');
-    $('operation-outcome').hidden = state.busy || !lastOutcome;
+    $('operation-outcome').hidden = state.busy || !lastOutcome || !strip.hidden;
     text('operation-outcome', lastOutcome.length > 180 ? lastOutcome.slice(0, 177) + '…' : lastOutcome);
     const percent = Number(state.progress.percent);
     $('progress-fill').style.width = Math.max(0, Math.min(100, Number.isFinite(percent) ? percent : 0)) + '%';
     $('progress-fill').classList.toggle('indeterminate', !!state.progress.indeterminate);
     $('recover-alert').hidden = !state.recovery.pending;
     if (state.recovery.message) $('recover-alert').title = state.recovery.message;
+
     const rc = state.receipt;
     $('receipt-stale').hidden = !(rc.present && rc.stale);
     if (rc.present && rc.stale) text('receipt-stale', 'Lần cài trước dành cho game ' + (rc.installedGameVersion || '?') + ' · tài nguyên ' + (rc.installedResourceVersion || '?') + '. Game đã cập nhật nên Kiểm tra tệp và Khôi phục không dùng được với lần cài cũ. Hãy bấm Cập nhật Việt hoá để cài lại.');
+
+    // Authentic Stella Sora Official Update Guard UI
+    const off = state.officialUpdate || {};
+    const grd = state.guard || {};
+    const guardAlertCard = $('official-guard-card');
+    if (guardAlertCard) {
+      guardAlertCard.hidden = !off.needsRestore;
+      if (off.needsRestore) {
+        const lVer = (off.localGameVersion ? 'v' + off.localGameVersion + ' · ' : '') + 'RES ' + (off.localResourceVersion || '?');
+        const nVer = (off.latestGameVersion ? 'v' + off.latestGameVersion + ' · ' : '') + 'RES ' + (off.latestResourceVersion || '?');
+        text('official-guard-ver', lVer + ' → ' + nVer);
+        text('official-guard-summary', 'Máy chủ Yostar đã phát hành bản cập nhật mới. KHÔNG bấm cập nhật trong game khi còn Việt hoá — hãy khôi phục gốc trước!');
+      }
+    }
+    const launchBtn = $('launch');
+    if (launchBtn) {
+      launchBtn.classList.toggle('guard-locked', !!off.needsRestore);
+    }
+    const a11yBadge = $('guard-a11y-status');
+    if (a11yBadge) {
+      text('guard-a11y-status', grd.accessibilityEnabled ? 'Trợ năng: Đang bật' : 'Chưa bật Trợ năng');
+      a11yBadge.prepend(Object.assign(document.createElement('i'), {}));
+      a11yBadge.classList.toggle('connected', !!grd.accessibilityEnabled);
+      a11yBadge.classList.toggle('warning', !grd.accessibilityEnabled);
+    }
+    const yostarNote = off.checked && (off.latestResourceVersion || off.latestGameVersion)
+      ? ('Máy chủ Yostar: ' + (off.latestGameVersion ? 'v' + off.latestGameVersion + ' · ' : '') + 'RES ' + (off.latestResourceVersion || '?')
+        + (off.needsRestore ? ' (CẦN KHÔI PHỤC GỐC TRƯỚC KHI MỞ GAME!)' : (off.vhModified ? ' · Bản Việt hoá đang an toàn.' : ' · Game đang ở bản gốc.')))
+      : 'Chủ động kiểm tra máy chủ Yostar (chạy được cả 4G/5G & Wi-Fi, không cần Local ADB) và chặn vào game khi có bản vá mới.';
+    text('guard-yostar-summary', yostarNote);
+    const pinBtn = $('btn-pin-guard');
+    if (pinBtn) pinBtn.hidden = grd.canPinShortcut === false;
+
     const lines = [gh.message || 'Chưa đồng bộ GitHub.'];
     lines.push('Thông báo: ' + statusLabel(gh.announcementStatus));
     if (gh.releaseVersion) lines.push('Bản phát hành: ' + gh.releaseVersion);
@@ -175,24 +445,22 @@
     if (gh.translationVersion) lines.push('Bản dịch: ' + gh.translationVersion);
     if (game.versionsKnown) lines.push('Game: ' + game.gameVersion + ' · tài nguyên ' + game.resourceVersion);
     text('github-state', lines.join('\n'));
+
     const ghRead = ['online','empty','cached','bundled'].includes(gh.announcementStatus);
     let summary = 'Chưa đồng bộ GitHub.';
     if (p.available) {
-      if (adb.connected && p.compatible) {
-        summary = 'Đã đọc gói Android tương thích (Sẵn sàng cài đặt).';
-      } else if (adb.connected && !p.compatible) {
-        summary = 'Đã đọc gói Android; chưa tương thích với game trên máy.';
-      } else {
-        summary = 'Đã đồng bộ gói Android thành công (Chờ kết nối Local ADB).';
-      }
+      if (adb.connected && p.compatible) summary = 'Đã đọc gói Android tương thích (Sẵn sàng cài đặt).';
+      else if (adb.connected && !p.compatible) summary = 'Đã đọc gói Android; chưa tương thích với game trên máy.';
+      else summary = 'Đã đồng bộ gói Android thành công (Chờ kết nối Local ADB).';
     } else if (ghRead || gh.message !== initial.github.message) {
       summary = gh.message || 'Chưa có gói Android tương thích. Xem trạng thái chi tiết bên dưới.';
     }
     text('github-summary', summary);
-    text('app-version', 'Launcher Android ' + (state.app.versionName || '2.0.1') + ' · Local ADB');
+    text('app-version', 'Launcher Android ' + (state.app.versionName || '2.1.0') + ' (code ' + (state.app.versionCode || 23) + ') · Local ADB');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Mở trình cài đặt Android' : 'Tải bản cập nhật';
+
     fillInput('repo', state.config.repo || gh.repo, firstConfig);
     fillInput('branch', state.config.branch || gh.branch, firstConfig);
     fillInput('adb-host', state.config.host || adb.host, firstConfig);
@@ -201,6 +469,7 @@
     firstConfig = false;
     renderNotices();
   }
+
   function notices() { return Array.isArray(state.notifications) ? state.notifications : []; }
   function noticeRow(n) {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'notice-row';
@@ -224,6 +493,7 @@
     text('notice-title', n.title || 'Thông báo'); text('notice-date', n.date || ''); text('notice-body', n.content || '');
   }
   function openNoticeList() { $('notices-overlay').hidden = false; $('notice-detail').hidden = true; $('notice-all-list').hidden = false; $('notice-search').hidden = false; renderNotices(); }
+
   function renderGuide() {
     const target = $('guide-content'); empty(target);
     content.sections.forEach(section => {
@@ -232,72 +502,138 @@
       const bodyWrap = document.createElement('div'); bodyWrap.className = 'disclosure-body';
       const sub = document.createElement('p'); sub.className = 'guide-copy'; sub.textContent = section.subtitle;
       const ol = document.createElement('ol'); ol.className = 'steps';
-      section.steps.forEach((step,index) => {
+      section.steps.forEach((step, index) => {
         const li = document.createElement('li'), num = document.createElement('span'), wrap = document.createElement('div'), title = document.createElement('strong'), body = document.createElement('p');
-        num.textContent = String(index+1); title.textContent = step.title; body.textContent = step.detail; wrap.append(title,body); li.append(num,wrap); ol.append(li);
+        num.textContent = String(index + 1); title.textContent = step.title; body.textContent = step.detail; wrap.append(title, body); li.append(num, wrap); ol.append(li);
       });
-      bodyWrap.append(sub,ol); panel.append(heading,bodyWrap); target.append(panel);
+      bodyWrap.append(sub, ol); panel.append(heading, bodyWrap); target.append(panel);
     });
   }
+
   function renderFaq() {
-    const list = $('faq-list');
+    const list = $('faq-list'); empty(list);
     content.faq.forEach(f => {
       const item = document.createElement('div'); item.className = 'faq-item';
-      const b = document.createElement('button'); b.type = 'button'; b.className = 'faq-question'; b.setAttribute('aria-expanded','false');
-      const label = document.createElement('span'); label.textContent = f.question; const icon = document.createElement('img'); icon.src = 'icons/chevron_right.svg'; icon.alt = ''; b.append(label,icon);
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'faq-question'; b.setAttribute('aria-expanded', 'false');
+      const label = document.createElement('span'); label.textContent = f.question; const icon = document.createElement('img'); icon.src = 'icons/chevron_right.svg'; icon.alt = ''; b.append(label, icon);
       const answer = document.createElement('div'); answer.className = 'faq-answer'; answer.hidden = true; answer.textContent = f.answer;
-      b.addEventListener('click', () => { answer.hidden = !answer.hidden; b.setAttribute('aria-expanded',String(!answer.hidden)); }); item.append(b,answer); list.append(item);
+      b.addEventListener('click', () => { answer.hidden = !answer.hidden; b.setAttribute('aria-expanded', String(!answer.hidden)); }); item.append(b, answer); list.append(item);
     });
   }
+
   function port(id) {
     const v = $(id).value.trim();
     if (!/^\d{4,5}$/.test(v) || Number(v) < 1024 || Number(v) > 65535) {
-      message('Cổng chưa hợp lệ', 'Nhập số cổng từ 1024 đến 65535 đang hiển thị trong Gỡ lỗi không dây.');
+      message('Cổng chưa hợp lệ', 'Nhập số cổng từ 1024 đến 65535 đang hiển thị trong Gỡ lỗi không dây.', false, {level:'warning'});
       return null;
     }
     return Number(v);
   }
+
+  // Event bindings
   document.querySelectorAll('[data-page]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
   document.querySelectorAll('[data-action]').forEach(b => b.addEventListener('click', () => request(b.dataset.action)));
   ['adb-host','pair-port','connect-port','repo','branch'].forEach(id => $(id).addEventListener('input', () => { $(id).dataset.edited = '1'; }));
+
+  $('theme-toggle').addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next, next);
+    request('setTheme', {theme: next});
+    showToast(next === 'dark' ? 'Đã bật Chế độ tối' : 'Đã bật Chế độ sáng');
+  });
+  document.querySelectorAll('[data-theme-choice]').forEach(btn => btn.addEventListener('click', () => {
+    const choice = btn.dataset.themeChoice || 'system';
+    applyTheme(choice, choice === 'system' ? null : choice);
+    request('setTheme', {theme: choice});
+  }));
+
   $('main-action').addEventListener('click', () => {
     if (state.busy) return;
     const main = primaryAction();
     if (main.page) showPage(main.page); else request(main.action);
   });
+
   $('manual-pair').addEventListener('click', () => {
     const pairingPort = port('pair-port'), code = $('pair-code').value.trim();
     if (pairingPort == null) return;
-    if (!/^\d{6}$/.test(code)) { message('Cần mã ghép đôi 6 số','Giữ cửa sổ mã ghép đôi của Android đang mở, rồi nhập đủ 6 số.'); return; }
-    request('pair',{host:$('adb-host').value.trim(),pairingPort,code}); $('pair-code').value = '';
+    if (!/^\d{6}$/.test(code)) { message('Cần mã ghép đôi 6 số', 'Giữ cửa sổ mã ghép đôi của Android đang mở, rồi nhập đủ 6 số.', false, {level:'warning'}); return; }
+    request('pair', {host:$('adb-host').value.trim(), pairingPort, code}); $('pair-code').value = '';
   });
-  $('manual-connect').addEventListener('click', () => { const connectionPort = port('connect-port'); if (connectionPort != null) request('connect',{host:$('adb-host').value.trim(),connectionPort}); });
-  $('save-settings').addEventListener('click', () => { const raw=$('connect-port').value.trim(); const connectionPort=raw?port('connect-port'):0; if(connectionPort==null)return; request('saveSettings',{repo:$('repo').value.trim(),branch:$('branch').value.trim(),host:$('adb-host').value.trim(),connectionPort}); });
-  $('all-notifications').addEventListener('click',openNoticeList); $('notice-search').addEventListener('input',renderNotices); $('notice-back').addEventListener('click',openNoticeList);
-  $('notices-close').addEventListener('click', () => { $('notices-overlay').hidden=true; });
-  ['message-close','message-ok'].forEach(id => $(id).addEventListener('click', () => { $('message-overlay').hidden=true; }));
+  $('manual-connect').addEventListener('click', () => { const connectionPort = port('connect-port'); if (connectionPort != null) request('connect', {host:$('adb-host').value.trim(), connectionPort}); });
+  $('save-settings').addEventListener('click', () => { const raw = $('connect-port').value.trim(); const connectionPort = raw ? port('connect-port') : 0; if (connectionPort == null) return; request('saveSettings', {repo:$('repo').value.trim(), branch:$('branch').value.trim(), host:$('adb-host').value.trim(), connectionPort}); });
+
+  $('last-error-open').addEventListener('click', () => request('openLastError', {id: $('last-error-strip').dataset.reportId || ''}));
+  $('last-error-copy').addEventListener('click', () => request('copyError', {id: $('last-error-strip').dataset.reportId || ''}));
+  $('settings-probe-btn').addEventListener('click', () => {
+    activeProbeInModal = false;
+    const btn = $('settings-probe-btn');
+    btn.disabled = true;
+    const s = btn.querySelector('span'); if (s) s.textContent = 'Đang đo mạng…';
+    const box = $('settings-probe-box');
+    if (box) { box.className = 'probe-panel'; text('settings-probe-verdict', 'Đang kiểm tra DNS, cổng 443 GitHub và Captive Portal…'); text('settings-probe-lines', ''); box.hidden = false; }
+    request('probeNetwork', {id: (state.lastError && state.lastError.reportId) || ''});
+  });
+
+  $('all-notifications').addEventListener('click', openNoticeList);
+  $('notice-search').addEventListener('input', renderNotices);
+  $('notice-back').addEventListener('click', openNoticeList);
+  $('notices-close').addEventListener('click', () => { $('notices-overlay').hidden = true; });
+  ['message-close','message-ok'].forEach(id => $(id).addEventListener('click', () => { $('message-overlay').hidden = true; }));
   $('message-copy').addEventListener('click', () => request('copyError', {id: currentReportId}));
   $('why-blocked').addEventListener('click', () => { const w = $('why-blocked'); request('explain', {code: w.dataset.code || 'E-UNKNOWN', id: w.dataset.id || ''}); });
+
   window.Stella = {
     onEvent(event) {
-      try { if (typeof event === 'string') event=JSON.parse(event); if(!event || typeof event!=='object')return;
-        if(event.type==='state')renderState(event.data||{});
-        else if(event.type==='navigate'&&(event.data||{}).page)showPage(event.data.page);
-        else if(event.type==='message')message((event.data||{}).title,(event.data||{}).message,!!(event.data||{}).error,event.data||{});
-        else if(event.type==='copied') {
-          if (!$('message-overlay').hidden && !$('message-copy').hidden) { setCopyLabel('Đã sao chép ✓'); clearTimeout(copyResetTimer); copyResetTimer = setTimeout(() => setCopyLabel('Sao chép mã lỗi'), 2500); }
-          else message('Đã sao chép mã lỗi', 'Dán nội dung vào tin nhắn hoặc trang báo lỗi để gửi cho nhóm phát triển. Báo cáo không chứa mã ghép đôi, địa chỉ kết nối hay định danh thiết bị.', false);
+      try {
+        if (typeof event === 'string') event = JSON.parse(event);
+        if (!event || typeof event !== 'object') return;
+        if (event.type === 'state') renderState(event.data || {});
+        else if (event.type === 'navigate' && (event.data || {}).page) showPage(event.data.page);
+        else if (event.type === 'message') message((event.data || {}).title, (event.data || {}).message, !!(event.data || {}).error, event.data || {});
+        else if (event.type === 'probeResult') {
+          const d = event.data || {};
+          const sBtn = $('settings-probe-btn');
+          if (sBtn) { sBtn.disabled = false; const sp = sBtn.querySelector('span'); if (sp) sp.textContent = 'Đo mạng & DNS'; }
+          const mBtn = document.querySelector('#message-quickfix-grid [data-qf-id="probe_network"]');
+          if (mBtn) { mBtn.disabled = false; const sp = mBtn.querySelector('span'); if (sp) sp.textContent = 'Kiểm tra kết nối & DNS'; }
+          if (activeProbeInModal || !$('message-overlay').hidden) {
+            renderProbePanel('message-probe-panel', 'message-probe-verdict', 'message-probe-lines', d);
+            if (Array.isArray(d.contextRows)) renderDiagGrid(d.contextRows);
+            if (d.reportPreview) {
+              text('message-report-preview', d.reportPreview);
+              $('message-report-preview').hidden = false;
+              $('message-preview-label').hidden = false;
+              $('message-tech').hidden = false;
+            }
+          }
+          if (!$('settings-probe-box').hidden || currentPage === 'settings') {
+            renderProbePanel('settings-probe-box', 'settings-probe-verdict', 'settings-probe-lines', d);
+          }
         }
-      } catch (_) { message('Chưa đọc được trạng thái','Hãy mở lại trang Tổng quan hoặc kết nối lại Local ADB.',true); }
+        else if (event.type === 'copied') {
+          const d = event.data || {};
+          const isDiag = d.kind === 'diagnostics';
+          if (!$('message-overlay').hidden && !$('message-copy').hidden && !isDiag) {
+            setCopyLabel('Đã sao chép báo lỗi ✓', true);
+            clearTimeout(copyResetTimer);
+            copyResetTimer = setTimeout(() => setCopyLabel('Sao chép báo lỗi chi tiết', false), 2600);
+          }
+          showToast(isDiag
+            ? 'Đã sao chép báo cáo chẩn đoán hệ thống (đã ẩn dữ liệu nhạy cảm)'
+            : ('Đã sao chép báo lỗi chi tiết' + (d.code ? ' [' + d.code + ']' : '') + ' — dán gửi cho nhóm hỗ trợ'));
+        }
+      } catch (_) {
+        message('Chưa đọc được trạng thái', 'Hãy mở lại trang Tổng quan hoặc kết nối lại Local ADB.', true);
+      }
     },
-    navigate(page) {
-      showPage(page);
-    },
+    navigate(page) { showPage(page); },
     goBack() {
-      if(!$('message-overlay').hidden){$('message-overlay').hidden=true;return true;}
-      if(!$('notices-overlay').hidden){$('notices-overlay').hidden=true;return true;}
-      if(currentPage!=='overview'){showPage('overview');return true;}return false;
+      if (!$('message-overlay').hidden) { $('message-overlay').hidden = true; return true; }
+      if (!$('notices-overlay').hidden) { $('notices-overlay').hidden = true; return true; }
+      if (currentPage !== 'overview') { showPage('overview'); return true; }
+      return false;
     }
   };
+
   renderGuide(); renderFaq(); renderState(initial); request('state');
 })();

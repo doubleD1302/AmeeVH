@@ -464,6 +464,38 @@ class SettingsScreen(QWidget):
             parent=self.left_col,
         )
         left_lay.addWidget(row_ar)
+
+        # Section 2b: BẢO VỆ CẬP NHẬT GAME
+        left_lay.addWidget(PorcelainSectionBar("Bảo vệ cập nhật Game", self.left_col))
+
+        self.chk_guard_watch, row_gw = self._make_switch_row(
+            "Cảnh báo ngay khi vào game có bản cập nhật",
+            subtitle="Theo dõi máy chủ Yostar và nhật ký Player.log theo thời gian thực",
+            highlight=True,
+            parent=self.left_col,
+        )
+        left_lay.addWidget(row_gw)
+
+        self.chk_guard_tray, row_gt = self._make_switch_row(
+            "Thu gọn xuống khay hệ thống khi bấm đóng (×)",
+            subtitle="Giữ lớp bảo vệ chạy ngầm để chặn lỗi cập nhật ngay cả khi mở game trực tiếp",
+            parent=self.left_col,
+        )
+        left_lay.addWidget(row_gt)
+
+        self.chk_guard_auto_close, row_gac = self._make_switch_row(
+            "Tự động đóng game ngay khi phát hiện bản cập nhật",
+            subtitle="Đóng StellaSora.exe trước khi hộp thoại trong game kịp tải bản vá",
+            parent=self.left_col,
+        )
+        left_lay.addWidget(row_gac)
+
+        self.chk_guard_autostart, row_gas = self._make_switch_row(
+            "Tự chạy ngầm bảo vệ khi khởi động Windows",
+            subtitle="Khởi động gọn dưới khay hệ thống (HKCU Run, không cần quyền Quản trị)",
+            parent=self.left_col,
+        )
+        left_lay.addWidget(row_gas)
         left_lay.addStretch(1)
 
         self._grid_layout.addWidget(self.left_col, 1)
@@ -744,6 +776,10 @@ class SettingsScreen(QWidget):
             self.chk_auto_restore.setChecked(
                 bool(cfg.get("auto_restore_before_game_update", False))
             )
+            self.chk_guard_watch.setChecked(bool(cfg.get("guard_watch_game_updates", True)))
+            self.chk_guard_tray.setChecked(bool(cfg.get("guard_background_tray", True)))
+            self.chk_guard_auto_close.setChecked(bool(cfg.get("guard_auto_close_game_on_update", False)))
+            self.chk_guard_autostart.setChecked(bool(cfg.get("guard_start_with_windows", False)))
 
             gm = str(cfg.get("graphics_mode") or "auto")
             if gm not in VALID_GRAPHICS_MODES:
@@ -768,6 +804,10 @@ class SettingsScreen(QWidget):
                 self.chk_check_updates,
                 self.chk_check_official,
                 self.chk_auto_restore,
+                self.chk_guard_watch,
+                self.chk_guard_tray,
+                self.chk_guard_auto_close,
+                self.chk_guard_autostart,
                 self.gfx_segmented,
                 self.chk_reduced_motion,
                 self.chk_auto_sync_bg,
@@ -921,6 +961,10 @@ class SettingsScreen(QWidget):
             self.chk_check_updates.setChecked(bool(DEFAULT_CONFIG["check_updates_on_start"]))
             self.chk_check_official.setChecked(bool(DEFAULT_CONFIG["check_official_on_start"]))
             self.chk_auto_restore.setChecked(bool(DEFAULT_CONFIG["auto_restore_before_game_update"]))
+            self.chk_guard_watch.setChecked(bool(DEFAULT_CONFIG["guard_watch_game_updates"]))
+            self.chk_guard_tray.setChecked(bool(DEFAULT_CONFIG["guard_background_tray"]))
+            self.chk_guard_auto_close.setChecked(bool(DEFAULT_CONFIG["guard_auto_close_game_on_update"]))
+            self.chk_guard_autostart.setChecked(bool(DEFAULT_CONFIG["guard_start_with_windows"]))
             self.gfx_segmented.set_value(str(DEFAULT_CONFIG["graphics_mode"]), emit=False)
             self.chk_reduced_motion.setChecked(bool(DEFAULT_CONFIG["reduced_motion"]))
             self.chk_auto_sync_bg.setChecked(bool(DEFAULT_CONFIG["auto_sync_official_bg"]))
@@ -950,6 +994,10 @@ class SettingsScreen(QWidget):
             "check_updates_on_start": self.chk_check_updates.isChecked(),
             "check_official_on_start": self.chk_check_official.isChecked(),
             "auto_restore_before_game_update": self.chk_auto_restore.isChecked(),
+            "guard_watch_game_updates": self.chk_guard_watch.isChecked(),
+            "guard_background_tray": self.chk_guard_tray.isChecked(),
+            "guard_auto_close_game_on_update": self.chk_guard_auto_close.isChecked(),
+            "guard_start_with_windows": self.chk_guard_autostart.isChecked(),
             "graphics_mode": self.gfx_segmented.value(),
             "reduced_motion": self.chk_reduced_motion.isChecked(),
             "auto_sync_official_bg": self.chk_auto_sync_bg.isChecked(),

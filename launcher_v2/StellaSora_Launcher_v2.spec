@@ -130,6 +130,7 @@ hiddenimports = [
     "launcher_v2.core.error_catalog",
     "launcher_v2.core.error_report",
     "launcher_v2.core.game_detection",
+    "launcher_v2.core.game_guard",
     "launcher_v2.core.installer",
     "launcher_v2.core.migration",
     "launcher_v2.core.net_probe",
@@ -176,6 +177,7 @@ hiddenimports = [
     "launcher_v2.ui.dialogs.install_completed_dialog",
     "launcher_v2.ui.dialogs.smart_error_dialog",
     "launcher_v2.ui.dialogs.support_locked_dialog",
+    "launcher_v2.ui.dialogs.update_guard_dialog",
     "launcher_v2.ui.dialogs.update_notice_dialog",
 ]
 

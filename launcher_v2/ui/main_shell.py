@@ -12,6 +12,8 @@ Enforces:
 """
 from __future__ import annotations
 
+import os
+import sys
 import weakref
 from pathlib import Path
 from typing import Any, Optional
@@ -24,9 +26,11 @@ from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QMainWindow,
+    QMenu,
     QPushButton,
     QSizePolicy,
     QStackedWidget,
+    QSystemTrayIcon,
     QVBoxLayout,
     QWidget,
 )
@@ -512,6 +516,10 @@ class MainShell(QMainWindow):
         self._modal_overlay: Optional[_ModalBackdropOverlay] = None
         self._modal_stack: list[tuple[QDialog, _ModalBackdropOverlay]] = []
         self._reduced_motion_override: Optional[bool] = None
+        self._force_quit: bool = False
+        self._tray_notified_once: bool = False
+        self.tray_icon: Optional[QSystemTrayIcon] = None
+        self._tray_menu: Optional[QMenu] = None
 
         # Background cross-fade state
         self._current_bg_frame: Optional[BackgroundFrame] = None
@@ -614,8 +622,127 @@ class MainShell(QMainWindow):
         # 4. Non-blocking ToastBanner overlay
         self.toast_banner = ToastBanner(self, reduced_motion=reduced)
 
+        # 5. Optional System Tray Guardian (disabled in headless/offscreen tests)
+        self._setup_tray_icon()
+
         self._apply_scrim_colors()
         self._clamp_to_screen(initial=True)
+
+    @staticmethod
+    def _is_headless_platform() -> bool:
+        if os.environ.get("QT_QPA_PLATFORM", "").lower() in ("offscreen", "minimal"):
+            return True
+        try:
+            return QGuiApplication.platformName().lower() in ("offscreen", "minimal")
+        except Exception:  # noqa: BLE001
+            return False
+
+    def _setup_tray_icon(self) -> None:
+        if self._is_headless_platform() or not QSystemTrayIcon.isSystemTrayAvailable():
+            return
+        icon = self.windowIcon()
+        if icon.isNull():
+            for rel in ("branding/app_icon.ico", "branding/app_icon.png"):
+                p = self._renderer.resolve_path(rel)
+                if p.is_file():
+                    icon = QIcon(str(p))
+                    break
+        tray = QSystemTrayIcon(icon, self)
+        tray.setToolTip(nfc(f"Stella Sora Việt Hóa v{LAUNCHER_VERSION} — Bảo vệ cập nhật"))
+
+        menu = QMenu(self)
+        shell_ref = weakref.ref(self)
+
+        act_open = menu.addAction(nfc("Mở Launcher"))
+        act_open.triggered.connect(
+            lambda _chk=False, r=shell_ref: r().bring_to_front_urgent() if r() is not None else None
+        )
+
+        act_launch = menu.addAction(nfc("Mở Stella Sora (Bảo vệ cập nhật)"))
+        act_launch.triggered.connect(
+            lambda _chk=False, r=shell_ref: (
+                r().controller.launch_game()
+                if r() is not None and r().controller is not None
+                else None
+            )
+        )
+
+        act_check = menu.addAction(nfc("Kiểm tra bản vá Yostar ngay"))
+        act_check.triggered.connect(
+            lambda _chk=False, r=shell_ref: (
+                (r().bring_to_front_urgent(), r().controller._start_official_check(force=True, manual=True))
+                if r() is not None and r().controller is not None
+                else None
+            )
+        )
+
+        menu.addSeparator()
+        act_quit = menu.addAction(nfc("Thoát hẳn Launcher"))
+        act_quit.triggered.connect(
+            lambda _chk=False, r=shell_ref: r().request_real_quit() if r() is not None else None
+        )
+
+        tray.setContextMenu(menu)
+        tray.activated.connect(self._on_tray_activated)
+        tray.show()
+        self.tray_icon = tray
+        self._tray_menu = menu
+
+    def _on_tray_activated(self, reason) -> None:
+        if reason in (
+            QSystemTrayIcon.ActivationReason.Trigger,
+            QSystemTrayIcon.ActivationReason.DoubleClick,
+        ):
+            self.bring_to_front_urgent()
+
+    def is_tray_active(self) -> bool:
+        return self.tray_icon is not None and self.tray_icon.isVisible()
+
+    def show_tray_notification(self, title: str, message: str, *, urgent: bool = False) -> None:
+        if not self.is_tray_active() or self.tray_icon is None:
+            return
+        icon_type = (
+            QSystemTrayIcon.MessageIcon.Warning if urgent else QSystemTrayIcon.MessageIcon.Information
+        )
+        try:
+            self.tray_icon.showMessage(nfc(title), nfc(message), icon_type, 8000 if urgent else 4000)
+        except Exception:  # noqa: BLE001
+            pass
+
+    def hide_to_tray(self, *, notify: bool = True) -> bool:
+        if not self.is_tray_active():
+            return False
+        self.hide()
+        if notify and not self._tray_notified_once:
+            self._tray_notified_once = True
+            self.show_tray_notification(
+                "Stella Sora Việt Hóa đang chạy ngầm",
+                "Launcher sẽ tự động cảnh báo ngay khi phát hiện bản cập nhật Stella Sora từ Yostar.",
+                urgent=False,
+            )
+        return True
+
+    def bring_to_front_urgent(self) -> None:
+        if self.isMinimized():
+            self.showNormal()
+        else:
+            self.show()
+        self.raise_()
+        self.activateWindow()
+        if sys.platform == "win32" and not self._is_headless_platform():
+            try:
+                import ctypes
+
+                hwnd = int(self.winId())
+                if hwnd:
+                    ctypes.windll.user32.ShowWindow(hwnd, 9)  # SW_RESTORE
+                    ctypes.windll.user32.SetForegroundWindow(hwnd)
+            except Exception:  # noqa: BLE001
+                pass
+
+    def request_real_quit(self) -> None:
+        self._force_quit = True
+        self.close()
 
     def _apply_window_icon(self) -> None:
         for rel in ("branding/app_icon.ico", "branding/app_icon.png"):
@@ -1053,6 +1180,22 @@ class MainShell(QMainWindow):
                 event.ignore()
                 return
 
+        if (
+            not self._force_quit
+            and not self._is_headless_platform()
+            and self.is_tray_active()
+            and bool(self.cm.get("guard_background_tray", True))
+            and bool(self.cm.get("guard_watch_game_updates", True))
+        ):
+            self.hide_to_tray(notify=True)
+            event.ignore()
+            return
+
+        if self.tray_icon is not None:
+            try:
+                self.tray_icon.hide()
+            except Exception:  # noqa: BLE001
+                pass
         self._bg_anim.stop()
         self.tools_screen.shutdown_workers()
         if self.controller is not None and hasattr(self.controller, "shutdown_workers"):

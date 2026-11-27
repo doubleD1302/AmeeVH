@@ -37,6 +37,8 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument('--smoke', action='store_true', help='Validate bootstrap and exit 0')
     parser.add_argument('--tls-check', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--safe-graphics', action='store_true', help='Force software OpenGL rendering')
+    parser.add_argument('--tray', action='store_true', help='Start minimized in system tray to watch for game updates')
+    parser.add_argument('--launch-game', action='store_true', help='Check for official updates before launching Stella Sora')
     return parser
 
 
@@ -157,6 +159,8 @@ def run_gui(
     startup_warnings: list[Exception],
     *,
     sentinel_already_present: bool = False,
+    start_in_tray: bool = False,
+    launch_guard_notice: Optional[dict[str, Any]] = None,
 ) -> int:
     """Lazy-import PySide6 and launch the modular v2.0 UI shell."""
     from launcher_v2.core import tls
@@ -228,6 +232,8 @@ def run_gui(
                 config_manager=cm,
                 software_rendering=use_software,
                 startup_warnings=startup_warnings,
+                start_in_tray=start_in_tray,
+                launch_guard_notice=launch_guard_notice,
             )
         else:
             from launcher_v2.ui.main_shell import MainShell
@@ -317,6 +323,30 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     cm = ConfigManager(pm)
 
+    # 3b. Pre-Qt `--launch-game` fast-path guard (ZERO PySide6 import when safe to launch)
+    launch_guard_notice: Optional[dict[str, Any]] = None
+    if args.launch_game:
+        from launcher_v2.core import tls
+        from launcher_v2.core.game_detection import GameDetector
+        from launcher_v2.core.game_guard import evaluate_fast_launch_guard
+
+        try:
+            tls.install()
+        except Exception:  # noqa: BLE001
+            pass
+
+        guard_res = evaluate_fast_launch_guard(pm, cm)
+        action = guard_res.get('action')
+        if action == 'launch':
+            ok, _msg = GameDetector(pm.backup_root).launch(guard_res['game'])
+            if ok:
+                return 0
+        elif action == 'already_running':
+            return 0
+        elif action == 'block':
+            launch_guard_notice = dict(guard_res.get('notice') or {})
+            launch_guard_notice['_launch_after_restore'] = True
+
     # 4. Pre-Qt graphics compatibility & `.graphics_boot_pending` sentinel check
     software_rendering, sentinel_triggered, gfx_warnings = prepare_graphics_mode(
         pm, cm, safe_graphics=bool(args.safe_graphics)
@@ -333,6 +363,8 @@ def main(argv: Optional[list[str]] = None) -> int:
         software_rendering,
         startup_warnings,
         sentinel_already_present=sentinel_triggered,
+        start_in_tray=bool(args.tray) and launch_guard_notice is None,
+        launch_guard_notice=launch_guard_notice,
     )
 
 

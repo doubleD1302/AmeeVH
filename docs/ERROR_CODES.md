@@ -39,6 +39,7 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 | `E-HTTP-RATE` | GitHub đang giới hạn lượt truy cập | lỗi | ✓ | ✓ |
 | `E-NET` | Không kết nối được máy chủ | lỗi | ✓ | ✓ |
 | `E-NET-BLOCKED` | Windows hoặc phần mềm bảo mật chặn launcher dùng mạng | lỗi | ✓ |  |
+| `E-NET-CAPTIVE` | Mạng đang chặn hoặc chuyển hướng đăng nhập (Captive Portal) | lỗi | ✓ | ✓ |
 | `E-NET-DNS` | Không tìm ra địa chỉ GitHub (lỗi DNS) | lỗi | ✓ | ✓ |
 | `E-NET-OFFLINE` | Máy chưa có đường ra Internet | lỗi | ✓ | ✓ |
 | `E-NET-PROXY` | Proxy từ chối hoặc chặn yêu cầu | lỗi | ✓ |  |
@@ -47,6 +48,7 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 | `E-NET-TIMEOUT` | GitHub phản hồi quá chậm | lỗi | ✓ | ✓ |
 | `E-NET-TLS` | Không thiết lập được kết nối an toàn (HTTPS) | lỗi | ✓ | ✓ |
 | `E-NET-TLS-CERT` | Chứng chỉ bảo mật không được tin cậy | lỗi | ✓ | ✓ |
+| `E-NET-VPN-DNS` | VPN hoặc DNS riêng tư đang chặn GitHub | lỗi |  | ✓ |
 | `E-RELEASE` | Chưa có bản phát hành dùng được | lỗi | ✓ |  |
 | `E-SYNC-PENDING` | Launcher đang đọc thông tin từ GitHub | thông tin | ✓ | ✓ |
 
@@ -77,13 +79,19 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 |---|---|---|:-:|:-:|
 | `E-ADB` | Lỗi Local ADB | lỗi |  | ✓ |
 | `E-ADB-AUTH` | Điện thoại chưa chấp nhận khoá Local ADB | lỗi |  | ✓ |
+| `E-ADB-CONN-REFUSED` | Gỡ lỗi không dây đang tắt hoặc cổng đã đổi | lỗi |  | ✓ |
+| `E-ADB-DISCONNECTED` | Kết nối Local ADB bị ngắt giữa chừng | lỗi |  | ✓ |
 | `E-ADB-INPUT` | Thông tin kết nối Local ADB không hợp lệ | cảnh báo |  | ✓ |
 | `E-ADB-KEY` | Khoá Local ADB gặp vấn đề | lỗi |  | ✓ |
+| `E-ADB-NO-WIFI` | Cần bật Wi-Fi để dùng Gỡ lỗi không dây | cảnh báo |  | ✓ |
 | `E-ADB-NOT-CONNECTED` | Chưa kết nối Local ADB | cảnh báo |  | ✓ |
 | `E-ADB-PAIR` | Ghép đôi chưa thành công | lỗi |  | ✓ |
+| `E-ADB-PERM` | Hệ điều hành đang chặn quyền Local ADB (ColorOS / HyperOS / MIUI) | lỗi |  | ✓ |
 | `E-ADB-START` | Không khởi động được Local ADB | lỗi |  | ✓ |
 | `E-ADB-TIMEOUT` | Local ADB không phản hồi | lỗi |  | ✓ |
 | `E-DEVOPT` | Chưa bật Tuỳ chọn nhà phát triển | cảnh báo |  | ✓ |
+| `E-NOTIF-PERMISSION` | Chưa cấp quyền hiện Thông báo | cảnh báo |  | ✓ |
+| `E-OEM-BG-RESTRICT` | Hệ thống tiết kiệm pin đang hạn chế ứng dụng nền | lỗi |  | ✓ |
 
 ### Game và thư mục
 
@@ -91,11 +99,13 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 |---|---|---|:-:|:-:|
 | `E-BIND-MISMATCH` | Nhật ký/bản sao lưu thuộc thiết bị hoặc thư mục khác | lỗi |  | ✓ |
 | `E-BUSY` | Launcher đang bận | cảnh báo | ✓ | ✓ |
+| `E-GAME-NO-DATA` | Game chưa có thư mục dữ liệu (chưa tải tài nguyên) | cảnh báo |  | ✓ |
 | `E-GAME-NOT-FOUND` | Không tự tìm thấy game | cảnh báo | ✓ |  |
 | `E-GAME-ROOT-CHANGED` | Thư mục dữ liệu game đã thay đổi | lỗi |  | ✓ |
 | `E-GAME-RUNNING` | Game đang chạy | cảnh báo | ✓ | ✓ |
 | `E-GAME-STATE` | Không kiểm tra được trạng thái game | lỗi |  | ✓ |
 | `E-GAME-VERSION` | Chưa đọc được phiên bản game | lỗi |  | ✓ |
+| `E-GAME-WRONG-EDITION` | Đang cài bản Stella Sora khu vực khác (không phải Global EN) | cảnh báo |  | ✓ |
 | `E-LAUNCH-FAILED` | Không mở được game | lỗi | ✓ |  |
 | `E-NO-EXE` | Thư mục này không có StellaSora.exe | cảnh báo | ✓ |  |
 | `E-NO-GAME` | Chưa tìm thấy game Stella Sora | cảnh báo |  | ✓ |
@@ -128,6 +138,7 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 
 | Mã | Tiêu đề | Mức | PC | AND |
 |---|---|---|:-:|:-:|
+| `E-APK-INSTALL-PERMISSION` | Chưa cấp quyền cài đặt APK từ ứng dụng | cảnh báo |  | ✓ |
 | `E-APK-INVALID` | Thông tin bản cập nhật ứng dụng không hợp lệ | lỗi |  | ✓ |
 | `E-APK-NONE` | Chưa có bản ứng dụng mới hơn | thông tin |  | ✓ |
 | `E-APK-SIGNATURE` | Chữ ký APK không khớp | lỗi |  | ✓ |
@@ -156,10 +167,23 @@ Mọi lỗi người chơi nhìn thấy đều được quy về **một mã `E-
 | `E-CANCELLED` | Thao tác đã được huỷ | thông tin | ✓ | ✓ |
 | `E-INTERNAL` | Launcher gặp lỗi nội bộ | lỗi | ✓ | ✓ |
 | `E-LOCAL-PAYLOAD` | Gói bản dịch cục bộ không dùng được | lỗi | ✓ |  |
-| `E-MEMORY` | Máy không đủ bộ nhớ RAM | lỗi | ✓ |  |
+| `E-MEMORY` | Máy không đủ bộ nhớ RAM | lỗi | ✓ | ✓ |
+| `E-ZIP-CORRUPT` | Gói nén AssetBundles bị lỗi khi giải nén | lỗi |  | ✓ |
 | `E-SHORTCUT` | Không tạo được lối tắt | cảnh báo | ✓ |  |
 | `E-UI-BLOCKED` | Yêu cầu bị chặn | lỗi |  | ✓ |
 | `E-UNKNOWN` | Lỗi chưa xác định | lỗi | ✓ | ✓ |
+
+### Launcher v2.0 (PC)
+
+| Mã | Tiêu đề | Mức | PC | AND |
+|---|---|---|---|:-:|
+| `E-BG-SYNC` | Không đồng bộ được hình nền chính thức, đang dùng ảnh dự phòng | thông tin | ✓ |  |
+| `E-CFA-BLOCKED` | Controlled Folder Access / Diệt virus chặn ghi tệp | lỗi | ✓ |  |
+| `E-GPU-RENDER` | Lỗi khởi tạo đồ họa phần cứng (đã bật chế độ tương thích) | cảnh báo | ✓ |  |
+| `E-MIGRATION` | Di trú dữ liệu từ phiên bản cũ gặp cảnh báo | cảnh báo | ✓ |  |
+| `E-NET-CAPTIVE` | Mạng đang chặn hoặc chuyển hướng đăng nhập (Captive Portal) | lỗi | ✓ |  |
+| `E-PARALLEL-DL` | Tải song song gặp sự cố | lỗi | ✓ |  |
+| `E-STARTUP-DLL` | Không nạp được thư viện hệ thống / Qt khi khởi động | lỗi | ✓ |  |
 
 ## Mã HTTP
 
