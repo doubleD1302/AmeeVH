@@ -1,7 +1,14 @@
 {
-  "version": "2.1.4",
+  "version": "2.1.5",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-045",
+      "date": "2026-11-27",
+      "title": "Bản vá nóng v2.1.5: Sửa Lỗi Giải Nén BZip2 Ngẫu Nhiên Khi Khôi Phục Gốc Trên Android",
+      "type": "release",
+      "content": "Bản vá nóng Launcher Android v2.1.5 (versionCode 28) và đồng bộ PC Launcher v2.1.5:\n• Hỗ trợ đầy đủ khối nén BZip2 ngẫu nhiên (Randomised BZip2 blocks) trong bộ dựng bản vá BSDIFF40 trên Android — khắc phục lỗi dừng khi dựng lại các gói lớn như icon-c.en.unity3d từ máy chủ Yostar.\n• Giữ lại bộ đệm official_cache khi mất mạng giữa chừng để bấm Khôi phục lại tiếp tục ngay phần còn thiếu (tự xoá sạch 0 MB sau khi hoàn tất).\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.5."
+    },
     {
       "id": "NOTIF-044",
       "date": "2026-11-27",
