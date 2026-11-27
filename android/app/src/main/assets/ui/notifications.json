@@ -1,7 +1,14 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-041",
+      "date": "2026-11-27",
+      "title": "Bản vá khẩn v2.1.1: Sửa Lỗi Văng Ngay Khi Mở Launcher Android v2.1.0",
+      "type": "release",
+      "content": "Khắc phục triệt để lỗi Launcher Android v2.1.0 bị văng ngay khi vừa mở (NullPointerException do gọi WindowInsetsController trước setContentView).\n• Nếu bạn đang ở bản v2.0.1 hoặc cũ hơn: mở launcher để tự động cập nhật thẳng lên v2.1.1 (versionCode 24).\n• Nếu bạn đã lỡ nâng lên v2.1.0 và không mở được app: tải trực tiếp tệp StellaSora-Android_v2.1.1.apk trên trang web/GitHub rồi bấm cài đè trực tiếp (không cần gỡ bản cũ, giữ nguyên toàn bộ cấu hình & khóa Local ADB).\n• PC Launcher đồng bộ phiên bản v2.1.1; bản dịch game giữ nguyên từ v2.1.0, không cần cài lại."
+    },
     {
       "id": "NOTIF-040",
       "date": "2026-11-27",

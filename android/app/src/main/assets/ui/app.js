@@ -15,7 +15,7 @@
     officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
     guard:{accessibilityEnabled:false,canPinShortcut:true,pendingRestore:false},
     support:{methods:[]},
-    app:{versionName:'2.1.0',versionCode:23,variant:'localadb',theme:'system',resolvedTheme:'light'}
+    app:{versionName:'2.1.1',versionCode:24,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
 
   let state = initial, currentPage = 'overview';
@@ -456,7 +456,7 @@
       summary = gh.message || 'Chưa có gói Android tương thích. Xem trạng thái chi tiết bên dưới.';
     }
     text('github-summary', summary);
-    text('app-version', 'Launcher Android ' + (state.app.versionName || '2.1.0') + ' (code ' + (state.app.versionCode || 23) + ') · Local ADB');
+    text('app-version', 'Launcher Android ' + (state.app.versionName || '2.1.1') + ' (code ' + (state.app.versionCode || 24) + ') · Local ADB');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Mở trình cài đặt Android' : 'Tải bản cập nhật';

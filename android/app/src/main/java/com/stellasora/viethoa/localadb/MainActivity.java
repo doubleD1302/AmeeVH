@@ -60,14 +60,21 @@ public final class MainActivity extends Activity implements LauncherService.List
   boolean dark = isDarkTheme();
   int bg = dark ? DARK_BG : LIGHT_BG;
   int nav = dark ? DARK_NAV : LIGHT_BG;
-  getWindow().setStatusBarColor(bg);
-  getWindow().setNavigationBarColor(nav);
+  Window win = getWindow();
+  if (win != null) {
+   win.setStatusBarColor(bg);
+   win.setNavigationBarColor(nav);
+  }
   if (container != null) container.setBackgroundColor(bg);
   if (web != null) web.setBackgroundColor(bg);
-  WindowInsetsController barAppearance = getWindow().getInsetsController();
-  if (barAppearance != null) {
-   int mask = WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS | WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS;
-   barAppearance.setSystemBarsAppearance(dark ? 0 : mask, mask);
+  if (win != null && win.peekDecorView() != null) {
+   try {
+    WindowInsetsController barAppearance = win.getInsetsController();
+    if (barAppearance != null) {
+     int mask = WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS | WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS;
+     barAppearance.setSystemBarsAppearance(dark ? 0 : mask, mask);
+    }
+   } catch (Throwable ignored) {}
   }
  }
 
@@ -75,8 +82,8 @@ public final class MainActivity extends Activity implements LauncherService.List
   super.onCreate(saved);
   getWindow().setDecorFitsSystemWindows(false);
   container = new FrameLayout(this);
-  applySystemChromeTheme();
   setContentView(container);
+  applySystemChromeTheme();
 
   container.setOnApplyWindowInsetsListener((v, insets) -> {
    android.graphics.Insets bars = insets.getInsets(WindowInsets.Type.systemBars() | WindowInsets.Type.displayCutout());
