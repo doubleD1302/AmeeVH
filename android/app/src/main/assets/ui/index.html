@@ -129,19 +129,34 @@
     <span class="ver-chip" id="guard-yostar-chip">Yostar</span>
    </div>
    <div class="setting-rows">
-    <button class="setting-row" id="btn-open-a11y" data-action="openAccessibilitySettings" type="button">
-     <img src="game_icons/shield.webp" alt="" width="18" height="18" decoding="async">
-     <span class="row-title">Trợ năng tự chặn</span>
-     <span class="chip-badge warning" id="guard-a11y-status"><i></i>Chưa bật</span>
-     <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="13" height="13" decoding="async">
-    </button>
-    <button class="setting-row" id="btn-open-overlay" data-action="openOverlaySettings" type="button">
-     <img src="game_icons/display.webp" alt="" width="18" height="18" decoding="async">
-     <span class="row-title">Hiển thị nổi (OEM)</span>
-     <span class="chip-badge neutral" id="guard-overlay-status"><i></i>Tắt</span>
-     <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="13" height="13" decoding="async">
-    </button>
+    <div class="setting-row-pair">
+     <button class="setting-row" id="btn-open-a11y" data-action="openAccessibilitySettings" type="button">
+      <img src="game_icons/shield.webp" alt="" width="17" height="17" decoding="async">
+      <span class="row-title">Trợ năng chặn</span>
+      <span class="chip-badge warning" id="guard-a11y-status"><i></i>Chưa bật</span>
+      <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
+     </button>
+     <button class="help-mini-btn" type="button" data-safety-topic="a11y" aria-label="Giải thích an toàn quyền Trợ năng">
+      <img src="game_icons/help.webp" alt="" width="16" height="16" decoding="async">
+     </button>
+    </div>
+    <div class="setting-row-pair">
+     <button class="setting-row" id="btn-open-overlay" data-action="openOverlaySettings" type="button">
+      <img src="game_icons/display.webp" alt="" width="17" height="17" decoding="async">
+      <span class="row-title">Hiển thị nổi</span>
+      <span class="chip-badge neutral" id="guard-overlay-status"><i></i>Tắt</span>
+      <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
+     </button>
+     <button class="help-mini-btn" type="button" data-safety-topic="overlay" aria-label="Giải thích an toàn quyền Hiển thị nổi">
+      <img src="game_icons/help.webp" alt="" width="16" height="16" decoding="async">
+     </button>
+    </div>
    </div>
+   <button class="safety-banner-btn" type="button" data-safety-topic="a11y">
+    <img src="game_icons/shield.webp" alt="" width="15" height="15" decoding="async">
+    <span>Cam kết an toàn · Tự check bằng AI</span>
+    <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
+   </button>
    <p class="micro-note" id="guard-yostar-summary">Tự kiểm tra Yostar trên cả Wi-Fi &amp; 4G/5G.</p>
    <div class="tool-bar">
     <button class="tool-btn" id="btn-pin-guard" data-action="pinGuardShortcut" type="button"><img src="game_icons/play.webp" alt="" width="15" height="15" decoding="async"><span>Lối tắt</span></button>
@@ -178,6 +193,11 @@
   <p>Ghép đôi 1 lần qua Wi-Fi (Android 11–16).</p>
  </div>
  <div class="content-stack">
+  <button class="safety-banner-btn standalone" type="button" data-safety-topic="adb">
+   <img src="game_icons/shield.webp" alt="" width="16" height="16" decoding="async">
+   <span>An toàn Local ADB · Tự check bằng AI</span>
+   <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
+  </button>
   <article class="card warn-card" id="dev-mode-warning" hidden>
    <div class="card-head">
     <h2><img src="game_icons/repair.webp" alt="" width="18" height="18" decoding="async">Chế độ nhà phát triển</h2>
@@ -290,7 +310,7 @@
   <article class="card">
    <div class="card-head">
     <h2><img src="game_icons/globe.webp" alt="" width="18" height="18" decoding="async">Đồng bộ &amp; Cập nhật</h2>
-    <span class="ver-chip" id="app-version">v2.1.2</span>
+    <span class="ver-chip" id="app-version">v2.1.3</span>
    </div>
    <p id="github-summary" class="micro-note">Chưa đồng bộ GitHub.</p>
    <p id="update-state" class="micro-note">Chưa kiểm tra bản mới.</p>
@@ -411,6 +431,75 @@
    <h3 id="notice-title"></h3>
    <p class="micro-note" id="notice-date"></p>
    <p class="notice-body" id="notice-body"></p>
+  </div>
+ </div>
+</div>
+
+<div class="overlay" id="safety-overlay" role="dialog" aria-modal="true" aria-labelledby="safety-title" hidden>
+ <div class="card dialog-card safety-dialog">
+  <div class="safety-hero">
+   <button class="chibi-badge" id="safety-chibi-btn" type="button" aria-label="Đổi nhân vật chibi">
+    <img id="safety-chibi-img" src="chibis/chibi_111.webp" alt="" width="70" height="70" decoding="async">
+   </button>
+   <div class="safety-hero-copy">
+    <div class="safety-char-row">
+     <span class="safety-char-pill" id="safety-char-name">Iris</span>
+     <span class="safety-tag">An toàn &amp; Minh bạch</span>
+    </div>
+    <h2 id="safety-title">Vì sao cần quyền Trợ năng?</h2>
+    <p class="safety-quote" id="safety-char-quote">"Đừng lo nhé, để mình giải thích thật dễ hiểu cho cậu!"</p>
+   </div>
+   <button class="icon-button dialog-close safety-close" id="safety-close" type="button" aria-label="Đóng"><img src="game_icons/close.webp" alt="" width="17" height="17" decoding="async"></button>
+  </div>
+
+  <div class="safety-tabs" role="tablist" aria-label="Chọn quyền cần giải thích">
+   <button type="button" class="safety-tab active" data-safety-tab="a11y" role="tab">Trợ năng</button>
+   <button type="button" class="safety-tab" data-safety-tab="overlay" role="tab">Hiển thị nổi</button>
+   <button type="button" class="safety-tab" data-safety-tab="adb" role="tab">Local ADB</button>
+  </div>
+
+  <div class="err-body-scroll safety-scroll" id="safety-scroll">
+   <div class="safety-block">
+    <h3 class="err-section-cap">QUYỀN NÀY DÙNG ĐỂ LÀM GÌ?</h3>
+    <ul class="safety-list" id="safety-why-list"></ul>
+   </div>
+
+   <div class="safety-pledge-box">
+    <h3 class="err-section-cap">CAM KẾT AN TOÀN TUYỆT ĐỐI</h3>
+    <ul class="pledge-list" id="safety-pledge-list"></ul>
+   </div>
+
+   <div class="ai-check-box">
+    <div class="ai-check-head">
+     <img src="game_icons/sparkle.webp" alt="" width="17" height="17" decoding="async">
+     <strong>Tự kiểm tra độ an toàn bằng AI</strong>
+    </div>
+    <p class="ai-check-desc">Bạn có thể tự nhờ <strong>ChatGPT, Gemini hoặc Claude</strong> đọc mã nguồn công khai trên GitHub để kiểm chứng độc lập trong 10 giây:</p>
+    <ol class="ai-steps">
+     <li>Bấm <strong>Chép prompt kiểm tra AI</strong> bên dưới (đã kèm sẵn link mã nguồn thật).</li>
+     <li>Dán vào ChatGPT / Gemini / Claude và xem AI đánh giá khách quan.</li>
+    </ol>
+    <details class="message-tech safety-prompt-preview" id="safety-prompt-details">
+     <summary>Xem trước prompt &amp; tệp mã nguồn</summary>
+     <div class="tech-inner">
+      <pre id="safety-prompt-text"></pre>
+     </div>
+    </details>
+   </div>
+  </div>
+
+  <div class="err-footer safety-footer">
+   <button class="button primary wide xs-btn copy-cta" id="safety-copy-ai" type="button">
+    <img src="game_icons/copy.webp" alt="" width="16" height="16" decoding="async">
+    <span>Chép prompt kiểm tra AI</span>
+   </button>
+   <div class="button-row safety-sub-row">
+    <button class="button secondary xs-btn" id="safety-open-source" type="button">
+     <img src="game_icons/external_link.webp" alt="" width="15" height="15" decoding="async">
+     <span>Xem mã nguồn</span>
+    </button>
+    <button class="button secondary xs-btn" id="safety-ok" type="button">Đã hiểu</button>
+   </div>
   </div>
  </div>
 </div>

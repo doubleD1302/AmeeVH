@@ -17,13 +17,92 @@
     officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
     guard:{accessibilityEnabled:false,overlayEnabled:false,canPinShortcut:true,pendingRestore:false},
     support:{methods:[]},
-    app:{versionName:'2.1.2',versionCode:25,variant:'localadb',theme:'system',resolvedTheme:'light'}
+    app:{versionName:'2.1.3',versionCode:26,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
 
   let state = initial, currentPage = 'overview';
   let previousBusyPhase = '', lastOutcome = '';
   let firstConfig = true;
-  let copyResetTimer = 0, toastTimer = 0, currentReportId = '', activeProbeInModal = false;
+  let copyResetTimer = 0, safetyCopyTimer = 0, toastTimer = 0, currentReportId = '', activeProbeInModal = false;
+  let currentSafetyTopic = 'a11y', lastChibiIdx = -1;
+
+  const CHIBI_CAST = [
+    {id:'103', name:'Amber',   quote:'"Cứ kiểm tra kỹ mọi thứ trước khi bật nhé, tớ đảm bảo sạch sẽ 100%!"'},
+    {id:'107', name:'Tilia',   quote:'"Với danh dự Hiệp sĩ Chính Nghĩa, mọi quyền ở đây đều minh bạch rõ ràng!"'},
+    {id:'110', name:'Firenze', quote:'"Đừng tin lời suông — cậu cứ dán mã nguồn vào AI kiểm chứng tận mắt nhé."'},
+    {id:'111', name:'Iris',    quote:'"Đừng lo lắng nhé, mình đã chuẩn bị sẵn hướng dẫn tự kiểm tra bằng AI rồi nè!"'},
+    {id:'112', name:'Noya',    quote:'"Mọi dòng code đều mở công khai đó, cậu bấm 1 chạm là kiểm tra được ngay ♪"'},
+    {id:'114', name:'Chaton',  quote:'"Chỉ canh đúng cửa Stella Sora thôi, không tò mò mấy ứng dụng khác đâu nha~"'},
+    {id:'117', name:'Jinglin', quote:'"An toàn dữ liệu là trên hết! Cậu xem cam kết bên dưới là yên tâm liền."'},
+    {id:'118', name:'Coronis', quote:'"Quyền nào cũng chỉ xin đúng phần tối thiểu nhất, hoàn toàn có thể tự kiểm tra."'},
+    {id:'119', name:'Nanoha',  quote:'"Cậu có thể tự nhờ ChatGPT, Gemini hay Claude đọc code xác nhận hộ đấy!"'},
+    {id:'120', name:'Canace',  quote:'"Dựa theo mã nguồn công khai trên GitHub, mọi thứ đều có thể kiểm chứng độc lập."'},
+    {id:'123', name:'Ann',     quote:'"Để tụi mình giải thích thật nhẹ nhàng để cậu yên tâm cài Việt hoá nha!"'},
+    {id:'134', name:'Fuyuka',  quote:'"Mở code lên soi thoải mái luôn — minh bạch từ đầu đến cuối cho cậu yên tâm!"'}
+  ];
+
+  const SAFETY_TOPICS = {
+    a11y: {
+      title: 'Vì sao cần quyền Trợ năng?',
+      sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
+      why: [
+        'Chỉ nhận biết đúng lúc bạn bấm mở icon Stella Sora khi máy chủ Yostar có bản cập nhật mới.',
+        'Lập tức hiện hộp thoại nhắc bạn khôi phục dữ liệu gốc trước, tránh lỗi hỏng bản vá game.',
+        'Android 13+ mặc định khoá quyền này cho app cài ngoài Play Store nên mới hiện mục "Cài đặt bị hạn chế".'
+      ],
+      pledges: [
+        'Đã khoá cứng packageNames = com.YoStarEN.StellaSora và canRetrieveWindowContent = false.',
+        'Tuyệt đối KHÔNG đọc nội dung màn hình, mật khẩu, tin nhắn, bàn phím hay ứng dụng ngân hàng.',
+        '100% mã nguồn mở trên GitHub — miễn phí, không quảng cáo, không gửi dữ liệu cá nhân ra ngoài.'
+      ],
+      promptFiles: [
+        'android/app/src/main/res/xml/game_guard_accessibility.xml',
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
+        'android/app/src/main/AndroidManifest.xml'
+      ],
+      promptFocus: 'quyền Trợ năng (AccessibilityService) của tính năng Bảo vệ cập nhật game'
+    },
+    overlay: {
+      title: 'Vì sao cần Hiển thị nổi (OEM)?',
+      sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
+      why: [
+        'Một số máy Xiaomi (HyperOS/MIUI), OPPO, Vivo, Samsung chặn lớp phủ Trợ năng mặc định khi mở game.',
+        'Quyền Hiển thị trên ứng dụng khác (SYSTEM_ALERT_WINDOW) làm lớp dự phòng để popup cảnh báo hiện lên ngay trên màn hình game.',
+        'Bạn chỉ cần bật quyền này nếu thấy mở game lúc có bản vá mới mà popup chưa tự hiện.'
+      ],
+      pledges: [
+        'Chỉ vẽ duy nhất hộp thoại cảnh báo cập nhật Stella Sora khi bản dịch cần khôi phục gốc.',
+        'KHÔNG chạy nền hiển thị quảng cáo, không che nút hệ thống hay can thiệp ứng dụng khác.',
+        'Có thể tắt lại bất kỳ lúc nào trong Cài đặt ứng dụng Android.'
+      ],
+      promptFiles: [
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/GameAlertViewBuilder.java',
+        'android/app/src/main/AndroidManifest.xml'
+      ],
+      promptFocus: 'quyền Hiển thị trên ứng dụng khác (SYSTEM_ALERT_WINDOW)'
+    },
+    adb: {
+      title: 'Vì sao cần Local ADB?',
+      sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GamePatcher.java',
+      why: [
+        'Từ Android 11+, hệ thống chặn app thông thường đọc/ghi thư mục Android/data/com.YoStarEN.StellaSora/files.',
+        'Local ADB dùng chính tính năng Gỡ lỗi không dây có sẵn của Android (kết nối nội bộ 127.0.0.1 ngay trên máy bạn, không cần PC hay Root).',
+        'Chỉ sao lưu bản gốc, chép tệp ngôn ngữ/ảnh Việt hoá đã kiểm tra SHA256 và khôi phục lại khi game cập nhật.'
+      ],
+      pledges: [
+        'Đường dẫn bị khoá chặt trong đúng thư mục dữ liệu của com.YoStarEN.StellaSora (chặn vượt thư mục & symlink).',
+        'Khoá ghép đôi ADB sinh cục bộ trong bộ nhớ riêng của máy, không bao giờ gửi ra internet.',
+        'Không đụng tới tệp hệ thống, ảnh cá nhân, danh bạ hay tài khoản game của bạn.'
+      ],
+      promptFiles: [
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/GamePatcher.java',
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/AdbBrokerService.java',
+        'android/app/src/main/AndroidManifest.xml'
+      ],
+      promptFocus: 'tính năng Local ADB (Gỡ lỗi không dây nội bộ) và quy trình ghi/khôi phục tệp game'
+    }
+  };
 
   const QUICK_FIX_MAP = {
     open_device_info:     {label:'Thông tin điện thoại', icon:'gear', action:'openDeviceInfo', close:false},
@@ -77,6 +156,43 @@
   }
   function text(id, value) { const e = $(id); if (e) e.textContent = value == null ? '' : String(value); }
   function empty(node) { while (node && node.firstChild) node.removeChild(node.firstChild); }
+
+  let marqueeRaf = 0;
+  function refreshMarquees() {
+    if (marqueeRaf) cancelAnimationFrame(marqueeRaf);
+    marqueeRaf = requestAnimationFrame(() => {
+      marqueeRaf = 0;
+      const nodes = document.querySelectorAll(
+        '#hero-status-text, .row-title, .safety-banner-btn > span, .notice-row > span, #safety-title, #message-title, .safety-tag, .guard-head-text strong'
+      );
+      nodes.forEach(el => {
+        if (!el || el.clientWidth <= 0) return;
+        let inner = el.querySelector(':scope > .mq-inner');
+        const currentText = inner ? inner.textContent : el.textContent;
+        if (!inner) {
+          el.classList.add('mq-host');
+          inner = document.createElement('span');
+          inner.className = 'mq-inner';
+          inner.textContent = currentText;
+          el.textContent = '';
+          el.appendChild(inner);
+        }
+        el.classList.remove('mq-active');
+        const overflow = Math.ceil(inner.scrollWidth - el.clientWidth);
+        if (overflow > 3) {
+          const dist = -(overflow + 8);
+          const dur = Math.max(5.5, Math.min(18, (overflow / 26) * 2 + 3.4));
+          el.style.setProperty('--mq-shift', dist + 'px');
+          el.style.setProperty('--mq-dur', dur.toFixed(2) + 's');
+          el.classList.add('mq-active');
+        } else {
+          el.style.removeProperty('--mq-shift');
+          el.style.removeProperty('--mq-dur');
+        }
+      });
+    });
+  }
+  window.addEventListener('resize', refreshMarquees);
 
   function showToast(msg) {
     const el = $('toast'); if (!el || !msg) return;
@@ -214,6 +330,7 @@
     setCopyLabel('Sao chép báo lỗi', false);
     $('message-overlay').hidden = false;
     const scroll = $('message-scroll'); if (scroll) scroll.scrollTop = 0;
+    refreshMarquees();
   }
 
   function request(action, payload={}) {
@@ -238,6 +355,7 @@
     document.querySelectorAll('.page').forEach(e => e.classList.toggle('active', e.id === 'page-' + page));
     document.querySelectorAll('.bottom-nav button').forEach(e => e.classList.toggle('active', e.dataset.page === page));
     window.scrollTo({top: 0, behavior: 'instant'});
+    refreshMarquees();
   }
 
   function statusLabel(v) {
@@ -452,7 +570,7 @@
     text('github-state', lines.join('\n'));
 
     text('github-summary', p.available ? ('Gói Android ' + (p.version || gh.translationVersion || '') + ' sẵn sàng.') : (gh.message || 'Chưa đồng bộ GitHub.'));
-    text('app-version', 'v' + (state.app.versionName || '2.1.2') + ' (' + (state.app.versionCode || 25) + ')');
+    text('app-version', 'v' + (state.app.versionName || '2.1.3') + ' (' + (state.app.versionCode || 26) + ')');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Cài APK mới' : 'Tải bản cập nhật';
@@ -464,6 +582,7 @@
     if (adb.pairingPort) fillInput('pair-port', adb.pairingPort);
     firstConfig = false;
     renderNotices();
+    refreshMarquees();
   }
 
   function notices() { return Array.isArray(state.notifications) ? state.notifications : []; }
@@ -483,6 +602,7 @@
     const filtered = items.filter(n => !query || ((n.title || '') + ' ' + (n.content || '')).toLocaleLowerCase('vi').includes(query));
     if (!filtered.length) { const p = document.createElement('p'); p.className = 'empty-note'; p.textContent = 'Không tìm thấy.'; list.append(p); }
     else filtered.forEach(n => list.append(noticeRow(n)));
+    refreshMarquees();
   }
   function openNotice(n) {
     $('notices-overlay').hidden = false; $('notice-all-list').hidden = true; $('notice-search').hidden = true; $('notice-detail').hidden = false;
@@ -527,8 +647,103 @@
     return Number(v);
   }
 
+  function buildAiCheckPrompt(topicKey) {
+    const spec = SAFETY_TOPICS[topicKey] || SAFETY_TOPICS.a11y;
+    const repo = (state.config && state.config.repo) || 'doubleD1302/AmeeVH';
+    const branch = (state.config && state.config.branch) || 'main';
+    const base = 'https://github.com/' + repo;
+    const fileLines = spec.promptFiles.map(f => '- ' + base + '/blob/' + branch + '/' + f).join('\n');
+    return 'Hãy đóng vai chuyên gia bảo mật Android, kiểm tra giúp tôi ' + spec.promptFocus
+      + ' trong ứng dụng mã nguồn mở Stella Sora Việt Hoá có an toàn không:\n'
+      + '- Kho mã nguồn công khai: ' + base + '\n'
+      + fileLines + '\n\n'
+      + 'Hãy đọc kỹ các tệp trên và trả lời ngắn gọn, dễ hiểu cho người dùng phổ thông:\n'
+      + '1. Tính năng này có đọc màn hình, mật khẩu, tin nhắn hay theo dõi ứng dụng khác ngoài game com.YoStarEN.StellaSora không?\n'
+      + '2. Có dấu hiệu mã độc, gửi dữ liệu cá nhân ra ngoài hay hành vi ngầm nguy hiểm không?\n'
+      + '3. Kết luận tổng thể: Có an toàn để cấp quyền hay không?';
+  }
+
+  function pickRandomChibi(animate=false) {
+    if (!CHIBI_CAST.length) return;
+    let idx = Math.floor(Math.random() * CHIBI_CAST.length);
+    if (CHIBI_CAST.length > 1 && idx === lastChibiIdx) idx = (idx + 1) % CHIBI_CAST.length;
+    lastChibiIdx = idx;
+    const ch = CHIBI_CAST[idx];
+    const img = $('safety-chibi-img');
+    if (img) img.src = 'chibis/chibi_' + ch.id + '.webp';
+    text('safety-char-name', ch.name);
+    text('safety-char-quote', ch.quote);
+    if (animate) {
+      const btn = $('safety-chibi-btn');
+      if (btn) {
+        btn.classList.remove('pop');
+        void btn.offsetWidth;
+        btn.classList.add('pop');
+      }
+    }
+  }
+
+  function renderSafetyTopic(topicKey) {
+    const key = SAFETY_TOPICS[topicKey] ? topicKey : 'a11y';
+    currentSafetyTopic = key;
+    const spec = SAFETY_TOPICS[key];
+    text('safety-title', spec.title);
+    document.querySelectorAll('[data-safety-tab]').forEach(t => {
+      const active = t.dataset.safetyTab === key;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', String(active));
+    });
+    const whyEl = $('safety-why-list');
+    empty(whyEl);
+    spec.why.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      whyEl.appendChild(li);
+    });
+    const pledgeEl = $('safety-pledge-list');
+    empty(pledgeEl);
+    spec.pledges.forEach(item => {
+      const li = document.createElement('li');
+      const ic = document.createElement('img');
+      ic.src = ICON('check'); ic.alt = ''; ic.width = 14; ic.height = 14; ic.decoding = 'async';
+      const sp = document.createElement('span'); sp.textContent = item;
+      li.append(ic, sp);
+      pledgeEl.appendChild(li);
+    });
+    text('safety-prompt-text', buildAiCheckPrompt(key));
+    const det = $('safety-prompt-details'); if (det) det.open = false;
+    const copyBtn = $('safety-copy-ai');
+    if (copyBtn) {
+      copyBtn.classList.remove('copied');
+      const sp = copyBtn.querySelector('span'); if (sp) sp.textContent = 'Chép prompt kiểm tra AI';
+    }
+    const sc = $('safety-scroll'); if (sc) sc.scrollTop = 0;
+    refreshMarquees();
+  }
+
+  function openSafetyModal(topicKey) {
+    haptic();
+    pickRandomChibi(true);
+    renderSafetyTopic(topicKey || 'a11y');
+    $('safety-overlay').hidden = false;
+    refreshMarquees();
+  }
+
   document.querySelectorAll('[data-page]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
   document.querySelectorAll('[data-action]').forEach(b => b.addEventListener('click', () => { haptic(); request(b.dataset.action); }));
+  document.querySelectorAll('[data-safety-topic]').forEach(b => b.addEventListener('click', () => openSafetyModal(b.dataset.safetyTopic)));
+  document.querySelectorAll('[data-safety-tab]').forEach(b => b.addEventListener('click', () => { haptic(); renderSafetyTopic(b.dataset.safetyTab); }));
+  $('safety-chibi-btn').addEventListener('click', () => { haptic(); pickRandomChibi(true); });
+  ['safety-close','safety-ok'].forEach(id => $(id).addEventListener('click', () => { $('safety-overlay').hidden = true; }));
+  $('safety-copy-ai').addEventListener('click', () => {
+    haptic();
+    request('copyAiPrompt', {text: buildAiCheckPrompt(currentSafetyTopic)});
+  });
+  $('safety-open-source').addEventListener('click', () => {
+    haptic();
+    const spec = SAFETY_TOPICS[currentSafetyTopic] || SAFETY_TOPICS.a11y;
+    request('openSourceCode', {path: spec.sourcePath});
+  });
   ['adb-host','pair-port','connect-port','repo','branch'].forEach(id => $(id).addEventListener('input', () => { $(id).dataset.edited = '1'; }));
 
   $('theme-toggle').addEventListener('click', () => {
@@ -614,12 +829,27 @@
         else if (event.type === 'copied') {
           const d = event.data || {};
           const isDiag = d.kind === 'diagnostics';
-          if (!$('message-overlay').hidden && !$('message-copy').hidden && !isDiag) {
-            setCopyLabel('Đã sao chép ✓', true);
-            clearTimeout(copyResetTimer);
-            copyResetTimer = setTimeout(() => setCopyLabel('Sao chép báo lỗi', false), 2400);
+          const isAi = d.kind === 'ai_prompt';
+          if (isAi) {
+            const btn = $('safety-copy-ai');
+            if (btn) {
+              btn.classList.add('copied');
+              const sp = btn.querySelector('span'); if (sp) sp.textContent = 'Đã sao chép prompt ✓';
+              clearTimeout(safetyCopyTimer);
+              safetyCopyTimer = setTimeout(() => {
+                btn.classList.remove('copied');
+                if (sp) sp.textContent = 'Chép prompt kiểm tra AI';
+              }, 2600);
+            }
+            showToast('Đã sao chép prompt — dán vào ChatGPT / Gemini / Claude!');
+          } else {
+            if (!$('message-overlay').hidden && !$('message-copy').hidden && !isDiag) {
+              setCopyLabel('Đã sao chép ✓', true);
+              clearTimeout(copyResetTimer);
+              copyResetTimer = setTimeout(() => setCopyLabel('Sao chép báo lỗi', false), 2400);
+            }
+            showToast(isDiag ? 'Đã sao chép chẩn đoán hệ thống' : ('Đã sao chép báo lỗi' + (d.code ? ' [' + d.code + ']' : '')));
           }
-          showToast(isDiag ? 'Đã sao chép chẩn đoán hệ thống' : ('Đã sao chép báo lỗi' + (d.code ? ' [' + d.code + ']' : '')));
         }
       } catch (_) {
         message('Chưa đọc được trạng thái', 'Hãy mở lại trang Tổng quan.', true);
@@ -627,6 +857,7 @@
     },
     navigate(page) { showPage(page); },
     goBack() {
+      if (!$('safety-overlay').hidden) { $('safety-overlay').hidden = true; return true; }
       if (!$('message-overlay').hidden) { $('message-overlay').hidden = true; return true; }
       if (!$('notices-overlay').hidden) { $('notices-overlay').hidden = true; return true; }
       if (currentPage !== 'overview') { showPage('overview'); return true; }

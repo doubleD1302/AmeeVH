@@ -41,6 +41,7 @@ from ..theme.typography import (
     ui_font,
 )
 from ..widgets import (
+    ActionButton,
     AssetRenderer,
     PorcelainSectionBar,
     PorcelainWindowFrame,
@@ -316,6 +317,20 @@ class GuideScreen(QWidget):
         self._sync_meta_max_width()
         self.frame.close_requested.connect(self.close_requested.emit)
         outer.addWidget(self.frame)
+
+        # Header Safety & AI Self-Check button
+        self.safety_button = ActionButton(
+            "An toàn · Check AI",
+            variant="header_white",
+            icon_path="icons/shield_ink.svg",
+            icon_size=(14, 14),
+            icon_tint=PORCELAIN_TOKENS.NAVY_TEXT,
+            height=30,
+            asset_renderer=self._renderer,
+            parent=self.frame,
+        )
+        self.safety_button.clicked.connect(self._open_safety_explainer)
+        self.frame.add_header_control(self.safety_button)
 
         # Header Search Box
         self.search_box = _GuideSearchBox(self.frame)
@@ -842,3 +857,13 @@ class GuideScreen(QWidget):
             lay.addWidget(row)
 
         return block
+
+    def _open_safety_explainer(self) -> None:
+        from ..dialogs.safety_explainer_dialog import SafetyExplainerDialog
+
+        dlg = SafetyExplainerDialog(
+            initial_topic="guard",
+            asset_renderer=self._renderer,
+            parent=self.window(),
+        )
+        dlg.exec()

@@ -97,6 +97,7 @@ if not version_info_path.is_file():
 
 datas = [
     (str(resources_dir / "branding"), "resources/branding"),
+    (str(resources_dir / "chibis"), "resources/chibis"),
     (str(resources_dir / "fonts"), "resources/fonts"),
     (str(resources_dir / "game"), "resources/game"),
     (str(resources_dir / "icons"), "resources/icons"),
@@ -175,6 +176,7 @@ hiddenimports = [
     "launcher_v2.ui.dialogs.confirmation_dialog",
     "launcher_v2.ui.dialogs.game_selection_dialog",
     "launcher_v2.ui.dialogs.install_completed_dialog",
+    "launcher_v2.ui.dialogs.safety_explainer_dialog",
     "launcher_v2.ui.dialogs.smart_error_dialog",
     "launcher_v2.ui.dialogs.support_locked_dialog",
     "launcher_v2.ui.dialogs.update_guard_dialog",

@@ -25,6 +25,8 @@ final class GamePatcher {
  private long deadline;
  private String verifiedExternalBase;
 
+ boolean hasTarget() { return target != null; }
+
  GamePatcher(Context c, AdbClient a, ChannelClient.Progress p) {
   context = c;
   adb = a;
@@ -351,14 +353,14 @@ final class GamePatcher {
   throw new IOException("Không thể ghi tệp an toàn (" + relPath + "): " + res);
  }
 
- private void restoreFileAtomic(JSONObject journal, String id, JSONObject f) throws Exception {
+ private void restoreFileAtomic(JSONObject journal, String id, JSONObject f, JSONObject expectedCurrent) throws Exception {
   String relPath = f.getString("path");
   String path = fullPath(relPath);
   JSONObject before = f.getJSONObject("before");
-  JSONObject after = f.getJSONObject("after");
+  JSONObject expected = expectedCurrent != null ? expectedCurrent : f.getJSONObject("after");
   String qPath = Store.q(path);
   String gBefore = guard(path, before);
-  String gAfter = guard(path, after);
+  String gExpected = guard(path, expected);
 
   if (before.getBoolean("exists")) {
    String backupPath = f.getString("backup");
@@ -377,7 +379,7 @@ final class GamePatcher {
    String gTempBefore = guard(temp, before);
    StringBuilder cmd = new StringBuilder();
    cmd.append("if (").append(gBefore).append("); then printf 'OK'; exit 0; fi; ");
-   cmd.append("if ! (").append(gAfter).append("); then printf 'ERR:CHANGED'; exit 0; fi; ");
+   cmd.append("if ! (").append(gExpected).append("); then printf 'ERR:CHANGED'; exit 0; fi; ");
    cmd.append("if [ -L ").append(qTemp).append(" ]; then printf 'ERR:TEMPLINK'; exit 0; fi; ");
    if (!wasTracked) {
     cmd.append("if [ -e ").append(qTemp).append(" ]; then printf 'ERR:UNTRACKED'; exit 0; fi; ");
@@ -386,7 +388,7 @@ final class GamePatcher {
    }
    cmd.append("if [ ! -e ").append(qTemp).append(" ]; then cp ").append(qBackup).append(" ").append(qTemp).append(" || exit $?; ");
    cmd.append("if ! (").append(gTempBefore).append("); then rm -f ").append(qTemp).append("; printf 'ERR:TEMPVERIFY'; exit 0; fi; fi; ");
-   cmd.append("if ! (").append(gAfter).append("); then printf 'ERR:CHANGED'; exit 0; fi; ");
+   cmd.append("if ! (").append(gExpected).append("); then printf 'ERR:CHANGED'; exit 0; fi; ");
    cmd.append("mv -f ").append(qTemp).append(" ").append(qPath).append(" || exit $?; ");
    cmd.append("if ! (").append(gBefore).append("); then printf 'ERR:READBACK'; exit 0; fi; ");
    cmd.append("printf 'OK'");
@@ -402,7 +404,7 @@ final class GamePatcher {
    journal.put("pending", relPath);
    saveJournal(journal);
    String cmd = "if (" + gBefore + "); then printf 'OK'; exit 0; fi; "
-     + "if ! (" + gAfter + "); then printf 'ERR:CHANGED'; exit 0; fi; "
+     + "if ! (" + gExpected + "); then printf 'ERR:CHANGED'; exit 0; fi; "
      + "rm -f " + qPath + " || exit $?; "
      + "if ! (" + gBefore + "); then printf 'ERR:READBACK'; exit 0; fi; "
      + "printf 'OK'";
@@ -1039,7 +1041,7 @@ final class GamePatcher {
   return Store.obj("state", j.optString("state", "ROLLED_BACK"), "message", "Đã phục hồi nhật ký chưa hoàn tất.");
  }
 
- private void restoreJournal(JSONObject j, boolean requireAfter) throws Exception {
+ private void restoreJournal(JSONObject j, boolean explicitRestore) throws Exception {
   bound(j);
   closedAndVersion();
   ensureExternalBase();
@@ -1054,21 +1056,42 @@ final class GamePatcher {
   }
   if (!relPaths.isEmpty()) verifySafeDirectories(relPaths);
   List<JSONObject> currentStates = batchStates(destPaths);
+  List<String> driftedPaths = new ArrayList<>();
+  int alreadyVanilla = 0;
   for (int i = 0; i < files.length(); i++) {
    JSONObject f = files.getJSONObject(i);
    JSONObject current = currentStates.get(i);
    JSONObject before = f.getJSONObject("before");
    JSONObject after = f.getJSONObject("after");
-   if (requireAfter ? !same(current, after) : (!same(current, before) && !same(current, after))) {
-    throw new IOException("Tệp đã đổi ngoài thao tác; giữ nguyên: " + f.getString("path"));
+   boolean isBefore = same(current, before);
+   boolean isAfter = same(current, after);
+   if (isBefore) {
+    alreadyVanilla++;
+    continue;
    }
-   if (before.getBoolean("exists") && (!same(current, before) || requireAfter)) {
+   if (!isAfter) {
+    if (!explicitRestore) {
+     throw new IOException("Tệp đã đổi ngoài thao tác; giữ nguyên: " + f.getString("path"));
+    }
+    driftedPaths.add(f.getString("path"));
+   }
+   if (before.getBoolean("exists")) {
     File bFile = new File(f.getString("backup"));
     ownExternalPath(bFile);
     if (!bFile.isFile() || bFile.length() != before.getLong("size") || !Store.hash(bFile).equalsIgnoreCase(before.getString("sha256"))) {
      throw new IOException("Backup bị thiếu hoặc sai SHA256: " + f.getString("path"));
     }
    }
+  }
+  if (!driftedPaths.isEmpty()) {
+   DiagnosticLog.log(context, "restore",
+     "Phát hiện " + driftedPaths.size() + " tệp khác biên bản sau cài (VD: " + driftedPaths.get(0)
+       + "); tiếp tục khôi phục bản sao lưu gốc đã xác minh SHA256 cho game "
+       + j.optString("gameVersion") + "/" + j.optString("resourceVersion") + ".");
+  }
+  if (alreadyVanilla > 0) {
+   DiagnosticLog.log(context, "restore",
+     "Bỏ qua " + alreadyVanilla + " tệp đã ở đúng trạng thái gốc trước cài.");
   }
 
   j.put("state", "RESTORING");
@@ -1078,14 +1101,15 @@ final class GamePatcher {
   for (int i = 0; i < files.length(); i++) {
    JSONObject f = files.getJSONObject(i);
    JSONObject before = f.getJSONObject("before");
-   if (!requireAfter && same(currentStates.get(i), before)) {
+   JSONObject current = currentStates.get(i);
+   if (same(current, before)) {
     continue;
    }
    if (mutatedCount > 0 && (mutatedCount % 15 == 0 || SystemClock.elapsedRealtime() - lastVerCheck >= 2500L)) {
     closedAndVersion();
     lastVerCheck = SystemClock.elapsedRealtime();
    }
-   restoreFileAtomic(j, id, f);
+   restoreFileAtomic(j, id, f, current);
    mutatedCount++;
    step("Đã phục hồi " + (i + 1) + " / " + files.length(), 92 * (i + 1) / Math.max(1, files.length()));
   }
@@ -1110,7 +1134,7 @@ final class GamePatcher {
    throw new IOException("Chưa cập nhật được biên bản phục hồi.");
   }
   j.remove("pending");
-  j.put("state", requireAfter ? "RESTORED" : "ROLLED_BACK");
+  j.put("state", explicitRestore ? "RESTORED" : "ROLLED_BACK");
   saveJournal(j);
   step("Đã hoàn tất khôi phục tệp gốc.", 100);
  }

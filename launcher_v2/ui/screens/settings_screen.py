@@ -466,7 +466,20 @@ class SettingsScreen(QWidget):
         left_lay.addWidget(row_ar)
 
         # Section 2b: BẢO VỆ CẬP NHẬT GAME
-        left_lay.addWidget(PorcelainSectionBar("Bảo vệ cập nhật Game", self.left_col))
+        guard_bar = PorcelainSectionBar("Bảo vệ cập nhật Game", self.left_col)
+        self.btn_guard_safety = ActionButton(
+            "An toàn · Check AI",
+            variant="light_secondary",
+            icon_path="icons/shield_ink.svg",
+            icon_size=(13, 13),
+            icon_tint=p.NAVY_TEXT,
+            height=24,
+            asset_renderer=self._renderer,
+            parent=guard_bar,
+        )
+        self.btn_guard_safety.clicked.connect(self._open_safety_explainer)
+        guard_bar.set_right_widget(self.btn_guard_safety)
+        left_lay.addWidget(guard_bar)
 
         self.chk_guard_watch, row_gw = self._make_switch_row(
             "Cảnh báo ngay khi vào game có bản cập nhật",
@@ -1027,6 +1040,20 @@ class SettingsScreen(QWidget):
         self.reduced_motion_toggled.emit(bool(vals["reduced_motion"]))
         self.save_and_sync_requested.emit(vals)
         self.toast_requested.emit(nfc("Đã lưu cài đặt và đồng bộ dữ liệu"), "success")
+
+    def _open_safety_explainer(self) -> None:
+        from ..dialogs.safety_explainer_dialog import SafetyExplainerDialog
+
+        repo = self.github_repo_input.text().strip() or DEFAULT_GITHUB_REPO
+        branch = self.github_branch_input.text().strip() or DEFAULT_GITHUB_BRANCH
+        dlg = SafetyExplainerDialog(
+            initial_topic="guard",
+            github_repo=repo,
+            github_branch=branch,
+            asset_renderer=self._renderer,
+            parent=self.window(),
+        )
+        dlg.exec()
 
     def _sync_meta_max_width(self) -> None:
         txt = self.frame.meta_label.text()

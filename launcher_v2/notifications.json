@@ -1,7 +1,14 @@
 {
-  "version": "2.1.2",
+  "version": "2.1.3",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-043",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.3: Sửa Lỗi Khôi Phục E-FILE-CHANGED & Thêm Giải Thích Quyền + Tự Kiểm Tra AI (PC & Android)",
+      "type": "release",
+      "content": "Cập nhật đồng bộ Launcher Android v2.1.3 (versionCode 26) và PC Launcher v2.1.3:\n• Sửa triệt để lỗi E-FILE-CHANGED trên Android khi bấm Khôi phục dữ liệu gốc (guardRestore / restore) đối với các máy có tệp bị lệch so với biên bản cài cũ: launcher nay tự bỏ qua tệp đã ở bản gốc và khôi phục an toàn bản sao lưu đã xác minh SHA256 đúng phiên bản game.\n• Bổ sung nút Giải thích quyền nhạy cảm, Cam kết an toàn & Hướng dẫn tự kiểm tra mã nguồn mở bằng AI (ChatGPT / Gemini / Claude) kèm 12 chibi nhân vật Stella Sora xuất hiện ngẫu nhiên trên cả Android (Trợ năng, Hiển thị nổi, Local ADB) và PC (Bảo vệ chạy ngầm, Tệp game, SmartScreen).\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.3. Bản dịch game giữ nguyên từ v2.1.0, không cần cài lại."
+    },
     {
       "id": "NOTIF-042",
       "date": "2026-11-27",

@@ -101,8 +101,8 @@ public final class LauncherService extends Service {
   } catch (Exception e) {
    support = Store.obj("methods", new JSONArray());
   }
-  String appVer = "2.1.2";
-  long appCode = 25;
+  String appVer = "2.1.3";
+  long appCode = 26;
   try {
    PackageInfo pi = c.getPackageManager().getPackageInfo(Store.APP, 0);
    appVer = pi.versionName;
@@ -535,6 +535,7 @@ public final class LauncherService extends Service {
       pendingGuardRestore = false;
       progress("Đang đóng Stella Sora an toàn trước khi khôi phục…", 10);
       patcher.forceStopGame();
+      if (!patcher.hasTarget()) detectGame();
       progress("Đang khôi phục dữ liệu gốc trước bản cập nhật…", 25);
       patcher.restore();
       detectGame();

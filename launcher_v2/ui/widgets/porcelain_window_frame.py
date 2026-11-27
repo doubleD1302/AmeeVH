@@ -12,12 +12,14 @@ Enforces Stage 1r3/1r4/1r5 contracts:
 """
 from __future__ import annotations
 
+import math
 from typing import Optional
 
-from PySide6.QtCore import QPoint, QRectF, QSize, Qt, Signal
+from PySide6.QtCore import QElapsedTimer, QPoint, QPointF, QRectF, QSize, Qt, QTimer, Signal
 from PySide6.QtGui import (
     QBrush,
     QColor,
+    QImage,
     QKeyEvent,
     QKeySequence,
     QLinearGradient,
@@ -43,6 +45,172 @@ from ..theme.tokens import PORCELAIN_TOKENS, rgba_qcolor
 from ..theme.typography import FS_HEADER, FS_META, nfc, ui_font
 from .asset_renderer import AssetRenderer, get_asset_renderer
 from .status_badge import HeaderStatusTag
+
+
+class MarqueeLabel(QLabel):
+    """Single-line label that smoothly scrolls back-and-forth whenever text overflows its width."""
+
+    def __init__(
+        self,
+        text: str = "",
+        parent: QWidget | None = None,
+        *,
+        text_color: str | None = None,
+        min_width: int = 88,
+        speed_px_s: float = 34.0,
+        pause_s: float = 1.35,
+    ) -> None:
+        super().__init__(text, parent)
+        self._text_color = QColor(text_color) if text_color else None
+        self._min_w = max(32, int(min_width))
+        self._speed_px_s = max(12.0, float(speed_px_s))
+        self._pause_s = max(0.4, float(pause_s))
+        self._offset_px: float = 0.0
+        self._clock = QElapsedTimer()
+        self._timer = QTimer(self)
+        self._timer.setInterval(16)
+        self._timer.timeout.connect(self._on_tick)
+        self.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+        self._sync_marquee(reset=True)
+
+    def _text_width(self) -> int:
+        txt = self.text()
+        if not txt:
+            return 0
+        return int(math.ceil(self.fontMetrics().horizontalAdvance(txt)))
+
+    def _overflow_px(self) -> int:
+        avail = max(0, self.contentsRect().width())
+        if avail <= 0:
+            return 0
+        return max(0, self._text_width() - avail)
+
+    def _max_shift_px(self) -> float:
+        ov = self._overflow_px()
+        return float(ov + 6) if ov > 2 else 0.0
+
+    def sizeHint(self) -> QSize:  # noqa: N802
+        fm = self.fontMetrics()
+        tw = self._text_width()
+        h = max(super().sizeHint().height(), fm.height() + 2)
+        return QSize(tw + 2 if tw else 0, h)
+
+    def minimumSizeHint(self) -> QSize:  # noqa: N802
+        fm = self.fontMetrics()
+        tw = self._text_width()
+        h = max(16, fm.height() + 2)
+        return QSize(min(self._min_w, tw + 2) if tw else 0, h)
+
+    def setText(self, text: str) -> None:  # noqa: N802
+        super().setText(text)
+        self.updateGeometry()
+        self._sync_marquee(reset=True)
+
+    def setFont(self, font) -> None:  # noqa: N802
+        super().setFont(font)
+        self.updateGeometry()
+        self._sync_marquee(reset=True)
+
+    def resizeEvent(self, event) -> None:  # noqa: N802
+        super().resizeEvent(event)
+        self._sync_marquee(reset=False)
+
+    def showEvent(self, event) -> None:  # noqa: N802
+        super().showEvent(event)
+        self._sync_marquee(reset=True)
+
+    def hideEvent(self, event) -> None:  # noqa: N802
+        super().hideEvent(event)
+        if self._timer.isActive():
+            self._timer.stop()
+
+    def _sync_marquee(self, *, reset: bool) -> None:
+        max_shift = self._max_shift_px()
+        if max_shift > 0.0:
+            self.setToolTip(self.text())
+            if reset:
+                self._offset_px = 0.0
+                self._clock.restart()
+            elif not self._clock.isValid():
+                self._clock.start()
+            if self.isVisible() and not self._timer.isActive():
+                self._timer.start()
+        else:
+            self.setToolTip("")
+            self._offset_px = 0.0
+            if self._timer.isActive():
+                self._timer.stop()
+        self.update()
+
+    def _on_tick(self) -> None:
+        max_shift = self._max_shift_px()
+        if max_shift <= 0.0 or not self.isVisible():
+            self._offset_px = 0.0
+            self._timer.stop()
+            self.update()
+            return
+        travel_fwd = max(0.8, max_shift / self._speed_px_s)
+        travel_back = max(0.65, max_shift / (self._speed_px_s * 1.25))
+        cycle = self._pause_s + travel_fwd + self._pause_s + travel_back
+        t = (self._clock.elapsed() / 1000.0) % cycle
+        if t < self._pause_s:
+            offset = 0.0
+        elif t < self._pause_s + travel_fwd:
+            frac = (t - self._pause_s) / travel_fwd
+            offset = max_shift * (0.5 - 0.5 * math.cos(math.pi * frac))
+        elif t < self._pause_s + travel_fwd + self._pause_s:
+            offset = max_shift
+        else:
+            frac = (t - self._pause_s - travel_fwd - self._pause_s) / travel_back
+            offset = max_shift * (0.5 + 0.5 * math.cos(math.pi * frac))
+        if abs(offset - self._offset_px) >= 0.2:
+            self._offset_px = offset
+            self.update()
+
+    def paintEvent(self, event) -> None:  # noqa: N802
+        max_shift = self._max_shift_px()
+        if max_shift <= 0.0:
+            super().paintEvent(event)
+            return
+        rect = self.contentsRect()
+        if rect.width() <= 0 or rect.height() <= 0:
+            return
+        dpr = max(1.0, float(self.devicePixelRatioF()))
+        img_w = max(1, int(round(rect.width() * dpr)))
+        img_h = max(1, int(round(rect.height() * dpr)))
+        buf = QImage(img_w, img_h, QImage.Format.Format_ARGB32_Premultiplied)
+        buf.setDevicePixelRatio(dpr)
+        buf.fill(Qt.GlobalColor.transparent)
+
+        p = QPainter(buf)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing, True)
+        p.setRenderHint(QPainter.RenderHint.TextAntialiasing, True)
+        p.setFont(self.font())
+        color = self._text_color or self.palette().color(self.foregroundRole())
+        p.setPen(color)
+        fm = self.fontMetrics()
+        baseline_y = (rect.height() + fm.ascent() - fm.descent()) / 2.0
+        p.drawText(QPointF(-self._offset_px, baseline_y), self.text())
+
+        fade = min(14.0, rect.width() * 0.14)
+        if fade >= 2.0:
+            p.setCompositionMode(QPainter.CompositionMode.CompositionMode_DestinationIn)
+            grad = QLinearGradient(0.0, 0.0, float(rect.width()), 0.0)
+            f_norm = fade / float(rect.width())
+            left_clipped = self._offset_px > 1.0
+            right_clipped = self._offset_px < (max_shift - 1.0)
+            grad.setColorAt(0.0, QColor(0, 0, 0, 0 if left_clipped else 255))
+            if left_clipped:
+                grad.setColorAt(f_norm, QColor(0, 0, 0, 255))
+            if right_clipped:
+                grad.setColorAt(1.0 - f_norm, QColor(0, 0, 0, 255))
+            grad.setColorAt(1.0, QColor(0, 0, 0, 0 if right_clipped else 255))
+            p.fillRect(QRectF(0.0, 0.0, float(rect.width()), float(rect.height())), QBrush(grad))
+        p.end()
+
+        out = QPainter(self)
+        out.drawImage(rect.topLeft(), buf)
+        out.end()
 
 
 class _PorcelainHeaderBar(QWidget):
@@ -231,7 +399,7 @@ class PorcelainWindowFrame(QFrame):
         self._title_row.setContentsMargins(0, 0, 0, 0)
         self._title_row.setSpacing(10)
 
-        self.title_label = QLabel(nfc(title), self.header_bar)
+        self.title_label = MarqueeLabel(nfc(title), self.header_bar, text_color="#FFFFFF", min_width=150)
         self.title_label.setFont(ui_font(FS_HEADER, 700))
         self.title_label.setStyleSheet("color: #FFFFFF; background: transparent;")
         self._title_row.addWidget(self.title_label, 0, Qt.AlignmentFlag.AlignVCenter)
@@ -241,7 +409,7 @@ class PorcelainWindowFrame(QFrame):
         self._title_row.addWidget(self.status_tag, 0, Qt.AlignmentFlag.AlignVCenter)
 
         meta_text = meta or subtitle
-        self.meta_label = QLabel(nfc(meta_text), self.header_bar)
+        self.meta_label = MarqueeLabel(nfc(meta_text), self.header_bar, text_color="#CBD5E1", min_width=90)
         self.meta_label.setFont(ui_font(FS_META, 500))
         self.meta_label.setStyleSheet("color: #CBD5E1; background: transparent;")
         self.meta_label.setVisible(bool(meta_text))

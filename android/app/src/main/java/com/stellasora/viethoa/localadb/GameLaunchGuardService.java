@@ -79,7 +79,11 @@ public final class GameLaunchGuardService extends AccessibilityService {
   if (!Store.GAME.equals(pkg)) return;
 
   long now = SystemClock.elapsedRealtime();
-  if (now - lastTriggerElapsed < 350L && overlayView != null && overlayView.isAttachedToWindow()) {
+  if (overlayView != null && overlayView.isAttachedToWindow()) {
+   lastTriggerElapsed = now;
+   return;
+  }
+  if (now - lastTriggerElapsed < 350L) {
    return;
   }
   lastTriggerElapsed = now;

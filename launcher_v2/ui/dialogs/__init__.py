@@ -5,6 +5,7 @@ from __future__ import annotations
 from .confirmation_dialog import ConfirmationDialog
 from .game_selection_dialog import GameSelectionDialog
 from .install_completed_dialog import InstallCompletedDialog
+from .safety_explainer_dialog import SafetyExplainerDialog
 from .smart_error_dialog import SmartErrorDialog
 from .support_locked_dialog import SupportLockedDialog
 from .update_guard_dialog import UpdateGuardDialog
@@ -14,6 +15,7 @@ __all__ = [
     "ConfirmationDialog",
     "GameSelectionDialog",
     "InstallCompletedDialog",
+    "SafetyExplainerDialog",
     "SmartErrorDialog",
     "SupportLockedDialog",
     "UpdateGuardDialog",

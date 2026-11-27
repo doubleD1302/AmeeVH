@@ -44,7 +44,7 @@ public final class MainActivity extends Activity implements LauncherService.List
    "pinGuardShortcut", "openAccessibilitySettings", "openOverlaySettings", "openAppInfoSettings", "openGuardAlert",
    "openWirelessSettings", "openWifiSettings",
    "openAppNotifications", "openBatterySettings", "openUnknownSources", "launchGame",
-   "copyDiagnostics", "copyError", "explain", "openLastError", "copyAccount", "openIssues",
+   "copyDiagnostics", "copyError", "copyAiPrompt", "openSourceCode", "explain", "openLastError", "copyAccount", "openIssues",
    "openDeviceInfo", "openDevSettings"
  ));
 
@@ -300,6 +300,28 @@ public final class MainActivity extends Activity implements LauncherService.List
      external("https://github.com/" + cfg.getString("repo") + "/issues");
      break;
     }
+    case "openSourceCode": {
+     JSONObject cfg = Store.config(this);
+     Store.validateConfig(cfg);
+     String relPath = args.optString("path", "").trim();
+     String base = "https://github.com/" + cfg.getString("repo");
+     if (relPath.matches("[A-Za-z0-9_./-]+") && !relPath.contains("..")) {
+      external(base + "/blob/" + Uri.encode(cfg.optString("branch", "main")) + "/" + relPath);
+     } else {
+      external(base);
+     }
+     break;
+    }
+    case "copyAiPrompt": {
+     String text = args.optString("text", "").trim();
+     if (text.isEmpty() || text.length() > 8192) {
+      showMessage("Chưa sao chép được", "Nội dung prompt kiểm tra chưa hợp lệ.", true);
+      break;
+     }
+     clipboard("Prompt kiểm tra an toàn Stella Sora", text);
+     event(Store.obj("type", "copied", "data", Store.obj("ok", true, "kind", "ai_prompt")));
+     break;
+    }
     case "copyAccount":
      showMessage("Tính năng đang bảo trì", "Bản Việt hoá luôn luôn miễn phí.", false);
      break;
@@ -357,7 +379,7 @@ public final class MainActivity extends Activity implements LauncherService.List
      if (state.optBoolean("busy")) throw new IOException("Đang có thao tác. Hãy chờ hoàn tất.");
      String root = state.getJSONObject("game").optString("root", "Chưa xác định");
      String text = action.equals("install") ? "Chỉ cài các tệp Android khớp phiên bản và SHA256. Gói Windows sẽ bị từ chối."
-       : action.equals("restore") ? "Khôi phục từ backup của đúng thiết bị và thư mục. Tệp đã đổi sau cài sẽ được giữ lại và báo xung đột."
+       : action.equals("restore") ? "Khôi phục toàn bộ tệp gốc đã xác minh SHA256 cho đúng phiên bản game hiện tại. Bỏ qua các tệp đã ở bản gốc."
        : "Đọc nhật ký và phục hồi thao tác bị ngắt. Không dùng backup của thiết bị khác.";
      dialogBuilder()
        .setTitle(action.equals("install") ? "Cài Việt hoá Android" : action.equals("restore") ? "Khôi phục bản trước cài" : "Phục hồi thao tác")
