@@ -135,24 +135,46 @@ def upload(rel: dict, name: str) -> None:
         else "application/octet-stream"
     )
     print(f"  upload {name} ({size:,} bytes) ...", flush=True)
-    t0 = time.time()
-    conn = http.client.HTTPSConnection(parsed.netloc, timeout=600, context=ssl.create_default_context())
-    conn.putrequest("POST", f"{parsed.path}?{query}")
-    conn.putheader("Authorization", f"Bearer {token()}")
-    conn.putheader("Accept", "application/vnd.github+json")
-    conn.putheader("User-Agent", "stellasora-release-script")
-    conn.putheader("Content-Type", ctype)
-    conn.putheader("Content-Length", str(size))
-    conn.endheaders()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(1 << 20), b""):
-            conn.send(chunk)
-    resp = conn.getresponse()
-    payload = resp.read()
-    conn.close()
-    if resp.status not in (200, 201):
-        sys.exit(f"upload of {name} failed: HTTP {resp.status} {payload[:200]!r}")
-    print(f"    done in {time.time() - t0:.0f}s")
+    last_err: Exception | None = None
+    for attempt in range(1, 5):
+        t0 = time.time()
+        conn = None
+        try:
+            if attempt > 1:
+                cur_rel = api("GET", f"https://api.github.com/repos/{REPO}/releases/{rel['id']}")
+                for a in cur_rel.get("assets", []):
+                    if a["name"] == name:
+                        api("DELETE", f"https://api.github.com/repos/{REPO}/releases/assets/{a['id']}")
+            conn = http.client.HTTPSConnection(parsed.netloc, timeout=600, context=ssl.create_default_context())
+            conn.putrequest("POST", f"{parsed.path}?{query}")
+            conn.putheader("Authorization", f"Bearer {token()}")
+            conn.putheader("Accept", "application/vnd.github+json")
+            conn.putheader("User-Agent", "stellasora-release-script")
+            conn.putheader("Content-Type", ctype)
+            conn.putheader("Content-Length", str(size))
+            conn.endheaders()
+            with path.open("rb") as f:
+                for chunk in iter(lambda: f.read(1 << 20), b""):
+                    conn.send(chunk)
+            resp = conn.getresponse()
+            payload = resp.read()
+            conn.close()
+            conn = None
+            if resp.status not in (200, 201):
+                raise RuntimeError(f"HTTP {resp.status} {payload[:200]!r}")
+            print(f"    done in {time.time() - t0:.0f}s")
+            return
+        except (OSError, ssl.SSLError, http.client.HTTPException, RuntimeError) as exc:
+            last_err = exc
+            if conn is not None:
+                try:
+                    conn.close()
+                except Exception:
+                    pass
+            print(f"    attempt {attempt}/4 failed: {exc}", flush=True)
+            if attempt < 4:
+                time.sleep(3 * attempt)
+    sys.exit(f"upload of {name} failed after retries: {last_err}")
 
 
 def cmd_draft() -> None:
@@ -178,7 +200,12 @@ def cmd_draft() -> None:
         )
         print(f"created draft release id={rel['id']}")
     else:
-        print(f"reusing draft release id={rel['id']}")
+        print(f"reusing draft release id={rel['id']} (updating title/body)")
+        rel = api(
+            "PATCH",
+            f"https://api.github.com/repos/{REPO}/releases/{rel['id']}",
+            {"name": TITLE, "body": NOTES},
+        )
     for name in ASSETS:
         rel = api("GET", f"https://api.github.com/repos/{REPO}/releases/{rel['id']}")
         upload(rel, name)

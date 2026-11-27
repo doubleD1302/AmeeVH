@@ -95,6 +95,28 @@ def _is_allowed_destination(rel: str) -> bool:
     )
 
 
+def _is_allowed_official_restore_destination(rel: str) -> bool:
+    """Allow-list for MD5-verified publisher files during OfficialRestoreEngine.
+
+    Strictly narrower than arbitrary Persistent_Store writes, while allowing recovery of
+    non-.en bundles / hotfix.arch / videos corrupted or half-patched by an aborted BinDiffPatch.
+    """
+    return (
+        _is_allowed_destination(rel)
+        or rel == "Persistent_Store/Scripts/hotfix.arch"
+        or bool(re.fullmatch(r"Persistent_Store/AssetBundles/[A-Za-z0-9_.-]+[.]unity3d", rel))
+        or bool(re.fullmatch(r'Persistent_Store/Videos/[^/<>:"|?*]+[.]mp4', rel))
+    )
+
+
+def safe_official_path(root, name) -> Path:
+    dest = safe_path(root, name, destination=False)
+    rel = relative_name(name)
+    if not _is_allowed_official_restore_destination(rel):
+        raise InstallerError("Tệp nằm ngoài danh sách tài nguyên khôi phục gốc được phép: " + rel, "PATH_NOT_ALLOWED")
+    return dest
+
+
 def safe_path(root, name, destination=False):
     rel = relative_name(name)
     root = Path(root).resolve()

@@ -3,8 +3,11 @@ package com.stellasora.viethoa.localadb;
 import android.content.Context;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -13,11 +16,16 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.crypto.Cipher;
@@ -54,6 +62,208 @@ final class OfficialAndroidClient {
    this.version = version;
    this.folder = folder;
    this.url = url;
+  }
+ }
+
+ static final class FileEntry {
+  final String name;
+  final String checksum;
+  final long size;
+
+  FileEntry(String name, String checksum, long size) {
+   this.name = name;
+   this.checksum = checksum;
+   this.size = size;
+  }
+ }
+
+ static final class PatchEntry {
+  final String name;
+  final String checksum;
+  final long size;
+  final String oldChecksum;
+  final String kind;
+
+  PatchEntry(String name, String checksum, long size, String oldChecksum, String kind) {
+   this.name = name;
+   this.checksum = checksum;
+   this.size = size;
+   this.oldChecksum = oldChecksum;
+   this.kind = kind;
+  }
+ }
+
+ static final class ParsedManifest {
+  final Map<String, String> headers;
+  final Map<String, FileEntry> files;
+  final Map<String, PatchEntry> patches;
+
+  ParsedManifest(Map<String, String> headers, Map<String, FileEntry> files, Map<String, PatchEntry> patches) {
+   this.headers = headers;
+   this.files = files;
+   this.patches = patches;
+  }
+ }
+
+ static final class PatchStep {
+  final int step;
+  final String resVer;
+  final Set<String> targets;
+
+  PatchStep(int step, String resVer, Set<String> targets) {
+   this.step = step;
+   this.resVer = resVer;
+   this.targets = targets;
+  }
+ }
+
+ interface RestoreProgress {
+  void onStatus(String message);
+ }
+
+ static final class AndroidCatalog {
+  final long serverDataVersion;
+  final String baseResVersion;
+  final String latestGameVersion;
+  final String latestResourceVersion;
+  final Map<String, ManifestRef> diff;
+  final Map<String, FileEntry> baseFiles;
+  final Map<String, FileEntry> finalFiles;
+  final Map<String, FileEntry> versions; // key = name + "\0" + checksum
+  final Map<String, PatchEntry> patchIndex; // key = name + "\0" + newChecksum
+  final List<PatchStep> patchSteps;
+
+  AndroidCatalog(
+    long serverDataVersion,
+    String baseResVersion,
+    String latestGameVersion,
+    String latestResourceVersion,
+    Map<String, ManifestRef> diff,
+    Map<String, FileEntry> baseFiles,
+    Map<String, FileEntry> finalFiles,
+    Map<String, FileEntry> versions,
+    Map<String, PatchEntry> patchIndex,
+    List<PatchStep> patchSteps
+  ) {
+   this.serverDataVersion = serverDataVersion;
+   this.baseResVersion = baseResVersion;
+   this.latestGameVersion = latestGameVersion;
+   this.latestResourceVersion = latestResourceVersion;
+   this.diff = diff;
+   this.baseFiles = baseFiles;
+   this.finalFiles = finalFiles;
+   this.versions = versions;
+   this.patchIndex = patchIndex;
+   this.patchSteps = patchSteps;
+  }
+
+  static String vKey(String name, String checksum) {
+   return name + "\0" + checksum.toLowerCase(Locale.ROOT);
+  }
+
+  boolean knows(String name, String checksum) {
+   return versions.containsKey(vKey(name, checksum));
+  }
+
+  Set<String> pendingPatchNames(String localResVer) {
+   Set<String> out = new LinkedHashSet<>();
+   if (patchSteps.isEmpty()) return out;
+   String lr = localResVer == null ? "" : localResVer.trim();
+   if (!lr.isEmpty() && lr.equals(latestResourceVersion)) return out;
+   int localStep = 0;
+   if (!lr.isEmpty() && !lr.equals(baseResVersion)) {
+    for (PatchStep st : patchSteps) {
+     if (lr.equals(st.resVer)) {
+      localStep = st.step;
+      break;
+     }
+    }
+   }
+   for (PatchStep st : patchSteps) {
+    if (st.step > localStep) out.addAll(st.targets);
+   }
+   return out;
+  }
+
+  File materialize(String name, String checksum, File cacheDir, int timeoutMs, RestoreProgress progress) throws IOException {
+   return materializeInternal(name, checksum.toLowerCase(Locale.ROOT), cacheDir, timeoutMs, progress, new HashSet<>());
+  }
+
+  private File materializeInternal(String name, String checksum, File cacheDir, int timeoutMs, RestoreProgress progress, Set<String> trail) throws IOException {
+   String key = vKey(name, checksum);
+   if (!trail.add(key)) {
+    throw new IOException("Chuỗi bản vá máy chủ chính thức bị tuần hoàn: " + name);
+   }
+   if (trail.size() > 64) {
+    throw new IOException("Chuỗi bản vá máy chủ chính thức quá sâu: " + name);
+   }
+   try {
+    FileEntry rec = versions.get(key);
+    if (rec == null) {
+     throw new IOException("Máy chủ Yostar không còn lưu phiên bản " + name + " (" + checksum.substring(0, Math.min(8, checksum.length())) + "…).");
+    }
+    File finalDir = new File(cacheDir, "final");
+    File inputDir = new File(cacheDir, "inputs");
+    if (!finalDir.isDirectory() && !finalDir.mkdirs()) throw new IOException("Không tạo được thư mục đệm tải gốc.");
+    if (!inputDir.isDirectory() && !inputDir.mkdirs()) throw new IOException("Không tạo được thư mục đệm bản vá.");
+
+    File outFile = new File(finalDir, checksum + ".bin");
+    if (matchesMd5(outFile, rec.size, checksum)) {
+     return outFile;
+    }
+
+    ManifestRef direct = diff.get(name);
+    if (direct != null && checksum.equalsIgnoreCase(direct.checksum)) {
+     if (progress != null) progress.onStatus("Đang tải bản gốc: " + name);
+     downloadVerifiedFile(direct.url, outFile, rec.size, checksum, timeoutMs);
+     return outFile;
+    }
+
+    PatchEntry patch = patchIndex.get(key);
+    if (patch == null) {
+     throw new IOException("Không dựng được bản gốc " + name + " (" + checksum.substring(0, Math.min(8, checksum.length())) + "…) từ máy chủ Yostar.");
+    }
+    ManifestRef remote = diff.get(patch.name);
+    if (remote == null || !patch.checksum.equalsIgnoreCase(remote.checksum)) {
+     throw new IOException("Dữ liệu bản vá máy chủ Yostar không khớp: " + patch.name);
+    }
+    if ("N".equals(patch.kind)) {
+     if (!checksum.equalsIgnoreCase(remote.checksum)) {
+      throw new IOException("Tệp mới máy chủ Yostar không khớp MD5: " + name);
+     }
+     if (progress != null) progress.onStatus("Đang tải bản gốc: " + name);
+     downloadVerifiedFile(remote.url, outFile, rec.size, checksum, timeoutMs);
+     return outFile;
+    }
+    if (!"U".equals(patch.kind)) {
+     throw new IOException("Kiểu bản vá chưa hỗ trợ: " + patch.kind);
+    }
+
+    File baseFile = materializeInternal(name, patch.oldChecksum, cacheDir, timeoutMs, progress, trail);
+    File deltaFile = new File(inputDir, patch.checksum + ".delta");
+    if (!matchesMd5(deltaFile, patch.size, patch.checksum)) {
+     if (progress != null) progress.onStatus("Đang tải bản vá gốc: " + name);
+     downloadVerifiedFile(remote.url, deltaFile, patch.size, patch.checksum, timeoutMs);
+    }
+    File tmpOut = new File(finalDir, ".rebuild_" + UUID.randomUUID().toString().replace("-", "") + ".tmp");
+    try {
+     if (progress != null) progress.onStatus("Đang dựng lại bản gốc: " + name);
+     Bsdiff40.apply(baseFile, deltaFile, tmpOut, rec.size);
+     if (!matchesMd5(tmpOut, rec.size, checksum)) {
+      throw new IOException("Bản gốc dựng lại không khớp MD5: " + name);
+     }
+     if (outFile.exists()) outFile.delete();
+     if (!tmpOut.renameTo(outFile)) {
+      throw new IOException("Không thể lưu tệp bản gốc sau khi dựng: " + name);
+     }
+    } finally {
+     if (tmpOut.exists()) tmpOut.delete();
+     if (deltaFile.exists()) deltaFile.delete();
+    }
+    return outFile;
+   } finally {
+    trail.remove(key);
+   }
   }
  }
 
@@ -511,6 +721,286 @@ final class OfficialAndroidClient {
    Store.write(Store.internal(c, GUARD_STATE_FILE), guardState);
   } catch (Exception ignored) {}
   return guardState;
+ }
+
+ private static final Pattern PATCH_NAME_RE = Pattern.compile("^p_\\d+_[un]\\.(.+)$");
+
+ /** Maps a manifest filename to its Persistent_Store relative path (null if outside official-restore scope). */
+ static String officialRelativePath(String name) {
+  if (name == null || name.isEmpty() || name.contains("/") || name.contains("\\") || name.contains("..")) return null;
+  if ("data.arcx".equals(name)) return "Persistent_Store/Tables/data.arcx";
+  if ("lua.arcx".equals(name) || "hotfix.arch".equals(name)) return "Persistent_Store/Scripts/" + name;
+  if (name.endsWith(".srt") || name.endsWith(".mp4")) return "Persistent_Store/Videos/" + name;
+  if (name.endsWith(".unity3d")) return "Persistent_Store/AssetBundles/" + name;
+  return null;
+ }
+
+ static ParsedManifest parseManifestFull(byte[] data) throws IOException {
+  if (data == null || data.length == 0) {
+   throw new IOException("Tệp manifest trống.");
+  }
+  String text = new String(data, StandardCharsets.UTF_8);
+  if (!text.isEmpty() && text.charAt(0) == '\uFEFF') {
+   text = text.substring(1);
+  }
+  Map<String, String> headers = new LinkedHashMap<>();
+  Map<String, FileEntry> files = new LinkedHashMap<>();
+  Map<String, PatchEntry> patches = new LinkedHashMap<>();
+  String[] lines = text.split("\\r?\\n");
+  for (String line : lines) {
+   if (line.isEmpty()) continue;
+   if (line.charAt(0) == '$') {
+    int sep = line.indexOf(':');
+    if (sep <= 1) continue;
+    String key = line.substring(1, sep);
+    String val = line.substring(sep + 1);
+    if ("BIN_DIFF_PATCH_FILE".equals(key)) {
+     String[] p = val.split("\\|");
+     if (p.length >= 5) {
+      String oldRaw = p[3].startsWith("@") ? p[3].substring(1) : p[3];
+      try {
+       long pSize = Long.parseLong(p[2]);
+       patches.put(p[0], new PatchEntry(p[0], padMd5(p[1]), pSize, padMd5(oldRaw), p[4]));
+      } catch (NumberFormatException ignored) {}
+     }
+    } else if (!"BIN_DIFF_PATCH_INFO".equals(key)) {
+     if ("RESOURCE_VER".equals(key)) key = "RES_VER";
+     headers.put(key, val);
+    }
+   } else {
+    String[] p = line.split("\\|");
+    if (p.length >= 4) {
+     try {
+      long sz = Long.parseLong(p[2]);
+      files.put(p[0], new FileEntry(p[0], padMd5(p[1]), sz));
+     } catch (NumberFormatException ignored) {}
+    }
+   }
+  }
+  return new ParsedManifest(headers, files, patches);
+ }
+
+ static String md5File(File file) throws IOException {
+  try (InputStream in = new BufferedInputStream(new FileInputStream(file), 65536)) {
+   MessageDigest md = MessageDigest.getInstance("MD5");
+   byte[] buf = new byte[65536];
+   int n;
+   while ((n = in.read(buf)) != -1) {
+    md.update(buf, 0, n);
+   }
+   byte[] d = md.digest();
+   StringBuilder sb = new StringBuilder(32);
+   for (byte b : d) sb.append(String.format(Locale.ROOT, "%02x", b));
+   return sb.toString();
+  } catch (IOException e) {
+   throw e;
+  } catch (Exception e) {
+   throw new IOException("Lỗi nội bộ tính mã kiểm tra MD5.", e);
+  }
+ }
+
+ static boolean matchesMd5(File file, long expectedSize, String expectedMd5) {
+  if (file == null || !file.isFile() || file.length() != expectedSize) return false;
+  try {
+   return md5File(file).equalsIgnoreCase(expectedMd5);
+  } catch (IOException e) {
+   return false;
+  }
+ }
+
+ private static boolean looksLikeHtml(byte[] buf, int len) {
+  int i = 0;
+  if (len >= 3 && (buf[0] & 0xFF) == 0xEF && (buf[1] & 0xFF) == 0xBB && (buf[2] & 0xFF) == 0xBF) i = 3;
+  while (i < len && (buf[i] == ' ' || buf[i] == '\t' || buf[i] == '\r' || buf[i] == '\n')) i++;
+  if (i >= len || buf[i] != '<') return false;
+  String head = new String(buf, i, Math.min(len - i, 128), StandardCharsets.US_ASCII).toLowerCase(Locale.ROOT);
+  return head.startsWith("<!doctype html") || head.startsWith("<html") || head.startsWith("<head") || head.startsWith("<body") || head.startsWith("<script");
+ }
+
+ static void downloadVerifiedFile(String urlStr, File dest, long expectedSize, String expectedMd5, int timeoutMs) throws IOException {
+  if (urlStr == null || (!urlStr.startsWith(ROOT_URL + "/") && !urlStr.equals(ROOT_URL))) {
+   throw new IOException("URL không thuộc máy chủ chính thức Yostar: " + urlStr);
+  }
+  if (matchesMd5(dest, expectedSize, expectedMd5)) return;
+  File part = new File(dest.getParentFile(), dest.getName() + ".part");
+  IOException lastErr = null;
+  for (int attempt = 0; attempt < 3; attempt++) {
+   HttpURLConnection conn = null;
+   try {
+    long offset = part.isFile() ? part.length() : 0L;
+    if (offset > expectedSize) {
+     part.delete();
+     offset = 0L;
+    }
+    if (expectedSize == 0 || !part.isFile() || offset != expectedSize) {
+     URL url = new URL(urlStr);
+     conn = (HttpURLConnection) url.openConnection();
+     conn.setRequestMethod("GET");
+     conn.setConnectTimeout(timeoutMs);
+     conn.setReadTimeout(Math.max(timeoutMs, 30000));
+     conn.setInstanceFollowRedirects(true);
+     conn.setRequestProperty("User-Agent", "StellaSoraVietHoaAndroid/2.1 (official-restore)");
+     conn.setRequestProperty("Accept-Encoding", "identity");
+     conn.setRequestProperty("Cache-Control", "no-cache");
+     if (offset > 0) {
+      conn.setRequestProperty("Range", "bytes=" + offset + "-");
+     }
+     int status = conn.getResponseCode();
+     String ct = conn.getContentType();
+     if (ct != null && ct.toLowerCase(Locale.ROOT).startsWith("text/html")) {
+      throw new IOException("Mạng Wi-Fi đang chuyển hướng sang trang đăng nhập (Captive Portal).");
+     }
+     boolean append;
+     if (offset > 0 && status == 206) {
+      append = true;
+     } else if (status == 200) {
+      offset = 0L;
+      append = false;
+     } else if (status == 416) {
+      part.delete();
+      throw new IOException("Dải byte tải tiếp không khớp (HTTP 416).");
+     } else {
+      throw new IOException("Máy chủ Yostar trả HTTP " + status + ".");
+     }
+     try (InputStream in = conn.getInputStream();
+          FileOutputStream fos = new FileOutputStream(part, append)) {
+      byte[] buf = new byte[65536];
+      long written = offset;
+      boolean checkedHtml = false;
+      int n;
+      while ((n = in.read(buf)) != -1) {
+       if (!checkedHtml) {
+        checkedHtml = true;
+        if (offset == 0 && looksLikeHtml(buf, n)) {
+         throw new IOException("Mạng Wi-Fi đang trả trang đăng nhập (Captive Portal) thay vì tệp game.");
+        }
+       }
+       written += n;
+       if (written > expectedSize) {
+        part.delete();
+        throw new IOException("Tệp tải về vượt kích thước bảng kê Yostar.");
+       }
+       fos.write(buf, 0, n);
+      }
+      fos.flush();
+     }
+    }
+    if (!matchesMd5(part, expectedSize, expectedMd5)) {
+     part.delete();
+     throw new IOException("Tệp tải từ máy chủ Yostar sai MD5 hoặc kích thước.");
+    }
+    if (dest.exists()) dest.delete();
+    if (!part.renameTo(dest)) {
+     throw new IOException("Không lưu được tệp tải về vào bộ nhớ đệm.");
+    }
+    return;
+   } catch (IOException e) {
+    lastErr = e;
+    if (e.getMessage() != null && e.getMessage().contains("Captive Portal")) throw e;
+    if (attempt < 2) {
+     try { Thread.sleep(1000L * (attempt + 1)); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); throw e; }
+    }
+   } finally {
+    if (conn != null) conn.disconnect();
+   }
+  }
+  throw lastErr != null ? lastErr : new IOException("Không tải được tệp từ máy chủ Yostar.");
+ }
+
+ /** Fetches the complete official Android CDN catalog (ss_and.mani + ss_and_add.mani + p_1..p_N) for MD5-verified restore. */
+ static AndroidCatalog fetchCatalog(int timeoutMs) throws IOException {
+  byte[] slEnc = httpGetBytes(ROOT_URL + "/meta/serverlist.html?nocache=" + System.nanoTime(), timeoutMs);
+  long serverVer = parseServerDataVersion(decryptMetadata(slEnc));
+
+  byte[] andEnc = httpGetBytes(ROOT_URL + "/meta/and.html?nocache=" + System.nanoTime(), timeoutMs);
+  Map<String, ManifestRef> diff = parseAndHtmlDiff(decryptMetadata(andEnc), ROOT_URL);
+
+  ManifestRef baseRef = diff.get("ss_and.mani");
+  if (baseRef == null) {
+   throw new IOException("Máy chủ Yostar thiếu tệp ss_and.mani.");
+  }
+  byte[] baseBytes = httpGetBytes(baseRef.url, timeoutMs);
+  if (!md5Hex(baseBytes).equalsIgnoreCase(baseRef.checksum)) {
+   throw new IOException("Manifest gốc ss_and.mani từ Yostar sai MD5.");
+  }
+  ParsedManifest base = parseManifestFull(baseBytes);
+  int patchCount = 0;
+  try {
+   patchCount = Integer.parseInt(base.headers.getOrDefault("BIN_DIFF_PATCH_VER", "0"));
+  } catch (NumberFormatException ignored) {}
+
+  Map<String, FileEntry> baseFiles = new LinkedHashMap<>(base.files);
+  Map<String, FileEntry> versions = new HashMap<>();
+  Map<String, PatchEntry> patchIndex = new HashMap<>();
+  List<PatchStep> patchSteps = new ArrayList<>();
+
+  for (FileEntry fe : base.files.values()) {
+   versions.put(AndroidCatalog.vKey(fe.name, fe.checksum), fe);
+  }
+
+  ManifestRef addRef = diff.get("ss_and_add.mani");
+  if (addRef != null) {
+   byte[] addBytes = httpGetBytes(addRef.url, timeoutMs);
+   if (!md5Hex(addBytes).equalsIgnoreCase(addRef.checksum)) {
+    throw new IOException("Manifest bổ sung ss_and_add.mani từ Yostar sai MD5.");
+   }
+   ParsedManifest addM = parseManifestFull(addBytes);
+   baseFiles.putAll(addM.files);
+   for (FileEntry fe : addM.files.values()) {
+    versions.put(AndroidCatalog.vKey(fe.name, fe.checksum), fe);
+   }
+  }
+
+  ParsedManifest finalMani = base;
+  for (int i = 1; i <= patchCount; i++) {
+   String mName = "p_" + i + "_m.ss_and.mani";
+   ManifestRef mRef = diff.get(mName);
+   if (mRef == null) {
+    throw new IOException("Máy chủ Yostar thiếu manifest bản vá " + mName);
+   }
+   byte[] mBytes = httpGetBytes(mRef.url, timeoutMs);
+   if (!md5Hex(mBytes).equalsIgnoreCase(mRef.checksum)) {
+    throw new IOException("Manifest bản vá " + mName + " từ Yostar sai MD5.");
+   }
+   ParsedManifest pm = parseManifestFull(mBytes);
+   for (FileEntry fe : pm.files.values()) {
+    versions.put(AndroidCatalog.vKey(fe.name, fe.checksum), fe);
+   }
+   Set<String> stepTargets = new LinkedHashSet<>();
+   for (Map.Entry<String, PatchEntry> pe : pm.patches.entrySet()) {
+    Matcher mt = PATCH_NAME_RE.matcher(pe.getKey());
+    if (mt.matches()) {
+     String targetName = mt.group(1);
+     FileEntry targetRec = pm.files.get(targetName);
+     if (targetRec != null) {
+      patchIndex.put(AndroidCatalog.vKey(targetName, targetRec.checksum), pe.getValue());
+      stepTargets.add(targetName);
+     }
+    }
+   }
+   patchSteps.add(new PatchStep(i, pm.headers.getOrDefault("RES_VER", ""), stepTargets));
+   if (i == patchCount) finalMani = pm;
+  }
+
+  // Verify snapshot did not rotate mid-read
+  byte[] slEnc2 = httpGetBytes(ROOT_URL + "/meta/serverlist.html?nocache=" + System.nanoTime(), timeoutMs);
+  long serverVer2 = parseServerDataVersion(decryptMetadata(slEnc2));
+  if (serverVer2 != serverVer) {
+   throw new IOException("Máy chủ Yostar vừa cập nhật trong lúc kiểm tra; hãy thử lại sau vài giây.");
+  }
+
+  Map<String, FileEntry> finalFiles = new LinkedHashMap<>(baseFiles);
+  finalFiles.putAll(finalMani.files);
+
+  String baseRes = base.headers.getOrDefault("RES_VER", "");
+  String latestRes = finalMani.headers.getOrDefault("RES_VER", baseRes);
+  String latestGame = finalMani.headers.getOrDefault("GAME_VER", base.headers.getOrDefault("GAME_VER", ""));
+  if (latestGame.isEmpty()) latestGame = finalMani.headers.getOrDefault("CLIENT_VER", "");
+
+  return new AndroidCatalog(
+    serverVer, baseRes, latestGame, latestRes,
+    diff, baseFiles, finalFiles, versions, patchIndex, patchSteps
+  );
  }
 
  /** Clears pending restore guard state & Heads-Up alert after successful restore to vanilla. */

@@ -508,13 +508,17 @@ public final class LauncherService extends Service {
       setMessage(okMsg);
       break;
      }
-     case "restore":
-      patcher.restore();
+     case "restore": {
+      JSONObject restoreRes = patcher.restore();
       detectGame();
       set("officialUpdate", OfficialAndroidClient.readCachedGuardState(this));
-      DiagnosticLog.log(this, "restore", "Khôi phục tệp gốc hoàn tất.");
-      setMessage("Đã khôi phục trạng thái trước lần cài được ghi nhận.");
+      String okRestore = restoreRes != null && !restoreRes.optString("message", "").isEmpty()
+        ? restoreRes.optString("message")
+        : "Đã khôi phục dữ liệu gốc chuẩn MD5 của nhà phát hành.";
+      DiagnosticLog.log(this, "restore", okRestore);
+      setMessage(okRestore);
       break;
+     }
      case "guardRestore": {
       if (!adb.verified) {
        if (!isDevOptions(this)) {
@@ -536,12 +540,13 @@ public final class LauncherService extends Service {
       progress("Đang đóng Stella Sora an toàn trước khi khôi phục…", 10);
       patcher.forceStopGame();
       if (!patcher.hasTarget()) detectGame();
-      progress("Đang khôi phục dữ liệu gốc trước bản cập nhật…", 25);
-      patcher.restore();
+      progress("Đang khôi phục dữ liệu gốc chuẩn MD5 từ Yostar…", 25);
+      JSONObject guardRes = patcher.restore();
       detectGame();
       JSONObject offAfter = OfficialAndroidClient.readCachedGuardState(this);
       set("officialUpdate", offAfter);
-      DiagnosticLog.log(this, "guardRestore", "Đã đóng Stella Sora và khôi phục dữ liệu gốc hoàn tất.");
+      String guardDetail = guardRes != null ? guardRes.optString("message", "") : "";
+      DiagnosticLog.log(this, "guardRestore", "Đã đóng Stella Sora và khôi phục dữ liệu gốc hoàn tất. " + guardDetail);
       String curG = state.getJSONObject("game").optString("gameVersion", "");
       String latestG = offAfter.optString("latestGameVersion", "");
       if (latestG.isEmpty() && manifest != null) latestG = manifest.optString("client_game_version", "");

@@ -388,10 +388,10 @@ public final class MainActivity extends Activity implements LauncherService.List
      if (state.optBoolean("busy")) throw new IOException("Đang có thao tác. Hãy chờ hoàn tất.");
      String root = state.getJSONObject("game").optString("root", "Chưa xác định");
      String text = action.equals("install") ? "Chỉ cài các tệp Android khớp phiên bản và SHA256. Gói Windows sẽ bị từ chối."
-       : action.equals("restore") ? "Khôi phục toàn bộ tệp gốc đã xác minh SHA256 cho đúng phiên bản game hiện tại. Bỏ qua các tệp đã ở bản gốc."
+       : action.equals("restore") ? "Đối chiếu toàn bộ tệp game với bảng kê gốc ss_and.mani (MD5), tự tải lại đúng bản gốc từ máy chủ Yostar nếu backup thiếu/lệch và dọn bộ nhớ tạm cập nhật (Temporary_Store) để tránh lỗi Patch file verification failed."
        : "Đọc nhật ký và phục hồi thao tác bị ngắt. Không dùng backup của thiết bị khác.";
      dialogBuilder()
-       .setTitle(action.equals("install") ? "Cài Việt hoá Android" : action.equals("restore") ? "Khôi phục bản trước cài" : "Phục hồi thao tác")
+       .setTitle(action.equals("install") ? "Cài Việt hoá Android" : action.equals("restore") ? "Khôi phục dữ liệu gốc Yostar" : "Phục hồi thao tác")
        .setMessage(root + "\n\n" + text + "\n\nHãy thoát game và chờ thao tác hoàn tất.")
        .setNegativeButton("Để sau", null)
        .setPositiveButton("Tiếp tục", (d, w) -> LauncherService.dispatch(this, action, args))

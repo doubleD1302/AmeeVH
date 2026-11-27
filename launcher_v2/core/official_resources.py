@@ -300,9 +300,9 @@ def official_relative_path(name: str) -> str:
     """Path of a resource under Persistent_Store, as the game itself lays it out."""
     if name == "data.arcx":
         return "Tables/" + name
-    if name == "lua.arcx":
+    if name in ("lua.arcx", "hotfix.arch"):
         return "Scripts/" + name
-    if name.endswith(".srt"):
+    if name.endswith((".srt", ".mp4", ".config")):
         return "Videos/" + name
     return "AssetBundles/" + name
 
@@ -330,9 +330,31 @@ class OfficialCatalog:
     versions: dict               # (name, checksum) -> {checksum,size}
     patch_index: dict            # (name, checksum_of_new_file) -> patch record
     evidence: list = field(default_factory=list)
+    base_res_version: str = ""
+    base_files: dict = field(default_factory=dict)
+    patch_steps: list = field(default_factory=list)  # [{step, res_ver, targets: set[str]}]
 
     def knows(self, name: str, checksum: str) -> bool:
         return (name, checksum) in self.versions
+
+    def pending_patch_names(self, local_res_version: Optional[str]) -> set[str]:
+        """Return every filename touched by CDN BinDiff patches newer than `local_res_version`."""
+        if not self.patch_steps:
+            return set()
+        local_res = str(local_res_version or "").strip()
+        if local_res and local_res == self.resource_version:
+            return set()
+        local_step = 0
+        if local_res and local_res != self.base_res_version:
+            for st in self.patch_steps:
+                if str(st.get("res_ver") or "").strip() == local_res:
+                    local_step = int(st.get("step", 0))
+                    break
+        out: set[str] = set()
+        for st in self.patch_steps:
+            if int(st.get("step", 0)) > local_step:
+                out.update(st.get("targets") or ())
+        return out
 
     def resolve(self, name: str, checksum: str, trail: tuple = ()) -> dict:
         """Return a plan item: {'path','size','algorithm','checksum','url'} or with base/patch chain."""
@@ -471,21 +493,33 @@ class OfficialClient:
             extra = list(pool.map(manifest, names))
         everything = [base] + extra
         final = next((m for m in extra if m[0] == f"p_{count}_m.ss_win.mani"), base)
-        final_files = dict(base[2][1])
+        base_files = dict(base[2][1])
         if "ss_win_add.mani" in names:
-            final_files.update(next(m for m in extra if m[0] == "ss_win_add.mani")[2][1])
+            base_files.update(next(m for m in extra if m[0] == "ss_win_add.mani")[2][1])
+        final_files = dict(base_files)
         final_files.update(final[2][1])
 
         versions: dict = {}
         patch_index: dict = {}
-        for _name, _data, (_head, files, patches) in everything:
+        patch_steps: list[dict] = []
+        for mname, _data, (mhead, files, patches) in everything:
             for record in files.values():
                 versions[(record["name"], record["checksum"])] = record
+            step_targets: set[str] = set()
             for patch_name, patch in patches.items():
                 match = re.fullmatch(r"p_\d+_[un]\.(.+)", patch_name)
                 if not match or match[1] not in files:
                     raise OfficialResourceError("Bản vá không có tệp đích: " + patch_name, "MANIFEST_FORMAT")
                 patch_index[(match[1], files[match[1]]["checksum"])] = patch
+                step_targets.add(match[1])
+            step_match = re.fullmatch(r"p_(\d+)_m\.ss_win\.mani", mname)
+            if step_match:
+                patch_steps.append({
+                    "step": int(step_match.group(1)),
+                    "res_ver": str(mhead.get("RES_VER") or "").strip(),
+                    "targets": step_targets,
+                })
+        patch_steps.sort(key=lambda x: x["step"])
         head = final[2][0]
         if not all(head.get(x) for x in ("CLIENT_VER", "GAME_VER", "RES_VER")):
             raise OfficialResourceError("Manifest cuối thiếu phiên bản.", "MANIFEST_FORMAT")
@@ -508,6 +542,9 @@ class OfficialClient:
             diff=diff,
             versions=versions,
             patch_index=patch_index,
+            base_res_version=str(base[2][0].get("RES_VER") or "").strip(),
+            base_files=base_files,
+            patch_steps=patch_steps,
         )
 
 

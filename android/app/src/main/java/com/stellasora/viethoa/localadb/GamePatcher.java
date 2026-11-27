@@ -51,6 +51,25 @@ final class GamePatcher {
   return path;
  }
 
+ static String relativeOfficial(String path) throws IOException {
+  if (path == null || path.isEmpty() || !path.equals(path.trim()) || path.startsWith("/") || path.contains("\\") || path.contains(":")) {
+   throw new IOException("Đường dẫn tệp khôi phục gốc không hợp lệ.");
+  }
+  for (String piece : path.split("/", -1)) {
+   if (piece.isEmpty() || piece.equals(".") || piece.equals("..")) throw new IOException("Đường dẫn vượt phạm vi.");
+  }
+  for (char ch : path.toCharArray()) {
+   if (ch < 32) throw new IOException("Đường dẫn chứa ký tự điều khiển.");
+  }
+  boolean allowed = path.equals("Persistent_Store/Tables/data.arcx")
+    || path.equals("Persistent_Store/Scripts/lua.arcx")
+    || path.equals("Persistent_Store/Scripts/hotfix.arch")
+    || path.matches("Persistent_Store/Videos/[^/<>:\"|?*]+\\.(srt|mp4)")
+    || path.matches("Persistent_Store/AssetBundles/[A-Za-z0-9_.-]+\\.unity3d");
+  if (!allowed) throw new IOException("Tệp không thuộc phạm vi khôi phục gốc được phép: " + path);
+  return path;
+ }
+
  private static boolean isSafeFuseAlias(String resolved, String expected, String requiredSuffix) {
   if (resolved == null || resolved.isEmpty()) return false;
   if (resolved.equals(expected)) return true;
@@ -1050,14 +1069,710 @@ final class GamePatcher {
   return !"RUNNING".equals(check);
  }
 
- void restore() throws Exception {
+ private static final class DeviceMd5State {
+  final boolean exists;
+  final long size;
+  final String md5; // empty when absent or size mismatched
+
+  DeviceMd5State(boolean exists, long size, String md5) {
+   this.exists = exists;
+   this.size = size;
+   this.md5 = md5;
+  }
+ }
+
+ private static final class OfficialTarget {
+  final String rel;
+  final String name;
+  final String destPath;
+  final String action; // keep | replace | delete
+  final long expectedSize;
+  final String expectedMd5;
+  final boolean existedBefore;
+  File sourceFile;
+  String sourceKind = ""; // backup | cdn
+
+  OfficialTarget(String rel, String name, String destPath, String action, long expectedSize, String expectedMd5, boolean existedBefore) {
+   this.rel = rel;
+   this.name = name;
+   this.destPath = destPath;
+   this.action = action;
+   this.expectedSize = expectedSize;
+   this.expectedMd5 = expectedMd5;
+   this.existedBefore = existedBefore;
+  }
+ }
+
+ private String fullOfficialPath(String rel) throws Exception {
+  return target.getString("root") + "/" + relativeOfficial(rel);
+ }
+
+ private void ensureAndVerifyOfficialDirs(Collection<String> relativePaths) throws Exception {
+  String root = target.getString("root");
+  String suffix = "/Android/data/" + Store.GAME + "/files";
+  LinkedHashSet<String> dirs = new LinkedHashSet<>();
+  dirs.add(root);
+  dirs.add(root + "/Persistent_Store");
+  for (String rel : relativePaths) {
+   String clean = relativeOfficial(rel);
+   String[] pieces = clean.split("/");
+   String current = root;
+   for (int i = 0; i < pieces.length - 1; i++) {
+    current += "/" + pieces[i];
+    dirs.add(current);
+   }
+  }
+  StringBuilder cmd = new StringBuilder("for d in");
+  for (String d : dirs) cmd.append(' ').append(Store.q(d));
+  cmd.append("; do if [ -L \"$d\" ]; then printf 'ERR\\n'; exit 0; fi; ");
+  cmd.append("if [ ! -e \"$d\" ]; then mkdir -p \"$d\" || exit $?; fi; ");
+  cmd.append("if [ -L \"$d\" ] || [ ! -d \"$d\" ]; then printf 'ERR\\n'; exit 0; fi; ");
+  cmd.append("readlink -f \"$d\" || exit $?; done");
+  String res = adb.exec(cmd.toString(), 15000);
+  if (res.startsWith("ERR")) {
+   throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");
+  }
+  String[] resolvedLines = res.isEmpty() ? new String[0] : res.split("\\r?\\n");
+  if (resolvedLines.length != dirs.size()) {
+   throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");
+  }
+  int idx = 0;
+  for (String d : dirs) {
+   String relSuffix = suffix + d.substring(root.length());
+   if (!isSafeFuseAlias(resolvedLines[idx++].trim(), d, relSuffix)) {
+    throw new IOException("Đường dẫn dữ liệu có liên kết hoặc thư mục chưa sẵn sàng.");
+   }
+  }
+ }
+
+ private List<DeviceMd5State> batchMd5States(List<String> fullPaths, List<Long> expectedSizes) throws Exception {
+  List<DeviceMd5State> all = new ArrayList<>(fullPaths.size());
+  for (int start = 0; start < fullPaths.size(); start += STATE_BATCH_SIZE) {
+   int end = Math.min(fullPaths.size(), start + STATE_BATCH_SIZE);
+   StringBuilder cmd = new StringBuilder();
+   for (int k = 0; k < end - start; k++) {
+    int idx = start + k;
+    String qP = Store.q(fullPaths.get(idx));
+    long expSz = expectedSizes.get(idx);
+    cmd.append("p=").append(qP).append("; ")
+      .append("if [ -L \"$p\" ]; then exit 73; ")
+      .append("elif [ -f \"$p\" ]; then s=$(stat -c %s \"$p\") || exit $?; ");
+    if (expSz >= 0) {
+     cmd.append("if [ \"$s\" = ").append(Store.q(String.valueOf(expSz))).append(" ]; then ")
+       .append("h=$(md5sum \"$p\") || exit $?; printf '").append(k).append(" F %s %s\\n' \"$s\" \"${h%% *}\"; ")
+       .append("else printf '").append(k).append(" S %s\\n' \"$s\"; fi; ");
+    } else {
+     cmd.append("printf '").append(k).append(" S %s\\n' \"$s\"; ");
+    }
+    cmd.append("elif [ -e \"$p\" ]; then exit 74; ")
+      .append("else printf '").append(k).append(" A\\n'; fi; ");
+   }
+   String raw = adb.exec(cmd.toString(), 120000);
+   String[] lines = raw.isEmpty() ? new String[0] : raw.split("\\r?\\n");
+   if (lines.length != (end - start)) {
+    throw new IOException("Chưa đối chiếu được kích thước/MD5 tệp game.");
+   }
+   for (int k = 0; k < end - start; k++) {
+    String[] tok = lines[k].trim().split("\\s+");
+    if (tok.length < 2 || !tok[0].equals(String.valueOf(k))) {
+     throw new IOException("Chưa đối chiếu được kích thước/MD5 tệp game.");
+    }
+    if ("A".equals(tok[1]) && tok.length == 2) {
+     all.add(new DeviceMd5State(false, -1L, ""));
+    } else if ("S".equals(tok[1]) && tok.length >= 3 && tok[2].matches("[0-9]+")) {
+     all.add(new DeviceMd5State(true, Long.parseLong(tok[2]), ""));
+    } else if ("F".equals(tok[1]) && tok.length >= 4 && tok[2].matches("[0-9]+") && tok[3].matches("[0-9a-fA-F]{32}")) {
+     all.add(new DeviceMd5State(true, Long.parseLong(tok[2]), tok[3].toLowerCase(Locale.ROOT)));
+    } else {
+     throw new IOException("Chưa đối chiếu được kích thước/MD5 tệp game.");
+    }
+   }
+  }
+  return all;
+ }
+
+ private byte[] pullManifestBytes(String remotePath, File localTemp) throws Exception {
+  String root = target.getString("root");
+  String suffix = "/Android/data/" + Store.GAME + "/files";
+  String rel = remotePath.startsWith(root) ? remotePath.substring(root.length()) : "";
+  String qRemote = Store.q(remotePath);
+  String qLocal = Store.q(ownExternalPath(localTemp));
+  String check = adb.exec(
+    "if [ ! -e " + qRemote + " ]; then printf 'MISSING'; exit 0; fi; "
+      + "if [ -L " + qRemote + " ] || [ ! -f " + qRemote + " ]; then printf 'ERR:BAD'; exit 0; fi; "
+      + "s=$(stat -c %s " + qRemote + ") || exit $?; "
+      + "if [ \"$s\" -gt 33554432 ]; then printf 'ERR:SIZE'; exit 0; fi; "
+      + "r=$(readlink -f " + qRemote + ") || exit $?; "
+      + "cp " + qRemote + " " + qLocal + " || exit $?; "
+      + "printf 'OK\\n%s' \"$r\"",
+    30000
+  ).trim();
+  if ("MISSING".equals(check)) return null;
+  if (!check.startsWith("OK\n")) {
+   throw new IOException("Không đọc được tệp bảng kê game trên thiết bị: " + check);
+  }
+  String resolved = check.substring(3).trim();
+  if (!isSafeFuseAlias(resolved, remotePath, suffix + rel)) {
+   throw new IOException("Tệp bảng kê game có liên kết không an toàn.");
+  }
+  ownExternalPath(localTemp);
+  return Files.readAllBytes(localTemp.toPath());
+ }
+
+ private OfficialAndroidClient.ParsedManifest pullLocalManifest(File stageDir) throws Exception {
+  String psDir = target.getString("root") + "/Persistent_Store";
+  byte[] baseBytes = pullManifestBytes(psDir + "/ss_and.mani", new File(stageDir, "local_ss_and.mani"));
+  if (baseBytes == null) return null;
+  OfficialAndroidClient.ParsedManifest base = OfficialAndroidClient.parseManifestFull(baseBytes);
+  if (base.files.isEmpty()) return null;
+
+  Map<String, String> mergedHeaders = new LinkedHashMap<>(base.headers);
+  Map<String, OfficialAndroidClient.FileEntry> mergedFiles = new LinkedHashMap<>(base.files);
+  Map<String, OfficialAndroidClient.PatchEntry> mergedPatches = new LinkedHashMap<>(base.patches);
+
+  try {
+   byte[] addBytes = pullManifestBytes(psDir + "/ss_and_add.mani", new File(stageDir, "local_ss_and_add.mani"));
+   if (addBytes != null) {
+    OfficialAndroidClient.ParsedManifest addM = OfficialAndroidClient.parseManifestFull(addBytes);
+    mergedFiles.putAll(addM.files);
+   }
+  } catch (Exception ignored) {}
+
+  String patchNumRaw = base.headers.getOrDefault("BIN_DIFF_PATCH_VER", "");
+  if (patchNumRaw.matches("[0-9]+")) {
+   try {
+    int patchNum = Integer.parseInt(patchNumRaw);
+    if (patchNum > 0) {
+     byte[] pmBytes = pullManifestBytes(psDir + "/p_" + patchNum + "_m.ss_and.mani", new File(stageDir, "local_pm.mani"));
+     if (pmBytes != null) {
+      OfficialAndroidClient.ParsedManifest pm = OfficialAndroidClient.parseManifestFull(pmBytes);
+      mergedFiles.putAll(pm.files);
+      for (String k : new String[]{"RES_VER", "GAME_VER", "CLIENT_VER"}) {
+       if (pm.headers.containsKey(k)) mergedHeaders.put(k, pm.headers.get(k));
+      }
+     }
+    }
+   } catch (Exception ignored) {}
+  }
+  return new OfficialAndroidClient.ParsedManifest(mergedHeaders, mergedFiles, mergedPatches);
+ }
+
+ private Map<Long, List<File>> indexLocalBackupsBySize(String binding) {
+  Map<Long, List<File>> bySize = new HashMap<>();
+  try {
+   File ext = context.getExternalFilesDir(null);
+   if (ext == null || Files.isSymbolicLink(ext.toPath())) return bySize;
+   File bRoot = new File(ext, "backups/" + binding);
+   if (!bRoot.isDirectory() || Files.isSymbolicLink(bRoot.toPath())) return bySize;
+   File[] runs = bRoot.listFiles();
+   if (runs == null) return bySize;
+   Arrays.sort(runs, (a, b) -> Long.compare(b.lastModified(), a.lastModified()));
+   for (File run : runs) {
+    if (!run.isDirectory() || Files.isSymbolicLink(run.toPath())) continue;
+    File[] items = run.listFiles();
+    if (items == null) continue;
+    for (File f : items) {
+     if (f.isFile() && !Files.isSymbolicLink(f.toPath())) {
+      bySize.computeIfAbsent(f.length(), k -> new ArrayList<>()).add(f);
+     }
+    }
+   }
+  } catch (Exception ignored) {}
+  return bySize;
+ }
+
+ private static File findVerifiedBackup(Map<Long, List<File>> bySize, long expectedSize, String expectedMd5) {
+  List<File> list = bySize.get(expectedSize);
+  if (list == null) return null;
+  for (File f : list) {
+   if (OfficialAndroidClient.matchesMd5(f, expectedSize, expectedMd5)) {
+    return f;
+   }
+  }
+  return null;
+ }
+
+ private Set<String> collectReceiptRelativePaths(String binding) {
+  Set<String> out = new LinkedHashSet<>();
+  try {
+   File f = receipt(binding);
+   Set<String> visited = new HashSet<>();
+   JSONObject cur = f.isFile() ? Store.read(f) : null;
+   while (cur != null) {
+    String jid = cur.optString("journal_id", "");
+    if (!jid.isEmpty() && !visited.add(jid)) break;
+    JSONArray files = cur.optJSONArray("files");
+    if (files != null) {
+     for (int i = 0; i < files.length(); i++) {
+      String p = files.getJSONObject(i).optString("path", "");
+      try { out.add(relativeOfficial(p)); } catch (Exception ignored) {}
+     }
+    }
+    if (jid.matches("[a-f0-9-]{36}")) {
+     File jf = journalFile(jid);
+     if (jf.isFile()) {
+      JSONObject jo = Store.read(jf);
+      JSONArray jfiles = jo.optJSONArray("files");
+      if (jfiles != null) {
+       for (int i = 0; i < jfiles.length(); i++) {
+        String p = jfiles.getJSONObject(i).optString("path", "");
+        try { out.add(relativeOfficial(p)); } catch (Exception ignored) {}
+       }
+      }
+      cur = jo.optJSONObject("previous_receipt");
+      continue;
+     }
+    }
+    cur = null;
+   }
+  } catch (Exception ignored) {}
+  return out;
+ }
+
+ private List<String> scanDeviceLanguageFiles() {
+  List<String> out = new ArrayList<>();
+  try {
+   String root = target.getString("root");
+   String ps = root + "/Persistent_Store";
+   String cmd = ""
+     + "if [ -d " + Store.q(ps + "/AssetBundles") + " ] && [ ! -L " + Store.q(ps + "/AssetBundles") + " ]; then "
+     + "find " + Store.q(ps + "/AssetBundles") + " -maxdepth 1 -type f -name '*.en.unity3d' -print 2>/dev/null || true; fi; "
+     + "if [ -d " + Store.q(ps + "/Videos") + " ] && [ ! -L " + Store.q(ps + "/Videos") + " ]; then "
+     + "find " + Store.q(ps + "/Videos") + " -maxdepth 1 -type f -name '*.srt' -print 2>/dev/null || true; fi";
+   String listing = adb.exec(cmd, 20000);
+   String prefix = root + "/";
+   for (String line : listing.split("\\r?\\n")) {
+    String trimmed = line.trim();
+    if (!trimmed.startsWith(prefix)) continue;
+    String rel = trimmed.substring(prefix.length());
+    try {
+     out.add(relativeOfficial(rel));
+    } catch (Exception ignored) {}
+   }
+  } catch (Exception ignored) {}
+  return out;
+ }
+
+ /**
+  * Removes stale partial BinDiff patch files in Temporary_Store/ and Patch_Store/ (preserving directories)
+  * and any leftover *.stella-*.tmp files in Persistent_Store/ so Stella Sora's updater starts completely clean.
+  */
+ private int cleanGamePatchCaches() {
+  int removed = 0;
+  try {
+   String root = target.getString("root");
+   String suffix = "/Android/data/" + Store.GAME + "/files";
+   for (String sub : new String[]{"Temporary_Store", "Patch_Store"}) {
+    String dir = root + "/" + sub;
+    String qDir = Store.q(dir);
+    String check = adb.exec(
+      "if [ ! -e " + qDir + " ]; then printf 'NONE'; exit 0; fi; "
+        + "if [ -L " + qDir + " ] || [ ! -d " + qDir + " ]; then printf 'SKIP'; exit 0; fi; "
+        + "readlink -f " + qDir,
+      10000
+    ).trim();
+    if ("NONE".equals(check) || "SKIP".equals(check)) continue;
+    if (!isSafeFuseAlias(check, dir, suffix + "/" + sub)) continue;
+    String countStr = adb.exec(
+      "c=$(find " + qDir + " -type f 2>/dev/null | wc -l); "
+        + "find " + qDir + " -type f -delete 2>/dev/null || find " + qDir + " -type f -exec rm -f {} + 2>/dev/null || true; "
+        + "printf '%s' \"$c\"",
+      30000
+    ).trim();
+    if (countStr.matches("[0-9]+")) {
+     removed += Integer.parseInt(countStr);
+    }
+   }
+   // Clean any stray launcher temp files in Persistent_Store subdirectories
+   String ps = root + "/Persistent_Store";
+   for (String sub : new String[]{"Tables", "Scripts", "AssetBundles", "Videos"}) {
+    String dir = ps + "/" + sub;
+    String qDir = Store.q(dir);
+    adb.exec(
+      "if [ -d " + qDir + " ] && [ ! -L " + qDir + " ]; then "
+        + "find " + qDir + " -maxdepth 1 -type f -name '*.stella-*.tmp' -delete 2>/dev/null || true; fi",
+      15000
+    );
+   }
+  } catch (Exception ignored) {}
+  return removed;
+ }
+
+ private void applyOfficialTargetAtomic(String id, OfficialTarget t, File rollbackCopy) throws Exception {
+  String qDest = Store.q(t.destPath);
+  if ("delete".equals(t.action)) {
+   if (t.existedBefore && rollbackCopy != null) {
+    String qRb = Store.q(ownExternalPath(rollbackCopy));
+    adb.exec("if [ -f " + qDest + " ] && [ ! -L " + qDest + " ]; then cp " + qDest + " " + qRb + " || exit $?; fi; printf 'OK'", 60000);
+   }
+   String res = adb.exec("rm -f " + qDest + " || exit $?; if [ -e " + qDest + " ]; then printf 'ERR:DEL'; else printf 'OK'; fi", 30000);
+   if (!"OK".equals(res)) throw new IOException("Không xoá được tệp Việt hoá riêng: " + t.rel);
+   return;
+  }
+
+  String qSrc = Store.q(ownExternalPath(t.sourceFile));
+  String tmp = t.destPath + ".stella-official-" + id + ".tmp";
+  String qTemp = Store.q(tmp);
+  String qSize = Store.q(String.valueOf(t.expectedSize));
+  String qMd5 = Store.q(t.expectedMd5);
+  String md5GuardTemp = "[ ! -L " + qTemp + " ] && [ -f " + qTemp + " ] && [ \"$(stat -c %s " + qTemp + ")\" = " + qSize + " ] && h=$(md5sum " + qTemp + ") && [ \"${h%% *}\" = " + qMd5 + " ]";
+  String md5GuardDest = "[ ! -L " + qDest + " ] && [ -f " + qDest + " ] && [ \"$(stat -c %s " + qDest + ")\" = " + qSize + " ] && h=$(md5sum " + qDest + ") && [ \"${h%% *}\" = " + qMd5 + " ]";
+
+  StringBuilder cmd = new StringBuilder();
+  if (t.existedBefore && rollbackCopy != null) {
+   String qRb = Store.q(ownExternalPath(rollbackCopy));
+   cmd.append("if [ -f ").append(qDest).append(" ] && [ ! -L ").append(qDest).append(" ]; then cp ").append(qDest).append(" ").append(qRb).append(" || exit $?; fi; ");
+  }
+  cmd.append("if [ -L ").append(qTemp).append(" ]; then printf 'ERR:TEMPLINK'; exit 0; fi; ");
+  cmd.append("rm -f ").append(qTemp).append(" || exit $?; ");
+  cmd.append("cp ").append(qSrc).append(" ").append(qTemp).append(" || exit $?; ");
+  cmd.append("if ! (").append(md5GuardTemp).append("); then rm -f ").append(qTemp).append("; printf 'ERR:TEMPVERIFY'; exit 0; fi; ");
+  cmd.append("mv -f ").append(qTemp).append(" ").append(qDest).append(" || exit $?; ");
+  cmd.append("if ! (").append(md5GuardDest).append("); then printf 'ERR:READBACK'; exit 0; fi; ");
+  cmd.append("printf 'OK'");
+
+  String res = adb.exec(cmd.toString(), 120000);
+  if ("OK".equals(res)) return;
+  if ("ERR:TEMPLINK".equals(res)) throw new IOException("Tệp tạm có liên kết không an toàn: " + t.rel);
+  if ("ERR:TEMPVERIFY".equals(res)) throw new IOException("Tệp tạm bản gốc sai MD5 khi chép vào máy: " + t.rel);
+  if ("ERR:READBACK".equals(res)) throw new IOException("Đọc lại bản gốc sau khi ghi sai MD5: " + t.rel);
+  throw new IOException("Không thể ghi bản gốc (" + t.rel + "): " + res);
+ }
+
+ private void markReceiptChainRestored(String binding) {
+  try {
+   File f = receipt(binding);
+   Set<String> visited = new HashSet<>();
+   JSONObject cur = f.isFile() ? Store.read(f) : null;
+   while (cur != null) {
+    String jid = cur.optString("journal_id", "");
+    if (!jid.isEmpty() && !visited.add(jid)) break;
+    if (jid.matches("[a-f0-9-]{36}")) {
+     File jf = journalFile(jid);
+     if (jf.isFile()) {
+      JSONObject jo = Store.read(jf);
+      jo.remove("pending");
+      jo.put("state", "RESTORED");
+      Store.write(jf, jo);
+      cur = jo.optJSONObject("previous_receipt");
+      continue;
+     }
+    }
+    cur = null;
+   }
+   if (f.isFile()) f.delete();
+   File act = active();
+   if (act.isFile()) {
+    JSONObject ao = Store.read(act);
+    if (binding.equals(ao.optString("binding")) && "DONE".equals(ao.optString("state"))) {
+     ao.put("state", "RESTORED");
+     Store.write(act, ao);
+    }
+   }
+  } catch (Exception ignored) {}
+ }
+
+ JSONObject restore() throws Exception {
   verifiedExternalBase = null;
   deadline = SystemClock.elapsedRealtime() + 5400000;
   requireTarget();
   if (pending()) throw new IOException("Hãy phục hồi nhật ký chưa hoàn tất trước.");
+  closedAndVersion();
+  ensureExternalBase();
+
   String binding = target.getString("binding");
+  String id = UUID.randomUUID().toString();
+  File stage = Store.external(context, "staging/restore_" + id);
+  File cdnCache = Store.external(context, "staging/official_cache_" + id);
+  File rollbackDir = new File(stage, "rollback");
+  ownExternalPath(stage);
+  ownExternalPath(cdnCache);
+  if (!rollbackDir.isDirectory() && !rollbackDir.mkdirs()) {
+   throw new IOException("Không tạo được thư mục đệm khôi phục gốc.");
+  }
+
+  try {
+   step("Đang đọc bảng kê gốc ss_and.mani trên thiết bị...", 6);
+   OfficialAndroidClient.ParsedManifest localManifest = pullLocalManifest(stage);
+   if (localManifest == null) {
+    // Fallback to legacy local-backup journal restore only when ss_and.mani is absent
+    File rf = receipt(binding);
+    if (!rf.isFile()) {
+     throw new IOException("Không đọc được ss_and.mani và chưa có biên bản cài đặt để khôi phục.");
+    }
+    restoreLegacyReceiptChain(binding);
+    int cleaned = cleanGamePatchCaches();
+    cleanStaleStaging();
+    pruneHistory(binding, null);
+    OfficialAndroidClient.clearGuardAlertAfterRestore(context);
+    return Store.obj("replaced", 0, "alreadyOfficial", 0, "deleted", 0, "cleanedTempFiles", cleaned,
+      "message", "Đã khôi phục tệp theo biên bản cũ và dọn " + cleaned + " tệp tạm.");
+   }
+
+   String localResVer = localManifest.headers.getOrDefault("RES_VER", target.optString("resourceVersion", ""));
+   step("Đang hỏi máy chủ chính thức Yostar (Android CDN)...", 12);
+   OfficialAndroidClient.AndroidCatalog catalog = null;
+   IOException cdnFetchError = null;
+   try {
+    catalog = OfficialAndroidClient.fetchCatalog(25000);
+   } catch (IOException netErr) {
+    cdnFetchError = netErr;
+    DiagnosticLog.log(context, "restore", "Chưa kết nối được máy chủ Yostar (" + Store.cleanError(netErr) + "); thử đối chiếu backup MD5 cục bộ.");
+   }
+
+   Set<String> pendingNames = catalog != null ? catalog.pendingPatchNames(localResVer) : Collections.emptySet();
+   Map<String, Boolean> candidateMap = new LinkedHashMap<>();
+   candidateMap.put("Persistent_Store/Tables/data.arcx", true);
+   candidateMap.put("Persistent_Store/Scripts/lua.arcx", true);
+   for (String rPath : collectReceiptRelativePaths(binding)) {
+    candidateMap.put(rPath, true);
+   }
+   for (String dPath : scanDeviceLanguageFiles()) {
+    candidateMap.putIfAbsent(dPath, false);
+   }
+   // Include updated/added .en.unity3d & .srt from local ss_and.mani (catches deleted bundles -> "no found patch target bundle")
+   for (OfficialAndroidClient.FileEntry fe : localManifest.files.values()) {
+    if (!fe.name.endsWith(".en.unity3d") && !fe.name.endsWith(".srt")) continue;
+    boolean inBaseSame = catalog != null
+      && catalog.baseFiles.containsKey(fe.name)
+      && catalog.baseFiles.get(fe.name).checksum.equalsIgnoreCase(fe.checksum);
+    if (!inBaseSame) {
+     String rel = OfficialAndroidClient.officialRelativePath(fe.name);
+     if (rel != null) candidateMap.putIfAbsent(rel, false);
+    }
+   }
+   // Include EVERY file touched by pending CDN BinDiff patches (p_k > localResVer), including non-.en bundles & hotfix.arch!
+   Set<String> pendingTrackedRels = new HashSet<>();
+   for (String pName : pendingNames) {
+    if (!localManifest.files.containsKey(pName)) continue;
+    String rel = OfficialAndroidClient.officialRelativePath(pName);
+    if (rel != null) {
+     candidateMap.putIfAbsent(rel, false);
+     pendingTrackedRels.add(rel);
+    }
+   }
+
+   List<String> candRels = new ArrayList<>(candidateMap.keySet());
+   List<String> candFullPaths = new ArrayList<>(candRels.size());
+   List<Long> candExpectedSizes = new ArrayList<>(candRels.size());
+   for (String rel : candRels) {
+    String name = rel.substring(rel.lastIndexOf('/') + 1);
+    OfficialAndroidClient.FileEntry rec = localManifest.files.get(name);
+    candFullPaths.add(fullOfficialPath(rel));
+    candExpectedSizes.add(rec != null ? rec.size : -1L);
+   }
+
+   step("Đang đối chiếu MD5 " + candRels.size() + " tệp với ss_and.mani...", 22);
+   List<DeviceMd5State> devStates = batchMd5States(candFullPaths, candExpectedSizes);
+
+   List<OfficialTarget> targets = new ArrayList<>();
+   List<OfficialTarget> todo = new ArrayList<>();
+   int alreadyOfficial = 0;
+   int repairedPending = 0;
+   for (int i = 0; i < candRels.size(); i++) {
+    String rel = candRels.get(i);
+    boolean fromReceipt = Boolean.TRUE.equals(candidateMap.get(rel));
+    String name = rel.substring(rel.lastIndexOf('/') + 1);
+    DeviceMd5State st = devStates.get(i);
+    OfficialAndroidClient.FileEntry rec = localManifest.files.get(name);
+    if (rec == null) {
+     if (fromReceipt && st.exists && !"data.arcx".equals(name) && !"lua.arcx".equals(name)) {
+      OfficialTarget t = new OfficialTarget(rel, name, candFullPaths.get(i), "delete", 0L, "", true);
+      targets.add(t);
+      todo.add(t);
+     }
+     continue;
+    }
+    if (st.exists && st.size == rec.size && rec.checksum.equalsIgnoreCase(st.md5)) {
+     alreadyOfficial++;
+     targets.add(new OfficialTarget(rel, name, candFullPaths.get(i), "keep", rec.size, rec.checksum, true));
+     continue;
+    }
+    boolean mustReplace;
+    if (st.exists) {
+     // File exists in Persistent_Store with WRONG size or MD5 (Vietnamese, stale, corrupted, or half-patched!)
+     mustReplace = true;
+    } else {
+     boolean inBaseSame = catalog != null
+       && catalog.baseFiles.containsKey(name)
+       && catalog.baseFiles.get(name).checksum.equalsIgnoreCase(rec.checksum);
+     if ("data.arcx".equals(name) || "lua.arcx".equals(name)) {
+      mustReplace = true;
+     } else if (pendingNames.contains(name) && (!inBaseSame || name.endsWith(".en.unity3d") || name.endsWith(".srt"))) {
+      mustReplace = true;
+     } else if ((name.endsWith(".en.unity3d") || name.endsWith(".srt")) && !inBaseSame) {
+      mustReplace = true;
+     } else {
+      mustReplace = false; // unmodified base file living inside APK assets
+     }
+    }
+    if (mustReplace) {
+     OfficialTarget t = new OfficialTarget(rel, name, candFullPaths.get(i), "replace", rec.size, rec.checksum, st.exists);
+     targets.add(t);
+     todo.add(t);
+     if (pendingTrackedRels.contains(rel)) repairedPending++;
+    }
+   }
+
+   // Resolve every REPLACE target: Tier 1 exact-MD5 local backup -> Tier 2 official Yostar Android CDN + BSDIFF40
+   Map<Long, List<File>> backupsBySize = indexLocalBackupsBySize(binding);
+   List<OfficialTarget> needCdn = new ArrayList<>();
+   int fromBackup = 0;
+   for (OfficialTarget t : todo) {
+    if (!"replace".equals(t.action)) continue;
+    File bak = findVerifiedBackup(backupsBySize, t.expectedSize, t.expectedMd5);
+    if (bak != null) {
+     t.sourceFile = bak;
+     t.sourceKind = "backup";
+     fromBackup++;
+    } else {
+     needCdn.add(t);
+    }
+   }
+
+   int fromCdn = 0;
+   if (!needCdn.isEmpty()) {
+    if (catalog == null) {
+     throw new IOException(
+       "Cần kết nối mạng để tải " + needCdn.size() + " tệp gốc từ máy chủ Yostar (bản sao lưu cục bộ bị thiếu hoặc không khớp MD5 ss_and.mani): "
+         + (cdnFetchError != null ? Store.cleanError(cdnFetchError) : "không có mạng."),
+       cdnFetchError
+     );
+    }
+    long needBytes = 0L;
+    for (OfficialTarget t : needCdn) {
+     if (!catalog.knows(t.name, t.expectedMd5)) {
+      throw new IOException(
+        "Máy chủ Yostar không còn lưu phiên bản cũ của " + t.name + " (" + t.expectedMd5.substring(0, 8)
+          + "…). Hãy mở Stella Sora → bấm nút Sửa tài nguyên (Repair) trên màn hình chính hoặc cài lại game từ Google Play."
+      );
+     }
+     needBytes += t.expectedSize;
+    }
+    if (new StatFs(cdnCache.getAbsolutePath()).getAvailableBytes() < needBytes + 33554432L) {
+     throw new IOException("Không đủ bộ nhớ trống để tải và xác minh tài nguyên gốc từ Yostar.");
+    }
+    for (int i = 0; i < needCdn.size(); i++) {
+     OfficialTarget t = needCdn.get(i);
+     final int idx = i + 1;
+     final int totalNeed = needCdn.size();
+     int pct = 28 + (36 * i / Math.max(1, totalNeed));
+     step("Đang tải bản gốc Yostar (" + idx + "/" + totalNeed + "): " + t.name, pct);
+     File f = catalog.materialize(t.name, t.expectedMd5, cdnCache, 25000, msg -> {
+      try { step(msg + " (" + idx + "/" + totalNeed + ")", pct); } catch (Exception ignored) {}
+     });
+     ownExternalPath(f);
+     if (!OfficialAndroidClient.matchesMd5(f, t.expectedSize, t.expectedMd5)) {
+      throw new IOException("Tệp tải từ Yostar sai MD5: " + t.name);
+     }
+     t.sourceFile = f;
+     t.sourceKind = "cdn";
+     fromCdn++;
+    }
+   }
+
+   DiagnosticLog.log(context, "restore",
+     "Kế hoạch khôi phục gốc Android (RES " + localResVer + "): thay " + (fromBackup + fromCdn)
+       + " tệp (backup MD5 chuẩn=" + fromBackup + ", Yostar CDN=" + fromCdn
+       + "), giữ nguyên " + alreadyOfficial + " tệp đã chuẩn, xoá " + (todo.size() - fromBackup - fromCdn) + " tệp Việt hoá riêng.");
+
+   // Apply atomically with rollback safety
+   if (!todo.isEmpty()) {
+    List<String> todoRels = new ArrayList<>(todo.size());
+    for (OfficialTarget t : todo) todoRels.add(t.rel);
+    ensureAndVerifyOfficialDirs(todoRels);
+    closedAndVersion();
+
+    List<OfficialTarget> applied = new ArrayList<>();
+    List<File> rollbackCopies = new ArrayList<>();
+    long lastVerCheck = SystemClock.elapsedRealtime();
+    try {
+     for (int i = 0; i < todo.size(); i++) {
+      if (i > 0 && (i % 15 == 0 || SystemClock.elapsedRealtime() - lastVerCheck >= 2500L)) {
+       closedAndVersion();
+       lastVerCheck = SystemClock.elapsedRealtime();
+      }
+      OfficialTarget t = todo.get(i);
+      File rb = t.existedBefore ? new File(rollbackDir, i + ".prev") : null;
+      applyOfficialTargetAtomic(id, t, rb);
+      applied.add(t);
+      rollbackCopies.add(rb);
+      step("Đang khôi phục bản gốc (" + (i + 1) + "/" + todo.size() + "): " + t.name, 65 + (25 * (i + 1) / Math.max(1, todo.size())));
+     }
+
+     // Final batch MD5 readback verification across ALL replaced files
+     List<String> checkPaths = new ArrayList<>();
+     List<Long> checkSizes = new ArrayList<>();
+     List<OfficialTarget> replacedList = new ArrayList<>();
+     for (OfficialTarget t : todo) {
+      if ("replace".equals(t.action)) {
+       checkPaths.add(t.destPath);
+       checkSizes.add(t.expectedSize);
+       replacedList.add(t);
+      }
+     }
+     if (!checkPaths.isEmpty()) {
+      step("Đang xác minh MD5 toàn bộ tệp sau khôi phục...", 92);
+      List<DeviceMd5State> finalStates = batchMd5States(checkPaths, checkSizes);
+      for (int i = 0; i < replacedList.size(); i++) {
+       OfficialTarget t = replacedList.get(i);
+       DeviceMd5State fs = finalStates.get(i);
+       if (!fs.exists || fs.size != t.expectedSize || !t.expectedMd5.equalsIgnoreCase(fs.md5)) {
+        throw new IOException("Xác minh MD5 sau khôi phục thất bại: " + t.rel);
+       }
+      }
+     }
+    } catch (Exception applyErr) {
+     // Best-effort rollback of already-swapped files
+     for (int i = applied.size() - 1; i >= 0; i--) {
+      OfficialTarget t = applied.get(i);
+      File rb = rollbackCopies.get(i);
+      try {
+       if (t.existedBefore && rb != null && rb.isFile()) {
+        adb.exec("cp " + Store.q(rb.getCanonicalPath()) + " " + Store.q(t.destPath) + " || true", 60000);
+       } else if (!t.existedBefore) {
+        adb.exec("rm -f " + Store.q(t.destPath) + " || true", 15000);
+       }
+      } catch (Exception ignored) {}
+     }
+     throw applyErr;
+    }
+   }
+
+   step("Đang dọn bộ nhớ tạm cập nhật (Temporary_Store / Patch_Store)...", 96);
+   int cleanedTemp = cleanGamePatchCaches();
+   markReceiptChainRestored(binding);
+   cleanStaleStaging();
+   pruneHistory(binding, null);
+   OfficialAndroidClient.clearGuardAlertAfterRestore(context);
+
+   int replacedCount = fromBackup + fromCdn;
+   int deletedCount = todo.size() - replacedCount;
+   String summaryMsg = "Đã khôi phục dữ liệu gốc chuẩn MD5 (RES " + localResVer + "): thay " + replacedCount
+     + " tệp (" + fromCdn + " tải từ Yostar, " + fromBackup + " từ backup chuẩn), giữ " + alreadyOfficial
+     + " tệp đã gốc" + (deletedCount > 0 ? ", gỡ " + deletedCount + " tệp Việt hoá riêng" : "")
+     + (cleanedTemp > 0 ? ", dọn " + cleanedTemp + " tệp tạm cập nhật" : "") + ".";
+   DiagnosticLog.log(context, "restore", summaryMsg);
+   step("Đã hoàn tất khôi phục dữ liệu gốc chuẩn MD5.", 100);
+   return Store.obj(
+     "replaced", replacedCount,
+     "alreadyOfficial", alreadyOfficial,
+     "deleted", deletedCount,
+     "fromBackup", fromBackup,
+     "fromCdn", fromCdn,
+     "repairedPending", repairedPending,
+     "cleanedTempFiles", cleanedTemp,
+     "resourceVersion", localResVer,
+     "message", summaryMsg
+   );
+  } finally {
+   deleteTree(stage);
+   deleteTree(cdnCache);
+  }
+ }
+
+ private void restoreLegacyReceiptChain(String binding) throws Exception {
   File f = receipt(binding);
-  if (!f.isFile()) throw new IOException("Chưa có biên bản/backup để khôi phục lần cài này.");
   Set<String> visited = new HashSet<>();
   while (f.isFile()) {
    JSONObject r = Store.read(f);
@@ -1074,9 +1789,6 @@ final class GamePatcher {
    }
    restoreJournal(j, true);
   }
-  cleanStaleStaging();
-  pruneHistory(binding, null);
-  OfficialAndroidClient.clearGuardAlertAfterRestore(context);
  }
 
  JSONObject recover() throws Exception {

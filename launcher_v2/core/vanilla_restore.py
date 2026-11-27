@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Callable, Optional
 
 from .game_detection import canonicalize_path, is_game_process_running, read_game_versions
+from .official_restore import cleanup_game_patch_caches
 from .safety import InstallerError, atomic_json, safe_path, sha256_file
 from .types import OperationEvent, OperationPhase
 
@@ -331,8 +332,9 @@ class VanillaRestoreEngine:
                     safe_srt.unlink(missing_ok=True)
                     cleaned_srts += 1
 
-            # 5. Remove receipt and cleanup temporary journals/files
-            self._emit(event_cb, operation_id, OperationPhase.READBACK, "Đang dọn dẹp biên bản cài đặt...", 5, 5)
+            # 5. Remove receipt, clear stale Temporary_Store/Patch_Store caches, and cleanup journals
+            self._emit(event_cb, operation_id, OperationPhase.READBACK, "Đang dọn dẹp biên bản cài đặt và bộ nhớ tạm cập nhật...", 5, 5)
+            cleaned_temp_files = cleanup_game_patch_caches(root)
             rp.unlink(missing_ok=True)
             (root / "viethoa_installed.json").unlink(missing_ok=True)
 
@@ -361,5 +363,6 @@ class VanillaRestoreEngine:
                 "restored_scripts": bool(vanilla_lua and vanilla_lua.is_file()),
                 "cleaned_bundles_count": cleaned_bundles,
                 "cleaned_subtitles_count": cleaned_srts,
+                "cleaned_temp_files": cleaned_temp_files,
                 "message": "✓ Hoàn tất khôi phục! Đã đưa toàn bộ dữ liệu game về trạng thái gốc nguyên bản từ nhà phát hành (bản hoàn chỉnh, chưa Việt hoá).",
             }

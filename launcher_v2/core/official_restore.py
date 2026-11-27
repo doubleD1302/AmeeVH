@@ -46,7 +46,7 @@ from .official_resources import (
     official_relative_path,
     parse_manifest,
 )
-from .safety import InstallerError, atomic_json, safe_path
+from .safety import InstallerError, atomic_json, safe_official_path, safe_path
 from .types import OperationEvent, OperationPhase
 
 RECEIPT = ".vietnamese_patch_receipt.json"
@@ -108,17 +108,76 @@ def _now() -> str:
 
 
 def read_local_manifest(root: Path) -> Optional[tuple[dict, dict]]:
-    """(headers, files) of the game's own Persistent_Store/ss_win.mani, or None when unusable."""
-    mf = Path(root) / "Persistent_Store" / "ss_win.mani"
+    """(headers, files) of the game's Persistent_Store manifest (merging ss_win_add & p_N_m if present)."""
+    ps = Path(root) / "Persistent_Store"
+    mf = ps / "ss_win.mani"
     try:
-        if not mf.is_file() or mf.stat().st_size > 32 * 1024 * 1024:
+        if not mf.is_file() or _is_reparse_or_symlink(mf) or mf.stat().st_size > 32 * 1024 * 1024:
             return None
         headers, files, _patches = parse_manifest(mf.read_bytes())
     except (OSError, OfficialResourceError):
         return None
     if not headers.get("RES_VER") or not files:
         return None
-    return headers, files
+    merged_headers = dict(headers)
+    merged_files = dict(files)
+    add_mf = ps / "ss_win_add.mani"
+    try:
+        if add_mf.is_file() and not _is_reparse_or_symlink(add_mf) and add_mf.stat().st_size <= 32 * 1024 * 1024:
+            _ah, afiles, _ap = parse_manifest(add_mf.read_bytes())
+            merged_files.update(afiles)
+    except (OSError, OfficialResourceError):
+        pass
+    patch_ver_raw = str(headers.get("BIN_DIFF_PATCH_VER") or "").strip()
+    if patch_ver_raw.isdigit() and int(patch_ver_raw) > 0:
+        pmf = ps / f"p_{int(patch_ver_raw)}_m.ss_win.mani"
+        try:
+            if pmf.is_file() and not _is_reparse_or_symlink(pmf) and pmf.stat().st_size <= 32 * 1024 * 1024:
+                pheaders, pfiles, _pp = parse_manifest(pmf.read_bytes())
+                merged_files.update(pfiles)
+                for key in ("RES_VER", "GAME_VER", "CLIENT_VER"):
+                    if pheaders.get(key):
+                        merged_headers[key] = pheaders[key]
+        except (OSError, OfficialResourceError):
+            pass
+    return merged_headers, merged_files
+
+
+def cleanup_game_patch_caches(root: Path) -> int:
+    """Remove stale partial patch files in Temporary_Store/ and Patch_Store/ (preserving folder layout).
+
+    Stella Sora's DownloadStore stages BinDiff deltas under Temporary_Store/PatchTemp/ and
+    Temporary_Store/. After an aborted update ("Patch file verification failed"), stale partial
+    files there can keep breaking verification even after Persistent_Store/ is restored cleanly.
+    Never follows symlinks/junctions/reparse points.
+    """
+    resolved_root = Path(root).resolve()
+    removed = 0
+    for folder_name in ("Temporary_Store", "Patch_Store"):
+        try:
+            store_dir = safe_path(resolved_root, folder_name, False)
+        except InstallerError:
+            continue
+        if not store_dir.is_dir() or _is_reparse_or_symlink(store_dir):
+            continue
+        for dirpath, dirnames, filenames in os.walk(store_dir, topdown=True, followlinks=False):
+            cur = Path(dirpath)
+            if _is_reparse_or_symlink(cur):
+                dirnames[:] = []
+                continue
+            dirnames[:] = [d for d in dirnames if not _is_reparse_or_symlink(cur / d)]
+            for fname in filenames:
+                candidate = cur / fname
+                if _is_reparse_or_symlink(candidate):
+                    continue
+                try:
+                    rel = candidate.relative_to(resolved_root).as_posix()
+                    safe_cand = safe_path(resolved_root, rel, False)
+                    safe_cand.unlink(missing_ok=True)
+                    removed += 1
+                except (ValueError, InstallerError, OSError):
+                    continue
+    return removed
 
 
 class OfficialRestoreEngine:
@@ -193,6 +252,40 @@ class OfficialRestoreEngine:
                 rels.setdefault(rel, False)
         return list(rels.items()), receipt
 
+    def _find_verified_local_backup(self, root: Path, rel: str, expected_size: int, expected_md5: str) -> Optional[Path]:
+        """Search launcher backups and *.orig_en for an EXACT size+MD5 match to Yostar's local manifest.
+
+        Because we require an exact 128-bit MD5 match against ss_win.mani, contaminated or stale
+        backups can never be chosen; this safely rescues older game versions rotated off Yostar CDN.
+        """
+        candidates: list[Path] = []
+        try:
+            broot = self.installer.get_backup_dir_for_root(root)
+            if broot.is_dir() and not _is_reparse_or_symlink(broot):
+                bdirs = sorted(
+                    (d for d in broot.glob("backup_*") if d.is_dir() and not _is_reparse_or_symlink(d)),
+                    key=lambda d: d.name,
+                    reverse=True,
+                )
+                for bd in bdirs:
+                    candidates.append(bd / rel)
+        except OSError:
+            pass
+        try:
+            orig = safe_path(root, rel + ".orig_en", False)
+            candidates.append(orig)
+        except InstallerError:
+            pass
+        for cand in candidates:
+            try:
+                if _is_reparse_or_symlink(cand) or not cand.is_file():
+                    continue
+                if cand.stat().st_size == expected_size and md5_file(cand) == expected_md5:
+                    return cand
+            except OSError:
+                continue
+        return None
+
     def _plan(self, root: Path, catalog: OfficialCatalog, prefer: str, cb, op) -> tuple[list[Target], dict]:
         local = read_local_manifest(root) if prefer == "game" else None
         mode = "game" if local else "latest"
@@ -200,8 +293,10 @@ class OfficialRestoreEngine:
         local_res = local[0].get("RES_VER") if local else None
         cands, receipt = self._candidates(root)
         streaming = root / "StellaSora_Data" / "StreamingAssets" / "InstallResource"
+        pending_patch_repairs: set[str] = set()
         if mode == "game":
             seen = {rel for rel, _ in cands}
+            # 1) Check missing *.en.unity3d / *.srt files declared in local ss_win.mani
             for name, rec in sorted(local_files.items()):
                 rel = "Persistent_Store/" + official_relative_path(name)
                 if rel in seen:
@@ -209,7 +304,7 @@ class OfficialRestoreEngine:
                 if not (_BUNDLE_RE.fullmatch(rel) or _SRT_RE.fullmatch(rel)):
                     continue
                 try:
-                    path = safe_path(root, rel, True)
+                    path = safe_official_path(root, rel)
                 except InstallerError:
                     continue
                 if path.exists():
@@ -220,19 +315,57 @@ class OfficialRestoreEngine:
                 # the exact official file, the game loads it from there without needing a copy.
                 cand = streaming / name
                 try:
-                    if cand.is_file() and cand.stat().st_size == rec_size and md5_file(cand) == rec_checksum:
+                    if not _is_reparse_or_symlink(cand) and cand.is_file() and cand.stat().st_size == rec_size and md5_file(cand) == rec_checksum:
                         continue
                 except OSError:
                     pass
-                if not catalog.knows(name, rec_checksum):
+                if not catalog.knows(name, rec_checksum) and self._find_verified_local_backup(root, rel, rec_size, rec_checksum) is None:
                     continue
                 seen.add(rel)
                 cands.append((rel, False))
+
+            # 2) Audit EVERY file targeted by pending CDN BinDiff patches (p_k newer than local_res),
+            # including non-.en bundles & hotfix.arch! A prior aborted BinDiffPatch can leave 40+
+            # non-.en bundles half-patched, corrupted, stale-overridden, or deleted while ss_win.mani
+            # remains on the older RES_VER, causing repeat "Patch file verification failed" errors.
+            pending_names = catalog.pending_patch_names(local_res)
+            for name in sorted(pending_names):
+                rec = local_files.get(name)
+                if rec is None:
+                    continue  # brand-new file added in a newer patch step (not expected on local_res)
+                rel = "Persistent_Store/" + official_relative_path(name)
+                if rel in seen:
+                    continue
+                try:
+                    path = safe_official_path(root, rel)
+                except InstallerError:
+                    continue
+                rec_checksum = rec["checksum"]
+                rec_size = int(rec["size"])
+                needs_repair = False
+                if path.is_file():
+                    try:
+                        if path.stat().st_size != rec_size or md5_file(path) != rec_checksum:
+                            needs_repair = True
+                    except OSError:
+                        needs_repair = True
+                else:
+                    cand = streaming / name
+                    try:
+                        ir_ok = not _is_reparse_or_symlink(cand) and cand.is_file() and cand.stat().st_size == rec_size and md5_file(cand) == rec_checksum
+                    except OSError:
+                        ir_ok = False
+                    if not ir_ok:
+                        needs_repair = True
+                if needs_repair:
+                    seen.add(rel)
+                    cands.append((rel, False))
+                    pending_patch_repairs.add(name)
         targets: list[Target] = []
         total = len(cands)
         for index, (rel, from_receipt) in enumerate(cands, 1):
             self._emit(cb, op, OperationPhase.VERIFY, f"Đang đối chiếu với bản gốc: {Path(rel).name}", index, total)
-            path = safe_path(root, rel, True)
+            path = safe_official_path(root, rel)
             name = path.name
             record = (local_files if mode == "game" else catalog.final_files).get(name)
             if record is None:
@@ -255,18 +388,23 @@ class OfficialRestoreEngine:
             if t.action == "replace":
                 cand = streaming / name
                 try:
-                    if cand.is_file() and cand.stat().st_size == size and md5_file(cand) == checksum:
+                    if not _is_reparse_or_symlink(cand) and cand.is_file() and cand.stat().st_size == size and md5_file(cand) == checksum:
                         t.source, t.local_source = "install_resource", cand
                 except OSError:
                     pass
                 if not t.source:
-                    if not catalog.knows(name, checksum):
-                        raise OfficialResourceError(
-                            f"Máy chủ chính thức không có phiên bản {name} mà game đang ghi nhận ({checksum[:8]}…). "
-                            "Hãy dùng chức năng Kiểm tra/Sửa tệp của Yostar Launcher hoặc Steam cho bản cài này.",
-                            "NOT_FOUND",
-                        )
-                    t.source, t.item = "download", catalog.resolve(name, checksum)
+                    if catalog.knows(name, checksum):
+                        t.source, t.item = "download", catalog.resolve(name, checksum)
+                    else:
+                        local_bak = self._find_verified_local_backup(root, rel, size, checksum)
+                        if local_bak is not None:
+                            t.source, t.local_source = "local_verified_backup", local_bak
+                        else:
+                            raise OfficialResourceError(
+                                f"Máy chủ chính thức không có phiên bản {name} mà game đang ghi nhận ({checksum[:8]}…). "
+                                "Hãy dùng chức năng Kiểm tra/Sửa tệp của Yostar Launcher hoặc Steam cho bản cài này.",
+                                "NOT_FOUND",
+                            )
             targets.append(t)
         info = {
             "mode": mode,
@@ -275,6 +413,7 @@ class OfficialRestoreEngine:
             "latest_resource_version": catalog.resource_version,
             "latest_game_version": catalog.game_version,
             "had_receipt": receipt is not None,
+            "repaired_pending_patch_files": sorted(pending_patch_repairs),
         }
         return targets, info
 
@@ -353,20 +492,33 @@ class OfficialRestoreEngine:
                 raise CancelledError("Đã huỷ khôi phục tài nguyên.", "CANCELLED")
 
             replaced = self._apply(root, todo, sources, event_cb, operation_id)
+            cleaned_temp_files = cleanup_game_patch_caches(root)
+            self._cleanup_stale_official_temps(root)
             self._finish_state(root, catalog, info, targets, replaced)
             downloader.cleanup()  # verified bytes are installed; free the cache disk space
 
             names = [t.name for t in todo if t.action == "replace"]
+            extra_notes = []
+            if cleaned_temp_files:
+                extra_notes.append(f"dọn {cleaned_temp_files} tệp tạm cập nhật")
+            if info.get("repaired_pending_patch_files"):
+                extra_notes.append(f"vá {len(info['repaired_pending_patch_files'])} tệp hệ thống lệch bản vá")
+            extra_suffix = (" (" + ", ".join(extra_notes) + ")") if extra_notes else ""
             msg = (
                 f"✓ Đã tải và cài tài nguyên gốc của nhà phát hành (tài nguyên {info['target_resource_version']}): "
                 f"{len(names)} tệp được thay, {len(summary['already_official'])} tệp đã đúng bản gốc, "
-                f"{len(summary['to_delete'])} tệp Việt hoá riêng được gỡ."
+                f"{len(summary['to_delete'])} tệp Việt hoá riêng được gỡ{extra_suffix}."
             )
             if info["mode"] == "game" and info["target_resource_version"] != info["latest_resource_version"]:
                 msg += (
                     f"\nMáy chủ đã có bản {info['latest_resource_version']}: hãy mở game (hoặc Yostar Launcher) để game tự cập nhật."
                 )
-            summary.update(message=msg, replaced=names, downloaded_bytes=downloader.downloaded_bytes)
+            summary.update(
+                message=msg,
+                replaced=names,
+                downloaded_bytes=downloader.downloaded_bytes,
+                cleaned_temp_files=cleaned_temp_files,
+            )
             emit(OperationPhase.DONE, msg, 1, 1)
             return summary
 
@@ -456,7 +608,7 @@ class OfficialRestoreEngine:
                 if not isinstance(e, dict):
                     continue
                 try:
-                    target = safe_path(root, rel, True)
+                    target = safe_official_path(root, rel)
                     backup = safe_path(bdir, rel)
                 except InstallerError:
                     continue
