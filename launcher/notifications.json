@@ -1,7 +1,14 @@
 {
-  "version": "2.1.3",
+  "version": "2.1.4",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-044",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.4: Sửa Triệt Để Lỗi \"Patch file verification failed\" & Lệch Phiên Bản (PC & Android)",
+      "type": "release",
+      "content": "Cập nhật đồng bộ Launcher Android v2.1.4 (versionCode 27) và PC Launcher v2.1.4:\n• Sửa triệt để lỗi \"Patch file verification failed\" / \"Data check fail\" khi mở game cập nhật sau khi đã khôi phục gốc trên cả Android và Windows:\n  - Android: Nâng cấp nút Khôi phục lên chuẩn đối chiếu MD5 trực tiếp với ss_and.mani, tự tải và dựng lại đúng tệp gốc chuẩn từ máy chủ chính thức Yostar (kể cả khi backup cũ bị lệch hoặc đã mất biên bản), đồng thời dọn sạch bộ nhớ tạm cập nhật (Temporary_Store / Patch_Store).\n  - Windows: Tự động phát hiện và vá lại toàn bộ tệp hệ thống bị lệch/dở dang của bản vá sắp tới (kể cả gói không phải .en và hotfix.arch), tận dụng backup chuẩn MD5 nếu máy chủ đã xoay vòng bản cũ, và dọn sạch Temporary_Store / Patch_Store.\n• Khắc phục E-PKG-MISMATCH: đọc chuẩn chuỗi .mani (BIN_DIFF_PATCH_VER), phân biệt rõ game cũ hơn hay mới hơn gói dịch, tự đổi nút chính thành \"Mở game cập nhật\" và tự quét lại phiên bản khi quay về launcher.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.4."
+    },
     {
       "id": "NOTIF-043",
       "date": "2026-11-27",

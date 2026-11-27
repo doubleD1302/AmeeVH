@@ -1,7 +1,63 @@
 {
-  "version": "1.3.4",
-  "updated_at": "2026-11-21",
+  "version": "2.1.4",
+  "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-044",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.4: Sửa Triệt Để Lỗi \"Patch file verification failed\" & Lệch Phiên Bản (PC & Android)",
+      "type": "release",
+      "content": "Cập nhật đồng bộ Launcher Android v2.1.4 (versionCode 27) và PC Launcher v2.1.4:\n• Sửa triệt để lỗi \"Patch file verification failed\" / \"Data check fail\" khi mở game cập nhật sau khi đã khôi phục gốc trên cả Android và Windows:\n  - Android: Nâng cấp nút Khôi phục lên chuẩn đối chiếu MD5 trực tiếp với ss_and.mani, tự tải và dựng lại đúng tệp gốc chuẩn từ máy chủ chính thức Yostar (kể cả khi backup cũ bị lệch hoặc đã mất biên bản), đồng thời dọn sạch bộ nhớ tạm cập nhật (Temporary_Store / Patch_Store).\n  - Windows: Tự động phát hiện và vá lại toàn bộ tệp hệ thống bị lệch/dở dang của bản vá sắp tới (kể cả gói không phải .en và hotfix.arch), tận dụng backup chuẩn MD5 nếu máy chủ đã xoay vòng bản cũ, và dọn sạch Temporary_Store / Patch_Store.\n• Khắc phục E-PKG-MISMATCH: đọc chuẩn chuỗi .mani (BIN_DIFF_PATCH_VER), phân biệt rõ game cũ hơn hay mới hơn gói dịch, tự đổi nút chính thành \"Mở game cập nhật\" và tự quét lại phiên bản khi quay về launcher.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.4."
+    },
+    {
+      "id": "NOTIF-043",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.3: Sửa Lỗi Khôi Phục E-FILE-CHANGED & Thêm Giải Thích Quyền + Tự Kiểm Tra AI (PC & Android)",
+      "type": "release",
+      "content": "Cập nhật đồng bộ Launcher Android v2.1.3 (versionCode 26) và PC Launcher v2.1.3:\n• Sửa triệt để lỗi E-FILE-CHANGED trên Android khi bấm Khôi phục dữ liệu gốc (guardRestore / restore) đối với các máy có tệp bị lệch so với biên bản cài cũ: launcher nay tự bỏ qua tệp đã ở bản gốc và khôi phục an toàn bản sao lưu đã xác minh SHA256 đúng phiên bản game.\n• Bổ sung nút Giải thích quyền nhạy cảm, Cam kết an toàn & Hướng dẫn tự kiểm tra mã nguồn mở bằng AI (ChatGPT / Gemini / Claude) kèm 12 chibi nhân vật Stella Sora xuất hiện ngẫu nhiên trên cả Android (Trợ năng, Hiển thị nổi, Local ADB) và PC (Bảo vệ chạy ngầm, Tệp game, SmartScreen).\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.3. Bản dịch game giữ nguyên từ v2.1.0, không cần cài lại."
+    },
+    {
+      "id": "NOTIF-042",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.2: Sửa Popup Cảnh Báo Game & Thiết Kế Lại Giao Diện Launcher Android",
+      "type": "release",
+      "content": "Nâng cấp toàn diện Launcher Android v2.1.2 (versionCode 25):\n• Sửa lỗi Popup Cảnh Báo Cập Nhật Game không hiển thị hoặc vỡ bố cục trên Android 11–16 và ROM OEM (thêm cơ chế chặn 3 tầng: Trợ năng + Hiển thị nổi OEM + dự phòng thông báo, hiển thị trọn bộ trong một màn hình).\n• Thiết kế lại giao diện gọn thoáng, chống rối chữ, thay toàn bộ biểu tượng bằng 36 icon gốc Stella Sora cân đều kích thước, tối ưu ảnh WebP (giảm APK từ 17.6 MB xuống 14.2 MB) và tăng độ mượt phản hồi.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.2. Bản dịch game giữ nguyên từ v2.1.0, không cần cài lại."
+    },
+    {
+      "id": "NOTIF-041",
+      "date": "2026-11-27",
+      "title": "Bản vá khẩn v2.1.1: Sửa Lỗi Văng Ngay Khi Mở Launcher Android v2.1.0",
+      "type": "release",
+      "content": "Khắc phục triệt để lỗi Launcher Android v2.1.0 bị văng ngay khi vừa mở (NullPointerException do gọi WindowInsetsController trước setContentView).\n• Nếu bạn đang ở bản v2.0.1 hoặc cũ hơn: mở launcher để tự động cập nhật thẳng lên v2.1.1 (versionCode 24).\n• Nếu bạn đã lỡ nâng lên v2.1.0 và không mở được app: tải trực tiếp tệp StellaSora-Android_v2.1.1.apk trên trang web/GitHub rồi bấm cài đè trực tiếp (không cần gỡ bản cũ, giữ nguyên toàn bộ cấu hình & khóa Local ADB).\n• PC Launcher đồng bộ phiên bản v2.1.1; bản dịch game giữ nguyên từ v2.1.0, không cần cài lại."
+    },
+    {
+      "id": "NOTIF-040",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.0: Việt Hóa Game 2.1.1, Cảnh Báo Cập Nhật Game (PC & Android) & Nâng Cấp Launcher Android",
+      "type": "release",
+      "content": "Cập nhật bản Việt hóa cho game 2.1.1: bổ sung văn bản mới (trang phục Kasimira, Quỹ Khởi Nghiệp Mùa 14, kỹ năng Score Boss, đồng bộ Đĩa & Leafia) và 3 gói ảnh cho PC & Android.\n• Thêm tính năng Cảnh báo cập nhật game trên PC (theo dõi nền ở khay hệ thống) và Android (kiểm tra máy chủ Yostar, lối tắt bảo vệ, Trợ năng tự chặn) giúp nhắc khôi phục gốc kịp thời trước khi game tải bản vá.\n• Nâng cấp Launcher Android v2.1.0 (versionCode 23): ảnh nền 9:16 mới dựng từ hình nền official, Dark Mode, tối ưu đa dòng máy Android 11–16, mở rộng mã lỗi kèm nút sao chép báo cáo chi tiết.\nMở launcher trên PC hoặc Android để tự động cập nhật trực tiếp lên v2.1.0."
+    },
+    {
+      "id": "NOTIF-039",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.0.2: Khôi Phục Gốc Quét Đủ Gói Ảnh & Phụ Đề Trên PC",
+      "type": "release",
+      "content": "Sửa lỗi Khôi phục gốc trên PC Launcher bỏ sót các gói ảnh (.en.unity3d) và phụ đề (.srt) khi thư mục game còn biên bản cài từ bản cũ, tránh lỗi Patch file verification failed khi Stella Sora cập nhật. Khôi phục gốc cũng tự tải lại các gói bị thiếu sau lần cập nhật lỗi. Launcher Android giữ nguyên bản 2.0.1; bản dịch giữ nguyên, không cần cài lại — mở PC Launcher để tự động cập nhật trực tiếp."
+    },
+    {
+      "id": "NOTIF-038",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.0.1: Sửa Lỗi Khôi Phục Gốc E-NET-CAPTIVE Trên PC & Đồng Bộ Android v2.0.1",
+      "type": "release",
+      "content": "Sửa lỗi báo nhầm Captive Portal (E-NET-CAPTIVE) trên Launcher PC v2.0.0 khi bấm Khôi phục gốc hoặc kiểm tra cập nhật game chính thức từ máy chủ Yostar. Launcher Android được đồng bộ lên phiên bản v2.0.1 (versionCode 21) kèm thông báo mới. Bản dịch giữ nguyên, không cần cài lại — mở launcher để tự động cập nhật trực tiếp trong ứng dụng."
+    },
+    {
+      "id": "NOTIF-037",
+      "date": "2026-11-25",
+      "title": "Bản cập nhật v2.0.0: PC Launcher v2.0 Mới, Dịch Lại Toàn Bộ Cốt Truyện Light Novel, 105 Gói Ảnh & Sửa Lỗi Chiêu Mộ",
+      "type": "release",
+      "content": "Bản cập nhật lớn so với v1.3.4 gồm 4 nâng cấp chính:\n• PC Launcher v2.0.0 mới (~45 MB): giao diện mới sắc nét ở mọi mức phóng to màn hình (100%–200%), tự động đồng bộ hình nền Official Launcher (có dự phòng khi mất mạng), tải gói song song hiển thị tốc độ/thời gian còn lại và trợ lý chẩn đoán & sửa lỗi 1 chạm. Người dùng v1.3.4 bấm cập nhật trực tiếp trong app, tự động giữ nguyên cấu hình, bản sao lưu và nhật ký cũ.\n• Dịch lại toàn bộ cốt truyện theo giọng Light Novel chuẩn thuật ngữ: làm mới Cốt truyện chính (Chương 3–9), toàn bộ 12 Cốt truyện Sự kiện (kèm bản hiệu đính mới trên TramVH của Antithesis & Crim), Thời Báo Nova, 42/42 tuyến truyện riêng Tuần du giả, tin nhắn điện thoại, kịch bản ký ức (CG), NPC Cự Tháp và Đĩa nhạc.\n• Dựng lại 105 gói ảnh Việt hóa (747 ảnh) trên cả PC và Android theo nền 2.1.0, làm sạch nền và giữ nguyên bản gốc Danh hiệu để hiển thị rõ nét.\n• Sửa lỗi dư chữ \"Mảnh\" trước tên 42 Tuần du giả ở mục Chiêu mộ.\n• Launcher Android v2.0.0 đồng bộ phiên bản v2.0.0 cùng thông báo mới — người dùng v1.3.3 mở app để tự động cập nhật trực tiếp lên v2.0.0 và tải trọn gói bản dịch mới nhất."
+    },
     {
       "id": "NOTIF-036",
       "date": "2026-11-21",
@@ -24,11 +80,18 @@
       "content": "Sửa lỗi nhân vật mất giọng ở màn hình chính và màn hình cốt truyện sự kiện hiện vòng tròn trắng kèm chữ Trung; dựng lại 8 gói ảnh và sửa các mã Story trong dữ liệu. Toàn bộ Event mới được dịch lại, Chương 10 và Chương 0 được bổ sung. Nút Khôi phục trên launcher PC nay tự tải dữ liệu gốc mới nhất từ nhà phát hành và nhắc khôi phục khi game có bản cập nhật. Cảm ơn NoOne đã báo lỗi và Antithesis đã dịch lại toàn bộ Event mới! Mở launcher và bấm cập nhật để nhận bản mới."
     },
     {
+      "id": "NOTIF-033",
+      "date": "2026-11-19",
+      "title": "Bản cập nhật Android v1.3.2: Sửa lối tắt Gỡ lỗi không dây",
+      "type": "release",
+      "content": "Nút Mở Gỡ lỗi không dây trong Kết nối nhanh Local ADB ưu tiên vào thẳng trang gỡ lỗi qua Wi-Fi. Khi hệ thống không hỗ trợ mở thẳng, launcher mở Tùy chọn nhà phát triển và đưa bạn đến mục Gỡ lỗi không dây nếu máy hỗ trợ."
+    },
+    {
       "id": "NOTIF-032",
       "date": "2026-11-18",
-      "title": "Bản cập nhật v1.3.1: Khắc Phục Lỗi Cập Nhật, Phục Hồi & Tối Ưu Bộ Đôi Launcher",
+      "title": "Bản cập nhật v1.3.1: Việt Hóa Chương 0–2 Light Novel & Tối Ưu Bộ Đôi Launcher",
       "type": "release",
-      "content": "Sửa lỗi tự cập nhật Windows khi khóa tệp, lỗi tạo lối tắt tiếng Việt, kẹt biên bản cũ sau cập nhật game và đồng bộ mã băm gói dữ liệu Chương 9.5. Tối ưu tốc độ cài đặt/kiểm tra tệp Local ADB trên Android, hỗ trợ tự nối tiếp khi rớt mạng và kết nối nhanh thiết bị đã ghép đôi."
+      "content": "Bản địa hóa lại toàn bộ Chương Mở đầu, Chương 1 và Chương 2 từ nguồn tiếng Anh theo văn phong Light Novel chuẩn bảng thuật ngữ; đồng bộ gói dữ liệu Chương 9.5. Nâng cấp Launcher PC & Android v1.3.1: tự cập nhật an toàn khi khóa tệp, sửa lối tắt tiếng Việt, dò tìm Steam/Yostar, tăng tốc Local ADB trên Android, hỗ trợ tải tiếp HTTP và kết nối nhanh 1 chạm."
     },
     {
       "id": "NOTIF-031",

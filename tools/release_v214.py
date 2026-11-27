@@ -106,9 +106,15 @@ def validate_text() -> None:
 
 
 def find_release() -> dict | None:
-    for rel in api("GET", f"https://api.github.com/repos/{REPO}/releases?per_page=30"):
-        if rel.get("tag_name") == TAG:
-            return rel
+    for page in range(1, 6):
+        rels = api("GET", f"https://api.github.com/repos/{REPO}/releases?per_page=100&page={page}")
+        if not rels:
+            break
+        for rel in rels:
+            if rel.get("tag_name") == TAG or (rel.get("draft") and rel.get("name") == TITLE):
+                return rel
+        if len(rels) < 100:
+            break
     return None
 
 
@@ -204,7 +210,7 @@ def cmd_draft() -> None:
         rel = api(
             "PATCH",
             f"https://api.github.com/repos/{REPO}/releases/{rel['id']}",
-            {"name": TITLE, "body": NOTES},
+            {"tag_name": TAG, "target_commitish": "main", "name": TITLE, "body": NOTES},
         )
     for name in ASSETS:
         rel = api("GET", f"https://api.github.com/repos/{REPO}/releases/{rel['id']}")
@@ -259,7 +265,7 @@ def cmd_publish() -> None:
     api(
         "PATCH",
         f"https://api.github.com/repos/{REPO}/releases/{rel['id']}",
-        {"draft": False, "prerelease": False, "make_latest": "true", "name": TITLE, "body": NOTES},
+        {"tag_name": TAG, "target_commitish": "main", "draft": False, "prerelease": False, "make_latest": "true", "name": TITLE, "body": NOTES},
     )
     live = api("GET", f"https://api.github.com/repos/{REPO}/releases/tags/{TAG}")
     print(f"published: tag={live['tag_name']} title={live['name']!r} draft={live['draft']} url={live['html_url']}")
