@@ -1,7 +1,14 @@
 {
-  "version": "2.1.1",
+  "version": "2.1.2",
   "updated_at": "2026-11-27",
   "announcements": [
+    {
+      "id": "NOTIF-042",
+      "date": "2026-11-27",
+      "title": "Bản cập nhật v2.1.2: Sửa Popup Cảnh Báo Game & Thiết Kế Lại Giao Diện Launcher Android",
+      "type": "release",
+      "content": "Nâng cấp toàn diện Launcher Android v2.1.2 (versionCode 25):\n• Sửa lỗi Popup Cảnh Báo Cập Nhật Game không hiển thị hoặc vỡ bố cục trên Android 11–16 và ROM OEM (thêm cơ chế chặn 3 tầng: Trợ năng + Hiển thị nổi OEM + dự phòng thông báo, hiển thị trọn bộ trong một màn hình).\n• Thiết kế lại giao diện gọn thoáng, chống rối chữ, thay toàn bộ biểu tượng bằng 36 icon gốc Stella Sora cân đều kích thước, tối ưu ảnh WebP (giảm APK từ 17.6 MB xuống 14.2 MB) và tăng độ mượt phản hồi.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.2. Bản dịch game giữ nguyên từ v2.1.0, không cần cài lại."
+    },
     {
       "id": "NOTIF-041",
       "date": "2026-11-27",

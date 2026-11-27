@@ -22,9 +22,11 @@ import java.util.*;
 public final class MainActivity extends Activity implements LauncherService.Listener {
  static final String EXTRA_GUARD_RESTORE = "guard_restore";
  private static final String HOST = "stella.local.invalid", HOME = "https://stella.local.invalid/index.html";
- private static final int LIGHT_BG = Color.rgb(243, 248, 250);
- private static final int DARK_BG = Color.rgb(13, 23, 36);
- private static final int DARK_NAV = Color.rgb(17, 30, 47);
+ private static final int LIGHT_BG = Color.rgb(255, 255, 255);
+ private static final int LIGHT_CANVAS = Color.rgb(238, 245, 249);
+ private static final int DARK_BG = Color.rgb(18, 32, 51);
+ private static final int DARK_CANVAS = Color.rgb(13, 23, 36);
+ private static final int DARK_NAV = Color.rgb(18, 32, 51);
 
  private FrameLayout container;
  private WebView web;
@@ -39,7 +41,7 @@ public final class MainActivity extends Activity implements LauncherService.List
    "pair", "connect", "autoConnect", "disconnect",
    "startPairingNotification", "cancelPairing", "detect", "install", "verify", "restore", "recover",
    "checkUpdate", "installUpdate", "checkOfficialUpdate", "guardRestore",
-   "pinGuardShortcut", "openAccessibilitySettings", "openAppInfoSettings", "openGuardAlert",
+   "pinGuardShortcut", "openAccessibilitySettings", "openOverlaySettings", "openAppInfoSettings", "openGuardAlert",
    "openWirelessSettings", "openWifiSettings",
    "openAppNotifications", "openBatterySettings", "openUnknownSources", "launchGame",
    "copyDiagnostics", "copyError", "explain", "openLastError", "copyAccount", "openIssues",
@@ -58,15 +60,16 @@ public final class MainActivity extends Activity implements LauncherService.List
 
  private void applySystemChromeTheme() {
   boolean dark = isDarkTheme();
-  int bg = dark ? DARK_BG : LIGHT_BG;
+  int barBg = dark ? DARK_BG : LIGHT_BG;
   int nav = dark ? DARK_NAV : LIGHT_BG;
+  int canvas = dark ? DARK_CANVAS : LIGHT_CANVAS;
   Window win = getWindow();
   if (win != null) {
-   win.setStatusBarColor(bg);
+   win.setStatusBarColor(barBg);
    win.setNavigationBarColor(nav);
   }
-  if (container != null) container.setBackgroundColor(bg);
-  if (web != null) web.setBackgroundColor(bg);
+  if (container != null) container.setBackgroundColor(canvas);
+  if (web != null) web.setBackgroundColor(canvas);
   if (win != null && win.peekDecorView() != null) {
    try {
     WindowInsetsController barAppearance = win.getInsetsController();
@@ -100,6 +103,10 @@ public final class MainActivity extends Activity implements LauncherService.List
    return;
   }
   applySystemChromeTheme();
+  web.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+  web.setOverScrollMode(View.OVER_SCROLL_NEVER);
+  web.setVerticalScrollBarEnabled(false);
+  web.setHorizontalScrollBarEnabled(false);
   container.addView(web, new FrameLayout.LayoutParams(-1, -1));
 
   WebView.setWebContentsDebuggingEnabled(false);
@@ -130,6 +137,7 @@ public final class MainActivity extends Activity implements LauncherService.List
      String mime = file.endsWith(".html") ? "text/html"
        : file.endsWith(".css") ? "text/css"
        : file.endsWith(".js") ? "text/javascript"
+       : file.endsWith(".webp") ? "image/webp"
        : file.endsWith(".png") ? "image/png"
        : file.endsWith(".svg") ? "image/svg+xml"
        : file.endsWith(".ttf") ? "font/ttf"
@@ -204,6 +212,13 @@ public final class MainActivity extends Activity implements LauncherService.List
  }
 
  private final class NativeBridge {
+  @JavascriptInterface public void haptic() {
+   runOnUiThread(() -> {
+    if (container != null) {
+     try { container.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK); } catch (Throwable ignored) {}
+    }
+   });
+  }
   @JavascriptInterface public void request(String action, String payload) {
    if (action == null || !allowed.contains(action) || payload == null || payload.length() > 65536) {
     runOnUiThread(() -> showMessage("Yêu cầu bị chặn", "Thao tác không thuộc giao diện tin cậy.", true));
@@ -241,6 +256,7 @@ public final class MainActivity extends Activity implements LauncherService.List
     case "openBatterySettings": openBatterySettings(); break;
     case "openUnknownSources": openUnknownSources(); break;
     case "openAccessibilitySettings": openAccessibilitySettings(); break;
+    case "openOverlaySettings": openOverlaySettings(); break;
     case "openAppInfoSettings": openAppInfoSettings(); break;
     case "pinGuardShortcut": pinGuardShortcut(); break;
     case "openGuardAlert": {
@@ -476,6 +492,14 @@ public final class MainActivity extends Activity implements LauncherService.List
   if (tryOpenSettings(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))) return;
   if (tryOpenSettings(new Intent(Settings.ACTION_SETTINGS))) return;
   showMessage("Mở Trợ năng", "Hãy vào Cài đặt Android → Trợ năng → Ứng dụng đã tải xuống → bật \"Bảo vệ cập nhật Stella Sora\".", false);
+ }
+
+ private void openOverlaySettings() {
+  Intent ov = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
+  if (tryOpenSettings(ov)) return;
+  Intent details = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));
+  if (tryOpenSettings(details)) return;
+  tryOpenSettings(new Intent(Settings.ACTION_SETTINGS));
  }
 
  private void openAppInfoSettings() {

@@ -101,8 +101,8 @@ public final class LauncherService extends Service {
   } catch (Exception e) {
    support = Store.obj("methods", new JSONArray());
   }
-  String appVer = "2.1.1";
-  long appCode = 24;
+  String appVer = "2.1.2";
+  long appCode = 25;
   try {
    PackageInfo pi = c.getPackageManager().getPackageInfo(Store.APP, 0);
    appVer = pi.versionName;
@@ -138,7 +138,12 @@ public final class LauncherService extends Service {
     "recovery", Store.obj("pending", GamePatcher.hasPending(c), "message", ""),
     "receipt", Store.obj("present", false),
     "officialUpdate", OfficialAndroidClient.readCachedGuardState(c),
-    "guard", Store.obj("accessibilityEnabled", GameLaunchGuardService.isEnabled(c), "canPinShortcut", isPinShortcutSupported(c), "pendingRestore", false),
+    "guard", Store.obj(
+      "accessibilityEnabled", GameLaunchGuardService.isEnabled(c),
+      "overlayEnabled", GameLaunchGuardService.canDrawOverlay(c),
+      "canPinShortcut", isPinShortcutSupported(c),
+      "pendingRestore", false
+    ),
     "support", support,
     "app", Store.obj("applicationId", Store.APP, "versionName", appVer, "versionCode", appCode, "variant", "localadb", "theme", themePref, "resolvedTheme", resolvedTheme)
   );
@@ -164,7 +169,12 @@ public final class LauncherService extends Service {
     adbObj.put("connected", s.adb != null && s.adb.verified);
     adbObj.put("hasIdentity", KeyMaterial.hasIdentity(c));
     j.put("officialUpdate", OfficialAndroidClient.readCachedGuardState(c));
-    j.put("guard", Store.obj("accessibilityEnabled", GameLaunchGuardService.isEnabled(c), "canPinShortcut", isPinShortcutSupported(c), "pendingRestore", s.pendingGuardRestore));
+    j.put("guard", Store.obj(
+      "accessibilityEnabled", GameLaunchGuardService.isEnabled(c),
+      "overlayEnabled", GameLaunchGuardService.canDrawOverlay(c),
+      "canPinShortcut", isPinShortcutSupported(c),
+      "pendingRestore", s.pendingGuardRestore
+    ));
     return j;
    } catch (Exception e) {
     return base(c);

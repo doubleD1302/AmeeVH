@@ -74,11 +74,14 @@ final class GameAlertViewBuilder {
   card.setBackground(cardBg);
   card.setElevation(dp(c, 14));
 
-  int maxCardW = Math.min(c.getResources().getDisplayMetrics().widthPixels - padOuter * 2, dp(c, 430));
+  int maxCardW = Math.min(c.getResources().getDisplayMetrics().widthPixels - padOuter * 2, dp(c, 420));
+  int maxCardH = Math.round(c.getResources().getDisplayMetrics().heightPixels * 0.88f);
   FrameLayout.LayoutParams cardLp = new FrameLayout.LayoutParams(maxCardW, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
   root.addView(card, cardLp);
 
   // 1. Navy Gradient Header + mirrored game_pop_halftone + 5dp Coral left bar
+  // Use explicit bounded height so MATCH_PARENT decorative overlays never expand FrameLayout to full screen!
+  int headerH = dp(c, 64);
   FrameLayout header = new FrameLayout(c);
   GradientDrawable headGrad = new GradientDrawable(GradientDrawable.Orientation.TL_BR, new int[]{NAVY_TL, NAVY_BR});
   header.setBackground(headGrad);
@@ -88,11 +91,11 @@ final class GameAlertViewBuilder {
   halftone.setScaleType(ImageView.ScaleType.CENTER_CROP);
   halftone.setScaleX(-1f);
   halftone.setAlpha(0.14f);
-  header.addView(halftone, new FrameLayout.LayoutParams(dp(c, 160), ViewGroup.LayoutParams.MATCH_PARENT, Gravity.END));
+  header.addView(halftone, new FrameLayout.LayoutParams(dp(c, 150), headerH, Gravity.END | Gravity.CENTER_VERTICAL));
 
   View leftCoral = new View(c);
   leftCoral.setBackgroundColor(CORAL);
-  header.addView(leftCoral, new FrameLayout.LayoutParams(dp(c, 5), ViewGroup.LayoutParams.MATCH_PARENT, Gravity.START));
+  header.addView(leftCoral, new FrameLayout.LayoutParams(dp(c, 5), headerH, Gravity.START));
 
   View bottomCoral = new View(c);
   bottomCoral.setBackgroundColor(CORAL);
@@ -101,12 +104,12 @@ final class GameAlertViewBuilder {
   LinearLayout headRow = new LinearLayout(c);
   headRow.setOrientation(LinearLayout.HORIZONTAL);
   headRow.setGravity(Gravity.CENTER_VERTICAL);
-  headRow.setPadding(dp(c, 16), dp(c, 12), dp(c, 14), dp(c, 14));
+  headRow.setPadding(dp(c, 14), dp(c, 8), dp(c, 12), dp(c, 10));
 
   ImageView headIcon = new ImageView(c);
   headIcon.setImageResource(R.drawable.game_warning_sm);
-  LinearLayout.LayoutParams hiLp = new LinearLayout.LayoutParams(dp(c, 24), dp(c, 20));
-  hiLp.rightMargin = dp(c, 10);
+  LinearLayout.LayoutParams hiLp = new LinearLayout.LayoutParams(dp(c, 22), dp(c, 19));
+  hiLp.rightMargin = dp(c, 9);
   headRow.addView(headIcon, hiLp);
 
   LinearLayout titleCol = new LinearLayout(c);
@@ -114,14 +117,16 @@ final class GameAlertViewBuilder {
   TextView titleTv = new TextView(c);
   titleTv.setText("CẢNH BÁO CẬP NHẬT STELLA SORA");
   titleTv.setTextColor(Color.WHITE);
-  titleTv.setTextSize(14.5f);
+  titleTv.setTextSize(13.5f);
+  titleTv.setMaxLines(1);
+  titleTv.setEllipsize(android.text.TextUtils.TruncateAt.END);
   titleTv.setTypeface(Typeface.DEFAULT_BOLD);
   titleCol.addView(titleTv);
 
   TextView badgeTv = new TextView(c);
   badgeTv.setText("BẮT BUỘC KHÔI PHỤC DỮ LIỆU GỐC");
   badgeTv.setTextColor(Color.WHITE);
-  badgeTv.setTextSize(10.5f);
+  badgeTv.setTextSize(10f);
   badgeTv.setTypeface(Typeface.DEFAULT_BOLD);
   badgeTv.setPadding(dp(c, 7), dp(c, 2), dp(c, 7), dp(c, 2));
   GradientDrawable pill = new GradientDrawable();
@@ -133,12 +138,19 @@ final class GameAlertViewBuilder {
   titleCol.addView(badgeTv, badgeLp);
 
   headRow.addView(titleCol, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
-  header.addView(headRow, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-  card.addView(header, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+  header.addView(headRow, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, headerH, Gravity.CENTER_VERTICAL));
+  card.addView(header, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, headerH));
 
-  // Scrollable body
-  ScrollView scroll = new ScrollView(c);
+  // Scrollable body with bounded maxHeight (never collapses to 0dp inside WRAP_CONTENT LinearLayout!)
+  final int maxScrollH = Math.max(dp(c, 200), maxCardH - dp(c, 198));
+  ScrollView scroll = new ScrollView(c) {
+   @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    int bounded = View.MeasureSpec.makeMeasureSpec(maxScrollH, View.MeasureSpec.AT_MOST);
+    super.onMeasure(widthMeasureSpec, bounded);
+   }
+  };
   scroll.setFillViewport(false);
+  scroll.setOverScrollMode(View.OVER_SCROLL_NEVER);
   LinearLayout body = new LinearLayout(c);
   body.setOrientation(LinearLayout.VERTICAL);
   scroll.addView(body, new ScrollView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -149,43 +161,43 @@ final class GameAlertViewBuilder {
   hero.setGravity(Gravity.CENTER_VERTICAL);
   GradientDrawable heroGrad = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{WARN_BG, Color.WHITE, ICE_BG});
   hero.setBackground(heroGrad);
-  hero.setPadding(dp(c, 16), dp(c, 14), dp(c, 16), dp(c, 12));
+  hero.setPadding(dp(c, 14), dp(c, 10), dp(c, 14), dp(c, 10));
 
   FrameLayout emblem = new FrameLayout(c);
   ImageView tyrant = new ImageView(c);
   tyrant.setImageResource(R.drawable.game_tyrant_head);
   tyrant.setScaleType(ImageView.ScaleType.FIT_CENTER);
-  emblem.addView(tyrant, new FrameLayout.LayoutParams(dp(c, 72), dp(c, 72), Gravity.START | Gravity.TOP));
+  emblem.addView(tyrant, new FrameLayout.LayoutParams(dp(c, 64), dp(c, 64), Gravity.START | Gravity.TOP));
 
   ImageView warnBadge = new ImageView(c);
   warnBadge.setImageResource(R.drawable.game_warning_icon);
   warnBadge.setScaleType(ImageView.ScaleType.FIT_CENTER);
-  emblem.addView(warnBadge, new FrameLayout.LayoutParams(dp(c, 34), dp(c, 32), Gravity.END | Gravity.BOTTOM));
+  emblem.addView(warnBadge, new FrameLayout.LayoutParams(dp(c, 30), dp(c, 28), Gravity.END | Gravity.BOTTOM));
 
   ImageView star = new ImageView(c);
   star.setImageResource(R.drawable.game_star_gold);
-  emblem.addView(star, new FrameLayout.LayoutParams(dp(c, 15), dp(c, 15), Gravity.START | Gravity.TOP));
+  emblem.addView(star, new FrameLayout.LayoutParams(dp(c, 14), dp(c, 14), Gravity.START | Gravity.TOP));
 
-  LinearLayout.LayoutParams embLp = new LinearLayout.LayoutParams(dp(c, 84), dp(c, 84));
-  embLp.rightMargin = dp(c, 12);
+  LinearLayout.LayoutParams embLp = new LinearLayout.LayoutParams(dp(c, 74), dp(c, 74));
+  embLp.rightMargin = dp(c, 11);
   hero.addView(emblem, embLp);
 
   LinearLayout heroText = new LinearLayout(c);
   heroText.setOrientation(LinearLayout.VERTICAL);
   TextView headline = new TextView(c);
-  headline.setText("DỪNG LẠI — KHÔNG cập nhật khi còn bản Việt hoá!");
+  headline.setText("DỪNG LẠI — KHÔNG cập nhật khi còn Việt hoá!");
   headline.setTextColor(CORAL_DARK);
-  headline.setTextSize(15f);
+  headline.setTextSize(14f);
   headline.setTypeface(Typeface.DEFAULT_BOLD);
   heroText.addView(headline);
 
   TextView desc = new TextView(c);
-  desc.setText("Máy chủ Yostar đã phát hành bản cập nhật mới. Nếu vào game tải bản vá ngay lúc này, tệp ngôn ngữ đã Việt hoá sẽ làm trình vá báo lỗi xác minh.");
+  desc.setText("Yostar vừa có bản cập nhật mới. Vào game lúc này sẽ làm trình vá báo lỗi xác minh tệp.");
   desc.setTextColor(SLATE_BODY);
-  desc.setTextSize(13f);
-  desc.setLineSpacing(dp(c, 2), 1f);
+  desc.setTextSize(12.5f);
+  desc.setLineSpacing(dp(c, 1.5f), 1f);
   LinearLayout.LayoutParams descLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-  descLp.topMargin = dp(c, 5);
+  descLp.topMargin = dp(c, 4);
   heroText.addView(desc, descLp);
 
   hero.addView(heroText, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
@@ -197,13 +209,13 @@ final class GameAlertViewBuilder {
   divider.setScaleType(ImageView.ScaleType.FIT_XY);
   divider.setPadding(dp(c, 12), 0, dp(c, 12), 0);
   divider.setBackgroundColor(Color.WHITE);
-  body.addView(divider, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(c, 8)));
+  body.addView(divider, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(c, 6)));
 
   // 4. Version comparison box
   LinearLayout infoWrap = new LinearLayout(c);
   infoWrap.setOrientation(LinearLayout.VERTICAL);
   infoWrap.setBackgroundColor(Color.WHITE);
-  infoWrap.setPadding(dp(c, 16), dp(c, 10), dp(c, 16), dp(c, 12));
+  infoWrap.setPadding(dp(c, 14), dp(c, 8), dp(c, 14), dp(c, 10));
 
   LinearLayout kvBox = new LinearLayout(c);
   kvBox.setOrientation(LinearLayout.VERTICAL);
@@ -212,11 +224,11 @@ final class GameAlertViewBuilder {
   kvBg.setCornerRadius(dp(c, 8));
   kvBg.setStroke(dp(c, 1), HAIRLINE);
   kvBox.setBackground(kvBg);
-  kvBox.setPadding(dp(c, 12), dp(c, 10), dp(c, 12), dp(c, 10));
+  kvBox.setPadding(dp(c, 11), dp(c, 8), dp(c, 11), dp(c, 8));
 
   addKvRow(c, kvBox, "Nguồn bảo vệ", sourceLabel, NAVY_INK, false);
-  addKvRow(c, kvBox, "Bản đang cài Việt hoá", formatVer(localGame, localRes), SLATE_BODY, false);
-  addKvRow(c, kvBox, "Bản mới từ Yostar", formatVer(latestGame, latestRes), CORAL, true);
+  addKvRow(c, kvBox, "Bản đang cài", formatVer(localGame, localRes), SLATE_BODY, false);
+  addKvRow(c, kvBox, "Bản mới Yostar", formatVer(latestGame, latestRes), CORAL, true);
   infoWrap.addView(kvBox, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
   // Safety strip
@@ -228,35 +240,35 @@ final class GameAlertViewBuilder {
   stripBg.setCornerRadius(dp(c, 8));
   stripBg.setStroke(dp(c, 1), WARN_BORDER);
   strip.setBackground(stripBg);
-  strip.setPadding(dp(c, 10), dp(c, 9), dp(c, 10), dp(c, 9));
+  strip.setPadding(dp(c, 9), dp(c, 7), dp(c, 9), dp(c, 7));
 
   ImageView stripIcon = new ImageView(c);
   stripIcon.setImageResource(R.drawable.game_warning_sm);
-  LinearLayout.LayoutParams siLp = new LinearLayout.LayoutParams(dp(c, 18), dp(c, 15));
-  siLp.rightMargin = dp(c, 8);
+  LinearLayout.LayoutParams siLp = new LinearLayout.LayoutParams(dp(c, 16), dp(c, 14));
+  siLp.rightMargin = dp(c, 7);
   siLp.topMargin = dp(c, 2);
   strip.addView(stripIcon, siLp);
 
   TextView stripTv = new TextView(c);
-  stripTv.setText("Quy trình an toàn: (1) Bấm nút đỏ bên dưới để khôi phục dữ liệu gốc → (2) Vào Stella Sora cập nhật xong → (3) Mở lại launcher cài Việt hoá mới.");
+  stripTv.setText("1. Bấm nút đỏ khôi phục gốc → 2. Cập nhật game xong → 3. Mở launcher cài lại Việt hoá.");
   stripTv.setTextColor(CORAL_DARK);
-  stripTv.setTextSize(12.5f);
-  stripTv.setLineSpacing(dp(c, 2), 1f);
+  stripTv.setTextSize(12f);
+  stripTv.setLineSpacing(dp(c, 1.5f), 1f);
   strip.addView(stripTv, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
 
   LinearLayout.LayoutParams stripLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-  stripLp.topMargin = dp(c, 10);
+  stripLp.topMargin = dp(c, 8);
   infoWrap.addView(strip, stripLp);
 
   body.addView(infoWrap, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-  card.addView(scroll, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
+  card.addView(scroll, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
   // 5. Footer with authentic Stella Sora 9-slice sprite CTAs (ZERO bypass option!)
   LinearLayout footer = new LinearLayout(c);
   footer.setOrientation(LinearLayout.VERTICAL);
   footer.setBackgroundColor(ICE_BG);
-  footer.setPadding(dp(c, 16), dp(c, 12), dp(c, 16), dp(c, 14));
+  footer.setPadding(dp(c, 14), dp(c, 10), dp(c, 14), dp(c, 12));
 
   View restoreBtn = makeGameSpriteButton(
     c,
@@ -267,7 +279,7 @@ final class GameAlertViewBuilder {
     Color.WHITE,
     onRestore
   );
-  footer.addView(restoreBtn, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(c, 48)));
+  footer.addView(restoreBtn, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(c, 45)));
 
   View exitBtn = makeGameSpriteButton(
     c,
@@ -278,17 +290,18 @@ final class GameAlertViewBuilder {
     NAVY_INK,
     onExit
   );
-  LinearLayout.LayoutParams exitLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(c, 44));
-  exitLp.topMargin = dp(c, 8);
+  LinearLayout.LayoutParams exitLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(c, 41));
+  exitLp.topMargin = dp(c, 7);
   footer.addView(exitBtn, exitLp);
 
   TextView lockNote = new TextView(c);
-  lockNote.setText("Đã khoá tạm vào game để tránh lỗi cập nhật dữ liệu.");
+  lockNote.setText("Đã tạm chặn vào game để bảo vệ dữ liệu gốc.");
   lockNote.setTextColor(SLATE_MUTED);
-  lockNote.setTextSize(11.5f);
+  lockNote.setTextSize(11f);
+  lockNote.setMaxLines(2);
   lockNote.setGravity(Gravity.CENTER_HORIZONTAL);
   LinearLayout.LayoutParams lnLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-  lnLp.topMargin = dp(c, 7);
+  lnLp.topMargin = dp(c, 6);
   footer.addView(lockNote, lnLp);
 
   card.addView(footer, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));

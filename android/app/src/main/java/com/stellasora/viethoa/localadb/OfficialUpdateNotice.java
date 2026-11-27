@@ -54,6 +54,11 @@ final class OfficialUpdateNotice {
   } catch (Exception ignored) {}
  }
 
+ static synchronized void forceNotify(Context c, JSONObject state) {
+  try { prefs(c).edit().remove("notified_res").apply(); } catch (Exception ignored) {}
+  notifyIfNeeded(c, state);
+ }
+
  static synchronized void notifyIfNeeded(Context c, JSONObject state) {
   if (state == null || !state.optBoolean("needsRestore", false)) {
    cancel(c);
