@@ -12,7 +12,7 @@ from typing import Any
 
 from .safety import atomic_json
 
-LAUNCHER_VERSION = "2.1.8"
+LAUNCHER_VERSION = "2.1.9"
 SUPPORT_DONATION_ENABLED: bool = False
 DEFAULT_GITHUB_REPO = "doubleD1302/AmeeVH"
 DEFAULT_GITHUB_BRANCH = "main"
@@ -28,7 +28,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "check_official_on_start": True,
     "auto_restore_before_game_update": False,
     "guard_watch_game_updates": True,
-    "guard_background_tray": True,
+    "guard_background_tray": False,
     "guard_auto_close_game_on_update": False,
     "guard_start_with_windows": False,
     "reduced_motion": False,

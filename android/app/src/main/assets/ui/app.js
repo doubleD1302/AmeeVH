@@ -17,14 +17,14 @@
     officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
     guard:{shortcutPinned:false,shortcutPinnedByOs:false,shortcutCallbackReceived:false,shortcutPinAttempts:0,canPinShortcut:true,notificationsEnabled:true,accessibilityEnabled:false,overlayEnabled:false,wirelessDebuggingState:-1,pendingRestore:false,oemFamily:'generic'},
     support:{methods:[]},
-    app:{versionName:'2.1.8',versionCode:31,variant:'localadb',theme:'system',resolvedTheme:'light'}
+    app:{versionName:'2.1.9',versionCode:32,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
 
   let state = initial, currentPage = 'overview';
   let previousBusyPhase = '', lastOutcome = '';
   let firstConfig = true;
   let copyResetTimer = 0, safetyCopyTimer = 0, toastTimer = 0, currentReportId = '', activeProbeInModal = false;
-  let currentSafetyTopic = 'a11y', lastChibiIdx = -1;
+  let currentSafetyTopic = 'shortcut', lastChibiIdx = -1;
   let swOpen = false, swStep = 1, swMandatory = false, swCheckFailedOnce = false, swWaitingPinReturn = false;
   let swScanTimer = 0, swPendingCheckFromRetry = false, swLaunchIdx = 0;
 
@@ -44,6 +44,46 @@
   ];
 
   const SAFETY_TOPICS = {
+    shortcut: {
+      title: 'Vì sao nên mở bằng Lối tắt Chơi Stella VH?',
+      sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/LaunchGuardActivity.java',
+      why: [
+        'Mỗi khi bấm vào biểu tượng tròn Chơi Stella VH, app tự hỏi máy chủ Yostar trong ~0,2 giây trước khi mở game.',
+        'Nếu Yostar vừa ra bản cập nhật mới, lối tắt sẽ chặn lại và nhắc khôi phục gốc trước, tránh lỗi hỏng bản vá game.',
+        'KHÔNG cần bật Trợ năng, Hiển thị nổi hay Local ADB khi chơi game — không gây lỗi app ngân hàng, VNeID hay game khác.'
+      ],
+      pledges: [
+        'Hoạt động với 0 quyền nhạy cảm — chỉ kiểm tra 432 byte phiên bản công khai từ máy chủ game rồi mở Stella Sora.',
+        'Tuyệt đối KHÔNG đọc màn hình, không chạy ngầm tốn pin, không đụng tới ứng dụng khác.',
+        '100% mã nguồn mở trên GitHub — bạn có thể tự nhờ AI kiểm chứng độc lập bên dưới.'
+      ],
+      promptFiles: [
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/LaunchGuardActivity.java',
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/ShortcutGuardHelper.java',
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/OfficialAndroidClient.java'
+      ],
+      promptFocus: 'tính năng Lối tắt Chơi Stella VH (LaunchGuardActivity) và cách kiểm tra bản cập nhật trước khi mở game'
+    },
+    notif: {
+      title: 'Vì sao nên bật Thông báo cập nhật nền?',
+      sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/OfficialUpdateCheckJob.java',
+      why: [
+        'Tự động kiểm tra máy chủ Yostar mỗi 30 phút (cả Wi-Fi lẫn 4G/5G) và báo ngay nếu game sắp cập nhật.',
+        'Cũng tự báo khi nhóm dịch phát hành bản Việt Hoá mới hoặc phiên bản Launcher mới.',
+        'Chỉ dùng quyền Thông báo thông thường như Zalo/Messenger — không cần Trợ năng hay Local ADB.'
+      ],
+      pledges: [
+        'Không gửi quảng cáo, không spam — chỉ báo đúng lúc game có bản vá cần khôi phục gốc hoặc có bản dịch mới.',
+        'Tự đọc phiên bản đã cài ngay trong bộ nhớ riêng của launcher, không quét dữ liệu ứng dụng khác.',
+        'Không ảnh hưởng tới app ngân hàng, VNeID hay bất kỳ ứng dụng bảo mật nào.'
+      ],
+      promptFiles: [
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/OfficialUpdateCheckJob.java',
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/OfficialUpdateNotice.java',
+        'android/app/src/main/java/com/stellasora/viethoa/localadb/UpdateCheckJob.java'
+      ],
+      promptFocus: 'tính năng Thông báo cập nhật nền (JobScheduler + Notification) của Stella Sora Việt Hoá'
+    },
     a11y: {
       title: 'Quyền Trợ năng (Tuỳ chọn nâng cao)',
       sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
@@ -628,7 +668,7 @@
     text('github-state', lines.join('\n'));
 
     text('github-summary', p.available ? ('Gói Android ' + (p.version || gh.translationVersion || '') + ' sẵn sàng.') : (gh.message || 'Chưa đồng bộ GitHub.'));
-    text('app-version', 'v' + (state.app.versionName || '2.1.8') + ' (' + (state.app.versionCode || 31) + ')');
+    text('app-version', 'v' + (state.app.versionName || '2.1.9') + ' (' + (state.app.versionCode || 32) + ')');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Cài APK mới' : 'Tải bản cập nhật';
@@ -706,7 +746,7 @@
   }
 
   function buildAiCheckPrompt(topicKey) {
-    const spec = SAFETY_TOPICS[topicKey] || SAFETY_TOPICS.a11y;
+    const spec = SAFETY_TOPICS[topicKey] || SAFETY_TOPICS.shortcut;
     const repo = (state.config && state.config.repo) || 'doubleD1302/AmeeVH';
     const branch = (state.config && state.config.branch) || 'main';
     const base = 'https://github.com/' + repo;
@@ -742,7 +782,7 @@
   }
 
   function renderSafetyTopic(topicKey) {
-    const key = SAFETY_TOPICS[topicKey] ? topicKey : 'a11y';
+    const key = SAFETY_TOPICS[topicKey] ? topicKey : 'shortcut';
     currentSafetyTopic = key;
     const spec = SAFETY_TOPICS[key];
     text('safety-title', spec.title);
@@ -782,7 +822,7 @@
   function openSafetyModal(topicKey) {
     haptic();
     pickRandomChibi(true);
-    renderSafetyTopic(topicKey || 'a11y');
+    renderSafetyTopic(topicKey || 'shortcut');
     $('safety-overlay').hidden = false;
     refreshMarquees();
   }

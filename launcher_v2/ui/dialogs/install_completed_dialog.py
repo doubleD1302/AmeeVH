@@ -20,7 +20,10 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ...core.shortcut import create_game_shortcut, get_desktop_path
+from pathlib import Path
+from typing import Optional
+
+from ...core.shortcut import PRIMARY_GUARD_SHORTCUT_NAME, create_game_shortcut, get_desktop_path
 from ..theme.tokens import PORCELAIN_TOKENS
 from ..theme.typography import FS_BODY, FS_BODY_SM, nfc, ui_font
 from ..widgets import (
@@ -81,10 +84,18 @@ class InstallCompletedDialog(PorcelainDialog):
         parent: QWidget | None = None,
         *,
         asset_renderer: AssetRenderer | None = None,
+        launcher_exe: Optional[Path] = None,
+        app_data_dir: Optional[Path] = None,
+        resource_dir: Optional[Path] = None,
+        icon_cache_dir: Optional[Path] = None,
     ) -> None:
         self._renderer = asset_renderer or get_asset_renderer()
         self.game_info = game_info
         self.install_result = dict(install_result) if isinstance(install_result, dict) else {}
+        self._launcher_exe = launcher_exe
+        self._app_data_dir = app_data_dir
+        self._resource_dir = resource_dir
+        self._icon_cache_dir = icon_cache_dir
         self.launch_game_clicked: bool = False
 
         super().__init__(
@@ -174,9 +185,9 @@ class InstallCompletedDialog(PorcelainDialog):
         b_lay.addWidget(sc_band)
 
         init_status = (
-            'Đã tạo lối tắt "Stella Sora Việt Hóa" trên màn hình chính.'
+            f'Đã tạo lối tắt "{PRIMARY_GUARD_SHORTCUT_NAME}" trên màn hình chính (có bảo vệ cập nhật).'
             if shortcut_created_initially
-            else 'Tích chọn hoặc bấm "Tạo lối tắt ngay" nếu bạn muốn đặt biểu tượng khởi động game ngoài Desktop.'
+            else f'Tích chọn hoặc bấm "Tạo lối tắt ngay" để đặt biểu tượng tròn "{PRIMARY_GUARD_SHORTCUT_NAME}" ngoài Desktop.'
         )
         self.shortcut_strip = AccentBannerStrip(
             "",
@@ -237,10 +248,19 @@ class InstallCompletedDialog(PorcelainDialog):
                 "", "Không xác định được thư mục game để tạo lối tắt.", tone="warn"
             )
             return
-        ok, msg = create_game_shortcut(self.game_info.game_path)
+        ok, msg = create_game_shortcut(
+            self.game_info.game_path,
+            shortcut_name=PRIMARY_GUARD_SHORTCUT_NAME,
+            launcher_exe=self._launcher_exe,
+            app_data_dir=self._app_data_dir,
+            resource_dir=self._resource_dir,
+            icon_cache_dir=self._icon_cache_dir,
+        )
         if ok:
             self.shortcut_strip.set_content(
-                "", 'Đã tạo lối tắt "Stella Sora Việt Hóa" trên màn hình chính thành công!', tone="ok"
+                "",
+                f'Đã tạo lối tắt "{PRIMARY_GUARD_SHORTCUT_NAME}" trên màn hình chính thành công!',
+                tone="ok",
             )
             self.cb_shortcut.setChecked(True)
         else:
@@ -253,9 +273,16 @@ class InstallCompletedDialog(PorcelainDialog):
             and getattr(self.game_info, "game_path", None)
         ):
             desktop = get_desktop_path()
-            lnk = desktop / "Stella Sora Việt Hóa.lnk"
+            lnk = desktop / f"{PRIMARY_GUARD_SHORTCUT_NAME}.lnk"
             if not lnk.exists():
-                create_game_shortcut(self.game_info.game_path)
+                create_game_shortcut(
+                    self.game_info.game_path,
+                    shortcut_name=PRIMARY_GUARD_SHORTCUT_NAME,
+                    launcher_exe=self._launcher_exe,
+                    app_data_dir=self._app_data_dir,
+                    resource_dir=self._resource_dir,
+                    icon_cache_dir=self._icon_cache_dir,
+                )
 
     def _on_close(self) -> None:
         self._ensure_shortcut()

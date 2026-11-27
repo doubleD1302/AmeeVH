@@ -667,6 +667,15 @@ class MainShell(QMainWindow):
             )
         )
 
+        act_shortcut = menu.addAction(nfc("Hướng dẫn lối tắt Chơi Stella VH"))
+        act_shortcut.triggered.connect(
+            lambda _chk=False, r=shell_ref: (
+                (r().bring_to_front_urgent(), r().controller.open_shortcut_wizard(trigger="manual"))
+                if r() is not None and r().controller is not None
+                else None
+            )
+        )
+
         act_check = menu.addAction(nfc("Kiểm tra bản vá Yostar ngay"))
         act_check.triggered.connect(
             lambda _chk=False, r=shell_ref: (
@@ -1184,7 +1193,7 @@ class MainShell(QMainWindow):
             not self._force_quit
             and not self._is_headless_platform()
             and self.is_tray_active()
-            and bool(self.cm.get("guard_background_tray", True))
+            and bool(self.cm.get("guard_background_tray", False))
             and bool(self.cm.get("guard_watch_game_updates", True))
         ):
             self.hide_to_tray(notify=True)

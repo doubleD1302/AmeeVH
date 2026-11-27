@@ -19,7 +19,7 @@ import os
 from pathlib import Path
 from typing import Any, Optional
 
-from PySide6.QtCore import QEvent, QObject, Qt, Signal
+from PySide6.QtCore import QEvent, QObject, QSize, Qt, Signal
 from PySide6.QtWidgets import (
     QBoxLayout,
     QCheckBox,
@@ -45,6 +45,7 @@ from ...core.config import (
     PathManager,
     derived_github_endpoints,
 )
+from ...core.shortcut import check_guarded_shortcut_status
 from ..theme.tokens import LAYOUT_TOKENS, PORCELAIN_TOKENS
 from ..theme.typography import (
     FS_BODY,
@@ -170,6 +171,7 @@ class SettingsScreen(QWidget):
     reduced_motion_toggled = Signal(bool)
     auto_sync_bg_toggled = Signal(bool)
     graphics_mode_changed = Signal(str)
+    open_shortcut_wizard_requested = Signal()
     error_raised = Signal(str, str, object)  # action, error_code, exception
     toast_requested = Signal(str, str)
 
@@ -465,7 +467,7 @@ class SettingsScreen(QWidget):
         )
         left_lay.addWidget(row_ar)
 
-        # Section 2b: BẢO VỆ CẬP NHẬT GAME
+        # Section 2b: BẢO VỆ CẬP NHẬT GAME (Chế độ an toàn bằng Lối tắt Chơi Stella VH)
         guard_bar = PorcelainSectionBar("Bảo vệ cập nhật Game", self.left_col)
         self.btn_guard_safety = ActionButton(
             "An toàn · Check AI",
@@ -477,35 +479,84 @@ class SettingsScreen(QWidget):
             asset_renderer=self._renderer,
             parent=guard_bar,
         )
-        self.btn_guard_safety.clicked.connect(self._open_safety_explainer)
+        self.btn_guard_safety.clicked.connect(lambda: self._open_safety_explainer("shortcut"))
         guard_bar.set_right_widget(self.btn_guard_safety)
         left_lay.addWidget(guard_bar)
 
+        # Primary Safe Mode Row: Guarded Desktop Shortcut (Chơi Stella VH)
+        sc_guard_row = QFrame(self.left_col)
+        sc_guard_row.setStyleSheet(
+            f"background: {p.HIGHLIGHT_STRIP_BG}; border: none; "
+            f"border-left: 3px solid {p.CYAN_ACCENT}; border-bottom: 1px solid {p.HAIRLINE};"
+        )
+        sc_g_lay = QHBoxLayout(sc_guard_row)
+        sc_g_lay.setContentsMargins(14, 9, 14, 9)
+        sc_g_lay.setSpacing(8)
+
+        sc_g_text = QVBoxLayout()
+        sc_g_text.setContentsMargins(0, 0, 0, 0)
+        sc_g_text.setSpacing(2)
+        sc_g_title = QLabel(nfc("Lối tắt bảo vệ Chơi Stella VH (Khuyên dùng)"), sc_guard_row)
+        sc_g_title.setFont(ui_font(FS_BODY_SM, 700))
+        sc_g_title.setWordWrap(True)
+        sc_g_title.setStyleSheet(f"color: {p.NAVY_TEXT}; background: transparent;")
+        sc_g_text.addWidget(sc_g_title)
+
+        self.guard_shortcut_sub_label = QLabel(
+            nfc("Kiểm tra Yostar 0,2s trước khi vào game · Không cần chạy ngầm khay hệ thống"),
+            sc_guard_row,
+        )
+        self.guard_shortcut_sub_label.setFont(ui_font(FS_CAPTION, 400))
+        self.guard_shortcut_sub_label.setWordWrap(True)
+        self.guard_shortcut_sub_label.setStyleSheet(f"color: {p.SLATE_MUTED}; background: transparent;")
+        sc_g_text.addWidget(self.guard_shortcut_sub_label)
+        sc_g_lay.addLayout(sc_g_text, 1)
+
+        self.btn_shortcut_wizard = ActionButton(
+            "Hướng dẫn / Tạo",
+            variant="light_cyan",
+            height=28,
+            asset_renderer=self._renderer,
+            parent=sc_guard_row,
+        )
+        self.btn_shortcut_wizard.clicked.connect(self.open_shortcut_wizard_requested.emit)
+        sc_g_lay.addWidget(self.btn_shortcut_wizard, 0, Qt.AlignmentFlag.AlignVCenter)
+        sc_g_lay.addWidget(
+            self._make_info_btn("shortcut", "Giải thích lối tắt Chơi Stella VH", sc_guard_row),
+            0,
+            Qt.AlignmentFlag.AlignVCenter,
+        )
+        left_lay.addWidget(sc_guard_row)
+
         self.chk_guard_watch, row_gw = self._make_switch_row(
             "Cảnh báo ngay khi vào game có bản cập nhật",
-            subtitle="Theo dõi máy chủ Yostar và nhật ký Player.log theo thời gian thực",
-            highlight=True,
+            subtitle="Theo dõi máy chủ Yostar và nhật ký Player.log khi Launcher đang mở",
+            highlight=False,
+            help_topic="guard",
             parent=self.left_col,
         )
         left_lay.addWidget(row_gw)
 
         self.chk_guard_tray, row_gt = self._make_switch_row(
-            "Thu gọn xuống khay hệ thống khi bấm đóng (×)",
-            subtitle="Giữ lớp bảo vệ chạy ngầm để chặn lỗi cập nhật ngay cả khi mở game trực tiếp",
+            "Thu gọn xuống khay hệ thống khi bấm đóng (×) (Tùy chọn)",
+            subtitle="Không bắt buộc nếu đã mở game bằng lối tắt Chơi Stella VH",
+            help_topic="guard",
             parent=self.left_col,
         )
         left_lay.addWidget(row_gt)
 
         self.chk_guard_auto_close, row_gac = self._make_switch_row(
-            "Tự động đóng game ngay khi phát hiện bản cập nhật",
+            "Tự động đóng game ngay khi phát hiện bản cập nhật (Tùy chọn)",
             subtitle="Đóng StellaSora.exe trước khi hộp thoại trong game kịp tải bản vá",
+            help_topic="guard",
             parent=self.left_col,
         )
         left_lay.addWidget(row_gac)
 
         self.chk_guard_autostart, row_gas = self._make_switch_row(
-            "Tự chạy ngầm bảo vệ khi khởi động Windows",
+            "Tự chạy ngầm bảo vệ khi khởi động Windows (Tùy chọn)",
             subtitle="Khởi động gọn dưới khay hệ thống (HKCU Run, không cần quyền Quản trị)",
+            help_topic="guard",
             parent=self.left_col,
         )
         left_lay.addWidget(row_gas)
@@ -638,16 +689,36 @@ class SettingsScreen(QWidget):
         lbl.setStyleSheet(f"color: {PORCELAIN_TOKENS.NAVY_TEXT}; background: transparent;")
         return lbl
 
+    def _make_info_btn(self, topic: str, tooltip: str, parent: QWidget) -> QPushButton:
+        p = PORCELAIN_TOKENS
+        btn = QPushButton("", parent)
+        btn.setObjectName("settingsInfoHelpBtn")
+        btn.setFixedSize(26, 26)
+        btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        btn.setFlat(True)
+        btn.setToolTip(nfc(tooltip))
+        dpr = max(1.0, float(self.devicePixelRatioF()))
+        btn.setIcon(self._renderer.get_icon("game/btn_icon_help_2.png", (16, 16), dpr, tint=p.NAVY_TEXT))
+        btn.setIconSize(QSize(16, 16))
+        btn.setStyleSheet(
+            f"QPushButton#settingsInfoHelpBtn {{ background: {p.ICE_ZEBRA}; "
+            f"border: 1px solid {p.HAIRLINE}; border-radius: 13px; padding: 0px; }}"
+            f"QPushButton#settingsInfoHelpBtn:hover {{ background: #D7F0F6; border-color: {p.CYAN_ACCENT}; }}"
+        )
+        btn.clicked.connect(lambda _chk=False, t=topic: self._open_safety_explainer(t))
+        return btn
+
     def _make_switch_row(
         self,
         title: str,
         *,
         subtitle: str = "",
         highlight: bool = False,
+        help_topic: str = "",
         parent: QWidget,
     ) -> tuple[QCheckBox, QFrame]:
         chk, frame, _ = self._make_switch_row_with_sub(
-            title, subtitle=subtitle, highlight=highlight, parent=parent
+            title, subtitle=subtitle, highlight=highlight, help_topic=help_topic, parent=parent
         )
         return chk, frame
 
@@ -657,6 +728,7 @@ class SettingsScreen(QWidget):
         *,
         subtitle: str = "",
         highlight: bool = False,
+        help_topic: str = "",
         parent: QWidget,
     ) -> tuple[QCheckBox, QFrame, Optional[QLabel]]:
         p = PORCELAIN_TOKENS
@@ -672,7 +744,7 @@ class SettingsScreen(QWidget):
             )
         lay = QHBoxLayout(frame)
         lay.setContentsMargins(14, 8, 14, 8)
-        lay.setSpacing(10)
+        lay.setSpacing(8)
 
         text_col = QVBoxLayout()
         text_col.setContentsMargins(0, 0, 0, 0)
@@ -695,6 +767,13 @@ class SettingsScreen(QWidget):
             text_col.addWidget(sub_lbl)
 
         lay.addLayout(text_col, 1)
+
+        if help_topic:
+            lay.addWidget(
+                self._make_info_btn(help_topic, f"Giải thích an toàn: {title}", frame),
+                0,
+                Qt.AlignmentFlag.AlignVCenter,
+            )
 
         chk = QCheckBox("", frame)
         chk.setObjectName("porcelainCheck")
@@ -790,9 +869,10 @@ class SettingsScreen(QWidget):
                 bool(cfg.get("auto_restore_before_game_update", False))
             )
             self.chk_guard_watch.setChecked(bool(cfg.get("guard_watch_game_updates", True)))
-            self.chk_guard_tray.setChecked(bool(cfg.get("guard_background_tray", True)))
+            self.chk_guard_tray.setChecked(bool(cfg.get("guard_background_tray", False)))
             self.chk_guard_auto_close.setChecked(bool(cfg.get("guard_auto_close_game_on_update", False)))
             self.chk_guard_autostart.setChecked(bool(cfg.get("guard_start_with_windows", False)))
+            self.refresh_shortcut_status()
 
             gm = str(cfg.get("graphics_mode") or "auto")
             if gm not in VALID_GRAPHICS_MODES:
@@ -1041,13 +1121,29 @@ class SettingsScreen(QWidget):
         self.save_and_sync_requested.emit(vals)
         self.toast_requested.emit(nfc("Đã lưu cài đặt và đồng bộ dữ liệu"), "success")
 
-    def _open_safety_explainer(self) -> None:
+    def refresh_shortcut_status(self) -> None:
+        try:
+            st = check_guarded_shortcut_status()
+            if st.get("exists"):
+                self.guard_shortcut_sub_label.setText(
+                    nfc("Đã có ngoài Desktop ✓ · Tự kiểm tra Yostar 0,2s trước khi vào game")
+                )
+                self.btn_shortcut_wizard.setText(nfc("Xem hướng dẫn"))
+            else:
+                self.guard_shortcut_sub_label.setText(
+                    nfc("Chưa tạo ngoài Desktop · Bấm để tạo lối tắt bảo vệ không cần chạy ngầm")
+                )
+                self.btn_shortcut_wizard.setText(nfc("Tạo lối tắt"))
+        except Exception:
+            pass
+
+    def _open_safety_explainer(self, topic: str = "shortcut") -> None:
         from ..dialogs.safety_explainer_dialog import SafetyExplainerDialog
 
         repo = self.github_repo_input.text().strip() or DEFAULT_GITHUB_REPO
         branch = self.github_branch_input.text().strip() or DEFAULT_GITHUB_BRANCH
         dlg = SafetyExplainerDialog(
-            initial_topic="guard",
+            initial_topic=topic,
             github_repo=repo,
             github_branch=branch,
             asset_renderer=self._renderer,

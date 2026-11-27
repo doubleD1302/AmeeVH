@@ -42,6 +42,7 @@ from ...core.config import PathManager
 from ...core.diagnostics import AdbBridge, DiagnosticsCollector
 from ...core.error_report import copy_text_native
 from ...core.installer import PatchInstaller
+from ...core.shortcut import check_guarded_shortcut_status
 from ...core.types import GameInfo
 from ..theme.tokens import LAYOUT_TOKENS, PORCELAIN_TOKENS
 from ..theme.typography import FS_BODY_SM, FS_CTA_SM, nfc, ui_font
@@ -442,9 +443,9 @@ class ToolsScreen(QWidget):
         u_lay.addWidget(PorcelainSectionBar("Tiện ích & Chẩn đoán", self.col_utils))
 
         self.row_shortcut = _ToolRow(
-            "Tạo lối tắt vào game",
-            "Tạo shortcut trên Desktop (hỗ trợ tên thư mục tiếng Việt).",
-            "Tạo lối tắt",
+            "Lối tắt bảo vệ Chơi Stella VH",
+            "Tạo biểu tượng tròn Chơi Stella VH trên Desktop (tự kiểm tra cập nhật Yostar 0,2s trước khi vào game).",
+            "Hướng dẫn / Tạo",
             icon_path="game/asar_path_navy.svg",
             icon_tint=None,
             is_odd=True,
@@ -542,6 +543,19 @@ class ToolsScreen(QWidget):
         self.row_clean_temp.set_description_html(
             f"Giải phóng <b style='color:{p.NAVY_SOLID};'>{temp_mb:.1f} MB</b> tệp tải tạm &amp; ảnh nền cũ (không xóa bản sao lưu)."
         )
+
+        try:
+            sc_status = check_guarded_shortcut_status()
+            if sc_status.get("exists"):
+                self.row_shortcut.set_description_html(
+                    f"Trạng thái: <b style='color:{p.OK_TEXT};'>Đã có trên Desktop ✓</b> · Tự kiểm tra bản vá Yostar trước khi vào game."
+                )
+            else:
+                self.row_shortcut.set_description_html(
+                    f"Trạng thái: <b style='color:{p.WARN_ICON};'>Chưa tạo trên Desktop</b> · Nên tạo để tránh lỗi cập nhật."
+                )
+        except Exception:
+            pass
 
         self._refresh_diagnostics_summary()
 

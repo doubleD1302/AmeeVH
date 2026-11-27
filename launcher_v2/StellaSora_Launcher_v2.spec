@@ -177,6 +177,7 @@ hiddenimports = [
     "launcher_v2.ui.dialogs.game_selection_dialog",
     "launcher_v2.ui.dialogs.install_completed_dialog",
     "launcher_v2.ui.dialogs.safety_explainer_dialog",
+    "launcher_v2.ui.dialogs.shortcut_wizard_dialog",
     "launcher_v2.ui.dialogs.smart_error_dialog",
     "launcher_v2.ui.dialogs.support_locked_dialog",
     "launcher_v2.ui.dialogs.update_guard_dialog",

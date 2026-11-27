@@ -64,17 +64,38 @@ CHIBI_CAST: list[tuple[str, str, str]] = [
 ]
 
 PC_SAFETY_TOPICS: dict[str, dict[str, object]] = {
-    "guard": {
-        "tab": "Bảo vệ chạy ngầm",
-        "title": "Bảo vệ cập nhật & Khởi động cùng Windows có an toàn?",
-        "source_path": "launcher_v2/core/game_guard.py",
+    "shortcut": {
+        "tab": "Lối tắt VH",
+        "title": "Lối tắt Chơi Stella VH bảo vệ cập nhật thế nào?",
+        "source_path": "launcher_v2/core/shortcut.py",
         "why": [
-            "Chỉ kiểm tra máy chủ tài nguyên Yostar và đọc nhật ký Player.log của Stella Sora để phát hiện sớm bản cập nhật game.",
-            "Thu gọn xuống khay hệ thống hoặc tự khởi động cùng Windows (HKCU Run) giúp chặn kịp lúc ngay cả khi bạn mở game trực tiếp không qua launcher.",
-            "Tùy chọn tự đóng StellaSora.exe chỉ tắt đúng tiến trình game khi sắp dính lỗi xác minh bản vá, hoàn toàn có thể tắt trong Cài đặt.",
+            "Lối tắt Chơi Stella VH trên Desktop chạy cờ --launch-game: kiểm tra nhanh máy chủ Yostar chỉ trong ~0,2 giây trước khi mở StellaSora.exe.",
+            "Nếu game không có bản vá mới, Stella Sora mở ngay lập tức mà KHÔNG cần bật giao diện Launcher và KHÔNG cần chạy ngầm khay hệ thống 24/7.",
+            "Nếu Yostar vừa tung bản cập nhật mới, lối tắt lập tức chặn mở game và hiện bảng Khôi phục gốc 1 chạm để tránh lỗi xác minh (BinDiffPatchError).",
         ],
         "pledges": [
-            "Không cần quyền Quản trị viên (Admin/UAC) — chỉ ghi đúng 1 khóa khởi động ở HKCU của riêng bạn.",
+            "Không cần chạy ngầm tốn RAM, không cần khởi động cùng Windows, không cần quyền Quản trị (Admin/UAC).",
+            "Chỉ tạo 1 tệp lối tắt (.lnk) chuẩn Windows trên Desktop và lưu biểu tượng riêng trong thư mục dữ liệu Launcher.",
+            "Đồng bộ giao diện & cơ chế an toàn với bản Android — 100% mã nguồn mở công khai trên GitHub.",
+        ],
+        "prompt_files": [
+            "launcher_v2/core/shortcut.py",
+            "launcher_v2/core/game_guard.py",
+            "launcher_v2/app.py",
+        ],
+        "prompt_focus": "lối tắt Chơi Stella VH (--launch-game) và cơ chế kiểm tra cập nhật trước khi mở game của Stella Sora PC Launcher",
+    },
+    "guard": {
+        "tab": "Chạy ngầm (Tuỳ chọn)",
+        "title": "Chạy ngầm khay hệ thống & Tự khởi động có an toàn?",
+        "source_path": "launcher_v2/core/game_guard.py",
+        "why": [
+            "Các tùy chọn chạy ngầm khay hệ thống / tự khởi động cùng Windows là HOÀN TOÀN TÙY CHỌN — bạn không cần bật nếu đã mở game bằng lối tắt Chơi Stella VH.",
+            "Khi bạn bật tùy chọn này, Launcher đọc nhật ký Player.log của Stella Sora để chặn kịp lúc ngay cả khi bạn bấm mở trực tiếp từ Steam hoặc Yostar Launcher.",
+            "Tùy chọn tự đóng StellaSora.exe chỉ tắt đúng tiến trình game khi sắp dính lỗi xác minh bản vá, mặc định đang TẮT.",
+        ],
+        "pledges": [
+            "Không cần quyền Quản trị viên (Admin/UAC) — chỉ ghi đúng 1 khóa khởi động ở HKCU của riêng bạn khi bạn chủ động bật.",
             "Tuyệt đối KHÔNG đọc bàn phím, chụp màn hình, đọc trình duyệt hay can thiệp bất kỳ ứng dụng nào khác.",
             "100% mã nguồn mở công khai trên GitHub — miễn phí, không quảng cáo, không thu thập dữ liệu cá nhân.",
         ],
@@ -282,7 +303,7 @@ class SafetyExplainerDialog(PorcelainDialog):
     def __init__(
         self,
         *,
-        initial_topic: str = "guard",
+        initial_topic: str = "shortcut",
         github_repo: str = DEFAULT_GITHUB_REPO,
         github_branch: str = DEFAULT_GITHUB_BRANCH,
         asset_renderer: AssetRenderer | None = None,
@@ -291,7 +312,7 @@ class SafetyExplainerDialog(PorcelainDialog):
         self._renderer = asset_renderer or get_asset_renderer()
         self._repo = (github_repo or DEFAULT_GITHUB_REPO).strip()
         self._branch = (github_branch or DEFAULT_GITHUB_BRANCH).strip()
-        self._topic = initial_topic if initial_topic in PC_SAFETY_TOPICS else "guard"
+        self._topic = initial_topic if initial_topic in PC_SAFETY_TOPICS else "shortcut"
         self._tab_buttons: dict[str, QPushButton] = {}
         self._prompt_open = False
 

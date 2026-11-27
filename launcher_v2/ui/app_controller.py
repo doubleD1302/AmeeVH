@@ -66,7 +66,12 @@ from ..core.quick_fix import QuickFixAction
 from ..core.rollback import RollbackEngine
 from ..core.safety import InstallerError, manifest_sha256
 from ..core.self_update import cleanup_update_artifacts, schedule_update
-from ..core.shortcut import create_game_shortcut
+from ..core.shortcut import (
+    PRIMARY_GUARD_SHORTCUT_NAME,
+    check_guarded_shortcut_status,
+    create_game_shortcut,
+    upgrade_existing_desktop_shortcuts,
+)
 from ..core.types import GameInfo, NotificationItem, OperationEvent, OperationPhase
 from ..core.update_notice import (
     detect_new_publisher_version,
@@ -78,6 +83,7 @@ from .dialogs import (
     ConfirmationDialog,
     GameSelectionDialog,
     InstallCompletedDialog,
+    ShortcutWizardDialog,
     SmartErrorDialog,
     UpdateGuardDialog,
     UpdateNoticeDialog,
@@ -448,6 +454,7 @@ class AppController(QObject):
         self._log_watcher = GameLogWatcher()
         self._guard_alerted_fingerprints: set[str] = set()
         self._guard_dialog_open: bool = False
+        self._shortcut_wizard_shown_on_launch: bool = False
         self._close_after_worker: bool = False
         self._last_progress_message: str = ""
         self._last_report: Optional[ErrorReport] = None
@@ -551,6 +558,13 @@ class AppController(QObject):
         st.preserve_corrupt_requested.connect(self.on_corrupt_preserved)
         st.reduced_motion_toggled.connect(self._on_reduced_motion_changed)
         st.auto_sync_bg_toggled.connect(self._on_auto_sync_bg_changed)
+        st.open_shortcut_wizard_requested.connect(
+            lambda r=self_ref: (
+                r().open_shortcut_wizard(trigger="manual")
+                if r() is not None and _qt_is_valid(r())
+                else None
+            )
+        )
         st.error_raised.connect(self._on_screen_error_raised)
         st.toast_requested.connect(self.show_toast)
 
@@ -565,7 +579,13 @@ class AppController(QObject):
         tl.official_restore_requested.connect(self.rollback_official)
         tl.verify_requested.connect(self.verify_files)
         tl.recover_requested.connect(self.recover_journals)
-        tl.create_shortcut_requested.connect(self.create_shortcut_now)
+        tl.create_shortcut_requested.connect(
+            lambda r=self_ref: (
+                r().open_shortcut_wizard(trigger="manual")
+                if r() is not None and _qt_is_valid(r())
+                else None
+            )
+        )
         tl.clean_temp_requested.connect(self.clean_temp_cache)
         tl.copy_diagnostics_requested.connect(self.copy_diagnostics_report)
         tl.toast_requested.connect(self.show_toast)
@@ -1424,6 +1444,19 @@ class AppController(QObject):
 
         ctrl_ref = weakref.ref(self)
         if kind in ("scan", "select_root"):
+            if (
+                self.current_game_info.installed
+                and self.current_game_info.game_path
+                and not self._is_headless_platform()
+            ):
+                try:
+                    upgrade_existing_desktop_shortcuts(
+                        self.current_game_info.game_path,
+                        **self._shortcut_kwargs(),
+                    )
+                except Exception:  # noqa: BLE001
+                    pass
+
             if self._pending_launch_guard_notice is not None and self.current_game_info.installed:
                 pending_n = self._pending_launch_guard_notice
                 self._pending_launch_guard_notice = None
@@ -1447,6 +1480,22 @@ class AppController(QObject):
                         else None
                     ),
                 )
+                if (
+                    kind == "scan"
+                    and not self._shortcut_wizard_shown_on_launch
+                    and not self._start_in_tray
+                    and self.current_game_info.installed
+                    and not self._is_headless_platform()
+                ):
+                    self._shortcut_wizard_shown_on_launch = True
+                    QTimer.singleShot(
+                        320,
+                        lambda r=ctrl_ref: (
+                            r()._maybe_show_shortcut_wizard_on_startup()
+                            if r() is not None and r()._alive and not r()._closing and _qt_is_valid(r())
+                            else None
+                        ),
+                    )
         elif kind == "verify":
             v_msg = (
                 f"Đã đối chiếu {result.get('files', 0)} tệp của bản dịch "
@@ -1520,11 +1569,7 @@ class AppController(QObject):
         elif kind == "install":
             sc_ok = False
             if self._pending_create_shortcut and self.current_game_info.game_path:
-                ok, _sc_msg = create_game_shortcut(
-                    self.current_game_info.game_path,
-                    launcher_exe=Path(sys.executable) if self.pm.is_frozen else None,
-                    app_data_dir=self.pm.app_data_dir if self.pm.is_custom_app_data else None,
-                )
+                ok, _sc_msg = self._create_guarded_shortcut()
                 sc_ok = ok
             self.show_toast(str(result.get("message") or "Hoàn tất cài đặt Việt hoá!"), "success")
             self._pending_post_op_modal = True
@@ -1799,6 +1844,7 @@ class AppController(QObject):
             shortcut_preference=self._pending_create_shortcut,
             parent=self.shell,
             asset_renderer=self.shell._renderer,
+            **self._shortcut_kwargs(),
         )
         self.shell.show_modal(dlg)
         if dlg.launch_game_clicked and self._alive and not self._closing:
@@ -2555,17 +2601,100 @@ class AppController(QObject):
         e = exc if isinstance(exc, BaseException) else None
         self.show_error(action, code=code, exc=e, message=str(exc or ""))
 
+    @staticmethod
+    def _is_headless_platform() -> bool:
+        if os.environ.get("QT_QPA_PLATFORM", "").lower() in ("offscreen", "minimal"):
+            return True
+        try:
+            return QGuiApplication.platformName().lower() in ("offscreen", "minimal")
+        except Exception:  # noqa: BLE001
+            return False
+
+    def _shortcut_kwargs(self) -> dict[str, Any]:
+        return {
+            "launcher_exe": Path(sys.executable) if self.pm.is_frozen else None,
+            "app_data_dir": self.pm.app_data_dir if self.pm.is_custom_app_data else None,
+            "resource_dir": self.pm.resource_dir,
+            "icon_cache_dir": self.pm.app_data_dir,
+        }
+
+    def _check_guarded_shortcut(self) -> dict[str, Any]:
+        return check_guarded_shortcut_status(
+            expected_launcher=Path(sys.executable) if self.pm.is_frozen else None,
+        )
+
+    def _create_guarded_shortcut(self) -> tuple[bool, str]:
+        if not self.current_game_info.installed or not self.current_game_info.game_path:
+            return False, "Chưa xác định được thư mục cài đặt Stella Sora."
+        ok, msg = create_game_shortcut(
+            self.current_game_info.game_path,
+            shortcut_name=PRIMARY_GUARD_SHORTCUT_NAME,
+            **self._shortcut_kwargs(),
+        )
+        if ok and self.shell is not None and _qt_is_valid(self.shell):
+            self.shell.settings_screen.refresh_shortcut_status()
+            self.shell.tools_screen.refresh_live_metrics()
+        return ok, msg
+
+    def _maybe_show_shortcut_wizard_on_startup(self) -> None:
+        if (
+            self._is_headless_platform()
+            or self._start_in_tray
+            or self._guard_dialog_open
+            or self._pending_post_op_modal
+            or self._pending_discoveries is not None
+            or not self.current_game_info.installed
+            or not self._can_open_modal()
+        ):
+            return
+        self.open_shortcut_wizard(trigger="launch")
+
+    def open_shortcut_wizard(self, *, trigger: str = "manual") -> None:
+        if not self._alive or self._closing or not _qt_is_valid(self):
+            return
+        if not self.current_game_info.installed or not self.current_game_info.game_path:
+            if trigger == "manual":
+                self.show_error("Lối tắt bảo vệ Chơi Stella VH", code="E-NO-GAME-FOLDER")
+            return
+        if not self._can_open_modal():
+            return
+        assert self.shell is not None
+        dlg = ShortcutWizardDialog(
+            check_shortcut_fn=self._check_guarded_shortcut,
+            create_shortcut_fn=self._create_guarded_shortcut,
+            trigger=trigger,
+            game_installed=True,
+            mandatory_if_missing=True,
+            asset_renderer=self.shell._renderer,
+            parent=self.shell,
+        )
+        self.shell.show_modal(dlg)
+        if self.shell is not None and _qt_is_valid(self.shell):
+            self.shell.settings_screen.refresh_shortcut_status()
+            self.shell.tools_screen.refresh_live_metrics()
+        if dlg.launch_game_requested and self._alive and not self._closing:
+            self.launch_game()
+        elif self._alive and not self._closing:
+            ctrl_ref = weakref.ref(self)
+            QTimer.singleShot(
+                120,
+                lambda r=ctrl_ref: (
+                    r()._maybe_show_release_notice()
+                    if r() is not None and r()._alive and not r()._closing and _qt_is_valid(r())
+                    else None
+                ),
+            )
+
     def create_shortcut_now(self) -> None:
         if not self.current_game_info.installed or not self.current_game_info.game_path:
             self.show_error("Tạo lối tắt vào game", code="E-NO-GAME-FOLDER")
             return
-        ok, msg = create_game_shortcut(
-            self.current_game_info.game_path,
-            launcher_exe=Path(sys.executable) if self.pm.is_frozen else None,
-            app_data_dir=self.pm.app_data_dir if self.pm.is_custom_app_data else None,
-        )
+        ok, msg = self._create_guarded_shortcut()
         if ok:
-            self.show_toast("Đã tạo lối tắt 'Stella Sora Việt Hóa' trên Desktop (có bảo vệ cập nhật).", "success")
+            self.show_toast(
+                f"Đã tạo lối tắt '{PRIMARY_GUARD_SHORTCUT_NAME}' trên Desktop (có bảo vệ cập nhật).",
+                "success",
+            )
         else:
             self.show_error("Tạo lối tắt vào game", code="E-SHORTCUT", message=msg)
 
