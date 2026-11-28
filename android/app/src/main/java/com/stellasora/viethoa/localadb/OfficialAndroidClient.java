@@ -605,7 +605,7 @@ final class OfficialAndroidClient {
   return out;
  }
 
- /** Reads last persisted official guard evaluation in <1ms (safe for AccessibilityService / LaunchGuard). */
+ /** Reads last persisted official guard evaluation in <1ms (safe for LaunchGuard). */
  static JSONObject readCachedGuardState(Context c) {
   JSONObject local = readInstalledLocalState(c);
   boolean vhModified = local.optBoolean("vhModified", false);

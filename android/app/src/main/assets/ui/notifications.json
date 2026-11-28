@@ -1,7 +1,35 @@
 {
-  "version": "2.1.6",
-  "updated_at": "2026-11-27",
+  "version": "2.1.9",
+  "updated_at": "2026-11-28",
   "announcements": [
+    {
+      "id": "NOTIF-050",
+      "date": "2026-11-28",
+      "title": "Bản cập nhật Android v2.1.10: Gỡ hoàn toàn quyền Trợ năng",
+      "type": "release",
+      "content": "Launcher Android v2.1.10 gỡ hoàn toàn dịch vụ Trợ năng, quyền Hiển thị nổi và các nút yêu cầu cấp quyền này. Hãy mở game bằng lối tắt Chơi Stella VH để launcher kiểm tra cập nhật Yostar trước khi vào game; thông báo cập nhật nền và Local ADB khi cài hoặc khôi phục vẫn được giữ. Mở launcher để nhận cập nhật; bản dịch game giữ nguyên."
+    },
+    {
+      "id": "NOTIF-049",
+      "date": "2026-11-28",
+      "title": "Bản vá nóng v2.1.9: Phóng To & Đồng Bộ Lối Tắt Chơi Stella VH (Android & PC), Thêm Lại Đầy Đủ Nút Giải Thích",
+      "type": "release",
+      "content": "Bản vá nóng Launcher Android v2.1.9 và PC Launcher v2.1.9:\n• Vì sao có bản vá này: Nếu để bật Trợ năng hoặc Gỡ lỗi không dây liên tục trên Android, nhiều app ngân hàng, ví điện tử, VNeID hoặc game khác sẽ hay báo lỗi. Đồng thời bản v2.1.9 thêm lại các nút giải thích an toàn cạnh từng mục và đồng bộ trải nghiệm lối tắt bảo vệ lên cả PC.\n• Phóng to biểu tượng lối tắt & đồng bộ Android + PC: Icon tròn \"Chơi Stella VH\" (nền trong suốt, gắn cờ Việt Hoá và chữ ▶ CHƠI) được phóng to rõ ràng hơn, dùng chung đồng nhất giữa điện thoại Android và Desktop PC.\n• Cập nhật cơ chế cảnh báo trên PC giống Android: PC Launcher tự động hiện bảng Chibi hướng dẫn kiểm tra/tạo lối tắt Chơi Stella VH ngoài Desktop mỗi khi mở, tự cập nhật icon lối tắt cũ, và mặc định không cần chạy ngầm khay hệ thống (vẫn kiểm tra Yostar 0,2 giây mỗi khi bấm lối tắt và chặn cứng nếu có bản vá mới).\n• Khôi phục đầy đủ nút giải thích an toàn trên cả Android và PC: Thêm lại toàn bộ nút \"i\" bên cạnh từng mục bảo vệ và nút Cam kết an toàn · Tự kiểm tra bằng AI.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.9."
+    },
+    {
+      "id": "NOTIF-048",
+      "date": "2026-11-28",
+      "title": "Bản vá nóng v2.1.8: Chế Độ An Toàn Không Cần Trợ Năng, Lối Tắt Chơi Stella VH Mới & Tự Tắt Local ADB",
+      "type": "release",
+      "content": "Bản vá nóng Launcher Android v2.1.8 (versionCode 31) và đồng bộ PC Launcher v2.1.8:\n• Lý do phát hành hotfix: Trợ năng (Accessibility) và Gỡ lỗi không dây (Local ADB) là các tính năng nhạy cảm trên Android — nếu bật thường xuyên không tắt dễ gây lỗi hoặc bị chặn ở ứng dụng khác (app ngân hàng, ví điện tử, VNeID, game chống cheat); nhưng nếu tắt mà không có lối tắt thay thế thì người chơi dễ bấm nhầm icon game gốc làm hỏng bản vá khi game cập nhật.\n• Lối tắt Chơi Stella VH mới & bảng hướng dẫn Chibi 4 bước: Thiết kế lại icon lối tắt tròn nền trong suốt nổi bật kèm logo cờ Việt Hoá để khó bấm nhầm; thêm bảng gợi ý dùng giao diện game và nhân vật Chibi tự kiểm tra lối tắt trên máy, hướng dẫn chi tiết cách cài và cách mở game an toàn mỗi khi mở launcher (không cần bật Trợ năng).\n• Tự động tắt Gỡ lỗi không dây: Ngay sau khi cài đặt hoặc khôi phục gốc xong, launcher tự động tắt Gỡ lỗi không dây & ngắt Local ADB (giữ nguyên khoá ghép đôi cho lần nối lại 1 chạm), kèm tuỳ chọn bật/tắt và nút tắt nhanh.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.8."
+    },
+    {
+      "id": "NOTIF-047",
+      "date": "2026-11-28",
+      "title": "Bản vá nóng v2.1.7: Sửa Lỗi Đứt Kết Nối Local ADB (E-ADB-NOT-CONNECTED) Khi Khôi Phục Gốc Trên Android",
+      "type": "release",
+      "content": "Bản vá nóng Launcher Android v2.1.7 (versionCode 30) và đồng bộ PC Launcher v2.1.7:\n• Sửa triệt để lỗi báo chưa kết nối Local ADB (E-ADB-NOT-CONNECTED) khi bấm Khôi phục gốc trên Android: tách quét kích thước Persistent_Store (21.948+ tệp) sang tệp tạm trong vùng staging thay vì đổ trực tiếp qua kênh IPC 128 KiB.\n• Thu gọn lệnh đối chiếu MD5 theo lô (< 3 KiB), giữ ổn định phiên Local ADB đang kết nối và không che giấu nguyên nhân lỗi thực nếu đường truyền bị ngắt.\n• Mở launcher trên Android hoặc PC để tự động cập nhật trực tiếp lên v2.1.7."
+    },
     {
       "id": "NOTIF-046",
       "date": "2026-11-27",

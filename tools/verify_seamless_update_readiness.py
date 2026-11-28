@@ -13,6 +13,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
+PC_LAUNCHER = ROOT / "launcher_v2"
 
 def sha256_file(p: Path) -> str:
     h = hashlib.sha256()
@@ -26,7 +27,7 @@ def main():
     errors = []
 
     # Read current version from config.py
-    cfg_file = ROOT / "launcher" / "core" / "config.py"
+    cfg_file = PC_LAUNCHER / "core" / "config.py"
     cfg_txt = cfg_file.read_text(encoding="utf-8")
     lv_match = re.search(r'LAUNCHER_VERSION\s*=\s*"([^"]+)"', cfg_txt)
     current_ver = lv_match.group(1) if lv_match else "1.0.9"
@@ -49,7 +50,7 @@ def main():
         print(f"✓ Gate 2: LAUNCHER_VERSION = {current_ver}")
 
     # Gate 3: Helper của PC launcher chứa taskkill và target.rename
-    updater_file = ROOT / "launcher" / "core" / "self_update.py"
+    updater_file = PC_LAUNCHER / "core" / "self_update.py"
     check_code = updater_file.read_text(encoding="utf-8") if updater_file.exists() else ""
     if "taskkill" not in check_code or "target.rename" not in check_code:
         errors.append("Gate 3 thất bại: Cơ chế tự cập nhật PC thiếu taskkill hoặc rename logic")

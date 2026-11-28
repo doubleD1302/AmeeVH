@@ -46,7 +46,7 @@ public final class MainActivity extends Activity implements LauncherService.List
    "startPairingNotification", "cancelPairing", "detect", "install", "verify", "restore", "recover",
    "checkUpdate", "installUpdate", "checkOfficialUpdate", "guardRestore",
    "pinGuardShortcut", "checkGuardShortcut", "confirmShortcutQuirk",
-   "openAccessibilitySettings", "openOverlaySettings", "openAppInfoSettings", "openGuardAlert",
+   "openAppInfoSettings", "openGuardAlert",
    "openWirelessSettings", "openWifiSettings",
    "openAppNotifications", "openBatterySettings", "openUnknownSources", "launchGame", "openPlayStore",
    "copyDiagnostics", "copyError", "copyAiPrompt", "openSourceCode", "explain", "openLastError", "copyAccount", "openIssues",
@@ -274,8 +274,6 @@ public final class MainActivity extends Activity implements LauncherService.List
     case "openAppNotifications": openAppNotifications(); break;
     case "openBatterySettings": openBatterySettings(); break;
     case "openUnknownSources": openUnknownSources(); break;
-    case "openAccessibilitySettings": openAccessibilitySettings(); break;
-    case "openOverlaySettings": openOverlaySettings(); break;
     case "openAppInfoSettings": openAppInfoSettings(); break;
     case "pinGuardShortcut": pinGuardShortcut(); break;
     case "checkGuardShortcut": checkGuardShortcut(); break;
@@ -544,20 +542,6 @@ public final class MainActivity extends Activity implements LauncherService.List
   if (tryOpenSettings(unk)) return;
   Intent details = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));
   tryOpenSettings(details);
- }
-
- private void openAccessibilitySettings() {
-  if (tryOpenSettings(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))) return;
-  if (tryOpenSettings(new Intent(Settings.ACTION_SETTINGS))) return;
-  showMessage("Mở Trợ năng", "Hãy vào Cài đặt Android → Trợ năng → Ứng dụng đã tải xuống → bật \"Bảo vệ cập nhật Stella Sora\".", false);
- }
-
- private void openOverlaySettings() {
-  Intent ov = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
-  if (tryOpenSettings(ov)) return;
-  Intent details = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));
-  if (tryOpenSettings(details)) return;
-  tryOpenSettings(new Intent(Settings.ACTION_SETTINGS));
  }
 
  private void openAppInfoSettings() {

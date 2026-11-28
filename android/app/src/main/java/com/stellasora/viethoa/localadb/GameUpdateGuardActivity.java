@@ -8,8 +8,8 @@ import org.json.JSONObject;
 
 /**
  * Hard-blocking translucent modal Activity displaying the authentic Stella Sora game-asset
- * update warning. Used by LaunchGuardActivity (Layer B), Notification taps (Layer C),
- * and Accessibility overlay fallback (Layer A). Never offers a bypass to launch the game.
+ * update warning. Used by LaunchGuardActivity and notification taps.
+ * Never offers a bypass to launch the game.
  */
 public final class GameUpdateGuardActivity extends Activity {
  static final String EXTRA_SOURCE = "guard_source";

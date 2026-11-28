@@ -15,9 +15,9 @@
     config:{repo:'doubleD1302/AmeeVH',branch:'main',host:'127.0.0.1',connectionPort:0,theme:'system',autoDisableWirelessAdb:true},
     update:{available:false,downloaded:false,message:'Chưa kiểm tra bản mới.'},recovery:{pending:false,message:''},receipt:{present:false,manifestSha256:''},
     officialUpdate:{checked:false,updateAvailable:false,vhModified:false,needsRestore:false,localGameVersion:'',localResourceVersion:'',latestGameVersion:'',latestResourceVersion:'',checkedAt:0},
-    guard:{shortcutPinned:false,shortcutPinnedByOs:false,shortcutCallbackReceived:false,shortcutPinAttempts:0,canPinShortcut:true,notificationsEnabled:true,accessibilityEnabled:false,overlayEnabled:false,wirelessDebuggingState:-1,pendingRestore:false,oemFamily:'generic'},
+    guard:{shortcutPinned:false,shortcutPinnedByOs:false,shortcutCallbackReceived:false,shortcutPinAttempts:0,canPinShortcut:true,notificationsEnabled:true,wirelessDebuggingState:-1,pendingRestore:false,oemFamily:'generic'},
     support:{methods:[]},
-    app:{versionName:'2.1.9',versionCode:32,variant:'localadb',theme:'system',resolvedTheme:'light'}
+    app:{versionName:'2.1.10',versionCode:33,variant:'localadb',theme:'system',resolvedTheme:'light'}
   };
 
   let state = initial, currentPage = 'overview';
@@ -50,7 +50,7 @@
       why: [
         'Mỗi khi bấm vào biểu tượng tròn Chơi Stella VH, app tự hỏi máy chủ Yostar trong ~0,2 giây trước khi mở game.',
         'Nếu Yostar vừa ra bản cập nhật mới, lối tắt sẽ chặn lại và nhắc khôi phục gốc trước, tránh lỗi hỏng bản vá game.',
-        'KHÔNG cần bật Trợ năng, Hiển thị nổi hay Local ADB khi chơi game — không gây lỗi app ngân hàng, VNeID hay game khác.'
+        'Launcher đã gỡ quyền Trợ năng và Hiển thị nổi. Khi chơi qua lối tắt, bạn cũng không cần bật Local ADB.'
       ],
       pledges: [
         'Hoạt động với 0 quyền nhạy cảm — chỉ kiểm tra 432 byte phiên bản công khai từ máy chủ game rồi mở Stella Sora.',
@@ -83,46 +83,6 @@
         'android/app/src/main/java/com/stellasora/viethoa/localadb/UpdateCheckJob.java'
       ],
       promptFocus: 'tính năng Thông báo cập nhật nền (JobScheduler + Notification) của Stella Sora Việt Hoá'
-    },
-    a11y: {
-      title: 'Quyền Trợ năng (Tuỳ chọn nâng cao)',
-      sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
-      why: [
-        'KHÔNG bắt buộc! Bạn nên dùng Lối tắt "Chơi Stella VH" + Thông báo nền (0 quyền nhạy cảm) để tránh xung đột với app ngân hàng / VNeID.',
-        'Trợ năng chỉ là lớp phụ để chặn thêm nếu bạn hay bấm nhầm trực tiếp vào icon Stella Sora gốc.',
-        'Android 13+ mặc định khoá quyền này cho app cài ngoài Play Store nên mới hiện mục "Cài đặt bị hạn chế".'
-      ],
-      pledges: [
-        'Đã khoá cứng packageNames = com.YoStarEN.StellaSora và canRetrieveWindowContent = false.',
-        'Tuyệt đối KHÔNG đọc nội dung màn hình, mật khẩu, tin nhắn, bàn phím hay ứng dụng ngân hàng.',
-        'Có thể tắt hoàn toàn bất kỳ lúc nào — Lối tắt Chơi Stella VH và Thông báo nền vẫn bảo vệ đầy đủ.'
-      ],
-      promptFiles: [
-        'android/app/src/main/res/xml/game_guard_accessibility.xml',
-        'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
-        'android/app/src/main/AndroidManifest.xml'
-      ],
-      promptFocus: 'quyền Trợ năng (AccessibilityService) của tính năng Bảo vệ cập nhật game'
-    },
-    overlay: {
-      title: 'Vì sao cần Hiển thị nổi (OEM)?',
-      sourcePath: 'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
-      why: [
-        'Một số máy Xiaomi (HyperOS/MIUI), OPPO, Vivo, Samsung chặn lớp phủ Trợ năng mặc định khi mở game.',
-        'Quyền Hiển thị trên ứng dụng khác (SYSTEM_ALERT_WINDOW) làm lớp dự phòng để popup cảnh báo hiện lên ngay trên màn hình game.',
-        'Bạn chỉ cần bật quyền này nếu thấy mở game lúc có bản vá mới mà popup chưa tự hiện.'
-      ],
-      pledges: [
-        'Chỉ vẽ duy nhất hộp thoại cảnh báo cập nhật Stella Sora khi bản dịch cần khôi phục gốc.',
-        'KHÔNG chạy nền hiển thị quảng cáo, không che nút hệ thống hay can thiệp ứng dụng khác.',
-        'Có thể tắt lại bất kỳ lúc nào trong Cài đặt ứng dụng Android.'
-      ],
-      promptFiles: [
-        'android/app/src/main/java/com/stellasora/viethoa/localadb/GameLaunchGuardService.java',
-        'android/app/src/main/java/com/stellasora/viethoa/localadb/GameAlertViewBuilder.java',
-        'android/app/src/main/AndroidManifest.xml'
-      ],
-      promptFocus: 'quyền Hiển thị trên ứng dụng khác (SYSTEM_ALERT_WINDOW)'
     },
     adb: {
       title: 'Vì sao cần Local ADB?',
@@ -169,7 +129,7 @@
   const OEM_TIPS = {
     xiaomi: {
       title: 'Lưu ý Xiaomi / Redmi / POCO (HyperOS)',
-      body: '• Bật thêm "Gỡ lỗi USB (Cài đặt bảo mật)" trong Tuỳ chọn nhà phát triển.\n• Bật Thông báo nổi, Hiển thị nổi và đặt Pin "Không hạn chế".'
+      body: '• Bật thêm "Gỡ lỗi USB (Cài đặt bảo mật)" trong Tuỳ chọn nhà phát triển.\n• Bật Thông báo nổi và đặt Pin "Không hạn chế".'
     },
     oppo: {
       title: 'Lưu ý OPPO / Realme / OnePlus',
@@ -618,15 +578,10 @@
       ? 'Đã có ngoài màn hình chính · Bấm để xem hướng dẫn'
       : 'Chưa ghim · Chạm để cài lối tắt Chơi Stella VH');
     setBadge($('guard-notif-status'), notifOn ? 'Đang bật' : 'Chưa bật', notifOn ? 'ok' : 'warning');
-    setBadge($('guard-a11y-status'), grd.accessibilityEnabled ? 'Đang bật' : 'Tắt (Khuyên dùng)', grd.accessibilityEnabled ? 'warning' : 'ok');
-    setBadge($('guard-overlay-status'), grd.overlayEnabled ? 'Đang bật' : 'Tắt', grd.overlayEnabled ? 'warning' : 'neutral');
 
     const safePill = $('guard-safe-pill');
     if (safePill) {
-      if (grd.accessibilityEnabled) {
-        safePill.className = 'safe-mode-pill warn';
-        text('guard-safe-pill-text', 'Đang bật Trợ năng · Có thể tắt để tránh lỗi app ngân hàng (dùng Lối tắt thay thế)');
-      } else if (shortcutPinned) {
+      if (shortcutPinned) {
         safePill.className = 'safe-mode-pill ok';
         text('guard-safe-pill-text', 'Chế độ An toàn · Đã có Lối tắt Chơi Stella VH (0 quyền nhạy cảm)');
       } else {
@@ -668,7 +623,7 @@
     text('github-state', lines.join('\n'));
 
     text('github-summary', p.available ? ('Gói Android ' + (p.version || gh.translationVersion || '') + ' sẵn sàng.') : (gh.message || 'Chưa đồng bộ GitHub.'));
-    text('app-version', 'v' + (state.app.versionName || '2.1.9') + ' (' + (state.app.versionCode || 32) + ')');
+    text('app-version', 'v' + (state.app.versionName || '2.1.10') + ' (' + (state.app.versionCode || 33) + ')');
     text('update-state', state.update.message || 'Chưa kiểm tra bản mới.');
     $('install-update').hidden = !state.update.available && !state.update.downloaded;
     $('install-update').querySelector('span').textContent = state.update.downloaded ? 'Cài APK mới' : 'Tải bản cập nhật';
@@ -1109,7 +1064,7 @@
   });
   $('safety-open-source').addEventListener('click', () => {
     haptic();
-    const spec = SAFETY_TOPICS[currentSafetyTopic] || SAFETY_TOPICS.a11y;
+    const spec = SAFETY_TOPICS[currentSafetyTopic] || SAFETY_TOPICS.shortcut;
     request('openSourceCode', {path: spec.sourcePath});
   });
   ['adb-host','pair-port','connect-port','repo','branch'].forEach(id => $(id).addEventListener('input', () => { $(id).dataset.edited = '1'; }));

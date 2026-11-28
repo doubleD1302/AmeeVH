@@ -170,42 +170,11 @@
     <button class="tool-btn needs-idle" data-action="checkOfficialUpdate" type="button"><img src="game_icons/refresh.webp" alt="" width="15" height="15" decoding="async"><span>Quét mới</span></button>
     <button class="tool-btn" data-action="openGuardAlert" type="button"><img src="game_icons/warning_sm.webp" alt="" width="15" height="15" decoding="async"><span>Xem thử</span></button>
    </div>
-   <details class="disclosure slim-details" id="guard-advanced-details">
-    <summary>Tuỳ chọn nâng cao (Trợ năng &amp; Hiển thị nổi)</summary>
-    <div class="disclosure-body">
-     <p class="callout warn-callout" id="guard-a11y-bank-note">Không bắt buộc. Một số app ngân hàng, VNeID hoặc game chống cheat có thể báo lỗi nếu bật Trợ năng thường xuyên. Khuyên dùng <strong>Lối tắt Chơi Stella VH + Thông báo nền</strong> ở trên thay thế.</p>
-     <div class="setting-rows">
-      <div class="setting-row-pair">
-       <button class="setting-row" id="btn-open-a11y" data-action="openAccessibilitySettings" type="button">
-        <img src="game_icons/shield.webp" alt="" width="17" height="17" decoding="async">
-        <span class="row-title">Trợ năng chặn (Không bắt buộc)</span>
-        <span class="chip-badge neutral" id="guard-a11y-status"><i></i>Tắt</span>
-        <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
-       </button>
-       <button class="help-mini-btn" type="button" data-safety-topic="a11y" aria-label="Giải thích an toàn quyền Trợ năng">
-        <img src="game_icons/help.webp" alt="" width="16" height="16" decoding="async">
-       </button>
-      </div>
-      <div class="setting-row-pair">
-       <button class="setting-row" id="btn-open-overlay" data-action="openOverlaySettings" type="button">
-        <img src="game_icons/display.webp" alt="" width="17" height="17" decoding="async">
-        <span class="row-title">Hiển thị nổi (Dự phòng OEM)</span>
-        <span class="chip-badge neutral" id="guard-overlay-status"><i></i>Tắt</span>
-        <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
-       </button>
-       <button class="help-mini-btn" type="button" data-safety-topic="overlay" aria-label="Giải thích an toàn quyền Hiển thị nổi">
-        <img src="game_icons/help.webp" alt="" width="16" height="16" decoding="async">
-       </button>
-      </div>
-     </div>
-     <button class="safety-banner-btn" type="button" data-safety-topic="a11y">
-      <img src="game_icons/shield.webp" alt="" width="15" height="15" decoding="async">
-      <span>Cam kết an toàn · Tự check bằng AI</span>
-      <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
-     </button>
-     <button class="button secondary xs-btn wide" data-action="openAppInfoSettings" type="button"><img src="game_icons/gear.webp" alt="" width="15" height="15" decoding="async">Mở Thông tin ứng dụng (Android 13+)</button>
-    </div>
-   </details>
+   <button class="safety-banner-btn" type="button" data-safety-topic="shortcut">
+    <img src="game_icons/shield.webp" alt="" width="15" height="15" decoding="async">
+    <span>Cam kết an toàn · Tự check bằng AI</span>
+    <img class="row-chev" src="game_icons/chevron_right.webp" alt="" width="12" height="12" decoding="async">
+   </button>
   </article>
 
   <article class="card notices-card">
@@ -364,7 +333,7 @@
   <article class="card">
    <div class="card-head">
     <h2><img src="game_icons/globe.webp" alt="" width="18" height="18" decoding="async">Đồng bộ &amp; Cập nhật</h2>
-    <span class="ver-chip" id="app-version">v2.1.9</span>
+    <span class="ver-chip" id="app-version">v2.1.10</span>
    </div>
    <p id="github-summary" class="micro-note">Chưa đồng bộ GitHub.</p>
    <p id="update-state" class="micro-note">Chưa kiểm tra bản mới.</p>
@@ -504,7 +473,7 @@
      <span class="safety-char-pill" id="safety-char-name">Iris</span>
      <span class="safety-tag">An toàn &amp; Minh bạch</span>
     </div>
-    <h2 id="safety-title">Vì sao cần quyền Trợ năng?</h2>
+    <h2 id="safety-title">Vì sao nên dùng Lối tắt Chơi Stella VH?</h2>
     <p class="safety-quote" id="safety-char-quote">"Đừng lo nhé, để mình giải thích thật dễ hiểu cho cậu!"</p>
    </div>
    <button class="icon-button dialog-close safety-close" id="safety-close" type="button" aria-label="Đóng"><img src="game_icons/close.webp" alt="" width="17" height="17" decoding="async"></button>
@@ -514,8 +483,6 @@
    <button type="button" class="safety-tab active" data-safety-tab="shortcut" role="tab">Lối tắt VH</button>
    <button type="button" class="safety-tab" data-safety-tab="notif" role="tab">Thông báo</button>
    <button type="button" class="safety-tab" data-safety-tab="adb" role="tab">Local ADB</button>
-   <button type="button" class="safety-tab" data-safety-tab="a11y" role="tab">Trợ năng</button>
-   <button type="button" class="safety-tab" data-safety-tab="overlay" role="tab">Hiển thị nổi</button>
   </div>
 
   <div class="err-body-scroll safety-scroll" id="safety-scroll">
@@ -620,7 +587,7 @@
     </div>
     <div class="sw-info-strip">
      <img src="game/zs_common_star_l_1.png" alt="" width="16" height="16" decoding="async">
-     <span id="sw-step1-tip">Dùng Lối tắt giúp bạn <strong>tắt hẳn Trợ năng &amp; Local ADB</strong> khi chơi game — không còn lỗi ở app ngân hàng hay VNeID!</span>
+     <span id="sw-step1-tip">Launcher đã <strong>gỡ quyền Trợ năng và Hiển thị nổi</strong>. Khi chơi bằng lối tắt, bạn cũng không cần bật Local ADB!</span>
     </div>
    </div>
 

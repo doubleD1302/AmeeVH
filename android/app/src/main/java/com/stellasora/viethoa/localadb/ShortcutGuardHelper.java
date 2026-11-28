@@ -197,8 +197,6 @@ final class ShortcutGuardHelper {
     "shortcutPinAttempts", attempts,
     "canPinShortcut", canPin,
     "notificationsEnabled", areNotificationsEnabled(c),
-    "accessibilityEnabled", GameLaunchGuardService.isEnabled(c),
-    "overlayEnabled", GameLaunchGuardService.canDrawOverlay(c),
     "wirelessDebuggingState", readWirelessDebuggingState(c),
     "oemFamily", ErrorReport.oemFamily()
   );
